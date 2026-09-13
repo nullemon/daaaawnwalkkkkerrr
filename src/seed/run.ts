@@ -56,13 +56,17 @@ const idsFor = (map: SlugMap, slugs: string[] = []) =>
   slugs.map((slug) => map.get(slug)).filter((id): id is string | number => id !== undefined)
 
 async function seed(): Promise<void> {
+  // Payload takes a while to boot and says nothing while it does, which on a
+  // cold Windows run looks exactly like a hang. Say something first.
+  console.log('Starting Payload (this takes a moment on a cold run)...\n')
   const payload = await getPayload({ config })
 
   // --- An account to log in with -------------------------------------------
   const email = process.env.SEED_ADMIN_EMAIL || 'admin@example.com'
   const password = process.env.SEED_ADMIN_PASSWORD || 'changeme-please'
   const existingUsers = await payload.find({ collection: 'users', limit: 1, depth: 0 })
-  if (existingUsers.totalDocs === 0) {
+  const createdAdmin = existingUsers.totalDocs === 0
+  if (createdAdmin) {
     await payload.create({
       collection: 'users',
       data: { email, password, name: 'Site owner', role: 'admin' },
@@ -215,7 +219,19 @@ async function seed(): Promise<void> {
   await payload.updateGlobal({ slug: 'site-settings', data: siteSettings as never })
   console.log('  site settings')
 
-  console.log('\nSeed complete.')
+  // The login is the one thing people come back to this output for, so print
+  // it at the end where it is still on screen rather than scrolled away.
+  console.log('\nSeed complete.\n')
+  console.log('Sign in at http://localhost:3000/admin')
+  console.log(`  email     ${email}`)
+  if (createdAdmin) {
+    console.log(`  password  ${password}`)
+    console.log('\nChange that password now — Admin → Users → your account.')
+  } else {
+    console.log(
+      `  password  unchanged by this run (the default this project ships is "${password}")`,
+    )
+  }
   process.exit(0)
 }
 

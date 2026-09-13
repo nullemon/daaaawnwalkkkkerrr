@@ -34,7 +34,16 @@ pnpm seed
 pnpm dev
 ```
 
-The seed prints the admin login it creates. Override it before running:
+`pnpm seed` creates the admin account and prints the login at the end. Unless
+you overrode it, that is:
+
+| | |
+| --- | --- |
+| URL | http://localhost:3000/admin |
+| Email | `admin@example.com` |
+| Password | `changeme-please` |
+
+Override it before the first run:
 
 ```bash
 SEED_ADMIN_EMAIL=you@example.com SEED_ADMIN_PASSWORD='a real password' pnpm seed
