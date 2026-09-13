@@ -33,6 +33,7 @@ seed only creates a user when none exists, so it will not overwrite yours later.
 | `pnpm start` | Serve the production build |
 | `pnpm seed` | Load/refresh hand-written seed content — idempotent, matches on slug |
 | `pnpm import` | Ingest researched JSON from `src/seed/raw/` — validates and rejects uncited records |
+| `pnpm assets` | Attach images in bulk from `assets/<collection>/<slug>.<ext>` (`--force` to replace) |
 | `pnpm test` | Run the run-checker unit tests |
 | `pnpm generate:types` | Regenerate `payload-types.ts` after a schema change |
 
@@ -100,6 +101,18 @@ object storage (`@payloadcms/storage-s3` or similar) before relying on uploads.
 over transitive prerequisites, cycles in the data, exclusion lock-outs,
 best/worst-case affordability, and unknown costs. The solver is deliberately
 free of Payload types so it can be tested without a database.
+
+## Images and data collection
+
+`docs/ASSETS.md` covers where to source game art, what sizes to use, and the
+legal position. Drop files into `assets/<collection>/<slug>.<ext>` and run
+`pnpm assets` — the folder picks the collection, the filename picks the record.
+Until a record has an image the site falls back to its own icon set, so a
+missing image never leaves a hole.
+
+`tools/extract.js` is a browser console tool for pulling a table off a page
+into our JSON schema, ready for `pnpm import`. See the end of `docs/DATA.md`
+for what it is and is not for.
 
 ## Honest limitations
 

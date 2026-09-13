@@ -21,3 +21,8 @@ public/media/
 .vercel
 .idea/
 .vscode/
+
+# Game assets are large and not ours to redistribute — keep them out of git.
+# The folder and its README stay; the image files do not.
+assets/**
+!assets/README.md

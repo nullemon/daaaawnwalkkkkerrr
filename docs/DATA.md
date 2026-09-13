@@ -145,3 +145,25 @@ every source cited, confidence rated honestly.**
 Screenshots and art belong to Bandai Namco / Rebel Wolves. Fan-site use is
 tolerated, not licensed. Keep usage minimal, credit them in the media record,
 and keep official logos out of the site's own branding.
+
+## Collecting data yourself, from the browser
+
+`tools/extract.js` is a console tool. Open DevTools on a page with a table or
+a list of links, paste the file's contents in, pick the table, map its columns
+onto our fields, and download JSON that drops into `src/seed/raw/` and runs
+through `pnpm import`.
+
+It fills in the page URL and today's date as the source on every record, since
+the importer rejects anything uncited. It works one page at a time and does
+not crawl or collect images.
+
+Where the line is: compiling **facts** — an item's name, a quest's segment
+cost, which region something is in — is fine, and it is what this whole
+project does. Two things are not. Copying someone's **sentences** is
+infringement, so rewrite every description in your own words. And lifting a
+**substantial part of their database** is separately actionable in the EU and
+UK under the sui generis database right, which protects the collection even
+when every fact in it is free. Taking a page of figures to cross-check against
+another source is ordinary research; mirroring a competitor's whole table is
+not, and it also defeats the point — the site's advantage is being the
+accurate one, which you cannot be by inheriting someone else's errors.
