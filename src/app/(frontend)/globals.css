@@ -1501,3 +1501,24 @@ td.num {
 .planner-summary h2 {
   font-size: 19px;
 }
+
+/*
+  Grid and flex children default to `min-width: auto`, which means a wide table
+  inside an overflow-x container still forces its ancestors wider than the
+  viewport — the scroll container never gets the chance to scroll. Letting
+  these shrink below their content width is what keeps the page itself from
+  scrolling sideways on a phone.
+*/
+.split > *,
+.stack,
+.section,
+.rail,
+.tablewrap,
+.checker > *,
+.planner > * {
+  min-width: 0;
+}
+
+.tablewrap {
+  max-width: 100%;
+}
