@@ -7,6 +7,7 @@ import { Icon } from './Icon'
 import {
   checkRun,
   STATUS_LABELS,
+  summariseRun,
   type EndingNode,
   type QuestNode,
 } from '@/lib/reachability'
@@ -36,9 +37,18 @@ export function RunDashboard({
     [endings, quests, segmentsSpent, completed],
   )
 
-  const live = results.filter((r) => r.status !== 'out-of-time' && r.status !== 'locked-out')
-  const secured = results.filter((r) => r.status === 'achieved')
-  const lost = results.length - live.length
+  /**
+   * "Time Runs Out" is excluded from the tally on both sides. It is reached by
+   * failing rather than choosing, so counting it as an open ending would mean
+   * the figure never drops below one and a doomed run would still read "1
+   * ending open" — the one outcome the player was trying to avoid.
+   */
+  const outlook = useMemo(() => summariseRun(results), [results])
+  const live = outlook.results.filter(
+    (r) => !r.ending.isFailure && r.status !== 'out-of-time' && r.status !== 'locked-out',
+  )
+  const secured = results.filter((r) => r.status === 'achieved' && !r.ending.isFailure)
+  const lost = outlook.lostCount
 
   // What to actually go and do: the first outstanding quest of the cheapest
   // route still open. One answer, not a list of lists.

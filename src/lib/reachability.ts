@@ -217,3 +217,83 @@ export const STATUS_LABELS: Record<ReachabilityStatus, string> = {
   'out-of-time': 'Out of time',
   'locked-out': 'Locked out',
 }
+
+/** Statuses that still count as "on the table" when tallying a run. */
+const OPEN: ReachabilityStatus[] = ['achieved', 'reachable', 'tight']
+
+export interface RunOutlook {
+  /** Endings still winnable, excluding the failure state. */
+  openCount: number
+  /** Endings that could ever be won, excluding the failure state. */
+  totalCount: number
+  /** Of the open ones, those with no slack left. */
+  tightCount: number
+  lostCount: number
+  results: EndingReachability[]
+}
+
+/**
+ * The headline a player actually wants: how many endings are still on the
+ * table, out of how many.
+ *
+ * "Time Runs Out" is excluded from both sides of that count. It is reached by
+ * failing rather than choosing, so including it would mean the tally never
+ * drops below one and a doomed run would still read "you can reach 1 of 7".
+ */
+export function summariseRun(results: EndingReachability[]): RunOutlook {
+  const winnable = results.filter((result) => !result.ending.isFailure)
+  const open = winnable.filter((result) => OPEN.includes(result.status))
+  return {
+    openCount: open.length,
+    totalCount: winnable.length,
+    tightCount: open.filter((result) => result.status === 'tight').length,
+    lostCount: winnable.length - open.length,
+    results,
+  }
+}
+
+/**
+ * The ending whose deadline bites first — what a mid-run player should be
+ * worrying about.
+ *
+ * Endings with nothing outstanding are never urgent, however little time is
+ * left: several are decided at the finale and need no preparation, so "needs 0
+ * more quests" would be advice about nothing. Tight beats merely reachable,
+ * and the failure state is never a goal.
+ */
+export function mostUrgentEnding(results: EndingReachability[]): EndingReachability | null {
+  const candidates = results.filter(
+    (result) => !result.ending.isFailure && result.outstanding.length > 0,
+  )
+  return (
+    candidates.find((result) => result.status === 'tight') ??
+    candidates.find((result) => result.status === 'reachable') ??
+    null
+  )
+}
+
+/**
+ * Of everything still outstanding, the quests that can be started *right now*
+ * — prerequisites met, and playable in the phase the player is currently in.
+ *
+ * Chains that are already lost contribute nothing: sending someone to grind a
+ * quest for an ending they can no longer reach is worse than saying nothing.
+ * A quest wanted by more than one ending appears once.
+ */
+export function questsAvailableNow(
+  results: EndingReachability[],
+  completedQuestIds: string[],
+  phase: 'day' | 'night',
+): QuestNode[] {
+  const done = new Set(completedQuestIds)
+  const wanted = new Map<string, QuestNode>()
+  for (const result of results) {
+    if (!OPEN.includes(result.status) || result.ending.isFailure) continue
+    for (const quest of result.outstanding) {
+      if (!quest.prereqs.every((id) => done.has(id))) continue
+      if (quest.phase !== 'either' && quest.phase !== phase) continue
+      wanted.set(quest.id, quest)
+    }
+  }
+  return [...wanted.values()]
+}

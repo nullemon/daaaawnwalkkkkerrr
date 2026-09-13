@@ -4,7 +4,9 @@ import { PageHeader } from '@/components/PageHeader'
 import { sectionArt } from '@/lib/art'
 import { Badge, Confidence } from '@/components/Badges'
 import { EntityCard } from '@/components/EntityCard'
+import { RunOutlook } from '@/components/RunOutlook'
 import { getAll } from '@/lib/payload'
+import { getRunGraph } from '@/lib/runData'
 import type { Ending } from '@/payload-types'
 
 export const metadata: Metadata = {
@@ -22,6 +24,9 @@ const GATE_LABEL: Record<string, string> = {
 export default async function EndingsIndex() {
   const endings = await getAll<Ending>('endings', { sort: 'title', depth: 0 })
   const byGate = (gate: string) => endings.filter((ending) => ending.gate === gate)
+  // The same graph the checker and the unlock paths walk, so the readout
+  // above the list cannot drift from either of them.
+  const graph = await getRunGraph()
 
   return (
     <>
@@ -34,6 +39,7 @@ export default async function EndingsIndex() {
         lede="Five of these are decided at the finale and cannot be lost early. Two are gated on questlines you have to finish long before you get there — those are the ones people lose without noticing."
       />
       <div className="page body-main">
+        <RunOutlook quests={graph.quests} endings={graph.endings} />
         {['ally', 'choice', 'clock'].map((gate) => {
           const group = byGate(gate)
           if (!group.length) return null

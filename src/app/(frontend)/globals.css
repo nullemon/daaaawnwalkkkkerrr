@@ -991,3 +991,26 @@ th.num { text-align: right; }
 .endinglist li[data-status='locked-out'] .endinglist-top a { color: var(--muted); }
 
 .linkish { background: none; border: none; padding: 0; font: inherit; color: var(--accent-hot); cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+
+/* Portrait art is 3:4, so crop to the square rather than squashing the face. */
+.cell-avatar {
+  flex: none; width: 22px; height: 22px; border-radius: 3px;
+  object-fit: cover; object-position: center top;
+  background: var(--raised); border: 1px solid var(--rule);
+}
+
+/* ---------- personalised readout above the endings index ---------- */
+
+.outlook-headline { font-size: 17px; line-height: 1.5; }
+.outlook-headline b { color: var(--accent); font-variant-numeric: tabular-nums; }
+
+.outlook-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.outlook-list li {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px;
+  padding: 9px 0; border-bottom: 1px solid var(--rule-soft);
+}
+.outlook-list li:last-child { border-bottom: 0; }
+.outlook-list a { font-weight: 500; flex: 1 1 auto; min-width: 0; }
+/* A route that is gone should read as gone at a glance, not need the badge. */
+.outlook-list li[data-status='out-of-time'] a,
+.outlook-list li[data-status='locked-out'] a { color: var(--muted); text-decoration: line-through; }

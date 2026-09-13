@@ -38,7 +38,7 @@ export type Facet = { key: string; label: string }
  * from a server page has to survive serialisation. A link column reads its
  * href from `<key>Href`, and the `name` column its icon from `icon`.
  */
-export type Row = BaseRow & { icon?: IconName }
+export type Row = BaseRow & { icon?: IconName; avatar?: string; avatarAlt?: string }
 
 export function DataTable({
   rows,
@@ -200,7 +200,13 @@ function Cell({ row, column }: { row: Row; column: Column }) {
     return (
       <td>
         <span className="cell-name" data-rarity={textOf(row, 'rarity') || undefined}>
-          {row.icon ? <Icon name={row.icon} size={16} className="ic" /> : null}
+          {row.avatar ? (
+            // Decorative: the row already says the name in text right beside it,
+            // so announcing the picture too would just read the name twice.
+            <img className="cell-avatar" src={row.avatar} alt="" width={22} height={22} loading="lazy" />
+          ) : row.icon ? (
+            <Icon name={row.icon} size={16} className="ic" />
+          ) : null}
           {href ? <Link href={href}>{value}</Link> : value}
         </span>
       </td>

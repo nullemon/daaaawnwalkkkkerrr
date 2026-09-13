@@ -1,5 +1,14 @@
 import { describe, expect, it } from 'vitest'
-import { checkRun, expandRequirements, indexQuests, type EndingNode, type QuestNode } from './reachability'
+import {
+  checkRun,
+  expandRequirements,
+  indexQuests,
+  mostUrgentEnding,
+  questsAvailableNow,
+  summariseRun,
+  type EndingNode,
+  type QuestNode,
+} from './reachability'
 import { TOTAL_SEGMENTS, segmentsSpentAt } from './segments'
 
 const quest = (id: string, over: Partial<QuestNode> = {}): QuestNode => ({
@@ -192,5 +201,110 @@ describe('checkRun', () => {
     const [result] = checkRun([patricide], chain, { segmentsSpent: spent, completedQuestIds: [] })
     expect(result.segmentsLeft).toBe(224)
     expect(result.status).toBe('reachable')
+  })
+})
+
+describe('summariseRun', () => {
+  it('counts only endings that can be won, and excludes the failure state', () => {
+    const quests = [quest('a'), quest('b')]
+    const endings = [
+      ending('reachable', { requiredQuests: ['a'] }),
+      ending('lost', { requiredQuests: ['b'] }),
+      ending('timeout', { isFailure: true, gate: 'clock' }),
+    ]
+    // Deep enough into the run that a 4-segment chain no longer fits.
+    const results = checkRun(endings, quests, {
+      segmentsSpent: TOTAL_SEGMENTS - 1,
+      completedQuestIds: ['a'],
+    })
+    const outlook = summariseRun(results)
+
+    expect(outlook.totalCount).toBe(2)
+    expect(outlook.openCount).toBe(1)
+    expect(outlook.lostCount).toBe(1)
+  })
+
+  it('never lets the failure state prop up the tally of a doomed run', () => {
+    const quests = [quest('a')]
+    const endings = [
+      ending('lost', { requiredQuests: ['a'] }),
+      ending('timeout', { isFailure: true, gate: 'clock' }),
+    ]
+    const outlook = summariseRun(
+      checkRun(endings, quests, { segmentsSpent: TOTAL_SEGMENTS - 1, completedQuestIds: [] }),
+    )
+    expect(outlook.openCount).toBe(0)
+  })
+})
+
+describe('questsAvailableNow', () => {
+  const graph = () => {
+    const quests = [
+      quest('open'),
+      quest('blocked', { prereqs: ['open'] }),
+      quest('nightonly', { phase: 'night' }),
+    ]
+    const endings = [ending('e', { requiredQuests: ['blocked', 'nightonly'] })]
+    return { quests, endings }
+  }
+
+  it('offers only quests whose prerequisites are met and whose phase matches', () => {
+    const { quests, endings } = graph()
+    const results = checkRun(endings, quests, { segmentsSpent: 0, completedQuestIds: [] })
+    const ready = questsAvailableNow(results, [], 'day')
+    expect(ready.map((q) => q.id)).toEqual(['open'])
+  })
+
+  it('offers the night quest once the clock is in that phase', () => {
+    const { quests, endings } = graph()
+    const results = checkRun(endings, quests, { segmentsSpent: 0, completedQuestIds: [] })
+    const ready = questsAvailableNow(results, [], 'night')
+    expect(ready.map((q) => q.id)).toContain('nightonly')
+  })
+
+  it('suggests nothing for a chain that can no longer be afforded', () => {
+    const { quests, endings } = graph()
+    const results = checkRun(endings, quests, {
+      segmentsSpent: TOTAL_SEGMENTS - 1,
+      completedQuestIds: [],
+    })
+    expect(questsAvailableNow(results, [], 'day')).toEqual([])
+  })
+
+  it('lists a quest once even when two endings both want it', () => {
+    const quests = [quest('shared')]
+    const endings = [
+      ending('one', { requiredQuests: ['shared'] }),
+      ending('two', { requiredQuests: ['shared'] }),
+    ]
+    const results = checkRun(endings, quests, { segmentsSpent: 0, completedQuestIds: [] })
+    expect(questsAvailableNow(results, [], 'day')).toHaveLength(1)
+  })
+})
+
+describe('mostUrgentEnding', () => {
+  it('never nominates an ending that needs no preparation', () => {
+    const quests = [quest('a')]
+    const endings = [
+      // Decided at the finale: reachable, but there is nothing to go and do.
+      ending('finale', { gate: 'choice', requiredQuests: [] }),
+      ending('chain', { requiredQuests: ['a'] }),
+    ]
+    const results = checkRun(endings, quests, { segmentsSpent: 0, completedQuestIds: [] })
+    expect(mostUrgentEnding(results)?.ending.id).toBe('chain')
+  })
+
+  it('returns null when nothing outstanding remains', () => {
+    const quests = [quest('a')]
+    const endings = [ending('finale', { gate: 'choice', requiredQuests: [] })]
+    const results = checkRun(endings, quests, { segmentsSpent: 0, completedQuestIds: [] })
+    expect(mostUrgentEnding(results)).toBeNull()
+  })
+
+  it('never nominates the failure state', () => {
+    const quests = [quest('a')]
+    const endings = [ending('timeout', { isFailure: true, gate: 'clock', requiredQuests: ['a'] })]
+    const results = checkRun(endings, quests, { segmentsSpent: 0, completedQuestIds: [] })
+    expect(mostUrgentEnding(results)).toBeNull()
   })
 })
