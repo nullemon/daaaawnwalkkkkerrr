@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PageHeader } from '@/components/PageHeader'
+import { sectionArt } from '@/lib/art'
 import { Badge, Confidence } from '@/components/Badges'
 import { getAll } from '@/lib/payload'
 import type { Build, SkillTree } from '@/payload-types'
@@ -24,6 +25,7 @@ export default async function BuildsIndex() {
   return (
     <>
       <PageHeader
+        art={sectionArt('builds')}
         eyebrow="Database"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Builds' }]}
         icon="shield"

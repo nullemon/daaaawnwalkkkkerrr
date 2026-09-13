@@ -23,6 +23,50 @@ end of the run rather than silently dropped.
 
 Assets are gitignored: they are large and not ours to redistribute.
 
+## Two piles, and why only one is in git
+
+`assets/` is gitignored. `public/art/` is committed. They hold the same kind of
+material, so the line between them is worth stating.
+
+`assets/` is the **library**: whole press packs and store downloads at full
+size, most of it never used. Putting that in git would be redistributing a
+175 MB media pack that anyone can already get from Rebel Wolves, for no reason
+other than that we happened to download it. `assets/_library/manifest.json`
+records where every file came from, so the pile is reproducible without being
+committed.
+
+`public/art/` is the **fourteen crops the site actually serves** — the home
+hero and one band per section index, 1920px WebP, about 1.6 MB in total. These
+are published on the site either way, which is the editorial fan-site use the
+press kit exists for. Committing them is what makes a clean checkout build:
+`assets/` is not in git, so a build that had to derive them would have nothing
+to derive them from. `tools/make-art.mjs` regenerates them from the library if
+you change the picks, and writes the credit strings to
+`src/lib/art-credits.json`.
+
+The rule of thumb: **git carries what the site serves, not what we collected.**
+
+## Where art may and may not go
+
+Decorative art goes on the home hero, the section indexes, and the social card.
+It does **not** go on a record page.
+
+No press kit or store page found so far says which place, person or creature
+any official screenshot shows — no captions, no IPTC or XMP, no named character
+renders. A forest screenshot above the words "Laslea Glen" reads as a claim
+that it *is* Laslea Glen, whatever the alt text says, and that is exactly the
+kind of claim this site cannot make without a source. An index page names a
+whole section rather than one thing, which is why it can carry a band.
+
+So a record gets an image only when a source names what the image shows. Until
+then it keeps the fallback icon, which `EntityImage` renders deliberately.
+
+Where a crop removes a burned-in disclaimer — several press screenshots are
+stamped `PRE-BETA IN-GAME FOOTAGE (ACTUAL GAMEPLAY)` along the bottom, next to
+the logos — that sentence moves into the visible credit instead. Cropping the
+image must not quietly promote pre-release footage into a picture of the game
+as shipped.
+
 ## Grabbing a whole page at once
 
 `tools/grab-images.js` is a DevTools console tool. Paste it in on a page full

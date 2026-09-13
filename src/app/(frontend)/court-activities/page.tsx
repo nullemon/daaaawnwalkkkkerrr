@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PageHeader } from '@/components/PageHeader'
+import { sectionArt } from '@/lib/art'
 import { getAll } from '@/lib/payload'
 import type { Court, CourtActivity, Region } from '@/payload-types'
 
@@ -20,6 +21,7 @@ export default async function CourtActivitiesIndex() {
   return (
     <>
       <PageHeader
+        art={sectionArt('court-activities')}
         eyebrow="Database"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Court', href: '/court' }, { label: 'Activities' }]}
         icon="crown"

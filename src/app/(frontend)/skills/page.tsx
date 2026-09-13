@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { PageHeader } from '@/components/PageHeader'
+import { sectionArt } from '@/lib/art'
 import { EntityCard } from '@/components/EntityCard'
 import { Badge, PhaseBadge } from '@/components/Badges'
 import { getAll } from '@/lib/payload'
@@ -21,6 +22,7 @@ export default async function SkillsIndex() {
   return (
     <>
       <PageHeader
+        art={sectionArt('skills')}
         eyebrow="Database"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Skills' }]}
         icon="spark"

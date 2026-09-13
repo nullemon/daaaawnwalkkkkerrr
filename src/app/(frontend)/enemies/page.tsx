@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PageHeader } from '@/components/PageHeader'
+import { sectionArt } from '@/lib/art'
 import { getAll } from '@/lib/payload'
 import type { Enemy, Region } from '@/payload-types'
 
@@ -49,6 +50,7 @@ export default async function EnemiesIndex() {
   return (
     <>
       <PageHeader
+        art={sectionArt('enemies')}
         eyebrow="Database"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Enemies' }]}
         icon="skull"

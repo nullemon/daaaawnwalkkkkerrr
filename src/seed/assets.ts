@@ -79,6 +79,10 @@ async function run(): Promise<void> {
     const target = FOLDERS[folder]
     const folderPath = path.join(ASSET_DIR, folder)
     if (!fs.statSync(folderPath).isDirectory()) continue
+    // `_`-prefixed folders are working space, not collections — assets/_library
+    // is the downloaded press material nothing is attached from. See
+    // docs/ASSETS.md.
+    if (folder.startsWith('_')) continue
     if (!target) {
       console.warn(`  ! assets/${folder} is not a known collection folder — skipped`)
       continue

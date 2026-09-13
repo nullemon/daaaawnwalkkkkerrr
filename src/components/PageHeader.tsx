@@ -4,6 +4,16 @@ import { Icon, type IconName } from './Icon'
 
 export type Crumb = { label: string; href?: string }
 
+/**
+ * Decorative art for a header band.
+ *
+ * Only the home page and the section indexes pass this. Record pages never do:
+ * no source says which place or person any official screenshot shows, and a
+ * picture above the words "Laslea Glen" reads as a claim that it is Laslea
+ * Glen whatever the alt text says. See docs/ASSETS.md.
+ */
+export type HeaderArt = { src: string; credit?: string; tall?: boolean }
+
 export function PageHeader({
   eyebrow,
   title,
@@ -11,6 +21,7 @@ export function PageHeader({
   crumbs = [],
   badges,
   icon,
+  art,
 }: {
   eyebrow?: string
   title: string
@@ -18,8 +29,9 @@ export function PageHeader({
   crumbs?: Crumb[]
   badges?: ReactNode
   icon?: IconName
+  art?: HeaderArt
 }) {
-  return (
+  const head = (
     <div className="page">
       <div className="page-head">
         {crumbs.length > 0 ? (
@@ -44,6 +56,19 @@ export function PageHeader({
         {lede ? <p className="lede">{lede}</p> : null}
         <div className="meta-row">{badges}</div>
       </div>
+    </div>
+  )
+
+  if (!art) return head
+
+  return (
+    <div
+      className="page-art"
+      style={{ backgroundImage: `url(${art.src})` }}
+      data-tall={art.tall ? 'true' : undefined}
+    >
+      {head}
+      {art.credit ? <p className="art-credit">{art.credit}</p> : null}
     </div>
   )
 }

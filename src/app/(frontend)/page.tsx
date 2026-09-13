@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PageHeader } from '@/components/PageHeader'
+import { sectionArt } from '@/lib/art'
 import { Confidence } from '@/components/Badges'
 import { Icon } from '@/components/Icon'
 import { getAll, getSiteSettings } from '@/lib/payload'
@@ -40,6 +41,7 @@ export default async function Home() {
   return (
     <>
       <PageHeader
+        art={sectionArt('hero', true)}
         eyebrow="The Blood of Dawnwalker"
         title={settings.heroHeading || 'You have 480 segments. Spend them well.'}
         lede={settings.heroSubheading}

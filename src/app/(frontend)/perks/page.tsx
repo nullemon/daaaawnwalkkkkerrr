@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PageHeader } from '@/components/PageHeader'
+import { sectionArt } from '@/lib/art'
 import { Badge } from '@/components/Badges'
 import { getAll } from '@/lib/payload'
 import type { Perk, SkillTree } from '@/payload-types'
@@ -19,6 +20,7 @@ export default async function PerksIndex() {
   return (
     <>
       <PageHeader
+        art={sectionArt('perks')}
         eyebrow="Database"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Perks' }]}
         icon="star"

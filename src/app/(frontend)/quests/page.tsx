@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PageHeader } from '@/components/PageHeader'
+import { sectionArt } from '@/lib/art'
 import { PhaseBadge } from '@/components/Badges'
 import { Icon, ICON_FOR_QUEST_KIND } from '@/components/Icon'
 import { getAll } from '@/lib/payload'
@@ -28,6 +29,7 @@ export default async function QuestIndex() {
   return (
     <>
       <PageHeader
+        art={sectionArt('quests')}
         eyebrow="Database"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Quests' }]}
         icon="scroll"

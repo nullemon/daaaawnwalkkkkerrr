@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PageHeader } from '@/components/PageHeader'
+import { sectionArt } from '@/lib/art'
 import { Icon, ICON_FOR_CATEGORY } from '@/components/Icon'
 import { getAll } from '@/lib/payload'
 import type { Item, Region } from '@/payload-types'
@@ -17,6 +18,7 @@ export default async function ItemsIndex() {
   return (
     <>
       <PageHeader
+        art={sectionArt('items')}
         eyebrow="Database"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Items' }]}
         icon="sword"

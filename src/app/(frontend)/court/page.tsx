@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { PageHeader } from '@/components/PageHeader'
+import { sectionArt } from '@/lib/art'
 import { EntityCard } from '@/components/EntityCard'
 import { Badge, Confidence } from '@/components/Badges'
 import { getAll } from '@/lib/payload'
@@ -19,6 +20,7 @@ export default async function CourtIndex() {
   return (
     <>
       <PageHeader
+        art={sectionArt('court')}
         eyebrow="Database"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Court' }]}
         icon="crown"

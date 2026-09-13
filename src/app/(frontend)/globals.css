@@ -267,6 +267,62 @@ p { margin: 0; }
 .page-head .meta-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; padding-bottom: 18px; }
 .page-head .meta-row:empty { padding-bottom: 14px; }
 
+/*
+  Decorative header band — the home hero and the section indexes only.
+
+  A record page never gets one: no source says which place or person any
+  official screenshot shows, and a picture sitting above the words "Laslea
+  Glen" reads as a claim that it is Laslea Glen whatever the alt text says.
+  That is also why the art is a background rather than an <img>: it is
+  decoration, and it says so to a screen reader by having nothing to read.
+
+  The band redefines the ink tokens locally instead of restyling each child,
+  because the photograph is dark in either theme and so the text on it has to
+  stay light in either theme.
+*/
+.page-art {
+  --ink: #f4f0e7;
+  --ink-soft: #d6d0c3;
+  --muted: #b5ad9e;
+  --rule: rgba(255, 255, 255, 0.16);
+  --raised: rgba(0, 0, 0, 0.42);
+  position: relative;
+  color: var(--ink);
+  /* A fixed dark ground, not var(--sunken): the text on this band is light in
+     both themes, so if the art ever fails to load the fallback has to stay
+     dark or the header goes light-on-light. */
+  background-color: #14120f;
+  background-size: cover;
+  background-position: center;
+  border-bottom: 1px solid var(--rule-soft);
+}
+.page-art::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(8, 7, 6, 0.84) 0%,
+    rgba(8, 7, 6, 0.55) 42%,
+    rgba(8, 7, 6, 0.85) 100%
+  );
+}
+.page-art > * { position: relative; }
+.page-art .page-head { border-bottom: 0; padding-bottom: 4px; }
+.page-art[data-tall='true'] .page-head { padding-block: 92px 4px; }
+
+.art-credit {
+  max-width: var(--page);
+  margin: 0 auto;
+  padding: 0 18px 9px;
+  font-family: var(--f-label);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.46);
+}
+
 .breadcrumbs {
   display: flex; flex-wrap: wrap; gap: 5px; list-style: none; margin: 0; padding: 0;
   font-family: var(--f-label); font-size: 11.5px; font-weight: 600;

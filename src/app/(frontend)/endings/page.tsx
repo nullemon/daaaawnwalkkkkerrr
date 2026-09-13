@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PageHeader } from '@/components/PageHeader'
+import { sectionArt } from '@/lib/art'
 import { Badge, Confidence } from '@/components/Badges'
 import { EntityCard } from '@/components/EntityCard'
 import { getAll } from '@/lib/payload'
@@ -25,6 +26,7 @@ export default async function EndingsIndex() {
   return (
     <>
       <PageHeader
+        art={sectionArt('endings')}
         eyebrow="Database"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Endings' }]}
         icon="crown"

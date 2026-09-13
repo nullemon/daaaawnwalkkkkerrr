@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { PageHeader } from '@/components/PageHeader'
+import { sectionArt } from '@/lib/art'
 import { EntityCard } from '@/components/EntityCard'
 import { Badge } from '@/components/Badges'
 import { getAll } from '@/lib/payload'
@@ -25,6 +26,7 @@ export default async function CharactersIndex() {
   return (
     <>
       <PageHeader
+        art={sectionArt('characters')}
         eyebrow="Database"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Characters' }]}
         icon="person"
