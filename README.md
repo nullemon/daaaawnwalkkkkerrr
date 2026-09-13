@@ -8,6 +8,14 @@ static HTML; the admin at `/admin` is a full CMS.
 
 ---
 
+## Working on this from your own machine
+
+Claude Code runs locally — CLI, desktop app, or IDE extension — which removes
+two limits the cloud session has: it can read files on your disk, and it is
+not behind a network policy that blocks games-media sites. See
+`docs/LOCAL-SETUP.md`. `CLAUDE.md` is picked up automatically, so a local
+session starts with the whole project in hand.
+
 ## Running it locally
 
 ```bash

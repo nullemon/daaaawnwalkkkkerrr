@@ -1,0 +1,103 @@
+# Running this on your own PC
+
+The cloud session this project was built in cannot reach games-media sites —
+its network policy blocks them — and cannot see files on your machine. Running
+Claude Code locally removes both limits at once: your files, your network, no
+uploads.
+
+## Install
+
+Claude Code runs as a CLI, a desktop app for Mac and Windows, and as VS Code
+and JetBrains extensions. The native installer is the recommended route and
+needs no Node.js.
+
+**Windows** — in PowerShell:
+
+```powershell
+curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd
+```
+
+**Mac or Linux:**
+
+```bash
+curl -fsSL https://claude.ai/install.sh | bash
+```
+
+Either way, then `claude login`. It needs a paid plan — Pro, Max, Team or
+Enterprise. The desktop app is at <https://claude.ai/download> if you would
+rather not use a terminal.
+
+## Get the project
+
+```bash
+git clone https://github.com/nullemon/daaaawnwalkkkkerrr.git
+cd daaaawnwalkkkkerrr
+git checkout claude/gallant-sagan-h66nua
+```
+
+You also need **Node.js 20.9+** and **pnpm** (`npm install -g pnpm`). Do not
+use npm to install this project — see the gotchas in `CLAUDE.md`.
+
+```bash
+pnpm install
+cp .env.example .env          # then set PAYLOAD_SECRET
+pnpm seed && pnpm import
+pnpm dev                      # http://localhost:3000
+```
+
+Then run `claude` in that folder. It reads `CLAUDE.md` automatically, so it
+starts with the whole project in hand — no re-explaining.
+
+## The asset workflow, locally
+
+This is the part that was impossible from the cloud.
+
+**1. Put your images anywhere** and tell Claude where. It can read them
+directly, look at them, and sort them. No uploading, no zipping.
+
+**2. Or drop them straight in** as `assets/<collection>/<slug>.<ext>`:
+
+```
+assets/items/durandal.png
+assets/characters/lacra.jpg
+```
+
+then `pnpm assets`. Matching is forgiving about capitals, spaces and
+apostrophes. Anything that matches no record is reported, not dropped.
+
+**3. For a pile of extracted game files**, do not rename by hand:
+
+```bash
+pnpm assets:match "C:\FModel\Output\Exports"          # dry run, writes a plan
+pnpm assets:match "C:\FModel\Output\Exports" --apply  # stage into assets/
+pnpm assets                                           # attach to records
+```
+
+**4. For the official art** — press kits, Steam — a local session can simply
+download it. That is what the cloud session was blocked from doing.
+
+## What to ask it to do first
+
+Good opening prompts, roughly in order of value:
+
+- *"Read CLAUDE.md and docs/ASSETS.md, then download the official press art
+  from the sources in docs/ASSETS.md and attach it."*
+- *"I have images in `C:\Users\me\Downloads\dawnwalker`. Sort them into
+  `assets/` with the right slugs, then run `pnpm assets`."*
+- *"Help me set up FModel and extract the UI icons"* — it can walk you through
+  it and handle everything after the export.
+- *"Deploy this"* — see the deploy section of the README.
+
+## Keeping both sides in sync
+
+Commit and push from your machine and the work is shared:
+
+```bash
+git add -A
+git commit -m "Add official press art"
+git push origin claude/gallant-sagan-h66nua
+```
+
+Images are gitignored on purpose — large, and not ours to redistribute — so
+they stay on your machine and in whatever you deploy to. Everything else
+travels.
