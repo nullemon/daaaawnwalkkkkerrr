@@ -11,10 +11,24 @@ Claude Code runs as a CLI, a desktop app for Mac and Windows, and as VS Code
 and JetBrains extensions. The native installer is the recommended route and
 needs no Node.js.
 
-**Windows** — in PowerShell:
+**Windows — PowerShell:**
 
 ```powershell
-curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd
+irm https://claude.ai/install.ps1 | iex
+```
+
+Then close and reopen the terminal so the PATH change takes effect, and check
+with `claude --version`.
+
+Two things that trip people up here. `install.cmd` is a **cmd.exe** script —
+running it from PowerShell fails, because PowerShell 5.1 does not accept `&&`
+as a statement separator and aliases `curl` to `Invoke-WebRequest`, so the
+curl flags are not understood either. Use the `.ps1` line above in PowerShell,
+or open Command Prompt if you want the `.cmd` route. And if PowerShell refuses
+to run the script at all:
+
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
 **Mac or Linux:**
@@ -23,9 +37,14 @@ curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd
 curl -fsSL https://claude.ai/install.sh | bash
 ```
 
+**No terminal at all:** the desktop app at <https://claude.ai/download>
+installs like any other program.
+
+**Already have Node.js:** `npm install -g @anthropic-ai/claude-code` also
+works and is fully supported.
+
 Either way, then `claude login`. It needs a paid plan — Pro, Max, Team or
-Enterprise. The desktop app is at <https://claude.ai/download> if you would
-rather not use a terminal.
+Enterprise.
 
 ## Get the project
 
