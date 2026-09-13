@@ -58,7 +58,7 @@ export function RunOutlook({
   if (!run.hydrated || !run.started) return null
 
   return (
-    <section className="section outlook" aria-labelledby="outlook-heading">
+    <section className="section" aria-labelledby="outlook-heading">
       <div className="section-head">
         <h2 id="outlook-heading">{heading}</h2>
         <span className="eyebrow">
