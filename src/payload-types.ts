@@ -2267,6 +2267,10 @@ export interface SiteSetting {
    */
   domain?: string | null;
   /**
+   * Leave ticked while the details below are provisional. The privacy, terms and contact pages carry a visible warning and mark every value in red until this is unticked. Untick it only once the details are genuinely yours — that is the single switch that publishes them as real.
+   */
+  legalProvisional?: boolean | null;
+  /**
    * The person or company responsible for this site. Your real name or registered company name.
    */
   legalEntity?: string | null;
@@ -2324,6 +2328,7 @@ export interface SiteSettingsSelect<T extends boolean = true> {
   maintainer?: T;
   lastVerified?: T;
   domain?: T;
+  legalProvisional?: T;
   legalEntity?: T;
   contactEmail?: T;
   postalAddress?: T;

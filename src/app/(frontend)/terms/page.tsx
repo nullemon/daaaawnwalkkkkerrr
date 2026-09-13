@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PageHeader } from '@/components/PageHeader'
-import { LegalGap } from '@/components/LegalGap'
+import { LegalField, LegalWarning } from '@/components/LegalGap'
+import { isProvisional } from '@/lib/legal'
 import { getSiteSettings } from '@/lib/payload'
 
 export const metadata: Metadata = {
@@ -12,9 +13,17 @@ export const metadata: Metadata = {
 
 export default async function TermsPage() {
   const settings = await getSiteSettings()
-  const entity = settings.legalEntity || <LegalGap field="legal entity" />
-  const email = settings.contactEmail || <LegalGap field="contact email" />
-  const jurisdiction = settings.jurisdiction || <LegalGap field="jurisdiction" />
+  const provisional = settings.legalProvisional !== false
+  const missing = [
+    (provisional || isProvisional(settings.legalEntity)) && 'who runs the site',
+    (provisional || isProvisional(settings.jurisdiction)) && 'the governing law',
+    (provisional || isProvisional(settings.contactEmail)) && 'a contact email',
+  ].filter(Boolean) as string[]
+  const entity = <LegalField field="legal entity" value={settings.legalEntity} provisional={provisional} />
+  const email = <LegalField field="contact email" value={settings.contactEmail} provisional={provisional} />
+  const jurisdiction = (
+    <LegalField field="jurisdiction" value={settings.jurisdiction} provisional={provisional} />
+  )
 
   return (
     <>
@@ -25,6 +34,8 @@ export default async function TermsPage() {
         lede="A fan site, run by one person, describing a game made by someone else. Here is what that does and does not promise."
       />
       <div className="page body-main">
+        <LegalWarning missing={missing} />
+
         <div className="prose">
           <h2>Who we are not</h2>
           <p>

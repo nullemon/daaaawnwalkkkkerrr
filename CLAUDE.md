@@ -87,5 +87,20 @@ that inherits the default would let any reader who signs up edit content.
 - Xanthe's 15th Court Activity — never named in any source found.
 - **Images.** Records have image slots and fall back to the icon set. See
   `docs/ASSETS.md`.
-- **Legal details unset.** Site settings → Legal & contact. The privacy, terms
-  and contact pages render a loud warning until they are filled in.
+- **Legal details are stand-ins.** Site settings → Legal & contact ships with a
+  fictional name, an `example.com` address and Royal Mail's documentation
+  postcode, so the pages read as finished. `legalProvisional` is ticked, which
+  makes privacy, terms and contact render a loud warning and mark every value
+  in red. Replace the details and untick it — that one switch is what publishes
+  them as real. `isProvisional` in `src/lib/legal.ts` is the backstop if
+  somebody unticks it with a placeholder still in place.
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+# This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->

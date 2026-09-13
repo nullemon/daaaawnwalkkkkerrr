@@ -62,6 +62,16 @@ export const SiteSettings: GlobalConfig = {
             'These appear on the privacy policy, terms and contact pages. A privacy policy names who is legally responsible for people\u2019s data — placeholders must be replaced with real details before launch.',
           fields: [
             {
+              name: 'legalProvisional',
+              type: 'checkbox',
+              defaultValue: true,
+              label: 'These details are still stand-ins',
+              admin: {
+                description:
+                  'Leave ticked while the details below are provisional. The privacy, terms and contact pages carry a visible warning and mark every value in red until this is unticked. Untick it only once the details are genuinely yours \u2014 that is the single switch that publishes them as real.',
+              },
+            },
+            {
               name: 'legalEntity',
               type: 'text',
               admin: {

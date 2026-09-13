@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PageHeader } from '@/components/PageHeader'
-import { LegalGap, LegalWarning } from '@/components/LegalGap'
+import { LegalField, LegalGap, LegalWarning } from '@/components/LegalGap'
+import { isProvisional } from '@/lib/legal'
 import { getSiteSettings } from '@/lib/payload'
 
 export const metadata: Metadata = {
@@ -12,14 +13,15 @@ export const metadata: Metadata = {
 
 export default async function PrivacyPage() {
   const settings = await getSiteSettings()
+  const provisional = settings.legalProvisional !== false
   const missing = [
-    !settings.legalEntity && 'who runs the site',
-    !settings.contactEmail && 'a contact email',
-    !settings.postalAddress && 'a postal address',
+    (provisional || isProvisional(settings.legalEntity)) && 'who runs the site',
+    (provisional || isProvisional(settings.contactEmail)) && 'a contact email',
+    (provisional || isProvisional(settings.postalAddress)) && 'a postal address',
   ].filter(Boolean) as string[]
 
-  const entity = settings.legalEntity || <LegalGap field="legal entity" />
-  const email = settings.contactEmail || <LegalGap field="contact email" />
+  const entity = <LegalField field="legal entity" value={settings.legalEntity} provisional={provisional} />
+  const email = <LegalField field="contact email" value={settings.contactEmail} provisional={provisional} />
 
   return (
     <>
@@ -38,7 +40,13 @@ export default async function PrivacyPage() {
             This site is operated by {entity}. For anything in this policy, write to {email}.
           </p>
           {settings.postalAddress ? (
-            <p style={{ whiteSpace: 'pre-line' }}>{settings.postalAddress}</p>
+            <p style={{ whiteSpace: 'pre-line' }}>
+              <LegalField
+                field="postal address"
+                value={settings.postalAddress}
+                provisional={provisional}
+              />
+            </p>
           ) : (
             <p>
               Postal address: <LegalGap field="postal address" />

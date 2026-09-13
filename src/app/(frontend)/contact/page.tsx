@@ -2,7 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PageHeader } from '@/components/PageHeader'
 import { CorrectionForm } from '@/components/CorrectionForm'
-import { LegalGap } from '@/components/LegalGap'
+import { LegalField, LegalWarning } from '@/components/LegalGap'
+import { isProvisional } from '@/lib/legal'
 import { getSiteSettings } from '@/lib/payload'
 
 export const metadata: Metadata = {
@@ -13,7 +14,11 @@ export const metadata: Metadata = {
 
 export default async function ContactPage() {
   const settings = await getSiteSettings()
-  const email = settings.contactEmail || <LegalGap field="contact email" />
+  const provisional = settings.legalProvisional !== false
+  const missing = [(provisional || isProvisional(settings.contactEmail)) && 'a contact email'].filter(
+    Boolean,
+  ) as string[]
+  const email = <LegalField field="contact email" value={settings.contactEmail} provisional={provisional} />
 
   return (
     <>
@@ -24,6 +29,8 @@ export default async function ContactPage() {
         lede="One person reads everything that arrives here."
       />
       <div className="page body-main">
+        <LegalWarning missing={missing} />
+
         <div className="prose">
           <h2>Something on the site is wrong</h2>
           <p>

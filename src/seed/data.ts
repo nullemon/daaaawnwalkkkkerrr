@@ -31,6 +31,21 @@ export const siteSettings = {
   footerNote:
     'Unofficial fan project. The Blood of Dawnwalker is developed by Rebel Wolves and published by Bandai Namco Entertainment. No affiliation is claimed. Facts are compiled from public sources and have not been verified against the game.',
   adsEnabled: false,
+  /*
+   * Stand-in legal details, so the site reads as finished before the real ones
+   * exist. They are deliberately fictional in the ways that count: example.com
+   * is reserved by IANA and can never be a working inbox, and EC1A 1BB is Royal
+   * Mail's own documentation postcode. `legalProvisional` is the switch that
+   * matters — while it is true the legal pages warn and mark every value, so
+   * these cannot be published as real by forgetting about them. Untick it in
+   * Site settings → Legal & contact once the details are genuinely yours.
+   */
+  legalProvisional: true,
+  legalEntity: 'Corvin Ashe (sole trader)',
+  contactEmail: 'hello@example.com',
+  postalAddress: 'Example House\n1 Example Street\nLondon EC1A 1BB\nUnited Kingdom',
+  jurisdiction: 'England and Wales',
+  maintainer: 'Corvin Ashe',
 }
 
 export const regions = [
