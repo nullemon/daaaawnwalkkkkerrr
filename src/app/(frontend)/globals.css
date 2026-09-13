@@ -9,104 +9,110 @@
 
 :root {
   /* dark is the base palette */
-  --ground: #131211;
-  --surface: #1b1a18;
-  --raised: #242220;
-  --sunken: #0e0d0c;
+  --ground: #0a0c11;
+  --surface: #11141b;
+  --raised: #1a1e28;
+  --sunken: #06080c;
 
-  --ink: #e9e5dc;
-  --ink-soft: #b3ada1;
-  --muted: #81796c;
+  --ink: #e9ecf3;
+  --ink-soft: #a4adbf;
+  --muted: #6b7489;
 
-  --rule: #2e2b27;
-  --rule-soft: #232120;
+  --rule: #222836;
+  --rule-soft: #191d27;
 
-  --accent: #c8a24a;
-  --accent-hot: #ddbb63;
-  --accent-dim: #6d5726;
-  --accent-wash: #241d0f;
+  --accent: #d13a44;
+  --accent-hot: #ff5b66;
+  --accent-dim: #6a1f25;
+  --accent-wash: #1c1013;
 
-  --legendary: #d9a63c;
-  --rare: #6c9bc4;
-  --common: #8c8677;
+  --legendary: #e3a33c;
+  --rare: #479df5;
+  --common: #8a93a6;
 
-  --danger: #c4544a;
-  --danger-wash: #2a1614;
-  --good: #7fa36b;
-  --good-wash: #17200f;
-  --caution: #c99a3f;
-  --caution-wash: #241c0d;
+  --danger: #ef4a55;
+  --danger-wash: #1f1013;
+  --good: #3fbe79;
+  --good-wash: #0c1d15;
+  --caution: #e3a33c;
+  --caution-wash: #1e1709;
 
-  --shadow: 0 1px 0 rgba(255, 255, 255, 0.03) inset;
+  --shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset;
 
-  --f-display: var(--font-cinzel), Georgia, 'Times New Roman', serif;
+  --f-display: var(--font-barlow-condensed), var(--f-body);
   --f-body: var(--font-barlow), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --f-label: var(--font-barlow-condensed), var(--f-body);
 
   --measure: 70ch;
-  --page: 1180px;
-  --r: 4px;
+  --page: 1340px;
+  --r: 6px;
   color-scheme: dark;
 }
 
 :root[data-theme='light'] {
-  --ground: #e6e3dc;
-  --surface: #f1efe9;
-  --raised: #faf9f5;
-  --sunken: #dbd8d0;
+  --ground: #eef0f4;
+  --surface: #ffffff;
+  --raised: #f7f8fa;
+  --sunken: #e2e5ea;
 
-  --ink: #1a1917;
-  --ink-soft: #454239;
-  --muted: #6c675c;
+  --ink: #11141b;
+  --ink-soft: #414a5c;
+  --muted: #6b7489;
 
-  --rule: #cbc6ba;
-  --rule-soft: #dcd8ce;
+  --rule: #d6dae1;
+  --rule-soft: #e6e9ee;
 
-  --accent: #8a6520;
-  --accent-hot: #6e4f16;
-  --accent-dim: #c6b58c;
-  --accent-wash: #ece4d1;
+  --accent: #c02630;
+  --accent-hot: #a41d27;
+  --accent-dim: #e8a9ad;
+  --accent-wash: #fdeced;
 
-  --legendary: #97701d;
-  --rare: #3c6d95;
-  --common: #6f6a5e;
+  --legendary: #9a6a12;
+  --rare: #1e63b8;
+  --common: #6b7489;
 
-  --danger: #9c2f27;
-  --danger-wash: #f0e0dd;
-  --good: #3f6132;
-  --good-wash: #e3ebdd;
-  --caution: #8a6520;
-  --caution-wash: #f0e7d3;
+  --danger: #c02630;
+  --danger-wash: #fdeced;
+  --good: #1d7a4a;
+  --good-wash: #e6f4ec;
+  --caution: #9a6a12;
+  --caution-wash: #fbf0d9;
 
-  --shadow: 0 1px 2px rgba(26, 25, 23, 0.05);
+  --shadow: 0 1px 2px rgba(17, 20, 27, 0.06);
   color-scheme: light;
 }
 
 @media (prefers-color-scheme: light) {
   :root:not([data-theme='dark']):not([data-theme='light']) {
-    --ground: #e6e3dc;
-    --surface: #f1efe9;
-    --raised: #faf9f5;
-    --sunken: #dbd8d0;
-    --ink: #1a1917;
-    --ink-soft: #454239;
-    --muted: #6c675c;
-    --rule: #cbc6ba;
-    --rule-soft: #dcd8ce;
-    --accent: #8a6520;
-    --accent-hot: #6e4f16;
-    --accent-dim: #c6b58c;
-    --accent-wash: #ece4d1;
-    --legendary: #97701d;
-    --rare: #3c6d95;
-    --common: #6f6a5e;
-    --danger: #9c2f27;
-    --danger-wash: #f0e0dd;
-    --good: #3f6132;
-    --good-wash: #e3ebdd;
-    --caution: #8a6520;
-    --caution-wash: #f0e7d3;
-    --shadow: 0 1px 2px rgba(26, 25, 23, 0.05);
+    --ground: #eef0f4;
+    --surface: #ffffff;
+    --raised: #f7f8fa;
+    --sunken: #e2e5ea;
+
+    --ink: #11141b;
+    --ink-soft: #414a5c;
+    --muted: #6b7489;
+
+    --rule: #d6dae1;
+    --rule-soft: #e6e9ee;
+
+    --accent: #c02630;
+    --accent-hot: #a41d27;
+    --accent-dim: #e8a9ad;
+    --accent-wash: #fdeced;
+
+    --legendary: #9a6a12;
+    --rare: #1e63b8;
+    --common: #6b7489;
+
+    --danger: #c02630;
+    --danger-wash: #fdeced;
+    --good: #1d7a4a;
+    --good-wash: #e6f4ec;
+    --caution: #9a6a12;
+    --caution-wash: #fbf0d9;
+
+    --shadow: 0 1px 2px rgba(17, 20, 27, 0.06);
     color-scheme: light;
   }
 }
@@ -516,6 +522,77 @@ th.num { text-align: right; }
 .site-footer nav ul { flex-direction: column; gap: 6px; }
 .site-footer nav a { font-size: 13.5px; color: var(--ink-soft); }
 .wordmark-sm { font-family: var(--f-display); font-weight: 700; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); margin-bottom: 5px; }
+
+/* ---------- filterable index tables ---------- */
+
+.datatable { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+
+.filterbar {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+  padding: 10px; border: 1px solid var(--rule); border-radius: var(--r);
+  background: var(--surface);
+}
+
+.filterbar-search {
+  display: flex; align-items: center; gap: 8px; flex: 1 1 260px; min-width: 0;
+  padding: 0 10px; height: 36px; border-radius: var(--r);
+  background: var(--sunken); border: 1px solid var(--rule);
+}
+.filterbar-search:focus-within { border-color: var(--accent); }
+.filterbar-search .ic { color: var(--muted); flex: none; }
+.filterbar-search input {
+  flex: 1 1 auto; min-width: 0; height: 100%;
+  background: none; border: none; outline: none;
+  color: var(--ink); font: inherit; font-size: 14px;
+}
+.filterbar-search input::placeholder { color: var(--muted); }
+.filterbar-search input::-webkit-search-cancel-button { filter: invert(0.5); }
+
+.filterbar-facet { display: flex; flex: none; }
+.filterbar-facet select {
+  height: 36px; padding: 0 30px 0 11px; border-radius: var(--r);
+  background: var(--sunken) no-repeat right 10px center;
+  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%),
+                    linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-size: 5px 5px, 5px 5px;
+  background-position: right 14px center, right 9px center;
+  border: 1px solid var(--rule); color: var(--ink-soft);
+  font: inherit; font-size: 13.5px; appearance: none; cursor: pointer;
+}
+.filterbar-facet select:hover { border-color: var(--accent-dim); color: var(--ink); }
+.filterbar-facet select[data-active] {
+  border-color: var(--accent); color: var(--ink); background-color: var(--accent-wash);
+}
+
+.filterbar-count {
+  margin-left: auto; font-family: var(--f-label); font-size: 13px;
+  color: var(--muted); white-space: nowrap; padding-inline: 4px;
+}
+.filterbar-count b { color: var(--ink); font-weight: 600; }
+
+.filterbar-reset, .datatable-empty button {
+  height: 36px; padding: 0 13px; border-radius: var(--r);
+  border: 1px solid var(--rule); background: var(--raised);
+  color: var(--ink-soft); font: inherit; font-size: 13.5px; cursor: pointer;
+}
+.filterbar-reset:hover, .datatable-empty button:hover { color: var(--ink); border-color: var(--accent-dim); }
+
+.datatable-empty { padding: 22px 4px; }
+.datatable-empty button { height: auto; padding: 2px 8px; }
+
+/* Sorting lives in the header cell so the whole label is the hit area. */
+.th-sort {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: none; border: none; padding: 0; cursor: pointer;
+  font: inherit; color: inherit; letter-spacing: inherit; text-transform: inherit;
+}
+.th-sort:hover { color: var(--ink); }
+.th-arrow { font-size: 8px; color: var(--accent); width: 7px; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
 
 .skip { position: absolute; left: -9999px; top: 8px; background: var(--raised); color: var(--ink); padding: 9px 13px; border: 1px solid var(--rule); z-index: 40; }
 .skip:focus { left: 16px; }
