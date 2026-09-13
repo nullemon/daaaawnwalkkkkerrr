@@ -1,0 +1,56 @@
+{
+  "name": "dawnwalker-guide",
+  "version": "0.1.0",
+  "description": "Guide, database and run planner for The Blood of Dawnwalker",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "cross-env NODE_OPTIONS=--no-deprecation next dev",
+    "devsafe": "rm -rf .next && cross-env NODE_OPTIONS=--no-deprecation next dev",
+    "build": "cross-env NODE_OPTIONS=\"--no-deprecation --max-old-space-size=6000\" next build",
+    "start": "cross-env NODE_OPTIONS=--no-deprecation next start",
+    "lint": "next lint",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "seed": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/run.ts",
+    "generate:types": "cross-env NODE_OPTIONS=--no-deprecation payload generate:types",
+    "generate:importmap": "cross-env NODE_OPTIONS=--no-deprecation payload generate:importmap",
+    "payload": "cross-env NODE_OPTIONS=--no-deprecation payload"
+  },
+  "dependencies": {
+    "@payloadcms/db-sqlite": "3.89.0",
+    "@payloadcms/next": "3.89.0",
+    "@payloadcms/richtext-lexical": "3.89.0",
+    "@payloadcms/ui": "3.89.0",
+    "cross-env": "10.1.0",
+    "graphql": "^16.8.1",
+    "next": "16.3.5",
+    "payload": "3.89.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "sharp": "0.34.2"
+  },
+  "devDependencies": {
+    "@types/node": "24.12.3",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "dotenv": "16.4.7",
+    "tsx": "4.22.4",
+    "typescript": "5.9.3",
+    "vitest": "4.1.6"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "sharp",
+      "esbuild",
+      "unrs-resolver",
+      "sqlite3",
+      "better-sqlite3",
+      "@libsql/client"
+    ]
+  },
+  "packageManager": "pnpm@10.33.0"
+}

@@ -1,0 +1,23 @@
+node_modules/
+.next/
+build/
+dist/
+*.log
+npm-debug.log*
+
+.env
+.env.*
+!.env.example
+
+# local sqlite database + uploaded media
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+public/media/
+
+.DS_Store
+*.pem
+.vercel
+.idea/
+.vscode/
