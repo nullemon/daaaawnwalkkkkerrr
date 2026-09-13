@@ -297,13 +297,30 @@ async function run(): Promise<void> {
   const quests = await slugIndex(payload, 'quests')
   for (const record of questRecords) {
     const prereqs = (record.prereqSlugs as string[] | undefined) ?? []
-    if (prereqs.length === 0) continue
-    const ids = prereqs.map((slug) => quests.get(slug)).filter(Boolean)
-    if (ids.length !== prereqs.length) {
-      warn(`quests/${record.slug}: some prereqSlugs did not resolve — linked the ones that did`)
+    const excludes = (record.excludeSlugs as string[] | undefined) ?? []
+    if (prereqs.length === 0 && excludes.length === 0) continue
+
+    const resolve = (slugs: string[], label: string) => {
+      const ids = slugs.map((slug) => quests.get(slug)).filter(Boolean)
+      if (ids.length !== slugs.length) {
+        warn(`quests/${record.slug}: some ${label} did not resolve — linked the ones that did`)
+      }
+      return ids
     }
+
     const id = quests.get(record.slug!)
-    if (id) await payload.update({ collection: 'quests', id, depth: 0, data: { prereqs: ids } as never })
+    if (!id) continue
+    await payload.update({
+      collection: 'quests',
+      id,
+      depth: 0,
+      data: {
+        prereqs: resolve(prereqs, 'prereqSlugs'),
+        // Exclusions are what let the checker say "locked out" rather than
+        // "out of time" — a different answer with a different remedy.
+        excludes: resolve(excludes, 'excludeSlugs'),
+      } as never,
+    })
   }
 
   // --- builds: need perks and items to exist first -------------------------

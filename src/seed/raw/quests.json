@@ -1,0 +1,2663 @@
+{
+  "collection": "quests",
+  "records": [
+    {
+      "title": "Prologue",
+      "slug": "prologue",
+      "kind": "prologue",
+      "regionSlug": "laslea-glen",
+      "phase": "day",
+      "timeSegments": {
+        "min": 8,
+        "max": 8,
+        "known": true
+      },
+      "summary": "The game's tutorial chapter in and around Laslea village, played entirely in daylight on a hard budget of eight time segments.",
+      "bodyParagraphs": [
+        "Coen's story opens in Laslea Glen before the wider valley unlocks. Almost every job on offer here is flagged as time-sensitive, and the chapter ends when the day does, so the eight daytime segments you start with are the whole budget.",
+        "Guides agree you cannot clear the board: Dexerto's quest hub puts the cost of doing every prologue task at roughly seventeen segments against the eight you are given, which forces a triage pass on your very first hour of play.",
+        "Prologue side quests are the only permanently missable content in the game. Once the chapter closes they vanish for good, while everything in the open world after it stays available right up to the final assault."
+      ],
+      "note": "The eight-segment figure is the daylight budget the prologue gives you rather than a per-quest charge; the seventeen-segment figure is what sources say clearing every prologue task would demand.",
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "All quests, rewards & required time in The Blood of Dawnwalker - Dexerto",
+          "url": "https://www.dexerto.com/wikis/the-blood-of-dawnwalker/all-quests/"
+        },
+        {
+          "title": "Full prologue walkthrough and quest order - PC Gamer",
+          "url": "https://www.pcgamer.com/games/rpg/blood-of-dawnwalker-prologue-quests-order/"
+        },
+        {
+          "title": "You Can't Do All Prologue Quests In The Blood of Dawnwalker - GameSpot",
+          "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-prologue-quest-priority/"
+        }
+      ]
+    },
+    {
+      "title": "Deep Down",
+      "slug": "deep-down",
+      "kind": "prologue",
+      "regionSlug": "laslea-glen",
+      "phase": "day",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "A prologue rescue job around Laslea in which saving Lazar is the outcome most guides steer you toward.",
+      "bodyParagraphs": [
+        "Deep Down is one of the timed prologue tasks that disappears when the chapter ends. Prologue routing guides list it among the jobs worth spending segments on, specifically because pulling Lazar out alive is treated as the good outcome.",
+        "Sources place it in Laslea Glen, though Fextralife's regional index also files a Deep Down entry under Maragir Wealds."
+      ],
+      "note": "Region is contested: prologue guides treat this as a Laslea Glen job, while Fextralife's Maragir Wealds page also lists a quest of this name.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Full prologue walkthrough and quest order - PC Gamer",
+          "url": "https://www.pcgamer.com/games/rpg/blood-of-dawnwalker-prologue-quests-order/"
+        },
+        {
+          "title": "Laslea Glen - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Laslea_Glen"
+        },
+        {
+          "title": "Maragir Wealds - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Maragir_Wealds"
+        }
+      ]
+    },
+    {
+      "title": "Blasphemy",
+      "slug": "blasphemy",
+      "kind": "prologue",
+      "phase": "day",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "A prologue-era quest named in routing guides, with sources split on which region it belongs to.",
+      "bodyParagraphs": [
+        "Blasphemy turns up in prologue quest-order guides alongside Deep Down and Enter Not, which places it in the missable first-day cluster.",
+        "Fextralife's regional index instead lists Blasphemy among Maragir Wealds content, so the region assignment is unresolved and has been left blank here rather than guessed."
+      ],
+      "note": "Prologue guides and the Fextralife region index disagree on where this quest sits; no region recorded.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Full prologue walkthrough and quest order - PC Gamer",
+          "url": "https://www.pcgamer.com/games/rpg/blood-of-dawnwalker-prologue-quests-order/"
+        },
+        {
+          "title": "Maragir Wealds - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Maragir_Wealds"
+        }
+      ]
+    },
+    {
+      "title": "Enter Not",
+      "slug": "enter-not",
+      "kind": "prologue",
+      "regionSlug": "laslea-glen",
+      "phase": "day",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "One of the timed Laslea prologue tasks, listed in both the Laslea Glen quest index and prologue routing guides.",
+      "bodyParagraphs": [
+        "Enter Not appears in the Laslea Glen quest listing and in prologue quest-order guides, marking it as part of the missable opening chapter.",
+        "As with Deep Down, Fextralife's Maragir Wealds page also carries an entry under this name, so the placement is not fully settled."
+      ],
+      "note": "Listed under both Laslea Glen and Maragir Wealds by different indexes.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Laslea Glen - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Laslea_Glen"
+        },
+        {
+          "title": "Full prologue walkthrough and quest order - PC Gamer",
+          "url": "https://www.pcgamer.com/games/rpg/blood-of-dawnwalker-prologue-quests-order/"
+        }
+      ]
+    },
+    {
+      "title": "If a Tree Falls in a Forest",
+      "slug": "if-a-tree-falls-in-a-forest",
+      "kind": "prologue",
+      "regionSlug": "laslea-glen",
+      "phase": "day",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "A prologue task named in first-day routing guides for Laslea.",
+      "bodyParagraphs": [
+        "Prologue guides list this among the jobs competing for the chapter's eight daylight segments. No published segment cost was found for it."
+      ],
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Full prologue walkthrough and quest order - PC Gamer",
+          "url": "https://www.pcgamer.com/games/rpg/blood-of-dawnwalker-prologue-quests-order/"
+        },
+        {
+          "title": "The Blood of Dawnwalker Prologue Quest Order - G2A News",
+          "url": "https://www.g2a.com/news/features/guide/the-blood-of-dawnwalker-prologue-quest-order/"
+        }
+      ]
+    },
+    {
+      "title": "Dead Drop",
+      "slug": "dead-drop",
+      "kind": "prologue",
+      "regionSlug": "laslea-glen",
+      "phase": "day",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "A prologue errand in Laslea listed among the chapter's missable jobs.",
+      "bodyParagraphs": [
+        "Dead Drop is named in prologue quest-order guides as one of the tasks available before the chapter closes. No segment cost is published for it in the sources found."
+      ],
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Full prologue walkthrough and quest order - PC Gamer",
+          "url": "https://www.pcgamer.com/games/rpg/blood-of-dawnwalker-prologue-quests-order/"
+        },
+        {
+          "title": "The Blood of Dawnwalker Prologue Quest Order - ConsolePulse",
+          "url": "https://consolepulse.com/multiplatform/dawnwalker-saga/guides/the-blood-of-dawnwalker-prologue-quest-order"
+        }
+      ]
+    },
+    {
+      "title": "Someone Needs a Lesson",
+      "slug": "someone-needs-a-lesson",
+      "kind": "prologue",
+      "regionSlug": "laslea-glen",
+      "phase": "day",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "A Laslea Glen prologue quest that appears in both the region index and first-day routing guides.",
+      "bodyParagraphs": [
+        "This job shows up in the Laslea Glen quest list and is repeatedly named in prologue priority guides, which weigh it against the handful of other tasks you can afford in eight segments."
+      ],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Laslea Glen - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Laslea_Glen"
+        },
+        {
+          "title": "Full prologue walkthrough and quest order - PC Gamer",
+          "url": "https://www.pcgamer.com/games/rpg/blood-of-dawnwalker-prologue-quests-order/"
+        }
+      ]
+    },
+    {
+      "title": "On the Run",
+      "slug": "on-the-run",
+      "kind": "prologue",
+      "regionSlug": "laslea-glen",
+      "phase": "day",
+      "timeSegments": {
+        "min": 2,
+        "max": 2,
+        "known": true
+      },
+      "summary": "The prologue pig chase, and one of the few early tasks with a published segment price.",
+      "bodyParagraphs": [
+        "On the Run is the runaway-pig chase in Laslea. PC Gamer's prologue routing guide prices it explicitly at two time segments, a quarter of the whole chapter's daylight budget for what looks like a throwaway errand.",
+        "That cost is exactly the kind of trap the prologue is built around, and most priority guides suggest spending those segments elsewhere."
+      ],
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Full prologue walkthrough and quest order - PC Gamer",
+          "url": "https://www.pcgamer.com/games/rpg/blood-of-dawnwalker-prologue-quests-order/"
+        }
+      ]
+    },
+    {
+      "title": "Into the Den",
+      "slug": "into-the-den",
+      "kind": "prologue",
+      "regionSlug": "laslea-glen",
+      "phase": "day",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "A prologue quest named in Laslea routing guides.",
+      "bodyParagraphs": [
+        "Into the Den is listed among the prologue's available tasks. No published time cost was found for it."
+      ],
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Full prologue walkthrough and quest order - PC Gamer",
+          "url": "https://www.pcgamer.com/games/rpg/blood-of-dawnwalker-prologue-quests-order/"
+        }
+      ]
+    },
+    {
+      "title": "Disturbed",
+      "slug": "disturbed",
+      "kind": "prologue",
+      "regionSlug": "laslea-glen",
+      "phase": "day",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "Starts outside the Laslea church and pays 100 XP and 25 Denarii; routing guides put it near the end of the ideal prologue order.",
+      "bodyParagraphs": [
+        "Disturbed begins outside the church in Laslea Glen. Guides quote a reward of 100 XP and 25 Denarii, small numbers that still matter when denarii are scarce on day one.",
+        "The commonly recommended prologue route saves Disturbed and Like Father, Like Son for last, after the medicine and rescue objectives are dealt with."
+      ],
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Laslea Glen - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Laslea_Glen"
+        },
+        {
+          "title": "Full prologue walkthrough and quest order - PC Gamer",
+          "url": "https://www.pcgamer.com/games/rpg/blood-of-dawnwalker-prologue-quests-order/"
+        }
+      ]
+    },
+    {
+      "title": "Live Bait",
+      "slug": "live-bait",
+      "kind": "prologue",
+      "regionSlug": "laslea-glen",
+      "phase": "day",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "A high-priority prologue quest that most routing guides tell you to take first.",
+      "bodyParagraphs": [
+        "Live Bait heads the recommended prologue order in several guides, which put it ahead of Esme's medicine and the Deep Down rescue in the safest route through the chapter."
+      ],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Full prologue walkthrough and quest order - PC Gamer",
+          "url": "https://www.pcgamer.com/games/rpg/blood-of-dawnwalker-prologue-quests-order/"
+        },
+        {
+          "title": "Laslea Glen - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Laslea_Glen"
+        }
+      ]
+    },
+    {
+      "title": "Withering Away",
+      "slug": "withering-away",
+      "kind": "prologue",
+      "regionSlug": "laslea-glen",
+      "phase": "day",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "The prologue's medicine quest, built around brewing the correct recipe to treat Esme.",
+      "bodyParagraphs": [
+        "Withering Away asks Coen to cure Esme, and hinges on mixing the right recipe. Method.gg's prologue guide is built around identifying that correct combination, and priority guides treat Esme's medicine as one of the segments worth spending.",
+        "No source found gives a segment price for the quest as a whole."
+      ],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Best Prologue Quests To Do & Correct Recipe For Withering Away - Method.gg",
+          "url": "https://www.method.gg/the-blood-of-dawnwalker/the-blood-of-dawnwalker-best-prologue-quests-to-do-correct-recipe-for-withering-away"
+        },
+        {
+          "title": "Laslea Glen - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Laslea_Glen"
+        }
+      ]
+    },
+    {
+      "title": "Like Father, Like Son",
+      "slug": "like-father-like-son",
+      "kind": "prologue",
+      "regionSlug": "laslea-glen",
+      "phase": "day",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "A Laslea Glen prologue quest that routing guides place at the very end of the chapter.",
+      "bodyParagraphs": [
+        "The commonly recommended prologue route finishes on Disturbed and Like Father, Like Son once the free objectives and the rescue work are done."
+      ],
+      "note": "Written as both 'Like Father Like Son' and 'Like Father, Like Son' across sources.",
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Laslea Glen - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Laslea_Glen"
+        },
+        {
+          "title": "Full prologue walkthrough and quest order - PC Gamer",
+          "url": "https://www.pcgamer.com/games/rpg/blood-of-dawnwalker-prologue-quests-order/"
+        }
+      ]
+    },
+    {
+      "title": "Smoke and Ashes",
+      "slug": "smoke-and-ashes",
+      "kind": "prologue",
+      "regionSlug": "laslea-glen",
+      "phase": "day",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "A prologue quest in Laslea Glen that gates the later Anca questline.",
+      "bodyParagraphs": [
+        "Smoke and Ashes is listed among Laslea Glen's quests and is explicitly named as the prologue prerequisite for Echoes of Silenced Bells, the quest that opens Anca's chain once the world unlocks.",
+        "Because prologue content is permanently missable, skipping this one can close off the Anca thread entirely."
+      ],
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Echoes of Silenced Bells Walkthrough - PowerPyx",
+          "url": "https://www.powerpyx.com/blood-of-dawnwalker-echoes-of-silenced-bells-walkthrough/"
+        },
+        {
+          "title": "Laslea Glen - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Laslea_Glen"
+        }
+      ]
+    },
+    {
+      "title": "All Good Things",
+      "slug": "all-good-things",
+      "kind": "side",
+      "regionSlug": "laslea-glen",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "A Laslea Glen quest listed in the region's quest index.",
+      "bodyParagraphs": [
+        "All Good Things appears in the Laslea Glen quest listing. Sources found do not say whether it belongs to the prologue block or opens afterwards, and give no time cost."
+      ],
+      "note": "Classified as a side quest because no source states it is prologue-only; the prologue/open-world split for this quest is unconfirmed.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Laslea Glen - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Laslea_Glen"
+        },
+        {
+          "title": "All Side Quests - Game8",
+          "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/616357"
+        }
+      ]
+    },
+    {
+      "title": "Sacred Covenant",
+      "slug": "sacred-covenant",
+      "kind": "side",
+      "regionSlug": "laslea-glen",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "A Laslea Glen quest listed in the region's quest index.",
+      "bodyParagraphs": [
+        "Sacred Covenant is named in the Laslea Glen quest listing. No walkthrough detail, reward or segment cost surfaced in the sources found."
+      ],
+      "note": "Prologue or open-world availability unconfirmed.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Laslea Glen - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Laslea_Glen"
+        },
+        {
+          "title": "All Side Quests - Game8",
+          "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/616357"
+        }
+      ]
+    },
+    {
+      "title": "Bad Blood",
+      "slug": "bad-blood",
+      "kind": "side",
+      "regionSlug": "laslea-glen",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "A Laslea Glen quest listed in the region's quest index.",
+      "bodyParagraphs": [
+        "Bad Blood appears in the Laslea Glen quest listing. Nothing further about its objectives, rewards or cost was found."
+      ],
+      "note": "Prologue or open-world availability unconfirmed.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Laslea Glen - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Laslea_Glen"
+        },
+        {
+          "title": "All Side Quests - Game8",
+          "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/616357"
+        }
+      ]
+    },
+    {
+      "title": "From Above",
+      "slug": "from-above",
+      "kind": "side",
+      "regionSlug": "laslea-glen",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "A Laslea Glen quest listed in the region's quest index.",
+      "bodyParagraphs": [
+        "From Above is named among Laslea Glen's quests. No objectives, rewards or segment cost were published in the sources found."
+      ],
+      "note": "Prologue or open-world availability unconfirmed.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Laslea Glen - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Laslea_Glen"
+        },
+        {
+          "title": "All Side Quests - Game8",
+          "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/616357"
+        }
+      ]
+    },
+    {
+      "title": "A Friend Like This",
+      "slug": "a-friend-like-this",
+      "kind": "ally",
+      "regionSlug": "svartrau-city",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "The opening beat of Lacra's questline, picked up in a back alley in the north-east of Svartrau City.",
+      "bodyParagraphs": [
+        "A Friend Like This starts in an alley under the walls in the north-eastern corner of Svartrau City. Guides quote 150 XP for finishing it, and completing it is what puts Song of the Mountain on the board.",
+        "It is the first link in the six-quest Lacra chain that eventually leads to Midnight Reckoning and The Patricide ending, so it is effectively the gate on one of the game's seven endings."
+      ],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Svartrau City - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Svartrau_City"
+        },
+        {
+          "title": "The Blood of Dawnwalker: Lacra Questline Walkthrough (All Six Quests) - allthings.how",
+          "url": "https://allthings.how/the-blood-of-dawnwalker-lacra-questline-walkthrough-all-six-quests/"
+        },
+        {
+          "title": "The Blood of Dawnwalker Walkthrough - All Quests - PowerPyx",
+          "url": "https://www.powerpyx.com/the-blood-of-dawnwalker-walkthrough-all-quests/"
+        }
+      ]
+    },
+    {
+      "title": "Song of the Mountain",
+      "slug": "song-of-the-mountain",
+      "kind": "ally",
+      "prereqSlugs": [
+        "a-friend-like-this"
+      ],
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "Second quest in Lacra's chain, unlocked by finishing A Friend Like This.",
+      "bodyParagraphs": [
+        "Song of the Mountain opens once A Friend Like This is done. Walkthroughs of the Lacra chain warn that the questline is paced across in-game days: between several of Lacra's quests you have to let a whole day pass before the next one becomes available.",
+        "No published segment cost was found for this entry."
+      ],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "The Blood of Dawnwalker: Lacra Questline Walkthrough (All Six Quests) - allthings.how",
+          "url": "https://allthings.how/the-blood-of-dawnwalker-lacra-questline-walkthrough-all-six-quests/"
+        },
+        {
+          "title": "Svartrau City - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Svartrau_City"
+        }
+      ]
+    },
+    {
+      "title": "Hive and Seek",
+      "slug": "hive-and-seek",
+      "kind": "ally",
+      "prereqSlugs": [
+        "song-of-the-mountain"
+      ],
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "Third quest in Lacra's questline.",
+      "bodyParagraphs": [
+        "Hive and Seek sits between Song of the Mountain and Our Rotten Roots in the Lacra chain as published by questline walkthroughs and the endings guides.",
+        "Sources found give no region, phase or time cost for it."
+      ],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "The Blood of Dawnwalker: Lacra Questline Walkthrough (All Six Quests) - allthings.how",
+          "url": "https://allthings.how/the-blood-of-dawnwalker-lacra-questline-walkthrough-all-six-quests/"
+        },
+        {
+          "title": "The Blood of Dawnwalker - All Endings Guide - KeenGamer",
+          "url": "https://www.keengamer.com/articles/guides/the-blood-of-dawnwalker-all-endings-guide/"
+        }
+      ]
+    },
+    {
+      "title": "Our Rotten Roots",
+      "slug": "our-rotten-roots",
+      "kind": "ally",
+      "prereqSlugs": [
+        "hive-and-seek"
+      ],
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "Fourth quest in Lacra's questline, and the last before the optional romance chapter.",
+      "bodyParagraphs": [
+        "Our Rotten Roots follows Hive and Seek. After it, the chain branches: The Night of Horrors is optional, but skipping it costs you the romance, and Midnight Reckoning closes the questline either way."
+      ],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "The Blood of Dawnwalker: Lacra Questline Walkthrough (All Six Quests) - allthings.how",
+          "url": "https://allthings.how/the-blood-of-dawnwalker-lacra-questline-walkthrough-all-six-quests/"
+        },
+        {
+          "title": "The Blood of Dawnwalker - All Endings Guide - KeenGamer",
+          "url": "https://www.keengamer.com/articles/guides/the-blood-of-dawnwalker-all-endings-guide/"
+        }
+      ]
+    },
+    {
+      "title": "The Night of Horrors",
+      "slug": "the-night-of-horrors",
+      "kind": "ally",
+      "prereqSlugs": [
+        "our-rotten-roots"
+      ],
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "The optional Lacra chapter that carries the romance, run through the swamp to a hidden cave.",
+      "bodyParagraphs": [
+        "The Night of Horrors is flagged optional in every published Lacra ordering, but it is the quest where the romance actually lands. It takes Coen through a swamp to a hidden cave.",
+        "Guides are emphatic on sequencing: it has to be finished before you start Midnight Reckoning, or the romance is gone. It is also tied to the Misery Loves Company achievement."
+      ],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "The Blood of Dawnwalker: Lacra Romance Guide - space4games",
+          "url": "https://space4games.com/en/games-en/the-blood-of-dawnwalker-lacra-romance-guide/"
+        },
+        {
+          "title": "Blood of Dawnwalker The Night of Horrors Walkthrough - PowerPyx",
+          "url": "https://www.powerpyx.com/blood-of-dawnwalker-the-night-of-horrors-walkthrough/"
+        },
+        {
+          "title": "The Night of Horrors Quest Walkthrough - Game8",
+          "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618692"
+        }
+      ]
+    },
+    {
+      "title": "Midnight Reckoning",
+      "slug": "midnight-reckoning",
+      "kind": "ally",
+      "prereqSlugs": [
+        "our-rotten-roots",
+        "the-night-of-horrors"
+      ],
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "The finale of Lacra's questline and the route to The Patricide ending.",
+      "bodyParagraphs": [
+        "Midnight Reckoning closes the Lacra chain and is the quest that delivers The Patricide, one of the game's seven endings.",
+        "Because it locks out The Night of Horrors, endings guides treat starting it as a point of no return for the Lacra romance."
+      ],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "The Blood of Dawnwalker - All Endings Guide - KeenGamer",
+          "url": "https://www.keengamer.com/articles/guides/the-blood-of-dawnwalker-all-endings-guide/"
+        },
+        {
+          "title": "The Blood of Dawnwalker: Lacra Questline Walkthrough (All Six Quests) - allthings.how",
+          "url": "https://allthings.how/the-blood-of-dawnwalker-lacra-questline-walkthrough-all-six-quests/"
+        },
+        {
+          "title": "The Blood of Dawnwalker endings and how to get each one - PC Gamer",
+          "url": "https://www.pcgamer.com/games/rpg/the-blood-of-dawnwalker-endings/"
+        }
+      ]
+    },
+    {
+      "title": "The Firebrand",
+      "slug": "the-firebrand",
+      "kind": "ally",
+      "regionSlug": "laslea-glen",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "The opening quest of Crake's long Manumit questline, tied to a prisoner processing camp.",
+      "bodyParagraphs": [
+        "The Firebrand is the first link in the Crake chain, the longest ally thread in the game. It is listed among Laslea Glen's quests, and court-activity guides note that the Prisoner Processing Camp activity is connected to it.",
+        "Everything that eventually leads to Rise at Dawn and Fall Before Dusk hangs off this quest, so it is the practical gate on two of the seven endings."
+      ],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "The Blood of Dawnwalker: Full Crake Questline Walkthrough - allthings.how",
+          "url": "https://allthings.how/the-blood-of-dawnwalker-full-crake-questline-walkthrough/"
+        },
+        {
+          "title": "Laslea Glen - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Laslea_Glen"
+        },
+        {
+          "title": "Blood of Dawnwalker All Court Activity Locations - PowerPyx",
+          "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-court-activity-locations/"
+        }
+      ]
+    },
+    {
+      "title": "Under Watchful Eyes",
+      "slug": "under-watchful-eyes",
+      "kind": "ally",
+      "regionSlug": "briar-sloughs",
+      "prereqSlugs": [
+        "the-firebrand"
+      ],
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "An optional Crake-chain quest at the prisoner processing camp at Stoneward Post.",
+      "bodyParagraphs": [
+        "Under Watchful Eyes is listed as optional in the Crake ordering and is picked up at the prisoner processing camp at Stoneward Post in the Briar Sloughs.",
+        "Optional Crake quests are the ones that feed A Closer Look and the fuller Manumit outcomes, so they are not throwaway even though the chain runs without them."
+      ],
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "The Blood of Dawnwalker: Full Crake Questline Walkthrough - allthings.how",
+          "url": "https://allthings.how/the-blood-of-dawnwalker-full-crake-questline-walkthrough/"
+        },
+        {
+          "title": "Briar Sloughs - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Briar_Sloughs"
+        }
+      ]
+    },
+    {
+      "title": "Taking Back What's Mine",
+      "slug": "taking-back-whats-mine",
+      "kind": "ally",
+      "prereqSlugs": [
+        "the-firebrand"
+      ],
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "An optional early quest in Crake's chain.",
+      "bodyParagraphs": [
+        "Taking Back What's Mine sits alongside Under Watchful Eyes as an optional step between The Firebrand and Shadows in the Woods in the published Crake ordering. No region or time cost was found."
+      ],
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "The Blood of Dawnwalker: Full Crake Questline Walkthrough - allthings.how",
+          "url": "https://allthings.how/the-blood-of-dawnwalker-full-crake-questline-walkthrough/"
+        },
+        {
+          "title": "The Blood of Dawnwalker - All Endings Guide - KeenGamer",
+          "url": "https://www.keengamer.com/articles/guides/the-blood-of-dawnwalker-all-endings-guide/"
+        }
+      ]
+    },
+    {
+      "title": "Shadows in the Woods",
+      "slug": "shadows-in-the-woods",
+      "kind": "ally",
+      "regionSlug": "briar-sloughs",
+      "prereqSlugs": [
+        "the-firebrand"
+      ],
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "A required Crake-chain quest handed out by Mert at Stoneward Post in the Briar Sloughs.",
+      "bodyParagraphs": [
+        "Shadows in the Woods is given by Mert at Stoneward Post. It is the first non-optional step after The Firebrand and leads directly into Where Loyalty Lies."
+      ],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Shadows in the Woods Walkthrough - PowerPyx",
+          "url": "https://www.powerpyx.com/blood-of-dawnwalker-shadows-in-the-woods-walkthrough/"
+        },
+        {
+          "title": "Briar Sloughs - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Briar_Sloughs"
+        },
+        {
+          "title": "The Blood of Dawnwalker: Full Crake Questline Walkthrough - allthings.how",
+          "url": "https://allthings.how/the-blood-of-dawnwalker-full-crake-questline-walkthrough/"
+        }
+      ]
+    },
+    {
+      "title": "Where Loyalty Lies",
+      "slug": "where-loyalty-lies",
+      "kind": "ally",
+      "prereqSlugs": [
+        "shadows-in-the-woods"
+      ],
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "The Crake quest that follows Shadows in the Woods and opens the middle of the Manumit thread.",
+      "bodyParagraphs": [
+        "Where Loyalty Lies comes straight after Shadows in the Woods. The optional Old Friends, New Friends branches off around this point before the chain resumes with What Hunts the Night."
+      ],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "The Blood of Dawnwalker: Full Crake Questline Walkthrough - allthings.how",
+          "url": "https://allthings.how/the-blood-of-dawnwalker-full-crake-questline-walkthrough/"
+        },
+        {
+          "title": "The Blood of Dawnwalker Walkthrough - All Quests - PowerPyx",
+          "url": "https://www.powerpyx.com/the-blood-of-dawnwalker-walkthrough-all-quests/"
+        }
+      ]
+    },
+    {
+      "title": "Old Friends, New Friends",
+      "slug": "old-friends-new-friends",
+      "kind": "ally",
+      "prereqSlugs": [
+        "where-loyalty-lies"
+      ],
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "An optional Crake-chain quest slotted between Where Loyalty Lies and What Hunts the Night.",
+      "bodyParagraphs": [
+        "Old Friends, New Friends is marked optional in the published Crake ordering. Endings guides group it with the other optional Manumit work that pays off in the longer Knyazmaker route."
+      ],
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "The Blood of Dawnwalker: Full Crake Questline Walkthrough - allthings.how",
+          "url": "https://allthings.how/the-blood-of-dawnwalker-full-crake-questline-walkthrough/"
+        },
+        {
+          "title": "The Blood of Dawnwalker - All Endings Guide - KeenGamer",
+          "url": "https://www.keengamer.com/articles/guides/the-blood-of-dawnwalker-all-endings-guide/"
+        }
+      ]
+    },
+    {
+      "title": "What Hunts the Night",
+      "slug": "what-hunts-the-night",
+      "kind": "ally",
+      "prereqSlugs": [
+        "where-loyalty-lies"
+      ],
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "A required Crake quest and the first of the three-part investigation that ends in Who Pulls the Strings.",
+      "bodyParagraphs": [
+        "What Hunts the Night opens the investigative middle of Crake's chain, running into What Moves the Dead and then Who Pulls the Strings.",
+        "PowerPyx keeps a dedicated walkthrough for it, which is a reasonable sign it is a substantial chapter rather than a short errand, though no segment cost is quoted."
+      ],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker What Hunts the Night Walkthrough - PowerPyx",
+          "url": "https://www.powerpyx.com/blood-of-dawnwalker-what-hunts-the-night-walkthrough/"
+        },
+        {
+          "title": "The Blood of Dawnwalker: Full Crake Questline Walkthrough - allthings.how",
+          "url": "https://allthings.how/the-blood-of-dawnwalker-full-crake-questline-walkthrough/"
+        }
+      ]
+    },
+    {
+      "title": "What Moves the Dead",
+      "slug": "what-moves-the-dead",
+      "kind": "ally",
+      "prereqSlugs": [
+        "what-hunts-the-night"
+      ],
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "The middle chapter of Crake's investigation, between What Hunts the Night and Who Pulls the Strings.",
+      "bodyParagraphs": [
+        "What Moves the Dead continues the thread started in What Hunts the Night and hands off to Who Pulls the Strings, the quest that actually unlocks the Manumit ending route."
+      ],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "The Blood of Dawnwalker: Full Crake Questline Walkthrough - allthings.how",
+          "url": "https://allthings.how/the-blood-of-dawnwalker-full-crake-questline-walkthrough/"
+        },
+        {
+          "title": "The Blood of Dawnwalker Walkthrough - All Quests - PowerPyx",
+          "url": "https://www.powerpyx.com/the-blood-of-dawnwalker-walkthrough-all-quests/"
+        }
+      ]
+    },
+    {
+      "title": "Who Pulls the Strings",
+      "slug": "who-pulls-the-strings",
+      "kind": "ally",
+      "prereqSlugs": [
+        "what-moves-the-dead"
+      ],
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "The Crake quest that unlocks the Manumit ending route.",
+      "bodyParagraphs": [
+        "Finishing Who Pulls the Strings is what opens the Manumit route in the endings tree. After it the chain offers two more optional quests, Distant Shadows and A Closer Look, before the endgame pair of Rise at Dawn and Fall Before Dusk."
+      ],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "The Blood of Dawnwalker - All Endings Guide - KeenGamer",
+          "url": "https://www.keengamer.com/articles/guides/the-blood-of-dawnwalker-all-endings-guide/"
+        },
+        {
+          "title": "The Blood of Dawnwalker: Full Crake Questline Walkthrough - allthings.how",
+          "url": "https://allthings.how/the-blood-of-dawnwalker-full-crake-questline-walkthrough/"
+        }
+      ]
+    },
+    {
+      "title": "Distant Shadows",
+      "slug": "distant-shadows",
+      "kind": "ally",
+      "prereqSlugs": [
+        "who-pulls-the-strings"
+      ],
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "An optional late Crake quest, after Who Pulls the Strings.",
+      "bodyParagraphs": [
+        "Distant Shadows is listed as optional in the Crake ordering, sitting between Who Pulls the Strings and A Closer Look. No region, phase or cost was published in the sources found."
+      ],
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "The Blood of Dawnwalker: Full Crake Questline Walkthrough - allthings.how",
+          "url": "https://allthings.how/the-blood-of-dawnwalker-full-crake-questline-walkthrough/"
+        },
+        {
+          "title": "The Blood of Dawnwalker - All Endings Guide - KeenGamer",
+          "url": "https://www.keengamer.com/articles/guides/the-blood-of-dawnwalker-all-endings-guide/"
+        }
+      ]
+    },
+    {
+      "title": "A Closer Look",
+      "slug": "a-closer-look",
+      "kind": "ally",
+      "prereqSlugs": [
+        "who-pulls-the-strings"
+      ],
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "The optional Crake quest tied to learning all of his secrets, and to The Manumit ending.",
+      "bodyParagraphs": [
+        "A Closer Look is the last optional beat before the Crake endgame. Endings guides tie it to learning every one of Crake's secrets and associate it with The Manumit ending.",
+        "It is the payoff for having taken the optional branches earlier in the chain rather than sprinting to Rise at Dawn."
+      ],
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "The Blood of Dawnwalker - All Endings Guide - KeenGamer",
+          "url": "https://www.keengamer.com/articles/guides/the-blood-of-dawnwalker-all-endings-guide/"
+        },
+        {
+          "title": "The Blood of Dawnwalker: Full Crake Questline Walkthrough - allthings.how",
+          "url": "https://allthings.how/the-blood-of-dawnwalker-full-crake-questline-walkthrough/"
+        }
+      ]
+    },
+    {
+      "title": "Rise at Dawn",
+      "slug": "rise-at-dawn",
+      "kind": "ally",
+      "prereqSlugs": [
+        "who-pulls-the-strings"
+      ],
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "The first of Crake's two ending quests, and the start of the final assault on the Manumit route.",
+      "bodyParagraphs": [
+        "Rise at Dawn is where Crake's chain turns into an endgame. Guides warn that much of the Manumit storyline has to be finished before you begin it, because starting the assault closes off the optional work.",
+        "It leads into Fall Before Dusk, which is where The Knyazmaker is actually decided."
+      ],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Rise at Dawn Walkthrough - PowerPyx",
+          "url": "https://www.powerpyx.com/blood-of-dawnwalker-rise-at-dawn-walkthrough/"
+        },
+        {
+          "title": "The Blood of Dawnwalker - All Endings Guide - KeenGamer",
+          "url": "https://www.keengamer.com/articles/guides/the-blood-of-dawnwalker-all-endings-guide/"
+        },
+        {
+          "title": "The Blood of Dawnwalker Endgame Guide - thebloodof-dawnwalker.wiki",
+          "url": "https://thebloodof-dawnwalker.wiki/guides/endgame/"
+        }
+      ]
+    },
+    {
+      "title": "Fall Before Dusk",
+      "slug": "fall-before-dusk",
+      "kind": "ally",
+      "prereqSlugs": [
+        "rise-at-dawn"
+      ],
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "The closing quest of Crake's chain and the route to The Knyazmaker ending.",
+      "bodyParagraphs": [
+        "Fall Before Dusk resolves the Manumit route. The Knyazmaker requires siding with Crake and the Manumits and putting Catalin Dragosti back in power.",
+        "The critical moment comes when Brencis attacks Catalin in the throne room: intervening is what keeps both Catalin and Crake alive, and beating Brencis from there is what unlocks the ending.",
+        "Guides call this the longest of the ally endings precisely because of how much Manumit work has to be banked before Rise at Dawn even starts."
+      ],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Fall Before Dusk Walkthrough - PowerPyx",
+          "url": "https://www.powerpyx.com/blood-of-dawnwalker-fall-before-dusk-walkthrough/"
+        },
+        {
+          "title": "The Blood of Dawnwalker - All Endings Guide - KeenGamer",
+          "url": "https://www.keengamer.com/articles/guides/the-blood-of-dawnwalker-all-endings-guide/"
+        },
+        {
+          "title": "The Blood of Dawnwalker endings and how to get each one - PC Gamer",
+          "url": "https://www.pcgamer.com/games/rpg/the-blood-of-dawnwalker-endings/"
+        }
+      ]
+    },
+    {
+      "title": "Echoes of Silenced Bells",
+      "slug": "echoes-of-silenced-bells",
+      "kind": "ally",
+      "regionSlug": "st-tynas-grove",
+      "prereqSlugs": [
+        "smoke-and-ashes"
+      ],
+      "timeSegments": {
+        "min": 8,
+        "max": 9,
+        "known": true
+      },
+      "summary": "Anca's opening quest, a monastery investigation that costs roughly a full phase of time.",
+      "bodyParagraphs": [
+        "Echoes of Silenced Bells is one of the first things the open world offers, and it takes Coen into St. Tyna's monastery with Anca. Completing the prologue quest Smoke and Ashes is the stated prerequisite.",
+        "It is expensive. Guides put the total at eight time segments for 150 XP, with one source quoting nine depending on choices. The published breakdown charges a segment each for pushing through the fog, escorting Anca toward the convent, investigating the chapel, telling Anca it is time for the library, and moving the candle along the spine to reveal the writing that ends the quest.",
+        "Spending two segments at the close rolls you straight into Between the Words and moves the party to the inn.",
+        {
+          "h": "Where it starts"
+        },
+        "Start point is contested. Different guides put it at the Laslea Glen village gates, at one of the broken shrines in the Briar Sloughs, and at St. Tyna's Grove itself. The monastery it revolves around is in St. Tyna's Grove, which is why the region is recorded that way here."
+      ],
+      "note": "Total cost is given as 8 segments by most guides and 9 by at least one, depending on choices. The starting location is reported three different ways (Laslea Glen village gates, a broken shrine in the Briar Sloughs, and St. Tyna's Grove).",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Echoes of Silenced Bells Walkthrough - PowerPyx",
+          "url": "https://www.powerpyx.com/blood-of-dawnwalker-echoes-of-silenced-bells-walkthrough/"
+        },
+        {
+          "title": "Echoes of Silenced Bells Quest Walkthrough - Game8",
+          "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618673"
+        },
+        {
+          "title": "Blood of Dawnwalker Echoes of Silenced Bells walkthrough - PC Gamer",
+          "url": "https://www.pcgamer.com/games/rpg/blood-of-dawnwalker-echoes-of-silenced-bells-walkthrough-burn-notes/"
+        },
+        {
+          "title": "How To Complete Echoes Of Silenced Bells - GameSpot",
+          "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-echoes-of-silenced-bells-relic-of-st-tyna/"
+        }
+      ]
+    },
+    {
+      "title": "Most Precious Thing",
+      "slug": "most-precious-thing",
+      "kind": "side",
+      "regionSlug": "st-tynas-grove",
+      "prereqSlugs": [
+        "echoes-of-silenced-bells"
+      ],
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "A short quest nested inside Echoes of Silenced Bells, about St. Tyna's stolen necklace.",
+      "bodyParagraphs": [
+        "Most Precious Thing opens while Coen is travelling with Anca on Echoes of Silenced Bells and wraps up as she heads for the library. Brencis's men want St. Tyna's necklace and will trade safe passage for it.",
+        "The route runs through the chapel, St. Tyna's coffin, the keys in the shed beside the sacristy, and a body on the sacristy floor holding the relic. Handing it over forces a choice between securing the soldiers' passage and abandoning them.",
+        "Completion pays 150 XP. Guides charge one time segment for the chapel investigation step, but no source found gives a total for the quest, so no cost is recorded."
+      ],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Most Precious Thing Walkthrough - PowerPyx",
+          "url": "https://www.powerpyx.com/blood-of-dawnwalker-most-precious-thing-walkthrough/"
+        },
+        {
+          "title": "Most Precious Thing Quest Walkthrough - Game8",
+          "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618675"
+        },
+        {
+          "title": "The Blood of Dawnwalker: Most Precious Thing Quest Walkthrough - Deltia's Gaming",
+          "url": "https://deltiasgaming.com/the-blood-of-dawnwalker-most-precious-thing-quest-walkthrough/"
+        }
+      ]
+    },
+    {
+      "title": "Between the Words",
+      "slug": "between-the-words",
+      "kind": "ally",
+      "regionSlug": "st-tynas-grove",
+      "prereqSlugs": [
+        "echoes-of-silenced-bells"
+      ],
+      "timeSegments": {
+        "min": 2,
+        "max": 4,
+        "known": true
+      },
+      "summary": "Anca's second quest, a night of forbidden books at Tyna's Monastery that pays unusually well.",
+      "bodyParagraphs": [
+        "Between the Words follows on automatically from Echoes of Silenced Bells, with Anca giving it at Tyna's Monastery. The reward is 1000 XP and a skill point, which is generous for the length.",
+        "The published costs disagree: one walkthrough puts the total at four segments, two of them spent studying the forbidden books, while another says two. The individual actions described are brewing Anca a warm drink for a segment and interacting with the books for another.",
+        "Both figures are recorded as a range rather than picking a winner."
+      ],
+      "note": "Sources give the total as either 2 or 4 time segments.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Between the Words Walkthrough - PowerPyx",
+          "url": "https://www.powerpyx.com/blood-of-dawnwalker-between-the-words-walkthrough/"
+        },
+        {
+          "title": "Between the Words Quest Walkthrough - Game8",
+          "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/620473"
+        },
+        {
+          "title": "Between the Words Walkthrough - MetaBot.GG",
+          "url": "https://metabot.gg/en/dawnwalker/quests/between-the-words"
+        }
+      ]
+    },
+    {
+      "title": "Where Old Devils Lie",
+      "slug": "where-old-devils-lie",
+      "kind": "ally",
+      "prereqSlugs": [
+        "between-the-words"
+      ],
+      "timeSegments": {
+        "min": 4,
+        "max": 4,
+        "known": true
+      },
+      "summary": "Anca's third quest, a trek from the Crossroads Inn to ruins hiding the Font of Life.",
+      "bodyParagraphs": [
+        "Where Old Devils Lie starts at the Crossroads Inn, south-east of St. Tyna's Grove, with Anca as quest giver. Guides put it at 150 XP across four total time segments.",
+        "There is a hard wait attached: after Between the Words you have to let a full in-game day pass, sixteen segments, before Anca will continue. Returning to her and choosing to go looking for the Font of Life begins the quest proper.",
+        "From there the route runs north through wolves, uphill to a vantage point that triggers a cutscene, then north-east along the river to ruins whose entrance sits behind a statue. Several conversations along the way feed Anca's romance."
+      ],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Where Old Devils Lie Quest Walkthrough - Game8",
+          "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618769"
+        },
+        {
+          "title": "Blood of Dawnwalker Where Old Devils Lie Walkthrough - PowerPyx",
+          "url": "https://www.powerpyx.com/blood-of-dawnwalker-where-old-devils-lie-walkthrough/"
+        },
+        {
+          "title": "Where Old Devils Lie Walkthrough - MetaBot.GG",
+          "url": "https://metabot.gg/en/dawnwalker/quests/where-old-devils-lie"
+        }
+      ]
+    },
+    {
+      "title": "Stronger Than Achilles",
+      "slug": "stronger-than-achilles",
+      "kind": "ally",
+      "prereqSlugs": [
+        "where-old-devils-lie"
+      ],
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "Anca's final quest, a run of trials beneath the ruins that ends at the Font of Life.",
+      "bodyParagraphs": [
+        "Stronger Than Achilles begins the instant Where Old Devils Lie ends, at the mouth of the ancient ruins, with the single objective of completing the trials and getting back out.",
+        "Progress runs through undead in the depths, a blood sacrifice to open the way, a Fallen Hero boss, and a central grate that spawns Guardians of the Font before opening access to the idol at the heart of the room.",
+        {
+          "h": "The Font choice"
+        },
+        "There is only enough left in the Font for one person and the decision is final. Coen drinking unlocks the Font of Life witchcraft perk, Anca drinking strips away her witchcraft, and destroying the Font reveals the legendary Ancient Greaves.",
+        "Rewards are 500 XP, a skill point and the Sins of the Past trophy, plus whichever of the Font outcomes you picked. No segment cost is published."
+      ],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Stronger Than Achilles Walkthrough - PowerPyx",
+          "url": "https://www.powerpyx.com/blood-of-dawnwalker-stronger-than-achilles-walkthrough/"
+        },
+        {
+          "title": "Stronger Than Achilles Quest Walkthrough - Game8",
+          "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618647"
+        },
+        {
+          "title": "The Blood of Dawnwalker: Stronger Than Achilles Full Quest Walkthrough - allthings.how",
+          "url": "https://allthings.how/the-blood-of-dawnwalker-stronger-than-achilles-full-quest-walkthrough/"
+        }
+      ]
+    },
+    {
+      "title": "A Study in Crimson",
+      "slug": "a-study-in-crimson",
+      "kind": "ally",
+      "regionSlug": "svartrau-city",
+      "phase": "night",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "The opening of Vicho's questline: a night-time murder investigation across Svartrau's rooftops.",
+      "bodyParagraphs": [
+        "Vicho keeps his emporium in the northern part of Svartrau City, west of the Market Tower. He is Vrakhiri and cannot be out in daylight, so this one is night-only. Getting in means using Shadowstep to climb the neighbouring houses and jumping to his balcony.",
+        "From there Vicho takes to the rooftops and leads Coen to the jeweller's house, where the victims are: Devora's corpse and a note upstairs, Eli's body in the basement.",
+        "Rewards total 750 XP across the objectives, plus a skill point and the Mercenary's Amulet, and Vicho opens up as a witchcraft vendor.",
+        "The quest reads as finished after the meeting, but the thread continues: the next daytime period puts The Good Samaritan on a medic in Svartrau."
+      ],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker A Study in Crimson Walkthrough - PowerPyx",
+          "url": "https://www.powerpyx.com/blood-of-dawnwalker-a-study-in-crimson-walkthrough/"
+        },
+        {
+          "title": "A Study in Crimson Quest Walkthrough - Game8",
+          "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618688"
+        },
+        {
+          "title": "Blood of Dawnwalker: Find Vicho, A Study In Crimson quest guide - VGC",
+          "url": "https://www.videogameschronicle.com/guide/blood-of-dawnwalker-find-vicho-a-study-in-crimson-quest-guide/"
+        }
+      ]
+    },
+    {
+      "title": "The Good Samaritan",
+      "slug": "the-good-samaritan",
+      "kind": "ally",
+      "regionSlug": "the-slits",
+      "phase": "day",
+      "prereqSlugs": [
+        "a-study-in-crimson"
+      ],
+      "timeSegments": {
+        "min": 1,
+        "max": 3,
+        "known": true
+      },
+      "summary": "Vicho's second chapter: a daytime medicine delivery south of Svartrau that turns into a crime scene.",
+      "bodyParagraphs": [
+        "The Good Samaritan appears on the medic in the centre of Svartrau during the first daytime period after A Study in Crimson. The job is to run medicaments out to a farm south of the city.",
+        "The route: travel to the farm in The Silts, use Focus Mode and Compel Soul on the dead woman in the cabin with the Farmer's Sword and Wedding Headband as catalysts, follow the tracks into the wheat field, kill the wolves, read the note on the daughter's body, and return to the medic in daylight.",
+        "It matters beyond its own rewards. Finishing it is what unlocks the Unquenchable Thirst confrontation, the moment that decides whether Vicho lives.",
+        "Published costs disagree: one guide says a single time segment, another says three."
+      ],
+      "note": "Time cost is given as 1 segment by one guide and 3 by another.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "The Good Samaritan Quest Walkthrough - Game8",
+          "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/621138"
+        },
+        {
+          "title": "Blood of Dawnwalker The Good Samaritan Walkthrough - PowerPyx",
+          "url": "https://www.powerpyx.com/blood-of-dawnwalker-the-good-samaritan-walkthrough/"
+        },
+        {
+          "title": "The Blood of Dawnwalker: The Good Samaritan Quest Walkthrough - allthings.how",
+          "url": "https://allthings.how/the-blood-of-dawnwalker-the-good-samaritan-quest-walkthrough/"
+        }
+      ]
+    },
+    {
+      "title": "Unquenchable Thirst",
+      "slug": "unquenchable-thirst",
+      "kind": "ally",
+      "regionSlug": "svartrau-city",
+      "prereqSlugs": [
+        "the-good-samaritan"
+      ],
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "The confrontation that closes Vicho's questline and decides whether he survives.",
+      "bodyParagraphs": [
+        "Unquenchable Thirst is described as the confrontation with Vicho unlocked by completing The Good Samaritan, and it is the point where his fate is settled. Guides on keeping Vicho alive centre on the dialogue choices and blood deliveries leading into it.",
+        "Sources describe it as the culmination of the Vicho thread rather than labelling it a standalone quest entry, so its classification here is provisional."
+      ],
+      "note": "Named only as a confrontation within Vicho's questline; no source found lists it as a separately titled quest, so kind and region are best-effort.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "How To Keep Vicho Alive In The Blood Of Dawnwalker - GameSpot",
+          "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-vicho-study-in-crimson-unquenchable-thirst/"
+        },
+        {
+          "title": "How to Keep Vicho Alive - Game8",
+          "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618682"
+        },
+        {
+          "title": "Blood of Dawnwalker The Good Samaritan Walkthrough - PowerPyx",
+          "url": "https://www.powerpyx.com/blood-of-dawnwalker-the-good-samaritan-walkthrough/"
+        }
+      ]
+    },
+    {
+      "title": "Good Home",
+      "slug": "good-home",
+      "kind": "side",
+      "regionSlug": "svartrau-outskirts",
+      "timeSegments": {
+        "min": 2,
+        "max": 8,
+        "known": true
+      },
+      "summary": "The gateway quest to the Sanzhani chain, and the widest published cost range of any quest found.",
+      "bodyParagraphs": [
+        "Good Home starts north of Svartrau City near the Sandy Gorge Shrine, where a stone ringed by red mushrooms triggers it. Following the glowing mushroom rings through the forest leads to a burrow and a girl named Heile, who wants her brother found.",
+        "The brother is Tonis, at the burner camp. Loosening him up with a drink is the cheap way through; he can then be walked back to the Yawning Burrow.",
+        "The cost swings hard on how you play it. Guides quote two to eight segments: the cheapest run skips the optional investigations and uses the drink, the most expensive inspects every clue and offers to swing an axe.",
+        "It is the prerequisite for the rest of the Sanzhani questline, which is the only source of extra days in the game."
+      ],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Good Home Quest Walkthrough - Game8",
+          "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618483"
+        },
+        {
+          "title": "Blood of Dawnwalker Good Home Walkthrough - PowerPyx",
+          "url": "https://www.powerpyx.com/blood-of-dawnwalker-good-home-walkthrough/"
+        },
+        {
+          "title": "Blood of Dawnwalker: All Sanzhani quests, locations, and rewards - VGC",
+          "url": "https://www.videogameschronicle.com/guide/blood-of-dawnwalker-all-sanzhani-quests-locations-and-rewards/"
+        }
+      ]
+    },
+    {
+      "title": "Come Hither",
+      "slug": "come-hither",
+      "kind": "side",
+      "prereqSlugs": [
+        "good-home"
+      ],
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "A Sanzhani quest north of the Vedera March Guardpost Shrine, clearing monsters out of a burrow.",
+      "bodyParagraphs": [
+        "A Sanzhana north of the Vedera March Guardpost Shrine wants her burrow cleared. The occupants include a Murohn miniboss.",
+        "It is one of the four Sanzhani quests that can be done in any order after Good Home, feeding into Letters to Lunka. No region name and no segment cost were published in the sources found."
+      ],
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Come Hither Walkthrough - PowerPyx",
+          "url": "https://www.powerpyx.com/blood-of-dawnwalker-come-hither-walkthrough/"
+        },
+        {
+          "title": "Blood of Dawnwalker: All Sanzhani quests, locations, and rewards - VGC",
+          "url": "https://www.videogameschronicle.com/guide/blood-of-dawnwalker-all-sanzhani-quests-locations-and-rewards/"
+        },
+        {
+          "title": "All Sanzhani locations in The Blood of Dawnwalker - GamesRadar+",
+          "url": "https://www.gamesradar.com/games/action-rpg/blood-of-dawnwalker-sanzhana/"
+        }
+      ]
+    },
+    {
+      "title": "Burrow Sorrows",
+      "slug": "burrow-sorrows",
+      "kind": "side",
+      "prereqSlugs": [
+        "good-home"
+      ],
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "A Sanzhani quest north of the Boarback Trail Shrine, about kobolds, a stolen burrow and a charm.",
+      "bodyParagraphs": [
+        "North of the Boarback Trail Shrine a Sanzhana claims kobolds have taken their burrow and their charm. The twist is that the kobolds were tricked into claiming the burrow on the Sanzhani's behalf.",
+        "The region is not stated outright in the sources found; only the Boarback Trail Shrine landmark is given, so no region slug is recorded here."
+      ],
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Burrow Sorrows Walkthrough - PowerPyx",
+          "url": "https://www.powerpyx.com/blood-of-dawnwalker-burrow-sorrows-walkthrough/"
+        },
+        {
+          "title": "Blood of Dawnwalker: All Sanzhani quests, locations, and rewards - VGC",
+          "url": "https://www.videogameschronicle.com/guide/blood-of-dawnwalker-all-sanzhani-quests-locations-and-rewards/"
+        }
+      ]
+    },
+    {
+      "title": "Pearly and Precious",
+      "slug": "pearly-and-precious",
+      "kind": "side",
+      "prereqSlugs": [
+        "good-home"
+      ],
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "A Sanzhani quest south of the Small Bridge Shrine that opens the Sanzhana vendor.",
+      "bodyParagraphs": [
+        "South of the Small Bridge Shrine, a Sanzhana who collects teeth from corpses asks Coen to deal with a band of bandits.",
+        "Rewards are 100 XP, a skill point, and access to the Sanzhana vendor. No region is named directly in the sources found and no time cost is published."
+      ],
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Pearly and Precious Walkthrough - PowerPyx",
+          "url": "https://www.powerpyx.com/blood-of-dawnwalker-pearly-and-precious-walkthrough/"
+        },
+        {
+          "title": "The Blood of Dawnwalker walkthrough: How to complete Pearly and Precious quest - Sportskeeda",
+          "url": "https://www.sportskeeda.com/esports/the-blood-of-dawnwalker-walkthrough-how-complete-pearly-precious-quest"
+        }
+      ]
+    },
+    {
+      "title": "Tiny Dancer",
+      "slug": "tiny-dancer",
+      "kind": "side",
+      "regionSlug": "svartrau-city",
+      "phase": "night",
+      "prereqSlugs": [
+        "good-home"
+      ],
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "A night-time Sanzhani rescue in Svartrau, freeing a caged Sanzhana from an upstairs room.",
+      "bodyParagraphs": [
+        "Tiny Dancer runs in Svartrau at night. Entry is through a balcony on the east side of the building; inside is a caged Sanzhana, with the key sitting on a desk in the same room.",
+        "Some listings give it the alternate title The Tsarina's Favourite Human."
+      ],
+      "note": "Also referred to as 'The Tsarina's Favourite Human' in at least one published ordering of the Sanzhani chain.",
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker: All Sanzhani quests, locations, and rewards - VGC",
+          "url": "https://www.videogameschronicle.com/guide/blood-of-dawnwalker-all-sanzhani-quests-locations-and-rewards/"
+        },
+        {
+          "title": "The Blood of Dawnwalker: All Sanzhani Quest Locations - Method.gg",
+          "url": "https://www.method.gg/the-blood-of-dawnwalker/the-blood-of-dawnwalker-all-sanzhani-quest-locations"
+        }
+      ]
+    },
+    {
+      "title": "Letters to Lunka",
+      "slug": "letters-to-lunka",
+      "kind": "side",
+      "regionSlug": "svartrau-outskirts",
+      "prereqSlugs": [
+        "good-home",
+        "come-hither",
+        "burrow-sorrows",
+        "pearly-and-precious",
+        "tiny-dancer"
+      ],
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "The Sanzhani payoff quest, and the only quest found that gives time back instead of taking it.",
+      "bodyParagraphs": [
+        "Letters to Lunka closes the Sanzhani chain. The approach involves following glowing moths from flowerbed to flowerbed in the Svartrau Outskirts until a small opening appears.",
+        "Once the rest of the Sanzhani quests are done and the Sanzhana Tsarina has been asked about all the letters, you wait one in-game day for the reply.",
+        "The reward is the reason everyone points at this quest: a full extra in-game day, sixteen time segments, plus 250 XP for reading all five of Lunka's replies. Against a thirty-day deadline that is a meaningful extension.",
+        "Sources phrase the requirement slightly differently, some saying the other four Sanzhani quests in any order, others saying all five, which is really the same chain counted with or without Good Home."
+      ],
+      "note": "Sources describe the requirement as either 'the remaining four Sanzhani quests' or 'all five Sanzhani quests', a counting difference over whether Good Home is included.",
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Letters to Lunka Quest Walkthrough - Game8",
+          "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/620416"
+        },
+        {
+          "title": "Blood of Dawnwalker Letters to Lunka walkthrough - PC Gamer",
+          "url": "https://www.pcgamer.com/games/rpg/blood-of-dawnwalker-letters-to-lunka-walkthrough-sanzhani/"
+        },
+        {
+          "title": "You Can Extend The Blood Of Dawnwalker's Time Limit By Finding Sanzhani Fairies - GameSpot",
+          "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-sanzhani-locations-letters-to-lunka/"
+        }
+      ]
+    },
+    {
+      "title": "Buried Past",
+      "slug": "buried-past",
+      "kind": "side",
+      "timeSegments": {
+        "min": 9,
+        "max": 20,
+        "known": true
+      },
+      "summary": "Volk's multi-day chore chain, widely called the single most expensive side quest in the game.",
+      "bodyParagraphs": [
+        "Volk lives in a hut north-east of Svartrau City near the Ruined Hut Shrine; the merchant at the Maragir Crossroads can mark the spot on your map.",
+        "The structure is what makes it costly. Every visit to Volk ends with having to wait until the next day before the thread moves, required interactions charge a segment per day, and the optional chores add more on top. Locating Pieter's treasure alone is quoted at four segments.",
+        "Doing all of Volk's optional chores is the stated condition for the best outcome and for stopping him betraying you.",
+        "Rewards are substantial: legendary armour, a powerful sword ability, and a chunk of backstory about Coen's father.",
+        {
+          "h": "Cost estimates vary wildly"
+        },
+        "Published figures range from nine to twelve segments, to sixteen once the full-day waits are counted, to twenty in both the day and night versions, which one guide frames as more than four per cent of the entire thirty-day clock spent on one side quest."
+      ],
+      "note": "Time cost is heavily contested: 9-12, 16, and 20 segments are all published figures. Region is also unclear, described as north-east of Svartrau City but reached via Maragir Crossroads, so no region slug is recorded.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Buried Past Quest Walkthrough - Game8",
+          "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618691"
+        },
+        {
+          "title": "Blood of Dawnwalker Buried Past Walkthrough - PowerPyx",
+          "url": "https://www.powerpyx.com/blood-of-dawnwalker-buried-past-walkthrough/"
+        },
+        {
+          "title": "How To Complete Volk's Buried Past Quest - GameSpot",
+          "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-buried-past-volk/"
+        },
+        {
+          "title": "Blood of Dawnwalker Time Costs - Time Segment Catalog",
+          "url": "https://dawnwalkerplanner.org/time-costs"
+        }
+      ]
+    },
+    {
+      "title": "Of Wolves and Men",
+      "slug": "of-wolves-and-men",
+      "kind": "side",
+      "phase": "day",
+      "timeSegments": {
+        "min": 0,
+        "max": 10,
+        "known": true
+      },
+      "summary": "A side quest most guides say is entirely free of time cost, though one source disagrees sharply.",
+      "bodyParagraphs": [
+        "The majority of current guides state that Of Wolves and Men takes zero segments off the thirty-day clock: picking it up does not push the day forward and it does not eat into the family deadline, which makes it an easy yes.",
+        "One time-cost catalogue instead lists it at ten units. That figure is recorded here as the upper bound rather than discarded, but the weight of sources is on zero.",
+        "Timing still matters for a different reason. The payoff depends on Compel Soul, a witchcraft ability Coen can only use in human form during daylight, so the quest wants to be run in the day."
+      ],
+      "note": "Flatly contested: most guides say 0 time segments, one time-cost catalogue says 10.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Of Wolves and Men Quest Walkthrough - Game8",
+          "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/621206"
+        },
+        {
+          "title": "The Blood of Dawnwalker: Of Wolves and Men Walkthrough - allthings.how",
+          "url": "https://allthings.how/the-blood-of-dawnwalker-of-wolves-and-men-walkthrough/"
+        },
+        {
+          "title": "Blood of Dawnwalker Time Costs - Time Segment Catalog",
+          "url": "https://dawnwalkerplanner.org/time-costs"
+        },
+        {
+          "title": "Of Wolves and Men Walkthrough - MetaBot.GG",
+          "url": "https://metabot.gg/en/dawnwalker/quests/of-wolves-and-men"
+        }
+      ]
+    },
+    {
+      "title": "The Beast of Balaur",
+      "slug": "the-beast-of-balaur",
+      "kind": "side",
+      "regionSlug": "boars-back",
+      "courtSlug": "bakir",
+      "timeSegments": {
+        "min": 3,
+        "max": 3,
+        "known": true
+      },
+      "summary": "A hellhound hunt in the mountains west of Parlita, priced at three time segments for 250 XP.",
+      "bodyParagraphs": [
+        "The quest triggers on entering the area around the Mount Balaur Shrine, on the western edge of the forest in the mountains west of Parlita. Focus Mode picks up tracks that climb the left-hand path.",
+        "The trail ends at a cave full of skeletons; inspecting them and crouching through the gap at the back reveals the miniboss, a vicious hellhound called the Beast of Balaur. Killing it and looting the nearby body yields A Letter to Iancu.",
+        "The wrap-up is with Ciprian, in the northern house next to the Parlita Shrine, and it is that conversation the sources price at three time segments. Total reward is 250 XP.",
+        "Boar's Back sits inside Bakir's fiefdom alongside Rockfalls, which is why the court is recorded as Bakir here."
+      ],
+      "note": "Court assignment comes from Fextralife's statement that Bakir's fiefdom covers Boar's Back and Rockfalls, not from the quest page itself.",
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "The Beast of Balaur Quest Walkthrough - Game8",
+          "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/620868"
+        },
+        {
+          "title": "Blood of Dawnwalker The Beast of Balaur Walkthrough - PowerPyx",
+          "url": "https://www.powerpyx.com/blood-of-dawnwalker-the-beast-of-balaur-walkthrough/"
+        },
+        {
+          "title": "The Beast of Balaur Quest - Gaming ProMax",
+          "url": "https://gamingpromax.com/the-beast-of-balaur-quest-blood-of-dawnwalker/"
+        },
+        {
+          "title": "Boar's Back - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Boar's_Back"
+        }
+      ]
+    },
+    {
+      "title": "Lost Blood",
+      "slug": "lost-blood",
+      "kind": "side",
+      "regionSlug": "st-tynas-grove",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "A blood-cart investigation starting at a wrecked wagon north of the Pilgrim's Trail Shrine.",
+      "bodyParagraphs": [
+        "Lost Blood begins at the destroyed cart directly north of the Pilgrim's Trail Shrine in St. Tyna's Grove. The job is working out who wrecked it, which means following a blood trail heading west.",
+        "No reward figures or segment costs were published in the sources found."
+      ],
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Lost Blood Walkthrough - PowerPyx",
+          "url": "https://www.powerpyx.com/blood-of-dawnwalker-lost-blood-walkthrough/"
+        },
+        {
+          "title": "The Blood of Dawnwalker: Lost Blood Quest Walkthrough - allthings.how",
+          "url": "https://allthings.how/the-blood-of-dawnwalker-lost-blood-full-quest-walkthrough/"
+        },
+        {
+          "title": "St. Tyna's Grove - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/St._Tyna's_Grove"
+        }
+      ]
+    },
+    {
+      "title": "Don't Kill the Messenger",
+      "slug": "dont-kill-the-messenger",
+      "kind": "side",
+      "regionSlug": "tantari-woods",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "A roadside ambush mystery in the Tantari Woods that ends with a confession pulled from a corpse.",
+      "bodyParagraphs": [
+        "The quest opens on arrows stuck in the dirt on a road through the Tantari Woods, and closes with Coen forcing a confession out of a dead man.",
+        "No segment cost or reward figures surfaced in the sources found."
+      ],
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "The Blood of Dawnwalker: Don't Kill the Messenger Walkthrough - allthings.how",
+          "url": "https://allthings.how/the-blood-of-dawnwalker-don-t-kill-the-messenger-full-walkthrough/"
+        },
+        {
+          "title": "Tantari Woods - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Tantari_Woods"
+        }
+      ]
+    },
+    {
+      "title": "The Highland Grave",
+      "slug": "the-highland-grave",
+      "kind": "side",
+      "regionSlug": "rockfalls",
+      "courtSlug": "bakir",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "A Rockfalls side thread built around the Scholar's Map treasure.",
+      "bodyParagraphs": [
+        "The Highland Grave is described as a side thread in Rockfalls. Treasure guides tie the Scholar's Map specifically to this quest, setting it apart from the seven bandit maps.",
+        "Rockfalls sits inside Bakir's fiefdom, which is where the court assignment comes from."
+      ],
+      "note": "Court assignment derives from Fextralife's statement that Bakir's fiefdom covers Boar's Back and Rockfalls, not from a quest page.",
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Rockfalls - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Rockfalls"
+        },
+        {
+          "title": "Blood of Dawnwalker All Treasure Map Locations & Solutions - PowerPyx",
+          "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-treasure-map-locations-solutions/"
+        }
+      ]
+    },
+    {
+      "title": "Night Terrors",
+      "slug": "night-terrors",
+      "kind": "side",
+      "regionSlug": "svartrau-city",
+      "phase": "night",
+      "timeSegments": {
+        "min": 1,
+        "max": 1,
+        "known": true
+      },
+      "summary": "An unmarked night-only quest down a well behind Svartrau cathedral, priced at a single segment.",
+      "bodyParagraphs": [
+        "Night Terrors never appears on the map. It starts when Coen walks into the courtyard north of the Svartrau City cathedral at night and hears noise coming from underground.",
+        "Focus Mode traces the howling to the well. Popping the top and dropping in leads along a passage, through a gap on the left, to a body in the next chamber; inspecting it ends the quest.",
+        "It costs one time segment and pays 75 XP, which makes it one of the cheapest quests with a published price.",
+        {
+          "h": "Mutually exclusive content"
+        },
+        "Triggering Night Terrors at all appears to lock out A Dubious Gift, the quest attached to the Xanthe court activity Cathedral Ritual. Finding the note also rolls straight into A Monk and a Saint."
+      ],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Night Terrors Quest Walkthrough - Game8",
+          "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618671"
+        },
+        {
+          "title": "Blood of Dawnwalker Night Terrors Walkthrough - PowerPyx",
+          "url": "https://www.powerpyx.com/blood-of-dawnwalker-night-terrors-walkthrough/"
+        },
+        {
+          "title": "Night Terrors Quest In The Blood Of Dawnwalker - Game Rant",
+          "url": "https://gamerant.com/the-blood-of-dawnwalker-night-terrors-quest-thief-note/"
+        }
+      ],
+      "excludeSlugs": [
+        "a-dubious-gift"
+      ]
+    },
+    {
+      "title": "A Monk and a Saint",
+      "slug": "a-monk-and-a-saint",
+      "kind": "side",
+      "regionSlug": "svartrau-city",
+      "prereqSlugs": [
+        "night-terrors"
+      ],
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "The second half of Svartrau's hidden well storyline, triggered automatically by Night Terrors.",
+      "bodyParagraphs": [
+        "Finding the note at the bottom of the well completes Night Terrors and starts A Monk and a Saint without any further prompting. Guides treat the pair as a single secret questline.",
+        "No segment cost or reward figures were published in the sources found."
+      ],
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Night Terrors Quest Walkthrough - Game8",
+          "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618671"
+        },
+        {
+          "title": "Blood of Dawnwalker Night Terrors Walkthrough - PowerPyx",
+          "url": "https://www.powerpyx.com/blood-of-dawnwalker-night-terrors-walkthrough/"
+        }
+      ]
+    },
+    {
+      "title": "A Dubious Gift",
+      "slug": "a-dubious-gift",
+      "kind": "side",
+      "courtSlug": "xanthe",
+      "regionSlug": "svartrau-city",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "A quest attached to the Xanthe court activity Cathedral Ritual, and mutually exclusive with Night Terrors.",
+      "bodyParagraphs": [
+        "A Dubious Gift is associated with the Xanthe court activity Cathedral Ritual. Guides warn that triggering Night Terrors appears to prevent you from ever starting it, making the two a genuine either-or.",
+        "Details beyond that connection were not published in the sources found."
+      ],
+      "note": "Known only through the Night Terrors exclusivity warning; its own objectives, rewards and cost are unverified.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Night Terrors Walkthrough - PowerPyx",
+          "url": "https://www.powerpyx.com/blood-of-dawnwalker-night-terrors-walkthrough/"
+        },
+        {
+          "title": "Night Terrors Quest Walkthrough - Game8",
+          "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618671"
+        }
+      ],
+      "excludeSlugs": [
+        "night-terrors"
+      ]
+    },
+    {
+      "title": "Enshrined Obsession",
+      "slug": "enshrined-obsession",
+      "kind": "side",
+      "regionSlug": "svartrau-city",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "A Svartrau City side quest handed out at the Curious House, worth 100 XP.",
+      "bodyParagraphs": [
+        "Enshrined Obsession begins in Svartrau City with a quest giver at the Curious House. Published reward is 100 XP. No time cost was found."
+      ],
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Svartrau City - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Svartrau_City"
+        },
+        {
+          "title": "The Blood of Dawnwalker All Side Quests Guide - PowerPyx",
+          "url": "https://www.powerpyx.com/the-blood-of-dawnwalker-all-side-quests-guide/"
+        }
+      ]
+    },
+    {
+      "title": "Working Her Magic",
+      "slug": "working-her-magic",
+      "kind": "side",
+      "regionSlug": "svartrau-city",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "A Curious House side quest in Svartrau City that pays out a Burning Blood Manual.",
+      "bodyParagraphs": [
+        "Working Her Magic also starts from the Curious House in Svartrau City. Rewards are 100 XP and a Burning Blood Manual, which makes it one of the cheaper routes to a witchcraft skill book.",
+        "No segment cost was published in the sources found."
+      ],
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Svartrau City - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Svartrau_City"
+        },
+        {
+          "title": "The Blood of Dawnwalker All Side Quests Guide - PowerPyx",
+          "url": "https://www.powerpyx.com/the-blood-of-dawnwalker-all-side-quests-guide/"
+        }
+      ]
+    },
+    {
+      "title": "In the Name of the Father",
+      "slug": "in-the-name-of-the-father",
+      "kind": "side",
+      "regionSlug": "svartrau-city",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "A Svartrau City side quest that gates A Hero's End.",
+      "bodyParagraphs": [
+        "In the Name of the Father is named as the required prerequisite for A Hero's End, which starts in Svartrau City. Its own objectives and rewards were not published in the sources found.",
+        "The region is inferred from its position in the Svartrau City quest listing and its link to A Hero's End."
+      ],
+      "note": "Region recorded from its listing alongside A Hero's End in the Svartrau City index; no dedicated walkthrough was found.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Svartrau City - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Svartrau_City"
+        },
+        {
+          "title": "The Blood of Dawnwalker All Side Quests Guide - PowerPyx",
+          "url": "https://www.powerpyx.com/the-blood-of-dawnwalker-all-side-quests-guide/"
+        }
+      ]
+    },
+    {
+      "title": "A Hero's End",
+      "slug": "a-heros-end",
+      "kind": "side",
+      "regionSlug": "svartrau-city",
+      "prereqSlugs": [
+        "in-the-name-of-the-father"
+      ],
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "A Svartrau City side quest gated behind In the Name of the Father, paying 250 XP and legendary gear.",
+      "bodyParagraphs": [
+        "A Hero's End starts in Svartrau City and requires In the Name of the Father to be finished first. The published reward is 250 XP plus legendary items, which puts it among the better-paying city side quests.",
+        "No segment cost was found."
+      ],
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Svartrau City - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Svartrau_City"
+        },
+        {
+          "title": "The Blood of Dawnwalker All Side Quests Guide - PowerPyx",
+          "url": "https://www.powerpyx.com/the-blood-of-dawnwalker-all-side-quests-guide/"
+        }
+      ]
+    },
+    {
+      "title": "A Mother's Plea",
+      "slug": "a-mothers-plea",
+      "kind": "side",
+      "regionSlug": "svartrau-city",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "A side quest listed among Svartrau City's content.",
+      "bodyParagraphs": [
+        "A Mother's Plea appears in the Svartrau City quest listing alongside A Friend Like This and Song of the Mountain. No walkthrough detail, reward or cost was found in the sources available."
+      ],
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Svartrau City - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Svartrau_City"
+        },
+        {
+          "title": "The Blood of Dawnwalker All Side Quests Guide - PowerPyx",
+          "url": "https://www.powerpyx.com/the-blood-of-dawnwalker-all-side-quests-guide/"
+        }
+      ]
+    },
+    {
+      "title": "The Heart Wants What It Wants",
+      "slug": "the-heart-wants-what-it-wants",
+      "kind": "side",
+      "regionSlug": "svartrau-city",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "A side quest listed among Svartrau City's content.",
+      "bodyParagraphs": [
+        "The Heart Wants What It Wants is named in the Svartrau City quest listing. Nothing further about its objectives, rewards or cost surfaced in the sources found."
+      ],
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Svartrau City - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Svartrau_City"
+        },
+        {
+          "title": "The Blood of Dawnwalker All Side Quests Guide - PowerPyx",
+          "url": "https://www.powerpyx.com/the-blood-of-dawnwalker-all-side-quests-guide/"
+        }
+      ]
+    },
+    {
+      "title": "A Bulwark Against Darkness",
+      "slug": "a-bulwark-against-darkness",
+      "kind": "side",
+      "regionSlug": "briar-sloughs",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "One of the quests catalogued in the Briar Sloughs.",
+      "bodyParagraphs": [
+        "A Bulwark Against Darkness is listed among the Briar Sloughs quests. Location guides count 26 quests in that region in total. No objectives or cost were published in the sources found."
+      ],
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Briar Sloughs - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Briar_Sloughs"
+        },
+        {
+          "title": "Briar Sloughs Location Guide - MetaBot.GG",
+          "url": "https://metabot.gg/en/dawnwalker/locations/briar-sloughs"
+        }
+      ]
+    },
+    {
+      "title": "A Good Deed Is Its Own Reward",
+      "slug": "a-good-deed-is-its-own-reward",
+      "kind": "side",
+      "regionSlug": "briar-sloughs",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "One of the quests catalogued in the Briar Sloughs.",
+      "bodyParagraphs": [
+        "A Good Deed Is Its Own Reward appears in the Briar Sloughs quest catalogue. No walkthrough, reward or segment cost was found."
+      ],
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Briar Sloughs - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Briar_Sloughs"
+        },
+        {
+          "title": "Briar Sloughs Location Guide - MetaBot.GG",
+          "url": "https://metabot.gg/en/dawnwalker/locations/briar-sloughs"
+        }
+      ]
+    },
+    {
+      "title": "The Cursed Chasm",
+      "slug": "the-cursed-chasm",
+      "kind": "side",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "A named route referenced in treasure guides as the place the Silver Cache map is found.",
+      "bodyParagraphs": [
+        "Treasure guides list a Silver Cache map found along the Cursed Chasm route, separate from the seven bandit maps.",
+        "Whether this is a titled quest or simply a location name is not clear from the sources found, so it is recorded provisionally."
+      ],
+      "note": "Referenced as a route in treasure guides rather than explicitly as a quest; classification is uncertain.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker All Treasure Map Locations & Solutions - PowerPyx",
+          "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-treasure-map-locations-solutions/"
+        },
+        {
+          "title": "All Treasure Locations In The Blood Of Dawnwalker - Game Rant",
+          "url": "https://gamerant.com/the-blood-of-dawnwalker-all-treasure-map-locations-will-o-the-wisp/"
+        }
+      ]
+    },
+    {
+      "title": "St. Tyna's Grove Tower",
+      "slug": "st-tynas-grove-tower",
+      "kind": "side",
+      "regionSlug": "st-tynas-grove",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "A tower objective in St. Tyna's Grove referred to as a mission in the sources found.",
+      "bodyParagraphs": [
+        "St. Tyna's Grove Tower is described as a mission in St. Tyna's Grove. No objectives, rewards or cost were published in the sources available, and it may be a location entry rather than a titled quest."
+      ],
+      "note": "Only loosely described as a 'mission'; may be a location rather than a distinct quest.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "St. Tyna's Grove - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/St._Tyna's_Grove"
+        }
+      ]
+    },
+    {
+      "title": "A Pilgrimage for Power",
+      "slug": "a-pilgrimage-for-power",
+      "kind": "contract",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "A four-part hunt for hidden Uriashi Sacred Stones that never places a marker on your map.",
+      "bodyParagraphs": [
+        "A Pilgrimage for Power is the one quest chain in the game that gives you no map marker at all. Each of the four Uriashi Sacred Stones is found by travelling to the right region and walking uphill toward the sound of wind chimes.",
+        "The four legs are Bear Trouble, Dark-Thing, The Ritual and Fanatics, and the stones sit in the Briar Sloughs, Rockfalls, the Tantari Woods and St. Tyna's Grove.",
+        "Each stone is guarded by something different: a Ravenous Bear, an Essence of Grief, wolves among fanatic corpses, and a Witch boss.",
+        {
+          "h": "Cost and payoff"
+        },
+        "Inspecting each Uriashi Glyph costs two time segments and pays a Ravenous Flock Manual plus 250 XP. Completing all four unlocks the Ravenous Flock witchcraft ability at full strength, which guides rate among the strongest combat options in the tree.",
+        "Recorded here as a contract-style repeatable chain because it is a templated hunt rather than a character storyline."
+      ],
+      "note": "Classified as 'contract' for its repeatable templated structure; the game's own category label for this chain was not confirmed in the sources found.",
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "A Pilgrimage for Power Quest Walkthrough - Game8",
+          "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618659"
+        },
+        {
+          "title": "All Sacred Stones In The Blood of Dawnwalker - GameSpot",
+          "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-pilgrimage-for-power-sacred-stones/"
+        },
+        {
+          "title": "The Blood of Dawnwalker: All Sacred Stone Locations - allthings.how",
+          "url": "https://allthings.how/the-blood-of-dawnwalker-all-sacred-stone-locations-a-pilgrimage-for-power/"
+        }
+      ]
+    },
+    {
+      "title": "A Pilgrimage for Power: Bear Trouble",
+      "slug": "a-pilgrimage-for-power-bear-trouble",
+      "kind": "contract",
+      "prereqSlugs": [
+        "a-pilgrimage-for-power"
+      ],
+      "timeSegments": {
+        "min": 2,
+        "max": 2,
+        "known": true
+      },
+      "summary": "The Sacred Stone leg guarded by a Ravenous Bear, reached by climbing toward wind chimes.",
+      "bodyParagraphs": [
+        "Bear Trouble is the leg of the pilgrimage where a Ravenous Bear guards the stone, and it involves exploring the top of a hill with no marker to guide you.",
+        "Inspecting the glyph costs two time segments and pays a Ravenous Flock Manual and 250 XP.",
+        "Region is contested: Fextralife's Laslea Glen index lists an entry under this name, while the Sacred Stones guides place the four stones in the Briar Sloughs, Rockfalls, the Tantari Woods and St. Tyna's Grove."
+      ],
+      "note": "Region unresolved: listed under Laslea Glen by one index, but the stone guides name only Briar Sloughs, Rockfalls, Tantari Woods and St. Tyna's Grove as stone locations.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "All Sacred Stones In The Blood of Dawnwalker - GameSpot",
+          "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-pilgrimage-for-power-sacred-stones/"
+        },
+        {
+          "title": "How to Explore the Top of the Hill in Blood of Dawnwalker (Bear Trouble) - Game Rant",
+          "url": "https://gamerant.com/blood-of-dawnwalker-explore-top-of-the-hill-in-bear-trouble/"
+        },
+        {
+          "title": "Laslea Glen - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Laslea_Glen"
+        }
+      ]
+    },
+    {
+      "title": "A Pilgrimage for Power: Dark-Thing",
+      "slug": "a-pilgrimage-for-power-dark-thing",
+      "kind": "contract",
+      "regionSlug": "rockfalls",
+      "courtSlug": "bakir",
+      "prereqSlugs": [
+        "a-pilgrimage-for-power"
+      ],
+      "timeSegments": {
+        "min": 2,
+        "max": 2,
+        "known": true
+      },
+      "summary": "The Rockfalls leg of the Sacred Stone pilgrimage.",
+      "bodyParagraphs": [
+        "Dark-Thing is named as the Rockfalls leg of the pilgrimage chain. As with the other legs, there is no map marker and the stone is found by following wind chimes uphill.",
+        "Inspecting the glyph costs two time segments and pays a Ravenous Flock Manual and 250 XP."
+      ],
+      "note": "Court assignment derives from Fextralife's statement that Bakir's fiefdom covers Boar's Back and Rockfalls.",
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Rockfalls - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Rockfalls"
+        },
+        {
+          "title": "All Sacred Stones In The Blood of Dawnwalker - GameSpot",
+          "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-pilgrimage-for-power-sacred-stones/"
+        }
+      ]
+    },
+    {
+      "title": "A Pilgrimage for Power: The Ritual",
+      "slug": "a-pilgrimage-for-power-the-ritual",
+      "kind": "contract",
+      "regionSlug": "tantari-woods",
+      "prereqSlugs": [
+        "a-pilgrimage-for-power"
+      ],
+      "timeSegments": {
+        "min": 2,
+        "max": 2,
+        "known": true
+      },
+      "summary": "The Tantari Woods leg of the Sacred Stone pilgrimage.",
+      "bodyParagraphs": [
+        "The Ritual appears in the Tantari Woods quest catalogue as one of the pilgrimage legs. The stone is unmarked and found by ear rather than by map.",
+        "Inspecting the glyph costs two time segments and pays a Ravenous Flock Manual and 250 XP."
+      ],
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Tantari Woods - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Tantari_Woods"
+        },
+        {
+          "title": "All Sacred Stones In The Blood of Dawnwalker - GameSpot",
+          "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-pilgrimage-for-power-sacred-stones/"
+        }
+      ]
+    },
+    {
+      "title": "A Pilgrimage for Power: Fanatics",
+      "slug": "a-pilgrimage-for-power-fanatics",
+      "kind": "contract",
+      "prereqSlugs": [
+        "a-pilgrimage-for-power"
+      ],
+      "timeSegments": {
+        "min": 2,
+        "max": 2,
+        "known": true
+      },
+      "summary": "The fourth Sacred Stone leg, named in the pilgrimage breakdown.",
+      "bodyParagraphs": [
+        "Fanatics completes the set of four legs alongside Bear Trouble, Dark-Thing and The Ritual. One of the four stones is guarded by wolves among fanatic corpses, which matches the name, but no source found states the region outright.",
+        "Inspecting the glyph costs two time segments and pays a Ravenous Flock Manual and 250 XP."
+      ],
+      "note": "No source names this leg's region directly; it is not recorded rather than deduced by elimination.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "A Pilgrimage for Power Quest Walkthrough - Game8",
+          "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618659"
+        },
+        {
+          "title": "All Sacred Stones In The Blood of Dawnwalker - GameSpot",
+          "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-pilgrimage-for-power-sacred-stones/"
+        }
+      ]
+    },
+    {
+      "title": "Bandit's Treasure Map: Laslea Glen",
+      "slug": "bandits-treasure-map-laslea-glen",
+      "kind": "contract",
+      "regionSlug": "laslea-glen",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "The Laslea Glen bandit map, found in a camp south-east of the Outlaw's Gorge Shrine.",
+      "bodyParagraphs": [
+        "The route runs to the eastern part of Laslea Glen and the Outlaw's Gorge Shrine, then south-east to a bandit camp holding the map.",
+        "Treasure maps are read in the Books & Notes section by matching the sketch to a real landmark, and the dig site shows up as a mound of loose dirt. A shovel is required."
+      ],
+      "note": "Game8 calls these Side Quests while PowerPyx files them as side activities; recorded here as repeatable contract-style content.",
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Bandit's Treasure Map: Laslea Glen Walkthrough - Game8",
+          "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618263"
+        },
+        {
+          "title": "Blood of Dawnwalker All Treasure Map Locations & Solutions - PowerPyx",
+          "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-treasure-map-locations-solutions/"
+        }
+      ]
+    },
+    {
+      "title": "Bandit's Treasure Map: Briar Sloughs",
+      "slug": "bandits-treasure-map-briar-sloughs",
+      "kind": "contract",
+      "regionSlug": "briar-sloughs",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "The Briar Sloughs entry in the seven-map bandit treasure set.",
+      "bodyParagraphs": [
+        "One of seven bandit maps scattered among the game's fifteen bandit camps. The map itself is looted from the camp, then matched against landmarks to find the dig site."
+      ],
+      "note": "Called a Side Quest by some indexes and a side activity by others.",
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Bandit's Treasure Map: Briar Sloughs Location & Solution - PowerPyx",
+          "url": "https://www.powerpyx.com/blood-of-dawnwalker-bandits-treasure-map-briar-sloughs-location-solution/"
+        },
+        {
+          "title": "Uncover the Briar Sloughs Treasure Location - Game Rant",
+          "url": "https://gamerant.com/the-blood-of-dawnwalker-bandit-treasure-map-briar-sloughs-location/"
+        }
+      ]
+    },
+    {
+      "title": "Bandit's Treasure Map: Riverbank",
+      "slug": "bandits-treasure-map-riverbank",
+      "kind": "contract",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "The Riverbank bandit map, one of seven in the set.",
+      "bodyParagraphs": [
+        "Riverbank is listed among the seven bandit treasure maps. No region name matching the game's ten regions was given for it in the sources found, so none is recorded."
+      ],
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Bandit's Treasure Map: Riverbank Location & Solution - PowerPyx",
+          "url": "https://www.powerpyx.com/blood-of-dawnwalker-bandits-treasure-map-riverbank-location-solution"
+        },
+        {
+          "title": "Blood of Dawnwalker All Treasure Map Locations & Solutions - PowerPyx",
+          "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-treasure-map-locations-solutions/"
+        }
+      ]
+    },
+    {
+      "title": "Bandit's Treasure Map: Boar's Back",
+      "slug": "bandits-treasure-map-boars-back",
+      "kind": "contract",
+      "regionSlug": "boars-back",
+      "courtSlug": "bakir",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "The Boar's Back bandit map, one of seven in the set.",
+      "bodyParagraphs": [
+        "Found in a bandit camp in Boar's Back, part of Bakir's fiefdom. As with the rest of the set, the map is matched to a landmark and the treasure dug up with a shovel."
+      ],
+      "note": "Court assignment derives from Fextralife's statement that Bakir's fiefdom covers Boar's Back and Rockfalls.",
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Bandit's Treasure Map: Boar's Back Location & Solution - PowerPyx",
+          "url": "https://www.powerpyx.com/blood-of-dawnwalker-bandits-treasure-map-boars-back-location-solution/"
+        },
+        {
+          "title": "Boar's Back - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Boar's_Back"
+        }
+      ]
+    },
+    {
+      "title": "Bandit's Treasure Map: Rockfalls - Pond Islet",
+      "slug": "bandits-treasure-map-rockfalls-pond-islet",
+      "kind": "contract",
+      "regionSlug": "rockfalls",
+      "courtSlug": "bakir",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "One of two bandit treasure maps in Rockfalls, solved at a pond islet.",
+      "bodyParagraphs": [
+        "Rockfalls carries two of the seven bandit maps. This one is solved at a pond islet; the sketch matches landmarks such as a river, tree, rock formation or island."
+      ],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker All Treasure Map Locations & Solutions - PowerPyx",
+          "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-treasure-map-locations-solutions/"
+        },
+        {
+          "title": "Rockfalls - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Rockfalls"
+        }
+      ]
+    },
+    {
+      "title": "Bandit's Treasure Map: Rockfalls - Split Rock",
+      "slug": "bandits-treasure-map-rockfalls-split-rock",
+      "kind": "contract",
+      "regionSlug": "rockfalls",
+      "courtSlug": "bakir",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "The second Rockfalls bandit map, solved at a split rock formation.",
+      "bodyParagraphs": [
+        "The companion to the Pond Islet map in Rockfalls, this one is keyed to a split rock formation. PowerPyx maintains a dedicated location and solution page for it."
+      ],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Bandit's Treasure Map: Rockfalls - Split Rock Location & Solution - PowerPyx",
+          "url": "https://www.powerpyx.com/blood-of-dawnwalker-bandits-treasure-map-rockfalls-split-rock-location-solution"
+        },
+        {
+          "title": "Rockfalls - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Rockfalls"
+        }
+      ]
+    },
+    {
+      "title": "Bandit's Treasure Map: Tantari Woods",
+      "slug": "bandits-treasure-map-tantari-woods",
+      "kind": "contract",
+      "regionSlug": "tantari-woods",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "The Tantari Woods bandit map, taken from the bandit camp in the east of the region.",
+      "bodyParagraphs": [
+        "The map is found in the bandit camp in the eastern Tantari Woods. Enemies in this region run roughly level 31 to 39, so it is not an early stop."
+      ],
+      "note": "Spelled 'Bandits's Treasure Map: Tantari Woods' in the Fextralife region index.",
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Bandit's Treasure Map: Tantari Woods Location & Solution - PowerPyx",
+          "url": "https://www.powerpyx.com/blood-of-dawnwalker-bandits-treasure-map-tantari-woods-location-solution/"
+        },
+        {
+          "title": "Tantari Woods - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Tantari_Woods"
+        }
+      ]
+    },
+    {
+      "title": "Destroyed Shrines",
+      "slug": "destroyed-shrines",
+      "kind": "contract",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "A repeatable questline covering seventeen wrecked shrines, each one restored by recovering its stolen heart.",
+      "bodyParagraphs": [
+        "There are seventeen destroyed shrines in the valley, and each follows the same shape: inspect the damaged shrine to start its quest, hold Focus Mode to reveal the thief's footprints, follow them to a camp, a corpse or an animal, loot the heart, then return and restore the shrine.",
+        "Restoring a shrine turns it back into a working fast-travel point, which is why guides treat this as high-value busywork rather than filler.",
+        {
+          "h": "Named shrines"
+        },
+        {
+          "ul": [
+            "Small Bridge, south of Stoneward Post",
+            "Western Slopes, west along the road from Stelian's Redoubt",
+            "Bear's Maw, east of Mert's Mill",
+            "Crossroads Inn, just west of the inn and east of St. Tyna's Convent",
+            "Pilgrim's Bridge",
+            "Vedera Marsh",
+            "Burner's Clearing",
+            "Eastridge Outpost",
+            "St. Tyna's Grove",
+            "Tantari Woods"
+          ]
+        },
+        "No complete list of all seventeen surfaced in the sources found."
+      ],
+      "note": "Sources name only about ten of the seventeen shrines; the remainder were not found.",
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "The Blood Of Dawnwalker: All Destroyed Shrine Heart Locations - TheGamer",
+          "url": "https://www.thegamer.com/the-blood-of-dawnwalker-shrine-destroyed-heart-fast-travel-locations/"
+        },
+        {
+          "title": "Shrines and Destroyed Shrine Locations - Game8",
+          "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/617220"
+        },
+        {
+          "title": "Blood of Dawnwalker All Shrine Locations (Fast Travel Points) - PowerPyx",
+          "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-shrine-locations-fast-travel-points/"
+        }
+      ]
+    },
+    {
+      "title": "Destroyed Shrines: Western Slopes",
+      "slug": "destroyed-shrines-western-slopes",
+      "kind": "contract",
+      "regionSlug": "briar-sloughs",
+      "prereqSlugs": [
+        "destroyed-shrines"
+      ],
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "The Briar Sloughs shrine restoration, west along the road from Stelian's Redoubt.",
+      "bodyParagraphs": [
+        "Listed among the Briar Sloughs quests, this shrine sits west along the road from Stelian's Redoubt. Recovering its heart and returning it restores the fast-travel point."
+      ],
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Briar Sloughs - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Briar_Sloughs"
+        },
+        {
+          "title": "The Blood Of Dawnwalker: All Destroyed Shrine Heart Locations - TheGamer",
+          "url": "https://www.thegamer.com/the-blood-of-dawnwalker-shrine-destroyed-heart-fast-travel-locations/"
+        }
+      ]
+    },
+    {
+      "title": "Destroyed Shrines: Eastridge Outpost",
+      "slug": "destroyed-shrines-eastridge-outpost",
+      "kind": "contract",
+      "regionSlug": "tantari-woods",
+      "prereqSlugs": [
+        "destroyed-shrines"
+      ],
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "A shrine restoration listed in the Tantari Woods quest catalogue.",
+      "bodyParagraphs": [
+        "Eastridge Outpost appears among the twenty-two quests catalogued for the Tantari Woods. Standard shrine procedure applies: track the thief, recover the heart, restore the shrine."
+      ],
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Tantari Woods - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Tantari_Woods"
+        },
+        {
+          "title": "Shrines and Destroyed Shrine Locations - Game8",
+          "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/617220"
+        }
+      ]
+    },
+    {
+      "title": "Destroyed Shrines: St. Tyna's Grove",
+      "slug": "destroyed-shrines-st-tynas-grove",
+      "kind": "contract",
+      "regionSlug": "st-tynas-grove",
+      "prereqSlugs": [
+        "destroyed-shrines"
+      ],
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "The St. Tyna's Grove shrine restoration.",
+      "bodyParagraphs": [
+        "Listed in the Tantari Woods quest catalogue under the St. Tyna's Grove name, which sits on the boundary between the two areas. The restoration follows the usual pattern."
+      ],
+      "note": "Appears in the Tantari Woods quest catalogue despite the St. Tyna's Grove name; region recorded from the shrine's own name.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Tantari Woods - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Tantari_Woods"
+        },
+        {
+          "title": "St. Tyna's Grove - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/St._Tyna's_Grove"
+        }
+      ]
+    },
+    {
+      "title": "Destroyed Shrines: Tantari Woods",
+      "slug": "destroyed-shrines-tantari-woods",
+      "kind": "contract",
+      "regionSlug": "tantari-woods",
+      "prereqSlugs": [
+        "destroyed-shrines"
+      ],
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "A shrine restoration in the Tantari Woods proper.",
+      "bodyParagraphs": [
+        "One of three destroyed-shrine entries catalogued for the Tantari Woods, alongside Eastridge Outpost and St. Tyna's Grove."
+      ],
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Tantari Woods - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Tantari_Woods"
+        },
+        {
+          "title": "Shrines and Destroyed Shrine Locations - Game8",
+          "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/617220"
+        }
+      ]
+    },
+    {
+      "title": "Destroyed Shrines: Hidden & Safe",
+      "slug": "destroyed-shrines-hidden-and-safe",
+      "kind": "contract",
+      "prereqSlugs": [
+        "destroyed-shrines"
+      ],
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "A destroyed-shrine entry with its own dedicated walkthrough.",
+      "bodyParagraphs": [
+        "Hidden & Safe is carried as a separate destroyed-shrine walkthrough, implying its heart is harder to track than most. No region or cost was given in the sources found."
+      ],
+      "note": "Known only from a walkthrough title; region and details unverified.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Destroyed Shrines: Hidden & Safe Walkthrough - allthings.how",
+          "url": "https://allthings.how/destroyed-shrines-hidden-safe-walkthrough-in-the-blood-of-dawnwalker/"
+        }
+      ]
+    },
+    {
+      "title": "Ancient Circles of Vale Sangora",
+      "slug": "ancient-circles-of-vale-sangora",
+      "kind": "contract",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "Thirteen witchcraft ruins scattered across the valley, each a self-contained puzzle site.",
+      "bodyParagraphs": [
+        "The Ancient Circles are described as thirteen witchcraft ruins spread across Vale Sangora. Fextralife carries an entry under the Ancient Circles of Vale Sangora name in its Briar Sloughs quest listing, and individual circles appear as their own quests elsewhere.",
+        "Named circles found in the sources include Hills of Tantari, Tantari Vista and the one in St. Tyna's Grove. No full list of all thirteen surfaced.",
+        "No time cost was published for any individual circle."
+      ],
+      "note": "Sources name only three of the thirteen circles; the naming convention also varies between 'Ancient Circle' and 'Ancient Circles'.",
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Briar Sloughs - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Briar_Sloughs"
+        },
+        {
+          "title": "The Blood of Dawnwalker: How to Complete the Ancient Circle in St. Tyna's Grove - allthings.how",
+          "url": "https://allthings.how/blood-of-dawnwalker-how-to-complete-the-st-tyna-s-grove-ancient-circle/"
+        },
+        {
+          "title": "Tantari Woods - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Tantari_Woods"
+        }
+      ]
+    },
+    {
+      "title": "Ancient Circle: Hills of Tantari",
+      "slug": "ancient-circle-hills-of-tantari",
+      "kind": "contract",
+      "regionSlug": "tantari-woods",
+      "prereqSlugs": [
+        "ancient-circles-of-vale-sangora"
+      ],
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "One of two Ancient Circles catalogued in the Tantari Woods.",
+      "bodyParagraphs": [
+        "Hills of Tantari appears in the Tantari Woods quest catalogue as one of the thirteen witchcraft ruins. No objectives or cost were published."
+      ],
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Tantari Woods - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Tantari_Woods"
+        }
+      ]
+    },
+    {
+      "title": "Ancient Circle: Tantari Vista",
+      "slug": "ancient-circle-tantari-vista",
+      "kind": "contract",
+      "regionSlug": "tantari-woods",
+      "prereqSlugs": [
+        "ancient-circles-of-vale-sangora"
+      ],
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "The second Ancient Circle catalogued in the Tantari Woods.",
+      "bodyParagraphs": [
+        "Tantari Vista is listed alongside Hills of Tantari among the region's twenty-two quests. No further detail was found."
+      ],
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Tantari Woods - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Tantari_Woods"
+        }
+      ]
+    },
+    {
+      "title": "Ancient Circle: St. Tyna's Grove",
+      "slug": "ancient-circle-st-tynas-grove",
+      "kind": "contract",
+      "regionSlug": "st-tynas-grove",
+      "prereqSlugs": [
+        "ancient-circles-of-vale-sangora"
+      ],
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "The Ancient Circle in St. Tyna's Grove, one of thirteen witchcraft ruins.",
+      "bodyParagraphs": [
+        "This circle sits in St. Tyna's Grove and has its own dedicated completion guide, describing it as one of the thirteen witchcraft ruins scattered across Vale Sangora."
+      ],
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "The Blood of Dawnwalker: How to Complete the Ancient Circle in St. Tyna's Grove - allthings.how",
+          "url": "https://allthings.how/blood-of-dawnwalker-how-to-complete-the-st-tyna-s-grove-ancient-circle/"
+        },
+        {
+          "title": "St. Tyna's Grove - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/St._Tyna's_Grove"
+        }
+      ]
+    },
+    {
+      "title": "Wisp Treasure Hunt: Watermill Hills",
+      "slug": "wisp-treasure-hunt-watermill-hills",
+      "kind": "contract",
+      "regionSlug": "briar-sloughs",
+      "timeSegments": {
+        "known": false
+      },
+      "summary": "A will-o'-the-wisp treasure hunt in the Briar Sloughs.",
+      "bodyParagraphs": [
+        "Watermill Hills is listed among the Briar Sloughs quests as a wisp treasure hunt. Treasure guides group the will-o'-the-wisp hunts separately from the seven bandit maps.",
+        "No time cost or reward figures were published in the sources found."
+      ],
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Briar Sloughs - Blood of Dawnwalker Wiki (Fextralife)",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Briar_Sloughs"
+        },
+        {
+          "title": "All Treasure Locations In The Blood Of Dawnwalker (Treasure Map & Will-O-The-Wisp) - Game Rant",
+          "url": "https://gamerant.com/the-blood-of-dawnwalker-all-treasure-map-locations-will-o-the-wisp/"
+        }
+      ]
+    }
+  ]
+}

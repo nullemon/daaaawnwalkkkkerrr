@@ -21,13 +21,17 @@ any record without a citable source URL.
 | Builds | 9 | — |
 | Guides | 11 | ~600 words each, original prose |
 | Regions | 10 | 3 rich, 4 solid, 3 thin |
+| Quests | 93 | 30 side, 26 ally, 23 repeatable, 14 prologue |
 | Endings | 7 | Requirements and outcomes separated |
-| **Per-quest segment costs** | **0** | **Still missing, still deliberate** |
+| **Quests with a sourced segment cost** | **15 of 93** | First real cost data — the rest stay blank |
 
 ### Live conflicts a human should settle
 
 - **"The Slits" vs "The Silts"** — region lists use one spelling, every page
   carrying real data uses the other. We kept `the-slits` and flagged it.
+- **Segment costs that disagree** — `buried-past` is reported as 9–12, 16 and
+  20 segments by three sources; `of-wolves-and-men` as 0 and as 10. Both are
+  stored as wide min/max ranges with the conflict noted, not averaged.
 - **Crake romanceable** — multiple launch guides list him as the third romance
   alongside Anca and Lacra; our earlier record said otherwise. Research won the
   upsert. Worth confirming.
@@ -37,6 +41,18 @@ any record without a citable source URL.
 - **Xanthe's 15th activity** — never named in any source found.
 - **Ultimate exclusivity** — guides split between one ultimate *per tree* and
   one *per build*. Both readings are stated on each ultimate's page.
+
+### Settled this round
+
+- **Lacra's chain is six quests, not five.** The missing link is
+  *The Night of Horrors*, which sits between *Our Rotten Roots* and *Midnight
+  Reckoning* and must be done first or the romance is lost. That resolves the
+  conflict this file previously recorded as open.
+- **The third romance is Anca**, a herbalist from Coen's village, whose arc
+  opens during the prologue.
+- **Two more ally chains exist** beyond Lacra and Crake — Anca's and Vicho's.
+- **There are no main quests after the prologue.** The researcher found zero
+  and recorded zero rather than inventing a spine.
 
 ### Research limits hit this round
 

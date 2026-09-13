@@ -72,6 +72,7 @@ Make record slugs yourself: lowercase, hyphens, no apostrophes
   "courtSlug": "ambrus",
   "phase": "day|night|either",
   "prereqSlugs": ["song-of-the-mountain"],
+  "excludeSlugs": ["a-quest-this-one-locks-out"],
   "timeSegments": { "min": 3, "max": 3, "known": true },
   "summary": "…",
   "bodyParagraphs": ["…"],
@@ -80,6 +81,10 @@ Make record slugs yourself: lowercase, hyphens, no apostrophes
 }
 ```
 Set `"known": false` and omit min/max unless a source states a real cost.
+
+`excludeSlugs` lists quests that doing this one permanently locks out. Record
+these whenever a source says two things are mutually exclusive — they are what
+lets the run checker answer "locked out" instead of "out of time".
 
 ### court-activities
 ```json
