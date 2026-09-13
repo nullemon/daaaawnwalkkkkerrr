@@ -124,6 +124,22 @@ describe('checkRun', () => {
     expect(result.status).toBe('locked-out')
   })
 
+  it('does not call an ending with no chain "achieved" — there was nothing to do', () => {
+    const finaleChoice = ending('folk-hero', { gate: 'choice', requiredQuests: [] })
+    const [result] = checkRun([finaleChoice], chain, { segmentsSpent: 0, completedQuestIds: [] })
+    expect(result.chainLength).toBe(0)
+    expect(result.status).toBe('reachable')
+  })
+
+  it('still reports achieved when a real chain has been finished', () => {
+    const [result] = checkRun([patricide], chain, {
+      segmentsSpent: 40,
+      completedQuestIds: ['q1', 'q2'],
+    })
+    expect(result.chainLength).toBe(2)
+    expect(result.status).toBe('achieved')
+  })
+
   it('never bars the failure ending, since overrunning is how you get it', () => {
     const timeout = ending('time-runs-out', { gate: 'clock', isFailure: true, requiredQuests: [] })
     const [result] = checkRun([timeout], chain, {

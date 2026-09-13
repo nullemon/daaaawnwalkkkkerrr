@@ -1,0 +1,60 @@
+import type { MetadataRoute } from 'next'
+import { getAll, siteUrl } from '@/lib/payload'
+import type { CollectionSlug } from 'payload'
+
+type Doc = { slug: string; updatedAt?: string }
+
+/** Collections that get a page each, and the path they live under. */
+const SECTIONS: { collection: CollectionSlug; path: string; priority: number }[] = [
+  { collection: 'quests', path: 'quests', priority: 0.8 },
+  { collection: 'endings', path: 'endings', priority: 0.9 },
+  { collection: 'court-activities', path: 'court-activities', priority: 0.7 },
+  { collection: 'courts', path: 'court', priority: 0.7 },
+  { collection: 'mechanics', path: 'mechanics', priority: 0.8 },
+  { collection: 'regions', path: 'regions', priority: 0.6 },
+  { collection: 'characters', path: 'characters', priority: 0.6 },
+  { collection: 'skill-trees', path: 'skills', priority: 0.6 },
+  { collection: 'items', path: 'items', priority: 0.6 },
+  { collection: 'guides', path: 'guides', priority: 0.7 },
+]
+
+const STATIC_PATHS: { path: string; priority: number }[] = [
+  { path: '', priority: 1 },
+  { path: 'tools/run-checker', priority: 1 },
+  { path: 'quests', priority: 0.9 },
+  { path: 'endings', priority: 0.9 },
+  { path: 'court', priority: 0.8 },
+  { path: 'mechanics', priority: 0.8 },
+  { path: 'regions', priority: 0.7 },
+  { path: 'characters', priority: 0.7 },
+  { path: 'skills', priority: 0.7 },
+  { path: 'items', priority: 0.7 },
+  { path: 'guides', priority: 0.7 },
+  { path: 'about', priority: 0.4 },
+]
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const base = await siteUrl()
+  const now = new Date()
+
+  const entries: MetadataRoute.Sitemap = STATIC_PATHS.map((entry) => ({
+    url: `${base}/${entry.path}`.replace(/\/$/, '') || base,
+    lastModified: now,
+    changeFrequency: 'weekly',
+    priority: entry.priority,
+  }))
+
+  for (const section of SECTIONS) {
+    const docs = await getAll<Doc>(section.collection, { depth: 0 })
+    for (const doc of docs) {
+      entries.push({
+        url: `${base}/${section.path}/${doc.slug}`,
+        lastModified: doc.updatedAt ? new Date(doc.updatedAt) : now,
+        changeFrequency: 'weekly',
+        priority: section.priority,
+      })
+    }
+  }
+
+  return entries
+}

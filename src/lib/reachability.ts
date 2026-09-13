@@ -68,6 +68,8 @@ export interface EndingReachability {
   status: ReachabilityStatus
   /** Required quests not yet done, in dependency order. */
   outstanding: QuestNode[]
+  /** Total quests in the chain, done or not. Zero means nothing to prepare. */
+  chainLength: number
   minCost: number
   maxCost: number
   segmentsLeft: number
@@ -145,6 +147,7 @@ export function checkEnding(
       ending,
       status: 'reachable',
       outstanding,
+      chainLength: required.length,
       minCost,
       maxCost,
       segmentsLeft,
@@ -161,7 +164,9 @@ export function checkEnding(
 
   let status: ReachabilityStatus
   if (blockedBy.length > 0) status = 'locked-out'
-  else if (outstanding.length === 0) status = 'achieved'
+  // An ending with no chain at all is decided at the finale — it was never
+  // "achieved", there was simply nothing to do.
+  else if (outstanding.length === 0) status = required.length > 0 ? 'achieved' : 'reachable'
   else if (maxCost <= segmentsLeft) status = 'reachable'
   else if (minCost <= segmentsLeft) status = 'tight'
   else status = 'out-of-time'
@@ -170,6 +175,7 @@ export function checkEnding(
     ending,
     status,
     outstanding,
+    chainLength: required.length,
     minCost,
     maxCost,
     segmentsLeft,

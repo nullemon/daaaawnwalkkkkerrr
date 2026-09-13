@@ -1,67 +1,92 @@
-# Payload Blank Template
+# Dawnwalker Guide
 
-This template comes configured with the bare minimum to get started on anything you need.
+A guide, database and run planner for *The Blood of Dawnwalker*, built around
+the mechanic the game is actually about: a budget of **480 time segments**.
 
-## Quick start
+Next.js 16 + Payload CMS 3 on libSQL. Every public page is prerendered to
+static HTML; the admin at `/admin` is a full CMS.
 
-This template can be deployed directly from our Cloud hosting and it will setup MongoDB and cloud S3 object storage for media.
+---
 
-## Quick Start - local setup
+## Running it locally
 
-To spin up this template locally, follow these steps:
+```bash
+pnpm install          # npm has a resolver bug on this dependency tree — use pnpm
+cp .env.example .env  # then set PAYLOAD_SECRET
+pnpm seed             # creates the admin user and loads the researched content
+pnpm dev              # http://localhost:3000
+```
 
-### Clone
+The seed prints the admin login it creates. Override it before running:
 
-After you click the `Deploy` button above, you'll want to have standalone copy of this repo on your machine. If you've already cloned this repo, skip to [Development](#development).
+```bash
+SEED_ADMIN_EMAIL=you@example.com SEED_ADMIN_PASSWORD='a real password' pnpm seed
+```
 
-### Development
+**Change that password immediately** — the default is a placeholder, and the
+seed only creates a user when none exists, so it will not overwrite yours later.
 
-1. First [clone the repo](#clone) if you have not done so already
-2. `cd my-project && cp .env.example .env` to copy the example environment variables. You'll need to add the `MONGODB_URL` from your Cloud project to your `.env` if you want to use S3 storage and the MongoDB database that was created for you.
+| Command | What it does |
+| --- | --- |
+| `pnpm dev` | Development server |
+| `pnpm build` | Production build (prerenders every page) |
+| `pnpm start` | Serve the production build |
+| `pnpm seed` | Load/refresh seed content — idempotent, matches on slug |
+| `pnpm test` | Run the run-checker unit tests |
+| `pnpm generate:types` | Regenerate `payload-types.ts` after a schema change |
 
-3. `pnpm install && pnpm dev` to install dependencies and start the dev server
-4. open `http://localhost:3000` to open the app in your browser
+## The admin panel
 
-That's it! Changes made in `./src` will be reflected in your app. Follow the on-screen instructions to login and create your first admin user. Then check out [Production](#production) once you're ready to build and serve your app, and [Deployment](#deployment) when you're ready to go live.
+`/admin`. Content is grouped by what it is for:
 
-#### Docker (Optional)
+- **Run** — Quests, Court Activities, Endings. These drive the run checker.
+- **World** — Regions, Courts, Characters, Enemies.
+- **Character** — Skill trees, Perks, Items.
+- **Content** — Mechanics, Guides.
+- **Admin** — Corrections queue, Media, Users, Site settings.
 
-If you prefer to use Docker for local development instead of a local MongoDB instance, the provided docker-compose.yml file can be used.
+Site settings hold the site name, nav, home-page copy, and the ad/analytics
+switches, so none of that needs a code change.
 
-To do so, follow these steps:
+### Two schema details that matter
 
-- Modify the `MONGODB_URL` in your `.env` file to `mongodb://127.0.0.1/<dbname>`
-- Modify the `docker-compose.yml` file's `MONGODB_URL` to match the above `<dbname>`
-- Run `docker-compose up` to start the database, optionally pass `-d` to run in the background.
+**Quest relationships are load-bearing.** `prereqs`, `excludes` and
+`requiredQuests` are the edges of the graph the run checker walks. Getting them
+wrong produces confidently wrong answers, which is worse than no answer.
 
-## How it works
+**"Cost confirmed" is not the same as "cost 0".** Leave it unticked unless a
+source actually publishes a segment cost. Unticked means *unknown*, and the
+checker reports totals containing it as a floor rather than a figure.
 
-The Payload config is tailored specifically to the needs of most websites. It is pre-configured in the following ways:
+## Deploying
 
-### Collections
+The database is libSQL, so the same adapter runs a local file in development
+and a hosted database in production — deploying is a change of environment
+variable, not a change of code.
 
-See the [Collections](https://payloadcms.com/docs/configuration/collections) docs for details on how to extend this functionality.
+**Vercel + Turso** (simplest):
 
-- #### Users (Authentication)
+1. Create a Turso database, take its URL and auth token.
+2. Set on Vercel: `DATABASE_URI=libsql://…`, `DATABASE_AUTH_TOKEN=…`,
+   `PAYLOAD_SECRET=…`, `NEXT_PUBLIC_SITE_URL=https://yourdomain`.
+3. Deploy, then run the seed once against the remote database.
 
-  Users are auth-enabled collections that have access to the admin panel.
+**A VPS** works too: `pnpm build && pnpm start` behind a reverse proxy, with
+`DATABASE_URI=file:./dawnwalker.db` on a persistent volume.
 
-  For additional help, see the official [Auth Example](https://github.com/payloadcms/payload/tree/main/examples/auth) or the [Authentication](https://payloadcms.com/docs/authentication/overview#authentication-overview) docs.
+Media uploads are written to disk, so on serverless hosting point Payload at
+object storage (`@payloadcms/storage-s3` or similar) before relying on uploads.
 
-- #### Media
+## Testing
 
-  This is the uploads enabled collection. It features pre-configured sizes, focal point and manual resizing to help you manage your pictures.
+`pnpm test` covers the clock arithmetic and the reachability solver — 25 tests
+over transitive prerequisites, cycles in the data, exclusion lock-outs,
+best/worst-case affordability, and unknown costs. The solver is deliberately
+free of Payload types so it can be tested without a database.
 
-### Docker
+## Honest limitations
 
-Alternatively, you can use [Docker](https://www.docker.com) to spin up this template locally. To do so, follow these steps:
-
-1. Follow [steps 1 and 2 from above](#development), the docker-compose file will automatically use the `.env` file in your project root
-1. Next run `docker-compose up`
-1. Follow [steps 4 and 5 from above](#development) to login and create your first admin user
-
-That's it! The Docker instance will help you get up and running quickly while also standardizing the development environment across your teams.
-
-## Questions
-
-If you have any issues or questions, reach out to us on [Discord](https://discord.com/invite/payload) or start a [GitHub discussion](https://github.com/payloadcms/payload/discussions).
+Read `docs/DATA.md` before trusting a number on this site. Short version: it
+was compiled from public sources without access to the game, published
+per-quest segment costs are not reliable enough to use, and the site says so
+rather than guessing.
