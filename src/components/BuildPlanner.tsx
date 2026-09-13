@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { useSearchParams } from 'next/navigation'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 
 /**
@@ -31,17 +32,44 @@ export interface PlannerTree {
   phase: string
 }
 
+/**
+ * A list of perk slugs from outside — a shared link, or a build page — cannot
+ * be trusted to be a legal build. Drop anything unknown, drop duplicates, and
+ * enforce the game's one-ultimate-per-tree rule, keeping the last ultimate
+ * named for a tree so it matches what clicking would have done.
+ */
+function sanitise(slugs: string[], bySlug: Map<string, PlannerPerk>): string[] {
+  const kept: string[] = []
+  const ultimateFor = new Map<string, string>()
+  for (const raw of slugs) {
+    const slug = raw.trim()
+    const perk = bySlug.get(slug)
+    if (!perk || kept.includes(slug)) continue
+    if (perk.isUltimate) {
+      const existing = ultimateFor.get(perk.treeSlug)
+      if (existing) kept.splice(kept.indexOf(existing), 1)
+      ultimateFor.set(perk.treeSlug, slug)
+    }
+    kept.push(slug)
+  }
+  return kept
+}
+
 export function BuildPlanner({ perks, trees }: { perks: PlannerPerk[]; trees: PlannerTree[] }) {
   const [picked, setPicked] = useState<string[]>([])
   const [copied, setCopied] = useState(false)
   /**
-   * A shared build arrives in the query string. It is read here rather than on
-   * the server because reading searchParams server-side makes the whole route
-   * dynamic, and this is the one page that would otherwise not be static HTML.
+   * The query string is the source of truth for an incoming build. Read in the
+   * browser rather than on the server: reading searchParams server-side opts
+   * the whole route out of static generation, and this is the one page that
+   * would otherwise not be static HTML.
    */
+  const searchParams = useSearchParams()
+  const shared = searchParams.get('perks') ?? ''
   const [loadedFromUrl, setLoadedFromUrl] = useState(false)
 
   const bySlug = useMemo(() => new Map(perks.map((perk) => [perk.slug, perk])), [perks])
+
   const chosen = useMemo(
     () => picked.map((slug) => bySlug.get(slug)).filter((perk): perk is PlannerPerk => Boolean(perk)),
     [picked, bySlug],
@@ -70,15 +98,17 @@ export function BuildPlanner({ perks, trees }: { perks: PlannerPerk[]; trees: Pl
     })
   }
 
+  /**
+   * Re-reads on every navigation, not just on mount. Next keeps this component
+   * mounted when the router moves between query strings on the same route, so
+   * a mount-only read would leave the panel showing a build the address bar no
+   * longer names — and "Copy share link" would then hand out a link that opens
+   * something else.
+   */
   useEffect(() => {
-    const known = new Set(perks.map((perk) => perk.slug))
-    const shared = (new URLSearchParams(window.location.search).get('perks') ?? '')
-      .split(',')
-      .map((slug) => slug.trim())
-      .filter((slug) => known.has(slug))
-    if (shared.length > 0) setPicked(shared)
+    setPicked(sanitise(shared.split(','), bySlug))
     setLoadedFromUrl(true)
-  }, [perks])
+  }, [shared, bySlug])
 
   // Keep the address bar in step, so copying from it always gives a live build.
   // Held until the shared build has been read, or this would wipe it first.

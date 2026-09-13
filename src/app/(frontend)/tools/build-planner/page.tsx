@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { Suspense } from 'react'
 import { PageHeader } from '@/components/PageHeader'
 import { BuildPlanner, type PlannerPerk, type PlannerTree } from '@/components/BuildPlanner'
 import { getAll } from '@/lib/payload'
@@ -51,7 +52,11 @@ export default async function BuildPlannerPage() {
         lede="Three trees, nine ultimates, one ultimate per tree. Pick your way through and share the result as a link."
       />
       <div className="page body-main">
-        <BuildPlanner perks={perks} trees={trees} />
+        {/* useSearchParams renders this subtree on the client; the boundary is
+            what lets the route around it stay static HTML. */}
+        <Suspense fallback={<p className="note">Loading the trees…</p>}>
+          <BuildPlanner perks={perks} trees={trees} />
+        </Suspense>
         <div className="callout">
           <h3>Perks cost time, not just points</h3>
           <p>
