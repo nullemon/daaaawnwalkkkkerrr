@@ -20,6 +20,26 @@ irm https://claude.ai/install.ps1 | iex
 Then close and reopen the terminal so the PATH change takes effect, and check
 with `claude --version`.
 
+**If it says the install location is not on your PATH**, you do not need the
+Environment Variables dialog. To use it right now in the window you are in:
+
+```powershell
+$env:Path += ";$env:USERPROFILE\.local\bin"
+```
+
+And to make it permanent, so every new terminal finds it:
+
+```powershell
+$bin = "$env:USERPROFILE\.local\bin"
+$old = [Environment]::GetEnvironmentVariable('Path', 'User')
+if ($old -notlike "*$bin*") {
+  [Environment]::SetEnvironmentVariable('Path', ($old.TrimEnd(';') + ';' + $bin), 'User')
+}
+```
+
+That writes to your *user* PATH, so it needs no administrator rights and
+cannot damage the system PATH.
+
 Two things that trip people up here. `install.cmd` is a **cmd.exe** script —
 running it from PowerShell fails, because PowerShell 5.1 does not accept `&&`
 as a statement separator and aliases `curl` to `Invoke-WebRequest`, so the
@@ -48,14 +68,36 @@ Enterprise.
 
 ## Get the project
 
-```bash
+Work somewhere sensible — not `C:\Windows\system32`, which is where
+PowerShell opens by default and where you do not want to be writing files:
+
+```powershell
+mkdir $env:USERPROFILE\projects -Force
+cd $env:USERPROFILE\projects
 git clone https://github.com/nullemon/daaaawnwalkkkkerrr.git
 cd daaaawnwalkkkkerrr
 git checkout claude/gallant-sagan-h66nua
 ```
 
-You also need **Node.js 20.9+** and **pnpm** (`npm install -g pnpm`). Do not
-use npm to install this project — see the gotchas in `CLAUDE.md`.
+You also need **Node.js 20.9+** and **pnpm**. Check what you have:
+
+```powershell
+node --version    # want v20.9 or newer
+git --version
+```
+
+Missing either, the quickest route on Windows 10/11:
+
+```powershell
+winget install OpenJS.NodeJS.LTS
+winget install Git.Git
+```
+
+Then reopen the terminal and `npm install -g pnpm`.
+
+Do not use npm to install *this project* — see the gotchas in `CLAUDE.md`.
+pnpm is only needed for the project's own dependencies; installing pnpm itself
+with npm is fine.
 
 ```bash
 pnpm install
