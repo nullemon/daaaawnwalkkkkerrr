@@ -34,6 +34,7 @@ seed only creates a user when none exists, so it will not overwrite yours later.
 | `pnpm seed` | Load/refresh hand-written seed content — idempotent, matches on slug |
 | `pnpm import` | Ingest researched JSON from `src/seed/raw/` — validates and rejects uncited records |
 | `pnpm assets` | Attach images in bulk from `assets/<collection>/<slug>.<ext>` (`--force` to replace) |
+| `pnpm assets:match <dir>` | Match extracted game files to records by filename; `--apply` stages them into `assets/` |
 | `pnpm test` | Run the run-checker unit tests |
 | `pnpm generate:types` | Regenerate `payload-types.ts` after a schema change |
 

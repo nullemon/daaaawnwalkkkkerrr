@@ -90,18 +90,56 @@ Photo mode, if the game has one, is worth the detour.
 
 ### 4. Extracted UI icons — what actually makes a database look right
 
-The item and perk icons are what give a game database its texture, and they
-only exist inside the game files. With the game installed, community
-extraction tools for the engine will pull the UI atlas. Check Nexus Mods and
-the game's modding Discord for a current extractor.
+Item and perk icons only exist inside the game files. This is the route that
+gives a database its texture, and it is also the fiddliest.
 
-Two honest caveats. Extracted UI assets are the least defensible category
-here — they are not published for redistribution the way press art is, and
-sites that use them are relying on tolerance rather than permission. And it
-needs the game plus a working toolchain, so it is the highest-effort route.
+**The tool is FModel**, not Vortex. Vortex is a mod manager and cannot open
+game archives. FModel is an Unreal archive browser built on CUE4Parse.
 
-If you skip this, the site's own icon set covers every category already, and
-nothing looks broken.
+- FModel: <https://github.com/4sval/FModel> (releases, or fmodel.app/download)
+- Needs .NET 10 or later
+
+**Setup, in order:**
+
+1. Install FModel and point it at the game's `Paks` folder, typically
+   `…\steamapps\common\The Blood of Dawnwalker\<Project>\Content\Paks`.
+2. Set the engine version. The published mapping file is named for **UE 5.5**.
+3. Add the **AES key**. The paks are encrypted, so nothing loads without it.
+4. Add a **`.usmap` mapping file**. UE5 stores properties unversioned, so
+   FModel cannot read asset structure without one.
+
+The key and the mapping file are both published on Nexus and both change when
+the game patches, so take the current ones from there rather than from any
+guide:
+
+- Mapping file: <https://www.nexusmods.com/thebloodofdawnwalker/mods/95>
+- Generate your own (survives patches): <https://www.nexusmods.com/thebloodofdawnwalker/mods/136>
+
+**Finding the icons:** `Ctrl+Shift+F` searches every filename in the archive.
+Look for paths containing `UI`, `Icon`, `Inventory` or `Perk`. Export as PNG;
+output lands in `FModel\Output\Exports` mirroring the archive's folder tree.
+
+**Then run the matcher.** Extraction gives you thousands of files named things
+like `T_Icon_Sword_Durandal_01.png`, and renaming those by hand is the real
+cost of this route:
+
+```bash
+pnpm assets:match ~/FModel/Output/Exports          # dry run, writes a plan
+pnpm assets:match ~/FModel/Output/Exports --apply  # stage into assets/
+pnpm assets                                        # attach to records
+```
+
+It strips the engine's naming furniture (`T_`, `UI_`, `_BaseColor`, trailing
+numbers), scores what is left against every record title and slug, and writes
+`asset-match-plan.tsv` for you to read before anything moves. Matches below
+75% are marked `CHECK`. Scenery and effects textures simply do not match and
+are reported as such.
+
+**The honest caveat.** Unlike the press pack, extracted UI assets are not
+published for redistribution. Sites that use them rely on tolerance rather
+than permission, and that is a decision about *publishing* them, separate from
+extracting them from a game you own. If you skip this entirely, the site's own
+icon set already covers every category and nothing looks broken.
 
 ### 5. Wikimedia and press coverage
 
