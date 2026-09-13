@@ -174,6 +174,10 @@ export interface Quest {
     max?: number | null;
     confidence?: ('high' | 'medium' | 'low') | null;
     /**
+     * Tick only when a source actually publishes this cost. Unticked means unknown — which is different from free, and the run checker reports it as a floor.
+     */
+    known?: boolean | null;
+    /**
      * e.g. "Costs 2 extra segments if you take the shrine option."
      */
     note?: string | null;
@@ -1415,6 +1419,7 @@ export interface QuestsSelect<T extends boolean = true> {
         min?: T;
         max?: T;
         confidence?: T;
+        known?: T;
         note?: T;
       };
   phase?: T;

@@ -68,6 +68,16 @@ export const Quests: CollectionConfig = {
           ],
         },
         {
+          name: 'known',
+          type: 'checkbox',
+          defaultValue: false,
+          label: 'Cost confirmed',
+          admin: {
+            description:
+              'Tick only when a source actually publishes this cost. Unticked means unknown — which is different from free, and the run checker reports it as a floor.',
+          },
+        },
+        {
           name: 'note',
           type: 'text',
           admin: { description: 'e.g. "Costs 2 extra segments if you take the shrine option."' },
