@@ -116,7 +116,22 @@ export const commonContentFields = (): Field[] => [
   seoGroup(),
 ]
 
-/** Published content is world-readable; everything else needs a logged-in editor. */
+/**
+ * An editor is a member of the `users` collection. Reader accounts live in
+ * `players` and must never be able to write content.
+ *
+ * This matters because Payload's default write access is "any authenticated
+ * user". Once a second auth collection exists, that default silently grants
+ * every signed-up reader the ability to create and edit content, so every
+ * content collection has to state its write rules explicitly.
+ */
+export const isEditor = ({ req }: { req: { user?: { collection?: string } | null } }): boolean =>
+  req.user?.collection === 'users'
+
+/** Published content is world-readable; writing it is editors only. */
 export const publicRead: CollectionConfig['access'] = {
   read: () => true,
+  create: isEditor,
+  update: isEditor,
+  delete: isEditor,
 }

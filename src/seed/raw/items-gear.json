@@ -1,0 +1,588 @@
+{
+  "collection": "items",
+  "records": [
+    {
+      "title": "Durandal",
+      "slug": "durandal",
+      "category": "weapon",
+      "rarity": "legendary",
+      "regionSlug": "briar-sloughs",
+      "howToGet": "Completes the side quest The Cursed Chasm. Read the Special Orders on the wrecked cart by the collapsed bridge, climb down the east wall of the gorge, clear the wolves and the Echo waiting at the bottom, then search the smashed wagon beneath the bridge.",
+      "stats": [
+        { "label": "Time Segments to loot", "value": "2" }
+      ],
+      "summary": "A legendary longsword lost with a knyaz's treasure convoy, and the earliest strong weapon most players can realistically reach.",
+      "bodyParagraphs": [
+        "Durandal is the blade most guides point new players toward, because it needs no long questline and no crafting chain. It lies where knyaz Skender's treasure convoy went off a bridge decades earlier, and the wreck is still scattered down the gorge.",
+        "Guides describe the approach as a fast-travel hop to the Coward's Path shrine followed by a walk uphill to the northwest and then south, until the broken bridge comes into view. Looting the sword is reported to cost two Time Segments and closes the quest out.",
+        "Because blacksmiths can upgrade legendary gear up to Coen's current level, several writers argue Durandal stays viable long after the early game rather than being replaced outright.",
+        { "ul": [
+          "Quest: The Cursed Chasm",
+          "Landmark: the collapsed bridge below Greifberg Castle",
+          "Nearest fast travel named by guides: the Coward's Path shrine"
+        ] }
+      ],
+      "note": "Sources place the chasm slightly differently. Some put it in the Briar Sloughs, below Greifberg Castle; another describes it as west of the Briar Sloughs; a third places the broken bridge southwest of Laslea. The quest and the loot itself are consistent across all of them.",
+      "confidence": "medium",
+      "sources": [
+        { "title": "Durandal Sword Location — Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618607" },
+        { "title": "The Cursed Chasm — How to Find Durandal (Gamer Guides)", "url": "https://www.gamerguides.com/the-blood-of-dawnwalker/guide/walkthrough/side-quests/the-cursed-chasm-how-to-find-durandal" },
+        { "title": "Durandal Legendary Longsword Location (Game Rant)", "url": "https://gamerant.com/the-blood-of-dawnwalker-the-cursed-chasm-quest-durandal-legendary-sword/" },
+        { "title": "Where To Find Your First Legendary Sword (Insider Gaming)", "url": "https://insider-gaming.com/find-first-legendary-sword-blood-of-dawnwalker/" },
+        { "title": "Blood of Dawnwalker Durandal Location and Route (ApolloTrail)", "url": "https://apollotrail.com/blog/blood-of-dawnwalker-durandal-location" },
+        { "title": "Best Early Game Swords (Method.gg)", "url": "https://www.method.gg/the-blood-of-dawnwalker/the-blood-of-dawnwalker-best-early-game-swords-get-your-first-legendary-sword" }
+      ]
+    },
+    {
+      "title": "Gladius",
+      "slug": "gladius",
+      "category": "weapon",
+      "rarity": "legendary",
+      "howToGet": "Hidden deep inside the Beast of Balaur's lair. Kill the miniboss, then use Shadowstep or Planeshift to climb the wall to an upper ledge, where the sword sits in a chest.",
+      "summary": "A legendary shortsword once carried by Brencis, locked behind a climb that only Coen's vampiric form can make.",
+      "bodyParagraphs": [
+        "Guides tie the Gladius to Brencis himself, and it is consistently described as brutal against human opponents — the pick for a night build that would rather swing a blade than use claws.",
+        "The catch is access. The ledge holding the chest can only be reached with the vampiric traversal abilities, so the route up simply does not exist while Coen is human. In practice that means coming to Mount Balaur at night.",
+        "Several writers warn against leaving immediately after grabbing the sword, because the same area also holds a Phial of Brencis' Blood, a legendary consumable that teaches the Piercing Shriek ability."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Gladius Location — Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618850" },
+        { "title": "The Beast of Balaur Walkthrough (Method.gg)", "url": "https://www.method.gg/the-blood-of-dawnwalker/the-blood-of-dawnwalker-the-beast-of-balaur-walkthrough-brencis-blood-gladius-location" },
+        { "title": "How to Get the Gladius Legendary Shortsword (allthings.how)", "url": "https://allthings.how/how-to-get-the-gladius-legendary-shortsword-in-the-blood-of-dawnwalker/" },
+        { "title": "Best Gear In Blood Of Dawnwalker (GameSpot)", "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-legendary-weapons-armors-gear/" },
+        { "title": "How to Get the Gladius and Brencis's Blood Early (allthings.how)", "url": "https://allthings.how/blood-of-dawnwalker-how-to-get-the-gladius-and-brencis-s-blood-early/" }
+      ]
+    },
+    {
+      "title": "The Vrakhir",
+      "slug": "the-vrakhir",
+      "category": "weapon",
+      "rarity": "legendary",
+      "howToGet": "Picked up in the tunnels during The Night of Horrors — at the intersection, interact with the body twice to take the sword. If it is not there, it is reported to drop instead from Isbrand's Echo during Our Rotten Roots.",
+      "summary": "A legendary blade found underground during The Night of Horrors, bound up with Lacra and Isbrand's thread of the story.",
+      "bodyParagraphs": [
+        "The Vrakhir sits considerably later in the game than the early free legendaries. Guides tie it to the Lacra and Isbrand material rather than to a standalone treasure hunt.",
+        "Its pickup is easy to walk past: it is on a corpse at a tunnel intersection, and takes a second interaction to actually collect.",
+        "Writers who missed it on the first pass report a fallback — the weapon turning up as loot from Isbrand's Echo during Our Rotten Roots."
+      ],
+      "note": "Descriptions of the item and its pickup vary. One roundup calls it a Legendary Greatsword; a walkthrough simply calls it a Legendary Sword taken from a body at an intersection, while another describes a chest. The two acquisition points (The Night of Horrors, and Isbrand's Echo in Our Rotten Roots) are also reported as alternatives rather than a single fixed location.",
+      "confidence": "low",
+      "sources": [
+        { "title": "The Vrakhir Location and Effects — Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618604" },
+        { "title": "The Vrakhir — Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/The_Vrakhir" },
+        { "title": "The Night of Horrors Walkthrough (PowerPyx)", "url": "https://www.powerpyx.com/blood-of-dawnwalker-the-night-of-horrors-walkthrough/" },
+        { "title": "All Legendary Weapons and Armor Locations (KeenGamer)", "url": "https://www.keengamer.com/articles/guides/the-blood-of-dawnwalker-all-legendary-weapons-and-armor-locations/" }
+      ]
+    },
+    {
+      "title": "Erkas's Sword",
+      "slug": "erkass-sword",
+      "category": "weapon",
+      "rarity": "legendary",
+      "howToGet": "Awarded for finishing the Champion of Old quest and putting down Erkas the Repenter.",
+      "stats": [
+        { "label": "Damage Against Supernatural Enemies", "value": "+8% (base)" },
+        { "label": "Weapon Critical Hit Chance", "value": "+5% (base)" },
+        { "label": "Weapon Critical Hit Damage", "value": "+7.5% (base)" },
+        { "label": "Maximum Human Health", "value": "+15% (base)" }
+      ],
+      "summary": "A legendary longsword handed over at the end of Champion of Old, tuned for fighting things that are not human.",
+      "bodyParagraphs": [
+        "Erkas's Sword is written up as an ancient vrakhir-slayer's weapon, and its bonus profile matches that billing: extra damage into supernatural enemies stacked on top of straightforward critical hit improvements.",
+        "The maximum human health line is unusual on a weapon, and makes it a reasonable daytime pick rather than a purely anti-monster tool.",
+        "Reaching it means running the Champion of Old quest to its end, which finishes with a fight against Erkas the Repenter."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Erkas's Sword Location — Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618898" },
+        { "title": "How to get Erkas's Sword & stats (Dexerto Wiki)", "url": "https://www.dexerto.com/wikis/the-blood-of-dawnwalker/weapons/erkass-sword/" },
+        { "title": "Erkas's Sword — Gamer Guides database", "url": "https://www.gamerguides.com/the-blood-of-dawnwalker/database/weaponry/longsword/erkass-sword" },
+        { "title": "The Champion of Old Quest (Game Rant)", "url": "https://gamerant.com/blood-of-dawnwalker-champion-of-old-find-place-from-fresco-erkas-sword/" }
+      ]
+    },
+    {
+      "title": "The Hand of Fate",
+      "slug": "the-hand-of-fate",
+      "category": "weapon",
+      "rarity": "legendary",
+      "regionSlug": "svartrau-city",
+      "howToGet": "Take the Stone Key from the cathedral treasure before starting A Hero's End, then in the temple below Svartrau City find the pit with the green glow, clear out the kobolds and open the chest.",
+      "stats": [
+        { "label": "Minimum Damage", "value": "41" },
+        { "label": "Maximum Damage", "value": "59" },
+        { "label": "Weight", "value": "1.1" },
+        { "label": "Passive Activation Charge Restoration", "value": "+15%" },
+        { "label": "Activation Charge Restoration from Actions", "value": "+8%" },
+        { "label": "Spell Cooldown Multiplier", "value": "-5%" },
+        { "label": "Witchcraft Ability Damage", "value": "+8%" }
+      ],
+      "summary": "A legendary shortsword buried under Svartrau City that pushes Activation Charge and Witchcraft damage rather than raw swordplay.",
+      "bodyParagraphs": [
+        "The Hand of Fate is the caster's weapon. Its bonuses feed Activation Charge back to Coen both passively and through actions, shorten spell cooldowns and lift Witchcraft ability damage, so it rewards a build that fights with magic and uses the blade to fill gaps.",
+        "The path there runs through the cathedral in the middle of Svartrau City: confess all three sins to Father Florin, then work through In the Name of the Father and A Hero's End. Grabbing the Stone Key from the cathedral treasure beforehand is the step most easily missed.",
+        "Writers building around Witchcraft commonly pair it with Ancient Hero's Armour and the Runic Enchantment chestpiece, stacking Witchcraft damage across several slots at once."
+      ],
+      "note": "Guides do not fully agree on where it comes from. A detailed walkthrough puts it in a locked chest in the underground temple beneath Svartrau City, while a gear roundup lists several recorded acquisition routes including Svartrau weapon vendors and fixed world loot.",
+      "confidence": "medium",
+      "sources": [
+        { "title": "The Hand of Fate — Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/The_Hand_of_Fate" },
+        { "title": "The Hand of Fate — Gamer Guides database", "url": "https://www.gamerguides.com/the-blood-of-dawnwalker/database/weaponry/shortsword/the-hand-of-fate" },
+        { "title": "The Hand of Fate Stats & Location (MetaBot.GG)", "url": "https://metabot.gg/en/dawnwalker/items/the-hand-of-fate" },
+        { "title": "Get the Hand of Fate and Ancient Hero's Armour (GamerFuzion)", "url": "https://www.gamerfuzion.com/blood-of-dawnwalker-hand-of-fate-ancient-heros-armour/" },
+        { "title": "Best Gear In Blood Of Dawnwalker (GameSpot)", "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-legendary-weapons-armors-gear/" }
+      ]
+    },
+    {
+      "title": "Imbued Sword of St. Mihai",
+      "slug": "imbued-sword-of-st-mihai",
+      "category": "weapon",
+      "rarity": "legendary",
+      "howToGet": "Recover the broken sword in A Monk and a Saint, then collect all three Sword Shards for Forge It Anew, take them to the Uriashi blacksmith in the northwest, and finish the imbuing ritual at the shrine he sends you to.",
+      "stats": [
+        { "label": "Swordmastery Ability Cooldown", "value": "-5% (base)" },
+        { "label": "Weapon Critical Hit Chance", "value": "+5% (base)" },
+        { "label": "Weapon Critical Hit Damage", "value": "+7.5% (base)" },
+        { "label": "Damage Against Supernatural Enemies", "value": "+8% (base)" },
+        { "label": "Weapon Art", "value": "Daywalker Slash Enhanced" },
+        { "label": "Weapon Art cooldown", "value": "15s" }
+      ],
+      "summary": "The greatsword most guides call the best weapon in the game, assembled from three shards and finished with a ritual.",
+      "bodyParagraphs": [
+        "This is the longest gear project in the game and, by most accounts, the one worth finishing. It is a greatsword built to hurt vampires and monsters, with the crit numbers to stay relevant against everything else.",
+        { "h": "The shard hunt" },
+        "The chain starts with Anca's questline, which must be pushed past the Font of Life quest. Three Sword Shards are then scattered across the map, each tied to a kobold den. Guides name the Do Not Disturb sub-quest, just north of the Maragir Wealds map marker, as the source of the first shard.",
+        "With all three in hand, the legendary Uriashi blacksmith in the northwest opens a final quest pointing to a shrine further northwest. A boss waits there; beating it and using the altar imbues the blade.",
+        { "h": "In combat" },
+        "Its Weapon Art, Daywalker Slash Enhanced, runs on a fifteen-second cooldown and is described as behaving differently depending on whether Coen swings it by day or by night. One account of it describes wide spinning strikes that knock nearby enemies down.",
+        "The listed bonuses are base-level figures. One wiki reports they climb to roughly three or four times those values by level 50 as the weapon is upgraded."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "How to get Imbued Sword of St. Mihai & stats (Dexerto Wiki)", "url": "https://www.dexerto.com/wikis/the-blood-of-dawnwalker/weapons/imbued-sword-of-st-mihai/" },
+        { "title": "The best Sword in The Blood of Dawnwalker (GamesRadar+)", "url": "https://www.gamesradar.com/games/action-rpg/blood-of-dawnwalker-weapons/" },
+        { "title": "Imbued Sword of St. Mihai — Fextralife Wiki", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Imbued_Sword_of_St._Mihai" },
+        { "title": "St. Mihai's silver sword, Forge It Anew quest guide (VGC)", "url": "https://www.videogameschronicle.com/guide/blood-of-dawnwalker-st-mihais-silver-sword-forge-it-anew-quest-guide/" },
+        { "title": "All Sword Shard Locations — Forge It Anew (GameSpot)", "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-forge-it-anew-sword-shard/" },
+        { "title": "All Sword Shard locations, Forge It Anew (GamesRadar+)", "url": "https://www.gamesradar.com/games/action-rpg/blood-of-dawnwalker-sword-shards-st-mihai/" }
+      ]
+    },
+    {
+      "title": "Undead Warrior's Sword",
+      "slug": "undead-warriors-sword",
+      "category": "weapon",
+      "howToGet": "Reported as a boss drop in the cave crypt out in the bogs that the Deep Down quest leads to.",
+      "summary": "A sword described as loot from the boss at the end of the Deep Down quest's bog crypt.",
+      "bodyParagraphs": [
+        "Only one guide in the material gathered here mentions this weapon, and it does so in passing while listing other places swords turn up. It describes Deep Down sending the player into the bogs, down into a cave or crypt, and looting the sword from a boss encounter there."
+      ],
+      "note": "Weakly sourced. A single weapons roundup referred to looting 'the Undead Warrior's sword', which may be a description of the enemy rather than the item's actual in-game name. No second source in the results confirmed the name, its rarity, its type or its stats, so all of those are left blank here.",
+      "confidence": "low",
+      "sources": [
+        { "title": "The best Sword in The Blood of Dawnwalker (GamesRadar+)", "url": "https://www.gamesradar.com/games/action-rpg/blood-of-dawnwalker-weapons/" }
+      ]
+    },
+    {
+      "title": "Ancient Hero's Armour",
+      "slug": "ancient-heros-armour",
+      "category": "armour",
+      "rarity": "legendary",
+      "regionSlug": "svartrau-city",
+      "howToGet": "Beat Rigoz, the Betrayed Hero at the close of A Hero's End in the ancient temple below Svartrau City, then loot the chest at the end of his room.",
+      "summary": "A legendary chestpiece taken from the temple under Svartrau City, favoured by daytime and Witchcraft builds.",
+      "bodyParagraphs": [
+        "The Ancient Hero's Armour is repeatedly named as the chest slot of choice for a day build. Guides credit it with strong action recharge, extra human health and a lift to Witchcraft abilities.",
+        "It is reached through Father Florin's thread of the story: A Hero's End takes Coen into the ancient temple beneath Svartrau City, and the chestpiece waits in a chest behind the boss.",
+        "It anchors a wider Ancient Hero's set alongside the Vambraces and the Greaves, and several writers combine it with Runic Enchantment, Ancient Greaves and Ancient Footwear to pile Witchcraft damage into four slots at once."
+      ],
+      "note": "The boss's name is spelled Rigoz in most guides and Rigos in one social-media roundup.",
+      "confidence": "high",
+      "sources": [
+        { "title": "Ancient Hero's Armour Location — Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/619051" },
+        { "title": "Ancient Hero's Armour — Gamer Guides database", "url": "https://www.gamerguides.com/the-blood-of-dawnwalker/database/armour/chestpiece/ancient-heros-armour" },
+        { "title": "Ancient Hero's Armour — Fextralife Wiki", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Ancient_Hero's_Armour" },
+        { "title": "How to Get Erkas's Sword and Ancient Hero's Armour (allthings.how)", "url": "https://allthings.how/the-blood-of-dawnwalker-how-to-get-erkas-s-sword-and-ancient-hero-s-armour/" },
+        { "title": "All Legendary Armor Locations (eGamersWorld)", "url": "https://egamersworld.com/blog/how-to-get-every-legendary-armor-set-in-the-blood--U7e1wVkT7" }
+      ]
+    },
+    {
+      "title": "Ancient Hero's Vambraces",
+      "slug": "ancient-heros-vambraces",
+      "category": "armour",
+      "rarity": "legendary",
+      "howToGet": "Given as a reward from one of Xanthe's court activities.",
+      "summary": "The bracer slot of the Ancient Hero's set, earned through Xanthe's court work.",
+      "bodyParagraphs": [
+        "The Vambraces complete the Ancient Hero's set alongside the Armour and the Greaves, and unlike those two they come from court business rather than from a dungeon.",
+        "Guides agree the source is one of Xanthe's activities, but not which one, so plan on working through her court content rather than targeting a single quest."
+      ],
+      "note": "Sources name different quests. PowerPyx and a social-media location roundup both point to the Xanthe court activity 'Xanthe's Transports: When Two Dogs…', while another guide places the Vambraces in a Xanthe side quest called 'Path of Glory'.",
+      "confidence": "low",
+      "sources": [
+        { "title": "All Legendary Equipment Locations (PowerPyx)", "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-legendary-equipment-locations/" },
+        { "title": "All Legendary Equipment and Their Locations — Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618231" },
+        { "title": "All Legendary Armor Locations (eGamersWorld)", "url": "https://egamersworld.com/blog/how-to-get-every-legendary-armor-set-in-the-blood--U7e1wVkT7" }
+      ]
+    },
+    {
+      "title": "Ancient Greaves",
+      "slug": "ancient-greaves",
+      "category": "armour",
+      "rarity": "legendary",
+      "howToGet": "Comes at the end of Anca's questline. When the game asks what to do with the Font of Life, choosing to destroy it yields the greaves.",
+      "summary": "Legendary trousers awarded for destroying the Font of Life at the end of Anca's questline.",
+      "bodyParagraphs": [
+        "These are a choice-gated reward rather than a chest find: the greaves only appear if the Font of Life is destroyed when Anca's questline puts that decision to the player.",
+        "They sit in the Ancient family of gear that several guides stack together for a Witchcraft-heavy loadout, next to Ancient Hero's Armour, Runic Enchantment and Ancient Footwear."
+      ],
+      "note": "Guides name the questline differently — one calls it 'Stronger Than Achilles', another simply refers to the end of the Font of Life questline. Roundups also switch between 'Ancient Greaves' and calling them the greaves of the Ancient Hero's set.",
+      "confidence": "medium",
+      "sources": [
+        { "title": "All Legendary Armor Locations (eGamersWorld)", "url": "https://egamersworld.com/blog/how-to-get-every-legendary-armor-set-in-the-blood--U7e1wVkT7" },
+        { "title": "Ancient Hero's Armour Location — Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/619051" },
+        { "title": "The Blood of Dawnwalker — Best Armor Ranked (KeenGamer)", "url": "https://www.keengamer.com/articles/guides/the-blood-of-dawnwalker-best-armor-ranked/" }
+      ]
+    },
+    {
+      "title": "Ancient Footwear",
+      "slug": "ancient-footwear",
+      "category": "armour",
+      "rarity": "legendary",
+      "howToGet": "Inside the Ancient Ruins visited during the Xanthe court activity 'Xanthe's Excavations: Bloodied Dagger'. In the boss room, use Focus Mode to spot the Ritual Dagger on the left, pick it up, then Compel Soul on the body in front of the chest to unlock it.",
+      "summary": "Legendary boots locked in a boss-room chest that only opens after a ritual dagger and a compelled soul.",
+      "bodyParagraphs": [
+        "Ancient Footwear is one of the more involved pickups in the game. The chest holding it is locked, and the key is not an object but a small puzzle: find the Ritual Dagger with Focus Mode, take it, then use Compel Soul on the corpse laid out in front of the chest.",
+        "The whole sequence happens inside the Ancient Ruins that the Xanthe court activity 'Xanthe's Excavations: Bloodied Dagger' sends Coen into, so it cannot be picked up outside that content.",
+        "It rounds out the Ancient gear grouping that Witchcraft builds lean on."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "All Legendary Equipment Locations (PowerPyx)", "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-legendary-equipment-locations/" },
+        { "title": "All Legendary Equipment and Their Locations — Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618231" },
+        { "title": "All Legendary Armor Locations (eGamersWorld)", "url": "https://egamersworld.com/blog/how-to-get-every-legendary-armor-set-in-the-blood--U7e1wVkT7" }
+      ]
+    },
+    {
+      "title": "Isbrand's Plate",
+      "slug": "isbrands-plate",
+      "category": "armour",
+      "rarity": "legendary",
+      "regionSlug": "rockfalls",
+      "howToGet": "During Lacra's quest Hive and Seek, in the room where Isbrand is found. Turn right from the arena and open the chest there — it must be looted before the story moves Coen and Lacra out of the caves.",
+      "stats": [
+        { "label": "Maximum Vampiric Health", "value": "+21%" }
+      ],
+      "summary": "A legendary chestpiece that pushes vampiric health and claw critical hits, and is easy to lose forever by walking out too early.",
+      "bodyParagraphs": [
+        "Isbrand's Plate is the specialist chestpiece for a claw-based night build. Beyond the vampiric health increase, guides credit it with Blood Drinking Restoration and with raising both the frequency and the damage of claw critical hits.",
+        "It is also a notorious missable. The scene with Isbrand ends by pulling Coen and Lacra out of the caves, so the chest must be opened before that happens.",
+        "The route runs through the northwest side of Rockfalls, where beating Chonk opens Isbrand's area up for free movement.",
+        "It pairs with Isbrand's Greaves for players committing to claws rather than a weapon."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Isbrand's Plate Location — Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618609" },
+        { "title": "Isbrand's Plate — Gamer Guides database", "url": "https://www.gamerguides.com/the-blood-of-dawnwalker/database/armour/chestpiece/isbrands-plate" },
+        { "title": "How to get Isbrand's Plate & stats (Dexerto Wiki)", "url": "https://www.dexerto.com/wikis/the-blood-of-dawnwalker/gear/isbrands-plate/" },
+        { "title": "Find Isbrand's Plate — All Quests in Order (allthings.how)", "url": "https://allthings.how/blood-of-dawnwalker-find-isbrand-s-plate-all-quests-in-order/" },
+        { "title": "All Legendary Equipment Locations (PowerPyx)", "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-legendary-equipment-locations/" }
+      ]
+    },
+    {
+      "title": "Isbrand's Greaves",
+      "slug": "isbrands-greaves",
+      "category": "armour",
+      "rarity": "legendary",
+      "howToGet": "In a chest at the Kobold Nest. The yellow chest is tucked against the rock beside the cave mouth.",
+      "summary": "Legendary medium trousers found in a roadside chest at the Kobold Nest, built around claw damage.",
+      "bodyParagraphs": [
+        "Unlike Isbrand's Plate, the greaves are not locked behind a story beat — they sit in a yellow chest pressed against the rock next to the Kobold Nest cave, which makes them one of the earliest legendary pieces a player can simply walk up to.",
+        "Guides list them under Legendary Medium Trousers, and describe their bonuses as raising claw damage while cutting ability cooldowns.",
+        "Together with Isbrand's Plate they form the core of the claw-focused night loadout that guides recommend for players leaning on Voracious Bite for healing."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Isbrand's Greaves — Fextralife Wiki", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Isbrand's_Greaves" },
+        { "title": "Isbrand's Greaves Legendary Armor Location (allthings.how)", "url": "https://allthings.how/the-blood-of-dawnwalker-isbrand-s-greaves-legendary-armor-location/" },
+        { "title": "The Best Armor — All Legendary Armor Pieces (Method.gg)", "url": "https://www.method.gg/the-blood-of-dawnwalker/the-best-armor-in-the-blood-of-dawnwalker-all-legendary-armor-pieces" },
+        { "title": "All Legendary Equipment Locations (PowerPyx)", "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-legendary-equipment-locations/" }
+      ]
+    },
+    {
+      "title": "Coat of Darkened Scales",
+      "slug": "coat-of-darkened-scales",
+      "category": "armour",
+      "rarity": "legendary",
+      "howToGet": "During Sanzhana's quest Tiny Dancer, in a chest at the far end of the upper floor of the house. A second copy is reported from the Bandits' Treasure Map for Rockfalls — Split Rock.",
+      "summary": "A legendary chestpiece tucked upstairs during Tiny Dancer, with a second copy behind a bandit treasure map.",
+      "bodyParagraphs": [
+        "The coat is easy to miss because the Tiny Dancer quest gives no reason to climb to the upper floor of the house. The chest sits at the end of the room up there.",
+        "It is one of the few legendary pieces guides say can be obtained twice — the Bandits' Treasure Map pointing at Split Rock in Rockfalls is listed as another source of the same item."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Coat of Darkened Scales Location — Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618802" },
+        { "title": "Coat of Darkened Scales — Fextralife Wiki", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Coat_of_Darkened_Scales" },
+        { "title": "All Legendary Equipment Locations (PowerPyx)", "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-legendary-equipment-locations/" },
+        { "title": "Coat of Darkened Scales Armor Location (Game Rant)", "url": "https://gamerant.com/blood-of-dawnwalker-coat-of-darkened-scales-legendary-armor-location/" },
+        { "title": "Tiny Dancer Walkthrough (PowerPyx)", "url": "https://www.powerpyx.com/blood-of-dawnwalker-tiny-dancer-walkthrough/" }
+      ]
+    },
+    {
+      "title": "Runic Enchantment",
+      "slug": "runic-enchantment",
+      "category": "armour",
+      "rarity": "legendary",
+      "howToGet": "A guaranteed step in Anca's quest Where Old Devils Lie. Push through the ruins to the trial door, where Anca paints the runes onto Coen.",
+      "stats": [
+        { "label": "Magical Damage Reduction", "value": "+4%" },
+        { "label": "Damage Against Supernatural Enemies", "value": "+6%" },
+        { "label": "Witchcraft Ability Damage", "value": "+6%" },
+        { "label": "Lifesteal from Attacks", "value": "+5%" }
+      ],
+      "summary": "Not armour at all but runes painted on Coen's skin, occupying the chest slot in exchange for offence and lifesteal.",
+      "bodyParagraphs": [
+        "Runic Enchantment is the oddity of the chest slot. There is no plate and no leather — it represents the markings Anca paints directly onto Coen during her questline, and it fills the chestpiece slot regardless.",
+        "The trade is explicit. It gives up the physical protection a real chestpiece would provide, and pays that back in Witchcraft damage, anti-supernatural damage and a lifesteal line that no other chest option in the material here offers.",
+        "That trade is why ranking articles put it at the bottom overall while still recommending it to players confident enough about dodging to not need the armour rating.",
+        "Because it is a scripted part of Where Old Devils Lie rather than a chest, it cannot be missed if the quest is finished."
+      ],
+      "confidence": "medium",
+      "sources": [
+        { "title": "Runic Enchantment Location — Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618803" },
+        { "title": "Runic Enchantment — Gamer Guides database", "url": "https://www.gamerguides.com/the-blood-of-dawnwalker/database/armour/chestpiece/runic-enchantment" },
+        { "title": "The Blood of Dawnwalker — Best Armor Ranked (KeenGamer)", "url": "https://www.keengamer.com/articles/guides/the-blood-of-dawnwalker-best-armor-ranked/" }
+      ]
+    },
+    {
+      "title": "Bakir's Armour",
+      "slug": "bakirs-armour",
+      "category": "armour",
+      "rarity": "legendary",
+      "howToGet": "Loot it from Boyar Bakir's corpse. Guides say he can be killed either during the Lunar Tournament in The Lunar Game or during the assault on Greifberg, once Infamy is high enough to bring the fight on.",
+      "stats": [
+        { "label": "Melee Damage", "value": "+6% (base)" },
+        { "label": "Parry Stamina Restore", "value": "+12% (base)" },
+        { "label": "Dodge Stamina Cost", "value": "-12% (base)" },
+        { "label": "Omniblock Stamina Cost", "value": "-12% (base)" },
+        { "label": "Armour (level 50)", "value": "523" },
+        { "label": "Melee Damage (level 50)", "value": "24.0%" },
+        { "label": "Parry Stamina Restore (level 50)", "value": "36.0%" },
+        { "label": "Dodge Stamina Cost (level 50)", "value": "-36.0%" },
+        { "label": "Omniblock Stamina Cost (level 50)", "value": "-36.0%" }
+      ],
+      "summary": "A legendary medium chestpiece stripped off a dead boyar, built entirely around keeping stamina in the green.",
+      "bodyParagraphs": [
+        "Every line on Bakir's Armour points the same direction: defensive actions cost less, and landing them gives stamina back. That makes it the chestpiece for a block-dodge-counter rhythm rather than for raw aggression.",
+        "Bakir is one of three boyars serving Brencis, so getting the armour means picking a fight with him. Guides note that killing him also makes the endgame confrontation easier.",
+        "The listed values are the base ones. A wiki tracking the scaling reports they grow to roughly three or four times those figures by level 50, which is where the 523 armour rating comes from."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Bakir's Armour Location — Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618800" },
+        { "title": "How to get Bakir's Armour & stats (Dexerto Wiki)", "url": "https://www.dexerto.com/wikis/the-blood-of-dawnwalker/gear/bakirs-armour/" },
+        { "title": "The Blood of Dawnwalker — Best Armor Ranked (KeenGamer)", "url": "https://www.keengamer.com/articles/guides/the-blood-of-dawnwalker-best-armor-ranked/" },
+        { "title": "All Legendary Armor Locations (eGamersWorld)", "url": "https://egamersworld.com/blog/how-to-get-every-legendary-armor-set-in-the-blood--U7e1wVkT7" }
+      ]
+    },
+    {
+      "title": "Ambrus's Cuirass",
+      "slug": "ambrus-cuirass",
+      "category": "armour",
+      "rarity": "legendary",
+      "howToGet": "Complete enough infamy work in Ambrus's domain — guides cite around ten quests — to anger him and unlock his infamy quest The Gilded Gauntlet. Kill him there and loot the body.",
+      "summary": "A legendary heavy chestpiece taken off the vampire boyar Ambrus, good early and outgrown quickly.",
+      "bodyParagraphs": [
+        "Ambrus's Cuirass is the reward for picking a fight with one of Brencis's boyars in his own territory. The trigger is infamy: sabotage enough of Ambrus's operations and The Gilded Gauntlet opens as his personal infamy quest.",
+        "Its bonuses are vampiric in flavour — shorter vampiric ability cooldowns, cheaper attacks in stamina, and Activation Charge restored both from attacks and from perfect blocks.",
+        "The caveat guides raise is the item's level. One ranking describes it as a level 12 heavy breastplate, which means it falls behind other pieces sooner and is better treated as a bridge into the mid-game than as a permanent chest slot."
+      ],
+      "confidence": "medium",
+      "sources": [
+        { "title": "Ambrus's Cuirass — Fextralife Wiki", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Ambrus%27s_Cuirass" },
+        { "title": "Best Early Legendary Armor — Ambrus's Cuirass and Isbrand's Greaves (allthings.how)", "url": "https://allthings.how/best-early-legendary-armor-in-the-blood-of-dawnwalker-ambrus-s-cuirass-and-isbrand-s-greaves/" },
+        { "title": "All Legendary Equipment and Their Locations — Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618231" },
+        { "title": "The Blood of Dawnwalker — Best Armor Ranked (KeenGamer)", "url": "https://www.keengamer.com/articles/guides/the-blood-of-dawnwalker-best-armor-ranked/" }
+      ]
+    },
+    {
+      "title": "Vrakhiric Bracers",
+      "slug": "vrakhiric-bracers",
+      "category": "armour",
+      "rarity": "legendary",
+      "howToGet": "In a chest in Bakir's treasury inside Lunar Manor, opened up after beating Bakir during the main quest The Lunar Game.",
+      "summary": "Legendary bracers sitting in the boyar's own treasury, collected on the way out of The Lunar Game.",
+      "bodyParagraphs": [
+        "The bracers are part of the spoils of The Lunar Game. Once Bakir goes down, the treasury room inside Lunar Manor becomes accessible and the chest there holds them.",
+        "PowerPyx's collectible guide gives the spot as map coordinates X 14637, Y 18362 for players hunting it on the world map."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "All Legendary Equipment Locations (PowerPyx)", "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-legendary-equipment-locations/" },
+        { "title": "Vrakhiric Bracers — Gamer Guides database", "url": "https://www.gamerguides.com/the-blood-of-dawnwalker/database/armour/bracers/vrakhiric-bracers" },
+        { "title": "Vrakhiric Bracers — Fextralife Wiki", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Vrakhiric_Bracers" },
+        { "title": "All Legendary Armor Locations (eGamersWorld)", "url": "https://egamersworld.com/blog/how-to-get-every-legendary-armor-set-in-the-blood--U7e1wVkT7" }
+      ]
+    },
+    {
+      "title": "Wolven Bracers",
+      "slug": "wolven-bracers",
+      "category": "armour",
+      "rarity": "legendary",
+      "howToGet": "Follow the blood spatters along the road near the Woodcutters Camp shrine. The trail ends at a small clearing; clear out the animals there.",
+      "summary": "Legendary bracers at the end of a blood trail off the road near the Woodcutters Camp shrine.",
+      "bodyParagraphs": [
+        "These are a pure exploration find with no quest attached. The prompt is a set of blood spatters on the road near the Woodcutters Camp shrine; investigating them starts a short trail that ends in a clearing.",
+        "Wild animals are waiting at the end of it, and the bracers are the payoff for dealing with them."
+      ],
+      "confidence": "medium",
+      "sources": [
+        { "title": "Wolven Bracers Location — Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618807" },
+        { "title": "All Legendary Weapons and Armor Locations (KeenGamer)", "url": "https://www.keengamer.com/articles/guides/the-blood-of-dawnwalker-all-legendary-weapons-and-armor-locations/" }
+      ]
+    },
+    {
+      "title": "Vrakhir's Treads",
+      "slug": "vrakhirs-treads",
+      "category": "armour",
+      "rarity": "legendary",
+      "howToGet": "Found in a chest in a room that only opens up later in Xanthe's storyline.",
+      "summary": "Legendary boots behind a door that stays shut until Xanthe's thread of the story is resolved.",
+      "bodyParagraphs": [
+        "Both accounts of these boots agree on the shape of the pickup — a chest in a room that is locked until a specific quest is finished — but not on which room or which quest.",
+        "Either way they are late-game boots, gated behind story progress rather than exploration."
+      ],
+      "note": "Sources disagree on the location. One location roundup says the chest is in a locked room that opens after The Cycle of Love quest; another guide places the boots behind the painted door in Chariklea's room, accessible once Xanthe has been dealt with. It is not clear from these results whether these describe the same room.",
+      "confidence": "low",
+      "sources": [
+        { "title": "Vrakhir's Treads — Fextralife Wiki", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Vrakhir's_Treads" },
+        { "title": "Vrakhir's Treads — Gamer Guides database", "url": "https://www.gamerguides.com/the-blood-of-dawnwalker/database/armour/boots/vrakhirs-treads" },
+        { "title": "How to get Vrakhir's Treads & stats (Dexerto Wiki)", "url": "https://www.dexerto.com/wikis/the-blood-of-dawnwalker/gear/vrakhirs-treads/" }
+      ]
+    },
+    {
+      "title": "Mercenary's Boots",
+      "slug": "mercenarys-boots",
+      "category": "armour",
+      "rarity": "legendary",
+      "howToGet": "Bought, not found — the armourer at the Rebel HQ in Silberkreis stocks them.",
+      "summary": "Legendary boots sold over the counter by the rebel armourer in Silberkreis.",
+      "bodyParagraphs": [
+        "Most legendary gear in the game is hidden or fought for. These are simply on sale, which makes them one of the few pieces a player can guarantee without tracking down a quest or a chest.",
+        "The vendor is the armourer at the Rebel HQ in Silberkreis."
+      ],
+      "confidence": "medium",
+      "sources": [
+        { "title": "All Legendary Armor Locations (eGamersWorld)", "url": "https://egamersworld.com/blog/how-to-get-every-legendary-armor-set-in-the-blood--U7e1wVkT7" },
+        { "title": "All Legendary Equipment and Their Locations — Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618231" }
+      ]
+    },
+    {
+      "title": "Mercenary's Greaves",
+      "slug": "mercenarys-greaves",
+      "category": "armour",
+      "rarity": "legendary",
+      "regionSlug": "svartrau-city",
+      "howToGet": "Purchased from the Armourer in the Altenmarkt district of Svartrau City.",
+      "summary": "Legendary trousers on a vendor's shelf in Altenmarkt, in Svartrau City.",
+      "bodyParagraphs": [
+        "The counterpart to Mercenary's Boots in the trousers slot, and likewise a straight purchase rather than a reward.",
+        "The seller is the Armourer in the Altenmarkt area of Svartrau City, a different vendor from the rebel armourer who stocks the boots."
+      ],
+      "confidence": "medium",
+      "sources": [
+        { "title": "All Legendary Armor Locations (eGamersWorld)", "url": "https://egamersworld.com/blog/how-to-get-every-legendary-armor-set-in-the-blood--U7e1wVkT7" },
+        { "title": "All Legendary Equipment and Their Locations — Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618231" }
+      ]
+    },
+    {
+      "title": "Enhanced Armour of the Arbiter",
+      "slug": "enhanced-armour-of-the-arbiter",
+      "category": "armour",
+      "rarity": "legendary",
+      "howToGet": "Handed over with the rest of the Arbiter set when A Bulwark Against Darkness is completed.",
+      "summary": "The heavy chestpiece of the Arbiter set, forged rather than looted, and strongest as part of the full four-piece.",
+      "bodyParagraphs": [
+        "The Arbiter chestpiece carries an unusually broad offensive spread: weapon damage, claw damage, Witchcraft ability damage and Activation Charge restored from actions. That breadth is why guides recommend it to players who do not want to commit to a single day or night identity.",
+        { "h": "Getting the set" },
+        "A Bulwark Against Darkness opens at infamy level four — the Notorious tier — reached by sabotaging Ambrus, Bakir and Xanthe until Brencis takes notice. A smuggler in Svartrau can also simply hand over the note that starts it.",
+        "The quest itself is a scavenger hunt for four rare crafting components scattered across Vale Sangora, followed by a forging ritual with the Uriashi Hermit blacksmith that Coen has to survive.",
+        { "ul": [
+          "Relic of a Saint",
+          "Bundle of Silk Threads",
+          "Flask of Quicksilver",
+          "Moult of a Large Lizard"
+        ] },
+        "Finishing it awards all four pieces at once and unlocks the Arbiter's Regalia trophy."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "How To Complete A Bulwark Against Darkness (GameSpot)", "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-bulwark-against-darkness-arbiter-armor/" },
+        { "title": "Craft the Arbiter Armor — A Bulwark Against Darkness (VGC)", "url": "https://www.videogameschronicle.com/guide/blood-of-dawnwalker-craft-the-arbiter-armor-a-bulwark-against-darkness-quest-guide/" },
+        { "title": "Enhanced Armour of the Arbiter — Fextralife Wiki", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Enhanced_Armour_of_the_Arbiter" },
+        { "title": "Arbiter Armor Set Guide — Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/620175" },
+        { "title": "How to complete A Bulwark Against Darkness (PC Gamer)", "url": "https://www.pcgamer.com/games/rpg/blood-of-dawnwalker-a-bulwark-against-darkness-walkthrough-arbiter-set/" }
+      ]
+    },
+    {
+      "title": "Enhanced Shin Guards of the Arbiter",
+      "slug": "enhanced-shin-guards-of-the-arbiter",
+      "category": "armour",
+      "rarity": "legendary",
+      "howToGet": "Awarded with the rest of the Arbiter set on completing A Bulwark Against Darkness.",
+      "summary": "The heavy trousers of the Arbiter set, loaded almost entirely with Activation Charge recovery.",
+      "bodyParagraphs": [
+        "Where the Arbiter chestpiece spreads itself across damage types, the shin guards specialise: Activation Charge comes back passively, from actions and from perfect blocks, and Witchcraft ability cooldowns are shortened on top.",
+        "For a build that leans on abilities rather than basic attacks, this is the piece that keeps them firing.",
+        "It cannot be obtained separately — A Bulwark Against Darkness hands over the whole four-piece set in one go."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "How To Complete A Bulwark Against Darkness (GameSpot)", "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-bulwark-against-darkness-arbiter-armor/" },
+        { "title": "The Blood of Dawnwalker — Arbiter Armor Set Location (KeenGamer)", "url": "https://www.keengamer.com/articles/guides/the-blood-of-dawnwalker-arbiter-armor-set-location/" },
+        { "title": "Arbiter Armor Set Guide — Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/620175" },
+        { "title": "How to get the Arbiter Armor (GamesRadar+)", "url": "https://www.gamesradar.com/games/action-rpg/blood-of-dawnwalker-arbiter-armor-bulwark-against-darkness/" }
+      ]
+    },
+    {
+      "title": "Enhanced Bracers of the Arbiter",
+      "slug": "enhanced-bracers-of-the-arbiter",
+      "category": "armour",
+      "rarity": "legendary",
+      "howToGet": "Awarded with the rest of the Arbiter set on completing A Bulwark Against Darkness.",
+      "summary": "The heavy bracers of the Arbiter set, the vampiric-sustain piece of the four.",
+      "bodyParagraphs": [
+        "The bracers are where the Arbiter set does its night-side work. They raise maximum vampiric health, speed up vampiric health segment regeneration, improve what Coen gets back from drinking blood, and add weapon damage on top.",
+        "That combination makes them the piece most often called out for players who spend long stretches of a night cycle in vampire form.",
+        "Like the rest of the set, they arrive only as part of the A Bulwark Against Darkness payout."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "How To Complete A Bulwark Against Darkness (GameSpot)", "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-bulwark-against-darkness-arbiter-armor/" },
+        { "title": "The Blood of Dawnwalker — Arbiter Armor Set Location (KeenGamer)", "url": "https://www.keengamer.com/articles/guides/the-blood-of-dawnwalker-arbiter-armor-set-location/" },
+        { "title": "All Legendary Equipment Locations (PowerPyx)", "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-legendary-equipment-locations/" },
+        { "title": "A Bulwark Against Darkness Guide (Method.gg)", "url": "https://www.method.gg/the-blood-of-dawnwalker/the-blood-of-dawnwalker-a-bulwark-against-darkness-guide" }
+      ]
+    },
+    {
+      "title": "Enhanced Boots of the Arbiter",
+      "slug": "enhanced-boots-of-the-arbiter",
+      "category": "armour",
+      "rarity": "legendary",
+      "howToGet": "Awarded with the rest of the Arbiter set on completing A Bulwark Against Darkness.",
+      "summary": "The heavy boots of the Arbiter set, and the piece that carries its human-side survivability.",
+      "bodyParagraphs": [
+        "The boots handle daytime durability where the bracers handle the night: maximum human health, human health restoration, maximum stamina and magical damage reduction.",
+        "That split is what lets the full Arbiter set cover both halves of the day-night cycle without the player swapping gear.",
+        "They are part of the single reward from A Bulwark Against Darkness and are listed by PowerPyx among the legendary boots in the game."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "How To Complete A Bulwark Against Darkness (GameSpot)", "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-bulwark-against-darkness-arbiter-armor/" },
+        { "title": "All Legendary Equipment Locations (PowerPyx)", "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-legendary-equipment-locations/" },
+        { "title": "The Blood of Dawnwalker — Arbiter Armor Set Location (KeenGamer)", "url": "https://www.keengamer.com/articles/guides/the-blood-of-dawnwalker-arbiter-armor-set-location/" },
+        { "title": "Arbiter Armor Set Guide — Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/620175" }
+      ]
+    }
+  ]
+}

@@ -63,6 +63,7 @@ export type SupportedTimezones =
 
 export interface Config {
   auth: {
+    players: PlayerAuthOperations;
     users: UserAuthOperations;
   };
   blocks: {};
@@ -77,10 +78,12 @@ export interface Config {
     'skill-trees': SkillTree;
     perks: Perk;
     items: Item;
+    builds: Build;
     mechanics: Mechanic;
     guides: Guide;
     corrections: Correction;
     media: Media;
+    players: Player;
     users: User;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
@@ -99,10 +102,12 @@ export interface Config {
     'skill-trees': SkillTreesSelect<false> | SkillTreesSelect<true>;
     perks: PerksSelect<false> | PerksSelect<true>;
     items: ItemsSelect<false> | ItemsSelect<true>;
+    builds: BuildsSelect<false> | BuildsSelect<true>;
     mechanics: MechanicsSelect<false> | MechanicsSelect<true>;
     guides: GuidesSelect<false> | GuidesSelect<true>;
     corrections: CorrectionsSelect<false> | CorrectionsSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
+    players: PlayersSelect<false> | PlayersSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
@@ -123,10 +128,28 @@ export interface Config {
   widgets: {
     collections: CollectionsWidget;
   };
-  user: User;
+  user: Player | User;
   jobs: {
     tasks: unknown;
     workflows: unknown;
+  };
+}
+export interface PlayerAuthOperations {
+  forgotPassword: {
+    email: string;
+    password: string;
+  };
+  login: {
+    email: string;
+    password: string;
+  };
+  registerFirstUser: {
+    email: string;
+    password: string;
+  };
+  unlock: {
+    email: string;
+    password: string;
   };
 }
 export interface UserAuthOperations {
@@ -1068,6 +1091,85 @@ export interface Perk {
   createdAt: string;
 }
 /**
+ * Recommended builds. These seed the build planner.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "builds".
+ */
+export interface Build {
+  id: number;
+  title: string;
+  /**
+   * URL segment. Auto-filled from the title. Changing it breaks existing links.
+   */
+  slug: string;
+  playstyle: 'day' | 'night' | 'hybrid';
+  difficulty?: ('beginner' | 'intermediate' | 'advanced') | null;
+  primaryTree?: (number | null) | SkillTree;
+  perks?: (number | Perk)[] | null;
+  items?: (number | Item)[] | null;
+  /**
+   * Segments needed to learn the whole build, where known. Leave blank rather than estimate.
+   */
+  segmentCost?: number | null;
+  /**
+   * Shown to readers as a badge. Be honest — it is the whole point of this site.
+   */
+  confidence: 'high' | 'medium' | 'low';
+  /**
+   * One or two sentences. Used on cards, in search results and as the page lede.
+   */
+  summary: string;
+  /**
+   * The main article. Original prose only — never paste from another site.
+   */
+  body?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  /**
+   * Cite every figure. Two independent sources before marking confidence high.
+   */
+  sources?:
+    | {
+        title: string;
+        url: string;
+        retrieved?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Leave blank to derive from the title and summary.
+   */
+  seo?: {
+    /**
+     * Under ~60 characters. Overrides the <title> tag.
+     */
+    title?: string | null;
+    /**
+     * Under ~155 characters. Overrides the meta description.
+     */
+    description?: string | null;
+    /**
+     * Hide this page from search engines.
+     */
+    noindex?: boolean | null;
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "mechanics".
  */
@@ -1255,6 +1357,53 @@ export interface Correction {
   createdAt: string;
 }
 /**
+ * Reader accounts. These are site visitors, not editors — they have no admin access.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "players".
+ */
+export interface Player {
+  id: number;
+  /**
+   * Optional. Shown only to the player themselves.
+   */
+  displayName?: string | null;
+  /**
+   * The saved run: day, phase, and which quests are ticked. Written by the site, not by hand.
+   */
+  run?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
+  /**
+   * Used to decide whether the browser or the server has the newer run.
+   */
+  runUpdatedAt?: string | null;
+  updatedAt: string;
+  createdAt: string;
+  email: string;
+  resetPasswordToken?: string | null;
+  resetPasswordExpiration?: string | null;
+  salt?: string | null;
+  hash?: string | null;
+  loginAttempts?: number | null;
+  lockUntil?: string | null;
+  sessions?:
+    | {
+        id: string;
+        createdAt?: string | null;
+        expiresAt: string;
+      }[]
+    | null;
+  password?: string | null;
+  collection: 'players';
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users".
  */
@@ -1346,6 +1495,10 @@ export interface PayloadLockedDocument {
         value: number | Item;
       } | null)
     | ({
+        relationTo: 'builds';
+        value: number | Build;
+      } | null)
+    | ({
         relationTo: 'mechanics';
         value: number | Mechanic;
       } | null)
@@ -1362,14 +1515,23 @@ export interface PayloadLockedDocument {
         value: number | Media;
       } | null)
     | ({
+        relationTo: 'players';
+        value: number | Player;
+      } | null)
+    | ({
         relationTo: 'users';
         value: number | User;
       } | null);
   globalSlug?: string | null;
-  user: {
-    relationTo: 'users';
-    value: number | User;
-  };
+  user:
+    | {
+        relationTo: 'players';
+        value: number | Player;
+      }
+    | {
+        relationTo: 'users';
+        value: number | User;
+      };
   updatedAt: string;
   createdAt: string;
 }
@@ -1379,10 +1541,15 @@ export interface PayloadLockedDocument {
  */
 export interface PayloadPreference {
   id: number;
-  user: {
-    relationTo: 'users';
-    value: number | User;
-  };
+  user:
+    | {
+        relationTo: 'players';
+        value: number | Player;
+      }
+    | {
+        relationTo: 'users';
+        value: number | User;
+      };
   key?: string | null;
   value?:
     | {
@@ -1772,6 +1939,40 @@ export interface ItemsSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "builds_select".
+ */
+export interface BuildsSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  playstyle?: T;
+  difficulty?: T;
+  primaryTree?: T;
+  perks?: T;
+  items?: T;
+  segmentCost?: T;
+  confidence?: T;
+  summary?: T;
+  body?: T;
+  sources?:
+    | T
+    | {
+        title?: T;
+        url?: T;
+        retrieved?: T;
+        id?: T;
+      };
+  seo?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        noindex?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "mechanics_select".
  */
 export interface MechanicsSelect<T extends boolean = true> {
@@ -1909,6 +2110,31 @@ export interface MediaSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "players_select".
+ */
+export interface PlayersSelect<T extends boolean = true> {
+  displayName?: T;
+  run?: T;
+  runUpdatedAt?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  email?: T;
+  resetPasswordToken?: T;
+  resetPasswordExpiration?: T;
+  salt?: T;
+  hash?: T;
+  loginAttempts?: T;
+  lockUntil?: T;
+  sessions?:
+    | T
+    | {
+        id?: T;
+        createdAt?: T;
+        expiresAt?: T;
+      };
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users_select".
  */
 export interface UsersSelect<T extends boolean = true> {
@@ -1996,6 +2222,22 @@ export interface SiteSetting {
    */
   domain?: string | null;
   /**
+   * The person or company responsible for this site. Your real name or registered company name.
+   */
+  legalEntity?: string | null;
+  /**
+   * A working address people can actually reach you on.
+   */
+  contactEmail?: string | null;
+  /**
+   * Required by GDPR/UK GDPR if you have readers in the EU or UK. A registered office or service address is fine; do not publish a home address you do not want public.
+   */
+  postalAddress?: string | null;
+  /**
+   * Country whose law governs the terms, e.g. "England and Wales".
+   */
+  jurisdiction?: string | null;
+  /**
    * Top navigation, in order.
    */
   primaryNav?:
@@ -2037,6 +2279,10 @@ export interface SiteSettingsSelect<T extends boolean = true> {
   maintainer?: T;
   lastVerified?: T;
   domain?: T;
+  legalEntity?: T;
+  contactEmail?: T;
+  postalAddress?: T;
+  jurisdiction?: T;
   primaryNav?:
     | T
     | {

@@ -1,0 +1,324 @@
+{
+  "collection": "enemies",
+  "records": [
+    {
+      "title": "Brencis",
+      "slug": "brencis-boss",
+      "isBoss": true,
+      "summary": "The knyaz, and the fight the campaign ends on. Met three times across a playthrough, but only the last meeting is winnable.",
+      "bodyParagraphs": [
+        "Brencis fights like a duellist rather than a monster. His loop is consistent: press with ordinary attacks, Shadowstep out of reach, then wind up one of three unblockable finishers. Reading which finisher is coming is the whole fight.",
+        { "h": "Answering the unblockables" },
+        { "ul": [
+          "Blood spears — sidestep out of the line rather than rolling backwards.",
+          "Cross slash — dodge backwards, out of the arc.",
+          "All three can also simply be interrupted if you have the tools for it."
+        ] },
+        "The winning rhythm is reactive: dodge, Shadowstep or interrupt, then immediately spend the opening on damage and disengage before the next unblockable starts.",
+        { "h": "Three encounters, three fights" },
+        "You meet him in the prologue when he turns Coen, at a parley once your Infamy is maxed, and at the finale. The prologue meeting is not a fight you are expected to win.",
+        { "h": "Who stands with you" },
+        "The final version has three forms depending on earlier choices: Brencis with Lacra at your side, Brencis with Crake at your side, or Brencis alone against you. Going in alone is the hardest of the three.",
+        { "h": "Clear the boyars first" },
+        "Any boyar you left alive turns up again as a miniboss inside Greifberg Castle. Finishing all three court campaigns beforehand is how you keep the final dungeon down to a single boss."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "How To Defeat All Vampire Court Bosses — GameSpot", "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-boss-guide-brencis-ambrus-bakir-xanthe/" },
+        { "title": "Brencis Boss Guide and How to Beat — Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/617141" },
+        { "title": "How to Beat Brencis (All 3 Fight Versions)", "url": "https://thebloodof-dawnwalker.wiki/bosses/brencis/" },
+        { "title": "Can you beat Brencis in the prologue? — PC Gamer", "url": "https://www.pcgamer.com/games/rpg/blood-of-dawnwalker-brencis-prologue/" },
+        { "title": "The Blood of Dawnwalker Final Boss: How to Beat Brencis — ValeGuides", "url": "https://valeguides.com/en/guides/brencis-final-boss/" }
+      ]
+    },
+    {
+      "title": "Ambrus",
+      "slug": "ambrus-boss",
+      "isBoss": true,
+      "weaknesses": ["Poison"],
+      "summary": "Boyar of the north, fought at the end of The Gilded Gauntlet. The one boss you can walk in against already half-beaten.",
+      "bodyParagraphs": [
+        "Ambrus is a swordsman, and a disciplined one — short, fast combinations rather than the theatrics the other boyars go in for. Fought at full strength he is a genuinely dangerous duel.",
+        { "h": "Poison him first" },
+        "He does not have to be fought at full strength. Ambrus always feeds from one of his servants before an important duel, and the side quest The Bittersweet Toast turns that habit against him: Iulian Codrin, one of his blood servants, doses his own blood so the boyar drinks the toxin.",
+        "The effect is visible from the first second of the fight. His health bar comes up green and drains on its own throughout, and he periodically doubles over in pain, which leaves him open and undefended. Guides are close to unanimous that taking the poisoned route is far safer than not.",
+        { "h": "Getting there" },
+        "Roughly ten Infamy quests are needed to anger him enough to unlock The Gilded Gauntlet."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "How To Complete The Gilded Gauntlet — GameSpot", "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-gilded-gauntlet-ambrus/" },
+        { "title": "Should You Poison Ambrus? — Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618676" },
+        { "title": "The Gilded Gauntlet Walkthrough — PowerPyx", "url": "https://www.powerpyx.com/blood-of-dawnwalker-the-gilded-gauntlet-walkthrough/" },
+        { "title": "The Gilded Gauntlet walkthrough — PC Gamer", "url": "https://www.pcgamer.com/games/rpg/blood-of-dawnwalker-the-gilded-gauntlet-walkthrough/" },
+        { "title": "All Bosses — Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/616364" }
+      ]
+    },
+    {
+      "title": "Bakir",
+      "slug": "bakir-boss",
+      "isBoss": true,
+      "summary": "Boyar of the southwest, fought at the end of The Lunar Game. A brawler who fights with his fists and closes distance faster than anything else in the game.",
+      "bodyParagraphs": [
+        "Bakir does not use a weapon. He punches, and he is extraordinarily quick — he can teleport in from across the arena and follow it straight into a flying kick or a flurry. Because most of his damage is ordinary melee, the fight rewards directional blocking: watch which side the blow is arriving from and block that way.",
+        { "h": "The attacks that need more than a block" },
+        { "ul": [
+          "Ground slam — he sends a wave of blood along the floor. Sidestep it; blocking is not the answer.",
+          "Blood birds — he spawns birds of blood and launches them at you. Easy to dodge on their own, but he likes to rush you while you are mid-dodge.",
+          "Red skull attacks — he cycles through these continuously, and one of them is an instant kill if the grab connects."
+        ] },
+        { "h": "Preparation pays" },
+        "Two things can be set up before the fight. There is a bush in a corner of the courtyard whose leaves can be collected and tipped into the liquor sitting beside the Cockroach, which leaves that miniboss too weak to fight properly when you meet him in the maze. Separately, if you manage to isolate Bakir you can take him alone in the treasury — otherwise you go through his henchmen first, ordinary soldiers plus a witch miniboss.",
+        { "h": "Getting there" },
+        "Around seven Infamy quests unlock The Lunar Game, the lowest bar of the three courts."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "How To Complete The Lunar Game — GameSpot", "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-lunar-game-bakir/" },
+        { "title": "The Lunar Game Walkthrough — PowerPyx", "url": "https://www.powerpyx.com/blood-of-dawnwalker-the-lunar-game-walkthrough/" },
+        { "title": "The Lunar Game — Full Walkthrough — Method.gg", "url": "https://www.method.gg/the-blood-of-dawnwalker/the-blood-of-dawnwalker-the-lunar-game-full-walkthrough" },
+        { "title": "How to complete The Lunar Game quest — Sportskeeda", "url": "https://www.sportskeeda.com/esports/the-blood-dawnwalker-walkthrough-how-complete-the-lunar-game-quest" },
+        { "title": "All Bosses — Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/616364" }
+      ]
+    },
+    {
+      "title": "Xanthe",
+      "slug": "xanthe-boss",
+      "isBoss": true,
+      "summary": "Boyar of the southeast, fought at the end of The Cycle of Love. A witchcraft duel, and widely called the hardest fight before the finale.",
+      "bodyParagraphs": [
+        "Xanthe does not trade blows. She fights with witchcraft and demonic magic, and the fight is decided on footwork and on how fast you react to one specific mechanic.",
+        { "h": "Her spellbook" },
+        { "ul": [
+          "Wicked Tendrils — long-range lashing whips. These can be parried.",
+          "Boiling Blood — glyphs bloom on the ground and detonate after a short delay. Move off the red circles rather than trying to tank them.",
+          "Life Leech — she siphons your health to top up her own.",
+          "Life Orbs — after each health segment falls, she spawns a set of orbs that feed her health back."
+        ] },
+        { "h": "The orbs are the fight" },
+        "When the orbs appear, stop attacking her immediately and break every one. Clearing the whole set does three things at once: it cancels the siphon, staggers her, and chunks her health. Leaving even part of the set up hands her back the progress you just made. Some guides frame the same mechanic as depleting her stagger bar three times, others as wearing down a yellow stamina bar before her real health opens up — either way, the opening is short and you need to be aggressive the instant it appears.",
+        { "h": "She would rather live" },
+        "Xanthe is the only boyar who negotiates. Beat her and she offers a deal instead of dying: spare her and she intervenes during the assault on Greifberg Castle, stripping the supernatural enemies out of that stretch. Kill her and they are still there waiting.",
+        { "h": "Getting there" },
+        "Ten to eleven Infamy quests are needed to open The Cycle of Love, the steepest requirement of the three courts."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "How To Complete The Cycle Of Love — GameSpot", "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-cycle-of-love-xanthe/" },
+        { "title": "How to Beat Xanthe — KeenGamer", "url": "https://www.keengamer.com/articles/guides/how-to-beat-xanthe-in-the-blood-of-dawnwalker/" },
+        { "title": "The Cycle of Love Walkthrough — PowerPyx", "url": "https://www.powerpyx.com/blood-of-dawnwalker-the-cycle-of-love-walkthrough/" },
+        { "title": "The Cycle of Love Quest Guide — Method.gg", "url": "https://www.method.gg/the-blood-of-dawnwalker/the-blood-of-dawnwalker-the-cycle-of-love-quest-guide" },
+        { "title": "All Bosses — Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/616364" }
+      ]
+    },
+    {
+      "title": "Murohn, Malformed Monstrosity",
+      "slug": "murohn-malformed-monstrosity",
+      "isBoss": true,
+      "summary": "The named miniboss waiting at Murohn's Lair. A feral, undead thing rather than a duel, and it drops Murohn's Blood.",
+      "bodyParagraphs": [
+        "This is the murohni strain taken to its logical end — a botched vampire that never stopped growing wrong. It anchors its own monster lair and is fought as a miniboss rather than as part of the main campaign.",
+        "The reason to make the trip is the drop: Murohn's Blood, which guides treat as the point of clearing the lair."
+      ],
+      "note": "Sources name the lair inconsistently — some write Murohn's Lair, others Murohn Lairs in the plural, which leaves it unclear whether there is one such lair or several sharing the encounter.",
+      "confidence": "medium",
+      "sources": [
+        { "title": "Murohn Malformed Monstrosity — Fextralife", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Murohn_Malformed_Monstrosity" },
+        { "title": "Murohn's Lair Locations — Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618793" },
+        { "title": "How to Beat Murohn, Malformed Monstrosity — allthings.how", "url": "https://allthings.how/the-blood-of-dawnwalker-how-to-beat-murohn-malformed-monstrosity/" },
+        { "title": "How to Beat Murohn and get Murohn's Blood — allthings.how", "url": "https://allthings.how/the-blood-of-dawnwalker-how-to-beat-murohn-and-get-murohn-s-blood/" }
+      ]
+    },
+    {
+      "title": "The Great Bog Wurm",
+      "slug": "great-bog-wurm",
+      "isBoss": true,
+      "regionSlug": "maragir-wealds",
+      "summary": "An optional miniboss lurking in the Maragir Wealds, at the Tatzelwurm's Lair. Skippable, but it pays out a legendary crafting ingredient.",
+      "bodyParagraphs": [
+        "The Great Bog Wurm is the oversized example of its species, holed up in the Tatzelwurm's Lair out in the Maragir Wealds. It is entirely optional — nothing in the main campaign requires it.",
+        "What makes it worth the detour is the reward: a legendary crafting ingredient, which is a rarer payout than most lairs offer.",
+        "Expect the family trait to matter here. Tatzelwurms burrow, and boggy ground is exactly the terrain that makes losing track of one dangerous."
+      ],
+      "confidence": "medium",
+      "sources": [
+        { "title": "Great Bog Wurm Mini Boss Guide (Tatzelwurm's Lair) — allthings.how", "url": "https://allthings.how/the-blood-of-dawnwalker-great-bog-wurm-mini-boss-guide/" },
+        { "title": "Enemy Guide: All Monsters, Bosses, and Factions Confirmed — 2UpSkill", "url": "https://2upskill.com/the-blood-of-dawnwalker-enemy-guide-all-monsters-bosses-and-factions-confirmed/" },
+        { "title": "All Monster Lair Locations — PowerPyx", "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-monster-lair-locations/" }
+      ]
+    },
+    {
+      "title": "The Cockroach",
+      "slug": "the-cockroach",
+      "isBoss": true,
+      "weaknesses": ["Poison"],
+      "summary": "A miniboss met inside the maze during The Lunar Game, on the way to Bakir. Trivially avoidable as a threat if you prepare first.",
+      "bodyParagraphs": [
+        "The Cockroach stands between you and Bakir during The Lunar Game, but he is one of the clearest cases in the game of preparation replacing skill.",
+        { "h": "Sabotage him before you meet him" },
+        "There is a bush in a corner of the courtyard. Collect its leaves, then use them on the liquor sitting next to the Cockroach. By the time you run into him inside the maze he is too weakened to put up a real fight.",
+        "Guides list this as one of the best uses of the preparation window The Lunar Game gives you, alongside isolating Bakir himself."
+      ],
+      "confidence": "medium",
+      "sources": [
+        { "title": "How To Complete The Lunar Game — GameSpot", "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-lunar-game-bakir/" },
+        { "title": "The Lunar Game Walkthrough — PowerPyx", "url": "https://www.powerpyx.com/blood-of-dawnwalker-the-lunar-game-walkthrough/" },
+        { "title": "The Lunar Game — Full Walkthrough — Method.gg", "url": "https://www.method.gg/the-blood-of-dawnwalker/the-blood-of-dawnwalker-the-lunar-game-full-walkthrough" }
+      ]
+    },
+    {
+      "title": "Vrakhiri",
+      "slug": "vrakhiri",
+      "isBoss": false,
+      "weaknesses": ["Holy silver"],
+      "summary": "The vampires themselves — the ruling caste of Vale Sangora and the enemy faction the whole game is organised around.",
+      "bodyParagraphs": [
+        "Vrakhiri are the game's headline enemy and its aristocracy at the same time. Brencis and his three boyars are vrakhiri; so is Lacra; so, halfway, is Coen.",
+        "MetaBot's bestiary counts 28 entries in total, sorted into Monster, Undead, Beast and Vampire categories, four of which are bosses. The vampire column is where the vrakhiri sit.",
+        { "h": "On silver" },
+        "Silver is outlawed contraband under vrakhiri rule, and ordinary merchants will not handle it — which is a strong circumstantial reason to believe the weakness is real, on top of the sources that state it."
+      ],
+      "note": "The holy silver weakness is stated in general terms only. No source we could reach maps it to specific enemies or quantifies it, and at least one explicitly says exact weaknesses still need verifying against the release build. Treat it as a strong lead rather than a confirmed number.",
+      "confidence": "low",
+      "sources": [
+        { "title": "Enemies — Fextralife", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Enemies" },
+        { "title": "Blood of Dawnwalker Enemies — Full Bestiary — MetaBot.GG", "url": "https://metabot.gg/en/dawnwalker/enemies" },
+        { "title": "Enemies — DawnwalkerDB", "url": "https://dawnwalkerdb.com/enemies" },
+        { "title": "How to sell silver — PC Gamer", "url": "https://www.pcgamer.com/games/rpg/blood-of-dawnwalker-silver/" }
+      ]
+    },
+    {
+      "title": "Blood Guards",
+      "slug": "blood-guards",
+      "isBoss": false,
+      "summary": "Human soldiers sworn to the vrakhiri through blood-bound oaths. The court's most feared mortal servants.",
+      "bodyParagraphs": [
+        "Blood Guards are the answer to the question of who does the vrakhiri's daylight work. They have bound body and mind to the dark rites of the blood oath, and the sources describe them as the court's most feared servants rather than its most numerous ones.",
+        "Practically, they are the human face of the regime's violence and turn up as a standard enemy group across the valley."
+      ],
+      "confidence": "medium",
+      "sources": [
+        { "title": "Enemies — Fextralife", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Enemies" },
+        { "title": "The Blood of Dawnwalker Enemies and Monsters", "url": "https://bloodofdawnwalker.cc/enemy-types/" },
+        { "title": "Enemy Guide: All Monsters, Bosses, and Factions Confirmed — 2UpSkill", "url": "https://2upskill.com/the-blood-of-dawnwalker-enemy-guide-all-monsters-bosses-and-factions-confirmed/" }
+      ]
+    },
+    {
+      "title": "Murohni",
+      "slug": "murohni",
+      "isBoss": false,
+      "weaknesses": ["Sunlight"],
+      "summary": "Failed vampires — victims whose turning went wrong. Feral, clawed, and short-lived because they keep walking into the sun.",
+      "bodyParagraphs": [
+        "A murohn is what happens when a vrakhir's fang goes into something other than the heart. The victim changes, but not correctly: fangs push out through the skull, the eyes take on a reflective shine, and the hands grow rows of claws the creature can extend at will. Several needle-like fangs replace the clean pair a proper vrakhir has.",
+        "They keep the vrakhiri's apparent immortality and agelessness but lose everything else — judgement, restraint, any sense of self-preservation. They feed on whatever blood is nearest and in practice do not last long, because sooner or later one of them wanders into daylight and burns to ash.",
+        { "h": "Where you meet them" },
+        "Murohni anchor their own monster lairs, and reaching a Murohn Lair means a miniboss fight rather than a skirmish."
+      ],
+      "confidence": "medium",
+      "sources": [
+        { "title": "Murohni — Dawnwalker Wiki (Fandom)", "url": "https://dawnwalker.fandom.com/wiki/Murohni" },
+        { "title": "Murohn — Gamer Guides database", "url": "https://www.gamerguides.com/the-blood-of-dawnwalker/database/glossary/monsters/murohn" },
+        { "title": "Murohn — Blood of Dawnwalker Lore — MetaBot.GG", "url": "https://metabot.gg/en/dawnwalker/lore/monster-murohn" },
+        { "title": "Murohn's Lair Locations — Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618793" }
+      ]
+    },
+    {
+      "title": "Psoglavs",
+      "slug": "psoglavs",
+      "isBoss": false,
+      "summary": "Wolves infected by a vrakhiri fang. Fast, blood-hungry pack animals that haunt the ruins across Vale Sangora.",
+      "bodyParagraphs": [
+        "A psoglav is made the same crude way a murohn is: lodge a vrakhiri fang in a wolf's body and what gets up afterwards is no longer a wolf. They crave fresh blood and range through the ruins scattered across the valley.",
+        "In a fight they are a straightforward physical problem rather than a supernatural one — they lunge aggressively, they hit hard, and they track you rather than losing interest."
+      ],
+      "confidence": "medium",
+      "sources": [
+        { "title": "Enemies — Fextralife", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Enemies" },
+        { "title": "The Blood of Dawnwalker Enemies and Monsters", "url": "https://bloodofdawnwalker.cc/enemy-types/" },
+        { "title": "Enemy Guide: All Monsters, Bosses, and Factions Confirmed — 2UpSkill", "url": "https://2upskill.com/the-blood-of-dawnwalker-enemy-guide-all-monsters-bosses-and-factions-confirmed/" }
+      ]
+    },
+    {
+      "title": "Kobolds",
+      "slug": "kobolds",
+      "isBoss": false,
+      "summary": "Small, frail-looking creatures that hunt in numbers and wait for you to stop paying attention. They have their own lair, Kobold's Nest.",
+      "bodyParagraphs": [
+        "Individually a kobold looks like nothing much. The threat is arithmetic — they come in groups, and they are patient with prey in a way most of the valley's monsters are not, which means the dangerous version of this fight is the one you walked into without noticing.",
+        "There is a dedicated monster lair built around them, Kobold's Nest."
+      ],
+      "confidence": "medium",
+      "sources": [
+        { "title": "Enemies — Fextralife", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Enemies" },
+        { "title": "All Monster Lair Locations — Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618244" },
+        { "title": "All Monster Lair Locations — PowerPyx", "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-monster-lair-locations/" }
+      ]
+    },
+    {
+      "title": "Tatzelwurms",
+      "slug": "tatzelwurms",
+      "isBoss": false,
+      "summary": "Burrowing creatures out of Alpine folklore — part worm, part lizard, with a cat-like head. Losing sight of one is the problem.",
+      "bodyParagraphs": [
+        "The tatzelwurm is lifted fairly directly from old Alpine legend: a long worm-or-lizard body with an incongruous cat-like head. In the game it burrows, which is what makes it awkward to fight rather than merely ugly.",
+        "Rocky ground and swampy ground both give it cover to vanish into. If it drops out of sight in either, assume it is repositioning underneath you rather than that it has left.",
+        "Their lair holds the Great Bog Wurm, the oversized optional miniboss out in the Maragir Wealds."
+      ],
+      "confidence": "medium",
+      "sources": [
+        { "title": "Enemy Guide: All Monsters, Bosses, and Factions Confirmed — 2UpSkill", "url": "https://2upskill.com/the-blood-of-dawnwalker-enemy-guide-all-monsters-bosses-and-factions-confirmed/" },
+        { "title": "Enemies — Fextralife", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Enemies" },
+        { "title": "Great Bog Wurm Mini Boss Guide (Tatzelwurm's Lair) — allthings.how", "url": "https://allthings.how/the-blood-of-dawnwalker-great-bog-wurm-mini-boss-guide/" }
+      ]
+    },
+    {
+      "title": "Uriashi",
+      "slug": "uriashi",
+      "isBoss": false,
+      "summary": "One of the confirmed enemy groups, described as mountain folk. Very little beyond that is documented.",
+      "bodyParagraphs": [
+        "Uriashi appear on every list of the game's confirmed enemy groups, and the single characterisation we could find is that they are mountain folk.",
+        "No accessible source gives their attacks, weaknesses, drops or where they are encountered."
+      ],
+      "note": "This record is close to name-only. It is here so the bestiary is complete and the gap is visible; everything about how uriashi actually fight is still unconfirmed.",
+      "confidence": "low",
+      "sources": [
+        { "title": "Enemy Guide: All Monsters, Bosses, and Factions Confirmed — 2UpSkill", "url": "https://2upskill.com/the-blood-of-dawnwalker-enemy-guide-all-monsters-bosses-and-factions-confirmed/" },
+        { "title": "Enemies — Fextralife", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Enemies" }
+      ]
+    },
+    {
+      "title": "Likhos",
+      "slug": "likhos",
+      "isBoss": false,
+      "summary": "A confirmed enemy group that so far exists mostly as a name on the official creature list.",
+      "bodyParagraphs": [
+        "Likhos are listed among the game's creature types everywhere the bestiary is enumerated, but the detail has not caught up with the name — we found no description of their behaviour, attacks, weaknesses or habitat."
+      ],
+      "note": "Name-only record, kept so the bestiary is complete and the gap is obvious. Nothing about likho behaviour is confirmed.",
+      "confidence": "low",
+      "sources": [
+        { "title": "Enemy Guide: All Monsters, Bosses, and Factions Confirmed — 2UpSkill", "url": "https://2upskill.com/the-blood-of-dawnwalker-enemy-guide-all-monsters-bosses-and-factions-confirmed/" },
+        { "title": "Enemies — Fextralife", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Enemies" }
+      ]
+    },
+    {
+      "title": "Ancient undead",
+      "slug": "ancient-undead",
+      "isBoss": false,
+      "summary": "One of the four bestiary categories and a confirmed enemy group, covering the valley's older dead.",
+      "bodyParagraphs": [
+        "Undead is one of the four headings the bestiary is sorted under, alongside Monster, Beast and Vampire, and ancient undead are named among the game's confirmed enemy groups.",
+        "What sits inside the category beyond the murohni is not something we could pin down."
+      ],
+      "note": "Sources agree the category exists but do not enumerate its members consistently, so the boundary between ancient undead and the murohni is unclear.",
+      "confidence": "low",
+      "sources": [
+        { "title": "Enemies — Fextralife", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Enemies" },
+        { "title": "Blood of Dawnwalker Enemies — Full Bestiary — MetaBot.GG", "url": "https://metabot.gg/en/dawnwalker/enemies" },
+        { "title": "Enemy Guide: All Monsters, Bosses, and Factions Confirmed — 2UpSkill", "url": "https://2upskill.com/the-blood-of-dawnwalker-enemy-guide-all-monsters-bosses-and-factions-confirmed/" }
+      ]
+    }
+  ]
+}

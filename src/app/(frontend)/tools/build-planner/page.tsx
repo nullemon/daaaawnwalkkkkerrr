@@ -1,0 +1,76 @@
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import { PageHeader } from '@/components/PageHeader'
+import { BuildPlanner, type PlannerPerk, type PlannerTree } from '@/components/BuildPlanner'
+import { getAll } from '@/lib/payload'
+import type { Perk, SkillTree } from '@/payload-types'
+
+export const metadata: Metadata = {
+  title: 'Build planner — pick perks across all three trees',
+  description:
+    'Plan a Blood of Dawnwalker build across Swordmastery, Witchcraft and Vampirism. Enforces one ultimate per tree, totals the segment cost, and gives you a shareable link.',
+  alternates: { canonical: '/tools/build-planner' },
+}
+
+type Props = { searchParams: Promise<{ perks?: string }> }
+
+export default async function BuildPlannerPage({ searchParams }: Props) {
+  const { perks: fromUrl } = await searchParams
+  const [perkDocs, treeDocs] = await Promise.all([
+    getAll<Perk>('perks', { depth: 1, sort: 'title' }),
+    getAll<SkillTree>('skill-trees', { depth: 0 }),
+  ])
+
+  const trees: PlannerTree[] = treeDocs.map((tree) => ({
+    slug: tree.slug,
+    title: tree.title,
+    phase: tree.phase ?? 'either',
+  }))
+
+  const perks: PlannerPerk[] = perkDocs
+    .filter((perk) => typeof perk.tree === 'object' && perk.tree)
+    .map((perk) => {
+      const tree = perk.tree as SkillTree
+      return {
+        id: String(perk.id),
+        slug: perk.slug,
+        title: perk.title,
+        treeSlug: tree.slug,
+        treeTitle: tree.title,
+        isUltimate: Boolean(perk.isUltimate),
+        cost: perk.timeCostSegments ?? 1,
+        costKnown: typeof perk.timeCostSegments === 'number',
+        effect: perk.effect,
+        foundInWorld: Boolean(perk.foundInWorld),
+      }
+    })
+
+  const known = new Set(perks.map((perk) => perk.slug))
+  const initial = (fromUrl ?? '')
+    .split(',')
+    .map((slug) => slug.trim())
+    .filter((slug) => known.has(slug))
+
+  return (
+    <>
+      <PageHeader
+        eyebrow="Tool"
+        crumbs={[{ label: 'Home', href: '/' }, { label: 'Build planner' }]}
+        title="Build planner"
+        lede="Three trees, nine ultimates, one ultimate per tree. Pick your way through and share the result as a link."
+      />
+      <div className="page body-main">
+        <BuildPlanner perks={perks} trees={trees} initial={initial} />
+        <div className="callout">
+          <h3>Perks cost time, not just points</h3>
+          <p>
+            Learning a perk spends segments off the same 480 the{' '}
+            <Link href="/tools/run-checker">run checker</Link> is watching. A heavy spec is a real
+            line item against the quests you wanted to do, which is why the total here is worth
+            looking at before you commit.
+          </p>
+        </div>
+      </div>
+    </>
+  )
+}

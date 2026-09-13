@@ -1,4 +1,5 @@
 import type { CollectionConfig } from 'payload'
+import { isEditor } from '../fields/shared'
 
 export const Users: CollectionConfig = {
   slug: 'users',
@@ -9,9 +10,18 @@ export const Users: CollectionConfig = {
   },
   auth: true,
   access: {
-    // Only admins can create or delete other accounts.
-    create: ({ req }) => req.user?.role === 'admin',
-    delete: ({ req }) => req.user?.role === 'admin',
+    /**
+     * Editor accounts are staff records and must not be visible to reader
+     * accounts. Payload's default read access is "any authenticated user",
+     * which since `players` exists would expose every editor's email address
+     * to anyone who signed up — so this is stated explicitly.
+     */
+    read: isEditor,
+    update: isEditor,
+    // Only an admin editor can create or delete editor accounts. Reader
+    // accounts live in `players` and never satisfy this.
+    create: ({ req }) => req.user?.collection === 'users' && req.user.role === 'admin',
+    delete: ({ req }) => req.user?.collection === 'users' && req.user.role === 'admin',
   },
   fields: [
     { name: 'name', type: 'text' },
@@ -26,7 +36,7 @@ export const Users: CollectionConfig = {
       ],
       access: {
         // An editor must not be able to promote themselves.
-        update: ({ req }) => req.user?.role === 'admin',
+        update: ({ req }) => req.user?.collection === 'users' && req.user.role === 'admin',
       },
     },
   ],

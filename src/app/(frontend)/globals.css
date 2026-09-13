@@ -1323,3 +1323,181 @@ td.num {
   color: var(--muted);
   white-space: nowrap;
 }
+
+.stack-sm {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.field-row .button {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.legal-gap {
+  background: var(--risk-wash);
+  color: var(--risk);
+  border: 1px dashed var(--risk);
+  border-radius: 2px;
+  padding: 0 5px;
+  font-family: var(--font-mono);
+  font-size: 0.86em;
+  white-space: nowrap;
+}
+
+.danger-zone {
+  border-top: 1px solid var(--rule);
+  padding-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.danger-zone h3 {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--risk);
+}
+
+.button-danger {
+  background: var(--risk);
+  border-color: var(--risk);
+}
+
+.button-danger:hover:not(:disabled) {
+  filter: brightness(1.1);
+  background: var(--risk);
+  border-color: var(--risk);
+}
+
+/* ---------- build planner ---------- */
+
+.planner {
+  display: grid;
+  grid-template-columns: 1fr minmax(260px, 320px);
+  gap: 20px;
+  align-items: start;
+}
+
+@media (max-width: 880px) {
+  .planner {
+    grid-template-columns: 1fr;
+  }
+}
+
+.planner-trees {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.planner-tree {
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.planner-tree-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.planner-tree-head h2 {
+  font-size: 20px;
+}
+
+.planner-tree-head a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.planner-tree-head a:hover {
+  color: var(--accent-ink);
+  text-decoration: underline;
+}
+
+.perk-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 8px;
+}
+
+.perk-list label {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--ground);
+  padding: 10px 12px;
+  cursor: pointer;
+  height: 100%;
+}
+
+.perk-list label:hover {
+  border-color: var(--accent);
+}
+
+.perk-list label[data-on='true'] {
+  border-color: var(--accent);
+  background: var(--accent-wash);
+}
+
+.perk-list label[data-blocked='true'] {
+  opacity: 0.72;
+}
+
+.perk-list input {
+  margin-top: 3px;
+  flex: none;
+  accent-color: var(--accent);
+}
+
+.perk-title {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.perk-list .star {
+  color: var(--accent);
+  font-size: 12px;
+}
+
+.perk-list .sub {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.planner-summary {
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: sticky;
+  top: 76px;
+}
+
+.planner-summary h2 {
+  font-size: 19px;
+}

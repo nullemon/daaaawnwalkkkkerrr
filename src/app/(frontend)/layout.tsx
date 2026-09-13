@@ -4,6 +4,7 @@ import { SiteHeader } from '@/components/SiteHeader'
 import { SiteFooter } from '@/components/SiteFooter'
 import { themeScript } from '@/components/ThemeToggle'
 import { RunProvider } from '@/components/RunProvider'
+import { AccountProvider } from '@/components/AccountProvider'
 import { getSiteSettings, siteUrl } from '@/lib/payload'
 import './globals.css'
 
@@ -47,6 +48,9 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: 'en',
     },
     robots: { index: true, follow: true },
+    alternates: {
+      types: { 'application/rss+xml': [{ url: '/feed.xml', title: settings.siteName }] },
+    },
   }
 }
 
@@ -60,7 +64,8 @@ export default async function FrontendLayout({ children }: { children: React.Rea
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body className={`${instrument.variable} ${archivo.variable} ${plexMono.variable}`}>
-        <RunProvider>
+        <AccountProvider>
+          <RunProvider>
           <a className="skip" href="#main">
             Skip to content
           </a>
@@ -71,7 +76,8 @@ export default async function FrontendLayout({ children }: { children: React.Rea
             note={settings.footerNote}
             maintainer={settings.maintainer}
           />
-        </RunProvider>
+          </RunProvider>
+        </AccountProvider>
       </body>
     </html>
   )

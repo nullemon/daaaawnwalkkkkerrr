@@ -1,0 +1,1206 @@
+{
+  "collection": "characters",
+  "records": [
+    {
+      "title": "Coen",
+      "slug": "coen",
+      "role": "protagonist",
+      "romanceable": false,
+      "summary": "The player character. A miner's son from the Carpathian valley of Vale Sangora who walks the world as a man by day and a vrakhir by night.",
+      "bodyParagraphs": [
+        "Coen grew up between a silver seam and a sword. His father Pieter mined for the family's bread and drilled his son in swordsmanship, and Coen was working the mines alongside him from childhood — which is the tidy explanation for why a villager starts the game already able to hold a blade.",
+        "Brencis turns him rather than kills him, leaving him half-made: not a full vrakhir, not a man any more either. The whole campaign runs on a thirty-day clock from that point, because his household is taken at the same time.",
+        {
+          "h": "Behind the voice"
+        },
+        "Will de Renzy-Martin performs Coen."
+      ],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "All Characters in The Blood of Dawnwalker — TechWiser",
+          "url": "https://techwiser.com/the-blood-of-dawnwalker-characters/"
+        },
+        {
+          "title": "Coen — Dawnwalker Wiki (Fandom)",
+          "url": "https://dawnwalker.fandom.com/wiki/Coen"
+        },
+        {
+          "title": "Community Bulletin Board #9 — Coen's Roots (Bandai Namco)",
+          "url": "https://en.bandainamcoent.eu/dawnwalker/news/community-bulletin-board-9-coens-roots"
+        },
+        {
+          "title": "All The Blood of Dawnwalker voice actors and cast list — Sportskeeda",
+          "url": "https://www.sportskeeda.com/esports/all-the-blood-dawnwalker-voice-actors-cast-list"
+        },
+        {
+          "title": "Characters — The Blood of Dawnwalker official site",
+          "url": "https://en.bandainamcoent.eu/dawnwalker/the-blood-of-dawnwalker/characters"
+        }
+      ]
+    },
+    {
+      "title": "Brencis",
+      "slug": "brencis",
+      "role": "antagonist",
+      "romanceable": false,
+      "summary": "The knyaz of Vale Sangora. An ancient, Roman-born vrakhir who rules the valley through three boyars and a blood tax on everyone still breathing.",
+      "bodyParagraphs": [
+        "Brencis is old enough to have been born in Rome, and he governs the valley the way an occupying administrator would — with a levy. The blood tax is the mechanism the living are taxed under, and the three boyars are the middle management that collects it.",
+        "He is fought three separate times across a playthrough, and only the last one is meant to be won. The prologue meeting is a scripted loss, a mid-game parley opens a second bout once your Infamy tops out, and the finale is the real thing.",
+        {
+          "h": "Behind the voice"
+        },
+        "Andrew James Spooner performs Brencis."
+      ],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "All Characters in The Blood of Dawnwalker — TechWiser",
+          "url": "https://techwiser.com/the-blood-of-dawnwalker-characters/"
+        },
+        {
+          "title": "How To Defeat All Vampire Court Bosses — GameSpot",
+          "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-boss-guide-brencis-ambrus-bakir-xanthe/"
+        },
+        {
+          "title": "Can you beat Brencis in the prologue? — PC Gamer",
+          "url": "https://www.pcgamer.com/games/rpg/blood-of-dawnwalker-brencis-prologue/"
+        },
+        {
+          "title": "All The Blood of Dawnwalker voice actors and cast list — Sportskeeda",
+          "url": "https://www.sportskeeda.com/esports/all-the-blood-dawnwalker-voice-actors-cast-list"
+        }
+      ]
+    },
+    {
+      "title": "Lacra",
+      "slug": "lacra",
+      "role": "ally",
+      "romanceable": true,
+      "regionSlug": "svartrau-city",
+      "summary": "A vrakhir who keeps her own company around Svartrau rather than Brencis's. One of the game's three romances, and the ally who gates the Patricide ending.",
+      "bodyParagraphs": [
+        "Lacra is a vampire who is conspicuously not part of the court. She holds a grudge against Brencis of her own making, which is what makes her usable as an ally rather than a target — you are not recruiting her so much as agreeing you both want the same man dead.",
+        "She is among the more opaque figures in the cast; guides consistently flag her as the character whose motives take the longest to read. Her chain is heavily night-locked, so committing to it commits your nights.",
+        {
+          "h": "As a romance"
+        },
+        "Lacra is one of three romanceable characters alongside Anca and Crake. Guides agree all three can be pursued in a single run without the game punishing you for it — the scenes do not cancel each other out.",
+        "Completing a romance pays out concretely as well as narratively: depending on the partner it can mean help in the fight against Brencis, a passive skill, or a piece of legendary equipment."
+      ],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "All Romance Options (Romance Guide) — Game8",
+          "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/616531"
+        },
+        {
+          "title": "All Romance options in Blood of Dawnwalker — GamesRadar",
+          "url": "https://www.gamesradar.com/games/action-rpg/blood-of-dawnwalker-romance-relationships/"
+        },
+        {
+          "title": "All Blood of Dawnwalker romance options — PCGamesN",
+          "url": "https://www.pcgamesn.com/dawnwalker/romance"
+        },
+        {
+          "title": "All romance options and how to date them — VGC",
+          "url": "https://www.videogameschronicle.com/guide/blood-of-dawnwalker-all-romance-options-and-how-to-date-them/"
+        },
+        {
+          "title": "Romance Guide — Fextralife",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Romance_Guide"
+        },
+        {
+          "title": "All Characters in The Blood of Dawnwalker — TechWiser",
+          "url": "https://techwiser.com/the-blood-of-dawnwalker-characters/"
+        }
+      ]
+    },
+    {
+      "title": "Crake",
+      "slug": "crake",
+      "role": "ally",
+      "romanceable": true,
+      "regionSlug": "svartrau-city",
+      "summary": "The mortal leader of the manumits, the rebellion against the vrakhiri court. A romance option, and the ally who gates the Knyazmaker ending.",
+      "bodyParagraphs": [
+        "Crake heads the manumits, the human resistance working against Brencis and his boyars. The faction runs out of a hideout in Svartrau, and Drogos and Sara are named among its members.",
+        "He is written as a leader people follow by choice — courage and charisma are what hold the manumits together — but he has been sold out before, and it shows in how long he takes to trust anyone from outside the group.",
+        {
+          "h": "As a romance"
+        },
+        "Crake is the third romance alongside Anca and Lacra, and his is the one tied to the rebel storyline rather than a personal side arc. As with the other two, romancing him does not lock out the others."
+      ],
+      "note": "His name is unsettled. Bandai Namco's own material introduces him as Marat, while launch-window quests and guides overwhelmingly call him Crake; the prevailing reading is that Marat is his birth name, but no source we found explains how the Crake name came about.",
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Marat — Fextralife",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Marat"
+        },
+        {
+          "title": "How To Romance Crake — GameSpot",
+          "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-crake-romance-guide/"
+        },
+        {
+          "title": "How to romance Crake — TheGamer",
+          "url": "https://www.thegamer.com/the-blood-of-dawnwalker-how-to-romance-crake-scene-guide/"
+        },
+        {
+          "title": "Every romanceable character — PC Gamer",
+          "url": "https://www.pcgamer.com/games/rpg/blood-of-dawnwalker-romances/"
+        },
+        {
+          "title": "Romance Guide: Anca, Crake and Lacra — G2A News",
+          "url": "https://www.g2a.com/news/features/guide/the-blood-of-dawnwalker-romance-guide/"
+        },
+        {
+          "title": "Marat / Crake Guide — Dawnwalker Wiki",
+          "url": "https://dawnwalkerwiki.wiki/characters/marat-crake/"
+        }
+      ]
+    },
+    {
+      "title": "Anca",
+      "slug": "anca",
+      "role": "ally",
+      "romanceable": true,
+      "summary": "A herbalist and witch from Coen's own village, and the earliest companion in the game. The third romance option, started in the prologue.",
+      "bodyParagraphs": [
+        "Anca was a nun before she was a herbalist, and she is the one keeping Esme medicated as Coen's mother declines. That is how she is introduced — as the person you go to for the family's remedies — and she attaches herself to the campaign against Brencis from there.",
+        "She is also carrying something she is not saying. Guides consistently describe her as hiding a secret without spelling it out in their opening paragraphs.",
+        {
+          "h": "Her quest arc"
+        },
+        {
+          "ul": [
+            "Withering Away",
+            "Echoes of Silenced Bells",
+            "Between the Words",
+            "Where Old Devils Lie"
+          ]
+        },
+        {
+          "h": "As a romance"
+        },
+        "Hers is the romance that opens earliest. During Withering Away in the prologue, after she hands over the herbs, you are offered the choice to stay and practise Latin with her or leave — accepting is what starts the Page-Turner side quest and puts the romance in motion. Declining ends it there.",
+        "The romance scene itself lands at the close of a later quest, Stronger Than Achilles. Coen can also settle for friendship instead, and there is a failure state: approaching her in vampire form on low health can get her killed."
+      ],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "How To Romance Anca — GameSpot",
+          "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-anca-romance-guide/"
+        },
+        {
+          "title": "Anca — Fextralife",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Anca"
+        },
+        {
+          "title": "How to Romance Anca (Quests and Best Choices) — Game8",
+          "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618489"
+        },
+        {
+          "title": "Anca Romance All Dialogue Choices — GosuNoob",
+          "url": "https://www.gosunoob.com/guides/the-blood-of-dawnwalker-anca-romance-all-dialogue-choices/"
+        },
+        {
+          "title": "All Romance Options (Romance Guide) — Game8",
+          "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/616531"
+        },
+        {
+          "title": "All Characters in The Blood of Dawnwalker — TechWiser",
+          "url": "https://techwiser.com/the-blood-of-dawnwalker-characters/"
+        }
+      ]
+    },
+    {
+      "title": "Ambrus",
+      "slug": "ambrus-character",
+      "role": "vassal",
+      "romanceable": false,
+      "summary": "Boyar of the north. He runs the valley's blood supply chain, which makes him the most administrative of Brencis's three vassals.",
+      "bodyParagraphs": [
+        "Ambrus holds the northern reaches of the map and manages the logistics of the blood tax rather than the violence of it. That bureaucratic streak is also his undoing — he keeps designated servants to feed from, and he is ritualistic about drinking before a duel.",
+        "Provoking him takes roughly ten Infamy quests, after which his duel opens as The Gilded Gauntlet. He fights as a swordsman, with quick, short combinations rather than showy vampire theatrics."
+      ],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "All Characters in The Blood of Dawnwalker — TechWiser",
+          "url": "https://techwiser.com/the-blood-of-dawnwalker-characters/"
+        },
+        {
+          "title": "All Bosses — Game8",
+          "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/616364"
+        },
+        {
+          "title": "How To Complete The Gilded Gauntlet — GameSpot",
+          "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-gilded-gauntlet-ambrus/"
+        }
+      ]
+    },
+    {
+      "title": "Bakir",
+      "slug": "bakir-character",
+      "role": "vassal",
+      "romanceable": false,
+      "summary": "Boyar of the southwest. He holds his fiefdom by force, and his court is the cheapest of the three to antagonise.",
+      "bodyParagraphs": [
+        "Bakir governs the far southwest of the valley and is the bluntest instrument of the three boyars — sources describe his rule in terms of brutality rather than policy.",
+        "He is also the quickest to bait. Around seven Infamy quests is enough to open his duel, The Lunar Game, against roughly ten for Ambrus and ten or eleven for Xanthe, which makes him the natural first target on a tight clock."
+      ],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "All Characters in The Blood of Dawnwalker — TechWiser",
+          "url": "https://techwiser.com/the-blood-of-dawnwalker-characters/"
+        },
+        {
+          "title": "All Bosses — Game8",
+          "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/616364"
+        },
+        {
+          "title": "How To Complete The Lunar Game — GameSpot",
+          "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-lunar-game-bakir/"
+        }
+      ]
+    },
+    {
+      "title": "Xanthe",
+      "slug": "xanthe-character",
+      "role": "vassal",
+      "romanceable": false,
+      "summary": "Boyar of the southeast, and centuries old. A witchcraft user rather than a duellist, and the only vassal who will negotiate.",
+      "bodyParagraphs": [
+        "Xanthe's holdings run to the far southeast, and they are consistently described as the toughest ground in the valley to work through. She is centuries old and fights with witchcraft — glyphs, siphons and tendrils rather than a sword.",
+        "Her duel, The Cycle of Love, unlocks after roughly ten or eleven Infamy quests, the steepest bar of the three.",
+        {
+          "h": "She has an offer"
+        },
+        "Alone among the boyars, Xanthe would rather live. Beat her and she proposes a deal instead of dying, and taking it changes the composition of the enemies you face in the finale."
+      ],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "All Characters in The Blood of Dawnwalker — TechWiser",
+          "url": "https://techwiser.com/the-blood-of-dawnwalker-characters/"
+        },
+        {
+          "title": "All Bosses — Game8",
+          "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/616364"
+        },
+        {
+          "title": "How To Complete The Cycle Of Love — GameSpot",
+          "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-cycle-of-love-xanthe/"
+        },
+        {
+          "title": "How to Beat Xanthe — KeenGamer",
+          "url": "https://www.keengamer.com/articles/guides/how-to-beat-xanthe-in-the-blood-of-dawnwalker/"
+        }
+      ]
+    },
+    {
+      "title": "Pieter",
+      "slug": "pieter",
+      "role": "minor",
+      "romanceable": false,
+      "summary": "Coen's father. A former mercenary turned silver miner, and the man who taught the protagonist to use a sword.",
+      "bodyParagraphs": [
+        "Pieter fought for pay before he had a family, then went down the silver mines to feed one. Coen worked those mines beside him from a young age.",
+        "His lasting contribution to the game is the swordsmanship he drilled into his son. He is taken along with the rest of the household during the prologue."
+      ],
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Community Bulletin Board #9 — Coen's Roots (Bandai Namco)",
+          "url": "https://en.bandainamcoent.eu/dawnwalker/news/community-bulletin-board-9-coens-roots"
+        },
+        {
+          "title": "Who Coen Is, and Which Family You Are Actually Saving — GamerFuzion",
+          "url": "https://www.gamerfuzion.com/blood-of-dawnwalker-coen-family-story/"
+        },
+        {
+          "title": "Characters in The Blood of Dawnwalker — TV Tropes",
+          "url": "https://tvtropes.org/pmwiki/pmwiki.php/Characters/TheBloodOfDawnwalker"
+        }
+      ]
+    },
+    {
+      "title": "Esme",
+      "slug": "esme",
+      "role": "minor",
+      "romanceable": false,
+      "summary": "Coen's mother. Her health has collapsed since Brencis took the valley, and keeping her medicated is what first sends Coen to Anca.",
+      "bodyParagraphs": [
+        "Esme has always spent herself on the household ahead of her own health, and the arrival of the vrakhiri regime finished the job. By the time the game opens she has largely stopped speaking, eating and sleeping properly.",
+        "Her condition is the practical hook that introduces Anca — the herbs Coen collects in the prologue are for her. She is taken with the rest of the family."
+      ],
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Community Bulletin Board #9 — Coen's Roots (Bandai Namco)",
+          "url": "https://en.bandainamcoent.eu/dawnwalker/news/community-bulletin-board-9-coens-roots"
+        },
+        {
+          "title": "Who Coen Is, and Which Family You Are Actually Saving — GamerFuzion",
+          "url": "https://www.gamerfuzion.com/blood-of-dawnwalker-coen-family-story/"
+        },
+        {
+          "title": "All Characters in The Blood of Dawnwalker — TechWiser",
+          "url": "https://techwiser.com/the-blood-of-dawnwalker-characters/"
+        }
+      ]
+    },
+    {
+      "title": "Yanna",
+      "slug": "yanna",
+      "role": "minor",
+      "romanceable": false,
+      "summary": "Coen's sister and the second-oldest child. With her father and brother away, she is the one raising the two youngest.",
+      "bodyParagraphs": [
+        "Yanna carries more than her years should require. When Pieter and Coen are at the mines she runs the household and looks after Mirto and Lunka.",
+        "Sources describe her as short on patience but immovable on keeping the family together. She is taken in the prologue with the others."
+      ],
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Yanna — Fextralife",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Yanna"
+        },
+        {
+          "title": "Community Bulletin Board #9 — Coen's Roots (Bandai Namco)",
+          "url": "https://en.bandainamcoent.eu/dawnwalker/news/community-bulletin-board-9-coens-roots"
+        },
+        {
+          "title": "Who Coen Is, and Which Family You Are Actually Saving — GamerFuzion",
+          "url": "https://www.gamerfuzion.com/blood-of-dawnwalker-coen-family-story/"
+        }
+      ]
+    },
+    {
+      "title": "Mirto",
+      "slug": "mirto",
+      "role": "minor",
+      "romanceable": false,
+      "summary": "One of Coen's younger siblings. A quiet child who has turned restless as his parents withdrew.",
+      "bodyParagraphs": [
+        "Mirto is drawn as the child who noticed the household going silent and reacted by refusing to stay still. He is taken in the prologue with the rest of the family."
+      ],
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Community Bulletin Board #9 — Coen's Roots (Bandai Namco)",
+          "url": "https://en.bandainamcoent.eu/dawnwalker/news/community-bulletin-board-9-coens-roots"
+        },
+        {
+          "title": "Who Coen Is, and Which Family You Are Actually Saving — GamerFuzion",
+          "url": "https://www.gamerfuzion.com/blood-of-dawnwalker-coen-family-story/"
+        }
+      ]
+    },
+    {
+      "title": "Lunka",
+      "slug": "lunka",
+      "role": "minor",
+      "romanceable": false,
+      "summary": "The youngest of Coen's siblings. Sharp and observant, but the most sheltered of the children.",
+      "bodyParagraphs": [
+        "Lunka misses very little, which sits awkwardly with how carefully she has been kept away from the worst of the valley — sources note she has trouble telling right from wrong because she has had so little practice. She is taken in the prologue with the rest of the family."
+      ],
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Community Bulletin Board #9 — Coen's Roots (Bandai Namco)",
+          "url": "https://en.bandainamcoent.eu/dawnwalker/news/community-bulletin-board-9-coens-roots"
+        },
+        {
+          "title": "Who Coen Is, and Which Family You Are Actually Saving — GamerFuzion",
+          "url": "https://www.gamerfuzion.com/blood-of-dawnwalker-coen-family-story/"
+        }
+      ]
+    },
+    {
+      "title": "Drogos",
+      "slug": "drogos",
+      "role": "minor",
+      "romanceable": false,
+      "regionSlug": "svartrau-city",
+      "summary": "A member of the manumits, the rebel faction Crake leads out of a hideout in Svartrau.",
+      "bodyParagraphs": [
+        "Drogos is named alongside Crake and Sara as part of the manumit cell. Beyond faction membership, the sources we could reach do not detail his role in the rebellion."
+      ],
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Marat — Fextralife",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Marat"
+        },
+        {
+          "title": "Marat / Crake Guide — Dawnwalker Wiki",
+          "url": "https://dawnwalkerwiki.wiki/characters/marat-crake/"
+        }
+      ]
+    },
+    {
+      "title": "Sara",
+      "slug": "sara",
+      "role": "minor",
+      "romanceable": false,
+      "regionSlug": "svartrau-city",
+      "summary": "A member of the manumits, based with Crake and Drogos at the rebel hideout in Svartrau.",
+      "bodyParagraphs": [
+        "Sara is named as part of Crake's cell. What she does for the rebellion is not spelled out in anything we could reach."
+      ],
+      "note": "One merchant round-up also lists a vendor under the name Sara, but it does not say whether that is this character trading from the hideout or a separate NPC, so we have not classified her as a merchant.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Marat — Fextralife",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Marat"
+        },
+        {
+          "title": "Blood of Dawnwalker Vendors — MetaBot.GG",
+          "url": "https://metabot.gg/en/dawnwalker/vendors"
+        }
+      ]
+    },
+    {
+      "title": "Iulian Codrin",
+      "slug": "iulian-codrin",
+      "role": "minor",
+      "romanceable": false,
+      "summary": "One of Ambrus's designated blood servants, and the reason the boyar can be walked into a duel already dying.",
+      "bodyParagraphs": [
+        "Iulian is kept by Ambrus as a feeding source. He knows the boyar's habits, in particular that Ambrus always drinks from a servant before an important duel, and he offers to turn that ritual into a weapon by dosing his own blood.",
+        "Taking him up on it is the side quest The Bittersweet Toast, and it is the single most valuable piece of preparation available before The Gilded Gauntlet."
+      ],
+      "note": "Spelling is inconsistent across sources: quest guides write Iulian Codrin, while the Fextralife character index carries a page under the name Julian. We have not found anything confirming whether these are the same person or two NPCs.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "How To Complete The Gilded Gauntlet — GameSpot",
+          "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-gilded-gauntlet-ambrus/"
+        },
+        {
+          "title": "Should You Poison Ambrus? — Game8",
+          "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618676"
+        },
+        {
+          "title": "Julian — Fextralife",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Julian"
+        }
+      ]
+    },
+    {
+      "title": "The Silver Trader",
+      "slug": "silver-trader",
+      "role": "merchant",
+      "romanceable": false,
+      "regionSlug": "svartrau-city",
+      "summary": "The valley's only silver fence, working out of a house in Neustadt, the southwestern district of Svartrau City.",
+      "bodyParagraphs": [
+        "Silver is contraband under vrakhiri law, so ordinary vendors will not touch it — which leaves a great deal of loot unsellable until you find this one man. He is the sole merchant in the game who both buys and sells it, and his stall is flagged on the map with a white goblet icon.",
+        "He is not available from the start. Access comes either through reaching Infamy level 4 or through the quest Into The Den.",
+        {
+          "h": "Why bother"
+        },
+        "Offloading 1,000 denarii worth of silver to him unlocks the Smuggler trophy."
+      ],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "All Silver Trader Locations — PowerPyx",
+          "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-silver-trader-locations/"
+        },
+        {
+          "title": "How to sell silver — PC Gamer",
+          "url": "https://www.pcgamer.com/games/rpg/blood-of-dawnwalker-silver/"
+        },
+        {
+          "title": "Where to sell silver and unlock the Silver Trader — TheGamer",
+          "url": "https://www.thegamer.com/the-blood-of-dawnwalker-silver-trader-merchant-where-to-sell-unlock-into-the-den-infamy-guide/"
+        },
+        {
+          "title": "All Vendor Types and Merchant Locations — Game8",
+          "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618446"
+        },
+        {
+          "title": "Where to Sell Silver — AltChar",
+          "url": "https://www.altchar.com/guides/the-blood-of-dawnwalker-where-to-sell-silver-aSZ7R0z6pPbS"
+        }
+      ]
+    },
+    {
+      "title": "The Altenmarket Armourer",
+      "slug": "altenmarket-armourer",
+      "role": "merchant",
+      "romanceable": false,
+      "regionSlug": "svartrau-city",
+      "summary": "The armour vendor in Altenmarket, the market district of Svartrau City, trading from the house in the middle of the marketplace.",
+      "bodyParagraphs": [
+        "Armourers are one of eight vendor types in the game, and this is the one most guides send you to first because of where it sits — dead centre of the city's market, a short walk from everything else worth selling to.",
+        "It has also been the subject of a widely circulated money exploit involving Darksteel Bracers, which suggests its stock and buy prices are worth checking before you liquidate elsewhere."
+      ],
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "All Armourer Locations — PowerPyx",
+          "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-armourer-locations/"
+        },
+        {
+          "title": "Infinite Money Glitch at the Altenmarket Armourer — allthings.how",
+          "url": "https://allthings.how/the-blood-of-dawnwalker-infinite-money-glitch-with-darksteel-bracers/"
+        },
+        {
+          "title": "All Merchant & Hidden Merchant Locations — Game Rant",
+          "url": "https://gamerant.com/the-blood-of-dawnwalker-all-merchant-locations-where-find-hidden/"
+        }
+      ]
+    },
+    {
+      "title": "The Svartrau City Blacksmith",
+      "slug": "svartrau-city-blacksmith",
+      "role": "merchant",
+      "romanceable": false,
+      "regionSlug": "svartrau-city",
+      "summary": "The city's weapon smith, positioned northwest of the Cathedral Complex in Svartrau City.",
+      "bodyParagraphs": [
+        "Blacksmiths are the weapons half of the vendor roster, separate from armourers. This one is the city's, sitting northwest of the Cathedral Complex.",
+        "Sources refer to him by trade rather than by any personal name, so we have catalogued him under his role."
+      ],
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "All Merchant & Hidden Merchant Locations — Game Rant",
+          "url": "https://gamerant.com/the-blood-of-dawnwalker-all-merchant-locations-where-find-hidden/"
+        },
+        {
+          "title": "All Vendor Types and Merchant Locations — Game8",
+          "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618446"
+        },
+        {
+          "title": "Merchants — Fextralife",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Merchants"
+        }
+      ]
+    },
+    {
+      "title": "Mevasser",
+      "slug": "mevasser",
+      "role": "merchant",
+      "romanceable": false,
+      "summary": "A named NPC who appears in vendor listings as a trader. His stock and location are not documented in anything we could reach.",
+      "bodyParagraphs": [
+        "Mevasser turns up both in the wiki's index of named NPCs and in a vendor round-up, which is the whole of what we can confirm: he trades, and he has a name."
+      ],
+      "note": "Only the vendor round-up implies he is a merchant, and it gives no location or stock. If he turns out to be a quest NPC who happens to sell a few things, his classification here should change.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Vendors — MetaBot.GG",
+          "url": "https://metabot.gg/en/dawnwalker/vendors"
+        },
+        {
+          "title": "Blood of Dawnwalker Wiki — Fextralife",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood_of_Dawnwalker_Wiki"
+        }
+      ]
+    },
+    {
+      "title": "Aurelius",
+      "slug": "aurelius",
+      "role": "minor",
+      "romanceable": false,
+      "summary": "A named NPC with an entry in the game's character index. No role detail surfaced in the sources we could reach.",
+      "bodyParagraphs": [
+        "Aurelius is catalogued as a named character with his own wiki page, but nothing we could retrieve describes what he does, where he stands, or which quests he appears in."
+      ],
+      "note": "This is a name-only record. It exists so the character index is complete and so the gap is visible; treat everything about his role as unconfirmed until someone fills it in.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Aurelius — Fextralife",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Aurelius"
+        }
+      ]
+    },
+    {
+      "title": "Nareh",
+      "slug": "nareh",
+      "role": "minor",
+      "romanceable": false,
+      "summary": "A named NPC with an entry in the game's character index. No role detail surfaced in the sources we could reach.",
+      "bodyParagraphs": [
+        "Nareh is catalogued as a named character with her own wiki page. Nothing we could retrieve describes her role."
+      ],
+      "note": "This is a name-only record, kept so the index is complete and the gap is obvious. Her role is unconfirmed.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Nareh — Fextralife",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Nareh"
+        }
+      ]
+    },
+    {
+      "title": "Neberu",
+      "slug": "neberu",
+      "role": "minor",
+      "romanceable": false,
+      "summary": "A named NPC with an entry in the game's character index. No role detail surfaced in the sources we could reach.",
+      "bodyParagraphs": [
+        "Neberu is catalogued as a named character with a dedicated wiki page, but no accessible source describes the part he plays."
+      ],
+      "note": "This is a name-only record, kept so the index is complete and the gap is obvious. His role is unconfirmed.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Neberu — Fextralife",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Neberu"
+        }
+      ]
+    },
+    {
+      "title": "Farkas",
+      "slug": "farkas",
+      "role": "minor",
+      "romanceable": false,
+      "summary": "A named NPC with an entry in the game's character index. No role detail surfaced in the sources we could reach.",
+      "bodyParagraphs": [
+        "Farkas is catalogued as a named character with a dedicated wiki page. What he does in the story is not covered by anything we could retrieve."
+      ],
+      "note": "This is a name-only record, kept so the index is complete and the gap is obvious. His role is unconfirmed.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Farkas — Fextralife",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Farkas"
+        }
+      ]
+    },
+    {
+      "title": "Mert",
+      "slug": "mert",
+      "role": "minor",
+      "romanceable": false,
+      "summary": "A named NPC with an entry in the game's character index. No role detail surfaced in the sources we could reach.",
+      "bodyParagraphs": [
+        "Mert is catalogued as a named character with a dedicated wiki page, with no accessible description of his role."
+      ],
+      "note": "This is a name-only record, kept so the index is complete and the gap is obvious. His role is unconfirmed.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Mert — Fextralife",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Mert"
+        }
+      ]
+    },
+    {
+      "title": "Tonis",
+      "slug": "tonis",
+      "role": "minor",
+      "romanceable": false,
+      "summary": "A named NPC with an entry in the game's character index. No role detail surfaced in the sources we could reach.",
+      "bodyParagraphs": [
+        "Tonis is catalogued as a named character with a dedicated wiki page. Nothing we could retrieve explains his part in the game."
+      ],
+      "note": "This is a name-only record, kept so the index is complete and the gap is obvious. His role is unconfirmed.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Tonis — Fextralife",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Tonis"
+        }
+      ]
+    },
+    {
+      "title": "Albertus",
+      "slug": "albertus",
+      "role": "minor",
+      "romanceable": false,
+      "summary": "A named NPC listed in the game's character index. Nothing beyond the name is documented in the sources we could reach.",
+      "bodyParagraphs": [
+        "Albertus is catalogued among the game's named NPCs. We were not able to retrieve anything describing the role played, the faction involved, or where the character is found."
+      ],
+      "note": "This is a name-only record. The character appears in the wiki's index of named NPCs, but no source we could reach describes the role, faction or location. It is catalogued so the index is complete and the gap is visible, not because anything here is settled.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Wiki character index — Fextralife",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood_of_Dawnwalker_Wiki"
+        }
+      ]
+    },
+    {
+      "title": "Alin",
+      "slug": "alin",
+      "role": "minor",
+      "romanceable": false,
+      "summary": "A named NPC listed in the game's character index. Nothing beyond the name is documented in the sources we could reach.",
+      "bodyParagraphs": [
+        "Alin is catalogued among the game's named NPCs. We were not able to retrieve anything describing the role played, the faction involved, or where the character is found."
+      ],
+      "note": "This is a name-only record. The character appears in the wiki's index of named NPCs, but no source we could reach describes the role, faction or location. It is catalogued so the index is complete and the gap is visible, not because anything here is settled.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Wiki character index — Fextralife",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood_of_Dawnwalker_Wiki"
+        }
+      ]
+    },
+    {
+      "title": "Andrei",
+      "slug": "andrei",
+      "role": "minor",
+      "romanceable": false,
+      "summary": "A named NPC listed in the game's character index. Nothing beyond the name is documented in the sources we could reach.",
+      "bodyParagraphs": [
+        "Andrei is catalogued among the game's named NPCs. We were not able to retrieve anything describing the role played, the faction involved, or where the character is found."
+      ],
+      "note": "This is a name-only record. The character appears in the wiki's index of named NPCs, but no source we could reach describes the role, faction or location. It is catalogued so the index is complete and the gap is visible, not because anything here is settled.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Wiki character index — Fextralife",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood_of_Dawnwalker_Wiki"
+        }
+      ]
+    },
+    {
+      "title": "Ascar",
+      "slug": "ascar",
+      "role": "minor",
+      "romanceable": false,
+      "summary": "A named NPC listed in the game's character index. Nothing beyond the name is documented in the sources we could reach.",
+      "bodyParagraphs": [
+        "Ascar is catalogued among the game's named NPCs. We were not able to retrieve anything describing the role played, the faction involved, or where the character is found."
+      ],
+      "note": "This is a name-only record. The character appears in the wiki's index of named NPCs, but no source we could reach describes the role, faction or location. It is catalogued so the index is complete and the gap is visible, not because anything here is settled.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Wiki character index — Fextralife",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood_of_Dawnwalker_Wiki"
+        }
+      ]
+    },
+    {
+      "title": "Atanas",
+      "slug": "atanas",
+      "role": "minor",
+      "romanceable": false,
+      "summary": "A named NPC listed in the game's character index. Nothing beyond the name is documented in the sources we could reach.",
+      "bodyParagraphs": [
+        "Atanas is catalogued among the game's named NPCs. We were not able to retrieve anything describing the role played, the faction involved, or where the character is found."
+      ],
+      "note": "This is a name-only record. The character appears in the wiki's index of named NPCs, but no source we could reach describes the role, faction or location. It is catalogued so the index is complete and the gap is visible, not because anything here is settled.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Wiki character index — Fextralife",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood_of_Dawnwalker_Wiki"
+        }
+      ]
+    },
+    {
+      "title": "Catalin",
+      "slug": "catalin",
+      "role": "minor",
+      "romanceable": false,
+      "summary": "A named NPC listed in the game's character index. Nothing beyond the name is documented in the sources we could reach.",
+      "bodyParagraphs": [
+        "Catalin is catalogued among the game's named NPCs. We were not able to retrieve anything describing the role played, the faction involved, or where the character is found."
+      ],
+      "note": "This is a name-only record. The character appears in the wiki's index of named NPCs, but no source we could reach describes the role, faction or location. It is catalogued so the index is complete and the gap is visible, not because anything here is settled.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Wiki character index — Fextralife",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood_of_Dawnwalker_Wiki"
+        }
+      ]
+    },
+    {
+      "title": "Charkilla",
+      "slug": "charkilla",
+      "role": "minor",
+      "romanceable": false,
+      "summary": "A named NPC listed in the game's character index. Nothing beyond the name is documented in the sources we could reach.",
+      "bodyParagraphs": [
+        "Charkilla is catalogued among the game's named NPCs. We were not able to retrieve anything describing the role played, the faction involved, or where the character is found."
+      ],
+      "note": "This is a name-only record. The character appears in the wiki's index of named NPCs, but no source we could reach describes the role, faction or location. It is catalogued so the index is complete and the gap is visible, not because anything here is settled.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Wiki character index — Fextralife",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood_of_Dawnwalker_Wiki"
+        }
+      ]
+    },
+    {
+      "title": "Crina",
+      "slug": "crina",
+      "role": "minor",
+      "romanceable": false,
+      "summary": "A named NPC listed in the game's character index. Nothing beyond the name is documented in the sources we could reach.",
+      "bodyParagraphs": [
+        "Crina is catalogued among the game's named NPCs. We were not able to retrieve anything describing the role played, the faction involved, or where the character is found."
+      ],
+      "note": "This is a name-only record. The character appears in the wiki's index of named NPCs, but no source we could reach describes the role, faction or location. It is catalogued so the index is complete and the gap is visible, not because anything here is settled.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Wiki character index — Fextralife",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood_of_Dawnwalker_Wiki"
+        }
+      ]
+    },
+    {
+      "title": "Deacon",
+      "slug": "deacon",
+      "role": "minor",
+      "romanceable": false,
+      "summary": "A named NPC listed in the game's character index. Nothing beyond the name is documented in the sources we could reach.",
+      "bodyParagraphs": [
+        "Deacon is catalogued among the game's named NPCs. We were not able to retrieve anything describing the role played, the faction involved, or where the character is found."
+      ],
+      "note": "This is a name-only record. The character appears in the wiki's index of named NPCs, but no source we could reach describes the role, faction or location. It is catalogued so the index is complete and the gap is visible, not because anything here is settled.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Wiki character index — Fextralife",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood_of_Dawnwalker_Wiki"
+        }
+      ]
+    },
+    {
+      "title": "Father Florin",
+      "slug": "father-florin",
+      "role": "minor",
+      "romanceable": false,
+      "summary": "A named NPC listed in the game's character index. Nothing beyond the name is documented in the sources we could reach.",
+      "bodyParagraphs": [
+        "Father Florin is catalogued among the game's named NPCs. We were not able to retrieve anything describing the role played, the faction involved, or where the character is found."
+      ],
+      "note": "This is a name-only record, and there is an extra complication: the index carries both \"Florin\" and \"Father Florin\" as separate entries. We have kept both rather than guess whether they are one clergyman listed twice or two different people.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Wiki character index — Fextralife",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood_of_Dawnwalker_Wiki"
+        }
+      ]
+    },
+    {
+      "title": "Florin",
+      "slug": "florin",
+      "role": "minor",
+      "romanceable": false,
+      "summary": "A named NPC listed in the game's character index. Nothing beyond the name is documented in the sources we could reach.",
+      "bodyParagraphs": [
+        "Florin is catalogued among the game's named NPCs. We were not able to retrieve anything describing the role played, the faction involved, or where the character is found."
+      ],
+      "note": "This is a name-only record, and there is an extra complication: the index carries both \"Florin\" and \"Father Florin\" as separate entries. We have kept both rather than guess whether they are one clergyman listed twice or two different people.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Wiki character index — Fextralife",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood_of_Dawnwalker_Wiki"
+        }
+      ]
+    },
+    {
+      "title": "Gavril",
+      "slug": "gavril",
+      "role": "minor",
+      "romanceable": false,
+      "summary": "A named NPC listed in the game's character index. Nothing beyond the name is documented in the sources we could reach.",
+      "bodyParagraphs": [
+        "Gavril is catalogued among the game's named NPCs. We were not able to retrieve anything describing the role played, the faction involved, or where the character is found."
+      ],
+      "note": "This is a name-only record. The character appears in the wiki's index of named NPCs, but no source we could reach describes the role, faction or location. It is catalogued so the index is complete and the gap is visible, not because anything here is settled.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Wiki character index — Fextralife",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood_of_Dawnwalker_Wiki"
+        }
+      ]
+    },
+    {
+      "title": "Gremla",
+      "slug": "gremla",
+      "role": "minor",
+      "romanceable": false,
+      "summary": "A named NPC listed in the game's character index. Nothing beyond the name is documented in the sources we could reach.",
+      "bodyParagraphs": [
+        "Gremla is catalogued among the game's named NPCs. We were not able to retrieve anything describing the role played, the faction involved, or where the character is found."
+      ],
+      "note": "This is a name-only record. The character appears in the wiki's index of named NPCs, but no source we could reach describes the role, faction or location. It is catalogued so the index is complete and the gap is visible, not because anything here is settled.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Wiki character index — Fextralife",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood_of_Dawnwalker_Wiki"
+        }
+      ]
+    },
+    {
+      "title": "Heile",
+      "slug": "heile",
+      "role": "minor",
+      "romanceable": false,
+      "summary": "A named NPC listed in the game's character index. Nothing beyond the name is documented in the sources we could reach.",
+      "bodyParagraphs": [
+        "Heile is catalogued among the game's named NPCs. We were not able to retrieve anything describing the role played, the faction involved, or where the character is found."
+      ],
+      "note": "This is a name-only record. The character appears in the wiki's index of named NPCs, but no source we could reach describes the role, faction or location. It is catalogued so the index is complete and the gap is visible, not because anything here is settled.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Wiki character index — Fextralife",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood_of_Dawnwalker_Wiki"
+        }
+      ]
+    },
+    {
+      "title": "Iorgu",
+      "slug": "iorgu",
+      "role": "minor",
+      "romanceable": false,
+      "summary": "A named NPC listed in the game's character index. Nothing beyond the name is documented in the sources we could reach.",
+      "bodyParagraphs": [
+        "Iorgu is catalogued among the game's named NPCs. We were not able to retrieve anything describing the role played, the faction involved, or where the character is found."
+      ],
+      "note": "This is a name-only record. The character appears in the wiki's index of named NPCs, but no source we could reach describes the role, faction or location. It is catalogued so the index is complete and the gap is visible, not because anything here is settled.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Wiki character index — Fextralife",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood_of_Dawnwalker_Wiki"
+        }
+      ]
+    },
+    {
+      "title": "Kostel",
+      "slug": "kostel",
+      "role": "minor",
+      "romanceable": false,
+      "summary": "A named NPC listed in the game's character index. Nothing beyond the name is documented in the sources we could reach.",
+      "bodyParagraphs": [
+        "Kostel is catalogued among the game's named NPCs. We were not able to retrieve anything describing the role played, the faction involved, or where the character is found."
+      ],
+      "note": "This is a name-only record. The character appears in the wiki's index of named NPCs, but no source we could reach describes the role, faction or location. It is catalogued so the index is complete and the gap is visible, not because anything here is settled.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Wiki character index — Fextralife",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood_of_Dawnwalker_Wiki"
+        }
+      ]
+    },
+    {
+      "title": "Lazar",
+      "slug": "lazar",
+      "role": "minor",
+      "romanceable": false,
+      "summary": "A named NPC listed in the game's character index. Nothing beyond the name is documented in the sources we could reach.",
+      "bodyParagraphs": [
+        "Lazar is catalogued among the game's named NPCs. We were not able to retrieve anything describing the role played, the faction involved, or where the character is found."
+      ],
+      "note": "This is a name-only record. The character appears in the wiki's index of named NPCs, but no source we could reach describes the role, faction or location. It is catalogued so the index is complete and the gap is visible, not because anything here is settled.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Wiki character index — Fextralife",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood_of_Dawnwalker_Wiki"
+        }
+      ]
+    },
+    {
+      "title": "Norah",
+      "slug": "norah",
+      "role": "minor",
+      "romanceable": false,
+      "summary": "A named NPC listed in the game's character index. Nothing beyond the name is documented in the sources we could reach.",
+      "bodyParagraphs": [
+        "Norah is catalogued among the game's named NPCs. We were not able to retrieve anything describing the role played, the faction involved, or where the character is found."
+      ],
+      "note": "This is a name-only record. The character appears in the wiki's index of named NPCs, but no source we could reach describes the role, faction or location. It is catalogued so the index is complete and the gap is visible, not because anything here is settled.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Wiki character index — Fextralife",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood_of_Dawnwalker_Wiki"
+        }
+      ]
+    },
+    {
+      "title": "Oha",
+      "slug": "oha",
+      "role": "minor",
+      "romanceable": false,
+      "summary": "A named NPC listed in the game's character index. Nothing beyond the name is documented in the sources we could reach.",
+      "bodyParagraphs": [
+        "Oha is catalogued among the game's named NPCs. We were not able to retrieve anything describing the role played, the faction involved, or where the character is found."
+      ],
+      "note": "This is a name-only record. The character appears in the wiki's index of named NPCs, but no source we could reach describes the role, faction or location. It is catalogued so the index is complete and the gap is visible, not because anything here is settled.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Wiki character index — Fextralife",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood_of_Dawnwalker_Wiki"
+        }
+      ]
+    },
+    {
+      "title": "Premysl",
+      "slug": "premysl",
+      "role": "minor",
+      "romanceable": false,
+      "summary": "A named NPC listed in the game's character index. Nothing beyond the name is documented in the sources we could reach.",
+      "bodyParagraphs": [
+        "Premysl is catalogued among the game's named NPCs. We were not able to retrieve anything describing the role played, the faction involved, or where the character is found."
+      ],
+      "note": "This is a name-only record. The character appears in the wiki's index of named NPCs, but no source we could reach describes the role, faction or location. It is catalogued so the index is complete and the gap is visible, not because anything here is settled.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Wiki character index — Fextralife",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood_of_Dawnwalker_Wiki"
+        }
+      ]
+    },
+    {
+      "title": "Renna",
+      "slug": "renna",
+      "role": "minor",
+      "romanceable": false,
+      "summary": "A named NPC listed in the game's character index. Nothing beyond the name is documented in the sources we could reach.",
+      "bodyParagraphs": [
+        "Renna is catalogued among the game's named NPCs. We were not able to retrieve anything describing the role played, the faction involved, or where the character is found."
+      ],
+      "note": "This is a name-only record. The character appears in the wiki's index of named NPCs, but no source we could reach describes the role, faction or location. It is catalogued so the index is complete and the gap is visible, not because anything here is settled.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Wiki character index — Fextralife",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood_of_Dawnwalker_Wiki"
+        }
+      ]
+    },
+    {
+      "title": "Vasil",
+      "slug": "vasil",
+      "role": "minor",
+      "romanceable": false,
+      "summary": "A named NPC listed in the game's character index. Nothing beyond the name is documented in the sources we could reach.",
+      "bodyParagraphs": [
+        "Vasil is catalogued among the game's named NPCs. We were not able to retrieve anything describing the role played, the faction involved, or where the character is found."
+      ],
+      "note": "This is a name-only record. The character appears in the wiki's index of named NPCs, but no source we could reach describes the role, faction or location. It is catalogued so the index is complete and the gap is visible, not because anything here is settled.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Wiki character index — Fextralife",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood_of_Dawnwalker_Wiki"
+        }
+      ]
+    },
+    {
+      "title": "Vera",
+      "slug": "vera",
+      "role": "minor",
+      "romanceable": false,
+      "summary": "A named NPC listed in the game's character index. Nothing beyond the name is documented in the sources we could reach.",
+      "bodyParagraphs": [
+        "Vera is catalogued among the game's named NPCs. We were not able to retrieve anything describing the role played, the faction involved, or where the character is found."
+      ],
+      "note": "This is a name-only record. The character appears in the wiki's index of named NPCs, but no source we could reach describes the role, faction or location. It is catalogued so the index is complete and the gap is visible, not because anything here is settled.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Wiki character index — Fextralife",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood_of_Dawnwalker_Wiki"
+        }
+      ]
+    },
+    {
+      "title": "Vicho",
+      "slug": "vicho",
+      "role": "minor",
+      "romanceable": false,
+      "summary": "A named NPC listed in the game's character index. Nothing beyond the name is documented in the sources we could reach.",
+      "bodyParagraphs": [
+        "Vicho is catalogued among the game's named NPCs. We were not able to retrieve anything describing the role played, the faction involved, or where the character is found."
+      ],
+      "note": "This is a name-only record. The character appears in the wiki's index of named NPCs, but no source we could reach describes the role, faction or location. It is catalogued so the index is complete and the gap is visible, not because anything here is settled.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Wiki character index — Fextralife",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood_of_Dawnwalker_Wiki"
+        }
+      ]
+    },
+    {
+      "title": "Vladimir",
+      "slug": "vladimir",
+      "role": "minor",
+      "romanceable": false,
+      "summary": "A named NPC listed in the game's character index. Nothing beyond the name is documented in the sources we could reach.",
+      "bodyParagraphs": [
+        "Vladimir is catalogued among the game's named NPCs. We were not able to retrieve anything describing the role played, the faction involved, or where the character is found."
+      ],
+      "note": "This is a name-only record. The character appears in the wiki's index of named NPCs, but no source we could reach describes the role, faction or location. It is catalogued so the index is complete and the gap is visible, not because anything here is settled.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Wiki character index — Fextralife",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood_of_Dawnwalker_Wiki"
+        }
+      ]
+    },
+    {
+      "title": "Volk",
+      "slug": "volk",
+      "role": "minor",
+      "romanceable": false,
+      "summary": "A named NPC listed in the game's character index. Nothing beyond the name is documented in the sources we could reach.",
+      "bodyParagraphs": [
+        "Volk is catalogued among the game's named NPCs. We were not able to retrieve anything describing the role played, the faction involved, or where the character is found."
+      ],
+      "note": "This is a name-only record. The character appears in the wiki's index of named NPCs, but no source we could reach describes the role, faction or location. It is catalogued so the index is complete and the gap is visible, not because anything here is settled.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Wiki character index — Fextralife",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood_of_Dawnwalker_Wiki"
+        }
+      ]
+    },
+    {
+      "title": "Zdislav",
+      "slug": "zdislav",
+      "role": "minor",
+      "romanceable": false,
+      "summary": "A named NPC listed in the game's character index. Nothing beyond the name is documented in the sources we could reach.",
+      "bodyParagraphs": [
+        "Zdislav is catalogued among the game's named NPCs. We were not able to retrieve anything describing the role played, the faction involved, or where the character is found."
+      ],
+      "note": "This is a name-only record. The character appears in the wiki's index of named NPCs, but no source we could reach describes the role, faction or location. It is catalogued so the index is complete and the gap is visible, not because anything here is settled.",
+      "confidence": "low",
+      "sources": [
+        {
+          "title": "Blood of Dawnwalker Wiki character index — Fextralife",
+          "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood_of_Dawnwalker_Wiki"
+        }
+      ]
+    }
+  ]
+}

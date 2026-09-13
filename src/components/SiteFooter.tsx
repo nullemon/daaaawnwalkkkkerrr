@@ -34,6 +34,18 @@ export function SiteFooter({
             <li>
               <Link href="/about">About the data</Link>
             </li>
+            <li>
+              <Link href="/account">Account</Link>
+            </li>
+            <li>
+              <Link href="/privacy">Privacy</Link>
+            </li>
+            <li>
+              <Link href="/terms">Terms</Link>
+            </li>
+            <li>
+              <Link href="/contact">Contact</Link>
+            </li>
           </ul>
         </nav>
       </div>

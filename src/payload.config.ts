@@ -14,12 +14,14 @@ import { Enemies } from './collections/Enemies'
 import { SkillTrees } from './collections/SkillTrees'
 import { Perks } from './collections/Perks'
 import { Items } from './collections/Items'
+import { Builds } from './collections/Builds'
 import { Quests } from './collections/Quests'
 import { CourtActivities } from './collections/CourtActivities'
 import { Endings } from './collections/Endings'
 import { Mechanics } from './collections/Mechanics'
 import { Guides } from './collections/Guides'
 import { Corrections } from './collections/Corrections'
+import { Players } from './collections/Players'
 import { SiteSettings } from './globals/SiteSettings'
 
 const filename = fileURLToPath(import.meta.url)
@@ -47,12 +49,14 @@ export default buildConfig({
     SkillTrees,
     Perks,
     Items,
+    Builds,
     // Editorial
     Mechanics,
     Guides,
     // Admin
     Corrections,
     Media,
+    Players,
     Users,
   ],
   globals: [SiteSettings],

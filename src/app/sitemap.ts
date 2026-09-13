@@ -16,11 +16,16 @@ const SECTIONS: { collection: CollectionSlug; path: string; priority: number }[]
   { collection: 'skill-trees', path: 'skills', priority: 0.6 },
   { collection: 'items', path: 'items', priority: 0.6 },
   { collection: 'guides', path: 'guides', priority: 0.7 },
+  { collection: 'builds', path: 'builds', priority: 0.8 },
+  { collection: 'enemies', path: 'enemies', priority: 0.6 },
 ]
 
 const STATIC_PATHS: { path: string; priority: number }[] = [
   { path: '', priority: 1 },
   { path: 'tools/run-checker', priority: 1 },
+  { path: 'tools/build-planner', priority: 0.9 },
+  { path: 'builds', priority: 0.8 },
+  { path: 'enemies', priority: 0.6 },
   { path: 'quests', priority: 0.9 },
   { path: 'endings', priority: 0.9 },
   { path: 'court', priority: 0.8 },
@@ -31,6 +36,9 @@ const STATIC_PATHS: { path: string; priority: number }[] = [
   { path: 'items', priority: 0.7 },
   { path: 'guides', priority: 0.7 },
   { path: 'about', priority: 0.4 },
+  { path: 'privacy', priority: 0.3 },
+  { path: 'terms', priority: 0.3 },
+  { path: 'contact', priority: 0.4 },
 ]
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

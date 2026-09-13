@@ -1,9 +1,10 @@
 import type { CollectionConfig } from 'payload'
+import { isEditor } from '../fields/shared'
 
 export const Media: CollectionConfig = {
   slug: 'media',
   admin: { group: 'Admin' },
-  access: { read: () => true },
+  access: { read: () => true, create: isEditor, update: isEditor, delete: isEditor },
   fields: [
     {
       name: 'alt',

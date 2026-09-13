@@ -1,0 +1,325 @@
+{
+  "collection": "builds",
+  "records": [
+    {
+      "title": "The All-Rounder",
+      "slug": "all-rounder",
+      "playstyle": "hybrid",
+      "primaryTreeSlug": "swordmastery",
+      "perkSlugs": ["sustained-focus", "perfect-block", "perfect-riposte", "master-fencer", "stinging-blade", "fates-favour", "nourishing-blood", "witchcraft-mastery"],
+      "itemSlugs": ["arbiter-set"],
+      "difficulty": "intermediate",
+      "summary": "A day-and-night generalist that uses Swordmastery as its spine and borrows just enough Witchcraft and Vampirism that Coen is never caught in the wrong form.",
+      "bodyParagraphs": [
+        "Coen is effectively two characters sharing one pool of skill points, and the All-Rounder is the answer to that problem rather than a way around it. Build guides describe it as making Coen a jack-of-all-trades across both halves of the cycle, balancing his remaining humanity against his vampiric appetites so that he can handle whatever the clock hands him.",
+        { "h": "Why it works" },
+        "Swordmastery is the only tree that never switches off. Witchcraft is sealed at night, because the runes that power Coen's hexes heal over when he turns, and Vampirism is unavailable by day and gated behind Corruption besides. Every point spent in Swordmastery therefore pays rent twice per in-game day, which is why it anchors this build and why the cross-tree investments sit on top of it rather than replacing it.",
+        { "h": "Perk priorities" },
+        { "ul": [
+          "Sustained Focus, which raises your total Activation Charges. Every active ability in every tree draws from that pool, so this is the single perk that improves a generalist most.",
+          "Perfect Block and Perfect Riposte, which turn defence into resource generation rather than a pause in your offence.",
+          "Master Fencer for extra Swordmastery ability slots, so you actually have room to carry a day kit and a night kit.",
+          "Stinging Blade and Fate's Favour for raw Swordmastery damage, the two damage perks most consistently named across build guides.",
+          "A light dip into Witchcraft Mastery for Burning Blood by day, and Nourishing Blood for vampire sustain by night."
+        ] },
+        { "h": "Gear" },
+        "Early gear in this game is mostly randomised enemy drops, so the sensible approach for a generalist is to chase stat lines that suit the build rather than hunting named pieces. Guides recommend using the Equipment Preview panel on the character screen to save two loadouts, so that your human passives are equipped while the sun is up and your vampire passives swap in after dark. For late game, one build guide points to the Arbiter set as the natural fit for this playstyle.",
+        { "h": "Reasoning, not gospel" },
+        "Our opinion rather than a sourced claim: the All-Rounder is the correct first-playthrough build precisely because there is no respec in the game. A specialist that turns out to be wrong for your schedule of quests is a mistake you cannot undo, whereas a generalist is merely slightly less efficient at everything. Choose this if you intend to follow the story where it leads rather than plan a route in advance."
+      ],
+      "confidence": "medium",
+      "sources": [
+        { "title": "Best All-Rounder Build - Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/617039" },
+        { "title": "All Best Builds - Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/616359" },
+        { "title": "The Blood of Dawnwalker: Best Builds - Method", "url": "https://www.method.gg/the-blood-of-dawnwalker/the-blood-of-dawnwalker-best-builds" },
+        { "title": "The Blood of Dawnwalker Beginner Tips: 12 Things to Know - Mobalytics", "url": "https://mobalytics.gg/gamebase/guides/the-blood-of-dawnwalker-beginner-tips" }
+      ]
+    },
+    {
+      "title": "Swordmaster",
+      "slug": "swordmaster",
+      "playstyle": "hybrid",
+      "primaryTreeSlug": "swordmastery",
+      "perkSlugs": ["sustained-focus", "stinging-blade", "fates-favour", "precision", "growing-momentum", "perfect-riposte", "counterattack", "omniblock", "endless-effort", "fleet-of-foot", "master-fencer", "sword-sage"],
+      "itemSlugs": ["the-purge", "pieters-garb", "ring-of-quick-strikes", "mercenarys-boots", "ancient-heros-vambraces"],
+      "difficulty": "intermediate",
+      "summary": "The purest expression of the directional duelling system: crit damage, cheap stamina, fast charges, and a riposte that punishes every read you win.",
+      "bodyParagraphs": [
+        "If the All-Rounder is insurance, the Swordmaster is conviction. Guides describe the goal as pushing weapon damage and critical hit power up while pushing activation charge time and stamina costs down, which compounds into a loop where every block you win funds the next ability you fire.",
+        { "h": "The defensive core" },
+        "Build guides consistently pair Omniblock, Perfect Riposte and Counterattack as the defensive spine, because a perfect block followed by a riposte deals boosted damage against every enemy type in the game. The Perfect Block perk also restores extra stamina and activation charge on a successful parry, which is what makes the build self-sustaining rather than a glass cannon. Endless Effort and Fleet of Foot reward correctly timed dodges with faster charge generation.",
+        { "h": "The offensive core" },
+        { "ul": [
+          "Stinging Blade and Fate's Favour, the two perks named across almost every Swordmastery guide as the backbone of weapon damage.",
+          "Precision and Growing Momentum, for the critical and ramping damage buffs that make longer fights lopsided.",
+          "Sustained Focus, capped, because every ability you own is paid for out of the Activation Charge pool.",
+          "Master Fencer, capped, to open enough ability slots that the build has a complete kit rather than one trick."
+        ] },
+        { "h": "Abilities and ultimate" },
+        "Dirty Trick and Charge are the ability picks most often called out as the best of the tree. For the ultimate, Sword Sage is the pick guides recommend for a Swordmastery-focused character, because it lets you chain multiple Artery Strikes. Remember that you can take only one ultimate per tree and the choice is permanent, so this is the decision to think hardest about.",
+        { "h": "Gear" },
+        "The named late-game loadout for this build is The Purge as the weapon, with an upgraded Pieter's Garb, the Ring of Quick Strikes, Mercenary's Boots and the Ancient Hero's Vambraces around it. Those pieces come from a single build guide rather than a consensus, so treat them as a strong lead rather than a settled best-in-slot list.",
+        { "h": "Who should play it" },
+        "Our read: this is the build that scales best with your own skill rather than your point total, which makes it the natural choice on Challenging and Duelist. On Duelist in particular, where the directional prompts stop holding your hand, a character whose entire economy runs on winning parries is doing exactly what the difficulty is asking of you."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Best Swordmaster Build - Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/617108" },
+        { "title": "Best Swordmastery Perks and Abilities - GamerGuides", "url": "https://www.gamerguides.com/the-blood-of-dawnwalker/guide/getting-started/character-development/best-swordmastery-perks-and-abilities" },
+        { "title": "Best sword build in The Blood of Dawnwalker - Sportskeeda", "url": "https://www.sportskeeda.com/esports/best-sword-build-the-blood-dawnwalker" },
+        { "title": "The Best Perks To Unlock And Upgrade - GameSpot", "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-best-perks-skills-abilitie/" },
+        { "title": "Best Perks Guide - G2A News", "url": "https://www.g2a.com/news/features/guide/the-blood-of-dawnwalker-best-perks-guide/" },
+        { "title": "The Blood of Dawnwalker: Best Human Build - Deltia's Gaming", "url": "https://deltiasgaming.com/the-blood-of-dawnwalker-best-human-build/" }
+      ]
+    },
+    {
+      "title": "Daylight Hexweaver",
+      "slug": "daylight-hexweaver",
+      "playstyle": "day",
+      "primaryTreeSlug": "witchcraft",
+      "perkSlugs": ["witchcraft-mastery", "aether-cascade", "cycle-of-ruin", "soul-stigma", "burning-blood", "soul-reaping", "ravenous-flock", "sustained-focus", "perfect-block"],
+      "itemSlugs": ["runic-enchantment", "the-hand-of-fate"],
+      "difficulty": "intermediate",
+      "summary": "A day-only caster that opens with Soul Stigma, stacks Burning Blood on top, and uses sword hits to keep every hex alive instead of recasting into its own health bar.",
+      "bodyParagraphs": [
+        "Witchcraft is the tree that demands the most planning, because it is unavailable for exactly half of the game. The runes carved into Coen's skin heal over when he turns at night, sealing every hex until sunrise. That is not a drawback to design around so much as a scheduling instruction: a Hexweaver plans daylight quests and leaves the night for travel, feeding and Swordmastery work.",
+        { "h": "The opening sequence" },
+        "The rotation guides recommend is specific and worth learning as a habit. Open with Soul Stigma on the biggest threat in the encounter, which raises critical hit chance and critical damage against that target, then follow immediately with Burning Blood on the same enemy for damage over time. Aether Cascade stacks Witchcraft damage for every hex you throw, so the order matters less than the volume, but stigmatising the priority target first means every subsequent cast lands into a damage multiplier.",
+        { "h": "Cycle of Ruin is the build" },
+        "The single perk that turns this from a cantrip rotation into a real build is Cycle of Ruin, which extends your active hexes on landed attacks, blocks and perfect blocks. Casting costs you health, so recasting constantly is how new Witchcraft players kill themselves. With Cycle of Ruin equipped, your sword keeps the hexes running and your perfect blocks refund activation charge to pay for the next cast. In practice you should be swinging between casts, not standing back from the fight.",
+        { "h": "Support hexes" },
+        { "ul": [
+          "Soul Reaping, which lifesteals from a target while pushing them away, and is the closest thing a day build has to a panic button.",
+          "Ravenous Flock, named alongside Burning Blood as one of the two best damage options in a Witchcraft-focused kit.",
+          "Runic Bulwark as the Witchcraft ultimate, which grants a 15 percent chance to apply a random hex when you perfect block."
+        ] },
+        { "h": "Gear" },
+        "Runic Enchantment is described as the best overall armour set for Witchcraft, with the caveat that it greatly benefits the kit while reducing your armour rating. The Hand of Fate is the sword most often recommended to prioritise for daytime Witchcraft play. The stat lines to chase are Witchcraft ability damage, cooldown reduction and activation charge restoration rate, with magical damage protection, lifesteal and higher human health as the useful secondaries.",
+        { "h": "Honest caveat" },
+        "Our opinion: the Hexweaver has the highest ceiling of the three specialist builds and the least forgiving floor. You are trading armour for output and paying health to cast, on a character who can only use half his kit. If you are playing on Story or Fair this is a thrilling way to spend thirty days. On Duelist we would want a Swordmastery defensive core underneath it before committing."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Best Witchcraft build - Dexerto", "url": "https://www.dexerto.com/wikis/the-blood-of-dawnwalker/best-daylight-witchcraft-build/" },
+        { "title": "Best Witchcraft Human Builds - Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/617228" },
+        { "title": "Best witchcraft build in The Blood of Dawnwalker - Sportskeeda", "url": "https://www.sportskeeda.com/esports/best-witchcraft-build-the-blood-dawnwalker" },
+        { "title": "Witchcraft Guide: Best Hexes, Manuals and How Blood Magic Works - Timesaver", "url": "https://timesaver.gg/blog/blood-of-dawnwalker-witchcraft-hexes-guide" },
+        { "title": "Best Builds in The Blood of Dawnwalker - BlogAndGuide", "url": "https://www.blogandguide.com/best-builds-in-the-blood-of-dawnwalker-witchcraft/" }
+      ]
+    },
+    {
+      "title": "Runic Bulwark Warden",
+      "slug": "runic-bulwark-warden",
+      "playstyle": "day",
+      "primaryTreeSlug": "witchcraft",
+      "perkSlugs": ["runic-bulwark", "perfect-block", "perfect-riposte", "omniblock", "cycle-of-ruin", "sustained-focus", "endless-effort", "witchcraft-mastery"],
+      "itemSlugs": ["runic-enchantment"],
+      "difficulty": "advanced",
+      "summary": "A defensive daylight variant that makes the block button the primary hex delivery system, built around the Runic Bulwark ultimate.",
+      "bodyParagraphs": [
+        "This is a variation on the Hexweaver rather than a rival to it, and it exists because of one sourced fact: the Witchcraft ultimate Runic Bulwark grants a 15 percent chance to apply a random hex to an opponent when you perfect block them. Guides recommending it point out that by the time ultimates unlock, a competent player is perfect blocking most incoming attacks, which turns that 15 percent into a steady drip rather than a lottery.",
+        { "h": "The idea" },
+        "Stack everything that increases the number of perfect blocks you throw per fight, then let the block button do your hex application for free. Perfect Block already refunds stamina and activation charge on a successful parry, Cycle of Ruin already extends your live hexes on every block and perfect block, and Runic Bulwark adds a chance to seed new ones. Those three effects point the same direction, which is unusual in this game's perk trees and worth exploiting.",
+        { "h": "Build order" },
+        { "ul": [
+          "Swordmastery defensive core first: Omniblock, Perfect Block, Perfect Riposte, Endless Effort.",
+          "Sustained Focus to keep the charge pool deep enough that your refunds have somewhere to land.",
+          "Witchcraft Mastery and Cycle of Ruin next, so the hexes Runic Bulwark applies actually persist.",
+          "Runic Bulwark as your one Witchcraft ultimate. Remember the choice is permanent and there is no respec."
+        ] },
+        { "h": "Reasoning, clearly labelled" },
+        "We want to be straight about this one. No guide we found publishes this as a named build. The perk effects and the Runic Bulwark recommendation are sourced, but the assembly is ours, and the case for it is an inference: three separate systems in the game all reward the same input, so a build that maximises that input should outperform a build that splits its attention. Treat it as a hypothesis worth testing rather than a proven optimum, and confirm the numbers yourself before committing an irreversible ultimate pick to it.",
+        { "h": "Who should play it" },
+        "This is for a second playthrough, or for a player who already knows the enemy animation set well enough to parry on reflex. On a first run the free hex application will feel unreliable simply because you will not be blocking often enough for the chance to matter."
+      ],
+      "note": "No source publishes this as a named build. The individual perk effects and the Runic Bulwark recommendation are sourced; the combination is our own reasoning and is flagged as such in the body.",
+      "confidence": "low",
+      "sources": [
+        { "title": "Best perks in The Blood of Dawnwalker - GamesRadar+", "url": "https://www.gamesradar.com/games/action-rpg/blood-of-dawnwalker-perks-skills-abilities/" },
+        { "title": "Best Skills to Upgrade: Perks and Abilities - Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618245" },
+        { "title": "Best Witchcraft build - Dexerto", "url": "https://www.dexerto.com/wikis/the-blood-of-dawnwalker/best-daylight-witchcraft-build/" },
+        { "title": "How to Block - Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618241" }
+      ]
+    },
+    {
+      "title": "Blood Surge Detonator",
+      "slug": "blood-surge-detonator",
+      "playstyle": "night",
+      "primaryTreeSlug": "vampirism",
+      "perkSlugs": ["blood-surge", "sustained-focus", "hastened-corruption", "nourishing-blood", "razorsharp-claws", "voracious-bite", "renounce-death"],
+      "itemSlugs": ["corrupted-pendant", "ring-of-the-night"],
+      "difficulty": "advanced",
+      "summary": "A night build that turns crowds into chain reactions by making Blood Surge cheap enough to cast repeatedly and strong enough to clear a room.",
+      "bodyParagraphs": [
+        "Blood Surge is the ability the whole build is named for. It makes ordinary enemies detonate, damaging everyone standing nearby, while bosses take heavy damage instead of exploding. You unlock it by drinking Xanthe's blood. Build guides describe the Vampirism specialist as dedicated to reducing that ability's Activation Charge cost and pushing its damage as high as it will go.",
+        { "h": "Corruption is the gate, not the goal" },
+        "Vampirism nodes stay locked until Coen reaches the required Corruption level, and the more powerful the skill, the higher the requirement. Corruption caps at level 15, which is what unlocks a Vampirism ultimate. It rises only by drinking blood, and it never goes back down. That makes a Blood Surge build a commitment in two directions at once: you need Corruption high enough to reach the good nodes, and you cannot change your mind about it later.",
+        { "h": "How to raise Corruption efficiently" },
+        { "ul": [
+          "Feed on enemies in and out of combat, and take the Drain option where boss fights offer it.",
+          "Drink Vials of Human Blood, and feed from stealth where the opportunity presents itself.",
+          "Prioritise by value: small animals such as rabbits and mice give the least, larger animals such as deer and wolves give more, human victims give more again, and vrakhiri blood gives the most of all.",
+          "Take Hastened Corruption early if you intend to reach the deep nodes before the thirty days run out."
+        ] },
+        { "h": "Supporting kit" },
+        "The loadout shape most often recommended for night play is a heal, a control and a finisher. Voracious Bite covers sustain and feeds Corruption at the same time, Piercing Shriek gets you out of a swarm, and Blood Surge is your removal. Nourishing Blood and Razorsharp Claws provide the damage and survivability floor underneath. Sustained Focus matters here as much as anywhere, because a detonator with an empty charge pool is just a man with claws.",
+        { "h": "Gear and the ultimate" },
+        "Corrupted Pendant and Ring of the Night are named among the night cornerstones, chosen for vampiric health restoration and ability cooldown reduction. For the ultimate, Renounce Death is the pick multiple guides recommend, especially on harder difficulties, because instead of dying you return once per combat with a short window of immortality and lifesteal reported at around ten seconds. Our view: on a build this dependent on standing inside an exploding crowd, that safety net is worth more than any damage ultimate."
+      ],
+      "confidence": "medium",
+      "sources": [
+        { "title": "Best Vampirism Build - Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/617218" },
+        { "title": "Blood Surge - Dawnwalker Planner", "url": "https://dawnwalkerplanner.com/vampire-powers/blood-surge" },
+        { "title": "Best vampire build in The Blood of Dawnwalker - Sportskeeda", "url": "https://www.sportskeeda.com/esports/best-vampire-build-the-blood-dawnwalker" },
+        { "title": "Vampirism Guide: All Night Abilities, Corruption and the Best Vampire Powers - Timesaver", "url": "https://timesaver.gg/blog/blood-of-dawnwalker-vampirism-abilities-guide" },
+        { "title": "Blood of Dawnwalker: What is Corruption, explained - VGC", "url": "https://www.videogameschronicle.com/guide/blood-of-dawnwalker-what-is-corruption-explained/" },
+        { "title": "Renounce Death - Fextralife Wiki", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Renounce_Death" }
+      ]
+    },
+    {
+      "title": "Night Claw Stalker",
+      "slug": "night-claw-stalker",
+      "playstyle": "night",
+      "primaryTreeSlug": "vampirism",
+      "perkSlugs": ["razorsharp-claws", "nourishing-blood", "voracious-bite", "piercing-shriek", "shadowstep", "shapeshift", "death-from-above", "fleet-of-foot"],
+      "itemSlugs": ["ambrus-cuirass", "vrakhiric-bracers", "corrupted-pendant", "ring-of-the-night"],
+      "difficulty": "intermediate",
+      "summary": "The gear-led night build: claw damage and vampiric cooldown stacked until Coen's damage ramp becomes momentum rather than burst.",
+      "bodyParagraphs": [
+        "Vampire combat is not a reskin of human combat. Guides are blunt about this: the night half of the game is built around mobility and creating openings with well timed dodges rather than trading blows behind a guard. The Night Claw Stalker leans all the way into that, treating claws and movement as the damage source and abilities as punctuation.",
+        { "h": "The stat priority" },
+        "At night, the two stats to max are Claw Damage and Vampiric Ability Cooldown, because a claw build's damage ramps with momentum rather than arriving in a single burst. Cooldown reduction is what keeps the momentum from stalling between engagements.",
+        { "h": "The named night loadout" },
+        { "ul": [
+          "Ambrus' Cuirass, a legendary chest piece obtainable by defeating Ambrus relatively early.",
+          "Vrakhiric Bracers.",
+          "Corrupted Pendant.",
+          "Ring of the Night."
+        ] },
+        "That set of four is described as the cornerstone loadout for boosting vampiric health restoration, vampiric ability cooldown reduction and claw damage. It comes from one build guide rather than a consensus of several, so the stat lines are the reliable part and the exact pieces are the lead to chase.",
+        { "h": "Solving the healing problem" },
+        "The hardest part of playing the vampire half is healing. The practical advice, repeated across beginner guides, is to loot every human and animal corpse you pass, because they have a random chance to drop blood consumables, and to remember that animals and ordinary enemies are a consequence-free blood source. Voracious Bite doubles as your in-combat sustain and your Corruption engine. Build this habit early or the build will feel far more fragile than it is.",
+        { "h": "Kit and movement" },
+        "Piercing Shriek is your escape from a swarm, Death from Above is a removal tool, and Shadowstep is the movement ability that defines the night half of the game. Shapeshift is worth a point for traversal alone. On the Swordmastery side, Fleet of Foot supports the dodge-first rhythm that the night form wants anyway.",
+        { "h": "Where it struggles" },
+        "Our opinion: this build is superb at clearing camps and miserable at scheduling. Every quest marked with a sun icon is played at a disadvantage, and there are a lot of them. If you take this build, accept that you are also choosing a night-weighted route through the thirty days, and plan your day segments for travel, trading and preparation instead of fighting."
+      ],
+      "confidence": "medium",
+      "sources": [
+        { "title": "Build Coen with the best Gear for both Day and Night combat - Game Rant", "url": "https://gamerant.com/the-blood-of-dawnwalker-best-build-vampire-human-day-night-gear/" },
+        { "title": "Best Vampirism Build - Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/617218" },
+        { "title": "The Blood of Dawnwalker: Best Vampire Powers and Builds - ComicBookCo", "url": "https://comicbookco.com/lists/blood-of-dawnwalker-vampire-powers-best-builds/" },
+        { "title": "The Blood of Dawnwalker Beginner Tips: 12 Things to Know - Mobalytics", "url": "https://mobalytics.gg/gamebase/guides/the-blood-of-dawnwalker-beginner-tips" },
+        { "title": "Blood Of Dawnwalker Skill Trees Complete Guide - Hack the Minotaur", "url": "https://hacktheminotaur.com/blood-of-dawnwalker/blood-of-dawnwalker-skill-trees-complete-guide/" }
+      ]
+    },
+    {
+      "title": "First Five Days",
+      "slug": "first-five-days",
+      "playstyle": "hybrid",
+      "primaryTreeSlug": "swordmastery",
+      "perkSlugs": ["sustained-focus", "perfect-block", "perfect-riposte", "endless-effort", "stinging-blade", "fates-favour", "witchcraft-mastery", "burning-blood", "nourishing-blood", "razorsharp-claws", "mercurial-fervour"],
+      "itemSlugs": ["ambrus-cuirass"],
+      "difficulty": "beginner",
+      "summary": "The opening investment plan for a fresh save: damage, health and stamina first, Swordmastery before anything else, and no points wasted on a specialism you cannot undo.",
+      "bodyParagraphs": [
+        "This is less a build than a spending order, and it is the most useful thing a new player can have. The advice across early-game guides converges hard: in roughly the first three to five days, prioritise damage and your health pool, and put your points where they work in both forms.",
+        { "h": "Swordmastery first, and it is not close" },
+        "The best early perks come from Swordmastery because it functions during both day and night. Sustained Focus, Perfect Block, Perfect Riposte and Endless Effort all improve Coen regardless of which form he is wearing, which makes them strictly better value than an equivalent point in a tree that is offline half the time. Stinging Blade and Fate's Favour are the two damage perks to open with.",
+        { "h": "Stamina before damage" },
+        "One piece of beginner advice deserves more prominence than it usually gets: stamina underwrites nearly everything in combat. Attacking, dodging, sprinting and holding Omniblock all draw from it. Guides recommend improving stamina before you go heavy on damage, and in our experience that is the difference between a fight you lose slowly and a fight you win comfortably.",
+        { "h": "The suggested opening order" },
+        { "ul": [
+          "Swordmastery core: Sustained Focus, Perfect Block, Perfect Riposte, Endless Effort.",
+          "Stinging Blade and Fate's Favour for damage.",
+          "One point in Mercurial Fervour for faster daytime travel.",
+          "Witchcraft Mastery, specifically to support Burning Blood.",
+          "Nourishing Blood and Razorsharp Claws for night-time damage and survivability, then Hastened Corruption and Shapeshift as the vampire toolkit opens up."
+        ] },
+        { "h": "Gear in the first week" },
+        "Early equipment is largely randomised drops from enemies, so chasing named pieces is a waste of segments. Match stat lines to your intended direction instead. The one exception worth planning around is Ambrus' Cuirass, a legendary armour piece obtainable by defeating Ambrus fairly early, which several guides single out as a genuine early power spike.",
+        { "h": "The mistake to avoid" },
+        "Acquiring a skill is itself reported to cost a time segment, and there is no respec in the game. Both of those facts point at the same discipline: do not open the skill screen and click things because you have points spare. Decide what you want the next three days to look like, buy exactly the perks that serve it, and close the menu. Our strong opinion is that the players who struggle with the thirty-day limit are usually not losing time to quests, they are losing it to fidgeting."
+      ],
+      "note": "The claim that acquiring a skill costs a time segment comes from one outlet's mistakes round-up rather than from several independent sources, so treat the specific cost as unconfirmed.",
+      "confidence": "high",
+      "sources": [
+        { "title": "Best early-game build in The Blood of Dawnwalker - Sportskeeda", "url": "https://www.sportskeeda.com/esports/best-early-game-build-the-blood-dawnwalker" },
+        { "title": "Blood of Dawnwalker Guide: Best Early Skills & Perks to Unlock First - Games.gg", "url": "https://games.gg/the-blood-of-dawnwalker/guides/blood-of-dawnwalker-best-perks/" },
+        { "title": "All Best Builds - Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/616359" },
+        { "title": "The Blood of Dawnwalker Beginner Tips: 12 Things to Know - Mobalytics", "url": "https://mobalytics.gg/gamebase/guides/the-blood-of-dawnwalker-beginner-tips" },
+        { "title": "Beginner Mistakes That Waste Your 30 Days - AllThings.how", "url": "https://allthings.how/the-blood-of-dawnwalker-beginner-mistakes-that-waste-your-30-days/" }
+      ]
+    },
+    {
+      "title": "Last Stand Brinkman",
+      "slug": "last-stand-brinkman",
+      "playstyle": "hybrid",
+      "primaryTreeSlug": "swordmastery",
+      "perkSlugs": ["last-stand", "renounce-death", "nourishing-blood", "voracious-bite", "perfect-block", "perfect-riposte", "sustained-focus", "stinging-blade"],
+      "itemSlugs": [],
+      "difficulty": "advanced",
+      "summary": "A deliberately reckless Swordmastery build that lives below thirty percent health to double its weapon damage, with vampiric healing as the throttle.",
+      "bodyParagraphs": [
+        "The Swordmastery ultimate Last Stand doubles all weapon damage while Coen is at thirty percent health or less. That is an enormous number, and the guides recommending it point out something clever: it pairs unusually well with the vampire half of the character, because feeding gives you more deliberate control over your own health bar than a normal RPG protagonist gets.",
+        { "h": "The core idea" },
+        "Most builds treat low health as a failure state. This one treats it as a resource. If you can reliably hold yourself in the damage band rather than falling through it, you are playing the whole back half of every fight at double weapon damage. The skill being tested is not reading attacks, it is restraint about when to heal.",
+        { "h": "What makes it survivable" },
+        { "ul": [
+          "Renounce Death as the Vampirism ultimate, which returns you once per combat instead of killing you, with a short immortality and lifesteal window reported at around ten seconds.",
+          "Voracious Bite and Nourishing Blood, so that topping up is a decision you make rather than a resource you run out of.",
+          "The standard Perfect Block and Perfect Riposte core, because a build that intends to sit at low health cannot afford to take chip damage.",
+          "Sustained Focus, as ever, to keep the charge pool funding your escapes."
+        ] },
+        { "h": "Reasoning, clearly labelled" },
+        "Being explicit: the Last Stand effect, the Renounce Death effect and the observation that vampiric healing gives you unusual control over your health are all sourced. The build itself is our construction, and it is a risk argument rather than a measured one. We have not seen a guide publish damage numbers proving this beats a straightforward Sword Sage crit build, and you should not commit two permanent ultimate picks to it on our word alone.",
+        { "h": "Who it is for" },
+        "Second playthroughs, and players who already find Fair too comfortable but dislike how Duelist strips the directional prompts. It is also, frankly, the most entertaining way to fight bosses in this game, which is not nothing in a thirty-day run you will spend a lot of hours inside."
+      ],
+      "note": "Assembled by us from sourced perk effects. No guide publishes this as a named build, and no source provides damage comparisons against a conventional Swordmastery ultimate pick.",
+      "confidence": "low",
+      "sources": [
+        { "title": "Best perks in The Blood of Dawnwalker - GamesRadar+", "url": "https://www.gamesradar.com/games/action-rpg/blood-of-dawnwalker-perks-skills-abilities/" },
+        { "title": "The Best Perks To Unlock And Upgrade - GameSpot", "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-best-perks-skills-abilitie/" },
+        { "title": "Renounce Death - Fextralife Wiki", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Renounce_Death" },
+        { "title": "Best Skills to Upgrade: Perks and Abilities - Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618245" }
+      ]
+    },
+    {
+      "title": "Duelist Insurance",
+      "slug": "duelist-insurance",
+      "playstyle": "hybrid",
+      "primaryTreeSlug": "vampirism",
+      "perkSlugs": ["renounce-death", "perfect-block", "omniblock", "perfect-riposte", "counterattack", "endless-effort", "fleet-of-foot", "sustained-focus", "nourishing-blood"],
+      "itemSlugs": ["ambrus-cuirass"],
+      "difficulty": "advanced",
+      "summary": "A survivability-first setup for Challenging and Duelist, built on stamina economy, perfect blocks, and Renounce Death as a per-fight second life.",
+      "bodyParagraphs": [
+        "Duelist is described as the preset for players who want to read enemy animations rather than rely on directional UI prompts, and there is a trophy, Uphill Battle, for completing the whole game on it while saving the people of Laslea. If that is your target, the build question changes: you are no longer optimising damage per second, you are optimising the number of mistakes you are allowed to make.",
+        { "h": "Renounce Death is the centrepiece" },
+        "Multiple guides call Renounce Death the safest of the nine ultimate perks, specifically on harder difficulties, because instead of dying you come back once per combat with a short window of immortality and lifesteal. On a boss you would otherwise have to reload, that is an entire extra attempt handed to you mid-fight. On a hardest-difficulty run where reloads cost real time, it is the most valuable thing in the ultimate list.",
+        { "h": "Stamina is the real health bar" },
+        "Attacking, dodging, sprinting and holding Omniblock all consume stamina, which is why beginner guides insist on improving it before damage. On Duelist that advice stops being a suggestion. The build order is defensive economy first, damage second.",
+        { "h": "Perk order" },
+        { "ul": [
+          "Omniblock, Perfect Block, Perfect Riposte and Counterattack, in that rough order. Perfect blocks cost no stamina and refund activation charge, which is the engine of the whole build.",
+          "Endless Effort and Fleet of Foot, so correctly timed dodges also generate charge.",
+          "Sustained Focus, capped, to deepen the pool everything draws from.",
+          "Nourishing Blood for night-time sustain, and Renounce Death once Corruption allows it."
+        ] },
+        { "h": "Practical technique" },
+        "The guidance we find most useful in practice: hold Omniblock against unfamiliar enemies while you learn which directions their common attacks come from, then switch to manual directional blocks once the patterns are readable, because directional play is far cheaper on stamina. Keep Omniblock for chaotic group fights. And when the directional indicator turns into a red skull, that attack cannot be blocked at all, so dodge it.",
+        { "h": "Caveat" },
+        "The Renounce Death recommendation and the combat mechanics here are sourced; putting them together into a hardest-difficulty package is our editorial call. We would also note the obvious tension: this build spends its Vampirism ultimate on defence, which means the Blood Surge specialist path is closed to you. On Duelist we think that is a trade worth making, but it is a trade."
+      ],
+      "confidence": "medium",
+      "sources": [
+        { "title": "Best Difficulty Settings - Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/617705" },
+        { "title": "The Blood of Dawnwalker Combat Guide - Mobalytics", "url": "https://mobalytics.gg/gamebase/guides/the-blood-of-dawnwalker-combat-guide" },
+        { "title": "How to Block - Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618241" },
+        { "title": "Best perks in The Blood of Dawnwalker - GamesRadar+", "url": "https://www.gamesradar.com/games/action-rpg/blood-of-dawnwalker-perks-skills-abilities/" },
+        { "title": "The Blood of Dawnwalker Trophy Guide & Roadmap - PowerPyx", "url": "https://www.powerpyx.com/the-blood-of-dawnwalker-trophy-guide-roadmap/" }
+      ]
+    }
+  ]
+}

@@ -21,11 +21,12 @@ export const siteSettings = {
     'Thirty days and thirty nights, eight segments each. The clock only moves when you let it. Work out what you can still reach from where you actually are.',
   primaryNav: [
     { label: 'Run checker', href: '/tools/run-checker' },
+    { label: 'Builds', href: '/tools/build-planner' },
     { label: 'Quests', href: '/quests' },
     { label: 'Endings', href: '/endings' },
+    { label: 'Items', href: '/items' },
     { label: 'Court', href: '/court' },
     { label: 'Mechanics', href: '/mechanics' },
-    { label: 'Regions', href: '/regions' },
   ],
   footerNote:
     'Unofficial fan project. The Blood of Dawnwalker is developed by Rebel Wolves and published by Bandai Namco Entertainment. No affiliation is claimed. Facts are compiled from public sources and have not been verified against the game.',

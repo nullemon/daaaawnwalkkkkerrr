@@ -1,0 +1,759 @@
+{
+  "collection": "perks",
+  "records": [
+    {
+      "title": "Last Stand",
+      "slug": "last-stand",
+      "treeSlug": "swordmastery",
+      "isUltimate": true,
+      "effect": "Sharply amplifies weapon damage for as long as Coen sits at 30% health or below.",
+      "summary": "A Swordmastery ultimate that turns being nearly dead into Coen's single highest-damage state.",
+      "bodyParagraphs": [
+        "Last Stand keys off one threshold. Drop to 30% health or lower and weapon damage climbs steeply, and it stays climbed for as long as Coen stays inside that band.",
+        "Write-ups favour it on builds that lean on vampire feeding, because feeding gives you deliberate control over your own health bar. The low-health window stops being an accident you survive and becomes a state you steer into on purpose.",
+        "It is generally discussed head-to-head with Tactical Mastery, the other Swordmastery ultimate that most guides shortlist. Ultimates are a one-way door, and coverage differs on how far that door swings: some articles describe taking one ultimate as locking out only the other two in the same tree, others describe a single ultimate as all any build will ever get. Either reading makes the pick permanent for the playthrough."
+      ],
+      "note": "Sources disagree on the magnitude. Some describe Last Stand as doubling weapon damage below 30% health; another describes the increase as 150%.",
+      "confidence": "low",
+      "sources": [
+        { "title": "Best perks in The Blood of Dawnwalker - GamesRadar+", "url": "https://www.gamesradar.com/games/action-rpg/blood-of-dawnwalker-perks-skills-abilities/" },
+        { "title": "The Best Perks To Unlock And Upgrade In The Blood of Dawnwalker - GameSpot", "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-best-perks-skills-abilitie/" },
+        { "title": "Ultimate Perks List - Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/621067" }
+      ]
+    },
+    {
+      "title": "Tactical Mastery",
+      "slug": "tactical-mastery",
+      "treeSlug": "swordmastery",
+      "isUltimate": true,
+      "effect": "Shaves one Activation Charge off the cost of every ability Coen uses.",
+      "summary": "The Swordmastery ultimate that makes the whole ability bar cheaper rather than making any one hit bigger.",
+      "bodyParagraphs": [
+        "Every active ability in the game draws on the Activation Charge pool, so a flat one-charge discount is felt in all three trees at once rather than only in sword combat. Cheap abilities become free, expensive ones become affordable, and the pool refills into a rotation you can actually sustain.",
+        "Coverage consistently frames the Swordmastery pick as a straight choice between this and Last Stand, with Last Stand winning on raw damage and Tactical Mastery winning on how often you get to press buttons.",
+        "Swordmastery and Witchcraft ultimates are gated behind roughly 35 skill points invested in their own tree, so this is a late commitment rather than an early one."
+      ],
+      "confidence": "medium",
+      "sources": [
+        { "title": "Best perks in The Blood of Dawnwalker - GamesRadar+", "url": "https://www.gamesradar.com/games/action-rpg/blood-of-dawnwalker-perks-skills-abilities/" },
+        { "title": "Ultimate Perks List - Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/621067" }
+      ]
+    },
+    {
+      "title": "Sword Sage",
+      "slug": "sword-sage",
+      "treeSlug": "swordmastery",
+      "isUltimate": true,
+      "effect": "Killing an enemy clears the cooldowns on Coen's active abilities.",
+      "summary": "The third Swordmastery ultimate, built around chaining kills to keep every ability permanently off cooldown.",
+      "bodyParagraphs": [
+        "Sword Sage rewards crowds. Each body that drops resets your active ability cooldowns, so a room full of ordinary enemies becomes a chain rather than a queue of waiting periods.",
+        "Its obvious weakness is the boss fight, where there is nothing to kill and therefore nothing to reset. That is the usual reason guides push players towards Last Stand or Tactical Mastery instead, both of which keep working in a duel.",
+        "It is the least discussed of the three Swordmastery ultimates in the coverage available, which is worth keeping in mind before committing a permanent choice to it."
+      ],
+      "confidence": "medium",
+      "sources": [
+        { "title": "Sword Sage - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Sword_Sage" },
+        { "title": "Best perks in The Blood of Dawnwalker - GamesRadar+", "url": "https://www.gamesradar.com/games/action-rpg/blood-of-dawnwalker-perks-skills-abilities/" }
+      ]
+    },
+    {
+      "title": "Runic Bulwark",
+      "slug": "runic-bulwark",
+      "treeSlug": "witchcraft",
+      "isUltimate": true,
+      "effect": "Every Perfect Block carries a 15% chance to stick a random Hex on the attacker.",
+      "summary": "A Witchcraft ultimate that turns defensive timing into free hexes, with no health paid for the casting.",
+      "bodyParagraphs": [
+        "Witchcraft normally charges Coen a slice of his current health to carve a fresh rune. Runic Bulwark sidesteps that entirely: the hex arrives through the block, not through the spell, so the bill never comes.",
+        "The 15% figure reads small on paper and plays larger in practice, because by the point ultimates unlock most players are blocking cleanly as a matter of routine. Guides that recommend it lean on exactly that argument, treating it as a per-block lottery you enter dozens of times a fight.",
+        "Which hex lands is out of your hands, which makes it a chaos pick rather than a precision one. Aether Cascade and Entwined Torment are the two alternatives in the same tree, and taking any of the three closes off the others."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Runic Bulwark - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Runic_Bulwark" },
+        { "title": "Best perks in The Blood of Dawnwalker - GamesRadar+", "url": "https://www.gamesradar.com/games/action-rpg/blood-of-dawnwalker-perks-skills-abilities/" },
+        { "title": "Ultimate Perks List - Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/621067" }
+      ]
+    },
+    {
+      "title": "Aether Cascade",
+      "slug": "aether-cascade",
+      "treeSlug": "witchcraft",
+      "isUltimate": true,
+      "effect": "Using any ability discounts the next one by one Activation Charge.",
+      "summary": "A Witchcraft ultimate that rewards casting in sequence, each spell paying part of the next one's bill.",
+      "bodyParagraphs": [
+        "Aether Cascade is a rhythm perk. Cast once and the following ability costs a charge less, which turns a two-spell opener into something a modest charge pool can actually afford.",
+        "It occupies much the same design space as Swordmastery's Tactical Mastery, trading that perk's unconditional discount for one that only arrives if you keep the chain going.",
+        "It is one of the three mutually exclusive Witchcraft ultimates alongside Runic Bulwark and Entwined Torment, and the Witchcraft tree gates its ultimates behind roughly 35 skill points spent inside the tree."
+      ],
+      "confidence": "medium",
+      "sources": [
+        { "title": "Best perks in The Blood of Dawnwalker - GamesRadar+", "url": "https://www.gamesradar.com/games/action-rpg/blood-of-dawnwalker-perks-skills-abilities/" },
+        { "title": "Perks - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Perks" }
+      ]
+    },
+    {
+      "title": "Entwined Torment",
+      "slug": "entwined-torment",
+      "treeSlug": "witchcraft",
+      "isUltimate": true,
+      "effect": "The first Witchcraft ability Coen casts in a fight strikes two enemies instead of one.",
+      "summary": "A Witchcraft ultimate that doubles the opener, making the first cast of every encounter count twice.",
+      "bodyParagraphs": [
+        "The condition is narrow and precise: it has to be a Witchcraft ability, and it has to be the first ability used in the combat. Meet both and the effect lands on a second target for free.",
+        "That makes it an opening-move perk rather than a sustained one. It rewards players who start fights deliberately, front-loading a debuff or a damage-over-time on two enemies before the melee begins.",
+        "Against a lone boss the second target simply does not exist, which is the natural limit on it. Runic Bulwark and Aether Cascade are the competing Witchcraft ultimates, and only one of the three can ever be learned."
+      ],
+      "confidence": "medium",
+      "sources": [
+        { "title": "Best perks in The Blood of Dawnwalker - GamesRadar+", "url": "https://www.gamesradar.com/games/action-rpg/blood-of-dawnwalker-perks-skills-abilities/" },
+        { "title": "Perks - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Perks" }
+      ]
+    },
+    {
+      "title": "Renounce Death",
+      "slug": "renounce-death",
+      "treeSlug": "vampirism",
+      "isUltimate": true,
+      "effect": "Once per fight a killing blow is refused, and Coen carries on with ten seconds of immortality and lifesteal.",
+      "summary": "The Vampirism ultimate most guides call the safe pick: one free death per encounter, converted into a ten-second rampage.",
+      "bodyParagraphs": [
+        "The window does two jobs at once. The immortality buys survival, and the lifesteal bolted onto it means those ten seconds are also how you claw your health back before the protection lapses. Spend them attacking, not retreating.",
+        "Unlike the Swordmastery and Witchcraft ultimates, which are bought with skill points, the Vampirism ultimates are gated behind reaching Corruption level 15. Corruption climbs by drinking blood, so the requirement is a play-pattern rather than a purchase.",
+        "It is the consensus recommendation of the three Vampirism ultimates, particularly at higher difficulties where one mistimed block otherwise means reloading. Lethal Crescendo and Sanguine Renewal are the alternatives, and picking any one closes the others."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Renounce Death - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Renounce_Death" },
+        { "title": "Best perks in The Blood of Dawnwalker - GamesRadar+", "url": "https://www.gamesradar.com/games/action-rpg/blood-of-dawnwalker-perks-skills-abilities/" },
+        { "title": "The Best Perks To Unlock And Upgrade In The Blood of Dawnwalker - GameSpot", "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-best-perks-skills-abilitie/" }
+      ]
+    },
+    {
+      "title": "Lethal Crescendo",
+      "slug": "lethal-crescendo",
+      "treeSlug": "vampirism",
+      "isUltimate": true,
+      "effect": "Each kill, or each boss health segment broken, stacks another 20% claw damage until combat ends.",
+      "summary": "The claw-build Vampirism ultimate, a damage buff with no listed stack ceiling that resets when the fight does.",
+      "bodyParagraphs": [
+        "The trigger is generous. It fires on killing a normal enemy and also on stripping a health segment from a boss, so the perk keeps paying out in fights that contain only one target.",
+        "Because the stacks are described as stacking without a stated cap, the scaling is open-ended. Its cost is ramp-up time: the first enemy of an encounter is fought at base damage, and everything resets to zero the moment combat closes.",
+        "Guides pair it with the Razorsharp Claws line and with vampiric sustain abilities, the idea being that you survive the opening of a fight long enough for the multiplier to take over. It is the recommended pick specifically for claw-focused night builds, where Renounce Death is the safer general-purpose choice."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "The Blood of Dawnwalker Skill Trees - Method", "url": "https://www.method.gg/the-blood-of-dawnwalker/the-blood-of-dawnwalker-skill-trees-explained-swordmastery-witchcraft-and-vampirism" },
+        { "title": "Claw Damage - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Claw_Damage" },
+        { "title": "Best Vampirism Build - Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/617218" }
+      ]
+    },
+    {
+      "title": "Sanguine Renewal",
+      "slug": "sanguine-renewal",
+      "treeSlug": "vampirism",
+      "isUltimate": true,
+      "effect": "Feeding with Voracious Bite wipes the cooldowns on all of Coen's active abilities.",
+      "summary": "A Vampirism ultimate that welds healing to cooldown reset, making the bite the pivot of the whole rotation.",
+      "bodyParagraphs": [
+        "This is a modifier on an ability you were already going to press. Voracious Bite is the standard vampire heal, and Sanguine Renewal makes every use of it double as a full reset of your active abilities.",
+        "The practical effect is that your sustain and your damage stop competing for time. You do not choose between healing and using an ability, because healing is what refunds the abilities.",
+        "Like the other Vampirism ultimates it requires Corruption level 15 before it can be learned, and it is mutually exclusive with Renounce Death and Lethal Crescendo. It is the least covered of the three in the guides available, so plan around it with that in mind."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Sanguine Renewal - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Sanguine_Renewal" },
+        { "title": "Sanguine Renewal Skill and How to Unlock - Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618983" },
+        { "title": "Sanguine Renewal - Gamer Guides database", "url": "https://www.gamerguides.com/the-blood-of-dawnwalker/database/perks/vampirism/sanguine-renewal" }
+      ]
+    },
+    {
+      "title": "Sustained Focus",
+      "slug": "sustained-focus",
+      "treeSlug": "swordmastery",
+      "isUltimate": false,
+      "effect": "Enlarges Coen's pool of Activation Charges.",
+      "summary": "The perk most guides name first, because every active ability in every tree is paid for out of this pool.",
+      "bodyParagraphs": [
+        "Activation Charges are the shared currency behind Swordmastery strikes, Witchcraft hexes and Vampirism powers alike. Raising the ceiling on that pool improves whatever you were already doing, which is why recommendations for it cut across playstyles rather than favouring one.",
+        "It sits in Swordmastery, the tree that works at any hour, so the benefit follows Coen from daylight into the night rather than switching off at dusk.",
+        "Guides that lay out an early order tend to slot it alongside Endless Effort and Perfect Riposte as the first handful of points worth spending."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "All Perks List - Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618584" },
+        { "title": "The best skills to pick early in The Blood of Dawnwalker - Shacknews", "url": "https://www.shacknews.com/article/150592/the-best-skills-to-pick-early-in-the-blood-of-dawnwalker" },
+        { "title": "The Best Perks To Unlock And Upgrade In The Blood of Dawnwalker - GameSpot", "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-best-perks-skills-abilitie/" }
+      ]
+    },
+    {
+      "title": "Endless Effort",
+      "slug": "endless-effort",
+      "treeSlug": "swordmastery",
+      "isUltimate": false,
+      "effect": "Raises Coen's maximum stamina.",
+      "summary": "An early Swordmastery stamina perk that guides rank among the very first points worth spending.",
+      "bodyParagraphs": [
+        "Stamina governs how long Coen can keep blocking, dodging and pressing an attack before he has to disengage. Raising the ceiling early buys room to learn enemy patterns rather than being forced out of every exchange.",
+        "Recommended orderings usually put it first for anyone committing to Swordmastery, ahead of Sustained Focus and Perfect Riposte, on the grounds that stamina is the constraint you run into before charges are.",
+        "Coverage of the Swordmastery tree also describes a four-rank stamina perk that eventually doubles maximum stamina. That description was not explicitly attached to a name in the material available."
+      ],
+      "note": "Guides name Endless Effort as the early Swordmastery stamina perk, and separately describe a four-rank Swordmastery perk that doubles maximum stamina, but no source seen here states that these are the same perk.",
+      "confidence": "medium",
+      "sources": [
+        { "title": "The best skills to pick early in The Blood of Dawnwalker - Shacknews", "url": "https://www.shacknews.com/article/150592/the-best-skills-to-pick-early-in-the-blood-of-dawnwalker" },
+        { "title": "Blood of Dawnwalker Guide: Best Early Skills & Perks to Unlock First - games.gg", "url": "https://games.gg/the-blood-of-dawnwalker/guides/blood-of-dawnwalker-best-perks/" },
+        { "title": "Best perks in The Blood of Dawnwalker - GamesRadar+", "url": "https://www.gamesradar.com/games/action-rpg/blood-of-dawnwalker-perks-skills-abilities/" }
+      ]
+    },
+    {
+      "title": "Stinging Blade",
+      "slug": "stinging-blade",
+      "treeSlug": "swordmastery",
+      "isUltimate": false,
+      "foundInWorld": false,
+      "effect": "Raises Coen's weapon damage, climbing further with each rank invested.",
+      "summary": "The Swordmastery tree's core weapon damage line, levelled by tracking down or buying its manuals.",
+      "bodyParagraphs": [
+        "Stinging Blade is the straightforward damage increase in Swordmastery, and the perk guides point at when players ask how to make the sword hit harder. Higher ranks add damage and, at the top of the line, critical benefits as well.",
+        "Progressing it means acquiring Stinging Blade manuals rather than simply spending points. Manuals turn up in chests at soldier camps, bandit camps, monster lairs and ancient circles, arrive as quest rewards, and drop from defeated enemies, but they are also sold by vendors.",
+        "One guide reports a blacksmith at Altenmarkt selling the manual for 314 Denarii, and suggests checking other traders in Svartrau City if that one is unavailable. Because a purchase route is documented, this line is not world-exclusive.",
+        "Recommended pairings put Growing Momentum next, so that the flat damage floor from Stinging Blade is stacked on top of by a per-hit buff."
+      ],
+      "note": "The Altenmarkt blacksmith and the 314 Denarii price come from a single guide and were not corroborated elsewhere in the material consulted.",
+      "confidence": "medium",
+      "sources": [
+        { "title": "Stinging Blade - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Stinging_Blade" },
+        { "title": "How to increase sword and claw damage in The Blood of Dawnwalker - Sportskeeda", "url": "https://www.sportskeeda.com/esports/how-increase-sword-claw-damage-the-blood-dawnwalker-stinging-blade-manuals-razorsharp-claws-upgrades" },
+        { "title": "Blood of Dawnwalker All Skill Manual Locations - PowerPyx", "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-skill-manual-locations/" }
+      ]
+    },
+    {
+      "title": "Growing Momentum",
+      "slug": "growing-momentum",
+      "treeSlug": "swordmastery",
+      "isUltimate": false,
+      "effect": "Stacks extra weapon damage with every attack landed, and the whole stack drops the moment Coen takes damage.",
+      "summary": "A Swordmastery buff that pays out for aggression and charges the full price for a single mistake.",
+      "bodyParagraphs": [
+        "The bargain is blunt. Keep hitting and the damage bonus keeps climbing; get hit once and it is gone, back to zero, however long the streak was.",
+        "That makes it a companion perk to defensive investment rather than a replacement for it. It pushes players towards clean blocks, well-judged dodges and full aggression between them, because the perk only pays for offence that goes unanswered.",
+        "Guides commonly recommend taking it shortly after Stinging Blade, so that the flat weapon damage increase and the stacking multiplier are working on the same swings."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "The Best Perks To Unlock And Upgrade In The Blood of Dawnwalker - GameSpot", "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-best-perks-skills-abilitie/" },
+        { "title": "The best skills to pick early in The Blood of Dawnwalker - Shacknews", "url": "https://www.shacknews.com/article/150592/the-best-skills-to-pick-early-in-the-blood-of-dawnwalker" },
+        { "title": "Blood of Dawnwalker Guide: Best Early Skills & Perks to Unlock First - games.gg", "url": "https://games.gg/the-blood-of-dawnwalker/guides/blood-of-dawnwalker-best-perks/" }
+      ]
+    },
+    {
+      "title": "Adrenaline Rush",
+      "slug": "adrenaline-rush",
+      "treeSlug": "swordmastery",
+      "isUltimate": false,
+      "effect": "Boosts attack damage after Coen uses a Swordmastery ability.",
+      "summary": "A Swordmastery perk that turns each ability use into a short window of harder-hitting ordinary attacks.",
+      "bodyParagraphs": [
+        "Rather than making the ability itself stronger, Adrenaline Rush strengthens what follows it. The ability becomes an opener and the normal attack string after it carries the bonus.",
+        "That gives it a natural fit with any build already cycling Swordmastery abilities for other reasons, and with perks that refund Activation Charges, since a faster ability cycle means the buff refreshes more often.",
+        "It is an offensive rather than a defensive investment, and sits alongside Stinging Blade and Growing Momentum in the damage half of the tree."
+      ],
+      "confidence": "medium",
+      "sources": [
+        { "title": "Best Swordmastery Perks and Abilities - Gamer Guides", "url": "https://www.gamerguides.com/the-blood-of-dawnwalker/guide/getting-started/character-development/best-swordmastery-perks-and-abilities" },
+        { "title": "Best perks in The Blood of Dawnwalker - GamesRadar+", "url": "https://www.gamesradar.com/games/action-rpg/blood-of-dawnwalker-perks-skills-abilities/" }
+      ]
+    },
+    {
+      "title": "Walking Fortress",
+      "slug": "walking-fortress",
+      "treeSlug": "swordmastery",
+      "isUltimate": false,
+      "effect": "Returns some Activation Charge every time Coen lands a Perfect Block.",
+      "summary": "One of the game's charge engines: it pays defensive precision back as resource for offence.",
+      "bodyParagraphs": [
+        "Activation Charges limit how often any ability can be used, and Walking Fortress makes blocking well a way to generate them rather than merely a way to avoid damage.",
+        "It is the reason Swordmastery is often described as the backbone of hybrid builds. The charges it produces are spent just as happily on Witchcraft hexes or Vampirism powers as on sword abilities, so a defensive Swordmastery investment funds the other two trees.",
+        "It pairs naturally with Runic Bulwark for players heading towards the Witchcraft ultimate, since both reward the same input."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Best Swordmastery Perks and Abilities - Gamer Guides", "url": "https://www.gamerguides.com/the-blood-of-dawnwalker/guide/getting-started/character-development/best-swordmastery-perks-and-abilities" },
+        { "title": "The Blood of Dawnwalker: Best Abilities - Mobalytics", "url": "https://mobalytics.gg/gamebase/guides/the-blood-of-dawnwalker-abilities" },
+        { "title": "The Best Perks To Unlock And Upgrade In The Blood of Dawnwalker - GameSpot", "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-best-perks-skills-abilitie/" }
+      ]
+    },
+    {
+      "title": "Perfect Riposte",
+      "slug": "perfect-riposte",
+      "treeSlug": "swordmastery",
+      "isUltimate": false,
+      "effect": "Improves the counterattack Coen makes after a Perfect Block.",
+      "summary": "An early Swordmastery pick in the block-and-counter line, recommended among the first few points spent.",
+      "bodyParagraphs": [
+        "Perfect Riposte appears in guide orderings for early spending, usually named after Endless Effort and Sustained Focus, as part of the defensive spine that makes the first hours survivable.",
+        "Coverage of the same tree describes a block-line perk under which the strike following a Perfect Block hits harder and, at higher ranks, causes bleeding. That description matches this perk's position and name, but no source consulted attached the two together explicitly.",
+        "It shares its trigger with Walking Fortress, so players building around Perfect Blocks tend to take both and treat clean defence as their primary damage and resource source."
+      ],
+      "note": "The name Perfect Riposte and the description of a strengthened, eventually bleed-inflicting post-Perfect-Block strike both come from Swordmastery tree coverage, but no source seen here states that the description belongs to this perk. The effect line is therefore an inference and should be verified in game.",
+      "confidence": "low",
+      "sources": [
+        { "title": "Blood Of Dawnwalker Skill Trees Complete Guide - Hack the Minotaur", "url": "https://hacktheminotaur.com/blood-of-dawnwalker/blood-of-dawnwalker-skill-trees-complete-guide/" },
+        { "title": "Blood of Dawnwalker Guide: Best Early Skills & Perks to Unlock First - games.gg", "url": "https://games.gg/the-blood-of-dawnwalker/guides/blood-of-dawnwalker-best-perks/" }
+      ]
+    },
+    {
+      "title": "Omniblock",
+      "slug": "omniblock",
+      "treeSlug": "swordmastery",
+      "isUltimate": false,
+      "effect": "Lets Coen block attacks coming from any direction, with a linked perk reducing its stamina drain.",
+      "summary": "The Swordmastery defence that forgives a misread, blocking regardless of where the blow comes from.",
+      "bodyParagraphs": [
+        "Ordinary blocking asks you to read the direction of an incoming attack correctly. Omniblock removes that demand, which matters most against groups where several attacks arrive from angles you were not watching.",
+        "The tree also contains a perk that lowers the stamina Omniblock consumes, which is what turns it from an emergency button into something you can hold through a sustained exchange.",
+        "It underpins the whole Perfect Block economy, since perks like Walking Fortress and the Witchcraft ultimate Runic Bulwark all pay out on blocks that land cleanly."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "The Blood of Dawnwalker: Best Abilities - Mobalytics", "url": "https://mobalytics.gg/gamebase/guides/the-blood-of-dawnwalker-abilities" },
+        { "title": "The Best Perks To Unlock And Upgrade In The Blood of Dawnwalker - GameSpot", "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-best-perks-skills-abilitie/" },
+        { "title": "Blood Of Dawnwalker Skill Trees Complete Guide - Hack the Minotaur", "url": "https://hacktheminotaur.com/blood-of-dawnwalker/blood-of-dawnwalker-skill-trees-complete-guide/" }
+      ]
+    },
+    {
+      "title": "Counterattack",
+      "slug": "counterattack",
+      "treeSlug": "swordmastery",
+      "isUltimate": false,
+      "effect": "Effect not documented in the sources consulted; listed as an early-rank Swordmastery perk.",
+      "summary": "A named Swordmastery perk in the defensive block line whose effect text has not surfaced in available coverage.",
+      "bodyParagraphs": [
+        "Counterattack is named alongside Omniblock and Perfect Riposte as one of the first-rank perks in the Swordmastery defensive line. Beyond its placement, no source consulted described what it actually does.",
+        "It is recorded here so the tree's roster is complete rather than because its behaviour is understood. Anyone planning a build around it should confirm the wording in game before committing points.",
+        "The same coverage that names it also produced a confirmed error elsewhere, which is the main reason this entry is rated low."
+      ],
+      "note": "Name only. No source consulted stated this perk's effect, and the single source naming it also misreported the ultimate perk names, so even the name should be treated as unverified.",
+      "confidence": "low",
+      "sources": [
+        { "title": "Blood Of Dawnwalker Skill Trees Complete Guide - Hack the Minotaur", "url": "https://hacktheminotaur.com/blood-of-dawnwalker/blood-of-dawnwalker-skill-trees-complete-guide/" }
+      ]
+    },
+    {
+      "title": "Artery Strike",
+      "slug": "artery-strike",
+      "treeSlug": "swordmastery",
+      "isUltimate": false,
+      "effect": "A targeted strike at the neck that can behead the target for an outright kill.",
+      "summary": "Swordmastery's single-target finisher, with a chance to end a fight in one blow.",
+      "bodyParagraphs": [
+        "Artery Strike aims at the throat and carries a chance of decapitation, which skips the rest of an enemy's health bar entirely. Even when the instant kill does not trigger, it is described as high single-target damage.",
+        "That combination makes it the tree's main damage ability in most recommended builds rather than a situational one, since the downside case is still a heavy hit.",
+        "It is one of the few things in the game that can genuinely shorten a dangerous fight rather than merely win it more comfortably, which is why it appears so consistently in build orders."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Best Swordmastery Perks and Abilities - Gamer Guides", "url": "https://www.gamerguides.com/the-blood-of-dawnwalker/guide/getting-started/character-development/best-swordmastery-perks-and-abilities" },
+        { "title": "The Blood of Dawnwalker: Best Abilities - Mobalytics", "url": "https://mobalytics.gg/gamebase/guides/the-blood-of-dawnwalker-abilities" },
+        { "title": "All Abilities List - Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618587" }
+      ]
+    },
+    {
+      "title": "Broadswing",
+      "slug": "broadswing",
+      "treeSlug": "swordmastery",
+      "isUltimate": false,
+      "effect": "A sweeping sword arc that strikes the enemies surrounding Coen.",
+      "summary": "Swordmastery's answer to being encircled, trading single-target precision for a hit on everything nearby.",
+      "bodyParagraphs": [
+        "Where Artery Strike concentrates everything on one throat, Broadswing spreads damage across whoever is standing close. It is the crowd tool of a tree otherwise built around duels.",
+        "Its value rises with any perk that pays out per enemy killed, since clearing several weakened foes at once is how those effects are triggered in bulk.",
+        "Only one source in the material consulted described it, so both the name and the description warrant checking in game."
+      ],
+      "note": "Single source, and that source misreported the ultimate perk names elsewhere on the same page.",
+      "confidence": "low",
+      "sources": [
+        { "title": "Blood Of Dawnwalker Skill Trees Complete Guide - Hack the Minotaur", "url": "https://hacktheminotaur.com/blood-of-dawnwalker/blood-of-dawnwalker-skill-trees-complete-guide/" }
+      ]
+    },
+    {
+      "title": "Charge",
+      "slug": "charge",
+      "treeSlug": "swordmastery",
+      "isUltimate": false,
+      "effect": "Rushes Coen into an opponent and stuns them on arrival.",
+      "summary": "The Swordmastery gap closer, opening a fight by arriving inside it with the target already staggered.",
+      "bodyParagraphs": [
+        "Charge solves two problems in one press: it covers the ground between Coen and a distant enemy, and it arrives with a stun that buys a free opening.",
+        "Broader descriptions of the Swordmastery tree confirm it contains both a gap closer and stun effects, which is consistent with this perk even where it is not named directly.",
+        "It is a natural opener for damage perks that want an uninterrupted first exchange, since a stunned target cannot break a building stack."
+      ],
+      "confidence": "medium",
+      "sources": [
+        { "title": "Blood Of Dawnwalker Skill Trees Complete Guide - Hack the Minotaur", "url": "https://hacktheminotaur.com/blood-of-dawnwalker/blood-of-dawnwalker-skill-trees-complete-guide/" },
+        { "title": "All Skills - Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/616366" }
+      ]
+    },
+    {
+      "title": "Dirty Trick",
+      "slug": "dirty-trick",
+      "treeSlug": "swordmastery",
+      "isUltimate": false,
+      "effect": "Throws powder into an enemy's eyes to blind them for a short time.",
+      "summary": "An unchivalrous Swordmastery opener that blinds a target rather than wounding it.",
+      "bodyParagraphs": [
+        "The effect is control rather than damage: a blinded enemy stops pressuring Coen for a moment, which is enough to reposition, heal, or land an uncontested opener.",
+        "It fits the same slot as Charge in a build, an ability spent to create a safe first exchange rather than to end one.",
+        "The one source describing it gave two names for the same effect, so the in-game name is not settled here."
+      ],
+      "note": "The single source consulted referred to this perk as Acrid Dust and Dirty Trick interchangeably, so the correct in-game name is unconfirmed. The same source misreported the ultimate perk names.",
+      "confidence": "low",
+      "sources": [
+        { "title": "Blood Of Dawnwalker Skill Trees Complete Guide - Hack the Minotaur", "url": "https://hacktheminotaur.com/blood-of-dawnwalker/blood-of-dawnwalker-skill-trees-complete-guide/" }
+      ]
+    },
+    {
+      "title": "Forbidden Sigils",
+      "slug": "forbidden-sigils",
+      "treeSlug": "witchcraft",
+      "isUltimate": false,
+      "effect": "Opens extra Witchcraft ability slots, reaching four at the highest rank.",
+      "summary": "The Witchcraft perk that decides how many hexes Coen can actually bring to a fight.",
+      "bodyParagraphs": [
+        "Slots are the hard limit on a Witchcraft build. Owning a wide spellbook means little if only two hexes can be equipped, and Forbidden Sigils is what raises that number, described as taking the count to 2, 3 and then 4 across its ranks.",
+        "It is gated behind a parent perk, Unnatural Resilience, which has to be learned first.",
+        "For hybrid builds it is the perk that decides whether Witchcraft is a full toolkit or a single utility button carried into the day."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Forbidden Sigils - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Forbidden_Sigils" },
+        { "title": "Best Witchcraft Perks and Abilities - Gamer Guides", "url": "https://www.gamerguides.com/the-blood-of-dawnwalker/guide/getting-started/character-development/best-witchcraft-perks-and-abilities" },
+        { "title": "Best perks in The Blood of Dawnwalker - GamesRadar+", "url": "https://www.gamesradar.com/games/action-rpg/blood-of-dawnwalker-perks-skills-abilities/" }
+      ]
+    },
+    {
+      "title": "Unnatural Resilience",
+      "slug": "unnatural-resilience",
+      "treeSlug": "witchcraft",
+      "isUltimate": false,
+      "effect": "Effect not documented in the sources consulted; required as the parent perk of Forbidden Sigils.",
+      "summary": "A Witchcraft prerequisite that has to be learned before ability slots can be expanded.",
+      "bodyParagraphs": [
+        "Unnatural Resilience is recorded because Forbidden Sigils explicitly lists it as the parent perk that must be learned first, which fixes its place in the Witchcraft tree.",
+        "None of the material consulted described what the perk itself does, so its effect is left blank rather than guessed at.",
+        "Anyone planning a Witchcraft build should budget points for it regardless, since the slot expansion everyone recommends cannot be reached without it."
+      ],
+      "note": "Name and tree position are sourced, but no source consulted stated this perk's effect.",
+      "confidence": "low",
+      "sources": [
+        { "title": "Forbidden Sigils - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Forbidden_Sigils" }
+      ]
+    },
+    {
+      "title": "Burning Blood",
+      "slug": "burning-blood",
+      "treeSlug": "witchcraft",
+      "isUltimate": false,
+      "effect": "Inflicts damage on an enemy steadily over time.",
+      "summary": "Witchcraft's damage-over-time hex, applied once and left to work while Coen fights on.",
+      "bodyParagraphs": [
+        "Burning Blood is the tree's straightforward attrition tool. The cost is paid up front and the damage arrives across the following seconds, which suits a class whose casting already costs health.",
+        "Because the damage continues independently of what Coen does next, it rewards being cast early in an encounter, when there is the most time left for it to tick.",
+        "It combines with Entwined Torment, the Witchcraft ultimate that makes the first ability of a fight hit two enemies, since an opening Burning Blood would then be running on both targets at once."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Best perks in The Blood of Dawnwalker - GamesRadar+", "url": "https://www.gamesradar.com/games/action-rpg/blood-of-dawnwalker-perks-skills-abilities/" },
+        { "title": "Blood of Dawnwalker Hexes - Dawnwalker Planner", "url": "https://dawnwalkerplanner.com/hexes" },
+        { "title": "The Blood of Dawnwalker Witchcraft Guide - Timesaver", "url": "https://timesaver.gg/blog/blood-of-dawnwalker-witchcraft-hexes-guide" }
+      ]
+    },
+    {
+      "title": "Life Lock",
+      "slug": "life-lock",
+      "treeSlug": "witchcraft",
+      "isUltimate": false,
+      "effect": "Absorbs a single incoming hit and throws its damage back at the attacker.",
+      "summary": "A Witchcraft ward that converts one blow into a counterattack, at a cost of two charges and a slice of health.",
+      "bodyParagraphs": [
+        "The reported cost is two Activation Charges plus 15% of Coen's health, which is a real price for a single block, so it is best spent on a telegraphed heavy attack rather than held against chip damage.",
+        "Paying health to avoid damage sounds circular until you notice the reflection: the hit you refuse is also a hit you deal, which makes the exchange favourable against enemies that hit hard.",
+        "Like every hex it is a daytime tool, carved as a rune into Coen's skin while he is still keeping hold of his humanity."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Abilities - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Abilities" },
+        { "title": "Best perks in The Blood of Dawnwalker - GamesRadar+", "url": "https://www.gamesradar.com/games/action-rpg/blood-of-dawnwalker-perks-skills-abilities/" },
+        { "title": "The Blood of Dawnwalker Witchcraft Guide - Timesaver", "url": "https://timesaver.gg/blog/blood-of-dawnwalker-witchcraft-hexes-guide" }
+      ]
+    },
+    {
+      "title": "Soul Stigma",
+      "slug": "soul-stigma",
+      "treeSlug": "witchcraft",
+      "isUltimate": false,
+      "effect": "Marks a target so that Coen's attacks against it crit more often and crit harder.",
+      "summary": "A Witchcraft opener that buys critical chance and critical damage with a large up-front payment in health.",
+      "bodyParagraphs": [
+        "The reported cost is one Activation Charge and 35% of current health, the steepest health price among the hexes documented here, which makes it a deliberate opening move rather than something cast mid-scramble.",
+        "Because Witchcraft charges a percentage of current health rather than a flat amount, casting it while healthy costs more in absolute terms but leaves the same proportion behind, a quirk worth understanding before opening a fight with it.",
+        "It is the natural partner to high single-hit damage such as Artery Strike, where a raised critical chance has the most to work with."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Soul Stigma - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Soul_Stigma" },
+        { "title": "Blood of Dawnwalker Hexes - Dawnwalker Planner", "url": "https://dawnwalkerplanner.com/hexes" }
+      ]
+    },
+    {
+      "title": "Soul Reaping",
+      "slug": "soul-reaping",
+      "treeSlug": "witchcraft",
+      "isUltimate": false,
+      "effect": "Drains life from a target back into Coen for a fixed period.",
+      "summary": "The Witchcraft answer to a tree that charges health for everything: a hex that gives some of it back.",
+      "bodyParagraphs": [
+        "The reported cost is two Activation Charges and 15% of health, which the lifesteal is expected to repay and then some over the duration.",
+        "That repayment is what makes an aggressive Witchcraft build viable at all. Without a sustain tool, every hex cast is a step closer to dying, and Soul Reaping is what breaks that spiral during the day when vampiric feeding is unavailable.",
+        "It runs for a set duration rather than a set number of hits, so the value depends on staying in contact with the target once it is up."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Soul Reaping - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Soul_Reaping" },
+        { "title": "Best Witchcraft Human Builds - Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/617228" }
+      ]
+    },
+    {
+      "title": "Compel Soul",
+      "slug": "compel-soul",
+      "treeSlug": "witchcraft",
+      "isUltimate": false,
+      "effect": "Lets Coen speak with souls that have not moved on.",
+      "summary": "A Witchcraft utility hex used for questioning the dead rather than for fighting the living.",
+      "bodyParagraphs": [
+        "Not everything in the Witchcraft tree is combat. Compel Soul opens conversations with restless souls, which makes it an investigation tool and a route into information that otherwise stays buried.",
+        "Utility hexes of this kind are easy to skip when planning around damage, and then abruptly necessary when a quest depends on them. It is worth knowing it exists before the moment arrives.",
+        "Like the rest of the tree it belongs to daytime Coen, the half of him still holding onto his humanity."
+      ],
+      "confidence": "medium",
+      "sources": [
+        { "title": "Blood of Dawnwalker Hexes - Dawnwalker Planner", "url": "https://dawnwalkerplanner.com/hexes" },
+        { "title": "The Blood of Dawnwalker Witchcraft Guide - Timesaver", "url": "https://timesaver.gg/blog/blood-of-dawnwalker-witchcraft-hexes-guide" }
+      ]
+    },
+    {
+      "title": "Astral Communion",
+      "slug": "astral-communion",
+      "treeSlug": "witchcraft",
+      "isUltimate": false,
+      "effect": "Pulls the spirits haunting a location into the material world.",
+      "summary": "A Witchcraft hex that makes the unseen occupants of a haunted place visible and present.",
+      "bodyParagraphs": [
+        "Astral Communion works on places rather than people. Where a location is haunted, it drags what is there into the material world so that Coen can deal with it directly.",
+        "That pairs it naturally with Compel Soul: one makes spirits present, the other makes them talk.",
+        "As with the tree's other utility hexes, its value is gated behind content that calls for it rather than showing up in every fight."
+      ],
+      "confidence": "medium",
+      "sources": [
+        { "title": "Blood of Dawnwalker Hexes - Dawnwalker Planner", "url": "https://dawnwalkerplanner.com/hexes" },
+        { "title": "The Blood of Dawnwalker Witchcraft Guide - Timesaver", "url": "https://timesaver.gg/blog/blood-of-dawnwalker-witchcraft-hexes-guide" }
+      ]
+    },
+    {
+      "title": "Voracious Bite",
+      "slug": "voracious-bite",
+      "treeSlug": "vampirism",
+      "isUltimate": false,
+      "foundInWorld": false,
+      "effect": "A feeding strike that wounds the target and restores Coen at the same time.",
+      "summary": "The centre of the Vampirism tree, and the main way Coen heals once the sun is down.",
+      "bodyParagraphs": [
+        "Voracious Bite is both the vampire's damage tool and the vampire's healing tool, which is unusual enough that most build guides treat it as the first thing to secure. Its damage scales with its level in the Vampirism panel, so ranks in it matter.",
+        "Feeding with it also drives Corruption upward, and Corruption is what unlocks the rest of the tree, including all three Vampirism ultimates at level 15. Using the ability is therefore how you progress the tree, not just how you survive the night.",
+        "The Vampirism ultimate Sanguine Renewal is built directly on top of it, turning each bite into a full reset of Coen's active ability cooldowns."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "All Perks List - Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618584" },
+        { "title": "How To Heal As A Vampire In The Blood of Dawnwalker - GameSpot", "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-vampire-heal/" },
+        { "title": "Best perks in The Blood of Dawnwalker - GamesRadar+", "url": "https://www.gamesradar.com/games/action-rpg/blood-of-dawnwalker-perks-skills-abilities/" }
+      ]
+    },
+    {
+      "title": "Endless Hunger",
+      "slug": "endless-hunger",
+      "treeSlug": "vampirism",
+      "isUltimate": false,
+      "foundInWorld": false,
+      "effect": "Adds a large amount of night-time maximum health, in the form of extra health segments.",
+      "summary": "A Vampirism perk that raises the health ceiling at night and, by doing so, keeps Coen further from losing control.",
+      "bodyParagraphs": [
+        "The obvious benefit is survivability: more maximum health while in vampire form means more room for error in the fights that happen after dark.",
+        "The less obvious benefit is the one guides stress harder. Coen's hunger is tied to his health, and the further from empty that bar sits, the less likely he is to lose control and attack whoever he happens to be speaking with. Extra health is therefore also narrative insurance.",
+        "That makes it a priority pick for players who want to keep their vampiric side under management rather than constantly firefighting it."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Best perks in The Blood of Dawnwalker - GamesRadar+", "url": "https://www.gamesradar.com/games/action-rpg/blood-of-dawnwalker-perks-skills-abilities/" },
+        { "title": "Best Vampirism Perks and Abilities - Gamer Guides", "url": "https://www.gamerguides.com/the-blood-of-dawnwalker/guide/getting-started/character-development/best-vampirism-perks-and-abilities" },
+        { "title": "All Perks List - Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618584" }
+      ]
+    },
+    {
+      "title": "Hastened Corruption",
+      "slug": "hastened-corruption",
+      "treeSlug": "vampirism",
+      "isUltimate": false,
+      "foundInWorld": false,
+      "effect": "Speeds up how fast Corruption accumulates, and at a later tier lets Coen overfill his health bar into a bonus segment.",
+      "summary": "The Vampirism tree's progression multiplier, accelerating the resource that gates every other perk in it.",
+      "bodyParagraphs": [
+        "Corruption is the key to the Vampirism tree. Nothing in it is bought with manuals; perks and abilities open as Corruption rises, and the three ultimates wait at level 15. Anything that raises Corruption faster effectively raises the rate at which the whole tree unlocks.",
+        "Guides describe it as functioning like an experience multiplier for that reason, and recommend taking it early so that the acceleration applies to as much of the playthrough as possible.",
+        "Its second tier adds a different kind of value, allowing the health bar to be overfilled for a bonus segment, which turns a progression perk into a survivability one as well."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Best perks in The Blood of Dawnwalker - GamesRadar+", "url": "https://www.gamesradar.com/games/action-rpg/blood-of-dawnwalker-perks-skills-abilities/" },
+        { "title": "How To Heal As A Vampire In The Blood of Dawnwalker - GameSpot", "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-vampire-heal/" }
+      ]
+    },
+    {
+      "title": "Nourishing Blood",
+      "slug": "nourishing-blood",
+      "treeSlug": "vampirism",
+      "isUltimate": false,
+      "foundInWorld": false,
+      "effect": "Increases how much health Coen recovers from drinking blood.",
+      "summary": "A Vampirism perk that improves the return on every feed, in combat and out of it.",
+      "bodyParagraphs": [
+        "Drinking blood is already how Coen heals at night. Nourishing Blood raises the amount recovered each time, which compounds with how often a vampire build ends up feeding.",
+        "Guides note that the improvement applies both during fights and outside them, so it shortens the downtime spent topping up between encounters as much as it helps mid-combat.",
+        "It sits naturally alongside Voracious Bite, since the bite is the delivery mechanism this perk improves."
+      ],
+      "confidence": "medium",
+      "sources": [
+        { "title": "Best perks in The Blood of Dawnwalker - GamesRadar+", "url": "https://www.gamesradar.com/games/action-rpg/blood-of-dawnwalker-perks-skills-abilities/" },
+        { "title": "Best Vampirism Perks and Abilities - Gamer Guides", "url": "https://www.gamerguides.com/the-blood-of-dawnwalker/guide/getting-started/character-development/best-vampirism-perks-and-abilities" }
+      ]
+    },
+    {
+      "title": "Razorsharp Claws",
+      "slug": "razorsharp-claws",
+      "treeSlug": "vampirism",
+      "isUltimate": false,
+      "foundInWorld": false,
+      "effect": "Raises claw damage in steps, each tier adding a further increase.",
+      "summary": "The Vampirism claw damage line, unlocked by Corruption rather than by any manual.",
+      "bodyParagraphs": [
+        "This is the answer to the common question of how to make claws hit harder at night. The increases are described as small per tier, which means the line rewards sustained investment rather than a single point.",
+        "It is unlocked by raising Corruption level, and Corruption is raised by drinking human, animal and vrakhiri blood. Vials of blood used as healing items are reported to count towards it as well.",
+        "It is the foundation the Lethal Crescendo ultimate is usually built on, since a stacking percentage buff is worth most when the base claw damage underneath it is already high."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Razorsharp Claws - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Razorsharp_Claws" },
+        { "title": "How to increase sword and claw damage in The Blood of Dawnwalker - Sportskeeda", "url": "https://www.sportskeeda.com/esports/how-increase-sword-claw-damage-the-blood-dawnwalker-stinging-blade-manuals-razorsharp-claws-upgrades" }
+      ]
+    },
+    {
+      "title": "Restless Claws",
+      "slug": "restless-claws",
+      "treeSlug": "vampirism",
+      "isUltimate": false,
+      "foundInWorld": false,
+      "effect": "Effect not documented in the sources consulted.",
+      "summary": "A named Vampirism claw perk that appears in wiki indexes without a description reaching the material consulted here.",
+      "bodyParagraphs": [
+        "Restless Claws is recorded because it has its own wiki entry and therefore certainly exists as a distinct perk in the Vampirism tree, alongside the better-documented Razorsharp Claws line.",
+        "No description of what it does surfaced in the sources available, so nothing is asserted about its behaviour.",
+        "As a Vampirism perk it is gated by Corruption rather than by any manual, which at least fixes how it is obtained even while the effect is unknown."
+      ],
+      "note": "Name and tree are sourced from a wiki page title; no source consulted stated this perk's effect.",
+      "confidence": "low",
+      "sources": [
+        { "title": "Restless Claws - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Restless_Claws" }
+      ]
+    },
+    {
+      "title": "Shapeshift",
+      "slug": "shapeshift",
+      "treeSlug": "vampirism",
+      "isUltimate": false,
+      "foundInWorld": false,
+      "effect": "Turns Coen into a wolf and grants Haste.",
+      "summary": "The night-time travel power, trading Coen's human shape for speed across open ground.",
+      "bodyParagraphs": [
+        "Shapeshift is described as the nighttime answer to long-distance travel. The wolf form comes with Haste attached, which is what turns it from a transformation into a genuine traversal tool.",
+        "Given that the game runs on a time budget, a power that shortens travel is doing more than saving real-world minutes. It is protecting in-game time that would otherwise be spent walking.",
+        "It belongs to Vampirism and therefore to the night, and like everything else in the tree it opens up as Corruption rises rather than through any manual."
+      ],
+      "confidence": "medium",
+      "sources": [
+        { "title": "The Blood of Dawnwalker Vampirism Guide - Timesaver", "url": "https://timesaver.gg/blog/blood-of-dawnwalker-vampirism-abilities-guide" },
+        { "title": "The Blood of Dawnwalker Vampire Powers Guide - Worldeka", "url": "https://worldeka.com/the-blood-of-dawnwalker-vampire-powers-guide-claws-and-night-abilities-list/" },
+        { "title": "The Blood of Dawnwalker Skill Trees - Method", "url": "https://www.method.gg/the-blood-of-dawnwalker/the-blood-of-dawnwalker-skill-trees-explained-swordmastery-witchcraft-and-vampirism" }
+      ]
+    },
+    {
+      "title": "Death From Above",
+      "slug": "death-from-above",
+      "treeSlug": "vampirism",
+      "isUltimate": false,
+      "foundInWorld": false,
+      "effect": "A drop assassination that kills ordinary enemies outright and badly wounds bosses.",
+      "summary": "A Vampirism stealth kill executed from above, and one of the few openers that works on bosses too.",
+      "bodyParagraphs": [
+        "The requirement is positional: Coen has to be above the target. Meet that and an ordinary enemy simply dies, no health bar involved.",
+        "What makes it unusual is that it does not become worthless against bosses. Instead of an instant kill it lands heavy damage, which means the same approach that clears a camp also opens a serious fight.",
+        "It rewards route planning at night, scouting rooftops and ledges before dropping in, rather than approaching an encounter at ground level."
+      ],
+      "confidence": "medium",
+      "sources": [
+        { "title": "The Blood of Dawnwalker Vampirism Guide - Timesaver", "url": "https://timesaver.gg/blog/blood-of-dawnwalker-vampirism-abilities-guide" },
+        { "title": "The Blood of Dawnwalker Vampire Powers Guide - Worldeka", "url": "https://worldeka.com/the-blood-of-dawnwalker-vampire-powers-guide-claws-and-night-abilities-list/" }
+      ]
+    },
+    {
+      "title": "Piercing Shriek",
+      "slug": "piercing-shriek",
+      "treeSlug": "vampirism",
+      "isUltimate": false,
+      "foundInWorld": false,
+      "effect": "Effect not documented in the sources consulted.",
+      "summary": "A named Vampirism night ability whose description has not surfaced in available coverage.",
+      "bodyParagraphs": [
+        "Piercing Shriek appears in listings of Vampirism night abilities but without an accompanying description in the material consulted here.",
+        "It is recorded so that the roster of night powers is complete, not because its behaviour is known. Nothing is asserted about what it does.",
+        "Like the rest of Vampirism it is Corruption-gated rather than manual-gated, so it cannot be looted or bought ahead of schedule."
+      ],
+      "note": "Name and tree are sourced; no source consulted stated this ability's effect.",
+      "confidence": "low",
+      "sources": [
+        { "title": "The Blood of Dawnwalker Vampirism Guide - Timesaver", "url": "https://timesaver.gg/blog/blood-of-dawnwalker-vampirism-abilities-guide" }
+      ]
+    },
+    {
+      "title": "Scarlet Shield",
+      "slug": "scarlet-shield",
+      "treeSlug": "vampirism",
+      "isUltimate": false,
+      "foundInWorld": false,
+      "effect": "Effect not documented in the sources consulted.",
+      "summary": "A named Vampirism night ability, listed in coverage of the tree without a stated effect.",
+      "bodyParagraphs": [
+        "Scarlet Shield is named among Vampirism night abilities in listings of the tree, but none of the material consulted described what it does.",
+        "The name suggests a defensive power, which is the kind of inference this database deliberately does not record as fact. The effect field is therefore left unfilled.",
+        "As with every Vampirism entry it is unlocked by Corruption level rather than by finding or buying a manual."
+      ],
+      "note": "Name and tree are sourced; no source consulted stated this ability's effect.",
+      "confidence": "low",
+      "sources": [
+        { "title": "The Blood of Dawnwalker Vampirism Guide - Timesaver", "url": "https://timesaver.gg/blog/blood-of-dawnwalker-vampirism-abilities-guide" }
+      ]
+    }
+  ]
+}

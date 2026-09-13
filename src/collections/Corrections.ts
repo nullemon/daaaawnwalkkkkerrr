@@ -1,4 +1,5 @@
 import type { CollectionConfig } from 'payload'
+import { isEditor } from '../fields/shared'
 
 /**
  * Reader-submitted corrections. Anyone may file one; only signed-in editors can
@@ -15,11 +16,12 @@ export const Corrections: CollectionConfig = {
     description: 'Reader reports. Triage these — they are the accuracy loop.',
   },
   access: {
-    // Public submission, private review.
+    // Anyone may file one. Only editors may read or triage them — a reader
+    // account is not staff, and reports can contain whatever someone typed.
     create: () => true,
-    read: ({ req }) => Boolean(req.user),
-    update: ({ req }) => Boolean(req.user),
-    delete: ({ req }) => Boolean(req.user),
+    read: isEditor,
+    update: isEditor,
+    delete: isEditor,
   },
   fields: [
     {

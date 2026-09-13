@@ -1,0 +1,994 @@
+{
+  "collection": "items",
+  "records": [
+    {
+      "title": "Ring of the Night",
+      "slug": "ring-of-the-night",
+      "category": "ring",
+      "howToGet": "Awarded for seeing the Past Glory questline through and thwarting Xanthe's scheme.",
+      "stats": [
+        { "label": "Blood Drinking Restoration", "value": "+20%" },
+        { "label": "Blood Per Segment", "value": "+15%" },
+        { "label": "Blood Regeneration", "value": "+1% per second" },
+        { "label": "Vampire Skill Cooldown", "value": "-5%" }
+      ],
+      "summary": "A vampirism ring that feeds the blood pool from four directions at once and trims vampire ability cooldowns.",
+      "bodyParagraphs": [
+        "Every line on this ring points at the blood economy. It raises how much blood a feed returns, adds blood at each time segment, ticks a slow regeneration on top, and shaves a little off vampire ability cooldowns.",
+        "Guide writers consistently pick it as the specialist choice for a night-leaning, vampirism-heavy character, in the same breath that they name Slicer's Ring for claw builds, Astrologer's Ring for witchcraft and Ring of Quick Strikes for conventional weapons.",
+        "It comes out of the Past Glory questline rather than open-world looting, so it is tied to story progress rather than exploration."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Ring of the Night - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Ring_of_the_Night" },
+        { "title": "The Blood of Dawnwalker: All Amulets and Rings Guide", "url": "https://allthings.how/the-blood-of-dawnwalker-all-amulets-and-rings-guide/" },
+        { "title": "Best Amulets & Rings in The Blood of Dawnwalker - Method.gg", "url": "https://www.method.gg/the-blood-of-dawnwalker/best-amulets-and-rings-in-the-blood-of-dawnwalker-all-legendary-rings-and-amulets" }
+      ]
+    },
+    {
+      "title": "Ring of Quick Strikes",
+      "slug": "ring-of-quick-strikes",
+      "category": "ring",
+      "rarity": "legendary",
+      "howToGet": "Sits in a chest inside an abandoned ruin that only opens up during The Highland Grave quest.",
+      "summary": "Legendary ring for sword-and-steel builds, stacking weapon damage, critical chance and critical damage with a little physical mitigation.",
+      "bodyParagraphs": [
+        "This is the straightforward damage ring for players who stay on conventional weapons rather than claws or spells. Sources describe it as lifting weapon damage, critical hit chance and critical hit damage together, with a modest amount of physical damage reduction attached.",
+        "The ruin that holds it is gated behind The Highland Grave quest, so it cannot simply be stumbled into while exploring.",
+        "Exact percentage values were not stated in any source I could reach, so no numbers are recorded here."
+      ],
+      "note": "Sources agree on which stats it raises but none of the ones I could read gave the actual percentages.",
+      "confidence": "high",
+      "sources": [
+        { "title": "Ring of Quick Strikes - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Ring_of_Quick_Strikes" },
+        { "title": "Ring of Quick Strikes Location - Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618620" },
+        { "title": "Best Amulets & Rings in The Blood of Dawnwalker - Method.gg", "url": "https://www.method.gg/the-blood-of-dawnwalker/best-amulets-and-rings-in-the-blood-of-dawnwalker-all-legendary-rings-and-amulets" },
+        { "title": "Blood of Dawnwalker All Legendary Equipment Locations - PowerPyx", "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-legendary-equipment-locations/" }
+      ]
+    },
+    {
+      "title": "Astrologer's Ring",
+      "slug": "astrologers-ring",
+      "category": "ring",
+      "howToGet": "Finish the Home Sweet Home quest at Aurelius Tower and survive Aurelius' looping dream.",
+      "summary": "The witchcraft specialist's ring, raising spell damage, activation charge and charge regeneration while cutting cooldowns.",
+      "bodyParagraphs": [
+        "Guides treat this as the ring to build a witchcraft character around. It raises the damage of witchcraft abilities, shortens their cooldowns, and improves both your activation charge pool and how quickly that pool refills on its own.",
+        "Getting it means completing Home Sweet Home at Aurelius Tower, which involves surviving the dream loop Aurelius traps you in.",
+        "Recommendation lists commonly pair it with the Relic of St Dasius for a full witchcraft loadout."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Astrologer's Ring - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Astrologer's_Ring" },
+        { "title": "The Blood of Dawnwalker: All Amulets and Rings Guide", "url": "https://allthings.how/the-blood-of-dawnwalker-all-amulets-and-rings-guide/" },
+        { "title": "Best Amulets & Rings in The Blood of Dawnwalker - Method.gg", "url": "https://www.method.gg/the-blood-of-dawnwalker/best-amulets-and-rings-in-the-blood-of-dawnwalker-all-legendary-rings-and-amulets" }
+      ]
+    },
+    {
+      "title": "Knightly Ring",
+      "slug": "knightly-ring",
+      "category": "ring",
+      "rarity": "legendary",
+      "regionSlug": "tantari-woods",
+      "howToGet": "Take a shovel from the wooden shed in Parlita, fast travel to the Tantari Bog shrine, cross the small wooden bridge east and dig the mound of dirt just past it. It is also listed as the payoff for Bandit's Treasure Map: Tantari Woods.",
+      "stats": [
+        { "label": "Level required to equip", "value": "9" }
+      ],
+      "summary": "An early-reachable legendary ring that speeds up swordmastery cooldowns and charge recovery while adding magical and physical mitigation.",
+      "bodyParagraphs": [
+        "The appeal is the turnaround speed: swordmastery abilities come back faster and activation charges refill quickly after you land an attack, with damage reduction against both magical and physical hits layered on top.",
+        "Digging it up is possible at any level, but Coen cannot actually wear it until level 9, which makes it a reward worth fetching early and slotting later. A Tatzelwurm patrols near the dig site, so clearing or avoiding it first is advised.",
+        "Its stat card carries the flavour line about trusting your blade and your honour."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Knightly Ring Location - Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618618" },
+        { "title": "The Blood of Dawnwalker: How to Get the Knightly Ring Early", "url": "https://allthings.how/the-blood-of-dawnwalker-how-to-get-the-knightly-ring-early/" },
+        { "title": "Blood of Dawnwalker All Legendary Equipment Locations - PowerPyx", "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-legendary-equipment-locations/" },
+        { "title": "The Blood of Dawnwalker: Where to Find Knightly Ring - Nintendo Smash", "url": "https://nintendosmash.com/the-blood-of-dawnwalker-where-to-find-knightly-ring/" }
+      ]
+    },
+    {
+      "title": "Slicer's Ring",
+      "slug": "slicers-ring",
+      "category": "ring",
+      "howToGet": "Bought from Sanzhana once the Pearly and Precious and Good Home side quests are done; her special stock only appears after you reach level 3 of Bewitching Influence.",
+      "summary": "A claw-focused night build ring that raises critical performance and overall damage while returning some activation charge.",
+      "bodyParagraphs": [
+        "Where Ring of Quick Strikes serves swords, Slicer's Ring serves claws. Guides describe it as improving critical performance and general damage output, with a slice of activation charge restoration attached.",
+        "Unlocking the purchase is a two-step chore: clear both Pearly and Precious and Good Home, then push Bewitching Influence to level 3 so Sanzhana's special offers become visible.",
+        "No exact percentage values appeared in any source I could reach."
+      ],
+      "confidence": "medium",
+      "sources": [
+        { "title": "Slicer's Ring Location - Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618614" },
+        { "title": "Slicer's Ring Stats & Location - MetaBot.GG", "url": "https://metabot.gg/en/dawnwalker/items/slicers-ring" },
+        { "title": "Best Amulets & Rings in The Blood of Dawnwalker - Method.gg", "url": "https://www.method.gg/the-blood-of-dawnwalker/best-amulets-and-rings-in-the-blood-of-dawnwalker-all-legendary-rings-and-amulets" }
+      ]
+    },
+    {
+      "title": "Corrupted Ring",
+      "slug": "corrupted-ring",
+      "category": "ring",
+      "summary": "A night build ring that grows the vampiric health pool, softens the cost of vampire abilities and adds damage against mortals.",
+      "bodyParagraphs": [
+        "Four things are attributed to this ring: more vampiric health, a reduced penalty for casting vampire abilities, extra health regeneration, and higher damage dealt to mortal enemies. That combination makes it a night-side counterpart to the more conventional damage rings.",
+        "I could not find a stated location or acquisition method for it in any source available to me, and no numeric values were given."
+      ],
+      "note": "Effects are described only in general terms across the guides I saw; no location, rarity or numbers were stated anywhere I could reach.",
+      "confidence": "medium",
+      "sources": [
+        { "title": "Corrupted Ring - DawnwalkerDB", "url": "https://dawnwalkerdb.com/items/corrupted-ring" },
+        { "title": "The Blood of Dawnwalker: All Amulets and Rings Guide", "url": "https://allthings.how/the-blood-of-dawnwalker-all-amulets-and-rings-guide/" }
+      ]
+    },
+    {
+      "title": "Quick Fighter's Ring",
+      "slug": "quick-fighters-ring",
+      "category": "ring",
+      "howToGet": "Bring the cursed ring from The Ring quest to Anca at the Crossroads Inn; she destroys it and hands this over. Databases also list it as a world drop across six regions and stock at many merchants.",
+      "stats": [
+        { "label": "Rarity tier", "value": "Epic" },
+        { "label": "Maximum Human Health", "value": "+12%" },
+        { "label": "Human Health Restoration", "value": "+12%" },
+        { "label": "Sword Skill Cooldown Multiplier", "value": "-4%" },
+        { "label": "Weight", "value": "0.1" }
+      ],
+      "summary": "Epic survivability ring from The Ring quest, adding twelve percent to both maximum health and health restoration plus a small sword cooldown cut.",
+      "bodyParagraphs": [
+        "This is the reward branch of The Ring where you let Anca destroy the cursed band rather than keeping it. The replacement she gives is a straightforward survivability piece: more maximum health, faster health restoration, and a small reduction to the sword skill cooldown multiplier.",
+        "Item databases also record it turning up in six separate world locations, among them Maragir Wealds, Laslea Glen, Svartrau City and Rockfalls, and being stocked by a long list of merchants including the Butcher Vendor, the Captive Vendor, the Catalin Supply Man and guard post traders.",
+        "The rarity tier is recorded as Epic in the databases, which is a finer-grained scale than this site's three-step rarity field, so it is stored as a stat instead."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Quick Fighter's Ring Accessories Stats - Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/621046" },
+        { "title": "Quick Fighter's Ring Stats & Location - MetaBot.GG", "url": "https://metabot.gg/en/dawnwalker/items/quick-fighters-ring" },
+        { "title": "Quick Fighter's Ring - Gamer Guides Database", "url": "https://www.gamerguides.com/the-blood-of-dawnwalker/database/accessories/rings/quick-fighters-ring" },
+        { "title": "Blood of Dawnwalker The Ring Walkthrough - PowerPyx", "url": "https://www.powerpyx.com/blood-of-dawnwalker-the-ring-walkthrough/" }
+      ]
+    },
+    {
+      "title": "Ring of Regeneration",
+      "slug": "ring-of-regeneration",
+      "category": "ring",
+      "howToGet": "A common world drop across six regions and widely stocked by merchants, including the Butcher Vendor, the Captive Vendor, the Catalin Supply Man and guard post traders.",
+      "stats": [
+        { "label": "Rarity tier", "value": "Superior" },
+        { "label": "Human Health Restoration", "value": "+6%" },
+        { "label": "Weight", "value": "0.1" }
+      ],
+      "summary": "A cheap, widely available Superior ring giving a six percent bump to health restoration.",
+      "bodyParagraphs": [
+        "This is the entry-level version of the health-restoration ring line, sitting well below Loop of Vitality and Quick Fighter's Ring in strength but far easier to obtain.",
+        "Databases record it appearing in six world locations, among them Maragir Wealds, Laslea Glen, Svartrau City and Rockfalls, and being carried by around sixteen different merchants, which makes it the ring most players will see first."
+      ],
+      "note": "One guide describes the bonus as health regeneration while the item database labels it Human Health Restoration. Both state six percent, so only the wording differs.",
+      "confidence": "medium",
+      "sources": [
+        { "title": "Ring of Regeneration Stats & Location - MetaBot.GG", "url": "https://metabot.gg/en/dawnwalker/items/ring-of-regeneration" },
+        { "title": "The Blood of Dawnwalker: All Amulets and Rings Guide", "url": "https://allthings.how/the-blood-of-dawnwalker-all-amulets-and-rings-guide/" }
+      ]
+    },
+    {
+      "title": "Loop of Vitality",
+      "slug": "loop-of-vitality",
+      "category": "ring",
+      "stats": [
+        { "label": "Maximum Health", "value": "+9%" },
+        { "label": "Health Regeneration", "value": "+9%" }
+      ],
+      "summary": "A mid-tier health ring granting nine percent more maximum health alongside nine percent health regeneration.",
+      "bodyParagraphs": [
+        "Loop of Vitality sits between Ring of Regeneration and Quick Fighter's Ring on the health ladder, adding both a larger pool and faster recovery at the same nine percent figure.",
+        "No location or acquisition route was given in the source I found, and no rarity tier was stated."
+      ],
+      "note": "Only one guide covered this ring, and it gave stats without a location.",
+      "confidence": "medium",
+      "sources": [
+        { "title": "The Blood of Dawnwalker: All Amulets and Rings Guide", "url": "https://allthings.how/the-blood-of-dawnwalker-all-amulets-and-rings-guide/" }
+      ]
+    },
+    {
+      "title": "Leonica's Ring",
+      "slug": "leonicas-ring",
+      "category": "ring",
+      "regionSlug": "st-tynas-grove",
+      "howToGet": "Dropped by Leonica, She Who Speaks with the Devil, fought in the eastern part of St Tyna's Grove during Echoes of Silenced Bells.",
+      "stats": [
+        { "label": "Rarity tier", "value": "Epic" }
+      ],
+      "summary": "An Epic witchcraft ring dropped by Leonica, combining passive charge restoration with spell damage and a change to ability health costs.",
+      "bodyParagraphs": [
+        "Three properties are attributed to it: passive activation charge restoration, an effect on the health cost of witchcraft abilities, and increased witchcraft ability damage. That makes it a secondary option for spellcasters alongside Astrologer's Ring.",
+        "It is a boss drop rather than a chest find, so it arrives with the Echoes of Silenced Bells quest and cannot be missed if you defeat Leonica.",
+        "No numeric values were stated in any source I could reach."
+      ],
+      "note": "The wiki entry spells the location St. Tryna's Grove while other guides for the same area write St. Tyna's Grove.",
+      "confidence": "medium",
+      "sources": [
+        { "title": "Leonica's Ring - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Leonica's_Ring" },
+        { "title": "Leonica She Who Speaks with the Devil - Blood of Dawnwalker Wiki", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Leonica_She_Who_Speaks_with_the_Devil" },
+        { "title": "How To Complete Echoes Of Silenced Bells - GameSpot", "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-echoes-of-silenced-bells-relic-of-st-tyna/" }
+      ]
+    },
+    {
+      "title": "Mysterious Ring",
+      "slug": "mysterious-ring",
+      "category": "ring",
+      "howToGet": "Taken from the finger of Murohn, Malformed Monstrosity, after killing him during the Lost Blood quest.",
+      "summary": "A ring prised off a monster's finger during Lost Blood, after the fight with Murohn, Malformed Monstrosity.",
+      "bodyParagraphs": [
+        "The wiki frames this one as loot recovered from a bloodthirsty creature rather than a crafted or purchased item, which fits the Lost Blood quest it belongs to.",
+        "Its stat effects and rarity were not stated in anything I could reach, so this entry records only its source."
+      ],
+      "note": "Only the acquisition is documented in the sources I could see; effects and rarity are unknown.",
+      "confidence": "medium",
+      "sources": [
+        { "title": "Mysterious Ring - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Mysterious_Ring" }
+      ]
+    },
+    {
+      "title": "Band of Claws",
+      "slug": "band-of-claws",
+      "category": "ring",
+      "stats": [
+        { "label": "Rarity tier", "value": "Master" },
+        { "label": "Sell value", "value": "154 denarii" }
+      ],
+      "summary": "A Master-tier ring named for claws, recorded in the item databases with a sell value of 154 denarii.",
+      "bodyParagraphs": [
+        "The name puts it in the same family as Slicer's Ring, the other claw-oriented accessory, but nothing I could reach actually stated what it does.",
+        "The item databases do record its tier as Master and its sell value at 154 denarii, which at least fixes where it sits on the quality ladder."
+      ],
+      "note": "Tier and sell value are documented; the stat lines are not, in any source I could reach.",
+      "confidence": "medium",
+      "sources": [
+        { "title": "Band of Claws Accessories Stats - Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/621029" },
+        { "title": "Band of Claws Stats & Location - MetaBot.GG", "url": "https://metabot.gg/en/dawnwalker/items/band-of-claws" },
+        { "title": "Band of Claws - Gamer Guides Database", "url": "https://www.gamerguides.com/the-blood-of-dawnwalker/database/accessories/rings/band-of-claws" }
+      ]
+    },
+    {
+      "title": "Band of Defence",
+      "slug": "band-of-defence",
+      "category": "ring",
+      "stats": [
+        { "label": "Rarity tier", "value": "Superior" }
+      ],
+      "summary": "A Superior-tier ring listed in the accessory databases; its stat lines are not yet documented publicly.",
+      "bodyParagraphs": [
+        "This ring appears in the ring sections of the community item databases at Superior tier, the same tier as Ring of Regeneration.",
+        "Neither its effects nor a location were stated in any source I could reach, so this is an index entry rather than a full profile."
+      ],
+      "note": "Only the name and tier could be confirmed. Treat the absence of effects as a gap in the record, not as evidence the ring has none.",
+      "confidence": "low",
+      "sources": [
+        { "title": "The Blood of Dawnwalker Accessories: All Amulets and Rings - TechWiser", "url": "https://techwiser.com/the-blood-of-dawnwalker-accessories-amulets-rings/" },
+        { "title": "Band of Claws Stats & Location - MetaBot.GG (ring index)", "url": "https://metabot.gg/en/dawnwalker/items/band-of-claws" }
+      ]
+    },
+    {
+      "title": "Band of Endurance",
+      "slug": "band-of-endurance",
+      "category": "ring",
+      "stats": [
+        { "label": "Rarity tier", "value": "Master" }
+      ],
+      "summary": "A Master-tier ring listed in the accessory databases; its stat lines are not yet documented publicly.",
+      "bodyParagraphs": [
+        "The name suggests a stamina or resilience effect, but nothing I could reach confirmed that, so no effect is recorded here.",
+        "What is documented is the tier: Master, the same band as Band of Claws and Ancestral Signet."
+      ],
+      "note": "Only the name and tier could be confirmed. The suggestion of a stamina role comes from the name alone and is not recorded as fact.",
+      "confidence": "low",
+      "sources": [
+        { "title": "The Blood of Dawnwalker Accessories: All Amulets and Rings - TechWiser", "url": "https://techwiser.com/the-blood-of-dawnwalker-accessories-amulets-rings/" },
+        { "title": "Band of Claws Stats & Location - MetaBot.GG (ring index)", "url": "https://metabot.gg/en/dawnwalker/items/band-of-claws" }
+      ]
+    },
+    {
+      "title": "Ancestral Signet",
+      "slug": "ancestral-signet",
+      "category": "ring",
+      "stats": [
+        { "label": "Rarity tier", "value": "Master" }
+      ],
+      "summary": "A Master-tier signet ring that appears in the wiki ring indexes without published stats.",
+      "bodyParagraphs": [
+        "Ancestral Signet shows up in the ring navigation of the community wikis and item databases at Master tier, but the underlying pages had no readable stat block or location at the time of research."
+      ],
+      "note": "Name and tier only. No effects, location or price could be confirmed from any source I could reach.",
+      "confidence": "low",
+      "sources": [
+        { "title": "The Blood of Dawnwalker Items and Equipment Guide - Kaburanai Games", "url": "https://gamersizayuke.com/en/the_blood_of_dawnwalker_items_hub/" },
+        { "title": "The Blood of Dawnwalker Accessories: All Amulets and Rings - TechWiser", "url": "https://techwiser.com/the-blood-of-dawnwalker-accessories-amulets-rings/" }
+      ]
+    },
+    {
+      "title": "Band of Persistence",
+      "slug": "band-of-persistence",
+      "category": "ring",
+      "summary": "A ring name that appears in the accessory databases, with no published stats, tier or location.",
+      "bodyParagraphs": [
+        "This is one of several rings in the Band family that the item databases list but do not yet describe. It is recorded here so the ring index is complete, not because anything is known about what it does."
+      ],
+      "note": "Name only. No tier, effect or location was stated in any source I could reach.",
+      "confidence": "low",
+      "sources": [
+        { "title": "The Blood of Dawnwalker Accessories: All Amulets and Rings - TechWiser", "url": "https://techwiser.com/the-blood-of-dawnwalker-accessories-amulets-rings/" }
+      ]
+    },
+    {
+      "title": "Band of Preservation",
+      "slug": "band-of-preservation",
+      "category": "ring",
+      "summary": "A ring name that appears in the accessory databases, with no published stats, tier or location.",
+      "bodyParagraphs": [
+        "Like Band of Persistence, this ring is listed in the database ring indexes without an accompanying description. The entry exists to record that the item is real, nothing more."
+      ],
+      "note": "Name only. No tier, effect or location was stated in any source I could reach.",
+      "confidence": "low",
+      "sources": [
+        { "title": "The Blood of Dawnwalker Accessories: All Amulets and Rings - TechWiser", "url": "https://techwiser.com/the-blood-of-dawnwalker-accessories-amulets-rings/" }
+      ]
+    },
+    {
+      "title": "Soul Reaping Manual",
+      "slug": "soul-reaping-manual",
+      "category": "manual",
+      "regionSlug": "maragir-wealds",
+      "howToGet": "Clear the Ancient Circle in the woods east of Maragir, which only activates in daylight and starts a fight when you touch the central altar. A second copy waits at the River Massacre Site east of Svartrau once its ghosts are put down, and three witchcraft vendors stock it.",
+      "summary": "The witchcraft manual for Soul Reaping, available free from two world sites and from every witchcraft vendor.",
+      "bodyParagraphs": [
+        "Soul Reaping is widely called the strongest witchcraft option in the game because it curses an enemy with damage over time while healing you for as long as the curse runs, which solves the sustain problem for a human-form build.",
+        "There are two free copies. The first is an Ancient Circle in the woods east of Maragir that can only be activated during the day; interacting with the stone altar in the middle triggers a fight, and clearing it yields the manual. The second is the River Massacre Site east of Svartrau, which pays out once every ghost haunting the camp is destroyed.",
+        "If you would rather buy it, Vera, Mevasser and the Uriashi Matriarch all sell witchcraft manuals, Soul Reaping included. The Matriarch's shop in Uriash Village opens after Song of the Mountain and carries very nearly the full witchcraft manual list."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Soul Reaping Manual - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Soul_Reaping_Manual" },
+        { "title": "Soul Reaping Manual - Gamer Guides Database", "url": "https://www.gamerguides.com/the-blood-of-dawnwalker/database/manuals-and-recipes/character-development/soul-reaping-manual" },
+        { "title": "How to Get the Absolute Best Witchcraft Ability - Game Rant", "url": "https://gamerant.com/blood-of-dawnwalker-how-get-soul-reaping-best-witchcraft-ability/" },
+        { "title": "All Witchcraft ability manual locations - PC Gamer", "url": "https://www.pcgamer.com/games/rpg/blood-of-dawnwalker-witchcraft-ability-manual-locations/" }
+      ]
+    },
+    {
+      "title": "Ravenous Flock Manual",
+      "slug": "ravenous-flock-manual",
+      "category": "manual",
+      "regionSlug": "laslea-glen",
+      "howToGet": "Reward for the Pilgrimage of Power: Bear Trouble quest, west across the river from the Laslea Gate shrine in Laslea Glen.",
+      "summary": "The witchcraft manual for Ravenous Flock, earned by completing the Bear Trouble pilgrimage in Laslea Glen.",
+      "bodyParagraphs": [
+        "Ravenous Flock sends a burst of ravens into a cone in front of Coen, damaging and stunning whatever is caught in it.",
+        "The manual comes from Pilgrimage of Power: Bear Trouble, which starts directly west across the river from the Laslea Gate shrine. Follow the wind chimes and cairns up the mountain trail, kill the Ravenous Bear waiting at the summit, then examine the body and the bloodied knife on the west side of the clearing before inspecting the uriash glyph carved into the central stone. The glyph is what actually hands over the manual.",
+        "The Pilgrimage of Power quests are one of the three reliable manual sources for witchcraft, alongside Ancient Circles and Haunted Sites."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "The Blood of Dawnwalker: Bear Trouble Walkthrough and Ravenous Flock Manual", "url": "https://allthings.how/the-blood-of-dawnwalker-bear-trouble-walkthrough-and-ravenous-flock-manual/" },
+        { "title": "Ravenous Flock - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Ravenous_Flock" },
+        { "title": "All Witchcraft ability manual locations - PC Gamer", "url": "https://www.pcgamer.com/games/rpg/blood-of-dawnwalker-witchcraft-ability-manual-locations/" }
+      ]
+    },
+    {
+      "title": "Life Lock Manual",
+      "slug": "life-lock-manual",
+      "category": "manual",
+      "summary": "The witchcraft manual for Life Lock, the ward that absorbs one incoming hit and throws it back.",
+      "bodyParagraphs": [
+        "Life Lock blocks a single instance of damage and reflects it at whoever dealt it, which makes the manual worth hunting for a defensive witchcraft build.",
+        "The wiki page for the manual existed at the time of research but its location section was still an unfilled placeholder, so no specific site can be recorded here. The general witchcraft manual routes still apply: Ancient Circles, Haunted Sites, Scouting Tower chests, Will-o'-the-Wisps, and the three witchcraft vendors."
+      ],
+      "note": "No source I could reach gave a confirmed location for this manual; the wiki entry was still a stub.",
+      "confidence": "low",
+      "sources": [
+        { "title": "Life Lock Manual - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Life_Lock_Manual" },
+        { "title": "Life Lock Skill and How to Unlock - Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618948" }
+      ]
+    },
+    {
+      "title": "Recipe for Razkovniche Elixir",
+      "slug": "recipe-for-razkovniche-elixir",
+      "category": "recipe",
+      "howToGet": "Pinned to the north-western wall inside the dead alchemist's house during The Hedgehog Herb side quest.",
+      "stats": [
+        { "label": "Strong Ancient Reagent", "value": "1" },
+        { "label": "Tatzelwurm Gland", "value": "2" },
+        { "label": "Razkovniche Plant", "value": "1" }
+      ],
+      "summary": "The one-off recipe behind the game's permanent health elixir, found on an alchemist's wall during The Hedgehog Herb.",
+      "bodyParagraphs": [
+        "This is the recipe players are most often pointed at, because the elixir it makes is the only consumable in the game with a permanent effect. The catch is the Razkovniche Plant: the Hedgehog Herb quest is the only source, so the elixir can be brewed exactly once per playthrough.",
+        "The other two components are repeatable by comparison. Strong Ancient Reagent comes out of Ancient Ruins and Tatzelwurm Glands come off dead Tatzelwurms.",
+        "Once you hold the recipe and the parts, Coen, Anca or a medic can each perform the brewing."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Recipe for Razkovniche Elixir - Gamer Guides Database", "url": "https://www.gamerguides.com/the-blood-of-dawnwalker/database/manuals-and-recipes/recipes/recipe-for-razkovniche-elixir" },
+        { "title": "Blood of Dawnwalker The Hedgehog Herb Walkthrough - PowerPyx", "url": "https://www.powerpyx.com/blood-of-dawnwalker-the-hedgehog-herb-walkthrough/" },
+        { "title": "How to Craft Razkovniche Elixir - Dawnwalker Codex", "url": "https://dawnwalkercodex.com/recipes/razkovniche-elixir" },
+        { "title": "The Hedgehog Herb Quest In The Blood Of Dawnwalker - Game Rant", "url": "https://gamerant.com/the-blood-of-dawnwalker-the-hedgehog-herb-quest-razkovniche-elixir/" }
+      ]
+    },
+    {
+      "title": "Razkovniche Elixir",
+      "slug": "razkovniche-elixir",
+      "category": "consumable",
+      "howToGet": "Craft it yourself, or have Anca or a medic do it, once you hold the recipe and its three components. It can only ever be made once.",
+      "stats": [
+        { "label": "Maximum Human Health", "value": "+20%" },
+        { "label": "Maximum Vampiric Health", "value": "+10%" },
+        { "label": "Skill Points", "value": "1" }
+      ],
+      "summary": "The game's only permanent consumable, granting a lasting health increase in both forms plus a free skill point.",
+      "bodyParagraphs": [
+        "Everything else you brew wears off. This does not: it permanently raises maximum human health by a fifth and maximum vampiric health by a tenth, and hands over a skill point on top.",
+        "Because the Razkovniche Plant only exists inside The Hedgehog Herb quest, there is no way to repeat it. Guides accordingly treat the quest as effectively mandatory for anyone optimising a run.",
+        "The crafting step can be delegated: Coen, Anca and a medic are all listed as able to prepare it."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Razkovniche Elixir - Gamer Guides Database", "url": "https://www.gamerguides.com/the-blood-of-dawnwalker/database/items/consumables/razkovniche-elixir" },
+        { "title": "There's A Legendary Herb That Permanently Increases Your Health - GameSpot", "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-hedgehog-herb-razkovniche-maximum-health/" },
+        { "title": "Who Should You Craft Razkovniche Elixir With? - Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/620453" },
+        { "title": "Crafting, and the one potion you can only make once - DawnwalkerDB", "url": "https://dawnwalkerdb.com/guides/crafting-and-the-one-potion-you-make-once" }
+      ]
+    },
+    {
+      "title": "Minor Mending Ointment",
+      "slug": "minor-mending-ointment",
+      "category": "consumable",
+      "howToGet": "Known from the start of the game. Gather two Ribwort Plantain on the rocky slopes north-east of Hustia Glen and buy a Canteen of Water from Rainer the food vendor in the village.",
+      "stats": [
+        { "label": "Canteen of Water", "value": "1" },
+        { "label": "Ribwort Plantain", "value": "2" }
+      ],
+      "summary": "The starting health item and the game's crafting tutorial, restoring a small amount of health instantly.",
+      "bodyParagraphs": [
+        "This is the one recipe Coen already knows when crafting unlocks, and making it is how the game teaches the crafting panel. Its effect is a small instant health restore.",
+        "The two components are deliberately easy: Ribwort Plantain grows on the rocky slopes north-east of Hustia Glen, and Rainer, the village food vendor, sells the Canteen of Water.",
+        "It sits at the bottom of the ointment line. Ointments in general are the instant-restore family, distinct from salves, which heal over time, and balms, which raise maximum health."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "The Blood of Dawnwalker: How to Craft Minor Mending Ointment", "url": "https://allthings.how/the-blood-of-dawnwalker-how-to-craft-minor-mending-ointment/" },
+        { "title": "Crafting, and the one potion you can only make once - DawnwalkerDB", "url": "https://dawnwalkerdb.com/guides/crafting-and-the-one-potion-you-make-once" },
+        { "title": "Blood of Dawnwalker Crafting Guide: How to Craft and All Recipes - TechWiser", "url": "https://techwiser.com/blood-of-dawnwalker-crafting-all-recipes/" }
+      ]
+    },
+    {
+      "title": "Vigour Infusion",
+      "slug": "vigour-infusion",
+      "category": "consumable",
+      "summary": "A stamina consumable that enlarges the maximum stamina pool rather than refilling it.",
+      "bodyParagraphs": [
+        "Stamina crafting splits two ways, and Vigour Infusion is the half that raises the ceiling: it increases how much stamina you can hold. Revitalising Tonic is the other half, speeding up the refill rate instead.",
+        "Stamina is the smallest crafting category in the game at six recipes. Exact values and the ingredient list were not stated in any source I could reach.",
+        "Crafted consumables keep their full strength in combat, unlike food, whose effects are reduced once a fight starts."
+      ],
+      "note": "The guides describe the effect in general terms only; no numbers, ingredients or tiers were published in anything I could read.",
+      "confidence": "medium",
+      "sources": [
+        { "title": "Vigour Infusion - Gamer Guides Database", "url": "https://www.gamerguides.com/the-blood-of-dawnwalker/database/items/consumables/vigour-infusion" },
+        { "title": "The Blood of Dawnwalker Crafting Recipes: Ingredients and Effects", "url": "https://allthings.how/the-blood-of-dawnwalker-crafting-recipes-ingredients-and-effects-for-every-item/" },
+        { "title": "Crafting, and the one potion you can only make once - DawnwalkerDB", "url": "https://dawnwalkerdb.com/guides/crafting-and-the-one-potion-you-make-once" }
+      ]
+    },
+    {
+      "title": "Revitalising Tonic",
+      "slug": "revitalising-tonic",
+      "category": "consumable",
+      "summary": "A stamina consumable that speeds up how fast stamina refills.",
+      "bodyParagraphs": [
+        "Where Vigour Infusion makes the stamina bar bigger, Revitalising Tonic makes it come back faster. Between them they cover the six stamina recipes in the crafting list.",
+        "Guides refer to these in the plural, which points at the pattern running through the whole recipe list: most consumables exist at three strengths rather than as single items. I could not confirm the individual tier names.",
+        "No ingredient list or numeric value was published in anything I could reach."
+      ],
+      "note": "Sources describe the family rather than a single item, so the exact in-game name may carry a strength prefix.",
+      "confidence": "medium",
+      "sources": [
+        { "title": "The Blood of Dawnwalker Crafting Recipes: Ingredients and Effects", "url": "https://allthings.how/the-blood-of-dawnwalker-crafting-recipes-ingredients-and-effects-for-every-item/" },
+        { "title": "Crafting, and the one potion you can only make once - DawnwalkerDB", "url": "https://dawnwalkerdb.com/guides/crafting-and-the-one-potion-you-make-once" },
+        { "title": "Recipes - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Recipes" }
+      ]
+    },
+    {
+      "title": "Blood Infusion",
+      "slug": "blood-infusion",
+      "category": "consumable",
+      "summary": "A crafted refill for the vampiric blood reserve, paid for in Corruption.",
+      "bodyParagraphs": [
+        "Three Blood Infusion recipes sit inside the health category, and they are the only crafted items that touch the vampiric side of the health system. They restore the blood reserve directly, but the refill is bought with Corruption rather than ingredients alone.",
+        "That cost is what makes them a deliberate choice instead of a free heal, since Corruption drives the game's night-side progression and consequences.",
+        "No ingredient lists or restore values were published in anything I could reach."
+      ],
+      "note": "Sources treat this as a three-strength family rather than one item, so individual in-game names may differ.",
+      "confidence": "medium",
+      "sources": [
+        { "title": "Crafting, and the one potion you can only make once - DawnwalkerDB", "url": "https://dawnwalkerdb.com/guides/crafting-and-the-one-potion-you-make-once" },
+        { "title": "Recipes - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Recipes" },
+        { "title": "Consumables - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Consumables" }
+      ]
+    },
+    {
+      "title": "Ribwort Plantain",
+      "slug": "ribwort-plantain",
+      "category": "ingredient",
+      "howToGet": "Picked by hand from grassy ground; two grow on the rocky slopes north-east of Hustia Glen for the opening crafting lesson.",
+      "summary": "The first herb the game asks you to gather, and two of them go into Minor Mending Ointment.",
+      "bodyParagraphs": [
+        "Ribwort Plantain is the tutorial herb. The game points you at the rocky slopes north-east of Hustia Glen to pick the two needed for Minor Mending Ointment.",
+        "Like every plant in the game it is taken straight off the ground with no tool and no mini-game. Focus Mode highlights it along with other interactable objects, which is the practical way to spot herbs in long grass."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "The Blood of Dawnwalker: How to Craft Minor Mending Ointment", "url": "https://allthings.how/the-blood-of-dawnwalker-how-to-craft-minor-mending-ointment/" },
+        { "title": "Herbs & Plants - The Blood of Dawnwalker Wiki", "url": "https://the-blood-of-dawn-walker.wiki/herbs" },
+        { "title": "Master Alchemy & Potion Brewing in The Blood Of Dawnwalker - Ludo Guide", "url": "https://www.ludo.guide/guide/the-blood-of-dawnwalker/alchemy-potion-brewing" }
+      ]
+    },
+    {
+      "title": "Common Yarrow",
+      "slug": "common-yarrow",
+      "category": "ingredient",
+      "howToGet": "Grows wild in grassy fields and wooded ground across the map; picked by hand.",
+      "summary": "A common field herb gathered from open grassland and woodland for alchemy.",
+      "bodyParagraphs": [
+        "Common Yarrow is one of the everyday herbs listed alongside Ribwort Plantain, Comfrey and Tansy as the plants growing across the open world.",
+        "Herbs sit in clearings, at the foot of trees, along trails and around settlements, and are simply picked up. Which recipes call for it was not stated in anything I could reach."
+      ],
+      "note": "Confirmed as a gatherable herb, but no source I could reach tied it to specific recipes.",
+      "confidence": "medium",
+      "sources": [
+        { "title": "Herbs & Plants - The Blood of Dawnwalker Wiki", "url": "https://the-blood-of-dawn-walker.wiki/herbs" },
+        { "title": "Master Alchemy & Potion Brewing in The Blood Of Dawnwalker - Ludo Guide", "url": "https://www.ludo.guide/guide/the-blood-of-dawnwalker/alchemy-potion-brewing" }
+      ]
+    },
+    {
+      "title": "Comfrey",
+      "slug": "comfrey",
+      "category": "ingredient",
+      "howToGet": "Grows wild in grassy fields and wooded ground across the map; picked by hand.",
+      "summary": "A common gatherable herb found in open grassland and forest.",
+      "bodyParagraphs": [
+        "Comfrey belongs to the same set of everyday world herbs as Ribwort Plantain, Common Yarrow and Tansy, all of which are picked freely from the environment.",
+        "No recipe using it was named in any source I could reach."
+      ],
+      "note": "Confirmed as a gatherable herb; recipe uses unknown.",
+      "confidence": "medium",
+      "sources": [
+        { "title": "Herbs & Plants - The Blood of Dawnwalker Wiki", "url": "https://the-blood-of-dawn-walker.wiki/herbs" },
+        { "title": "Master Alchemy & Potion Brewing in The Blood Of Dawnwalker - Ludo Guide", "url": "https://www.ludo.guide/guide/the-blood-of-dawnwalker/alchemy-potion-brewing" }
+      ]
+    },
+    {
+      "title": "Tansy",
+      "slug": "tansy",
+      "category": "ingredient",
+      "howToGet": "Grows wild in grassy fields and wooded ground across the map; picked by hand.",
+      "summary": "A common gatherable herb found in open grassland and forest.",
+      "bodyParagraphs": [
+        "Tansy is listed among the world herbs that grow untended across the regions, gathered without any tool.",
+        "No recipe using it was named in any source I could reach."
+      ],
+      "note": "Confirmed as a gatherable herb; recipe uses unknown.",
+      "confidence": "medium",
+      "sources": [
+        { "title": "Herbs & Plants - The Blood of Dawnwalker Wiki", "url": "https://the-blood-of-dawn-walker.wiki/herbs" },
+        { "title": "Master Alchemy & Potion Brewing in The Blood Of Dawnwalker - Ludo Guide", "url": "https://www.ludo.guide/guide/the-blood-of-dawnwalker/alchemy-potion-brewing" }
+      ]
+    },
+    {
+      "title": "Parasol Mushroom",
+      "slug": "parasol-mushroom",
+      "category": "ingredient",
+      "howToGet": "Picked from shaded, sheltered ground rather than open fields.",
+      "summary": "One of the gatherable mushrooms, found in darker and more sheltered spots.",
+      "bodyParagraphs": [
+        "Mushrooms occupy a different niche to herbs: instead of open grassland they grow where the light does not reach, which makes them a reason to search caves, hollows and dense woodland.",
+        "Parasol Mushroom is named alongside Saffron Milk Cap, Green-Gilled Mushroom, Slippery Jack, Chanterelle and Cave Fungus as the game's fungal ingredients."
+      ],
+      "note": "Confirmed as a gatherable ingredient; no specific recipe or region was stated.",
+      "confidence": "medium",
+      "sources": [
+        { "title": "Herbs & Plants - The Blood of Dawnwalker Wiki", "url": "https://the-blood-of-dawn-walker.wiki/herbs" },
+        { "title": "Master Alchemy & Potion Brewing in The Blood Of Dawnwalker - Ludo Guide", "url": "https://www.ludo.guide/guide/the-blood-of-dawnwalker/alchemy-potion-brewing" }
+      ]
+    },
+    {
+      "title": "Saffron Milk Cap",
+      "slug": "saffron-milk-cap",
+      "category": "ingredient",
+      "howToGet": "Picked from shaded, sheltered ground rather than open fields.",
+      "summary": "A gatherable mushroom found in darker and more sheltered spots.",
+      "bodyParagraphs": [
+        "Saffron Milk Cap is one of six mushrooms named as crafting ingredients, all of which favour shade over open ground."
+      ],
+      "note": "Confirmed as a gatherable ingredient; no specific recipe or region was stated.",
+      "confidence": "medium",
+      "sources": [
+        { "title": "Herbs & Plants - The Blood of Dawnwalker Wiki", "url": "https://the-blood-of-dawn-walker.wiki/herbs" },
+        { "title": "Master Alchemy & Potion Brewing in The Blood Of Dawnwalker - Ludo Guide", "url": "https://www.ludo.guide/guide/the-blood-of-dawnwalker/alchemy-potion-brewing" }
+      ]
+    },
+    {
+      "title": "Green-Gilled Mushroom",
+      "slug": "green-gilled-mushroom",
+      "category": "ingredient",
+      "howToGet": "Picked from shaded, sheltered ground rather than open fields.",
+      "summary": "A gatherable mushroom found in darker and more sheltered spots.",
+      "bodyParagraphs": [
+        "Green-Gilled Mushroom sits in the same gathering family as Parasol Mushroom and Cave Fungus, harvested by hand wherever the light is thin."
+      ],
+      "note": "Confirmed as a gatherable ingredient; no specific recipe or region was stated.",
+      "confidence": "medium",
+      "sources": [
+        { "title": "Herbs & Plants - The Blood of Dawnwalker Wiki", "url": "https://the-blood-of-dawn-walker.wiki/herbs" },
+        { "title": "Master Alchemy & Potion Brewing in The Blood Of Dawnwalker - Ludo Guide", "url": "https://www.ludo.guide/guide/the-blood-of-dawnwalker/alchemy-potion-brewing" }
+      ]
+    },
+    {
+      "title": "Slippery Jack",
+      "slug": "slippery-jack",
+      "category": "ingredient",
+      "howToGet": "Picked from shaded, sheltered ground rather than open fields.",
+      "summary": "A gatherable mushroom found in darker and more sheltered spots.",
+      "bodyParagraphs": [
+        "Slippery Jack is one of the named mushrooms in the ingredient list, collected the same way as every other plant in the game."
+      ],
+      "note": "Confirmed as a gatherable ingredient; no specific recipe or region was stated.",
+      "confidence": "medium",
+      "sources": [
+        { "title": "Herbs & Plants - The Blood of Dawnwalker Wiki", "url": "https://the-blood-of-dawn-walker.wiki/herbs" },
+        { "title": "Master Alchemy & Potion Brewing in The Blood Of Dawnwalker - Ludo Guide", "url": "https://www.ludo.guide/guide/the-blood-of-dawnwalker/alchemy-potion-brewing" }
+      ]
+    },
+    {
+      "title": "Chanterelle",
+      "slug": "chanterelle",
+      "category": "ingredient",
+      "howToGet": "Picked from shaded, sheltered ground rather than open fields.",
+      "summary": "A gatherable mushroom found in darker and more sheltered spots.",
+      "bodyParagraphs": [
+        "Chanterelle appears in the mushroom half of the ingredient list, gathered from sheltered ground alongside Parasol Mushroom and Slippery Jack."
+      ],
+      "note": "Confirmed as a gatherable ingredient; no specific recipe or region was stated.",
+      "confidence": "medium",
+      "sources": [
+        { "title": "Herbs & Plants - The Blood of Dawnwalker Wiki", "url": "https://the-blood-of-dawn-walker.wiki/herbs" },
+        { "title": "Master Alchemy & Potion Brewing in The Blood Of Dawnwalker - Ludo Guide", "url": "https://www.ludo.guide/guide/the-blood-of-dawnwalker/alchemy-potion-brewing" }
+      ]
+    },
+    {
+      "title": "Cave Fungus",
+      "slug": "cave-fungus",
+      "category": "ingredient",
+      "howToGet": "Picked from the darkest, most sheltered ground, as the name suggests.",
+      "summary": "A gatherable fungus from the darkest corners of the world.",
+      "bodyParagraphs": [
+        "Cave Fungus is the most literal of the shade-loving ingredients, grouped with the other mushrooms that grow away from open grassland.",
+        "Focus Mode is the practical tool for spotting it, since it highlights interactable objects in poor light."
+      ],
+      "note": "Confirmed as a gatherable ingredient; no specific recipe or region was stated.",
+      "confidence": "medium",
+      "sources": [
+        { "title": "Herbs & Plants - The Blood of Dawnwalker Wiki", "url": "https://the-blood-of-dawn-walker.wiki/herbs" },
+        { "title": "Master Alchemy & Potion Brewing in The Blood Of Dawnwalker - Ludo Guide", "url": "https://www.ludo.guide/guide/the-blood-of-dawnwalker/alchemy-potion-brewing" }
+      ]
+    },
+    {
+      "title": "Canteen of Water",
+      "slug": "canteen-of-water",
+      "category": "ingredient",
+      "howToGet": "Bought from Rainer, the village food vendor, and also turned up by looting crates and barrels.",
+      "summary": "The basic liquid base for crafting, sold by village food vendors and looted from containers.",
+      "bodyParagraphs": [
+        "Most recipes pair a liquid base with gathered plants, mushrooms or creature parts, and water is the plainest of those bases. One canteen plus two Ribwort Plantain makes Minor Mending Ointment, the first thing you craft.",
+        "Rainer, the food vendor in the village, sells it, and containers across the world hold it too, so it is never a bottleneck."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "The Blood of Dawnwalker: How to Craft Minor Mending Ointment", "url": "https://allthings.how/the-blood-of-dawnwalker-how-to-craft-minor-mending-ointment/" },
+        { "title": "Blood of Dawnwalker Crafting Guide: How to Craft and All Recipes - TechWiser", "url": "https://techwiser.com/blood-of-dawnwalker-crafting-all-recipes/" },
+        { "title": "Ingredients - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Ingredients" }
+      ]
+    },
+    {
+      "title": "Linseed Oil",
+      "slug": "linseed-oil",
+      "category": "ingredient",
+      "howToGet": "Looted from crates and barrels, including throughout Vale Sangora.",
+      "stats": [
+        { "label": "Recipes that use it", "value": "9" }
+      ],
+      "summary": "A base crafting component looted from containers, called for by nine different recipes.",
+      "bodyParagraphs": [
+        "Linseed Oil is one of the two workhorse base components in the crafting list, appearing in nine recipes. Weak Spirits, in ten, is the other.",
+        "It is not gathered from the world like herbs; it comes out of containers. Crates and barrels around Vale Sangora are the usual source, so it accumulates naturally while looting.",
+        "Because so many recipes lean on it, it is worth opening containers even when your inventory feels full."
+      ],
+      "confidence": "medium",
+      "sources": [
+        { "title": "Crafting, and the one potion you can only make once - DawnwalkerDB", "url": "https://dawnwalkerdb.com/guides/crafting-and-the-one-potion-you-make-once" },
+        { "title": "Blood of Dawnwalker Crafting Guide: How to Craft and All Recipes - TechWiser", "url": "https://techwiser.com/blood-of-dawnwalker-crafting-all-recipes/" },
+        { "title": "Ingredients - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Ingredients" }
+      ]
+    },
+    {
+      "title": "Weak Spirits",
+      "slug": "weak-spirits",
+      "category": "ingredient",
+      "howToGet": "Looted from crates and barrels, including throughout Vale Sangora.",
+      "stats": [
+        { "label": "Recipes that use it", "value": "10" }
+      ],
+      "summary": "The most-used base component in the crafting list, required by ten recipes.",
+      "bodyParagraphs": [
+        "Weak Spirits appears in more recipes than any other single component, which makes it the thing most likely to run short mid-run.",
+        "Like Linseed Oil it is container loot rather than a world-gathered plant, showing up regularly in crates and barrels around Vale Sangora.",
+        "The name implies a stronger counterpart exists, matching the pattern where most crafting ideas appear at three strengths, but no source I could reach confirmed one."
+      ],
+      "note": "The existence of a stronger spirits variant is inferred from the naming pattern and is not recorded as fact.",
+      "confidence": "medium",
+      "sources": [
+        { "title": "Crafting, and the one potion you can only make once - DawnwalkerDB", "url": "https://dawnwalkerdb.com/guides/crafting-and-the-one-potion-you-make-once" },
+        { "title": "Blood of Dawnwalker Crafting Guide: How to Craft and All Recipes - TechWiser", "url": "https://techwiser.com/blood-of-dawnwalker-crafting-all-recipes/" },
+        { "title": "Ingredients - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Ingredients" }
+      ]
+    },
+    {
+      "title": "Vial of Aether",
+      "slug": "vial-of-aether",
+      "category": "ingredient",
+      "howToGet": "An alchemical reagent rather than a gathered plant; sources place it among the purchased and looted crafting stock.",
+      "summary": "An alchemical reagent used in potions in place of plant matter.",
+      "bodyParagraphs": [
+        "Potion recipes lean on manufactured reagents as much as on foraged material, and Vial of Aether is named alongside Copper Sulfate and Sodium Carbonate as one of those reagents.",
+        "No specific recipe, price or source location was stated in anything I could reach."
+      ],
+      "note": "Confirmed as a reagent used in potion recipes; its sources and uses were not documented in anything I could read.",
+      "confidence": "medium",
+      "sources": [
+        { "title": "Crafting, and the one potion you can only make once - DawnwalkerDB", "url": "https://dawnwalkerdb.com/guides/crafting-and-the-one-potion-you-make-once" },
+        { "title": "The Blood of Dawnwalker Crafting Recipes: Ingredients and Effects", "url": "https://allthings.how/the-blood-of-dawnwalker-crafting-recipes-ingredients-and-effects-for-every-item/" }
+      ]
+    },
+    {
+      "title": "Copper Sulfate",
+      "slug": "copper-sulfate",
+      "category": "ingredient",
+      "howToGet": "An alchemical reagent rather than a gathered plant; sources place it among the purchased and looted crafting stock.",
+      "summary": "An alchemical reagent used in potion recipes.",
+      "bodyParagraphs": [
+        "Copper Sulfate is one of three named reagents that stand in for plants in the potion side of crafting, the others being Vial of Aether and Sodium Carbonate.",
+        "No specific recipe, price or source location was stated in anything I could reach."
+      ],
+      "note": "Confirmed as a reagent used in potion recipes; its sources and uses were not documented in anything I could read.",
+      "confidence": "medium",
+      "sources": [
+        { "title": "Crafting, and the one potion you can only make once - DawnwalkerDB", "url": "https://dawnwalkerdb.com/guides/crafting-and-the-one-potion-you-make-once" },
+        { "title": "The Blood of Dawnwalker Crafting Recipes: Ingredients and Effects", "url": "https://allthings.how/the-blood-of-dawnwalker-crafting-recipes-ingredients-and-effects-for-every-item/" }
+      ]
+    },
+    {
+      "title": "Sodium Carbonate",
+      "slug": "sodium-carbonate",
+      "category": "ingredient",
+      "howToGet": "An alchemical reagent rather than a gathered plant; sources place it among the purchased and looted crafting stock.",
+      "summary": "An alchemical reagent used in potion recipes.",
+      "bodyParagraphs": [
+        "Sodium Carbonate rounds out the trio of named alchemical reagents, sitting alongside Vial of Aether and Copper Sulfate in the potion recipes.",
+        "No specific recipe, price or source location was stated in anything I could reach."
+      ],
+      "note": "Confirmed as a reagent used in potion recipes; its sources and uses were not documented in anything I could read.",
+      "confidence": "medium",
+      "sources": [
+        { "title": "Crafting, and the one potion you can only make once - DawnwalkerDB", "url": "https://dawnwalkerdb.com/guides/crafting-and-the-one-potion-you-make-once" },
+        { "title": "The Blood of Dawnwalker Crafting Recipes: Ingredients and Effects", "url": "https://allthings.how/the-blood-of-dawnwalker-crafting-recipes-ingredients-and-effects-for-every-item/" }
+      ]
+    },
+    {
+      "title": "Strong Ancient Reagent",
+      "slug": "strong-ancient-reagent",
+      "category": "ingredient",
+      "howToGet": "Recovered from Ancient Ruins.",
+      "summary": "A high-grade reagent pulled out of Ancient Ruins, and one of the three parts of the Razkovniche Elixir.",
+      "bodyParagraphs": [
+        "One Strong Ancient Reagent is required for the Razkovniche Elixir, which makes finding one a prerequisite for the only permanent consumable in the game.",
+        "Ancient Ruins are the stated source. The name places it at the top of an ancient reagent line, consistent with the three-strength pattern running through the rest of the crafting list, though no weaker version was named in anything I could reach."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Blood of Dawnwalker The Hedgehog Herb Walkthrough - PowerPyx", "url": "https://www.powerpyx.com/blood-of-dawnwalker-the-hedgehog-herb-walkthrough/" },
+        { "title": "How to Craft Razkovniche Elixir - Dawnwalker Codex", "url": "https://dawnwalkercodex.com/recipes/razkovniche-elixir" },
+        { "title": "Crafting, and the one potion you can only make once - DawnwalkerDB", "url": "https://dawnwalkerdb.com/guides/crafting-and-the-one-potion-you-make-once" }
+      ]
+    },
+    {
+      "title": "Tatzelwurm Gland",
+      "slug": "tatzelwurm-gland",
+      "category": "ingredient",
+      "howToGet": "Harvested from slain Tatzelwurms.",
+      "summary": "A monster part cut from Tatzelwurms, needed two at a time for the Razkovniche Elixir.",
+      "bodyParagraphs": [
+        "The Razkovniche Elixir calls for two of these, so the recipe demands at least one Tatzelwurm hunt before it can be brewed.",
+        "Tatzelwurms also guard other points of interest, notably the dig site holding the Knightly Ring near the Tantari Bog shrine, so the gland tends to accumulate alongside other errands."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Blood of Dawnwalker The Hedgehog Herb Walkthrough - PowerPyx", "url": "https://www.powerpyx.com/blood-of-dawnwalker-the-hedgehog-herb-walkthrough/" },
+        { "title": "How to Craft Razkovniche Elixir - Dawnwalker Codex", "url": "https://dawnwalkercodex.com/recipes/razkovniche-elixir" },
+        { "title": "The Hedgehog Herb Quest In The Blood Of Dawnwalker - Game Rant", "url": "https://gamerant.com/the-blood-of-dawnwalker-the-hedgehog-herb-quest-razkovniche-elixir/" }
+      ]
+    },
+    {
+      "title": "Razkovniche Plant",
+      "slug": "razkovniche-plant",
+      "category": "ingredient",
+      "howToGet": "Obtainable only through The Hedgehog Herb side quest, which begins at an abandoned house.",
+      "summary": "The legendary hedgehog herb, available exactly once per playthrough through its own side quest.",
+      "bodyParagraphs": [
+        "This is the ingredient that makes the Razkovniche Elixir a one-time reward. The Hedgehog Herb quest is its only source, so once it is used the elixir cannot be brewed again.",
+        "The quest starts at an abandoned house, and the recipe for the elixir is pinned to the north-western wall of the dead alchemist's home inside the same questline, which means the plant and the instructions are found on the same trip."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Blood of Dawnwalker The Hedgehog Herb Walkthrough - PowerPyx", "url": "https://www.powerpyx.com/blood-of-dawnwalker-the-hedgehog-herb-walkthrough/" },
+        { "title": "There's A Legendary Herb That Permanently Increases Your Health - GameSpot", "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-hedgehog-herb-razkovniche-maximum-health/" },
+        { "title": "Crafting, and the one potion you can only make once - DawnwalkerDB", "url": "https://dawnwalkerdb.com/guides/crafting-and-the-one-potion-you-make-once" }
+      ]
+    },
+    {
+      "title": "Wolf Claws",
+      "slug": "wolf-claws",
+      "category": "ingredient",
+      "howToGet": "Taken from wolves killed in the wild.",
+      "summary": "A crafting material harvested from wolves.",
+      "bodyParagraphs": [
+        "Wolves are among the beasts that yield crafting materials when killed, dropping claws and hearts.",
+        "Creature parts form the third leg of the crafting economy alongside foraged plants and looted base liquids."
+      ],
+      "note": "Confirmed as a creature drop; no recipe using it was named in anything I could reach.",
+      "confidence": "medium",
+      "sources": [
+        { "title": "Master Alchemy & Potion Brewing in The Blood Of Dawnwalker - Ludo Guide", "url": "https://www.ludo.guide/guide/the-blood-of-dawnwalker/alchemy-potion-brewing" },
+        { "title": "Ingredients - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Ingredients" }
+      ]
+    },
+    {
+      "title": "Wolf Heart",
+      "slug": "wolf-heart",
+      "category": "ingredient",
+      "howToGet": "Taken from wolves killed in the wild.",
+      "summary": "A crafting material harvested from wolves.",
+      "bodyParagraphs": [
+        "The second of the two wolf drops named in the ingredient lists, gathered the same way as Wolf Claws."
+      ],
+      "note": "Confirmed as a creature drop; no recipe using it was named in anything I could reach.",
+      "confidence": "medium",
+      "sources": [
+        { "title": "Master Alchemy & Potion Brewing in The Blood Of Dawnwalker - Ludo Guide", "url": "https://www.ludo.guide/guide/the-blood-of-dawnwalker/alchemy-potion-brewing" },
+        { "title": "Ingredients - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Ingredients" }
+      ]
+    },
+    {
+      "title": "Boar Fat",
+      "slug": "boar-fat",
+      "category": "ingredient",
+      "howToGet": "Taken from boars killed in the wild.",
+      "summary": "A crafting material harvested from boars.",
+      "bodyParagraphs": [
+        "Boars drop both fat and tusks, putting them alongside wolves and kobolds as a routine source of creature components."
+      ],
+      "note": "Confirmed as a creature drop; no recipe using it was named in anything I could reach.",
+      "confidence": "medium",
+      "sources": [
+        { "title": "Master Alchemy & Potion Brewing in The Blood Of Dawnwalker - Ludo Guide", "url": "https://www.ludo.guide/guide/the-blood-of-dawnwalker/alchemy-potion-brewing" },
+        { "title": "Ingredients - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Ingredients" }
+      ]
+    },
+    {
+      "title": "Boar Tusks",
+      "slug": "boar-tusks",
+      "category": "ingredient",
+      "howToGet": "Taken from boars killed in the wild.",
+      "summary": "A crafting material harvested from boars.",
+      "bodyParagraphs": [
+        "The harder of the two boar drops, collected from the same kills that yield Boar Fat."
+      ],
+      "note": "Confirmed as a creature drop; no recipe using it was named in anything I could reach.",
+      "confidence": "medium",
+      "sources": [
+        { "title": "Master Alchemy & Potion Brewing in The Blood Of Dawnwalker - Ludo Guide", "url": "https://www.ludo.guide/guide/the-blood-of-dawnwalker/alchemy-potion-brewing" },
+        { "title": "Ingredients - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Ingredients" }
+      ]
+    },
+    {
+      "title": "Kobold Brain",
+      "slug": "kobold-brain",
+      "category": "ingredient",
+      "howToGet": "Taken from slain kobolds.",
+      "summary": "A crafting material harvested from kobolds.",
+      "bodyParagraphs": [
+        "Kobolds yield two components, brain and bile, which puts them in the same bracket as wolves and boars for routine material farming."
+      ],
+      "note": "Confirmed as a creature drop; no recipe using it was named in anything I could reach.",
+      "confidence": "medium",
+      "sources": [
+        { "title": "Master Alchemy & Potion Brewing in The Blood Of Dawnwalker - Ludo Guide", "url": "https://www.ludo.guide/guide/the-blood-of-dawnwalker/alchemy-potion-brewing" },
+        { "title": "Ingredients - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Ingredients" }
+      ]
+    },
+    {
+      "title": "Kobold Bile",
+      "slug": "kobold-bile",
+      "category": "ingredient",
+      "howToGet": "Taken from slain kobolds.",
+      "summary": "A crafting material harvested from kobolds.",
+      "bodyParagraphs": [
+        "The second kobold component named in the ingredient lists, collected from the same kills that yield Kobold Brain."
+      ],
+      "note": "Confirmed as a creature drop; no recipe using it was named in anything I could reach.",
+      "confidence": "medium",
+      "sources": [
+        { "title": "Master Alchemy & Potion Brewing in The Blood Of Dawnwalker - Ludo Guide", "url": "https://www.ludo.guide/guide/the-blood-of-dawnwalker/alchemy-potion-brewing" },
+        { "title": "Ingredients - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Ingredients" }
+      ]
+    },
+    {
+      "title": "Bandit's Treasure Map: Tantari Woods",
+      "slug": "bandits-treasure-map-tantari-woods",
+      "category": "quest",
+      "regionSlug": "tantari-woods",
+      "howToGet": "Recovered from bandits in and around Tantari Woods.",
+      "summary": "A bandit treasure map whose marked dig site yields the legendary Knightly Ring.",
+      "bodyParagraphs": [
+        "Treasure maps mark buried caches that need a shovel to open. This one points at the mound east of the Tantari Bog shrine, across a small wooden bridge.",
+        "The payout is the Knightly Ring, which means players who find the map and players who simply know the location both end up at the same hole in the ground. The ring can be dug up at any level but cannot be worn until Coen reaches level 9."
+      ],
+      "note": "Guides name the map as an alternative route to the Knightly Ring; where the map itself is found was not stated in anything I could reach.",
+      "confidence": "medium",
+      "sources": [
+        { "title": "The Blood of Dawnwalker: How to Get the Knightly Ring Early", "url": "https://allthings.how/the-blood-of-dawnwalker-how-to-get-the-knightly-ring-early/" },
+        { "title": "Knightly Ring Location - Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618618" }
+      ]
+    },
+    {
+      "title": "Shovel",
+      "slug": "shovel",
+      "category": "quest",
+      "howToGet": "Taken from the wooden shed in Parlita.",
+      "summary": "The digging tool needed to open buried treasure sites, stolen from a shed in Parlita.",
+      "bodyParagraphs": [
+        "Buried caches cannot be opened bare-handed, so the shovel is a prerequisite for treasure map rewards. The one guides point at is stored in a wooden shed in Parlita and has to be stolen.",
+        "The best-documented use is the mound east of the Tantari Bog shrine, which holds the Knightly Ring."
+      ],
+      "note": "Only one dig site was documented in the sources I could reach; whether the shovel is a unique item or a common tool was not stated.",
+      "confidence": "medium",
+      "sources": [
+        { "title": "The Blood of Dawnwalker: How to Get the Knightly Ring Early", "url": "https://allthings.how/the-blood-of-dawnwalker-how-to-get-the-knightly-ring-early/" },
+        { "title": "Knightly Ring Location - Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618618" }
+      ]
+    },
+    {
+      "title": "Anca's Recipe",
+      "slug": "ancas-recipe",
+      "category": "quest",
+      "howToGet": "Given by Anca during the prologue, when she sends Coen to prepare her medicine.",
+      "summary": "The prologue herb recipe from Anca, which asks for a precise number of spoonfuls brewed into water.",
+      "bodyParagraphs": [
+        "Before the crafting system proper opens up, the prologue has Coen prepare a medicine to Anca's instructions. The puzzle is the measurement: the recipe specifies how many spoonfuls of herbs go into the water, and guides exist purely to answer that question.",
+        "It functions as the narrative introduction to brewing, with the Minor Mending Ointment tutorial following once the crafting panel unlocks after the prologue."
+      ],
+      "note": "Covered by several walkthroughs of the prologue herb-brewing step; the exact spoonful count was not visible in the results I could read, so it is not recorded here.",
+      "confidence": "medium",
+      "sources": [
+        { "title": "Anca's Recipe and how many spoonfuls of herbs to use - GamesRadar", "url": "https://www.gamesradar.com/games/action-rpg/blood-of-dawnwalker-brew-herbs-medicine-water-spoonfuls/" },
+        { "title": "Blood of Dawnwalker: How to prepare the herbs from Anca in the prologue - The Big Lead", "url": "https://www.thebiglead.com/blood-of-dawnwalker-perpare-herbs-withered-away/" },
+        { "title": "Blood of the Dawnwalker How to Prepare Herbs: 3 Steps - XModHub", "url": "https://www.xmodhub.com/info/guides/blood-of-the-dawnwalker-how-to-prepare-herbs/" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,685 @@
+{
+  "collection": "court-activities",
+  "records": [
+    {
+      "title": "Bloody Business",
+      "slug": "bloody-business",
+      "courtSlug": "ambrus",
+      "howToStart": "Track the activity from the journal and run down the convoy on the road; the marker drifts because the caravan is walking a route rather than sitting in a camp.",
+      "summary": "A moving blood convoy belonging to Ambrus that has to be chased down and ambushed on the road.",
+      "bodyParagraphs": [
+        "One of the two blood transports in Ambrus's court and among the first things the game lets you disrupt once the prologue is behind you. Because the wagons are in motion, the objective marker slides across the map instead of staying put, so this plays as a pursuit rather than a raid on a fixed position.",
+        "Killing the escort is not quite enough. The convoy leader, Uriash, has to be searched personally, because the written order the activity asks for is on his body rather than on the rank-and-file guards. Guides put the payout at 250 XP plus a skill point for a cost of three time segments."
+      ],
+      "note": "Sources place this one differently. One describes the convoy crossing the western Maragir Wealds, another puts it near South Rock, so no region is assigned here.",
+      "confidence": "medium",
+      "sources": [
+        { "title": "Blood of Dawnwalker All Court Activity Locations (PowerPyx)", "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-court-activity-locations/" },
+        { "title": "The Blood of Dawnwalker: All Ambrus's Transports Quests", "url": "https://allthings.how/the-blood-of-dawnwalker-all-ambrus-s-transports-quests/" },
+        { "title": "Blood Transports | The Blood of Dawnwalker (Gamer Guides)", "url": "https://www.gamerguides.com/the-blood-of-dawnwalker/guide/walkthrough/ambrus-quests/blood-transports" }
+      ]
+    },
+    {
+      "title": "Roadside Surprise",
+      "slug": "roadside-surprise",
+      "courtSlug": "ambrus",
+      "regionSlug": "briar-sloughs",
+      "howToStart": "Walk into the roadside camp and engage the escort; the cargo barrels only become interactable once the guards are down.",
+      "summary": "A parked blood-transport camp where the cargo barrels themselves are the objective.",
+      "bodyParagraphs": [
+        "Unlike its sibling transport, this one sits still. Clear the camp, then break the highlighted barrels one by one to ruin the shipment before it ever reaches Ambrus's cellars.",
+        "One barrel turns out not to hold blood at all. A man calling himself Klaus the Brave has climbed inside to hide from the escort. Reported loot from the site includes the Pendant of Yakhari's Swiftness, Kobold's Blood and Uriashi Smoked Cheese."
+      ],
+      "note": "One guide writes the location as \"Brior Slough\"; treated here as the Briar Sloughs region.",
+      "confidence": "high",
+      "sources": [
+        { "title": "Blood of Dawnwalker All Court Activity Locations (PowerPyx)", "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-court-activity-locations/" },
+        { "title": "The Blood of Dawnwalker: All Ambrus's Transports Quests", "url": "https://allthings.how/the-blood-of-dawnwalker-all-ambrus-s-transports-quests/" },
+        { "title": "The Blood of Dawnwalker: All 14 Ambrus Court Activities", "url": "https://allthings.how/the-blood-of-dawnwalker-all-14-ambrus-court-activities-full-guide/" }
+      ]
+    },
+    {
+      "title": "Lucky Crossing",
+      "slug": "lucky-crossing",
+      "courtSlug": "ambrus",
+      "howToStart": "Intercept the marching prisoner column on the road near the Svartrau Bridge shrine.",
+      "summary": "An escorted prisoner column whose rescue introduces a duellist who can be turned into a Swordmastery teacher.",
+      "bodyParagraphs": [
+        "Ambrus shifts captives across the valley in small guarded columns, and this is one of two such convoys flagged as a court activity. Cutting down the escort and freeing the prisoners is all the activity itself requires.",
+        "The interesting part comes afterwards. Among the freed captives is Ursul Varna, known as Ursul the Undefeated, who immediately wants to test Coen. Beating him at his camp turns him into a vendor; guides name Second Skin II, Omniblock and Counterattack among the manuals he then sells."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "The Blood of Dawnwalker: Both Ambrus's Prisoners Quests Explained", "url": "https://allthings.how/the-blood-of-dawnwalker-both-ambrus-s-prisoners-quests-explained/" },
+        { "title": "Blood of Dawnwalker All Court Activity Locations (PowerPyx)", "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-court-activity-locations/" },
+        { "title": "Court Activities Walkthrough | Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Court_Activities_Walkthrough" }
+      ]
+    },
+    {
+      "title": "Fate's Mercy",
+      "slug": "fates-mercy",
+      "courtSlug": "ambrus",
+      "howToStart": "Follow the road north past the fortified Military Camp and catch the moving prisoner escort.",
+      "summary": "The second of Ambrus's escorted prisoner convoys, running a road north of the fortified military camp.",
+      "bodyParagraphs": [
+        "This convoy behaves like Lucky Crossing, a walking column of guards and captives rather than a fixed encampment, but it sits further north on the map, beyond the fortified military camp. Together the two prisoner runs and the two blood runs make up the four moving convoys in Ambrus's court."
+      ],
+      "confidence": "medium",
+      "sources": [
+        { "title": "The Blood of Dawnwalker: Both Ambrus's Prisoners Quests Explained", "url": "https://allthings.how/the-blood-of-dawnwalker-both-ambrus-s-prisoners-quests-explained/" },
+        { "title": "The Blood of Dawnwalker: All 14 Ambrus Court Activities", "url": "https://allthings.how/the-blood-of-dawnwalker-all-14-ambrus-court-activities-full-guide/" }
+      ]
+    },
+    {
+      "title": "Bounty of the Mire",
+      "slug": "bounty-of-the-mire",
+      "courtSlug": "ambrus",
+      "howToStart": "Approach the collectors' camp and attack; the leech barrels can be destroyed once the crew is dead.",
+      "summary": "A leech-harvesting camp run by Ambrus's collectors, undone by killing the crew and smashing their barrels.",
+      "bodyParagraphs": [
+        "Ambrus's court keeps gangs of collectors out in the wetlands harvesting leeches to keep the blood supply topped up. Three of their camps are logged as separate court activities, and all three resolve identically: wipe out everyone present, then destroy the leech barrels so the haul is lost."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "The Blood of Dawnwalker: All 14 Ambrus Court Activities", "url": "https://allthings.how/the-blood-of-dawnwalker-all-14-ambrus-court-activities-full-guide/" },
+        { "title": "Blood of Dawnwalker All Court Activity Locations (PowerPyx)", "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-court-activity-locations/" },
+        { "title": "Ambrus Court | Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Ambrus_Court" }
+      ]
+    },
+    {
+      "title": "Wetland Helpers",
+      "slug": "wetland-helpers",
+      "courtSlug": "ambrus",
+      "howToStart": "Approach the collectors' camp and attack; the leech barrels can be destroyed once the crew is dead.",
+      "summary": "The second of Ambrus's three leech-collector camps, cleared the same way as the others.",
+      "bodyParagraphs": [
+        "One of the trio of collector camps feeding Ambrus's blood operation. Guides describe no twist here beyond the standard pattern of killing the collectors and then destroying the barrels of leeches they have gathered."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "The Blood of Dawnwalker: All 14 Ambrus Court Activities", "url": "https://allthings.how/the-blood-of-dawnwalker-all-14-ambrus-court-activities-full-guide/" },
+        { "title": "Blood of Dawnwalker All Court Activity Locations (PowerPyx)", "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-court-activity-locations/" },
+        { "title": "Ambrus Court | Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Ambrus_Court" }
+      ]
+    },
+    {
+      "title": "Unsavoury Solutions",
+      "slug": "unsavoury-solutions",
+      "courtSlug": "ambrus",
+      "howToStart": "Approach the collectors' camp and attack; the leech barrels can be destroyed once the crew is dead.",
+      "summary": "The third leech-collector camp in Ambrus's court, resolved by killing the crew and breaking their barrels.",
+      "bodyParagraphs": [
+        "The last of the three collector sites. Like Bounty of the Mire and Wetland Helpers, it is a short, self-contained camp clear followed by the destruction of the leech barrels."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "The Blood of Dawnwalker: All 14 Ambrus Court Activities", "url": "https://allthings.how/the-blood-of-dawnwalker-all-14-ambrus-court-activities-full-guide/" },
+        { "title": "Blood of Dawnwalker All Court Activity Locations (PowerPyx)", "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-court-activity-locations/" },
+        { "title": "Ambrus Court | Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Ambrus_Court" }
+      ]
+    },
+    {
+      "title": "Under Watchful Eyes",
+      "slug": "under-watchful-eyes",
+      "courtSlug": "ambrus",
+      "howToStart": "Enter Ambrus's prisoner processing camp and fight the garrison, then open the cell to free the captive inside.",
+      "summary": "A raid on Ambrus's prisoner processing camp that also closes the side quest The Firebrand.",
+      "bodyParagraphs": [
+        "This is the camp where Ambrus's court sorts the humans it has taken. The activity wants the guards dead and the Miller pulled out of the prison cell.",
+        "The same rescue resolves the side quest The Firebrand, so a single three-segment visit settles two journal entries at once, which makes it good value against the thirty-day clock."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "The Blood of Dawnwalker: All 14 Ambrus Court Activities", "url": "https://allthings.how/the-blood-of-dawnwalker-all-14-ambrus-court-activities-full-guide/" },
+        { "title": "Blood of Dawnwalker All Court Activity Locations (PowerPyx)", "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-court-activity-locations/" },
+        { "title": "Ambrus Court | Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Ambrus_Court" }
+      ]
+    },
+    {
+      "title": "Seeing Red",
+      "slug": "seeing-red",
+      "courtSlug": "ambrus",
+      "summary": "One of the three blood-storage cellars kept by Ambrus's court.",
+      "bodyParagraphs": [
+        "Securing the cellars where collected blood is stored is one of the pillars of Ambrus's operation, alongside the transports and the prisoner camps. Three cellars are logged as court activities: Seeing Red, Uninvited and Trouble Brewing.",
+        "The guides found for this entry group the three together without spelling out what each one asks of Coen individually, so no start condition is recorded here."
+      ],
+      "confidence": "medium",
+      "sources": [
+        { "title": "The Blood of Dawnwalker: All Ambrus's Cellars Quests Explained", "url": "https://allthings.how/the-blood-of-dawnwalker-all-ambrus-s-cellars-quests-explained/" },
+        { "title": "The Blood of Dawnwalker: All 14 Ambrus Court Activities", "url": "https://allthings.how/the-blood-of-dawnwalker-all-14-ambrus-court-activities-full-guide/" }
+      ]
+    },
+    {
+      "title": "Uninvited",
+      "slug": "uninvited",
+      "courtSlug": "ambrus",
+      "summary": "The second of Ambrus's three blood-storage cellar activities.",
+      "bodyParagraphs": [
+        "Listed among Ambrus's Cellars together with Seeing Red and Trouble Brewing. Sources name it as a court activity in that group but do not describe its individual objectives, so nothing further is recorded."
+      ],
+      "confidence": "medium",
+      "sources": [
+        { "title": "The Blood of Dawnwalker: All Ambrus's Cellars Quests Explained", "url": "https://allthings.how/the-blood-of-dawnwalker-all-ambrus-s-cellars-quests-explained/" },
+        { "title": "The Blood of Dawnwalker: All 14 Ambrus Court Activities", "url": "https://allthings.how/the-blood-of-dawnwalker-all-14-ambrus-court-activities-full-guide/" }
+      ]
+    },
+    {
+      "title": "Trouble Brewing",
+      "slug": "trouble-brewing",
+      "courtSlug": "ambrus",
+      "summary": "The third of Ambrus's three blood-storage cellar activities.",
+      "bodyParagraphs": [
+        "The last of the cellar group. As with the other two, the sources consulted list the name and the category but stop short of detailing what the activity itself involves."
+      ],
+      "confidence": "medium",
+      "sources": [
+        { "title": "The Blood of Dawnwalker: All Ambrus's Cellars Quests Explained", "url": "https://allthings.how/the-blood-of-dawnwalker-all-ambrus-s-cellars-quests-explained/" },
+        { "title": "The Blood of Dawnwalker: All 14 Ambrus Court Activities", "url": "https://allthings.how/the-blood-of-dawnwalker-all-14-ambrus-court-activities-full-guide/" }
+      ]
+    },
+    {
+      "title": "Judge and Executioner",
+      "slug": "judge-and-executioner",
+      "courtSlug": "ambrus",
+      "summary": "One of the three dungeon activities in Ambrus's court.",
+      "bodyParagraphs": [
+        "Ambrus's Dungeons form the sixth category of his court activities, alongside the cargo transports, the collectors, the prisoner processing camp, the prisoner transports and the cellars. Three are named: Judge and Executioner, Evil and Convenience and Twists and Turns.",
+        "The guides found for this entry list the three by name without breaking down their individual objectives."
+      ],
+      "confidence": "medium",
+      "sources": [
+        { "title": "The Blood of Dawnwalker: All 14 Ambrus Court Activities", "url": "https://allthings.how/the-blood-of-dawnwalker-all-14-ambrus-court-activities-full-guide/" },
+        { "title": "Blood of Dawnwalker All Court Activity Locations (PowerPyx)", "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-court-activity-locations/" }
+      ]
+    },
+    {
+      "title": "Evil and Convenience",
+      "slug": "evil-and-convenience",
+      "courtSlug": "ambrus",
+      "summary": "The second of Ambrus's three dungeon activities.",
+      "bodyParagraphs": [
+        "Named as part of the Ambrus's Dungeons group. Sources confirm the name and the court but give no objective detail."
+      ],
+      "confidence": "medium",
+      "sources": [
+        { "title": "The Blood of Dawnwalker: All 14 Ambrus Court Activities", "url": "https://allthings.how/the-blood-of-dawnwalker-all-14-ambrus-court-activities-full-guide/" },
+        { "title": "Blood of Dawnwalker All Court Activity Locations (PowerPyx)", "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-court-activity-locations/" }
+      ]
+    },
+    {
+      "title": "Twists and Turns",
+      "slug": "twists-and-turns",
+      "courtSlug": "ambrus",
+      "summary": "The third of Ambrus's three dungeon activities.",
+      "bodyParagraphs": [
+        "The final entry in the Ambrus's Dungeons group. As with its two companions, only the name and category are attested in the sources consulted."
+      ],
+      "confidence": "medium",
+      "sources": [
+        { "title": "The Blood of Dawnwalker: All 14 Ambrus Court Activities", "url": "https://allthings.how/the-blood-of-dawnwalker-all-14-ambrus-court-activities-full-guide/" },
+        { "title": "Blood of Dawnwalker All Court Activity Locations (PowerPyx)", "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-court-activity-locations/" }
+      ]
+    },
+    {
+      "title": "Matter of Honour",
+      "slug": "matter-of-honour",
+      "courtSlug": "bakir",
+      "howToStart": "Engage the headhunter band at their camp.",
+      "summary": "One of three Bakir headhunter camps that have to be wiped out to raise his anger.",
+      "bodyParagraphs": [
+        "Bakir commands a military force, and bands of his headhunters are stationed in camps across his territory. Three of those camps are logged as court activities: Matter of Honour, Silent to the Grave and Smoke Them Out.",
+        "The pattern for the group is straightforward: defeat the headhunters and the activity resolves."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Bakir Court | Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Bakir_Court" },
+        { "title": "The Blood of Dawnwalker: How to Complete Bakir's Headhunters: Matter of Honour", "url": "https://allthings.how/the-blood-of-dawnwalker-how-to-complete-bakir-s-headhunters-matter-of-honour/" },
+        { "title": "All 12 Bakir Court Activities (Patch Crazy)", "url": "https://patchcrazy.co.uk/all-12-bakir-court-activities-the-blood-of-dawnwalker/" }
+      ]
+    },
+    {
+      "title": "Silent to the Grave",
+      "slug": "silent-to-the-grave",
+      "courtSlug": "bakir",
+      "howToStart": "Engage the headhunter band at their camp.",
+      "summary": "The second of Bakir's three headhunter camp activities.",
+      "bodyParagraphs": [
+        "Another of the headhunter bands Bakir keeps in the field. Clearing the camp is what registers the activity and pushes his anger meter along."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Bakir Court | Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Bakir_Court" },
+        { "title": "The Blood of Dawnwalker: Bakir's Headhunters - Silent to the Grave Full Quest", "url": "https://allthings.how/the-blood-of-dawnwalker-bakir-s-headhunters-silent-to-the-grave-full-quest/" },
+        { "title": "All 12 Bakir Court Activities (Patch Crazy)", "url": "https://patchcrazy.co.uk/all-12-bakir-court-activities-the-blood-of-dawnwalker/" }
+      ]
+    },
+    {
+      "title": "Smoke Them Out",
+      "slug": "smoke-them-out",
+      "courtSlug": "bakir",
+      "howToStart": "Engage the headhunter band at their camp.",
+      "summary": "The third headhunter camp tied to Bakir's court.",
+      "bodyParagraphs": [
+        "The last of the three headhunter activities under Bakir. It has its own entry in the game's court journal, which lists it alongside the other headhunter jobs."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Bakir's Headhunters: Smoke Them Out (Gamer Guides database)", "url": "https://www.gamerguides.com/the-blood-of-dawnwalker/database/journal/court/bakirs-headhunters-smoke-them-out" },
+        { "title": "Bakir's Headhunters: Smoke Them Out Walkthrough", "url": "https://allthings.how/the-blood-of-dawnwalker-bakir-s-headhunters-smoke-them-out-walkthrough/" },
+        { "title": "Bakir Court | Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Bakir_Court" }
+      ]
+    },
+    {
+      "title": "Ends and Means",
+      "slug": "ends-and-means",
+      "courtSlug": "bakir",
+      "howToStart": "Attack the guards standing in the distillery yard near Parlag, then head inside and interact with the distilling equipment.",
+      "summary": "A sabotage job on the distillery near Parlag, one of three stills feeding Bakir's plan to drink the valley into submission.",
+      "bodyParagraphs": [
+        "Bakir's answer to rebellion is cheap liquor. Flood the valley with drink, the reasoning goes, and nobody stays sober enough to stand against the vrakhiri. Wrecking the stills is the counter-move.",
+        "Once the yard is clear, the still inside can be interacted with, and the activity closes the instant Coen smashes it. Guides report 250 XP and a skill point for a cost of three time segments. Poisoning the batch instead also resolves the activity, though it is not treated as shutting the operation down."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Bakir's Distilleries: Ends and Means (Gamer Guides database)", "url": "https://www.gamerguides.com/the-blood-of-dawnwalker/database/journal/court/bakirs-distilleries-ends-and-means" },
+        { "title": "The Blood of Dawnwalker: All Bakir's Distilleries Quests", "url": "https://allthings.how/the-blood-of-dawnwalker-all-bakir-s-distilleries-quests/" },
+        { "title": "Ends and Means Walkthrough | Blood of Dawnwalker", "url": "https://bloodofdawnwalker.org/walkthrough/ends-and-means/" }
+      ]
+    },
+    {
+      "title": "Coercion and Duress",
+      "slug": "coercion-and-duress",
+      "courtSlug": "bakir",
+      "regionSlug": "svartrau-city",
+      "howToStart": "Find the still inside Svartrau City and fight the guards posted on it.",
+      "summary": "The urban distillery in Svartrau City, where the activity turns on what Coen does with the distiller.",
+      "bodyParagraphs": [
+        "The city entry in the distillery group. The fight is the usual business of clearing the guards, but the resolution hangs on a decision about the distiller himself rather than only on breaking equipment."
+      ],
+      "confidence": "medium",
+      "sources": [
+        { "title": "Bakir's Distilleries: Coercion and Duress (Gamer Guides database)", "url": "https://www.gamerguides.com/the-blood-of-dawnwalker/database/journal/court/bakirs-distilleries-coercion-and-duress" },
+        { "title": "The Blood of Dawnwalker: All Bakir's Distilleries Quests", "url": "https://allthings.how/the-blood-of-dawnwalker-all-bakir-s-distilleries-quests/" }
+      ]
+    },
+    {
+      "title": "Offshoot",
+      "slug": "offshoot",
+      "courtSlug": "bakir",
+      "howToStart": "Head into the woods west of Svartrau City and follow the cave in to the hidden still.",
+      "summary": "A hidden distillery in a forest cave west of the city, where Coen can take a cut instead of destroying it.",
+      "bodyParagraphs": [
+        "The third still is tucked underground rather than standing in the open, which makes it the least obvious of the distillery activities to stumble across.",
+        "Guides note an alternative resolution here: Coen can strike a profit-sharing arrangement rather than wreck the place. That closes the activity, but like the poisoned batch at Ends and Means it does not count as a proper shutdown."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "The Blood of Dawnwalker: All Bakir's Distilleries Quests", "url": "https://allthings.how/the-blood-of-dawnwalker-all-bakir-s-distilleries-quests/" },
+        { "title": "Bakir Court | Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Bakir_Court" },
+        { "title": "All 12 Bakir Court Activities (Patch Crazy)", "url": "https://patchcrazy.co.uk/all-12-bakir-court-activities-the-blood-of-dawnwalker/" }
+      ]
+    },
+    {
+      "title": "Out of Love",
+      "slug": "out-of-love",
+      "courtSlug": "bakir",
+      "regionSlug": "svartrau-city",
+      "howToStart": "Approach the pillory in Svartrau City and intervene against the guards holding the prisoner.",
+      "summary": "The pillory activity inside Svartrau City, one of Bakir's public punishments.",
+      "bodyParagraphs": [
+        "Bakir punishes lawbreakers in the open at pillories, and the gathering around each one is a court activity in its own right. Investigating the crowd and stepping in is what triggers them.",
+        "Guides give the pillory jobs a cost of three time segments each, with a skill point among the rewards."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "The Blood of Dawnwalker: All Bakir's Pillories Quests and Rewards", "url": "https://allthings.how/the-blood-of-dawnwalker-all-bakir-s-pillories-quests-and-rewards/" },
+        { "title": "Bakir's Pillories: Out of Love Walkthrough", "url": "https://allthings.how/bakir-s-pillories-out-of-love-walkthrough-in-the-blood-of-dawnwalker/" },
+        { "title": "Bakir Court | Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Bakir_Court" }
+      ]
+    },
+    {
+      "title": "Familiar Face",
+      "slug": "familiar-face",
+      "courtSlug": "bakir",
+      "howToStart": "Approach the pillory at Parlina and intervene.",
+      "summary": "The pillory activity at Parlina, second of Bakir's three main public punishments.",
+      "bodyParagraphs": [
+        "One of the three pillories flagged in Bakir's territory. Sources place it at Parlina and otherwise describe it in the same terms as the other pillory activities: a crowd around a prisoner, and a fight if Coen chooses to interfere."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "The Blood of Dawnwalker: All Bakir's Pillories Quests and Rewards", "url": "https://allthings.how/the-blood-of-dawnwalker-all-bakir-s-pillories-quests-and-rewards/" },
+        { "title": "Bakir Court | Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Bakir_Court" },
+        { "title": "All 12 Bakir Court Activities (Patch Crazy)", "url": "https://patchcrazy.co.uk/all-12-bakir-court-activities-the-blood-of-dawnwalker/" }
+      ]
+    },
+    {
+      "title": "Old Hand",
+      "slug": "old-hand",
+      "courtSlug": "bakir",
+      "howToStart": "Approach the pillory standing in front of Lunar Manor and defeat the guards.",
+      "summary": "The pillory outside Lunar Manor, whose dialogue can open a follow-up activity.",
+      "bodyParagraphs": [
+        "This one plays out like the other pillories right up to the conversation afterwards. The prisoner's fate is put to Coen, and refusing to let him be harmed changes what happens next.",
+        "Choosing to protect him opens Catalin's Tutor, which sends Coen on to the man's camp to the north-west of the pillory."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Bakir's Pillories: Old Hand Walkthrough", "url": "https://allthings.how/bakir-s-pillories-old-hand-walkthrough-in-the-blood-of-dawnwalker/" },
+        { "title": "The Blood of Dawnwalker: All Bakir's Pillories Quests and Rewards", "url": "https://allthings.how/the-blood-of-dawnwalker-all-bakir-s-pillories-quests-and-rewards/" },
+        { "title": "The Blood of Dawnwalker Walkthrough - All Quests (PowerPyx)", "url": "https://www.powerpyx.com/the-blood-of-dawnwalker-walkthrough-all-quests/" }
+      ]
+    },
+    {
+      "title": "Catalin's Tutor",
+      "slug": "catalins-tutor",
+      "courtSlug": "bakir",
+      "howToStart": "Finish Old Hand by choosing to protect the prisoner, then visit his camp north-west of the pillory and ask him to train Coen.",
+      "summary": "A follow-up to Old Hand that turns the spared prisoner into a Swordmastery teacher.",
+      "bodyParagraphs": [
+        "This does not exist as a marker you can find in the world. It only appears once Old Hand ends with Coen refusing to let the man at the pillory be hurt.",
+        "At his camp he agrees to teach on one condition: beat him in a duel. Winning unlocks him as a Swordmastery teacher."
+      ],
+      "note": "Described as a sub-quest that unlocks from Old Hand, so it is unclear whether it counts as one of Bakir's twelve court activities or as an extension of Old Hand.",
+      "confidence": "low",
+      "sources": [
+        { "title": "The Blood of Dawnwalker: All Bakir's Pillories Quests and Rewards", "url": "https://allthings.how/the-blood-of-dawnwalker-all-bakir-s-pillories-quests-and-rewards/" },
+        { "title": "The Blood of Dawnwalker Walkthrough - All Quests (PowerPyx)", "url": "https://www.powerpyx.com/the-blood-of-dawnwalker-walkthrough-all-quests/" }
+      ]
+    },
+    {
+      "title": "Fools' Gold",
+      "slug": "fools-gold",
+      "courtSlug": "bakir",
+      "howToStart": "Catch the guarded caravan on its route and kill the escort.",
+      "summary": "One of the two road caravans run by Bakir's court and marked as court activities.",
+      "bodyParagraphs": [
+        "Bakir moves goods by road under armed guard, and two of those caravans are logged in the journal as court activities: Fools' Gold and Curious Shipment. Intercepting the transport is what the entry asks for."
+      ],
+      "note": "Rendered as both \"Fools' Gold\" and \"Fool's Gold\" across guides.",
+      "confidence": "high",
+      "sources": [
+        { "title": "Bakir Court | Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Bakir_Court" },
+        { "title": "All 12 Bakir Court Activities (Patch Crazy)", "url": "https://patchcrazy.co.uk/all-12-bakir-court-activities-the-blood-of-dawnwalker/" },
+        { "title": "Blood of Dawnwalker All Court Activity Locations (PowerPyx)", "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-court-activity-locations/" }
+      ]
+    },
+    {
+      "title": "Curious Shipment",
+      "slug": "curious-shipment",
+      "courtSlug": "bakir",
+      "howToStart": "Catch the guarded caravan on its route and kill the escort.",
+      "summary": "The second of Bakir's two transport caravans flagged as a court activity.",
+      "bodyParagraphs": [
+        "Paired with Fools' Gold in the Bakir's Transports group. Both are road convoys rather than fixed camps, so they have to be run down rather than raided in place."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Bakir Court | Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Bakir_Court" },
+        { "title": "All 12 Bakir Court Activities (Patch Crazy)", "url": "https://patchcrazy.co.uk/all-12-bakir-court-activities-the-blood-of-dawnwalker/" },
+        { "title": "Blood of Dawnwalker All Court Activity Locations (PowerPyx)", "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-court-activity-locations/" }
+      ]
+    },
+    {
+      "title": "A Mother's Plea",
+      "slug": "a-mothers-plea",
+      "courtSlug": "bakir",
+      "howToStart": "Work the Lacra and Osha side-quest chain in order - A Friend Like This, then Song of the Mountain - which unlocks A Mother's Plea, followed by The Heart Wants What It Wants.",
+      "summary": "A hidden, missable side-quest chain that also counts against Bakir's anger.",
+      "bodyParagraphs": [
+        "This one is easy to lose to the thirty-day clock, because it hangs off a chain of side quests instead of appearing as a discoverable marker in Bakir's territory. Guides flag it as both hidden and time-sensitive.",
+        "The story concerns the Uriash matriarch Bakr-Erga and a family problem involving her daughter Bakr-Ocha. Finishing it feeds Bakir's anger meter, which is why several guides file it beside the headhunters, distilleries and pillories."
+      ],
+      "note": "Counted by several guides as a Bakir court activity, but it is structurally a hidden side-quest chain. Together with Catalin's Tutor this gives thirteen named Bakir entries against a reported total of twelve, so at least one of the two is not part of the official count.",
+      "confidence": "low",
+      "sources": [
+        { "title": "Blood of Dawnwalker A Mother's Plea Walkthrough (PowerPyx)", "url": "https://www.powerpyx.com/blood-of-dawnwalker-a-mothers-plea-walkthrough/" },
+        { "title": "A Mother's Plea Quest Walkthrough | The Blood of Dawnwalker (Game8)", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618785" },
+        { "title": "The Blood of Dawnwalker: A Mother's Plea Full Quest Walkthrough", "url": "https://allthings.how/the-blood-of-dawnwalker-a-mother-s-plea-full-quest-walkthrough/" }
+      ]
+    },
+    {
+      "title": "Taste of Power",
+      "slug": "taste-of-power",
+      "courtSlug": "xanthe",
+      "regionSlug": "svartrau-city",
+      "howToStart": "Enter the backyard in Svartrau City where the recruiters are working and attack them.",
+      "summary": "A Blood Guard recruiting pitch running in a Svartrau City backyard.",
+      "bodyParagraphs": [
+        "Xanthe's people tour the valley handing out undiluted vrakhiri blood to anyone curious enough to try it, on the theory that the addiction will do the recruiting for them.",
+        "All three recruiter activities resolve the same way: kill everyone, then search out the small reliquary of blood vials they carry. The vials can be kept as consumables or destroyed outright, and guides describe them as legendary phials."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Xanthe's Recruiters: Taste of Power (Gamer Guides database)", "url": "https://www.gamerguides.com/the-blood-of-dawnwalker/database/journal/court/xanthes-recruiters-taste-of-power" },
+        { "title": "The Blood of Dawnwalker: How to Complete Xanthe's Recruiters Taste of Power", "url": "https://allthings.how/the-blood-of-dawnwalker-how-to-complete-xanthe-s-recruiters-taste-of-power/" },
+        { "title": "Xanthe Boss Guide: Court Quest Locations (Game8)", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618651" }
+      ]
+    },
+    {
+      "title": "Just a Bit More",
+      "slug": "just-a-bit-more",
+      "courtSlug": "xanthe",
+      "howToStart": "Travel south of Svartrau City to the ground just east of the Silty Mug Inn and take out the recruiters there.",
+      "summary": "A recruiter gathering south of Svartrau City, near the Silty Mug Inn.",
+      "bodyParagraphs": [
+        "The second of Xanthe's three recruiter activities. Like the others, the objective is the reliquary of vrakhiri blood the recruiters are carrying rather than the recruiters themselves."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Xanthe's Recruiters: Just a Bit More (Gamer Guides database)", "url": "https://www.gamerguides.com/the-blood-of-dawnwalker/database/journal/court/xanthes-recruiters-just-a-bit-more" },
+        { "title": "Xanthe's Recruiters: Just a Bit More Walkthrough", "url": "https://allthings.how/xanthe-s-recruiters-just-a-bit-more-walkthrough-the-blood-of-dawnwalker/" },
+        { "title": "The Blood of Dawnwalker: All Xanthe Court Activities and Quests", "url": "https://allthings.how/the-blood-of-dawnwalker-all-xanthe-court-activities-and-quests/" }
+      ]
+    },
+    {
+      "title": "Come Home",
+      "slug": "come-home",
+      "courtSlug": "xanthe",
+      "howToStart": "Make for the ground south-west of Tantari, south-east of Svartrau City and south of St. Tyna's Grove, and confront the recruiters.",
+      "summary": "The third recruiter activity, sited between Tantari, Svartrau City and St. Tyna's Grove.",
+      "bodyParagraphs": [
+        "The last of Xanthe's recruiter jobs. Guides single this one out for the choices it puts to Coen at the end, on top of the usual decision over whether to keep or destroy the blood vials."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Xanthe's Recruiters: Come Home (Gamer Guides database)", "url": "https://www.gamerguides.com/the-blood-of-dawnwalker/database/journal/court/xanthes-recruiters-come-home" },
+        { "title": "The Blood of Dawnwalker: Xanthe's Recruiters (Come Home Choices Explained)", "url": "https://www.method.gg/the-blood-of-dawnwalker/the-blood-of-dawnwalker-xanthes-recruiters-come-home-choices" },
+        { "title": "Come Home Quest in The Blood of Dawnwalker - Full Walkthrough", "url": "https://gamingpromax.com/come-home-quest-blood-of-dawnwalker/" }
+      ]
+    },
+    {
+      "title": "Unsealed Secrets",
+      "slug": "unsealed-secrets",
+      "courtSlug": "xanthe",
+      "howToStart": "Go to the dig site east of Vedera Spring and fight the crew working it.",
+      "summary": "An excavation east of Vedera Spring where the objective is a pair of hidden notes rather than a boss.",
+      "bodyParagraphs": [
+        "Xanthe has crews digging through old ruins for mystical relics, and this is the most search-heavy of the three. Once the site is clear, Focus Mode picks out two glowing notes.",
+        "One sits among the tents outside. The other is inside the ruin, which is reached by squeezing through a gap in the hillside rather than by any obvious door."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Xanthe's Excavations: Unsealed Secrets (Gamer Guides database)", "url": "https://www.gamerguides.com/the-blood-of-dawnwalker/database/journal/court/xanthes-excavations-unsealed-secrets" },
+        { "title": "The Blood of Dawnwalker: All Xanthe's Excavations Quests and Rewards", "url": "https://allthings.how/the-blood-of-dawnwalker-all-xanthe-s-excavations-quests-and-rewards/" },
+        { "title": "Blood of Dawnwalker All Court Activity Locations (PowerPyx)", "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-court-activity-locations/" }
+      ]
+    },
+    {
+      "title": "Malevolent Presence",
+      "slug": "malevolent-presence",
+      "courtSlug": "xanthe",
+      "regionSlug": "tantari-woods",
+      "howToStart": "Enter the excavated ruins in Tantari Woods and fight down through them.",
+      "summary": "A ruin crawl in Tantari Woods that ends against a ghost boss.",
+      "bodyParagraphs": [
+        "The second of the excavation activities, and a straighter dungeon than Unsealed Secrets. The route runs down through the ruins to a final chamber held by a ghost.",
+        "The document the activity wants is waiting on the table in the middle of that last room."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "The Blood of Dawnwalker: All Xanthe's Excavations Quests and Rewards", "url": "https://allthings.how/the-blood-of-dawnwalker-all-xanthe-s-excavations-quests-and-rewards/" },
+        { "title": "Blood of Dawnwalker All Court Activity Locations (PowerPyx)", "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-court-activity-locations/" },
+        { "title": "The Blood of Dawnwalker: All Xanthe Court Activities and Quests", "url": "https://allthings.how/the-blood-of-dawnwalker-all-xanthe-court-activities-and-quests/" }
+      ]
+    },
+    {
+      "title": "Bloodied Dagger",
+      "slug": "bloodied-dagger",
+      "courtSlug": "xanthe",
+      "regionSlug": "tantari-woods",
+      "howToStart": "Head for the ruins in the eastern part of Tantari Woods and clear your way to the bottom.",
+      "summary": "An eastern Tantari Woods dig ending on a boss fight, with legendary boots behind a puzzle-locked chest.",
+      "bodyParagraphs": [
+        "The third excavation, and the one with the best prize. The dungeon itself finishes with a boss.",
+        "The boss room also holds a locked chest containing legendary boots, and the way in is not a key. Focus Mode highlights a Ritual Dagger on the left-hand side of the room; picking it up lets Coen compel the corpse lying in front of the chest to open it."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Xanthe's Excavations: Bloodied Dagger (Gamer Guides database)", "url": "https://www.gamerguides.com/the-blood-of-dawnwalker/database/journal/court/xanthes-excavations-bloodied-dagger" },
+        { "title": "The Blood of Dawnwalker: All Xanthe's Excavations Quests and Rewards", "url": "https://allthings.how/the-blood-of-dawnwalker-all-xanthe-s-excavations-quests-and-rewards/" },
+        { "title": "Blood of Dawnwalker All Court Activity Locations (PowerPyx)", "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-court-activity-locations/" }
+      ]
+    },
+    {
+      "title": "Fair Maiden",
+      "slug": "fair-maiden",
+      "courtSlug": "xanthe",
+      "regionSlug": "tantari-woods",
+      "howToStart": "Track the activity in the journal and follow the road through Tantari Woods until you overtake the escort.",
+      "summary": "A walking escort of abducted women moving through Tantari Woods.",
+      "bodyParagraphs": [
+        "Xanthe's court ships abducted women along the roads under guard, and two of those escorts are court activities. Because the column keeps walking, the marker moves with it and has to be chased rather than assaulted in place.",
+        "Killing the guards is not the end of it. Speaking to the freed woman afterwards is what closes the entry."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Xanthe's Transports: Fair Maiden Walkthrough", "url": "https://allthings.how/the-blood-of-dawnwalker-xanthe-s-transports-fair-maiden-full-quest/" },
+        { "title": "Xanthe Boss Guide: Court Quest Locations (Game8)", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618651" },
+        { "title": "The Blood of Dawnwalker Walkthrough - All Quests (PowerPyx)", "url": "https://www.powerpyx.com/the-blood-of-dawnwalker-walkthrough-all-quests/" }
+      ]
+    },
+    {
+      "title": "Chosen One",
+      "slug": "chosen-one",
+      "courtSlug": "xanthe",
+      "howToStart": "Run down the second moving prisoner escort on the road and kill the guards travelling with it.",
+      "summary": "The second mobile transport of abducted women in Xanthe's court.",
+      "bodyParagraphs": [
+        "The companion piece to Fair Maiden and handled identically: a column of guards on the move with a captive in tow, caught by following the road until you overtake it."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Xanthe's Transports: Chosen One Walkthrough", "url": "https://allthings.how/the-blood-of-dawnwalker-xanthe-s-transports-chosen-one-full-quest/" },
+        { "title": "Xanthe Boss Guide: Court Quest Locations (Game8)", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618651" },
+        { "title": "The Blood of Dawnwalker: All Xanthe Court Activities and Quests", "url": "https://allthings.how/the-blood-of-dawnwalker-all-xanthe-court-activities-and-quests/" }
+      ]
+    },
+    {
+      "title": "Past Glory",
+      "slug": "past-glory",
+      "courtSlug": "xanthe",
+      "howToStart": "Intercept the patrol carrying the artefact along the road, then loot the bodies.",
+      "summary": "An artefact run carried by a road patrol; the reward is the Ring of the Night.",
+      "bodyParagraphs": [
+        "Xanthe has relics moved around the valley by foot patrols rather than in wagons, which makes these the quickest of her activities: kill the patrol, search what they were carrying, done.",
+        "This is the run that pays out the Ring of the Night. Guides give it the standard three time segments."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Xanthe's Transports: Past Glory Walkthrough", "url": "https://allthings.how/the-blood-of-dawnwalker-how-to-get-the-ring-of-the-night-in-past-glory/" },
+        { "title": "Blood of Dawnwalker All Court Activity Locations (PowerPyx)", "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-court-activity-locations/" },
+        { "title": "The Blood of Dawnwalker: All Xanthe Court Activities and Quests", "url": "https://allthings.how/the-blood-of-dawnwalker-all-xanthe-court-activities-and-quests/" }
+      ]
+    },
+    {
+      "title": "When Two Dogs...",
+      "slug": "when-two-dogs",
+      "courtSlug": "xanthe",
+      "howToStart": "Ambush the patrol carrying the artefact on the road and loot the corpses.",
+      "summary": "The second artefact transport in Xanthe's court, rewarding the legendary Ancient Hero's Vambraces.",
+      "bodyParagraphs": [
+        "Identical in shape to Past Glory: a walking patrol with something valuable on them, and no objective beyond killing them and taking it.",
+        "The prize here is the legendary Ancient Hero's Vambraces."
+      ],
+      "note": "Guides render the title with a trailing ellipsis, as \"When Two Dogs...\".",
+      "confidence": "high",
+      "sources": [
+        { "title": "Blood of Dawnwalker All Court Activity Locations (PowerPyx)", "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-court-activity-locations/" },
+        { "title": "The Blood of Dawnwalker: All Xanthe Court Activities and Quests", "url": "https://allthings.how/the-blood-of-dawnwalker-all-xanthe-court-activities-and-quests/" },
+        { "title": "The Blood of Dawnwalker Xanthe Court Activities locations", "url": "https://www.blooddawnwalkerguid.wiki/en/guides/court-activities-xanthe" }
+      ]
+    },
+    {
+      "title": "Unquenchable Thirst",
+      "slug": "unquenchable-thirst",
+      "courtSlug": "xanthe",
+      "howToStart": "Walk up to the Blood Guard camp; approaching it is enough to trigger the activity.",
+      "summary": "A Blood Guard camp clear with a prisoner to free and a Sword Shard tucked in a tent.",
+      "bodyParagraphs": [
+        "Xanthe raises new Blood Guards and hands them to veteran instructors for training, so breaking up the camps hits her regime directly. These are the simplest of her activities, since most ask for nothing more than killing everyone present.",
+        "This camp carries two optional extras: a prisoner tied to a tree who can be cut loose, and a Sword Shard stashed inside one of the tents."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Xanthe's Blood Guards: Unquenchable Thirst (Gamer Guides database)", "url": "https://www.gamerguides.com/the-blood-of-dawnwalker/database/journal/court/xanthes-blood-guards-unquenchable-thirst" },
+        { "title": "Xanthe Boss Guide: Court Quest Locations (Game8)", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618651" },
+        { "title": "The Blood of Dawnwalker: All Xanthe Court Activities and Quests", "url": "https://allthings.how/the-blood-of-dawnwalker-all-xanthe-court-activities-and-quests/" }
+      ]
+    },
+    {
+      "title": "Teach with Pain",
+      "slug": "teach-with-pain",
+      "courtSlug": "xanthe",
+      "howToStart": "Attack the guard to trigger the activity, then clear the rest of the camp.",
+      "summary": "A straightforward Blood Guard camp clear, started by striking the guard on watch.",
+      "bodyParagraphs": [
+        "The plainest of Xanthe's Blood Guard activities. Nothing needs to be looted or inspected; killing every soldier in the camp is the whole objective."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Xanthe's Blood Guards: Teach with Pain (Gamer Guides database)", "url": "https://www.gamerguides.com/the-blood-of-dawnwalker/database/journal/court/xanthes-blood-guards-teach-with-pain" },
+        { "title": "Xanthe Boss Guide: Court Quest Locations (Game8)", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618651" },
+        { "title": "The Blood of Dawnwalker: All Xanthe Court Activities and Quests", "url": "https://allthings.how/the-blood-of-dawnwalker-all-xanthe-court-activities-and-quests/" }
+      ]
+    },
+    {
+      "title": "Loophole",
+      "slug": "loophole",
+      "courtSlug": "xanthe",
+      "howToStart": "Sneak into the ground the Blood Guards have ringed off; slipping inside is what starts it.",
+      "summary": "A Blood Guard camp that ends on a decision about whether to spare a captive vrakhiri warrior.",
+      "bodyParagraphs": [
+        "The one Blood Guard camp that is entered rather than charged, and the one that ends with a choice rather than a body count.",
+        "After the fight Coen can spare the prisoner instead of killing him. Guides describe the outcome as Uriash, a giant vrakhiri warrior, being released on the understanding that he leaves the lowlands for good."
+      ],
+      "note": "One source writes the spared prisoner as \"the urlash\" and another names him Uriash; these appear to refer to the same character.",
+      "confidence": "high",
+      "sources": [
+        { "title": "Xanthe's Blood Guards: Loophole (Gamer Guides database)", "url": "https://www.gamerguides.com/the-blood-of-dawnwalker/database/journal/court/xanthes-blood-guards-loophole" },
+        { "title": "How to Complete Xanthe's Blood Guards: Loophole", "url": "https://allthings.how/the-blood-of-dawnwalker-xanthe-s-blood-guards-loophole-full-quest/" },
+        { "title": "Xanthe Boss Guide: Court Quest Locations (Game8)", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618651" }
+      ]
+    },
+    {
+      "title": "Home Sweet Home",
+      "slug": "home-sweet-home",
+      "courtSlug": "xanthe",
+      "regionSlug": "the-slits",
+      "howToStart": "Make your way to Silts Tower, where the gargoyle work is being carried out.",
+      "summary": "The lone gargoyle-manufacture activity in Xanthe's court, hidden away at Silts Tower.",
+      "bodyParagraphs": [
+        "Gargoyle manufacture is the sixth strand of Xanthe's operation, sitting apart from the recruiters, excavations, abducted-girl transports, artefact transports and Blood Guard camps. Only one activity is named under it.",
+        "Guides place it at Silts Tower and describe it as hidden rather than signposted, so it is easy to miss on a first pass through the region."
+      ],
+      "note": "Described in one place as a court activity in its own right and in another as a hidden quest within the Gargoyle Manufacture strand. Sources spell the region \"The Silts\"; mapped here to the-slits.",
+      "confidence": "medium",
+      "sources": [
+        { "title": "The Blood of Dawnwalker: All Xanthe Court Activities and Quests", "url": "https://allthings.how/the-blood-of-dawnwalker-all-xanthe-court-activities-and-quests/" },
+        { "title": "The Blood of Dawnwalker Xanthe Court Activities locations", "url": "https://www.blooddawnwalkerguid.wiki/en/guides/court-activities-xanthe" },
+        { "title": "All Quest List In The Blood of Dawnwalker (Game Rant)", "url": "https://gamerant.com/the-blood-of-dawnwalker-all-quest-list-complete-full/" }
+      ]
+    }
+  ]
+}

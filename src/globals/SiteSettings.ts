@@ -1,4 +1,5 @@
 import type { GlobalConfig } from 'payload'
+import { isEditor } from '../fields/shared'
 
 /**
  * Everything chrome-level that should be changeable without a deploy:
@@ -8,7 +9,7 @@ export const SiteSettings: GlobalConfig = {
   slug: 'site-settings',
   label: 'Site settings',
   admin: { group: 'Admin' },
-  access: { read: () => true },
+  access: { read: () => true, update: isEditor },
   fields: [
     {
       type: 'tabs',
@@ -52,6 +53,39 @@ export const SiteSettings: GlobalConfig = {
                 description:
                   'Canonical origin, e.g. https://example.com. Used for sitemap and canonical URLs. Overridden by NEXT_PUBLIC_SITE_URL when set.',
               },
+            },
+          ],
+        },
+        {
+          label: 'Legal & contact',
+          description:
+            'These appear on the privacy policy, terms and contact pages. A privacy policy names who is legally responsible for people\u2019s data — placeholders must be replaced with real details before launch.',
+          fields: [
+            {
+              name: 'legalEntity',
+              type: 'text',
+              admin: {
+                description:
+                  'The person or company responsible for this site. Your real name or registered company name.',
+              },
+            },
+            {
+              name: 'contactEmail',
+              type: 'email',
+              admin: { description: 'A working address people can actually reach you on.' },
+            },
+            {
+              name: 'postalAddress',
+              type: 'textarea',
+              admin: {
+                description:
+                  'Required by GDPR/UK GDPR if you have readers in the EU or UK. A registered office or service address is fine; do not publish a home address you do not want public.',
+              },
+            },
+            {
+              name: 'jurisdiction',
+              type: 'text',
+              admin: { description: 'Country whose law governs the terms, e.g. "England and Wales".' },
             },
           ],
         },

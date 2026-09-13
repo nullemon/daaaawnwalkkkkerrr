@@ -1,0 +1,352 @@
+{
+  "collection": "regions",
+  "records": [
+    {
+      "title": "Laslea Glen",
+      "slug": "laslea-glen",
+      "dangerRating": "starting",
+      "summary": "Coen's home region and the valley's opening ground, a shuttered silver-mining district whose six shrines are all open from the moment you arrive.",
+      "bodyParagraphs": [
+        "Laslea Glen is where a run of The Blood of Dawnwalker starts. Laslea itself is Coen's home, a settlement that used to live off its silver until Brencis had the workings shut down, and the closure still shapes everything about the place. The glen covers the prologue and the first stretch of free play, so it is the region players learn the day and night loop in.",
+        { "h": "When you go" },
+        "Immediately. Every one of the region's six shrines unlocks with no conditions attached, which means fast travel, skill purchases and time skipping are all available here from the outset, and guides treat lighting them up as the first job of a playthrough.",
+        { "h": "Points of interest" },
+        { "ul": [
+          "Laslea village, one of the eight settlements on the Vale Sangora map and the home Coen sets out from",
+          "Six shrines with no unlock requirements: Laslea Centre, Anca's Hut, Blackwater Hollow, Northern Foothills, Silver Mines and Outlaw's Gorge",
+          "Outlaw's Gorge in the eastern part of the glen, where a bandit camp sits just past the shrine beside an abandoned house",
+          "The silver mines the village once worked, closed on Brencis's orders",
+          "Ancient ruins on the fringe of the region's bog, which set several quests running once you start poking at them",
+          "A cave east of the Northern Foothills shrine with a territorial bear parked in the entrance"
+        ] },
+        { "h": "Quests and finds tied to the glen" },
+        { "ul": [
+          "If a Tree Falls in a Forest, triggered at the Northern Foothills shrine by examining a fallen tree and the footprints that lead away from it to a dead Uriash",
+          "Bandit's Treasure Map: Laslea Glen, one of the region's buried-treasure hunts",
+          "Early-game loot runs that guides build specifically around the area near Laslea"
+        ] }
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Laslea Glen - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Laslea_Glen" },
+        { "title": "All Laslea Glen Shrine Locations In The Blood of Dawnwalker - Game Rant", "url": "https://gamerant.com/the-blood-of-dawnwalker-all-shrine-locations-prologue-laslea-glen-village/" },
+        { "title": "Blood of Dawnwalker Bandit's Treasure Map: Laslea Glen Walkthrough - PowerPyx", "url": "https://www.powerpyx.com/blood-of-dawnwalker-banditss-treasure-map-laslea-glen-walkthrough/" },
+        { "title": "The Blood of Dawnwalker: Early Game Loot Locations Near Laslea Glen", "url": "https://allthings.how/the-blood-of-dawnwalker-early-game-loot-locations-near-laslea-glen/" },
+        { "title": "Blood of Dawnwalker All Village Locations - PowerPyx", "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-village-locations/" }
+      ]
+    },
+    {
+      "title": "Briar Sloughs",
+      "slug": "briar-sloughs",
+      "dangerRating": "moderate",
+      "summary": "Ambrus's swamp-and-garrison region in the northern half of the valley, split between open mire in the east and one of the largest military camps in Vale Sangora in the west.",
+      "bodyParagraphs": [
+        "Briar Sloughs is the first region that properly pushes back. Its eastern half is wetland; its western half belongs to the army, built around Stoneward Post, described as one of the biggest military camps in the valley. The region sits in the northern part of the map, below the castle at the head of the regime, and it is firmly Ambrus's ground.",
+        { "h": "When you go" },
+        "Early to mid run. Sources put the region's content at roughly levels 8 to 16, so a character straight out of the prologue will be outmatched by the wildlife and by Ambrus's patrols, but it is the natural second stop after Laslea Glen.",
+        { "h": "Points of interest" },
+        { "ul": [
+          "Stoneward Post in the west, one of the largest military camps in Vale Sangora",
+          "The mire that fills the eastern half of the region",
+          "Briar Sloughs Tower, one of the eleven scouting towers, climbable only at night using vampiric movement",
+          "Sloughside Mill Shrine, with a will-o'-the-wisp trail starting uphill to its west",
+          "The Watermill Hills, where the Wisp Treasure Hunt plays out",
+          "A Murohn's Lair, one of the eleven lairs that hold the feral undead miniboss of that name",
+          "Ancient circles among the region's daytime ruins"
+        ] },
+        { "h": "Ambrus's operations here" },
+        "Most of Ambrus's fourteen court activities sit in Briar Sloughs or in neighbouring Maragir Wealds, and disrupting them is how you raise his anger and eventually force him into the open.",
+        { "ul": [
+          "Ambrus's Collectors: Bounty of the Mire",
+          "Ambrus's Collectors: Wetland Helpers",
+          "Ambrus's Dungeons: Evil and Convenience",
+          "Ambrus's Prisoners: Fate's Mercy",
+          "Ambrus's Transports: Roadside Surprise"
+        ] },
+        { "h": "A treasure that is not where its map is" },
+        "The bandit treasure map named for Briar Sloughs is picked up in the region, but guides place the dig site itself over the border in the western part of Maragir Wealds, so do not waste time searching the mire for it."
+      ],
+      "note": "The castle the region sits below is rendered Brecis on some wiki pages and Brencis on others; the name is inconsistent across sources rather than referring to two places.",
+      "confidence": "high",
+      "sources": [
+        { "title": "Briar Sloughs - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Briar_Sloughs" },
+        { "title": "Briar Sloughs Location Guide - Blood of Dawnwalker | MetaBot.GG", "url": "https://metabot.gg/en/dawnwalker/locations/briar-sloughs" },
+        { "title": "Blood of Dawnwalker Bandit's Treasure Map: Briar Sloughs Location & Solution - PowerPyx", "url": "https://www.powerpyx.com/blood-of-dawnwalker-bandits-treasure-map-briar-sloughs-location-solution/" },
+        { "title": "Briar Sloughs Tower in The Blood of Dawnwalker: Climb and Reward", "url": "https://allthings.how/the-blood-of-dawnwalker-how-to-climb-the-briar-sloughs-tower/" },
+        { "title": "Blood of Dawnwalker All Will-o-the-Wisps Locations - PowerPyx", "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-will-o-the-wisps-locations/" },
+        { "title": "The Blood of Dawnwalker: All 14 Ambrus Court Activities (Full Guide)", "url": "https://allthings.how/the-blood-of-dawnwalker-all-14-ambrus-court-activities-full-guide/" }
+      ]
+    },
+    {
+      "title": "Maragir Wealds",
+      "slug": "maragir-wealds",
+      "dangerRating": "moderate",
+      "summary": "Ambrus's wooded heartland east of the Military Camp, built around the open village of Maragir and an early, easy scouting tower that lights up a large slice of the map.",
+      "bodyParagraphs": [
+        "Maragir Wealds is forest country in Ambrus's half of the valley, and it pairs with Briar Sloughs as the region where most of his court activities are found. Its main draw for a new arrival is the tower: the Maragir Wealds Tower stands at the easternmost edge of the region and is one of the softer climbs among the eleven, so it is often the first tower players clear. Doing so turns the surrounding woods from blank forest into a list of sacred stones, ancient circles, haunted sites and camps worth walking to.",
+        { "h": "When you go" },
+        "Early to mid run, alongside Briar Sloughs. The tower in particular is worth taking well before the rest of the region, because the map reveal pays off everywhere else.",
+        { "h": "Points of interest" },
+        { "ul": [
+          "Maragir, an open village you can simply walk into, sited a good way east and slightly south of the Military Camp",
+          "Maragir Wealds Tower on the region's eastern edge, one of the easier of the eleven scouting towers",
+          "Maragir Wealds Shrine and Lower Maragir Wealds Shrine",
+          "A soldier camp west of the Lower Maragir Wealds shrine, holding the shrine heart in a yellow chest inside the tent at the back",
+          "A will-o'-the-wisp trail east of the Maragir Wealds Shrine",
+          "The dig site for the Briar Sloughs bandit treasure, which guides put in the western part of this region"
+        ] },
+        { "h": "Restoring the broken shrine" },
+        "Maragir Wealds contains one of the seventeen destroyed shrines. Repairing it needs the figurine sometimes called a shrine heart, and the one for this region is in the yellow chest at the back of the soldier camp west of the Lower Maragir Wealds shrine. Restore it and the shrine joins the fast travel network like any other.",
+        { "h": "Who holds it" },
+        "Ambrus. Court guides name Briar Sloughs and Maragir Wealds as the two regions where the bulk of his fourteen activities are concentrated."
+      ],
+      "confidence": "medium",
+      "sources": [
+        { "title": "Maragir Wealds - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Maragir_Wealds" },
+        { "title": "The Blood of Dawnwalker: How to Climb the Maragir Wealds Tower", "url": "https://allthings.how/the-blood-of-dawnwalker-how-to-climb-the-maragir-wealds-tower/" },
+        { "title": "The Blood of Dawnwalker: Shrine Heart Location in Maragir Wealds", "url": "https://allthings.how/the-blood-of-dawnwalker-shrine-heart-location-in-maragir-wealds/" },
+        { "title": "The Blood of Dawnwalker - All Village Locations - Games Horizon", "url": "https://gameshorizon.com/guides/the-blood-of-dawnwalker-all-village-locations/" },
+        { "title": "Blood of Dawnwalker All Will-o-the-Wisps Locations - PowerPyx", "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-will-o-the-wisps-locations/" },
+        { "title": "Blood of Dawnwalker All Court Activity Locations - PowerPyx", "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-court-activity-locations/" }
+      ]
+    },
+    {
+      "title": "Boar's Back",
+      "slug": "boars-back",
+      "dangerRating": "dangerous",
+      "summary": "Bakir's broken upland reaching down towards Svartrau, holding two of the thirteen ancient circles, a tower on Shrike's Crag, and a treasure buried at the end of a dead-end forest path.",
+      "bodyParagraphs": [
+        "Boar's Back is one of the two regions court guides name as Bakir's own, and it runs a long way north to south: its scouting tower sits at the far southern end, on a crag west of Svartrau City, while the circles and treasure sites are spread through the woods further up. It is a region you tend to pass through repeatedly rather than clear in one visit.",
+        { "h": "When you go" },
+        "Mid to late run, once you are ready to start dismantling Bakir's operations. No source I found gives the region an explicit enemy level band, but Bakir's court content is mid-to-late material and monster lairs are noted as getting harder the further south you push.",
+        { "h": "Points of interest" },
+        { "ul": [
+          "Boar's Back Tower at Shrike's Crag, west of Svartrau City and close to the Shrike's Crag Shrine, at the far southern reach of the region",
+          "Two ancient circles: one south of the Parlita Woods Shrine, one northwest of the Wallows Shrine",
+          "Giant's Pawns Shrine, with a will-o'-the-wisp trail to its southwest",
+          "Parlita Woods Shrine and Wallows Shrine, the landmarks the two circles are measured from",
+          "A bandit camp west of Svartrau City where the region's treasure map is looted from crates behind the wooden tents",
+          "A dead-end path leading into the woods, with the treasure buried behind the big tree at the end of it"
+        ] },
+        { "h": "Tower rewards" },
+        "Climbing the Boar's Back Tower is worth a detour: guides list a Potent Blood manual and the epic amulet Duelist's Pendant among what it pays out. Like every tower it can only be scaled at night, since the route up depends on vampiric movement such as Shadowstep and Planeshift.",
+        { "h": "Who holds it" },
+        "Bakir. His activities are the distilleries, headhunters, transports and pillories that run through Boar's Back and Rockfalls, and disrupting at least seven of them is what unlocks his infamy quest."
+      ],
+      "note": "The dangerRating here is a judgement rather than a sourced level band: no guide I found states an enemy level range for Boar's Back, and it is assigned on the basis that the region carries Bakir's mid-to-late court content.",
+      "confidence": "medium",
+      "sources": [
+        { "title": "Boar's Back - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Boar's_Back" },
+        { "title": "All Ancient Circle Locations In The Blood Of Dawnwalker - Game Rant", "url": "https://gamerant.com/the-blood-of-dawnwalker-all-ancient-circle-locations/" },
+        { "title": "All Scouting Towers In The Blood of Dawnwalker - GameSpot", "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-scouting-tower-locations-guide/" },
+        { "title": "Blood of Dawnwalker Bandit's Treasure Map: Boar's Back Location & Solution - PowerPyx", "url": "https://www.powerpyx.com/blood-of-dawnwalker-bandits-treasure-map-boars-back-location-solution/" },
+        { "title": "Blood of Dawnwalker All Will-o-the-Wisps Locations - PowerPyx", "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-will-o-the-wisps-locations/" },
+        { "title": "The Blood of Dawnwalker: Every Bakir Court Activity and Its Rewards", "url": "https://allthings.how/the-blood-of-dawnwalker-every-bakir-court-activity-and-its-rewards/" }
+      ]
+    },
+    {
+      "title": "Svartrau Outskirts",
+      "slug": "svartrau-outskirts",
+      "dangerRating": "moderate",
+      "summary": "The approach country between the outlying regions and the capital, held directly by Brencis rather than by a boyar, where the regime's grip first becomes obvious.",
+      "bodyParagraphs": [
+        "Svartrau Outskirts is the belt of land that feeds into the capital, and guides describe it as the stretch where the regime stops being something you hear about and starts being something you see. It functions as the transition between the valley's rural regions and Svartrau City proper, and most coverage treats the two as a single area rather than describing the Outskirts on their own.",
+        { "h": "Who holds it" },
+        "Brencis governs Svartrau and its outskirts directly, without delegating to one of the three boyars. The practical consequence for a player is that activities belonging to Ambrus, Bakir and Xanthe can all turn up here, rather than the region being tied to one court's anger meter.",
+        { "h": "When you go" },
+        "Mid run, as the road to the capital. The Outskirts are the natural bridge between the northern regions and the city, and the city's own content sits behind having a reason to be there.",
+        { "h": "What is actually documented" },
+        { "ul": [
+          "Named as one of the ten regions of Vale Sangora in every region list I found",
+          "Governed directly by Brencis, so all three courts' activities can appear in it",
+          "Covered by guides together with Svartrau City as the valley's capital area, taking in the cathedral, the Middens, rooftop traversal and everyday civilian life"
+        ] }
+      ],
+      "note": "This is the thinnest of the ten regions in the sources available. Guides consistently fold the Outskirts into their Svartrau City coverage, and I could not find an enemy level band, a shrine list, or a single point of interest named as being in the Outskirts specifically rather than in the city. Confidence is low accordingly, and the dangerRating is inferred from its position on the road to the capital rather than stated anywhere.",
+      "confidence": "low",
+      "sources": [
+        { "title": "Svartrau Outskirts - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Svartrau_Outskirts" },
+        { "title": "Locations - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Locations" },
+        { "title": "The Blood of Dawnwalker: Brencis Court and Where to Find All Boyars - RespawnFirst", "url": "https://respawnfirst.com/blood-of-dawnwalker-brencis-court-boyars-guide/" },
+        { "title": "The Blood of Dawnwalker Map - Vale Sangora Regions Guide", "url": "https://thebloodofdawnwalkergame.online/locations/" }
+      ]
+    },
+    {
+      "title": "Svartrau City",
+      "slug": "svartrau-city",
+      "dangerRating": "dangerous",
+      "summary": "The capital of Vale Sangora and the knyaz's seat, a walled medieval city of named quarters sitting on top of a warren of cellars, caves and far older ruins, with three scouting towers inside it.",
+      "bodyParagraphs": [
+        "Svartrau is the capital, and it plays very differently from the rest of the valley. Instead of forest and shrines it gives you streets, quarters with their own character, rooftops to move across at night and a population going about ordinary life under occupation. Beneath all of it runs a second city of musty cellars, damp caves and ruins old enough that nobody remembers who cut them.",
+        { "h": "The quarters" },
+        { "ul": [
+          "Silberstein, home to the wealthy merchants and to the handful of nobles who submitted fast enough that Brencis spared them",
+          "Neustadt, a small Jewish quarter whose community keeps to itself and takes care not to hand the knyaz a pretext",
+          "The Middens, part of the city's fabric and a staple of the day and night urban exploration guides describe",
+          "The Cathedral Complex, whose public spaces including the cathedral itself are open to visitors",
+          "Altenmarkt, listed among the city's places in database coverage",
+          "An undercity of cellars, caves and ancient ruins running beneath the streets"
+        ] },
+        { "h": "Towers" },
+        "Three of the eleven scouting towers are packed close together inside the city, and the tower roster names Neustadt, Market and Cathedral among the eleven. As everywhere, they can only be climbed at night, because the route up depends on Shadowstep and Planeshift.",
+        { "h": "When you go" },
+        "Mid to late run. Svartrau is where the story converges rather than a place you sweep early, and the city towers are a convenient cluster to bank once you are operating there anyway.",
+        { "h": "Who holds it" },
+        "Brencis directly. Svartrau and its outskirts are not delegated to a boyar, so activities belonging to all three courts can surface in the capital.",
+        { "h": "Nearby" },
+        "A bandit camp west of the city holds the Boar's Back treasure map, and the Boar's Back scouting tower stands on Shrike's Crag on the same side of the walls."
+      ],
+      "note": "Sources disagree on the city's layout. One account describes Svartrau as consisting of four districts, while a database listing names five places inside it: Altenmarkt, Middens, Neustadt, Silberstein and the Cathedral Complex. The Cathedral Complex may be counted as a precinct rather than a district, but no source I found says so.",
+      "confidence": "medium",
+      "sources": [
+        { "title": "Svartrau City - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Svartrau_City" },
+        { "title": "Svartrau - Dawnwalker Wiki (Fandom)", "url": "https://dawnwalker.fandom.com/wiki/Svartrau" },
+        { "title": "Svartrau City - The Blood of Dawnwalker Database (Gamer Guides)", "url": "https://www.gamerguides.com/the-blood-of-dawnwalker/database/glossary/locations/svartrau-city" },
+        { "title": "Svartrau City Location Guide - Blood of Dawnwalker | MetaBot.GG", "url": "https://metabot.gg/en/dawnwalker/locations/svartrau-city" },
+        { "title": "All Scouting Towers In The Blood of Dawnwalker - GameSpot", "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-scouting-tower-locations-guide/" },
+        { "title": "All Scouting Tower Locations In The Blood of Dawnwalker - KeenGamer", "url": "https://www.keengamer.com/articles/guides/all-scouting-tower-locations-in-the-blood-of-dawnwalker/" }
+      ]
+    },
+    {
+      "title": "Rockfalls",
+      "slug": "rockfalls",
+      "dangerRating": "dangerous",
+      "summary": "A mountain region named for slides that come down far too often to be nature's doing, held by Bakir and carrying two separate bandit treasure hunts.",
+      "bodyParagraphs": [
+        "Rockfalls takes its name from the landslides and avalanches that keep coming off its peaks. The frequency is the point: local stories do not accept it as ordinary weathering and blame mountain giants or old sites where magic never settled. Whatever the cause, it makes the region read as unstable ground in a way the forested regions do not.",
+        { "h": "Points of interest" },
+        { "ul": [
+          "Rockfalls Tower, one of the eleven scouting towers, which fills in the northern stretch of map around Oghasti",
+          "Oghasti, one of the eight settlements on the map",
+          "A lake in the southwest corner with a small island in the middle of it, where the Pond Islet treasure is buried",
+          "A roadside boulder in the north of the region marking the Split Rock treasure, sitting dead centre of its search radius",
+          "A bandit camp holding the Pond Islet treasure map in one of its chests",
+          "Woodcutters' Camp Shrine, with a will-o'-the-wisp trail running north from it"
+        ] },
+        { "h": "When you go" },
+        "Mid to late run, as part of working through Bakir's holdings. Both of the region's treasure hunts are self-contained and can be picked up whenever you are passing.",
+        { "h": "Who holds it" },
+        "Bakir. He is responsible for the Vrakhiri's entertainment and runs distilleries and death pageants across the valley, along with pillories staged for public humiliation. Sabotaging distilleries, killing headhunters, intercepting transports and breaking up the crowds at pillories are the four shapes his activities take, and at least seven disruptions are needed to anger him enough to unlock his duel."
+      ],
+      "note": "Sources place the region differently. A tower guide puts Rockfalls in the north of the map around Oghasti, while a court guide describes Bakir's holdings, Rockfalls included, as the southwestern part of Vale Sangora. Separately, one database files the Bandit's Treasure Map: Rockfalls - Split Rock quest under The Silts rather than under Rockfalls, even though the treasure itself is described as being in northern Rockfalls.",
+      "confidence": "low",
+      "sources": [
+        { "title": "Rockfalls - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Rockfalls" },
+        { "title": "Rockfalls - The Blood of Dawnwalker Database (Gamer Guides)", "url": "https://www.gamerguides.com/the-blood-of-dawnwalker/database/glossary/locations/rockfalls" },
+        { "title": "Blood of Dawnwalker Bandit's Treasure Map: Rockfalls - Pond Islet Location & Solution - PowerPyx", "url": "https://www.powerpyx.com/blood-of-dawnwalker-bandits-treasure-map-rockfalls-pond-islet-location-solution" },
+        { "title": "Blood of Dawnwalker Bandit's Treasure Map: Rockfalls - Split Rock Location & Solution - PowerPyx", "url": "https://www.powerpyx.com/blood-of-dawnwalker-bandits-treasure-map-rockfalls-split-rock-location-solution" },
+        { "title": "The Blood of Dawnwalker: How to Climb Rockfalls Tower", "url": "https://allthings.how/the-blood-of-dawnwalker-rockfalls-tower-location-and-how-to-climb-it/" },
+        { "title": "Bakir Boss Guide: Court Quest Locations | The Blood of Dawnwalker (Game8)", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618603" }
+      ]
+    },
+    {
+      "title": "St. Tyna's Grove",
+      "slug": "st-tynas-grove",
+      "dangerRating": "moderate",
+      "summary": "Woodland wrapped around a convent that the plague emptied, contested between Ambrus's outposts in the north and Xanthe's operations along its southern edge, with two ancient circles.",
+      "bodyParagraphs": [
+        "St. Tyna's Grove is built around its convent and the disaster that closed it. Pilgrims packed into the religious community looking for shelter or a cure, the nuns kept working until the outbreak simply overwhelmed them, and what is left is an abandoned convent and woods that never settled afterwards. The region's later troubles all trace back to that.",
+        { "h": "Points of interest" },
+        { "ul": [
+          "St. Tyna's Convent, abandoned after the plague overran the nuns and the pilgrims sheltering with them",
+          "St. Tyna's Chapterhouse",
+          "St. Tyna's Bosk",
+          "St. Tyna's Grove itself, the named site the region is called after",
+          "St. Tyna's Grove Tower, on a hill west of the Pilgrim's Trail Shrine, sitting between one of Ambrus's outposts and an ancient circle on the wider map",
+          "Two ancient circles, the second of them northeast of the Vedera Shallows Shrine",
+          "Pilgrim's Trail Shrine and Vedera Shallows Shrine"
+        ] },
+        { "h": "When you go" },
+        "Mid run for the northern half, later for the south. The tower and the circles are approachable once you have a few levels behind you, but Xanthe's activities run through the southern end of the region and those belong with her late-game content in Tantari Woods and The Slits.",
+        { "h": "Two courts, one region" },
+        "This is the clearest split territory in the valley. A court walkthrough lists St. Tyna's Grove among Ambrus's holdings alongside Laslea, the heaths and the Maragir woods, while Xanthe's fifteen activities are described as spread across Tantari Woods, The Slits and southern St. Tyna's Grove. Ambrus's outposts near the tower are consistent with the northern half being his.",
+        { "h": "Ancient circles" },
+        "Both of the region's circles work the way all thirteen do: they are daytime-only, you inspect the mural, use Focus Mode on the altar in front of it, call the guardians up with Astral Communion, clear them, and take the chest. The payouts are skill manuals, epic weapons and armour, and crafting recipes that scale to your level."
+      ],
+      "note": "The list naming St. Tyna's Grove as Ambrus's territory comes from a translated walkthrough that renders several region names loosely, including spelling the grove St. Tryna's, so the attribution is reported with caution. Xanthe's presence in the region's south is separately and clearly stated.",
+      "confidence": "medium",
+      "sources": [
+        { "title": "St. Tyna's Grove - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/St._Tyna's_Grove" },
+        { "title": "St. Tyna's Grove - The Blood of Dawnwalker Database (Gamer Guides)", "url": "https://www.gamerguides.com/the-blood-of-dawnwalker/database/glossary/locations/st-tynas-grove" },
+        { "title": "All Scouting Tower Locations In The Blood of Dawnwalker - KeenGamer", "url": "https://www.keengamer.com/articles/guides/all-scouting-tower-locations-in-the-blood-of-dawnwalker/" },
+        { "title": "The Blood of Dawnwalker: How to Complete the Ancient Circle in St. Tyna's Grove", "url": "https://allthings.how/blood-of-dawnwalker-how-to-complete-the-st-tyna-s-grove-ancient-circle/" },
+        { "title": "All Ancient Circle Locations In The Blood Of Dawnwalker - GameSpot", "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-ancient-circle-locations/" },
+        { "title": "The Blood of Dawnwalker: All Xanthe Court Activities and Quests", "url": "https://allthings.how/the-blood-of-dawnwalker-all-xanthe-court-activities-and-quests/" }
+      ]
+    },
+    {
+      "title": "The Slits",
+      "slug": "the-slits",
+      "dangerRating": "late",
+      "summary": "A late-game swamp region in the valley's southeast running roughly levels 29 to 37, unusually dense with ancient circles, and worked by both Bakir and Xanthe.",
+      "bodyParagraphs": [
+        "The Slits is one of the two regions that cap the difficulty curve. A database listing puts its enemies at levels 29 to 37 and counts thirty-four quests taking place inside it, which makes it one of the busiest regions on the map as well as one of the most dangerous. Four separate ancient circles are named among those quests, more than any other region I found documented.",
+        { "h": "When you go" },
+        "Late. This is endgame territory alongside Tantari Woods, and it is where Xanthe's operations and Bakir's pillories overlap.",
+        { "h": "Points of interest" },
+        { "ul": [
+          "Four ancient circles named in the region's quest list: Blind Gorge, Silts Overgrowth, Southern Swamps and South-West Silts",
+          "The Silts Tower, one of the eleven scouting towers",
+          "Bakir's pillories, including the Catalin's Tutor and Old Hand set-pieces",
+          "The Riverbank bandit treasure",
+          "A Captive Vendor, the region's listed merchant"
+        ] },
+        { "h": "Who you meet here" },
+        "Both boyars whose territory borders the region show up in it: Bakir and Xanthe are both listed among the characters found in The Slits, along with Lacra and Mihai.",
+        { "h": "Who holds it" },
+        "Xanthe rules the southeastern corner of the valley, and her fifteen court activities are spread across Tantari Woods, The Slits and the southern end of St. Tyna's Grove. Her activities fall into five shapes: recruiters, excavations, relic transports, prisoner transports and Blood Guard camps. Nine of them need to be disrupted to max her anger, and one more after that to trigger her duel. Bakir's pillories also operate in the region despite it not being counted among his core holdings."
+      ],
+      "note": "The region's name is spelled two ways across sources. It appears as The Slits on some wiki region lists and as The Silts on others, including the Fextralife locations index and the database entry that supplies the level band, quest count and merchant. Both plainly refer to the same place, but I could not establish which spelling the game itself uses.",
+      "confidence": "low",
+      "sources": [
+        { "title": "The Silts Location Guide - Blood of Dawnwalker | MetaBot.GG", "url": "https://metabot.gg/en/dawnwalker/locations/the-silts" },
+        { "title": "Locations - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Locations" },
+        { "title": "The Blood of Dawnwalker Full World Map - PowerPyx", "url": "https://www.powerpyx.com/the-blood-of-dawnwalker-full-world-map/" },
+        { "title": "The Blood of Dawnwalker: All Xanthe Court Activities and Quests", "url": "https://allthings.how/the-blood-of-dawnwalker-all-xanthe-court-activities-and-quests/" },
+        { "title": "All Scouting Tower Locations In The Blood of Dawnwalker - KeenGamer", "url": "https://www.keengamer.com/articles/guides/all-scouting-tower-locations-in-the-blood-of-dawnwalker/" }
+      ]
+    },
+    {
+      "title": "Tantari Woods",
+      "slug": "tantari-woods",
+      "dangerRating": "late",
+      "summary": "Xanthe's forest in the southeastern corner and the highest-level region documented in the sources at roughly levels 31 to 39, built around Tantari village and the bog west of it.",
+      "bodyParagraphs": [
+        "Tantari Woods is the toughest region I could find a level band for, listed at 31 to 39, and it anchors Xanthe's corner of the valley. Twenty-two quests are recorded as taking place here. Unlike the sprawling northern regions it has a clear centre: Tantari village, with the bog immediately west of it and bandits camped in the woods to the east.",
+        { "h": "When you go" },
+        "Late, and in company with The Slits. A character arriving here early will be badly outclassed.",
+        { "h": "Points of interest" },
+        { "ul": [
+          "Tantari, the region's village and its only listed settlement",
+          "Tantari Bog, directly west of the village past the Tantari Twin Rocks Shrine",
+          "A bandit camp in the eastern part of the woods",
+          "Tantari Tower, one of the eleven scouting towers",
+          "Two ancient circles named in the region's quests: Hills of Tantari and Tantari Vista",
+          "Tantari Twin Rocks Shrine, Vedara Spring Shrine and the Drunken Boar Inn Shrine"
+        ] },
+        { "h": "Merchants" },
+        "Tantari is one of the better-supplied stops in the south, with an armourer, a blacksmith and a general vendor all trading in the village.",
+        { "h": "Will-o'-the-wisps" },
+        "Two of the six wisp trails in the game are in this region. One starts south of Tantari Tower: follow the river down past the Vedara Spring Shrine and go into the forest below it. The other is in the woods south of the village, heading towards the swamp from the Drunken Boar Inn Shrine. Each trail costs a time segment to follow and tends to end on a skill manual.",
+        { "h": "Quests tied to the region" },
+        { "ul": [
+          "Ancient Circle: Hills of Tantari",
+          "Ancient Circle: Tantari Vista",
+          "A Pilgrimage for Power: The Ritual",
+          "Bandit's Treasure Map: Tantari Woods"
+        ] },
+        { "h": "Who holds it" },
+        "Xanthe. Tantari Woods is the core of her southeastern territory, alongside The Slits and the southern edge of St. Tyna's Grove."
+      ],
+      "confidence": "high",
+      "sources": [
+        { "title": "Tantari Woods - Blood of Dawnwalker Wiki (Fextralife)", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Tantari_Woods" },
+        { "title": "Tantari Woods Location Guide - Blood of Dawnwalker | MetaBot.GG", "url": "https://metabot.gg/en/dawnwalker/locations/tantari-woods" },
+        { "title": "Tantari Woods - The Blood of Dawnwalker Database (Gamer Guides)", "url": "https://www.gamerguides.com/the-blood-of-dawnwalker/database/glossary/locations/tantari-woods" },
+        { "title": "Blood of Dawnwalker Bandit's Treasure Map: Tantari Woods Location & Solution - PowerPyx", "url": "https://www.powerpyx.com/blood-of-dawnwalker-bandits-treasure-map-tantari-woods-location-solution/" },
+        { "title": "All Treasure Locations In The Blood Of Dawnwalker (Treasure Map & Will-O-The-Wisp) - Game Rant", "url": "https://gamerant.com/the-blood-of-dawnwalker-all-treasure-map-locations-will-o-the-wisp/" },
+        { "title": "The Blood of Dawnwalker: All Xanthe Court Activities and Quests", "url": "https://allthings.how/the-blood-of-dawnwalker-all-xanthe-court-activities-and-quests/" }
+      ]
+    }
+  ]
+}
