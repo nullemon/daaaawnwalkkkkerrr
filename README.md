@@ -40,7 +40,7 @@ seed only creates a user when none exists, so it will not overwrite yours later.
 | `pnpm build` | Production build (prerenders every page) |
 | `pnpm start` | Serve the production build |
 | `pnpm seed` | Load/refresh hand-written seed content — idempotent, matches on slug |
-| `pnpm import` | Ingest researched JSON from `src/seed/raw/` — validates and rejects uncited records |
+| `pnpm ingest` | Ingest researched JSON from `src/seed/raw/` — validates and rejects uncited records |
 | `pnpm assets` | Attach images in bulk from `assets/<collection>/<slug>.<ext>` (`--force` to replace) |
 | `pnpm assets:match <dir>` | Match extracted game files to records by filename; `--apply` stages them into `assets/` |
 | `pnpm test` | Run the run-checker unit tests |
@@ -124,7 +124,7 @@ Two browser console tools live in `tools/`:
 - `grab-images.js` — find every image on a page, name them, and download one
   zip already laid out for `pnpm assets`. Zips in the page; nothing uploaded.
 - `extract.js` — pull a table off a page into our JSON schema, ready for
-  `pnpm import`. See the end of `docs/DATA.md` for what it is and is not for.
+  `pnpm ingest`. See the end of `docs/DATA.md` for what it is and is not for.
 
 ## Honest limitations
 

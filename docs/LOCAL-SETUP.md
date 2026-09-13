@@ -117,7 +117,7 @@ with npm is fine.
 ```bash
 pnpm install
 cp .env.example .env          # then set PAYLOAD_SECRET
-pnpm seed && pnpm import
+pnpm seed && pnpm ingest
 pnpm dev                      # http://localhost:3000
 ```
 

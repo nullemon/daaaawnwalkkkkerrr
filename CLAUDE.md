@@ -12,7 +12,7 @@ pnpm dev          # http://localhost:3000
 pnpm build        # prerenders ~400 pages
 pnpm test         # run-checker unit tests (25)
 pnpm seed         # hand-written seed content, idempotent on slug
-pnpm import       # ingest researched JSON from src/seed/raw/
+pnpm ingest       # ingest researched JSON from src/seed/raw/
 pnpm assets       # attach images from assets/<collection>/<slug>.<ext>
 pnpm assets:match <dir> [--apply]   # match extracted game files to records
 pnpm generate:types                 # after any collection change
@@ -63,13 +63,17 @@ that inherits the default would let any reader who signs up edit content.
 
 - **Use pnpm.** npm hits an arborist bug (`Cannot read properties of null
   (reading 'edgesOut')`) on this dependency tree and cannot install it.
+- **Do not name a script after a pnpm built-in.** `pnpm ingest` was once
+  `pnpm import`, which silently ran pnpm's own lockfile-import command instead
+  and failed with `ERR_PNPM_LOCKFILE_NOT_FOUND`. `pnpm run <name>` always
+  reaches the script, but the plain form is what people type.
 - **Font variables belong on `<html>`, not `<body>`.** The tokens that
   reference them are declared on `:root`; a custom property referencing an
   undefined custom property computes to guaranteed-invalid, which silently
   fell back every font on the site to Times New Roman for several commits.
 - **Schema changes need the database rebuilt.** Production builds run with
   `push: false`, so a new field breaks the build with a missing-column error.
-  `rm -f dawnwalker.db* && pnpm seed && pnpm import` — the database is fully
+  `rm -f dawnwalker.db* && pnpm seed && pnpm ingest` — the database is fully
   reproducible from seed plus `src/seed/raw/`, by design.
 - **Grid and flex children default to `min-width: auto`**, so a wide table
   inside an `overflow-x` container drags the page sideways on a phone. The

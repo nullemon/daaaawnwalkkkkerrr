@@ -151,7 +151,7 @@ and keep official logos out of the site's own branding.
 `tools/extract.js` is a console tool. Open DevTools on a page with a table or
 a list of links, paste the file's contents in, pick the table, map its columns
 onto our fields, and download JSON that drops into `src/seed/raw/` and runs
-through `pnpm import`.
+through `pnpm ingest`.
 
 It fills in the page URL and today's date as the source on every record, since
 the importer rejects anything uncited. It works one page at a time and does
