@@ -160,7 +160,7 @@ h2 {
 h3 { font-family: var(--f-body); font-size: 16px; font-weight: 600; line-height: 1.25; letter-spacing: -0.01em; }
 p { margin: 0; }
 
-/* ---------- page furniture ---------- */
+/* ---------- layout utilities ---------- */
 
 .page { max-width: var(--page); margin: 0 auto; padding-inline: 18px; }
 .stack { display: flex; flex-direction: column; gap: 34px; min-width: 0; }
@@ -182,6 +182,33 @@ p { margin: 0; }
 .lede { font-size: 17px; line-height: 1.5; color: var(--ink-soft); max-width: 64ch; }
 .note { font-size: 13.5px; color: var(--muted); max-width: 62ch; }
 .mono { font-variant-numeric: tabular-nums; }
+
+/* ---------- run readout and icon buttons ---------- */
+
+.icon-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  background: var(--raised); border: 1px solid var(--rule); border-radius: var(--r);
+  color: var(--ink-soft); padding: 6px 8px; cursor: pointer; font: inherit; line-height: 0;
+}
+.icon-btn:hover { color: var(--accent-hot); border-color: var(--accent-dim); }
+
+.run-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid var(--rule); border-radius: var(--r); background: var(--raised);
+  padding: 5px 9px; color: var(--ink-soft);
+}
+.run-badge:hover { border-color: var(--accent-dim); text-decoration: none; color: var(--ink); }
+.run-badge-fig { font-family: var(--f-label); font-size: 12.5px; letter-spacing: 0.03em; white-space: nowrap; }
+.run-badge-fig b { color: var(--accent-hot); font-weight: 600; }
+.run-badge-bar { width: 40px; height: 3px; background: var(--rule); border-radius: 2px; overflow: hidden; flex: none; }
+.run-badge-bar span { display: block; height: 100%; background: var(--accent); }
+
+/* In a 64px rail the readout has nowhere to go, so it fades in with the labels
+   rather than wrapping into a stack of loose words down the left edge. */
+.navrail-foot .run-badge { opacity: 0; pointer-events: none; white-space: nowrap; transition: opacity 0.12s ease; }
+.navrail:hover .navrail-foot .run-badge,
+.navrail:focus-within .navrail-foot .run-badge { opacity: 1; pointer-events: auto; }
+
 
 /* ---------- shell: a persistent rail, not a header that scrolls away ---------- */
 
@@ -245,7 +272,14 @@ p { margin: 0; }
 /* ---------- hero ---------- */
 
 .hero {
-  position: relative; isolation: isolate;
+  /*
+   * The z-index matters as much as the isolation. `isolation: isolate` keeps
+   * the ::before gradient behind the hero's own content, but it also confines
+   * the search dropdown's z-index to this stacking context — and with no
+   * z-index of its own the hero painted in DOM order, so the tiles after it
+   * covered the dropdown. Lifting the whole context fixes it at the root.
+   */
+  position: relative; isolation: isolate; z-index: 2;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   gap: 26px; padding: 92px 20px 84px; text-align: center;
   background: var(--sunken) center / cover no-repeat;

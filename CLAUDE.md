@@ -95,6 +95,17 @@ that inherits the default would let any reader who signs up edit content.
   is yours to merge — `git checkout -- <file>` and move on. The committed
   `next-env.d.ts` is the build form, which is what CI needs. `.gitattributes`
   pins line endings to LF so this stops being a whole-file diff on Windows.
+- **Deleting a CSS block fails silently.** Removing the old header section
+  took `.page`, `.prose`, `.lede`, `.icon-btn` and `.run-badge` with it. Every
+  page lost its max width and ran to the edge, the theme toggle lost its
+  button, and the run readout rendered as loose wrapping words down the rail —
+  and nothing errored, no test failed. `pnpm check:css` compares every
+  rendered className against `globals.css`; it runs as part of `pnpm check`.
+- **`isolation: isolate` traps the z-index of everything inside it.** `.hero`
+  isolates so its gradient stays behind its own content, which also meant the
+  search dropdown could not rise above the tiles that come after the hero in
+  the DOM — no z-index inside an isolated context escapes it. The container
+  needs a z-index of its own, not the overlay.
 - **Grid and flex children default to `min-width: auto`**, so a wide table
   inside an `overflow-x` container drags the page sideways on a phone. The
   shrink-fix is at the end of `globals.css`; keep it.

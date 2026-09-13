@@ -52,7 +52,7 @@ export function UnlockPath({
 
   if (lockedBy) {
     return (
-      <section className="section unlockpath" data-state="locked">
+      <section className="section">
         <div className="section-head">
           <h2>{heading}</h2>
         </div>
@@ -94,7 +94,7 @@ export function UnlockPath({
         : `At least ${span}, plus ${unknownCount} step${plural} nobody has published a cost for. Treat it as a floor, not a total.`
 
   return (
-    <section className="section unlockpath">
+    <section className="section">
       <div className="section-head">
         <h2>{heading}</h2>
         {personal && !soloQuest ? (
