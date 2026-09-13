@@ -31,17 +31,15 @@ export interface PlannerTree {
   phase: string
 }
 
-export function BuildPlanner({
-  perks,
-  trees,
-  initial,
-}: {
-  perks: PlannerPerk[]
-  trees: PlannerTree[]
-  initial: string[]
-}) {
-  const [picked, setPicked] = useState<string[]>(initial)
+export function BuildPlanner({ perks, trees }: { perks: PlannerPerk[]; trees: PlannerTree[] }) {
+  const [picked, setPicked] = useState<string[]>([])
   const [copied, setCopied] = useState(false)
+  /**
+   * A shared build arrives in the query string. It is read here rather than on
+   * the server because reading searchParams server-side makes the whole route
+   * dynamic, and this is the one page that would otherwise not be static HTML.
+   */
+  const [loadedFromUrl, setLoadedFromUrl] = useState(false)
 
   const bySlug = useMemo(() => new Map(perks.map((perk) => [perk.slug, perk])), [perks])
   const chosen = useMemo(
@@ -72,13 +70,25 @@ export function BuildPlanner({
     })
   }
 
-  // Keep the address bar in step, so copying from it always gives a live build.
   useEffect(() => {
+    const known = new Set(perks.map((perk) => perk.slug))
+    const shared = (new URLSearchParams(window.location.search).get('perks') ?? '')
+      .split(',')
+      .map((slug) => slug.trim())
+      .filter((slug) => known.has(slug))
+    if (shared.length > 0) setPicked(shared)
+    setLoadedFromUrl(true)
+  }, [perks])
+
+  // Keep the address bar in step, so copying from it always gives a live build.
+  // Held until the shared build has been read, or this would wipe it first.
+  useEffect(() => {
+    if (!loadedFromUrl) return
     const url = new URL(window.location.href)
     if (picked.length > 0) url.searchParams.set('perks', picked.join(','))
     else url.searchParams.delete('perks')
     window.history.replaceState(null, '', url.toString())
-  }, [picked])
+  }, [picked, loadedFromUrl])
 
   const share = async () => {
     try {

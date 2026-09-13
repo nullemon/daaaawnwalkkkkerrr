@@ -12,10 +12,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/tools/build-planner' },
 }
 
-type Props = { searchParams: Promise<{ perks?: string }> }
-
-export default async function BuildPlannerPage({ searchParams }: Props) {
-  const { perks: fromUrl } = await searchParams
+export default async function BuildPlannerPage() {
   const [perkDocs, treeDocs] = await Promise.all([
     getAll<Perk>('perks', { depth: 1, sort: 'title' }),
     getAll<SkillTree>('skill-trees', { depth: 0 }),
@@ -45,12 +42,6 @@ export default async function BuildPlannerPage({ searchParams }: Props) {
       }
     })
 
-  const known = new Set(perks.map((perk) => perk.slug))
-  const initial = (fromUrl ?? '')
-    .split(',')
-    .map((slug) => slug.trim())
-    .filter((slug) => known.has(slug))
-
   return (
     <>
       <PageHeader
@@ -60,7 +51,7 @@ export default async function BuildPlannerPage({ searchParams }: Props) {
         lede="Three trees, nine ultimates, one ultimate per tree. Pick your way through and share the result as a link."
       />
       <div className="page body-main">
-        <BuildPlanner perks={perks} trees={trees} initial={initial} />
+        <BuildPlanner perks={perks} trees={trees} />
         <div className="callout">
           <h3>Perks cost time, not just points</h3>
           <p>
