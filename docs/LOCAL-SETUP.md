@@ -114,12 +114,37 @@ Do not use npm to install *this project* — see the gotchas in `CLAUDE.md`.
 pnpm is only needed for the project's own dependencies; installing pnpm itself
 with npm is fine.
 
-```bash
+```powershell
 pnpm install
-cp .env.example .env          # then set PAYLOAD_SECRET
-pnpm seed && pnpm ingest
+Copy-Item .env.example .env   # PowerShell has no `cp`; then set PAYLOAD_SECRET
+pnpm seed
+pnpm ingest
 pnpm dev                      # http://localhost:3000
 ```
+
+Everything else in `package.json` is already cross-platform — the scripts call
+Node rather than shelling out to `rm`, so `pnpm devsafe` and `pnpm db:reset`
+work the same in PowerShell as they do on a Mac.
+
+### If `git pull` refuses to run
+
+```
+error: Your local changes to the following files would be overwritten by merge:
+        src/payload-types.ts
+```
+
+That file is generated — Payload rewrites it whenever the schema changes, and
+`pnpm dev` can rewrite it just by starting. Nothing of yours is in it, so throw
+your copy away and pull:
+
+```powershell
+git checkout -- src/payload-types.ts
+git pull
+```
+
+If more than one file is listed and you have not deliberately edited anything,
+`git checkout -- .` discards all of them. `.gitattributes` pins line endings to
+LF everywhere, which is what stopped this recurring for every file on Windows.
 
 Then run `claude` in that folder. It reads `CLAUDE.md` automatically, so it
 starts with the whole project in hand — no re-explaining.

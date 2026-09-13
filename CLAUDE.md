@@ -10,9 +10,11 @@ Every public page prerenders to static HTML; `/admin` is a full CMS.
 pnpm install      # NOT npm — see gotchas
 pnpm dev          # http://localhost:3000
 pnpm build        # prerenders ~400 pages
-pnpm test         # run-checker unit tests (25)
+pnpm test         # unit tests (30)
 pnpm seed         # hand-written seed content, idempotent on slug
 pnpm ingest       # ingest researched JSON from src/seed/raw/
+pnpm db:reset     # delete the database and rebuild it from seed + raw
+pnpm clean        # delete .next (devsafe does this, then starts dev)
 pnpm assets       # attach images from assets/<collection>/<slug>.<ext>
 pnpm assets:match <dir> [--apply]   # match extracted game files to records
 pnpm generate:types                 # after any collection change
@@ -73,8 +75,18 @@ that inherits the default would let any reader who signs up edit content.
   fell back every font on the site to Times New Roman for several commits.
 - **Schema changes need the database rebuilt.** Production builds run with
   `push: false`, so a new field breaks the build with a missing-column error.
-  `rm -f dawnwalker.db* && pnpm seed && pnpm ingest` — the database is fully
-  reproducible from seed plus `src/seed/raw/`, by design.
+  `pnpm db:reset` — the database is fully reproducible from seed plus
+  `src/seed/raw/`, by design.
+- **Scripts must run on Windows too.** `pnpm devsafe` shipped as `rm -rf .next`
+  and died with `'rm' is not recognized` on the machine this is actually
+  developed on. Anything that touches the filesystem from `package.json` goes
+  through `node -e` and `fs`, never a shell builtin. `&&` is fine — pnpm runs
+  scripts through cmd.exe, which accepts it; it is PowerShell 5.1 that does not.
+- **`src/payload-types.ts` is generated and will block a pull.** Payload
+  rewrites it on schema change and sometimes just on `pnpm dev`. Discard the
+  local copy (`git checkout -- src/payload-types.ts`) rather than merging it.
+  `.gitattributes` pins line endings to LF so this stops being a whole-file
+  diff on Windows.
 - **Grid and flex children default to `min-width: auto`**, so a wide table
   inside an `overflow-x` container drags the page sideways on a phone. The
   shrink-fix is at the end of `globals.css`; keep it.

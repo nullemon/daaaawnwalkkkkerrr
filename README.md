@@ -25,10 +25,28 @@ pnpm seed             # creates the admin user and loads the researched content
 pnpm dev              # http://localhost:3000
 ```
 
+On Windows, only the copy differs — PowerShell has no `cp`:
+
+```powershell
+pnpm install
+Copy-Item .env.example .env   # then set PAYLOAD_SECRET
+pnpm seed
+pnpm dev
+```
+
 The seed prints the admin login it creates. Override it before running:
 
 ```bash
 SEED_ADMIN_EMAIL=you@example.com SEED_ADMIN_PASSWORD='a real password' pnpm seed
+```
+
+PowerShell sets environment variables differently — prefixing a command does
+not work there:
+
+```powershell
+$env:SEED_ADMIN_EMAIL = 'you@example.com'
+$env:SEED_ADMIN_PASSWORD = 'a real password'
+pnpm seed
 ```
 
 **Change that password immediately** — the default is a placeholder, and the
@@ -43,8 +61,16 @@ seed only creates a user when none exists, so it will not overwrite yours later.
 | `pnpm ingest` | Ingest researched JSON from `src/seed/raw/` — validates and rejects uncited records |
 | `pnpm assets` | Attach images in bulk from `assets/<collection>/<slug>.<ext>` (`--force` to replace) |
 | `pnpm assets:match <dir>` | Match extracted game files to records by filename; `--apply` stages them into `assets/` |
-| `pnpm test` | Run the run-checker unit tests |
+| `pnpm test` | Run the unit tests |
+| `pnpm typecheck` | `tsc --noEmit` |
+| `pnpm check` | Typecheck, test and build — run this before pushing |
 | `pnpm generate:types` | Regenerate `payload-types.ts` after a schema change |
+| `pnpm db:reset` | Delete the database and rebuild it from seed + `src/seed/raw/` |
+| `pnpm clean` | Delete `.next`. `pnpm devsafe` does this then starts dev |
+
+Every script runs the same on Windows, macOS and Linux — they shell out to
+Node rather than to `rm`, which is what used to break `pnpm devsafe` on
+Windows.
 
 ## The admin panel
 
@@ -56,9 +82,12 @@ seed only creates a user when none exists, so it will not overwrite yours later.
 - **Content** — Mechanics, Guides.
 - **Admin** — Corrections queue, Media, Player accounts, Users, Site settings.
 
-Fill in **Site settings → Legal & contact** before launch. The privacy, terms
-and contact pages render a loud in-page warning for every detail left unset,
-because a privacy policy has to name who is actually responsible for data.
+Fill in **Site settings → Legal & contact** before launch. It ships with
+stand-in details so the site reads as finished, and a checkbox — *these details
+are still stand-ins* — that is ticked. While it is ticked, the privacy, terms
+and contact pages carry a loud in-page warning and mark every legal value in
+red, because a privacy policy has to name who is actually responsible for
+people's data. Put your real details in and untick it.
 
 Site settings hold the site name, nav, home-page copy, and the ad/analytics
 switches, so none of that needs a code change.

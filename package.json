@@ -6,11 +6,13 @@
   "type": "module",
   "scripts": {
     "dev": "cross-env NODE_OPTIONS=\"--no-deprecation --max-old-space-size=6000\" next dev",
-    "devsafe": "rm -rf .next && cross-env NODE_OPTIONS=\"--no-deprecation --max-old-space-size=6000\" next dev",
+    "clean": "node -e \"require('fs').rmSync('.next',{recursive:true,force:true})\"",
+    "devsafe": "pnpm run clean && cross-env NODE_OPTIONS=\"--no-deprecation --max-old-space-size=6000\" next dev",
     "build": "cross-env NODE_OPTIONS=\"--no-deprecation --max-old-space-size=6000\" next build",
     "start": "cross-env NODE_OPTIONS=--no-deprecation next start",
-    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
     "test": "vitest run",
+    "check": "pnpm run typecheck && pnpm run test && pnpm run build",
     "test:watch": "vitest",
     "seed": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/run.ts",
     "generate:types": "cross-env NODE_OPTIONS=--no-deprecation payload generate:types",
@@ -18,7 +20,9 @@
     "payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
     "assets": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/assets.ts",
     "assets:match": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/match-assets.ts",
-    "ingest": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/import.ts"
+    "ingest": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/import.ts",
+    "clean:db": "node -e \"const fs=require('fs');for (const f of fs.readdirSync('.')) if (f.startsWith('dawnwalker.db')) fs.rmSync(f,{force:true})\"",
+    "db:reset": "pnpm run clean:db && pnpm run seed && pnpm run ingest"
   },
   "dependencies": {
     "@payloadcms/db-sqlite": "3.89.0",

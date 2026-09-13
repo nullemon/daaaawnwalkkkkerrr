@@ -1,0 +1,14 @@
+# Line endings are LF in the repository and LF in the working tree, on every
+# platform. Without this, a tool that rewrites a generated file with Windows
+# line endings — Payload rewriting src/payload-types.ts on `pnpm dev`, say —
+# makes the whole file look modified and blocks the next `git pull`.
+* text=auto eol=lf
+
+# Generated. Diffs are noise in review; the file is still tracked and still
+# needed for typechecking, so this only collapses it in `git diff`.
+src/payload-types.ts linguist-generated=true
+pnpm-lock.yaml linguist-generated=true
+
+# Never touch the bytes of these.
+*.png binary
+*.svg text eol=lf
