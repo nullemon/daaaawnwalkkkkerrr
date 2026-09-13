@@ -20,8 +20,17 @@ irm https://claude.ai/install.ps1 | iex
 Then close and reopen the terminal so the PATH change takes effect, and check
 with `claude --version`.
 
-**If it says the install location is not on your PATH**, you do not need the
-Environment Variables dialog. To use it right now in the window you are in:
+**If `claude` is not recognised**, the install worked but the shell cannot find
+it. The installer prints the location — by default
+`C:\Users\<you>\.local\bin\claude.exe`. You can always run it by full path,
+which needs no PATH set up at all:
+
+```powershell
+& "$env:USERPROFILE\.local\bin\claude.exe" --version
+```
+
+To fix it properly, you do not need the Environment Variables dialog. To use
+it in the window you are already in:
 
 ```powershell
 $env:Path += ";$env:USERPROFILE\.local\bin"
@@ -38,7 +47,13 @@ if ($old -notlike "*$bin*") {
 ```
 
 That writes to your *user* PATH, so it needs no administrator rights and
-cannot damage the system PATH.
+cannot damage the system PATH. Close the terminal and open a new one before
+testing — a PATH change does not reach a window that is already open.
+
+One thing worth saying plainly: when a command fails, paste only the command
+again, never the error text. PowerShell will happily try to execute the error
+message line by line, and the resulting wall of unrelated failures hides the
+real problem.
 
 Two things that trip people up here. `install.cmd` is a **cmd.exe** script —
 running it from PowerShell fails, because PowerShell 5.1 does not accept `&&`
