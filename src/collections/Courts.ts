@@ -20,6 +20,15 @@ export const Courts: CollectionConfig = {
     { name: 'title', type: 'text', required: true, admin: { description: 'e.g. "Ambrus"' } },
     slugField(),
     {
+      name: 'image',
+      type: 'upload',
+      relationTo: 'media',
+      admin: {
+        description:
+          'Optional. A screenshot or piece of art for this record. Until one is set, the site falls back to its own icon, so a missing image never leaves a hole.',
+      },
+    },
+    {
       name: 'activityCount',
       type: 'number',
       admin: { description: 'Total Court Activities in this court.' },

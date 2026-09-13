@@ -12,6 +12,15 @@ export const Enemies: CollectionConfig = {
   fields: [
     { name: 'title', type: 'text', required: true },
     slugField(),
+    {
+      name: 'image',
+      type: 'upload',
+      relationTo: 'media',
+      admin: {
+        description:
+          'Optional. A screenshot or piece of art for this record. Until one is set, the site falls back to its own icon, so a missing image never leaves a hole.',
+      },
+    },
     { name: 'isBoss', type: 'checkbox', defaultValue: false, label: 'Boss' },
     { name: 'region', type: 'relationship', relationTo: 'regions' },
     {

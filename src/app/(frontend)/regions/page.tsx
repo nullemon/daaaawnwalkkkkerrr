@@ -26,6 +26,7 @@ export default async function RegionsIndex() {
       <PageHeader
         eyebrow="Database"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Regions' }]}
+        icon="map"
         title="Vale Sangora"
         lede="Ten regions across roughly ten square kilometres. Travel between them is free — it is the quests inside them that cost you."
       />

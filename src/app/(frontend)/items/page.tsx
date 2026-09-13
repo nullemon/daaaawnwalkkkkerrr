@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PageHeader } from '@/components/PageHeader'
+import { Icon, ICON_FOR_CATEGORY } from '@/components/Icon'
 import { getAll } from '@/lib/payload'
 import type { Item, Region } from '@/payload-types'
 
@@ -18,6 +19,7 @@ export default async function ItemsIndex() {
       <PageHeader
         eyebrow="Database"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Items' }]}
+        icon="sword"
         title="Items"
         lede="We cover the legendaries, manuals, recipes and key items rather than all 1,700-odd pickups. The rest are not worth a page and we would only be guessing at their stats."
       />
@@ -38,10 +40,15 @@ export default async function ItemsIndex() {
                 return (
                   <tr key={item.id}>
                     <td>
-                      <Link href={`/items/${item.slug}`}>{item.title}</Link>
+                      <span className="cell-name" data-rarity={item.rarity ?? undefined}>
+                        <Icon name={ICON_FOR_CATEGORY[item.category] ?? 'key'} size={16} className="ic" />
+                        <Link href={`/items/${item.slug}`}>{item.title}</Link>
+                      </span>
                     </td>
                     <td>{item.category}</td>
-                    <td>{item.rarity ?? '—'}</td>
+                    <td className={item.rarity ? `rarity-${item.rarity}` : undefined}>
+                      {item.rarity ?? '—'}
+                    </td>
                     <td>{region ? <Link href={`/regions/${region.slug}`}>{region.title}</Link> : '—'}</td>
                   </tr>
                 )

@@ -26,6 +26,7 @@ export default async function BuildsIndex() {
       <PageHeader
         eyebrow="Database"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Builds' }]}
+        icon="shield"
         title="Builds"
         lede="Coen is two characters sharing a body, so a build is really a decision about which half of the clock you intend to fight in. Each of these says which, and what it costs you in the other."
       />

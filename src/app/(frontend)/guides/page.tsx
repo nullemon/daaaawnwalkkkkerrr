@@ -18,6 +18,7 @@ export default async function GuidesIndex() {
       <PageHeader
         eyebrow="Editorial"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Guides' }]}
+        icon="book"
         title="Guides"
         lede="One page, one question, answered properly."
       />

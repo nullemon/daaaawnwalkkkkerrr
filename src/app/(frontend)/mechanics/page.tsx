@@ -19,6 +19,7 @@ export default async function MechanicsIndex() {
       <PageHeader
         eyebrow="Database"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Mechanics' }]}
+        icon="hourglass"
         title="Mechanics"
         lede="The four systems that actually decide a run: the clock, Corruption, Infamy, and what you can reach in a given phase."
       />

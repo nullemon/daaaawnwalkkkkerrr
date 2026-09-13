@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PageHeader } from '@/components/PageHeader'
-import { Confidence, PhaseBadge } from '@/components/Badges'
+import { PhaseBadge } from '@/components/Badges'
+import { Icon, ICON_FOR_QUEST_KIND } from '@/components/Icon'
 import { getAll } from '@/lib/payload'
 import type { Quest, Region } from '@/payload-types'
 
@@ -29,6 +30,7 @@ export default async function QuestIndex() {
       <PageHeader
         eyebrow="Database"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Quests' }]}
+        icon="scroll"
         title="Quests"
         lede={`${quests.length} quests catalogued. Time costs are shown only where a source actually publishes one — ${confirmed} so far. An unknown cost is not a zero cost, and we would rather leave a gap than fill it with a guess.`}
       />
@@ -51,7 +53,10 @@ export default async function QuestIndex() {
                 return (
                   <tr key={quest.id}>
                     <td>
-                      <Link href={`/quests/${quest.slug}`}>{quest.title}</Link>
+                      <span className="cell-name">
+                        <Icon name={ICON_FOR_QUEST_KIND[quest.kind] ?? 'scroll'} size={16} className="ic" />
+                        <Link href={`/quests/${quest.slug}`}>{quest.title}</Link>
+                      </span>
                     </td>
                     <td>{KIND_LABELS[quest.kind] ?? quest.kind}</td>
                     <td>{region ? <Link href={`/regions/${region.slug}`}>{region.title}</Link> : '—'}</td>

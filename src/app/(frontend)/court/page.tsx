@@ -21,6 +21,7 @@ export default async function CourtIndex() {
       <PageHeader
         eyebrow="Database"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Court' }]}
+        icon="crown"
         title="The Court"
         lede={`After the prologue there is no linear main quest. Progression is ${total} Court Activities across three vassals — anger each of them enough and they will meet you in a duel.`}
       />

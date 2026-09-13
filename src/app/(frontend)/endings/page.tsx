@@ -27,6 +27,7 @@ export default async function EndingsIndex() {
       <PageHeader
         eyebrow="Database"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Endings' }]}
+        icon="crown"
         title="The seven endings"
         lede="Five of these are decided at the finale and cannot be lost early. Two are gated on questlines you have to finish long before you get there — those are the ones people lose without noticing."
       />

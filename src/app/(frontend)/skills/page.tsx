@@ -23,6 +23,7 @@ export default async function SkillsIndex() {
       <PageHeader
         eyebrow="Database"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Skills' }]}
+        icon="spark"
         title="Skill trees"
         lede="Three trees split by phase. Each has three ultimate perks and you may take only one per tree, so nine exist and three are reachable in a run."
       />

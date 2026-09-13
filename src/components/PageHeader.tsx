@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import type { ReactNode } from 'react'
+import { Icon, type IconName } from './Icon'
 
 export type Crumb = { label: string; href?: string }
 
@@ -9,12 +10,14 @@ export function PageHeader({
   lede,
   crumbs = [],
   badges,
+  icon,
 }: {
   eyebrow?: string
   title: string
   lede?: string | null
   crumbs?: Crumb[]
   badges?: ReactNode
+  icon?: IconName
 }) {
   return (
     <div className="page">
@@ -30,9 +33,16 @@ export function PageHeader({
           </ol>
         ) : null}
         {eyebrow ? <p className="eyebrow">{eyebrow}</p> : null}
-        <h1>{title}</h1>
+        <div className="title-row">
+          {icon ? (
+            <span className="title-icon">
+              <Icon name={icon} size={21} />
+            </span>
+          ) : null}
+          <h1>{title}</h1>
+        </div>
         {lede ? <p className="lede">{lede}</p> : null}
-        {badges ? <div className="meta-row">{badges}</div> : <div className="meta-row" />}
+        <div className="meta-row">{badges}</div>
       </div>
     </div>
   )

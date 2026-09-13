@@ -22,6 +22,7 @@ export default async function CourtActivitiesIndex() {
       <PageHeader
         eyebrow="Database"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Court', href: '/court' }, { label: 'Activities' }]}
+        icon="crown"
         title="Court Activities"
         lede={`${activities.length} catalogued. These are the real main quest after the prologue — anger a vassal enough and they meet you in a duel. You do not need to clear them all.`}
       />

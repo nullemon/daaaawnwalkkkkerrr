@@ -21,6 +21,7 @@ export default async function PerksIndex() {
       <PageHeader
         eyebrow="Database"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Perks' }]}
+        icon="star"
         title="Perks"
         lede={`${perks.length} perks catalogued, ${ultimates.length} of them ultimates. You may take one ultimate per tree, so picking any of the nine closes two others.`}
       />

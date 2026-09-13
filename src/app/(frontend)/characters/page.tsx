@@ -27,6 +27,7 @@ export default async function CharactersIndex() {
       <PageHeader
         eyebrow="Database"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Characters' }]}
+        icon="person"
         title="Characters"
         lede="Two of these gate endings. Finish their questlines late and the ending is simply not offered."
       />

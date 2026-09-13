@@ -51,6 +51,7 @@ export default async function EnemiesIndex() {
       <PageHeader
         eyebrow="Database"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Enemies' }]}
+        icon="skull"
         title="Enemies and bosses"
         lede="Half of what you fight, you fight as a different character. What you meet by day and what you meet by night are not the same list."
       />

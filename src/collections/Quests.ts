@@ -35,6 +35,15 @@ export const Quests: CollectionConfig = {
     },
     { name: 'region', type: 'relationship', relationTo: 'regions' },
     {
+      name: 'image',
+      type: 'upload',
+      relationTo: 'media',
+      admin: {
+        description:
+          'Optional. A screenshot or piece of art for this record. Until one is set, the site falls back to its own icon, so a missing image never leaves a hole.',
+      },
+    },
+    {
       name: 'court',
       type: 'relationship',
       relationTo: 'courts',

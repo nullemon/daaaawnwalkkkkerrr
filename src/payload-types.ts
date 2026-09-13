@@ -186,6 +186,10 @@ export interface Quest {
   kind: 'main' | 'ally' | 'court' | 'side' | 'contract' | 'prologue';
   region?: (number | null) | Region;
   /**
+   * Optional. A screenshot or piece of art for this record. Until one is set, the site falls back to its own icon, so a missing image never leaves a hole.
+   */
+  image?: (number | null) | Media;
+  /**
    * Set when this quest angers a specific vassal.
    */
   court?: (number | null) | Court;
@@ -309,6 +313,10 @@ export interface Region {
    */
   slug: string;
   /**
+   * Optional. A screenshot or piece of art for this record. Until one is set, the site falls back to its own icon, so a missing image never leaves a hole.
+   */
+  image?: (number | null) | Media;
+  /**
    * Which vassal holds this region, if any.
    */
   court?: (number | null) | Court;
@@ -371,6 +379,59 @@ export interface Region {
   createdAt: string;
 }
 /**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "media".
+ */
+export interface Media {
+  id: number;
+  /**
+   * Describe the image for screen readers and search engines.
+   */
+  alt: string;
+  caption?: string | null;
+  /**
+   * Attribution. Game screenshots and art belong to Bandai Namco / Rebel Wolves — credit them.
+   */
+  credit?: string | null;
+  updatedAt: string;
+  createdAt: string;
+  url?: string | null;
+  thumbnailURL?: string | null;
+  filename?: string | null;
+  mimeType?: string | null;
+  filesize?: number | null;
+  width?: number | null;
+  height?: number | null;
+  focalX?: number | null;
+  focalY?: number | null;
+  sizes?: {
+    thumb?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
+    card?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
+    hero?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
+  };
+}
+/**
  * The three vassal courts. Court Activities hang off these.
  *
  * This interface was referenced by `Config`'s JSON-Schema
@@ -386,6 +447,10 @@ export interface Court {
    * URL segment. Auto-filled from the title. Changing it breaks existing links.
    */
   slug: string;
+  /**
+   * Optional. A screenshot or piece of art for this record. Until one is set, the site falls back to its own icon, so a missing image never leaves a hole.
+   */
+  image?: (number | null) | Media;
   /**
    * Total Court Activities in this court.
    */
@@ -466,6 +531,10 @@ export interface Enemy {
    * URL segment. Auto-filled from the title. Changing it breaks existing links.
    */
   slug: string;
+  /**
+   * Optional. A screenshot or piece of art for this record. Until one is set, the site falls back to its own icon, so a missing image never leaves a hole.
+   */
+  image?: (number | null) | Media;
   isBoss?: boolean | null;
   region?: (number | null) | Region;
   weaknesses?:
@@ -545,6 +614,10 @@ export interface Ending {
    * URL segment. Auto-filled from the title. Changing it breaks existing links.
    */
   slug: string;
+  /**
+   * Optional. A screenshot or piece of art for this record. Until one is set, the site falls back to its own icon, so a missing image never leaves a hole.
+   */
+  image?: (number | null) | Media;
   gate: 'ally' | 'choice' | 'clock';
   /**
    * The ally whose questline gates this ending.
@@ -707,59 +780,6 @@ export interface Character {
   createdAt: string;
 }
 /**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "media".
- */
-export interface Media {
-  id: number;
-  /**
-   * Describe the image for screen readers and search engines.
-   */
-  alt: string;
-  caption?: string | null;
-  /**
-   * Attribution. Game screenshots and art belong to Bandai Namco / Rebel Wolves — credit them.
-   */
-  credit?: string | null;
-  updatedAt: string;
-  createdAt: string;
-  url?: string | null;
-  thumbnailURL?: string | null;
-  filename?: string | null;
-  mimeType?: string | null;
-  filesize?: number | null;
-  width?: number | null;
-  height?: number | null;
-  focalX?: number | null;
-  focalY?: number | null;
-  sizes?: {
-    thumb?: {
-      url?: string | null;
-      width?: number | null;
-      height?: number | null;
-      mimeType?: string | null;
-      filesize?: number | null;
-      filename?: string | null;
-    };
-    card?: {
-      url?: string | null;
-      width?: number | null;
-      height?: number | null;
-      mimeType?: string | null;
-      filesize?: number | null;
-      filename?: string | null;
-    };
-    hero?: {
-      url?: string | null;
-      width?: number | null;
-      height?: number | null;
-      mimeType?: string | null;
-      filesize?: number | null;
-      filename?: string | null;
-    };
-  };
-}
-/**
  * Legendaries, manuals, recipes and key items — not every one of the 1,700+ pickups.
  *
  * This interface was referenced by `Config`'s JSON-Schema
@@ -858,6 +878,10 @@ export interface CourtActivity {
    * URL segment. Auto-filled from the title. Changing it breaks existing links.
    */
   slug: string;
+  /**
+   * Optional. A screenshot or piece of art for this record. Until one is set, the site falls back to its own icon, so a missing image never leaves a hole.
+   */
+  image?: (number | null) | Media;
   court: number | Court;
   region?: (number | null) | Region;
   time?: {
@@ -939,6 +963,10 @@ export interface SkillTree {
    */
   slug: string;
   /**
+   * Optional. A screenshot or piece of art for this record. Until one is set, the site falls back to its own icon, so a missing image never leaves a hole.
+   */
+  image?: (number | null) | Media;
+  /**
    * Witchcraft is a day tree, Vampirism a night tree, Swordmastery sits in the middle.
    */
   phase: 'day' | 'night' | 'either';
@@ -1017,6 +1045,10 @@ export interface Perk {
    */
   slug: string;
   tree: number | SkillTree;
+  /**
+   * Optional. A screenshot or piece of art for this record. Until one is set, the site falls back to its own icon, so a missing image never leaves a hole.
+   */
+  image?: (number | null) | Media;
   /**
    * One ultimate per tree, nine in the game.
    */
@@ -1103,6 +1135,10 @@ export interface Build {
    * URL segment. Auto-filled from the title. Changing it breaks existing links.
    */
   slug: string;
+  /**
+   * Optional. A screenshot or piece of art for this record. Until one is set, the site falls back to its own icon, so a missing image never leaves a hole.
+   */
+  image?: (number | null) | Media;
   playstyle: 'day' | 'night' | 'hybrid';
   difficulty?: ('beginner' | 'intermediate' | 'advanced') | null;
   primaryTree?: (number | null) | SkillTree;
@@ -1583,6 +1619,7 @@ export interface QuestsSelect<T extends boolean = true> {
   slug?: T;
   kind?: T;
   region?: T;
+  image?: T;
   court?: T;
   time?:
     | T
@@ -1636,6 +1673,7 @@ export interface QuestsSelect<T extends boolean = true> {
 export interface CourtActivitiesSelect<T extends boolean = true> {
   title?: T;
   slug?: T;
+  image?: T;
   court?: T;
   region?: T;
   time?:
@@ -1675,6 +1713,7 @@ export interface CourtActivitiesSelect<T extends boolean = true> {
 export interface EndingsSelect<T extends boolean = true> {
   title?: T;
   slug?: T;
+  image?: T;
   gate?: T;
   ally?: T;
   requiredQuests?: T;
@@ -1710,6 +1749,7 @@ export interface EndingsSelect<T extends boolean = true> {
 export interface RegionsSelect<T extends boolean = true> {
   title?: T;
   slug?: T;
+  image?: T;
   court?: T;
   dangerRating?: T;
   confidence?: T;
@@ -1740,6 +1780,7 @@ export interface RegionsSelect<T extends boolean = true> {
 export interface CourtsSelect<T extends boolean = true> {
   title?: T;
   slug?: T;
+  image?: T;
   activityCount?: T;
   angerThresholdPct?: T;
   bossEnemy?: T;
@@ -1804,6 +1845,7 @@ export interface CharactersSelect<T extends boolean = true> {
 export interface EnemiesSelect<T extends boolean = true> {
   title?: T;
   slug?: T;
+  image?: T;
   isBoss?: T;
   region?: T;
   weaknesses?:
@@ -1841,6 +1883,7 @@ export interface EnemiesSelect<T extends boolean = true> {
 export interface SkillTreesSelect<T extends boolean = true> {
   title?: T;
   slug?: T;
+  image?: T;
   phase?: T;
   gatedByCorruption?: T;
   confidence?: T;
@@ -1872,6 +1915,7 @@ export interface PerksSelect<T extends boolean = true> {
   title?: T;
   slug?: T;
   tree?: T;
+  image?: T;
   isUltimate?: T;
   timeCostSegments?: T;
   foundInWorld?: T;
@@ -1944,6 +1988,7 @@ export interface ItemsSelect<T extends boolean = true> {
 export interface BuildsSelect<T extends boolean = true> {
   title?: T;
   slug?: T;
+  image?: T;
   playstyle?: T;
   difficulty?: T;
   primaryTree?: T;

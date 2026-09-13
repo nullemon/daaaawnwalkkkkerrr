@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Archivo, IBM_Plex_Mono, Instrument_Serif } from 'next/font/google'
+import { Barlow, Barlow_Semi_Condensed, Cinzel } from 'next/font/google'
 import { SiteHeader } from '@/components/SiteHeader'
 import { SiteFooter } from '@/components/SiteFooter'
 import { themeScript } from '@/components/ThemeToggle'
@@ -8,26 +8,33 @@ import { AccountProvider } from '@/components/AccountProvider'
 import { getSiteSettings, siteUrl } from '@/lib/payload'
 import './globals.css'
 
-// Self-hosted through next/font: no render-blocking request to a font host,
-// and no layout shift, both of which show up directly in Core Web Vitals.
-const instrument = Instrument_Serif({
+/*
+ * Self-hosted through next/font: no render-blocking request to a font host and
+ * no layout shift, both of which show up directly in Core Web Vitals.
+ *
+ * Cinzel is inscriptional Roman capitals — right for a 14th-century setting,
+ * and used only on the wordmark and page titles so it never has to carry body
+ * text. Barlow does the work: slightly condensed, dense enough for data tables,
+ * and readable at 13px where most of this site lives.
+ */
+const cinzel = Cinzel({
   subsets: ['latin'],
-  weight: '400',
-  style: ['normal', 'italic'],
-  variable: '--font-instrument',
+  weight: ['600', '700'],
+  variable: '--font-cinzel',
   display: 'swap',
 })
 
-const archivo = Archivo({
+const barlow = Barlow({
   subsets: ['latin'],
-  variable: '--font-archivo',
+  weight: ['400', '500', '600'],
+  variable: '--font-barlow',
   display: 'swap',
 })
 
-const plexMono = IBM_Plex_Mono({
+const barlowCondensed = Barlow_Semi_Condensed({
   subsets: ['latin'],
-  weight: ['400', '500'],
-  variable: '--font-plex-mono',
+  weight: ['500', '600'],
+  variable: '--font-barlow-condensed',
   display: 'swap',
 })
 
@@ -54,16 +61,27 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
+/**
+ * These must land on <html>, not <body>.
+ *
+ * The design tokens that reference them (--f-body and friends) are declared on
+ * :root. A custom property whose value references an undefined custom property
+ * computes to guaranteed-invalid, so with the classes one level too low every
+ * font-family on the site silently fell back to the browser default — which is
+ * exactly what was happening until this was caught.
+ */
+const fontVars = `${cinzel.variable} ${barlow.variable} ${barlowCondensed.variable}`
+
 export default async function FrontendLayout({ children }: { children: React.ReactNode }) {
   const settings = await getSiteSettings()
   const nav = settings.primaryNav ?? []
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={fontVars} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className={`${instrument.variable} ${archivo.variable} ${plexMono.variable}`}>
+      <body>
         <AccountProvider>
           <RunProvider>
           <a className="skip" href="#main">
