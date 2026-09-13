@@ -88,11 +88,13 @@ that inherits the default would let any reader who signs up edit content.
   this started as gave a stack trace that said nothing about the cause. The
   work is in `tools/reset-db.mjs`, which retries, clears a read-only attribute,
   and names the likely culprit when it still fails.
-- **`src/payload-types.ts` is generated and will block a pull.** Payload
-  rewrites it on schema change and sometimes just on `pnpm dev`. Discard the
-  local copy (`git checkout -- src/payload-types.ts`) rather than merging it.
-  `.gitattributes` pins line endings to LF so this stops being a whole-file
-  diff on Windows.
+- **Two generated files show up as uncommitted work.** `src/payload-types.ts`
+  is rewritten by Payload on a schema change and sometimes just on `pnpm dev`;
+  `next-env.d.ts` points at `.next/dev/types/` after `next dev` and
+  `.next/types/` after `next build`, so it flips every time you switch. Neither
+  is yours to merge — `git checkout -- <file>` and move on. The committed
+  `next-env.d.ts` is the build form, which is what CI needs. `.gitattributes`
+  pins line endings to LF so this stops being a whole-file diff on Windows.
 - **Grid and flex children default to `min-width: auto`**, so a wide table
   inside an `overflow-x` container drags the page sideways on a phone. The
   shrink-fix is at the end of `globals.css`; keep it.
