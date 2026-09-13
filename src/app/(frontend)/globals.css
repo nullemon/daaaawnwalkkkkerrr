@@ -585,6 +585,49 @@ th.num { text-align: right; }
 .site-footer nav a { font-size: 13.5px; color: var(--ink-soft); }
 .wordmark-sm { font-family: var(--f-display); font-weight: 700; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); margin-bottom: 5px; }
 
+/* ---------- unlock path ---------- */
+
+.unlockpath-state { font-size: 14.5px; color: var(--ink-soft); }
+.unlockpath-state[data-tone='good'] { color: var(--good); display: flex; align-items: center; gap: 6px; }
+.unlockpath-cost { max-width: none; }
+
+.unlocksteps {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; flex-direction: column;
+  border: 1px solid var(--rule); border-radius: var(--r); overflow: hidden;
+}
+.unlocksteps li {
+  display: flex; align-items: center; gap: 12px;
+  padding: 9px 12px; background: var(--surface);
+  border-bottom: 1px solid var(--rule-soft);
+}
+.unlocksteps li:last-child { border-bottom: none; }
+.unlocksteps li[data-done] { background: var(--sunken); }
+.unlocksteps li[data-done] .unlockstep-body a,
+.unlocksteps li[data-done] .unlockstep-body b { color: var(--muted); text-decoration: line-through; }
+.unlocksteps li[data-next] { background: var(--accent-wash); box-shadow: inset 3px 0 0 var(--accent); }
+
+/* The number doubles as the tick box, so the chain is also the checklist. */
+.unlockstep-tick {
+  flex: none; width: 26px; height: 26px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--rule); background: var(--raised);
+  color: var(--muted); font-family: var(--f-label); font-size: 12px; font-weight: 600;
+  cursor: pointer;
+}
+.unlockstep-tick:hover:not(:disabled) { border-color: var(--accent); color: var(--ink); }
+.unlockstep-tick[aria-pressed='true'] { background: var(--good); border-color: var(--good); color: #06120c; }
+.unlockstep-tick:disabled { cursor: default; opacity: 0.5; }
+
+.unlockstep-body { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; min-width: 0; flex: 1 1 auto; }
+.unlockstep-body a, .unlockstep-body b { font-weight: 500; color: var(--ink); }
+.unlockstep-body a:hover { color: var(--accent-hot); }
+.unlockstep-cost {
+  margin-left: auto; font-family: var(--f-label); font-size: 12.5px;
+  color: var(--muted); white-space: nowrap;
+}
+
+
 /* ---------- filterable index tables ---------- */
 
 .datatable { display: flex; flex-direction: column; gap: 12px; min-width: 0; }

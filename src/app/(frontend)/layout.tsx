@@ -121,6 +121,7 @@ export default async function FrontendLayout({ children }: { children: React.Rea
         href: item.href as string,
         icon: RAIL_ICONS[item.href as string] ?? ('chevron' as const),
       })),
+    { label: 'Your run', href: '/account', icon: 'person' as const },
   ]
 
   return (

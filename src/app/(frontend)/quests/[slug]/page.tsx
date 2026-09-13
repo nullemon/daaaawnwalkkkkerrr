@@ -8,6 +8,8 @@ import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
 import { AdSlot } from '@/components/AdSlot'
 import { QuestToggle } from '@/components/QuestToggle'
+import { UnlockPath } from '@/components/UnlockPath'
+import { getRunGraph } from '@/lib/runData'
 import { EntityImage } from '@/components/EntityImage'
 import { getAll, getBySlug, relMany, rel } from '@/lib/payload'
 import type { Ending, Quest, Region } from '@/payload-types'
@@ -37,6 +39,7 @@ export default async function QuestPage({ params }: Props) {
   if (!quest) notFound()
 
   const region = rel<Region>(quest.region)
+  const graph = await getRunGraph()
   const prereqs = relMany<Quest>(quest.prereqs)
   const unlocks = relMany<Quest>(quest.unlocks)
   const excludes = relMany<Quest>(quest.excludes)
@@ -78,24 +81,7 @@ export default async function QuestPage({ params }: Props) {
 
         <RichText data={quest.body} />
 
-        {prereqs.length > 0 ? (
-          <section className="section">
-            <div className="section-head">
-              <h2>Before this opens</h2>
-            </div>
-            <ol className="chain">
-              {prereqs.map((prereq, index) => (
-                <li key={prereq.id}>
-                  <span className="step">{String(index + 1).padStart(2, '0')}</span>
-                  <span>
-                    <Link href={`/quests/${prereq.slug}`}>{prereq.title}</Link>
-                    {prereq.summary ? <span className="sub">{prereq.summary}</span> : null}
-                  </span>
-                </li>
-              ))}
-            </ol>
-          </section>
-        ) : null}
+        <UnlockPath questId={String(quest.id)} quests={graph.quests} />
 
         {unlocks.length > 0 ? (
           <section className="section">

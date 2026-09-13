@@ -88,7 +88,7 @@ export interface EndingReachability {
   unknownCostCount: number
 }
 
-type QuestIndex = Map<string, QuestNode>
+export type QuestIndex = Map<string, QuestNode>
 
 export function indexQuests(quests: QuestNode[]): QuestIndex {
   return new Map(quests.map((quest) => [quest.id, quest]))
