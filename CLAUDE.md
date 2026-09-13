@@ -82,6 +82,12 @@ that inherits the default would let any reader who signs up edit content.
   developed on. Anything that touches the filesystem from `package.json` goes
   through `node -e` and `fs`, never a shell builtin. `&&` is fine — pnpm runs
   scripts through cmd.exe, which accepts it; it is PowerShell 5.1 that does not.
+- **Windows will not delete a file another process has open.** `pnpm db:reset`
+  fails with `EPERM` while a dev server is running, and node's `rmSync` retry
+  options are silently ignored unless `recursive` is set — so the raw one-liner
+  this started as gave a stack trace that said nothing about the cause. The
+  work is in `tools/reset-db.mjs`, which retries, clears a read-only attribute,
+  and names the likely culprit when it still fails.
 - **`src/payload-types.ts` is generated and will block a pull.** Payload
   rewrites it on schema change and sometimes just on `pnpm dev`. Discard the
   local copy (`git checkout -- src/payload-types.ts`) rather than merging it.

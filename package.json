@@ -21,7 +21,7 @@
     "assets": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/assets.ts",
     "assets:match": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/match-assets.ts",
     "ingest": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/import.ts",
-    "clean:db": "node -e \"const fs=require('fs');for (const f of fs.readdirSync('.')) if (f.startsWith('dawnwalker.db')) fs.rmSync(f,{force:true})\"",
+    "clean:db": "node tools/reset-db.mjs",
     "db:reset": "pnpm run clean:db && pnpm run seed && pnpm run ingest"
   },
   "dependencies": {
