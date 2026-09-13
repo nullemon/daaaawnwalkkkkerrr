@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { PageHeader } from '@/components/PageHeader'
 import { sectionArt } from '@/lib/art'
+import { HeroSearch } from '@/components/HeroSearch'
+import { Logo } from '@/components/Logo'
 import { Confidence } from '@/components/Badges'
 import { Icon } from '@/components/Icon'
 import { getAll, getSiteSettings } from '@/lib/payload'
@@ -38,15 +39,60 @@ export default async function Home() {
   )
   const costed = quests.filter((quest) => quest.time?.known).length
 
+  const hero = sectionArt('hero', true)
+
+  // The sections people actually came for, as cards rather than a nav list —
+  // each carries its own count so the size of the database is visible before
+  // you click into any of it.
+  const SECTIONS = [
+    { label: 'Quests', href: '/quests', art: 'quests', icon: 'scroll' as const, count: `${quests.length} catalogued` },
+    { label: 'Endings', href: '/endings', art: 'endings', icon: 'book' as const, count: `${endings.length} routes` },
+    { label: 'Items', href: '/items', art: 'items', icon: 'sword' as const, count: `${items.length} recorded` },
+    { label: 'Perks', href: '/perks', art: 'perks', icon: 'star' as const, count: `${perks.length} across three trees` },
+    { label: 'Court', href: '/court', art: 'court', icon: 'crown' as const, count: `${courts.length} courts` },
+    { label: 'Regions', href: '/regions', art: 'regions', icon: 'map' as const, count: `${regions.length} places` },
+    { label: 'Mechanics', href: '/mechanics', art: 'mechanics', icon: 'spark' as const, count: `${mechanics.length} systems` },
+    { label: 'Run checker', href: '/tools/run-checker', art: 'skills', icon: 'hourglass' as const, count: 'What can you still reach' },
+  ]
+
   return (
     <>
-      <PageHeader
-        art={sectionArt('hero', true)}
-        eyebrow="The Blood of Dawnwalker"
-        title={settings.heroHeading || 'You have 480 segments. Spend them well.'}
-        lede={settings.heroSubheading}
-      />
+      <section className="hero" style={hero ? { backgroundImage: `url(${hero.src})` } : undefined}>
+        <p className="hero-wordmark">
+          <span className="glyph">
+            <Logo size={40} />
+          </span>
+          {settings.siteName}
+        </p>
+        <HeroSearch />
+        <p className="hero-lede">
+          {settings.heroSubheading ||
+            'Thirty days and thirty nights, eight segments each. Work out what you can still reach from where you actually are.'}
+        </p>
+        {hero?.credit ? <p className="hero-credit">{hero.credit}</p> : null}
+      </section>
+
       <div className="page body-main">
+        <div className="tilegrid">
+          {SECTIONS.map((section) => {
+            const art = sectionArt(section.art)
+            return (
+              <Link
+                key={section.href}
+                href={section.href}
+                className="tile"
+                style={art ? { backgroundImage: `url(${art.src})` } : undefined}
+              >
+                <span className="tile-icon">
+                  <Icon name={section.icon} size={19} />
+                </span>
+                <span className="tile-name">{section.label}</span>
+                <span className="tile-count">{section.count}</span>
+              </Link>
+            )
+          })}
+        </div>
+
         <section className="clock-strip">
           <div className="strip" aria-hidden="true">
             {Array.from({ length: TOTAL_DAYS }).map((_, index) => (

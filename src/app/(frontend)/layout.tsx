@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Barlow, Barlow_Semi_Condensed, Cinzel } from 'next/font/google'
-import { SiteHeader } from '@/components/SiteHeader'
+import { SiteRail, type RailItem } from '@/components/SiteRail'
 import { SiteFooter } from '@/components/SiteFooter'
 import { themeScript } from '@/components/ThemeToggle'
 import { RunProvider } from '@/components/RunProvider'
@@ -85,9 +85,43 @@ export async function generateMetadata(): Promise<Metadata> {
  */
 const fontVars = `${cinzel.variable} ${barlow.variable} ${barlowCondensed.variable}`
 
+/**
+ * The rail is structural, so it carries an icon per destination. Site settings
+ * still own the list and its order; this only says what each one looks like,
+ * and anything unrecognised falls back to a generic mark rather than vanishing.
+ */
+const RAIL_ICONS: Record<string, RailItem['icon']> = {
+  '/': 'home',
+  '/tools/run-checker': 'hourglass',
+  '/tools/build-planner': 'shield',
+  '/quests': 'scroll',
+  '/endings': 'book',
+  '/items': 'sword',
+  '/court': 'crown',
+  '/court-activities': 'crown',
+  '/characters': 'person',
+  '/regions': 'map',
+  '/enemies': 'skull',
+  '/perks': 'star',
+  '/skills': 'spark',
+  '/mechanics': 'spark',
+  '/builds': 'shield',
+  '/guides': 'book',
+}
+
 export default async function FrontendLayout({ children }: { children: React.ReactNode }) {
   const settings = await getSiteSettings()
   const nav = settings.primaryNav ?? []
+  const rail: RailItem[] = [
+    { label: 'Home', href: '/', icon: 'home' as const },
+    ...nav
+      .filter((item) => item.href && item.label && item.href !== '/')
+      .map((item) => ({
+        label: item.label as string,
+        href: item.href as string,
+        icon: RAIL_ICONS[item.href as string] ?? ('chevron' as const),
+      })),
+  ]
 
   return (
     <html lang="en" className={fontVars} suppressHydrationWarning>
@@ -100,13 +134,17 @@ export default async function FrontendLayout({ children }: { children: React.Rea
           <a className="skip" href="#main">
             Skip to content
           </a>
-          <SiteHeader siteName={settings.siteName} nav={nav} />
-          <main id="main">{children}</main>
-          <SiteFooter
-            siteName={settings.siteName}
-            note={settings.footerNote}
-            maintainer={settings.maintainer}
-          />
+          <div className="shell">
+            <SiteRail siteName={settings.siteName} items={rail} />
+            <div className="shell-main">
+              <main id="main">{children}</main>
+              <SiteFooter
+                siteName={settings.siteName}
+                note={settings.footerNote}
+                maintainer={settings.maintainer}
+              />
+            </div>
+          </div>
           </RunProvider>
         </AccountProvider>
       </body>

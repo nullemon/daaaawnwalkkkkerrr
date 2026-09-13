@@ -14,8 +14,10 @@ export type IconName =
   | 'scroll' | 'skull' | 'crown' | 'map' | 'person' | 'star'
   | 'sun' | 'moon' | 'hourglass' | 'check' | 'lock' | 'warn'
   | 'search' | 'chevron' | 'external' | 'claw' | 'shield' | 'blood' | 'spark'
+  | 'home'
 
 const PATHS: Record<IconName, React.ReactNode> = {
+  home: <><path d="M3.8 10.4 12 3.6l8.2 6.8v8.4a1.6 1.6 0 0 1-1.6 1.6H5.4a1.6 1.6 0 0 1-1.6-1.6v-8.4Z" /><path d="M9.6 20.4v-6.8h4.8v6.8" /></>,
   sword: <><path d="M20.5 3.5 11 13m0 0 1.8 1.8M11 13 9.2 11.2M20.5 3.5h-3.7L8.4 11.9l3.7 3.7 8.4-8.4V3.5Z" /><path d="M7.6 12.7 4 16.3l3.7 3.7 3.6-3.6M5.2 17.9 3 20.1" /></>,
   armour: <><path d="M12 3 5 5.4v6.1c0 4.2 2.9 7.5 7 9.5 4.1-2 7-5.3 7-9.5V5.4L12 3Z" /><path d="M12 3.4v17.4M8.4 8h7.2" /></>,
   ring: <><circle cx="12" cy="14.5" r="5.5" /><path d="m9.3 9.6 1-3.9h3.4l1 3.9M12 3v2.7" /></>,
