@@ -5,19 +5,54 @@ game.** Every fact currently on the site was compiled from public sources on
 13 September 2026 and has not been verified against *The Blood of Dawnwalker*
 itself. That is why every record carries a confidence rating and citations.
 
-## What is seeded now
+## What is in the database now
 
-| Area | State |
-| --- | --- |
-| 7 endings and their gates | Good — multiple sources agree |
-| 10 regions | Good |
-| 3 courts, activity counts (14/12/15) | Good |
-| Ally questlines (Lacra, Crake) | Names and order only |
-| 3 skill trees, 3 ultimate perks | Partial |
-| The clock: 480 segments, 8+8 per day | Good — this is the best-sourced fact we have |
-| **Per-quest segment costs** | **Missing, deliberately** |
-| Court Activities, individually | Missing — 41 to document |
-| Items beyond a couple of legendaries | Missing |
+Researched by eight parallel agents against the contract in
+`RESEARCH-CONTRACT.md`, then run through `src/seed/import.ts`, which rejects
+any record without a citable source URL.
+
+| Area | Records | State |
+| --- | --- | --- |
+| Items (weapons, armour, rings, manuals, recipes, ingredients) | 80 | Good on legendaries; common/rare tiers missing |
+| Perks | 40 | All 9 ultimates found |
+| Characters | 53 | 20 substantive, 33 name-only index entries marked low confidence |
+| Court Activities | 41 | Ambrus 14/14, Bakir 13 (one too many), Xanthe 14/15 |
+| Enemies and bosses | 16 | Of a reported 28 in the bestiary |
+| Builds | 9 | — |
+| Guides | 11 | ~600 words each, original prose |
+| Regions | 10 | 3 rich, 4 solid, 3 thin |
+| Endings | 7 | Requirements and outcomes separated |
+| **Per-quest segment costs** | **0** | **Still missing, still deliberate** |
+
+### Live conflicts a human should settle
+
+- **"The Slits" vs "The Silts"** — region lists use one spelling, every page
+  carrying real data uses the other. We kept `the-slits` and flagged it.
+- **Crake romanceable** — multiple launch guides list him as the third romance
+  alongside Anca and Lacra; our earlier record said otherwise. Research won the
+  upsert. Worth confirming.
+- **Bakir's court count** — 13 found against a reported 12. Two entries
+  (`Catalin's Tutor`, `A Mother's Plea`) are described as court activities but
+  are structurally derivative. Neither was dropped to force the number.
+- **Xanthe's 15th activity** — never named in any source found.
+- **Ultimate exclusivity** — guides split between one ultimate *per tree* and
+  one *per build*. Both readings are stated on each ultimate's page.
+
+### Research limits hit this round
+
+Every agent reported the same two ceilings, and they cap what more research can
+achieve without changes:
+
+1. **WebFetch is egress-blocked for every games-media domain** (game8,
+   fextralife, powerpyx, gamespot, gamesradar and the rest). All data came from
+   search-result summaries; no agent could open a single source page. The full
+   item and perk tables live behind that block.
+2. **The session-wide WebSearch budget (200 calls) was exhausted**, shared
+   across the eight agents. Each completed around 16 searches of the ~20
+   planned.
+
+Raising the search budget, or allowlisting the wiki domains for fetching, is
+the cheapest way to close the remaining gaps.
 
 ## Known contradictions in the public record
 

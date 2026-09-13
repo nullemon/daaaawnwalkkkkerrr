@@ -31,7 +31,8 @@ seed only creates a user when none exists, so it will not overwrite yours later.
 | `pnpm dev` | Development server |
 | `pnpm build` | Production build (prerenders every page) |
 | `pnpm start` | Serve the production build |
-| `pnpm seed` | Load/refresh seed content — idempotent, matches on slug |
+| `pnpm seed` | Load/refresh hand-written seed content — idempotent, matches on slug |
+| `pnpm import` | Ingest researched JSON from `src/seed/raw/` — validates and rejects uncited records |
 | `pnpm test` | Run the run-checker unit tests |
 | `pnpm generate:types` | Regenerate `payload-types.ts` after a schema change |
 
@@ -41,9 +42,13 @@ seed only creates a user when none exists, so it will not overwrite yours later.
 
 - **Run** — Quests, Court Activities, Endings. These drive the run checker.
 - **World** — Regions, Courts, Characters, Enemies.
-- **Character** — Skill trees, Perks, Items.
+- **Character** — Skill trees, Perks, Items, Builds.
 - **Content** — Mechanics, Guides.
-- **Admin** — Corrections queue, Media, Users, Site settings.
+- **Admin** — Corrections queue, Media, Player accounts, Users, Site settings.
+
+Fill in **Site settings → Legal & contact** before launch. The privacy, terms
+and contact pages render a loud in-page warning for every detail left unset,
+because a privacy policy has to name who is actually responsible for data.
 
 Site settings hold the site name, nav, home-page copy, and the ad/analytics
 switches, so none of that needs a code change.
@@ -56,7 +61,19 @@ wrong produces confidently wrong answers, which is worse than no answer.
 
 **"Cost confirmed" is not the same as "cost 0".** Leave it unticked unless a
 source actually publishes a segment cost. Unticked means *unknown*, and the
-checker reports totals containing it as a floor rather than a figure.
+checker reports totals containing it as a floor rather than a figure. The same
+rule governs a perk's segment cost: blank means nobody published it, and the
+field deliberately has no default — a default would turn "unknown" into a
+number the site cannot stand behind.
+
+### Two auth collections
+
+`users` are editors and own the admin panel. `players` are readers with an
+optional account that syncs their run. Payload's default write access is *any
+authenticated user*, so every content collection states its write rules
+explicitly via `isEditor` in `src/fields/shared.ts`. If you add a collection,
+give it `publicRead` or equivalent — inheriting the default would let any
+reader who signs up edit your content.
 
 ## Deploying
 

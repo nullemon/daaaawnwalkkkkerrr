@@ -288,7 +288,6 @@ export const perks = [
 ].map((perk) => ({
   ...perk,
   isUltimate: true,
-  timeCostSegments: 1,
   foundInWorld: false,
   confidence: 'medium' as const,
   sources: cite('game8Perks'),

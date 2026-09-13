@@ -18,6 +18,7 @@ const SECTIONS: { collection: CollectionSlug; path: string; priority: number }[]
   { collection: 'guides', path: 'guides', priority: 0.7 },
   { collection: 'builds', path: 'builds', priority: 0.8 },
   { collection: 'enemies', path: 'enemies', priority: 0.6 },
+  { collection: 'perks', path: 'perks', priority: 0.7 },
 ]
 
 const STATIC_PATHS: { path: string; priority: number }[] = [
@@ -26,6 +27,8 @@ const STATIC_PATHS: { path: string; priority: number }[] = [
   { path: 'tools/build-planner', priority: 0.9 },
   { path: 'builds', priority: 0.8 },
   { path: 'enemies', priority: 0.6 },
+  { path: 'perks', priority: 0.7 },
+  { path: 'court-activities', priority: 0.8 },
   { path: 'quests', priority: 0.9 },
   { path: 'endings', priority: 0.9 },
   { path: 'court', priority: 0.8 },

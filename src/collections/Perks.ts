@@ -23,8 +23,10 @@ export const Perks: CollectionConfig = {
     {
       name: 'timeCostSegments',
       type: 'number',
-      defaultValue: 1,
-      admin: { description: 'Segments spent learning it. Usually 1; some are 0, some 2.' },
+      admin: {
+        description:
+          'Segments spent learning this specific perk. LEAVE BLANK unless a source states it — blank renders as "not confirmed". Reporting says most skills cost about 1, but that general claim is not evidence for any individual perk.',
+      },
     },
     {
       name: 'foundInWorld',

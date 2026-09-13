@@ -158,7 +158,9 @@ export function BuildPlanner({
               </div>
               <div className="fact">
                 <dt>Segments</dt>
-                <dd className="mono">{unknownCount > 0 ? `${knownCost}+` : knownCost}</dd>
+                <dd className="mono">
+                  {unknownCount === chosen.length ? '—' : unknownCount > 0 ? `${knownCost}+` : knownCost}
+                </dd>
               </div>
               <div className="fact">
                 <dt>Ultimates</dt>
@@ -178,10 +180,16 @@ export function BuildPlanner({
               ))}
             </ul>
 
-            {unknownCount > 0 ? (
+            {unknownCount === chosen.length ? (
               <p className="note">
-                {unknownCount} of these have no published segment cost, so the total above is a
-                floor. Learning perks competes with quests for the same 480 segments.
+                No source publishes a segment cost for any of these, so we cannot total them.
+                Reporting puts most skills at about one segment each, which would make this roughly{' '}
+                {chosen.length} — treat that as a rule of thumb, not a figure.
+              </p>
+            ) : unknownCount > 0 ? (
+              <p className="note">
+                {knownCost} segments confirmed, with {unknownCount} perk
+                {unknownCount === 1 ? '' : 's'} whose cost nobody publishes. The total is a floor.
               </p>
             ) : (
               <p className="note">
