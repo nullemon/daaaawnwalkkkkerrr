@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { indexQuests, type QuestNode } from './reachability'
-import { unlockPlan } from './unlock'
+import { chainPlan, unlockPlan } from './unlock'
 
 const quest = (id: string, over: Partial<QuestNode> = {}): QuestNode => ({
   id,
@@ -79,5 +79,27 @@ describe('the unlock path', () => {
 
   it('returns nothing for a quest that is not in the graph', () => {
     expect(unlockPlan('nope', GRAPH, [])).toBeNull()
+  })
+})
+
+describe('an ending chain, which has many roots and no single target', () => {
+  it('walks every root into one ordered path', () => {
+    const plan = chainPlan(['c', 'e'], GRAPH, [])!
+    expect(plan.steps.map((s) => s.quest.id)).toEqual(['a', 'b', 'c', 'e'])
+    expect(plan.target).toBeNull()
+  })
+
+  it('never lists a shared prerequisite twice', () => {
+    const ids = chainPlan(['b', 'e'], GRAPH, [])!.steps.map((s) => s.quest.id)
+    expect(ids.filter((id) => id === 'a')).toHaveLength(1)
+  })
+
+  it('counts as achieved only when every quest in it is done', () => {
+    expect(chainPlan(['c'], GRAPH, ['a', 'b'])!.achieved).toBe(false)
+    expect(chainPlan(['c'], GRAPH, ['a', 'b', 'c'])!.achieved).toBe(true)
+  })
+
+  it('still reports a lock-out across the whole set of roots', () => {
+    expect(chainPlan(['c', 'e'], GRAPH, ['d'])!.lockedBy?.id).toBe('d')
   })
 })

@@ -81,7 +81,7 @@ export default async function QuestPage({ params }: Props) {
 
         <RichText data={quest.body} />
 
-        <UnlockPath questId={String(quest.id)} quests={graph.quests} />
+        <UnlockPath roots={[String(quest.id)]} questId={String(quest.id)} quests={graph.quests} />
 
         {unlocks.length > 0 ? (
           <section className="section">

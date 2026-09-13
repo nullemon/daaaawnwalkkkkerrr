@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { PageHeader } from '@/components/PageHeader'
 import { sectionArt } from '@/lib/art'
 import { Badge } from '@/components/Badges'
+import { DataTable, type Row } from '@/components/DataTable'
 import { getAll } from '@/lib/payload'
 import type { Perk, SkillTree } from '@/payload-types'
 
@@ -15,6 +16,21 @@ export const metadata: Metadata = {
 
 export default async function PerksIndex() {
   const perks = await getAll<Perk>('perks', { depth: 1, sort: 'title' })
+
+  const rows: Row[] = perks.map((perk) => {
+    const tree = typeof perk.tree === 'object' ? (perk.tree as SkillTree) : null
+    return {
+      id: perk.id,
+      icon: perk.isUltimate ? 'star' : 'spark',
+      title: perk.title,
+      titleHref: `/perks/${perk.slug}`,
+      tree: tree?.title ?? '',
+      treeHref: tree ? `/skills/${tree.slug}` : '',
+      kind: perk.isUltimate ? 'Ultimate' : 'Standard',
+      effect: perk.effect ?? '',
+      segments: typeof perk.timeCostSegments === 'number' ? String(perk.timeCostSegments) : '',
+    }
+  })
   const ultimates = perks.filter((perk) => perk.isUltimate)
 
   return (
@@ -28,36 +44,21 @@ export default async function PerksIndex() {
         lede={`${perks.length} perks catalogued, ${ultimates.length} of them ultimates. You may take one ultimate per tree, so picking any of the nine closes two others.`}
       />
       <div className="page body-main">
-        <div className="tablewrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Perk</th>
-                <th>Tree</th>
-                <th>Effect</th>
-                <th className="num">Segments</th>
-              </tr>
-            </thead>
-            <tbody>
-              {perks.map((perk) => {
-                const tree = typeof perk.tree === 'object' ? (perk.tree as SkillTree) : null
-                return (
-                  <tr key={perk.id}>
-                    <td>
-                      {perk.isUltimate ? <span title="Ultimate">★ </span> : null}
-                      <Link href={`/perks/${perk.slug}`}>{perk.title}</Link>
-                    </td>
-                    <td>{tree ? <Link href={`/skills/${tree.slug}`}>{tree.title}</Link> : '—'}</td>
-                    <td>{perk.effect ?? '—'}</td>
-                    <td className="num">
-                      {typeof perk.timeCostSegments === 'number' ? perk.timeCostSegments : 'unknown'}
-                    </td>
-                  </tr>
-                )
-              })}
-            </tbody>
-          </table>
-        </div>
+        <DataTable
+          rows={rows}
+          noun="perks"
+          searchPlaceholder="Search perks by name, tree or effect…"
+          facets={[
+            { key: 'tree', label: 'Tree' },
+            { key: 'kind', label: 'Kind' },
+          ]}
+          columns={[
+            { key: 'title', label: 'Perk', type: 'name' },
+            { key: 'tree', label: 'Tree', type: 'link' },
+            { key: 'effect', label: 'Effect', sortable: false },
+            { key: 'segments', label: 'Segments', type: 'num' },
+          ]}
+        />
         <div className="callout">
           <h3>Plan a full build</h3>
           <p>

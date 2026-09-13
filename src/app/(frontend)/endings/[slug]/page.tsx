@@ -11,6 +11,7 @@ import { Spoiler } from '@/components/Spoiler'
 import { EntityImage } from '@/components/EntityImage'
 import { getAll, getBySlug, rel } from '@/lib/payload'
 import { getRunGraph } from '@/lib/runData'
+import { UnlockPath } from '@/components/UnlockPath'
 import { checkEnding, indexQuests } from '@/lib/reachability'
 import { clockAt, formatSegments } from '@/lib/segments'
 import type { Character, Ending } from '@/payload-types'
@@ -130,27 +131,13 @@ export default async function EndingPage({ params }: Props) {
           </p>
         ) : null}
 
-        {chain.length > 0 ? (
-          <section className="section">
-            <div className="section-head">
-              <h2>The chain, in order</h2>
-              <span className="eyebrow">{chain.length} quests</span>
-            </div>
-            <ol className="chain">
-              {chain.map((quest, position) => (
-                <li key={quest.id}>
-                  <span className="step">{String(position + 1).padStart(2, '0')}</span>
-                  <span>
-                    <Link href={`/quests/${quest.slug}`}>{quest.title}</Link>
-                    <span className="sub">
-                      {quest.phase === 'either' ? 'Day or night' : `${quest.phase} only`} ·{' '}
-                      {quest.costKnown ? `${quest.timeMax} segments` : 'cost not confirmed'}
-                    </span>
-                  </span>
-                </li>
-              ))}
-            </ol>
-          </section>
+        {node && node.requiredQuests.length > 0 ? (
+          <UnlockPath
+            roots={node.requiredQuests}
+            quests={quests}
+            heading="How to reach this ending"
+            emptyNote="No source records a required questline for this ending yet."
+          />
         ) : null}
 
         <RichText data={ending.body} />

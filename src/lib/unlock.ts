@@ -23,7 +23,8 @@ export interface UnlockStep {
 export interface UnlockPlan {
   /** The chain in dependency order, the target itself last. */
   steps: UnlockStep[]
-  target: QuestNode
+  /** The quest the page is about, when there is one. An ending has none. */
+  target: QuestNode | null
   doneCount: number
   /** The first step not yet ticked — what to go and do now. */
   next: QuestNode | null
@@ -38,16 +39,22 @@ export interface UnlockPlan {
   achieved: boolean
 }
 
-export function unlockPlan(
-  targetId: string,
+/**
+ * The same walk for a set of roots rather than one quest — an ending names a
+ * whole questline, so its path is the union of those chains in dependency
+ * order. `targetId` is the quest the page is about, if any; an ending has none.
+ */
+export function chainPlan(
+  rootIds: string[],
   index: QuestIndex,
   completedIds: string[],
+  targetId?: string,
 ): UnlockPlan | null {
-  const target = index.get(targetId)
-  if (!target) return null
+  const target = targetId ? (index.get(targetId) ?? null) : null
+  if (targetId && !target) return null
 
   const completed = new Set(completedIds)
-  const chain = expandRequirements([targetId], index)
+  const chain = expandRequirements(rootIds, index)
   const steps: UnlockStep[] = chain.map((quest) => ({ quest, done: completed.has(quest.id) }))
 
   // An exclusion is permanent, so a single completed quest that locks out any
@@ -85,6 +92,15 @@ export function unlockPlan(
     remainingMax,
     unknownCount,
     lockedBy,
-    achieved: completed.has(targetId),
+    achieved: targetId ? completed.has(targetId) : outstanding.length === 0 && steps.length > 0,
   }
+}
+
+/** One quest's path to being unlocked. */
+export function unlockPlan(
+  targetId: string,
+  index: QuestIndex,
+  completedIds: string[],
+): UnlockPlan | null {
+  return chainPlan([targetId], index, completedIds, targetId)
 }

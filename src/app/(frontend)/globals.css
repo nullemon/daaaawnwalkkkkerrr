@@ -433,6 +433,7 @@ th {
   position: sticky; top: 0;
 }
 tbody tr:last-child td { border-bottom: none; }
+tbody tr:nth-child(odd) { background: color-mix(in srgb, var(--sunken) 55%, transparent); }
 tbody tr:hover { background: var(--raised); }
 td.num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
 th.num { text-align: right; }
@@ -584,6 +585,70 @@ th.num { text-align: right; }
 .site-footer nav ul { flex-direction: column; gap: 6px; }
 .site-footer nav a { font-size: 13.5px; color: var(--ink-soft); }
 .wordmark-sm { font-family: var(--f-display); font-weight: 700; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); margin-bottom: 5px; }
+
+/* ---------- panels, headings and stat boxes ----------
+   The reference site's three structural signatures: content sits in a raised
+   panel, every panel heading carries a short accent bar on its left edge, and
+   numbers live in their own tiles rather than in a sentence. Borrowed because
+   they solve a real problem here — this site is mostly numbers with caveats,
+   and a caveat reads better beside a figure than inside it. */
+
+.panel {
+  background: var(--surface); border: 1px solid var(--rule);
+  border-radius: var(--r); padding: 20px;
+  display: flex; flex-direction: column; gap: 14px; min-width: 0;
+}
+@media (max-width: 600px) { .panel { padding: 14px; } }
+
+.panel-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; }
+.panel-head h2, .panel-head h3 {
+  position: relative; padding-left: 13px;
+  font-size: 15.5px; font-weight: 700; letter-spacing: -0.005em;
+}
+.panel-head h2::before, .panel-head h3::before {
+  content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+  width: 3px; height: 17px; border-radius: 2px; background: var(--accent);
+}
+.panel-head .meta { margin-left: auto; font-family: var(--f-label); font-size: 12.5px; color: var(--muted); }
+.panel-note { font-size: 13px; color: var(--muted); }
+
+.statrow { display: grid; grid-template-columns: repeat(auto-fit, minmax(132px, 1fr)); gap: 8px; }
+.statbox {
+  background: var(--sunken); border-radius: var(--r); padding: 12px 14px;
+  display: flex; flex-direction: column; gap: 3px; min-width: 0;
+}
+.statbox dt, .statbox .statbox-label {
+  font-family: var(--f-label); font-size: 11.5px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
+}
+.statbox dd, .statbox .statbox-value {
+  margin: 0; font-size: 21px; font-weight: 700; line-height: 1.15;
+  color: var(--ink); font-variant-numeric: tabular-nums;
+}
+.statbox .statbox-sub { font-size: 12px; color: var(--ink-soft); }
+.statbox[data-tone='good'] .statbox-value { color: var(--good); }
+.statbox[data-tone='risk'] .statbox-value { color: var(--danger); }
+.statbox[data-tone='caution'] .statbox-value { color: var(--caution); }
+
+/* A progress bar reads a run's shape faster than "day 12 of 30" does. */
+.meter { height: 6px; border-radius: 3px; background: var(--sunken); overflow: hidden; }
+.meter span { display: block; height: 100%; background: var(--accent); border-radius: 3px; }
+.meter[data-tone='good'] span { background: var(--good); }
+.meter[data-tone='risk'] span { background: var(--danger); }
+
+/* Status pills, one per reachability state. */
+.status {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 3px 9px; border-radius: 999px;
+  font-family: var(--f-label); font-size: 11.5px; font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  border: 1px solid transparent; white-space: nowrap;
+}
+.status[data-status='achieved'] { color: var(--good); background: var(--good-wash); border-color: color-mix(in srgb, var(--good) 40%, transparent); }
+.status[data-status='reachable'] { color: var(--rare); background: color-mix(in srgb, var(--rare) 14%, transparent); border-color: color-mix(in srgb, var(--rare) 40%, transparent); }
+.status[data-status='tight'] { color: var(--caution); background: var(--caution-wash); border-color: color-mix(in srgb, var(--caution) 40%, transparent); }
+.status[data-status='out-of-time'], .status[data-status='locked-out'] { color: var(--danger); background: var(--danger-wash); border-color: color-mix(in srgb, var(--danger) 40%, transparent); }
+
 
 /* ---------- unlock path ---------- */
 
@@ -903,3 +968,26 @@ th.num { text-align: right; }
   margin-right: 7px;
 }
 .wordmark-sm { display: flex; align-items: center; }
+
+/* ---------- run dashboard ---------- */
+
+.dashboard { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.statbox-of { font-size: 13px; font-weight: 500; color: var(--muted); }
+
+.nextup { display: flex; flex-direction: column; gap: 3px; }
+.nextup > a { font-size: 19px; font-weight: 700; color: var(--ink); }
+.nextup > a:hover { color: var(--accent-hot); }
+.nextup-why { font-size: 13.5px; color: var(--muted); }
+
+.endinglist { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.endinglist li { padding: 11px 0; border-bottom: 1px solid var(--rule-soft); display: flex; flex-direction: column; gap: 4px; }
+.endinglist li:last-child { border-bottom: none; }
+.endinglist-top { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.endinglist-top a { font-size: 15.5px; font-weight: 600; color: var(--ink); }
+.endinglist-top a:hover { color: var(--accent-hot); }
+.endinglist-top .status { margin-left: auto; }
+.endinglist-meta { font-size: 13px; color: var(--muted); }
+.endinglist li[data-status='out-of-time'] .endinglist-top a,
+.endinglist li[data-status='locked-out'] .endinglist-top a { color: var(--muted); }
+
+.linkish { background: none; border: none; padding: 0; font: inherit; color: var(--accent-hot); cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }

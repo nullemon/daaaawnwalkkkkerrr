@@ -5,7 +5,7 @@ import { useMemo } from 'react'
 import { useRun } from './RunProvider'
 import { Icon } from './Icon'
 import { indexQuests, type QuestNode } from '@/lib/reachability'
-import { unlockPlan } from '@/lib/unlock'
+import { chainPlan } from '@/lib/unlock'
 import { formatSegments } from '@/lib/segments'
 
 /**
@@ -17,12 +17,26 @@ import { formatSegments } from '@/lib/segments'
  * so it is as sourced as the rest of the site and it cannot drift — change the
  * graph in the admin and every unlock path on the site changes with it.
  */
-export function UnlockPath({ questId, quests }: { questId: string; quests: QuestNode[] }) {
+export function UnlockPath({
+  roots,
+  quests,
+  questId,
+  heading = 'How to unlock this',
+  emptyNote = 'Nothing has to happen first — this is open from the start of the run.',
+}: {
+  /** Where to start walking: one quest, or an ending's whole questline. */
+  roots: string[]
+  quests: QuestNode[]
+  /** Set when the page is about a quest, so it renders as the last step. */
+  questId?: string
+  heading?: string
+  emptyNote?: string
+}) {
   const { completed, hydrated, isDone, toggleQuest, segmentsLeft } = useRun()
 
   const plan = useMemo(
-    () => unlockPlan(questId, indexQuests(quests), completed),
-    [questId, quests, completed],
+    () => chainPlan(roots, indexQuests(quests), completed, questId),
+    [roots, quests, completed, questId],
   )
 
   if (!plan) return null
@@ -30,7 +44,7 @@ export function UnlockPath({ questId, quests }: { questId: string; quests: Quest
   const { steps, lockedBy, achieved, next, doneCount, remainingMin, remainingMax, unknownCount } =
     plan
   const total = steps.length
-  const soloQuest = total === 1
+  const soloQuest = total <= 1
 
   // Until the browser copy is read, showing progress would flash "0 done" at
   // somebody who has done plenty. Show the chain, hold the personal part.
@@ -40,7 +54,7 @@ export function UnlockPath({ questId, quests }: { questId: string; quests: Quest
     return (
       <section className="section unlockpath" data-state="locked">
         <div className="section-head">
-          <h2>How to unlock this</h2>
+          <h2>{heading}</h2>
         </div>
         <div className="callout" data-tone="risk">
           <h3>
@@ -82,7 +96,7 @@ export function UnlockPath({ questId, quests }: { questId: string; quests: Quest
   return (
     <section className="section unlockpath">
       <div className="section-head">
-        <h2>How to unlock this</h2>
+        <h2>{heading}</h2>
         {personal && !soloQuest ? (
           <span className="eyebrow">
             {doneCount} of {total} done
@@ -91,9 +105,7 @@ export function UnlockPath({ questId, quests }: { questId: string; quests: Quest
       </div>
 
       {soloQuest ? (
-        <p className="note">
-          Nothing has to happen first — this is open from the start of the run.
-        </p>
+        <p className="note">{emptyNote}</p>
       ) : (
         <p className="note">
           {total - 1} quest{total - 1 === 1 ? '' : 's'} stand between the start of a run and this
@@ -129,7 +141,7 @@ export function UnlockPath({ questId, quests }: { questId: string; quests: Quest
                 {done ? <Icon name="check" size={13} /> : <span>{index + 1}</span>}
               </button>
               <span className="unlockstep-body">
-                {isTarget ? (
+                {isTarget && questId ? (
                   <b>{step.quest.title}</b>
                 ) : (
                   <Link href={`/quests/${step.quest.slug}`}>{step.quest.title}</Link>

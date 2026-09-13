@@ -93,6 +93,7 @@ const fontVars = `${cinzel.variable} ${barlow.variable} ${barlowCondensed.variab
 const RAIL_ICONS: Record<string, RailItem['icon']> = {
   '/': 'home',
   '/tools/run-checker': 'hourglass',
+  '/run': 'hourglass',
   '/tools/build-planner': 'shield',
   '/quests': 'scroll',
   '/endings': 'book',
@@ -121,7 +122,7 @@ export default async function FrontendLayout({ children }: { children: React.Rea
         href: item.href as string,
         icon: RAIL_ICONS[item.href as string] ?? ('chevron' as const),
       })),
-    { label: 'Your run', href: '/account', icon: 'person' as const },
+    { label: 'Your run', href: '/run', icon: 'hourglass' as const },
   ]
 
   return (
