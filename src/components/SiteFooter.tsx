@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { Logo } from './Logo'
 
 export function SiteFooter({
   siteName,
@@ -13,7 +14,10 @@ export function SiteFooter({
     <footer className="site-footer">
       <div className="page site-footer-inner">
         <div>
-          <p className="wordmark-sm">{siteName}</p>
+          <p className="wordmark-sm">
+            <span className="glyph"><Logo size={15} /></span>
+            {siteName}
+          </p>
           {maintainer ? <p className="note">Written and maintained by {maintainer}.</p> : null}
           <p className="note">{note}</p>
         </div>

@@ -655,3 +655,13 @@ th.num { text-align: right; }
   color: var(--rule);
   border-style: dashed;
 }
+
+.wordmark .glyph,
+.wordmark-sm .glyph {
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  vertical-align: -2px;
+  margin-right: 7px;
+}
+.wordmark-sm { display: flex; align-items: center; }
