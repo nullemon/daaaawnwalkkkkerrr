@@ -15,6 +15,10 @@ npm-debug.log*
 *.db-journal
 *.db-wal
 *.db-shm
+# Media has no staticDir set, so Payload writes uploads and their generated
+# sizes to ./media at the repo root — public/media/ alone never matched a file
+# and only looked right until something was actually uploaded.
+/media/
 public/media/
 
 .DS_Store
