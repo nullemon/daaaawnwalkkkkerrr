@@ -5,6 +5,7 @@ import { PageHeader } from '@/components/PageHeader'
 import { Badge, Confidence, PhaseBadge } from '@/components/Badges'
 import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
+import { EntityImage } from '@/components/EntityImage'
 import { getAll, getBySlug, rel } from '@/lib/payload'
 import type { Enemy, Region } from '@/payload-types'
 
@@ -48,6 +49,8 @@ export default async function EnemyPage({ params }: Props) {
         }
       />
       <div className="page body-main">
+        <EntityImage media={doc.image} shape="wide" />
+
         {doc.weaknesses?.length ? (
           <div className="callout">
             <h3>Weak to</h3>

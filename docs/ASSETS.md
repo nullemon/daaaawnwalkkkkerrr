@@ -23,6 +23,25 @@ end of the run rather than silently dropped.
 
 Assets are gitignored: they are large and not ours to redistribute.
 
+## Grabbing a whole page at once
+
+`tools/grab-images.js` is a DevTools console tool. Paste it in on a page full
+of images — a press kit, a Steam store page — and it finds every image,
+including the full-size file behind a thumbnail link, and the ones set as CSS
+backgrounds.
+
+You get a grid: untick the junk, set a minimum width to hide 16px sprites,
+give each keeper a collection and a filename, and download **one zip already
+laid out as `<collection>/<slug>.<ext>`**. Unzip it into `assets/` and run
+`pnpm assets`; nothing else to do.
+
+A `manifest.json` rides along recording the source URL, page and date for
+every file, so attribution survives into the project.
+
+Zipping happens in the page, so nothing is uploaded anywhere. Some sites block
+cross-origin reads, in which case a fetch fails — those are listed in the
+manifest and in the panel, and have to be saved by hand.
+
 ## What sizes to aim for
 
 | Use | Shape | Minimum | Notes |

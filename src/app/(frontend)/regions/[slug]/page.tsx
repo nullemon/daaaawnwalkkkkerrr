@@ -5,6 +5,7 @@ import { PageHeader } from '@/components/PageHeader'
 import { Confidence } from '@/components/Badges'
 import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
+import { EntityImage } from '@/components/EntityImage'
 import { getAll, getBySlug } from '@/lib/payload'
 import type { Quest, Region } from '@/payload-types'
 
@@ -45,6 +46,8 @@ export default async function RegionPage({ params }: Props) {
         badges={<Confidence level={doc.confidence} />}
       />
       <div className="page body-main">
+        <EntityImage media={doc.image} shape="wide" />
+
         <RichText data={doc.body} />
         {quests.length > 0 ? (
           <section className="section">

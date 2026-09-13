@@ -5,6 +5,7 @@ import { PageHeader } from '@/components/PageHeader'
 import { Badge, Confidence } from '@/components/Badges'
 import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
+import { EntityImage } from '@/components/EntityImage'
 import { getAll, getBySlug, relMany } from '@/lib/payload'
 import type { Character, Quest } from '@/payload-types'
 
@@ -47,6 +48,8 @@ export default async function CharacterPage({ params }: Props) {
         }
       />
       <div className="page body-main">
+        <EntityImage media={doc.portrait} shape="portrait" />
+
         <RichText data={doc.body} />
         {questline.length > 0 ? (
           <section className="section">

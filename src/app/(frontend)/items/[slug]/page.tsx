@@ -4,6 +4,7 @@ import { PageHeader } from '@/components/PageHeader'
 import { Badge, Confidence } from '@/components/Badges'
 import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
+import { EntityImage } from '@/components/EntityImage'
 import { getAll, getBySlug } from '@/lib/payload'
 import type { Item } from '@/payload-types'
 
@@ -46,6 +47,8 @@ export default async function ItemPage({ params }: Props) {
         }
       />
       <div className="page body-main">
+        <EntityImage media={doc.image} shape="square" />
+
         {doc.howToGet ? (
           <div className="callout">
             <h3>Where to find it</h3>

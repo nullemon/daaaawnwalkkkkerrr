@@ -5,6 +5,7 @@ import { Confidence } from '@/components/Badges'
 import { Facts } from '@/components/Facts'
 import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
+import { EntityImage } from '@/components/EntityImage'
 import Link from 'next/link'
 import { getAll, getBySlug } from '@/lib/payload'
 import type { Court, CourtActivity } from '@/payload-types'
@@ -48,6 +49,8 @@ export default async function CourtPage({ params }: Props) {
         badges={<Confidence level={doc.confidence} />}
       />
       <div className="page body-main">
+        <EntityImage media={doc.image} shape="wide" />
+
         <Facts
           items={[
             { label: 'Court Activities', value: doc.activityCount ?? '—' },

@@ -8,6 +8,7 @@ import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
 import { AdSlot } from '@/components/AdSlot'
 import { Spoiler } from '@/components/Spoiler'
+import { EntityImage } from '@/components/EntityImage'
 import { getAll, getBySlug, rel } from '@/lib/payload'
 import { getRunGraph } from '@/lib/runData'
 import { checkEnding, indexQuests } from '@/lib/reachability'
@@ -67,6 +68,8 @@ export default async function EndingPage({ params }: Props) {
         }
       />
       <div className="page body-main">
+        <EntityImage media={ending.image} shape="wide" />
+
         {ending.howToGet ? (
           <div className="callout">
             <h3>What you have to do</h3>

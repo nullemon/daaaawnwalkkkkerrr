@@ -7,6 +7,7 @@ import { Facts } from '@/components/Facts'
 import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
 import { AdSlot } from '@/components/AdSlot'
+import { EntityImage } from '@/components/EntityImage'
 import { getAll, getBySlug, rel, relMany } from '@/lib/payload'
 import type { Build, Item, Perk, SkillTree } from '@/payload-types'
 
@@ -56,6 +57,8 @@ export default async function BuildPage({ params }: Props) {
         }
       />
       <div className="page body-main">
+        <EntityImage media={doc.image} shape="wide" />
+
         <Facts
           items={[
             { label: 'Plays in', value: doc.playstyle },

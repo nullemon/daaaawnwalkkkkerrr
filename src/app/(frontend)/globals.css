@@ -623,3 +623,35 @@ th.num { text-align: right; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
+
+/* ---------- record images ---------- */
+
+.entity-figure {
+  margin: 0;
+  border: 1px solid var(--rule);
+  border-radius: var(--r);
+  overflow: hidden;
+  background: var(--sunken);
+  max-width: 100%;
+}
+.entity-figure[data-shape='wide'] { max-width: 640px; }
+.entity-figure[data-shape='portrait'] { max-width: 300px; }
+.entity-figure[data-shape='square'] { max-width: 260px; }
+.entity-figure img { width: 100%; height: auto; display: block; }
+.entity-figure figcaption {
+  font-family: var(--f-label);
+  font-size: 11px;
+  color: var(--muted);
+  padding: 6px 10px;
+  border-top: 1px solid var(--rule);
+  background: var(--surface);
+}
+/* Only shown where a page explicitly asks for a placeholder. */
+.entity-figure[data-empty='true'] {
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--rule);
+  border-style: dashed;
+}

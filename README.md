@@ -110,9 +110,12 @@ legal position. Drop files into `assets/<collection>/<slug>.<ext>` and run
 Until a record has an image the site falls back to its own icon set, so a
 missing image never leaves a hole.
 
-`tools/extract.js` is a browser console tool for pulling a table off a page
-into our JSON schema, ready for `pnpm import`. See the end of `docs/DATA.md`
-for what it is and is not for.
+Two browser console tools live in `tools/`:
+
+- `grab-images.js` — find every image on a page, name them, and download one
+  zip already laid out for `pnpm assets`. Zips in the page; nothing uploaded.
+- `extract.js` — pull a table off a page into our JSON schema, ready for
+  `pnpm import`. See the end of `docs/DATA.md` for what it is and is not for.
 
 ## Honest limitations
 

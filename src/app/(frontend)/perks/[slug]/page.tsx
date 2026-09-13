@@ -6,6 +6,7 @@ import { Badge, Confidence, PhaseBadge } from '@/components/Badges'
 import { Facts } from '@/components/Facts'
 import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
+import { EntityImage } from '@/components/EntityImage'
 import { getAll, getBySlug, rel } from '@/lib/payload'
 import type { Perk, SkillTree } from '@/payload-types'
 
@@ -60,6 +61,8 @@ export default async function PerkPage({ params }: Props) {
         }
       />
       <div className="page body-main">
+        <EntityImage media={doc.image} shape="square" />
+
         {doc.effect ? (
           <div className="callout">
             <h3>What it does</h3>
