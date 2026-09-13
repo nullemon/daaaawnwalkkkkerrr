@@ -1,11 +1,20 @@
 import Link from 'next/link'
 
-export function SiteFooter({ siteName, note }: { siteName: string; note?: string | null }) {
+export function SiteFooter({
+  siteName,
+  note,
+  maintainer,
+}: {
+  siteName: string
+  note?: string | null
+  maintainer?: string | null
+}) {
   return (
     <footer className="site-footer">
       <div className="page site-footer-inner">
         <div>
           <p className="wordmark-sm">{siteName}</p>
+          {maintainer ? <p className="note">Written and maintained by {maintainer}.</p> : null}
           <p className="note">{note}</p>
         </div>
         <nav aria-label="Footer">

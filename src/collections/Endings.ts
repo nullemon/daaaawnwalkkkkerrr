@@ -60,7 +60,22 @@ export const Endings: CollectionConfig = {
       defaultValue: false,
       admin: { description: 'True for endings that close the run early, before the Brencis confrontation.' },
     },
-    { name: 'howToGet', type: 'textarea', admin: { description: 'The short answer, above the fold.' } },
+    {
+      name: 'howToGet',
+      type: 'textarea',
+      admin: {
+        description:
+          'What the player must DO. Not a spoiler — shown openly, because this is what someone mid-run came for.',
+      },
+    },
+    {
+      name: 'outcome',
+      type: 'textarea',
+      admin: {
+        description:
+          'What actually HAPPENS in this ending. This is the spoiler, and it stays covered until the reader clicks to reveal it. Keep the two separate — it is the distinction every other site fails to make.',
+      },
+    },
     confidenceField(),
     ...commonContentFields(),
   ],

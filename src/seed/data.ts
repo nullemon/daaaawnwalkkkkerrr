@@ -592,6 +592,8 @@ export const endings = [
   {
     title: 'The Patricide',
     slug: 'the-patricide',
+    outcome:
+      'Lacra stands with you against Brencis, and the confrontation closes as a family matter rather than a war. Her own reason for hunting him resolves alongside yours.',
     gate: 'ally',
     ally: 'lacra',
     requiredQuests: ['midnight-reckoning'],
@@ -601,6 +603,8 @@ export const endings = [
   {
     title: 'The Knyazmaker',
     slug: 'the-knyazmaker',
+    outcome:
+      'You march on the castle with Crake and the Manumit at your back. Brencis falls, and the question the ending leaves you with is who takes his place.',
     gate: 'ally',
     ally: 'crake',
     requiredQuests: ['fall-before-dusk'],
@@ -610,6 +614,8 @@ export const endings = [
   {
     title: 'The Folk Hero',
     slug: 'the-folk-hero',
+    outcome:
+      'You face Brencis with no ally and no bargain, and Vale Sangora remembers you for it.',
     gate: 'choice',
     requiredQuests: [],
     howToGet: 'Defeat Brencis without Lacra’s or Crake’s help.',
@@ -618,6 +624,8 @@ export const endings = [
   {
     title: 'The Turncoat',
     slug: 'the-turncoat',
+    outcome:
+      'You get your family back. The price is everyone who trusted you to do otherwise.',
     gate: 'choice',
     requiredQuests: [],
     howToGet: 'Betray your allies and strike a deal with Brencis to get your family back.',
@@ -626,6 +634,8 @@ export const endings = [
   {
     title: 'A Hero They Deserve',
     slug: 'a-hero-they-deserve',
+    outcome:
+      'You leave the vale. The thirty days end without you in them, and what happens next happens to other people.',
     gate: 'choice',
     isEarlyExit: true,
     requiredQuests: [],
@@ -635,6 +645,8 @@ export const endings = [
   {
     title: 'Together Forever',
     slug: 'together-forever',
+    outcome:
+      'You stay. Nothing is fixed and nobody is saved, but you are all in the same place when it stops mattering.',
     gate: 'choice',
     isEarlyExit: true,
     requiredQuests: [],
@@ -644,6 +656,8 @@ export const endings = [
   {
     title: 'Time Runs Out',
     slug: 'time-runs-out',
+    outcome:
+      'Day thirty passes and Brencis holds his ceremony. Your family is sacrificed. You can still reach him and still kill him — you simply do it too late for the thing you came for.',
     gate: 'clock',
     isFailure: true,
     requiredQuests: [],

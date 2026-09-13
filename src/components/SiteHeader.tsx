@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ThemeToggle } from './ThemeToggle'
+import { RunBadge } from './RunBadge'
 
 type NavItem = { label?: string | null; href?: string | null; id?: string | null }
 
@@ -19,6 +20,7 @@ export function SiteHeader({ siteName, nav }: { siteName: string; nav: NavItem[]
             ))}
           </ul>
         </nav>
+        <RunBadge />
         <ThemeToggle />
       </div>
     </header>

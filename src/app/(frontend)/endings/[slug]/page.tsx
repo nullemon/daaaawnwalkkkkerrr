@@ -7,6 +7,7 @@ import { Facts } from '@/components/Facts'
 import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
 import { AdSlot } from '@/components/AdSlot'
+import { Spoiler } from '@/components/Spoiler'
 import { getAll, getBySlug, rel } from '@/lib/payload'
 import { getRunGraph } from '@/lib/runData'
 import { checkEnding, indexQuests } from '@/lib/reachability'
@@ -68,9 +69,21 @@ export default async function EndingPage({ params }: Props) {
       <div className="page body-main">
         {ending.howToGet ? (
           <div className="callout">
-            <h3>The short answer</h3>
+            <h3>What you have to do</h3>
             <p>{ending.howToGet}</p>
           </div>
+        ) : null}
+
+        {ending.outcome ? (
+          <section className="section">
+            <div className="section-head">
+              <h2>What actually happens</h2>
+              <span className="eyebrow">Story spoiler</span>
+            </div>
+            <Spoiler label={`Ending of ${ending.title}`}>
+              <p className="lede">{ending.outcome}</p>
+            </Spoiler>
+          </section>
         ) : null}
 
         <Facts

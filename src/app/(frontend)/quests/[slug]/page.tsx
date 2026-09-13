@@ -7,6 +7,7 @@ import { Facts } from '@/components/Facts'
 import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
 import { AdSlot } from '@/components/AdSlot'
+import { QuestToggle } from '@/components/QuestToggle'
 import { getAll, getBySlug, relMany, rel } from '@/lib/payload'
 import type { Ending, Quest, Region } from '@/payload-types'
 
@@ -56,6 +57,8 @@ export default async function QuestPage({ params }: Props) {
         }
       />
       <div className="page body-main">
+        <QuestToggle questId={String(quest.id)} title={quest.title} />
+
         <Facts
           items={[
             {

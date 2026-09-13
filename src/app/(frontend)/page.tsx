@@ -1,24 +1,39 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PageHeader } from '@/components/PageHeader'
-import { EntityCard } from '@/components/EntityCard'
 import { Confidence } from '@/components/Badges'
 import { getAll, getSiteSettings } from '@/lib/payload'
 import { SEGMENTS_PER_PHASE, TOTAL_DAYS, TOTAL_SEGMENTS } from '@/lib/segments'
-import type { Ending, Mechanic, Quest, Region } from '@/payload-types'
+import type { Court, Ending, Mechanic, Quest, Region } from '@/payload-types'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/' },
 }
 
+const GATE_SHORT: Record<string, string> = {
+  ally: 'Ally chain',
+  choice: 'Finale choice',
+  clock: 'The clock',
+}
+
 export default async function Home() {
   const settings = await getSiteSettings()
-  const [endings, quests, regions, mechanics] = await Promise.all([
+  const [endings, quests, regions, mechanics, courts] = await Promise.all([
     getAll<Ending>('endings', { depth: 0 }),
     getAll<Quest>('quests', { depth: 0 }),
     getAll<Region>('regions', { depth: 0 }),
     getAll<Mechanic>('mechanics', { depth: 0, sort: 'order' }),
+    getAll<Court>('courts', { depth: 0 }),
   ])
+
+  const cheapest = [...courts].sort(
+    (a, b) => (a.activityCount ?? 99) - (b.activityCount ?? 99),
+  )[0]
+  const totalActivities = courts.reduce((sum, court) => sum + (court.activityCount ?? 0), 0)
+  const neededActivities = courts.reduce(
+    (sum, court) => sum + Math.ceil(((court.activityCount ?? 0) * (court.angerThresholdPct ?? 75)) / 100),
+    0,
+  )
 
   return (
     <>
@@ -28,105 +43,181 @@ export default async function Home() {
         lede={settings.heroSubheading}
       />
       <div className="page body-main">
-        <section className="section">
-          <div className="clock-strip">
-            <div className="strip" aria-hidden="true">
-              {Array.from({ length: TOTAL_DAYS }).map((_, index) => (
-                <div className="col" key={index}>
-                  <div className="d" />
-                  <div className="n" />
-                </div>
-              ))}
-            </div>
-            <div className="strip-ruler mono">
-              <span>Day 1</span>
-              <span>10</span>
-              <span>20</span>
-              <span>{TOTAL_DAYS}</span>
-            </div>
-            <p className="note">
-              {TOTAL_DAYS} days × {SEGMENTS_PER_PHASE * 2} segments = {TOTAL_SEGMENTS}. Eight
-              daylight, eight night. The clock only moves when you take an action marked with an
-              hourglass — walking, fast travel, looting and combat are all free.
-            </p>
-          </div>
-        </section>
-
-        <section className="section">
-          <div className="section-head">
-            <h2>Start here</h2>
-          </div>
-          <div className="grid">
-            <EntityCard
-              href="/tools/run-checker"
-              title="Run checker"
-              summary="Tell it your day and what you have finished. It works out which endings are still reachable, which are out of time, and which you have already locked out."
-            />
-            <EntityCard
-              href="/endings"
-              title={`All ${endings.length} endings`}
-              summary="Five are decided at the finale. Two are gated on questlines you finish long before you get there — those are the ones people lose without noticing."
-            />
-            <EntityCard
-              href="/quests"
-              title={`${quests.length} quests`}
-              summary="Phase, prerequisites, what each one locks out, and segment cost wherever a source actually publishes one."
-            />
-            <EntityCard
-              href="/mechanics/the-clock"
-              title="How the clock works"
-              summary="Why thirty days is a budget with prerequisites rather than a timer, and what actually costs you time."
-            />
-          </div>
-        </section>
-
-        <section className="section">
-          <div className="section-head">
-            <h2>The systems that decide your run</h2>
-            <Link href="/mechanics" className="eyebrow">
-              All mechanics
-            </Link>
-          </div>
-          <div className="grid">
-            {mechanics.slice(0, 4).map((mechanic) => (
-              <EntityCard
-                key={mechanic.id}
-                href={`/mechanics/${mechanic.slug}`}
-                title={mechanic.title}
-                summary={mechanic.summary}
-                badges={<Confidence level={mechanic.confidence} />}
-              />
+        <section className="clock-strip">
+          <div className="strip" aria-hidden="true">
+            {Array.from({ length: TOTAL_DAYS }).map((_, index) => (
+              <div className="col" key={index}>
+                <div className="d" />
+                <div className="n" />
+              </div>
             ))}
           </div>
-        </section>
-
-        <section className="section">
-          <div className="section-head">
-            <h2>Vale Sangora</h2>
-            <Link href="/regions" className="eyebrow">
-              All {regions.length} regions
-            </Link>
+          <div className="strip-ruler mono">
+            <span>Day 1</span>
+            <span>10</span>
+            <span>20</span>
+            <span>{TOTAL_DAYS}</span>
           </div>
-          <div className="grid">
-            {regions.slice(0, 6).map((region) => (
-              <EntityCard
-                key={region.id}
-                href={`/regions/${region.slug}`}
-                title={region.title}
-                summary={region.summary}
-              />
-            ))}
-          </div>
-        </section>
-
-        <div className="callout" data-tone="risk">
-          <h3>What this site does not know yet</h3>
-          <p>
-            This is a new site built without access to the game. Every fact here is compiled from
-            public sources, cited on the page it appears on, and rated for confidence. Per-quest
-            segment costs are the big gap — nobody publishes reliable ones, so we leave them blank
-            rather than invent them. <Link href="/about">More about how the data is built</Link>.
+          <p className="note">
+            {TOTAL_DAYS} days × {SEGMENTS_PER_PHASE * 2} segments = {TOTAL_SEGMENTS}. Eight daylight,
+            eight night. The clock only moves when you take an action marked with an hourglass;
+            walking, fast travel, looting and combat are all free.
           </p>
+        </section>
+
+        <div className="split">
+          <div className="stack">
+            <section className="section">
+              <div className="section-head">
+                <h2>If you are starting now</h2>
+                <span className="eyebrow">Our read</span>
+              </div>
+              <p className="note">
+                Opinions, not facts. The reasoning is shown so you can disagree with it.
+              </p>
+
+              <div className="take">
+                <span className="who">Court order</span>
+                <h3>Fight {cheapest?.title ?? 'Bakir'} first.</h3>
+                <p>
+                  The duel unlocks at roughly three quarters of a vassal&rsquo;s Court Activities,
+                  and the courts are not the same size:{' '}
+                  {courts.map((court, index) => (
+                    <span key={court.id}>
+                      {index > 0 ? ', ' : ''}
+                      {court.title} has {court.activityCount}
+                    </span>
+                  ))}
+                  . A proportional threshold on a smaller court is simply less work.{' '}
+                  {cheapest?.title} is the cheapest of the three duels to reach, and clearing one
+                  court early tells you how expensive the other two will be.
+                </p>
+              </div>
+
+              <div className="take">
+                <span className="who">Ally chains</span>
+                <h3>Commit to Crake early, or write him off.</h3>
+                <p>
+                  Crake&rsquo;s chain runs eight quests and each one only appears after the previous
+                  closes. You cannot run them in parallel and you cannot compress them. That makes
+                  it the one thing on this list that a late run genuinely cannot buy back, however
+                  many segments are left. Lacra&rsquo;s chain is shorter but nearly all of it is
+                  night-locked, so taking it commits your nights and leaves your days as the
+                  flexible half of the budget.
+                </p>
+              </div>
+
+              <div className="take">
+                <span className="who">Budget</span>
+                <h3>Do not clear every Court Activity.</h3>
+                <p>
+                  There are {totalActivities} across the three courts and you need roughly{' '}
+                  {neededActivities}. That gap is the largest single saving available to a tight
+                  run, and most walkthroughs will happily march you through all of them.
+                </p>
+              </div>
+            </section>
+
+            <section className="section">
+              <div className="section-head">
+                <h2>The seven endings</h2>
+                <Link href="/endings" className="eyebrow">
+                  Full detail
+                </Link>
+              </div>
+              <p className="note">
+                Five are decided at the finale and cannot be lost early. Two are gated on chains you
+                finish long before you get there. Those two are what the run checker is for.
+              </p>
+              <div className="tablewrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Ending</th>
+                      <th>Decided by</th>
+                      <th>Can you lose it early?</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {endings.map((ending) => (
+                      <tr key={ending.id}>
+                        <td>
+                          <Link href={`/endings/${ending.slug}`}>{ending.title}</Link>
+                        </td>
+                        <td>{GATE_SHORT[ending.gate] ?? ending.gate}</td>
+                        <td>{ending.gate === 'ally' ? 'Yes — plan ahead' : 'No'}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+
+          <aside className="rail">
+            <div className="rail-block">
+              <h2>Start here</h2>
+              <ul className="linklist">
+                <li>
+                  <Link href="/tools/run-checker">Run checker</Link>
+                  <span className="meta">tool</span>
+                </li>
+                <li>
+                  <Link href="/mechanics/the-clock">How the clock works</Link>
+                  <span className="meta">mechanic</span>
+                </li>
+                <li>
+                  <Link href="/quests">Quest database</Link>
+                  <span className="meta">{quests.length}</span>
+                </li>
+                <li>
+                  <Link href="/court">The three courts</Link>
+                  <span className="meta">{totalActivities}</span>
+                </li>
+                <li>
+                  <Link href="/regions">Vale Sangora</Link>
+                  <span className="meta">{regions.length}</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="rail-block">
+              <h2>Systems</h2>
+              <ul className="linklist">
+                {mechanics.map((mechanic) => (
+                  <li key={mechanic.id}>
+                    <Link href={`/mechanics/${mechanic.slug}`}>{mechanic.title}</Link>
+                    <span className="meta">
+                      <Confidence level={mechanic.confidence} />
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="rail-block">
+              <h2>What we do not know</h2>
+              <p className="note">
+                No reliable per-quest segment costs exist in public sources, so we publish none. The
+                checker counts what it knows and says what it does not. Published quest totals for
+                this game range from 128 to 233 depending on who is counting, and one ally chain is
+                documented under two different names.
+              </p>
+              <p className="note">
+                <Link href="/about">How the data is built</Link> ·{' '}
+                <Link href="/corrections">Report an error</Link>
+              </p>
+            </div>
+
+            {settings.maintainer || settings.lastVerified ? (
+              <div className="masthead">
+                {settings.maintainer ? <span>Maintained by {settings.maintainer}</span> : null}
+                {settings.lastVerified ? (
+                  <span>Data last checked {String(settings.lastVerified).slice(0, 10)}</span>
+                ) : null}
+              </div>
+            ) : null}
+          </aside>
         </div>
       </div>
     </>

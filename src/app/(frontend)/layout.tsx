@@ -3,6 +3,7 @@ import { Archivo, IBM_Plex_Mono, Instrument_Serif } from 'next/font/google'
 import { SiteHeader } from '@/components/SiteHeader'
 import { SiteFooter } from '@/components/SiteFooter'
 import { themeScript } from '@/components/ThemeToggle'
+import { RunProvider } from '@/components/RunProvider'
 import { getSiteSettings, siteUrl } from '@/lib/payload'
 import './globals.css'
 
@@ -59,12 +60,18 @@ export default async function FrontendLayout({ children }: { children: React.Rea
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body className={`${instrument.variable} ${archivo.variable} ${plexMono.variable}`}>
-        <a className="skip" href="#main">
-          Skip to content
-        </a>
-        <SiteHeader siteName={settings.siteName} nav={nav} />
-        <main id="main">{children}</main>
-        <SiteFooter siteName={settings.siteName} note={settings.footerNote} />
+        <RunProvider>
+          <a className="skip" href="#main">
+            Skip to content
+          </a>
+          <SiteHeader siteName={settings.siteName} nav={nav} />
+          <main id="main">{children}</main>
+          <SiteFooter
+            siteName={settings.siteName}
+            note={settings.footerNote}
+            maintainer={settings.maintainer}
+          />
+        </RunProvider>
       </body>
     </html>
   )

@@ -30,6 +30,22 @@ export const SiteSettings: GlobalConfig = {
               admin: { description: 'Default meta description for pages that do not set their own.' },
             },
             {
+              name: 'maintainer',
+              type: 'text',
+              admin: {
+                description:
+                  'Your name or handle. Shown in the footer and on the about page. Readers and search engines both treat an anonymous guide site as lower quality — put a real name here. Left blank, nothing is shown.',
+              },
+            },
+            {
+              name: 'lastVerified',
+              type: 'date',
+              admin: {
+                date: { pickerAppearance: 'dayOnly' },
+                description: 'When the data was last checked over. Shown on the home page.',
+              },
+            },
+            {
               name: 'domain',
               type: 'text',
               admin: {

@@ -540,9 +540,13 @@ export interface Ending {
    */
   isEarlyExit?: boolean | null;
   /**
-   * The short answer, above the fold.
+   * What the player must DO. Not a spoiler — shown openly, because this is what someone mid-run came for.
    */
   howToGet?: string | null;
+  /**
+   * What actually HAPPENS in this ending. This is the spoiler, and it stays covered until the reader clicks to reveal it. Keep the two separate — it is the distinction every other site fails to make.
+   */
+  outcome?: string | null;
   /**
    * Shown to readers as a badge. Be honest — it is the whole point of this site.
    */
@@ -1510,6 +1514,7 @@ export interface EndingsSelect<T extends boolean = true> {
   isFailure?: T;
   isEarlyExit?: T;
   howToGet?: T;
+  outcome?: T;
   confidence?: T;
   summary?: T;
   body?: T;
@@ -1979,6 +1984,14 @@ export interface SiteSetting {
    */
   description?: string | null;
   /**
+   * Your name or handle. Shown in the footer and on the about page. Readers and search engines both treat an anonymous guide site as lower quality — put a real name here. Left blank, nothing is shown.
+   */
+  maintainer?: string | null;
+  /**
+   * When the data was last checked over. Shown on the home page.
+   */
+  lastVerified?: string | null;
+  /**
    * Canonical origin, e.g. https://example.com. Used for sitemap and canonical URLs. Overridden by NEXT_PUBLIC_SITE_URL when set.
    */
   domain?: string | null;
@@ -2021,6 +2034,8 @@ export interface SiteSettingsSelect<T extends boolean = true> {
   siteName?: T;
   tagline?: T;
   description?: T;
+  maintainer?: T;
+  lastVerified?: T;
   domain?: T;
   primaryNav?:
     | T
