@@ -43,7 +43,7 @@
     },
     "If your budget is tight, this is not the court to open with. Start with Bakir at twelve, learn what a full court costs, and come here knowing the number."
    ],
-   "note": "The 75% threshold is reported rather than confirmed. Activity counts are ours; see docs/DATA.md for where sources disagree."
+   "note": "The 75% threshold is reported rather than confirmed. Our activity counts are 14, 12 and 15, and sources do not all agree on them."
   },
   {
    "updated": "2026-09-14",
@@ -168,7 +168,7 @@
     },
     "If you are picking a first court, this is the one. The smallest court is the cheapest duel, and clearing one early tells you what the other two will cost before you commit to them."
    ],
-   "note": "The 75% threshold is reported rather than confirmed. Activity counts are ours; see docs/DATA.md for where sources disagree."
+   "note": "The 75% threshold is reported rather than confirmed. Our activity counts are 14, 12 and 15, and sources do not all agree on them."
   },
   {
    "title": "The Blood of Dawnwalker Beginner's Guide: What to Understand Before Day One",
@@ -275,7 +275,7 @@
     },
     "Perks are bought with skill points, and skill points come from XP, and XP comes from quests, which cost segments. Gear found in the world costs only the trip — and the trip is free."
    ],
-   "note": "The Kobold Nest’s region is disputed between sources; see docs/DATA.md."
+   "note": "Sources disagree about where the Kobold Nest sits: one places it inside Rockfalls, another below it, and a third only says \"near\". We give no region rather than pick one."
   },
   {
    "title": "Which Ultimate Perks Should You Take in The Blood of Dawnwalker?",
@@ -546,7 +546,7 @@
     },
     "You will see him called Marat in some material, including Bandai Namco’s own. The prevailing reading is that Marat is his birth name and Crake is what the rebellion calls him, but no source we found explains the change, so we record both rather than picking one."
    ],
-   "note": "Whether romancing one locks the others is reported rather than confirmed. Crake’s romanceability is recorded against an earlier source that said otherwise — see docs/DATA.md.",
+   "note": "Whether romancing one locks the others is reported rather than confirmed. Crake’s romanceability is recorded against an earlier source that said otherwise, and is worth confirming in-game.",
    "authorSlug": "tobias-renn",
    "updated": "2026-09-14"
   },
@@ -2007,7 +2007,7 @@
     },
     "In principle nothing forbids it. In practice they compete for the same 480 segments, and a run that tries to finish both usually finishes neither. Pick one, and take the other on a second playthrough where it will be a genuinely different run."
    ],
-   "note": "Lacra’s chain is recorded as six quests; some sources list five and omit The Night of Horrors. See docs/DATA.md."
+   "note": "Lacra’s chain is recorded as six quests; some sources list five and omit The Night of Horrors, which we believe is an error on their part."
   },
   {
    "updated": "2026-09-14",
@@ -2934,7 +2934,7 @@
     "There are forty-one activities across the three courts and you need roughly thirty-one. That gap — ten activities you never have to do — is the single largest saving available to a tight run, and most walkthroughs will happily march you through all forty-one without mentioning it.",
     "If your budget is tight, stop at the threshold. The duel is what you came for; the remainder is content you are paying for twice."
    ],
-   "note": "The 75% threshold is reported rather than confirmed, and is stored as approximate. Activity counts are ours; Bakir’s is recorded as 12 against one source reporting 13 — see docs/DATA.md.",
+   "note": "The 75% threshold is reported rather than confirmed, and is stored as approximate. Our activity counts are 14, 12 and 15; one source reports 13 for Bakir rather than 12, and we have kept our own figure while noting the disagreement.",
    "authorSlug": "tobias-renn",
    "updated": "2026-09-14"
   },
@@ -3144,7 +3144,7 @@
     },
     "If your budget is tight, this is not the court to open with. Start with Bakir at twelve, learn what a full court costs, and come here knowing the number."
    ],
-   "note": "The 75% threshold is reported rather than confirmed. Activity counts are ours; see docs/DATA.md for where sources disagree."
+   "note": "The 75% threshold is reported rather than confirmed. Our activity counts are 14, 12 and 15, and sources do not all agree on them."
   }
  ]
 }
