@@ -38,6 +38,34 @@ export const Items: CollectionConfig = {
       ],
     },
     { name: 'region', type: 'relationship', relationTo: 'regions' },
+    {
+      /*
+        Why an item has no region, so the index can say something true instead
+        of a dash. Most items genuinely have no single region: a herb that grows
+        "across the map" is not missing a location, and a quest reward handed to
+        you at the end of a chain never had one. Leaving those blank made the
+        page read as unfinished research when the research was in fact complete.
+
+        Set this from what the sourced `howToGet` prose already says. It
+        classifies our own text; it never asserts anything a source did not.
+        Where a fixed world location exists but nobody has published which
+        region holds it, the honest value is `world` with `region` left unset.
+      */
+      name: 'acquisition',
+      type: 'select',
+      admin: {
+        description:
+          'How it is obtained. Explains an empty region rather than leaving the index blank.',
+      },
+      options: [
+        { label: 'Fixed world location', value: 'world' },
+        { label: 'Quest reward', value: 'quest-reward' },
+        { label: 'Bought from a merchant', value: 'merchant' },
+        { label: 'Enemy or boss drop', value: 'drop' },
+        { label: 'Gathered across the map', value: 'gathered' },
+        { label: 'Crafted', value: 'crafted' },
+      ],
+    },
     { name: 'howToGet', type: 'textarea', admin: { description: 'Where it is and what it takes to reach it.' } },
     {
       name: 'stats',

@@ -186,6 +186,7 @@ async function run(): Promise<void> {
       category: record.category ?? 'quest',
       rarity: record.rarity,
       region: regions.get(String(record.regionSlug)),
+      acquisition: record.acquisition,
       howToGet: record.howToGet,
       stats: Array.isArray(record.stats) ? record.stats : undefined,
     })

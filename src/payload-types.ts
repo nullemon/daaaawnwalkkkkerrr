@@ -796,6 +796,10 @@ export interface Item {
   rarity?: ('legendary' | 'rare' | 'common') | null;
   region?: (number | null) | Region;
   /**
+   * How it is obtained. Explains an empty region rather than leaving the index blank.
+   */
+  acquisition?: ('world' | 'quest-reward' | 'merchant' | 'drop' | 'gathered' | 'crafted') | null;
+  /**
    * Where it is and what it takes to reach it.
    */
   howToGet?: string | null;
@@ -1951,6 +1955,7 @@ export interface ItemsSelect<T extends boolean = true> {
   category?: T;
   rarity?: T;
   region?: T;
+  acquisition?: T;
   howToGet?: T;
   stats?:
     | T

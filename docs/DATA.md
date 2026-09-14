@@ -39,6 +39,17 @@ any record without a citable source URL.
   (`Catalin's Tutor`, `A Mother's Plea`) are described as court activities but
   are structurally derivative. Neither was dropped to force the number.
 - **Xanthe's 15th activity** — never named in any source found.
+- **Where the Kobold Nest is** — Fextralife places Isbrand's Greaves at "the
+  Kobolds's Nest central Rockfalls", while allthings.how puts the nest "in the
+  southwestern part of Vale Sangora, below Rockfalls" and KeenGamer hedges with
+  "near Rockfalls". Inside the region and below it are different claims, so
+  `isbrands-greaves` carries no region rather than a coin flip. The nearest
+  fast-travel point is agreed: Gravel Lea Shrine.
+- **Coat of Darkened Scales has two locations** — the primary is a chest in a
+  house during Sanzhana's *Tiny Dancer*, whose region nobody states; a second
+  copy sits behind the Rockfalls *Split Rock* treasure map. Storing one region
+  would flatten a two-location fact, so the field is empty and `howToGet`
+  carries both.
 - **Ultimate exclusivity** — guides split between one ultimate *per tree* and
   one *per build*. Both readings are stated on each ultimate's page.
 

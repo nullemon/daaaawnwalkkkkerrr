@@ -14,11 +14,30 @@ export const metadata: Metadata = {
   alternates: { canonical: '/items' },
 }
 
+/**
+ * What an empty region means, in the item's own terms.
+ *
+ * Most items have no single region and never will: a herb that grows across
+ * the map is not missing a location, and a reward handed over at the end of a
+ * questline never had one. A column of dashes said "we have not done the
+ * research" about items whose research is finished, so where the region is
+ * genuinely not a fact, the row says which kind of thing it is instead.
+ */
+const ACQUISITION_LABEL: Record<string, string> = {
+  world: 'Fixed location',
+  'quest-reward': 'Quest reward',
+  merchant: 'Merchant',
+  drop: 'Enemy drop',
+  gathered: 'Across the map',
+  crafted: 'Crafted',
+}
+
 export default async function ItemsIndex() {
   const items = await getAll<Item>('items', { depth: 1 })
 
   const rows: Row[] = items.map((item) => {
     const region = typeof item.region === 'object' ? (item.region as Region) : null
+    const acquisition = item.acquisition ? ACQUISITION_LABEL[item.acquisition] : undefined
     return {
       id: item.id,
       icon: ICON_FOR_CATEGORY[item.category] ?? 'key',
@@ -26,8 +45,14 @@ export default async function ItemsIndex() {
       titleHref: `/items/${item.slug}`,
       category: item.category,
       rarity: item.rarity ?? '',
+      // A named region when one is sourced; otherwise how the thing is got.
+      // Only an item with neither falls through to the table's own dash.
+      where: region?.title ?? acquisition ?? '',
+      whereHref: region ? `/regions/${region.slug}` : '',
+      // Faceted separately so "show me everything in Rockfalls" still works
+      // without the acquisition kinds cluttering the region list.
       region: region?.title ?? '',
-      regionHref: region ? `/regions/${region.slug}` : '',
+      acquisition: acquisition ?? '',
     }
   })
   return (
@@ -44,19 +69,32 @@ export default async function ItemsIndex() {
         <DataTable
           rows={rows}
           noun="items"
-          searchPlaceholder="Search items by name, type or region…"
+          searchPlaceholder={`Search ${items.length} items by name, type or where to get it…`}
           facets={[
             { key: 'category', label: 'Type' },
             { key: 'rarity', label: 'Rarity' },
             { key: 'region', label: 'Region' },
+            { key: 'acquisition', label: 'How to get' },
           ]}
           columns={[
             { key: 'title', label: 'Item', type: 'name' },
             { key: 'category', label: 'Type' },
             { key: 'rarity', label: 'Rarity', type: 'rarity' },
-            { key: 'region', label: 'Region', type: 'link' },
+            { key: 'where', label: 'Where', type: 'link' },
           ]}
         />
+        <div className="callout">
+          <h3>Why so few items name a region</h3>
+          <p>
+            Guides describe where a thing is by quest and landmark — &ldquo;the Kobold Nest&rdquo;,
+            &ldquo;Bakir&rsquo;s treasury&rdquo; — and almost never say which of the ten regions
+            holds it. Where a source does say, the region is linked. Where it does not, the column
+            says how the item is obtained instead, because most of these have no single region at
+            all: a herb that grows across the map and a reward handed over at the end of a
+            questline are not missing data. <Link href="/regions">Browse by region</Link> for the
+            ones that are pinned down.
+          </p>
+        </div>
       </div>
     </>
   )
