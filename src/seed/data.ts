@@ -721,6 +721,11 @@ export const guides = [
     title: 'Can you still reach every ending from where you are?',
     slug: 'can-you-still-reach-every-ending',
     targetQuery: 'blood of dawnwalker can I still get knyazmaker ending day 17',
+    seo: {
+      title: 'Can You Still Reach Every Ending?',
+      description:
+        'Two of the seven endings are decided long before the finale. How to tell, mid-run, whether Knyazmaker and Patricide are still on the table.',
+    },
     summary:
       'Two of the seven endings are decided by work you do long before the finale. Here is how to tell, mid-run, whether they are still on the table.',
     relatedEndings: ['the-patricide', 'the-knyazmaker'],

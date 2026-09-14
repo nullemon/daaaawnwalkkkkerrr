@@ -171,6 +171,10 @@ async function run(): Promise<void> {
     body: bodyOf(record),
     sources: cleanSources(record.sources),
     confidence: confidenceOf(record),
+    // Researched records may carry their own <title> and meta description.
+    // This was silently dropped before, so every seo field written in
+    // src/seed/raw/ was thrown away and every page fell back to deriving one.
+    seo: record.seo ?? undefined,
   })
 
   const counts: Record<string, number> = {}

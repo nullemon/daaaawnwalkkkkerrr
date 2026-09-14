@@ -1,359 +1,1222 @@
 {
-  "collection": "guides",
-  "records": [
+ "collection": "guides",
+ "records": [
+  {
+   "title": "Are Court Activities Worth Doing in The Blood of Dawnwalker?",
+   "slug": "are-court-activities-worth-it",
+   "targetQuery": "blood of dawnwalker court activities worth it",
+   "seo": {
+    "title": "Are Court Activities Worth Doing?",
+    "description": "There are 41 Court Activities and you need about 31. The ten you can skip are the biggest saving in the game — here is how to decide which."
+   },
+   "summary": "Court Activities are the real main quest after the prologue. You need roughly three quarters of each court, which means about ten of the forty-one are optional — and that gap is the largest saving a tight run has.",
+   "confidence": "medium",
+   "sources": [
     {
-      "title": "The Blood of Dawnwalker Beginner's Guide: What to Understand Before Day One",
-      "slug": "beginners-guide",
-      "targetQuery": "blood of dawnwalker beginner tips",
-      "summary": "The mechanics that decide whether your thirty days go well, explained in the order a new player actually needs them.",
-      "bodyParagraphs": [
-        "Most action RPGs teach you their systems through failure, and you get to try again. This one gives you thirty days and thirty nights before Brencis' coronation, and the failures are permanent. That single design choice reorganises every piece of beginner advice worth giving, so we have ordered this guide by what costs you most if you learn it late.",
-        { "h": "Time is spent by your actions, not by a clock" },
-        "Nothing ticks while you stand still. The clock advances only when you commit to something the game considers meaningful, and it tells you in advance: an hourglass icon appears with a number next to it, and that number is the price in time segments. Exploring, travelling, scouting, trading, talking to ambient NPCs, fighting things that wander into you and healing with blood are all free. That means you can walk the entire map, uncover every opportunity available to you, and pay nothing until you decide which of them to actually do.",
-        "Our strongest advice for a first playthrough follows directly from that: scout before you commit. The temptation is to accept the first quest you find because it is in front of you. The better habit is to spend an hour of real time gathering options and then choose, because the hourglass numbers are how the game asks you what you value.",
-        { "h": "Stamina is the stat that quietly runs everything" },
-        "Attacking, dodging, sprinting and holding the omniblock guard all draw from the same stamina pool. Beginner guides are consistent on this point, and we agree with them: raise stamina before you go heavy on damage. A character who runs dry mid-exchange is not a character with low damage, it is a character who cannot act at all for two seconds while something with a sword stands over him.",
-        { "h": "Coen is two characters, so carry two loadouts" },
-        "By day he is human, with access to Swordmastery and Witchcraft. By night he is a vampire, with Swordmastery and Vampirism. The two halves do not even want to be played the same way, because vampire combat is built around mobility and creating openings with well timed dodges rather than holding a guard. Use the Equipment Preview option on the right of the character screen to save separate loadouts, so that your human passives are worn while the sun is up and your vampire passives swap in after dark. New players routinely go a week without noticing this exists.",
-        { "h": "Feeding is your healing, so loot every corpse" },
-        "The hardest part of the night half is staying alive, because healing as a vampire depends on blood. Human and animal corpses have a random chance to drop blood consumables, so the correct reflex is to loot everything you kill and everything you find already dead. Animals and ordinary enemies are described as a consequence-free source, which means the moral hand-wringing the game invites you into is genuinely optional at this level.",
-        { "h": "Spend your first points in Swordmastery" },
-        "Of the three trees, only Swordmastery works in both forms. Witchcraft is sealed at night because the runes powering Coen's hexes heal over when he turns, and Vampirism is unavailable by day and gated behind Corruption besides. So the early perks that improve you most are the Swordmastery ones that apply regardless of form, with Sustained Focus, Perfect Block, Perfect Riposte and Endless Effort named most often. Sustained Focus deserves particular attention because it raises your total Activation Charges, and every active ability in every tree is paid for out of that pool.",
-        { "h": "Be greedy in conversation" },
-        "Skippable white dialogue options sometimes open yellow choice options that are otherwise unreachable, which means the plain-looking questions are occasionally the only route to the interesting answers. Dialogue does not cost segments. Exhaust it.",
-        { "h": "The habit that matters most" },
-        "Save often, in different slots. This is normally filler advice, but here the game gives you a large bank of manual save slots and a thirty-day structure that maps neatly onto them. Saving in a fresh slot at the start of each in-game day effectively builds yourself a chapter select, and it is the difference between a missed opportunity being a minor regret and being a lost playthrough."
-      ],
-      "confidence": "high",
-      "sources": [
-        { "title": "The Blood of Dawnwalker Beginner Tips: 12 Things to Know - Mobalytics", "url": "https://mobalytics.gg/gamebase/guides/the-blood-of-dawnwalker-beginner-tips" },
-        { "title": "15 Things You Need To Know Before You Play The Blood Of Dawnwalker - GameSpot", "url": "https://www.gamespot.com/articles/15-things-you-need-to-know-before-you-play-the-blood-of-dawnwalker/" },
-        { "title": "20 quick tips to survive Vale Sangora - PC Gamer", "url": "https://www.pcgamer.com/games/rpg/blood-of-dawnwalker-tips/" },
-        { "title": "The Blood of Dawnwalker Beginner Tips: 8 Things to Know Before You Start - Timesaver", "url": "https://timesaver.gg/blog/blood-of-dawnwalker-beginner-tips" },
-        { "title": "The Blood of Dawnwalker time system and limit explained - GamesRadar+", "url": "https://www.gamesradar.com/games/action-rpg/blood-of-dawnwalker-time-day-night/" }
-      ]
+     "title": "Bakir Boss Guide: Court Quest Locations | Game8",
+     "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618603"
     },
     {
-      "title": "Which Difficulty Should You Play The Blood of Dawnwalker On?",
-      "slug": "which-difficulty-to-choose",
-      "targetQuery": "blood of dawnwalker best difficulty setting",
-      "summary": "All four presets explained, what actually changes between them, and an honest recommendation for each kind of player.",
-      "bodyParagraphs": [
-        "The Blood of Dawnwalker ships with four difficulty presets plus a custom option, and unusually for a game with a hard time limit, the choice is not locked in. You can change it at any point from the in-game settings menu, which changes how much this decision should worry you.",
-        { "h": "The four presets" },
-        { "ul": [
-          "Story, the easiest setting. Enemies are weaker and slower, and Coen is given more stamina.",
-          "Fair, the standard experience, with Coen and enemy statistics left at their default values.",
-          "Challenging, described as raising the pressure without removing the directional combat UI.",
-          "Duelist, aimed at players who want to read enemy animations rather than rely on directional UI prompts."
-        ] },
-        { "h": "What the directional UI actually is" },
-        "This is the part that makes the difficulty question different here than in most RPGs. Combat is directional: you aim attacks in one of four directions and enemies telegraph their swings the same way, with an on-screen indicator flagging which direction is coming. Matching your block to that direction at the moment of impact gives you a perfect block, which costs no stamina and can leave the attacker staggered. The presets do not only scale numbers, they scale how much of that information the interface hands you.",
-        { "h": "Our recommendations" },
-        "Play Fair on a first playthrough. It keeps the numbers honest while leaving the directional prompts in place, which gives you room to learn a genuinely unfamiliar combat system without the game also punishing you for learning it. Nearly every outlet that offers a recommendation lands here, and so do we.",
-        "Play Story if your interest is the thirty-day structure. This is not a lesser way to play the game. The most distinctive thing about The Blood of Dawnwalker is not its combat, it is the pressure of choosing which quests are worth segments, and that pressure is unchanged on Story. If combat is a toll you pay between decisions rather than the reason you are here, lowering the toll is the right call.",
-        "Move to Challenging once Fair stops threatening you, which for most players will happen somewhere in the second week once the perk tree starts compounding. The step up is real but it does not change the language of combat, so you are not relearning anything.",
-        "Save Duelist for a second run, or for players who already enjoy animation-reading in this genre. We would add one practical warning: there is a trophy called Uphill Battle that requires completing the entire game on Duelist while saving the people of Laslea. If you are a completionist, you will be doing a Duelist run anyway, which is an argument for making your first run a comfortable one rather than a miserable dress rehearsal.",
-        { "h": "Custom is underrated" },
-        "The gameplay menu lets you mix and match individual mechanics rather than take a preset wholesale. Our view is that this is the most interesting option in the list and the least discussed. The obvious use case is taking Challenging or Duelist enemy scaling while keeping the directional indicators, or the reverse, turning the indicators off at Fair numbers to practise animation reading without the damage spike. If one specific element of a preset is what is ruining your evening, change that element rather than the whole difficulty.",
-        { "h": "The thing that reduces difficulty most" },
-        "Reasoning rather than a sourced claim: on any preset, the single biggest difficulty reduction available to you is learning the perfect block, because it costs no stamina and refunds resources on top. Two hours of deliberately practising directional parries on trash enemies will do more for your survival than a preset change, and unlike a preset change it carries into the fights that actually matter."
-      ],
-      "confidence": "high",
-      "sources": [
-        { "title": "Best Difficulty Settings - Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/617705" },
-        { "title": "All difficulty settings and which one should you choose - Sportskeeda", "url": "https://www.sportskeeda.com/esports/all-the-blood-dawnwalker-difficulty-settings-and-one-choose" },
-        { "title": "Difficulty Settings Explained and Which to Pick - AllThings.how", "url": "https://allthings.how/the-blood-of-dawnwalker-difficulty-settings-explained-and-which-to-pick/" },
-        { "title": "Difficulty Settings Explained: Story, Fair, Challenging, Duelist - G2A News", "url": "https://www.g2a.com/news/features/guide/the-blood-of-dawnwalker-difficulty-settings-explained/" },
-        { "title": "All 4 Modes and Which One to Choose - Timesaver", "url": "https://timesaver.gg/blog/blood-of-dawnwalker-difficulty-settings" },
-        { "title": "The Blood of Dawnwalker Trophy Guide & Roadmap - PowerPyx", "url": "https://www.powerpyx.com/the-blood-of-dawnwalker-trophy-guide-roadmap/" }
-      ]
-    },
-    {
-      "title": "How to Perfect Block in The Blood of Dawnwalker",
-      "slug": "how-to-perfect-block",
-      "targetQuery": "blood of dawnwalker how to perfect block",
-      "summary": "Directional parries, omniblock, and the stamina economy underneath them, plus when each defensive option is actually correct.",
-      "bodyParagraphs": [
-        "Combat here is directional in both halves of the exchange. You aim your attacks in one of four directions, and enemies telegraph their swings the same way, with the incoming direction flagged on screen. Everything defensive in the game grows out of that one fact, so the skill ceiling is a lot higher than it first appears.",
-        { "h": "The directional parry" },
-        "The perfect block, sometimes called the directional parry, is the single most important technique in the game. When an enemy attack is flagged, match your block to the incoming direction at the moment of impact. Do it correctly and the attack is deflected cleanly without draining stamina at all, and correctly timed parries can leave the attacker staggered and open.",
-        "That stamina detail is what makes it more than a flourish. Blocking normally costs stamina, and stamina is also what pays for your attacks, dodges and sprints. A perfect block is therefore not just damage avoided, it is the only defensive action in the game that does not compete with your offence for resources.",
-        { "h": "Omniblock, and why it is a trap if you lean on it" },
-        "Hold the block input, which is LB on Xbox, L1 on PlayStation and left mouse button on PC, to omniblock. Omniblock and its attacking counterpart omniattack remove direction selection entirely: your guard covers every angle automatically and you no longer have to read anything. The cost is paid in stamina, which drains noticeably faster than directional play.",
-        "The recommended way to use it is as a learning tool rather than a crutch. Hold omniblock against an enemy type you have not fought before and use the safety to watch which directions their common attacks come from. Once the pattern is readable, switch to manual directional blocks, which are far cheaper. Keep omniblock in reserve for chaotic group fights and for moments where too much is happening to read a single indicator.",
-        { "h": "When you cannot block at all" },
-        "A skull marks an attack that cannot be blocked by any means. When the directional indicator turns into a red skull, stop thinking about your guard and dodge. Trying to omniblock these is the most common way newer players lose fights they were otherwise winning, because the guard reads as universal and is not.",
-        { "h": "The perks that make defence pay" },
-        { "ul": [
-          "Perfect Block, which restores extra stamina and Activation Charge on a successful perfect parry, turning defence into resource generation.",
-          "Perfect Riposte and Counterattack, which are the follow-ups. A perfect block into a riposte deals boosted damage against every enemy type.",
-          "Omniblock as a perk, to make the universal guard less punishing when you do need it.",
-          "Endless Effort and Fleet of Foot, which reward correctly timed dodges with faster charge generation, so evading is not a dead beat."
-        ] },
-        { "h": "Day and night are not the same fight" },
-        "Human Coen and vampire Coen should not be played identically. The vampire half is much more oriented around mobility and creating openings through well timed dodges than around holding a guard and winning the exchange. In practice we would describe the day rhythm as parry-and-punish and the night rhythm as evade-and-close, and players who try to run the day rhythm after dark tend to conclude the vampire form is weak when it is mostly being played wrong.",
-        { "h": "How to practise it" },
-        "Our suggestion rather than anything a guide told us: go and fight something beneath you, and deliberately refuse to omniblock or dodge for an entire encounter. Parry everything or die. Perfect blocks are a reflex, not a piece of knowledge, and the fastest route to owning that reflex is a few low-stakes fights where you are not allowed any other answer. It costs you nothing, because ordinary combat does not advance the clock."
-      ],
-      "confidence": "high",
-      "sources": [
-        { "title": "The Blood of Dawnwalker Combat Guide - Mobalytics", "url": "https://mobalytics.gg/gamebase/guides/the-blood-of-dawnwalker-combat-guide" },
-        { "title": "How to Block - Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618241" },
-        { "title": "Combat Guide: Perfect Blocks, Dodges, Stamina, Abilities - G2A News", "url": "https://www.g2a.com/news/features/guide/the-blood-of-dawnwalker-combat-guide/" },
-        { "title": "Combat Guide: Directional Attacks, Parries, and Stamina - ApolloTrail", "url": "https://apollotrail.com/blog/the-blood-of-dawnwalker-combat-guide" },
-        { "title": "Combat Guide: How to Parry, Directional Duels and Vampire Powers - Timesaver", "url": "https://timesaver.gg/blog/blood-of-dawnwalker-combat-guide" }
-      ]
-    },
-    {
-      "title": "The Blood of Dawnwalker Romance Guide: Every Option and How to Pursue Them",
-      "slug": "romance-guide",
-      "targetQuery": "blood of dawnwalker romance guide",
-      "summary": "All three romanceable characters, how each one is unlocked, and why romance is less risky here than the thirty-day clock suggests.",
-      "bodyParagraphs": [
-        "There are three romanceable characters in The Blood of Dawnwalker: Anca, Lacra and Crake. That is a small roster by modern RPG standards, and the game compensates by making each one reachable through a completely different part of its structure, which means your romance is effectively a statement about how you spent your thirty days.",
-        { "h": "Anca" },
-        "Anca is the earliest and the most straightforward. You can begin romancing her as soon as you meet her during the Withering Away quest in the prologue, which makes her the option available to a player who has not yet learned any of the game's systems. If you are anxious about wasting segments on a route that might not pay off, she is the safe choice, because the opportunity arrives before the clock has any real pressure on it.",
-        { "h": "Lacra" },
-        "Lacra is the only supernatural romance option, and she is gated behind progress rather than availability. You find her by advancing certain side quests, with her introduction commonly coming through the quest A Friend Like This, which players typically pick up from a note found on Ambrus' body in The Gilded Gauntlet. Her questline matters well beyond romance: it terminates in Midnight Reckoning, the final quest that lets you confront Brencis alongside her, which is one of the game's major endings and carries its own trophy.",
-        { "h": "Crake" },
-        "Crake leads the Manumits, and reaching him runs through the infamy system rather than through conversation. Raise your infamy, get in with his organisation, and access to Crake himself follows. Like Lacra, he is also an endgame ally rather than only a romance, with his own final quest, Rise at Dawn, opening a distinct route into the confrontation with Brencis.",
-        { "h": "The mechanics are more forgiving than you expect" },
-        "Two things make romance here less fraught than the thirty-day structure implies. First, Coen is not limited to a single partner, so an early flirtation does not close later doors. Second, the method for each is fundamentally the same: follow their questline, be decent to them in conversation, and take the romance option when it appears. There is no hidden approval meter you can quietly ruin, and there is no puzzle to solve.",
-        { "h": "How we would actually plan it" },
-        "Reasoning rather than a sourced instruction: treat Lacra and Crake as ending decisions that happen to include romance, and treat Anca as the one that does not cost you anything structural. Two of the game's seven endings are gated on ally questlines, and those questlines belong to Lacra and Crake. So if you intend to romance either of them, you are already committing a meaningful share of your remaining segments to their content, and you should decide that in the first week rather than the third.",
-        "The corollary is that romancing all three in one run is not a scheduling problem so much as an ending problem. The ally routes diverge at the end, with Lacra's Midnight Reckoning and Crake's Rise at Dawn as separate conversations that start separate finales. Completing both questlines is possible, but the ending-starting conversation is where you have to pick, and keeping those two moments distinct is the practical advice guides give.",
-        { "h": "Do not rush the finale" },
-        "One structural warning worth repeating in any romance context: entering Brencis' castle for the final confrontation rolls the epilogue immediately and locks you out of the open world. Whatever romance content you still want to see, see it before you walk through that door, because there is no coming back to tidy up afterwards."
-      ],
-      "confidence": "high",
-      "sources": [
-        { "title": "Romance Guide - Fextralife Wiki", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Romance_Guide" },
-        { "title": "The Blood of Dawnwalker romance guide - PC Gamer", "url": "https://www.pcgamer.com/games/rpg/blood-of-dawnwalker-romances/" },
-        { "title": "All romance options and how to date them - VGC", "url": "https://www.videogameschronicle.com/guide/blood-of-dawnwalker-all-romance-options-and-how-to-date-them/" },
-        { "title": "All Romance Options (Romance Guide) - Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/616531" },
-        { "title": "All Blood of Dawnwalker romance options - PCGamesN", "url": "https://www.pcgamesn.com/dawnwalker/romance" },
-        { "title": "Endings Guide - Fextralife Wiki", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Endings_Guide" }
-      ]
-    },
-    {
-      "title": "What to Do First in The Blood of Dawnwalker",
-      "slug": "what-to-do-first",
-      "targetQuery": "blood of dawnwalker what to do first",
-      "summary": "The opening hours after the prologue, in the order that buys you the most power for the fewest time segments.",
-      "bodyParagraphs": [
-        "The moment the prologue ends, the game hands you an open map, a thirty-day deadline and no instruction about which of those two facts should worry you more. The honest answer is neither, at first. The opening block of the game is the one stretch where almost everything worth doing is free, and the correct move is to bank power before you start spending segments on story.",
-        { "h": "Climb both scouting towers" },
-        "After you leave Laslea village and separate from Anca, you are in vampire form, which means you can scale structures you could not otherwise reach. Go to both scouting towers, the one in Laslea and the one out in the marshes. Between them they reveal the most northerly section of the map. Overworld travel does not cost time segments, so this is pure information at no price, and information is the resource the whole game is really about.",
-        { "h": "Clear the soldiers' camp outside Laslea" },
-        "The soldiers' camp just outside Laslea is the other early stop worth making. It hands over a basic spread of rewards including better gear, and it does so through combat, which also does not advance the clock. On a higher difficulty this is not optional so much as necessary, because Dawnwalker's opening can be genuinely brutal if you walk into story content underequipped.",
-        { "h": "Fight things, on purpose" },
-        "This is the piece of advice we would push hardest, and it follows from the time system rather than from any combat guide. Random combat is free. Perfect blocks are a reflex you have to build. The opening hours are therefore the cheapest training ground you will ever get, and the two hours you spend learning directional parries against soldiers and wolves will be repaid several times over in the fights where a reload costs you a quest window.",
-        { "h": "Loot everything, especially corpses" },
-        "Get into the habit immediately. Human and animal corpses have a random chance to drop blood consumables, and blood is how the vampire half of the character heals. Players who reach the first difficult night fight without a blood stockpile tend to conclude the night form is fragile. It is not fragile, it is unsupplied.",
-        { "h": "Spend your first perk points deliberately" },
-        "Put them in Swordmastery. It is the only tree that works in both day and night, so early points there compound twice per in-game day, while Witchcraft goes dark after sunset and Vampirism is locked behind Corruption. Sustained Focus is the standout, because it raises your total Activation Charges and every active ability you will ever own draws from that pool. Perfect Block, Perfect Riposte and Endless Effort round out the opening set. If you want one point elsewhere, Mercurial Fervour for faster daytime travel is the pick early-game guides name.",
-        { "h": "Set up two loadouts before your first night" },
-        "The Equipment Preview option on the right of the character screen lets you save separate configurations, so your human passives are active by day and your vampire passives by night. Doing this once, early, saves you from the far more common alternative, which is realising on day nine that half your gear has been doing nothing for half the game.",
-        { "h": "What not to do first" },
-        "Do not start repairing broken shrines. There are more than enough functioning shrines across the map to keep fast travel convenient, so restoring them is effort spent on a problem you do not have. More generally, be suspicious of any early activity that comes with a large hourglass number and a small reward. Court and infamy busywork in particular is reported to cost three time slots per activity for modest returns, which is a poor rate this early, before you know what you actually want.",
-        "Our summary: the first day should leave you with a bigger map, better gear, a stack of blood, four Swordmastery perks and zero segments spent. Then start the story."
-      ],
-      "confidence": "medium",
-      "sources": [
-        { "title": "What to do first in The Blood of Dawnwalker - GamesRadar+", "url": "https://www.gamesradar.com/games/action-rpg/blood-of-dawnwalker-what-to-do-first-where-to-go/" },
-        { "title": "Where To Go After the Prologue In The Blood of Dawnwalker - Game Rant", "url": "https://gamerant.com/the-blood-of-dawnwalker-what-to-do-first-quest-after-prologue/" },
-        { "title": "Things You Should Do First - Games.gg", "url": "https://games.gg/the-blood-of-dawnwalker/guides/blood-of-dawnwalker-things-you-should-do-first/" },
-        { "title": "The Blood of Dawnwalker Beginner Tips - Mobalytics", "url": "https://mobalytics.gg/gamebase/guides/the-blood-of-dawnwalker-beginner-tips" },
-        { "title": "Beginner Mistakes That Waste Your 30 Days - AllThings.how", "url": "https://allthings.how/the-blood-of-dawnwalker-beginner-mistakes-that-waste-your-30-days/" }
-      ]
-    },
-    {
-      "title": "The Blood of Dawnwalker Trophy Guide: How to Plan a Platinum Run",
-      "slug": "trophy-guide",
-      "targetQuery": "blood of dawnwalker trophy guide",
-      "summary": "The full trophy breakdown, which ones are missable, and the save discipline that turns an eighteen-missable list into a single playthrough.",
-      "bodyParagraphs": [
-        "The Blood of Dawnwalker has 47 trophies: one platinum, three gold, five silver and 38 bronze. PowerPyx rates the platinum at 5 out of 10 for difficulty and estimates 40 to 60 hours, though one player is reported to have taken it in under 30 hours by leaning heavily on save manipulation. Treat the estimate as a range rather than a target, because how long it takes you depends almost entirely on how disciplined you are with saves.",
-        { "h": "Eighteen missables that are not really missable" },
-        "Eighteen trophies are flagged as missable, which sounds alarming for a game with a hard thirty-day limit and no chapter select. The workaround is built into the game. There are 54 manual save slots, and the recommended approach is to save into a fresh slot at the start of every in-game day. Do that and you have effectively constructed your own chapter select: any trophy you learn about on day 22 can be collected by reloading the day it was available on. With that habit, nothing in the list is genuinely lost.",
-        "If you take one thing from this guide, take that. The save discipline is not an optimisation, it is the entire strategy, and it costs you nothing but the two seconds it takes to pick a different slot.",
-        { "h": "The saves that matter most" },
-        { "ul": [
-          "A save at the end of the prologue, before the open world begins.",
-          "A save at the start of each in-game day, in a new slot.",
-          "A save before and after each major boss.",
-          "A save immediately before the final quest begins, kept untouched."
-        ] },
-        { "h": "Why the last one is non-negotiable" },
-        "The game has seven endings, decided by dialogue choices, and all seven can be unlocked in a single playthrough by keeping a manual save from just before the final quest and reloading it. There are also silver trophies for defeating the final boss alongside different allies, and those cancel each other out within a single run. Placed correctly, one save before the point of divergence converts what looks like a multi-playthrough requirement into an afternoon of reloading.",
-        "The ally routes are the specific thing to watch. Lacra's finale is Midnight Reckoning, which awards The Patricide, and Crake's is Rise at Dawn. The advice worth following is to complete both ally questlines during the run so that both routes are available, but to keep the ending-starting conversations distinct rather than letting one foreclose the other.",
-        { "h": "Uphill Battle is the one real grind" },
-        "Uphill Battle requires completing the entire game on the Duelist preset while saving the people of Laslea. Duelist is the hardest of the four presets, aimed at players reading enemy animations rather than relying on the directional UI prompts. That is the trophy that sets the tone of a completionist run, and it is worth deciding about early rather than discovering it in week three.",
-        { "h": "How we would sequence it" },
-        "Reasoning rather than a sourced roadmap: we would not attempt the platinum on a blind first playthrough. Play once on Fair, explore freely, learn the map and the perk trees and the shape of the ally questlines, and take whatever endings you organically reach. Then run it properly on Duelist with full knowledge, banking a save per day, completing both ally lines, and reloading the pre-finale save to sweep the ending trophies at the end.",
-        "The alternative, which is attempting everything in one blind Duelist run, is possible and is what the sub-30-hour times imply, but it means playing the game as a checklist the first time you see it. For a game whose main idea is that you cannot do everything in thirty days, spending your first run proving you can seems like the wrong way round."
-      ],
-      "note": "Completion time estimates vary widely between sources, from around 40 to 60 hours for a platinum to a reported sub-30-hour run using save manipulation, while at least one reviewer describes spending over 80 hours with the game. Treat any single figure as indicative only.",
-      "confidence": "medium",
-      "sources": [
-        { "title": "The Blood of Dawnwalker Trophy Guide & Roadmap - PowerPyx", "url": "https://www.powerpyx.com/the-blood-of-dawnwalker-trophy-guide-roadmap/" },
-        { "title": "Trophy Guide and List of Achievements: How to Get Platinum - Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/617555" },
-        { "title": "Trophy and Achievement Guide - Fextralife Wiki", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Trophy_and_Achievement_Guide" },
-        { "title": "The Blood of Dawnwalker: Achievement/Trophy Guide - TheGamer", "url": "https://www.thegamer.com/the-blood-of-dawnwalker-achievement-trophy-unlock-guide/" },
-        { "title": "The Blood of Dawnwalker Trophies - PSNProfiles", "url": "https://psnprofiles.com/trophies/42703-the-blood-of-dawnwalker" },
-        { "title": "Endings Guide - Fextralife Wiki", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Endings_Guide" }
-      ]
-    },
-    {
-      "title": "The Biggest Mistakes to Avoid in The Blood of Dawnwalker",
-      "slug": "mistakes-to-avoid",
-      "targetQuery": "blood of dawnwalker mistakes to avoid",
-      "summary": "The errors that cost you days, permanently close content, or waste perk points you can never get back.",
-      "bodyParagraphs": [
-        "Nearly every serious mistake in this game belongs to one of three families: spending time on things that are not worth it, spending permanent resources carelessly, and triggering an ending before you meant to. Here they are in roughly the order of how much they cost you.",
-        { "h": "Walking into the final confrontation early" },
-        "This is the one that ends playthroughs. Do not enter Brencis' castle until you have finished everything else you care about. Beating him rolls the epilogue immediately and permanently locks you out of the open world. There is no post-game, no wandering back to tidy up a romance or an ally questline. If you are within sight of the finale and have loose ends, the finale waits.",
-        { "h": "Grinding court and infamy busywork" },
-        "The largest ongoing time leak is low-value court and infamy activity, reported at three time slots each for modest reward. Three slots out of the eight available in a half-day is a serious price, and the rewards do not consistently justify it. This does not mean court content is worthless, it means it should be chosen rather than hoovered up because it appeared on a map.",
-        { "h": "Clicking through the skill tree because you have points" },
-        "Acquiring a new skill is itself reported to cost a segment of time, and there is no respec in the game at launch. Both facts push in the same direction: treat the skill screen as a shop with a queue outside, not a menu to browse. Decide what the next few days require, buy that, and close it. Impulse perk purchases are how players lose half a day to nothing.",
-        { "h": "Repairing broken shrines" },
-        "There are more than enough working shrines across the map to make fast travel comfortable, so restoring the broken ones solves a problem you do not have. It looks like the kind of world-improving side activity these games usually reward. Here it mostly is not.",
-        { "h": "Assuming a region is finished" },
-        "Quests can appear in regions you have already cleared. If you are trying to see everything, the map is not a checklist you fill in once. Periodically passing back through an area you consider done is cheap, because overworld travel and fast travel do not advance the clock at all.",
-        { "h": "Skipping the boring dialogue options" },
-        "The white dialogue options that look like flavour sometimes unlock yellow choice options that cannot be reached any other way. Conversation does not cost segments. Exhausting a dialogue tree is one of the few genuinely free actions in the game, and it is occasionally the only route into the interesting material.",
-        { "h": "Treating night like day" },
-        "Human and vampire Coen want different things from a fight. The night form is built around mobility and creating openings with well timed dodges rather than holding a guard and winning exchanges. Players who bring their daytime parry rhythm into vampire combat generally decide the vampire is underpowered, when in fact they are playing a mobility character as a duelist.",
-        { "h": "Running out of blood" },
-        "Healing as a vampire depends on blood, and blood comes from feeding and from consumables that drop randomly off human and animal corpses. Looting every body you pass is a trivial habit that prevents the single most avoidable death spiral in the game. Animals and ordinary enemies are described as a consequence-free source, so there is no reason to ration your conscience here.",
-        { "h": "Not saving in fresh slots" },
-        "The game provides 54 manual save slots. Using one per in-game day gives you a working chapter select, which matters because 18 trophies are flagged missable and seven endings branch from a single late decision point. Overwriting one slot all game is the most quietly expensive habit on this list.",
-        { "h": "The meta-mistake" },
-        "Our opinion, and the thing we would tell a friend starting today: the real mistake is trying to do everything. The thirty-day limit is not an obstacle the game wants you to defeat, it is the subject of the game. Players who attempt full completion on a first run spend the whole time anxious and see less of what makes it interesting than players who pick a direction on day two and follow it honestly to the end."
-      ],
-      "note": "The specific costs cited here, three time slots for court and infamy activities and one segment per skill acquired, each come from a single outlet rather than from multiple independent sources.",
-      "confidence": "medium",
-      "sources": [
-        { "title": "Beginner Mistakes That Waste Your 30 Days - AllThings.how", "url": "https://allthings.how/the-blood-of-dawnwalker-beginner-mistakes-that-waste-your-30-days/" },
-        { "title": "8 must-know tips to avoid wasting time segments - GamingBible", "url": "https://www.gamingbible.com/news/the-blood-of-dawnwalker-must-know-tips-avoid-wasting-time-822830-20260907" },
-        { "title": "20 quick tips to survive Vale Sangora - PC Gamer", "url": "https://www.pcgamer.com/games/rpg/blood-of-dawnwalker-tips/" },
-        { "title": "The Blood of Dawnwalker Beginner Mistakes to Avoid - KoalaFun", "url": "https://www.koalafun.online/games/the-blood-of-dawnwalker/beginner-and-release/beginner-mistakes/" },
-        { "title": "The Blood of Dawnwalker Trophy Guide & Roadmap - PowerPyx", "url": "https://www.powerpyx.com/the-blood-of-dawnwalker-trophy-guide-roadmap/" }
-      ]
-    },
-    {
-      "title": "How Time Works in The Blood of Dawnwalker",
-      "slug": "how-time-works",
-      "targetQuery": "how does time work in blood of dawnwalker",
-      "summary": "The 480-segment budget explained: what the hourglass actually charges you for, what is free, and how to plan thirty days without wasting them.",
-      "bodyParagraphs": [
-        "Coen has thirty days and thirty nights before Brencis' coronation. Each day and each night is divided into eight time segments, which gives you 480 segments in total for the entire game. That number is the whole design. Everything else about how this game plays comes from the fact that your budget is finite and visible.",
-        { "h": "There is no clock" },
-        "The most important thing to understand is that the game does not run a real-time clock. Time advances in discrete chunks only when you take an action the game treats as significant. Stand in a field for an hour and it is still the same segment. The clock waits for your decisions, which means you can explore, scout, prepare and deliberate for as long as you like without cost.",
-        { "h": "The hourglass is a price tag" },
-        "When an action will consume time, the interface shows an hourglass with a number beside it. That number is how many of your 480 segments the action costs. This is one of the most player-respecting things in the game: you are never surprised by a bill. Every meaningful expenditure is quoted to you in advance, and you are free to decline.",
-        { "h": "What is free" },
-        { "ul": [
-          "Overworld travel of every kind: running, riding, jumping, swimming and general movement.",
-          "Fast travel between activated sanctuaries.",
-          "Commerce and trading with merchants.",
-          "Ambient conversation with NPCs.",
-          "Random combat that occurs while you are moving around the world.",
-          "Healing with blood."
-        ] },
-        "That list is longer and more generous than most players assume, and it has a direct strategic consequence: the exploration half of the game is effectively unlimited. You can uncover every opportunity in a region, weigh them all, and spend nothing until you commit.",
-        { "h": "Day and night are not interchangeable" },
-        "Coen is human by day, with access to Swordmastery and Witchcraft, and a vampire by night, with Swordmastery and Vampirism including movement powers such as Shadowstep. The game marks which half of the cycle a quest belongs to: a sun icon means daytime only, a moon icon means night only. Since each half-day carries its own eight segments, a day-locked quest cannot be paid for out of your night budget, and this is where most planning mistakes originate.",
-        { "h": "How to actually plan" },
-        "Reasoning rather than a rule the game states: think of your 480 segments as 240 day and 240 night, and audit them separately. A build that specialises in Vampirism is implicitly spending its night budget on combat and leaving day segments idle, and a Witchcraft build has the opposite problem. Neither is wrong, but both need a plan for the half of the cycle where they are weaker, and the cheapest answer is usually to schedule travel, trading, preparation and information gathering into your weak half, since none of those cost anything anyway.",
-        { "h": "Two costs to watch" },
-        "Reports from players and guides flag two expenditures as consistently poor value. Court and infamy busywork is reported at three time slots per activity for small rewards, which is a substantial fraction of one half-day. Acquiring a new skill is also reported to cost a segment, which is an argument for buying perks in deliberate batches rather than one at a time as points trickle in. Both figures come from single outlets rather than a consensus, so treat them as warnings rather than confirmed numbers.",
-        { "h": "The point of the limit" },
-        "It is worth saying plainly, because the temptation is to treat the clock as an enemy: you are not supposed to complete everything. The thirty days exist so that choosing one thing means losing another, and the game is more interesting when you let that happen than when you optimise around it. Our advice is to spend the first day or two spending nothing, learn what is on offer, decide what kind of run this is going to be, and then commit."
-      ],
-      "note": "The specific segment costs cited for court and infamy activities and for acquiring a skill each come from a single outlet, not from multiple independent sources.",
-      "confidence": "high",
-      "sources": [
-        { "title": "The Blood of Dawnwalker time system and limit explained - GamesRadar+", "url": "https://www.gamesradar.com/games/action-rpg/blood-of-dawnwalker-time-day-night/" },
-        { "title": "The Blood of Dawnwalker: Time System Explained - TechWiser", "url": "https://techwiser.com/the-blood-of-dawnwalker-time-system-explained/" },
-        { "title": "How the 30-Day/30-Night Clock Works - FinalBoss.io", "url": "https://finalboss.io/the-blood-of-dawnwalker-how-the-30-day-30-night-clock-works" },
-        { "title": "How Time Works in The Blood of Dawnwalker - G2A News", "url": "https://www.g2a.com/news/features/guide/how-time-works-in-the-blood-of-dawnwalker/" },
-        { "title": "The Blood of Dawnwalker Time Segments Guide - ValeGuides", "url": "https://valeguides.com/en/guides/time-segments/" },
-        { "title": "How Time Progression Works - AltChar", "url": "https://www.altchar.com/guides/the-blood-of-dawnwalker-how-time-progression-works-aqro25G3s67B" }
-      ]
-    },
-    {
-      "title": "Which Ultimate Perks Should You Take in The Blood of Dawnwalker?",
-      "slug": "best-ultimate-perks",
-      "targetQuery": "blood of dawnwalker best ultimate perks",
-      "summary": "Nine ultimate perks, three permanent choices, no respec. The picks the guides recommend and the reasoning behind each.",
-      "bodyParagraphs": [
-        "There are nine ultimate perks in The Blood of Dawnwalker, three in each skill tree, and you can unlock exactly one per tree. The choices are permanent, and the game has no respec option at launch, so these are three of the most consequential decisions in a playthrough. This guide covers the picks that guides most consistently recommend and, more usefully, why.",
-        { "h": "Swordmastery: Last Stand or Sword Sage" },
-        "Last Stand doubles all weapon damage while Coen is at 30 percent health or below. Doubling weapon damage is an enormous effect, and the case guides make for it is specific: it synergises unusually well with playing as a vampire, because feeding gives you far more deliberate control over your own health bar than a normal RPG character has. You are not hoping to end up in the danger band, you are choosing to sit in it.",
-        "Sword Sage is the alternative recommended for a Swordmastery-focused character, because it lets you chain multiple Artery Strikes. That is the safer, more consistent pick, and the one we would take on a first playthrough.",
-        "Our read on the choice: Last Stand is a high-variance pick that rewards a confident player with good defensive fundamentals, and punishes everyone else. If you are not reliably winning your perfect blocks, a perk that only turns on when you are nearly dead is a perk that mostly turns on immediately before you die.",
-        { "h": "Witchcraft: Runic Bulwark" },
-        "Runic Bulwark grants a 15 percent chance to apply a random hex to an opponent when you perfect block them. On its face 15 percent sounds unreliable. The argument for it is that by the time ultimates unlock, you should be perfect blocking more often than not, so the number of rolls per fight is high enough that it becomes a steady effect rather than a lottery.",
-        "It also stacks conceptually with the rest of a Witchcraft kit. Casting hexes costs health in this game, so anything that applies a hex for free is worth more than its raw numbers suggest, and Cycle of Ruin already extends your active hexes on blocks and perfect blocks. Three separate systems reward the same input, which is rare in these trees.",
-        { "h": "Vampirism: Renounce Death" },
-        "Renounce Death is the pick multiple guides call the safest of the nine, especially on harder difficulties. Instead of dying, once per combat you return with a short window of immortality and lifesteal, reported at around ten seconds. In practice that is a free second attempt at a boss handed to you mid-fight, without a reload and without losing the progress you had made on the encounter.",
-        "We would go further: on a game with a thirty-day limit, dying is not just a combat failure, it is a time and momentum cost. A perk that converts deaths into recoveries is doing something no damage perk can.",
-        { "h": "Corruption gates the Vampirism choice" },
-        "One practical constraint to plan around: the Vampirism ultimate is gated behind Corruption, which caps at level 15 and unlocks an ultimate perk at that cap. Corruption only rises by drinking blood and it never falls. So if you intend to take Renounce Death, you need to have been feeding deliberately for weeks beforehand, not decide on day 25 that you would like it. This is the most common way players lock themselves out of an ultimate they wanted.",
-        { "h": "How to approach the decision" },
-        "Reasoning rather than a rule: because there is no respec, the right approach is to pick your ultimates before you need them and then build toward them, rather than picking whichever looks best in the moment they unlock. Write down which three you want by the end of your first week, check what each one requires, and spend your Corruption and your perk points accordingly. The worst outcome here is not choosing wrong, it is arriving at the unlock with the prerequisites for none of the perks you actually wanted."
-      ],
-      "note": "Search results reliably cover Last Stand, Sword Sage, Runic Bulwark and Renounce Death. The remaining ultimate perks in each tree were not described in the sources we found, so this guide does not attempt to rank all nine.",
-      "confidence": "medium",
-      "sources": [
-        { "title": "Best perks in The Blood of Dawnwalker - GamesRadar+", "url": "https://www.gamesradar.com/games/action-rpg/blood-of-dawnwalker-perks-skills-abilities/" },
-        { "title": "The Best Perks To Unlock And Upgrade - GameSpot", "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-best-perks-skills-abilitie/" },
-        { "title": "Best Skills to Upgrade: Perks and Abilities - Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618245" },
-        { "title": "Renounce Death - Fextralife Wiki", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Renounce_Death" },
-        { "title": "Perks - Fextralife Wiki", "url": "https://bloodofdawnwalker.wiki.fextralife.com/Perks" },
-        { "title": "Best Swordmastery Perks and Abilities - GamerGuides", "url": "https://www.gamerguides.com/the-blood-of-dawnwalker/guide/getting-started/character-development/best-swordmastery-perks-and-abilities" }
-      ]
-    },
-    {
-      "title": "Corruption Explained: Should You Raise It in The Blood of Dawnwalker?",
-      "slug": "corruption-explained",
-      "targetQuery": "blood of dawnwalker how to increase corruption",
-      "summary": "What Corruption gates, every way to raise it, why it can never be undone, and whether it actually costs you anything.",
-      "bodyParagraphs": [
-        "Corruption is the second progression system in The Blood of Dawnwalker, running alongside ordinary levelling, and it measures how far Coen has given in to his vampiric nature. Mechanically it is a gate: nodes in the Vampirism tree stay locked until Coen reaches the required Corruption level, and the more powerful the skill, the higher the requirement.",
-        { "h": "The cap and what it unlocks" },
-        "Corruption maxes out at level 15. Reaching that cap is what unlocks an ultimate perk from the Vampirism tree, which means that if you intend to take Renounce Death or any other Vampirism ultimate, Corruption is not optional for you, it is a prerequisite with a long lead time.",
-        { "h": "Every way to raise it" },
-        "The mechanism is simple. Coen drinks blood. Specifically, Corruption rises when you feed on enemies, in combat or out of it, when you consume Vials of Human Blood, when you take the Drain option that certain boss fights offer, and when you feed from stealth.",
-        "The sources differ in value, and the hierarchy is worth learning because it changes how you spend your time:",
-        { "ul": [
-          "Small animals such as rabbits and mice give the least.",
-          "Larger animals such as deer and wolves give noticeably more.",
-          "Human victims give more than animals.",
-          "Vrakhiri blood gives the most of all."
-        ] },
-        { "h": "It only goes one way" },
-        "This is the part to internalise before you start. Corruption is permanent. There is no way to reduce it, and there is no skill-point respec at launch either. Every point you gain is a point you keep for the remaining thirty days, and every Vampirism node you buy is bought forever.",
-        "That permanence cuts both ways, and it is why the question in the title gets asked so often. If raising Corruption carried a hidden penalty, a one-way meter would be genuinely alarming.",
-        { "h": "Does it ruin your ending?" },
-        "The answer reported by the guides we found is no. Corruption is not a disguised morality meter. It does not impose stat penalties, it does not ruin your ending, and it does not make Coen uncontrollable or take control away from you. It is described straightforwardly as a tool for unlocking powerful Vampirism abilities.",
-        "We would add a note of caution, though, because this is exactly the kind of claim that gets refined as more players finish the game. Several outlets have published pieces framing the question as open rather than settled, which suggests the community has not entirely stopped worrying about it. Our position is that the mechanical reading is well supported and the narrative reading is less thoroughly tested, so if you are playing for a specific ending you should still save before major choices rather than assume Corruption is inert.",
-        { "h": "How to raise it efficiently" },
-        "Reasoning rather than a sourced plan: feeding does not cost time segments, and neither does the combat that produces most of your opportunities to feed. That makes Corruption one of the few forms of progression in this game that is genuinely free, and it means the players who reach the deep Vampirism nodes are not the ones who dedicated days to it, they are the ones who built the habit early of feeding on everything they killed rather than walking past the bodies.",
-        "If you know from day one that you want a Vampirism specialist, take Hastened Corruption early, prioritise the higher-value blood sources when you have a choice, and take the Drain option where boss fights offer it. If you are undecided, feed anyway. There is no recorded downside to having the option, and the cost of arriving at the endgame short of the cap is that an entire ultimate perk stays closed to you."
-      ],
-      "note": "One guide states plainly that Corruption carries no stat penalty and does not affect the ending, while other outlets have published pieces framing whether to raise it as an open question. We have not found a source that documents a concrete narrative penalty.",
-      "confidence": "medium",
-      "sources": [
-        { "title": "Blood of Dawnwalker: What is Corruption, explained - VGC", "url": "https://www.videogameschronicle.com/guide/blood-of-dawnwalker-what-is-corruption-explained/" },
-        { "title": "How Corruption Works - Game8", "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/616329" },
-        { "title": "Corruption Explained: How the Vampire Meter Works - Timesaver", "url": "https://timesaver.gg/blog/blood-of-dawnwalker-corruption-explained" },
-        { "title": "The Blood of Dawnwalker: How to Build Corruption - AltChar", "url": "https://www.altchar.com/guides/the-blood-of-dawnwalker-how-to-build-corruption-aNXyl2x950aH" },
-        { "title": "How to Level Up Corruption in The Blood of Dawnwalker - Game Rant", "url": "https://gamerant.com/blood-of-dawnwalker-increase-corruption-vampirism/" }
-      ]
+     "title": "Quests | Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Quests"
     }
-  ]
+   ],
+   "bodyParagraphs": [
+    "After the prologue there is no linear main quest to follow. Progression is Court Activities: work in a vassal’s territory until they are angry enough to duel you. Forty-one of them are catalogued across the three courts.",
+    {
+     "h": "You do not need all of them"
+    },
+    "The duel unlocks at roughly three quarters of a vassal’s activities. Across all three courts that is about thirty-one of forty-one — so ten are genuinely optional, and most walkthroughs will route you through every one without mentioning it.",
+    "Ten activities is a large number of segments in a game that gives you 480 and never gives any back. It is the single biggest saving available to a run that is behind.",
+    {
+     "h": "Which ones to skip"
+    },
+    "Skip by geography rather than by reward. Activities cluster in a vassal’s territory, and the cheapest ones to do are the ones near something else you were already going to do. An activity that needs a dedicated trip across the valley costs you more than its hourglass says, because getting there is time you could have spent elsewhere — even though travel itself is free.",
+    {
+     "h": "Which ones to do anyway"
+    },
+    "Some activities carry legendary rewards, and a few gate quests of their own. Ancient Hero’s Vambraces come out of one of Xanthe’s activities; Ancient Footwear out of another. If you are hunting gear, those stop being optional.",
+    "Our court activities database lists all forty-one with their court, their region and what they lead to, so you can pick the cheap thirty-one rather than the first thirty-one you happen to walk past."
+   ],
+   "note": "No source publishes a per-activity segment cost, so the database records them as unknown rather than as zero."
+  },
+  {
+   "title": "The Blood of Dawnwalker Beginner's Guide: What to Understand Before Day One",
+   "slug": "beginners-guide",
+   "targetQuery": "blood of dawnwalker beginner tips",
+   "summary": "The mechanics that decide whether your thirty days go well, explained in the order a new player actually needs them.",
+   "bodyParagraphs": [
+    "Most action RPGs teach you their systems through failure, and you get to try again. This one gives you thirty days and thirty nights before Brencis' coronation, and the failures are permanent. That single design choice reorganises every piece of beginner advice worth giving, so we have ordered this guide by what costs you most if you learn it late.",
+    {
+     "h": "Time is spent by your actions, not by a clock"
+    },
+    "Nothing ticks while you stand still. The clock advances only when you commit to something the game considers meaningful, and it tells you in advance: an hourglass icon appears with a number next to it, and that number is the price in time segments. Exploring, travelling, scouting, trading, talking to ambient NPCs, fighting things that wander into you and healing with blood are all free. That means you can walk the entire map, uncover every opportunity available to you, and pay nothing until you decide which of them to actually do.",
+    "Our strongest advice for a first playthrough follows directly from that: scout before you commit. The temptation is to accept the first quest you find because it is in front of you. The better habit is to spend an hour of real time gathering options and then choose, because the hourglass numbers are how the game asks you what you value.",
+    {
+     "h": "Stamina is the stat that quietly runs everything"
+    },
+    "Attacking, dodging, sprinting and holding the omniblock guard all draw from the same stamina pool. Beginner guides are consistent on this point, and we agree with them: raise stamina before you go heavy on damage. A character who runs dry mid-exchange is not a character with low damage, it is a character who cannot act at all for two seconds while something with a sword stands over him.",
+    {
+     "h": "Coen is two characters, so carry two loadouts"
+    },
+    "By day he is human, with access to Swordmastery and Witchcraft. By night he is a vampire, with Swordmastery and Vampirism. The two halves do not even want to be played the same way, because vampire combat is built around mobility and creating openings with well timed dodges rather than holding a guard. Use the Equipment Preview option on the right of the character screen to save separate loadouts, so that your human passives are worn while the sun is up and your vampire passives swap in after dark. New players routinely go a week without noticing this exists.",
+    {
+     "h": "Feeding is your healing, so loot every corpse"
+    },
+    "The hardest part of the night half is staying alive, because healing as a vampire depends on blood. Human and animal corpses have a random chance to drop blood consumables, so the correct reflex is to loot everything you kill and everything you find already dead. Animals and ordinary enemies are described as a consequence-free source, which means the moral hand-wringing the game invites you into is genuinely optional at this level.",
+    {
+     "h": "Spend your first points in Swordmastery"
+    },
+    "Of the three trees, only Swordmastery works in both forms. Witchcraft is sealed at night because the runes powering Coen's hexes heal over when he turns, and Vampirism is unavailable by day and gated behind Corruption besides. So the early perks that improve you most are the Swordmastery ones that apply regardless of form, with Sustained Focus, Perfect Block, Perfect Riposte and Endless Effort named most often. Sustained Focus deserves particular attention because it raises your total Activation Charges, and every active ability in every tree is paid for out of that pool.",
+    {
+     "h": "Be greedy in conversation"
+    },
+    "Skippable white dialogue options sometimes open yellow choice options that are otherwise unreachable, which means the plain-looking questions are occasionally the only route to the interesting answers. Dialogue does not cost segments. Exhaust it.",
+    {
+     "h": "The habit that matters most"
+    },
+    "Save often, in different slots. This is normally filler advice, but here the game gives you a large bank of manual save slots and a thirty-day structure that maps neatly onto them. Saving in a fresh slot at the start of each in-game day effectively builds yourself a chapter select, and it is the difference between a missed opportunity being a minor regret and being a lost playthrough."
+   ],
+   "confidence": "high",
+   "sources": [
+    {
+     "title": "The Blood of Dawnwalker Beginner Tips: 12 Things to Know - Mobalytics",
+     "url": "https://mobalytics.gg/gamebase/guides/the-blood-of-dawnwalker-beginner-tips"
+    },
+    {
+     "title": "15 Things You Need To Know Before You Play The Blood Of Dawnwalker - GameSpot",
+     "url": "https://www.gamespot.com/articles/15-things-you-need-to-know-before-you-play-the-blood-of-dawnwalker/"
+    },
+    {
+     "title": "20 quick tips to survive Vale Sangora - PC Gamer",
+     "url": "https://www.pcgamer.com/games/rpg/blood-of-dawnwalker-tips/"
+    },
+    {
+     "title": "The Blood of Dawnwalker Beginner Tips: 8 Things to Know Before You Start - Timesaver",
+     "url": "https://timesaver.gg/blog/blood-of-dawnwalker-beginner-tips"
+    },
+    {
+     "title": "The Blood of Dawnwalker time system and limit explained - GamesRadar+",
+     "url": "https://www.gamesradar.com/games/action-rpg/blood-of-dawnwalker-time-day-night/"
+    }
+   ],
+   "seo": {
+    "title": "The Blood of Dawnwalker Beginner's Guide",
+    "description": "Thirty days, 480 segments and no second chances. What to understand about the clock, the courts and the ally chains before you start day one."
+   }
+  },
+  {
+   "title": "Which Ultimate Perks Should You Take in The Blood of Dawnwalker?",
+   "slug": "best-ultimate-perks",
+   "targetQuery": "blood of dawnwalker best ultimate perks",
+   "summary": "Nine ultimate perks, three permanent choices, no respec. The picks the guides recommend and the reasoning behind each.",
+   "bodyParagraphs": [
+    "There are nine ultimate perks in The Blood of Dawnwalker, three in each skill tree, and you can unlock exactly one per tree. The choices are permanent, and the game has no respec option at launch, so these are three of the most consequential decisions in a playthrough. This guide covers the picks that guides most consistently recommend and, more usefully, why.",
+    {
+     "h": "Swordmastery: Last Stand or Sword Sage"
+    },
+    "Last Stand doubles all weapon damage while Coen is at 30 percent health or below. Doubling weapon damage is an enormous effect, and the case guides make for it is specific: it synergises unusually well with playing as a vampire, because feeding gives you far more deliberate control over your own health bar than a normal RPG character has. You are not hoping to end up in the danger band, you are choosing to sit in it.",
+    "Sword Sage is the alternative recommended for a Swordmastery-focused character, because it lets you chain multiple Artery Strikes. That is the safer, more consistent pick, and the one we would take on a first playthrough.",
+    "Our read on the choice: Last Stand is a high-variance pick that rewards a confident player with good defensive fundamentals, and punishes everyone else. If you are not reliably winning your perfect blocks, a perk that only turns on when you are nearly dead is a perk that mostly turns on immediately before you die.",
+    {
+     "h": "Witchcraft: Runic Bulwark"
+    },
+    "Runic Bulwark grants a 15 percent chance to apply a random hex to an opponent when you perfect block them. On its face 15 percent sounds unreliable. The argument for it is that by the time ultimates unlock, you should be perfect blocking more often than not, so the number of rolls per fight is high enough that it becomes a steady effect rather than a lottery.",
+    "It also stacks conceptually with the rest of a Witchcraft kit. Casting hexes costs health in this game, so anything that applies a hex for free is worth more than its raw numbers suggest, and Cycle of Ruin already extends your active hexes on blocks and perfect blocks. Three separate systems reward the same input, which is rare in these trees.",
+    {
+     "h": "Vampirism: Renounce Death"
+    },
+    "Renounce Death is the pick multiple guides call the safest of the nine, especially on harder difficulties. Instead of dying, once per combat you return with a short window of immortality and lifesteal, reported at around ten seconds. In practice that is a free second attempt at a boss handed to you mid-fight, without a reload and without losing the progress you had made on the encounter.",
+    "We would go further: on a game with a thirty-day limit, dying is not just a combat failure, it is a time and momentum cost. A perk that converts deaths into recoveries is doing something no damage perk can.",
+    {
+     "h": "Corruption gates the Vampirism choice"
+    },
+    "One practical constraint to plan around: the Vampirism ultimate is gated behind Corruption, which caps at level 15 and unlocks an ultimate perk at that cap. Corruption only rises by drinking blood and it never falls. So if you intend to take Renounce Death, you need to have been feeding deliberately for weeks beforehand, not decide on day 25 that you would like it. This is the most common way players lock themselves out of an ultimate they wanted.",
+    {
+     "h": "How to approach the decision"
+    },
+    "Reasoning rather than a rule: because there is no respec, the right approach is to pick your ultimates before you need them and then build toward them, rather than picking whichever looks best in the moment they unlock. Write down which three you want by the end of your first week, check what each one requires, and spend your Corruption and your perk points accordingly. The worst outcome here is not choosing wrong, it is arriving at the unlock with the prerequisites for none of the perks you actually wanted."
+   ],
+   "note": "Search results reliably cover Last Stand, Sword Sage, Runic Bulwark and Renounce Death. The remaining ultimate perks in each tree were not described in the sources we found, so this guide does not attempt to rank all nine.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "title": "Best perks in The Blood of Dawnwalker - GamesRadar+",
+     "url": "https://www.gamesradar.com/games/action-rpg/blood-of-dawnwalker-perks-skills-abilities/"
+    },
+    {
+     "title": "The Best Perks To Unlock And Upgrade - GameSpot",
+     "url": "https://www.gamespot.com/articles/blood-of-dawnwalker-best-perks-skills-abilitie/"
+    },
+    {
+     "title": "Best Skills to Upgrade: Perks and Abilities - Game8",
+     "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618245"
+    },
+    {
+     "title": "Renounce Death - Fextralife Wiki",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Renounce_Death"
+    },
+    {
+     "title": "Perks - Fextralife Wiki",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Perks"
+    },
+    {
+     "title": "Best Swordmastery Perks and Abilities - GamerGuides",
+     "url": "https://www.gamerguides.com/the-blood-of-dawnwalker/guide/getting-started/character-development/best-swordmastery-perks-and-abilities"
+    }
+   ],
+   "seo": {
+    "title": "Which Ultimate Perks Should You Take?",
+    "description": "Nine ultimates, one per tree, and picking any closes two others. A look at what each actually does and which combinations hold up."
+   }
+  },
+  {
+   "title": "Can You Romance Everyone in The Blood of Dawnwalker?",
+   "slug": "can-you-romance-everyone",
+   "targetQuery": "blood of dawnwalker romance all options",
+   "seo": {
+    "title": "Can You Romance Everyone?",
+    "description": "Three romance options — Anca, Lacra and Crake. Whether they lock each other out, what each costs in segments, and which one a tight run should pick."
+   },
+   "summary": "Three romances, and they do not lock each other out. What stops you having all three is the budget, not the writing.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "title": "Quests | Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Quests"
+    },
+    {
+     "title": "Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood+of+Dawnwalker+Wiki"
+    }
+   ],
+   "bodyParagraphs": [
+    "There are three romance options: Anca, Lacra and Crake. The usual RPG question is whether pursuing one closes the others, and here the answer is no — they are not written as mutually exclusive.",
+    "The thing that actually stops you is the clock. Two of the three are attached to the long ally questlines, and those chains compete for the same 480 segments.",
+    {
+     "h": "What each one costs"
+    },
+    {
+     "ul": [
+      "Anca — the earliest companion, picked up in the prologue. The cheapest to keep up with.",
+      "Lacra — a six-quest chain, almost entirely night-locked, and the gate on The Patricide.",
+      "Crake — an eight-quest chain, the longest in the game, and the gate on The Knyazmaker."
+     ]
+    },
+    {
+     "h": "Which to pick on a tight run"
+    },
+    "Anca, if you want a romance without reshaping the run around it. Her thread starts in the prologue and does not demand the kind of sustained commitment the other two do.",
+    "If you are going for one of the two gated endings anyway, take the romance attached to it — you are already doing the quests, and the romance is the part of that chain you would otherwise be paying for and not collecting.",
+    {
+     "h": "A note on Crake’s name"
+    },
+    "You will see him called Marat in some material, including Bandai Namco’s own. The prevailing reading is that Marat is his birth name and Crake is what the rebellion calls him, but no source we found explains the change, so we record both rather than picking one."
+   ],
+   "note": "Whether romancing one locks the others is reported rather than confirmed. Crake’s romanceability is recorded against an earlier source that said otherwise — see docs/DATA.md."
+  },
+  {
+   "title": "Corruption Explained: Should You Raise It in The Blood of Dawnwalker?",
+   "slug": "corruption-explained",
+   "targetQuery": "blood of dawnwalker how to increase corruption",
+   "summary": "What Corruption gates, every way to raise it, why it can never be undone, and whether it actually costs you anything.",
+   "bodyParagraphs": [
+    "Corruption is the second progression system in The Blood of Dawnwalker, running alongside ordinary levelling, and it measures how far Coen has given in to his vampiric nature. Mechanically it is a gate: nodes in the Vampirism tree stay locked until Coen reaches the required Corruption level, and the more powerful the skill, the higher the requirement.",
+    {
+     "h": "The cap and what it unlocks"
+    },
+    "Corruption maxes out at level 15. Reaching that cap is what unlocks an ultimate perk from the Vampirism tree, which means that if you intend to take Renounce Death or any other Vampirism ultimate, Corruption is not optional for you, it is a prerequisite with a long lead time.",
+    {
+     "h": "Every way to raise it"
+    },
+    "The mechanism is simple. Coen drinks blood. Specifically, Corruption rises when you feed on enemies, in combat or out of it, when you consume Vials of Human Blood, when you take the Drain option that certain boss fights offer, and when you feed from stealth.",
+    "The sources differ in value, and the hierarchy is worth learning because it changes how you spend your time:",
+    {
+     "ul": [
+      "Small animals such as rabbits and mice give the least.",
+      "Larger animals such as deer and wolves give noticeably more.",
+      "Human victims give more than animals.",
+      "Vrakhiri blood gives the most of all."
+     ]
+    },
+    {
+     "h": "It only goes one way"
+    },
+    "This is the part to internalise before you start. Corruption is permanent. There is no way to reduce it, and there is no skill-point respec at launch either. Every point you gain is a point you keep for the remaining thirty days, and every Vampirism node you buy is bought forever.",
+    "That permanence cuts both ways, and it is why the question in the title gets asked so often. If raising Corruption carried a hidden penalty, a one-way meter would be genuinely alarming.",
+    {
+     "h": "Does it ruin your ending?"
+    },
+    "The answer reported by the guides we found is no. Corruption is not a disguised morality meter. It does not impose stat penalties, it does not ruin your ending, and it does not make Coen uncontrollable or take control away from you. It is described straightforwardly as a tool for unlocking powerful Vampirism abilities.",
+    "We would add a note of caution, though, because this is exactly the kind of claim that gets refined as more players finish the game. Several outlets have published pieces framing the question as open rather than settled, which suggests the community has not entirely stopped worrying about it. Our position is that the mechanical reading is well supported and the narrative reading is less thoroughly tested, so if you are playing for a specific ending you should still save before major choices rather than assume Corruption is inert.",
+    {
+     "h": "How to raise it efficiently"
+    },
+    "Reasoning rather than a sourced plan: feeding does not cost time segments, and neither does the combat that produces most of your opportunities to feed. That makes Corruption one of the few forms of progression in this game that is genuinely free, and it means the players who reach the deep Vampirism nodes are not the ones who dedicated days to it, they are the ones who built the habit early of feeding on everything they killed rather than walking past the bodies.",
+    "If you know from day one that you want a Vampirism specialist, take Hastened Corruption early, prioritise the higher-value blood sources when you have a choice, and take the Drain option where boss fights offer it. If you are undecided, feed anyway. There is no recorded downside to having the option, and the cost of arriving at the endgame short of the cap is that an entire ultimate perk stays closed to you."
+   ],
+   "note": "One guide states plainly that Corruption carries no stat penalty and does not affect the ending, while other outlets have published pieces framing whether to raise it as an open question. We have not found a source that documents a concrete narrative penalty.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "title": "Blood of Dawnwalker: What is Corruption, explained - VGC",
+     "url": "https://www.videogameschronicle.com/guide/blood-of-dawnwalker-what-is-corruption-explained/"
+    },
+    {
+     "title": "How Corruption Works - Game8",
+     "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/616329"
+    },
+    {
+     "title": "Corruption Explained: How the Vampire Meter Works - Timesaver",
+     "url": "https://timesaver.gg/blog/blood-of-dawnwalker-corruption-explained"
+    },
+    {
+     "title": "The Blood of Dawnwalker: How to Build Corruption - AltChar",
+     "url": "https://www.altchar.com/guides/the-blood-of-dawnwalker-how-to-build-corruption-aNXyl2x950aH"
+    },
+    {
+     "title": "How to Level Up Corruption in The Blood of Dawnwalker - Game Rant",
+     "url": "https://gamerant.com/blood-of-dawnwalker-increase-corruption-vampirism/"
+    }
+   ],
+   "seo": {
+    "title": "Corruption Explained",
+    "description": "Corruption gates the Vampirism tree and rises when you feed. What it unlocks, what it costs you, and whether raising it is worth doing."
+   }
+  },
+  {
+   "title": "Day or Night: Which Should You Play in The Blood of Dawnwalker?",
+   "slug": "day-or-night",
+   "targetQuery": "blood of dawnwalker day or night which is better",
+   "seo": {
+    "title": "Day or Night: Which Is Better?",
+    "description": "Coen is two characters sharing a body. What changes between day and night, which quests are locked to each, and how to split your 480 segments."
+   },
+   "summary": "Day and night are not a cosmetic cycle. They are two rulesets with different abilities, different quests and different enemies — and half your budget goes to each whether you plan it or not.",
+   "confidence": "high",
+   "sources": [
+    {
+     "title": "The Blood of Dawnwalker on Steam",
+     "url": "https://store.steampowered.com/app/3751260/The_Blood_of_Dawnwalker/"
+    },
+    {
+     "title": "The Blood of Dawnwalker: How Time Progression Works — AltChar",
+     "url": "https://www.altchar.com/guides/the-blood-of-dawnwalker-how-time-progression-works-aqro25G3s67B"
+    }
+   ],
+   "bodyParagraphs": [
+    "Coen is human by day and a dawnwalker by night, and the game treats that as two separate sets of rules rather than a costume change. Thirty days and thirty nights means 240 segments of each, and what you can do with them is not the same.",
+    {
+     "h": "What changes"
+    },
+    {
+     "ul": [
+      "Witchcraft is the day tree. Vampirism is the night tree. Swordmastery works in either.",
+      "Some quests are locked to a phase and simply cannot be started in the other.",
+      "Vampiric movement is what gets you up the scouting towers, so those are night work.",
+      "What you meet by day and what you meet by night are not the same list."
+     ]
+    },
+    {
+     "h": "Which is stronger"
+    },
+    "Vampirism is the stronger tree, and night is when you have it. But it is gated on Corruption rather than skill points, so it opens on a schedule you only partly control, and the strongest night build is not available early.",
+    "Day is the more flexible half rather than the weaker one. Witchcraft plus Swordmastery is a complete kit from the start, and most of the game’s open-world work — settlements, merchants, the ordinary business of a quest — happens in it.",
+    {
+     "h": "How to split the budget"
+    },
+    "Let the locked content decide. Night-only quests are the constraint, because they can only be done in one place; day content usually has somewhere else to go. Lacra’s chain in particular is almost entirely night-locked, so taking it commits your nights and leaves your days as the flexible half.",
+    "The run checker knows which phase you are in and will tell you what you can actually start right now, which is a more useful question than which half is better."
+   ]
+  },
+  {
+   "title": "How Does Corruption Work in The Blood of Dawnwalker?",
+   "slug": "how-corruption-works",
+   "targetQuery": "blood of dawnwalker corruption explained",
+   "seo": {
+    "title": "How Corruption Works",
+    "description": "Corruption gates the Vampirism tree and rises when you feed. What it unlocks, what it costs, and whether raising it is worth doing."
+   },
+   "summary": "Corruption is the only skill gate in the game that is not skill points. It climbs when you feed, it unlocks the strongest tree, and it is the one number the endings system is actually watching.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "title": "Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood+of+Dawnwalker+Wiki"
+    },
+    {
+     "title": "The Blood of Dawnwalker on Steam",
+     "url": "https://store.steampowered.com/app/3751260/The_Blood_of_Dawnwalker/"
+    }
+   ],
+   "bodyParagraphs": [
+    "Two of the three skill trees are bought with skill points like any other RPG. Vampirism is not. Its abilities open as Corruption rises, and Corruption rises by feeding — which makes it the one progression track in the game you advance by playing a certain way rather than by spending a currency.",
+    {
+     "h": "What raising it gets you"
+    },
+    "Vampirism is the strongest of the three trees, and it is night-locked. Its ultimate, Renounce Death, returns you to a fight once per combat with ten seconds of immortality instead of dying — which is less a power spike than an insurance policy against the one mistake that would otherwise cost you a run.",
+    {
+     "h": "What it costs you"
+    },
+    "The game is built around a tension between staying human and using what you have become, and Corruption is the number that tracks which way you are leaning. Raising it is not free in narrative terms, and the tree is therefore a running argument with the endings system rather than a pure power choice.",
+    {
+     "h": "Should you raise it?"
+    },
+    "If you are playing nights heavily, yes — you are feeding anyway, and refusing the tree means fighting the back half of every day with two thirds of your kit. If you are building around Witchcraft, which is the day tree, the calculus is different: you will not be feeding as often, and forcing Corruption up to reach abilities you cannot use in daylight is effort spent twice.",
+    "The build planner will total what a given spec costs and enforce the one-ultimate-per-tree rule, which is the constraint that actually decides these questions."
+   ],
+   "note": "Exactly what Corruption does to the ending you are offered is not published in any source we could reach, and is deliberately not stated here."
+  },
+  {
+   "title": "How Long Is The Blood of Dawnwalker? The 480-Segment Budget Explained",
+   "slug": "how-long-is-the-blood-of-dawnwalker",
+   "targetQuery": "how long is the blood of dawnwalker",
+   "seo": {
+    "title": "How Long Is The Blood of Dawnwalker?",
+    "description": "The run is 30 days of 16 segments — 480 in total. Here is what actually spends them, what is free, and how long a full playthrough really takes."
+   },
+   "summary": "Thirty days, sixteen segments each, 480 in total — but the clock only moves when you let it, so the honest answer to \"how long\" is a budget rather than a number of hours.",
+   "confidence": "high",
+   "sources": [
+    {
+     "title": "The Blood of Dawnwalker: How Time Progression Works — AltChar",
+     "url": "https://www.altchar.com/guides/the-blood-of-dawnwalker-how-time-progression-works-aqro25G3s67B"
+    },
+    {
+     "title": "The Blood of Dawnwalker on Steam",
+     "url": "https://store.steampowered.com/app/3751260/The_Blood_of_Dawnwalker/"
+    }
+   ],
+   "bodyParagraphs": [
+    "The question people mean by \"how long is this game\" usually has an hours answer. This one does not, and the difference is the whole design. A run is thirty days and thirty nights. Each phase holds eight time segments, so a day is sixteen and the run is 480. That budget is fixed, it never refills, and when it runs out the story ends whether you were ready or not.",
+    {
+     "h": "What actually spends a segment"
+    },
+    "Almost nothing you do moment to moment costs anything. Walking is free. Fast travel is free. Looting a chest is free. Fighting is free. You can spend a real-world hour clearing a bandit camp and the clock will not have moved.",
+    "What costs is committing to something the game considers a piece of story. Those are marked in advance with an hourglass and a number, so you always know the price before you agree to it. That is the bargain the game is making with you: it will never take time without telling you, and in exchange it will never give any back.",
+    {
+     "h": "So how many hours is it?"
+    },
+    "Long enough that the budget matters more than the clock on your wall. A player who reads every document and clears every camp can spend far more real time than someone who drives at the main quest, and both of them get the same 480 segments. The length that matters is how much of the content you can reach inside the budget, not how many evenings it takes you to get there.",
+    {
+     "h": "Why the budget is tighter than it looks"
+    },
+    "Three things eat into it before you make a single choice. The prologue is costed at eight segments and is not optional. The three courts hold forty-one activities between them, and you need roughly three quarters of each vassal to force their duel. And the two ally questlines run to six and eight quests apiece, each link appearing only after the previous one closes.",
+    "Add those up and the shape of the problem appears: you cannot do everything, and the game never tells you that outright. It simply lets the days run out.",
+    {
+     "h": "What to do about it"
+    },
+    "Work backwards from the ending you want rather than forwards from where you are. Two of the seven are gated on an ally chain that has to be finished before the finale, and a chain you start on day twenty is a chain you do not finish. Everything else is either decided at the finale or decided by the clock beating you to it.",
+    "Our run checker does that arithmetic for you: tell it the day you are on and what you have finished, and it works out which endings are still reachable and which are already gone."
+   ],
+   "note": "Total-hours figures are deliberately not given: no source publishes a reliable one and the segment budget is the meaningful measure."
+  },
+  {
+   "title": "How Time Works in The Blood of Dawnwalker",
+   "slug": "how-time-works",
+   "targetQuery": "how does time work in blood of dawnwalker",
+   "summary": "The 480-segment budget explained: what the hourglass actually charges you for, what is free, and how to plan thirty days without wasting them.",
+   "bodyParagraphs": [
+    "Coen has thirty days and thirty nights before Brencis' coronation. Each day and each night is divided into eight time segments, which gives you 480 segments in total for the entire game. That number is the whole design. Everything else about how this game plays comes from the fact that your budget is finite and visible.",
+    {
+     "h": "There is no clock"
+    },
+    "The most important thing to understand is that the game does not run a real-time clock. Time advances in discrete chunks only when you take an action the game treats as significant. Stand in a field for an hour and it is still the same segment. The clock waits for your decisions, which means you can explore, scout, prepare and deliberate for as long as you like without cost.",
+    {
+     "h": "The hourglass is a price tag"
+    },
+    "When an action will consume time, the interface shows an hourglass with a number beside it. That number is how many of your 480 segments the action costs. This is one of the most player-respecting things in the game: you are never surprised by a bill. Every meaningful expenditure is quoted to you in advance, and you are free to decline.",
+    {
+     "h": "What is free"
+    },
+    {
+     "ul": [
+      "Overworld travel of every kind: running, riding, jumping, swimming and general movement.",
+      "Fast travel between activated sanctuaries.",
+      "Commerce and trading with merchants.",
+      "Ambient conversation with NPCs.",
+      "Random combat that occurs while you are moving around the world.",
+      "Healing with blood."
+     ]
+    },
+    "That list is longer and more generous than most players assume, and it has a direct strategic consequence: the exploration half of the game is effectively unlimited. You can uncover every opportunity in a region, weigh them all, and spend nothing until you commit.",
+    {
+     "h": "Day and night are not interchangeable"
+    },
+    "Coen is human by day, with access to Swordmastery and Witchcraft, and a vampire by night, with Swordmastery and Vampirism including movement powers such as Shadowstep. The game marks which half of the cycle a quest belongs to: a sun icon means daytime only, a moon icon means night only. Since each half-day carries its own eight segments, a day-locked quest cannot be paid for out of your night budget, and this is where most planning mistakes originate.",
+    {
+     "h": "How to actually plan"
+    },
+    "Reasoning rather than a rule the game states: think of your 480 segments as 240 day and 240 night, and audit them separately. A build that specialises in Vampirism is implicitly spending its night budget on combat and leaving day segments idle, and a Witchcraft build has the opposite problem. Neither is wrong, but both need a plan for the half of the cycle where they are weaker, and the cheapest answer is usually to schedule travel, trading, preparation and information gathering into your weak half, since none of those cost anything anyway.",
+    {
+     "h": "Two costs to watch"
+    },
+    "Reports from players and guides flag two expenditures as consistently poor value. Court and infamy busywork is reported at three time slots per activity for small rewards, which is a substantial fraction of one half-day. Acquiring a new skill is also reported to cost a segment, which is an argument for buying perks in deliberate batches rather than one at a time as points trickle in. Both figures come from single outlets rather than a consensus, so treat them as warnings rather than confirmed numbers.",
+    {
+     "h": "The point of the limit"
+    },
+    "It is worth saying plainly, because the temptation is to treat the clock as an enemy: you are not supposed to complete everything. The thirty days exist so that choosing one thing means losing another, and the game is more interesting when you let that happen than when you optimise around it. Our advice is to spend the first day or two spending nothing, learn what is on offer, decide what kind of run this is going to be, and then commit."
+   ],
+   "note": "The specific segment costs cited for court and infamy activities and for acquiring a skill each come from a single outlet, not from multiple independent sources.",
+   "confidence": "high",
+   "sources": [
+    {
+     "title": "The Blood of Dawnwalker time system and limit explained - GamesRadar+",
+     "url": "https://www.gamesradar.com/games/action-rpg/blood-of-dawnwalker-time-day-night/"
+    },
+    {
+     "title": "The Blood of Dawnwalker: Time System Explained - TechWiser",
+     "url": "https://techwiser.com/the-blood-of-dawnwalker-time-system-explained/"
+    },
+    {
+     "title": "How the 30-Day/30-Night Clock Works - FinalBoss.io",
+     "url": "https://finalboss.io/the-blood-of-dawnwalker-how-the-30-day-30-night-clock-works"
+    },
+    {
+     "title": "How Time Works in The Blood of Dawnwalker - G2A News",
+     "url": "https://www.g2a.com/news/features/guide/how-time-works-in-the-blood-of-dawnwalker/"
+    },
+    {
+     "title": "The Blood of Dawnwalker Time Segments Guide - ValeGuides",
+     "url": "https://valeguides.com/en/guides/time-segments/"
+    },
+    {
+     "title": "How Time Progression Works - AltChar",
+     "url": "https://www.altchar.com/guides/the-blood-of-dawnwalker-how-time-progression-works-aqro25G3s67B"
+    }
+   ],
+   "seo": {
+    "title": "How Time Works in The Blood of Dawnwalker",
+    "description": "The clock only moves when you let it. How the 480-segment budget works, what spends it, and why travel and combat are free."
+   }
+  },
+  {
+   "title": "How to Perfect Block in The Blood of Dawnwalker",
+   "slug": "how-to-perfect-block",
+   "targetQuery": "blood of dawnwalker how to perfect block",
+   "summary": "Directional parries, omniblock, and the stamina economy underneath them, plus when each defensive option is actually correct.",
+   "bodyParagraphs": [
+    "Combat here is directional in both halves of the exchange. You aim your attacks in one of four directions, and enemies telegraph their swings the same way, with the incoming direction flagged on screen. Everything defensive in the game grows out of that one fact, so the skill ceiling is a lot higher than it first appears.",
+    {
+     "h": "The directional parry"
+    },
+    "The perfect block, sometimes called the directional parry, is the single most important technique in the game. When an enemy attack is flagged, match your block to the incoming direction at the moment of impact. Do it correctly and the attack is deflected cleanly without draining stamina at all, and correctly timed parries can leave the attacker staggered and open.",
+    "That stamina detail is what makes it more than a flourish. Blocking normally costs stamina, and stamina is also what pays for your attacks, dodges and sprints. A perfect block is therefore not just damage avoided, it is the only defensive action in the game that does not compete with your offence for resources.",
+    {
+     "h": "Omniblock, and why it is a trap if you lean on it"
+    },
+    "Hold the block input, which is LB on Xbox, L1 on PlayStation and left mouse button on PC, to omniblock. Omniblock and its attacking counterpart omniattack remove direction selection entirely: your guard covers every angle automatically and you no longer have to read anything. The cost is paid in stamina, which drains noticeably faster than directional play.",
+    "The recommended way to use it is as a learning tool rather than a crutch. Hold omniblock against an enemy type you have not fought before and use the safety to watch which directions their common attacks come from. Once the pattern is readable, switch to manual directional blocks, which are far cheaper. Keep omniblock in reserve for chaotic group fights and for moments where too much is happening to read a single indicator.",
+    {
+     "h": "When you cannot block at all"
+    },
+    "A skull marks an attack that cannot be blocked by any means. When the directional indicator turns into a red skull, stop thinking about your guard and dodge. Trying to omniblock these is the most common way newer players lose fights they were otherwise winning, because the guard reads as universal and is not.",
+    {
+     "h": "The perks that make defence pay"
+    },
+    {
+     "ul": [
+      "Perfect Block, which restores extra stamina and Activation Charge on a successful perfect parry, turning defence into resource generation.",
+      "Perfect Riposte and Counterattack, which are the follow-ups. A perfect block into a riposte deals boosted damage against every enemy type.",
+      "Omniblock as a perk, to make the universal guard less punishing when you do need it.",
+      "Endless Effort and Fleet of Foot, which reward correctly timed dodges with faster charge generation, so evading is not a dead beat."
+     ]
+    },
+    {
+     "h": "Day and night are not the same fight"
+    },
+    "Human Coen and vampire Coen should not be played identically. The vampire half is much more oriented around mobility and creating openings through well timed dodges than around holding a guard and winning the exchange. In practice we would describe the day rhythm as parry-and-punish and the night rhythm as evade-and-close, and players who try to run the day rhythm after dark tend to conclude the vampire form is weak when it is mostly being played wrong.",
+    {
+     "h": "How to practise it"
+    },
+    "Our suggestion rather than anything a guide told us: go and fight something beneath you, and deliberately refuse to omniblock or dodge for an entire encounter. Parry everything or die. Perfect blocks are a reflex, not a piece of knowledge, and the fastest route to owning that reflex is a few low-stakes fights where you are not allowed any other answer. It costs you nothing, because ordinary combat does not advance the clock."
+   ],
+   "confidence": "high",
+   "sources": [
+    {
+     "title": "The Blood of Dawnwalker Combat Guide - Mobalytics",
+     "url": "https://mobalytics.gg/gamebase/guides/the-blood-of-dawnwalker-combat-guide"
+    },
+    {
+     "title": "How to Block - Game8",
+     "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618241"
+    },
+    {
+     "title": "Combat Guide: Perfect Blocks, Dodges, Stamina, Abilities - G2A News",
+     "url": "https://www.g2a.com/news/features/guide/the-blood-of-dawnwalker-combat-guide/"
+    },
+    {
+     "title": "Combat Guide: Directional Attacks, Parries, and Stamina - ApolloTrail",
+     "url": "https://apollotrail.com/blog/the-blood-of-dawnwalker-combat-guide"
+    },
+    {
+     "title": "Combat Guide: How to Parry, Directional Duels and Vampire Powers - Timesaver",
+     "url": "https://timesaver.gg/blog/blood-of-dawnwalker-combat-guide"
+    }
+   ],
+   "seo": {
+    "title": "How to Perfect Block",
+    "description": "Timing, what it counters and why it matters more here than in most action RPGs — plus the perks that build on it."
+   }
+  },
+  {
+   "title": "How to Save Time in The Blood of Dawnwalker: 9 Things That Cost Nothing",
+   "slug": "how-to-save-time",
+   "targetQuery": "blood of dawnwalker how to save time segments",
+   "seo": {
+    "title": "How to Save Time: 9 Free Actions",
+    "description": "Travel, combat and looting are all free. Here is everything that does not touch your 480 segments, and where the real costs hide."
+   },
+   "summary": "The fastest way to save segments is knowing what was never going to cost any. Most of what fills an evening in this game is free.",
+   "confidence": "high",
+   "sources": [
+    {
+     "title": "The Blood of Dawnwalker: How Time Progression Works — AltChar",
+     "url": "https://www.altchar.com/guides/the-blood-of-dawnwalker-how-time-progression-works-aqro25G3s67B"
+    },
+    {
+     "title": "The Blood of Dawnwalker on Steam",
+     "url": "https://store.steampowered.com/app/3751260/The_Blood_of_Dawnwalker/"
+    }
+   ],
+   "bodyParagraphs": [
+    "The clock only moves when you commit to something the game marks with an hourglass. Everything else is free, and the list is longer than most players assume.",
+    {
+     "h": "What costs nothing"
+    },
+    {
+     "ul": [
+      "Walking anywhere, however far.",
+      "Fast travel between shrines.",
+      "Combat — every fight, of any length.",
+      "Looting chests, crates and bodies.",
+      "Exploring a region you have no quest in.",
+      "Talking to merchants and buying or selling.",
+      "Lighting shrines, which is what unlocks fast travel in the first place.",
+      "Climbing a scouting tower, which fills in the map around it.",
+      "Reading anything — documents, notes, books."
+     ]
+    },
+    {
+     "h": "Where the cost actually is"
+    },
+    "Committing to a quest objective. That is the whole of it. The hourglass appears with a number beside it before you agree, so you are never charged without being told the price first.",
+    {
+     "h": "What this means in practice"
+    },
+    "Front-load the free things. Light every shrine in a region the first time you are there, because fast travel costs nothing later and walking back costs nothing now. Climb the towers at night while you are passing. Clear the camps you walk past.",
+    "The mistake is treating exploration as expensive and quests as cheap. It is exactly the other way round, and players who rush past optional content to \"save time\" are saving nothing and arriving at the finale underequipped.",
+    {
+     "h": "The one real trap"
+    },
+    "A quest with an unpublished cost is not a free quest. Only fifteen of ninety-three have a confirmed figure, so most of what you commit to is priced in a number nobody has written down. Treat an unknown as expensive until proven otherwise, which is exactly how our run checker treats it."
+   ]
+  },
+  {
+   "title": "What Is Infamy in The Blood of Dawnwalker, and Should You Raise It?",
+   "slug": "infamy-explained",
+   "targetQuery": "blood of dawnwalker infamy explained",
+   "seo": {
+    "title": "Infamy and the Nine Edicts",
+    "description": "Infamy is how the regime responds to you. What raises it, what the Edicts do when it climbs, and why some runs raise it on purpose."
+   },
+   "summary": "Infamy is the regime noticing you. It climbs as you work against the courts, and it answers with Edicts that make the world harder — but some of the best content only opens once it is high.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "title": "Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood+of+Dawnwalker+Wiki"
+    },
+    {
+     "title": "Quests | Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Quests"
+    }
+   ],
+   "bodyParagraphs": [
+    "Most games with a wanted level want you to keep it low. This one is more interesting: Infamy is how Brencis’ regime responds to what you are doing, and the response is not only a penalty. Some of what you want is behind it.",
+    {
+     "h": "What it does"
+    },
+    "As Infamy climbs, the regime lands Edicts — nine of them — and the world gets harder in specific, named ways rather than by a general difficulty slider. Patrols change. Places you walked through become places you have to get through.",
+    {
+     "h": "Why you might want it high"
+    },
+    "Ambrus’ Cuirass is the clearest example: it comes from beating Ambrus in The Gilded Gauntlet, which is a maximum-Infamy quest. A run that keeps its head down never sees that fight. Several of the best confrontations in the game are gated the same way.",
+    {
+     "h": "Why you might not"
+    },
+    "Every Edict is friction, and friction costs segments. Getting somewhere that used to be a walk can now mean a fight, a detour, or waiting for the other phase — and the budget does not care why you spent it.",
+    {
+     "h": "The honest advice"
+    },
+    "Decide early which half of this you want, because drifting into high Infamy without intending to is the worst of both. If you want the high-Infamy content, drive at it and accept the Edicts. If you want a clean routing run, stay under the thresholds and skip those fights deliberately rather than by accident."
+   ]
+  },
+  {
+   "title": "Is The Blood of Dawnwalker Worth Playing?",
+   "slug": "is-it-worth-playing",
+   "targetQuery": "is the blood of dawnwalker worth it",
+   "seo": {
+    "title": "Is The Blood of Dawnwalker Worth Playing?",
+    "description": "An honest look at what the 480-segment design actually asks of you, who will love it, and who will find it frustrating."
+   },
+   "summary": "The thirty-day clock is the whole game, not a feature bolted onto one. Whether you will enjoy it depends almost entirely on how you feel about being unable to do everything.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "title": "The Blood of Dawnwalker on Steam",
+     "url": "https://store.steampowered.com/app/3751260/The_Blood_of_Dawnwalker/"
+    },
+    {
+     "title": "The Blood of Dawnwalker: How Time Progression Works — AltChar",
+     "url": "https://www.altchar.com/guides/the-blood-of-dawnwalker-how-time-progression-works-aqro25G3s67B"
+    }
+   ],
+   "bodyParagraphs": [
+    "This is an open-world RPG that will not let you clear the map, and that single decision is what everything else grows out of. Thirty days, 480 segments, no refills. When the budget is gone the story ends, finished or not.",
+    {
+     "h": "Who will love it"
+    },
+    "Anyone who has ever felt that open-world games are a checklist with a story attached. Scarcity gives the choices weight: taking one ally chain means not taking the other, and the game never softens that by letting you come back later. Routing a run well feels like solving something.",
+    "It also rewards a second playthrough in a way most large RPGs do not, because a second run is genuinely a different run rather than the same one with better gear.",
+    {
+     "h": "Who will find it frustrating"
+    },
+    "Anyone who plays RPGs to exhaust them. If leaving content unseen bothers you, this game will bother you constantly and by design. There is no completionist pass that sees everything in one run — the budget does not stretch that far.",
+    "It is also unforgiving of casual play. Drifting for a week of in-game time is how people lose endings they did not know they were pursuing, and nothing warns them.",
+    {
+     "h": "The fair summary"
+    },
+    "Play it if you want your choices to cost something. Avoid it if you want a world you can finish. Both are legitimate, and knowing which you are before day one is worth more than any build guide.",
+    "If you do play it, the one thing worth doing early is deciding which ending you are aiming at, because two of the seven stop being reachable long before the game tells you so."
+   ],
+   "note": "Opinion, clearly marked as such. The factual claims underneath it — the budget, the gating, the chain lengths — are sourced in the records they come from."
+  },
+  {
+   "title": "Where to Find Every Legendary Weapon in The Blood of Dawnwalker",
+   "slug": "legendary-weapon-locations",
+   "targetQuery": "blood of dawnwalker legendary weapon locations",
+   "seo": {
+    "title": "Every Legendary Weapon Location",
+    "description": "Durandal, The Hand of Fate, Gladius and the rest — where each legendary weapon is, what it takes to reach it, and which are missable."
+   },
+   "summary": "Seven legendary weapons, and most are tied to a quest rather than a chest. Here is where each one is and what it costs you to go and get it.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "title": "Blood of Dawnwalker All Legendary Equipment Locations — PowerPyx",
+     "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-legendary-equipment-locations/"
+    },
+    {
+     "title": "Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood+of+Dawnwalker+Wiki"
+    }
+   ],
+   "bodyParagraphs": [
+    "Legendary weapons in this game are rarely sitting in a chest waiting for you. Most are the payoff of a side quest, which means going after one is a decision about your segment budget rather than a detour you can make for free.",
+    {
+     "h": "The ones worth planning around"
+    },
+    "Durandal is the earliest legendary most runs can reach. It closes the side quest The Cursed Chasm in Briar Sloughs: read the Special Orders on the wrecked cart by the collapsed bridge, climb down the east wall of the gorge, clear what waits at the bottom, then search the smashed wagon beneath the bridge.",
+    "The Hand of Fate needs the Stone Key from the cathedral treasure, taken before you start A Hero’s End. Take the key first and the weapon is yours; start the quest without it and you have closed the route.",
+    "The Imbued Sword of St Mihai is the longest chain of the three. Recover the broken sword in A Monk and a Saint, collect all three Sword Shards for Forge It Anew, take them to the Uriashi blacksmith in the northwest, then finish the imbuing ritual at the shrine he sends you to.",
+    {
+     "h": "The ones you find rather than earn"
+    },
+    {
+     "ul": [
+      "Gladius — deep inside the Beast of Balaur’s lair, past the miniboss.",
+      "The Vrakhir — picked up in the tunnels during The Night of Horrors, at the intersection.",
+      "Erkass’ Sword — awarded for finishing Champion of Old.",
+      "Undead Warrior’s Sword — reported as a boss drop in the cave crypt out in the bogs."
+     ]
+    },
+    {
+     "h": "A word on what is missable"
+    },
+    "The Hand of Fate is the clearest trap: the key has to be taken before the quest begins, and nothing tells you so at the time. If you are running a completionist pass, take the cathedral treasure early even if you have no intention of starting A Hero’s End yet.",
+    "Our items database lists every legendary with its location, its rarity and where a source actually pins it, and marks the ones where guides disagree rather than picking a side."
+   ],
+   "note": "Region attribution is given only where a source names one. Several legendaries are described by landmark alone and carry no region in our database."
+  },
+  {
+   "title": "The Biggest Mistakes to Avoid in The Blood of Dawnwalker",
+   "slug": "mistakes-to-avoid",
+   "targetQuery": "blood of dawnwalker mistakes to avoid",
+   "summary": "The errors that cost you days, permanently close content, or waste perk points you can never get back.",
+   "bodyParagraphs": [
+    "Nearly every serious mistake in this game belongs to one of three families: spending time on things that are not worth it, spending permanent resources carelessly, and triggering an ending before you meant to. Here they are in roughly the order of how much they cost you.",
+    {
+     "h": "Walking into the final confrontation early"
+    },
+    "This is the one that ends playthroughs. Do not enter Brencis' castle until you have finished everything else you care about. Beating him rolls the epilogue immediately and permanently locks you out of the open world. There is no post-game, no wandering back to tidy up a romance or an ally questline. If you are within sight of the finale and have loose ends, the finale waits.",
+    {
+     "h": "Grinding court and infamy busywork"
+    },
+    "The largest ongoing time leak is low-value court and infamy activity, reported at three time slots each for modest reward. Three slots out of the eight available in a half-day is a serious price, and the rewards do not consistently justify it. This does not mean court content is worthless, it means it should be chosen rather than hoovered up because it appeared on a map.",
+    {
+     "h": "Clicking through the skill tree because you have points"
+    },
+    "Acquiring a new skill is itself reported to cost a segment of time, and there is no respec in the game at launch. Both facts push in the same direction: treat the skill screen as a shop with a queue outside, not a menu to browse. Decide what the next few days require, buy that, and close it. Impulse perk purchases are how players lose half a day to nothing.",
+    {
+     "h": "Repairing broken shrines"
+    },
+    "There are more than enough working shrines across the map to make fast travel comfortable, so restoring the broken ones solves a problem you do not have. It looks like the kind of world-improving side activity these games usually reward. Here it mostly is not.",
+    {
+     "h": "Assuming a region is finished"
+    },
+    "Quests can appear in regions you have already cleared. If you are trying to see everything, the map is not a checklist you fill in once. Periodically passing back through an area you consider done is cheap, because overworld travel and fast travel do not advance the clock at all.",
+    {
+     "h": "Skipping the boring dialogue options"
+    },
+    "The white dialogue options that look like flavour sometimes unlock yellow choice options that cannot be reached any other way. Conversation does not cost segments. Exhausting a dialogue tree is one of the few genuinely free actions in the game, and it is occasionally the only route into the interesting material.",
+    {
+     "h": "Treating night like day"
+    },
+    "Human and vampire Coen want different things from a fight. The night form is built around mobility and creating openings with well timed dodges rather than holding a guard and winning exchanges. Players who bring their daytime parry rhythm into vampire combat generally decide the vampire is underpowered, when in fact they are playing a mobility character as a duelist.",
+    {
+     "h": "Running out of blood"
+    },
+    "Healing as a vampire depends on blood, and blood comes from feeding and from consumables that drop randomly off human and animal corpses. Looting every body you pass is a trivial habit that prevents the single most avoidable death spiral in the game. Animals and ordinary enemies are described as a consequence-free source, so there is no reason to ration your conscience here.",
+    {
+     "h": "Not saving in fresh slots"
+    },
+    "The game provides 54 manual save slots. Using one per in-game day gives you a working chapter select, which matters because 18 trophies are flagged missable and seven endings branch from a single late decision point. Overwriting one slot all game is the most quietly expensive habit on this list.",
+    {
+     "h": "The meta-mistake"
+    },
+    "Our opinion, and the thing we would tell a friend starting today: the real mistake is trying to do everything. The thirty-day limit is not an obstacle the game wants you to defeat, it is the subject of the game. Players who attempt full completion on a first run spend the whole time anxious and see less of what makes it interesting than players who pick a direction on day two and follow it honestly to the end."
+   ],
+   "note": "The specific costs cited here, three time slots for court and infamy activities and one segment per skill acquired, each come from a single outlet rather than from multiple independent sources.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "title": "Beginner Mistakes That Waste Your 30 Days - AllThings.how",
+     "url": "https://allthings.how/the-blood-of-dawnwalker-beginner-mistakes-that-waste-your-30-days/"
+    },
+    {
+     "title": "8 must-know tips to avoid wasting time segments - GamingBible",
+     "url": "https://www.gamingbible.com/news/the-blood-of-dawnwalker-must-know-tips-avoid-wasting-time-822830-20260907"
+    },
+    {
+     "title": "20 quick tips to survive Vale Sangora - PC Gamer",
+     "url": "https://www.pcgamer.com/games/rpg/blood-of-dawnwalker-tips/"
+    },
+    {
+     "title": "The Blood of Dawnwalker Beginner Mistakes to Avoid - KoalaFun",
+     "url": "https://www.koalafun.online/games/the-blood-of-dawnwalker/beginner-and-release/beginner-mistakes/"
+    },
+    {
+     "title": "The Blood of Dawnwalker Trophy Guide & Roadmap - PowerPyx",
+     "url": "https://www.powerpyx.com/the-blood-of-dawnwalker-trophy-guide-roadmap/"
+    }
+   ],
+   "seo": {
+    "title": "The Biggest Mistakes to Avoid",
+    "description": "The errors that quietly cost you an ending: starting an ally chain too late, clearing every court activity, and treating unknown costs as free."
+   }
+  },
+  {
+   "title": "The Blood of Dawnwalker Romance Guide: Every Option and How to Pursue Them",
+   "slug": "romance-guide",
+   "targetQuery": "blood of dawnwalker romance guide",
+   "summary": "All three romanceable characters, how each one is unlocked, and why romance is less risky here than the thirty-day clock suggests.",
+   "bodyParagraphs": [
+    "There are three romanceable characters in The Blood of Dawnwalker: Anca, Lacra and Crake. That is a small roster by modern RPG standards, and the game compensates by making each one reachable through a completely different part of its structure, which means your romance is effectively a statement about how you spent your thirty days.",
+    {
+     "h": "Anca"
+    },
+    "Anca is the earliest and the most straightforward. You can begin romancing her as soon as you meet her during the Withering Away quest in the prologue, which makes her the option available to a player who has not yet learned any of the game's systems. If you are anxious about wasting segments on a route that might not pay off, she is the safe choice, because the opportunity arrives before the clock has any real pressure on it.",
+    {
+     "h": "Lacra"
+    },
+    "Lacra is the only supernatural romance option, and she is gated behind progress rather than availability. You find her by advancing certain side quests, with her introduction commonly coming through the quest A Friend Like This, which players typically pick up from a note found on Ambrus' body in The Gilded Gauntlet. Her questline matters well beyond romance: it terminates in Midnight Reckoning, the final quest that lets you confront Brencis alongside her, which is one of the game's major endings and carries its own trophy.",
+    {
+     "h": "Crake"
+    },
+    "Crake leads the Manumits, and reaching him runs through the infamy system rather than through conversation. Raise your infamy, get in with his organisation, and access to Crake himself follows. Like Lacra, he is also an endgame ally rather than only a romance, with his own final quest, Rise at Dawn, opening a distinct route into the confrontation with Brencis.",
+    {
+     "h": "The mechanics are more forgiving than you expect"
+    },
+    "Two things make romance here less fraught than the thirty-day structure implies. First, Coen is not limited to a single partner, so an early flirtation does not close later doors. Second, the method for each is fundamentally the same: follow their questline, be decent to them in conversation, and take the romance option when it appears. There is no hidden approval meter you can quietly ruin, and there is no puzzle to solve.",
+    {
+     "h": "How we would actually plan it"
+    },
+    "Reasoning rather than a sourced instruction: treat Lacra and Crake as ending decisions that happen to include romance, and treat Anca as the one that does not cost you anything structural. Two of the game's seven endings are gated on ally questlines, and those questlines belong to Lacra and Crake. So if you intend to romance either of them, you are already committing a meaningful share of your remaining segments to their content, and you should decide that in the first week rather than the third.",
+    "The corollary is that romancing all three in one run is not a scheduling problem so much as an ending problem. The ally routes diverge at the end, with Lacra's Midnight Reckoning and Crake's Rise at Dawn as separate conversations that start separate finales. Completing both questlines is possible, but the ending-starting conversation is where you have to pick, and keeping those two moments distinct is the practical advice guides give.",
+    {
+     "h": "Do not rush the finale"
+    },
+    "One structural warning worth repeating in any romance context: entering Brencis' castle for the final confrontation rolls the epilogue immediately and locks you out of the open world. Whatever romance content you still want to see, see it before you walk through that door, because there is no coming back to tidy up afterwards."
+   ],
+   "confidence": "high",
+   "sources": [
+    {
+     "title": "Romance Guide - Fextralife Wiki",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Romance_Guide"
+    },
+    {
+     "title": "The Blood of Dawnwalker romance guide - PC Gamer",
+     "url": "https://www.pcgamer.com/games/rpg/blood-of-dawnwalker-romances/"
+    },
+    {
+     "title": "All romance options and how to date them - VGC",
+     "url": "https://www.videogameschronicle.com/guide/blood-of-dawnwalker-all-romance-options-and-how-to-date-them/"
+    },
+    {
+     "title": "All Romance Options (Romance Guide) - Game8",
+     "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/616531"
+    },
+    {
+     "title": "All Blood of Dawnwalker romance options - PCGamesN",
+     "url": "https://www.pcgamesn.com/dawnwalker/romance"
+    },
+    {
+     "title": "Endings Guide - Fextralife Wiki",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Endings_Guide"
+    }
+   ],
+   "seo": {
+    "title": "Romance Guide: Every Option",
+    "description": "Anca, Lacra and Crake — who you can romance, whether they lock each other out, and what each one costs in segments."
+   }
+  },
+  {
+   "title": "The Blood of Dawnwalker Trophy Guide: How to Plan a Platinum Run",
+   "slug": "trophy-guide",
+   "targetQuery": "blood of dawnwalker trophy guide",
+   "summary": "The full trophy breakdown, which ones are missable, and the save discipline that turns an eighteen-missable list into a single playthrough.",
+   "bodyParagraphs": [
+    "The Blood of Dawnwalker has 47 trophies: one platinum, three gold, five silver and 38 bronze. PowerPyx rates the platinum at 5 out of 10 for difficulty and estimates 40 to 60 hours, though one player is reported to have taken it in under 30 hours by leaning heavily on save manipulation. Treat the estimate as a range rather than a target, because how long it takes you depends almost entirely on how disciplined you are with saves.",
+    {
+     "h": "Eighteen missables that are not really missable"
+    },
+    "Eighteen trophies are flagged as missable, which sounds alarming for a game with a hard thirty-day limit and no chapter select. The workaround is built into the game. There are 54 manual save slots, and the recommended approach is to save into a fresh slot at the start of every in-game day. Do that and you have effectively constructed your own chapter select: any trophy you learn about on day 22 can be collected by reloading the day it was available on. With that habit, nothing in the list is genuinely lost.",
+    "If you take one thing from this guide, take that. The save discipline is not an optimisation, it is the entire strategy, and it costs you nothing but the two seconds it takes to pick a different slot.",
+    {
+     "h": "The saves that matter most"
+    },
+    {
+     "ul": [
+      "A save at the end of the prologue, before the open world begins.",
+      "A save at the start of each in-game day, in a new slot.",
+      "A save before and after each major boss.",
+      "A save immediately before the final quest begins, kept untouched."
+     ]
+    },
+    {
+     "h": "Why the last one is non-negotiable"
+    },
+    "The game has seven endings, decided by dialogue choices, and all seven can be unlocked in a single playthrough by keeping a manual save from just before the final quest and reloading it. There are also silver trophies for defeating the final boss alongside different allies, and those cancel each other out within a single run. Placed correctly, one save before the point of divergence converts what looks like a multi-playthrough requirement into an afternoon of reloading.",
+    "The ally routes are the specific thing to watch. Lacra's finale is Midnight Reckoning, which awards The Patricide, and Crake's is Rise at Dawn. The advice worth following is to complete both ally questlines during the run so that both routes are available, but to keep the ending-starting conversations distinct rather than letting one foreclose the other.",
+    {
+     "h": "Uphill Battle is the one real grind"
+    },
+    "Uphill Battle requires completing the entire game on the Duelist preset while saving the people of Laslea. Duelist is the hardest of the four presets, aimed at players reading enemy animations rather than relying on the directional UI prompts. That is the trophy that sets the tone of a completionist run, and it is worth deciding about early rather than discovering it in week three.",
+    {
+     "h": "How we would sequence it"
+    },
+    "Reasoning rather than a sourced roadmap: we would not attempt the platinum on a blind first playthrough. Play once on Fair, explore freely, learn the map and the perk trees and the shape of the ally questlines, and take whatever endings you organically reach. Then run it properly on Duelist with full knowledge, banking a save per day, completing both ally lines, and reloading the pre-finale save to sweep the ending trophies at the end.",
+    "The alternative, which is attempting everything in one blind Duelist run, is possible and is what the sub-30-hour times imply, but it means playing the game as a checklist the first time you see it. For a game whose main idea is that you cannot do everything in thirty days, spending your first run proving you can seems like the wrong way round."
+   ],
+   "note": "Completion time estimates vary widely between sources, from around 40 to 60 hours for a platinum to a reported sub-30-hour run using save manipulation, while at least one reviewer describes spending over 80 hours with the game. Treat any single figure as indicative only.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "title": "The Blood of Dawnwalker Trophy Guide & Roadmap - PowerPyx",
+     "url": "https://www.powerpyx.com/the-blood-of-dawnwalker-trophy-guide-roadmap/"
+    },
+    {
+     "title": "Trophy Guide and List of Achievements: How to Get Platinum - Game8",
+     "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/617555"
+    },
+    {
+     "title": "Trophy and Achievement Guide - Fextralife Wiki",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Trophy_and_Achievement_Guide"
+    },
+    {
+     "title": "The Blood of Dawnwalker: Achievement/Trophy Guide - TheGamer",
+     "url": "https://www.thegamer.com/the-blood-of-dawnwalker-achievement-trophy-unlock-guide/"
+    },
+    {
+     "title": "The Blood of Dawnwalker Trophies - PSNProfiles",
+     "url": "https://psnprofiles.com/trophies/42703-the-blood-of-dawnwalker"
+    },
+    {
+     "title": "Endings Guide - Fextralife Wiki",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Endings_Guide"
+    }
+   ],
+   "seo": {
+    "title": "Trophy Guide: Planning a Platinum",
+    "description": "A platinum needs more than one run because the budget will not stretch. How to split the work and what to do in which playthrough."
+   }
+  },
+  {
+   "title": "What Happens If You Run Out of Time in The Blood of Dawnwalker?",
+   "slug": "what-happens-if-time-runs-out",
+   "targetQuery": "blood of dawnwalker what happens if you run out of time",
+   "seo": {
+    "title": "What Happens If Time Runs Out?",
+    "description": "The thirty days expire whether you are ready or not. What the Time Runs Out ending is, whether you can avoid it, and how to tell if you are heading for it."
+   },
+   "summary": "Time Runs Out is the only ending you do not choose. It is what the game does when the budget is gone and nothing else has been secured.",
+   "confidence": "high",
+   "sources": [
+    {
+     "title": "All Endings | The Blood of Dawnwalker — Game8",
+     "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618231"
+    },
+    {
+     "title": "The Blood of Dawnwalker: How Time Progression Works — AltChar",
+     "url": "https://www.altchar.com/guides/the-blood-of-dawnwalker-how-time-progression-works-aqro25G3s67B"
+    }
+   ],
+   "bodyParagraphs": [
+    "Every other ending in the game is something you do. This one is something that happens to you. When the thirty days expire without any other route being secured, the run closes on Time Runs Out — the failure state, and the only ending decided by the clock rather than by a choice.",
+    {
+     "h": "Can you avoid it?"
+    },
+    "Almost always, yes, and more easily than people expect. The Folk Hero requires no questline at all: kill Brencis alone. It is available to a run that has done nothing in particular to prepare, which makes it the floor under every playthrough.",
+    "That is worth knowing because it changes what a failing run should do. If you are late and your chain is not going to finish, abandoning it for the finale is not giving up — it is taking a real ending instead of no ending.",
+    {
+     "h": "How to tell you are heading for it"
+    },
+    "The warning sign is not the day number, it is the gap between what you have left and what your chosen chain still needs. A player on day twenty-two with Crake’s chain two quests from done is fine. A player on day fifteen who has not started it is not, and nothing in the game will say so.",
+    "The run checker exists for exactly this. It subtracts what you have finished from what each ending needs and compares the remainder against your budget, and it will tell you plainly when a route has stopped being affordable.",
+    {
+     "h": "The one thing that genuinely cannot be undone"
+    },
+    "A quest you have completed that permanently excludes part of another chain is not a time problem, and no amount of remaining budget fixes it. Those are tracked separately, and the checker reports them as locked out rather than out of time — the difference matters, because one of them you could have fixed by hurrying."
+   ]
+  },
+  {
+   "title": "What to Do First in The Blood of Dawnwalker",
+   "slug": "what-to-do-first",
+   "targetQuery": "blood of dawnwalker what to do first",
+   "summary": "The opening hours after the prologue, in the order that buys you the most power for the fewest time segments.",
+   "bodyParagraphs": [
+    "The moment the prologue ends, the game hands you an open map, a thirty-day deadline and no instruction about which of those two facts should worry you more. The honest answer is neither, at first. The opening block of the game is the one stretch where almost everything worth doing is free, and the correct move is to bank power before you start spending segments on story.",
+    {
+     "h": "Climb both scouting towers"
+    },
+    "After you leave Laslea village and separate from Anca, you are in vampire form, which means you can scale structures you could not otherwise reach. Go to both scouting towers, the one in Laslea and the one out in the marshes. Between them they reveal the most northerly section of the map. Overworld travel does not cost time segments, so this is pure information at no price, and information is the resource the whole game is really about.",
+    {
+     "h": "Clear the soldiers' camp outside Laslea"
+    },
+    "The soldiers' camp just outside Laslea is the other early stop worth making. It hands over a basic spread of rewards including better gear, and it does so through combat, which also does not advance the clock. On a higher difficulty this is not optional so much as necessary, because Dawnwalker's opening can be genuinely brutal if you walk into story content underequipped.",
+    {
+     "h": "Fight things, on purpose"
+    },
+    "This is the piece of advice we would push hardest, and it follows from the time system rather than from any combat guide. Random combat is free. Perfect blocks are a reflex you have to build. The opening hours are therefore the cheapest training ground you will ever get, and the two hours you spend learning directional parries against soldiers and wolves will be repaid several times over in the fights where a reload costs you a quest window.",
+    {
+     "h": "Loot everything, especially corpses"
+    },
+    "Get into the habit immediately. Human and animal corpses have a random chance to drop blood consumables, and blood is how the vampire half of the character heals. Players who reach the first difficult night fight without a blood stockpile tend to conclude the night form is fragile. It is not fragile, it is unsupplied.",
+    {
+     "h": "Spend your first perk points deliberately"
+    },
+    "Put them in Swordmastery. It is the only tree that works in both day and night, so early points there compound twice per in-game day, while Witchcraft goes dark after sunset and Vampirism is locked behind Corruption. Sustained Focus is the standout, because it raises your total Activation Charges and every active ability you will ever own draws from that pool. Perfect Block, Perfect Riposte and Endless Effort round out the opening set. If you want one point elsewhere, Mercurial Fervour for faster daytime travel is the pick early-game guides name.",
+    {
+     "h": "Set up two loadouts before your first night"
+    },
+    "The Equipment Preview option on the right of the character screen lets you save separate configurations, so your human passives are active by day and your vampire passives by night. Doing this once, early, saves you from the far more common alternative, which is realising on day nine that half your gear has been doing nothing for half the game.",
+    {
+     "h": "What not to do first"
+    },
+    "Do not start repairing broken shrines. There are more than enough functioning shrines across the map to keep fast travel convenient, so restoring them is effort spent on a problem you do not have. More generally, be suspicious of any early activity that comes with a large hourglass number and a small reward. Court and infamy busywork in particular is reported to cost three time slots per activity for modest returns, which is a poor rate this early, before you know what you actually want.",
+    "Our summary: the first day should leave you with a bigger map, better gear, a stack of blood, four Swordmastery perks and zero segments spent. Then start the story."
+   ],
+   "confidence": "medium",
+   "sources": [
+    {
+     "title": "What to do first in The Blood of Dawnwalker - GamesRadar+",
+     "url": "https://www.gamesradar.com/games/action-rpg/blood-of-dawnwalker-what-to-do-first-where-to-go/"
+    },
+    {
+     "title": "Where To Go After the Prologue In The Blood of Dawnwalker - Game Rant",
+     "url": "https://gamerant.com/the-blood-of-dawnwalker-what-to-do-first-quest-after-prologue/"
+    },
+    {
+     "title": "Things You Should Do First - Games.gg",
+     "url": "https://games.gg/the-blood-of-dawnwalker/guides/blood-of-dawnwalker-things-you-should-do-first/"
+    },
+    {
+     "title": "The Blood of Dawnwalker Beginner Tips - Mobalytics",
+     "url": "https://mobalytics.gg/gamebase/guides/the-blood-of-dawnwalker-beginner-tips"
+    },
+    {
+     "title": "Beginner Mistakes That Waste Your 30 Days - AllThings.how",
+     "url": "https://allthings.how/the-blood-of-dawnwalker-beginner-mistakes-that-waste-your-30-days/"
+    }
+   ],
+   "seo": {
+    "title": "What to Do First",
+    "description": "The opening hours decide more than they look like they do. What to prioritise before the clock starts mattering."
+   }
+  },
+  {
+   "title": "Which Court Should You Fight First in The Blood of Dawnwalker?",
+   "slug": "which-court-first",
+   "targetQuery": "blood of dawnwalker which court first",
+   "seo": {
+    "title": "Which Court Should You Fight First?",
+    "description": "Ambrus has 14 activities, Bakir 12, Xanthe 15, and each duel unlocks at about 75%. The smallest court is the cheapest duel — here is why that matters."
+   },
+   "summary": "The three courts are not the same size, and the duel threshold is proportional. That makes Bakir the cheapest of the three to reach, and the best place to learn what the other two will cost you.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "title": "Bakir Boss Guide: Court Quest Locations | Game8",
+     "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618603"
+    },
+    {
+     "title": "Quests | Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Quests"
+    }
+   ],
+   "bodyParagraphs": [
+    "After the prologue there is no linear main quest. Progression is Court Activities: work in a vassal’s territory until they are angry enough to meet you in a duel. There are three vassals, and the order you take them in is one of the few genuinely free choices the game gives you.",
+    {
+     "h": "The courts are different sizes"
+    },
+    {
+     "ul": [
+      "Ambrus — 14 activities",
+      "Bakir — 12 activities",
+      "Xanthe — 15 activities"
+     ]
+    },
+    "The duel unlocks at roughly three quarters of a vassal’s activities. Because that threshold is a proportion rather than a fixed number, a smaller court is simply less work: three quarters of twelve is nine, three quarters of fifteen is twelve. Bakir is the cheapest duel in the game to reach, by about three activities.",
+    {
+     "h": "Why going smallest-first is more than a saving"
+    },
+    "Clearing one court early tells you what the other two will cost. Until you have finished a court you are guessing at how long an activity takes, how far apart they are, and how much of your budget a full court really eats. Doing the cheapest one first buys that information at the lowest price.",
+    "It also banks a duel. A vassal you have already beaten cannot become a problem later, and the run checker can stop counting their activities against your remaining budget.",
+    {
+     "h": "The saving nobody mentions"
+    },
+    "There are forty-one activities across the three courts and you need roughly thirty-one. That gap — ten activities you never have to do — is the single largest saving available to a tight run, and most walkthroughs will happily march you through all forty-one without mentioning it.",
+    "If your budget is tight, stop at the threshold. The duel is what you came for; the remainder is content you are paying for twice."
+   ],
+   "note": "The 75% threshold is reported rather than confirmed, and is stored as approximate. Activity counts are ours; Bakir’s is recorded as 12 against one source reporting 13 — see docs/DATA.md."
+  },
+  {
+   "title": "Which Difficulty Should You Play The Blood of Dawnwalker On?",
+   "slug": "which-difficulty-to-choose",
+   "targetQuery": "blood of dawnwalker best difficulty setting",
+   "summary": "All four presets explained, what actually changes between them, and an honest recommendation for each kind of player.",
+   "bodyParagraphs": [
+    "The Blood of Dawnwalker ships with four difficulty presets plus a custom option, and unusually for a game with a hard time limit, the choice is not locked in. You can change it at any point from the in-game settings menu, which changes how much this decision should worry you.",
+    {
+     "h": "The four presets"
+    },
+    {
+     "ul": [
+      "Story, the easiest setting. Enemies are weaker and slower, and Coen is given more stamina.",
+      "Fair, the standard experience, with Coen and enemy statistics left at their default values.",
+      "Challenging, described as raising the pressure without removing the directional combat UI.",
+      "Duelist, aimed at players who want to read enemy animations rather than rely on directional UI prompts."
+     ]
+    },
+    {
+     "h": "What the directional UI actually is"
+    },
+    "This is the part that makes the difficulty question different here than in most RPGs. Combat is directional: you aim attacks in one of four directions and enemies telegraph their swings the same way, with an on-screen indicator flagging which direction is coming. Matching your block to that direction at the moment of impact gives you a perfect block, which costs no stamina and can leave the attacker staggered. The presets do not only scale numbers, they scale how much of that information the interface hands you.",
+    {
+     "h": "Our recommendations"
+    },
+    "Play Fair on a first playthrough. It keeps the numbers honest while leaving the directional prompts in place, which gives you room to learn a genuinely unfamiliar combat system without the game also punishing you for learning it. Nearly every outlet that offers a recommendation lands here, and so do we.",
+    "Play Story if your interest is the thirty-day structure. This is not a lesser way to play the game. The most distinctive thing about The Blood of Dawnwalker is not its combat, it is the pressure of choosing which quests are worth segments, and that pressure is unchanged on Story. If combat is a toll you pay between decisions rather than the reason you are here, lowering the toll is the right call.",
+    "Move to Challenging once Fair stops threatening you, which for most players will happen somewhere in the second week once the perk tree starts compounding. The step up is real but it does not change the language of combat, so you are not relearning anything.",
+    "Save Duelist for a second run, or for players who already enjoy animation-reading in this genre. We would add one practical warning: there is a trophy called Uphill Battle that requires completing the entire game on Duelist while saving the people of Laslea. If you are a completionist, you will be doing a Duelist run anyway, which is an argument for making your first run a comfortable one rather than a miserable dress rehearsal.",
+    {
+     "h": "Custom is underrated"
+    },
+    "The gameplay menu lets you mix and match individual mechanics rather than take a preset wholesale. Our view is that this is the most interesting option in the list and the least discussed. The obvious use case is taking Challenging or Duelist enemy scaling while keeping the directional indicators, or the reverse, turning the indicators off at Fair numbers to practise animation reading without the damage spike. If one specific element of a preset is what is ruining your evening, change that element rather than the whole difficulty.",
+    {
+     "h": "The thing that reduces difficulty most"
+    },
+    "Reasoning rather than a sourced claim: on any preset, the single biggest difficulty reduction available to you is learning the perfect block, because it costs no stamina and refunds resources on top. Two hours of deliberately practising directional parries on trash enemies will do more for your survival than a preset change, and unlike a preset change it carries into the fights that actually matter."
+   ],
+   "confidence": "high",
+   "sources": [
+    {
+     "title": "Best Difficulty Settings - Game8",
+     "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/617705"
+    },
+    {
+     "title": "All difficulty settings and which one should you choose - Sportskeeda",
+     "url": "https://www.sportskeeda.com/esports/all-the-blood-dawnwalker-difficulty-settings-and-one-choose"
+    },
+    {
+     "title": "Difficulty Settings Explained and Which to Pick - AllThings.how",
+     "url": "https://allthings.how/the-blood-of-dawnwalker-difficulty-settings-explained-and-which-to-pick/"
+    },
+    {
+     "title": "Difficulty Settings Explained: Story, Fair, Challenging, Duelist - G2A News",
+     "url": "https://www.g2a.com/news/features/guide/the-blood-of-dawnwalker-difficulty-settings-explained/"
+    },
+    {
+     "title": "All 4 Modes and Which One to Choose - Timesaver",
+     "url": "https://timesaver.gg/blog/blood-of-dawnwalker-difficulty-settings"
+    },
+    {
+     "title": "The Blood of Dawnwalker Trophy Guide & Roadmap - PowerPyx",
+     "url": "https://www.powerpyx.com/the-blood-of-dawnwalker-trophy-guide-roadmap/"
+    }
+   ],
+   "seo": {
+    "title": "Which Difficulty Should You Play On?",
+    "description": "Difficulty changes the fights but not the clock. What each setting alters and which suits a first run."
+   }
+  },
+  {
+   "title": "Which Ending Should You Go For in The Blood of Dawnwalker?",
+   "slug": "which-ending-should-you-choose",
+   "targetQuery": "blood of dawnwalker which ending should i choose",
+   "seo": {
+    "title": "Which Ending Should You Go For?",
+    "description": "Seven endings, and only two need planning. Which ones you can still reach depends on the day you are on — here is how to choose before the clock chooses for you."
+   },
+   "summary": "Five endings are decided at the finale and cannot be lost early. Two are gated on ally questlines you must finish long before you get there — and those are the ones people lose without noticing.",
+   "confidence": "high",
+   "sources": [
+    {
+     "title": "All Endings | The Blood of Dawnwalker — Game8",
+     "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618231"
+    },
+    {
+     "title": "Quests | Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Quests"
+    }
+   ],
+   "bodyParagraphs": [
+    "There are seven endings, and choosing between them is not really a choice you make at the end. Five of them are, and they are safe. The other two are decided by what you did in the first two weeks, and by the time the finale asks you the question it is far too late to change your answer.",
+    {
+     "h": "The two that need planning"
+    },
+    "The Knyazmaker needs Crake’s chain, which is the longest in the game at eight quests. The Patricide needs Lacra’s, which is shorter but almost entirely night-locked. Both share the same structure: each quest appears only once the previous one has closed, so the chain cannot be parallelised, cannot be rushed, and cannot be picked up late and hurried through.",
+    "That is what makes them the two endings people lose. Nothing warns you. You simply arrive at the finale and the option is not offered.",
+    {
+     "h": "The five that do not"
+    },
+    {
+     "ul": [
+      "The Folk Hero — kill Brencis alone. Needs no questline at all, which makes it the reliable fallback when a run has gone sideways.",
+      "The Turncoat — deal with Brencis rather than fight him.",
+      "A Hero They Deserve — leave. An early exit that closes the run before the confrontation.",
+      "Together Forever — stay. The other early exit.",
+      "Time Runs Out — not chosen at all. This is what happens when the thirty days expire."
+     ]
+    },
+    {
+     "h": "How to actually decide"
+    },
+    "If you are early — inside the first week — pick which of the two ally chains you want and commit to it. They are not mutually exclusive in principle, but they compete for the same budget, and a run that tries to finish both usually finishes neither.",
+    "If you are past the halfway mark and have not started either, stop trying. The Folk Hero costs nothing in advance and is a real ending rather than a consolation. Spending your remaining days on a chain you cannot finish is how runs end in Time Runs Out.",
+    "If you are not sure where you stand, the run checker will tell you. It walks each ending’s prerequisite chain against the segments you have left and reports which are still open, which are tight, and which are already gone."
+   ]
+  }
+ ]
 }
