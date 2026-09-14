@@ -19,6 +19,7 @@ import { Quests } from './collections/Quests'
 import { CourtActivities } from './collections/CourtActivities'
 import { Endings } from './collections/Endings'
 import { Mechanics } from './collections/Mechanics'
+import { Authors } from './collections/Authors'
 import { Guides } from './collections/Guides'
 import { Corrections } from './collections/Corrections'
 import { Players } from './collections/Players'
@@ -53,6 +54,7 @@ export default buildConfig({
     // Editorial
     Mechanics,
     Guides,
+    Authors,
     // Admin
     Corrections,
     Media,

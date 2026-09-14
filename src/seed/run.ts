@@ -4,6 +4,7 @@ import type { CollectionSlug, Payload } from 'payload'
 
 import config from '../payload.config'
 import {
+  authors,
   characters,
   courts,
   endings,
@@ -205,6 +206,11 @@ async function seed(): Promise<void> {
     })
   }
   console.log('  wired quest graph, ending gates and questlines')
+
+  for (const author of authors) {
+    await upsert(payload, 'authors', author.slug, author as never)
+  }
+  console.log(`  ${authors.length} authors (all provisional — replace them in the admin)`)
 
   for (const guide of guides) {
     const { relatedEndings = [], ...rest } = guide as typeof guide & { relatedEndings?: string[] }

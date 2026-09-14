@@ -1089,3 +1089,41 @@ th.num { text-align: right; }
 .factlist dd { margin: 0; font-weight: 600; font-variant-numeric: tabular-nums; }
 /* A fact nobody has published reads as absent, not as a value. */
 .factlist dd[data-absent='true'] { font-weight: 400; font-size: 13px; color: var(--muted); }
+
+/* ---------- bylines and contributor profiles ---------- */
+
+.byline { display: flex; flex-wrap: wrap; align-items: center; gap: 11px; }
+.byline-avatar {
+  flex: none; width: 34px; height: 34px; border-radius: 50%;
+  object-fit: cover; background: var(--raised); border: 1px solid var(--rule);
+}
+.byline-avatar-blank { display: flex; align-items: center; justify-content: center; color: var(--muted); }
+.byline-text { display: flex; flex-direction: column; gap: 1px; font-size: 14px; }
+.byline-role { color: var(--muted); }
+.byline-date { font-size: 12.5px; color: var(--muted); }
+/*
+  A placeholder byline has to be impossible to miss, for the same reason the
+  legal pages shout about provisional details: the failure mode is a
+  plausible-looking stand-in going live unnoticed.
+*/
+.byline-provisional {
+  flex: 1 1 100%; margin: 0; padding: 8px 11px;
+  font-size: 13px; color: var(--ink-soft);
+  background: var(--caution-wash); border: 1px solid var(--caution);
+  border-radius: var(--r);
+}
+
+/* ---------- latest guides on the home page ---------- */
+
+.guidecards { display: grid; grid-template-columns: 1fr; gap: 12px; }
+@media (min-width: 640px) { .guidecards { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .guidecards { grid-template-columns: repeat(3, 1fr); } }
+.guidecard {
+  display: flex; flex-direction: column; gap: 6px; padding: 15px;
+  border: 1px solid var(--rule); border-radius: var(--r);
+  background: var(--surface); color: var(--ink);
+}
+.guidecard:hover { text-decoration: none; border-color: var(--accent); }
+.guidecard h3 { font-size: 16px; }
+.guidecard p { font-size: 13.5px; color: var(--muted); }
+.guidecard .eyebrow { color: var(--accent); }

@@ -7,7 +7,7 @@ import { Confidence } from '@/components/Badges'
 import { Icon } from '@/components/Icon'
 import { getAll, getSiteSettings } from '@/lib/payload'
 import { SEGMENTS_PER_PHASE, TOTAL_DAYS, TOTAL_SEGMENTS } from '@/lib/segments'
-import type { Build, Character, Court, Ending, Enemy, Item, Mechanic, Perk, Quest, Region } from '@/payload-types'
+import type { Build, Character, Court, Ending, Enemy, Guide, Item, Mechanic, Perk, Quest, Region } from '@/payload-types'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/' },
@@ -21,7 +21,7 @@ const GATE_SHORT: Record<string, string> = {
 
 export default async function Home() {
   const settings = await getSiteSettings()
-  const [endings, quests, regions, mechanics, courts, items, perks, characters, enemies, builds] =
+  const [endings, quests, regions, mechanics, courts, items, perks, characters, enemies, builds, guides] =
     await Promise.all([
     getAll<Ending>('endings', { depth: 0 }),
     getAll<Quest>('quests', { depth: 0 }),
@@ -33,6 +33,7 @@ export default async function Home() {
     getAll<Character>('characters', { depth: 0 }),
     getAll<Enemy>('enemies', { depth: 0 }),
     getAll<Build>('builds', { depth: 0 }),
+    getAll<Guide>('guides', { depth: 0, sort: '-updatedAt' }),
   ])
 
   const cheapest = [...courts].sort((a, b) => (a.activityCount ?? 99) - (b.activityCount ?? 99))[0]
@@ -42,6 +43,9 @@ export default async function Home() {
     0,
   )
   const costed = quests.filter((quest) => quest.time?.known).length
+
+  // Six is a clean two rows of three at desktop width.
+  const latestGuides = guides.slice(0, 6)
 
   const hero = sectionArt('hero', true)
 
@@ -100,6 +104,32 @@ export default async function Home() {
             )
           })}
         </div>
+
+        {/*
+          Guides on the front page, not buried behind a nav item. They are the
+          pages most likely to be somebody's entry point from a search, and
+          linking them from the busiest page on the site is worth more to them
+          than another row of database tiles.
+        */}
+        {latestGuides.length > 0 ? (
+          <section className="section">
+            <div className="section-head">
+              <h2>Guides</h2>
+              <span className="eyebrow">
+                <Link href="/guides">all {guides.length}</Link>
+              </span>
+            </div>
+            <div className="guidecards">
+              {latestGuides.map((guide) => (
+                <Link key={guide.id} href={`/guides/${guide.slug}`} className="guidecard">
+                  {guide.targetQuery ? <span className="eyebrow">{guide.targetQuery}</span> : null}
+                  <h3>{guide.title}</h3>
+                  {guide.summary ? <p>{guide.summary}</p> : null}
+                </Link>
+              ))}
+            </div>
+          </section>
+        ) : null}
 
         <section className="clock-strip">
           <div className="strip" aria-hidden="true">

@@ -81,6 +81,7 @@ export interface Config {
     builds: Build;
     mechanics: Mechanic;
     guides: Guide;
+    authors: Author;
     corrections: Correction;
     media: Media;
     players: Player;
@@ -105,6 +106,7 @@ export interface Config {
     builds: BuildsSelect<false> | BuildsSelect<true>;
     mechanics: MechanicsSelect<false> | MechanicsSelect<true>;
     guides: GuidesSelect<false> | GuidesSelect<true>;
+    authors: AuthorsSelect<false> | AuthorsSelect<true>;
     corrections: CorrectionsSelect<false> | CorrectionsSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     players: PlayersSelect<false> | PlayersSelect<true>;
@@ -1311,6 +1313,14 @@ export interface Guide {
    * The search this page is written to answer. One page, one query.
    */
   targetQuery?: string | null;
+  /**
+   * Who is answerable for this page. Shown as a byline with a link to their profile.
+   */
+  author?: (number | null) | Author;
+  /**
+   * Shown as "last checked". A guide to a live game goes stale, and saying when it was last looked at is more use than hiding it.
+   */
+  updated?: string | null;
   relatedQuests?: (number | Quest)[] | null;
   relatedEndings?: (number | Ending)[] | null;
   /**
@@ -1370,6 +1380,45 @@ export interface Guide {
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
+}
+/**
+ * Bylines for guides. Replace the seeded placeholders with real people before launch and untick "provisional" on each.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "authors".
+ */
+export interface Author {
+  id: number;
+  name: string;
+  /**
+   * URL segment. Auto-filled from the title. Changing it breaks existing links.
+   */
+  slug: string;
+  /**
+   * Ticked means every page carrying this byline says so out loud. Untick it only when the name, biography and credentials below belong to a real person who agreed to them.
+   */
+  provisional?: boolean | null;
+  /**
+   * How they are described under the byline, e.g. "Routing and endings".
+   */
+  role?: string | null;
+  /**
+   * Why this person is worth reading on this subject. Specific beats flattering — what they have actually done with the game.
+   */
+  bio?: string | null;
+  avatar?: (number | null) | Media;
+  /**
+   * Somewhere a reader can verify the person exists.
+   */
+  links?:
+    | {
+        label: string;
+        url: string;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * Reader reports. Triage these — they are the accuracy loop.
@@ -1549,6 +1598,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'guides';
         value: number | Guide;
+      } | null)
+    | ({
+        relationTo: 'authors';
+        value: number | Author;
       } | null)
     | ({
         relationTo: 'corrections';
@@ -2071,6 +2124,8 @@ export interface GuidesSelect<T extends boolean = true> {
   title?: T;
   slug?: T;
   targetQuery?: T;
+  author?: T;
+  updated?: T;
   relatedQuests?: T;
   relatedEndings?: T;
   confidence?: T;
@@ -2094,6 +2149,27 @@ export interface GuidesSelect<T extends boolean = true> {
   updatedAt?: T;
   createdAt?: T;
   _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "authors_select".
+ */
+export interface AuthorsSelect<T extends boolean = true> {
+  name?: T;
+  slug?: T;
+  provisional?: T;
+  role?: T;
+  bio?: T;
+  avatar?: T;
+  links?:
+    | T
+    | {
+        label?: T;
+        url?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

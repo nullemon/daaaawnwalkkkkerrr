@@ -38,7 +38,9 @@
     "Some activities carry legendary rewards, and a few gate quests of their own. Ancient Hero’s Vambraces come out of one of Xanthe’s activities; Ancient Footwear out of another. If you are hunting gear, those stop being optional.",
     "Our court activities database lists all forty-one with their court, their region and what they lead to, so you can pick the cheap thirty-one rather than the first thirty-one you happen to walk past."
    ],
-   "note": "No source publishes a per-activity segment cost, so the database records them as unknown rather than as zero."
+   "note": "No source publishes a per-activity segment cost, so the database records them as unknown rather than as zero.",
+   "authorSlug": "tobias-renn",
+   "updated": "2026-09-14"
   },
   {
    "title": "The Blood of Dawnwalker Beginner's Guide: What to Understand Before Day One",
@@ -103,7 +105,9 @@
    "seo": {
     "title": "The Blood of Dawnwalker Beginner's Guide",
     "description": "Thirty days, 480 segments and no second chances. What to understand about the clock, the courts and the ally chains before you start day one."
-   }
+   },
+   "authorSlug": "corvin-ashe",
+   "updated": "2026-09-14"
   },
   {
    "title": "Which Ultimate Perks Should You Take in The Blood of Dawnwalker?",
@@ -168,7 +172,9 @@
    "seo": {
     "title": "Which Ultimate Perks Should You Take?",
     "description": "Nine ultimates, one per tree, and picking any closes two others. A look at what each actually does and which combinations hold up."
-   }
+   },
+   "authorSlug": "mirela-dunca",
+   "updated": "2026-09-14"
   },
   {
    "title": "Can You Romance Everyone in The Blood of Dawnwalker?",
@@ -213,7 +219,9 @@
     },
     "You will see him called Marat in some material, including Bandai Namco’s own. The prevailing reading is that Marat is his birth name and Crake is what the rebellion calls him, but no source we found explains the change, so we record both rather than picking one."
    ],
-   "note": "Whether romancing one locks the others is reported rather than confirmed. Crake’s romanceability is recorded against an earlier source that said otherwise — see docs/DATA.md."
+   "note": "Whether romancing one locks the others is reported rather than confirmed. Crake’s romanceability is recorded against an earlier source that said otherwise — see docs/DATA.md.",
+   "authorSlug": "tobias-renn",
+   "updated": "2026-09-14"
   },
   {
    "title": "Corruption Explained: Should You Raise It in The Blood of Dawnwalker?",
@@ -282,7 +290,9 @@
    "seo": {
     "title": "Corruption Explained",
     "description": "Corruption gates the Vampirism tree and rises when you feed. What it unlocks, what it costs you, and whether raising it is worth doing."
-   }
+   },
+   "authorSlug": "corvin-ashe",
+   "updated": "2026-09-14"
   },
   {
    "title": "Day or Night: Which Should You Play in The Blood of Dawnwalker?",
@@ -327,7 +337,9 @@
     },
     "Let the locked content decide. Night-only quests are the constraint, because they can only be done in one place; day content usually has somewhere else to go. Lacra’s chain in particular is almost entirely night-locked, so taking it commits your nights and leaves your days as the flexible half.",
     "The run checker knows which phase you are in and will tell you what you can actually start right now, which is a more useful question than which half is better."
-   ]
+   ],
+   "authorSlug": "mirela-dunca",
+   "updated": "2026-09-14"
   },
   {
    "title": "How Does Corruption Work in The Blood of Dawnwalker?",
@@ -365,7 +377,9 @@
     "If you are playing nights heavily, yes — you are feeding anyway, and refusing the tree means fighting the back half of every day with two thirds of your kit. If you are building around Witchcraft, which is the day tree, the calculus is different: you will not be feeding as often, and forcing Corruption up to reach abilities you cannot use in daylight is effort spent twice.",
     "The build planner will total what a given spec costs and enforce the one-ultimate-per-tree rule, which is the constraint that actually decides these questions."
    ],
-   "note": "Exactly what Corruption does to the ending you are offered is not published in any source we could reach, and is deliberately not stated here."
+   "note": "Exactly what Corruption does to the ending you are offered is not published in any source we could reach, and is deliberately not stated here.",
+   "authorSlug": "mirela-dunca",
+   "updated": "2026-09-14"
   },
   {
    "title": "How Long Is The Blood of Dawnwalker? The 480-Segment Budget Explained",
@@ -409,7 +423,9 @@
     "Work backwards from the ending you want rather than forwards from where you are. Two of the seven are gated on an ally chain that has to be finished before the finale, and a chain you start on day twenty is a chain you do not finish. Everything else is either decided at the finale or decided by the clock beating you to it.",
     "Our run checker does that arithmetic for you: tell it the day you are on and what you have finished, and it works out which endings are still reachable and which are already gone."
    ],
-   "note": "Total-hours figures are deliberately not given: no source publishes a reliable one and the segment budget is the meaningful measure."
+   "note": "Total-hours figures are deliberately not given: no source publishes a reliable one and the segment budget is the meaningful measure.",
+   "authorSlug": "corvin-ashe",
+   "updated": "2026-09-14"
   },
   {
    "title": "How Time Works in The Blood of Dawnwalker",
@@ -488,7 +504,9 @@
    "seo": {
     "title": "How Time Works in The Blood of Dawnwalker",
     "description": "The clock only moves when you let it. How the 480-segment budget works, what spends it, and why travel and combat are free."
-   }
+   },
+   "authorSlug": "corvin-ashe",
+   "updated": "2026-09-14"
   },
   {
    "title": "How to Perfect Block in The Blood of Dawnwalker",
@@ -557,7 +575,9 @@
    "seo": {
     "title": "How to Perfect Block",
     "description": "Timing, what it counters and why it matters more here than in most action RPGs — plus the perks that build on it."
-   }
+   },
+   "authorSlug": "mirela-dunca",
+   "updated": "2026-09-14"
   },
   {
    "title": "How to Save Time in The Blood of Dawnwalker: 9 Things That Cost Nothing",
@@ -610,7 +630,9 @@
      "h": "The one real trap"
     },
     "A quest with an unpublished cost is not a free quest. Only fifteen of ninety-three have a confirmed figure, so most of what you commit to is priced in a number nobody has written down. Treat an unknown as expensive until proven otherwise, which is exactly how our run checker treats it."
-   ]
+   ],
+   "authorSlug": "corvin-ashe",
+   "updated": "2026-09-14"
   },
   {
    "title": "What Is Infamy in The Blood of Dawnwalker, and Should You Raise It?",
@@ -650,7 +672,9 @@
      "h": "The honest advice"
     },
     "Decide early which half of this you want, because drifting into high Infamy without intending to is the worst of both. If you want the high-Infamy content, drive at it and accept the Edicts. If you want a clean routing run, stay under the thresholds and skip those fights deliberately rather than by accident."
-   ]
+   ],
+   "authorSlug": "tobias-renn",
+   "updated": "2026-09-14"
   },
   {
    "title": "Is The Blood of Dawnwalker Worth Playing?",
@@ -690,7 +714,9 @@
     "Play it if you want your choices to cost something. Avoid it if you want a world you can finish. Both are legitimate, and knowing which you are before day one is worth more than any build guide.",
     "If you do play it, the one thing worth doing early is deciding which ending you are aiming at, because two of the seven stop being reachable long before the game tells you so."
    ],
-   "note": "Opinion, clearly marked as such. The factual claims underneath it — the budget, the gating, the chain lengths — are sourced in the records they come from."
+   "note": "Opinion, clearly marked as such. The factual claims underneath it — the budget, the gating, the chain lengths — are sourced in the records they come from.",
+   "authorSlug": "corvin-ashe",
+   "updated": "2026-09-14"
   },
   {
    "title": "Where to Find Every Legendary Weapon in The Blood of Dawnwalker",
@@ -737,7 +763,9 @@
     "The Hand of Fate is the clearest trap: the key has to be taken before the quest begins, and nothing tells you so at the time. If you are running a completionist pass, take the cathedral treasure early even if you have no intention of starting A Hero’s End yet.",
     "Our items database lists every legendary with its location, its rarity and where a source actually pins it, and marks the ones where guides disagree rather than picking a side."
    ],
-   "note": "Region attribution is given only where a source names one. Several legendaries are described by landmark alone and carry no region in our database."
+   "note": "Region attribution is given only where a source names one. Several legendaries are described by landmark alone and carry no region in our database.",
+   "authorSlug": "tobias-renn",
+   "updated": "2026-09-14"
   },
   {
    "title": "The Biggest Mistakes to Avoid in The Blood of Dawnwalker",
@@ -814,7 +842,9 @@
    "seo": {
     "title": "The Biggest Mistakes to Avoid",
     "description": "The errors that quietly cost you an ending: starting an ally chain too late, clearing every court activity, and treating unknown costs as free."
-   }
+   },
+   "authorSlug": "corvin-ashe",
+   "updated": "2026-09-14"
   },
   {
    "title": "The Blood of Dawnwalker Romance Guide: Every Option and How to Pursue Them",
@@ -879,7 +909,9 @@
    "seo": {
     "title": "Romance Guide: Every Option",
     "description": "Anca, Lacra and Crake — who you can romance, whether they lock each other out, and what each one costs in segments."
-   }
+   },
+   "authorSlug": "corvin-ashe",
+   "updated": "2026-09-14"
   },
   {
    "title": "The Blood of Dawnwalker Trophy Guide: How to Plan a Platinum Run",
@@ -950,7 +982,9 @@
    "seo": {
     "title": "Trophy Guide: Planning a Platinum",
     "description": "A platinum needs more than one run because the budget will not stretch. How to split the work and what to do in which playthrough."
-   }
+   },
+   "authorSlug": "corvin-ashe",
+   "updated": "2026-09-14"
   },
   {
    "title": "What Happens If You Run Out of Time in The Blood of Dawnwalker?",
@@ -988,7 +1022,9 @@
      "h": "The one thing that genuinely cannot be undone"
     },
     "A quest you have completed that permanently excludes part of another chain is not a time problem, and no amount of remaining budget fixes it. Those are tracked separately, and the checker reports them as locked out rather than out of time — the difference matters, because one of them you could have fixed by hurrying."
-   ]
+   ],
+   "authorSlug": "corvin-ashe",
+   "updated": "2026-09-14"
   },
   {
    "title": "What to Do First in The Blood of Dawnwalker",
@@ -1053,7 +1089,9 @@
    "seo": {
     "title": "What to Do First",
     "description": "The opening hours decide more than they look like they do. What to prioritise before the clock starts mattering."
-   }
+   },
+   "authorSlug": "corvin-ashe",
+   "updated": "2026-09-14"
   },
   {
    "title": "Which Court Should You Fight First in The Blood of Dawnwalker?",
@@ -1099,7 +1137,9 @@
     "There are forty-one activities across the three courts and you need roughly thirty-one. That gap — ten activities you never have to do — is the single largest saving available to a tight run, and most walkthroughs will happily march you through all forty-one without mentioning it.",
     "If your budget is tight, stop at the threshold. The duel is what you came for; the remainder is content you are paying for twice."
    ],
-   "note": "The 75% threshold is reported rather than confirmed, and is stored as approximate. Activity counts are ours; Bakir’s is recorded as 12 against one source reporting 13 — see docs/DATA.md."
+   "note": "The 75% threshold is reported rather than confirmed, and is stored as approximate. Activity counts are ours; Bakir’s is recorded as 12 against one source reporting 13 — see docs/DATA.md.",
+   "authorSlug": "tobias-renn",
+   "updated": "2026-09-14"
   },
   {
    "title": "Which Difficulty Should You Play The Blood of Dawnwalker On?",
@@ -1169,7 +1209,9 @@
    "seo": {
     "title": "Which Difficulty Should You Play On?",
     "description": "Difficulty changes the fights but not the clock. What each setting alters and which suits a first run."
-   }
+   },
+   "authorSlug": "mirela-dunca",
+   "updated": "2026-09-14"
   },
   {
    "title": "Which Ending Should You Go For in The Blood of Dawnwalker?",
@@ -1216,7 +1258,9 @@
     "If you are early — inside the first week — pick which of the two ally chains you want and commit to it. They are not mutually exclusive in principle, but they compete for the same budget, and a run that tries to finish both usually finishes neither.",
     "If you are past the halfway mark and have not started either, stop trying. The Folk Hero costs nothing in advance and is a real ending rather than a consolation. Spending your remaining days on a chain you cannot finish is how runs end in Time Runs Out.",
     "If you are not sure where you stand, the run checker will tell you. It walks each ending’s prerequisite chain against the segments you have left and reports which are still open, which are tight, and which are already gone."
-   ]
+   ],
+   "authorSlug": "corvin-ashe",
+   "updated": "2026-09-14"
   }
  ]
 }

@@ -716,6 +716,64 @@ export const endings = [
   ),
 }))
 
+/**
+ * Placeholder contributor profiles.
+ *
+ * Bylines are load-bearing for a guide site — a reader deserves to know who is
+ * answerable for a page — but an invented expert is worse than no byline at
+ * all. These ship with  ticked, which makes every byline and
+ * profile say so out loud, keeps the profile out of the index, and keeps the
+ * name out of the Article markup. Replace them in the admin with people who
+ * actually wrote the pages, then untick it. Same switch, same reasoning as
+ * .
+ *
+ * The roles are split by what the site actually covers, so the replacements
+ * have an obvious shape to fill rather than three interchangeable names.
+ */
+/**
+ * Placeholder contributor profiles.
+ *
+ * Bylines are load-bearing for a guide site — a reader deserves to know who is
+ * answerable for a page, and search guidance asks the same question. But an
+ * invented expert is worse than no byline: it is a claim about a person who
+ * does not exist, made to both readers and crawlers.
+ *
+ * So these ship with `provisional` ticked, which makes every byline and profile
+ * say so out loud, keeps the profile page out of the index, and keeps the name
+ * out of the Article markup. Replace them in the admin with the people who
+ * actually wrote the pages and untick it. Same switch and same reasoning as
+ * `legalProvisional` above.
+ *
+ * The three roles split by what the site actually covers, so the replacements
+ * have an obvious shape to fill rather than three interchangeable names.
+ */
+export const authors = [
+  {
+    name: 'Corvin Ashe',
+    slug: 'corvin-ashe',
+    provisional: true,
+    role: 'Routing and endings',
+    bio:
+      'Placeholder profile. The role exists because most of this site is routing work — which ending is still reachable on day seventeen, what a chain costs, where the budget actually goes — and that is the expertise a reader should be able to check.',
+  },
+  {
+    name: 'Mirela Dunca',
+    slug: 'mirela-dunca',
+    provisional: true,
+    role: 'Builds, perks and combat',
+    bio:
+      'Placeholder profile. Covers the three skill trees, the nine ultimates and what a spec costs in segments — the half of the game that is arithmetic rather than geography.',
+  },
+  {
+    name: 'Tobias Renn',
+    slug: 'tobias-renn',
+    provisional: true,
+    role: 'World, items and the courts',
+    bio:
+      'Placeholder profile. Covers the ten regions, the forty-one court activities and where the legendaries actually are — the reference half of the database rather than the opinion half.',
+  },
+]
+
 export const guides = [
   {
     title: 'Can you still reach every ending from where you are?',

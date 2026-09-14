@@ -23,6 +23,25 @@ export const Guides: CollectionConfig = {
       },
     },
     {
+      name: 'author',
+      type: 'relationship',
+      relationTo: 'authors',
+      admin: {
+        position: 'sidebar',
+        description: 'Who is answerable for this page. Shown as a byline with a link to their profile.',
+      },
+    },
+    {
+      name: 'updated',
+      type: 'date',
+      admin: {
+        position: 'sidebar',
+        date: { pickerAppearance: 'dayOnly' },
+        description:
+          'Shown as "last checked". A guide to a live game goes stale, and saying when it was last looked at is more use than hiding it.',
+      },
+    },
+    {
       name: 'relatedQuests',
       type: 'relationship',
       relationTo: 'quests',

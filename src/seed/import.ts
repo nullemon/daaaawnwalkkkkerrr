@@ -270,11 +270,15 @@ async function run(): Promise<void> {
     if (ok) bump('court-activities')
   }
 
+  // Authors are seeded by `pnpm seed`, so they exist before this runs.
+  const authors = await slugIndex(payload, 'authors')
   for (const record of raw.get('guides') ?? []) {
     if (!validate(record, 'guides', 0)) continue
     const ok = await upsert(payload, 'guides', record.slug!, {
       ...base(record),
       targetQuery: record.targetQuery,
+      author: authors.get(String(record.authorSlug)),
+      updated: record.updated,
       _status: 'published',
     })
     if (ok) bump('guides')
