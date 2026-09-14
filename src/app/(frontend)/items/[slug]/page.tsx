@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
 import { Badge, Confidence } from '@/components/Badges'
@@ -6,7 +7,8 @@ import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
 import { EntityImage } from '@/components/EntityImage'
 import { getAll, getBySlug } from '@/lib/payload'
-import type { Item } from '@/payload-types'
+import { ACQUISITION_SENTENCE } from '@/lib/items'
+import type { Item, Region } from '@/payload-types'
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -31,6 +33,9 @@ export default async function ItemPage({ params }: Props) {
   const doc = await getBySlug<Item>('items', slug, 1)
   if (!doc) notFound()
 
+  const region = doc.region && typeof doc.region === 'object' ? (doc.region as Region) : null
+  const acquisitionSentence = doc.acquisition ? ACQUISITION_SENTENCE[doc.acquisition] : undefined
+
   return (
     <>
       <PageHeader
@@ -49,12 +54,33 @@ export default async function ItemPage({ params }: Props) {
       <div className="page body-main">
         <EntityImage media={doc.image} shape="square" />
 
-        {doc.howToGet ? (
-          <div className="callout">
-            <h3>Where to find it</h3>
-            <p>{doc.howToGet}</p>
-          </div>
-        ) : null}
+        {/*
+          The index promises a "Where" for this item, so the page has to answer
+          it. Region when one is sourced, otherwise the kind of acquisition —
+          and when there is neither, say so plainly rather than showing nothing
+          at all, which reads as though the section were still being written.
+        */}
+        <div className="callout">
+          <h3>Where to find it</h3>
+          {doc.howToGet ? <p>{doc.howToGet}</p> : null}
+          {region || acquisitionSentence ? (
+            <p className="note">
+              {region ? (
+                <>
+                  In <Link href={`/regions/${region.slug}`}>{region.title}</Link>.{' '}
+                </>
+              ) : null}
+              {acquisitionSentence}
+            </p>
+          ) : null}
+          {!doc.howToGet && !region && !acquisitionSentence ? (
+            <p>
+              No source we could reach says where this one comes from. That is a gap in the public
+              record rather than a shortcut here — <Link href="/corrections">tell us</Link> if you
+              know it.
+            </p>
+          ) : null}
+        </div>
         {doc.stats?.length ? (
           <div className="tablewrap">
             <table>

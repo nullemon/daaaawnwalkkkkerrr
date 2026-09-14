@@ -77,6 +77,13 @@ that inherits the default would let any reader who signs up edit content.
   `push: false`, so a new field breaks the build with a missing-column error.
   `pnpm db:reset` — the database is fully reproducible from seed plus
   `src/seed/raw/`, by design.
+- **`db:reset` drops attached images, because they are not in the seed.**
+  Uploads live in the database and in `media/`, not in `src/seed/raw/`, so a
+  rebuild silently takes every record back to its fallback icon — the pages
+  still render, which is exactly why nobody notices. `pnpm db:reset` now ends
+  with `pnpm assets` to put them back; that step no-ops cleanly on a machine
+  with no `assets/` folder, so it is safe in the chain. If portraits vanish,
+  this is what happened, and `pnpm assets` alone fixes it.
 - **Scripts must run on Windows too.** `pnpm devsafe` shipped as `rm -rf .next`
   and died with `'rm' is not recognized` on the machine this is actually
   developed on. Anything that touches the filesystem from `package.json` goes

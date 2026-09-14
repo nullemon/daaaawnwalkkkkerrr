@@ -23,7 +23,7 @@
     "assets:match": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/match-assets.ts",
     "ingest": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/import.ts",
     "clean:db": "node tools/reset-db.mjs",
-    "db:reset": "pnpm run clean:db && pnpm run seed && pnpm run ingest"
+    "db:reset": "pnpm run clean:db && pnpm run seed && pnpm run ingest && pnpm run assets"
   },
   "dependencies": {
     "@payloadcms/db-sqlite": "3.89.0",

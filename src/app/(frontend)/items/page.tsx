@@ -5,6 +5,7 @@ import { sectionArt } from '@/lib/art'
 import { ICON_FOR_CATEGORY } from '@/components/Icon'
 import { DataTable, type Row } from '@/components/DataTable'
 import { getAll } from '@/lib/payload'
+import { acquisitionLabel } from '@/lib/items'
 import type { Item, Region } from '@/payload-types'
 
 export const metadata: Metadata = {
@@ -14,30 +15,12 @@ export const metadata: Metadata = {
   alternates: { canonical: '/items' },
 }
 
-/**
- * What an empty region means, in the item's own terms.
- *
- * Most items have no single region and never will: a herb that grows across
- * the map is not missing a location, and a reward handed over at the end of a
- * questline never had one. A column of dashes said "we have not done the
- * research" about items whose research is finished, so where the region is
- * genuinely not a fact, the row says which kind of thing it is instead.
- */
-const ACQUISITION_LABEL: Record<string, string> = {
-  world: 'Fixed location',
-  'quest-reward': 'Quest reward',
-  merchant: 'Merchant',
-  drop: 'Enemy drop',
-  gathered: 'Across the map',
-  crafted: 'Crafted',
-}
-
 export default async function ItemsIndex() {
   const items = await getAll<Item>('items', { depth: 1 })
 
   const rows: Row[] = items.map((item) => {
     const region = typeof item.region === 'object' ? (item.region as Region) : null
-    const acquisition = item.acquisition ? ACQUISITION_LABEL[item.acquisition] : undefined
+    const acquisition = acquisitionLabel(item)
     return {
       id: item.id,
       icon: ICON_FOR_CATEGORY[item.category] ?? 'key',
