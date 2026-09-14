@@ -15,13 +15,12 @@
  *   affects Google indexing at all. For Google, the sitemap in Search Console
  *   remains the mechanism, and that is already wired up at /sitemap.xml.
  *
- * Setup, once:
+ * Setup: none. A key is already generated and committed as public/<key>.txt,
+ * which is all the engines need to verify it — the key is published by design
+ * rather than kept secret, so it lives in the repo like any other public file.
  *
- *   1. Invent a key — any 8-128 hex characters. `openssl rand -hex 16` is fine.
- *   2. Put it in .env as INDEXNOW_KEY=<key>.
- *   3. Run this script once with --send. It writes public/<key>.txt, which is
- *      how the engines verify the key belongs to you, then submits.
- *   4. Commit that file. Without it every submission is rejected.
+ * All that is required is that the site is deployed at the origin in
+ * NEXT_PUBLIC_SITE_URL, and that /<key>.txt is reachable there.
  *
  * Re-run it after a deploy that adds or changes pages. Submitting unchanged
  * URLs repeatedly is not useful and some participants rate-limit it.
@@ -33,12 +32,38 @@ import 'dotenv/config'
 const SEND = process.argv.includes('--send')
 const ENDPOINT = 'https://api.indexnow.org/IndexNow'
 
-const key = process.env.INDEXNOW_KEY?.trim()
+/**
+ * Find the key.
+ *
+ * An IndexNow key is not a credential. It is a random string you invent and
+ * then publish at `/<key>.txt` — the file being reachable is the whole of the
+ * proof that the key is yours. So the committed key file is the source of
+ * truth, and the env var only exists to override it.
+ *
+ * That means this works on a fresh clone with no setup: the key ships in the
+ * repo because it has to ship to the web anyway.
+ */
+const keyFromPublicDir = () => {
+  const dir = path.resolve('public')
+  if (!fs.existsSync(dir)) return undefined
+  const candidate = fs
+    .readdirSync(dir)
+    .filter((name) => /^[a-zA-Z0-9-]{8,128}\.txt$/.test(name))
+    .find((name) => {
+      const stem = name.replace(/\.txt$/, '')
+      return fs.readFileSync(path.join(dir, name), 'utf8').trim() === stem
+    })
+  return candidate?.replace(/\.txt$/, '')
+}
+
+const key = process.env.INDEXNOW_KEY?.trim() || keyFromPublicDir()
 const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || '').trim()
 
 if (!key) {
-  console.error('No INDEXNOW_KEY in .env.')
-  console.error('Generate one (openssl rand -hex 16) and add INDEXNOW_KEY=<key> to .env.')
+  console.error('No IndexNow key found.')
+  console.error('Expected a file in public/ named <key>.txt whose contents are that same key,')
+  console.error('or INDEXNOW_KEY set in .env. Generate one with:')
+  console.error('  node -e "console.log(require(\'crypto\').randomBytes(16).toString(\'hex\'))"')
   process.exit(1)
 }
 if (!/^[a-zA-Z0-9-]{8,128}$/.test(key)) {
@@ -58,7 +83,7 @@ const host = new URL(siteUrl).host
 const keyFile = path.resolve('public', `${key}.txt`)
 if (!fs.existsSync(keyFile)) {
   fs.writeFileSync(keyFile, key)
-  console.log(`Wrote public/${key}.txt — commit and deploy this before submitting.`)
+  console.log(`Wrote public/${key}.txt — commit and deploy it before submitting.`)
 }
 
 /**
