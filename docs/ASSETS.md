@@ -227,10 +227,44 @@ licence. Check the licence on the file page itself, not the article.
 
 ## What not to do
 
-**Do not pull images from other fan wikis.** Their images are ripped from the
-game just as yours would be, so you inherit that exposure — and you add a
-terms-of-service violation against the wiki on top. There is no upside: the
-same asset is available from the source.
+**Pulling images from community wikis — what this site actually does.**
+
+This section used to read "do not", on the reasoning that *there is no upside:
+the same asset is available from the source*. That last clause turned out to be
+false, and the rule was overruled deliberately rather than forgotten.
+
+Every official route was worked through first, and none of them identifies its
+own pictures. The Rebel Wolves media pack, all three Bandai Namco press packs
+and the Steam store ship screenshots named `Screenshot (1..8).png` with no
+captions and no IPTC or XMP. The official site never names a region anywhere in
+its published copy. The printed Vale Sangora map exists only inside the
+Collector's Edition box. The streaming kit is overlay frames and emoji. Item
+icons genuinely do only exist inside the game files, and the extraction route in
+section 5 needs the game installed, which it is not here.
+
+So the choice was between a database with no pictures and one that credits
+another site for them. The owner chose the second, knowing the rest of the
+original reasoning stands: **these images are ripped from the game just as ours
+would be, so we inherit that exposure, and there is a terms-of-service question
+against the wiki on top.**
+
+`tools/fetch-wiki-images.mjs` is how it is done, and it is deliberately narrow:
+
+- it reads `robots.txt` first and refuses any path the host disallows
+- one request per second, single-threaded, with a real referer
+- an image is only accepted when its **own filename names the record** it is
+  being filed under, so Durandal's art can never land on Gladius
+- every file's page and URL go into `assets/_library/wiki-images.json`, and
+  `pnpm assets` turns that into a visible per-image credit: *"… Image via
+  bloodofdawnwalker.wiki.fextralife.com."*
+
+Sites that signal they do not want automated collection are left alone —
+`gamerguides.com` blocks `GPTBot` and `Google-Extended` in its robots.txt, so it
+is not used even though its pages would parse.
+
+If the game is ever installed, prefer section 5: extracted icons are the same
+assets without the second party's exposure, and `pnpm assets:match` already
+exists to file them.
 
 **Do not hotlink.** Serving images from someone else's CDN is bandwidth theft
 and breaks the moment they rotate a URL. Upload them here.

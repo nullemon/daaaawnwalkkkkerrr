@@ -42,6 +42,43 @@ const FOLDERS: Record<string, { collection: CollectionSlug; field: string }> = {
 
 const ALLOWED = new Set(['.png', '.jpg', '.jpeg', '.webp', '.avif', '.gif'])
 
+const PUBLISHER = 'The Blood of Dawnwalker © Rebel Wolves / Bandai Namco Entertainment'
+
+/**
+ * Where a given file came from, when something recorded it.
+ *
+ * The publisher owns the art either way, but an image lifted from a community
+ * wiki was hosted and named by that wiki, and saying so is the difference
+ * between crediting a source and quietly passing off someone else's work.
+ * `tools/fetch-wiki-images.mjs` writes the manifest this reads.
+ */
+const wikiCredits = (): Map<string, string> => {
+  const manifestPath = path.join(ASSET_DIR, '_library/wiki-images.json')
+  if (!fs.existsSync(manifestPath)) return new Map()
+  try {
+    const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8')) as {
+      files?: { file: string; page?: string }[]
+    }
+    const host = (url?: string) => {
+      try {
+        return url ? new URL(url).hostname.replace(/^www\./, '') : undefined
+      } catch {
+        return undefined
+      }
+    }
+    return new Map(
+      (manifest.files ?? [])
+        .filter((entry) => entry.file)
+        .map((entry) => [
+          entry.file,
+          host(entry.page) ? `${PUBLISHER}. Image via ${host(entry.page)}.` : PUBLISHER,
+        ]),
+    )
+  } catch {
+    return new Map()
+  }
+}
+
 /** Filenames are the interface, so be forgiving about how they are written. */
 const slugFromFilename = (filename: string): string =>
   path
@@ -70,6 +107,7 @@ async function run(): Promise<void> {
     process.exit(0)
   }
 
+  const credits = wikiCredits()
   const payload = await getPayload({ config })
   let attached = 0
   let skipped = 0
@@ -109,7 +147,7 @@ async function run(): Promise<void> {
           filePath: path.join(folderPath, file),
           data: {
             alt: `${record.title ?? slug} — ${target.collection.replace(/-/g, ' ')}`,
-            credit: 'The Blood of Dawnwalker © Rebel Wolves / Bandai Namco Entertainment',
+            credit: credits.get(`${folder}/${file}`) ?? PUBLISHER,
           },
         })
         await payload.update({
