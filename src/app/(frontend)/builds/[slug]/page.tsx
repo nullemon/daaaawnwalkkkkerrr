@@ -9,7 +9,8 @@ import { Sources } from '@/components/Sources'
 import { AdSlot } from '@/components/AdSlot'
 import { EntityImage } from '@/components/EntityImage'
 import { getAll, getBySlug, rel, relMany } from '@/lib/payload'
-import type { Build, Item, Perk, SkillTree } from '@/payload-types'
+import type { Build, Item, Perk, SkillTree } from '@/payload-types'
+import { buildMeta } from '@/lib/seo'
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -20,11 +21,13 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const doc = await getBySlug<Build>('builds', slug, 0)
+  const doc = await getBySlug<Build>('builds', slug, 1)
   if (!doc) return {}
+  const meta = buildMeta(doc)
   return {
-    title: doc.seo?.title || `${doc.title} build — perks, gear and how it plays`,
-    description: doc.seo?.description || doc.summary,
+    // Composed from the record's own fields unless an editor has written one.
+    title: doc.seo?.title || meta.title,
+    description: doc.seo?.description || meta.description,
     alternates: { canonical: `/builds/${doc.slug}` },
   }
 }

@@ -46,6 +46,7 @@ const COLUMNS: { heading: string; links: { label: string; href: string }[] }[] =
     links: [
       { label: 'About the data', href: '/about' },
       { label: 'Report an error', href: '/corrections' },
+      { label: 'Request a feature', href: '/requests' },
       { label: 'Contact', href: '/contact' },
       { label: 'Your account', href: '/account' },
       { label: 'Privacy', href: '/privacy' },

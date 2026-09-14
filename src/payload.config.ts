@@ -22,6 +22,7 @@ import { Mechanics } from './collections/Mechanics'
 import { Authors } from './collections/Authors'
 import { Guides } from './collections/Guides'
 import { Corrections } from './collections/Corrections'
+import { Requests } from './collections/Requests'
 import { Players } from './collections/Players'
 import { SiteSettings } from './globals/SiteSettings'
 
@@ -57,6 +58,7 @@ export default buildConfig({
     Authors,
     // Admin
     Corrections,
+    Requests,
     Media,
     Players,
     Users,

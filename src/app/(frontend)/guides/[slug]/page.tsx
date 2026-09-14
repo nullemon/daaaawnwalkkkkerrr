@@ -10,6 +10,7 @@ import { RelatedList, type RelatedItem } from '@/components/RelatedList'
 import Link from 'next/link'
 import { getAll, getBySlug, relMany } from '@/lib/payload'
 import { JsonLd } from '@/components/JsonLd'
+import { guideKeywords } from '@/lib/seo'
 import type { Author, Ending, Guide, Media, Quest } from '@/payload-types'
 
 type Props = { params: Promise<{ slug: string }> }
@@ -30,6 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: doc.seo?.title || doc.title,
     description: doc.seo?.description || doc.summary,
     alternates: { canonical: `/guides/${doc.slug}` },
+    keywords: guideKeywords(doc),
     openGraph: image ? { images: [{ url: image }] } : undefined,
   }
 }

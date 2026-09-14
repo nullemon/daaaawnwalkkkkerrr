@@ -69,7 +69,11 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     robots: { index: true, follow: true },
     alternates: {
-      types: { 'application/rss+xml': [{ url: '/feed.xml', title: settings.siteName }] },
+      // Both formats declared, so a reader auto-discovers whichever it prefers.
+      types: {
+        'application/rss+xml': [{ url: '/feed.xml', title: settings.siteName }],
+        'application/atom+xml': [{ url: '/atom.xml', title: settings.siteName }],
+      },
     },
   }
 }

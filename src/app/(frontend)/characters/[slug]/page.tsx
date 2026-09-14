@@ -10,7 +10,8 @@ import { FactPanel } from '@/components/FactPanel'
 import { RelatedList, type RelatedItem } from '@/components/RelatedList'
 import { ROLE } from '@/lib/characters'
 import { getAll, getBySlug, relMany } from '@/lib/payload'
-import type { Character, Ending, Quest, Region } from '@/payload-types'
+import type { Character, Ending, Quest, Region } from '@/payload-types'
+import { characterMeta } from '@/lib/seo'
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -21,11 +22,13 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const doc = await getBySlug<Character>('characters', slug, 0)
+  const doc = await getBySlug<Character>('characters', slug, 1)
   if (!doc) return {}
+  const meta = characterMeta(doc)
   return {
-    title: doc.seo?.title || `${doc.title} — questline, romance and role`,
-    description: doc.seo?.description || doc.summary,
+    // Composed from the record's own fields unless an editor has written one.
+    title: doc.seo?.title || meta.title,
+    description: doc.seo?.description || meta.description,
     alternates: { canonical: `/characters/${doc.slug}` },
   }
 }

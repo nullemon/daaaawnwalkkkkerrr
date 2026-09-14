@@ -15,6 +15,7 @@ import { UnlockPath } from '@/components/UnlockPath'
 import { checkEnding, indexQuests } from '@/lib/reachability'
 import { clockAt, formatSegments } from '@/lib/segments'
 import type { Character, Ending } from '@/payload-types'
+import { endingMeta } from '@/lib/seo'
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -25,11 +26,13 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const ending = await getBySlug<Ending>('endings', slug, 0)
+  const ending = await getBySlug<Ending>('endings', slug, 1)
   if (!ending) return {}
+  const meta = endingMeta(ending)
   return {
-    title: ending.seo?.title || `${ending.title} ending — requirements and how to get it`,
-    description: ending.seo?.description || ending.summary,
+    // Composed from the record's own fields unless an editor has written one.
+    title: ending.seo?.title || meta.title,
+    description: ending.seo?.description || meta.description,
     alternates: { canonical: `/endings/${ending.slug}` },
   }
 }

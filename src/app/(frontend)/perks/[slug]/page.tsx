@@ -8,7 +8,8 @@ import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
 import { EntityImage } from '@/components/EntityImage'
 import { getAll, getBySlug, rel } from '@/lib/payload'
-import type { Perk, SkillTree } from '@/payload-types'
+import type { Perk, SkillTree } from '@/payload-types'
+import { perkMeta } from '@/lib/seo'
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -19,11 +20,13 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const doc = await getBySlug<Perk>('perks', slug, 0)
+  const doc = await getBySlug<Perk>('perks', slug, 1)
   if (!doc) return {}
+  const meta = perkMeta(doc)
   return {
-    title: doc.seo?.title || `${doc.title} — what it does and whether it is worth it`,
-    description: doc.seo?.description || doc.summary,
+    // Composed from the record's own fields unless an editor has written one.
+    title: doc.seo?.title || meta.title,
+    description: doc.seo?.description || meta.description,
     alternates: { canonical: `/perks/${doc.slug}` },
   }
 }

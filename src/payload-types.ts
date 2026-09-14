@@ -83,6 +83,7 @@ export interface Config {
     guides: Guide;
     authors: Author;
     corrections: Correction;
+    requests: Request;
     media: Media;
     players: Player;
     users: User;
@@ -108,6 +109,7 @@ export interface Config {
     guides: GuidesSelect<false> | GuidesSelect<true>;
     authors: AuthorsSelect<false> | AuthorsSelect<true>;
     corrections: CorrectionsSelect<false> | CorrectionsSelect<true>;
+    requests: RequestsSelect<false> | RequestsSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     players: PlayersSelect<false> | PlayersSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
@@ -1471,6 +1473,40 @@ export interface Correction {
   createdAt: string;
 }
 /**
+ * What readers have asked for. Sort by votes to see what is actually wanted.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "requests".
+ */
+export interface Request {
+  id: number;
+  /**
+   * What they want, in one line.
+   */
+  summary: string;
+  detail?: string | null;
+  kind?: ('feature' | 'data' | 'guide' | 'usability' | 'bug' | 'other') | null;
+  /**
+   * Page the request came from, if it was sent from one.
+   */
+  pageUrl?: string | null;
+  /**
+   * Optional, and only for replying about this request. Never used for anything else.
+   */
+  email?: string | null;
+  status?: ('new' | 'considering' | 'planned' | 'done' | 'declined') | null;
+  /**
+   * Bump this when the same thing is asked for again, so the queue sorts itself.
+   */
+  votes?: number | null;
+  /**
+   * Internal. Why it was planned or declined.
+   */
+  note?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * Reader accounts. These are site visitors, not editors — they have no admin access.
  *
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1627,6 +1663,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'corrections';
         value: number | Correction;
+      } | null)
+    | ({
+        relationTo: 'requests';
+        value: number | Request;
       } | null)
     | ({
         relationTo: 'media';
@@ -2212,6 +2252,22 @@ export interface CorrectionsSelect<T extends boolean = true> {
   sourceUrl?: T;
   status?: T;
   editorNote?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "requests_select".
+ */
+export interface RequestsSelect<T extends boolean = true> {
+  summary?: T;
+  detail?: T;
+  kind?: T;
+  pageUrl?: T;
+  email?: T;
+  status?: T;
+  votes?: T;
+  note?: T;
   updatedAt?: T;
   createdAt?: T;
 }

@@ -9,7 +9,8 @@ import { RelatedList } from '@/components/RelatedList'
 import { EntityImage } from '@/components/EntityImage'
 import Link from 'next/link'
 import { getAll, getBySlug } from '@/lib/payload'
-import type { Court, CourtActivity } from '@/payload-types'
+import type { Court, CourtActivity } from '@/payload-types'
+import { courtMeta } from '@/lib/seo'
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -20,11 +21,13 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const doc = await getBySlug<Court>('courts', slug, 0)
+  const doc = await getBySlug<Court>('courts', slug, 1)
   if (!doc) return {}
+  const meta = courtMeta(doc)
   return {
-    title: doc.seo?.title || `${doc.title}'s court — activities, duel and how much you need`,
-    description: doc.seo?.description || doc.summary,
+    // Composed from the record's own fields unless an editor has written one.
+    title: doc.seo?.title || meta.title,
+    description: doc.seo?.description || meta.description,
     alternates: { canonical: `/court/${doc.slug}` },
   }
 }

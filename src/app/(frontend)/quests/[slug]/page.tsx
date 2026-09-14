@@ -13,6 +13,7 @@ import { EntityImage } from '@/components/EntityImage'
 import { FactPanel } from '@/components/FactPanel'
 import { getAll, getBySlug, relMany, rel } from '@/lib/payload'
 import type { Ending, Quest, Region } from '@/payload-types'
+import { questMeta } from '@/lib/seo'
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -23,11 +24,14 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const quest = await getBySlug<Quest>('quests', slug, 0)
+  // Depth 1: the composed description names the region, so it has to resolve.
+  const quest = await getBySlug<Quest>('quests', slug, 1)
   if (!quest) return {}
+  const meta = questMeta(quest)
   return {
-    title: quest.seo?.title || `${quest.title} — walkthrough, time cost and prerequisites`,
-    description: quest.seo?.description || quest.summary,
+    // Composed from the record's own fields unless an editor has written one.
+    title: quest.seo?.title || meta.title,
+    description: quest.seo?.description || meta.description,
     alternates: { canonical: `/quests/${quest.slug}` },
     robots: quest.seo?.noindex ? { index: false, follow: true } : undefined,
   }

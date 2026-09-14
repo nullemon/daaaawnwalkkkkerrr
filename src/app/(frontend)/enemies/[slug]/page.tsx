@@ -8,7 +8,8 @@ import { Sources } from '@/components/Sources'
 import { FactPanel } from '@/components/FactPanel'
 import { EntityImage } from '@/components/EntityImage'
 import { getAll, getBySlug, rel } from '@/lib/payload'
-import type { Enemy, Region } from '@/payload-types'
+import type { Enemy, Region } from '@/payload-types'
+import { enemyMeta } from '@/lib/seo'
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -19,11 +20,13 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const doc = await getBySlug<Enemy>('enemies', slug, 0)
+  const doc = await getBySlug<Enemy>('enemies', slug, 1)
   if (!doc) return {}
+  const meta = enemyMeta(doc)
   return {
-    title: doc.seo?.title || `${doc.title} — weaknesses and how to fight it`,
-    description: doc.seo?.description || doc.summary,
+    // Composed from the record's own fields unless an editor has written one.
+    title: doc.seo?.title || meta.title,
+    description: doc.seo?.description || meta.description,
     alternates: { canonical: `/enemies/${doc.slug}` },
   }
 }
