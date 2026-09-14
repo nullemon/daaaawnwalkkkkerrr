@@ -1,15 +1,24 @@
 /**
  * Builds a lead image for every guide into assets/guides/<slug>.jpg.
  *
- *   node tools/make-guide-images.mjs && pnpm assets
+ *   node tools/make-guide-images.mjs && pnpm assets --force
  *
- * Region guides get that region's own photograph, which is the one case where
- * the picture genuinely depicts what the article is about. Everything else gets
- * the section band it belongs to — decorative, exactly as on the index pages,
- * and credited the same way.
+ * Every guide gets a different picture. That is the point of the file: the
+ * first version of this tool reused fifteen section bands across sixty-odd
+ * articles, so an index of the whole guide library showed the same handful of
+ * images over and over and every article looked like every other one.
  *
- * Sources come from assets/ and public/art, both of which are already in the
- * project; nothing is downloaded here.
+ * Sources, in order of how well they match a subject:
+ *
+ *   1. Region guides take that region's own photograph. The only case where the
+ *      picture genuinely depicts what the article is about.
+ *   2. Character guides take that character's portrait, likewise.
+ *   3. Everything else takes one of the forty official press screenshots, each
+ *      used once. Decorative, and credited as the press material it is.
+ *   4. Section bands are the last resort, and the run fails loudly if it gets
+ *      that far often enough to repeat one.
+ *
+ * Nothing is downloaded; all of this is already in assets/ and public/art.
  */
 import fs from 'fs'
 import path from 'path'
@@ -21,93 +30,109 @@ const { DatabaseSync } = require('node:sqlite')
 
 const OUT = path.resolve('assets/guides')
 const REGIONS = path.resolve('assets/regions')
+const PORTRAITS = path.resolve('assets/characters')
+const SHOTS = path.resolve('assets/_library/screenshots')
 const ART = path.resolve('public/art')
 
-/** 16:9 at a size that survives the social card and the article header. */
 const W = 1600
 const H = 900
 
-/**
- * Which band suits which article, by subject.
- *
- * Matched by hand rather than by keyword: "how to save time" is about the clock
- * and belongs with the quests band, and no rule derived from the slug would
- * work that out.
- */
-const BY_SLUG = {
-  'how-long-is-the-blood-of-dawnwalker': 'quests',
-  'how-to-save-time': 'quests',
-  'what-happens-if-time-runs-out': 'endings',
-  'which-ending-should-you-choose': 'endings',
-  'can-you-still-reach-every-ending': 'endings',
-  'knyazmaker-ending-guide': 'endings',
-  'patricide-ending-guide': 'endings',
-  'which-court-first': 'court',
-  'are-court-activities-worth-it': 'court-activities',
-  'infamy-explained': 'court',
-  'legendary-weapon-locations': 'items',
-  'how-corruption-works': 'perks',
-  'best-ultimate-perks': 'perks',
-  'day-or-night': 'skills',
-  'how-to-perfect-block': 'skills',
-  'which-difficulty-to-choose': 'builds',
-  'can-you-romance-everyone': 'characters',
-  'romance-guide': 'characters',
-  'beginners-guide': 'hero',
-  'what-to-do-first': 'hero',
-  'is-it-worth-playing': 'hero',
-  'mistakes-to-avoid': 'enemies',
-  'trophy-guide': 'builds',
-  'how-time-works': 'mechanics',
-  'corruption-explained': 'perks',
+/** Guides about one named person, and whose portrait belongs on them. */
+const BY_CHARACTER = {
+  'lacra-guide': 'lacra',
+  'crake-guide': 'crake',
+  'anca-guide': 'anca',
+  'brencis-guide': 'brencis',
+  'ambrus-court-guide': 'ambrus-character',
+  'bakir-court-guide': 'bakir-character',
+  'xanthe-court-guide': 'xanthe-character',
 }
+
+const firstExisting = (dir, stem) =>
+  ['png', 'jpg', 'jpeg', 'webp']
+    .map((ext) => path.join(dir, `${stem}.${ext}`))
+    .find((file) => fs.existsSync(file))
 
 const db = new DatabaseSync(path.resolve('dawnwalker.db'), { readOnly: true })
 const guides = db.prepare('select slug, title from guides order by slug').all()
-const regionSlugs = new Set(
-  db
-    .prepare('select slug from regions')
-    .all()
-    .map((row) => row.slug),
-)
+const regionSlugs = new Set(db.prepare('select slug from regions').all().map((r) => r.slug))
 
 fs.mkdirSync(OUT, { recursive: true })
 
-let made = 0
-const missing = []
+// A stable pool of screenshots, shared out one per guide. Sorted so the same
+// guide gets the same picture on every run rather than shuffling on rebuild.
+const pool = fs.existsSync(SHOTS)
+  ? fs
+      .readdirSync(SHOTS)
+      .filter((name) => /\.(png|jpg|jpeg|webp)$/i.test(name))
+      .sort()
+      .map((name) => path.join(SHOTS, name))
+  : []
+
+const bands = fs.existsSync(ART)
+  ? fs
+      .readdirSync(ART)
+      .filter((name) => name.endsWith('.webp') && name !== 'og-bg.webp')
+      .sort()
+      .map((name) => path.join(ART, name))
+  : []
+
+let poolAt = 0
+let bandAt = 0
+const used = new Map()
+const repeats = []
 
 for (const guide of guides) {
-  // "<region>-guide" articles are about a place we have a photograph of.
-  const asRegion = guide.slug.replace(/-guide$/, '')
   let source = null
+  let kind = ''
 
+  const asRegion = guide.slug.replace(/-guide$/, '')
   if (regionSlugs.has(asRegion)) {
-    const candidate = ['png', 'jpg', 'webp']
-      .map((ext) => path.join(REGIONS, `${asRegion}.${ext}`))
-      .find((file) => fs.existsSync(file))
-    if (candidate) source = candidate
+    source = firstExisting(REGIONS, asRegion)
+    kind = 'region'
+  }
+
+  if (!source && BY_CHARACTER[guide.slug]) {
+    source = firstExisting(PORTRAITS, BY_CHARACTER[guide.slug])
+    kind = 'portrait'
+  }
+
+  if (!source && poolAt < pool.length) {
+    source = pool[poolAt++]
+    kind = 'screenshot'
+  }
+
+  if (!source && bandAt < bands.length) {
+    source = bands[bandAt++]
+    kind = 'band'
   }
 
   if (!source) {
-    const band = BY_SLUG[guide.slug] ?? 'guides'
-    const candidate = path.join(ART, `${band}.webp`)
-    if (fs.existsSync(candidate)) source = candidate
-  }
-
-  if (!source) {
-    missing.push(guide.slug)
+    console.error(`  ! ${guide.slug}: nothing left to use`)
     continue
   }
 
+  if (used.has(source)) repeats.push(`${guide.slug} shares with ${used.get(source)}`)
+  used.set(source, guide.slug)
+
   const out = path.join(OUT, `${guide.slug}.jpg`)
   await sharp(fs.readFileSync(source))
+    // `attention` finds the busiest part of a frame, which on a portrait keeps
+    // the face and on a landscape keeps the subject rather than the sky.
     .resize(W, H, { fit: 'cover', position: 'attention' })
     .jpeg({ quality: 82 })
     .toFile(out)
-  made++
-  console.log(`  + guides/${guide.slug}.jpg  <- ${path.relative(process.cwd(), source)}`)
+
+  console.log(`  + ${guide.slug}.jpg  [${kind}] ${path.basename(source)}`)
 }
 
-console.log(`\n${made} guide images written to assets/guides`)
-if (missing.length) console.log(`no source for: ${missing.join(', ')}`)
-console.log('next: pnpm assets')
+console.log(`\n${used.size} unique images across ${guides.length} guides`)
+if (repeats.length) {
+  console.error(`\n${repeats.length} guide(s) had to share a picture:`)
+  repeats.forEach((line) => console.error(`  ${line}`))
+  console.error('Add more sources, or reduce the number of guides that need one.')
+  process.exitCode = 1
+} else {
+  console.log('every guide has its own picture')
+}
+console.log('\nnext: pnpm assets --force')

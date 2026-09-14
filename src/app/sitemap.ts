@@ -23,6 +23,7 @@ const SECTIONS: { collection: CollectionSlug; path: string; priority: number }[]
 
 const STATIC_PATHS: { path: string; priority: number }[] = [
   { path: '', priority: 1 },
+  { path: 'run', priority: 0.9 },
   { path: 'tools/run-checker', priority: 1 },
   { path: 'tools/build-planner', priority: 0.9 },
   { path: 'builds', priority: 0.8 },
@@ -65,6 +66,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: section.priority,
       })
     }
+  }
+
+  /*
+    Contributor profiles, but only the ones that are indexable.
+
+    A profile still marked provisional renders with `noindex`, and listing a
+    noindex page in a sitemap is a contradiction — it asks a crawler to fetch
+    something and then tells it to forget what it found. They appear here the
+    moment the flag comes off in the admin.
+  */
+  const authors = await getAll<Doc & { provisional?: boolean | null }>('authors', { depth: 0 })
+  for (const author of authors) {
+    if (author.provisional) continue
+    entries.push({
+      url: `${base}/authors/${author.slug}`,
+      lastModified: author.updatedAt ? new Date(author.updatedAt) : now,
+      changeFrequency: 'monthly',
+      priority: 0.4,
+    })
   }
 
   return entries

@@ -49,17 +49,15 @@ export const siteSettings = {
     'Unofficial fan project. The Blood of Dawnwalker is developed by Rebel Wolves and published by Bandai Namco Entertainment. No affiliation is claimed. Facts are compiled from public sources and have not been verified against the game.',
   adsEnabled: false,
   /*
-   * Real operator details: the site is published by CWMI Group, trading as Code
-   * Web Media, and the address is their Manila office as published on
-   * codewebmedia.com.
+   * Operator details for CWMI Group, trading as Code Web Media, with the Manila
+   * office as published on codewebmedia.com.
    *
-   * `legalProvisional` stays ticked for one reason only — the contact address
-   * below has not been confirmed as a monitored inbox, and a privacy policy
-   * that names an address nobody reads is worse than one that admits it is
-   * unfinished. Put the real inbox in Site settings → Legal & contact and untick
-   * it; everything else on these pages is already correct.
+   * `legalProvisional` is off because these are real, so the legal pages
+   * present them as real rather than warning over every value. Turn it back on
+   * in Site settings if the entity or the address ever changes and the new one
+   * has not been confirmed — the pages will mark everything again until it is.
    */
-  legalProvisional: true,
+  legalProvisional: false,
   legalEntity: 'CWMI Group (Code Web Media)',
   contactEmail: 'hello@codewebmedia.com',
   postalAddress: 'Code Web Media\n77 Casoy St, Pasong Tamo\nQuezon City 1107\nMetro Manila, Philippines',
