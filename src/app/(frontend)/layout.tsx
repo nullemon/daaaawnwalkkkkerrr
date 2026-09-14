@@ -113,10 +113,20 @@ const RAIL_ICONS: Record<string, RailItem['icon']> = {
 export default async function FrontendLayout({ children }: { children: React.ReactNode }) {
   const settings = await getSiteSettings()
   const nav = settings.primaryNav ?? []
-  const rail: RailItem[] = [
+  /*
+    Home and Your run are appended whatever the CMS says, so the two pages a
+    reader always needs cannot be navigated away by an edit. That means the
+    list can contain an href twice the moment somebody adds one of them in the
+    admin — which happened, and React reported it as a duplicate key rather
+     than as the nav bug it is.
+
+    Deduplicating by href fixes it for good: the editor's own entry wins, since
+    it carries their label and ordering, and the fallback only fills a gap.
+  */
+  const candidates: RailItem[] = [
     { label: 'Home', href: '/', icon: 'home' as const },
     ...nav
-      .filter((item) => item.href && item.label && item.href !== '/')
+      .filter((item) => item.href && item.label)
       .map((item) => ({
         label: item.label as string,
         href: item.href as string,
@@ -124,6 +134,13 @@ export default async function FrontendLayout({ children }: { children: React.Rea
       })),
     { label: 'Your run', href: '/run', icon: 'hourglass' as const },
   ]
+
+  const seen = new Set<string>()
+  const rail = candidates.filter((item) => {
+    if (seen.has(item.href)) return false
+    seen.add(item.href)
+    return true
+  })
 
   return (
     <html lang="en" className={fontVars} suppressHydrationWarning>
