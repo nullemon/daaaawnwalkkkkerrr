@@ -28,15 +28,17 @@ const CROP_H = 1080
 /**
  * file stem -> record slug, and where to cut.
  *
- * `left` is the crop's left edge in the 1920-wide source. Everyone is framed
- * the same way except Xanthe, who stands further right and whose outstretched
- * hand is clipped by the edge of the source art itself — 1110 is as far right
- * as an 810-wide window can go, so her framing is as good as the art allows.
+ * `left` is the crop's left edge in the 1920-wide source. Most are framed the
+ * same way. Xanthe and Brencis stand further right, so they take the rightmost
+ * window an 810-wide crop allows (1920 - 810 = 1110); Xanthe's outstretched
+ * hand is clipped by the edge of the source art itself, so her framing is as
+ * good as the art permits rather than as good as we would like.
  */
 const PORTRAITS = [
   { file: 'ambrus.jpg', slug: 'ambrus-character', left: 1080 },
   { file: 'anca.jpg', slug: 'anca', left: 1080 },
   { file: 'bakir.jpg', slug: 'bakir-character', left: 1080 },
+  { file: 'brencis.jpg', slug: 'brencis', left: 1110 },
   { file: 'coen.jpg', slug: 'coen', left: 1080 },
   { file: 'crake.jpg', slug: 'crake', left: 1080 },
   { file: 'xanthe.jpg', slug: 'xanthe-character', left: 1110 },

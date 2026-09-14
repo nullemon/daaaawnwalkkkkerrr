@@ -31,9 +31,10 @@ material, so the line between them is worth stating.
 `assets/` is the **library**: whole press packs and store downloads at full
 size, most of it never used. Putting that in git would be redistributing a
 175 MB media pack that anyone can already get from Rebel Wolves, for no reason
-other than that we happened to download it. `assets/_library/manifest.json`
-records where every file came from, so the pile is reproducible without being
-committed.
+other than that we happened to download it. A `manifest.json` in each library
+folder records where every file came from, and `tools/fetch-steam-art.mjs`
+re-downloads the part the site actually depends on, so the pile is reproducible
+without being committed.
 
 `public/art/` is the **fourteen crops the site actually serves** — the home
 hero and one band per section index, 1920px WebP, about 1.6 MB in total. These
@@ -60,6 +61,10 @@ whole section rather than one thing, which is why it can carry a band.
 
 So a record gets an image only when a source names what the image shows. Until
 then it keeps the fallback icon, which `EntityImage` renders deliberately.
+
+There is exactly one source that does name its subjects — the Steam community
+items in section 3 below, which the publisher titles per character. That is why
+seven character pages have a face and no region page has a photograph.
 
 Where a crop removes a burned-in disclaimer — several press screenshots are
 stamped `PRE-BETA IN-GAME FOOTAGE (ACTUAL GAMEPLAY)` along the bottom, next to
@@ -122,7 +127,37 @@ capsule, and the official screenshot set. Steam's own CDN URLs are stable and
 these images are published for promotion. Good for region art, key art and
 the social preview; useless for item icons.
 
-### 3. Your own screenshots — the only ones nobody else has
+### 3. Steam community items — the only route that names who is in the picture
+
+This is the one source that clears the bar in *Where art may and may not go*
+above, and it is the reason any character page has a face on it.
+
+Steam sells profile backgrounds and trading cards per character, and the
+publisher titles each item: **"Ambrus (Profile Background)"**. That title is a
+source naming the subject, not our guess at it. Nothing in the press packs
+does this — their screenshots ship as `Screenshot (1..8).png` with no captions
+and no IPTC or XMP metadata.
+
+```bash
+node tools/fetch-steam-art.mjs   # download, with a provenance manifest
+node tools/make-portraits.mjs    # cut 3:4 portraits from the backgrounds
+pnpm assets                      # attach them to the character records
+```
+
+Backgrounds are 1920×1080 with the figure right of centre, so a 3:4 slice
+lands at 810×1080 — comfortably over the minimum above. Seven characters have
+one: Ambrus, Anca, Bakir, Brencis, Coen, Crake and Xanthe.
+
+Trading cards cover one more subject (Lacra) but the market API exposes only a
+224×261 inventory icon, which is under the minimum and framed and logo-stamped
+besides, so `make-portraits.mjs` deliberately does not cut from them. She keeps
+the fallback icon rather than sitting blurry beside seven sharp ones.
+
+Re-run the fetch after a patch or a seasonal sale: the set grows. Brencis was
+missing from the first hand-made pass and only turned up once the download was
+a script that pages the listing properly.
+
+### 4. Your own screenshots — the only ones nobody else has
 
 If you own the game: F12 on Steam, or the console capture button. This is the
 best source for anything the official material does not cover — specific
@@ -132,7 +167,7 @@ other wiki using the same press pack.
 
 Photo mode, if the game has one, is worth the detour.
 
-### 4. Extracted UI icons — what actually makes a database look right
+### 5. Extracted UI icons — what actually makes a database look right
 
 Item and perk icons only exist inside the game files. This is the route that
 gives a database its texture, and it is also the fiddliest.
@@ -185,7 +220,7 @@ than permission, and that is a decision about *publishing* them, separate from
 extracting them from a game you own. If you skip this entirely, the site's own
 icon set already covers every category and nothing looks broken.
 
-### 5. Wikimedia and press coverage
+### 6. Wikimedia and press coverage
 
 Logos and box art occasionally sit on Wikipedia/Wikimedia under a stated
 licence. Check the licence on the file page itself, not the article.
