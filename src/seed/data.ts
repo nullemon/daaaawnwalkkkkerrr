@@ -19,14 +19,31 @@ export const siteSettings = {
   heroHeading: 'You have 480 segments. Spend them well.',
   heroSubheading:
     'Thirty days and thirty nights, eight segments each. The clock only moves when you let it. Work out what you can still reach from where you actually are.',
+  /*
+   * Every section that has an index, in the order a reader wants them: the two
+   * tools first, then the database.
+   *
+   * This list is the whole of the site rail, so anything missing from it is
+   * unreachable except by typing the URL. Characters, Regions, Enemies, Perks,
+   * Skills and Guides were all absent — fifty-three characters and ten regions
+   * with no way in from any page on the site.
+   */
   primaryNav: [
+    { label: 'Your run', href: '/run' },
     { label: 'Run checker', href: '/tools/run-checker' },
-    { label: 'Builds', href: '/tools/build-planner' },
+    { label: 'Build planner', href: '/tools/build-planner' },
     { label: 'Quests', href: '/quests' },
-    { label: 'Endings', href: '/endings' },
+    { label: 'Characters', href: '/characters' },
+    { label: 'Regions', href: '/regions' },
     { label: 'Items', href: '/items' },
+    { label: 'Perks', href: '/perks' },
+    { label: 'Skills', href: '/skills' },
+    { label: 'Enemies', href: '/enemies' },
     { label: 'Court', href: '/court' },
+    { label: 'Endings', href: '/endings' },
+    { label: 'Builds', href: '/builds' },
     { label: 'Mechanics', href: '/mechanics' },
+    { label: 'Guides', href: '/guides' },
   ],
   footerNote:
     'Unofficial fan project. The Blood of Dawnwalker is developed by Rebel Wolves and published by Bandai Namco Entertainment. No affiliation is claimed. Facts are compiled from public sources and have not been verified against the game.',

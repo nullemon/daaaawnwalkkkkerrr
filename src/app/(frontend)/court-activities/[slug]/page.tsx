@@ -33,7 +33,9 @@ export default async function CourtActivityPage({ params }: Props) {
   if (!doc) notFound()
   const court = rel<Court>(doc.court)
   const region = rel<Region>(doc.region)
-  const known = (doc.time?.max ?? 0) > 0
+  // Read the flag, not the number: a confirmed zero-cost activity is a real
+  // thing and must not read as unresearched.
+  const known = Boolean(doc.time?.known)
 
   return (
     <>

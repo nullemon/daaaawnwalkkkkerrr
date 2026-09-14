@@ -7,7 +7,7 @@ import { Confidence } from '@/components/Badges'
 import { Icon } from '@/components/Icon'
 import { getAll, getSiteSettings } from '@/lib/payload'
 import { SEGMENTS_PER_PHASE, TOTAL_DAYS, TOTAL_SEGMENTS } from '@/lib/segments'
-import type { Court, Ending, Item, Mechanic, Perk, Quest, Region } from '@/payload-types'
+import type { Build, Character, Court, Ending, Enemy, Item, Mechanic, Perk, Quest, Region } from '@/payload-types'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/' },
@@ -21,7 +21,8 @@ const GATE_SHORT: Record<string, string> = {
 
 export default async function Home() {
   const settings = await getSiteSettings()
-  const [endings, quests, regions, mechanics, courts, items, perks] = await Promise.all([
+  const [endings, quests, regions, mechanics, courts, items, perks, characters, enemies, builds] =
+    await Promise.all([
     getAll<Ending>('endings', { depth: 0 }),
     getAll<Quest>('quests', { depth: 0 }),
     getAll<Region>('regions', { depth: 0 }),
@@ -29,6 +30,9 @@ export default async function Home() {
     getAll<Court>('courts', { depth: 0 }),
     getAll<Item>('items', { depth: 0 }),
     getAll<Perk>('perks', { depth: 0 }),
+    getAll<Character>('characters', { depth: 0 }),
+    getAll<Enemy>('enemies', { depth: 0 }),
+    getAll<Build>('builds', { depth: 0 }),
   ])
 
   const cheapest = [...courts].sort((a, b) => (a.activityCount ?? 99) - (b.activityCount ?? 99))[0]
@@ -46,13 +50,17 @@ export default async function Home() {
   // you click into any of it.
   const SECTIONS = [
     { label: 'Quests', href: '/quests', art: 'quests', icon: 'scroll' as const, count: `${quests.length} catalogued` },
-    { label: 'Endings', href: '/endings', art: 'endings', icon: 'book' as const, count: `${endings.length} routes` },
+    { label: 'Characters', href: '/characters', art: 'characters', icon: 'person' as const, count: `${characters.length} named` },
     { label: 'Items', href: '/items', art: 'items', icon: 'sword' as const, count: `${items.length} recorded` },
-    { label: 'Perks', href: '/perks', art: 'perks', icon: 'star' as const, count: `${perks.length} across three trees` },
-    { label: 'Court', href: '/court', art: 'court', icon: 'crown' as const, count: `${courts.length} courts` },
     { label: 'Regions', href: '/regions', art: 'regions', icon: 'map' as const, count: `${regions.length} places` },
+    { label: 'Perks', href: '/perks', art: 'perks', icon: 'star' as const, count: `${perks.length} across three trees` },
+    { label: 'Enemies', href: '/enemies', art: 'enemies', icon: 'skull' as const, count: `${enemies.length} catalogued` },
+    { label: 'Court', href: '/court', art: 'court', icon: 'crown' as const, count: `${courts.length} courts` },
+    { label: 'Endings', href: '/endings', art: 'endings', icon: 'book' as const, count: `${endings.length} routes` },
     { label: 'Mechanics', href: '/mechanics', art: 'mechanics', icon: 'spark' as const, count: `${mechanics.length} systems` },
-    { label: 'Run checker', href: '/tools/run-checker', art: 'skills', icon: 'hourglass' as const, count: 'What can you still reach' },
+    { label: 'Skills', href: '/skills', art: 'skills', icon: 'spark' as const, count: 'Three trees' },
+    { label: 'Builds', href: '/builds', art: 'builds', icon: 'shield' as const, count: `${builds.length} worked out` },
+    { label: 'Run checker', href: '/tools/run-checker', art: 'quests', icon: 'hourglass' as const, count: 'What can you still reach' },
   ]
 
   return (

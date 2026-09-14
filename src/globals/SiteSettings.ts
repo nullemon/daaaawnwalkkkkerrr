@@ -125,6 +125,24 @@ export const SiteSettings: GlobalConfig = {
           fields: [
             { name: 'heroHeading', type: 'text' },
             { name: 'heroSubheading', type: 'textarea' },
+            {
+              /*
+                Citations are collected on every record and validated on import
+                — `src/seed/import.ts` still rejects anything without a source
+                URL — but showing the list on the page is a separate decision.
+                Off by default: the "compiled from public sources, tell us if it
+                is wrong" line stays either way, which is the part a reader
+                needs, while the link list is for whoever wants to audit us.
+              */
+              name: 'showSources',
+              type: 'checkbox',
+              defaultValue: false,
+              label: 'Show source lists on pages',
+              admin: {
+                description:
+                  'Off by default. Sources are always stored and always required on import; this only controls whether the list is printed under each page.',
+              },
+            },
           ],
         },
         {

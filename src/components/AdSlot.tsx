@@ -8,13 +8,11 @@ import { getSiteSettings } from '@/lib/payload'
  */
 export async function AdSlot({ label = 'Advertisement' }: { label?: string }) {
   const settings = await getSiteSettings()
-  if (!settings.adsEnabled || !settings.adClientId) {
-    return process.env.NODE_ENV === 'development' ? (
-      <div className="ad-slot" aria-hidden="true">
-        ad slot — disabled
-      </div>
-    ) : null
-  }
+  // Nothing at all until there is an ad client, in development as well as in
+  // production. The dev placeholder that used to sit here was a grey box with
+  // "ad slot — disabled" in it on every page, which looked like a broken
+  // component rather than reserved space.
+  if (!settings.adsEnabled || !settings.adClientId) return null
   return (
     <div className="ad-slot" role="complementary" aria-label={label}>
       {label}

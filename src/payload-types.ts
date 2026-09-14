@@ -889,6 +889,10 @@ export interface CourtActivity {
   court: number | Court;
   region?: (number | null) | Region;
   time?: {
+    /**
+     * Leave off unless a source actually publishes a figure. An unknown cost is not a zero cost.
+     */
+    known?: boolean | null;
     min?: number | null;
     max?: number | null;
   };
@@ -1683,6 +1687,7 @@ export interface CourtActivitiesSelect<T extends boolean = true> {
   time?:
     | T
     | {
+        known?: T;
         min?: T;
         max?: T;
       };
@@ -2308,6 +2313,10 @@ export interface SiteSetting {
   heroHeading?: string | null;
   heroSubheading?: string | null;
   /**
+   * Off by default. Sources are always stored and always required on import; this only controls whether the list is printed under each page.
+   */
+  showSources?: boolean | null;
+  /**
    * Leave off until there is traffic and an approved ad account.
    */
   adsEnabled?: boolean | null;
@@ -2348,6 +2357,7 @@ export interface SiteSettingsSelect<T extends boolean = true> {
   footerNote?: T;
   heroHeading?: T;
   heroSubheading?: T;
+  showSources?: T;
   adsEnabled?: T;
   adClientId?: T;
   analyticsId?: T;

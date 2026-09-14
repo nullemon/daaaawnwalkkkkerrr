@@ -31,15 +31,36 @@ export const CourtActivities: CollectionConfig = {
     { name: 'court', type: 'relationship', relationTo: 'courts', required: true },
     { name: 'region', type: 'relationship', relationTo: 'regions' },
     {
+      /*
+        Mirrors the quests time group, including its `known` flag.
+
+        This used to default min and max to 0, so all forty-one activities
+        stored a cost of zero and nothing distinguished "nobody published this"
+        from "this is genuinely free". The pages happened to read `max > 0` and
+        print "Not confirmed", which was right by accident — a real zero-cost
+        activity would have read the same way, and anything summing these would
+        have quietly treated the lot as free.
+      */
       name: 'time',
       type: 'group',
       label: 'Time cost',
       fields: [
         {
+          name: 'known',
+          type: 'checkbox',
+          defaultValue: false,
+          label: 'Cost confirmed by a source',
+          admin: {
+            description:
+              'Leave off unless a source actually publishes a figure. An unknown cost is not a zero cost.',
+          },
+        },
+        {
           type: 'row',
+          admin: { condition: (_, siblingData) => Boolean(siblingData?.known) },
           fields: [
-            { name: 'min', type: 'number', defaultValue: 0, admin: { width: '50%' } },
-            { name: 'max', type: 'number', defaultValue: 0, admin: { width: '50%' } },
+            { name: 'min', type: 'number', admin: { width: '50%' } },
+            { name: 'max', type: 'number', admin: { width: '50%' } },
           ],
         },
       ],

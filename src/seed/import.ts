@@ -258,6 +258,9 @@ async function run(): Promise<void> {
       court,
       region: regions.get(String(record.regionSlug)),
       phase: record.phase ?? 'either',
+      // No source publishes a per-activity figure yet, so this stays explicitly
+      // unknown rather than importing as a zero anyone could mistake for free.
+      time: record.time ?? { known: false },
       howToStart: record.howToStart,
     })
     if (ok) bump('court-activities')
