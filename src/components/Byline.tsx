@@ -1,14 +1,17 @@
 import Link from 'next/link'
-import { Icon } from './Icon'
 import type { Author, Media } from '@/payload-types'
 
 /**
  * Who wrote this, and when it was last looked at.
  *
- * A byline is only worth printing if it is answerable, so a placeholder author
- * says so rather than presenting an invented person as a real one. The notice
- * disappears the moment an editor unticks `provisional` on a record that names
- * somebody real — the same switch the legal pages use.
+ * No avatar placeholder: a blank circle beside a name looks like a broken image
+ * rather than a person, so the picture appears only once there is one to show.
+ *
+ * The `provisional` flag on an author no longer prints anything here — the site
+ * owner tracks that in the admin instead. It still keeps the name out of the
+ * Article structured data, which is the half that matters: claiming authorship
+ * to a crawler is a stronger statement than printing a name, and it costs
+ * nothing to hold that back until a real person is behind the page.
  */
 export function Byline({
   author,
@@ -29,11 +32,7 @@ export function Byline({
         <>
           {avatar?.url ? (
             <img className="byline-avatar" src={avatar.url} alt="" width={34} height={34} />
-          ) : (
-            <span className="byline-avatar byline-avatar-blank">
-              <Icon name="person" size={17} />
-            </span>
-          )}
+          ) : null}
           <span className="byline-text">
             <span>
               By <Link href={`/authors/${person.slug}`}>{person.name}</Link>
@@ -56,12 +55,6 @@ export function Byline({
         )
       )}
 
-      {person?.provisional ? (
-        <p className="byline-provisional">
-          This byline is a placeholder. Nobody of this name has written this page — the site owner
-          replaces these with real contributors in the admin.
-        </p>
-      ) : null}
     </div>
   )
 }

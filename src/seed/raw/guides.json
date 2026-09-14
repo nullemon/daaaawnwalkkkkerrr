@@ -177,6 +177,123 @@
    "updated": "2026-09-14"
   },
   {
+   "title": "Boar's Back: Every Quest, Item and Activity",
+   "slug": "boars-back-guide",
+   "targetQuery": "blood of dawnwalker boar's back",
+   "authorSlug": "tobias-renn",
+   "updated": "2026-09-14",
+   "seo": {
+    "title": "Boar's Back — What Is There",
+    "description": "The ridge road between the lowlands and the capital, and a stop on Crake’s chain. Everything filed to Boar's Back: quests, items, court activities and when to come."
+   },
+   "summary": "The ridge road between the lowlands and the capital, and a stop on Crake’s chain.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "title": "Locations | Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Locations"
+    },
+    {
+     "title": "Quests | Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Quests"
+    }
+   ],
+   "bodyParagraphs": [
+    "Bakir’s broken upland reaching down towards Svartrau, holding two of the valley’s thirteen ancient circles. Three quests are filed here, one of them Where Loyalty Lies — a link in Crake’s chain, which makes this region unavoidable for anyone chasing The Knyazmaker.",
+    {
+     "h": "What is here"
+    },
+    {
+     "ul": [
+      "3 quests filed to this region",
+      "No Court Activities recorded here",
+      "No item is pinned here by name — guides describe locations by landmark instead",
+      "Danger: one of the harder regions"
+     ]
+    },
+    {
+     "h": "When to come"
+    },
+    "Treat it as a corridor rather than a destination. Most of what you do here you do while passing through to Svartrau, and routing it that way costs you nothing extra.",
+    {
+     "h": "What it costs"
+    },
+    "Getting here is free. Walking and fast travel cost no segments at all, so a region is only ever as expensive as the quests you commit to once you arrive — which is why clearing shrines early and coming back later is almost always cheaper than doing everything in one visit.",
+    {
+     "h": "The quests filed here"
+    },
+    {
+     "ul": [
+      "Bandit's Treasure Map: Boar's Back",
+      "The Beast of Balaur",
+      "Where Loyalty Lies"
+     ]
+    },
+    "The region page lists these alongside the items and activities filed here."
+   ]
+  },
+  {
+   "title": "Briar Sloughs: Every Quest, Item and Activity",
+   "slug": "briar-sloughs-guide",
+   "targetQuery": "blood of dawnwalker briar sloughs",
+   "authorSlug": "tobias-renn",
+   "updated": "2026-09-14",
+   "seo": {
+    "title": "Briar Sloughs — What Is There",
+    "description": "Durandal is here, and it is the earliest legendary sword most runs can reach. Everything filed to Briar Sloughs: quests, items, court activities and when to come."
+   },
+   "summary": "Durandal is here, and it is the earliest legendary sword most runs can reach.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "title": "Locations | Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Locations"
+    },
+    {
+     "title": "Quests | Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Quests"
+    }
+   ],
+   "bodyParagraphs": [
+    "Ambrus’s swamp-and-garrison country in the northern half of the valley, split between open mire and the military posts holding the road through it. Eight quests are filed here and one of them pays out the earliest legendary weapon a run can realistically collect.",
+    {
+     "h": "What is here"
+    },
+    {
+     "ul": [
+      "8 quests filed to this region",
+      "1 Court Activity",
+      "1 item a source pins to this region: Durandal",
+      "Danger: a mid-run region"
+     ]
+    },
+    {
+     "h": "When to come"
+    },
+    "Do The Cursed Chasm early. Durandal comes out of it, and a legendary sword in week one changes the difficulty of everything that follows more than any perk you could buy with the same segments.",
+    {
+     "h": "What it costs"
+    },
+    "Getting here is free. Walking and fast travel cost no segments at all, so a region is only ever as expensive as the quests you commit to once you arrive — which is why clearing shrines early and coming back later is almost always cheaper than doing everything in one visit.",
+    {
+     "h": "The quests filed here"
+    },
+    {
+     "ul": [
+      "A Bulwark Against Darkness",
+      "A Good Deed Is Its Own Reward",
+      "Bandit's Treasure Map: Briar Sloughs",
+      "Destroyed Shrines: Western Slopes",
+      "Shadows in the Woods",
+      "Under Watchful Eyes",
+      "What Hunts the Night",
+      "Wisp Treasure Hunt: Watermill Hills"
+     ]
+    },
+    "The region page lists these alongside the items and activities filed here."
+   ]
+  },
+  {
    "title": "Can You Romance Everyone in The Blood of Dawnwalker?",
    "slug": "can-you-romance-everyone",
    "targetQuery": "blood of dawnwalker romance all options",
@@ -719,6 +836,127 @@
    "updated": "2026-09-14"
   },
   {
+   "title": "The Knyazmaker Ending: How to Get It, and When It Becomes Impossible",
+   "slug": "knyazmaker-ending-guide",
+   "targetQuery": "blood of dawnwalker knyazmaker ending",
+   "authorSlug": "corvin-ashe",
+   "updated": "2026-09-14",
+   "seo": {
+    "title": "The Knyazmaker Ending: Full Guide",
+    "description": "The Knyazmaker needs Crake’s eight-quest chain finished before the finale. What the chain is, what it costs, and the day it stops being reachable."
+   },
+   "summary": "The longest chain in the game, and the ending most often lost without the player realising it was ever in play.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "title": "All Endings | The Blood of Dawnwalker — Game8",
+     "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618231"
+    },
+    {
+     "title": "Quests | Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Quests"
+    }
+   ],
+   "bodyParagraphs": [
+    "The Knyazmaker is the ending where you take the valley with Crake and the Manumit rather than alone. It is also the most expensive thing you can commit to, and the one that punishes a late start hardest.",
+    {
+     "h": "What it needs"
+    },
+    "Crake’s questline, finished before you reach the finale. Eight quests, each of which appears only once the previous one has closed. The chain cannot be parallelised, cannot be hurried, and cannot be picked up in the last week and pushed through.",
+    {
+     "ul": [
+      "The Firebrand",
+      "Shadows in the Woods",
+      "Where Loyalty Lies",
+      "What Hunts the Night",
+      "What Moves the Dead",
+      "Who Pulls the Strings",
+      "Rise at Dawn",
+      "Fall Before Dusk"
+     ]
+    },
+    {
+     "h": "Where it starts"
+    },
+    "The Firebrand opens in Laslea Glen, the region you begin in, which is the good news: nothing gates the start of this chain and you can be on it within the first day. The chain then moves through Boar’s Back and converges on Svartrau City, where the last two quests sit.",
+    {
+     "h": "When it becomes impossible"
+    },
+    "There is no published day number, because nobody has costed all eight quests. What is knowable is the shape of the problem: eight sequential quests, each needing the previous one closed, in a run of thirty days. If you have not started by the halfway mark you are almost certainly not finishing.",
+    "Our run checker is the honest answer here. It walks the chain against your remaining segments and tells you whether the ending is still reachable, tight, or already gone — and because several of the eight have no published cost, it reports the total as a floor rather than a figure.",
+    {
+     "h": "If you have left it too late"
+    },
+    "Take The Folk Hero. It needs no questline at all, it is a real ending rather than a consolation, and spending your last week on a chain you cannot finish is how runs end in Time Runs Out instead."
+   ],
+   "note": "No source publishes a segment cost for most of Crake’s chain, so no \"finish by day N\" figure is given here."
+  },
+  {
+   "title": "Laslea Glen: Every Quest, Item and Activity",
+   "slug": "laslea-glen-guide",
+   "targetQuery": "blood of dawnwalker laslea glen",
+   "authorSlug": "tobias-renn",
+   "updated": "2026-09-14",
+   "seo": {
+    "title": "Laslea Glen — What Is There",
+    "description": "Nineteen quests — more than any other region — and every one of its six shrines opens with no conditions attached. Everything filed to Laslea Glen: quests, items, court activitie"
+   },
+   "summary": "Nineteen quests — more than any other region — and every one of its six shrines opens with no conditions attached.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "title": "Locations | Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Locations"
+    },
+    {
+     "title": "Quests | Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Quests"
+    }
+   ],
+   "bodyParagraphs": [
+    "Laslea Glen is where a run starts, and it is unusually generous about it. Six shrines unlock with nothing asked of you, which means fast travel, skill purchases and time skipping are all live from the first hour. Nineteen quests are filed here, the most of any region in the valley, so it is also where most players spend their cheapest days.",
+    {
+     "h": "What is here"
+    },
+    {
+     "ul": [
+      "19 quests filed to this region",
+      "No Court Activities recorded here",
+      "1 item a source pins to this region: Ravenous Flock Manual",
+      "Danger: the region you start in"
+     ]
+    },
+    {
+     "h": "When to come"
+    },
+    "Light all six shrines before you leave. Lighting a shrine costs no segments and unlocks free travel back here for the rest of the run, and you will be coming back: Crake’s chain opens in this region.",
+    {
+     "h": "What it costs"
+    },
+    "Getting here is free. Walking and fast travel cost no segments at all, so a region is only ever as expensive as the quests you commit to once you arrive — which is why clearing shrines early and coming back later is almost always cheaper than doing everything in one visit.",
+    {
+     "h": "The quests filed here"
+    },
+    {
+     "ul": [
+      "All Good Things",
+      "Bad Blood",
+      "Bandit's Treasure Map: Laslea Glen",
+      "Dead Drop (day only)",
+      "Deep Down (day only)",
+      "Disturbed (day only)",
+      "Enter Not (day only)",
+      "From Above",
+      "If a Tree Falls in a Forest (day only)",
+      "Into the Den (day only)",
+      "Like Father, Like Son (day only)",
+      "Live Bait (day only)"
+     ]
+    },
+    "That is the first twelve of 19. The region page lists all of them, along with the items and activities filed here."
+   ]
+  },
+  {
    "title": "Where to Find Every Legendary Weapon in The Blood of Dawnwalker",
    "slug": "legendary-weapon-locations",
    "targetQuery": "blood of dawnwalker legendary weapon locations",
@@ -766,6 +1004,60 @@
    "note": "Region attribution is given only where a source names one. Several legendaries are described by landmark alone and carry no region in our database.",
    "authorSlug": "tobias-renn",
    "updated": "2026-09-14"
+  },
+  {
+   "title": "Maragir Wealds: Every Quest, Item and Activity",
+   "slug": "maragir-wealds-guide",
+   "targetQuery": "blood of dawnwalker maragir wealds",
+   "authorSlug": "tobias-renn",
+   "updated": "2026-09-14",
+   "seo": {
+    "title": "Maragir Wealds — What Is There",
+    "description": "One quest on the books and an ancient circle that only activates in daylight. Everything filed to Maragir Wealds: quests, items, court activities and when to come."
+   },
+   "summary": "One quest on the books and an ancient circle that only activates in daylight.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "title": "Locations | Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Locations"
+    },
+    {
+     "title": "Quests | Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Quests"
+    }
+   ],
+   "bodyParagraphs": [
+    "Ambrus’s wooded heartland east of the Military Camp, built around the open village of Maragir. Only one quest is filed here in our database, which makes it the thinnest region on paper — but the Soul Reaping Manual comes out of its ancient circle, and manuals are not quests.",
+    {
+     "h": "What is here"
+    },
+    {
+     "ul": [
+      "1 quest filed to this region",
+      "No Court Activities recorded here",
+      "1 item a source pins to this region: Soul Reaping Manual",
+      "Danger: a mid-run region"
+     ]
+    },
+    {
+     "h": "When to come"
+    },
+    "Come in daylight. The circle east of Maragir only activates by day and starts a fight when you touch the central altar, so arriving at night means arriving twice.",
+    {
+     "h": "What it costs"
+    },
+    "Getting here is free. Walking and fast travel cost no segments at all, so a region is only ever as expensive as the quests you commit to once you arrive — which is why clearing shrines early and coming back later is almost always cheaper than doing everything in one visit.",
+    {
+     "h": "The quests filed here"
+    },
+    {
+     "ul": [
+      "Hive and Seek"
+     ]
+    },
+    "The region page lists these alongside the items and activities filed here."
+   ]
   },
   {
    "title": "The Biggest Mistakes to Avoid in The Blood of Dawnwalker",
@@ -847,6 +1139,123 @@
    "updated": "2026-09-14"
   },
   {
+   "title": "The Patricide Ending: Lacra’s Chain and the Night Problem",
+   "slug": "patricide-ending-guide",
+   "targetQuery": "blood of dawnwalker patricide ending",
+   "authorSlug": "corvin-ashe",
+   "updated": "2026-09-14",
+   "seo": {
+    "title": "The Patricide Ending: Full Guide",
+    "description": "The Patricide needs Lacra’s six-quest chain, and almost all of it is night-locked. What that does to your budget and how to plan around it."
+   },
+   "summary": "Shorter than Crake’s chain by two quests, but almost entirely night-locked — which makes it a constraint on half your run rather than a cost against all of it.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "title": "All Endings | The Blood of Dawnwalker — Game8",
+     "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618231"
+    },
+    {
+     "title": "Quests | Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Quests"
+    },
+    {
+     "title": "The Blood of Dawnwalker: How Time Progression Works — AltChar",
+     "url": "https://www.altchar.com/guides/the-blood-of-dawnwalker-how-time-progression-works-aqro25G3s67B"
+    }
+   ],
+   "bodyParagraphs": [
+    "The Patricide is the ending where you kill Brencis with Lacra. It is gated on her questline in the same way The Knyazmaker is gated on Crake’s, but it behaves differently, and the difference is worth understanding before you commit.",
+    {
+     "h": "What it needs"
+    },
+    "Six quests rather than eight, each appearing only after the last one closes:",
+    {
+     "ul": [
+      "A Friend Like This",
+      "Song of the Mountain",
+      "Hive and Seek",
+      "The Night of Horrors",
+      "Our Rotten Roots",
+      "Midnight Reckoning"
+     ]
+    },
+    "The Night of Horrors is the one people miss. It sits between Our Rotten Roots and Midnight Reckoning and has to be done first, and an earlier version of our own database had the chain at five quests because of it.",
+    {
+     "h": "The night problem"
+    },
+    "Almost all of this chain is night-locked. That does not make it more expensive in raw segments — it makes it expensive in a different currency. A run has 240 night segments, and committing most of them to one questline means the rest of your night work, including three scouting towers inside Svartrau and anything needing vampiric movement, competes for what is left.",
+    "The practical effect is that Lacra’s chain commits your nights and leaves your days as the flexible half. Plan the day content around it rather than the other way round.",
+    {
+     "h": "Where it runs"
+    },
+    "It opens in Svartrau City — on the rooftops, after dark — and closes in The Slits, the late-run swamp in the southeast. If you are chasing this ending, arriving in The Slits without the segments for the last two quests is the failure mode.",
+    {
+     "h": "Can you do both chains?"
+    },
+    "In principle nothing forbids it. In practice they compete for the same 480 segments, and a run that tries to finish both usually finishes neither. Pick one, and take the other on a second playthrough where it will be a genuinely different run."
+   ],
+   "note": "Lacra’s chain is recorded as six quests; some sources list five and omit The Night of Horrors. See docs/DATA.md."
+  },
+  {
+   "title": "Rockfalls: Every Quest, Item and Activity",
+   "slug": "rockfalls-guide",
+   "targetQuery": "blood of dawnwalker rockfalls",
+   "authorSlug": "tobias-renn",
+   "updated": "2026-09-14",
+   "seo": {
+    "title": "Rockfalls — What Is There",
+    "description": "Two bandit treasure hunts, two legendaries, and vertical ground that quietly favours a night run. Everything filed to Rockfalls: quests, items, court activities and when to come."
+   },
+   "summary": "Two bandit treasure hunts, two legendaries, and vertical ground that quietly favours a night run.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "title": "Locations | Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Locations"
+    },
+    {
+     "title": "Quests | Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Quests"
+    }
+   ],
+   "bodyParagraphs": [
+    "A mountain region named for slides that come down far too often to be nature’s doing. Five quests are filed here and two of them are treasure maps — Pond Islet and Split Rock — which between them are the reason the region carries two legendary items.",
+    {
+     "h": "What is here"
+    },
+    {
+     "ul": [
+      "5 quests filed to this region",
+      "No Court Activities recorded here",
+      "2 items a source pins to this region: Isbrand's Plate, Wolven Bracers",
+      "Danger: one of the harder regions"
+     ]
+    },
+    {
+     "h": "When to come"
+    },
+    "Bring the shovel. Both treasure hunts need one, and the nearest is taken from a wooden shed in Parlita, which is a different region entirely.",
+    {
+     "h": "What it costs"
+    },
+    "Getting here is free. Walking and fast travel cost no segments at all, so a region is only ever as expensive as the quests you commit to once you arrive — which is why clearing shrines early and coming back later is almost always cheaper than doing everything in one visit.",
+    {
+     "h": "The quests filed here"
+    },
+    {
+     "ul": [
+      "A Pilgrimage for Power: Dark-Thing",
+      "Bandit's Treasure Map: Rockfalls - Pond Islet",
+      "Bandit's Treasure Map: Rockfalls - Split Rock",
+      "Song of the Mountain",
+      "The Highland Grave"
+     ]
+    },
+    "The region page lists these alongside the items and activities filed here."
+   ]
+  },
+  {
    "title": "The Blood of Dawnwalker Romance Guide: Every Option and How to Pursue Them",
    "slug": "romance-guide",
    "targetQuery": "blood of dawnwalker romance guide",
@@ -912,6 +1321,303 @@
    },
    "authorSlug": "corvin-ashe",
    "updated": "2026-09-14"
+  },
+  {
+   "title": "St. Tyna's Grove: Every Quest, Item and Activity",
+   "slug": "st-tynas-grove-guide",
+   "targetQuery": "blood of dawnwalker st. tyna's grove",
+   "authorSlug": "tobias-renn",
+   "updated": "2026-09-14",
+   "seo": {
+    "title": "St. Tyna's Grove — What Is There",
+    "description": "Consecrated woodland where the shrines interact with Corruption. Everything filed to St. Tyna's Grove: quests, items, court activities and when to come."
+   },
+   "summary": "Consecrated woodland where the shrines interact with Corruption.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "title": "Locations | Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Locations"
+    },
+    {
+     "title": "Quests | Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Quests"
+    }
+   ],
+   "bodyParagraphs": [
+    "Woodland wrapped around a convent the plague emptied, contested between Ambrus’s outposts and whatever is left of the order. Eight quests are filed here, and the region is the one place where the shrine system and the Corruption system touch each other.",
+    {
+     "h": "What is here"
+    },
+    {
+     "ul": [
+      "8 quests filed to this region",
+      "No Court Activities recorded here",
+      "1 item a source pins to this region: Leonica's Ring",
+      "Danger: a mid-run region"
+     ]
+    },
+    {
+     "h": "When to come"
+    },
+    "Mind your Corruption before you come. If you are running the Vampirism tree, this is the region most likely to make that choice cost you something.",
+    {
+     "h": "What it costs"
+    },
+    "Getting here is free. Walking and fast travel cost no segments at all, so a region is only ever as expensive as the quests you commit to once you arrive — which is why clearing shrines early and coming back later is almost always cheaper than doing everything in one visit.",
+    {
+     "h": "The quests filed here"
+    },
+    {
+     "ul": [
+      "Ancient Circle: St. Tyna's Grove",
+      "Between the Words",
+      "Destroyed Shrines: St. Tyna's Grove",
+      "Echoes of Silenced Bells",
+      "Lost Blood",
+      "Most Precious Thing",
+      "St. Tyna's Grove Tower",
+      "What Moves the Dead"
+     ]
+    },
+    "The region page lists these alongside the items and activities filed here."
+   ]
+  },
+  {
+   "title": "Svartrau City: Every Quest, Item and Activity",
+   "slug": "svartrau-city-guide",
+   "targetQuery": "blood of dawnwalker svartrau city",
+   "authorSlug": "tobias-renn",
+   "updated": "2026-09-14",
+   "seo": {
+    "title": "Svartrau City — What Is There",
+    "description": "Sixteen quests, four legendaries and three court activities — the densest hub in the game. Everything filed to Svartrau City: quests, items, court activities and when to come."
+   },
+   "summary": "Sixteen quests, four legendaries and three court activities — the densest hub in the game.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "title": "Locations | Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Locations"
+    },
+    {
+     "title": "Quests | Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Quests"
+    }
+   ],
+   "bodyParagraphs": [
+    "The capital and the knyaz’s seat: a walled medieval city of named quarters sitting on a warren of cellars, caves and far older ruins. Sixteen quests are filed here, more than anywhere except Laslea Glen, and unlike the glen they are not beginner work.",
+    {
+     "h": "What is here"
+    },
+    {
+     "ul": [
+      "16 quests filed to this region, 3 of them night-only",
+      "3 Court Activities",
+      "4 items a source pins to this region: Ambrus's Cuirass, Ancient Hero's Armour, Mercenary's Greaves, The Hand of Fate",
+      "Danger: one of the harder regions"
+     ]
+    },
+    {
+     "h": "When to come"
+    },
+    "Come at night for the rooftops. Lacra’s chain opens up there, three of the eleven scouting towers are packed inside the walls, and the route up every one of them depends on vampiric movement.",
+    {
+     "h": "What it costs"
+    },
+    "Getting here is free. Walking and fast travel cost no segments at all, so a region is only ever as expensive as the quests you commit to once you arrive — which is why clearing shrines early and coming back later is almost always cheaper than doing everything in one visit.",
+    {
+     "h": "The quests filed here"
+    },
+    {
+     "ul": [
+      "A Dubious Gift",
+      "A Friend Like This",
+      "A Hero's End",
+      "A Monk and a Saint",
+      "A Mother's Plea",
+      "A Study in Crimson (night only)",
+      "Enshrined Obsession",
+      "Fall Before Dusk",
+      "In the Name of the Father",
+      "Night Terrors (night only)",
+      "Rise at Dawn",
+      "The Heart Wants What It Wants"
+     ]
+    },
+    "That is the first twelve of 16. The region page lists all of them, along with the items and activities filed here."
+   ]
+  },
+  {
+   "title": "Svartrau Outskirts: Every Quest, Item and Activity",
+   "slug": "svartrau-outskirts-guide",
+   "targetQuery": "blood of dawnwalker svartrau outskirts",
+   "authorSlug": "tobias-renn",
+   "updated": "2026-09-14",
+   "seo": {
+    "title": "Svartrau Outskirts — What Is There",
+    "description": "Held by Brencis directly, which means all three courts can send work here. Everything filed to Svartrau Outskirts: quests, items, court activities and when to come."
+   },
+   "summary": "Held by Brencis directly, which means all three courts can send work here.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "title": "Locations | Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Locations"
+    },
+    {
+     "title": "Quests | Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Quests"
+    }
+   ],
+   "bodyParagraphs": [
+    "The approach country between the outlying regions and the capital. It is not delegated to a vassal, so activities belonging to any of the three courts can surface in it — a quirk that makes it unusually useful when you are trying to anger a specific vassal without crossing the valley.",
+    {
+     "h": "What is here"
+    },
+    {
+     "ul": [
+      "2 quests filed to this region",
+      "No Court Activities recorded here",
+      "No item is pinned here by name — guides describe locations by landmark instead",
+      "Danger: a mid-run region"
+     ]
+    },
+    {
+     "h": "When to come"
+    },
+    "Check it when a court is one or two activities from its threshold. Work for any of the three can appear here, so it is often the cheapest place to top up.",
+    {
+     "h": "What it costs"
+    },
+    "Getting here is free. Walking and fast travel cost no segments at all, so a region is only ever as expensive as the quests you commit to once you arrive — which is why clearing shrines early and coming back later is almost always cheaper than doing everything in one visit.",
+    {
+     "h": "The quests filed here"
+    },
+    {
+     "ul": [
+      "Good Home",
+      "Letters to Lunka"
+     ]
+    },
+    "The region page lists these alongside the items and activities filed here."
+   ]
+  },
+  {
+   "title": "Tantari Woods: Every Quest, Item and Activity",
+   "slug": "tantari-woods-guide",
+   "targetQuery": "blood of dawnwalker tantari woods",
+   "authorSlug": "tobias-renn",
+   "updated": "2026-09-14",
+   "seo": {
+    "title": "Tantari Woods — What Is There",
+    "description": "The highest-level region in the sources, and Xanthe’s ground. Everything filed to Tantari Woods: quests, items, court activities and when to come."
+   },
+   "summary": "The highest-level region in the sources, and Xanthe’s ground.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "title": "Locations | Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Locations"
+    },
+    {
+     "title": "Quests | Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Quests"
+    }
+   ],
+   "bodyParagraphs": [
+    "Xanthe’s forest in the southeastern corner, and the highest-level region documented anywhere we could check. Seven quests and three court activities are filed here, so it is both expensive to work through and unavoidable if you intend to force Xanthe’s duel.",
+    {
+     "h": "What is here"
+    },
+    {
+     "ul": [
+      "7 quests filed to this region",
+      "3 Court Activities",
+      "2 items a source pins to this region: Bandit's Treasure Map: Tantari Woods, Knightly Ring",
+      "Danger: late-run territory"
+     ]
+    },
+    {
+     "h": "When to come"
+    },
+    "Leave it until you are equipped. Coming here early is the most common way a run loses time it did not plan to lose — not because the quests cost more, but because the fights do.",
+    {
+     "h": "What it costs"
+    },
+    "Getting here is free. Walking and fast travel cost no segments at all, so a region is only ever as expensive as the quests you commit to once you arrive — which is why clearing shrines early and coming back later is almost always cheaper than doing everything in one visit.",
+    {
+     "h": "The quests filed here"
+    },
+    {
+     "ul": [
+      "A Pilgrimage for Power: The Ritual",
+      "Ancient Circle: Hills of Tantari",
+      "Ancient Circle: Tantari Vista",
+      "Bandit's Treasure Map: Tantari Woods",
+      "Destroyed Shrines: Eastridge Outpost",
+      "Destroyed Shrines: Tantari Woods",
+      "Don't Kill the Messenger"
+     ]
+    },
+    "The region page lists these alongside the items and activities filed here."
+   ]
+  },
+  {
+   "title": "The Slits: Every Quest, Item and Activity",
+   "slug": "the-slits-guide",
+   "targetQuery": "blood of dawnwalker the slits",
+   "authorSlug": "tobias-renn",
+   "updated": "2026-09-14",
+   "seo": {
+    "title": "The Slits — What Is There",
+    "description": "Late-run swamp, roughly levels 29 to 37, and the close of Lacra’s chain. Everything filed to The Slits: quests, items, court activities and when to come."
+   },
+   "summary": "Late-run swamp, roughly levels 29 to 37, and the close of Lacra’s chain.",
+   "confidence": "medium",
+   "sources": [
+    {
+     "title": "Locations | Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Locations"
+    },
+    {
+     "title": "Quests | Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Quests"
+    }
+   ],
+   "bodyParagraphs": [
+    "A late-game swamp in the valley’s southeast, unusually dense for its size. Three quests are filed here, and two of them — Our Rotten Roots and Midnight Reckoning — are the back half of Lacra’s questline.",
+    {
+     "h": "What is here"
+    },
+    {
+     "ul": [
+      "3 quests filed to this region",
+      "1 Court Activity",
+      "1 item a source pins to this region: Vrakhiric Bracers",
+      "Danger: late-run territory"
+     ]
+    },
+    {
+     "h": "When to come"
+    },
+    "If you are chasing The Patricide, this region is the deadline. Arriving here with fewer than the segments Lacra’s remaining quests need is how that ending is lost.",
+    {
+     "h": "What it costs"
+    },
+    "Getting here is free. Walking and fast travel cost no segments at all, so a region is only ever as expensive as the quests you commit to once you arrive — which is why clearing shrines early and coming back later is almost always cheaper than doing everything in one visit.",
+    {
+     "h": "The quests filed here"
+    },
+    {
+     "ul": [
+      "Midnight Reckoning",
+      "Our Rotten Roots",
+      "The Good Samaritan (day only)"
+     ]
+    },
+    "The region page lists these alongside the items and activities filed here."
+   ]
   },
   {
    "title": "The Blood of Dawnwalker Trophy Guide: How to Plan a Platinum Run",

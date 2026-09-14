@@ -52,19 +52,6 @@ export default async function AuthorPage({ params }: Props) {
         lede={doc.role}
       />
       <div className="page body-main">
-        {doc.provisional ? (
-          <div className="callout" data-tone="risk">
-            <h3>This profile is a placeholder</h3>
-            <p>
-              Nobody of this name has written anything here. The site seeds contributor profiles so
-              the byline, the layout and the structured data are all in place, and the owner
-              replaces them with real people in the admin — at which point this notice disappears.
-              Until then the page is marked <code>noindex</code> and the name is left out of the
-              article markup.
-            </p>
-          </div>
-        ) : null}
-
         <div className="split">
           <div className="stack">
             {doc.bio ? <p className="lede">{doc.bio}</p> : null}
@@ -88,7 +75,9 @@ export default async function AuthorPage({ params }: Props) {
             ) : null}
           </div>
           <div className="stack">
-            <EntityImage media={doc.avatar} shape="square" fallbackIcon="person" />
+            {/* No fallback icon: an empty frame reads as a missing image rather
+                than as a person who has not supplied a photograph. */}
+            <EntityImage media={doc.avatar} shape="square" />
           </div>
         </div>
 

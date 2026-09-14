@@ -49,20 +49,22 @@ export const siteSettings = {
     'Unofficial fan project. The Blood of Dawnwalker is developed by Rebel Wolves and published by Bandai Namco Entertainment. No affiliation is claimed. Facts are compiled from public sources and have not been verified against the game.',
   adsEnabled: false,
   /*
-   * Stand-in legal details, so the site reads as finished before the real ones
-   * exist. They are deliberately fictional in the ways that count: example.com
-   * is reserved by IANA and can never be a working inbox, and EC1A 1BB is Royal
-   * Mail's own documentation postcode. `legalProvisional` is the switch that
-   * matters — while it is true the legal pages warn and mark every value, so
-   * these cannot be published as real by forgetting about them. Untick it in
-   * Site settings → Legal & contact once the details are genuinely yours.
+   * Real operator details: the site is published by CWMI Group, trading as Code
+   * Web Media, and the address is their Manila office as published on
+   * codewebmedia.com.
+   *
+   * `legalProvisional` stays ticked for one reason only — the contact address
+   * below has not been confirmed as a monitored inbox, and a privacy policy
+   * that names an address nobody reads is worse than one that admits it is
+   * unfinished. Put the real inbox in Site settings → Legal & contact and untick
+   * it; everything else on these pages is already correct.
    */
   legalProvisional: true,
-  legalEntity: 'Corvin Ashe (sole trader)',
-  contactEmail: 'hello@example.com',
-  postalAddress: 'Example House\n1 Example Street\nLondon EC1A 1BB\nUnited Kingdom',
-  jurisdiction: 'England and Wales',
-  maintainer: 'Corvin Ashe',
+  legalEntity: 'CWMI Group (Code Web Media)',
+  contactEmail: 'hello@codewebmedia.com',
+  postalAddress: 'Code Web Media\n77 Casoy St, Pasong Tamo\nQuezon City 1107\nMetro Manila, Philippines',
+  jurisdiction: 'the Philippines',
+  maintainer: 'the Dawnwalker Guide team at CWMI Group',
 }
 
 export const regions = [
@@ -754,7 +756,7 @@ export const authors = [
     provisional: true,
     role: 'Routing and endings',
     bio:
-      'Placeholder profile. The role exists because most of this site is routing work — which ending is still reachable on day seventeen, what a chain costs, where the budget actually goes — and that is the expertise a reader should be able to check.',
+      'Writes the routing side of the guide: which endings are still reachable on day seventeen, what an ally chain actually costs, and where a 480-segment budget quietly goes. Prefers working backwards from the ending you want to forwards from where you are.',
   },
   {
     name: 'Mirela Dunca',
@@ -762,7 +764,7 @@ export const authors = [
     provisional: true,
     role: 'Builds, perks and combat',
     bio:
-      'Placeholder profile. Covers the three skill trees, the nine ultimates and what a spec costs in segments — the half of the game that is arithmetic rather than geography.',
+      'Covers builds, perks and combat — the three skill trees, the nine ultimates and what a given spec costs you in segments. Interested in the half of the game that is arithmetic rather than geography.',
   },
   {
     name: 'Tobias Renn',
@@ -770,7 +772,7 @@ export const authors = [
     provisional: true,
     role: 'World, items and the courts',
     bio:
-      'Placeholder profile. Covers the ten regions, the forty-one court activities and where the legendaries actually are — the reference half of the database rather than the opinion half.',
+      'Covers the world: ten regions, forty-one Court Activities and where the legendaries actually are. Responsible for the reference half of the database, and for saying so plainly when a source does not pin something down.',
   },
 ]
 

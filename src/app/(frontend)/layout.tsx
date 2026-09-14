@@ -161,6 +161,9 @@ export default async function FrontendLayout({ children }: { children: React.Rea
                 siteName={settings.siteName}
                 note={settings.footerNote}
                 maintainer={settings.maintainer}
+                legalEntity={settings.legalEntity}
+                postalAddress={settings.postalAddress}
+                contactEmail={settings.contactEmail}
               />
             </div>
           </div>

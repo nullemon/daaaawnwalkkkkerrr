@@ -1127,3 +1127,40 @@ th.num { text-align: right; }
 .guidecard h3 { font-size: 16px; }
 .guidecard p { font-size: 13.5px; color: var(--muted); }
 .guidecard .eyebrow { color: var(--accent); }
+
+/* ---------- guides index ---------- */
+
+.guidegrid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+@media (min-width: 620px) { .guidegrid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1040px) { .guidegrid { grid-template-columns: repeat(3, 1fr); } }
+
+.guidetile {
+  display: flex; flex-direction: column; overflow: hidden;
+  border: 1px solid var(--rule); border-radius: var(--r);
+  background: var(--surface); color: var(--ink);
+}
+.guidetile:hover { text-decoration: none; border-color: var(--accent); }
+.guidetile-image { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.guidetile-body { display: flex; flex-direction: column; gap: 6px; padding: 14px 15px 16px; }
+.guidetile h2 { font-size: 17px; }
+.guidetile .eyebrow { color: var(--accent); }
+
+/* ---------- footer ---------- */
+
+.site-footer-inner {
+  display: grid; gap: 26px 30px; padding-block: 34px 26px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 620px) { .site-footer-inner { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .site-footer-inner { grid-template-columns: 1.6fr repeat(4, 1fr); } }
+
+.site-footer-brand { display: flex; flex-direction: column; gap: 9px; max-width: 42ch; }
+.site-footer-col ul { list-style: none; margin: 9px 0 0; padding: 0; display: flex; flex-direction: column; gap: 7px; }
+.site-footer-col a { font-size: 13.5px; color: var(--ink-soft); }
+.site-footer-col a:hover { color: var(--accent-hot); }
+
+.site-footer-legal {
+  display: flex; flex-wrap: wrap; gap: 10px 30px; justify-content: space-between;
+  padding-block: 16px 34px; border-top: 1px solid var(--rule-soft);
+}
+.site-footer-disclaimer { max-width: 68ch; }

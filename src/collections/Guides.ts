@@ -42,6 +42,15 @@ export const Guides: CollectionConfig = {
       },
     },
     {
+      name: 'image',
+      type: 'upload',
+      relationTo: 'media',
+      admin: {
+        description:
+          'Lead image. Shown at the top of the article, on the guides index and on the home page cards, and used as the social preview.',
+      },
+    },
+    {
       name: 'relatedQuests',
       type: 'relationship',
       relationTo: 'quests',

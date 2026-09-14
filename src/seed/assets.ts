@@ -38,6 +38,7 @@ const FOLDERS: Record<string, { collection: CollectionSlug; field: string }> = {
   courts: { collection: 'courts', field: 'image' },
   'court-activities': { collection: 'court-activities', field: 'image' },
   skills: { collection: 'skill-trees', field: 'image' },
+  guides: { collection: 'guides', field: 'image' },
 }
 
 const ALLOWED = new Set(['.png', '.jpg', '.jpeg', '.webp', '.avif', '.gif'])

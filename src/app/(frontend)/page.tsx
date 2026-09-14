@@ -33,7 +33,7 @@ export default async function Home() {
     getAll<Character>('characters', { depth: 0 }),
     getAll<Enemy>('enemies', { depth: 0 }),
     getAll<Build>('builds', { depth: 0 }),
-    getAll<Guide>('guides', { depth: 0, sort: '-updatedAt' }),
+    getAll<Guide>('guides', { depth: 1, sort: '-updatedAt' }),
   ])
 
   const cheapest = [...courts].sort((a, b) => (a.activityCount ?? 99) - (b.activityCount ?? 99))[0]
@@ -119,12 +119,22 @@ export default async function Home() {
                 <Link href="/guides">all {guides.length}</Link>
               </span>
             </div>
-            <div className="guidecards">
+            <div className="guidegrid">
               {latestGuides.map((guide) => (
-                <Link key={guide.id} href={`/guides/${guide.slug}`} className="guidecard">
-                  {guide.targetQuery ? <span className="eyebrow">{guide.targetQuery}</span> : null}
-                  <h3>{guide.title}</h3>
-                  {guide.summary ? <p>{guide.summary}</p> : null}
+                <Link key={guide.id} href={`/guides/${guide.slug}`} className="guidetile">
+                  {guide.image && typeof guide.image === 'object' && guide.image.url ? (
+                    <img
+                      className="guidetile-image"
+                      src={guide.image.sizes?.card?.url ?? guide.image.url}
+                      alt=""
+                      loading="lazy"
+                    />
+                  ) : null}
+                  <span className="guidetile-body">
+                    {guide.targetQuery ? <span className="eyebrow">{guide.targetQuery}</span> : null}
+                    <h3>{guide.title}</h3>
+                    {guide.summary ? <p className="note">{guide.summary}</p> : null}
+                  </span>
                 </Link>
               ))}
             </div>

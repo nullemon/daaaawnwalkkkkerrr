@@ -1,10 +1,9 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PageHeader } from '@/components/PageHeader'
 import { sectionArt } from '@/lib/art'
-import { EntityCard } from '@/components/EntityCard'
-import { Confidence } from '@/components/Badges'
 import { getAll } from '@/lib/payload'
-import type { Guide } from '@/payload-types'
+import type { Guide, Media } from '@/payload-types'
 
 export const metadata: Metadata = {
   title: 'Guides',
@@ -13,7 +12,9 @@ export const metadata: Metadata = {
 }
 
 export default async function GuidesIndex() {
-  const guides = await getAll<Guide>('guides', { depth: 0 })
+  // depth 1 so each card can show its own lead image rather than a wall of text.
+  const guides = await getAll<Guide>('guides', { depth: 1, sort: '-updatedAt' })
+
   return (
     <>
       <PageHeader
@@ -22,19 +23,30 @@ export default async function GuidesIndex() {
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Guides' }]}
         icon="book"
         title="Guides"
-        lede="One page, one question, answered properly."
+        lede={`${guides.length} guides. One page, one question, answered properly.`}
       />
       <div className="page body-main">
-        <div className="grid">
-          {guides.map((guide) => (
-            <EntityCard
-              key={guide.id}
-              href={`/guides/${guide.slug}`}
-              title={guide.title}
-              summary={guide.summary}
-              badges={<Confidence level={guide.confidence} />}
-            />
-          ))}
+        <div className="guidegrid">
+          {guides.map((guide) => {
+            const image = guide.image && typeof guide.image === 'object' ? (guide.image as Media) : null
+            return (
+              <Link key={guide.id} href={`/guides/${guide.slug}`} className="guidetile">
+                {image?.url ? (
+                  <img
+                    className="guidetile-image"
+                    src={image.sizes?.card?.url ?? image.url}
+                    alt=""
+                    loading="lazy"
+                  />
+                ) : null}
+                <span className="guidetile-body">
+                  {guide.targetQuery ? <span className="eyebrow">{guide.targetQuery}</span> : null}
+                  <h2>{guide.title}</h2>
+                  {guide.summary ? <p className="note">{guide.summary}</p> : null}
+                </span>
+              </Link>
+            )
+          })}
         </div>
       </div>
     </>

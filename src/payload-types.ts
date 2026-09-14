@@ -1321,6 +1321,10 @@ export interface Guide {
    * Shown as "last checked". A guide to a live game goes stale, and saying when it was last looked at is more use than hiding it.
    */
   updated?: string | null;
+  /**
+   * Lead image. Shown at the top of the article, on the guides index and on the home page cards, and used as the social preview.
+   */
+  image?: (number | null) | Media;
   relatedQuests?: (number | Quest)[] | null;
   relatedEndings?: (number | Ending)[] | null;
   /**
@@ -2126,6 +2130,7 @@ export interface GuidesSelect<T extends boolean = true> {
   targetQuery?: T;
   author?: T;
   updated?: T;
+  image?: T;
   relatedQuests?: T;
   relatedEndings?: T;
   confidence?: T;
