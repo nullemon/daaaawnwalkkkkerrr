@@ -165,11 +165,40 @@ p { margin: 0; }
 .page { max-width: var(--page); margin: 0 auto; padding-inline: 18px; }
 .stack { display: flex; flex-direction: column; gap: 34px; min-width: 0; }
 
-.prose { max-width: var(--measure); display: flex; flex-direction: column; gap: 0.85em; color: var(--ink-soft); }
-.prose h2, .prose h3 { color: var(--ink); margin-top: 0.6em; }
-.prose ul { margin: 0; padding-left: 1.15em; display: flex; flex-direction: column; gap: 0.35em; }
-.prose li::marker { color: var(--accent-dim); }
-.prose strong { color: var(--ink); }
+/*
+  Article prose.
+
+  The gap has to be declared on `.payload-richtext` as well as on `.prose`.
+  Payload's renderer emits its own wrapper div inside ours, so `.prose`'s flex
+  gap only ever applied to that single child — every paragraph inside it ran
+  together with no space at all, which is what made long articles unreadable.
+
+  Nesting is tolerated on purpose: several pages wrap RichText in a `.prose` of
+  their own, and a `.prose` inside a `.prose` should not double the width limit
+  or the gap.
+*/
+.prose,
+.prose .payload-richtext,
+.payload-richtext {
+  max-width: var(--measure);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85em;
+  color: var(--ink-soft);
+}
+.prose .prose, .prose .payload-richtext { max-width: none; }
+
+.prose h2, .prose h3,
+.payload-richtext h2, .payload-richtext h3 { color: var(--ink); margin-top: 0.6em; }
+.prose ul, .payload-richtext ul {
+  margin: 0; padding-left: 1.15em; display: flex; flex-direction: column; gap: 0.35em;
+}
+.prose li::marker, .payload-richtext li::marker { color: var(--accent-dim); }
+.prose strong, .payload-richtext strong { color: var(--ink); }
+/* Images placed inside an article body, rather than as the lead image. */
+.prose figure, .payload-richtext figure { margin: 0; display: flex; flex-direction: column; gap: 6px; }
+.prose img, .payload-richtext img { border-radius: var(--r); border: 1px solid var(--rule); }
+.prose figcaption, .payload-richtext figcaption { font-size: 12.5px; color: var(--muted); }
 
 .eyebrow {
   font-family: var(--f-label);
@@ -216,13 +245,24 @@ p { margin: 0; }
 .shell-main { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; }
 .shell-main > main { flex: 1 1 auto; }
 
+/*
+  The rail holds sixteen destinations now, which at 42px each is taller than a
+  laptop viewport — so the bottom of the list was simply cut off, along with the
+  theme toggle and run badge that sit under it.
+
+  The list scrolls; the brand and the footer stay put. `overflow: hidden` has to
+  go with it, because a clipped column cannot scroll, and the horizontal axis is
+  pinned separately so the hover-expand does not produce a sideways scrollbar.
+*/
 .navrail {
   position: fixed; inset: 0 auto 0 0; z-index: 60;
-  width: 64px; overflow: hidden;
+  width: 64px;
   display: flex; flex-direction: column; gap: 4px;
   padding: 10px 10px 14px;
   background: var(--surface); border-right: 1px solid var(--rule);
   transition: width 0.15s ease;
+  overflow-x: hidden; overflow-y: auto;
+  scrollbar-width: thin;
 }
 .navrail:hover, .navrail:focus-within { width: 236px; box-shadow: 6px 0 28px rgba(0, 0, 0, 0.45); }
 
@@ -1164,3 +1204,25 @@ th.num { text-align: right; }
   padding-block: 16px 34px; border-top: 1px solid var(--rule-soft);
 }
 .site-footer-disclaimer { max-width: 68ch; }
+
+/* The list takes the slack so the brand and the footer controls stay visible
+   however many sections the CMS nav holds. */
+.navrail-list { flex: 1 1 auto; min-height: 0; }
+.navrail-foot { flex: none; }
+
+/* A 22px avatar is a thumbnail, not a portrait — too small to tell two
+   dark-haired characters apart, which is the entire job it has in a list of
+   fifty-three. Bigger, and the row grows to suit. */
+.cell-avatar { width: 40px; height: 40px; border-radius: var(--r); }
+.datatable td { vertical-align: middle; }
+
+/* Pictures inside an article. Item icons are small and square; region art is
+   wide — one row handles both by letting the items wrap and the wide ones take
+   the full width. */
+.figurerow { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; }
+.figurerow figure { margin: 0; display: flex; flex-direction: column; gap: 7px; }
+.figurerow img {
+  width: 100%; border-radius: var(--r); border: 1px solid var(--rule);
+  background: var(--sunken); object-fit: contain;
+}
+.figurerow figcaption { font-size: 13px; color: var(--muted); }

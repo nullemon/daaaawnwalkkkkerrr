@@ -2,6 +2,90 @@
  "collection": "guides",
  "records": [
   {
+   "updated": "2026-09-14",
+   "confidence": "medium",
+   "title": "Ambrus's Court: How Many Activities You Actually Need",
+   "slug": "ambrus-court-guide",
+   "targetQuery": "blood of dawnwalker ambrus court",
+   "authorSlug": "tobias-renn",
+   "seo": {
+    "title": "Ambrus's Court: What You Need",
+    "description": "Fourteen activities, the blood supply chain, and a heavy armour set with his name on it. How many of the 14 you need before the duel, and what the court pays out."
+   },
+   "summary": "Fourteen activities, the blood supply chain, and a heavy armour set with his name on it.",
+   "sources": [
+    {
+     "title": "Bakir Boss Guide: Court Quest Locations | Game8",
+     "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618603"
+    },
+    {
+     "title": "Quests | Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Quests"
+    }
+   ],
+   "bodyParagraphs": [
+    "Ambrus is Boyar of the north and runs the valley’s blood supply. Fourteen Court Activities are filed to him, which puts him in the middle of the three for cost.",
+    {
+     "h": "How many you need"
+    },
+    "The duel unlocks at roughly three quarters of a vassal’s activities, which on this court means about 11 of 14. Treat that as reported rather than confirmed: it is widely repeated and we have not seen the developer state it.",
+    "That leaves roughly 3 you never have to do. Across all three courts the slack adds up to about ten activities, which is the largest single saving available to a run that is behind.",
+    {
+     "h": "What it pays out"
+    },
+    "Ambrus’s Cuirass comes off him after The Gilded Gauntlet, which is a maximum-Infamy quest — so this is the vassal whose best reward is gated behind playing loud rather than quiet.",
+    {
+     "h": "Routing it"
+    },
+    "Do activities in clusters. They are filed by region and a vassal only cares about trouble in territory they hold, so working one area at a time costs less than chasing the highest-value activity across the valley — even though travel itself is free.",
+    {
+     "h": "Where it sits in the order"
+    },
+    "If your budget is tight, this is not the court to open with. Start with Bakir at twelve, learn what a full court costs, and come here knowing the number."
+   ],
+   "note": "The 75% threshold is reported rather than confirmed. Activity counts are ours; see docs/DATA.md for where sources disagree."
+  },
+  {
+   "updated": "2026-09-14",
+   "confidence": "medium",
+   "title": "Anca: The Cheapest Romance and the Earliest Companion",
+   "slug": "anca-guide",
+   "targetQuery": "blood of dawnwalker anca romance",
+   "authorSlug": "corvin-ashe",
+   "seo": {
+    "title": "Anca: Romance and Questline",
+    "description": "A herbalist from Coen’s own village and the first companion you meet. Why hers is the romance a tight run can actually afford."
+   },
+   "summary": "The earliest companion in the game, and the only romance that does not reshape your run around it.",
+   "sources": [
+    {
+     "title": "Quests | Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Quests"
+    },
+    {
+     "title": "Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood+of+Dawnwalker+Wiki"
+    }
+   ],
+   "bodyParagraphs": [
+    "Anca is a herbalist and witch from Coen’s own village, met in the prologue. She is the earliest companion in the game and the third romance option alongside Lacra and Crake.",
+    {
+     "h": "Why she is the affordable one"
+    },
+    "The other two romances are attached to long ally questlines that gate endings. Hers is not, which means pursuing it does not commit a large share of your 480 segments to a chain you then have to finish.",
+    "For a run that is tight, or a first run still learning what things cost, that makes her the realistic choice rather than the consolation one.",
+    {
+     "h": "What her thread pays out"
+    },
+    "Ancient Greaves come at the end of her questline, at the point where the game asks what to do with the Font of Life — choosing to destroy it yields the greaves. Runic Enchantment is a guaranteed step in Where Old Devils Lie, another of her quests.",
+    {
+     "h": "Do the romances lock each other out?"
+    },
+    "Not as written. Nothing in the sources we found says pursuing one closes the others, and the practical limit is the clock rather than the story."
+   ],
+   "note": "Whether romances are mutually exclusive is reported rather than confirmed."
+  },
+  {
    "title": "Are Court Activities Worth Doing in The Blood of Dawnwalker?",
    "slug": "are-court-activities-worth-it",
    "targetQuery": "blood of dawnwalker court activities worth it",
@@ -41,6 +125,50 @@
    "note": "No source publishes a per-activity segment cost, so the database records them as unknown rather than as zero.",
    "authorSlug": "tobias-renn",
    "updated": "2026-09-14"
+  },
+  {
+   "updated": "2026-09-14",
+   "confidence": "medium",
+   "title": "Bakir's Court: How Many Activities You Actually Need",
+   "slug": "bakir-court-guide",
+   "targetQuery": "blood of dawnwalker bakir court",
+   "authorSlug": "tobias-renn",
+   "seo": {
+    "title": "Bakir's Court: What You Need",
+    "description": "Twelve activities — the smallest court, and therefore the cheapest duel in the game. How many of the 12 you need before the duel, and what the court pays out."
+   },
+   "summary": "Twelve activities — the smallest court, and therefore the cheapest duel in the game.",
+   "sources": [
+    {
+     "title": "Bakir Boss Guide: Court Quest Locations | Game8",
+     "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618603"
+    },
+    {
+     "title": "Quests | Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Quests"
+    }
+   ],
+   "bodyParagraphs": [
+    "Bakir holds the southwest by force. Twelve Court Activities are filed to him, the fewest of the three, and because the duel threshold is proportional that makes him the cheapest vassal to provoke.",
+    {
+     "h": "How many you need"
+    },
+    "The duel unlocks at roughly three quarters of a vassal’s activities, which on this court means about 9 of 12. Treat that as reported rather than confirmed: it is widely repeated and we have not seen the developer state it.",
+    "That leaves roughly 3 you never have to do. Across all three courts the slack adds up to about ten activities, which is the largest single saving available to a run that is behind.",
+    {
+     "h": "What it pays out"
+    },
+    "Bakir’s Armour comes off his corpse, and the Vrakhiric Bracers sit in a chest in his treasury inside Lunar Manor once The Lunar Game is done.",
+    {
+     "h": "Routing it"
+    },
+    "Do activities in clusters. They are filed by region and a vassal only cares about trouble in territory they hold, so working one area at a time costs less than chasing the highest-value activity across the valley — even though travel itself is free.",
+    {
+     "h": "Where it sits in the order"
+    },
+    "If you are picking a first court, this is the one. The smallest court is the cheapest duel, and clearing one early tells you what the other two will cost before you commit to them."
+   ],
+   "note": "The 75% threshold is reported rather than confirmed. Activity counts are ours; see docs/DATA.md for where sources disagree."
   },
   {
    "title": "The Blood of Dawnwalker Beginner's Guide: What to Understand Before Day One",
@@ -108,6 +236,46 @@
    },
    "authorSlug": "corvin-ashe",
    "updated": "2026-09-14"
+  },
+  {
+   "updated": "2026-09-14",
+   "confidence": "medium",
+   "title": "Best Early Weapons and Armour in The Blood of Dawnwalker",
+   "slug": "best-early-gear",
+   "targetQuery": "blood of dawnwalker best early weapons armor",
+   "authorSlug": "mirela-dunca",
+   "seo": {
+    "title": "Best Early Gear",
+    "description": "Which legendaries a week-one run can actually reach, and why gear is better value than perks when your budget is the constraint."
+   },
+   "summary": "Combat costs no segments, so a weapon that shortens fights is pure profit against a budget only quests can spend.",
+   "sources": [
+    {
+     "title": "Blood of Dawnwalker All Legendary Equipment Locations — PowerPyx",
+     "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-legendary-equipment-locations/"
+    },
+    {
+     "title": "Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood+of+Dawnwalker+Wiki"
+    }
+   ],
+   "bodyParagraphs": [
+    "Gear is unusually good value in this game, for a reason specific to its design: fights are free. Combat costs no segments at all, so anything that makes fighting easier improves your run without touching the budget.",
+    {
+     "h": "The two worth going for early"
+    },
+    "Durandal, in Briar Sloughs, closing the side quest The Cursed Chasm. It is the earliest legendary most runs can realistically reach.",
+    "Isbrand’s Greaves, in a chest at the Kobold Nest, with the yellow chest tucked against the rock beside the cave mouth. No quest is required — though sources disagree about exactly where the nest sits relative to Rockfalls, so read our item page before making a trip for it.",
+    {
+     "h": "The one to set up rather than chase"
+    },
+    "The Hand of Fate. Take the Stone Key from the cathedral treasure early, even if you are nowhere near starting A Hero’s End, because starting that quest without the key closes the route permanently.",
+    {
+     "h": "Why not just buy perks?"
+    },
+    "Perks are bought with skill points, and skill points come from XP, and XP comes from quests, which cost segments. Gear found in the world costs only the trip — and the trip is free."
+   ],
+   "note": "The Kobold Nest’s region is disputed between sources; see docs/DATA.md."
   },
   {
    "title": "Which Ultimate Perks Should You Take in The Blood of Dawnwalker?",
@@ -230,6 +398,48 @@
      ]
     },
     "The region page lists these alongside the items and activities filed here."
+   ]
+  },
+  {
+   "updated": "2026-09-14",
+   "confidence": "medium",
+   "title": "Brencis: The Knyaz, the Deadline, and the Fight at the End",
+   "slug": "brencis-guide",
+   "targetQuery": "blood of dawnwalker brencis",
+   "authorSlug": "tobias-renn",
+   "seo": {
+    "title": "Brencis: The Knyaz Explained",
+    "description": "Brencis takes your family in the prologue and waits at the end of the thirty days. Who he is, why the clock exists, and how the confrontation works."
+   },
+   "summary": "The reason there is a clock at all. He takes Coen’s family in the prologue and is waiting at the end of the thirty days whatever state you arrive in.",
+   "sources": [
+    {
+     "title": "All Endings | The Blood of Dawnwalker — Game8",
+     "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618231"
+    },
+    {
+     "title": "The Blood of Dawnwalker on Steam",
+     "url": "https://store.steampowered.com/app/3751260/The_Blood_of_Dawnwalker/"
+    }
+   ],
+   "bodyParagraphs": [
+    "Brencis is the knyaz of Vale Sangora: an ancient, Roman-born vrakhir who rules the valley through three vassal boyars. He takes Coen’s family in the prologue, and the thirty-day clock is the time you have before his coronation.",
+    {
+     "h": "Why the clock exists"
+    },
+    "It is not an arbitrary timer. The whole structure of the game — 480 segments, no refills, most content unreachable in one run — exists to make the family’s deadline mean something. Every quest you take is time you did not spend on them.",
+    {
+     "h": "Getting to him"
+    },
+    "Killing the three vassals is what draws him out. Each is provoked by working through roughly three quarters of their Court Activities until they meet you in a duel, and the three courts hold forty-one activities between them.",
+    {
+     "h": "The confrontation"
+    },
+    "Five of the seven endings are decided here, which is why they cannot be lost early. Whether you fight him alone, with Lacra, with Crake, or come to terms with him instead is settled at this point — but the two ally options are only on the table if you finished the relevant chain long before arriving.",
+    {
+     "h": "If the clock beats you"
+    },
+    "Time Runs Out is the failure state. It is also avoidable to the last day, because The Folk Hero needs no preparation at all."
    ]
   },
   {
@@ -412,6 +622,63 @@
    "updated": "2026-09-14"
   },
   {
+   "updated": "2026-09-14",
+   "confidence": "medium",
+   "title": "Crake: The Longest Questline in the Game",
+   "slug": "crake-guide",
+   "targetQuery": "blood of dawnwalker crake questline",
+   "authorSlug": "corvin-ashe",
+   "seo": {
+    "title": "Crake: Questline and Romance",
+    "description": "Eight quests, each appearing only after the last closes. What Crake’s chain costs, where it runs, and why a late start cannot be recovered."
+   },
+   "summary": "Leader of the manumits, a romance option, and the single largest commitment a run can make.",
+   "sources": [
+    {
+     "title": "Quests | Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Quests"
+    },
+    {
+     "title": "All Endings | The Blood of Dawnwalker — Game8",
+     "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618231"
+    }
+   ],
+   "bodyParagraphs": [
+    "Crake leads the manumits, the human resistance against Brencis and his boyars. His questline is eight quests long, the most in the game, and each link appears only once the previous one has closed.",
+    {
+     "h": "The chain"
+    },
+    {
+     "ul": [
+      "The Firebrand — opens in Laslea Glen, the starting region",
+      "Shadows in the Woods",
+      "Where Loyalty Lies",
+      "What Hunts the Night",
+      "What Moves the Dead",
+      "Who Pulls the Strings",
+      "Rise at Dawn",
+      "Fall Before Dusk"
+     ]
+    },
+    {
+     "h": "Why it cannot be rushed"
+    },
+    "Sequential gating is the whole problem. You cannot run two of these at once, you cannot pick up the last three in the final week, and there is no catch-up mechanism. Eight sequential commitments in a thirty-day run is a schedule, not a side activity.",
+    {
+     "h": "Where it runs"
+    },
+    "It opens in Laslea Glen where you start, passes through Boar’s Back, and converges on Svartrau City where the final two sit. That shape is convenient: the chain broadly follows the direction a run travels anyway.",
+    {
+     "h": "The ending he gates"
+    },
+    "The Knyazmaker — take the valley with Crake and the Manumit. It is the most expensive ending in the game to reach and the one most often lost by players who did not realise they were on the clock.",
+    {
+     "h": "The name"
+    },
+    "Bandai Namco’s own material introduces him as Marat, while launch-window guides overwhelmingly call him Crake. The prevailing reading is that Marat is his birth name; no source we found explains the change, so we record both."
+   ]
+  },
+  {
    "title": "Day or Night: Which Should You Play in The Blood of Dawnwalker?",
    "slug": "day-or-night",
    "targetQuery": "blood of dawnwalker day or night which is better",
@@ -457,6 +724,138 @@
    ],
    "authorSlug": "mirela-dunca",
    "updated": "2026-09-14"
+  },
+  {
+   "updated": "2026-09-14",
+   "confidence": "medium",
+   "title": "The Early Exits: A Hero They Deserve and Together Forever",
+   "slug": "early-exit-endings-guide",
+   "targetQuery": "blood of dawnwalker early ending leave stay",
+   "authorSlug": "corvin-ashe",
+   "seo": {
+    "title": "The Two Early-Exit Endings",
+    "description": "Two of the seven endings close the run before the confrontation — leave, or stay. What they are and what you give up by taking one."
+   },
+   "summary": "Two endings close the run before you ever reach Brencis. Neither is a failure state, and both are easy to take by accident if you do not know they are there.",
+   "sources": [
+    {
+     "title": "All Endings | The Blood of Dawnwalker — Game8",
+     "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618231"
+    }
+   ],
+   "bodyParagraphs": [
+    "Five of the seven endings happen at the confrontation. Two do not: A Hero They Deserve and Together Forever both close the run early, before you get there at all.",
+    {
+     "h": "A Hero They Deserve"
+    },
+    "You leave. The run ends with the valley behind you and the confrontation never happening.",
+    {
+     "h": "Together Forever"
+    },
+    "You stay. The other early exit, and the other way of declining the fight.",
+    {
+     "h": "Why this matters for routing"
+    },
+    "Both are finale-class choices in the sense that nothing gates them, but they arrive earlier than the others — so a player who does not know they exist can end a run at a moment they thought was a story beat rather than a conclusion.",
+    "If you are working towards one of the two chain endings, that is worth knowing before you meet the decision. An early exit taken by accident costs you every segment you spent preparing for something else.",
+    {
+     "h": "Are they worth taking on purpose?"
+    },
+    "On a second or third run, yes. They are the only two endings that answer the question the game keeps asking — whether the family is worth the valley — by refusing the frame entirely, and seeing both is cheap once you know where they sit."
+   ]
+  },
+  {
+   "updated": "2026-09-14",
+   "confidence": "medium",
+   "title": "Every Ending in The Blood of Dawnwalker, Ranked by How Easy It Is to Lose",
+   "slug": "endings-ranked-by-difficulty",
+   "targetQuery": "blood of dawnwalker all endings list",
+   "authorSlug": "corvin-ashe",
+   "seo": {
+    "title": "All 7 Endings, Ranked by Risk",
+    "description": "All seven endings in one place, ordered by how easily a run can lose them — from the two that need week-one planning to the one that needs nothing."
+   },
+   "summary": "All seven, ordered by the thing that actually matters mid-run: how likely you are to lose this one without noticing.",
+   "sources": [
+    {
+     "title": "All Endings | The Blood of Dawnwalker — Game8",
+     "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618231"
+    },
+    {
+     "title": "Quests | Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Quests"
+    }
+   ],
+   "bodyParagraphs": [
+    "Ranking endings by quality is a matter of taste. Ranking them by how easily you can lose one is a matter of routing, and that is the list a player halfway through a run actually needs.",
+    {
+     "h": "1. The Knyazmaker — easiest to lose"
+    },
+    "Crake’s chain, eight quests, each appearing only after the last closes. The longest commitment in the game and the least forgiving of a late start.",
+    {
+     "h": "2. The Patricide"
+    },
+    "Lacra’s chain, six quests, almost entirely night-locked. Two quests shorter than Crake’s but it constrains half your clock rather than costing against all of it.",
+    {
+     "h": "3. Time Runs Out — lost by not choosing"
+    },
+    "Not really an ending you lose; an ending you receive. It arrives when the budget expires with nothing else secured.",
+    {
+     "h": "4 to 6. The finale choices"
+    },
+    "The Folk Hero, The Turncoat and the confrontation routes cannot be closed in advance. If you reach the finale they are on the table, however the run went.",
+    {
+     "h": "7. The early exits — impossible to lose, easy to take by accident"
+    },
+    "A Hero They Deserve and Together Forever close the run before the confrontation. The risk with these is the opposite of the others: not missing them, but taking one without meaning to.",
+    {
+     "h": "What to do with this"
+    },
+    "If you want a gated ending, commit in week one and let the run checker tell you when it stops being affordable. If you do not, stop worrying about the clock — five of the seven will still be waiting whatever you do."
+   ]
+  },
+  {
+   "updated": "2026-09-14",
+   "confidence": "medium",
+   "title": "The Folk Hero Ending: The One You Can Always Reach",
+   "slug": "folk-hero-ending-guide",
+   "targetQuery": "blood of dawnwalker folk hero ending",
+   "authorSlug": "corvin-ashe",
+   "seo": {
+    "title": "The Folk Hero Ending",
+    "description": "Kill Brencis alone. The Folk Hero needs no questline, which makes it the floor under every run — and the right call when a chain will not finish."
+   },
+   "summary": "The ending that asks nothing of you in advance, and the reason a run is almost never truly lost.",
+   "sources": [
+    {
+     "title": "All Endings | The Blood of Dawnwalker — Game8",
+     "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618231"
+    },
+    {
+     "title": "Quests | Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Quests"
+    }
+   ],
+   "bodyParagraphs": [
+    "The Folk Hero is what happens when you walk into the finale and kill Brencis on your own. No ally, no chain, no preparation — which is exactly why it matters more than its reputation suggests.",
+    {
+     "h": "What it needs"
+    },
+    "Nothing. There is no questline to finish, no character to keep alive, and no prerequisite to have started in week one. If you can reach the confrontation, this ending is available to you.",
+    {
+     "h": "Why that is the important part"
+    },
+    "Two of the seven endings are gated on ally chains that have to be finished before the finale, and those are the ones people lose. The Folk Hero is the floor underneath that: however badly a run has gone, there is still a real ending waiting rather than a failure state.",
+    "That changes what a late run should do. If your chain is four quests from done and you have six days left, abandoning it is not giving up — it is trading an ending you will not reach for one you will.",
+    {
+     "h": "Is it a worse ending?"
+    },
+    "It is a lonelier one. The chain endings are about what you built on the way; this is about what you are willing to do without it. Whether that reads as a lesser outcome is a judgement about the story, not about the mechanics, and the game does not treat it as a failure.",
+    {
+     "h": "When to commit to it deliberately"
+    },
+    "A first playthrough is a reasonable place. Running the clock without a chain hanging over you is the fastest way to learn what things actually cost, and a second run with that knowledge is where the gated endings become comfortable rather than frantic."
+   ]
   },
   {
    "title": "How Does Corruption Work in The Blood of Dawnwalker?",
@@ -545,6 +944,46 @@
    "updated": "2026-09-14"
   },
   {
+   "updated": "2026-09-14",
+   "confidence": "medium",
+   "title": "How Many Quests Are in The Blood of Dawnwalker?",
+   "slug": "how-many-quests",
+   "targetQuery": "blood of dawnwalker how many quests",
+   "authorSlug": "tobias-renn",
+   "seo": {
+    "title": "How Many Quests Are There?",
+    "description": "Ninety-three quests and forty-one Court Activities catalogued here, and you cannot do all of them. What the real number means for a run."
+   },
+   "summary": "The count matters less than the fact that you cannot reach the end of it — which is the design, not a shortfall.",
+   "sources": [
+    {
+     "title": "Quests | Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Quests"
+    },
+    {
+     "title": "The Blood of Dawnwalker: How Time Progression Works — AltChar",
+     "url": "https://www.altchar.com/guides/the-blood-of-dawnwalker-how-time-progression-works-aqro25G3s67B"
+    }
+   ],
+   "bodyParagraphs": [
+    "We have ninety-three quests catalogued, plus forty-one Court Activities filed separately because they are structurally a different thing. Other sites count differently — some put the total nearer 128 by folding the two together and including variants.",
+    {
+     "h": "The number that actually matters"
+    },
+    "Not the total. What matters is that 480 segments will not cover it, and no source publishes a segment cost for most individual quests — only fifteen of our ninety-three have a confirmed figure.",
+    "That means nobody, including us, can tell you exactly how much of the game fits in one run. What we can tell you is which specific routes are still affordable from where you are, which is what the run checker does.",
+    {
+     "h": "Why the counts differ between sites"
+    },
+    "Mostly definitional. Court Activities are quests in the loose sense and separate in the structural one. Treasure maps, ancient circles and destroyed shrines are sometimes counted individually and sometimes as one entry.",
+    {
+     "h": "What to do with this"
+    },
+    "Stop trying to clear the list. Ten of the forty-one Court Activities are optional by the duel threshold alone, and that slack is the biggest saving available to a tight run."
+   ],
+   "note": "Quest counts vary between sources by definition rather than by disagreement about the game."
+  },
+  {
    "title": "How Time Works in The Blood of Dawnwalker",
    "slug": "how-time-works",
    "targetQuery": "how does time work in blood of dawnwalker",
@@ -624,6 +1063,141 @@
    },
    "authorSlug": "corvin-ashe",
    "updated": "2026-09-14"
+  },
+  {
+   "updated": "2026-09-14",
+   "confidence": "medium",
+   "title": "How to Get Durandal in The Blood of Dawnwalker",
+   "slug": "how-to-get-durandal",
+   "targetQuery": "blood of dawnwalker durandal location",
+   "authorSlug": "tobias-renn",
+   "seo": {
+    "title": "How to Get Durandal",
+    "description": "The earliest legendary sword most runs can reach, in Briar Sloughs. Step by step, and why it is worth doing in week one."
+   },
+   "summary": "The earliest legendary a run can realistically collect, and one of the few worth a dedicated trip.",
+   "sources": [
+    {
+     "title": "Blood of Dawnwalker All Legendary Equipment Locations — PowerPyx",
+     "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-legendary-equipment-locations/"
+    },
+    {
+     "title": "Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood+of+Dawnwalker+Wiki"
+    }
+   ],
+   "bodyParagraphs": [
+    "Durandal is a legendary longsword in Briar Sloughs, and it is the earliest legendary weapon most runs can actually reach. It closes the side quest The Cursed Chasm.",
+    {
+     "h": "Step by step"
+    },
+    {
+     "ul": [
+      "Go to the collapsed bridge in Briar Sloughs.",
+      "Read the Special Orders on the wrecked cart beside it — this starts the quest.",
+      "Climb down the east wall of the gorge.",
+      "Clear the wolves and the Echo waiting at the bottom.",
+      "Search the smashed wagon beneath the bridge."
+     ]
+    },
+    {
+     "h": "Why do it early"
+    },
+    "A legendary sword in week one changes the difficulty of everything that follows more than any perk you could buy with the same segments. Fights are free in time terms, so a weapon that shortens them is pure profit against a budget that only quests can spend.",
+    {
+     "h": "What it costs"
+    },
+    "Getting to Briar Sloughs is free, as all travel is. The cost is whatever the quest charges once you commit to it — and like most quests in the game, no source publishes a confirmed figure, so treat it as unknown rather than cheap."
+   ]
+  },
+  {
+   "updated": "2026-09-14",
+   "confidence": "medium",
+   "title": "How to Get the Hand of Fate (and the Mistake That Loses It)",
+   "slug": "how-to-get-hand-of-fate",
+   "targetQuery": "blood of dawnwalker hand of fate",
+   "authorSlug": "tobias-renn",
+   "seo": {
+    "title": "How to Get The Hand of Fate",
+    "description": "Take the Stone Key from the cathedral treasure BEFORE starting A Hero’s End. Start the quest first and the weapon is gone."
+   },
+   "summary": "A legendary with a trap attached: one step has to happen before a quest you might already have started.",
+   "sources": [
+    {
+     "title": "Blood of Dawnwalker All Legendary Equipment Locations — PowerPyx",
+     "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-legendary-equipment-locations/"
+    },
+    {
+     "title": "Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood+of+Dawnwalker+Wiki"
+    }
+   ],
+   "bodyParagraphs": [
+    "The Hand of Fate is a legendary weapon in Svartrau City, and it is the clearest missable in the game. The order matters and nothing tells you so at the time.",
+    {
+     "h": "The order that works"
+    },
+    {
+     "ul": [
+      "Take the Stone Key from the cathedral treasure first.",
+      "Only then start A Hero’s End."
+     ]
+    },
+    {
+     "h": "The order that does not"
+    },
+    "Start A Hero’s End before taking the key and the route closes. This is not a time problem and no amount of remaining budget fixes it — it is the same class of thing as a quest that permanently excludes another, which our run checker reports as locked out rather than out of time.",
+    {
+     "h": "If you are running for completion"
+    },
+    "Take the cathedral treasure early even if you have no intention of starting A Hero’s End yet. There is no downside to holding the key and a permanent one to skipping it.",
+    {
+     "h": "What else is in that chain"
+    },
+    "Ancient Hero’s Armour comes from beating Rigoz at the close of A Hero’s End, so the quest is worth doing on its own terms — just not before you have the key."
+   ]
+  },
+  {
+   "updated": "2026-09-14",
+   "confidence": "medium",
+   "title": "How to Level Up Fast in The Blood of Dawnwalker",
+   "slug": "how-to-level-up",
+   "targetQuery": "blood of dawnwalker how to level up fast xp",
+   "authorSlug": "mirela-dunca",
+   "seo": {
+    "title": "How to Level Up Fast",
+    "description": "XP comes from quests, and quests cost segments — so levelling fast and routing well are the same problem. How to get both."
+   },
+   "summary": "Levelling and routing are the same problem in this game, because the thing that pays XP is the thing that spends your budget.",
+   "sources": [
+    {
+     "title": "Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood+of+Dawnwalker+Wiki"
+    },
+    {
+     "title": "The Blood of Dawnwalker: How Time Progression Works — AltChar",
+     "url": "https://www.altchar.com/guides/the-blood-of-dawnwalker-how-time-progression-works-aqro25G3s67B"
+    }
+   ],
+   "bodyParagraphs": [
+    "In most RPGs you can grind. Here you largely cannot, because the activity that pays experience is the activity that costs time, and time is the one resource that never comes back.",
+    {
+     "h": "What this changes"
+    },
+    "It makes XP efficiency a routing question. A quest that pays 250 XP for one segment is worth more than one paying 400 for four, and the second is a trap in a way it would not be in a game with an unlimited clock.",
+    {
+     "h": "What is actually free"
+    },
+    "Combat costs no segments. So does exploration, looting and travel. Any experience those pay is free experience, and it is the closest thing to grinding the game allows.",
+    {
+     "h": "The practical advice"
+    },
+    "Do the cheap quests in a region while you are there for an expensive one. Clustering by geography is the single biggest efficiency available, because the marginal cost of a nearby quest is only its own hourglass — you are already standing there.",
+    {
+     "h": "Where to check the numbers"
+    },
+    "Our quests database lists XP rewards where a source publishes them, alongside segment costs where those are confirmed. Only fifteen of ninety-three quests have a confirmed cost, so treat the rest as expensive until proven otherwise."
+   ]
   },
   {
    "title": "How to Perfect Block in The Blood of Dawnwalker",
@@ -750,6 +1324,45 @@
    ],
    "authorSlug": "corvin-ashe",
    "updated": "2026-09-14"
+  },
+  {
+   "updated": "2026-09-14",
+   "confidence": "medium",
+   "title": "How to Unlock Fast Travel in The Blood of Dawnwalker",
+   "slug": "how-to-unlock-fast-travel",
+   "targetQuery": "blood of dawnwalker fast travel shrines",
+   "authorSlug": "mirela-dunca",
+   "seo": {
+    "title": "How Fast Travel Works",
+    "description": "Shrines unlock fast travel, lighting them costs nothing, and travel itself is free. Why clearing shrines early is the best-value thing you can do."
+   },
+   "summary": "Fast travel runs off shrines, lighting them costs no segments, and travelling costs no segments — which makes shrine-clearing the highest-value free action in the game.",
+   "sources": [
+    {
+     "title": "The Blood of Dawnwalker: How Time Progression Works — AltChar",
+     "url": "https://www.altchar.com/guides/the-blood-of-dawnwalker-how-time-progression-works-aqro25G3s67B"
+    },
+    {
+     "title": "Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood+of+Dawnwalker+Wiki"
+    }
+   ],
+   "bodyParagraphs": [
+    "Fast travel in this game is tied to shrines. Light one and it becomes a destination; travelling between lit shrines costs nothing at all.",
+    {
+     "h": "The part players underuse"
+    },
+    "Neither half of that costs segments. Lighting a shrine is free. Travelling is free. In a game whose entire design is a budget you cannot refill, an entire system that charges nothing is worth exploiting deliberately rather than incidentally.",
+    {
+     "h": "What to do about it"
+    },
+    "Light every shrine in a region the first time you are in it, whether or not you have business there. Laslea Glen is the obvious case — all six of its shrines unlock with no conditions attached, from the first hour.",
+    "Doing this early means every later visit is a free teleport instead of a walk, and it makes the routing question \"which quest do I commit to\" rather than \"can I be bothered to go back there\".",
+    {
+     "h": "What it does not solve"
+    },
+    "Phase locks. A night-only quest is still night-only however quickly you can reach it, and fast travel does not advance the clock to get you there. Lacra’s chain in particular is a night problem, not a distance problem."
+   ]
   },
   {
    "title": "What Is Infamy in The Blood of Dawnwalker, and Should You Raise It?",
@@ -892,6 +1505,58 @@
    "note": "No source publishes a segment cost for most of Crake’s chain, so no \"finish by day N\" figure is given here."
   },
   {
+   "updated": "2026-09-14",
+   "confidence": "medium",
+   "title": "Lacra: Her Questline, Her Romance, and the Ending She Gates",
+   "slug": "lacra-guide",
+   "targetQuery": "blood of dawnwalker lacra questline",
+   "authorSlug": "corvin-ashe",
+   "seo": {
+    "title": "Lacra: Questline and Romance",
+    "description": "Six quests, almost all night-locked, and the gate on The Patricide. What her chain asks of your clock and when to start it."
+   },
+   "summary": "A vrakhir who keeps her own company, a romance option, and the gate on one of the two endings you can lose without noticing.",
+   "sources": [
+    {
+     "title": "Quests | Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Quests"
+    },
+    {
+     "title": "All Endings | The Blood of Dawnwalker — Game8",
+     "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618231"
+    }
+   ],
+   "bodyParagraphs": [
+    "Lacra is one of three romance options and one of two allies whose questline gates an ending. Her chain is the shorter of the two at six quests — and the more constraining, because almost all of it is night-locked.",
+    {
+     "h": "The chain"
+    },
+    {
+     "ul": [
+      "A Friend Like This — opens on the Svartrau rooftops after dark",
+      "Song of the Mountain",
+      "Hive and Seek",
+      "The Night of Horrors",
+      "Our Rotten Roots",
+      "Midnight Reckoning"
+     ]
+    },
+    "The Night of Horrors is the one that gets missed. It sits between Our Rotten Roots and Midnight Reckoning and must be done first — our own database recorded this chain as five quests until that was corrected.",
+    {
+     "h": "What it does to your run"
+    },
+    "Committing to Lacra commits your nights. A run has 240 night segments and this chain wants a large share of them, which means the scouting towers inside Svartrau, anything needing vampiric movement, and the rest of your night work all compete for what is left. Plan the day content around her rather than the other way round.",
+    {
+     "h": "The ending she gates"
+    },
+    "The Patricide — kill Brencis with Lacra. Reach the finale without her chain finished and it is simply not offered, with no warning beforehand.",
+    {
+     "h": "The romance"
+    },
+    "Available, and not mutually exclusive with the other two in principle. In practice the budget decides: her chain and Crake’s compete for the same 480 segments, and a run that tries to finish both usually finishes neither."
+   ]
+  },
+  {
    "title": "Laslea Glen: Every Quest, Item and Activity",
    "slug": "laslea-glen-guide",
    "targetQuery": "blood of dawnwalker laslea glen",
@@ -1006,6 +1671,56 @@
    "updated": "2026-09-14"
   },
   {
+   "updated": "2026-09-14",
+   "confidence": "medium",
+   "title": "The Blood of Dawnwalker Map: How Vale Sangora Is Laid Out",
+   "slug": "map-and-regions-guide",
+   "targetQuery": "blood of dawnwalker map vale sangora",
+   "authorSlug": "tobias-renn",
+   "seo": {
+    "title": "The Vale Sangora Map Explained",
+    "description": "Ten regions across roughly ten square kilometres, who holds each, and why region boundaries matter more here than in most open worlds."
+   },
+   "summary": "Ten regions, three vassals holding most of them, and boundaries that matter more than they look like they should.",
+   "sources": [
+    {
+     "title": "Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood+of+Dawnwalker+Wiki"
+    },
+    {
+     "title": "Bakir Boss Guide: Court Quest Locations | Game8",
+     "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618603"
+    }
+   ],
+   "bodyParagraphs": [
+    "Vale Sangora covers roughly ten square kilometres across ten named regions. That is small by open-world standards, and it is the right size for a game where the budget is measured in commitments rather than distance.",
+    {
+     "h": "Why the boundaries matter"
+    },
+    "Court Activities are filed by region, and each vassal only cares about trouble caused in territory they hold. So the map is not just geography — it is the structure of the progression system. Working one area at a time angers one vassal at a time.",
+    {
+     "h": "Who holds what"
+    },
+    {
+     "ul": [
+      "Ambrus — the north, including Briar Sloughs and Maragir Wealds",
+      "Bakir — the southwest, including Rockfalls and Boar’s Back",
+      "Xanthe — the southeast, including Tantari Woods and The Slits",
+      "Brencis — Svartrau City and its outskirts, held directly rather than delegated"
+     ]
+    },
+    "That last one is a useful quirk: because the capital is not delegated, activities belonging to any of the three courts can appear there.",
+    {
+     "h": "Getting around"
+    },
+    "Travel is free, in both senses. Walking costs nothing and fast travel between lit shrines costs nothing, so the expense of a region is only ever the quests you commit to inside it.",
+    {
+     "h": "Where to start"
+    },
+    "Laslea Glen. Nineteen quests are filed to it, more than any other region, and all six of its shrines unlock with no conditions attached."
+   ]
+  },
+  {
    "title": "Maragir Wealds: Every Quest, Item and Activity",
    "slug": "maragir-wealds-guide",
    "targetQuery": "blood of dawnwalker maragir wealds",
@@ -1057,6 +1772,57 @@
      ]
     },
     "The region page lists these alongside the items and activities filed here."
+   ]
+  },
+  {
+   "updated": "2026-09-14",
+   "confidence": "medium",
+   "title": "Missable Content in The Blood of Dawnwalker: What You Can Permanently Lose",
+   "slug": "missable-content-guide",
+   "targetQuery": "blood of dawnwalker missable quests items",
+   "authorSlug": "corvin-ashe",
+   "seo": {
+    "title": "Everything You Can Permanently Lose",
+    "description": "Two endings, several legendaries and a handful of quests can be closed off for good. The full list and the order that protects them."
+   },
+   "summary": "The things a run can lose for good, separated from the things it merely runs out of time for — because only one of those is fixable by hurrying.",
+   "sources": [
+    {
+     "title": "All Endings | The Blood of Dawnwalker — Game8",
+     "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618231"
+    },
+    {
+     "title": "Blood of Dawnwalker All Legendary Equipment Locations — PowerPyx",
+     "url": "https://www.powerpyx.com/blood-of-dawnwalker-all-legendary-equipment-locations/"
+    },
+    {
+     "title": "Quests | Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Quests"
+    }
+   ],
+   "bodyParagraphs": [
+    "There are two ways to lose content in this game and they need different responses. Running out of budget is a time problem, and hurrying fixes it. Permanently closing a route is not, and nothing fixes it.",
+    {
+     "h": "Endings you can lose"
+    },
+    "The Knyazmaker and The Patricide. Both are gated on ally chains that must be finished before the finale, and neither gives any warning. Everything else is decided at the confrontation and cannot be closed early.",
+    {
+     "h": "Items you can lose"
+    },
+    {
+     "ul": [
+      "The Hand of Fate — take the Stone Key from the cathedral treasure before starting A Hero’s End, or the route closes.",
+      "Anything behind a choice-gated questline, including the Ancient Greaves, which depend on destroying the Font of Life at the end of Anca’s chain."
+     ]
+    },
+    {
+     "h": "Quests that close other quests"
+    },
+    "Some completed quests permanently exclude others. Those are real locks rather than deadlines, and our run checker reports them separately as locked out for exactly that reason — the difference tells you whether hurrying would have helped.",
+    {
+     "h": "The one habit that protects most of it"
+    },
+    "Take keys, letters and documents when you see them, before starting the quest they belong to. Almost every missable in this game is an ordering problem rather than a timing one."
    ]
   },
   {
@@ -1139,6 +1905,52 @@
    "updated": "2026-09-14"
   },
   {
+   "updated": "2026-09-14",
+   "confidence": "medium",
+   "title": "Is There New Game Plus in The Blood of Dawnwalker?",
+   "slug": "new-game-plus",
+   "targetQuery": "blood of dawnwalker new game plus",
+   "authorSlug": "corvin-ashe",
+   "seo": {
+    "title": "New Game Plus and Replays",
+    "description": "What a second run is actually for in a game you cannot finish in one, and how to plan it so it is not a repeat of the first."
+   },
+   "summary": "The budget guarantees you left content behind, which makes a second run a different run rather than the same one with better gear.",
+   "sources": [
+    {
+     "title": "The Blood of Dawnwalker on Steam",
+     "url": "https://store.steampowered.com/app/3751260/The_Blood_of_Dawnwalker/"
+    },
+    {
+     "title": "All Endings | The Blood of Dawnwalker — Game8",
+     "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618231"
+    }
+   ],
+   "bodyParagraphs": [
+    "No source we could reach confirms a New Game Plus mode, and we are not going to state one exists on the strength of it being common in the genre. What is certain is that this game is built to be played more than once.",
+    {
+     "h": "Why a replay is genuinely different"
+    },
+    "Four hundred and eighty segments do not stretch far enough to see everything, and that is by design. A first run that commits to Crake’s chain simply does not see Lacra’s, and the reverse. The content you skipped is not locked behind difficulty — it is behind a choice you already made.",
+    {
+     "h": "Planning a second run"
+    },
+    {
+     "ul": [
+      "Take the other ally chain. That is the single biggest change available.",
+      "Swap your phase emphasis: if run one was night-heavy, run the day trees.",
+      "Take an early exit deliberately, since both are cheap to see once you know where they sit.",
+      "Skip the court activities you did last time and stop at the threshold instead."
+     ]
+    },
+    {
+     "h": "Getting the trophies"
+    },
+    "A platinum will not fit in one playthrough, so plan the split rather than discovering it. Our trophy guide covers which work belongs in which run."
+   ],
+   "note": "No source confirms a New Game Plus mode; this page deliberately does not claim one exists."
+  },
+  {
    "title": "The Patricide Ending: Lacra’s Chain and the Night Problem",
    "slug": "patricide-ending-guide",
    "targetQuery": "blood of dawnwalker patricide ending",
@@ -1196,6 +2008,45 @@
     "In principle nothing forbids it. In practice they compete for the same 480 segments, and a run that tries to finish both usually finishes neither. Pick one, and take the other on a second playthrough where it will be a genuinely different run."
    ],
    "note": "Lacra’s chain is recorded as six quests; some sources list five and omit The Night of Horrors. See docs/DATA.md."
+  },
+  {
+   "updated": "2026-09-14",
+   "confidence": "medium",
+   "title": "The Blood of Dawnwalker Prologue: What to Do and What to Skip",
+   "slug": "prologue-guide",
+   "targetQuery": "blood of dawnwalker prologue walkthrough",
+   "authorSlug": "corvin-ashe",
+   "seo": {
+    "title": "The Prologue: What to Do First",
+    "description": "The prologue is costed at eight segments and is not optional. What it teaches, what it takes, and what to set up before it ends."
+   },
+   "summary": "Eight segments, unavoidable, and the only part of the run where the game is still explaining itself.",
+   "sources": [
+    {
+     "title": "Quests | Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Quests"
+    },
+    {
+     "title": "The Blood of Dawnwalker: How Time Progression Works — AltChar",
+     "url": "https://www.altchar.com/guides/the-blood-of-dawnwalker-how-time-progression-works-aqro25G3s67B"
+    }
+   ],
+   "bodyParagraphs": [
+    "The prologue is one of the few quests in the game with a confirmed segment cost: eight. It is also not optional, so that is eight of your 480 spent before you make a single decision of your own.",
+    {
+     "h": "What it sets up"
+    },
+    "Brencis takes Coen’s family, which is the deadline the whole run is measured against. Anca appears here too — the earliest companion in the game and the cheapest of the three romances to keep up with.",
+    {
+     "h": "What to do before it closes"
+    },
+    "Learn what the hourglass means. Every commitment the game charges you for is marked in advance with a number beside it, and internalising that early is what stops players treating exploration as expensive and quests as cheap. It is exactly the other way round.",
+    {
+     "h": "Straight afterwards"
+    },
+    "Light Laslea Glen’s six shrines. They unlock with no conditions, they cost nothing, and they make the whole starting region free to move around for the rest of the run.",
+    "Then decide whether you are chasing an ally ending. The Firebrand — the start of Crake’s eight-quest chain — opens in this same region, and that decision is much cheaper to make now than on day fifteen."
+   ]
   },
   {
    "title": "Rockfalls: Every Quest, Item and Activity",
@@ -1321,6 +2172,82 @@
    },
    "authorSlug": "corvin-ashe",
    "updated": "2026-09-14"
+  },
+  {
+   "updated": "2026-09-14",
+   "confidence": "medium",
+   "title": "What Are Scouting Towers For in The Blood of Dawnwalker?",
+   "slug": "scouting-towers-guide",
+   "targetQuery": "blood of dawnwalker scouting towers",
+   "authorSlug": "tobias-renn",
+   "seo": {
+    "title": "Scouting Towers Explained",
+    "description": "Eleven towers, climbable only at night, and free to do. What they reveal and why they are night work rather than optional work."
+   },
+   "summary": "Eleven towers, all of them night work, and none of them costing you a segment.",
+   "sources": [
+    {
+     "title": "Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood+of+Dawnwalker+Wiki"
+    },
+    {
+     "title": "The Blood of Dawnwalker: How Time Progression Works — AltChar",
+     "url": "https://www.altchar.com/guides/the-blood-of-dawnwalker-how-time-progression-works-aqro25G3s67B"
+    }
+   ],
+   "bodyParagraphs": [
+    "Eleven scouting towers are spread across the valley, and climbing one fills in the map around it. Three are packed close together inside Svartrau City alone.",
+    {
+     "h": "Why they are night work"
+    },
+    "The route up depends on vampiric movement — Shadowstep and Planeshift — which means they cannot be climbed by day. That makes them a claim on your night budget in scheduling terms even though they cost nothing in segments.",
+    {
+     "h": "Why do them at all"
+    },
+    "They are free. Climbing costs no segments, and map information is the thing that makes the rest of your routing cheaper: you cannot plan a tight run around content you have not found.",
+    {
+     "h": "How to fit them in"
+    },
+    "Climb them while passing, not as a trip. If you are in Svartrau at night for Lacra’s chain, the three city towers are already on your route. Making a special journey for a tower is spending night time you may want for a night-locked quest."
+   ]
+  },
+  {
+   "updated": "2026-09-14",
+   "confidence": "medium",
+   "title": "How Shrines Work: Fast Travel, Skills and Time Skipping",
+   "slug": "shrines-guide",
+   "targetQuery": "blood of dawnwalker shrines what do they do",
+   "authorSlug": "mirela-dunca",
+   "seo": {
+    "title": "How Shrines Work",
+    "description": "Shrines are fast travel, skill purchases and time skipping in one. What lighting one gets you and which unlock without conditions."
+   },
+   "summary": "Three systems behind one interaction, all of them free to use, and the first thing worth doing in any region.",
+   "sources": [
+    {
+     "title": "Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood+of+Dawnwalker+Wiki"
+    },
+    {
+     "title": "The Blood of Dawnwalker: How Time Progression Works — AltChar",
+     "url": "https://www.altchar.com/guides/the-blood-of-dawnwalker-how-time-progression-works-aqro25G3s67B"
+    }
+   ],
+   "bodyParagraphs": [
+    "A lit shrine is three things at once: a fast travel point, somewhere to spend skill points, and somewhere to skip time. That bundle is why shrine coverage shapes a run more than its individual parts suggest.",
+    {
+     "h": "Time skipping is the interesting one"
+    },
+    "Half the content in this game is phase-locked. Being able to move from day to night on demand turns \"I cannot do that now\" into \"I will do that in a moment\", and it is the mechanism that makes a mixed day-and-night route practical at all.",
+    {
+     "h": "Which unlock freely"
+    },
+    "Laslea Glen’s six all open with no conditions attached: Laslea Centre, Anca’s Hut, Blackwater Hollow, Northern Foothills, Silver Mines and Outlaw’s Gorge. That is unusually generous and it is why the starting region is where most runs spend their cheapest days.",
+    {
+     "h": "The habit worth forming"
+    },
+    "Light everything you walk past. It costs nothing, it compounds, and the run checker’s advice about what you can start right now is far more useful when the answer is not gated behind a walk across the valley."
+   ]
   },
   {
    "title": "St. Tyna's Grove: Every Quest, Item and Activity",
@@ -1504,6 +2431,49 @@
    ]
   },
   {
+   "updated": "2026-09-14",
+   "confidence": "medium",
+   "title": "The Swordmastery Tree: What It Does and Which Ultimate to Take",
+   "slug": "swordmastery-tree-guide",
+   "targetQuery": "blood of dawnwalker swordmastery tree",
+   "authorSlug": "mirela-dunca",
+   "seo": {
+    "title": "The Swordmastery Tree Explained",
+    "description": "The tree that works around the clock, and the only one you can lean on in both halves of the day. What the tree is for, its three ultimates, and which one suits which build."
+   },
+   "summary": "The tree that works around the clock, and the only one you can lean on in both halves of the day.",
+   "sources": [
+    {
+     "title": "Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood+of+Dawnwalker+Wiki"
+    },
+    {
+     "title": "The Blood of Dawnwalker on Steam",
+     "url": "https://store.steampowered.com/app/3751260/The_Blood_of_Dawnwalker/"
+    }
+   ],
+   "bodyParagraphs": [
+    "Swordmastery is the steel tree. It does not care whether the sun is up, which makes it the spine of almost every build that wants to function for a full twenty-four hours rather than half of one.",
+    {
+     "h": "When you can use it"
+    },
+    "Both phases. That is the whole argument for it: a run has 240 day segments and 240 night segments, and this is the only tree that works in all 480.",
+    {
+     "h": "The ultimates"
+    },
+    "Last Stand, Sword Sage and Tactical Mastery. You may take one.",
+    "One ultimate per tree, so taking any of the three closes the other two. Nine exist across the game and three are reachable in a run, which makes each choice a third of your ceiling rather than a small upgrade.",
+    {
+     "h": "How to think about it"
+    },
+    "Last Stand rewards fighting below the line, Sword Sage rewards technique, Tactical Mastery rewards control. Pick the one that matches how you actually fight rather than the one with the best numbers on paper.",
+    {
+     "h": "Plan it properly"
+    },
+    "The build planner enforces one ultimate per tree, totals what a spec costs in segments, and gives you a link to share. That last part matters more than it sounds: build advice is much easier to argue about when both people are looking at the same list."
+   ]
+  },
+  {
    "title": "Tantari Woods: Every Quest, Item and Activity",
    "slug": "tantari-woods-guide",
    "targetQuery": "blood of dawnwalker tantari woods",
@@ -1620,6 +2590,49 @@
    ]
   },
   {
+   "updated": "2026-09-14",
+   "confidence": "medium",
+   "title": "Time Runs Out: The Ending You Do Not Choose",
+   "slug": "time-runs-out-ending-guide",
+   "targetQuery": "blood of dawnwalker time runs out ending",
+   "authorSlug": "corvin-ashe",
+   "seo": {
+    "title": "The Time Runs Out Ending",
+    "description": "The failure state, and the only ending decided by the clock. What triggers it, and the two-minute check that tells you if you are heading there."
+   },
+   "summary": "The only ending the game gives you rather than one you take. It is also the easiest of the seven to avoid, once you know what actually causes it.",
+   "sources": [
+    {
+     "title": "All Endings | The Blood of Dawnwalker — Game8",
+     "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618231"
+    },
+    {
+     "title": "The Blood of Dawnwalker: How Time Progression Works — AltChar",
+     "url": "https://www.altchar.com/guides/the-blood-of-dawnwalker-how-time-progression-works-aqro25G3s67B"
+    }
+   ],
+   "bodyParagraphs": [
+    "Six of the seven endings are decisions. This one is arithmetic: the thirty days expire, nothing else has been secured, and the run closes on Time Runs Out.",
+    {
+     "h": "What actually triggers it"
+    },
+    "Not being slow. Running out of budget without reaching the confrontation. Those sound the same and are not — you can spend a great many real hours in this game without spending segments, because travel, combat, looting and exploration are all free.",
+    {
+     "h": "The check that tells you"
+    },
+    "Compare what your chosen route still needs against what you have left. A player on day twenty-two with a chain two quests from done is fine. A player on day fifteen who has not started one is not, and nothing in the game will say so.",
+    "Our run checker does exactly this comparison and reports the result as reachable, tight, out of time or locked out. Where a chain contains quests nobody has costed, it reports the total as a floor rather than a figure, because an unknown cost is not a zero cost.",
+    {
+     "h": "How to get out of it"
+    },
+    "Take The Folk Hero. It needs no questline, it is available to any run that reaches the finale, and it is a real ending rather than a consolation. Spending the last week on a chain that cannot finish is the single most common way players land here.",
+    {
+     "h": "The one thing that is not a time problem"
+    },
+    "A quest you have already finished that permanently excludes part of another chain is not fixable with more days. The checker reports those separately as locked out, and the difference matters: one of them you could have solved by hurrying, and the other you could not."
+   ]
+  },
+  {
    "title": "The Blood of Dawnwalker Trophy Guide: How to Plan a Platinum Run",
    "slug": "trophy-guide",
    "targetQuery": "blood of dawnwalker trophy guide",
@@ -1691,6 +2704,84 @@
    },
    "authorSlug": "corvin-ashe",
    "updated": "2026-09-14"
+  },
+  {
+   "updated": "2026-09-14",
+   "confidence": "medium",
+   "title": "The Turncoat Ending: Dealing With Brencis Instead of Fighting Him",
+   "slug": "turncoat-ending-guide",
+   "targetQuery": "blood of dawnwalker turncoat ending",
+   "authorSlug": "corvin-ashe",
+   "seo": {
+    "title": "The Turncoat Ending",
+    "description": "Decided at the finale rather than in week one. What The Turncoat is, what it costs you, and why it cannot be lost early."
+   },
+   "summary": "Come to terms with the knyaz rather than kill him. Decided at the finale, which means no amount of bad routing can take it away from you.",
+   "sources": [
+    {
+     "title": "All Endings | The Blood of Dawnwalker — Game8",
+     "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618231"
+    }
+   ],
+   "bodyParagraphs": [
+    "The Turncoat is the ending where you deal with Brencis instead of fighting him. Like most of the seven it is a finale choice, and that single fact is the most useful thing to know about it.",
+    {
+     "h": "It cannot be lost early"
+    },
+    "Nothing you do in the first twenty days closes this route. There is no chain to finish and no ally to keep, so a run that has gone badly wrong by every other measure still arrives at the finale with this on the table.",
+    {
+     "h": "What it costs"
+    },
+    "Not segments. The cost is narrative, and it is the whole point: the game spends thirty days establishing what the regime does to the valley, then offers you a seat at it.",
+    {
+     "h": "How it sits against the others"
+    },
+    "The Folk Hero is the same structural shape — no preparation, available at the finale — but it is the opposite answer. Between them they mean a run with no ally chain finished still has two real endings to choose from rather than one.",
+    "If you are routing for a specific ending, this is the one that needs the least planning and the most thought."
+   ]
+  },
+  {
+   "updated": "2026-09-14",
+   "confidence": "medium",
+   "title": "The Vampirism Tree: What It Does and Which Ultimate to Take",
+   "slug": "vampirism-tree-guide",
+   "targetQuery": "blood of dawnwalker vampirism tree",
+   "authorSlug": "mirela-dunca",
+   "seo": {
+    "title": "The Vampirism Tree Explained",
+    "description": "The strongest tree, the night tree, and the only one gated by something other than skill points. What the tree is for, its three ultimates, and which one suits which build."
+   },
+   "summary": "The strongest tree, the night tree, and the only one gated by something other than skill points.",
+   "sources": [
+    {
+     "title": "Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood+of+Dawnwalker+Wiki"
+    },
+    {
+     "title": "The Blood of Dawnwalker on Steam",
+     "url": "https://store.steampowered.com/app/3751260/The_Blood_of_Dawnwalker/"
+    }
+   ],
+   "bodyParagraphs": [
+    "Vampirism opens as Corruption rises rather than as you spend points, which makes it the one tree you advance by playing a certain way. It is also the strongest of the three, and night is when you have it.",
+    {
+     "h": "When you can use it"
+    },
+    "Night only. A run has 240 night segments, and this tree is idle for the other half. It is also the strongest of the three, which is the trade the game is offering.",
+    {
+     "h": "The ultimates"
+    },
+    "Lethal Crescendo, Renounce Death and Sanguine Renewal. You may take one.",
+    "One ultimate per tree, so taking any of the three closes the other two. Nine exist across the game and three are reachable in a run, which makes each choice a third of your ceiling rather than a small upgrade.",
+    {
+     "h": "How to think about it"
+    },
+    "Renounce Death is the one most builds converge on: it returns you to a fight once per combat with ten seconds of immortality instead of dying. That is less a power spike than insurance against the one mistake that would otherwise cost a run.",
+    {
+     "h": "Plan it properly"
+    },
+    "The build planner enforces one ultimate per tree, totals what a spec costs in segments, and gives you a link to share. That last part matters more than it sounds: build advice is much easier to argue about when both people are looking at the same list."
+   ]
   },
   {
    "title": "What Happens If You Run Out of Time in The Blood of Dawnwalker?",
@@ -1967,6 +3058,93 @@
    ],
    "authorSlug": "corvin-ashe",
    "updated": "2026-09-14"
+  },
+  {
+   "updated": "2026-09-14",
+   "confidence": "medium",
+   "title": "The Witchcraft Tree: What It Does and Which Ultimate to Take",
+   "slug": "witchcraft-tree-guide",
+   "targetQuery": "blood of dawnwalker witchcraft tree",
+   "authorSlug": "mirela-dunca",
+   "seo": {
+    "title": "The Witchcraft Tree Explained",
+    "description": "The daylight tree: hexes, wards and preparation for the half of the run you spend human. What the tree is for, its three ultimates, and which one suits which build."
+   },
+   "summary": "The daylight tree: hexes, wards and preparation for the half of the run you spend human.",
+   "sources": [
+    {
+     "title": "Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Blood+of+Dawnwalker+Wiki"
+    },
+    {
+     "title": "The Blood of Dawnwalker on Steam",
+     "url": "https://store.steampowered.com/app/3751260/The_Blood_of_Dawnwalker/"
+    }
+   ],
+   "bodyParagraphs": [
+    "Witchcraft is the day tree, and it is about setting things up rather than reacting. Hexes and wards reward planning a fight before you walk into it, which fits the half of the clock where you have no vampiric options to fall back on.",
+    {
+     "h": "When you can use it"
+    },
+    "Daylight only. A run has 240 day segments, and this tree is idle for the other half — which is why most builds pair it with Swordmastery rather than running it alone.",
+    {
+     "h": "The ultimates"
+    },
+    "Aether Cascade, Entwined Torment and Runic Bulwark. You may take one.",
+    "One ultimate per tree, so taking any of the three closes the other two. Nine exist across the game and three are reachable in a run, which makes each choice a third of your ceiling rather than a small upgrade.",
+    {
+     "h": "How to think about it"
+    },
+    "Runic Bulwark turns the block button into the plan; Aether Cascade and Entwined Torment go the other way and reward stacking damage over time. The defensive line is the safer first-run choice.",
+    {
+     "h": "Plan it properly"
+    },
+    "The build planner enforces one ultimate per tree, totals what a spec costs in segments, and gives you a link to share. That last part matters more than it sounds: build advice is much easier to argue about when both people are looking at the same list."
+   ]
+  },
+  {
+   "updated": "2026-09-14",
+   "confidence": "medium",
+   "title": "Xanthe's Court: How Many Activities You Actually Need",
+   "slug": "xanthe-court-guide",
+   "targetQuery": "blood of dawnwalker xanthe court",
+   "authorSlug": "tobias-renn",
+   "seo": {
+    "title": "Xanthe's Court: What You Need",
+    "description": "Fifteen activities, the longest court, and the most expensive duel to reach. How many of the 15 you need before the duel, and what the court pays out."
+   },
+   "summary": "Fifteen activities, the longest court, and the most expensive duel to reach.",
+   "sources": [
+    {
+     "title": "Bakir Boss Guide: Court Quest Locations | Game8",
+     "url": "https://game8.co/games/The-Blood-of-Dawnwalker/archives/618603"
+    },
+    {
+     "title": "Quests | Blood of Dawnwalker Wiki — Fextralife",
+     "url": "https://bloodofdawnwalker.wiki.fextralife.com/Quests"
+    }
+   ],
+   "bodyParagraphs": [
+    "Xanthe is Boyar of the southeast and a witchcraft user of some age. Fifteen Court Activities are filed to her, the most of the three, which makes hers the most expensive duel in the game to unlock.",
+    {
+     "h": "How many you need"
+    },
+    "The duel unlocks at roughly three quarters of a vassal’s activities, which on this court means about 12 of 15. Treat that as reported rather than confirmed: it is widely repeated and we have not seen the developer state it.",
+    "That leaves roughly 3 you never have to do. Across all three courts the slack adds up to about ten activities, which is the largest single saving available to a run that is behind.",
+    {
+     "h": "What it pays out"
+    },
+    "Two pieces of the Ancient Hero set come out of her activities — the Vambraces from one, the Footwear from another — so her court pays out even before the duel.",
+    {
+     "h": "Routing it"
+    },
+    "Do activities in clusters. They are filed by region and a vassal only cares about trouble in territory they hold, so working one area at a time costs less than chasing the highest-value activity across the valley — even though travel itself is free.",
+    {
+     "h": "Where it sits in the order"
+    },
+    "If your budget is tight, this is not the court to open with. Start with Bakir at twelve, learn what a full court costs, and come here knowing the number."
+   ],
+   "note": "The 75% threshold is reported rather than confirmed. Activity counts are ours; see docs/DATA.md for where sources disagree."
   }
  ]
 }

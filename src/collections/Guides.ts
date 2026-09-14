@@ -51,6 +51,34 @@ export const Guides: CollectionConfig = {
       },
     },
     {
+      /*
+        Pictures inside the article, as opposed to the lead image above it.
+        Rendered as a figure row partway down the page.
+
+        Kept as its own field rather than as upload nodes inside the body,
+        because the body is written in src/seed/raw as plain strings and a
+        Lexical upload node needs a media id that does not exist until after
+        the import has run.
+      */
+      name: 'bodyImages',
+      type: 'array',
+      label: 'Images inside the article',
+      admin: { description: 'Shown together partway down the page, under a heading of your choosing.' },
+      fields: [
+        { name: 'image', type: 'upload', relationTo: 'media', required: true },
+        { name: 'caption', type: 'text', admin: { description: 'Printed under the picture.' } },
+      ],
+    },
+    {
+      name: 'bodyImagesHeading',
+      type: 'text',
+      defaultValue: 'What you are looking for',
+      admin: {
+        condition: (_, siblingData) => Boolean(siblingData?.bodyImages?.length),
+        description: 'Heading above the in-article images.',
+      },
+    },
+    {
       name: 'relatedQuests',
       type: 'relationship',
       relationTo: 'quests',

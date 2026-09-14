@@ -10,7 +10,7 @@ import { RelatedList, type RelatedItem } from '@/components/RelatedList'
 import Link from 'next/link'
 import { getAll, getBySlug, relMany } from '@/lib/payload'
 import { JsonLd } from '@/components/JsonLd'
-import type { Author, Ending, Guide, Quest } from '@/payload-types'
+import type { Author, Ending, Guide, Media, Quest } from '@/payload-types'
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -38,6 +38,16 @@ export default async function GuidePage({ params }: Props) {
   const { slug } = await params
   const doc = await getBySlug<Guide>('guides', slug, 1)
   if (!doc) notFound()
+
+  // Only entries whose upload actually resolved; a broken one renders nothing
+  // rather than an empty frame.
+  const bodyImages = (doc.bodyImages ?? [])
+    .map((entry) => ({
+      id: entry.id ?? String(entry.image),
+      caption: entry.caption,
+      media: entry.image && typeof entry.image === 'object' ? (entry.image as Media) : null,
+    }))
+    .filter((entry): entry is typeof entry & { media: Media } => Boolean(entry.media?.url))
 
   const person = doc.author && typeof doc.author === 'object' ? (doc.author as Author) : null
 
@@ -103,6 +113,31 @@ export default async function GuidePage({ params }: Props) {
             <div className="prose">
               <RichText data={doc.body} />
             </div>
+
+            {bodyImages.length > 0 ? (
+              <section className="section">
+                <div className="section-head">
+                  <h2>{doc.bodyImagesHeading || 'What you are looking for'}</h2>
+                </div>
+                <div className="figurerow">
+                  {bodyImages.map((entry) => (
+                    <figure key={entry.id}>
+                      <img
+                        src={entry.media.sizes?.card?.url ?? entry.media.url ?? ''}
+                        alt={entry.caption ?? entry.media.alt ?? ''}
+                        loading="lazy"
+                      />
+                      {entry.caption ? <figcaption>{entry.caption}</figcaption> : null}
+                    </figure>
+                  ))}
+                </div>
+                {/* One credit for the row rather than one per picture. */}
+                <p className="note">
+                  The Blood of Dawnwalker © Rebel Wolves / Bandai Namco Entertainment.
+                </p>
+              </section>
+            ) : null}
+
             <Sources sources={doc.sources} />
           </div>
 

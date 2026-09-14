@@ -1325,6 +1325,23 @@ export interface Guide {
    * Lead image. Shown at the top of the article, on the guides index and on the home page cards, and used as the social preview.
    */
   image?: (number | null) | Media;
+  /**
+   * Shown together partway down the page, under a heading of your choosing.
+   */
+  bodyImages?:
+    | {
+        image: number | Media;
+        /**
+         * Printed under the picture.
+         */
+        caption?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Heading above the in-article images.
+   */
+  bodyImagesHeading?: string | null;
   relatedQuests?: (number | Quest)[] | null;
   relatedEndings?: (number | Ending)[] | null;
   /**
@@ -2131,6 +2148,14 @@ export interface GuidesSelect<T extends boolean = true> {
   author?: T;
   updated?: T;
   image?: T;
+  bodyImages?:
+    | T
+    | {
+        image?: T;
+        caption?: T;
+        id?: T;
+      };
+  bodyImagesHeading?: T;
   relatedQuests?: T;
   relatedEndings?: T;
   confidence?: T;
