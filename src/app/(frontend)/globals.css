@@ -1048,3 +1048,33 @@ th.num { text-align: right; }
 /* A route that is gone should read as gone at a glance, not need the badge. */
 .outlook-list li[data-status='out-of-time'] a,
 .outlook-list li[data-status='locked-out'] a { color: var(--muted); text-decoration: line-through; }
+
+/* ---------- detail pages: related lists and the at-a-glance column ---------- */
+
+.related { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.related li {
+  display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between;
+  gap: 3px 14px; padding: 10px 0; border-bottom: 1px solid var(--rule-soft);
+}
+.related li:last-child { border-bottom: 0; }
+.related-main { display: flex; flex-direction: column; gap: 2px; min-width: 0; flex: 1 1 20ch; }
+.related-main a { font-weight: 500; }
+.related-main .sub { font-size: 13px; color: var(--muted); }
+.related-meta { flex: none; font-size: 13px; color: var(--muted); }
+
+.section-head h2 { display: flex; align-items: center; gap: 9px; }
+.section-head h2 .ic { color: var(--muted); flex: none; }
+
+.factpanel .factlist { margin: 0; display: flex; flex-direction: column; }
+.factlist > div {
+  display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between;
+  gap: 4px 14px; padding: 9px 0; border-bottom: 1px solid var(--rule-soft);
+}
+.factlist > div:last-child { border-bottom: 0; }
+.factlist dt {
+  font-family: var(--f-label); font-size: 11.5px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted);
+}
+.factlist dd { margin: 0; font-weight: 600; font-variant-numeric: tabular-nums; }
+/* A fact nobody has published reads as absent, not as a value. */
+.factlist dd[data-absent='true'] { font-weight: 400; font-size: 13px; color: var(--muted); }

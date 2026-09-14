@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { PageHeader } from '@/components/PageHeader'
 import { sectionArt } from '@/lib/art'
 import { DataTable, type Row } from '@/components/DataTable'
+import { ROLE } from '@/lib/characters'
 import { getAll } from '@/lib/payload'
 import type { Character, Media } from '@/payload-types'
 
@@ -9,15 +10,6 @@ export const metadata: Metadata = {
   title: 'Characters of Vale Sangora',
   description: 'Allies, vassals and antagonists in The Blood of Dawnwalker, and whose questline gates which ending.',
   alternates: { canonical: '/characters' },
-}
-
-const ROLE: Record<string, string> = {
-  protagonist: 'Protagonist',
-  ally: 'Ally',
-  vassal: 'Vassal',
-  antagonist: 'Antagonist',
-  merchant: 'Merchant',
-  minor: 'Minor',
 }
 
 export default async function CharactersIndex() {

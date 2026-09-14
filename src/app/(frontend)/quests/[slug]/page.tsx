@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
 import { Confidence, PhaseBadge } from '@/components/Badges'
-import { Facts } from '@/components/Facts'
 import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
 import { AdSlot } from '@/components/AdSlot'
@@ -11,6 +10,7 @@ import { QuestToggle } from '@/components/QuestToggle'
 import { UnlockPath } from '@/components/UnlockPath'
 import { getRunGraph } from '@/lib/runData'
 import { EntityImage } from '@/components/EntityImage'
+import { FactPanel } from '@/components/FactPanel'
 import { getAll, getBySlug, relMany, rel } from '@/lib/payload'
 import type { Ending, Quest, Region } from '@/payload-types'
 
@@ -61,25 +61,53 @@ export default async function QuestPage({ params }: Props) {
         }
       />
       <div className="page body-main">
-        <EntityImage media={quest.image} shape="wide" />
-
         <QuestToggle questId={String(quest.id)} title={quest.title} />
 
-        <Facts
-          items={[
-            {
-              label: 'Time cost',
-              value: known
-                ? `${quest.time?.min === quest.time?.max ? quest.time?.max : `${quest.time?.min}–${quest.time?.max}`} segments`
-                : 'Not confirmed',
-            },
-            { label: 'Phase', value: quest.phase === 'either' ? 'Day or night' : `${quest.phase} only` },
-            { label: 'Region', value: region ? region.title : 'Unrecorded' },
-            { label: 'Prerequisites', value: prereqs.length },
-          ]}
-        />
-
-        <RichText data={quest.body} />
+        <div className="split">
+          <div className="stack">
+            <EntityImage media={quest.image} shape="wide" />
+            <div className="prose">
+              <RichText data={quest.body} />
+            </div>
+          </div>
+          <div className="stack">
+            <FactPanel
+              facts={[
+                {
+                  label: 'Time cost',
+                  value: known
+                    ? `${quest.time?.min === quest.time?.max ? quest.time?.max : `${quest.time?.min}–${quest.time?.max}`} segments`
+                    : undefined,
+                  // "Not confirmed" rather than 0: an unpublished cost is not a
+                  // free quest, and the run checker treats it as a floor too.
+                  absent: 'nobody has published one',
+                },
+                {
+                  label: 'Phase',
+                  value: quest.phase === 'either' ? 'Day or night' : `${quest.phase} only`,
+                },
+                {
+                  // Linked, not printed. The region page lists this quest back,
+                  // so leaving it as plain text was a dead end in one direction.
+                  label: 'Region',
+                  value: region ? <Link href={`/regions/${region.slug}`}>{region.title}</Link> : undefined,
+                  absent: 'unrecorded',
+                },
+                { label: 'Prerequisites', value: prereqs.length || undefined, absent: 'none' },
+                { label: 'Opens', value: unlocks.length || undefined },
+                { label: 'Closes off', value: excludes.length || undefined },
+              ]}
+            />
+            <div className="callout">
+              <h3>Where does this leave your run?</h3>
+              <p>
+                The <Link href="/tools/run-checker">run checker</Link> takes the quests you have
+                actually finished and works out which endings are still reachable from where you
+                are.
+              </p>
+            </div>
+          </div>
+        </div>
 
         <UnlockPath roots={[String(quest.id)]} questId={String(quest.id)} quests={graph.quests} />
 
@@ -130,14 +158,6 @@ export default async function QuestPage({ params }: Props) {
             </ul>
           </section>
         ) : null}
-
-        <div className="callout">
-          <h3>Where does this leave your run?</h3>
-          <p>
-            The <Link href="/tools/run-checker">run checker</Link> takes the quests you have actually
-            finished and works out which endings are still reachable from where you are.
-          </p>
-        </div>
 
         <AdSlot />
         <Sources sources={quest.sources} />
