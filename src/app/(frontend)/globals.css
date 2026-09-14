@@ -338,7 +338,18 @@ p { margin: 0; }
 
 /* ---------- section tiles ---------- */
 
-.tilegrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(228px, 1fr)); gap: 12px; }
+/*
+  Fixed column counts, not auto-fill.
+
+  There are eight tiles, and auto-fill packed as many as would fit — five at
+  desktop width, leaving a second row of three and a gap where two used to be.
+  Every count here divides eight evenly, so the grid is always a full
+  rectangle: four across on a desktop, two on a phone, one when even that is
+  cramped. Add or remove a section and this wants revisiting.
+*/
+.tilegrid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+@media (min-width: 480px) { .tilegrid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .tilegrid { grid-template-columns: repeat(4, 1fr); } }
 .tile {
   position: relative; isolation: isolate;
   display: flex; flex-direction: column; justify-content: flex-end;
