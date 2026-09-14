@@ -1,9 +1,12 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
 import { Badge, Confidence, PhaseBadge } from '@/components/Badges'
 import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
+import { FactPanel } from '@/components/FactPanel'
+import { RelatedList, type RelatedItem } from '@/components/RelatedList'
 import { getAll, getBySlug } from '@/lib/payload'
 import type { Perk, SkillTree } from '@/payload-types'
 
@@ -29,9 +32,18 @@ export default async function SkillTreePage({ params }: Props) {
   const { slug } = await params
   const doc = await getBySlug<SkillTree>('skill-trees', slug, 1)
   if (!doc) notFound()
-  const perks = (await getAll<Perk>('perks', { depth: 1 })).filter(
+  const perks = (await getAll<Perk>('perks', { depth: 1, sort: 'title' })).filter(
     (perk) => typeof perk.tree === 'object' && perk.tree?.slug === slug,
   )
+  const ultimates = perks.filter((perk) => perk.isUltimate)
+
+  const perkItems: RelatedItem[] = perks.map((perk) => ({
+    id: perk.id,
+    title: perk.title,
+    href: `/perks/${perk.slug}`,
+    sub: perk.effect,
+    meta: perk.isUltimate ? <span className="badge">Ultimate</span> : undefined,
+  }))
 
   return (
     <>
@@ -49,25 +61,47 @@ export default async function SkillTreePage({ params }: Props) {
         }
       />
       <div className="page body-main">
-        <RichText data={doc.body} />
-        {perks.length > 0 ? (
-          <section className="section">
-            <div className="section-head">
-              <h2>Perks in this tree</h2>
+        <div className="split">
+          <div className="stack">
+            <div className="prose">
+              <RichText data={doc.body} />
             </div>
-            <ul className="chain">
-              {perks.map((perk) => (
-                <li key={perk.id}>
-                  <span className="step">·</span>
-                  <span>
-                    <strong>{perk.title}</strong>
-                    <span className="sub">{perk.effect}</span>
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </section>
-        ) : null}
+          </div>
+          <div className="stack">
+            <FactPanel
+              facts={[
+                { label: 'Perks', value: perks.length || undefined },
+                { label: 'Ultimates', value: ultimates.length || undefined },
+                {
+                  label: 'Phase',
+                  value: doc.phase === 'either' ? 'Day or night' : doc.phase ? `${doc.phase} only` : undefined,
+                },
+                { label: 'Corruption-gated', value: doc.gatedByCorruption ? 'Yes' : undefined },
+              ]}
+            />
+            <div className="callout">
+              <h3>One ultimate per tree</h3>
+              <p>
+                Taking any ultimate here closes the other two, so a tree is a choice as much as a
+                path. The <Link href="/tools/build-planner">build planner</Link> enforces it and
+                totals what a spec costs.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/*
+          These were rendered as bare <strong>, so the one page listing a
+          tree's perks was the one place you could not click through to any of
+          them. Every perk has a page; this is the index for it.
+        */}
+        <RelatedList
+          heading="Perks in this tree"
+          icon="star"
+          items={perkItems}
+          href="/perks"
+          emptyNote="No perk in the database is filed under this tree yet."
+        />
         <Sources sources={doc.sources} />
       </div>
     </>

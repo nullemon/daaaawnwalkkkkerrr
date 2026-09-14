@@ -6,8 +6,9 @@ import { Badge, Confidence } from '@/components/Badges'
 import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
 import { EntityImage } from '@/components/EntityImage'
+import { FactPanel } from '@/components/FactPanel'
 import { getAll, getBySlug } from '@/lib/payload'
-import { ACQUISITION_SENTENCE } from '@/lib/items'
+import { ACQUISITION_SENTENCE, acquisitionLabel } from '@/lib/items'
 import type { Item, Region } from '@/payload-types'
 
 type Props = { params: Promise<{ slug: string }> }
@@ -52,7 +53,28 @@ export default async function ItemPage({ params }: Props) {
         }
       />
       <div className="page body-main">
-        <EntityImage media={doc.image} shape="square" />
+        <div className="split">
+          <div className="stack">
+            <div className="prose">
+              <RichText data={doc.body} />
+            </div>
+          </div>
+          <div className="stack">
+            <EntityImage media={doc.image} shape="square" />
+            <FactPanel
+              facts={[
+                { label: 'Type', value: doc.category },
+                { label: 'Rarity', value: doc.rarity },
+                {
+                  label: 'Region',
+                  value: region ? <Link href={`/regions/${region.slug}`}>{region.title}</Link> : undefined,
+                  absent: doc.acquisition ? 'no single region' : 'unrecorded',
+                },
+                { label: 'How to get', value: acquisitionLabel(doc) },
+              ]}
+            />
+          </div>
+        </div>
 
         {/*
           The index promises a "Where" for this item, so the page has to answer
@@ -101,7 +123,6 @@ export default async function ItemPage({ params }: Props) {
             </table>
           </div>
         ) : null}
-        <RichText data={doc.body} />
         <Sources sources={doc.sources} />
       </div>
     </>

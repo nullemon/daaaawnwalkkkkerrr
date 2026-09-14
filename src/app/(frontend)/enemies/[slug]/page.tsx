@@ -5,6 +5,7 @@ import { PageHeader } from '@/components/PageHeader'
 import { Badge, Confidence, PhaseBadge } from '@/components/Badges'
 import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
+import { FactPanel } from '@/components/FactPanel'
 import { EntityImage } from '@/components/EntityImage'
 import { getAll, getBySlug, rel } from '@/lib/payload'
 import type { Enemy, Region } from '@/payload-types'
@@ -49,20 +50,48 @@ export default async function EnemyPage({ params }: Props) {
         }
       />
       <div className="page body-main">
-        <EntityImage media={doc.image} shape="wide" />
-
-        {doc.weaknesses?.length ? (
-          <div className="callout">
-            <h3>Weak to</h3>
-            <p>{doc.weaknesses.map((w) => w.value).join(', ')}</p>
+        <div className="split">
+          <div className="stack">
+            <EntityImage media={doc.image} shape="wide" />
+            {doc.weaknesses?.length ? (
+              <div className="callout">
+                <h3>Weak to</h3>
+                <p>{doc.weaknesses.map((weakness) => weakness.value).join(', ')}</p>
+              </div>
+            ) : null}
+            <div className="prose">
+              <RichText data={doc.body} />
+            </div>
           </div>
-        ) : null}
-        <RichText data={doc.body} />
-        {region ? (
-          <p className="note">
-            Found in <Link href={`/regions/${region.slug}`}>{region.title}</Link>.
-          </p>
-        ) : null}
+          <div className="stack">
+            <FactPanel
+              facts={[
+                { label: 'Rank', value: doc.isBoss ? 'Boss' : 'Regular enemy' },
+                {
+                  label: 'Met during',
+                  value: doc.phase === 'either' ? 'Day or night' : doc.phase ? `${doc.phase} only` : undefined,
+                },
+                {
+                  label: 'Weak to',
+                  value: doc.weaknesses?.length
+                    ? doc.weaknesses.map((weakness) => weakness.value).join(', ')
+                    : undefined,
+                  absent: 'nothing published',
+                },
+                {
+                  /*
+                    Most of the bestiary is creature *types* that roam the whole
+                    vale, so an empty region here is usually the fact rather
+                    than a gap — say which, instead of printing a dash.
+                  */
+                  label: 'Region',
+                  value: region ? <Link href={`/regions/${region.slug}`}>{region.title}</Link> : undefined,
+                  absent: doc.isBoss ? 'unrecorded' : 'found across the vale',
+                },
+              ]}
+            />
+          </div>
+        </div>
         <Sources sources={doc.sources} />
       </div>
     </>

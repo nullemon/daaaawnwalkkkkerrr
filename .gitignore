@@ -31,3 +31,9 @@ public/media/
 # The folder and its README stay; the image files do not.
 assets/**
 !assets/README.md
+
+# Throwaway screenshots from checking a page during development.
+# They are worth nothing once the change is verified, and a stray `git add -A`
+# will otherwise commit several megabytes of them.
+s-*.png
+shot-*.png

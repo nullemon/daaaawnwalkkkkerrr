@@ -2,9 +2,10 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
 import { Confidence } from '@/components/Badges'
-import { Facts } from '@/components/Facts'
 import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
+import { FactPanel } from '@/components/FactPanel'
+import { RelatedList } from '@/components/RelatedList'
 import { EntityImage } from '@/components/EntityImage'
 import Link from 'next/link'
 import { getAll, getBySlug } from '@/lib/payload'
@@ -49,36 +50,52 @@ export default async function CourtPage({ params }: Props) {
         badges={<Confidence level={doc.confidence} />}
       />
       <div className="page body-main">
-        <EntityImage media={doc.image} shape="wide" />
-
-        <Facts
-          items={[
-            { label: 'Court Activities', value: doc.activityCount ?? '—' },
-            { label: 'Reported threshold', value: doc.angerThresholdPct ? `~${doc.angerThresholdPct}%` : '—' },
-            { label: 'Roughly enough', value: needed ? `${needed} of ${doc.activityCount}` : '—' },
-          ]}
-        />
-        <RichText data={doc.body} />
-        {activities.length > 0 ? (
-          <section className="section">
-            <div className="section-head">
-              <h2>Court Activities</h2>
-              <span className="eyebrow">
-                {activities.length} of {doc.activityCount ?? '?'} documented
-              </span>
+        <div className="split">
+          <div className="stack">
+            <EntityImage media={doc.image} shape="wide" />
+            <div className="prose">
+              <RichText data={doc.body} />
             </div>
-            <ul className="chain">
-              {activities.map((activity) => (
-                <li key={activity.id}>
-                  <span className="step">·</span>
-                  <span>
-                    <Link href={`/court-activities/${activity.slug}`}>{activity.title}</Link>
-                    {activity.summary ? <span className="sub">{activity.summary}</span> : null}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </section>
+          </div>
+          <div className="stack">
+            <FactPanel
+              facts={[
+                { label: 'Court Activities', value: doc.activityCount ?? undefined },
+                {
+                  label: 'Reported threshold',
+                  value: doc.angerThresholdPct ? `~${doc.angerThresholdPct}%` : undefined,
+                },
+                {
+                  label: 'Roughly enough',
+                  value: needed ? `${needed} of ${doc.activityCount}` : undefined,
+                },
+                { label: 'Documented here', value: activities.length || undefined },
+              ]}
+            />
+            <div className="callout">
+              <h3>You do not need all of them</h3>
+              <p>
+                The duel unlocks at roughly three quarters of a vassal&rsquo;s activities, so the
+                gap between that and clearing the lot is the largest saving available to a tight
+                run. <Link href="/tools/run-checker">See what your run can still afford</Link>.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {activities.length > 0 ? (
+          <RelatedList
+            heading="Court Activities"
+            icon="crown"
+            items={activities.map((activity) => ({
+              id: activity.id,
+              title: activity.title,
+              href: `/court-activities/${activity.slug}`,
+              sub: activity.summary,
+            }))}
+            href="/court-activities"
+            note={`${activities.length} of ${doc.activityCount ?? '?'} documented.`}
+          />
         ) : (
           <div className="callout">
             <h3>Activities not yet catalogued</h3>
