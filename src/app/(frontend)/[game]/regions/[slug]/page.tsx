@@ -5,6 +5,7 @@ import { PageHeader } from '@/components/PageHeader'
 import { Confidence, PhaseBadge } from '@/components/Badges'
 import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
+import { CommentThread } from '@/components/CommentThread'
 import { EntityImage } from '@/components/EntityImage'
 import { FactPanel } from '@/components/FactPanel'
 import { RelatedList, type RelatedItem } from '@/components/RelatedList'
@@ -179,6 +180,8 @@ export default async function RegionPage({ params }: Props) {
         <RelatedList heading="Enemies here" icon="skull" items={enemyItems} href="/enemies" />
 
         <Sources sources={doc.sources} />
+
+        <CommentThread game={game} path={`/regions/${slug}`} />
       </div>
     </>
   )

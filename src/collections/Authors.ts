@@ -18,7 +18,7 @@ import { slugField, publicRead } from '../fields/shared'
 export const Authors: CollectionConfig = {
   slug: 'authors',
   admin: {
-    group: 'Content',
+    group: 'Editorial',
     useAsTitle: 'name',
     defaultColumns: ['name', 'role', 'provisional', 'updatedAt'],
     description:

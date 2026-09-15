@@ -4,6 +4,7 @@ import { PageHeader } from '@/components/PageHeader'
 import { Confidence } from '@/components/Badges'
 import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
+import { CommentThread } from '@/components/CommentThread'
 import { FactPanel } from '@/components/FactPanel'
 import { RelatedList } from '@/components/RelatedList'
 import { EntityImage } from '@/components/EntityImage'
@@ -107,6 +108,7 @@ export default async function CourtPage({ params }: Props) {
           </div>
         )}
         <Sources sources={doc.sources} />
+        <CommentThread game={game} path={`/court/${slug}`} />
       </div>
     </>
   )

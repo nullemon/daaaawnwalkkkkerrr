@@ -10,7 +10,7 @@ import { slugField, confidenceField, commonContentFields, publicRead } from '../
 export const Endings: CollectionConfig = {
   slug: 'endings',
   admin: {
-    group: 'Run',
+    group: 'Progression',
     useAsTitle: 'title',
     defaultColumns: ['title', 'gate', 'ally', 'confidence', 'updatedAt'],
     description: 'Seven endings, gated three ways: by an ally, by a choice, or by the clock.',

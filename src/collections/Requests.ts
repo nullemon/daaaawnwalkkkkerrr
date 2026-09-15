@@ -17,7 +17,7 @@ import { isEditor } from '../fields/shared'
 export const Requests: CollectionConfig = {
   slug: 'requests',
   admin: {
-    group: 'Admin',
+    group: 'Moderation',
     useAsTitle: 'summary',
     defaultColumns: ['summary', 'kind', 'status', 'votes', 'createdAt'],
     description: 'What readers have asked for. Sort by votes to see what is actually wanted.',

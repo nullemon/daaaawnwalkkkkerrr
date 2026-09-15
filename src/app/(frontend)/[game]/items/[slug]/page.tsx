@@ -5,6 +5,7 @@ import { PageHeader } from '@/components/PageHeader'
 import { Badge, Confidence } from '@/components/Badges'
 import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
+import { CommentThread } from '@/components/CommentThread'
 import { EntityImage } from '@/components/EntityImage'
 import { FactPanel } from '@/components/FactPanel'
 import { getBySlug } from '@/lib/payload'
@@ -125,6 +126,7 @@ export default async function ItemPage({ params }: Props) {
           </div>
         ) : null}
         <Sources sources={doc.sources} />
+        <CommentThread game={game} path={`/items/${slug}`} />
       </div>
     </>
   )

@@ -5,7 +5,7 @@ import { slugField, confidenceField, commonContentFields, publicRead } from '../
 export const Mechanics: CollectionConfig = {
   slug: 'mechanics',
   admin: {
-    group: 'Content',
+    group: 'Editorial',
     useAsTitle: 'title',
     defaultColumns: ['title', 'order', 'confidence', 'updatedAt'],
   },

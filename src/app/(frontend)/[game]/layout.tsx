@@ -5,6 +5,7 @@ import type { RailItem } from '@/components/SiteRail'
 import type { FooterColumn } from '@/components/SiteFooter'
 import { getGame, getPublishedGames, getSiteSettings, gameUrl } from '@/lib/payload'
 import { sectionsFor, toolsFor } from '@/lib/sections'
+import { hub } from '@/lib/urls'
 
 /**
  * One game's wiki.
@@ -110,15 +111,24 @@ export default async function GameLayout({
     { heading: 'Database', links: database.map(({ label, href }) => ({ label, href })) },
     { heading: 'Systems', links: systems.map(({ label, href }) => ({ label, href })) },
     {
+      /*
+        The first three are this wiki's own pages; the rest live once, on the
+        hub, so they are absolute. A relative `/privacy` on a wiki host is a
+        404 — the network's legal pages exist at the apex only, because seven
+        copies of a privacy policy is seven pages competing for one search and
+        six of them going stale.
+      */
       heading: 'This site',
       links: [
         { label: 'About the data', href: '/about' },
         { label: 'Report an error', href: '/corrections' },
         { label: 'Request a feature', href: '/requests' },
-        { label: 'Contact', href: '/contact' },
-        { label: 'Your account', href: '/account' },
-        { label: 'Privacy', href: '/privacy' },
-        { label: 'Terms', href: '/terms' },
+        { label: 'All wikis', href: hub('/wikis') },
+        { label: 'Contributors', href: hub('/authors') },
+        { label: 'Contact', href: hub('/contact') },
+        { label: 'Your account', href: hub('/account') },
+        { label: 'Privacy', href: hub('/privacy') },
+        { label: 'Terms', href: hub('/terms') },
       ],
     },
   ].filter((column) => column.links.length > 0)

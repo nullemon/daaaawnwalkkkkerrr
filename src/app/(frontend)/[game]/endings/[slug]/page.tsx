@@ -6,6 +6,7 @@ import { Badge, Confidence } from '@/components/Badges'
 import { Facts } from '@/components/Facts'
 import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
+import { CommentThread } from '@/components/CommentThread'
 import { AdSlot } from '@/components/AdSlot'
 import { Spoiler } from '@/components/Spoiler'
 import { EntityImage } from '@/components/EntityImage'
@@ -153,6 +154,7 @@ export default async function EndingPage({ params }: Props) {
 
         <AdSlot />
         <Sources sources={ending.sources} />
+        <CommentThread game={game} path={`/endings/${slug}`} />
       </div>
     </>
   )

@@ -1,4 +1,4 @@
-import type { CollectionConfig, Field, FieldHook, TextFieldSingleValidation } from 'payload'
+import type { CollectionConfig, Field, FieldHook, TextFieldSingleValidation, Where } from 'payload'
 
 /** Turn any string into a URL-safe slug. */
 export const slugify = (value: string): string =>
@@ -138,6 +138,56 @@ export const publicRead: CollectionConfig['access'] = {
 }
 
 /**
+ * The games an editor is assigned to, or null for "all of them".
+ *
+ * An admin is never restricted. An editor with an empty `games` list is also
+ * unrestricted, which is the right default for a one-person network and the
+ * only way the existing account keeps working — a list that defaulted to empty
+ * *meaning none* would have locked the owner out of their own site on the
+ * deploy that introduced it.
+ */
+const assignedGames = (user: unknown): (number | string)[] | null => {
+  const account = user as
+    | { collection?: string; role?: string; games?: (number | string | { id: number | string })[] }
+    | null
+    | undefined
+
+  if (account?.collection !== 'users') return []
+  if (account.role === 'admin') return null
+
+  const games = account.games ?? []
+  if (games.length === 0) return null
+
+  return games.map((game) => (typeof game === 'object' ? game.id : game))
+}
+
+/**
+ * Write access for a game-scoped collection.
+ *
+ * Returns `true` for an unrestricted editor, `false` for anyone who is not an
+ * editor, and a `Where` for an editor assigned to particular games — which
+ * Payload applies as a filter, so a restricted editor cannot reach another
+ * game's records by guessing an id, and does not see them in a list either.
+ */
+export const isEditorForGame = ({ req }: { req: { user?: unknown } }): boolean | Where => {
+  const games = assignedGames(req.user)
+  if (games === null) return true
+  if (games.length === 0) return false
+  return { game: { in: games } }
+}
+
+/**
+ * Access for content that belongs to a game: public to read, and writable by
+ * the editors assigned to that game.
+ */
+export const gameScopedAccess: CollectionConfig['access'] = {
+  read: () => true,
+  create: isEditorForGame,
+  update: isEditorForGame,
+  delete: isEditorForGame,
+}
+
+/**
  * Which game this record belongs to.
  *
  * This is the single most load-bearing field in the network. Every public
@@ -196,6 +246,19 @@ export const gameField = (): Field => ({
  */
 export const scopedToGame = (collection: CollectionConfig): CollectionConfig => ({
   ...collection,
+  /*
+    Write access becomes per-game at the same time, for the same reason the
+    three schema changes are bundled: a collection that gained the field but
+    kept `publicRead` would let an editor hired for one wiki edit all seven,
+    and nothing about the admin would look wrong.
+  */
+  access: { ...collection.access, ...gameScopedAccess },
+  admin: {
+    ...collection.admin,
+    // Which wiki a record belongs to is the first thing a network editor needs
+    // from a list, so it goes in the columns rather than behind a filter.
+    defaultColumns: ['game', ...(collection.admin?.defaultColumns ?? ['title'])],
+  },
   fields: [
     ...collection.fields.map((field) =>
       'name' in field && field.name === 'slug' ? { ...field, unique: false } : field,

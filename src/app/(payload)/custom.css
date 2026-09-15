@@ -1,0 +1,94 @@
+/* ---------------------------------------------------------------------------
+   Admin panel additions.
+
+   Payload's own design system is left alone — this styles only the network
+   dashboard that sits above the stock one, and it borrows Payload's CSS
+   variables rather than inventing colours, so it follows the admin theme
+   (including dark mode) without a second set of tokens to keep in sync.
+--------------------------------------------------------------------------- */
+
+.net-dash {
+  display: flex;
+  flex-direction: column;
+  gap: var(--base, 20px);
+  margin-bottom: calc(var(--base, 20px) * 1.5);
+}
+
+.net-dash-heading {
+  font-size: 1rem;
+  margin: 0 0 calc(var(--base, 20px) * 0.5);
+  color: var(--theme-elevation-800);
+}
+
+.net-dash-clear {
+  color: var(--theme-elevation-600);
+  margin: 0 0 calc(var(--base, 20px) * 0.5);
+}
+
+/* --- Queues ------------------------------------------------------------- */
+
+.net-dash-queues {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+@media (min-width: 700px) {
+  .net-dash-queues { grid-template-columns: repeat(3, 1fr); }
+}
+
+.net-dash-queues a {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 14px 16px;
+  border: 1px solid var(--theme-elevation-150);
+  border-radius: 4px;
+  background: var(--theme-elevation-50);
+  color: var(--theme-elevation-800);
+  text-decoration: none;
+}
+.net-dash-queues a:hover { border-color: var(--theme-elevation-400); }
+
+/*
+  A queue with something in it is the only thing on this page that should pull
+  the eye. An empty one stays quiet rather than being hidden, so the absence of
+  work is visible too.
+*/
+.net-dash-queues li[data-busy] a {
+  border-color: var(--theme-warning-500, #b8860b);
+  background: var(--theme-warning-50, var(--theme-elevation-50));
+}
+
+.net-dash-count { font-size: 1.6rem; font-weight: 700; line-height: 1; }
+.net-dash-label { font-size: 0.85rem; color: var(--theme-elevation-600); }
+.net-dash-queues li[data-busy] .net-dash-label { color: var(--theme-elevation-800); }
+
+/* --- The wiki table ----------------------------------------------------- */
+
+.net-dash-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.net-dash-table th,
+.net-dash-table td {
+  text-align: left;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--theme-elevation-100);
+}
+.net-dash-table th {
+  font-weight: 600;
+  color: var(--theme-elevation-600);
+  border-bottom-color: var(--theme-elevation-200);
+}
+.net-dash-num { text-align: right; font-variant-numeric: tabular-nums; }
+
+.net-dash-note {
+  margin: calc(var(--base, 20px) * 0.5) 0 0;
+  font-size: 0.8rem;
+  color: var(--theme-elevation-500);
+  max-width: 70ch;
+}

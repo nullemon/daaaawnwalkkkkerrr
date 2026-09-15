@@ -5,7 +5,7 @@ import { slugField, confidenceField, commonContentFields, publicRead } from '../
 export const Guides: CollectionConfig = {
   slug: 'guides',
   admin: {
-    group: 'Content',
+    group: 'Editorial',
     useAsTitle: 'title',
     defaultColumns: ['title', 'status', 'targetQuery', 'updatedAt'],
   },

@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { useAccount } from './AccountProvider'
 import { useRun } from './RunProvider'
+import { hub } from '@/lib/urls'
 
 type Mode = 'signin' | 'register'
 
@@ -156,7 +157,7 @@ export function AccountPanel() {
 
       <p className="note">
         We store your email and your run. Nothing else. See the{' '}
-        <Link href="/privacy">privacy policy</Link>.
+        <a href={hub('/privacy')}>privacy policy</a>.
       </p>
     </div>
   )

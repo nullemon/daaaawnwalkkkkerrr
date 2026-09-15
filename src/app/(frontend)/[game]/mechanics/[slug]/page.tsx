@@ -4,6 +4,7 @@ import { PageHeader } from '@/components/PageHeader'
 import { Confidence } from '@/components/Badges'
 import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
+import { CommentThread } from '@/components/CommentThread'
 import { getBySlug } from '@/lib/payload'
 import { gameSlugParams } from '@/lib/params'
 import type { Mechanic } from '@/payload-types'
@@ -67,6 +68,7 @@ export default async function MechanicPage({ params }: Props) {
         ) : null}
         <RichText data={doc.body} />
         <Sources sources={doc.sources} />
+        <CommentThread game={game} path={`/mechanics/${slug}`} />
       </div>
     </>
   )

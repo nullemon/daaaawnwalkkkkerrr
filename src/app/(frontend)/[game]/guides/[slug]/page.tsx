@@ -4,6 +4,7 @@ import { PageHeader } from '@/components/PageHeader'
 import { Confidence } from '@/components/Badges'
 import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
+import { CommentThread } from '@/components/CommentThread'
 import { Byline } from '@/components/Byline'
 import { EntityImage } from '@/components/EntityImage'
 import { RelatedList, type RelatedItem } from '@/components/RelatedList'
@@ -13,6 +14,7 @@ import { gameSlugParams } from '@/lib/params'
 import { JsonLd } from '@/components/JsonLd'
 import { guideKeywords } from '@/lib/seo'
 import type { Author, Ending, Guide, Media, Quest } from '@/payload-types'
+import { hub } from '@/lib/urls'
 
 type Props = { params: Promise<{ game: string; slug: string }> }
 
@@ -139,6 +141,8 @@ export default async function GuidePage({ params }: Props) {
             ) : null}
 
             <Sources sources={doc.sources} />
+
+            <CommentThread game={game} path={`/guides/${slug}`} />
           </div>
 
           {/*
@@ -155,7 +159,7 @@ export default async function GuidePage({ params }: Props) {
                   <h2>Written by</h2>
                 </div>
                 <p>
-                  <Link href={`/authors/${person.slug}`}>{person.name}</Link>
+                  <a href={hub(`/authors/${person.slug}`)}>{person.name}</a>
                   {person.role ? <span className="note"> · {person.role}</span> : null}
                 </p>
                 {person.bio ? <p className="note">{person.bio}</p> : null}

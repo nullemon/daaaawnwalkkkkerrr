@@ -83,6 +83,7 @@ export interface Config {
     guides: Guide;
     authors: Author;
     games: Game;
+    comments: Comment;
     corrections: Correction;
     requests: Request;
     media: Media;
@@ -110,6 +111,7 @@ export interface Config {
     guides: GuidesSelect<false> | GuidesSelect<true>;
     authors: AuthorsSelect<false> | AuthorsSelect<true>;
     games: GamesSelect<false> | GamesSelect<true>;
+    comments: CommentsSelect<false> | CommentsSelect<true>;
     corrections: CorrectionsSelect<false> | CorrectionsSelect<true>;
     requests: RequestsSelect<false> | RequestsSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
@@ -1591,6 +1593,122 @@ export interface Author {
   createdAt: string;
 }
 /**
+ * Nothing here is public until you approve it. Sorted worst-first by spam score — work the top of the list.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "comments".
+ */
+export interface Comment {
+  id: number;
+  /**
+   * Generated. The first line of the screened body, so the list is readable.
+   */
+  excerpt?: string | null;
+  /**
+   * The comment as it may be published. Links have already been removed — see Original below for what was actually sent.
+   */
+  body: string;
+  /**
+   * What the reader called themselves. Not verified.
+   */
+  authorName?: string | null;
+  /**
+   * The page this belongs under. Comments are fetched by this.
+   */
+  pageUrl: string;
+  /**
+   * Which wiki it came from. Comments are not game-scoped like content is — the queue is one queue, because a moderator works all of them in one sitting.
+   */
+  game?: (number | null) | Game;
+  /**
+   * Only Approved is public. Everything arrives as Pending.
+   */
+  status: 'pending' | 'approved' | 'rejected' | 'spam';
+  /**
+   * Generated, 0–100. An ordering for the queue, not a verdict.
+   */
+  spamScore?: number | null;
+  /**
+   * Why this was worth a second look.
+   */
+  flags?:
+    | {
+        value?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Taken out before the comment was stored. Shown so you can judge it; it is not on the page and approving does not put it back.
+   */
+  removed?:
+    | {
+        value?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Exactly what was submitted, before screening. Editors only.
+   */
+  original?: string | null;
+  /**
+   * Set when the reader was signed in. Most comments are anonymous.
+   */
+  submittedBy?: (number | null) | Player;
+  /**
+   * Internal. Never shown publicly.
+   */
+  moderatorNote?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Reader accounts. These are site visitors, not editors — they have no admin access.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "players".
+ */
+export interface Player {
+  id: number;
+  /**
+   * Optional. Shown only to the player themselves.
+   */
+  displayName?: string | null;
+  /**
+   * The saved run: day, phase, and which quests are ticked. Written by the site, not by hand.
+   */
+  run?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
+  /**
+   * Used to decide whether the browser or the server has the newer run.
+   */
+  runUpdatedAt?: string | null;
+  updatedAt: string;
+  createdAt: string;
+  email: string;
+  resetPasswordToken?: string | null;
+  resetPasswordExpiration?: string | null;
+  salt?: string | null;
+  hash?: string | null;
+  loginAttempts?: number | null;
+  lockUntil?: string | null;
+  sessions?:
+    | {
+        id: string;
+        createdAt?: string | null;
+        expiresAt: string;
+      }[]
+    | null;
+  password?: string | null;
+  collection: 'players';
+}
+/**
  * Reader reports. Triage these — they are the accuracy loop.
  *
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1654,53 +1772,6 @@ export interface Request {
   createdAt: string;
 }
 /**
- * Reader accounts. These are site visitors, not editors — they have no admin access.
- *
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "players".
- */
-export interface Player {
-  id: number;
-  /**
-   * Optional. Shown only to the player themselves.
-   */
-  displayName?: string | null;
-  /**
-   * The saved run: day, phase, and which quests are ticked. Written by the site, not by hand.
-   */
-  run?:
-    | {
-        [k: string]: unknown;
-      }
-    | unknown[]
-    | string
-    | number
-    | boolean
-    | null;
-  /**
-   * Used to decide whether the browser or the server has the newer run.
-   */
-  runUpdatedAt?: string | null;
-  updatedAt: string;
-  createdAt: string;
-  email: string;
-  resetPasswordToken?: string | null;
-  resetPasswordExpiration?: string | null;
-  salt?: string | null;
-  hash?: string | null;
-  loginAttempts?: number | null;
-  lockUntil?: string | null;
-  sessions?:
-    | {
-        id: string;
-        createdAt?: string | null;
-        expiresAt: string;
-      }[]
-    | null;
-  password?: string | null;
-  collection: 'players';
-}
-/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users".
  */
@@ -1708,6 +1779,10 @@ export interface User {
   id: number;
   name?: string | null;
   role: 'admin' | 'editor';
+  /**
+   * Which wikis this editor may write to. Leave empty for all of them. A contributor hired to cover one game should not be able to edit another — see isEditorForGame in fields/shared.ts.
+   */
+  games?: (number | Game)[] | null;
   updatedAt: string;
   createdAt: string;
   email: string;
@@ -1810,6 +1885,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'games';
         value: number | Game;
+      } | null)
+    | ({
+        relationTo: 'comments';
+        value: number | Comment;
       } | null)
     | ({
         relationTo: 'corrections';
@@ -2444,6 +2523,36 @@ export interface GamesSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "comments_select".
+ */
+export interface CommentsSelect<T extends boolean = true> {
+  excerpt?: T;
+  body?: T;
+  authorName?: T;
+  pageUrl?: T;
+  game?: T;
+  status?: T;
+  spamScore?: T;
+  flags?:
+    | T
+    | {
+        value?: T;
+        id?: T;
+      };
+  removed?:
+    | T
+    | {
+        value?: T;
+        id?: T;
+      };
+  original?: T;
+  submittedBy?: T;
+  moderatorNote?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "corrections_select".
  */
 export interface CorrectionsSelect<T extends boolean = true> {
@@ -2558,6 +2667,7 @@ export interface PlayersSelect<T extends boolean = true> {
 export interface UsersSelect<T extends boolean = true> {
   name?: T;
   role?: T;
+  games?: T;
   updatedAt?: T;
   createdAt?: T;
   email?: T;

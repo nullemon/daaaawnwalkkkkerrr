@@ -12,8 +12,22 @@
 import fs from 'node:fs'
 import path from 'node:path'
 
-const css = fs.readFileSync('src/app/(frontend)/globals.css', 'utf8')
-const defined = new Set([...css.matchAll(/\.([a-zA-Z][\w-]*)/g)].map((m) => m[1]))
+/*
+ * Both stylesheets, because there are two.
+ *
+ * The public site is styled by globals.css; the admin panel's additions live
+ * in custom.css, which Payload loads into /admin. Reading only the first meant
+ * every class on the admin dashboard was reported as orphaned — and an audit
+ * that cries wolf is one people stop reading, which defeats the point of
+ * having it.
+ */
+const STYLESHEETS = ['src/app/(frontend)/globals.css', 'src/app/(payload)/custom.css']
+
+const defined = new Set(
+  STYLESHEETS.filter((file) => fs.existsSync(file)).flatMap((file) =>
+    [...fs.readFileSync(file, 'utf8').matchAll(/\.([a-zA-Z][\w-]*)/g)].map((m) => m[1]),
+  ),
+)
 
 const walk = (dir) => fs.readdirSync(dir, { withFileTypes: true }).flatMap((e) => {
   const full = path.join(dir, e.name)

@@ -11,7 +11,7 @@ export const CourtActivities: CollectionConfig = {
   slug: 'court-activities',
   labels: { singular: 'Court activity', plural: 'Court activities' },
   admin: {
-    group: 'Run',
+    group: 'Progression',
     useAsTitle: 'title',
     defaultColumns: ['title', 'court', 'region', 'phase', 'confidence'],
   },

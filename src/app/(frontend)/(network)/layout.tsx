@@ -18,8 +18,9 @@ const railFor = (games: { slug: string; title: string; shortTitle?: string | nul
   { label: 'All wikis', href: '/wikis', icon: 'book' },
   ...games.slice(0, 10).map((game) => ({
     label: game.shortTitle || game.title,
-    // A wiki lives on its own host, so these are absolute. `SiteRail` renders
-    // them through `next/link`, which passes an absolute href straight through.
+    // The directory, anchored at this game — not the wiki itself. The rail is
+    // the hub's own navigation, so it stays on the hub; the directory card is
+    // what carries the cross-origin link to the wiki.
     href: `/wikis#${game.slug}`,
     icon: 'chevron' as const,
   })),

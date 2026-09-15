@@ -6,7 +6,7 @@ export const Users: CollectionConfig = {
   admin: {
     group: 'Admin',
     useAsTitle: 'email',
-    defaultColumns: ['email', 'name', 'role'],
+    defaultColumns: ['email', 'name', 'role', 'games'],
   },
   auth: true,
   access: {
@@ -36,6 +36,22 @@ export const Users: CollectionConfig = {
       ],
       access: {
         // An editor must not be able to promote themselves.
+        update: ({ req }) => req.user?.collection === 'users' && req.user.role === 'admin',
+      },
+    },
+    {
+      name: 'games',
+      type: 'relationship',
+      relationTo: 'games',
+      hasMany: true,
+      admin: {
+        description:
+          'Which wikis this editor may write to. Leave empty for all of them. A contributor hired to cover one game should not be able to edit another — see isEditorForGame in fields/shared.ts.',
+        condition: (_data, siblingData) => siblingData?.role !== 'admin',
+      },
+      access: {
+        // Assigning yourself another game is the same escalation as changing
+        // your own role, so it is gated the same way.
         update: ({ req }) => req.user?.collection === 'users' && req.user.role === 'admin',
       },
     },

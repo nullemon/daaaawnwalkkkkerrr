@@ -15,6 +15,20 @@ export type FooterColumn = {
   links: { label: string; href: string }[]
 }
 
+/**
+ * A footer link may point at another host — a wiki's footer links the hub's
+ * legal and contributor pages, which live at the apex only.
+ *
+ * `next/link` across origins does nothing useful: there is no client-side
+ * navigation to be had, and it adds a prefetch that cannot resolve. So an
+ * absolute href renders as a plain anchor and a relative one keeps the
+ * prefetching it benefits from.
+ */
+function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
+  if (/^https?:\/\//i.test(href)) return <a href={href}>{children}</a>
+  return <Link href={href}>{children}</Link>
+}
+
 export function SiteFooter({
   siteName,
   blurb,
@@ -62,7 +76,7 @@ export function SiteFooter({
             <ul>
               {column.links.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href}>{link.label}</Link>
+                  <FooterLink href={link.href}>{link.label}</FooterLink>
                 </li>
               ))}
             </ul>

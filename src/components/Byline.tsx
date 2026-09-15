@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import type { Author, Media } from '@/payload-types'
+import { hub } from '@/lib/urls'
 
 /**
  * Who wrote this, and when it was last looked at.
@@ -35,7 +36,7 @@ export function Byline({
           ) : null}
           <span className="byline-text">
             <span>
-              By <Link href={`/authors/${person.slug}`}>{person.name}</Link>
+              By <a href={hub(`/authors/${person.slug}`)}>{person.name}</a>
               {person.role ? <span className="byline-role"> · {person.role}</span> : null}
             </span>
             {checked ? (

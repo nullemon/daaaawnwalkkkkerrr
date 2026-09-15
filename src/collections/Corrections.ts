@@ -10,7 +10,7 @@ import { isEditor } from '../fields/shared'
 export const Corrections: CollectionConfig = {
   slug: 'corrections',
   admin: {
-    group: 'Admin',
+    group: 'Moderation',
     useAsTitle: 'summary',
     defaultColumns: ['summary', 'status', 'pageUrl', 'createdAt'],
     description: 'Reader reports. Triage these — they are the accuracy loop.',

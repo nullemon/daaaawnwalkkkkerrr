@@ -9,7 +9,7 @@ import { slugField, confidenceField, commonContentFields, publicRead } from '../
 export const Quests: CollectionConfig = {
   slug: 'quests',
   admin: {
-    group: 'Run',
+    group: 'Progression',
     useAsTitle: 'title',
     defaultColumns: ['title', 'kind', 'region', 'phase', 'confidence', 'updatedAt'],
     description:

@@ -5,6 +5,7 @@ import { PageHeader } from '@/components/PageHeader'
 import { Badge, Confidence, PhaseBadge } from '@/components/Badges'
 import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
+import { CommentThread } from '@/components/CommentThread'
 import { FactPanel } from '@/components/FactPanel'
 import { RelatedList, type RelatedItem } from '@/components/RelatedList'
 import { getAll, getBySlug } from '@/lib/payload'
@@ -100,6 +101,7 @@ export default async function SkillTreePage({ params }: Props) {
           emptyNote="No perk in the database is filed under this tree yet."
         />
         <Sources sources={doc.sources} />
+        <CommentThread game={game} path={`/skills/${slug}`} />
       </div>
     </>
   )

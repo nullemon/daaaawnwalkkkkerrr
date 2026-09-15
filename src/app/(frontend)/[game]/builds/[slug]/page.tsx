@@ -6,6 +6,7 @@ import { Badge, Confidence } from '@/components/Badges'
 import { Facts } from '@/components/Facts'
 import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
+import { CommentThread } from '@/components/CommentThread'
 import { AdSlot } from '@/components/AdSlot'
 import { EntityImage } from '@/components/EntityImage'
 import { getBySlug, rel, relMany } from '@/lib/payload'
@@ -114,6 +115,7 @@ export default async function BuildPage({ params }: Props) {
 
         <AdSlot />
         <Sources sources={doc.sources} />
+        <CommentThread game={game} path={`/builds/${slug}`} />
       </div>
     </>
   )

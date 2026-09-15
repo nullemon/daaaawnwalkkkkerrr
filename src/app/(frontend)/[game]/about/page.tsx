@@ -5,6 +5,7 @@ import { FactPanel } from '@/components/FactPanel'
 import { RelatedList, type RelatedItem } from '@/components/RelatedList'
 import { getAll, getGame, getSiteSettings } from '@/lib/payload'
 import type { Guide } from '@/payload-types'
+import { hub } from '@/lib/urls'
 
 type Props = { params: Promise<{ game: string }> }
 
@@ -182,8 +183,8 @@ export default async function AboutPage({ params }: Props) {
                 </p>
               ) : null}
               <p className="note">
-                <Link href="/contact">Full contact details</Link> ·{' '}
-                <Link href="/privacy">Privacy</Link> · <Link href="/terms">Terms</Link>
+                <a href={hub('/contact')}>Full contact details</a> ·{' '}
+                <a href={hub('/privacy')}>Privacy</a> · <a href={hub('/terms')}>Terms</a>
               </p>
             </section>
           </div>

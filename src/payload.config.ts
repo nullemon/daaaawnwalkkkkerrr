@@ -23,6 +23,7 @@ import { Authors } from './collections/Authors'
 import { Guides } from './collections/Guides'
 import { Corrections } from './collections/Corrections'
 import { Requests } from './collections/Requests'
+import { Comments } from './collections/Comments'
 import { Players } from './collections/Players'
 import { Games } from './collections/Games'
 import { SiteSettings } from './globals/SiteSettings'
@@ -36,7 +37,16 @@ export default buildConfig({
     user: Users.slug,
     importMap: { baseDir: path.resolve(dirname) },
     meta: {
-      titleSuffix: ' · Dawnwalker Guide',
+      titleSuffix: ' · Network admin',
+    },
+    components: {
+      /*
+        Payload's stock dashboard is a list of collection names. That was
+        adequate for one wiki; across seven it answers none of the questions an
+        editor actually arrives with — is anything waiting for me, and which
+        wiki is thin. This replaces the top of the page with both.
+      */
+      beforeDashboard: ['@/components/admin/NetworkDashboard'],
     },
   },
   collections: [
@@ -64,7 +74,8 @@ export default buildConfig({
     Authors,
     // Network-wide
     Games,
-    // Admin
+    // Moderation and admin
+    Comments,
     Corrections,
     Requests,
     Media,

@@ -5,6 +5,7 @@ import { PageHeader } from '@/components/PageHeader'
 import { Badge, Confidence } from '@/components/Badges'
 import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
+import { CommentThread } from '@/components/CommentThread'
 import { EntityImage } from '@/components/EntityImage'
 import { FactPanel } from '@/components/FactPanel'
 import { RelatedList, type RelatedItem } from '@/components/RelatedList'
@@ -141,6 +142,7 @@ export default async function CharacterPage({ params }: Props) {
           note="Reach the finale without the chain finished and these are simply not offered. There is no catching up at the end."
         />
         <Sources sources={doc.sources} />
+        <CommentThread game={game} path={`/characters/${slug}`} />
       </div>
     </>
   )
