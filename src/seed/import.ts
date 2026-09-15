@@ -7,6 +7,8 @@ import type { CollectionSlug, Payload } from 'payload'
 
 import config from '../payload.config'
 import { rich, type Block } from './lexical'
+import { PRIMARY_GAME } from './games'
+import { isGameScoped } from '../lib/tenancy'
 
 /**
  * Ingests the researched JSON in `raw/` into the database.
@@ -121,9 +123,25 @@ async function loadRawFiles(): Promise<Map<string, Raw[]>> {
 }
 
 async function slugIndex(payload: Payload, collection: CollectionSlug) {
-  const result = await payload.find({ collection, limit: 2000, depth: 0, pagination: false })
+  const result = await payload.find({
+    collection,
+    limit: 2000,
+    depth: 0,
+    pagination: false,
+    ...(isGameScoped(collection) ? { where: { game: { equals: primaryGameId } } } : {}),
+  })
   return new Map(result.docs.map((doc) => [(doc as { slug: string }).slug, doc.id]))
 }
+
+/**
+ * The game everything under src/seed/raw belongs to.
+ *
+ * Researched JSON is Dawnwalker's; nothing in those files names a game because
+ * there was only ever one. Resolved once here rather than threaded through
+ * forty call sites, for the same reason as in run.ts: a forgotten game is not
+ * an error, it is a record that silently never appears on the site.
+ */
+let primaryGameId: string | number | undefined
 
 async function upsert(
   payload: Payload,
@@ -131,19 +149,24 @@ async function upsert(
   slug: string,
   data: Record<string, unknown>,
 ): Promise<string | number | null> {
+  const scoped = isGameScoped(collection)
   try {
+    // Slugs are unique per game, so the lookup carries the game too.
     const existing = await payload.find({
       collection,
-      where: { slug: { equals: slug } },
+      where: scoped
+        ? { and: [{ slug: { equals: slug } }, { game: { equals: primaryGameId } }] }
+        : { slug: { equals: slug } },
       limit: 1,
       depth: 0,
     })
+    const withGame = scoped ? { ...data, game: primaryGameId } : data
     if (existing.docs.length > 0) {
       const id = existing.docs[0].id
-      await payload.update({ collection, id, data: data as never, depth: 0 })
+      await payload.update({ collection, id, data: withGame as never, depth: 0 })
       return id
     }
-    const created = await payload.create({ collection, data: data as never, depth: 0 })
+    const created = await payload.create({ collection, data: withGame as never, depth: 0 })
     return created.id
   } catch (error) {
     warn(`${collection}/${slug}: write failed — ${(error as Error).message}`)
@@ -153,6 +176,20 @@ async function upsert(
 
 async function run(): Promise<void> {
   const payload = await getPayload({ config })
+
+  const game = await payload.find({
+    collection: 'games',
+    where: { slug: { equals: PRIMARY_GAME } },
+    limit: 1,
+    depth: 0,
+  })
+  if (game.docs.length === 0) {
+    console.error(`No game "${PRIMARY_GAME}" in the database. Run \`pnpm seed\` first —`)
+    console.error('every record written here has to belong to a game.')
+    process.exit(1)
+  }
+  primaryGameId = game.docs[0].id
+
   console.log('Reading research output…')
   const raw = await loadRawFiles()
   if (raw.size === 0) {

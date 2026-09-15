@@ -226,3 +226,102 @@ The editorial rules carry over too, and they matter more than the code: never
 invent a fact, unknown is not zero, record conflicts rather than resolving them,
 write original prose. Those are what make a small wiki worth reading when a
 larger one exists.
+
+---
+
+## Decisions taken — 15 September 2026
+
+The four questions at the top of "Decisions to make" have been answered. Recording
+them here with their costs, because two of them go against the recommendation
+above and the reasoning should survive the people who made it.
+
+### 1. Subdomains, not paths
+
+`dawnwalker.sitename.com`, not `sitename.com/dawnwalker`.
+
+This overrules the recommendation in "Routing" above. The cost is real and is
+accepted: **each subdomain accumulates search authority from zero**, so game
+seven does not inherit anything from games one through six. Google treats a
+subdomain as a separate site for most purposes.
+
+What is bought with it:
+
+- Each game reads as its own wiki, which is what the audience expects — every
+  competitor in this space is shaped that way, Fextralife included.
+- A game can be sold, moved or shut down without touching the others.
+- Internal links need no game prefix. On `dawnwalker.sitename.com` a link to
+  `/quests/night-terrors` is already correct, so the several hundred `<Link>`
+  hrefs already written stay exactly as they are. Under paths, every one of
+  them would have needed rewriting to carry the game.
+
+That last point turned out to be the deciding practical one rather than the
+branding: the path scheme is better for SEO and worse for everything else, and
+the SEO gap narrows once the hub is linking every game from a page that does
+accumulate authority.
+
+The internal route structure is still path-based — `/[game]/quests/...` — and
+`proxy.ts` maps host to prefix. So the decision is reversible: dropping the
+proxy and linking with prefixes switches the whole network to paths.
+
+### 2. The domain is not bought yet
+
+Nothing may hardcode it. The origin already comes from `NEXT_PUBLIC_SITE_URL`
+with Site Settings as the fallback, and per-game hosts derive from it, so
+choosing the name later is an environment variable and a DNS record.
+
+Until then, development uses `*.localhost` subdomains, which Chrome and Firefox
+resolve to 127.0.0.1 without a hosts-file entry: `dawnwalker.localhost:3000`.
+
+### 3. Comments, with nothing auto-published
+
+Fextralife has comments; they are also most of its moderation burden. So:
+
+- **Every comment is held.** No comment reaches a page until an editor approves
+  it in the admin. There is no trust level that bypasses this and no timer that
+  releases it.
+- **Links are stripped, not just flagged.** A comment containing a URL is the
+  overwhelming majority of spam. The filter runs before storage.
+- The moderation queue is a first-class admin view, because a queue nobody can
+  work through is the same as no comments at all.
+
+Details in "Comments" below.
+
+### 4. The first six games
+
+The brief was games released in the last two to three months or releasing in
+the next two to three months — a window of roughly June to December 2026.
+Every date below was read from the game's own Steam store page rather than from
+a news article, and every one of these six is inside the window.
+
+| Game | Released | Publisher | Why it is here |
+| --- | --- | --- | --- |
+| Star Wars Zero Company | 27 Aug 2026 | Electronic Arts | Turn-based tactics. Squads, classes, missions — a shape nothing like Dawnwalker, which is the point |
+| Resonance: A Plague Tale Legacy | 27 Aug 2026 | Focus Entertainment | Linear narrative adventure. Chapters and collectibles, a deliberately thin wiki |
+| Onimusha: Way of the Sword | 3 Sep 2026 | Capcom | Action RPG, franchise revival. Weapons, souls, bosses — thick wiki |
+| Control Resonant | 24 Sep 2026 | Remedy | Documents, abilities, altered items. Collectible-dense |
+| Gears of War: E-Day | 6 Oct 2026 | Xbox Game Studios | Campaign shooter. Big brand, moderate wiki surface |
+| Phantom Blade Zero | 28 Oct 2026 | S-GAME | Action RPG with heavy build variety. The best straight wiki candidate of the six |
+
+Three are already out and three are not, which is deliberate: the ones already
+released can be filled with real data now, and the three ahead of release are
+where a new site can actually win, because the established wikis start from
+nothing on launch day too.
+
+The portfolio is also mixed on purpose. Two thick RPGs, one tactics game, one
+shooter, two linear narrative games. If the three-tier content model survives
+all six it is genuinely general; if it only fits the RPGs, that is worth
+discovering on game two rather than game twelve.
+
+**GTA 6 is not on the list.** It is in the window, it would out-traffic all six
+combined, and every established wiki has had a team on it for a year. A new
+network does not win that one, and losing it publicly is worse than not
+entering. Revisit when the network has authority to spend.
+
+**Marvel's Wolverine** (15 Sep 2026) was the strongest candidate left out. It is
+PlayStation-exclusive, so it has no Steam page to verify against and no PC
+audience, which is most of this kind of search traffic.
+
+### What this changes above
+
+The "Routing" section recommends paths. That recommendation was not taken.
+Treat this section as current where the two disagree.

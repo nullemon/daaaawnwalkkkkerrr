@@ -1,72 +1,52 @@
 import type { MetadataRoute } from 'next'
-import { getAll, siteUrl } from '@/lib/payload'
-import type { CollectionSlug } from 'payload'
+import { headers } from 'next/headers'
+import { getAll, getGame, gameUrl, siteUrl } from '@/lib/payload'
+import { SECTIONS, toolsFor } from '@/lib/sections'
+import { subdomainOf } from '@/proxy'
 
-type Doc = { slug: string; updatedAt?: string }
-
-/** Collections that get a page each, and the path they live under. */
-const SECTIONS: { collection: CollectionSlug; path: string; priority: number }[] = [
-  { collection: 'quests', path: 'quests', priority: 0.8 },
-  { collection: 'endings', path: 'endings', priority: 0.9 },
-  { collection: 'court-activities', path: 'court-activities', priority: 0.7 },
-  { collection: 'courts', path: 'court', priority: 0.7 },
-  { collection: 'mechanics', path: 'mechanics', priority: 0.8 },
-  { collection: 'regions', path: 'regions', priority: 0.6 },
-  { collection: 'characters', path: 'characters', priority: 0.6 },
-  { collection: 'skill-trees', path: 'skills', priority: 0.6 },
-  { collection: 'items', path: 'items', priority: 0.6 },
-  { collection: 'guides', path: 'guides', priority: 0.7 },
-  { collection: 'builds', path: 'builds', priority: 0.8 },
-  { collection: 'enemies', path: 'enemies', priority: 0.6 },
-  { collection: 'perks', path: 'perks', priority: 0.7 },
-]
-
-const STATIC_PATHS: { path: string; priority: number }[] = [
-  { path: '', priority: 1 },
-  { path: 'run', priority: 0.9 },
-  { path: 'tools/run-checker', priority: 1 },
-  { path: 'tools/build-planner', priority: 0.9 },
-  { path: 'builds', priority: 0.8 },
-  { path: 'enemies', priority: 0.6 },
-  { path: 'perks', priority: 0.7 },
-  { path: 'court-activities', priority: 0.8 },
-  { path: 'quests', priority: 0.9 },
-  { path: 'endings', priority: 0.9 },
-  { path: 'court', priority: 0.8 },
-  { path: 'mechanics', priority: 0.8 },
-  { path: 'regions', priority: 0.7 },
-  { path: 'characters', priority: 0.7 },
-  { path: 'skills', priority: 0.7 },
-  { path: 'items', priority: 0.7 },
-  { path: 'guides', priority: 0.7 },
-  { path: 'about', priority: 0.4 },
-  { path: 'privacy', priority: 0.3 },
-  { path: 'terms', priority: 0.3 },
-  { path: 'contact', priority: 0.4 },
-]
-
+/**
+ * The sitemap, answered per host.
+ *
+ * Every wiki is its own origin, so each needs its own sitemap listing only its
+ * own URLs. One file listing seven hosts would be a cross-host sitemap, which
+ * engines only honour when all of them are verified under a single property —
+ * not something to depend on.
+ *
+ * ## Why one route rather than one per game
+ *
+ * The obvious shape is a route handler at `[game]/sitemap.xml/route.ts`, so
+ * each wiki's sitemap prerenders with its pages. That does not work: `sitemap`
+ * is one of Next's metadata file conventions, and a route folder named
+ * `sitemap.xml` is claimed by it. The result builds without complaint and
+ * emits a single file at the literal path `/-/sitemap.xml` — the dash being
+ * the placeholder for the `id` that `generateSitemaps` would have supplied —
+ * while `/dawnwalker/sitemap.xml` does not exist at all.
+ *
+ * So this reads the Host header instead, exactly as `robots.ts` does, and
+ * decides which sitemap it is. That makes it dynamic, which is the one
+ * exception to the site being wholly prerendered, and is worth it: a sitemap
+ * is fetched a few times a day by crawlers and never by a reader.
+ */
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const base = await siteUrl()
+  const network = await siteUrl()
+  const host = (await headers()).get('host') ?? new URL(network).host
+  const label = subdomainOf(host, new URL(network).host)
+
+  return label ? await wikiSitemap(label) : await hubSitemap(network)
+}
+
+/** The apex: the directory, the contributor profiles, and the legal pages. */
+async function hubSitemap(base: string): Promise<MetadataRoute.Sitemap> {
   const now = new Date()
 
-  const entries: MetadataRoute.Sitemap = STATIC_PATHS.map((entry) => ({
-    url: `${base}/${entry.path}`.replace(/\/$/, '') || base,
-    lastModified: now,
-    changeFrequency: 'weekly',
-    priority: entry.priority,
-  }))
-
-  for (const section of SECTIONS) {
-    const docs = await getAll<Doc>(section.collection, { depth: 0 })
-    for (const doc of docs) {
-      entries.push({
-        url: `${base}/${section.path}/${doc.slug}`,
-        lastModified: doc.updatedAt ? new Date(doc.updatedAt) : now,
-        changeFrequency: 'weekly',
-        priority: section.priority,
-      })
-    }
-  }
+  const entries: MetadataRoute.Sitemap = [
+    { url: base, lastModified: now, changeFrequency: 'daily', priority: 1 },
+    { url: `${base}/wikis`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${base}/authors`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${base}/contact`, lastModified: now, changeFrequency: 'yearly', priority: 0.4 },
+    { url: `${base}/privacy`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${base}/terms`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
+  ]
 
   /*
     Contributor profiles, but only the ones that are indexable.
@@ -76,7 +56,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     something and then tells it to forget what it found. They appear here the
     moment the flag comes off in the admin.
   */
-  const authors = await getAll<Doc & { provisional?: boolean | null }>('authors', { depth: 0 })
+  const authors = await getAll('authors', { depth: 0 })
   for (const author of authors) {
     if (author.provisional) continue
     entries.push({
@@ -85,6 +65,59 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly',
       priority: 0.4,
     })
+  }
+
+  return entries
+}
+
+/**
+ * One wiki.
+ *
+ * The section list comes from `lib/sections.ts` rather than being restated
+ * here. It used to be restated here, and in the search index, and in the
+ * footer — lists that all had to be edited together and, predictably, were not.
+ */
+async function wikiSitemap(slug: string): Promise<MetadataRoute.Sitemap> {
+  const game = await getGame(slug)
+  if (!game) return []
+
+  const base = await gameUrl(game)
+  const now = new Date()
+
+  // Index pages, and the tools this game actually has. A wiki without a run
+  // checker must not advertise one: a 404 in a sitemap is a crawl error
+  // against the whole host, not a quietly ignored line.
+  const entries: MetadataRoute.Sitemap = [
+    { url: base, lastModified: now, changeFrequency: 'weekly', priority: 1 },
+    ...toolsFor(game).map((tool) => ({
+      url: `${base}${tool.href}`,
+      lastModified: now,
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+    })),
+    { url: `${base}/about`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.4 },
+  ]
+
+  for (const section of SECTIONS) {
+    const docs = await getAll(section.collection, { game: slug, depth: 0 })
+    if (docs.length === 0) continue
+
+    // The index only earns a place once it has something on it.
+    entries.push({
+      url: `${base}${section.href}`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: Math.min(section.priority + 0.1, 1),
+    })
+
+    for (const record of docs) {
+      entries.push({
+        url: `${base}${section.href}/${record.slug}`,
+        lastModified: record.updatedAt ? new Date(record.updatedAt) : now,
+        changeFrequency: 'weekly',
+        priority: section.priority,
+      })
+    }
   }
 
   return entries

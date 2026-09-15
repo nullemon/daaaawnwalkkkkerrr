@@ -24,7 +24,8 @@
     "ingest": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/import.ts",
     "clean:db": "node tools/reset-db.mjs",
     "db:reset": "pnpm run clean:db && pnpm run seed && pnpm run ingest && pnpm run assets",
-    "indexnow": "cross-env NODE_OPTIONS=--no-deprecation node tools/indexnow.mjs"
+    "indexnow": "cross-env NODE_OPTIONS=--no-deprecation node tools/indexnow.mjs",
+    "verify": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/verify.ts"
   },
   "dependencies": {
     "@payloadcms/db-sqlite": "3.89.0",

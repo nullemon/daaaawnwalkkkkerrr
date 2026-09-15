@@ -5,6 +5,8 @@ import { fileURLToPath } from 'url'
 import { getPayload } from 'payload'
 import type { CollectionSlug, Payload } from 'payload'
 import config from '../payload.config'
+import { PRIMARY_GAME } from './games'
+import { isGameScoped } from '../lib/tenancy'
 
 /**
  * Bulk-attach images to records by filename.
@@ -91,10 +93,27 @@ const slugFromFilename = (filename: string): string =>
     .replace(/-+/g, '-')
     .replace(/^-|-$/g, '')
 
+/**
+ * The game these assets belong to.
+ *
+ * `assets/<collection>/<slug>.<ext>` says nothing about a game, because there
+ * was only one when the layout was chosen. Everything in the library is
+ * Dawnwalker's, so the lookup is pinned to it rather than matching a slug
+ * across the network — which would otherwise attach a Dawnwalker screenshot to
+ * whichever game happened to have a record with the same slug.
+ *
+ * When a second game gets its own images, this becomes a folder level:
+ * `assets/<game>/<collection>/<slug>.<ext>`.
+ */
+let primaryGameId: string | number | undefined
+
 async function findBySlug(payload: Payload, collection: CollectionSlug, slug: string) {
+  const scoped = isGameScoped(collection)
   const result = await payload.find({
     collection,
-    where: { slug: { equals: slug } },
+    where: scoped
+      ? { and: [{ slug: { equals: slug } }, { game: { equals: primaryGameId } }] }
+      : { slug: { equals: slug } },
     limit: 1,
     depth: 0,
   })
@@ -110,6 +129,19 @@ async function run(): Promise<void> {
 
   const credits = wikiCredits()
   const payload = await getPayload({ config })
+
+  const game = await payload.find({
+    collection: 'games',
+    where: { slug: { equals: PRIMARY_GAME } },
+    limit: 1,
+    depth: 0,
+  })
+  if (game.docs.length === 0) {
+    console.error(`No game "${PRIMARY_GAME}" in the database. Run \`pnpm seed\` first.`)
+    process.exit(1)
+  }
+  primaryGameId = game.docs[0].id
+
   let attached = 0
   let skipped = 0
   const unmatched: string[] = []

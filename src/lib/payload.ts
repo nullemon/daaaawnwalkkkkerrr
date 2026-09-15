@@ -1,22 +1,224 @@
 import { cache } from 'react'
 import { getPayload } from 'payload'
-import type { CollectionSlug } from 'payload'
+import type { CollectionSlug, Where } from 'payload'
 import config from '@payload-config'
+import { isGameScoped, type GameScopedCollection } from './tenancy'
+import type { Config, Game } from '@/payload-types'
 
 /**
  * Content access for the public site. Everything is read through the local API
  * at build time, so pages render as static HTML with no database on the
  * request path — page speed is one of the few advantages a new site has over
  * the established wikis, and this is where it comes from.
+ *
+ * Since the network became multi-game, these two functions are also the only
+ * place a game filter is applied. That is on purpose: one filter in one place
+ * cannot be forgotten by page thirty-seven, and the type signature below makes
+ * forgetting it a compile error rather than a leak nobody notices until a
+ * reader finds Dawnwalker quests on the Onimusha wiki.
  */
 
 export const client = cache(async () => getPayload({ config }))
 
-/** Fetch a whole collection. Sizes here are small enough to take in one page. */
-export const getAll = cache(async <T = Record<string, unknown>>(
-  collection: CollectionSlug,
-  options: { depth?: number; sort?: string; limit?: number } = {},
-): Promise<T[]> => {
+/**
+ * The document type for a collection slug, read from the types Payload
+ * generates.
+ *
+ * Call sites used to name the type themselves, passing the document type as an
+ * explicit type argument alongside the slug. That was redundant, and worse, it
+ * was load-bearing in the wrong direction:
+ * supplying one type argument made TypeScript fall back to the *default* for
+ * the collection generic, which collapsed the game-scope check below into
+ * "optional" at every call site at once. Inferring both from the slug is
+ * shorter, and is what makes the guard real rather than decorative.
+ */
+type DocOf<C extends CollectionSlug> = Config['collections'][C]
+
+/**
+ * A game, by slug. Cached per render, so the hundred-odd scoped queries a page
+ * makes resolve the same game once.
+ *
+ * Returns null for a slug that does not exist, which callers turn into a 404 —
+ * the alternative, falling back to some default game, would serve one wiki's
+ * content under another wiki's URL.
+ */
+export const getGame = cache(async (slug: string): Promise<Game | null> => {
+  const payload = await client()
+  const result = await payload.find({
+    collection: 'games',
+    where: { slug: { equals: slug } },
+    limit: 1,
+    depth: 1,
+  })
+  return (result.docs[0] as Game) ?? null
+})
+
+/** Every game a reader may reach. Planned games are not among them. */
+export const getPublishedGames = cache(async (): Promise<Game[]> => {
+  const payload = await client()
+  const result = await payload.find({
+    collection: 'games',
+    where: { status: { in: ['building', 'live', 'archived'] } },
+    sort: 'title',
+    limit: 200,
+    pagination: false,
+    depth: 1,
+  })
+  return result.docs as Game[]
+})
+
+/**
+ * A runtime backstop for the compile-time guard.
+ *
+ * TypeScript catches this everywhere the types are honoured, but these
+ * functions are also reachable from scripts, and from any call that has
+ * widened its collection argument to `CollectionSlug` — where the conditional
+ * type collapses and the requirement quietly evaporates. That is precisely how
+ * the first draft of this file shipped a guard that never once fired.
+ */
+export const assertScoped = (collection: string, game: string | undefined): void => {
+  if (isGameScoped(collection) && !game) {
+    throw new Error(
+      `Unscoped read of "${collection}". Game-scoped collections need a game — ` +
+        `see GAME_SCOPED in lib/tenancy.ts.`,
+    )
+  }
+}
+
+/**
+ * The game filter, resolved from a slug.
+ *
+ * Filtering on the relationship's id rather than on `game.slug` keeps this to
+ * an indexed integer comparison against the compound (game, slug) index, which
+ * is what that index exists for.
+ */
+const scopeFor = async (game: string): Promise<Where> => {
+  const doc = await getGame(game)
+  if (!doc) {
+    // Better a loud failure at build time than a page that silently renders
+    // every game's records because the filter evaluated to "no constraint".
+    throw new Error(
+      `No game with slug "${game}". A scoped query cannot fall back to unfiltered — ` +
+        `check the route param against the games collection.`,
+    )
+  }
+  return { game: { equals: doc.id } }
+}
+
+type BaseOptions = { depth?: number; sort?: string; limit?: number }
+
+/**
+ * Require a `game` for the collections that have one, and forbid it for the
+ * collections that do not.
+ *
+ * This is the guard rail. `getAll('quests', {})` does not compile, and neither
+ * does `getAll('authors', { game: 'dawnwalker' })` — the second being the
+ * mistake that would otherwise return nothing at all and look like missing
+ * content rather than a bug.
+ */
+type Scope<C extends CollectionSlug> = C extends GameScopedCollection
+  ? { game: string }
+  : { game?: never }
+
+/**
+ * The cached read.
+ *
+ * Every argument is a primitive, which is what makes React's `cache` actually
+ * deduplicate: it keys on argument identity, so the options object the public
+ * signature takes would be a fresh reference on every call and never hit.
+ */
+const findAll = cache(
+  async (
+    collection: CollectionSlug,
+    game: string | undefined,
+    depth: number,
+    sort: string,
+    limit: number,
+  ): Promise<unknown[]> => {
+    assertScoped(collection, game)
+    const payload = await client()
+    const result = await payload.find({
+      collection,
+      depth,
+      sort,
+      limit,
+      pagination: false,
+      ...(game ? { where: await scopeFor(game) } : {}),
+    })
+    return result.docs
+  },
+)
+
+/**
+ * Fetch a whole collection. Sizes here are small enough to take in one page.
+ *
+ * Deliberately not itself wrapped in `cache`: the generic signature *is* the
+ * guard, and `cache` erases generics. The caching lives one level down.
+ */
+export const getAll = async <C extends CollectionSlug>(
+  collection: C,
+  options: BaseOptions & Scope<C>,
+): Promise<DocOf<C>[]> =>
+  findAll(
+    collection,
+    options.game,
+    options.depth ?? 1,
+    options.sort ?? 'title',
+    options.limit ?? 1000,
+  ) as Promise<DocOf<C>[]>
+
+const countIn = cache(
+  async (collection: CollectionSlug, game: string | undefined): Promise<number> => {
+    assertScoped(collection, game)
+    const payload = await client()
+    const result = await payload.count({
+      collection,
+      ...(game ? { where: await scopeFor(game) } : {}),
+    })
+    return result.totalDocs
+  },
+)
+
+/**
+ * How many records a collection holds for a game.
+ *
+ * Worth having as its own function rather than `(await getAll(...)).length`,
+ * which is what the navigation and the directory did first. That loaded every
+ * column of every row — including rich text bodies and two joined sub-tables —
+ * across thirteen collections, on every page render, to arrive at an integer.
+ *
+ * On one game it was merely wasteful. Across seven games and twenty-one build
+ * workers it was enough contention to make SQLite return SQLITE_BUSY and fail
+ * the build outright, which is how it came to light.
+ */
+export const countRecords = async <C extends CollectionSlug>(
+  collection: C,
+  options: Scope<C>,
+): Promise<number> => countIn(collection, options.game)
+
+/**
+ * Read a game-scoped collection across every game at once.
+ *
+ * The network needs this in exactly two situations, and both are hub-side: a
+ * contributor's profile listing everything they have written, and the hub's
+ * own cross-game search. Both genuinely want the union.
+ *
+ * It is a separate, deliberately wordy function rather than "call `getAll` and
+ * leave the game out", because the two must never be confusable. An unscoped
+ * read that happens by accident is a content leak; one that happens because
+ * somebody typed `getAllAcrossGames` is a decision.
+ *
+ * Each row comes back with the game it belongs to, since a caller showing
+ * mixed results has to be able to say where each one came from and link to the
+ * right host.
+ */
+export const getAllAcrossGames = async <C extends GameScopedCollection>(
+  collection: C,
+  options: BaseOptions = {},
+): Promise<{ doc: DocOf<C>; game: Game }[]> => {
+  const games = await getPublishedGames()
+  const byId = new Map(games.map((game) => [game.id, game]))
+
   const payload = await client()
   const result = await payload.find({
     collection,
@@ -24,24 +226,44 @@ export const getAll = cache(async <T = Record<string, unknown>>(
     sort: options.sort ?? 'title',
     limit: options.limit ?? 1000,
     pagination: false,
+    where: { game: { in: games.map((game) => game.id) } },
   })
-  return result.docs as T[]
-})
 
-export const getBySlug = cache(async <T = Record<string, unknown>>(
-  collection: CollectionSlug,
-  slug: string,
-  depth = 2,
-): Promise<T | null> => {
-  const payload = await client()
-  const result = await payload.find({
-    collection,
-    where: { slug: { equals: slug } },
-    limit: 1,
-    depth,
+  return (result.docs as DocOf<C>[]).flatMap((doc) => {
+    const ref = (doc as { game?: unknown }).game
+    const id = typeof ref === 'object' && ref ? (ref as Game).id : (ref as number)
+    const game = byId.get(id)
+    // A record whose game is unpublished is not an error, it is just not for
+    // readers yet — drop it rather than rendering a link that will 404.
+    return game ? [{ doc, game }] : []
   })
-  return (result.docs[0] as T) ?? null
-})
+}
+
+const findOne = cache(
+  async (
+    collection: CollectionSlug,
+    slug: string,
+    game: string | undefined,
+    depth: number,
+  ): Promise<unknown> => {
+    assertScoped(collection, game)
+    const payload = await client()
+    const result = await payload.find({
+      collection,
+      where: { ...(game ? await scopeFor(game) : {}), slug: { equals: slug } },
+      limit: 1,
+      depth,
+    })
+    return result.docs[0] ?? null
+  },
+)
+
+export const getBySlug = async <C extends CollectionSlug>(
+  collection: C,
+  slug: string,
+  options: { depth?: number } & Scope<C>,
+): Promise<DocOf<C> | null> =>
+  findOne(collection, slug, options.game, options.depth ?? 2) as Promise<DocOf<C> | null>
 
 export const getSiteSettings = cache(async () => {
   const payload = await client()
@@ -54,6 +276,24 @@ export const siteUrl = async (): Promise<string> => {
   if (fromEnv) return fromEnv.replace(/\/$/, '')
   const settings = await getSiteSettings()
   return (settings.domain || 'http://localhost:3000').replace(/\/$/, '')
+}
+
+/**
+ * The public origin for one game's wiki.
+ *
+ * Subdomains are the network's routing scheme, so a game's canonical URL is
+ * not the network origin plus a path — it is its own host. Everything
+ * canonical, every sitemap entry and every feed link has to agree on this.
+ *
+ * Localhost is handled rather than special-cased away: `*.localhost` resolves
+ * to 127.0.0.1 in Chrome and Firefox without a hosts entry, so development
+ * exercises the same code path production does.
+ */
+export const gameUrl = async (game: Pick<Game, 'slug' | 'subdomain'>): Promise<string> => {
+  const base = await siteUrl()
+  const url = new URL(base)
+  const label = game.subdomain || game.slug
+  return `${url.protocol}//${label}.${url.host}`
 }
 
 /** Relationship fields come back as an id or a populated object depending on depth. */

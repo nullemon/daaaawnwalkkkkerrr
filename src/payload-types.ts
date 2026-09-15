@@ -82,6 +82,7 @@ export interface Config {
     mechanics: Mechanic;
     guides: Guide;
     authors: Author;
+    games: Game;
     corrections: Correction;
     requests: Request;
     media: Media;
@@ -108,6 +109,7 @@ export interface Config {
     mechanics: MechanicsSelect<false> | MechanicsSelect<true>;
     guides: GuidesSelect<false> | GuidesSelect<true>;
     authors: AuthorsSelect<false> | AuthorsSelect<true>;
+    games: GamesSelect<false> | GamesSelect<true>;
     corrections: CorrectionsSelect<false> | CorrectionsSelect<true>;
     requests: RequestsSelect<false> | RequestsSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
@@ -300,6 +302,10 @@ export interface Quest {
      */
     noindex?: boolean | null;
   };
+  /**
+   * Which wiki this belongs to. Moving a record between games changes its URL.
+   */
+  game: number | Game;
   updatedAt: string;
   createdAt: string;
 }
@@ -379,6 +385,10 @@ export interface Region {
      */
     noindex?: boolean | null;
   };
+  /**
+   * Which wiki this belongs to. Moving a record between games changes its URL.
+   */
+  game: number | Game;
   updatedAt: string;
   createdAt: string;
 }
@@ -521,6 +531,10 @@ export interface Court {
      */
     noindex?: boolean | null;
   };
+  /**
+   * Which wiki this belongs to. Moving a record between games changes its URL.
+   */
+  game: number | Game;
   updatedAt: string;
   createdAt: string;
 }
@@ -585,6 +599,103 @@ export interface Enemy {
         id?: string | null;
       }[]
     | null;
+  /**
+   * Leave blank to derive from the title and summary.
+   */
+  seo?: {
+    /**
+     * Under ~60 characters. Overrides the <title> tag.
+     */
+    title?: string | null;
+    /**
+     * Under ~155 characters. Overrides the meta description.
+     */
+    description?: string | null;
+    /**
+     * Hide this page from search engines.
+     */
+    noindex?: boolean | null;
+  };
+  /**
+   * Which wiki this belongs to. Moving a record between games changes its URL.
+   */
+  game: number | Game;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * One row per wiki. The slug becomes the subdomain, so choose it once and leave it alone.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "games".
+ */
+export interface Game {
+  id: number;
+  /**
+   * The game’s full name, as its publisher writes it.
+   */
+  title: string;
+  /**
+   * URL segment. Auto-filled from the title. Changing it breaks existing links.
+   */
+  slug: string;
+  /**
+   * What to call it where the full name will not fit — navigation, cards, breadcrumbs. "Dawnwalker" for "The Blood of Dawnwalker".
+   */
+  shortTitle?: string | null;
+  /**
+   * Planned games are hidden from the directory and return 404. Building games are listed and say so on the page.
+   */
+  status: 'planned' | 'building' | 'live' | 'archived';
+  /**
+   * One line under the game’s name on the hub directory.
+   */
+  tagline?: string | null;
+  /**
+   * A sentence or two. Used on the directory card and as the wiki’s default meta description.
+   */
+  summary?: string | null;
+  publisher?: string | null;
+  developer?: string | null;
+  /**
+   * Verified against the publisher’s own store page, not a news article. Leave empty rather than guess — a wrong release date is the first thing a reader catches.
+   */
+  releaseDate?: string | null;
+  /**
+   * Tick once the game is actually out, or the date is officially dated rather than a window. Unticked dates render as "expected".
+   */
+  releaseDateConfirmed?: boolean | null;
+  platforms?: ('PC' | 'PlayStation 5' | 'Xbox Series X|S' | 'Nintendo Switch 2' | 'Mac')[] | null;
+  /**
+   * The official store page. Used as a source of record for the release date.
+   */
+  storeUrl?: string | null;
+  /**
+   * Each wiki looks like its own site. Kept deliberately small — one accent, one image.
+   */
+  theme?: {
+    /**
+     * CSS colour, e.g. #b33a3a. Falls back to the network accent when empty.
+     */
+    accent?: string | null;
+    /**
+     * Wide key art for the wiki home and the directory card.
+     */
+    hero?: (number | null) | Media;
+    logo?: (number | null) | Media;
+  };
+  /**
+   * Host label, if it differs from the slug. Almost always leave this empty — the slug is used when it is.
+   */
+  subdomain?: string | null;
+  /**
+   * Bespoke tools this game switches on. Most games have none — a tool nobody built for this game should not appear in its navigation.
+   */
+  features?: ('run-checker' | 'build-planner' | 'comments')[] | null;
+  /**
+   * Sideways links between wikis — the same series, or the obvious "if you liked this". How a new wiki gets its first traffic.
+   */
+  relatedGames?: (number | Game)[] | null;
   /**
    * Leave blank to derive from the title and summary.
    */
@@ -701,6 +812,10 @@ export interface Ending {
      */
     noindex?: boolean | null;
   };
+  /**
+   * Which wiki this belongs to. Moving a record between games changes its URL.
+   */
+  game: number | Game;
   updatedAt: string;
   createdAt: string;
 }
@@ -780,6 +895,10 @@ export interface Character {
      */
     noindex?: boolean | null;
   };
+  /**
+   * Which wiki this belongs to. Moving a record between games changes its URL.
+   */
+  game: number | Game;
   updatedAt: string;
   createdAt: string;
 }
@@ -872,6 +991,10 @@ export interface Item {
      */
     noindex?: boolean | null;
   };
+  /**
+   * Which wiki this belongs to. Moving a record between games changes its URL.
+   */
+  game: number | Game;
   updatedAt: string;
   createdAt: string;
 }
@@ -960,6 +1083,10 @@ export interface CourtActivity {
      */
     noindex?: boolean | null;
   };
+  /**
+   * Which wiki this belongs to. Moving a record between games changes its URL.
+   */
+  game: number | Game;
   updatedAt: string;
   createdAt: string;
 }
@@ -1040,6 +1167,10 @@ export interface SkillTree {
      */
     noindex?: boolean | null;
   };
+  /**
+   * Which wiki this belongs to. Moving a record between games changes its URL.
+   */
+  game: number | Game;
   updatedAt: string;
   createdAt: string;
 }
@@ -1131,6 +1262,10 @@ export interface Perk {
      */
     noindex?: boolean | null;
   };
+  /**
+   * Which wiki this belongs to. Moving a record between games changes its URL.
+   */
+  game: number | Game;
   updatedAt: string;
   createdAt: string;
 }
@@ -1214,6 +1349,10 @@ export interface Build {
      */
     noindex?: boolean | null;
   };
+  /**
+   * Which wiki this belongs to. Moving a record between games changes its URL.
+   */
+  game: number | Game;
   updatedAt: string;
   createdAt: string;
 }
@@ -1297,6 +1436,10 @@ export interface Mechanic {
      */
     noindex?: boolean | null;
   };
+  /**
+   * Which wiki this belongs to. Moving a record between games changes its URL.
+   */
+  game: number | Game;
   updatedAt: string;
   createdAt: string;
 }
@@ -1400,6 +1543,10 @@ export interface Guide {
      */
     noindex?: boolean | null;
   };
+  /**
+   * Which wiki this belongs to. Moving a record between games changes its URL.
+   */
+  game: number | Game;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -1661,6 +1808,10 @@ export interface PayloadLockedDocument {
         value: number | Author;
       } | null)
     | ({
+        relationTo: 'games';
+        value: number | Game;
+      } | null)
+    | ({
         relationTo: 'corrections';
         value: number | Correction;
       } | null)
@@ -1785,6 +1936,7 @@ export interface QuestsSelect<T extends boolean = true> {
         description?: T;
         noindex?: T;
       };
+  game?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -1826,6 +1978,7 @@ export interface CourtActivitiesSelect<T extends boolean = true> {
         description?: T;
         noindex?: T;
       };
+  game?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -1862,6 +2015,7 @@ export interface EndingsSelect<T extends boolean = true> {
         description?: T;
         noindex?: T;
       };
+  game?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -1893,6 +2047,7 @@ export interface RegionsSelect<T extends boolean = true> {
         description?: T;
         noindex?: T;
       };
+  game?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -1925,6 +2080,7 @@ export interface CourtsSelect<T extends boolean = true> {
         description?: T;
         noindex?: T;
       };
+  game?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -1958,6 +2114,7 @@ export interface CharactersSelect<T extends boolean = true> {
         description?: T;
         noindex?: T;
       };
+  game?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -1996,6 +2153,7 @@ export interface EnemiesSelect<T extends boolean = true> {
         description?: T;
         noindex?: T;
       };
+  game?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -2027,6 +2185,7 @@ export interface SkillTreesSelect<T extends boolean = true> {
         description?: T;
         noindex?: T;
       };
+  game?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -2061,6 +2220,7 @@ export interface PerksSelect<T extends boolean = true> {
         description?: T;
         noindex?: T;
       };
+  game?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -2102,6 +2262,7 @@ export interface ItemsSelect<T extends boolean = true> {
         description?: T;
         noindex?: T;
       };
+  game?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -2137,6 +2298,7 @@ export interface BuildsSelect<T extends boolean = true> {
         description?: T;
         noindex?: T;
       };
+  game?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -2174,6 +2336,7 @@ export interface MechanicsSelect<T extends boolean = true> {
         description?: T;
         noindex?: T;
       };
+  game?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -2216,6 +2379,7 @@ export interface GuidesSelect<T extends boolean = true> {
         description?: T;
         noindex?: T;
       };
+  game?: T;
   updatedAt?: T;
   createdAt?: T;
   _status?: T;
@@ -2237,6 +2401,43 @@ export interface AuthorsSelect<T extends boolean = true> {
         label?: T;
         url?: T;
         id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "games_select".
+ */
+export interface GamesSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  shortTitle?: T;
+  status?: T;
+  tagline?: T;
+  summary?: T;
+  publisher?: T;
+  developer?: T;
+  releaseDate?: T;
+  releaseDateConfirmed?: T;
+  platforms?: T;
+  storeUrl?: T;
+  theme?:
+    | T
+    | {
+        accent?: T;
+        hero?: T;
+        logo?: T;
+      };
+  subdomain?: T;
+  features?: T;
+  relatedGames?: T;
+  seo?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        noindex?: T;
       };
   updatedAt?: T;
   createdAt?: T;

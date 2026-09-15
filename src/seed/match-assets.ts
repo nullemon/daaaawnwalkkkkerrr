@@ -5,6 +5,8 @@ import { fileURLToPath } from 'url'
 import { getPayload } from 'payload'
 import type { CollectionSlug } from 'payload'
 import config from '../payload.config'
+import { PRIMARY_GAME } from './games'
+import { isGameScoped } from '../lib/tenancy'
 
 /**
  * Match a pile of extracted game files to database records.
@@ -131,9 +133,34 @@ async function run(): Promise<void> {
   }
 
   const payload = await getPayload({ config })
+
+  /*
+    Scoped to the primary game. The extracted files this tool matches against
+    are Dawnwalker's, and offering it every game's records to match would mean
+    a fuzzy title match could confidently attach a Dawnwalker screenshot to an
+    Onimusha boss with a similar name.
+  */
+  const game = await payload.find({
+    collection: 'games',
+    where: { slug: { equals: PRIMARY_GAME } },
+    limit: 1,
+    depth: 0,
+  })
+  if (game.docs.length === 0) {
+    console.error(`No game "${PRIMARY_GAME}" in the database. Run \`pnpm seed\` first.`)
+    process.exit(1)
+  }
+  const gameId = game.docs[0].id
+
   const records: Record_[] = []
   for (const target of TARGETS) {
-    const result = await payload.find({ collection: target.collection, limit: 2000, depth: 0, pagination: false })
+    const result = await payload.find({
+      collection: target.collection,
+      limit: 2000,
+      depth: 0,
+      pagination: false,
+      ...(isGameScoped(target.collection) ? { where: { game: { equals: gameId } } } : {}),
+    })
     for (const doc of result.docs as unknown as { slug: string; title: string; image?: unknown; portrait?: unknown }[]) {
       const norm = normalise(doc.title)
       records.push({

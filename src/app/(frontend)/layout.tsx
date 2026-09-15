@@ -1,12 +1,21 @@
 import type { Metadata } from 'next'
 import { Barlow, Barlow_Semi_Condensed, Cinzel } from 'next/font/google'
-import { SiteRail, type RailItem } from '@/components/SiteRail'
-import { SiteFooter } from '@/components/SiteFooter'
 import { themeScript } from '@/components/ThemeToggle'
 import { RunProvider } from '@/components/RunProvider'
 import { AccountProvider } from '@/components/AccountProvider'
 import { getSiteSettings, siteUrl } from '@/lib/payload'
 import './globals.css'
+
+/*
+ * The document, and nothing else.
+ *
+ * Everything that varies between the hub and a game's wiki — the rail, the
+ * footer's site map, the titles — moved down into `(network)/layout.tsx` and
+ * `[game]/layout.tsx` when the site became a network. What is left here is
+ * what every page in the network genuinely shares: the fonts, the theme
+ * script, the two client providers, and the metadata defaults a page can
+ * override but should not have to restate.
+ */
 
 /*
  * Self-hosted through next/font: no render-blocking request to a font host and
@@ -68,13 +77,6 @@ export async function generateMetadata(): Promise<Metadata> {
       images: ['/og.png'],
     },
     robots: { index: true, follow: true },
-    alternates: {
-      // Both formats declared, so a reader auto-discovers whichever it prefers.
-      types: {
-        'application/rss+xml': [{ url: '/feed.xml', title: settings.siteName }],
-        'application/atom+xml': [{ url: '/atom.xml', title: settings.siteName }],
-      },
-    },
   }
 }
 
@@ -89,63 +91,7 @@ export async function generateMetadata(): Promise<Metadata> {
  */
 const fontVars = `${cinzel.variable} ${barlow.variable} ${barlowCondensed.variable}`
 
-/**
- * The rail is structural, so it carries an icon per destination. Site settings
- * still own the list and its order; this only says what each one looks like,
- * and anything unrecognised falls back to a generic mark rather than vanishing.
- */
-const RAIL_ICONS: Record<string, RailItem['icon']> = {
-  '/': 'home',
-  '/tools/run-checker': 'hourglass',
-  '/run': 'hourglass',
-  '/tools/build-planner': 'shield',
-  '/quests': 'scroll',
-  '/endings': 'book',
-  '/items': 'sword',
-  '/court': 'crown',
-  '/court-activities': 'crown',
-  '/characters': 'person',
-  '/regions': 'map',
-  '/enemies': 'skull',
-  '/perks': 'star',
-  '/skills': 'spark',
-  '/mechanics': 'spark',
-  '/builds': 'shield',
-  '/guides': 'book',
-}
-
-export default async function FrontendLayout({ children }: { children: React.ReactNode }) {
-  const settings = await getSiteSettings()
-  const nav = settings.primaryNav ?? []
-  /*
-    Home and Your run are appended whatever the CMS says, so the two pages a
-    reader always needs cannot be navigated away by an edit. That means the
-    list can contain an href twice the moment somebody adds one of them in the
-    admin — which happened, and React reported it as a duplicate key rather
-     than as the nav bug it is.
-
-    Deduplicating by href fixes it for good: the editor's own entry wins, since
-    it carries their label and ordering, and the fallback only fills a gap.
-  */
-  const candidates: RailItem[] = [
-    { label: 'Home', href: '/', icon: 'home' as const },
-    ...nav
-      .filter((item) => item.href && item.label)
-      .map((item) => ({
-        label: item.label as string,
-        href: item.href as string,
-        icon: RAIL_ICONS[item.href as string] ?? ('chevron' as const),
-      })),
-    { label: 'Your run', href: '/run', icon: 'hourglass' as const },
-  ]
-
-  const seen = new Set<string>()
-  const rail = candidates.filter((item) => {
-    if (seen.has(item.href)) return false
-    seen.add(item.href)
-    return true
-  })
-
+export default function FrontendLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={fontVars} suppressHydrationWarning>
       <head>
@@ -153,25 +99,7 @@ export default async function FrontendLayout({ children }: { children: React.Rea
       </head>
       <body>
         <AccountProvider>
-          <RunProvider>
-          <a className="skip" href="#main">
-            Skip to content
-          </a>
-          <div className="shell">
-            <SiteRail siteName={settings.siteName} items={rail} />
-            <div className="shell-main">
-              <main id="main">{children}</main>
-              <SiteFooter
-                siteName={settings.siteName}
-                note={settings.footerNote}
-                maintainer={settings.maintainer}
-                legalEntity={settings.legalEntity}
-                postalAddress={settings.postalAddress}
-                contactEmail={settings.contactEmail}
-              />
-            </div>
-          </div>
-          </RunProvider>
+          <RunProvider>{children}</RunProvider>
         </AccountProvider>
       </body>
     </html>

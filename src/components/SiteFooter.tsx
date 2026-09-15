@@ -10,53 +10,15 @@ import { Logo } from './Logo'
  * content is grouped rather than in one long list.
  */
 
-const COLUMNS: { heading: string; links: { label: string; href: string }[] }[] = [
-  {
-    heading: 'Plan a run',
-    links: [
-      { label: 'Your run', href: '/run' },
-      { label: 'Run checker', href: '/tools/run-checker' },
-      { label: 'Build planner', href: '/tools/build-planner' },
-      { label: 'Guides', href: '/guides' },
-    ],
-  },
-  {
-    heading: 'Database',
-    links: [
-      { label: 'Quests', href: '/quests' },
-      { label: 'Characters', href: '/characters' },
-      { label: 'Regions', href: '/regions' },
-      { label: 'Items', href: '/items' },
-      { label: 'Enemies', href: '/enemies' },
-    ],
-  },
-  {
-    heading: 'Systems',
-    links: [
-      { label: 'Endings', href: '/endings' },
-      { label: 'The Court', href: '/court' },
-      { label: 'Court Activities', href: '/court-activities' },
-      { label: 'Perks', href: '/perks' },
-      { label: 'Skill trees', href: '/skills' },
-      { label: 'Mechanics', href: '/mechanics' },
-    ],
-  },
-  {
-    heading: 'This site',
-    links: [
-      { label: 'About the data', href: '/about' },
-      { label: 'Report an error', href: '/corrections' },
-      { label: 'Request a feature', href: '/requests' },
-      { label: 'Contact', href: '/contact' },
-      { label: 'Your account', href: '/account' },
-      { label: 'Privacy', href: '/privacy' },
-      { label: 'Terms', href: '/terms' },
-    ],
-  },
-]
+export type FooterColumn = {
+  heading: string
+  links: { label: string; href: string }[]
+}
 
 export function SiteFooter({
   siteName,
+  blurb,
+  columns,
   note,
   maintainer,
   legalEntity,
@@ -64,6 +26,14 @@ export function SiteFooter({
   contactEmail,
 }: {
   siteName: string
+  /** What this particular site is, in a sentence or two. */
+  blurb: string
+  /**
+   * The site map. Passed in rather than declared here, because the footer of a
+   * game wiki lists that game's sections and the footer of the hub lists the
+   * network's — and a game with no run checker must not link to one.
+   */
+  columns: FooterColumn[]
   note?: string | null
   maintainer?: string | null
   legalEntity?: string | null
@@ -82,14 +52,11 @@ export function SiteFooter({
             </span>
             {siteName}
           </p>
-          <p className="note">
-            A run planner and database for The Blood of Dawnwalker. Every figure carries a
-            confidence rating, and where sources disagree we say so rather than picking one.
-          </p>
+          <p className="note">{blurb}</p>
           {maintainer ? <p className="note">Written and maintained by {maintainer}.</p> : null}
         </div>
 
-        {COLUMNS.map((column) => (
+        {columns.map((column) => (
           <nav key={column.heading} aria-label={column.heading} className="site-footer-col">
             <p className="eyebrow">{column.heading}</p>
             <ul>

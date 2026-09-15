@@ -24,7 +24,9 @@ import { Guides } from './collections/Guides'
 import { Corrections } from './collections/Corrections'
 import { Requests } from './collections/Requests'
 import { Players } from './collections/Players'
+import { Games } from './collections/Games'
 import { SiteSettings } from './globals/SiteSettings'
+import { scopedToGame } from './fields/shared'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -38,24 +40,30 @@ export default buildConfig({
     },
   },
   collections: [
+    // Every collection below scopedToGame() belongs to one game and is filtered
+    // by it on every public read. The list must match GAME_SCOPED in
+    // lib/tenancy.ts — see the note there about what happens when it does not.
+
     // Run — the data the planner is built on
-    Quests,
-    CourtActivities,
-    Endings,
+    scopedToGame(Quests),
+    scopedToGame(CourtActivities),
+    scopedToGame(Endings),
     // World
-    Regions,
-    Courts,
-    Characters,
-    Enemies,
+    scopedToGame(Regions),
+    scopedToGame(Courts),
+    scopedToGame(Characters),
+    scopedToGame(Enemies),
     // Character building
-    SkillTrees,
-    Perks,
-    Items,
-    Builds,
+    scopedToGame(SkillTrees),
+    scopedToGame(Perks),
+    scopedToGame(Items),
+    scopedToGame(Builds),
     // Editorial
-    Mechanics,
-    Guides,
+    scopedToGame(Mechanics),
+    scopedToGame(Guides),
     Authors,
+    // Network-wide
+    Games,
     // Admin
     Corrections,
     Requests,
@@ -78,6 +86,24 @@ export default buildConfig({
       authToken: process.env.DATABASE_AUTH_TOKEN,
     },
     push: process.env.NODE_ENV !== 'production',
+    /*
+     * Write-ahead logging, and a lock timeout that is not zero.
+     *
+     * `next build` prerenders with twenty-one worker processes, every one of
+     * them reading this file at once. Under the adapter's defaults — rollback
+     * journal, and `busyTimeout: 0`, which means "fail rather than wait a
+     * single millisecond" — that is enough contention to abort the build with
+     * SQLITE_BUSY partway through the record pages. It did, at around page six
+     * hundred, on a machine that had built the same site four hundred pages at
+     * a time for months.
+     *
+     * WAL lets readers proceed while a write is in flight, which is the whole
+     * shape of a static build; the timeout covers the checkpoints, where they
+     * still cannot. Neither changes anything about a deployed site, where the
+     * database is not on the request path at all.
+     */
+    wal: true,
+    busyTimeout: 15_000,
   }),
   sharp,
 })

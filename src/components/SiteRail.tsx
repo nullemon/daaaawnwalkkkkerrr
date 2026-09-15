@@ -20,7 +20,16 @@ import { RunBadge } from './RunBadge'
 
 export type RailItem = { label: string; href: string; icon: IconName }
 
-export function SiteRail({ siteName, items }: { siteName: string; items: RailItem[] }) {
+export function SiteRail({
+  siteName,
+  items,
+  brandHref = '/',
+}: {
+  siteName: string
+  items: RailItem[]
+  /** Where the wordmark goes. A wiki's rail points at its own home, not the hub's. */
+  brandHref?: string
+}) {
   const pathname = usePathname()
 
   const isCurrent = (href: string) =>
@@ -28,7 +37,7 @@ export function SiteRail({ siteName, items }: { siteName: string; items: RailIte
 
   return (
     <nav className="navrail" aria-label="Primary">
-      <Link href="/" className="navrail-brand" title={siteName}>
+      <Link href={brandHref} className="navrail-brand" title={siteName}>
         <span className="navrail-brand-mark">
           <Logo size={22} />
         </span>

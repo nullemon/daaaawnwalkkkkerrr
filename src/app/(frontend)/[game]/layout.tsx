@@ -1,0 +1,145 @@
+import { notFound } from 'next/navigation'
+import type { Metadata } from 'next'
+import { Shell } from '@/components/Shell'
+import type { RailItem } from '@/components/SiteRail'
+import type { FooterColumn } from '@/components/SiteFooter'
+import { getGame, getPublishedGames, getSiteSettings, gameUrl } from '@/lib/payload'
+import { sectionsFor, toolsFor } from '@/lib/sections'
+
+/**
+ * One game's wiki.
+ *
+ * Readers never see this segment in a URL. `proxy.ts` maps
+ * `dawnwalker.example.com/quests` onto `/dawnwalker/quests`, so the prefix is
+ * internal routing and every link in the site stays root-relative — which is
+ * why several hundred existing `<Link href="/quests/…">` did not have to
+ * change when the site became a network.
+ */
+
+type Props = { params: Promise<{ game: string }> }
+
+/**
+ * Generated here rather than in each child page, so the thirteen index pages
+ * and thirteen detail pages below do not each repeat the list of games. A
+ * child's own `generateStaticParams` is then called once per game, with that
+ * game in `params`.
+ */
+export async function generateStaticParams() {
+  const games = await getPublishedGames()
+  return games.map((game) => ({ game: game.slug }))
+}
+
+/**
+ * A slug that is not a published game is a 404, not a fallback.
+ *
+ * Without this, an unknown slug would render at request time and the scoped
+ * query would throw deep inside a page. Worse, it would let `/about` be
+ * interpreted as a game if the static route above it ever moved.
+ */
+export const dynamicParams = false
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { game: slug } = await params
+  const game = await getGame(slug)
+  if (!game) return {}
+
+  const base = await gameUrl(game)
+  const name = game.shortTitle || game.title
+
+  return {
+    // Each wiki is its own site as far as search engines are concerned, so it
+    // gets its own canonical origin, its own title template and its own feeds.
+    metadataBase: new URL(base),
+    title: {
+      default: game.seo?.title || `${game.title} guide, wiki and database`,
+      template: `%s · ${name} Wiki`,
+    },
+    description: game.seo?.description || game.summary || undefined,
+    applicationName: `${name} Wiki`,
+    openGraph: { siteName: `${name} Wiki`, type: 'website', locale: 'en' },
+    alternates: {
+      canonical: '/',
+      types: {
+        'application/rss+xml': [{ url: '/feed.xml', title: `${name} Wiki` }],
+        'application/atom+xml': [{ url: '/atom.xml', title: `${name} Wiki` }],
+      },
+    },
+  }
+}
+
+export default async function GameLayout({
+  children,
+  params,
+}: Props & { children: React.ReactNode }) {
+  const { game: slug } = await params
+  const game = await getGame(slug)
+  if (!game || game.status === 'planned') notFound()
+
+  const settings = await getSiteSettings()
+  const sections = await sectionsFor(slug)
+  const tools = toolsFor(game)
+  const name = game.shortTitle || game.title
+
+  const rail: RailItem[] = [
+    { label: 'Home', href: '/', icon: 'home' },
+    ...tools,
+    ...sections.map(({ label, href, icon }) => ({ label, href, icon })),
+  ]
+
+  /*
+    The footer is the site map, so it is built from the same derived section
+    list the rail is — split into three columns by hand because "Plan a run"
+    and "Database" are meaningfully different to a reader in a way that a
+    mechanical split into equal thirds would not be.
+  */
+  const database = sections.filter((section) =>
+    ['regions', 'characters', 'enemies', 'items', 'courts'].includes(section.collection),
+  )
+  const systems = sections.filter((section) =>
+    ['endings', 'court-activities', 'perks', 'skill-trees', 'mechanics'].includes(section.collection),
+  )
+  const planning = sections.filter((section) =>
+    ['quests', 'builds', 'guides'].includes(section.collection),
+  )
+
+  const columns: FooterColumn[] = [
+    {
+      heading: 'Plan a run',
+      links: [...tools, ...planning].map(({ label, href }) => ({ label, href })),
+    },
+    { heading: 'Database', links: database.map(({ label, href }) => ({ label, href })) },
+    { heading: 'Systems', links: systems.map(({ label, href }) => ({ label, href })) },
+    {
+      heading: 'This site',
+      links: [
+        { label: 'About the data', href: '/about' },
+        { label: 'Report an error', href: '/corrections' },
+        { label: 'Request a feature', href: '/requests' },
+        { label: 'Contact', href: '/contact' },
+        { label: 'Your account', href: '/account' },
+        { label: 'Privacy', href: '/privacy' },
+        { label: 'Terms', href: '/terms' },
+      ],
+    },
+  ].filter((column) => column.links.length > 0)
+
+  return (
+    <Shell
+      siteName={`${name} Wiki`}
+      items={rail}
+      footer={{
+        blurb:
+          game.summary ||
+          `A guide and database for ${game.title}. Every figure carries a confidence rating, and where sources disagree we say so rather than picking one.`,
+        columns,
+        note: settings.footerNote,
+        maintainer: settings.maintainer,
+        legalEntity: settings.legalEntity,
+        postalAddress: settings.postalAddress,
+        contactEmail: settings.contactEmail,
+      }}
+    >
+      {children}
+    </Shell>
+  )
+}

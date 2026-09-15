@@ -34,11 +34,20 @@ export const toEndingNode = (ending: Ending): EndingNode => ({
   isFailure: Boolean(ending.isFailure),
 })
 
-/** Everything the run checker needs, in one build-time read. */
-export async function getRunGraph(): Promise<{ quests: QuestNode[]; endings: EndingNode[] }> {
+/**
+ * Everything the run checker needs, in one build-time read.
+ *
+ * Scoped to a game because the prerequisite graph is a property of one game's
+ * quest list. Feeding the solver two games' quests at once would not produce a
+ * wrong answer so much as a meaningless one: the edges would connect nodes
+ * that cannot appear in the same playthrough.
+ */
+export async function getRunGraph(
+  game: string,
+): Promise<{ quests: QuestNode[]; endings: EndingNode[] }> {
   const [quests, endings] = await Promise.all([
-    getAll<Quest>('quests', { depth: 1, sort: 'title' }),
-    getAll<Ending>('endings', { depth: 1, sort: 'title' }),
+    getAll('quests', { game, depth: 1, sort: 'title' }),
+    getAll('endings', { game, depth: 1, sort: 'title' }),
   ])
   return {
     quests: quests.map(toQuestNode),

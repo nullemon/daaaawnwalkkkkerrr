@@ -1,0 +1,84 @@
+import type { IconName } from '@/components/Icon'
+import type { Game } from '@/payload-types'
+import type { GameScopedCollection } from './tenancy'
+import { countRecords } from './payload'
+
+/**
+ * The sections a game's wiki can have, and which of them it actually does.
+ *
+ * The rail and the footer both used to carry their own hardcoded list of
+ * Dawnwalker's sections. That worked exactly once. With seven games it would
+ * mean a Gears of War wiki whose navigation offers Court Activities and Skill
+ * Trees, every link landing on an empty index — which is worse than the link
+ * not being there, because an empty page reads as a broken site rather than as
+ * a section that does not apply.
+ *
+ * So the navigation is derived from what the game has. A section appears when
+ * the game has at least one record in it. Nothing to configure, nothing to
+ * remember when a game's first Region is written, and no way to link to an
+ * empty index.
+ */
+
+export type Section = {
+  label: string
+  href: string
+  icon: IconName
+  collection: GameScopedCollection
+  /** Singular noun for one record, used as the type label in search results. */
+  kind: string
+  /** Sitemap priority. Higher for the pages a reader actually arrives on. */
+  priority: number
+}
+
+/**
+ * Fixed order, chosen to read top to bottom as a reader's journey rather than
+ * alphabetically: what to do, then where, then who, then what to build.
+ */
+export const SECTIONS: Section[] = [
+  { label: 'Quests', href: '/quests', icon: 'scroll', collection: 'quests', kind: 'Quest', priority: 0.8 },
+  { label: 'Court Activities', href: '/court-activities', icon: 'crown', collection: 'court-activities', kind: 'Court activity', priority: 0.7 },
+  { label: 'Endings', href: '/endings', icon: 'book', collection: 'endings', kind: 'Ending', priority: 0.9 },
+  { label: 'Regions', href: '/regions', icon: 'map', collection: 'regions', kind: 'Region', priority: 0.6 },
+  { label: 'The Court', href: '/court', icon: 'crown', collection: 'courts', kind: 'Court', priority: 0.7 },
+  { label: 'Characters', href: '/characters', icon: 'person', collection: 'characters', kind: 'Character', priority: 0.6 },
+  { label: 'Enemies', href: '/enemies', icon: 'skull', collection: 'enemies', kind: 'Enemy', priority: 0.6 },
+  { label: 'Skill trees', href: '/skills', icon: 'spark', collection: 'skill-trees', kind: 'Skill tree', priority: 0.6 },
+  { label: 'Perks', href: '/perks', icon: 'star', collection: 'perks', kind: 'Perk', priority: 0.7 },
+  { label: 'Items', href: '/items', icon: 'sword', collection: 'items', kind: 'Item', priority: 0.6 },
+  { label: 'Builds', href: '/builds', icon: 'shield', collection: 'builds', kind: 'Build', priority: 0.8 },
+  { label: 'Mechanics', href: '/mechanics', icon: 'spark', collection: 'mechanics', kind: 'Mechanic', priority: 0.8 },
+  { label: 'Guides', href: '/guides', icon: 'book', collection: 'guides', kind: 'Guide', priority: 0.7 },
+]
+
+/** Tools are switched on per game rather than derived, since they are code. */
+const TOOLS: Record<string, { label: string; href: string; icon: IconName }[]> = {
+  'run-checker': [
+    { label: 'Your run', href: '/run', icon: 'hourglass' },
+    { label: 'Run checker', href: '/tools/run-checker', icon: 'hourglass' },
+  ],
+  'build-planner': [{ label: 'Build planner', href: '/tools/build-planner', icon: 'shield' }],
+}
+
+export type SectionWithCount = Section & { count: number }
+
+/**
+ * Which sections this game has, with how many records in each.
+ *
+ * Thirteen `count` queries per game, cached per render. It matters that these
+ * are counts and not reads: this runs in the layout, so it runs for every page
+ * on the wiki, and the first version fetched every row of every collection to
+ * take its length. See `countRecords`.
+ */
+export const sectionsFor = async (game: string): Promise<SectionWithCount[]> => {
+  const counted = await Promise.all(
+    SECTIONS.map(async (section) => ({
+      ...section,
+      count: await countRecords(section.collection, { game }),
+    })),
+  )
+  return counted.filter((section) => section.count > 0)
+}
+
+/** The tool links a game has switched on. */
+export const toolsFor = (game: Pick<Game, 'features'>) =>
+  (game.features ?? []).flatMap((feature) => TOOLS[feature] ?? [])

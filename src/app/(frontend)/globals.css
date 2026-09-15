@@ -1226,3 +1226,59 @@ th.num { text-align: right; }
   background: var(--sunken); object-fit: contain;
 }
 .figurerow figcaption { font-size: 13px; color: var(--muted); }
+
+/* ---------------------------------------------------------------------------
+   The network: wiki directory cards and the small chip label.
+
+   A wiki card carries more than an entity card does — art, a page count, a
+   release line and a row of section counts — because the directory is where a
+   reader decides which of seven sites is worth their click, and "412 pages"
+   decides it faster than any amount of blurb.
+
+   `--card-accent` lets a game tint its own card from the CMS without a
+   stylesheet per game. It falls back to the site accent, so a game with no
+   colour set looks deliberate rather than unfinished.
+--------------------------------------------------------------------------- */
+
+.chip {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 2px 7px; border-radius: 999px;
+  font-size: 11.5px; font-weight: 500; line-height: 1.6;
+  color: var(--muted); background: var(--raised);
+  border: 1px solid var(--rule); white-space: nowrap;
+}
+
+.wiki-card {
+  color: inherit; gap: 9px; overflow: hidden; padding: 0 0 14px;
+  border-color: var(--rule);
+}
+.wiki-card:hover {
+  text-decoration: none;
+  border-color: var(--card-accent, var(--accent-dim));
+  background: var(--raised);
+}
+.wiki-card .card-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; padding: 14px 15px 0; }
+.wiki-card h3 { color: var(--ink); font-size: 16px; }
+.wiki-card > p { font-size: 13.5px; color: var(--ink-soft); padding: 0 15px; }
+
+/* Art is optional. Without it the card simply starts at the title, rather
+   than reserving an empty band that reads as a failed image. */
+.wiki-card-art { display: block; width: 100%; aspect-ratio: 16 / 7; overflow: hidden; background: var(--raised); }
+.wiki-card-art img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.wiki-card-tagline {
+  padding: 0 15px; font-size: 13px; color: var(--card-accent, var(--accent-hot));
+  font-weight: 500;
+}
+
+.wiki-card-foot {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 10px; flex-wrap: wrap; padding: 0 15px; margin-top: auto;
+}
+.wiki-card-count {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 13px; font-weight: 600; color: var(--ink);
+}
+.wiki-card-count .ic { color: var(--card-accent, var(--accent)); flex: none; }
+
+.wiki-card-sections { display: flex; flex-wrap: wrap; gap: 5px; padding: 0 15px; }

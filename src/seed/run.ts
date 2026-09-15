@@ -3,6 +3,8 @@ import { getPayload } from 'payload'
 import type { CollectionSlug, Payload } from 'payload'
 
 import config from '../payload.config'
+import { games, PRIMARY_GAME } from './games'
+import { isGameScoped } from '../lib/tenancy'
 import {
   authors,
   characters,
@@ -30,26 +32,51 @@ import {
 
 type SlugMap = Map<string, string | number>
 
+/**
+ * The game everything in `data.ts` belongs to.
+ *
+ * Set once at the top of the seed and read by `upsert`. Passing it explicitly
+ * at every call site would mean thirteen chances to forget, and a forgotten
+ * one does not fail — it writes a record with no game, which then vanishes
+ * from every page on the site with no error anywhere.
+ */
+let primaryGameId: string | number | undefined
+
 async function upsert(
   payload: Payload,
   collection: CollectionSlug,
   slug: string,
   data: Record<string, unknown>,
 ): Promise<string | number> {
+  const scoped = isGameScoped(collection)
+
+  if (scoped && primaryGameId === undefined) {
+    throw new Error(`Seeding "${collection}" before the games were seeded.`)
+  }
+
+  /*
+    Slugs are unique per game, not across the network, so the lookup has to
+    carry the game as well. Without it, seeding a second game whose item is
+    also called "lockpick" would find Dawnwalker's and overwrite it.
+  */
   const existing = await payload.find({
     collection,
-    where: { slug: { equals: slug } },
+    where: scoped
+      ? { and: [{ slug: { equals: slug } }, { game: { equals: primaryGameId } }] }
+      : { slug: { equals: slug } },
     limit: 1,
     depth: 0,
   })
 
+  const withGame = scoped ? { ...data, game: primaryGameId } : data
+
   if (existing.docs.length > 0) {
     const id = existing.docs[0].id
-    await payload.update({ collection, id, data: data as never, depth: 0 })
+    await payload.update({ collection, id, data: withGame as never, depth: 0 })
     return id
   }
 
-  const created = await payload.create({ collection, data: data as never, depth: 0 })
+  const created = await payload.create({ collection, data: withGame as never, depth: 0 })
   return created.id
 }
 
@@ -76,6 +103,30 @@ async function seed(): Promise<void> {
   } else {
     console.log('  admin user already exists, left alone')
   }
+
+  // --- The games themselves, before anything that belongs to one ----------
+  const gameIds: SlugMap = new Map()
+  for (const game of games) {
+    const existing = await payload.find({
+      collection: 'games',
+      where: { slug: { equals: game.slug } },
+      limit: 1,
+      depth: 0,
+    })
+    if (existing.docs.length > 0) {
+      const id = existing.docs[0].id
+      await payload.update({ collection: 'games', id, data: game as never, depth: 0 })
+      gameIds.set(game.slug, id)
+    } else {
+      const created = await payload.create({ collection: 'games', data: game as never, depth: 0 })
+      gameIds.set(game.slug, created.id)
+    }
+  }
+  primaryGameId = gameIds.get(PRIMARY_GAME)
+  if (primaryGameId === undefined) {
+    throw new Error(`The primary game "${PRIMARY_GAME}" is missing from seed/games.ts.`)
+  }
+  console.log(`  ${gameIds.size} games (primary: ${PRIMARY_GAME})`)
 
   // --- Pass one: records without cross-collection references ---------------
   const regionIds: SlugMap = new Map()

@@ -1,4 +1,4 @@
-import type { CollectionConfig, Field, FieldHook } from 'payload'
+import type { CollectionConfig, Field, FieldHook, TextFieldSingleValidation } from 'payload'
 
 /** Turn any string into a URL-safe slug. */
 export const slugify = (value: string): string =>
@@ -22,7 +22,7 @@ const formatSlug: FieldHook = ({ data, operation, value }) => {
  * editable — once a page is indexed, its slug must be able to stay put even
  * if the title is corrected.
  */
-export const slugField = (): Field => ({
+export const slugField = (options: { validate?: TextFieldSingleValidation } = {}): Field => ({
   name: 'slug',
   type: 'text',
   required: true,
@@ -33,6 +33,7 @@ export const slugField = (): Field => ({
     description: 'URL segment. Auto-filled from the title. Changing it breaks existing links.',
   },
   hooks: { beforeValidate: [formatSlug] },
+  ...(options.validate ? { validate: options.validate } : {}),
 })
 
 /**
@@ -135,3 +136,71 @@ export const publicRead: CollectionConfig['access'] = {
   update: isEditor,
   delete: isEditor,
 }
+
+/**
+ * Which game this record belongs to.
+ *
+ * This is the single most load-bearing field in the network. Every public
+ * query filters on it, so a record with the wrong game does not merely show up
+ * in the wrong place — it shows up as another game's content, which is the one
+ * mistake a wiki cannot be caught making.
+ *
+ * It is required, and deliberately has no blanket default. A hook that quietly
+ * filed everything under the first game would work perfectly while there is one
+ * game and then silently misfile records forever after the second one is added,
+ * which is exactly the class of bug that is invisible until it is expensive.
+ *
+ * The one exception is a network of exactly one game, where there is nothing to
+ * get wrong and asking would be noise. As soon as a second game exists the
+ * default disappears and the editor has to choose.
+ */
+export const gameField = (): Field => ({
+  name: 'game',
+  type: 'relationship',
+  relationTo: 'games',
+  required: true,
+  index: true,
+  admin: {
+    position: 'sidebar',
+    description: 'Which wiki this belongs to. Moving a record between games changes its URL.',
+  },
+  defaultValue: async ({ req }) => {
+    const result = await req.payload.find({
+      collection: 'games',
+      limit: 2,
+      pagination: false,
+      depth: 0,
+    })
+    return result.docs.length === 1 ? result.docs[0].id : undefined
+  },
+})
+
+/**
+ * Make a collection belong to a game.
+ *
+ * Three changes have to happen together, and applying two of the three leaves
+ * a subtly broken collection, so they are one call rather than three things to
+ * remember per collection:
+ *
+ *   1. The `game` relationship is added.
+ *   2. The slug stops being globally unique. Two games can each have a
+ *      "Lockpick", and under a global unique index the second game to be
+ *      seeded would simply fail to import half its records.
+ *   3. A compound unique index on (game, slug) takes over, which is the
+ *      constraint actually wanted: unique within a wiki, free across the
+ *      network.
+ *
+ * Step 2 without step 3 is the dangerous one — it silently permits two records
+ * with the same slug in the same game, and the detail page then renders
+ * whichever the database returns first.
+ */
+export const scopedToGame = (collection: CollectionConfig): CollectionConfig => ({
+  ...collection,
+  fields: [
+    ...collection.fields.map((field) =>
+      'name' in field && field.name === 'slug' ? { ...field, unique: false } : field,
+    ),
+    gameField(),
+  ],
+  indexes: [...(collection.indexes ?? []), { fields: ['game', 'slug'], unique: true }],
+})
