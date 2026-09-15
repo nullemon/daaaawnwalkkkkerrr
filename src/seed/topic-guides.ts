@@ -543,18 +543,52 @@ async function run(): Promise<void> {
           }
         }
 
-        const shared = [...frequency.entries()]
+        /*
+          Three fields, but only three that say different things.
+
+          Gears files a weapon's `manufacturer` and its `affiliation` and both
+          read "Coalition of Ordered Governments" on most rows, so taking the
+          three commonest fields produced a line that was two hundred and
+          seventy-five characters of the same phrase three times. A field
+          earns its place by disagreeing with the ones already chosen on at
+          least half the records.
+        */
+        const ranked = [...frequency.entries()]
           .filter(([, count]) => count >= Math.max(3, members.length * 0.5))
           .sort((a, b) => b[1] - a[1])
-          .slice(0, 3)
           .map(([key]) => key)
 
+        const shared: string[] = []
+        for (const key of ranked) {
+          if (shared.length >= 3) break
+          const differs = members.filter((member) => {
+            const value = member.facts?.[key]
+            if (!value) return false
+            return shared.every((chosen) => member.facts?.[chosen] !== value)
+          }).length
+          if (shared.length === 0 || differs >= members.length * 0.5) shared.push(key)
+        }
+
         if (shared.length < 2) continue
+
+        /*
+          An infobox field can hold a dozen comma-separated values. Printing
+          all of them turns a comparison into a wall, so a long one is cut to
+          three and says how many it left - which keeps the line scannable
+          without quietly pretending the rest do not exist. The record's own
+          page carries the full list.
+        */
+        const trim = (value: string) => {
+          const values = value.split(/,\s*/).filter(Boolean)
+          return values.length > 3
+            ? `${values.slice(0, 3).join(', ')} +${values.length - 3} more`
+            : value
+        }
 
         const sorted = [...members].sort((a, b) => a.title.localeCompare(b.title))
         const lines = sorted.map((member) => {
           const parts = shared
-            .map((key) => (member.facts?.[key] ? `${label(key)}: ${member.facts[key]}` : null))
+            .map((key) => (member.facts?.[key] ? `${label(key)}: ${trim(member.facts[key])}` : null))
             .filter(Boolean)
           return `${member.title}${parts.length ? ` - ${parts.join(' | ')}` : ' - not recorded'}`
         })

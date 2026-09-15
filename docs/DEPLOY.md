@@ -62,10 +62,17 @@ sitemaps point at the wrong host.
 
 ```bash
 pnpm install
-pnpm db:reset     # seed + ingest + attach images. Destroys and rebuilds.
-pnpm verify       # 422 records, 0 with no game
-pnpm build        # ~600 pages
+pnpm db:reset     # fourteen passes: seed, ingest, four guide generators, images
+pnpm verify       # 1,472 records, 0 with no game
+pnpm check:launch # what still wants a decision. Nothing here blocks a launch
+pnpm build        # ~1,670 pages
 ```
+
+`pnpm db:reset` is the whole content pipeline in one command, and the order in
+it matters: the guide generators read records the entity pass writes, and
+`seed:cite` runs last because it looks for guides with no source. If you add a
+generator, add it to that chain too — a pass that only ever runs by hand is a
+pass that is missing the next time somebody rebuilds from scratch.
 
 `pnpm verify` is not optional ceremony. A record with no game does not error —
 it silently never appears on any page. Run it after any import.
@@ -197,6 +204,12 @@ REMOTE_API_KEY=<the key>
 The key carries exactly that user's permissions — an editor assigned to one
 wiki cannot write to another with theirs, because the same access rules run.
 Revoking one is unticking the box. Never commit it; `.env` is gitignored.
+
+**Put the key in `.env` yourself rather than pasting it into a chat.** Every
+tool here reads it from there, so whoever is doing the work never needs to see
+it — and a key that was never in a transcript is one you never have to wonder
+about. If one does get pasted somewhere, untick the box and tick it again: the
+old key stops working immediately.
 
 **Then:**
 
