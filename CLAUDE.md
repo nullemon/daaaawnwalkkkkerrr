@@ -230,8 +230,16 @@ pnpm seed:guides    # hand-written, per game
 pnpm seed:articles  # eight topics a Steam listing settles outright
 pnpm seed:deep      # engine/composer/series facts, rarity bands, category roundups
 pnpm seed:topics    # store features, stat comparisons, coverage, the demand side
+pnpm seed:prune     # delete pages a generator would no longer write
 pnpm seed:cite      # cite the pages that compile this wiki's own records
 ```
+
+`seed:prune` exists because the other passes upsert and never delete, so
+tightening a filter does nothing to the pages the loose filter already wrote
+— they stay in the database, in the sitemap, indexed, with nothing to mark
+them as orphans of a rule that has since changed. Run it after changing any
+generator's filters. It matches on the generated titles, which say exactly
+what kind of page each one is, so it cannot touch anything hand-written.
 
 All of them are in `pnpm db:reset`, in that order, and a new one belongs
 there too. A pass that only ever runs by hand is a pass that is missing the
