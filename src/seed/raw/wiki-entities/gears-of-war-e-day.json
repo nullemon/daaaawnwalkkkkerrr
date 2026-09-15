@@ -4,6 +4,637 @@
   "fetchedAt": "2026-09-15",
   "entities": [
     {
+      "title": "Gut-Puncher Grenade Launcher",
+      "wikiTitle": "Gut-Puncher Grenade Launcher",
+      "collection": "items",
+      "facts": {
+        "manufacturer": "Coalition of Ordered Governments",
+        "type": "Under-barrel Grenade Launcher, Heavy Belt-fed Grenade Launcher",
+        "size": "Small (Under-barrel version), Medium (Heavy version)",
+        "magazine": "1 Grenade (Under-barrel variant), 4 Grenades (Heavy variant)",
+        "fire": "Single Shot",
+        "ammotype": "Armor-Piercing Grenade",
+        "accuracy": "Accurate at Close Range",
+        "counterpart": "Boomshot Grenade Launcher, *Heavy Boomshot, Booshka Grenade Launcher, Stomper",
+        "era": "*Pendulum Wars, Locust War",
+        "affiliation": "Coalition of Ordered Governments",
+        "operation": "Pump-Action",
+        "maxammo": "12"
+      },
+      "categories": [
+        "Gears of War: E-Day",
+        "Gears of War: E-Day weapons",
+        "Weapons",
+        "Weapons of the Coalition of Ordered Governments"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/9/9d/Gut_Puncher.png/revision/latest?cb=20260611041346",
+      "url": "https://gearsofwar.fandom.com/wiki/Gut-Puncher_Grenade_Launcher",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Gut-Puncher-Grenade-Launcher.png"
+    },
+    {
+      "title": "Emergence in Kalona",
+      "wikiTitle": "Emergence in Kalona",
+      "collection": "quests",
+      "facts": {
+        "conflict": "Locust War",
+        "date": "Bounty, 0 A.E.",
+        "place": "Kalona, Tyrus",
+        "side1": "25px COG",
+        "side2": "25px Locust Horde",
+        "commanders1": "Col. Trench, Mayor Shaw, Lt. Brown, Cpt. Akila Grey",
+        "commanders2": "Queen Myrrah, Vraahk",
+        "forces1": "Kalona Police Force, COG Army, *Theta squad, *Charlie-One, *Whiskey Squad, *26th Royal Tyran Infantry, **C Company, ***Bravo Squad, King Raven, Centaur Tanks, *Centaur Zero-Two, *Centaur Zero-Five, *Centaur One-One, *Cen",
+        "forces2": "Locust Army, *Scorched Legion",
+        "casual1": "Very Heavy",
+        "casual2": "Unknown, probably moderate",
+        "previous": "Emergence in Ephyra",
+        "conc": "Emergence Day",
+        "next": "Fall of Gorasnaya"
+      },
+      "categories": [
+        "Battles",
+        "Gears of War: E-Day"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/5/55/Gearse-day.jpg/revision/latest?cb=20240609191148",
+      "url": "https://gearsofwar.fandom.com/wiki/Emergence_in_Kalona",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Emergence-in-Kalona.jpg"
+    },
+    {
+      "title": "Kalona",
+      "wikiTitle": "Kalona",
+      "collection": "regions",
+      "facts": {
+        "location": "Tyrus",
+        "allegiance": "COG",
+        "date founded": "Pre-Pendulum Wars",
+        "date destroyed": "0 A.E."
+      },
+      "categories": [
+        "COG",
+        "Cities",
+        "Gears of War: E-Day",
+        "Locations"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/1/1b/Kalona0.png/revision/latest?cb=20260609193015",
+      "url": "https://gearsofwar.fandom.com/wiki/Kalona",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Kalona.png"
+    },
+    {
+      "title": "Mags Carter",
+      "wikiTitle": "Mags Carter",
+      "collection": "characters",
+      "facts": {
+        "homeland": "Kalona, Tyrus",
+        "birth": "circa 35 B.E.",
+        "species": "Human",
+        "gender": "Female",
+        "occupation": "Worker for the Timgad Prime Refinery, Former Gear",
+        "rank": "Specialist",
+        "era": "Pendulum Wars, Locust War",
+        "affiliation": "Coalition of Ordered Governments",
+        "hair": "Brown",
+        "eyes": "Brown"
+      },
+      "categories": [
+        "26th Royal Tyran Infantry",
+        "COG",
+        "Characters",
+        "Female characters",
+        "Gear Soldier",
+        "Gears of War: E-Day",
+        "Locust War veterans",
+        "Pendulum Wars veterans"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/b/b8/Mags_Carter.png/revision/latest?cb=20260609203626",
+      "url": "https://gearsofwar.fandom.com/wiki/Mags_Carter",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Mags-Carter.png"
+    },
+    {
+      "title": "Lucas Reyes",
+      "wikiTitle": "Lucas Reyes",
+      "collection": "characters",
+      "facts": {
+        "birth": "c. 20 B.E.",
+        "species": "Human",
+        "gender": "Male",
+        "occupation": "Gear, Communications Officer",
+        "rank": "Cadet First Class",
+        "era": "Pendulum Wars, Locust War",
+        "affiliation": "Coalition of Ordered Governments"
+      },
+      "categories": [
+        "26th Royal Tyran Infantry",
+        "COG",
+        "Characters",
+        "Gear Soldier",
+        "Gears of War: E-Day",
+        "Locust War veterans",
+        "Male characters",
+        "Pendulum Wars veterans"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/5/58/Lucas_Reyes.png/revision/latest?cb=20260609205950",
+      "url": "https://gearsofwar.fandom.com/wiki/Lucas_Reyes",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Lucas-Reyes.png"
+    },
+    {
+      "title": "Chainsaw Lancer Prototype",
+      "wikiTitle": "Chainsaw Lancer Prototype",
+      "collection": "items",
+      "facts": {
+        "manufacturer": "Coalition of Ordered Governments",
+        "model": "Mark 1",
+        "type": "Assault Rifle",
+        "fire": "Full Auto",
+        "magazine": "60",
+        "maxammo": "600",
+        "era": "Locust War",
+        "counterwep": "Hammerburst Assault Rifle",
+        "affiliation": "Coalition of Ordered Governments, Coalition of Ordered Governments Army"
+      },
+      "categories": [
+        "Gears of War: E-Day",
+        "Gears of War: E-Day weapons",
+        "Weapons",
+        "Weapons of the Coalition of Ordered Governments"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/3/33/ProtoLancerPlaceholder.png/revision/latest?cb=20260803093534",
+      "url": "https://gearsofwar.fandom.com/wiki/Chainsaw_Lancer_Prototype",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Chainsaw-Lancer-Prototype.png"
+    },
+    {
+      "title": "Incinerator Shotgun",
+      "wikiTitle": "Incinerator Shotgun",
+      "collection": "items",
+      "facts": {
+        "manufacturer": "Locust Horde, Scorched Legion",
+        "type": "Shotgun",
+        "magazine": "3",
+        "maxammo": "12",
+        "range": "Short",
+        "era": "Locust War",
+        "counterwep": "Gnasher Shotgun",
+        "affiliation": "Locust Horde",
+        "ammotype": "Imulsion"
+      },
+      "categories": [
+        "Gears of War: E-Day",
+        "Gears of War: E-Day weapons",
+        "Weapons",
+        "Weapons of the Locust Horde"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/5/58/Incinerator_Shotgun.png/revision/latest?cb=20260611043609",
+      "url": "https://gearsofwar.fandom.com/wiki/Incinerator_Shotgun",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Incinerator-Shotgun.png"
+    },
+    {
+      "title": "Oria Stadium",
+      "wikiTitle": "Oria Stadium",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "COG",
+        "COG military bases",
+        "Gears of War: E-Day",
+        "Locations",
+        "Stadiums"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/b/b8/Oria_Stadium.png/revision/latest?cb=20260612015622",
+      "url": "https://gearsofwar.fandom.com/wiki/Oria_Stadium",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Oria-Stadium.png"
+    },
+    {
+      "title": "Feral Wretch",
+      "wikiTitle": "Feral Wretch",
+      "collection": "enemies",
+      "facts": {
+        "homeland": "Hollow",
+        "species": "Hollow Creatures",
+        "body color": "Grey skin",
+        "height": "3'1\"",
+        "eyes": "Black",
+        "affiliation": "Locust Horde",
+        "rank": "Cannon Fodder"
+      },
+      "categories": [
+        "Characters",
+        "Creatures in Gears Tactics",
+        "Creatures in Gears of War",
+        "Creatures in Gears of War: Judgment",
+        "Creatures in Gears of War 2",
+        "Creatures in Gears of War 3",
+        "Creatures in RAAM's Shadow",
+        "Gears of War: E-Day",
+        "Hollow Creatures"
+      ],
+      "image": null,
+      "url": "https://gearsofwar.fandom.com/wiki/Feral_Wretch"
+    },
+    {
+      "title": "Mako Kemara",
+      "wikiTitle": "Mako Kemara",
+      "collection": "characters",
+      "facts": {
+        "species": "Human",
+        "gender": "Male",
+        "occupation": "Gear",
+        "rank": "Private",
+        "era": "Pendulum Wars, Locust War",
+        "affiliation": "Coalition of Ordered Governments, Coalition of Ordered Governments Army, *Theta Squad",
+        "family": "Manu Kemara - Twin Brother"
+      },
+      "categories": [
+        "COG",
+        "Characters",
+        "Gear Soldier",
+        "Gears of War: E-Day",
+        "Locust War veterans",
+        "Male characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/9/91/Mako_Kemara.png/revision/latest?cb=20260623060755",
+      "url": "https://gearsofwar.fandom.com/wiki/Mako_Kemara",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Mako-Kemara.png"
+    },
+    {
+      "title": "Gorehook",
+      "wikiTitle": "Gorehook",
+      "collection": "items",
+      "facts": {
+        "manufacturer": "Locust Horde",
+        "type": "Harpoon Launcher",
+        "magazine": "10",
+        "range": "Short",
+        "era": "Locust War",
+        "affiliation": "Locust Horde",
+        "size": "Large",
+        "ammotype": "Harpoons"
+      },
+      "categories": [
+        "Gears of War: E-Day",
+        "Gears of War: E-Day weapons",
+        "Weapons",
+        "Weapons of the Locust Horde"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/d/d2/Gorehook.jpg/revision/latest?cb=20260809060721",
+      "url": "https://gearsofwar.fandom.com/wiki/Gorehook",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Gorehook.jpg"
+    },
+    {
+      "title": "Striga Pistol",
+      "wikiTitle": "Striga Pistol",
+      "collection": "items",
+      "facts": {
+        "manufacturer": "Locust Horde, Scorched Legion",
+        "type": "Pistol",
+        "magazine": "3 (27 spikes)",
+        "maxammo": "12 (108 spikes)",
+        "range": "Short",
+        "era": "Locust War",
+        "affiliation": "Locust Horde",
+        "size": "Small",
+        "ammotype": "Spikes",
+        "fire": "Burst-fire",
+        "counterpart": "Boltok Pistol, Gorgon Submachine Gun",
+        "counterwep": "MX8 Snub Pistol"
+      },
+      "categories": [
+        "Gears of War: E-Day",
+        "Gears of War: E-Day weapons",
+        "Weapons",
+        "Weapons of the Locust Horde"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/5/56/StrigaPlaceholder.png/revision/latest?cb=20260803094835",
+      "url": "https://gearsofwar.fandom.com/wiki/Striga_Pistol",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Striga-Pistol.png"
+    },
+    {
+      "title": "Ripper Light Machine Gun",
+      "wikiTitle": "Ripper Light Machine Gun",
+      "collection": "items",
+      "facts": {
+        "manufacturer": "Locust Horde",
+        "type": "Light Machine Gun",
+        "magazine": "70 (35 per magazine)",
+        "range": "Medium",
+        "era": "Locust War",
+        "affiliation": "Locust Horde",
+        "size": "Medium",
+        "fire": "Full Auto",
+        "maxammo": "210",
+        "rate of fire": "Variable",
+        "accuracy": "Medium"
+      },
+      "categories": [
+        "Gears of War: E-Day",
+        "Gears of War: E-Day weapons",
+        "Weapons",
+        "Weapons of the Locust Horde"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/2/2e/RipperLMG.jpg/revision/latest?cb=20260809030606",
+      "url": "https://gearsofwar.fandom.com/wiki/Ripper_Light_Machine_Gun",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Ripper-Light-Machine-Gun.jpg"
+    },
+    {
+      "title": "Heavy Boomshot",
+      "wikiTitle": "Heavy Boomshot",
+      "collection": "items",
+      "facts": {
+        "manufacturer": "Locust Horde",
+        "type": "Heavy Grenade Launcher",
+        "size": "Large",
+        "magazine": "9",
+        "ammotype": "Cluster Grenade",
+        "range": "Short-Medium",
+        "era": "Locust War",
+        "affiliation": "Locust Horde"
+      },
+      "categories": [
+        "Gears of War: E-Day",
+        "Gears of War: E-Day weapons",
+        "Weapons",
+        "Weapons of the Locust Horde"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/4/40/HeavyBoomshot.jpg/revision/latest?cb=20260819082644",
+      "url": "https://gearsofwar.fandom.com/wiki/Heavy_Boomshot",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Heavy-Boomshot.jpg"
+    },
+    {
+      "title": "Rusher",
+      "wikiTitle": "Rusher",
+      "collection": "enemies",
+      "facts": {
+        "homeland": "The Hollow",
+        "species": "Locust Drone",
+        "gender": "Male",
+        "body color": "Grey skin with black scales",
+        "era": "Locust War",
+        "affiliation": "Locust Horde"
+      },
+      "categories": [
+        "Characters",
+        "Gears of War: E-Day",
+        "Locust Horde",
+        "Locust Soldier",
+        "Male characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/e/ee/Drone-Rusher.jpg/revision/latest?cb=20260819082617",
+      "url": "https://gearsofwar.fandom.com/wiki/Rusher",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Rusher.jpg"
+    },
+    {
+      "title": "Akila Grey",
+      "wikiTitle": "Akila Grey",
+      "collection": "characters",
+      "facts": {
+        "species": "Human",
+        "gender": "Female",
+        "occupation": "Gear",
+        "rank": "Captain",
+        "era": "Pendulum Wars, Locust War",
+        "affiliation": "Coalition of Ordered Governments, COG Army",
+        "hair": "Black",
+        "eyes": "Brown"
+      },
+      "categories": [
+        "26th Royal Tyran Infantry",
+        "COG",
+        "Characters",
+        "Female characters",
+        "Gear Soldier",
+        "Gears of War: E-Day",
+        "Locust War veterans",
+        "Pendulum Wars veterans"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/3/31/Akila_Grey.png/revision/latest?cb=20260826000056",
+      "url": "https://gearsofwar.fandom.com/wiki/Akila_Grey",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Akila-Grey.png"
+    },
+    {
+      "title": "Scorched Legion",
+      "wikiTitle": "Scorched Legion",
+      "collection": "enemies",
+      "facts": {},
+      "categories": [
+        "Gears of War: E-Day",
+        "Locust Horde"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/4/48/Scorched_Legion.png/revision/latest?cb=20260826185631",
+      "url": "https://gearsofwar.fandom.com/wiki/Scorched_Legion",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Scorched-Legion.png"
+    },
+    {
+      "title": "Russ Rustin",
+      "wikiTitle": "Russ Rustin",
+      "collection": "characters",
+      "facts": {
+        "birth": "Before Emergence Day",
+        "species": "Human",
+        "gender": "Male",
+        "hair": "Black",
+        "eyes": "Brown",
+        "cyber": "4 prosthetic fingers on right hand",
+        "occupation": "Quartermaster",
+        "rank": "Sergeant Major",
+        "era": "Pendulum Wars, Locust War",
+        "notable": "Redesigned the Gnasher Shotgun with Adam Fenix, Creator of the Chainsaw Lancer Prototype",
+        "affiliation": "Coalition of Ordered Governments, *Coalition of Ordered Governments Army"
+      },
+      "categories": [
+        "COG",
+        "Characters",
+        "Gear Soldier",
+        "Gears of War: E-Day",
+        "Male characters",
+        "Pendulum Wars veterans"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/b/b3/SergeantMajorRustin.jpg/revision/latest?cb=20260902063023",
+      "url": "https://gearsofwar.fandom.com/wiki/Russ_Rustin",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Russ-Rustin.jpg"
+    },
+    {
+      "title": "Concussion Grenade",
+      "wikiTitle": "Concussion Grenade",
+      "collection": "items",
+      "facts": {
+        "manufacturer": "Coalition of Ordered Governments",
+        "type": "Anti-Personnel Grenade",
+        "size": "Small",
+        "era": "Pendulum Wars, Locust War",
+        "counterpart": "Frag Grenade, Smoke Grenade, Incendiary Grenade, Stim-Gas Grenade",
+        "affiliation": "Coalition of Ordered Governments, *NCOG Corps of Marines"
+      },
+      "categories": [
+        "Gears of War: E-Day",
+        "Gears of War: E-Day weapons",
+        "Weapons",
+        "Weapons of the Coalition of Ordered Governments"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/f/fe/E-DayConcussionNadeLoadout.jpg/revision/latest?cb=20260911013847",
+      "url": "https://gearsofwar.fandom.com/wiki/Concussion_Grenade",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Concussion-Grenade.jpg"
+    },
+    {
+      "title": "Marcus Michael Fenix",
+      "wikiTitle": "Marcus Michael Fenix",
+      "collection": "characters",
+      "facts": {
+        "homeland": "Ephyra, Tyrus",
+        "birth": "22 B.E.",
+        "rank": "Sergeant",
+        "species": "Human",
+        "gender": "Male",
+        "height": "6'1\" ft. (1.85 meters)",
+        "hair": "Gray (Formerly Black)",
+        "eyes": "Blue",
+        "era": "Pendulum WarsLocust WarStranded InsurgencyLambent PandemicOutsider MovementSwarm Invasion",
+        "notable": "Embry Star Recipient",
+        "family": "Adam Fenix - Father †, Elain Fenix - Mother †, (Unnamed) - Paternal Grandfather †, Roland Fenix - Paternal Great-Grandfather †, Anya Stroud - Wife †, Helena Stroud - Mother-in-law †, James Fenix - Son",
+        "affiliation": "COG, COG Army, *26th RTI, **Alpha-Five, **Omega-Two, **Delta-One, **Delta-Two"
+      },
+      "categories": [
+        "26th Royal Tyran Infantry",
+        "Articles to be cleaned up",
+        "COG",
+        "Characters",
+        "Gear Soldier",
+        "Locust War veterans",
+        "Male characters",
+        "Pendulum Wars veterans",
+        "Slab Prisoners",
+        "Swarm War veterans",
+        "Tyran"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/0/0b/G5MarcusRender.png/revision/latest?cb=20210717205425",
+      "url": "https://gearsofwar.fandom.com/wiki/Marcus_Michael_Fenix",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Marcus-Michael-Fenix.png"
+    },
+    {
+      "title": "Dominic Santiago",
+      "wikiTitle": "Dominic Santiago",
+      "collection": "characters",
+      "facts": {
+        "homeland": "Ephyra, Tyrus",
+        "birth": "Brume, 21 B.E.",
+        "death": "Bloom, 17 A.E.",
+        "rank": "Private",
+        "occupation": "Former Auto-mechanic",
+        "species": "Human",
+        "gender": "Male",
+        "height": "6'0\" ft. (1.83 meters)",
+        "weapons": "Commando Knife",
+        "hair": "Black",
+        "eyes": "Brown",
+        "era": "Pendulum Wars, Locust War, Stranded Insurgency, Lambent Pandemic",
+        "notable": "Awarded the Embry Star for his actions at Operation Leveler, Experienced Commando, Fourth-generation Gear, Hero of Timgad",
+        "family": "Eduardo Santiago - Father †, Eva Santiago - Mother †, Carlos Santiago - Brother †, Rosa Santiago - Paternal Aunt †, Maria Santiago - Wife †, Mr. Flores - Father-in-law †, Mrs. Flores - Mother-in-law †, Benedicto Santiago",
+        "affiliation": "COG"
+      },
+      "categories": [
+        "26th Royal Tyran Infantry",
+        "COG",
+        "Characters",
+        "Commando",
+        "Gear Soldier",
+        "Locust War veterans",
+        "Male characters",
+        "Pendulum Wars veterans",
+        "Stubs",
+        "Tyran"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/8/87/Dom_edit.jpg/revision/latest?cb=20121208203222",
+      "url": "https://gearsofwar.fandom.com/wiki/Dominic_Santiago",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Dominic-Santiago.jpg"
+    },
+    {
+      "title": "King Raven",
+      "wikiTitle": "King Raven",
+      "collection": "items",
+      "facts": {
+        "manufacturer": "Coalition of Ordered Governments",
+        "model": "Helicopter",
+        "class": "Gunship",
+        "speed": "180 kph",
+        "engine": "Coaxial Rotors",
+        "hull": "Medium",
+        "armament": "*Frontal Machine Gun, Frontal Chain Guns, Rocket Pods, Missile Launchers",
+        "equipment": "UV-filtered Searchlight",
+        "crew": "*One pilot, One co-pilot, One crew chief",
+        "capacity": "4-6 Gears",
+        "role": "*Assault, Air strikes",
+        "era": "*Pendulum Wars, Locust War, Swarm Invasion",
+        "affiliation": "*Coalition of Ordered Governments, *Coalition of Ordered Governments Air Corps"
+      },
+      "categories": [
+        "COG",
+        "Coalition of Ordered Governments Air Corps",
+        "Vehicles"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/f/f9/Kingravemdp3.jpg/revision/latest?cb=20130209003253",
+      "url": "https://gearsofwar.fandom.com/wiki/King_Raven",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/King-Raven.jpg"
+    },
+    {
+      "title": "Emergence Day",
+      "wikiTitle": "Emergence Day",
+      "collection": "enemies",
+      "facts": {
+        "next": "Emergence in Jannermont",
+        "conflict": "Locust War",
+        "date": "Bounty 0 A.E.",
+        "place": "Every major city on Sera",
+        "result": "Major Locust Strategic Victory, 25% of the Human population wiped out, Beginning of the Locust War",
+        "side1": "25px COG25px UIR",
+        "side2": "25px Locust Horde",
+        "commanders1": "Council of Sovereigns, *Chairman Tomas Dalyell, *Deputy Chairman Richard Prescott, Coalition High Command, *Chief of the COG Defense Staff General Bardry Salaman, *Colonel Victor Hoffman, *Lieutenant Anya Stroud, Gorasni",
+        "commanders2": "Locust Council, *Queen Myrrah, *Ukkon, Locust Army, *Uzil RAAM, *Zamil Karn, *Svore Vraahk, *Krav Jermad, *Vold Sraak †, Trinity of Worms, *Ketor Vrol, *Acolyte Skorge",
+        "forces1": "COG Armed Forces, Gorasni Armed Forces",
+        "forces2": "Locust Horde, Hollow Creatures",
+        "casual1": "25% of total human population, *Billions of civilians and personnel in the first 26 hours, *Eight million Gorasni",
+        "casual2": "Unknown, probably light, Vold Sraak (Executed by RAAM in Jannermont)"
+      },
+      "categories": [
+        "Battles",
+        "Events",
+        "Locust Horde military victories"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/5/55/Gearse-day.jpg/revision/latest?cb=20240609191148",
+      "url": "https://gearsofwar.fandom.com/wiki/Emergence_Day",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Emergence-Day.jpg"
+    },
+    {
+      "title": "Augustus Cole",
+      "wikiTitle": "Augustus Cole",
+      "collection": "characters",
+      "facts": {
+        "homeland": "Hanover, Tyrus",
+        "birth": "Before Emergence Day",
+        "occupation": "Thrashball Player for the Eagles, Thrashball Player for the Hanover Cougars, President of the Coalition Thrashball League",
+        "rank": "Private",
+        "species": "Human",
+        "gender": "Male",
+        "height": "6'4\" ft.",
+        "weight": "230 lbs.",
+        "hair": "Black (Greying)",
+        "era": "Pendulum Wars, Locust War, Stranded Insurgency, Lambent Pandemic, Interwar Period, Outsider Movement, Swarm Invasion",
+        "family": "Mr. Cole - Father †, Mrs. Cole - Mother †, (Unammed) - Wife, Hana Cole - Daughter",
+        "affiliation": "COG, COG Army, *Alpha Squad, *Delta-One, *Foxtrot-Six, *Kilo Squad, *Sigma-One"
+      },
+      "categories": [
+        "Articles needing citations",
+        "COG",
+        "Characters",
+        "Gear Soldier",
+        "Locust War veterans",
+        "Male characters",
+        "Stubs",
+        "Swarm War veterans",
+        "Thrashball Players",
+        "Tyran"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/e/eb/G5ColeRender.png/revision/latest?cb=20210717205203",
+      "url": "https://gearsofwar.fandom.com/wiki/Augustus_Cole",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Augustus-Cole.png"
+    },
+    {
       "title": "MX8 Snub Pistol",
       "wikiTitle": "MX8 Snub Pistol",
       "collection": "items",
@@ -37,7 +668,9 @@
         "Weapons",
         "Weapons of the Coalition of Ordered Governments"
       ],
-      "url": "https://gearsofwar.fandom.com/wiki/MX8_Snub_Pistol"
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/7/7a/Gow-3-snub-pistol.jpeg/revision/latest?cb=20120429113949",
+      "url": "https://gearsofwar.fandom.com/wiki/MX8_Snub_Pistol",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/MX8-Snub-Pistol.jpeg"
     },
     {
       "title": "Gnasher Shotgun",
@@ -71,7 +704,9 @@
         "Weapons",
         "Weapons of the Coalition of Ordered Governments"
       ],
-      "url": "https://gearsofwar.fandom.com/wiki/Gnasher_Shotgun"
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/3/33/UEGnasherTransparent.png/revision/latest?cb=20160325144038",
+      "url": "https://gearsofwar.fandom.com/wiki/Gnasher_Shotgun",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Gnasher-Shotgun.png"
     },
     {
       "title": "Longshot Sniper Rifle",
@@ -106,7 +741,9 @@
         "Weapons",
         "Weapons of the Coalition of Ordered Governments"
       ],
-      "url": "https://gearsofwar.fandom.com/wiki/Longshot_Sniper_Rifle"
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/a/a4/NewLongShotRender.png/revision/latest?cb=20130310015515",
+      "url": "https://gearsofwar.fandom.com/wiki/Longshot_Sniper_Rifle",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Longshot-Sniper-Rifle.png"
     },
     {
       "title": "Frag Grenade",
@@ -138,7 +775,9 @@
         "Weapons of the Locust Horde",
         "Weapons of the Swarm"
       ],
-      "url": "https://gearsofwar.fandom.com/wiki/Frag_Grenade"
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/7/7b/Gow-3-frag.jpeg/revision/latest?cb=20120429152459",
+      "url": "https://gearsofwar.fandom.com/wiki/Frag_Grenade",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Frag-Grenade.jpeg"
     },
     {
       "title": "Torque Bow",
@@ -175,7 +814,9 @@
         "Weapons of the Locust Horde",
         "Weapons of the Swarm"
       ],
-      "url": "https://gearsofwar.fandom.com/wiki/Torque_Bow"
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/7/7c/Gow-torquebow.jpg/revision/latest?cb=20120416204443",
+      "url": "https://gearsofwar.fandom.com/wiki/Torque_Bow",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Torque-Bow.jpg"
     },
     {
       "title": "Troika Heavy Machine Gun",
@@ -208,7 +849,9 @@
         "Weapons",
         "Weapons of the Locust Horde"
       ],
-      "url": "https://gearsofwar.fandom.com/wiki/Troika_Heavy_Machine_Gun"
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/5/57/Troikaturretqk6.jpg/revision/latest?cb=20090112232351",
+      "url": "https://gearsofwar.fandom.com/wiki/Troika_Heavy_Machine_Gun",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Troika-Heavy-Machine-Gun.jpg"
     },
     {
       "title": "Chainsaw Bayonet",
@@ -240,33 +883,9 @@
         "Weapons",
         "Weapons of the Coalition of Ordered Governments"
       ],
-      "url": "https://gearsofwar.fandom.com/wiki/Chainsaw_Bayonet"
-    },
-    {
-      "title": "Gut-Puncher Grenade Launcher",
-      "wikiTitle": "Gut-Puncher Grenade Launcher",
-      "collection": "items",
-      "facts": {
-        "manufacturer": "Coalition of Ordered Governments",
-        "type": "Under-barrel Grenade Launcher, Heavy Belt-fed Grenade Launcher",
-        "size": "Small (Under-barrel version), Medium (Heavy version)",
-        "magazine": "1 Grenade (Under-barrel variant), 4 Grenades (Heavy variant)",
-        "fire": "Single Shot",
-        "ammotype": "Armor-Piercing Grenade",
-        "accuracy": "Accurate at Close Range",
-        "counterpart": "Boomshot Grenade Launcher, *Heavy Boomshot, Booshka Grenade Launcher, Stomper",
-        "era": "*Pendulum Wars, Locust War",
-        "affiliation": "Coalition of Ordered Governments",
-        "operation": "Pump-Action",
-        "maxammo": "12"
-      },
-      "categories": [
-        "Gears of War: E-Day",
-        "Gears of War: E-Day weapons",
-        "Weapons",
-        "Weapons of the Coalition of Ordered Governments"
-      ],
-      "url": "https://gearsofwar.fandom.com/wiki/Gut-Puncher_Grenade_Launcher"
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/9/9c/Gow-3-lancer-blueprint.png/revision/latest?cb=20120501091932",
+      "url": "https://gearsofwar.fandom.com/wiki/Chainsaw_Bayonet",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Chainsaw-Bayonet.png"
     },
     {
       "title": "Hammerburst Assault Rifle",
@@ -299,7 +918,9 @@
         "Weapons",
         "Weapons of the Locust Horde"
       ],
-      "url": "https://gearsofwar.fandom.com/wiki/Hammerburst_Assault_Rifle"
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/1/16/UEHammyTransparent.png/revision/latest?cb=20160313045029",
+      "url": "https://gearsofwar.fandom.com/wiki/Hammerburst_Assault_Rifle",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Hammerburst-Assault-Rifle.png"
     },
     {
       "title": "Mark 1 Lancer Assault Rifle",
@@ -333,7 +954,9 @@
         "Weapons",
         "Weapons of the Coalition of Ordered Governments"
       ],
-      "url": "https://gearsofwar.fandom.com/wiki/Mark_1_Lancer_Assault_Rifle"
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/5/52/Gow-3-retrolancer.jpeg/revision/latest?cb=20120419173716",
+      "url": "https://gearsofwar.fandom.com/wiki/Mark_1_Lancer_Assault_Rifle",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Mark-1-Lancer-Assault-Rifle.jpeg"
     },
     {
       "title": "Vulcan Gatling Gun",
@@ -363,7 +986,9 @@
         "Weapons",
         "Weapons of the Coalition of Ordered Governments"
       ],
-      "url": "https://gearsofwar.fandom.com/wiki/Vulcan_Gatling_Gun"
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/2/22/Gow-3-vulcan.jpeg/revision/latest?cb=20120429112338",
+      "url": "https://gearsofwar.fandom.com/wiki/Vulcan_Gatling_Gun",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Vulcan-Gatling-Gun.jpeg"
     },
     {
       "title": "Breechshot",
@@ -392,7 +1017,9 @@
         "Weapons",
         "Weapons of the Locust Horde"
       ],
-      "url": "https://gearsofwar.fandom.com/wiki/Breechshot"
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/a/a3/Breechshot_render.jpg/revision/latest?cb=20130207154034",
+      "url": "https://gearsofwar.fandom.com/wiki/Breechshot",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Breechshot.jpg"
     },
     {
       "title": "Commando Knife",
@@ -417,168 +1044,2645 @@
         "Weapons",
         "Weapons of the Coalition of Ordered Governments"
       ],
-      "url": "https://gearsofwar.fandom.com/wiki/Commando_Knife"
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/b/b4/COGCommandoKnife.png/revision/latest?cb=20210706201503",
+      "url": "https://gearsofwar.fandom.com/wiki/Commando_Knife",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Commando-Knife.png"
     },
     {
-      "title": "Chainsaw Lancer Prototype",
-      "wikiTitle": "Chainsaw Lancer Prototype",
-      "collection": "items",
-      "facts": {
-        "manufacturer": "Coalition of Ordered Governments",
-        "model": "Mark 1",
-        "type": "Assault Rifle",
-        "fire": "Full Auto",
-        "magazine": "60",
-        "maxammo": "600",
-        "era": "Locust War",
-        "counterwep": "Hammerburst Assault Rifle",
-        "affiliation": "Coalition of Ordered Governments, Coalition of Ordered Governments Army"
-      },
+      "title": "The Armored Prayer Bar",
+      "wikiTitle": "The Armored Prayer Bar",
+      "collection": "regions",
+      "facts": {},
       "categories": [
         "Gears of War: E-Day",
-        "Gears of War: E-Day weapons",
-        "Weapons",
-        "Weapons of the Coalition of Ordered Governments"
+        "Locations"
       ],
-      "url": "https://gearsofwar.fandom.com/wiki/Chainsaw_Lancer_Prototype"
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/8/8a/The_Armored_Prayer_Bar.png/revision/latest?cb=20260610211532",
+      "url": "https://gearsofwar.fandom.com/wiki/The_Armored_Prayer_Bar",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/The-Armored-Prayer-Bar.png"
     },
     {
-      "title": "Incinerator Shotgun",
-      "wikiTitle": "Incinerator Shotgun",
-      "collection": "items",
+      "title": "Vraahk",
+      "wikiTitle": "Vraahk",
+      "collection": "enemies",
       "facts": {
-        "manufacturer": "Locust Horde, Scorched Legion",
-        "type": "Shotgun",
-        "magazine": "3",
-        "maxammo": "12",
-        "range": "Short",
-        "era": "Locust War",
-        "counterwep": "Gnasher Shotgun",
-        "affiliation": "Locust Horde",
-        "ammotype": "Imulsion"
-      },
-      "categories": [
-        "Gears of War: E-Day",
-        "Gears of War: E-Day weapons",
-        "Weapons",
-        "Weapons of the Locust Horde"
-      ],
-      "url": "https://gearsofwar.fandom.com/wiki/Incinerator_Shotgun"
-    },
-    {
-      "title": "Gorehook",
-      "wikiTitle": "Gorehook",
-      "collection": "items",
-      "facts": {
-        "manufacturer": "Locust Horde",
-        "type": "Harpoon Launcher",
-        "magazine": "10",
-        "range": "Short",
-        "era": "Locust War",
-        "affiliation": "Locust Horde",
-        "size": "Large",
-        "ammotype": "Harpoons"
-      },
-      "categories": [
-        "Gears of War: E-Day",
-        "Gears of War: E-Day weapons",
-        "Weapons",
-        "Weapons of the Locust Horde"
-      ],
-      "url": "https://gearsofwar.fandom.com/wiki/Gorehook"
-    },
-    {
-      "title": "Striga Pistol",
-      "wikiTitle": "Striga Pistol",
-      "collection": "items",
-      "facts": {
-        "manufacturer": "Locust Horde, Scorched Legion",
-        "type": "Pistol",
-        "magazine": "3 (27 spikes)",
-        "maxammo": "12 (108 spikes)",
-        "range": "Short",
-        "era": "Locust War",
-        "affiliation": "Locust Horde",
-        "size": "Small",
-        "ammotype": "Spikes",
-        "fire": "Burst-fire",
-        "counterpart": "Boltok Pistol, Gorgon Submachine Gun",
-        "counterwep": "MX8 Snub Pistol"
-      },
-      "categories": [
-        "Gears of War: E-Day",
-        "Gears of War: E-Day weapons",
-        "Weapons",
-        "Weapons of the Locust Horde"
-      ],
-      "url": "https://gearsofwar.fandom.com/wiki/Striga_Pistol"
-    },
-    {
-      "title": "Ripper Light Machine Gun",
-      "wikiTitle": "Ripper Light Machine Gun",
-      "collection": "items",
-      "facts": {
-        "manufacturer": "Locust Horde",
-        "type": "Light Machine Gun",
-        "magazine": "70 (35 per magazine)",
-        "range": "Medium",
-        "era": "Locust War",
-        "affiliation": "Locust Horde",
-        "size": "Medium",
-        "fire": "Full Auto",
-        "maxammo": "210",
-        "rate of fire": "Variable",
-        "accuracy": "Medium"
-      },
-      "categories": [
-        "Gears of War: E-Day",
-        "Gears of War: E-Day weapons",
-        "Weapons",
-        "Weapons of the Locust Horde"
-      ],
-      "url": "https://gearsofwar.fandom.com/wiki/Ripper_Light_Machine_Gun"
-    },
-    {
-      "title": "Heavy Boomshot",
-      "wikiTitle": "Heavy Boomshot",
-      "collection": "items",
-      "facts": {
-        "manufacturer": "Locust Horde",
-        "type": "Heavy Grenade Launcher",
-        "size": "Large",
-        "magazine": "9",
-        "ammotype": "Cluster Grenade",
-        "range": "Short-Medium",
-        "era": "Locust War",
+        "homeland": "Nexus, Inner Hollow",
+        "birth": "Before Emergence Day",
+        "rank": "Svore",
+        "species": "Locust Drone",
+        "gender": "Male",
+        "era": "Lambent War, Locust War",
         "affiliation": "Locust Horde"
       },
       "categories": [
+        "Characters",
         "Gears of War: E-Day",
-        "Gears of War: E-Day weapons",
-        "Weapons",
-        "Weapons of the Locust Horde"
+        "Lambent War Veterans",
+        "Locust Characters",
+        "Locust Horde",
+        "Locust Soldier",
+        "Locust War veterans",
+        "Male characters"
       ],
-      "url": "https://gearsofwar.fandom.com/wiki/Heavy_Boomshot"
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/d/d2/Svore_Vraahk.png/revision/latest?cb=20260827001843",
+      "url": "https://gearsofwar.fandom.com/wiki/Vraahk",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Vraahk.png"
     },
     {
-      "title": "Concussion Grenade",
-      "wikiTitle": "Concussion Grenade",
+      "title": "Mark 2 Lancer Assault Rifle",
+      "wikiTitle": "Mark 2 Lancer Assault Rifle",
       "collection": "items",
       "facts": {
         "manufacturer": "Coalition of Ordered Governments",
-        "type": "Anti-Personnel Grenade",
-        "size": "Small",
-        "era": "Pendulum Wars, Locust War",
-        "counterpart": "Frag Grenade, Smoke Grenade, Incendiary Grenade, Stim-Gas Grenade",
-        "affiliation": "Coalition of Ordered Governments, *NCOG Corps of Marines"
+        "model": "Mark 2",
+        "type": "Automatic Assault Rifle",
+        "size": "Medium",
+        "damage per hit": "Low",
+        "magazine": "Varies, 60 rounds in GOW1, GOW3 & GOWJ, 50 rounds in GOW2 & GOW4, 40 rounds in Gears 5",
+        "maxammo": "Varies, 660 rounds in GOW1, 550 rounds in GOW2 & GOW4, 420 rounds in GOW3, GOWJ, 520 rounds in Gears 5",
+        "fire": "Automatic",
+        "ammotype": "Cartridge",
+        "operation": "Gas",
+        "rate of fire": "900/M (GOW1 & GOWJ), 500/M (GOW2 & GOW3), 600/M (GOW4 & GOW5)",
+        "accuracy": "Medium-High",
+        "range": "Medium",
+        "era": "*Locust War, Lambent Pandemic, Swarm Invasion",
+        "counterpart": "*Mk 1 Lancer Assault Rifle, Mk 3 Lancer Assault Rifle, *Lancer GL Assault Rifle, Custom Lancer",
+        "counterwep": "*Hammerburst Assault Rifle, Hammerburst II",
+        "affiliation": "*Coalition of Ordered Governments, *Coalition of Ordered Governments Army, Lambent, Locust Horde, Stranded, Outsiders, Swarm"
       },
       "categories": [
-        "Gears of War: E-Day",
-        "Gears of War: E-Day weapons",
+        "Articles that need Gearsify-ing",
+        "Articles with Canonical Conflicts",
+        "Gears of War: Judgment weapons",
+        "Gears of War 2 weapons",
+        "Gears of War 3 weapons",
+        "Gears of War 4 weapons",
+        "Gears of War weapons",
         "Weapons",
         "Weapons of the Coalition of Ordered Governments"
       ],
-      "url": "https://gearsofwar.fandom.com/wiki/Concussion_Grenade"
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/a/a9/Gears_4_Lancer_Mk2.png/revision/latest?cb=20190911220038",
+      "url": "https://gearsofwar.fandom.com/wiki/Mark_2_Lancer_Assault_Rifle",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Mark-2-Lancer-Assault-Rifle.png"
+    },
+    {
+      "title": "Drone",
+      "wikiTitle": "Drone",
+      "collection": "enemies",
+      "facts": {
+        "homeland": "Mount Kadar, Tyrus, Nexus, Inner Hollow",
+        "species": "Locust",
+        "gender": "Male",
+        "height": "6'7\" ft. (Average)",
+        "weight": "265 lbs (Average)",
+        "equipment": "*Drone Armor",
+        "era": "Pendulum Wars, Lambent War, Locust War, Lambent Pandemic, Swarm Invasion",
+        "affiliation": "Locust Horde, Queen's Guard, Savage Locust, Bloodied Vanguard, Swarm",
+        "body color": "Grey skin with black scales",
+        "rank": "Standard Infantry",
+        "types": "Cyclops, Bolter, Sniper Drone, Beast Rider",
+        "notable": "Genetically altered humans created by Niles Samson, Used to mate with Berserkers for reproduction, Fearless in any situation, Unmatched loyalty to Queen Myrrah"
+      },
+      "categories": [
+        "Characters",
+        "Creatures in Gears Tactics",
+        "Creatures in Gears of War",
+        "Creatures in Gears of War: Judgment",
+        "Creatures in Gears of War 2",
+        "Creatures in Gears of War 3",
+        "Creatures in RAAM's Shadow",
+        "Locust Horde",
+        "Locust Soldier",
+        "Male characters",
+        "The Swarm"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/a/a8/Locustdrone.png/revision/latest?cb=20200318204634",
+      "url": "https://gearsofwar.fandom.com/wiki/Drone",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Drone.png"
+    },
+    {
+      "title": "Boomer",
+      "wikiTitle": "Boomer",
+      "collection": "enemies",
+      "facts": {
+        "homeland": "Mount Kadar, TyrusNexus, Inner Hollow",
+        "species": "Locust",
+        "gender": "Male",
+        "height": "8'0\" ft. (Average)",
+        "eyes": "Black",
+        "weapons": "*Boomshot Grenade Launcher, Butcher Cleaver, Digger Launcher, Gorehook, Heavy Boomshot, Mulcher, Scorcher",
+        "equipment": "*Boomer Armor, Boomshield (Maulers only), Thumper (Tremors only)",
+        "era": "Pendulum Wars, Lambent War, Locust War, Lambent Invasion",
+        "types": "Butcher, Flame Boomer, Flayer, Grinder, Mauler, *Mauler Elite, Savage Boomer, Tremor",
+        "affiliation": "Locust Horde, Bloodied Vanguard, Savage Locust",
+        "body color": "Grey skin",
+        "notable": "Large size, Physically powerful, Dimwitted and mentally degraded",
+        "rank": "Heavy Shock Troops"
+      },
+      "categories": [
+        "Characters",
+        "Creatures in Gears Tactics",
+        "Creatures in Gears of War",
+        "Creatures in Gears of War: Judgment",
+        "Creatures in Gears of War 2",
+        "Creatures in Gears of War 3",
+        "Creatures in RAAM's Shadow",
+        "Locust Soldier",
+        "Male characters",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/3/3f/Boomer_GoWUE.jpg/revision/latest?cb=20210717082006",
+      "url": "https://gearsofwar.fandom.com/wiki/Boomer",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Boomer.jpg"
+    },
+    {
+      "title": "Corpser",
+      "wikiTitle": "Corpser",
+      "collection": "enemies",
+      "facts": {
+        "homeland": "Hollow",
+        "species": "Corpser",
+        "height": "36'0\" ft. (Average)",
+        "eyes": "Orange",
+        "body color": "Grey/White skin",
+        "weapons": "*Claws, Mass, Corpser Mine Layer (optional)",
+        "equipment": "*Armor",
+        "era": "*Lambent War, Locust War, Lambent Pandemic",
+        "types": "*Shibboleth, Corpser Adolescent, Corpser Hatchling",
+        "notable": "*Dug Locust Tunnels, Extremely Durable, High Intelligence, Weaponised and Engineered by Ukkon",
+        "affiliation": "*Locust Horde",
+        "rank": "Logistical Support"
+      },
+      "categories": [
+        "Articles that need Gearsify-ing",
+        "Articles to be cleaned up",
+        "Characters",
+        "Creatures in Gears Tactics",
+        "Creatures in Gears of War",
+        "Creatures in Gears of War: Judgment",
+        "Creatures in Gears of War 2",
+        "Creatures in Gears of War 3",
+        "Creatures in RAAM's Shadow",
+        "Hollow Creatures",
+        "Locust Horde",
+        "Stubs",
+        "Victims of general RAAM"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/a/af/Corpserlocust.jpg/revision/latest?cb=20191025054922",
+      "url": "https://gearsofwar.fandom.com/wiki/Corpser",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Corpser.jpg"
+    },
+    {
+      "title": "Reaver",
+      "wikiTitle": "Reaver",
+      "collection": "enemies",
+      "facts": {
+        "homeland": "Hollow",
+        "species": "Reaver",
+        "height": "10 feet",
+        "length": "10-15 feet",
+        "eyes": "White/Yellow",
+        "body color": "Black and Grey skin",
+        "weapons": "*Gunner (either Drone with Hammerburst or Theron Guard with Torque Bow), Reaver Rocket Launcher, Reaver Chain Gun (optional), Tentacles (for melee use on the ground)",
+        "mounts": "*One pilot, One gunner",
+        "era": "*Locust War, Lambent Pandemic",
+        "types": "*Hydra",
+        "notable": "*Has ability to fly, Can also be considered a vehicle, Extremely tough skin",
+        "affiliation": "*Locust Horde",
+        "rank": "Calvary, Fire Support, Air Superiority"
+      },
+      "categories": [
+        "Articles needing images",
+        "Articles that need Gearsify-ing",
+        "Articles to be cleaned up",
+        "Characters",
+        "Creatures in Gears Tactics",
+        "Creatures in Gears of War",
+        "Creatures in Gears of War: Judgment",
+        "Creatures in Gears of War 2",
+        "Creatures in Gears of War 3",
+        "Creatures in RAAM's Shadow",
+        "Hollow Creatures",
+        "Locust Horde vehicles",
+        "Stubs",
+        "Vehicles"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/a/a2/Reaverlocust.jpg/revision/latest?cb=20191025054525",
+      "url": "https://gearsofwar.fandom.com/wiki/Reaver",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Reaver.jpg"
+    },
+    {
+      "title": "Grenadier",
+      "wikiTitle": "Grenadier (Locust)",
+      "collection": "enemies",
+      "facts": {
+        "species": "Locust Drone",
+        "gender": "Male",
+        "homeland": "The Hollow",
+        "weapons": "Boltok Pistol, Frag Grenade, Gnasher Shotgun, Mark II Lancer Assault Rifle",
+        "types": "Flame Grenadier, Grenadier Elite, Savage Grenadier, Savage Grenadier Elite",
+        "notable": "Improved Physique over Drones",
+        "era": "Lambent War, Locust War, Lambent Pandemic",
+        "affiliation": "Locust Horde, Lambent, Queen's Guard",
+        "height": "6'8\" ft. (Average)",
+        "body color": "Grey skin with black scales",
+        "rank": "Assault Troops",
+        "death": "17 A.E"
+      },
+      "categories": [
+        "Articles needing images",
+        "Articles to be cleaned up",
+        "Characters",
+        "Creatures in Gears of War",
+        "Creatures in Gears of War: Judgment",
+        "Creatures in Gears of War 2",
+        "Creatures in Gears of War 3",
+        "Lambent Locust",
+        "Locust Horde",
+        "Locust Soldier",
+        "Male characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/4/48/Locustgrenadier.png/revision/latest?cb=20200715033844",
+      "url": "https://gearsofwar.fandom.com/wiki/Grenadier_(Locust)",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Grenadier-Locust-.png"
+    },
+    {
+      "title": "Active Reload",
+      "wikiTitle": "Active Reload",
+      "collection": "mechanics",
+      "facts": {},
+      "categories": [
+        "Gameplay"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/9/91/Sucsses.jpg/revision/latest?cb=20081216152031",
+      "url": "https://gearsofwar.fandom.com/wiki/Active_Reload",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Active-Reload.jpg"
+    },
+    {
+      "title": "Adam Jonathon Fenix",
+      "wikiTitle": "Adam Jonathon Fenix",
+      "collection": "characters",
+      "facts": {
+        "homeland": "Ephyra, Tyrus",
+        "birth": "c. 45 B.E.",
+        "death": "*Frost 10 A.E. (Faked), Bloom 17 A.E.",
+        "occupation": "Physicist for Defense Research Agency, Professor for La Croix University, Professor for East Barricade Academy, Scientist for the Locust Horde, Scientist for Azura Research Facility",
+        "rank": "Major (Retired)",
+        "hair": "Black (Balding and Graying)",
+        "species": "Human",
+        "gender": "Male",
+        "eyes": "Blue",
+        "era": "Pendulum Wars, Lambent War, Locust War, Lambent Pandemic",
+        "notable": "Awarded the Octus Medal, Created the COG version of the Hammer of Dawn, Knew of the Locust Horde before Emergence Day, Planned the Sinking of Jacinto and other key coastal cities, Saved Sera and the Human race, Taught at",
+        "family": "(Unnamed) - Father †, Roland Fenix - Paternal Grandfather †, Elain Fenix - Wife †, Marcus Fenix - Son, Anya Stroud - Daughter-in-law †, James Fenix - Grandson",
+        "affiliation": "COG, Defense Research Agency, COG Army"
+      },
+      "categories": [
+        "26th Royal Tyran Infantry",
+        "COG",
+        "Characters",
+        "Civilians",
+        "Gear Soldier",
+        "Male characters",
+        "Pendulum Wars veterans",
+        "Retired Gears",
+        "Scientist",
+        "Tyran"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/1/18/AFenix_edit.jpg/revision/latest?cb=20121208201816",
+      "url": "https://gearsofwar.fandom.com/wiki/Adam_Jonathon_Fenix",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Adam-Jonathon-Fenix.jpg"
+    },
+    {
+      "title": "Helen Cooper",
+      "wikiTitle": "Helen Cooper",
+      "collection": "characters",
+      "facts": {
+        "birth": "Before 100 B.E.",
+        "death": "Before 0 A.E.",
+        "rank": "Civilian Doctor",
+        "species": "Human",
+        "gender": "Female",
+        "notable": "Discovered the Lightmass Process, Allowed Imulsion to become a fuel source, Unintentionally caused global destruction"
+      },
+      "categories": [
+        "Characters",
+        "Civilians",
+        "Female characters",
+        "Scientist"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/0/00/Helencooperstatue.jpg/revision/latest?cb=20260814083200",
+      "url": "https://gearsofwar.fandom.com/wiki/Helen_Cooper",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Helen-Cooper.jpg"
+    },
+    {
+      "title": "Seeder",
+      "wikiTitle": "Seeder",
+      "collection": "enemies",
+      "facts": {
+        "homeland": "Hollow",
+        "rank": "*Artillery, Self-Propelled Anti-Aircraft Gun, Radio Jammer",
+        "species": "Locust",
+        "eyes": "Black",
+        "body color": "Grey/Pinkish skin",
+        "weapons": "*Nemacyst Spores",
+        "equipment": "Armor",
+        "mounts": "*One Nemacyst loader",
+        "era": "*Locust War, Lambent Pandemic",
+        "affiliation": "Locust Horde"
+      },
+      "categories": [
+        "Articles that need Gearsify-ing",
+        "Characters",
+        "Creatures in Gears Tactics",
+        "Creatures in Gears of War",
+        "Creatures in Gears of War 2",
+        "Creatures in RAAM's Shadow",
+        "Hollow Creatures",
+        "Locust Horde",
+        "Vehicles"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/8/8a/Seederlocust.jpg/revision/latest?cb=20210315160147",
+      "url": "https://gearsofwar.fandom.com/wiki/Seeder",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Seeder.jpg"
+    },
+    {
+      "title": "Nemacyst",
+      "wikiTitle": "Nemacyst",
+      "collection": "enemies",
+      "facts": {
+        "homeland": "Hollow",
+        "species": "Hollow Creature",
+        "height": "5-6 feet",
+        "body color": "Dark Grey skin",
+        "weapons": "Themselves",
+        "equipment": "*Armor",
+        "era": "Locust War",
+        "affiliation": "*Locust Horde",
+        "rank": "Explosive Ordnance"
+      },
+      "categories": [
+        "Characters",
+        "Creatures in Gears Tactics",
+        "Creatures in Gears of War",
+        "Creatures in Gears of War 2",
+        "Creatures in RAAM's Shadow",
+        "Gears of War: Judgment weapons",
+        "Gears of War 2 weapons",
+        "Gears of War 3 weapons",
+        "Gears of War weapons",
+        "Locust Horde",
+        "RAAM's Shadow",
+        "Weapons",
+        "Weapons of the Locust Horde"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/a/ad/Nemacyst_full.jpg/revision/latest?cb=20120704071154",
+      "url": "https://gearsofwar.fandom.com/wiki/Nemacyst",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Nemacyst.jpg"
+    },
+    {
+      "title": "The Art of Gears of War",
+      "wikiTitle": "The Art of Gears of War",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "Books",
+        "Gears of War",
+        "Real World articles",
+        "Stubs"
+      ],
+      "image": null,
+      "url": "https://gearsofwar.fandom.com/wiki/The_Art_of_Gears_of_War"
+    },
+    {
+      "title": "Maria Santiago",
+      "wikiTitle": "Maria Santiago",
+      "collection": "characters",
+      "facts": {
+        "homeland": "Mercy, Tyrus",
+        "birth": "21 B.E.",
+        "death": "2 Frost 14 A.E.",
+        "species": "Human",
+        "gender": "Female",
+        "height": "5'5\" ft.",
+        "hair": "Black",
+        "eyes": "Green",
+        "era": "Pendulum Wars, Locust War",
+        "notable": "Wife of Dominic Santiago, Prisoner of the Locust Horde, Victim of processing",
+        "family": "Mr. Flores - Father †, Mrs. Flores - Mother †, (Unnamed) - Paternal Great-grandfather †, Dominic Santiago - Husband †, Eduardo Santiago - Father-in-law †, Eva Santiago - Mother-in-law †, Carlos Santiago - Brother-in-law ",
+        "affiliation": "Stranded, COG (Formerly)"
+      },
+      "categories": [
+        "COG",
+        "Characters",
+        "Civilians",
+        "Female characters",
+        "Stranded",
+        "Tyran"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/c/c3/MariaSantiagoModel.jpg/revision/latest?cb=20110709174144",
+      "url": "https://gearsofwar.fandom.com/wiki/Maria_Santiago",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Maria-Santiago.jpg"
+    },
+    {
+      "title": "Armadillo",
+      "wikiTitle": "Armadillo",
+      "collection": "items",
+      "facts": {
+        "manufacturer": "Coalition of Ordered Governments",
+        "model": "APC",
+        "speed": "Unknown",
+        "hull": "Armored hull",
+        "armament": "*Side Guns, Rear Gun, 8 Grenade Launchers (depends on model)",
+        "crew": "*One driver, One gunner",
+        "capacity": "2-5 Gears",
+        "othersystems": "*Frontal shovel, JACK pod, Radio communications system, Headlights",
+        "role": "*Assault, Transportation",
+        "era": "*Pendulum Wars, Locust War, Lambent Pandemic",
+        "affiliation": "*Coalition of Ordered Governments, *Coalition of Ordered Governments Army, Stranded",
+        "length": "7 meters",
+        "width": "3.81 meters",
+        "height": "4 meters",
+        "passengers": "*One Gear squad, One Jack",
+        "engine": "Lightmass Engine"
+      },
+      "categories": [
+        "Articles needing citations",
+        "Articles that need Gearsify-ing",
+        "Articles to be cleaned up",
+        "COG",
+        "Coalition of Ordered Governments Army",
+        "Coalition of Ordered Governments Army ground vehicles",
+        "Stubs",
+        "Vehicles"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/2/2f/Gears_of_War_APC.jpg/revision/latest?cb=20100524020912",
+      "url": "https://gearsofwar.fandom.com/wiki/Armadillo",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Armadillo.jpg"
+    },
+    {
+      "title": "Centaur",
+      "wikiTitle": "Centaur",
+      "collection": "items",
+      "facts": {
+        "manufacturer": "*Coalition of Ordered Governments, *Speyer Metalworks",
+        "class": "Light Tank",
+        "speed": "High, with boost capabilities",
+        "engine": "Modified nitro-boosted imulsion engine",
+        "hull": "Reinforced armored hull",
+        "armament": "*High Velocity Main Cannon",
+        "crew": "*One driver, One gunner, One commander",
+        "capacity": "4 Gears",
+        "othersystems": "*Frontal shovel, Radio communications system, Headlights",
+        "role": "*Assault, Escort",
+        "era": "*Pendulum Wars, Locust War, Lambent Pandemic",
+        "affiliation": "*Coalition of Ordered Governments, *Coalition of Ordered Governments Army",
+        "length": "Unknown",
+        "height": "Several meters",
+        "passengers": "Unknown, but capable of holding at least four Gears and several Stranded"
+      },
+      "categories": [
+        "Coalition of Ordered Governments Army",
+        "Coalition of Ordered Governments Army ground vehicles",
+        "Vehicles"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/7/77/Gow3-centaur.jpeg/revision/latest?cb=20130308231934",
+      "url": "https://gearsofwar.fandom.com/wiki/Centaur",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Centaur.jpeg"
+    },
+    {
+      "title": "Ticker",
+      "wikiTitle": "Ticker",
+      "collection": "enemies",
+      "facts": {
+        "homeland": "The Hollow",
+        "death": "Possibly 17 A.E.",
+        "species": "Ticker",
+        "body color": "Grey skin",
+        "length": "2'0\" ft. (Average)",
+        "weapons": "*Back-Strapped Imulsion Explosive, Claws, Beak",
+        "equipment": "Back-Strapped Imulsion Explosive",
+        "era": "*Locust War, Lambent Pandemic",
+        "types": "*Wild Ticker",
+        "notable": "*Capable of Eating Weapons and Ammunition",
+        "affiliation": "*Locust Horde, *Savage Locust",
+        "rank": "Suicide Bomber"
+      },
+      "categories": [
+        "Articles that need Gearsify-ing",
+        "Characters",
+        "Creatures in Gears Tactics",
+        "Creatures in Gears of War: Judgment",
+        "Creatures in Gears of War 2",
+        "Creatures in Gears of War 3",
+        "Creatures in RAAM's Shadow",
+        "Hollow Creatures",
+        "Locust Horde",
+        "Weapons"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/b/bb/GOW_3_Ticker.png/revision/latest?cb=20111031211925",
+      "url": "https://gearsofwar.fandom.com/wiki/Ticker",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Ticker.png"
+    },
+    {
+      "title": "Tai Kaliso",
+      "wikiTitle": "Tai Kaliso",
+      "collection": "characters",
+      "facts": {
+        "homeland": "Irohma, South Islands",
+        "birth": "Before Emergence Day",
+        "death": "1 Frost 14 A.E.",
+        "rank": "Corporal",
+        "species": "Human",
+        "gender": "Male",
+        "height": "6'3\" ft.",
+        "hair": "Black",
+        "eyes": "Brown",
+        "era": "Pendulum Wars, Locust War",
+        "notable": "*Raised on South Islander Warrior Traditions, Possesses Tribal Tattoos, Veteran of Aspho Fields, Inspired Creation of Chainsaw Bayonet, Former POW to the Locust, Member of Zeta-Six, Went head to head with Skorge in a cha",
+        "family": "(Unnamed) - Grandfather (Deceased), (Unnamed) - Paternal Uncle (Deceased), Lahni Kaliso - Paternal Cousin",
+        "affiliation": "COG, COG Army, *Delta-One, *Zeta-Six, *Unidentified Squad"
+      },
+      "categories": [
+        "26th Royal Tyran Infantry",
+        "COG",
+        "Characters",
+        "Gear Soldier",
+        "Locust War veterans",
+        "Male characters",
+        "Pendulum Wars veterans",
+        "South Islanders"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/d/d0/Taihollowstorm-content.png/revision/latest?cb=20201124225915",
+      "url": "https://gearsofwar.fandom.com/wiki/Tai_Kaliso",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Tai-Kaliso.png"
+    },
+    {
+      "title": "Carlos Benedicto Santiago",
+      "wikiTitle": "Carlos Benedicto Santiago",
+      "collection": "characters",
+      "facts": {
+        "homeland": "Ephyra, Tyrus",
+        "birth": "22 B.E.",
+        "death": "15 Brume 2 B.E.",
+        "rank": "Private",
+        "species": "Human",
+        "gender": "Male",
+        "hair": "Black",
+        "eyes": "Brown",
+        "era": "Pendulum Wars",
+        "notable": "Awarded the Embry Star, Member of Alpha-Five, Member of 26th Royal Tyran infantry",
+        "family": "Eduardo Santiago - Father †, Eva Santiago - Mother †, Rosa Santiago - Paternal Aunt †, Dominic Santiago - Brother †, Maria Santiago - Sister-in-law †, Benedicto Santiago - Nephew †, Sylvia Santiago - Niece †",
+        "weapons": "Mark 1 Lancer Assault Rifle, *Gut-Puncher Grenade Launcher",
+        "affiliation": "Coalition of Ordered Governments, *Coalition of Ordered Governments Army, **Alpha-Five, **26th RTI"
+      },
+      "categories": [
+        "26th Royal Tyran Infantry",
+        "COG",
+        "Characters",
+        "Gear Soldier",
+        "Male characters",
+        "Pendulum Wars veterans",
+        "Tyran"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/9/99/Carlospicturelaugh.jpg/revision/latest?cb=20260621032152",
+      "url": "https://gearsofwar.fandom.com/wiki/Carlos_Benedicto_Santiago",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Carlos-Benedicto-Santiago.jpg"
+    },
+    {
+      "title": "Gears of War: Aspho Fields",
+      "wikiTitle": "Gears of War: Aspho Fields",
+      "collection": "regions",
+      "facts": {
+        "author": "Karen Traviss",
+        "artist": "*James Hawkins, Mike Buck",
+        "publisher": "*Del Rey Books (US), Orbit (UK)",
+        "availability": "Novel",
+        "date released": "28th October 2008",
+        "us price": "$15.00",
+        "uk price": "£6.99",
+        "isbn": "9781841497372",
+        "followed by": "Gears of War: Jacinto's Remnant"
+      },
+      "categories": [
+        "Books",
+        "Pages with reference errors",
+        "Real World articles"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/e/e5/Gears_of_War-_Aspho_Fields.png/revision/latest?cb=20150127030047",
+      "url": "https://gearsofwar.fandom.com/wiki/Gears_of_War%3A_Aspho_Fields",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Gears-of-War-Aspho-Fields.png"
+    },
+    {
+      "title": "Gears of War: Hollow",
+      "wikiTitle": "Gears of War: Hollow",
+      "collection": "regions",
+      "facts": {
+        "characters": "Damon Baird, Michael Barrick, Blake, Augustus Cole, Draper (Unnamed), Emma, Marcus Fenix, Gil Gonzalez, Victor Hoffman, Jace's Brother, Jace's Father, Jace's Mother, Jerry, Jonboy, Lily, Nash, Polanski, Richard Prescott,",
+        "creatures": "Bloodmount, Brumak, Corpser, Human, Kryll, Locust, *Beast Rider, *Drone, Nemacyst, Seeder, Wretch",
+        "events": "Locust War, *Mission to Montevado, *Mission to the Pirnah Badlands, *Siege of Jacinto",
+        "locations": "Tyrus, *Jacinto City, *Montevado",
+        "organizations": "Coalition of Ordered Governments, *Coalition of Ordered Governments Army, **Delta-One, Stranded",
+        "vehicles": "Centaur, *Centaur II-W080I, King Raven",
+        "technology": "Boomshot Grenade Launcher, Gnasher Shotgun, Hammerburst II, Hammer of Dawn, Lancer Assault Rifle, Snub Pistol",
+        "miscellanea": "COG Armor, COG Tag, Tyran"
+      },
+      "categories": [
+        "Books",
+        "Comic",
+        "Real World articles"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/b/b9/Hollow_Issue_one.jpg/revision/latest?cb=20090725103956",
+      "url": "https://gearsofwar.fandom.com/wiki/Gears_of_War%3A_Hollow",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Gears-of-War-Hollow.jpg"
+    },
+    {
+      "title": "Gears of War",
+      "wikiTitle": "Gears of War (film)",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "Gears of War series",
+        "Real World articles"
+      ],
+      "image": null,
+      "url": "https://gearsofwar.fandom.com/wiki/Gears_of_War_(film)"
+    },
+    {
+      "title": "Gears of War Soundtrack",
+      "wikiTitle": "Gears of War Soundtrack",
+      "collection": "regions",
+      "facts": {
+        "catalog": "SE-2035-2",
+        "composer": "Kevin Riepl",
+        "publisher": "Sumthing Else Music Works",
+        "performer": "Northwest Sinfonia",
+        "info": "1 CD - 28 Tracks",
+        "length": "69:20",
+        "releasedate": "July 31, 2007",
+        "price": "$13.99"
+      },
+      "categories": [
+        "Real World articles",
+        "Soundtracks"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/a/a2/200px-Gears-soundtrack-cover.jpg/revision/latest?cb=20081227180812",
+      "url": "https://gearsofwar.fandom.com/wiki/Gears_of_War_Soundtrack",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Gears-of-War-Soundtrack.jpg"
+    },
+    {
+      "title": "Gears of War 2 Soundtrack",
+      "wikiTitle": "Gears of War 2 Soundtrack",
+      "collection": "regions",
+      "facts": {
+        "catalog": "SE-2053-2",
+        "composer": "Steve Jablonsky",
+        "arranger": "Penka Kouneva, Danail Getz, Pieter Schlosser",
+        "publisher": "Sumthing Else Music Works",
+        "performer": "The Skywalker Symphony Orchestra, The Skywalker Chorus",
+        "info": "1 CD - 27 Tracks",
+        "length": "62:27",
+        "releasedate": "November 25, 2008",
+        "price": "$15.98 (CD), $9.99 (iTunes)"
+      },
+      "categories": [
+        "Real World articles",
+        "Soundtracks"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/2/27/200px-Gears_of_War_2_soundtrack.PNG/revision/latest?cb=20081227181358",
+      "url": "https://gearsofwar.fandom.com/wiki/Gears_of_War_2_Soundtrack",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Gears-of-War-2-Soundtrack.png"
+    },
+    {
+      "title": "Gears of War: Destroyed Beauty",
+      "wikiTitle": "Gears of War: Destroyed Beauty",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "Books",
+        "Real World articles"
+      ],
+      "image": null,
+      "url": "https://gearsofwar.fandom.com/wiki/Gears_of_War%3A_Destroyed_Beauty"
+    },
+    {
+      "title": "Beneath the Surface: An Inside Look at Gears of War 2",
+      "wikiTitle": "Beneath the Surface: An Inside Look at Gears of War 2",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "Books",
+        "Real World articles",
+        "Stubs"
+      ],
+      "image": null,
+      "url": "https://gearsofwar.fandom.com/wiki/Beneath_the_Surface%3A_An_Inside_Look_at_Gears_of_War_2"
+    },
+    {
+      "title": "Sniper",
+      "wikiTitle": "Sniper (Locust)",
+      "collection": "characters",
+      "facts": {
+        "homeland": "The Hollow",
+        "rank": "Sniper",
+        "species": "Locust Drone",
+        "gender": "Male",
+        "height": "6'7\" ft.",
+        "weapons": "*Longshot Sniper Rifle, Mortar, One-Shot",
+        "equipment": "*Sniper Goggles, Sniper Helmet, Drone Armor",
+        "era": "*Locust War, Lambent Pandemic",
+        "affiliation": "*Locust Horde",
+        "body color": "Grey skin with Black scales",
+        "notable": "Skilled with the Longshot, Unmatched patience unlike other Drones, Killed Anthony Carmine with a headshot while using the Longshot"
+      },
+      "categories": [
+        "Characters",
+        "Locust Soldier",
+        "Male characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/3/30/G5Sniper.jpg/revision/latest?cb=20210705021632",
+      "url": "https://gearsofwar.fandom.com/wiki/Sniper_(Locust)",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Sniper-Locust-.jpg"
+    },
+    {
+      "title": "Mad World",
+      "wikiTitle": "Mad World",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "Real World articles"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/c/cb/Gears_of_war_%28mad_world%29/revision/latest?cb=20130618154707",
+      "url": "https://gearsofwar.fandom.com/wiki/Mad_World",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Mad-World.png"
+    },
+    {
+      "title": "Allfathers",
+      "wikiTitle": "Allfathers",
+      "collection": "characters",
+      "facts": {},
+      "categories": [
+        "Allfathers",
+        "COG",
+        "Government",
+        "Organizations",
+        "Titles"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/9/93/Gears_5_Embry_statue.png/revision/latest?cb=20191003052911",
+      "url": "https://gearsofwar.fandom.com/wiki/Allfathers",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Allfathers.png"
+    },
+    {
+      "title": "Gears of War",
+      "wikiTitle": "Gears of War (franchise)",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "Gears 5",
+        "Gears of War",
+        "Gears of War 2",
+        "Gears of War 3",
+        "Gears of War 4",
+        "Real World articles"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/0/0e/LP2_Gears.png/revision/latest?cb=20220219003550",
+      "url": "https://gearsofwar.fandom.com/wiki/Gears_of_War_(franchise)",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Gears-of-War-franchise-.png"
+    },
+    {
+      "title": "Quentin Michaelson",
+      "wikiTitle": "Quentin Michaelson",
+      "collection": "characters",
+      "facts": {
+        "birth": "Before Emergence Day",
+        "death": "Bloom, 17 A.E.",
+        "rank": "*Captain, Head of the Navy",
+        "species": "Human",
+        "gender": "Male",
+        "hair": "Grey",
+        "eyes": "Blue",
+        "equipment": "*Binoculars, COG Armor, Combat boot, Captain's Log",
+        "vehicles": "*CNV Pomeroy, CNV Falconer, CNV Sovereign, Sea Raven",
+        "era": "*Pendulum Wars, Locust War, Lambent Pandemic",
+        "notable": "*Led the naval task force at Aspho Fields, In charge of counter piracy during Locust War, Became head of the COG Navy and Marine Corps after the Sinking of Jacinto",
+        "affiliation": "*Coalition of Ordered Governments, *Coalition of Ordered Governments Navy, **NCOG Corps of Marines"
+      },
+      "categories": [
+        "COG",
+        "COG Navy Personnel",
+        "Characters",
+        "Locust War veterans",
+        "Male characters",
+        "Pendulum Wars veterans"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/8/8e/Michaelson_Model1.jpg/revision/latest?cb=20211125123718",
+      "url": "https://gearsofwar.fandom.com/wiki/Quentin_Michaelson",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Quentin-Michaelson.jpg"
+    },
+    {
+      "title": "Kalona Eagles",
+      "wikiTitle": "Kalona Eagles",
+      "collection": "characters",
+      "facts": {},
+      "categories": [
+        "COG",
+        "Human Culture",
+        "Thrashball Teams"
+      ],
+      "image": null,
+      "url": "https://gearsofwar.fandom.com/wiki/Kalona_Eagles"
+    },
+    {
+      "title": "Jacob Monroe",
+      "wikiTitle": "Jacob Monroe",
+      "collection": "characters",
+      "facts": {
+        "birth": "Early Pendulum Wars",
+        "death": "Before Emergence Day",
+        "homeland": "Tyrus",
+        "rank": "Chairman",
+        "species": "Human",
+        "gender": "Male",
+        "era": "Golden AgePendulum Wars",
+        "notable": "*Early COG Chairman, Ordered opening of New Hope Research Facility to cure Rustlung, Shut down New Hope after Dr. Niles Samson's crimes came to light",
+        "affiliation": "Coalition of Ordered Governments"
+      },
+      "categories": [
+        "COG",
+        "Characters",
+        "Civilians",
+        "Male characters",
+        "Politicans"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/d/d1/Monroe.jpg/revision/latest?cb=20260810130833",
+      "url": "https://gearsofwar.fandom.com/wiki/Jacob_Monroe",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Jacob-Monroe.jpg"
+    },
+    {
+      "title": "Gill Gettner",
+      "wikiTitle": "Gill Gettner",
+      "collection": "characters",
+      "facts": {
+        "homeland": "Unknown",
+        "birth": "Unknown; Before Emergence Day",
+        "rank": "Major",
+        "species": "Human",
+        "gender": "Female",
+        "hair": "Blond",
+        "eyes": "Blue",
+        "weapons": "*Chain Gun",
+        "vehicles": "*King Raven, *KR Eight-Zero",
+        "era": "*Locust War, Lambent Pandemic",
+        "notable": "Highest ranking member of the COG Air Corps left by 10 A.E.",
+        "affiliation": "*Coalition of Ordered Governments, *Coalition of Ordered Governments Air Corps, **Butcherbird Squadron"
+      },
+      "categories": [
+        "COG",
+        "COG Air Corps Personnel",
+        "Characters",
+        "Female characters",
+        "Locust War veterans",
+        "Pilots"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/f/fa/EDayGillGettner.png/revision/latest?cb=20260612184234",
+      "url": "https://gearsofwar.fandom.com/wiki/Gill_Gettner",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Gill-Gettner.png"
+    },
+    {
+      "title": "Gears of War: Jacinto's Remnant",
+      "wikiTitle": "Gears of War: Jacinto's Remnant",
+      "collection": "regions",
+      "facts": {
+        "author": "*Karen Traviss",
+        "artist": "*James Hawkins, Mike Buck",
+        "publisher": "*Del Rey Books (US), Orbit (UK)",
+        "availability": "Novel",
+        "date released": "July 28th 2009",
+        "us price": "$15.00",
+        "uk price": "£6.99",
+        "isbn": "9780345499448",
+        "preceded by": "Gears of War: Aspho Fields",
+        "followed by": "Gears of War: Anvil Gate"
+      },
+      "categories": [
+        "Books",
+        "Pages with reference errors",
+        "Real World articles"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/4/45/Jacintos_Remnant_cover.jpg/revision/latest?cb=20150126074555",
+      "url": "https://gearsofwar.fandom.com/wiki/Gears_of_War%3A_Jacinto's_Remnant",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Gears-of-War-Jacinto-s-Remnant.jpg"
+    },
+    {
+      "title": "Gears of War: Barren",
+      "wikiTitle": "Gears of War: Barren",
+      "collection": "regions",
+      "facts": {
+        "author": "Joshua Ortega",
+        "artist": "Liam Sharp",
+        "publisher": "Wildstorm",
+        "availability": "Comic Story Arc",
+        "us price": "$3.99",
+        "uk price": "£3.60",
+        "date released": "July 23rd 2009",
+        "preceded by": "Gears of War: Hollow",
+        "followed by": "Gears of War: Dirty Little Secrets"
+      },
+      "categories": [
+        "Comic",
+        "Real World articles"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/5/5e/Barren_issue_nine.png/revision/latest?cb=20090725104225",
+      "url": "https://gearsofwar.fandom.com/wiki/Gears_of_War%3A_Barren",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Gears-of-War-Barren.png"
+    },
+    {
+      "title": "Comic Series",
+      "wikiTitle": "Comic Series",
+      "collection": "regions",
+      "facts": {
+        "publisher": "*Wildstorm / DC Comics, IDW Publishing (The Rise of RAAM, Hivebusters)",
+        "availability": "Comic Series",
+        "date released": "December 2008 -",
+        "us price": "$3.99",
+        "uk price": "£3.60",
+        "authors": "*Joshua Ortega, Mike Capps, Karen Traviss",
+        "artists": "*Liam Sharp, Leonardo Manco, Simon Bisley, Trevor Hairsine, Joel Gomez, Colin Wilson, Philip Tan, Julius Gopez, Pop Mhan, Pete Woods"
+      },
+      "categories": [
+        "Comic",
+        "Real World articles"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/b/b9/Hollow_Issue_one.jpg/revision/latest?cb=20090725103956",
+      "url": "https://gearsofwar.fandom.com/wiki/Comic_Series",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Comic-Series.jpg"
+    },
+    {
+      "title": "Stand-Alone Comic Issues",
+      "wikiTitle": "Stand-Alone Comic Issues",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "Comic",
+        "Real World articles"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/4/43/Day_One.jpg/revision/latest?cb=20110130211950",
+      "url": "https://gearsofwar.fandom.com/wiki/Stand-Alone_Comic_Issues",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Stand-Alone-Comic-Issues.jpg"
+    },
+    {
+      "title": "Gears of War: Book One",
+      "wikiTitle": "Gears of War: Book One",
+      "collection": "regions",
+      "facts": {
+        "author": "Joshua Ortega",
+        "artist": "Liam Sharp, Federico Dallocchio",
+        "publisher": "Wildstorm",
+        "availability": "Graphic Novel",
+        "isbn": "978-1-4012-2520-9",
+        "us price": "$19.99",
+        "uk price": "£6.99",
+        "date released": "October 21st 2009",
+        "followed by": "Gears of War: Book Two"
+      },
+      "categories": [
+        "Comic",
+        "Real World articles"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/8/81/Book_One.jpg/revision/latest?cb=20130111120446",
+      "url": "https://gearsofwar.fandom.com/wiki/Gears_of_War%3A_Book_One",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Gears-of-War-Book-One.jpg"
+    },
+    {
+      "title": "KR Eight-Zero",
+      "wikiTitle": "KR Eight-Zero",
+      "collection": "items",
+      "facts": {
+        "manufacturer": "Coalition of Ordered Governments",
+        "line": "King Raven",
+        "speed": "180 kph",
+        "engine": "Coaxial Rotors",
+        "armament": "Frontal Machine Gun, Chain Gun/Vulcan Gatling Gun attachments on the sides",
+        "hull": "Medium",
+        "crew": "One pilot: Maj. Gill Gettner, One co-pilot, One crew chief: Lt. Nat Barber, Specialist Daan Riggs",
+        "capacity": "12 Gears",
+        "role": "Assault, Carrier, Troop Transport",
+        "era": "Locust War, Lambent Pandemic",
+        "affiliation": "Coalition of Ordered Governments, *Coalition of Ordered Governments Air Corps"
+      },
+      "categories": [
+        "COG",
+        "Stubs",
+        "Vehicles"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/8/89/KR_Eight-Zero.png/revision/latest?cb=20120709192434",
+      "url": "https://gearsofwar.fandom.com/wiki/KR_Eight-Zero",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/KR-Eight-Zero.png"
+    },
+    {
+      "title": "Gears of War: Anvil Gate",
+      "wikiTitle": "Gears of War: Anvil Gate",
+      "collection": "regions",
+      "facts": {
+        "author": "*Karen Traviss",
+        "publisher": "*Del Rey Books (US), Orbit (UK)",
+        "availability": "Novel",
+        "date released": "31st August 2010",
+        "us price": "$15.00",
+        "uk price": "£6.99",
+        "preceded by": "Gears of War: Jacinto's Remnant",
+        "followed by": "Gears of War: Coalition's End",
+        "isbn": "9780345499455"
+      },
+      "categories": [
+        "Books",
+        "Real World articles"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/d/d6/Anvil_Gate.jpg/revision/latest?cb=20100608205957",
+      "url": "https://gearsofwar.fandom.com/wiki/Gears_of_War%3A_Anvil_Gate",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Gears-of-War-Anvil-Gate.jpg"
+    },
+    {
+      "title": "Gears of War 3",
+      "wikiTitle": "Gears of War 3",
+      "collection": "regions",
+      "facts": {
+        "characters": "Alan, Jason Almsted, Zoe Almsted, Amy, Damon Baird, Samantha Byrne, Samuel K. Byrne, Sheraya Byrne, Anthony Carmine, Benjamin Carmine, Clayton Carmine, Miles Carver, Anton Chambers, Augustus Cole, Cragen, Tomas Dalyell, ",
+        "creatures": "Bloodmount, Brumak, Corpser, Lambent, *Former, *Lambent Gunker, *Lambent Berserker, *Lambent Drone, *Lambent Drudge, *Lambent Leviathan, *Lambent Stalks, *Lambent Wretch, *Polyp, Locust, *Boomer, **Butcher, **Grinder, **",
+        "events": "Pendulum Wars, *Siege of Anvil Gate, Lambent Pandemic, *First Battle of New Jacinto, *Victory Day, **Mission to Hanover, **Battle of Cougars Stadium, **Attack on the Sovereign, **Battle of Centennial Bridge, **Battle of ",
+        "locations": "Sera, *Azura, **Acanthus Station, **Pinnacle Tower, **Rose Station, *Bridge of Sera, *Deadlands, *Kashkur, **Anvegad, **Anvegad Plains, **Anvil Gate, *Jacinto Maximum Security Prison, *Lesser Islands Chain, **Vectes, *Or",
+        "organizations": "Coalition of Ordered Governments, *Coalition of Ordered Governments Air Corps, *Coalition of Ordered Governments Army, **9th Division, **26th Royal Tyran Infantry, ***Connaught Platoon, **501st Legion, **Delta-One, **Ony",
+        "vehicles": "Armadillo, Assault Derrick, *Rig 314, Bartlett, Centaur, Gorasni Destroyer, King Raven, *KR Zero-One, *KR Zero-Three, *KR Zero-Six, *KR Seven-Zero, Mechanical Loader, Raven's Nest Class, *CNV Sovereign, Silverback, Subma",
+        "technology": "Boltok Pistol, Boom Shield, Boomshot Grenade Launcher, Butcher Cleaver, Digger Launcher, Frag Grenade, Gnasher Shotgun, Gorgon SMG, Hammerburst II, Hammer of Dawn, Mk 1 Lancer Assault Rifle, Mk 2 Lancer Assault Rifle, *C",
+        "miscellanea": "*A2897, Adam Fenix's data disk, Allfathers Trophy, COG Armor, COG Tag, Dispute, Fifth Dawn at Anvegad, Gorasni, Grayson Cup Championship, Hanover Times-Tribune, HMT, Imulsion, JACK (model), *JACK, Kashkuri, Octus Medal, "
+      },
+      "categories": [
+        "Games",
+        "Gears of War 3",
+        "Real World articles"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/d/dc/Gears_of_War_3_box_artwork.png/revision/latest?cb=20240610134243",
+      "url": "https://gearsofwar.fandom.com/wiki/Gears_of_War_3",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Gears-of-War-3.png"
+    },
+    {
+      "title": "Gears of War: Coalition's End",
+      "wikiTitle": "Gears of War: Coalition's End",
+      "collection": "regions",
+      "facts": {
+        "characters": "Ailsa, Alonzo, Rory Andresen, Robb Arden, Damon Baird, Nat Barber, Dan Barrett, Baz, Frederic Benten, William Berenz, Alex Brand, Samantha Byrne, Samuel Byrne, Sheraya Byrne, Clayton Carmine, Chalky, Chuck, Augustus Cole",
+        "creatures": "Cat, *Sosca, Cow, *Rose (Cow), Dog, *Mac, *Moss, Human, Lambent, *Lambent Bull, *Lambent Cat, *Lambent Dog, *Lambent Leviathan, *Lambent Stalk, *Polyp, Locust, *Berserker, *Boomer, *Drone, Sires, Ticker",
+        "events": "Lambent Pandemic, *Battle of Edlar Farm, *Battle of the Emerald Spar Platform, *Battle of Grid Echo-Five, *Battle of the Vectes Imulsion Field, *Vectes Imulsion Field Incident, *Meadow Skirmish, *Second Battle of New Jac",
+        "locations": "Abyssal trench, Emerald Spar Imulsion Platform, Ingarez, *Brabaio, Kashkur, *Anvegad, *Anvegad Plain, *Anvil Gate, Lesser Islands Chain, *Vectes, **Edlar Farm, **Jackson Farm, **Merris Farm, **Pelruan, **Vectes Imulsion ",
+        "organizations": "Coalition of Ordered Governments, *Chairman, *Coalition of Ordered Governments Army, **3rd Ephyran Engineers, **4th Ephyra Light Infantry, ***Bravo Company, ***Kilo Squad, **5th Kaian Grenadiers, **25th Sherrith Cavalry,",
+        "vehicles": "Armadillo, Assault Derrick, *Rig 314, Betancourt Star, C-One, Centaur, COG Frigate, *CNV Timgad, COG Destroyer, *CNV Audacious, *CNV Fenmont, *CNV Fort Andius, Gelen Class Frigate, *Nezark, Khimera, King Raven, *KR-239, ",
+        "technology": "Bolo Grenade, Gnasher Shotgun, Hammerburst Assault Rifle, Hammer of Dawn, JACK (model), *JACK, Longshot Sniper Rifle, Longspear, Mk 2 Lancer Assault Rifle",
+        "miscellanea": "A2897, COG Armor, COG Tag, Gorasni, Gorasni (language), Governor, Hanover Cougars, Imulsion, Operation Lifeboat, Pesan, Pesanga, Seasons on Sera, Sharks, Silver Age, Tyran, Tyran (language)"
+      },
+      "categories": [
+        "Books",
+        "Real World articles",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/3/3b/Gow-coalitions-end-cvr.jpg/revision/latest?cb=20110806030322",
+      "url": "https://gearsofwar.fandom.com/wiki/Gears_of_War%3A_Coalition's_End",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Gears-of-War-Coalition-s-End.jpg"
+    },
+    {
+      "title": "Gears of War: Book Two",
+      "wikiTitle": "Gears of War: Book Two",
+      "collection": "regions",
+      "facts": {
+        "author": "Joshua Ortega, Mike Capps",
+        "artist": "Liam Sharp, Leonardo Manco, Simon Bisley, Trevor Hairsine, Joel Gomez",
+        "publisher": "Wildstorm",
+        "availability": "Graphic Novel",
+        "us price": "$24.99",
+        "date released": "February 16th 2011",
+        "preceded by": "Gears of War: Book One",
+        "followed by": "Gears of War: Book Three"
+      },
+      "categories": [
+        "Comic",
+        "Real World articles"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/d/db/Book_Two.jpg/revision/latest?cb=20130111120204",
+      "url": "https://gearsofwar.fandom.com/wiki/Gears_of_War%3A_Book_Two",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Gears-of-War-Book-Two.jpg"
+    },
+    {
+      "title": "Books",
+      "wikiTitle": "Books",
+      "collection": "regions",
+      "facts": {
+        "author": "Karen Traviss, Aspho Fields, Jacinto's Remnant, Anvil Gate, Coalition's End, The Slab, Jason M. Hough, Ascendance, Bloodlines, Michael A. Stackpole, Ephyra Rising",
+        "publisher": "Del Ray Books, Aspho Fields, Jacinto's Remnant, Anvil Gate, Gallery Books, Coalition's End, The Slab, Titan Books, Ascendance, Bloodlines",
+        "availability": "Novel series",
+        "us price": "$15.00",
+        "uk price": "£6.99"
+      },
+      "categories": [
+        "Books",
+        "Real World articles"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/e/e5/Gears_of_War-_Aspho_Fields.png/revision/latest?cb=20150127030047",
+      "url": "https://gearsofwar.fandom.com/wiki/Books",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Books.png"
+    },
+    {
+      "title": "Gears of War: Exile",
+      "wikiTitle": "Gears of War: Exile",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "Games",
+        "Gears of War",
+        "Real World articles"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/b/b9/GoWexile.png/revision/latest?cb=20110530050807",
+      "url": "https://gearsofwar.fandom.com/wiki/Gears_of_War%3A_Exile",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Gears-of-War-Exile.png"
+    },
+    {
+      "title": "Gears of War: The Slab",
+      "wikiTitle": "Gears of War: The Slab",
+      "collection": "regions",
+      "facts": {
+        "characters": "J. Ademi, Aigle, Monro Alleyn, William Alva, Benjamin L. Amberley, Jay Assandris, Damon Baird, Esther Bakos, Nat Barber, Barry, Baz, Baz (JACK), Beresford, Jillian Beston, Julian Bissell, Brendan, Bradeley Campbell, Care",
+        "creatures": "Brumak, Corpser, Dog, *Jerry (Dog), Human, Kryll, Lambent, Locust, *Boomer, *Drone, Reaver, Sires, Ticker, Wretch",
+        "events": "Archipelago War, Locust War, *Battle of Ephyra, *Battle of Estana, *Battle on the Andius Highway, *Emergence Day, *Hammer of Dawn Counterattack, *Lightmass Offensive, *Raid on Ginnet Drive, *Raid on the CIC, *Siege of th",
+        "locations": "Azura, *Landa Tower, *Pinnacle Tower, Independent Republic of Furlin, Kashkur, Lesser Islands Chain, *Vectes, Pelles Republic, South Islands, *Arohma Island, Tyrus, *Endeavor Naval Shipyard, *Jacinto Plateau, **Andius, *",
+        "organizations": "Coalition of Ordered Governments, *Chairman, *Chief of the COG Defense Staff, *Coalition of Ordered Governments Air Corps, **802nd Raven Squadron, *Coalition of Ordered Governments Army, **4th Ephyra Light Infantry, **26",
+        "vehicles": "Armadillo, Centaur, CNV Kalona, King Raven, *KR One-One, *KR Four-Nine, *KR Six-One, *KR Six-Two, *KR Six-Four, *KR Seven-Five, *KR Seven-Seven, *KR Eight-Zero, *KR Nine-Six, *KR-239, Mammoth, Packhorse, Silverback",
+        "technology": "Brader, Frag Grenade, Hammer of Dawn, Lightmass Bomb, Longshot Sniper Rifle, Longspear, Mk 2 Lancer Assault Rifle, Police Lancer Assault Rifle, Stomper",
+        "miscellanea": "Adaptive Atmospheric Manipulation System, COG Armor, COG Tag, Embry Star, Emergence Hole, Ephyra World Service, Imulsion, Jacinto Daily, Octus Medal"
+      },
+      "categories": [
+        "Books",
+        "Real World articles",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/4/48/Slabcover.jpg/revision/latest?cb=20120203162656",
+      "url": "https://gearsofwar.fandom.com/wiki/Gears_of_War%3A_The_Slab",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Gears-of-War-The-Slab.jpg"
+    },
+    {
+      "title": "Gears of War 3 Soundtrack",
+      "wikiTitle": "Gears of War 3 Soundtrack",
+      "collection": "regions",
+      "facts": {
+        "composer": "Steve Jablonsky",
+        "publisher": "Sumthing Else Music Works",
+        "info": "1 CD - 31 Tracks",
+        "length": "1:18:43",
+        "releasedate": "September 15, 2011 (iTunes), September 20, 2011 (at large)",
+        "price": "$12.99 (CD), $9.99 (iTunes)"
+      },
+      "categories": [
+        "Real World articles",
+        "Soundtracks"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/0/0f/Gears_of_War_3_soundtrack.jpg/revision/latest?cb=20110924033616",
+      "url": "https://gearsofwar.fandom.com/wiki/Gears_of_War_3_Soundtrack",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Gears-of-War-3-Soundtrack.jpg"
+    },
+    {
+      "title": "Toru Hoshi",
+      "wikiTitle": "Toru Hoshi",
+      "collection": "characters",
+      "facts": {
+        "homeland": "Unknown",
+        "birth": "Before Emergence Day",
+        "death": "17 A.E.",
+        "species": "Human",
+        "gender": "Male",
+        "era": "Locust War, Lambent Pandemic",
+        "affiliation": "Coalition of Ordered Governments"
+      },
+      "categories": [
+        "COG",
+        "Characters",
+        "Civilians",
+        "Male characters",
+        "Scientist"
+      ],
+      "image": null,
+      "url": "https://gearsofwar.fandom.com/wiki/Toru_Hoshi"
+    },
+    {
+      "title": "Gears of War: Judgment",
+      "wikiTitle": "Gears of War: Judgment",
+      "collection": "regions",
+      "facts": {
+        "characters": "M. Alexieff, D. Andrade, Roy Antebi, K. Axford, Kai Axford, Damon Baird, K. Barrick, Malcolm Benjafield, S. Bishop, G. Bixhorn, M. Blythe, Michael Greg Blythe, Coleen Bracy, Alexandra Brand, Daniel Brunner, Dennis Bye, R",
+        "creatures": "Bloodmount, Corpser, *Shibboleth, Human, Kryll, Lambent, *Former, *Lambent Wretch, Locust, *Boomer, **Butcher, **Flame Boomer, **Grinder, **Mauler, **Mauler Elite, *Drone, **Beast Rider, **Berserker, **Bolter, **Cyclops,",
+        "events": "Lambent Pandemic, *Mission to Halvo Bay, Locust War, *Destruction of Halvo Bay, Pendulum Wars, *Battle of Aspho Fields, *Battle of Autrin (Pendulum Wars), *Battle of Berephus, *Battle of Irohma Island, *Battle of Shavad,",
+        "locations": "Emerald Spar Imulsion Platform, South Islands, *Autrin, *Lake Station, *Soteroa, Tyrus, *Andius, *East Timgad, *Ephyra, *Gerrenhalt, *Halvo Bay, **Agora Foothills, **Alexiy Desipich Memorial Library, **Amador Park, **Ang",
+        "organizations": "Coalition of Ordered Governments, *Coalition of Ordered Governments Army, **Kilo Squad, **Omega-Two, **Onyx Guard, ***Black-Four, Union of Independent Republics",
+        "vehicles": "Assault Barque, CNV Pomeroy, Gorasni Destroyer, King Raven, Packhorse, Rat Truck, Silverback",
+        "technology": "Auto-Turret, Beacon Grenade, Blow Torch, Boltok Pistol, Boomshot Grenade Launcher, Booshka Grenade Launcher, Breechshot, Butcher Cleaver, Digger Launcher, Frag Grenade, Gnasher Shotgun, Gorgon Submachine Gun, GZ18 Markza",
+        "miscellanea": "COG Armor, COG Combat Helmet, COG Tag, Emergence Hole, Flame-Away aerosol, Gear, Imulsion, JACK (model), *Troy, Open Arms Program, Thrashball"
+      },
+      "categories": [
+        "Games",
+        "Real World articles"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/5/54/Gears_of_War_Judgment_Key_Art_2.jpg/revision/latest?cb=20121105165339",
+      "url": "https://gearsofwar.fandom.com/wiki/Gears_of_War%3A_Judgment",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Gears-of-War-Judgment.jpg"
+    },
+    {
+      "title": "Gears of War: Book Three",
+      "wikiTitle": "Gears of War: Book Three",
+      "collection": "regions",
+      "facts": {
+        "author": "Karen Traviss, Joshua Ortega",
+        "artist": "Leonardo Manco, Colin Wilson, Julius Gopez, Pop Mhan",
+        "publisher": "Wildstorm",
+        "availability": "Graphic Novel",
+        "us price": "$24.99",
+        "date released": "January 9th 2013",
+        "preceded by": "Gears of War: Book Two"
+      },
+      "categories": [
+        "Comic",
+        "Real World articles"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/4/4b/Book_Three.jpg/revision/latest?cb=20130111115822",
+      "url": "https://gearsofwar.fandom.com/wiki/Gears_of_War%3A_Book_Three",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Gears-of-War-Book-Three.jpg"
+    },
+    {
+      "title": "Gears of War: Judgment Soundtrack",
+      "wikiTitle": "Gears of War: Judgment Soundtrack",
+      "collection": "regions",
+      "facts": {
+        "composer": "Steve Jablonsky",
+        "publisher": "Sumthing Else Music Works",
+        "info": "1 CD - 30 Tracks",
+        "releasedate": "March 19, 2013"
+      },
+      "categories": [
+        "Gears of War: Judgment",
+        "Real World articles",
+        "Soundtracks"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/8/80/Gears_of_War_Judgment_soundtrack.jpg/revision/latest?cb=20130318221127",
+      "url": "https://gearsofwar.fandom.com/wiki/Gears_of_War%3A_Judgment_Soundtrack",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Gears-of-War-Judgment-Soundtrack.jpg"
+    },
+    {
+      "title": "Bank of Tyrus",
+      "wikiTitle": "Bank of Tyrus",
+      "collection": "characters",
+      "facts": {},
+      "categories": [
+        "Human Culture"
+      ],
+      "image": null,
+      "url": "https://gearsofwar.fandom.com/wiki/Bank_of_Tyrus"
+    },
+    {
+      "title": "The Coalition",
+      "wikiTitle": "The Coalition",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "Real World articles"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/2/20/Coalition_lockup.clean_reversed.FINAL.jpg/revision/latest?cb=20150604042858",
+      "url": "https://gearsofwar.fandom.com/wiki/The_Coalition",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/The-Coalition.jpg"
+    },
+    {
+      "title": "Gears of War: Tactics",
+      "wikiTitle": "Gears of War: Tactics",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "Games",
+        "Gears of War",
+        "Real World articles"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/3/3d/Gowtactics.jpg/revision/latest?cb=20140717064306",
+      "url": "https://gearsofwar.fandom.com/wiki/Gears_of_War%3A_Tactics",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Gears-of-War-Tactics.jpg"
+    },
+    {
+      "title": "Gears of War 4",
+      "wikiTitle": "Gears of War 4",
+      "collection": "regions",
+      "facts": {
+        "characters": "Damon Baird, Balgan, J. Beckman, Samantha Byrne, Carew, Gary Carmine, Chuzz, John Clement, Augustus Cole, Culda, Richard Dalmore, Gabriel Diaz, Kait Diaz, Oscar Diaz, Reyna Diaz, Dyer, James Fenix, Marcus Fenix, Eli, Ger",
+        "events": "Pendulum Wars, *Siege of Anvil Gate, *Battle of Aspho Fields, Lambent Pandemic, *Battle of Anvil Gate, Locust War, *Emergence Day, **First Battle of Ephyra, *Evacuation of Ilima, *Battle of Tollen Dam, *Evacuation of Spe",
+        "creatures": "*Brumak, Corpser, DeeBees, *DR-1, **DR-1 Devastator, **DR-1 Oppressor, **DR-1 Protector, *Shepherd, **Command Bot, **Deadeye, **Peace Keeper, **Peace Maker, *Tracker, **Shock Tracker, *Watcher, **Guardian (DeeBee), **Sen",
+        "locations": "*Sera, *Hollow, *Kashkur, **Anvegad, ***Anvil Gate, *Ostri Republic, **Aspho Point, *Tyrus, **Bronn, **Fort Umson, **Ephyra, ***House of Sovereigns, **Fort Reval, ***Fort Reval Military Museum, **Halvo Bay, **Ilima, **Ja",
+        "organizations": "*Carmine Construction Company, Coalition of Ordered Governments, *First Minister, *Ministry of Settlements, DB Industries, Nethercutt Mining, Outsiders, Speyer Metalworks, Union of Independent Republics, *Union of Indepe",
+        "vehicles": "Bot-Transport Cart, Centaur, Condor, Construction Mech, *Mega Mech, Kestrel, King Raven, *KR Three-Seven, *KR Five-Eight, *KR Six-Four, Marlin, Mechanical Loader, Ore Transporter, Track Mule, Vulture",
+        "technology": "Blow Torch, Boltok Pistol, Boomshot Grenade Launcher, Buzzkill, Combat Knife, Dropshot Munitions Launcher, EMBAR, Enforcer Submachine Gun, *Shock Enforcer, Frag Grenade, *Dom's Toms, Gnasher Shotgun, Hammerburst II, Hamm",
+        "miscellanea": "COG Tag, Emergence Hole, Hive, JACK (model), *Bruce, Imulsion, Locust Emblem, Locust Shell, Nest, Osmium, Phoenix Omen, Pod, Seran Movies, *It Ate My Face, *They Came From B-Low, The New Ephyran, Windflare"
+      },
+      "categories": [
+        "Games",
+        "Gears of War 4",
+        "Real World articles"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/f/f5/GoW4cover.jpg/revision/latest?cb=20160406203836",
+      "url": "https://gearsofwar.fandom.com/wiki/Gears_of_War_4",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Gears-of-War-4.jpg"
+    },
+    {
+      "title": "Emergence in Ephyra",
+      "wikiTitle": "Emergence in Ephyra",
+      "collection": "quests",
+      "facts": {
+        "conflict": "Locust War",
+        "date": "Bounty, 0 A.E.",
+        "place": "Ephyra, Tyrus",
+        "result": "Pyrrhic COG Victory, Locust successfully repelled from the city, Ephyra reclaimed by the COG",
+        "side1": "25px COG",
+        "side2": "25px Locust Horde",
+        "commanders1": "Chairman Tomas Dalyell, Deputy Chairman Richard Prescott, Col. Victor Hoffman, Lt. Anya Stroud, Pvt. Minh Young Kim",
+        "commanders2": "Queen Myrrah",
+        "forces1": "COG Army, Hammer of Dawn",
+        "forces2": "Locust Army, *Drones, *Boomers, *Wretches, *Reavers, *Corpsers",
+        "casual1": "Heavy, *At least 100,000 soldiers and civilians",
+        "casual2": "Heavy",
+        "previous": "Emergence in Porta Ogari",
+        "conc": "Emergence Day",
+        "next": "Emergence in Kalona"
+      },
+      "categories": [
+        "Battles"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/6/61/Ephyreday.jpg/revision/latest?cb=20190928152946",
+      "url": "https://gearsofwar.fandom.com/wiki/Emergence_in_Ephyra",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Emergence-in-Ephyra.jpg"
+    },
+    {
+      "title": "Gears of War 4 Soundtrack",
+      "wikiTitle": "Gears of War 4 Soundtrack",
+      "collection": "regions",
+      "facts": {
+        "composer": "Ramin Djawadi",
+        "publisher": "Sumthing Else Music Works",
+        "info": "1 CD - 23 Tracks",
+        "length": "1:00:10",
+        "releasedate": "October 18, 2016",
+        "price": "$15.98 (CD), $9.99 (iTunes)"
+      },
+      "categories": [
+        "Real World articles",
+        "Soundtracks"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/2/27/GearsofWar4Soundtrack.jpg/revision/latest?cb=20170115120506",
+      "url": "https://gearsofwar.fandom.com/wiki/Gears_of_War_4_Soundtrack",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Gears-of-War-4-Soundtrack.jpg"
+    },
+    {
+      "title": "Oath of the Coalition",
+      "wikiTitle": "Oath of the Coalition",
+      "collection": "items",
+      "facts": {},
+      "categories": [
+        "COG",
+        "COG Armed Forces",
+        "COG Army",
+        "COG Navy",
+        "Laws and Documents"
+      ],
+      "image": null,
+      "url": "https://gearsofwar.fandom.com/wiki/Oath_of_the_Coalition"
+    },
+    {
+      "title": "Gears 5",
+      "wikiTitle": "Gears 5",
+      "collection": "regions",
+      "facts": {
+        "characters": "*Agent 9, Ahman, Akagi, M. Alexieff, James Allvord, D. Andrade, Rory Andresen, Ben Andrews, Roy Antebi, Zajnal Arifin, AX-331-2, K. Axford, Kai Axford, Damon Baird, Balgan, Josh Barnhill, K. Barrick, Michael Barrick, Baz",
+        "creatures": "*Brumak, Corpser, DeeBees, *Command Bot, *DR-1, *Guardian, *Shepherd, **Peace Maker, *Tracker, **Shock Tracker, Horse, Human, Kryll, Locust, *Drone, *Sire, *Matriarch, Mangler, Reaver, Riftworm, Rockworm, Serapede, Swarm",
+        "events": "*Gold Rush, Pendulum Wars, *Mount Kadar Laboratory Uprising, *UIR Occupation of Vasgar, *Expedition to the Moons of Sera, *Battle of Bonbourg, *Mutiny at OZP-11, *UIR-COG Armistice, Locust War, *Emergence Day, *Destructi",
+        "locations": "*Sera, *Deadlands, *Independent Republic of Furlin, **Ghato City, **Tenla, *Republic of Gorasnaya, **Chalitz, **Gorasnayan Sea, *Hollow, **Nexus, *Kashkur, **Anvegad, *Khindago, *Ostri Republic, **Berephus, **Bonbourg, *",
+        "organizations": "*DB Industries, Coalition of Ordered Governments, *Coalition of Ordered Governments Army, **4th Infantry Division, **81st \"Brash\" Brigade, **Delta-One, **Echo Squad, **Lima Squad, **Onyx Guard, **Sierra Squad, *First Min",
+        "vehicles": "*Asp, Assault Derrick, Centaur, *Delta's Centaur, COG Rocket, COG Train, Condor, *Baird's Condor, Grindlift, Kestrel, King Raven, King Raven Mark 2, *KR Zero-Seven, *KR One-Three, *KR Two-Two, *KR Two-Nine, *KR Four-Thre",
+        "technology": "*Adrenaline Injector, Boltok Pistol, Boomshot Grenade Launcher, Breaker Mace, *Pipe, Buzzkill, Chain Gun, Claw Light Machine Gun, Combat Knife, Cryo Cannon, Dropshot Munitions Launcher, EMBAR, Enforcer Submachine Gun, Fl",
+        "miscellanea": "*Bonbourg Convention, COG Armor, COG Fertility Program, COG Reclamation Program, COG Tag, Components, Embry Star, Endorphicin, Festival of Cinema, Hive, Hivemind, JACK (model), Locust Emblem, Locust Shell, Nest, Octus Ca"
+      },
+      "categories": [
+        "Games",
+        "Gears 5",
+        "Real World articles"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/7/79/Gears_5.jpeg/revision/latest?cb=20190623130421",
+      "url": "https://gearsofwar.fandom.com/wiki/Gears_5",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Gears-5.jpeg"
+    },
+    {
+      "title": "Gears of War: Hivebusters",
+      "wikiTitle": "Gears of War: Hivebusters",
+      "collection": "regions",
+      "facts": {
+        "characters": "*Amanda Macallister, Danny, Paul Dury, Hana, Victor Hoffman, Lahni Kaliso, Jeremiah Keegan, Dillon Macallister, Donald Macallister, Leslie Macallister, Leslie Macallister's adoptive father, Leslie Macallister's mother, R",
+        "creatures": "*DeeBees, *Shepherd, Swarm, *Drone, *Elite Drone, *Flock, **Leech, *Juvie, *Scion, **Warden, *Snatcher",
+        "events": "*Locust War, *Destruction of Halvo Bay, *Operation: Hollow Storm, **Sinking of Jacinto City, Swarm Invasion, *Ambush on Croya, *Ambush on Bravelle, *Hivebuster Offensive, **Hivebust of Pahanu, **Mission to Croya, **Hiveb",
+        "locations": "*Sera, *South Islands, **Pahanu, *Tyrus, **Bravelle, **Croya, ***Croya Square, **Halvo Bay",
+        "organizations": "*Coalition of Ordered Governments, *Coalition of Ordered Governments Army, **81st \"Brash\" Brigade, **Hivebuster, ***Team Scorpio, **Onyx Guard, Outsiders",
+        "vehicles": "*Armadillo, King Raven Mark 2, *Tak's King Raven, Rat Truck, *Mister Reliable",
+        "technology": "*Adrenaline Injector, Boltok Pistol, Chain Gun, Combat Knife, Frag Grenade, Gnasher Shotgun, Hammerburst, Mark 2 Lancer Assault Rifle, Mark 3 Lancer Assault Rifle, MX8 Snub Pistol, Talon Autopistol, Venom Bomb",
+        "miscellanea": "*COG Armor, Swarm Hive, Swarm Pod"
+      },
+      "categories": [
+        "Comic",
+        "Real World articles",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/7/76/HivebustersPrelimCover1.jpg/revision/latest?cb=20190122040244",
+      "url": "https://gearsofwar.fandom.com/wiki/Gears_of_War%3A_Hivebusters",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Gears-of-War-Hivebusters.jpg"
+    },
+    {
+      "title": "Gears of War: Ascendance",
+      "wikiTitle": "Gears of War: Ascendance",
+      "collection": "regions",
+      "facts": {
+        "characters": "*Damon Baird, Becca, Samantha Byrne, Augustus Cole, Gabriel Diaz, Kait Diaz, Oscar Diaz, Reyna Diaz, Eli, Adam Fenix, James Dominic Fenix, Marcus Fenix, Hansen, IRIS, Mina Jinn, Yoon Kieho, Mackenzie, Richard Prescott, S",
+        "creatures": "*DeeBees, *Command Bot, *DR-1, *Shepherd, **Deadeye, *Tracker, *Watcher, **Guardian, Horse, *Chuzz, Human, Locust Horde, Riftworm, Rockworm, Snapjaw, Swarm, *Carrier, *Drone, **Grenadier, *Juvie, *Pouncer, *Scion, **Scio",
+        "events": "Locust War, *Hammer of Dawn Strikes, *Fall of Ephyra, Outsider Movement, *Settlement 2 Protest Massacre, *Raid on Settlement 5, *Battle of Fort Umson, *Assault on the Stroud Estate, Swarm War, *Rescue of Fort Umson, **Am",
+        "locations": "*Sera, *Serano Ocean, **Azura, *Tyrus, **Jacinto Plateau, ***Ephyra, ***Jacinto City, ***New Ephyra, ****Baird estate, ****Government House, **Montevado, **Orzabal Crater, **Settlement 2, **Settlement 5, **Settlement 6, ",
+        "organizations": "Carmine Construction Company, Coalition of Ordered Governments, *First Minister, DB Industries, Outsiders, Pickers",
+        "vehicles": "Condor, *CO One-Zero-Six, Construction Mech, Kestrel, King Raven, Vulture",
+        "technology": "Boltok Pistol, Breechshot, Buzzkill, Chain Gun, Combat Knife, Dropshot Munitions Launcher, EMBAR, Enforcer Submachine Gun, *Shock Enforcer, Gnasher Shotgun, Hammerburst II, Hammer of Dawn, Mark 2 Lancer Assault Rifle, *C",
+        "miscellanea": "Adam Fenix's data disk, COG Armor, COG Tag, JACK (model), *Dave, Project Morning Star, Windflare"
+      },
+      "categories": [
+        "Books",
+        "Real World articles"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/1/15/GoW_Ascendance.jpg/revision/latest?cb=20190626201905",
+      "url": "https://gearsofwar.fandom.com/wiki/Gears_of_War%3A_Ascendance",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Gears-of-War-Ascendance.jpg"
+    },
+    {
+      "title": "Gears 5 Soundtrack",
+      "wikiTitle": "Gears 5 Soundtrack",
+      "collection": "regions",
+      "facts": {
+        "composer": "Ramin Djawadi",
+        "info": "18 Tracks",
+        "length": "1:01:31",
+        "releasedate": "September 6, 2019"
+      },
+      "categories": [
+        "Real World articles",
+        "Soundtracks"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/5/5e/Gears5SoundtrackCover.jpg/revision/latest?cb=20190919004117",
+      "url": "https://gearsofwar.fandom.com/wiki/Gears_5_Soundtrack",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Gears-5-Soundtrack.jpg"
+    },
+    {
+      "title": "NCOG Marine",
+      "wikiTitle": "NCOG Marine",
+      "collection": "characters",
+      "facts": {
+        "homeland": "Sera",
+        "species": "Human",
+        "weapons": "*Longshot Sniper Rifle, Mark 2 Lancer Assault Rifle, Combat Knife, Concussion Grenade",
+        "equipment": "*Marine Armor, COG Combat Helmet, Combat boot, Helmet light, Gas canisters, Radio",
+        "vehicles": "*King Raven, *KR One-Six, Sea Raven",
+        "era": "*Pendulum Wars, Locust War, Lambent Pandemic",
+        "affiliation": "*Coalition of Ordered Governments, *Coalition of Ordered Governments Navy, **NCOG Corps of Marines",
+        "rank": "Standard Infantry"
+      },
+      "categories": [
+        "COG",
+        "COG Navy Personnel",
+        "COG Special Forces units",
+        "COG military units",
+        "Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/0/0f/NCOGMarineMale.png/revision/latest?cb=20180703234541",
+      "url": "https://gearsofwar.fandom.com/wiki/NCOG_Marine",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/NCOG-Marine.png"
+    },
+    {
+      "title": "Blight",
+      "wikiTitle": "Blight",
+      "collection": "enemies",
+      "facts": {},
+      "categories": [
+        "Blights",
+        "Locust Horde",
+        "Military subdivisions"
+      ],
+      "image": null,
+      "url": "https://gearsofwar.fandom.com/wiki/Blight"
+    },
+    {
+      "title": "Gears of War: Bloodlines",
+      "wikiTitle": "Gears of War: Bloodlines",
+      "collection": "regions",
+      "facts": {
+        "characters": "*Abbot, Akino, Damon Baird, Blair, Samuel Bowden, Samantha Byrne, Wyatt Callahan, Elizabeth Carmine, Carter, Fahz Chutani, Augustus Cole, Davis, Deevers, Ciprian Demov, Gabriel Diaz, Kait Diaz, Oscar Diaz, Reyna Diaz, El",
+        "creatures": "*DeeBees, *DR-1, *Tracker, Human, Monkey, Swarm, *Drone (Swarm), *Flock, *Juvie, *Leech, *Pouncer, *Reject, *Scion, *Snatcher",
+        "events": "*Pendulum Wars, *Mission to Knifespire, *Battle of Gatka Ridge, Locust War, *Assassination of Ukkon, Outsider Movement, *Settlement 2 Protest Massacre, Swarm Invasion, *Rescue of Fort Umson, **Ambush of Fort Umson, **Mis",
+        "locations": "*Sera, *Emerald Spar Imulsion Platform, *Lesser Islands Chain, **Adena Island, ***Shallow Bay, **Knifespire, ***Cathedral Cave, ***Gatka Ridge, ***Scabbard Cove, **Vectes, ***Vectes Naval Base, *Reinvar, *Republic of Gor",
+        "organizations": "*Coalition of Ordered Governments, *Coalition of Ordered Governments Army, **7th Brigade, ***Black Squad, ***Blue Squad, ***Green Squad, ***Orange Squad, ***White Squad, **Ghost Squad, *Coalition of Ordered Governments N",
+        "vehicles": "*CNV Defiant, COG Patrol Boat, *CNV 146, *CNV Domino, *CNV Mighty, *CNV Righteous, Corva, *Corva One, *Corva Two, *Corva Three, King Raven Mark 2, Landing Craft Utility, *CNV Vigil, Mega Mech, Minotaur, *Old Gal, UIR Bat",
+        "technology": "Booshka Grenade Launcher, Enforcer Submachine Gun, Frag Grenade, Gnasher Shotgun, Hammer of Dawn, Industrial Staple Gun, Mark 1 Lancer Assault Rifle, Mark 2 Lancer Assault Rifle, *Custom Lancer, Mark 3 Lancer Assault Rif",
+        "miscellanea": "*Goras, Imulsion, JACK (model), *Dave, *JACK, Rustlung"
+      },
+      "categories": [
+        "Books",
+        "Real World articles"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/4/43/GoW_Bloodlines.jpg/revision/latest?cb=20201219182118",
+      "url": "https://gearsofwar.fandom.com/wiki/Gears_of_War%3A_Bloodlines",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Gears-of-War-Bloodlines.jpg"
+    },
+    {
+      "title": "Autrin",
+      "wikiTitle": "Autrin",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "Cities",
+        "Locations"
+      ],
+      "image": null,
+      "url": "https://gearsofwar.fandom.com/wiki/Autrin"
+    },
+    {
+      "title": "Battle of Autrin",
+      "wikiTitle": "Battle of Autrin (Pendulum Wars)",
+      "collection": "quests",
+      "facts": {
+        "conflict": "Pendulum Wars",
+        "date": "0 B.E.",
+        "place": "Autrin, Kaia",
+        "result": "Unknown",
+        "side1": "22px Coalition of Ordered Governments",
+        "side2": "22px Union of Independent Republics",
+        "commanders1": "Unknown",
+        "commanders2": "Unknown",
+        "casual1": "At least 17 Gears",
+        "casual2": "Unknown",
+        "next": "Skirmish in Ghato City",
+        "previous": "Battle of Aspho Fields"
+      },
+      "categories": [
+        "Battles",
+        "Events"
+      ],
+      "image": null,
+      "url": "https://gearsofwar.fandom.com/wiki/Battle_of_Autrin_(Pendulum_Wars)"
+    },
+    {
+      "title": "Gears of War: Ephyra Rising",
+      "wikiTitle": "Gears of War: Ephyra Rising",
+      "collection": "regions",
+      "facts": {
+        "characters": "*Damon Baird, Samantha Byrne, Clayton Carmine, Augustus Cole, Diana Egami, Adam Fenix, Elain Fenix, Marcus Fenix, Mr. Flores, Mrs. Flores, Aaron Griffin, Roger Hahn, Raul Hasterwith, Eric Hernandez, Victor Hoffman, Nigel",
+        "creatures": "*Human, Lambent, *Lambent Stalk, Locust, *Boomer, *Drone, *Grenadier",
+        "events": "*Locust War, *Victory Day, **Mission to Mercy, **Mission to Char, **Battle of Azura, Lambent Pandemic, *Victory Day, **Mission to Hanover, **Attack on the Sovereign, **Mission to Mercy, **Mission to Char, **Battle of Azu",
+        "locations": "*Sera, *Serano Ocean, **Azura, *Tyrus, **Char, **Ephyra, ***House of Sovereigns, **Hanover, ***Cougars Stadium, **Mercy, **New Ephyra, **Wilds, ***Stroud Estate",
+        "organizations": "*Coalition of Ordered Governments, *Coalition of Ordered Governments Army, Griffin Imulsion Corporation, Lambent, Locust Horde, Stranded",
+        "vehicles": "*Raven's Nest Class, *CNV Sovereign",
+        "technology": "*Boomshot Grenade Launcher, Gnasher Shotgun, Hammerburst II, Imulsion Countermeasure Weapon, Mark 2 Lancer Assault Rifle, Longshot Sniper Rifle, Snub Pistol",
+        "miscellanea": "COG Armor, COG Tag"
+      },
+      "categories": [
+        "Books",
+        "Real World articles"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/1/16/Gearsephyrarising.jpg/revision/latest?cb=20210305234810",
+      "url": "https://gearsofwar.fandom.com/wiki/Gears_of_War%3A_Ephyra_Rising",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Gears-of-War-Ephyra-Rising.jpg"
+    },
+    {
+      "title": "Gears of War",
+      "wikiTitle": "Gears of War (TV Series)",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "Gears of War series",
+        "Real World articles"
+      ],
+      "image": null,
+      "url": "https://gearsofwar.fandom.com/wiki/Gears_of_War_(TV_Series)"
+    },
+    {
+      "title": "Gears of War: Reloaded",
+      "wikiTitle": "Gears of War: Reloaded",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "Games",
+        "Real World articles",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/0/07/GoW_Reloaded_Keyart_4K.png/revision/latest?cb=20250510192520",
+      "url": "https://gearsofwar.fandom.com/wiki/Gears_of_War%3A_Reloaded",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Gears-of-War-Reloaded.png"
+    },
+    {
+      "title": "Nordesca",
+      "wikiTitle": "Nordesca",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "Cities",
+        "Locations"
+      ],
+      "image": null,
+      "url": "https://gearsofwar.fandom.com/wiki/Nordesca"
+    },
+    {
+      "title": "Flayer",
+      "wikiTitle": "Flayer",
+      "collection": "characters",
+      "facts": {
+        "homeland": "Hollow",
+        "species": "Locust",
+        "gender": "Male",
+        "height": "8'1",
+        "body color": "Grey skin",
+        "eyes": "Black",
+        "rank": "Heavy Shock Troops",
+        "era": "Locust War",
+        "weapons": "Gorehook",
+        "equipment": "Boomer Armor",
+        "affiliation": "*Locust Horde, *Boomers"
+      },
+      "categories": [
+        "Characters",
+        "Locust Soldier",
+        "Male characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/5/55/Screenshot_20260902_192922_Gallery.jpg/revision/latest?cb=20260902183005",
+      "url": "https://gearsofwar.fandom.com/wiki/Flayer",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Flayer.jpg"
+    },
+    {
+      "title": "Brumak",
+      "wikiTitle": "Brumak",
+      "collection": "enemies",
+      "facts": {
+        "homeland": "The Hollow",
+        "rank": "*Walking Tank, Rocket Artillery",
+        "species": "Brumak",
+        "height": "40'0\" ft. (Average)",
+        "weight": "11 tons",
+        "eyes": "Yellow",
+        "body color": "Grey/White skin",
+        "weapons": "*Mass, One Brumak Rocket Launcher, Two Wrist-Mounted Chain Guns, Four Brumak Rocket Mortars",
+        "mounts": "*One rider, One gunner",
+        "era": "*Lambent War, Locust War, Lambent Pandemic, Swarm Invasion (as Swarmaks)",
+        "types": "*Lambent Brumak, Swarmak",
+        "notable": "*Bred from apes, Created by Ukkon",
+        "affiliation": "*Locust Horde, Savage Locust, Queen's Guard, Lambent (Lambent Brumak), Swarm (as Swarmaks)"
+      },
+      "categories": [
+        "Characters",
+        "Creatures in Gears Tactics",
+        "Creatures in Gears of War",
+        "Creatures in Gears of War 2",
+        "Creatures in Gears of War 3",
+        "Creatures in RAAM's Shadow",
+        "Hollow Creatures",
+        "Locust Horde vehicles",
+        "Male characters",
+        "Stubs",
+        "Vehicles"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/9/96/Brumak_GOW_3.png/revision/latest?cb=20111030200641",
+      "url": "https://gearsofwar.fandom.com/wiki/Brumak",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Brumak.png"
+    },
+    {
+      "title": "COG Tag",
+      "wikiTitle": "COG Tag",
+      "collection": "items",
+      "facts": {},
+      "categories": [
+        "Articles to be cleaned up",
+        "COG",
+        "Collectibles",
+        "Gameplay",
+        "Weapons"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/6/60/COG_Tags_Render.jpg/revision/latest?cb=20150713060505",
+      "url": "https://gearsofwar.fandom.com/wiki/COG_Tag",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/COG-Tag.jpg"
+    },
+    {
+      "title": "Boomshot Grenade Launcher",
+      "wikiTitle": "Boomshot Grenade Launcher",
+      "collection": "items",
+      "facts": {
+        "manufacturer": "Locust Horde",
+        "type": "Grenade Launcher",
+        "size": "Large",
+        "damage per hit": "Very High to Lethal",
+        "magazine": "1 grenade",
+        "maxammo": "Varies, 6 grenades in GOW3, GOWJ, and GOW4, 12 grenades in GOW and GOW2",
+        "fire": "Single-Shot",
+        "ammotype": "Cluster Grenades",
+        "rate of fire": "180/M",
+        "accuracy": "Medium",
+        "range": "Medium",
+        "era": "*Locust War, Lambent War, Lambent Pandemic, Swarm War",
+        "counterpart": "*Booshka Grenade Launcher, Digger Launcher",
+        "affiliation": "*Locust Horde, Stranded, Swarm"
+      },
+      "categories": [
+        "Articles that need Gearsify-ing",
+        "Gears 5 weapons",
+        "Gears of War: Judgment weapons",
+        "Gears of War 2 weapons",
+        "Gears of War 3 weapons",
+        "Gears of War 4 weapons",
+        "Gears of War weapons",
+        "Weapons",
+        "Weapons of the Locust Horde",
+        "Weapons of the Swarm"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/0/06/Gow-boomshot%26projectile.jpg/revision/latest?cb=20120412220100",
+      "url": "https://gearsofwar.fandom.com/wiki/Boomshot_Grenade_Launcher",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Boomshot-Grenade-Launcher.jpg"
+    },
+    {
+      "title": "Centaur Four-Nine",
+      "wikiTitle": "Centaur Four-Nine",
+      "collection": "items",
+      "facts": {
+        "manufacturer": "Coalition of Ordered Governments",
+        "line": "Centaur",
+        "model": "Main Battle Tank",
+        "height": "Several meters",
+        "armament": "Turret-mounted Cannon",
+        "passengers": "Unknown, but capable of holding at least two Gears and several Stranded",
+        "role": "Assault, Escort",
+        "era": "Locust War",
+        "affiliation": "Coalition of Ordered Governments, *Coalition of Ordered Governments Army"
+      },
+      "categories": [
+        "COG",
+        "Vehicles"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/f/f7/Centaur_Four-Nine.jpg/revision/latest?cb=20160226043353",
+      "url": "https://gearsofwar.fandom.com/wiki/Centaur_Four-Nine",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Centaur-Four-Nine.jpg"
+    },
+    {
+      "title": "COG Armor",
+      "wikiTitle": "COG Armor",
+      "collection": "items",
+      "facts": {},
+      "categories": [
+        "Armor",
+        "COG",
+        "Coalition of Ordered Governments Armed Forces technology",
+        "Technology",
+        "Weapons"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/6/65/Augustus_Cole.jpg/revision/latest?cb=20120613223447",
+      "url": "https://gearsofwar.fandom.com/wiki/COG_Armor",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/COG-Armor.jpg"
+    },
+    {
+      "title": "Booshka Grenade Launcher",
+      "wikiTitle": "Booshka Grenade Launcher",
+      "collection": "items",
+      "facts": {
+        "manufacturer": "Union of Independent Republics",
+        "type": "Drum-Loaded Grenade Launcher",
+        "size": "Medium",
+        "damage per hit": "High",
+        "magazine": "3 grenades",
+        "maxammo": "15 grenades",
+        "fire": "Semi-Automatic",
+        "ammotype": "Imulsion-Fueled Grenades",
+        "operation": "Drum-Loaded",
+        "rate of fire": "60/M",
+        "accuracy": "Medium",
+        "range": "Medium-Long",
+        "counterpart": "*Boomshot Grenade Launcher, Digger Launcher",
+        "affiliation": "*Coalition of Ordered Governments, Union of Independent Republics"
+      },
+      "categories": [
+        "Gears of War: Judgment weapons",
+        "Weapons",
+        "Weapons of the Union of Independent Republics"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/e/e1/Booshka_02.jpg/revision/latest?cb=20130205044849",
+      "url": "https://gearsofwar.fandom.com/wiki/Booshka_Grenade_Launcher",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Booshka-Grenade-Launcher.jpg"
+    },
+    {
+      "title": "Coalition of Ordered Governments",
+      "wikiTitle": "Coalition of Ordered Governments",
+      "collection": "characters",
+      "facts": {
+        "type": "Supranational and intergovernmental military alliance (Former), Unitary authoritarian autocracy (Current)",
+        "founding": "Octus Canon",
+        "constitution": "Coalition Constitution (Former), Unknown (Current)",
+        "headofstate": "Chairman (Former), First Minister (Current)",
+        "headofgov": "Chairman (Former), First Minister (Current)",
+        "commander": "Chairman (Former), First Minister (Current)",
+        "defacto": "Coalition High Command (Gale, 15 A.E. - Bloom, 15 A.E.)",
+        "executive": "Chairman (Former), First Minister (Current)",
+        "legislative": "Council of Sovereigns (Former), Unknown (Current)",
+        "judicial": "Coalition Judicial System, *Fortification Act (Former)",
+        "capital": "Ephyra (Unknown B.E. - Frost, 10 A.E.), Jacinto (Frost, 10 A.E. - 2nd Frost, 14 A.E.), Port Farrall (2nd Frost, 14 A.E. - Thaw, 14 A.E.), New Jacinto (Thaw, 14 A.E. - Bloom, 15 A.E.), New Ephyra (Bloom, 17 A.E. - Current",
+        "language": "Tyran",
+        "currency": "Dollar (Former), Iron (Current)",
+        "holiday": "Allfathers Day, Day of the Fallen, Victory Day",
+        "established": "Approximately 85 B.E.",
+        "dissolved": "Bloom, 15 A.E.",
+        "restored": "Bloom, 17 A.E."
+      },
+      "categories": [
+        "Articles needing citations",
+        "COG",
+        "Government",
+        "Organizations",
+        "Pages with reference errors",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/f/f7/COGFlag.png/revision/latest?cb=20100415012245",
+      "url": "https://gearsofwar.fandom.com/wiki/Coalition_of_Ordered_Governments",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Coalition-of-Ordered-Governments.png"
+    },
+    {
+      "title": "Emergence Hole",
+      "wikiTitle": "Emergence Hole",
+      "collection": "enemies",
+      "facts": {},
+      "categories": [
+        "Culture of the Locust Horde"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/c/c8/COG_orbital_satellite_recon_photo2.jpg/revision/latest?cb=20130121214547",
+      "url": "https://gearsofwar.fandom.com/wiki/Emergence_Hole",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Emergence-Hole.jpg"
+    },
+    {
+      "title": "Centaur Zero-Two",
+      "wikiTitle": "Centaur Zero-Two",
+      "collection": "items",
+      "facts": {
+        "manufacturer": "Coalition of Ordered Governments",
+        "line": "Centaur",
+        "model": "Main Battle Tank",
+        "height": "Several meters",
+        "armament": "Turret-mounted Cannon",
+        "passengers": "Unknown, but capable of holding at least two Gears and several Stranded",
+        "role": "Assault, Escort",
+        "destroyed": "1st Frost, 14 A.E.",
+        "era": "Locust War",
+        "affiliation": "Coalition of Ordered Governments, *Coalition of Ordered Governments Army"
+      },
+      "categories": [
+        "COG",
+        "Vehicles"
+      ],
+      "image": null,
+      "url": "https://gearsofwar.fandom.com/wiki/Centaur_Zero-Two"
+    },
+    {
+      "title": "Coalition of Ordered Governments Army",
+      "wikiTitle": "Coalition of Ordered Governments Army",
+      "collection": "characters",
+      "facts": {
+        "type": "Army",
+        "headofgov": "*Chairman (Formerly), First Minister",
+        "commander": "Colonel Victor Hoffman",
+        "judicial": "*Victor Hoffman (Partial participation), Colonel Ezra Loomis (Partial participation)",
+        "capital": "*Ephyra (Founding - Frost, 10 A.E.), Jacinto City (Frost, 10 A.E. - 2nd Frost, 14 A.E.), Port Farrall (2nd Frost, 14 A.E. - Thaw, 14 A.E.), Vectes (Thaw, 14 A.E. - Bloom, 15 A.E.), New Ephyra (18 A.E. - current)",
+        "language": "Tyran",
+        "holiday": "*Day of the Fallen, Victory Day",
+        "established": "Pre-Pendulum Wars",
+        "fragmented": "15 A.E.",
+        "dissolved": "15 A.E.",
+        "restored": "17 A.E."
+      },
+      "categories": [
+        "COG military units",
+        "Coalition of Ordered Governments Armed Forces Branches",
+        "Organizations"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/e/eb/COG_Army.PNG/revision/latest?cb=20150706043502",
+      "url": "https://gearsofwar.fandom.com/wiki/Coalition_of_Ordered_Governments_Army",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Coalition-of-Ordered-Governments-Army.png"
+    },
+    {
+      "title": "Coalition of Ordered Governments Air Corps",
+      "wikiTitle": "Coalition of Ordered Governments Air Corps",
+      "collection": "characters",
+      "facts": {
+        "type": "Air Force",
+        "headofgov": "*Chairman (formerly), First Minister",
+        "commander": "Major Gill Gettner",
+        "capital": "*Ephyra (until the Battle of Ephyra), Jacinto (until its sinking), Vectes (until the COG collapsed), New Ephyra (after the re-establishment of the COG)",
+        "language": "Tyran",
+        "established": "Pre-Pendulum Wars",
+        "fragmented": "15 A.E.",
+        "dissolved": "16 A.E.",
+        "restored": "Between 17 and 42 A.E."
+      },
+      "categories": [
+        "Articles to be cleaned up",
+        "COG military units",
+        "Coalition of Ordered Governments Armed Forces Branches",
+        "Organizations",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/e/e0/Gearssdcc-768x1024.jpg/revision/latest?cb=20180515011720",
+      "url": "https://gearsofwar.fandom.com/wiki/Coalition_of_Ordered_Governments_Air_Corps",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Coalition-of-Ordered-Governments-Air-Corps.jpg"
+    },
+    {
+      "title": "Coalition Thrashball League",
+      "wikiTitle": "Coalition Thrashball League",
+      "collection": "characters",
+      "facts": {},
+      "categories": [
+        "COG",
+        "Organizations",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/5/53/Coalition_Thrashball_League_logo.jpg/revision/latest?cb=20130122233945",
+      "url": "https://gearsofwar.fandom.com/wiki/Coalition_Thrashball_League",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Coalition-Thrashball-League.jpg"
+    },
+    {
+      "title": "Imulsion",
+      "wikiTitle": "Imulsion",
+      "collection": "enemies",
+      "facts": {
+        "homeland": "Hollow, Sera",
+        "species": "Parasitic Fungi",
+        "birth": "Prehistory",
+        "death": "Bloom 17 A.E.",
+        "body color": "Gold",
+        "weapons": "Limitless reproduction, Extremely volatile, Mutagenic, teratogenic, and carcinogenic, Infectious when airborne, Able to colonize lifeforms, Sensitive to radiation",
+        "affiliation": "Lambent",
+        "types": "Lambent Stalk, Lambent Polyp",
+        "hideb": "true"
+      },
+      "categories": [
+        "COG",
+        "Characters",
+        "Human Culture",
+        "Lambent Locust",
+        "Locust Horde",
+        "Technology",
+        "UIR"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/3/31/Imulsiongowu.jpeg/revision/latest?cb=20180127165435",
+      "url": "https://gearsofwar.fandom.com/wiki/Imulsion",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Imulsion.jpeg"
+    },
+    {
+      "title": "Human",
+      "wikiTitle": "Human",
+      "collection": "enemies",
+      "facts": {
+        "homeland": "Sera",
+        "homeworld": "Sera",
+        "hideb": "true"
+      },
+      "categories": [
+        "COG",
+        "Characters",
+        "Creatures in Gears Tactics",
+        "Creatures in Gears of War",
+        "Creatures in Gears of War: Judgment",
+        "Creatures in Gears of War 2",
+        "Creatures in RAAM's Shadow",
+        "Ethnic Groups",
+        "Human Culture",
+        "Organizations",
+        "Stranded",
+        "UIR"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/d/d6/Humansofsera2.jpg/revision/latest?cb=20190923175025",
+      "url": "https://gearsofwar.fandom.com/wiki/Human",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Human.jpg"
+    },
+    {
+      "title": "Grinder",
+      "wikiTitle": "Grinder",
+      "collection": "characters",
+      "facts": {
+        "homeland": "Hollow",
+        "species": "Locust",
+        "gender": "Male",
+        "height": "8'1",
+        "eyes": "Black",
+        "weapons": "Mulcher",
+        "equipment": "*Boomer Armor, Grinder Helmet",
+        "era": "*Locust War, Lambent Invasion",
+        "affiliation": "Locust Horde",
+        "body color": "Grey skin",
+        "rank": "Heavy Shock Troops"
+      },
+      "categories": [
+        "Characters",
+        "Locust Soldier",
+        "Male characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/4/44/GOW_3_Grinders.png/revision/latest?cb=20111030195804",
+      "url": "https://gearsofwar.fandom.com/wiki/Grinder",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Grinder.png"
+    },
+    {
+      "title": "Hanover Cougars",
+      "wikiTitle": "Hanover Cougars",
+      "collection": "characters",
+      "facts": {},
+      "categories": [
+        "COG",
+        "Human Culture",
+        "Thrashball Teams"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/b/b6/Courgarslogo.png/revision/latest?cb=20110822160146",
+      "url": "https://gearsofwar.fandom.com/wiki/Hanover_Cougars",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Hanover-Cougars.png"
+    },
+    {
+      "title": "Hammer of Dawn Strikes",
+      "wikiTitle": "Hammer of Dawn Strikes",
+      "collection": "quests",
+      "facts": {
+        "conflict": "Locust War",
+        "date": "33 Bloom 1 A.E.",
+        "place": "Sera",
+        "result": "Pyrrhic COG victory, Locust denied of military and technological assets, Destruction of all major cities outside the Jacinto Plateau, Firestorms and long-term environmental damage, Temporary global climate cooling caused",
+        "side1": "25px Coalition of Ordered Governments",
+        "side2": "15px Locust Horde",
+        "commanders1": "Chairman Richard Prescott, General Bardry Salaman, Col. Victor Hoffman, Professor Adam Fenix, Lt. Anya Stroud",
+        "commanders2": "Queen Myrrah",
+        "forces1": "COG Army, Hammer of Dawn",
+        "forces2": "Locust Horde",
+        "casual1": "All COG forces and civilians outside of Jacinto Plateau",
+        "casual2": "All Locust forces caught on the surface",
+        "previous": "Ambush on Voslov Bridge",
+        "next": "Assassination of Ukkon"
+      },
+      "categories": [
+        "Battles",
+        "COG military victories",
+        "Events"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/5/50/HammerStrikesPostEDay.jpg/revision/latest?cb=20160331020311",
+      "url": "https://gearsofwar.fandom.com/wiki/Hammer_of_Dawn_Strikes",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Hammer-of-Dawn-Strikes.jpg"
+    },
+    {
+      "title": "Incendiary Grenade",
+      "wikiTitle": "Incendiary Grenade",
+      "collection": "items",
+      "facts": {
+        "manufacturer": "Stranded",
+        "type": "Incendiary Grenade",
+        "accuracy": "N/A",
+        "range": "Depends on the User",
+        "era": "*Locust War, Lambent Pandemic, Swarm War",
+        "counterpart": "*Beacon Grenade, Bolo Grenade, Ink Grenade, Smoke Grenade, Stim-Gas Grenade",
+        "affiliation": "*Coalition of Ordered Governments, Locust Horde, *Savage Locust, Stranded"
+      },
+      "categories": [
+        "Articles that need Gearsify-ing",
+        "Gears 5 weapons",
+        "Gears of War: Judgment weapons",
+        "Gears of War 3 weapons",
+        "Gears of War 4 weapons",
+        "Weapons",
+        "Weapons of the Coalition of Ordered Governments",
+        "Weapons of the Stranded"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/1/14/Gow-3-incendiary.jpeg/revision/latest?cb=20120429152931",
+      "url": "https://gearsofwar.fandom.com/wiki/Incendiary_Grenade",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Incendiary-Grenade.jpeg"
+    },
+    {
+      "title": "Gears of War: Dirty Little Secrets",
+      "wikiTitle": "Gears of War: Dirty Little Secrets",
+      "collection": "regions",
+      "facts": {
+        "characters": "Damon Baird, Nat Barber, Augustus Cole, Paul Dury, Nevil Estrom, Adam Fenix, Marcus Fenix, Gill Gettner, Victor Hoffman, Jasi, Jon, Yanik Laas, Lowe, Mac, Teodor Marisc, Bernadette Mataki, Donneld Mathieson, Quentin Mich",
+        "creatures": "Brumak, Dog, Gas Barge, Human, Locust, *Armored Kantus, *Drone, Lambent, *Lambent Brumak, *Lambent Shale Eel, *Lambent Stalk, Mangler, Polyp, Reaver, Tempest",
+        "events": "Lambent Pandemic, *Battle of Gerrenhalt, *Emergence on the Southwest Coast of Vectes, *Flooding of Pelruan, *Sinking of the Harvest, *Sinking of the Nezark, Locust War, *First Battle of Azura, *Hammer of Dawn Counteratta",
+        "locations": "Azura, *Pinnacle Tower, Kashkur, *Anvil Gate, **The Mess, *Kashkur Foothills, Learan Prison, Republic of Gorasnaya, *Branascu, *Ramascu, Tyrus, *Endeavor Naval Shipyard, *Gerrenhalt, *Jacinto City, **Wrightman Base, *Por",
+        "organizations": "Coalition of Ordered Governments, *Coalition of Ordered Governments Air Corps, *Coalition of Ordered Governments Army, **Delta-One, **Onyx Guard, ***Red Squad, *Coalition of Ordered Governments Navy, Stranded, Union of I",
+        "vehicles": "C-One, Centaur, Gelen Class Frigate, *Nezark, King Raven, *KR Zero-One, *KR Zero-Three, *KR Zero-Four, *KR Zero-Five, *KR Three-Three, *KR Eight-Zero, *KR-239, *KR-471, Packhorse, Paryk, Raven's Nest Class, *CNV Sovereig",
+        "technology": "Boomshot Grenade Launcher, Hammer of Dawn, Hammerburst II, Imulsion Countermeasure Weapon, Longshot Sniper Rifle, Mk 1 Lancer Assault Rifle, Mk 2 Lancer Assault Rifle, Rocket Launcher, Snub Pistol",
+        "miscellanea": "A2897, Adaptive Atmospheric Manipulation System, COG Armor, Emergence Hole, Gorasni, Gorasni (language), Kashkuri, Pesanga, South Islander, Tyran, Tyran (language)"
+      },
+      "categories": [
+        "Comic",
+        "Real World articles"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/2/25/Dirty_Little_Secrets_1_cover.jpg/revision/latest?cb=20110516210653",
+      "url": "https://gearsofwar.fandom.com/wiki/Gears_of_War%3A_Dirty_Little_Secrets",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Gears-of-War-Dirty-Little-Secrets.jpg"
+    },
+    {
+      "title": "Gears of War: The Rise of RAAM",
+      "wikiTitle": "Gears of War: The Rise of RAAM",
+      "collection": "regions",
+      "facts": {
+        "characters": "*Droak, Jermad, Karn, Myrrah, Praax, RAAM, Skorge, Sraak, Ukkon, Vrol, Will Carmine",
+        "creatures": "*Corpser, Lambent, *Lambent Drudge, *Lambent Wretch, Locust, *Boomer, *Drone, *Kantus, *Sire, *Theron Guard, **Theron Elite, **Theron Sentinel, Shibboleth, Riftworm",
+        "events": "*Lambent War, Pendulum Wars, Locust War",
+        "locations": "*Sera, *Hollow, **Outer Hollow, ***Gorgon Front, **Inner Hollow, ***Nexus, ****Royal Palace, ****Temple of the Trinity, ****Ukkon's Laboratory, *Tyrus, **Jannermont, ***Jannermont Army Base",
+        "organizations": "*Coalition of Ordered Governments, *Coalition of Ordered Governments Army, Locust Horde, *Bloodied Vanguard, Union of Independent Republics, *Union of Independent Republics Infantry",
+        "technology": "*Boomshot Grenade Launcher, Breechshot, Gnasher Shotgun, Gorgon-Hammerburst Rifle, Hammerburst Assault Rifle, Mark 1 Lancer Assault Rifle, Torque Bow",
+        "miscellanea": "*Blight, Imulsion, Ketor, Krav, Maag, Trinity of Worms, Uzil, Vold, Vurl, Zamil"
+      },
+      "categories": [
+        "Comic",
+        "Real World articles",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/f/f4/RiseofRAAMcoverart.jpg/revision/latest?cb=20171028115153",
+      "url": "https://gearsofwar.fandom.com/wiki/Gears_of_War%3A_The_Rise_of_RAAM",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Gears-of-War-The-Rise-of-RAAM.jpg"
+    },
+    {
+      "title": "Hollow Creatures",
+      "wikiTitle": "Hollow Creatures",
+      "collection": "enemies",
+      "facts": {},
+      "categories": [
+        "Hollow Creatures",
+        "Locust Horde",
+        "Pages with reference errors",
+        "The Swarm"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/3/32/Locusthorde.jpg/revision/latest?cb=20210606135750",
+      "url": "https://gearsofwar.fandom.com/wiki/Hollow_Creatures",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Hollow-Creatures.jpg"
+    },
+    {
+      "title": "Gears of War: A Pendulum Wars Story",
+      "wikiTitle": "Gears of War: A Pendulum Wars Story",
+      "collection": "regions",
+      "facts": {
+        "characters": "Nevil Estrom, Adam Fenix, Marcus Fenix, Victor Hoffman, Tai Kaliso, Bernadette Mataki, Myrrah, Dominic Santiago, Anya Stroud, Helena Stroud, Bai Tak, Miran Trescu",
+        "creatures": "Human, Locust",
+        "events": "Pendulum Wars",
+        "organizations": "Coalition of Ordered Governments, *Coalition of Ordered Governments Air Corps, *Coalition of Ordered Governments Army, Union of Independent Republics, *UIR Infantry",
+        "vehicles": "King Raven",
+        "technology": "Hammer of Dawn, Longshot Sniper Rifle, Mk 1 Lancer Assault Rifle",
+        "miscellanea": "COG Armor, Gorasni, Gorasni (language), Kashkuri, Pesanga, South Islander, Tyran, Tyran (language)"
+      },
+      "categories": [
+        "Real World articles"
+      ],
+      "image": null,
+      "url": "https://gearsofwar.fandom.com/wiki/Gears_of_War%3A_A_Pendulum_Wars_Story"
+    },
+    {
+      "title": "Locust Horde",
+      "wikiTitle": "Locust Horde",
+      "collection": "enemies",
+      "facts": {
+        "type": "Enatic eusocial theocratic absolute monarchy",
+        "headofstate": "Queen Myrrah (c. 30 B.E. - 2 Frost 14 A.E.)",
+        "commander": "Ketor Skorge (Rise 14 A.E. - 2 Frost 14 A.E.), Uzil RAAM (Bounty 0 B.E. - Rise 14 A.E.), Uzil Sraak (c. 30 B.E. - Bounty 0 B.E.)",
+        "legislative": "Locust Council",
+        "capital": "Nexus (c. 30 B.E. - 2 Frost 14 A.E.)",
+        "language": "Tyran (Spoken), Locust Runes (Written)",
+        "religious": "Trinity of Worms",
+        "established": "c. 30 B.E.",
+        "fragmented": "2 Frost 14 A.E.",
+        "reorganized": "2 Frost 14 A.E. as the Queen's Guard and Savage Locust",
+        "dissolved": "Bloom 17 A.E.",
+        "restored": "Bloom 42 A.E. as the Swarm"
+      },
+      "categories": [
+        "Creatures in Gears Tactics",
+        "Creatures in Gears of War",
+        "Creatures in Gears of War: Judgment",
+        "Creatures in Gears of War 2",
+        "Creatures in Gears of War 3",
+        "Creatures in RAAM's Shadow",
+        "Ethnic Groups",
+        "Government",
+        "Locust Horde",
+        "Organizations"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/d/df/Locust_symbol.png/revision/latest?cb=20090602124446",
+      "url": "https://gearsofwar.fandom.com/wiki/Locust_Horde",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Locust-Horde.png"
+    },
+    {
+      "title": "Locust War",
+      "wikiTitle": "Locust War",
+      "collection": "quests",
+      "facts": {
+        "previous": "Pendulum Wars",
+        "conc": "Lambent War, Stranded Insurgency, Lambent Pandemic",
+        "next": "Outsider Movement",
+        "begin": "Bounty 0 A.E.",
+        "end": "Bloom 17 A.E.",
+        "place": "Sera",
+        "result": "Pyrrhic Human Victory, Forced evolution of the Locust into the Swarm after the deployment of the Imulsion Countermeasure Weapon during the battle of Azura, Total devastation of most of Sera's habitable environment, Near-",
+        "battles": "*Emergence Day, Emergence in Kalona, Destruction of Halvo Bay, Hammer of Dawn Strikes, Assassination of Ukkon, Fall of Landown, Evacuation of Ilima, Fall of Ephyra, West Barricade Campaign, Jilane Massacre, Lightmass Off",
+        "side1": "25px COG, 25px UIR, Stranded",
+        "side2": "25px Locust Horde, Queen's Guard, Savage Locust",
+        "commanders1": "*Council of Sovereigns, *Chairman Tomas Dalyell †, *Chairman Richard Prescott †, *Premier Yori Deschenko †, Coalition High Command, *Chief of Defense Col. Victor Hoffman, *Commander Alisder Fyne, *Chief of Defense Gen. J",
+        "commanders2": "*Locust Council, *Queen Myrrah †, *Ukkon †, Locust Army, *Uzil RAAM †, *Zamil Karn †, *Vold Sraak †, *Krav Jermad †, *Krav Gurst †, Trinity of Worms, *Ketor Vrol †, *Ketor Skorge †",
+        "forces1": "*COG Armed Forces, *Coalition of Ordered Governments Army, *Coalition of Ordered Governments Air Corps, *Coalition of Ordered Governments Navy, Gorasni Armed Forces, *Gorasni Army, *Gorasni Navy, Stranded Gangs",
+        "forces2": "*Locust Army, *Bloodied Vanguard, *Palace Guard, *Theron Guard",
+        "casual1": "*99.9% of the Human race, *Most of the COG leadership, *Near-total military and civilian casualities",
+        "casual2": "*Majority of Locust forces, *All surviving Locust are forced to evolve"
+      },
+      "categories": [
+        "Battles",
+        "Events",
+        "Wars"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/6/66/Locusthumanwar.jpg/revision/latest?cb=20230429205000",
+      "url": "https://gearsofwar.fandom.com/wiki/Locust_War",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Locust-War.jpg"
+    },
+    {
+      "title": "Jannermont",
+      "wikiTitle": "Jannermont",
+      "collection": "regions",
+      "facts": {
+        "location": "Tyrus",
+        "pendulum wars allegiance": "Coalition of Ordered Governments",
+        "locust-human war allegiance": "Locust Horde",
+        "notable facts": "*The first city to attacked by the Locust Horde on Emergence Day"
+      },
+      "categories": [
+        "COG",
+        "Cities",
+        "Locations",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/6/6c/Battleofjannermontcity.jpg/revision/latest?cb=20200603233726",
+      "url": "https://gearsofwar.fandom.com/wiki/Jannermont",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Jannermont.jpg"
+    },
+    {
+      "title": "Kaia",
+      "wikiTitle": "Kaia",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "Locations"
+      ],
+      "image": null,
+      "url": "https://gearsofwar.fandom.com/wiki/Kaia"
+    },
+    {
+      "title": "Locust Army",
+      "wikiTitle": "Locust Army",
+      "collection": "enemies",
+      "facts": {
+        "title1": "Locust Army",
+        "type": "Armed Forces",
+        "country": "Hollow",
+        "part_of": "Locust Horde",
+        "headquarters": "Royal PalaceNexus, Inner Hollow",
+        "commander-in-chief": "Uzil Sraak (c. 30 B.E. - Bounty 0 A.E.)Uzil RAAM (Bounty 0 A.E. - Gale 14 A.E.)Ketor Skorge (Gale 14 A.E. - 2 Frost 14 A.E.)",
+        "second-in-command": "Zamil Karn (Bounty 0 B.E. - Thaw 0 A.E.)",
+        "historical_information": "Example",
+        "founded": "circa 30 B.E.",
+        "dissolved": "2 Frost 14 A.E."
+      },
+      "categories": [
+        "Locust Horde"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/d/df/Locust_symbol.png/revision/latest?cb=20090602124446",
+      "url": "https://gearsofwar.fandom.com/wiki/Locust_Army",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Locust-Army.png"
+    },
+    {
+      "title": "Locust",
+      "wikiTitle": "Locust (species)",
+      "collection": "enemies",
+      "facts": {
+        "homeland": "Mount Kadar, Tyrus",
+        "hideb": "true"
+      },
+      "categories": [
+        "Characters",
+        "Ethnic Groups",
+        "Locust Horde"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/c/c8/Gears_2_Locust_Horde.jpg/revision/latest?cb=20260607195953",
+      "url": "https://gearsofwar.fandom.com/wiki/Locust_(species)",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Locust-species-.jpg"
+    },
+    {
+      "title": "Mulcher",
+      "wikiTitle": "Mulcher",
+      "collection": "items",
+      "facts": {
+        "manufacturer": "Coalition of Ordered Governments",
+        "type": "Gatling Gun",
+        "size": "Large",
+        "damage per hit": "Low to Medium",
+        "magazine": "N/A",
+        "maxammo": "*500, 250 (GOW4)",
+        "fire": "Automatic",
+        "ammotype": "High-Caliber Machine Gun Ammunition",
+        "operation": "Hand Crank",
+        "rate of fire": "1200/M",
+        "accuracy": "Low-Medium",
+        "range": "Short to Medium",
+        "era": "*Locust War, Lambent Pandemic, Swarm War",
+        "counterpart": "*Chain Gun, Tri-Shot, Troika Heavy Machine Gun, Vulcan Cannon, UIR Minigun",
+        "counterwep": "*Breechshot, Gnasher Shotgun, Longshot Sniper Rifle, Sawed-Off Shotgun",
+        "affiliation": "*Coalition of Ordered Governments, Locust Horde, Swarm"
+      },
+      "categories": [
+        "Articles that need Gearsify-ing",
+        "Gears 5 weapons",
+        "Gears of War: Judgment weapons",
+        "Gears of War 2 weapons",
+        "Gears of War 3 weapons",
+        "Gears of War 4 weapons",
+        "Weapons",
+        "Weapons of the Coalition of Ordered Governments",
+        "Weapons of the Locust Horde"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/6/6a/Gow-Mulcher-hi-res.jpg/revision/latest?cb=20120416205512",
+      "url": "https://gearsofwar.fandom.com/wiki/Mulcher",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Mulcher.jpg"
+    },
+    {
+      "title": "Padrick Salton",
+      "wikiTitle": "Padrick Salton",
+      "collection": "characters",
+      "facts": {
+        "homeland": "Autrin, South Islands",
+        "birth": "35 B.E.",
+        "rank": "Private",
+        "species": "Human",
+        "gender": "Male",
+        "hair": "White (Formerly Red)",
+        "eyes": "Blue",
+        "family": "J. Salton - Relative †",
+        "era": "Pendulum Wars, Locust War, Lambent Pandemic",
+        "notable": "*Has tribal tattoos, Expert sniper, 400 plus kills during the Pendulum Wars, Went MIA during the Locust War",
+        "affiliation": "COG, Stranded (Formerly)"
+      },
+      "categories": [
+        "26th Royal Tyran Infantry",
+        "COG",
+        "Characters",
+        "Gear Soldier",
+        "Male characters",
+        "Pendulum Wars veterans",
+        "South Islanders"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/b/bc/Pad_threatening_stranded_2.png/revision/latest?cb=20120426015219",
+      "url": "https://gearsofwar.fandom.com/wiki/Padrick_Salton",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Padrick-Salton.png"
+    },
+    {
+      "title": "Second Battle of Jannermont",
+      "wikiTitle": "Second Battle of Jannermont",
+      "collection": "enemies",
+      "facts": {
+        "conflict": "Locust War",
+        "date": "30th Bloom, 1 A.E.",
+        "place": "Jannermont, Tyrus",
+        "result": "Locust Victory, Jannermont City sacked by Locust forces",
+        "side1": "25px Coalition of Ordered Governments",
+        "side2": "25px Locust Horde",
+        "commanders1": "Sgt. Marcus Fenix (late battle)",
+        "commanders2": "Unknown",
+        "forces1": "One Gear squad, One APC, *APC-Two-Eighty",
+        "forces2": "Drones",
+        "casual1": "None, heavy civilian losses",
+        "casual2": "All Locust forces encountered",
+        "previous": "Battle of Bonbourg",
+        "next": "Fall of Ostri"
+      },
+      "categories": [
+        "Battles",
+        "Events",
+        "Locust Horde military victories"
+      ],
+      "image": null,
+      "url": "https://gearsofwar.fandom.com/wiki/Second_Battle_of_Jannermont"
+    },
+    {
+      "title": "Sera",
+      "wikiTitle": "Sera",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "Locations"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/f/f5/3019089047_eb422d5a59.jpg/revision/latest?cb=20100630020326",
+      "url": "https://gearsofwar.fandom.com/wiki/Sera",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Sera.jpg"
+    },
+    {
+      "title": "Thrashball",
+      "wikiTitle": "Thrashball",
+      "collection": "characters",
+      "facts": {},
+      "categories": [
+        "Articles needing citations",
+        "Human Culture",
+        "Sports",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/5/53/Thrashball_League_Logo.jpg/revision/latest?cb=20120418220217",
+      "url": "https://gearsofwar.fandom.com/wiki/Thrashball",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Thrashball.jpg"
+    },
+    {
+      "title": "Smoke Grenade",
+      "wikiTitle": "Smoke Grenade",
+      "collection": "items",
+      "facts": {
+        "type": "Smoke Grenade",
+        "manufacturer": "Coalition of Ordered Governments",
+        "size": "Small",
+        "accuracy": "Varies",
+        "range": "Varies on User",
+        "era": "*Pendulum Wars, Locust War, Lambent Pandemic, Outsider Movement, Swarm War",
+        "counterpart": "*Beacon Grenade, Bolo Grenade, Ink Grenade, Stim-Gas Grenade",
+        "counterwep": "*Beacon Grenade",
+        "affiliation": "*Coalition of Ordered Governments, Locust Horde"
+      },
+      "categories": [
+        "Articles that need Gearsify-ing",
+        "Coalition of Ordered Governments Armed Forces technology",
+        "Gears 5 weapons",
+        "Gears of War: Judgment weapons",
+        "Gears of War 2 weapons",
+        "Gears of War 3 weapons",
+        "Gears of War 4 weapons",
+        "Gears of War weapons",
+        "Technology",
+        "Weapons"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/4/4d/Gow-3-smoke.jpeg/revision/latest?cb=20120429152802",
+      "url": "https://gearsofwar.fandom.com/wiki/Smoke_Grenade",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Smoke-Grenade.jpeg"
+    },
+    {
+      "title": "South Islands",
+      "wikiTitle": "South Islands",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "COG",
+        "Locations",
+        "Nations of Sera"
+      ],
+      "image": null,
+      "url": "https://gearsofwar.fandom.com/wiki/South_Islands"
+    },
+    {
+      "title": "Timeline",
+      "wikiTitle": "Timeline",
+      "collection": "characters",
+      "facts": {},
+      "categories": [
+        "Events",
+        "Human Culture",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/5/53/Gow_timeline.jpg/revision/latest?cb=20130223183333",
+      "url": "https://gearsofwar.fandom.com/wiki/Timeline",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Timeline.jpg"
+    },
+    {
+      "title": "Team Deathmatch",
+      "wikiTitle": "Team Deathmatch",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "Multiplayer modes",
+        "Real World articles"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/3/39/TDM.jpg/revision/latest?cb=20150118220637",
+      "url": "https://gearsofwar.fandom.com/wiki/Team_Deathmatch",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Team-Deathmatch.jpg"
+    },
+    {
+      "title": "Stim-Gas Grenade",
+      "wikiTitle": "Stim-Gas Grenade",
+      "collection": "items",
+      "facts": {
+        "manufacturer": "Coalition of Ordered Governments",
+        "type": "Stimulation Gas Grenade",
+        "size": "Small",
+        "rate of fire": "Slow",
+        "accuracy": "Varies",
+        "range": "Medium",
+        "counterpart": "*Beacon Grenade, Bolo Grenade, Incendiary Grenade, Ink Grenade",
+        "affiliation": "*Coalition of Ordered Governments, *Onyx Guard"
+      },
+      "categories": [
+        "Coalition of Ordered Governments Armed Forces technology",
+        "Gears of War: Judgment weapons",
+        "Medicine",
+        "Technology",
+        "Weapons"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/5/5b/Stim_Grenade.jpg/revision/latest?cb=20121212163950",
+      "url": "https://gearsofwar.fandom.com/wiki/Stim-Gas_Grenade",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Stim-Gas-Grenade.jpg"
+    },
+    {
+      "title": "Wretch",
+      "wikiTitle": "Wretch",
+      "collection": "enemies",
+      "facts": {
+        "homeland": "Hollow",
+        "species": "Hollow Creatures",
+        "body color": "Grey skin",
+        "height": "3'1\"",
+        "weight": "135 lbs",
+        "eyes": "Black",
+        "types": "Lambent Wretch",
+        "affiliation": "Locust Horde",
+        "rank": "Cannon Fodder"
+      },
+      "categories": [
+        "Characters",
+        "Creatures in Gears Tactics",
+        "Creatures in Gears of War",
+        "Creatures in Gears of War: Judgment",
+        "Creatures in Gears of War 2",
+        "Creatures in Gears of War 3",
+        "Creatures in RAAM's Shadow",
+        "Hollow Creatures"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/2/2d/Wretch.png/revision/latest?cb=20110713224628",
+      "url": "https://gearsofwar.fandom.com/wiki/Wretch",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Wretch.png"
+    },
+    {
+      "title": "Union of Independent Republics",
+      "wikiTitle": "Union of Independent Republics",
+      "collection": "characters",
+      "facts": {
+        "type": "*Supranational and intergovernmental military alliance (Former), Separatist movement (Former), Military dictatorship (Current)",
+        "headofstate": "Chairman (Former)",
+        "headofgov": "Premier (Former)",
+        "commander": "Chairman (Former)",
+        "defacto": "*High Council of Gorasnaya (11th Reap, 0 A.E. - Bounty, 0 A.E.), Commander Miran Trescu (Bounty, 0 A.E. - Brume, 14 A.E.; Bloom, 15 A.E. - Current)",
+        "executive": "Chairman (Former)",
+        "capital": "*Unnamed capital of Pelles (Unknown B.E. - 11th Reap, 0 A.E.), Unnamed capital of Gorasnaya (11th Reap, 0 A.E. - Bounty, 0 A.E.), Gorasnayan Protectorate in the Lesser Islands (Unknown A.E. - Brume, 14 A.E.)",
+        "language": "*Pellesian, Ostrini, Gorasni",
+        "established": "Approximately 80 B.E.",
+        "fragmented": "11th Reap, 0 A.E.",
+        "dissolved": "Brume, 14 A.E.",
+        "restored": "Bloom, 15 A.E."
+      },
+      "categories": [
+        "Articles that need Gearsify-ing",
+        "Articles to be cleaned up",
+        "Government",
+        "Organizations",
+        "Stubs",
+        "UIR"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/4/4e/UIRFlagUpdate.png/revision/latest?cb=20200430034344",
+      "url": "https://gearsofwar.fandom.com/wiki/Union_of_Independent_Republics",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/Union-of-Independent-Republics.png"
+    },
+    {
+      "title": "UIR Infantry",
+      "wikiTitle": "UIR Infantry",
+      "collection": "characters",
+      "facts": {
+        "species": "Human",
+        "height": "6'0\" ft. (Average)",
+        "weapons": "*Markza Mk 1 Marksman Rifle, *GZ18 Markza Sniper Rifle, Booshka Grenade Launcher, Mark 1 Lancer Assault Rifle, Snub Pistol, UIR Assault Rifle, UIR Mortar, UIR Pistol",
+        "equipment": "*UIR Armor, UIR Helmet",
+        "vehicles": "*Asp, Khimera, LAV, Pariah Tank, UIR APC, UIR Transport Helicopter",
+        "era": "Pendulum Wars",
+        "types": "*Standard Infantry, UIR Officer, Commandos, Sandswept Unit, UIR Elite, Saboteurs, Cosmonauts",
+        "notable": "UIR Counterpart to Gears",
+        "affiliation": "*Union of Independent Republics, *Union of Independent Republics Army",
+        "rank": "Standard Infantry"
+      },
+      "categories": [
+        "Articles to be cleaned up",
+        "Characters",
+        "Stubs",
+        "UIR"
+      ],
+      "image": "https://static.wikia.nocookie.net/gearsofwar/images/e/e4/UIRSoldierMale_Render.jpg/revision/latest?cb=20210409203826",
+      "url": "https://gearsofwar.fandom.com/wiki/UIR_Infantry",
+      "imageFile": "assets/_wiki/gears-of-war-e-day/UIR-Infantry.jpg"
     }
   ]
 }

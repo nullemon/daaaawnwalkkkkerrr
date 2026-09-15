@@ -10,6 +10,57 @@ import { rich, type Block } from './lexical'
 import { slugify } from '../fields/shared'
 
 /**
+ * Upload one harvested image, once.
+ *
+ * Keyed on the filename we give it, so re-running does not fill the library
+ * with copies. A failed upload loses the picture, never the record — a page
+ * with facts and no illustration is still worth having.
+ */
+const uploadImage = async (
+  payload: Payload,
+  file: string,
+  filename: string,
+  alt: string,
+  credit: string,
+): Promise<number | string | null> => {
+  if (!fs.existsSync(file)) return null
+
+  const existing = await payload.find({
+    collection: 'media',
+    where: { filename: { equals: filename } },
+    limit: 1,
+    depth: 0,
+  })
+  if (existing.docs.length > 0) return existing.docs[0].id
+
+  const extension = path.extname(filename).toLowerCase()
+  const mimetype =
+    extension === '.png'
+      ? 'image/png'
+      : extension === '.gif'
+        ? 'image/gif'
+        : extension === '.webp'
+          ? 'image/webp'
+          : 'image/jpeg'
+
+  try {
+    const created = await payload.create({
+      collection: 'media',
+      data: { alt, credit } as never,
+      file: {
+        data: fs.readFileSync(file),
+        mimetype,
+        name: filename,
+        size: fs.statSync(file).size,
+      },
+    })
+    return created.id
+  } catch {
+    return null
+  }
+}
+
+/**
  * Turns harvested wiki entities into records.
  *
  *   pnpm seed:entities
@@ -48,6 +99,8 @@ type Entity = {
   facts: Record<string, string>
   categories: string[]
   url: string
+  /** Path to the page's lead image, downloaded by the harvester. */
+  imageFile?: string
 }
 
 type Harvest = { slug: string; host: string; fetchedAt: string; entities: Entity[] }
@@ -219,9 +272,20 @@ const REQUIRED_DEFAULTS: Record<string, Record<string, unknown>> = {
   enemies: {},
   characters: {},
   regions: {},
-  perks: {},
   mechanics: {},
 }
+
+/**
+ * Collections a harvested entity cannot be written into, and where it goes
+ * instead.
+ *
+ * A perk requires a skill tree, and a tree is a thing somebody designs after
+ * playing the game — there is no honest default. Rather than inventing a
+ * "General" tree per game so a foreign record fits, an ability page is filed
+ * as a systems page, which is what it actually is until somebody maps the
+ * tree.
+ */
+const REHOME: Record<string, string> = { perks: 'mechanics', endings: 'mechanics' }
 
 async function run(): Promise<void> {
   if (!fs.existsSync(RAW_DIR)) {
@@ -255,8 +319,11 @@ async function run(): Promise<void> {
 
     const counts: Record<string, number> = {}
     const seen = new Set<string>()
+    let failed = 0
 
     for (const entity of harvest.entities) {
+      entity.collection = REHOME[entity.collection] ?? entity.collection
+
       let slug = slugify(entity.title)
       if (!slug) continue
 
@@ -268,8 +335,28 @@ async function run(): Promise<void> {
       }
       seen.add(`${entity.collection}:${slug}`)
 
-      await upsert(payload, entity.collection as CollectionSlug, game.id, slug, {
+      /*
+        The page's own lead image, credited to the wiki it came from. This is
+        the one place a picture is attached to a named record, and it is safe
+        precisely because the wiki labelled it: the image on the page for a
+        named character is a picture of that character. The rule about
+        unidentified screenshots in docs/ASSETS.md is about the opposite case.
+      */
+      let imageId: number | string | null = null
+      if (entity.imageFile) {
+        imageId = await uploadImage(
+          payload,
+          path.resolve(entity.imageFile),
+          `${harvest.slug}-${slug}${path.extname(entity.imageFile) || '.png'}`,
+          `${entity.title} in ${gameTitle}`,
+          `Image via ${harvest.host}.`,
+        )
+      }
+
+      try {
+        await upsert(payload, entity.collection as CollectionSlug, game.id, slug, {
         ...(REQUIRED_DEFAULTS[entity.collection] ?? {}),
+        ...(imageId ? { image: imageId } : {}),
         title: entity.title,
         slug,
         summary: summaryFor(entity, gameTitle),
@@ -285,12 +372,24 @@ async function run(): Promise<void> {
         ],
       })
 
-      counts[entity.collection] = (counts[entity.collection] ?? 0) + 1
-      total += 1
+        counts[entity.collection] = (counts[entity.collection] ?? 0) + 1
+        total += 1
+      } catch (error) {
+        /*
+          One record that will not validate must not take the other five
+          hundred with it. Harvested data is other people's data and will
+          always contain a shape nothing here anticipated.
+        */
+        failed += 1
+        if (failed <= 5) {
+          console.log(`    skipped ${entity.collection}/${slug}: ${(error as Error).message}`)
+        }
+      }
     }
 
     console.log(
-      `  ${joinList(Object.entries(counts).map(([key, value]) => `${value} ${key}`))}`,
+      `  ${joinList(Object.entries(counts).map(([key, value]) => `${value} ${key}`))}` +
+        (failed > 0 ? ` — ${failed} skipped` : ''),
     )
   }
 

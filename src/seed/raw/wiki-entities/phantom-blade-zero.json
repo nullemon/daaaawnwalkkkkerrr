@@ -4,6 +4,80 @@
   "fetchedAt": "2026-09-15",
   "entities": [
     {
+      "title": "Phantom Blade Wiki",
+      "wikiTitle": "Phantom Blade Wiki",
+      "collection": "items",
+      "facts": {},
+      "categories": [
+        "Phantom Blade Wiki"
+      ],
+      "image": "https://static.wikia.nocookie.net/phantom-blade/images/e/e6/Site-logo.png/revision/latest?cb=20230911202339",
+      "url": "https://phantomblade.fandom.com/wiki/Phantom_Blade_Wiki",
+      "imageFile": "assets/_wiki/phantom-blade-zero/Phantom-Blade-Wiki.png"
+    },
+    {
+      "title": "Soul",
+      "wikiTitle": "Soul",
+      "collection": "characters",
+      "facts": {
+        "aliases": "Soul the \"Dark Raider\"Black Blade Soul",
+        "relatives": "Zuo Shang (Friend), Mu Tianmiao (Adoptive Father/Leader), Mu Xiaokui (Childhood Friend), Jianxuan (Friend)",
+        "affiliation": "The Order",
+        "occupation": "Hand",
+        "marital": "Xuanyu (True Love)",
+        "species": "Human",
+        "gender": "Male",
+        "height": "172cm",
+        "appearsin": "Rainblood: Town of DeathRainblood 2: City of FlameRainblood Chronicles: MiragePhantom Blade: ExecutionersPhantom Blade Zero"
+      },
+      "categories": [
+        "Characters",
+        "Characters in Phantom Blade: Executioners",
+        "Characters in Rainblood: Town of Death",
+        "Characters in Rainblood 2: City of Flame",
+        "Characters in Rainblood Chronicles: Mirage",
+        "Playable Characters in Phantom Blade: Executioners",
+        "Playable Characters in Rainblood: Town of Death",
+        "Playable Characters in Rainblood 2: City of Flame",
+        "Playable Characters in Rainblood Chronicles: Mirage",
+        "Protagonists"
+      ],
+      "image": "https://static.wikia.nocookie.net/phantom-blade/images/8/82/Soul-1.png/revision/latest?cb=20230911031854",
+      "url": "https://phantomblade.fandom.com/wiki/Soul",
+      "imageFile": "assets/_wiki/phantom-blade-zero/Soul.png"
+    },
+    {
+      "title": "The Order",
+      "wikiTitle": "The Order",
+      "collection": "characters",
+      "facts": {},
+      "categories": [
+        "Factions",
+        "Lore",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/phantom-blade/images/5/59/The_Order.png/revision/latest?cb=20230919044735",
+      "url": "https://phantomblade.fandom.com/wiki/The_Order",
+      "imageFile": "assets/_wiki/phantom-blade-zero/The-Order.png"
+    },
+    {
+      "title": "Mu Tianmiao",
+      "wikiTitle": "Mu Tianmiao",
+      "collection": "characters",
+      "facts": {
+        "relatives": "Soul (Adopted Son) Zuo Shang (Adopted Son), Zhongshu (Personal Servant)",
+        "affiliation": "The Order",
+        "gender": "Male",
+        "height": "180cm"
+      },
+      "categories": [
+        "Characters",
+        "Characters in Rainblood 2: City of Flame"
+      ],
+      "image": null,
+      "url": "https://phantomblade.fandom.com/wiki/Mu_Tianmiao"
+    },
+    {
       "title": "Combat",
       "wikiTitle": "Combat",
       "collection": "mechanics",
@@ -11,6 +85,7 @@
       "categories": [
         "Gameplay in Phantom Blade Zero"
       ],
+      "image": null,
       "url": "https://phantomblade.fandom.com/wiki/Combat"
     },
     {
@@ -27,6 +102,7 @@
         "Characters",
         "Characters in Phantom Blade Zero"
       ],
+      "image": null,
       "url": "https://phantomblade.fandom.com/wiki/Tie_Sha_the_Frenzy"
     },
     {
@@ -43,6 +119,7 @@
         "Characters",
         "Characters in Phantom Blade Zero"
       ],
+      "image": null,
       "url": "https://phantomblade.fandom.com/wiki/Chief_Disciple_of_the_Seven_Stars"
     },
     {
@@ -59,7 +136,30 @@
         "Characters",
         "Characters in Phantom Blade Zero"
       ],
+      "image": null,
       "url": "https://phantomblade.fandom.com/wiki/Red_Wraith"
+    },
+    {
+      "title": "Healer's Journal",
+      "wikiTitle": "Healer's Journal",
+      "collection": "items",
+      "facts": {},
+      "categories": [
+        "Documents in Phantom Blade Zero"
+      ],
+      "image": null,
+      "url": "https://phantomblade.fandom.com/wiki/Healer's_Journal"
+    },
+    {
+      "title": "Mandatory Procedure for All Personnel",
+      "wikiTitle": "Mandatory Procedure for All Personnel",
+      "collection": "items",
+      "facts": {},
+      "categories": [
+        "Documents in Phantom Blade Zero"
+      ],
+      "image": null,
+      "url": "https://phantomblade.fandom.com/wiki/Mandatory_Procedure_for_All_Personnel"
     },
     {
       "title": "Wan Jun \"Coppermaul\"",
@@ -75,6 +175,7 @@
         "Characters",
         "Characters in Phantom Blade Zero"
       ],
+      "image": null,
       "url": "https://phantomblade.fandom.com/wiki/Wan_Jun_%22Coppermaul%22"
     },
     {
@@ -85,6 +186,7 @@
       "categories": [
         "Gameplay in Phantom Blade Zero"
       ],
+      "image": null,
       "url": "https://phantomblade.fandom.com/wiki/Weapons"
     }
   ]

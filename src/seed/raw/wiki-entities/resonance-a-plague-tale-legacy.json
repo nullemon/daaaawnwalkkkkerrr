@@ -4,6 +4,272 @@
   "fetchedAt": "2026-09-15",
   "entities": [
     {
+      "title": "Amicia de Rune",
+      "wikiTitle": "Amicia de Rune",
+      "collection": "characters",
+      "facts": {
+        "name(s)": "Daughter of Robert and Béatrice de Rune Defiler",
+        "title(s)": "Lady Protector",
+        "born": "c. 1333",
+        "age(d)": "15",
+        "condition": "Uninfected",
+        "status": "Alive",
+        "occupation(s)": "Protector of the Carrier",
+        "affiliation(s)": "de Rune family",
+        "relative(s)": "Robert de Rune Béatrice de Rune Hugo de Rune",
+        "religion": "Roman Catholic",
+        "weapon(s)": "Sling Crossbow Alchemy",
+        "species": "Human",
+        "gender": "Female",
+        "race": "Caucasian",
+        "nationality": "French",
+        "hair": "Brown",
+        "eye": "Blue",
+        "debut": "A Plague Tale: Innocence",
+        "mo-capped by": "Stéphanie Cassignard Robyn Wolf",
+        "created by": "Olivier Ponsonnet"
+      },
+      "categories": [
+        "A Plague Tale: Innocence characters",
+        "A Plague Tale: Requiem characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/f/ff/APTR-Amicia-Infobox.jpg/revision/latest?cb=20221107231128",
+      "url": "https://aplaguetale.fandom.com/wiki/Amicia_de_Rune",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Amicia-de-Rune.jpg"
+    },
+    {
+      "title": "Hugo de Rune",
+      "wikiTitle": "Hugo de Rune",
+      "collection": "characters",
+      "facts": {
+        "name(s)": "Son of Robert and Béatrice de Rune The Natural Carrier The Chosen One",
+        "title(s)": "Carrier of the Prima Macula",
+        "born": "c. 1343",
+        "died": "June 1349",
+        "age(d)": "6",
+        "condition": "Uninfected",
+        "status": "Deceased",
+        "death": "Marseille, July 1349",
+        "cause of death": "Bludgeoned with a rock by Amicia de Rune out of mercy or shot with a crossbow by Lucas",
+        "affiliation(s)": "de Rune family Prima Macula",
+        "relative(s)": "Robert de Rune Béatrice de Rune Amicia de Rune",
+        "weapon(s)": "Prima Macula",
+        "species": "Human",
+        "gender": "Male",
+        "race": "Caucasian",
+        "nationality": "French",
+        "hair": "Brown",
+        "eye": "Blue",
+        "debut": "A Plague Tale: Innocence",
+        "mo-capped by": "Gabin Linot Chloé Louis"
+      },
+      "categories": [
+        "A Plague Tale: Innocence characters",
+        "A Plague Tale: Requiem characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/8/86/SOURCE%E2%81%84hello-turtless%E2%81%84Hugo%E2%81%841.jpg/revision/latest?cb=20210510050808",
+      "url": "https://aplaguetale.fandom.com/wiki/Hugo_de_Rune",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Hugo-de-Rune.jpg"
+    },
+    {
+      "title": "Lucas",
+      "wikiTitle": "Lucas",
+      "collection": "characters",
+      "facts": {
+        "title(s)": "Magister",
+        "born": "Circa 1336",
+        "age(d)": "12 14",
+        "condition": "Uninfected",
+        "status": "Alive",
+        "affiliation(s)": "de Rune family",
+        "species": "Human",
+        "gender": "Male",
+        "race": "Caucasian",
+        "nationality": "French",
+        "hair": "Brown",
+        "eye": "Blue",
+        "debut": "A Plague Tale: Innocence",
+        "mo-capped by": "Emile Sardin Tom Hudson"
+      },
+      "categories": [
+        "A Plague Tale: Innocence characters",
+        "A Plague Tale: Requiem characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/2/28/Lucas_infobox.png/revision/latest?cb=20260628164609",
+      "url": "https://aplaguetale.fandom.com/wiki/Lucas",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Lucas.png"
+    },
+    {
+      "title": "Laurentius",
+      "wikiTitle": "Laurentius",
+      "collection": "characters",
+      "facts": {
+        "death": "November 1348 in his farmstead",
+        "cause of death": "Accidental incineration caused by the rats",
+        "affiliation(s)": "de Rune family",
+        "species": "Human",
+        "gender": "Male",
+        "race": "Caucasian",
+        "nationality": "French",
+        "hair": "Grey",
+        "eye": "Brown",
+        "debut": "A Plague Tale: Innocence"
+      },
+      "categories": [
+        "A Plague Tale: Innocence characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/f/f0/Plaguetale15.png/revision/latest?cb=20190530205625",
+      "url": "https://aplaguetale.fandom.com/wiki/Laurentius",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Laurentius.png"
+    },
+    {
+      "title": "Béatrice de Rune",
+      "wikiTitle": "Béatrice de Rune",
+      "collection": "characters",
+      "facts": {
+        "title(s)": "Lady Magistra",
+        "condition": "Uninfected",
+        "status": "Deceased",
+        "death": "Central Stage of La Cuna, June 1349",
+        "cause of death": "Throat slit by Countess Émilie de Arles",
+        "occupation(s)": "Alchemist",
+        "affiliation(s)": "de Rune family",
+        "relative(s)": "Robert de Rune Amicia de Rune Hugo de Rune",
+        "religion": "Roman Catholic",
+        "species": "Human",
+        "gender": "Female",
+        "race": "Caucasian",
+        "nationality": "French",
+        "hair": "Brown",
+        "eye": "Brown",
+        "debut": "A Plague Tale: Innocence",
+        "mo-capped by": "Giorgia Sinicorni"
+      },
+      "categories": [
+        "A Plague Tale: Innocence characters",
+        "A Plague Tale: Requiem characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/7/70/Beatrice_infobox.png/revision/latest?cb=20260628164014",
+      "url": "https://aplaguetale.fandom.com/wiki/B%C3%A9atrice_de_Rune",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/B-atrice-de-Rune.png"
+    },
+    {
+      "title": "Robert de Rune",
+      "wikiTitle": "Robert de Rune",
+      "collection": "characters",
+      "facts": {
+        "name(s)": "Knight of the Tree",
+        "condition": "Uninfected",
+        "status": "Deceased",
+        "death": "Died at the de Rune estate grounds in November 1348",
+        "cause of death": "Had throat slit by Nicholas",
+        "affiliation(s)": "de Rune family",
+        "weapon(s)": "Sword",
+        "species": "Human",
+        "gender": "Male",
+        "race": "Caucasian",
+        "nationality": "French",
+        "hair": "Brown",
+        "eye": "Brown",
+        "debut": "\"The de Rune Legacy\""
+      },
+      "categories": [
+        "A Plague Tale: Innocence characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/b/be/Plaguetale2.png/revision/latest?cb=20190520092538",
+      "url": "https://aplaguetale.fandom.com/wiki/Robert_de_Rune",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Robert-de-Rune.png"
+    },
+    {
+      "title": "Vitalis Bénévent",
+      "wikiTitle": "Vitalis Bénévent",
+      "collection": "characters",
+      "facts": {
+        "name(s)": "The Unity \"Saint\"",
+        "title(s)": "Grand Inquisitor",
+        "condition": "Infected",
+        "status": "Deceased",
+        "death": "Died at the Cathedral in December 1348",
+        "cause of death": "Struck in the face by several rocks launched at him by Amicia de Rune",
+        "occupation(s)": "Grand Inquisitor",
+        "affiliation(s)": "The Inquisition The Catholic Church Prima Macula",
+        "species": "Human",
+        "gender": "Male",
+        "race": "Caucasian",
+        "nationality": "French",
+        "hair": "Grey",
+        "eye": "Grey",
+        "debut": "A Plague Tale: Innocence",
+        "voiced by": "Stéphane Cornicard"
+      },
+      "categories": [
+        "A Plague Tale: Innocence characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/c/ca/SOURCE%E2%81%84hello-turtless%E2%81%84Vitalis%E2%81%841.jpg/revision/latest?cb=20190909224023",
+      "url": "https://aplaguetale.fandom.com/wiki/Vitalis_B%C3%A9n%C3%A9vent",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Vitalis-B-n-vent.jpg"
+    },
+    {
+      "title": "Rodric",
+      "wikiTitle": "Rodric",
+      "collection": "characters",
+      "facts": {
+        "name(s)": "Son of the Smith",
+        "condition": "Uninfected",
+        "status": "Deceased",
+        "death": "Died at the Cathedral gates in December 1348",
+        "cause of death": "Shot and killed by a volley of arrows from the Inquisition",
+        "occupation(s)": "Blacksmith",
+        "affiliation(s)": "de Rune family",
+        "relative(s)": "Unnamed father",
+        "species": "Human",
+        "gender": "Male",
+        "race": "Caucasian",
+        "nationality": "French",
+        "hair": "Brown",
+        "eye": "Brown",
+        "debut": "A Plague Tale: Innocence",
+        "mo-capped by": "Gabriel Mercier"
+      },
+      "categories": [
+        "A Plague Tale: Innocence characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/5/5b/SOURCE%E2%81%84hello-turtless%E2%81%84Rodric%E2%81%841.jpg/revision/latest?cb=20190909224022",
+      "url": "https://aplaguetale.fandom.com/wiki/Rodric",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Rodric.jpg"
+    },
+    {
+      "title": "Arthur",
+      "wikiTitle": "Arthur",
+      "collection": "characters",
+      "facts": {
+        "born": "c. 1332",
+        "age(d)": "16",
+        "condition": "Uninfected",
+        "status": "Deceased",
+        "death": "Died at the Château d'Ombrage ramparts in December 1348",
+        "cause of death": "Stabbed in the abdomen by Nicholas",
+        "occupation(s)": "Thief",
+        "affiliation(s)": "de Rune family",
+        "relative(s)": "Unnamed father Mélie",
+        "weapon(s)": "Explosives",
+        "species": "Human",
+        "gender": "Male",
+        "race": "Caucasian",
+        "nationality": "French",
+        "hair": "Red",
+        "eye": "Blue",
+        "debut": "A Plague Tale: Innocence",
+        "mo-capped by": "Gabriel Mercier"
+      },
+      "categories": [
+        "A Plague Tale: Innocence characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/1/10/APlagueTale_Arthur1.png/revision/latest?cb=20190721181545",
+      "url": "https://aplaguetale.fandom.com/wiki/Arthur",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Arthur.png"
+    },
+    {
       "title": "Sophia",
       "wikiTitle": "Sophia",
       "collection": "characters",
@@ -31,10 +297,11 @@
       },
       "categories": [
         "A Plague Tale: Requiem characters",
-        "Articles to be expanded",
         "Resonance: A Plague Tale Legacy characters"
       ],
-      "url": "https://aplaguetale.fandom.com/wiki/Sophia"
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/d/dc/Sophia_Resonance.jpg/revision/latest?cb=20260906154652",
+      "url": "https://aplaguetale.fandom.com/wiki/Sophia",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Sophia.jpg"
     },
     {
       "title": "Theseus",
@@ -57,7 +324,9 @@
         "Resonance: A Plague Tale Legacy characters",
         "Stubs"
       ],
-      "url": "https://aplaguetale.fandom.com/wiki/Theseus"
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/0/00/Theseus_infobox.jpg/revision/latest?cb=20260616180112",
+      "url": "https://aplaguetale.fandom.com/wiki/Theseus",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Theseus.jpg"
     },
     {
       "title": "Leni",
@@ -74,7 +343,9 @@
         "Resonance: A Plague Tale Legacy characters",
         "Stubs"
       ],
-      "url": "https://aplaguetale.fandom.com/wiki/Leni"
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/f/f3/Leni.png/revision/latest?cb=20260830184140",
+      "url": "https://aplaguetale.fandom.com/wiki/Leni",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Leni.png"
     },
     {
       "title": "Minotaur",
@@ -89,7 +360,9 @@
         "Resonance: A Plague Tale Legacy characters",
         "Stubs"
       ],
-      "url": "https://aplaguetale.fandom.com/wiki/Minotaur"
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/f/f6/Minotaur_infobox.jpg/revision/latest?cb=20260616175943",
+      "url": "https://aplaguetale.fandom.com/wiki/Minotaur",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Minotaur.jpg"
     },
     {
       "title": "Crete",
@@ -106,6 +379,7 @@
         "Resonance: A Plague Tale Legacy locations",
         "Stubs"
       ],
+      "image": null,
       "url": "https://aplaguetale.fandom.com/wiki/Crete"
     },
     {
@@ -127,6 +401,7 @@
       "categories": [
         "Resonance: A Plague Tale Legacy characters"
       ],
+      "image": null,
       "url": "https://aplaguetale.fandom.com/wiki/Alec"
     },
     {
@@ -144,7 +419,9 @@
         "Resonance: A Plague Tale Legacy locations",
         "Stubs"
       ],
-      "url": "https://aplaguetale.fandom.com/wiki/Minotaur's_Island"
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/4/47/Minotaur%27s_Island.png/revision/latest?cb=20260702035420",
+      "url": "https://aplaguetale.fandom.com/wiki/Minotaur's_Island",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Minotaur-s-Island.png"
     },
     {
       "title": "Ezra",
@@ -161,6 +438,7 @@
         "Resonance: A Plague Tale Legacy characters",
         "Stubs"
       ],
+      "image": null,
       "url": "https://aplaguetale.fandom.com/wiki/Ezra"
     },
     {
@@ -178,7 +456,1293 @@
         "Resonance: A Plague Tale Legacy locations",
         "Stubs"
       ],
-      "url": "https://aplaguetale.fandom.com/wiki/Venice"
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/5/5f/Venice_2.jpg/revision/latest?cb=20260617172826",
+      "url": "https://aplaguetale.fandom.com/wiki/Venice",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Venice.jpg"
+    },
+    {
+      "title": "Mélie",
+      "wikiTitle": "Mélie",
+      "collection": "characters",
+      "facts": {
+        "age(d)": "16",
+        "condition": "Uninfected",
+        "status": "Alive",
+        "occupation(s)": "Thief",
+        "affiliation(s)": "de Rune family",
+        "relative(s)": "Unnamed father Arthur",
+        "weapon(s)": "Lockpick",
+        "species": "Human",
+        "gender": "Female",
+        "race": "Caucasian",
+        "nationality": "French",
+        "hair": "Red",
+        "eye": "Blue",
+        "debut": "A Plague Tale: Innocence",
+        "voiced by": "Tabitha Rubens",
+        "mo-capped by": "Mard Bruthenaux"
+      },
+      "categories": [
+        "A Plague Tale: Innocence characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/6/63/SOURCE%E2%81%84hello-turtless%E2%81%84M%C3%A9lie%E2%81%841.jpg/revision/latest?cb=20190909224024",
+      "url": "https://aplaguetale.fandom.com/wiki/M%C3%A9lie",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/M-lie.jpg"
+    },
+    {
+      "title": "Nicholas",
+      "wikiTitle": "Nicholas",
+      "collection": "characters",
+      "facts": {
+        "name(s)": "The Scarlet Monk",
+        "title(s)": "Captain of the Purple Guard Cap'n The Knight The Butcher",
+        "age(d)": "Late 30s",
+        "condition": "Uninfected",
+        "status": "Deceased",
+        "death": "Died at the Château d'Ombrage ramparts in December 1348",
+        "cause of death": "Spine broken after being violently thrown by his cloak into the ground by a rat swarm",
+        "occupation(s)": "Captain",
+        "affiliation(s)": "The Inquisition The Catholic Church",
+        "religion": "Christianity",
+        "weapon(s)": "Longsword",
+        "species": "Human",
+        "gender": "Male",
+        "race": "Unknown",
+        "nationality": "French",
+        "hair": "Unknown",
+        "eye": "Unknown",
+        "debut": "A Plague Tale: Innocence",
+        "voiced by": "Mark Healy",
+        "mo-capped by": "Christophe Sardain"
+      },
+      "categories": [
+        "A Plague Tale: Innocence characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/2/27/Nicholas_infobox.jpg/revision/latest?cb=20260617155431",
+      "url": "https://aplaguetale.fandom.com/wiki/Nicholas",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Nicholas.jpg"
+    },
+    {
+      "title": "Conrad Malfort",
+      "wikiTitle": "Conrad Malfort",
+      "collection": "characters",
+      "facts": {
+        "condition": "Uninfected",
+        "status": "Deceased",
+        "death": "November 1348",
+        "cause of death": "Shot and killed by a volley of rocks from Amicia",
+        "occupation(s)": "Town leader",
+        "affiliation(s)": "Afflicted Village",
+        "relative(s)": "Unnamed son",
+        "resides": "Afflicted Church Courtyard",
+        "weapon(s)": "Mace",
+        "species": "Human",
+        "gender": "Male",
+        "race": "Caucasian",
+        "nationality": "French",
+        "hair": "Brown",
+        "eye": "Brown",
+        "debut": "A Plague Tale: Innocence"
+      },
+      "categories": [
+        "A Plague Tale: Innocence characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/0/04/ConradMalfort1.png/revision/latest?cb=20190520093649",
+      "url": "https://aplaguetale.fandom.com/wiki/Conrad_Malfort",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Conrad-Malfort.png"
+    },
+    {
+      "title": "Gauthier",
+      "wikiTitle": "Gauthier",
+      "collection": "characters",
+      "facts": {
+        "title(s)": "Archbishop",
+        "condition": "Uninfected",
+        "status": "Alive",
+        "occupation(s)": "Archbishop",
+        "affiliation(s)": "The Catholic Church",
+        "religion": "Roman Catholic",
+        "species": "Human",
+        "gender": "Male",
+        "race": "Caucasian",
+        "nationality": "French",
+        "hair": "Grey",
+        "eye": "Brown",
+        "debut": "A Plague Tale: Innocence"
+      },
+      "categories": [
+        "A Plague Tale: Innocence characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/b/b1/SOURCE%E2%81%84hello-turtless%E2%81%84Gauthier%E2%81%841.jpg/revision/latest?cb=20190909224021",
+      "url": "https://aplaguetale.fandom.com/wiki/Gauthier",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Gauthier.jpg"
+    },
+    {
+      "title": "Rat",
+      "wikiTitle": "Rat",
+      "collection": "characters",
+      "facts": {
+        "affiliation(s)": "Prima Macula",
+        "species": "Rattus rattus",
+        "hair": "Black White",
+        "eye": "Black Red",
+        "debut": "A Plague Tale: Innocence"
+      },
+      "categories": [
+        "A Plague Tale: Innocence characters",
+        "A Plague Tale: Requiem characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/3/37/Rats.png/revision/latest?cb=20190520094515",
+      "url": "https://aplaguetale.fandom.com/wiki/Rat",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Rat.png"
+    },
+    {
+      "title": "Father Thomas",
+      "wikiTitle": "Father Thomas",
+      "collection": "characters",
+      "facts": {
+        "title(s)": "Priest",
+        "condition": "Uninfected",
+        "status": "Deceased",
+        "death": "November 1348 in Aquitaine, France",
+        "cause of death": "Devoured by rats",
+        "occupation(s)": "Priest",
+        "affiliation(s)": "Afflicted Church",
+        "species": "Human",
+        "gender": "Male",
+        "race": "Caucasian",
+        "nationality": "French",
+        "hair": "Brown",
+        "eye": "Brown",
+        "debut": "\"Retribution\""
+      },
+      "categories": [
+        "A Plague Tale: Innocence characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/6/6c/Plaguetale5.png/revision/latest?cb=20190520114922",
+      "url": "https://aplaguetale.fandom.com/wiki/Father_Thomas",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Father-Thomas.png"
+    },
+    {
+      "title": "Clervie",
+      "wikiTitle": "Clervie",
+      "collection": "characters",
+      "facts": {
+        "condition": "Uninfected",
+        "status": "Alive",
+        "relative(s)": "Unnamed children Unnamed grandchildren",
+        "resides": "Afflicted Village",
+        "species": "Human",
+        "gender": "Female",
+        "race": "Caucasian",
+        "nationality": "French",
+        "hair": "Grey",
+        "eye": "Blue",
+        "debut": "A Plague Tale: Innocence"
+      },
+      "categories": [
+        "A Plague Tale: Innocence characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/d/d1/Plaguetale6.png/revision/latest?cb=20190520121641",
+      "url": "https://aplaguetale.fandom.com/wiki/Clervie",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Clervie.png"
+    },
+    {
+      "title": "Lion",
+      "wikiTitle": "Lion",
+      "collection": "characters",
+      "facts": {
+        "status": "Deceased",
+        "death": "November",
+        "cause of death": "Consumed by rats",
+        "occupation(s)": "Hunting dog",
+        "affiliation(s)": "de Rune family",
+        "resides": "de Rune estate",
+        "species": "Canine",
+        "gender": "Male",
+        "breed": "Indeterminate",
+        "hair": "Mixed-color",
+        "eye": "Brown",
+        "debut": "\"The de Rune Legacy\""
+      },
+      "categories": [
+        "A Plague Tale: Innocence characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/4/47/Lion.png/revision/latest?cb=20190721184627",
+      "url": "https://aplaguetale.fandom.com/wiki/Lion",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Lion.png"
+    },
+    {
+      "title": "University",
+      "wikiTitle": "University",
+      "collection": "regions",
+      "facts": {
+        "type": "Large, multi-chambered building",
+        "location": "Aquitaine",
+        "debut": "A Plague Tale: Innocence",
+        "chapter(s)": "\"The Way of Roses\""
+      },
+      "categories": [
+        "A Plague Tale: Innocence locations"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/3/3f/University_Distant.jpg/revision/latest?cb=20230112034246",
+      "url": "https://aplaguetale.fandom.com/wiki/University",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/University.jpg"
+    },
+    {
+      "title": "Château d'Ombrage",
+      "wikiTitle": "Château d'Ombrage",
+      "collection": "regions",
+      "facts": {
+        "type": "Castle",
+        "location": "Aquitaine",
+        "function(s)": "Refuge",
+        "debut": "A Plague Tale: Innocence"
+      },
+      "categories": [
+        "A Plague Tale: Innocence locations"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/8/82/Plaguetale16.png/revision/latest?cb=20190530210845",
+      "url": "https://aplaguetale.fandom.com/wiki/Ch%C3%A2teau_d'Ombrage",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Ch-teau-d-Ombrage.png"
+    },
+    {
+      "title": "Brother Morel",
+      "wikiTitle": "Brother Morel",
+      "collection": "characters",
+      "facts": {
+        "condition": "Uninfected",
+        "status": "Deceased",
+        "death": "September 1348",
+        "cause of death": "Consumed by rats",
+        "occupation(s)": "Monk",
+        "affiliation(s)": "Afflicted Church",
+        "species": "Human",
+        "gender": "Male",
+        "race": "Caucasian",
+        "nationality": "French",
+        "hair": "Brown",
+        "eye": "Brown",
+        "debut": "\"Retribution\""
+      },
+      "categories": [
+        "A Plague Tale: Innocence characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/e/e0/Plaguetale17.png/revision/latest?cb=20190531055616",
+      "url": "https://aplaguetale.fandom.com/wiki/Brother_Morel",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Brother-Morel.png"
+    },
+    {
+      "title": "Crypt of the Three Saints",
+      "wikiTitle": "Crypt of the Three Saints",
+      "collection": "regions",
+      "facts": {
+        "location": "Aquitaine",
+        "debut": "A Plague Tale: Innocence",
+        "chapter(s)": "\"Retribution\""
+      },
+      "categories": [
+        "A Plague Tale: Innocence locations"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/2/21/Three_Saints_Pass.jpg/revision/latest?cb=20230109063513",
+      "url": "https://aplaguetale.fandom.com/wiki/Crypt_of_the_Three_Saints",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Crypt-of-the-Three-Saints.jpg"
+    },
+    {
+      "title": "Bastion",
+      "wikiTitle": "Bastion",
+      "collection": "regions",
+      "facts": {
+        "location": "Aquitaine",
+        "function(s)": "Headquarters",
+        "inhabitant(s)": "Vitalis Bénévent Nicholas Béatrice de Rune Hugo de Rune",
+        "debut": "A Plague Tale: Innocence",
+        "chapter(s)": "\"Blood Ties\""
+      },
+      "categories": [
+        "A Plague Tale: Innocence locations"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/e/ed/Bastion_Chapel.jpg/revision/latest?cb=20230123015059",
+      "url": "https://aplaguetale.fandom.com/wiki/Bastion",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Bastion.jpg"
+    },
+    {
+      "title": "Hideout",
+      "wikiTitle": "Hideout",
+      "collection": "regions",
+      "facts": {
+        "type": "Ruins",
+        "location": "Aquitaine",
+        "function(s)": "Refuge",
+        "debut": "A Plague Tale: Innocence",
+        "chapter(s)": "\"The Path Before Us\""
+      },
+      "categories": [
+        "A Plague Tale: Innocence locations"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/f/f7/Hideout_Upper.jpg/revision/latest?cb=20230112013940",
+      "url": "https://aplaguetale.fandom.com/wiki/Hideout",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Hideout.jpg"
+    },
+    {
+      "title": "De Rune estate",
+      "wikiTitle": "De Rune estate",
+      "collection": "regions",
+      "facts": {
+        "type": "Residence",
+        "location": "Aquitaine",
+        "debut": "A Plague Tale: Innocence"
+      },
+      "categories": [
+        "A Plague Tale: Innocence locations"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/5/56/De_Rune_Courtyard.jpg/revision/latest?cb=20230109053751",
+      "url": "https://aplaguetale.fandom.com/wiki/De_Rune_estate",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/De-Rune-estate.jpg"
+    },
+    {
+      "title": "Laurentius' Farmstead",
+      "wikiTitle": "Laurentius' Farmstead",
+      "collection": "regions",
+      "facts": {
+        "location": "Aquitaine",
+        "debut": "A Plague Tale: Innocence",
+        "chapter(s)": "\"The Apprentice\""
+      },
+      "categories": [
+        "A Plague Tale: Innocence locations"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/7/74/Farmstead.jpg/revision/latest?cb=20230109224435",
+      "url": "https://aplaguetale.fandom.com/wiki/Laurentius'_Farmstead",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Laurentius-Farmstead.jpg"
+    },
+    {
+      "title": "Rodric's Forge",
+      "wikiTitle": "Rodric's Forge",
+      "collection": "regions",
+      "facts": {
+        "type": "Blacksmith's shop and forge",
+        "location": "Aquitaine",
+        "function(s)": "Blacksmith's forge",
+        "creator": "Rodric's father (presumably)",
+        "debut": "A Plague Tale: Innocence",
+        "chapter(s)": "\"Coronation\""
+      },
+      "categories": [
+        "A Plague Tale: Innocence locations"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/5/51/Rodric%27s_Forge.jpg/revision/latest?cb=20230123212913",
+      "url": "https://aplaguetale.fandom.com/wiki/Rodric's_Forge",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Rodric-s-Forge.jpg"
+    },
+    {
+      "title": "Flore",
+      "wikiTitle": "Flore",
+      "collection": "characters",
+      "facts": {
+        "condition": "Uninfected",
+        "status": "Deceased",
+        "death": "November 1348",
+        "cause of death": "Slain by the Inquisition",
+        "occupation(s)": "Housemaid",
+        "affiliation(s)": "de Rune family",
+        "resides": "de Rune estate",
+        "species": "Human",
+        "gender": "Female",
+        "race": "Caucasian",
+        "nationality": "French",
+        "hair": "Brown",
+        "eye": "Brown",
+        "debut": "A Plague Tale: Innocence"
+      },
+      "categories": [
+        "A Plague Tale: Innocence characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/3/3b/Flore.png/revision/latest?cb=20260628170609",
+      "url": "https://aplaguetale.fandom.com/wiki/Flore",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Flore.png"
+    },
+    {
+      "title": "Theo",
+      "wikiTitle": "Theo",
+      "collection": "characters",
+      "facts": {
+        "condition": "Uninfected",
+        "status": "Deceased",
+        "death": "November 1348",
+        "cause of death": "Slain by the Inquisition",
+        "occupation(s)": "Servant",
+        "affiliation(s)": "de Rune family",
+        "resides": "de Rune estate",
+        "species": "Human",
+        "gender": "Male",
+        "race": "Caucasian",
+        "nationality": "French",
+        "hair": "Black",
+        "eye": "Brown",
+        "debut": "A Plague Tale: Innocence"
+      },
+      "categories": [
+        "A Plague Tale: Innocence characters"
+      ],
+      "image": null,
+      "url": "https://aplaguetale.fandom.com/wiki/Theo"
+    },
+    {
+      "title": "Gabrielle",
+      "wikiTitle": "Gabrielle",
+      "collection": "characters",
+      "facts": {
+        "condition": "Uninfected",
+        "status": "Deceased",
+        "death": "November 1348",
+        "cause of death": "Slain by the Inquisition",
+        "occupation(s)": "Housemaid",
+        "affiliation(s)": "de Rune family",
+        "resides": "de Rune estate",
+        "species": "Human",
+        "gender": "Female",
+        "race": "Caucasian",
+        "nationality": "French",
+        "hair": "Black",
+        "eye": "Brown",
+        "debut": "A Plague Tale: Innocence"
+      },
+      "categories": [
+        "A Plague Tale: Innocence characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/e/e0/Gabrielle_infobox.png/revision/latest?cb=20260628171028",
+      "url": "https://aplaguetale.fandom.com/wiki/Gabrielle",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Gabrielle.png"
+    },
+    {
+      "title": "Louise",
+      "wikiTitle": "Louise",
+      "collection": "characters",
+      "facts": {
+        "condition": "Uninfected",
+        "status": "Deceased",
+        "death": "November 1348",
+        "cause of death": "Slain by the Inquisition",
+        "occupation(s)": "Housemaid",
+        "affiliation(s)": "de Rune family",
+        "resides": "de Rune estate",
+        "species": "Human",
+        "gender": "Female",
+        "race": "Caucasian",
+        "nationality": "French",
+        "hair": "Brown",
+        "eye": "Brown",
+        "debut": "A Plague Tale: Innocence"
+      },
+      "categories": [
+        "A Plague Tale: Innocence characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/0/06/Louise_infobox.png/revision/latest?cb=20260628170854",
+      "url": "https://aplaguetale.fandom.com/wiki/Louise",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Louise.png"
+    },
+    {
+      "title": "Lea",
+      "wikiTitle": "Lea",
+      "collection": "characters",
+      "facts": {
+        "condition": "Uninfected",
+        "status": "Deceased",
+        "death": "November 1348",
+        "cause of death": "Slain by the Inquisition",
+        "occupation(s)": "Housemaid",
+        "affiliation(s)": "de Rune family",
+        "resides": "de Rune estate",
+        "species": "Human",
+        "gender": "Female",
+        "race": "Caucasian",
+        "nationality": "French",
+        "hair": "Brown",
+        "eye": "Brown",
+        "debut": "A Plague Tale: Innocence"
+      },
+      "categories": [
+        "A Plague Tale: Innocence characters"
+      ],
+      "image": null,
+      "url": "https://aplaguetale.fandom.com/wiki/Lea"
+    },
+    {
+      "title": "Lambert",
+      "wikiTitle": "Lambert",
+      "collection": "characters",
+      "facts": {
+        "condition": "Uninfected",
+        "status": "Deceased",
+        "death": "Died at the de Rune estate grounds in November 1348",
+        "cause of death": "Stabbed through the gut by Nicholas",
+        "occupation(s)": "Servant",
+        "affiliation(s)": "de Rune family",
+        "weapon(s)": "Sword",
+        "species": "Human",
+        "gender": "Male",
+        "race": "Caucasian",
+        "nationality": "French",
+        "hair": "Black",
+        "eye": "Brown",
+        "debut": "A Plague Tale: Innocence"
+      },
+      "categories": [
+        "A Plague Tale: Innocence characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/b/bd/Lambert.PNG/revision/latest?cb=20200711130828",
+      "url": "https://aplaguetale.fandom.com/wiki/Lambert",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Lambert.png"
+    },
+    {
+      "title": "Battlefield",
+      "wikiTitle": "Battlefield",
+      "collection": "regions",
+      "facts": {
+        "location": "Aquitaine",
+        "debut": "A Plague Tale: Innocence",
+        "chapter(s)": "\"The Ravens' Spoils\""
+      },
+      "categories": [
+        "A Plague Tale: Innocence locations"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/b/b0/Battlefield.jpg/revision/latest?cb=20230109232602",
+      "url": "https://aplaguetale.fandom.com/wiki/Battlefield",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Battlefield.jpg"
+    },
+    {
+      "title": "Afflicted Village",
+      "wikiTitle": "Afflicted Village",
+      "collection": "regions",
+      "facts": {
+        "location": "Aquitaine",
+        "debut": "A Plague Tale: Innocence"
+      },
+      "categories": [
+        "A Plague Tale: Innocence locations"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/e/eb/Village_Streets.jpg/revision/latest?cb=20230109052805",
+      "url": "https://aplaguetale.fandom.com/wiki/Afflicted_Village",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Afflicted-Village.jpg"
+    },
+    {
+      "title": "Afflicted Church",
+      "wikiTitle": "Afflicted Church",
+      "collection": "regions",
+      "facts": {
+        "location": "Aquitaine, France",
+        "debut": "A Plague Tale: Innocence"
+      },
+      "categories": [
+        "A Plague Tale: Innocence locations"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/d/d4/Church_Interior.jpg/revision/latest?cb=20230109062713",
+      "url": "https://aplaguetale.fandom.com/wiki/Afflicted_Church",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Afflicted-Church.jpg"
+    },
+    {
+      "title": "Cathedral",
+      "wikiTitle": "Cathedral",
+      "collection": "regions",
+      "facts": {
+        "type": "House of worship",
+        "location": "Aquitaine",
+        "function(s)": "Religious worship",
+        "debut": "A Plague Tale: Innocence",
+        "chapter(s)": "\"Coronation\""
+      },
+      "categories": [
+        "A Plague Tale: Innocence locations"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/f/fd/Cathedral_Outer2.jpg/revision/latest?cb=20230123222340",
+      "url": "https://aplaguetale.fandom.com/wiki/Cathedral",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Cathedral.jpg"
+    },
+    {
+      "title": "Infected Town",
+      "wikiTitle": "Infected Town",
+      "collection": "regions",
+      "facts": {
+        "type": "Large urban/residential setting",
+        "location": "Aquitaine",
+        "debut": "A Plague Tale: Innocence"
+      },
+      "categories": [
+        "A Plague Tale: Innocence locations"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/8/8b/Town_Skyline.jpg/revision/latest?cb=20230112023322",
+      "url": "https://aplaguetale.fandom.com/wiki/Infected_Town",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Infected-Town.jpg"
+    },
+    {
+      "title": "Abandoned Village",
+      "wikiTitle": "Abandoned Village",
+      "collection": "regions",
+      "facts": {
+        "location": "Aquitaine",
+        "debut": "A Plague Tale: Innocence"
+      },
+      "categories": [
+        "A Plague Tale: Innocence locations"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/5/5d/Abandoned_Village.jpg/revision/latest?cb=20230112012852",
+      "url": "https://aplaguetale.fandom.com/wiki/Abandoned_Village",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Abandoned-Village.jpg"
+    },
+    {
+      "title": "English Encampment",
+      "wikiTitle": "English Encampment",
+      "collection": "regions",
+      "facts": {
+        "location": "Aquitaine",
+        "inhabitant(s)": "English Army",
+        "debut": "A Plague Tale: Innocence",
+        "chapter(s)": "\"Damaged Goods\""
+      },
+      "categories": [
+        "A Plague Tale: Innocence locations"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/5/5a/English_Encampment.jpg/revision/latest?cb=20230108142148",
+      "url": "https://aplaguetale.fandom.com/wiki/English_Encampment",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/English-Encampment.jpg"
+    },
+    {
+      "title": "Sanctuary",
+      "wikiTitle": "Sanctuary",
+      "collection": "regions",
+      "facts": {
+        "type": "Temple",
+        "location": "La Cuna",
+        "function(s)": "To study and contain the Prima Macula and Carrier",
+        "creator": "The Order",
+        "inhabitant(s)": "Basilius Aelia Dragas",
+        "debut": "A Plague Tale: Requiem",
+        "chapter(s)": "\"Tales and Revelations\""
+      },
+      "categories": [
+        "A Plague Tale: Requiem locations"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/c/c2/Sanctuary_Hall.jpg/revision/latest?cb=20230106202312",
+      "url": "https://aplaguetale.fandom.com/wiki/Sanctuary",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Sanctuary.jpg"
+    },
+    {
+      "title": "Arnaud Malpart",
+      "wikiTitle": "Arnaud Malpart",
+      "collection": "characters",
+      "facts": {
+        "title(s)": "The Wall",
+        "born": "Guyenne",
+        "age(d)": "40",
+        "condition": "Uninfected",
+        "status": "Deceased",
+        "death": "Marseille, July 1349",
+        "cause of death": "Stabbed in the abdomen by Count Victor de Arles",
+        "rank": "Knight",
+        "relative(s)": "Unnamed son",
+        "weapon(s)": "Sword",
+        "species": "Human",
+        "gender": "Male",
+        "race": "Caucasian",
+        "nationality": "French",
+        "hair": "Brown",
+        "eye": "Brown"
+      },
+      "categories": [
+        "A Plague Tale: Requiem characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/6/69/Arnaud_Portrait_Photo.jpg/revision/latest?cb=20230104004942",
+      "url": "https://aplaguetale.fandom.com/wiki/Arnaud_Malpart",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Arnaud-Malpart.jpg"
+    },
+    {
+      "title": "Victor de Arles",
+      "wikiTitle": "Victor de Arles",
+      "collection": "characters",
+      "facts": {
+        "title(s)": "Count",
+        "age(d)": "50",
+        "condition": "Uninfected",
+        "status": "Deceased",
+        "death": "Shore of Marseille, circa 1349",
+        "cause of death": "Bashed in the head with rocks by Amicia de Rune",
+        "occupation(s)": "Ruler",
+        "relative(s)": "Émilie de Arles (spouse)",
+        "resides": "La Cuna",
+        "weapon(s)": "Sword",
+        "species": "Human",
+        "gender": "Male",
+        "race": "Caucasian",
+        "nationality": "French",
+        "hair": "Brown",
+        "eye": "Blue",
+        "debut": "A Plague Tale: Requiem",
+        "voiced by": "Alistair Petrie"
+      },
+      "categories": [
+        "A Plague Tale: Requiem characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/9/98/Victor.jpg/revision/latest?cb=20230104011249",
+      "url": "https://aplaguetale.fandom.com/wiki/Victor_de_Arles",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Victor-de-Arles.jpg"
+    },
+    {
+      "title": "Milo",
+      "wikiTitle": "Milo",
+      "collection": "characters",
+      "facts": {
+        "condition": "Uninfected",
+        "status": "Deceased",
+        "death": "Fort of La Cuna, circa 1350",
+        "cause of death": "Killed by Sophia",
+        "occupation(s)": "Slaver",
+        "species": "Human",
+        "gender": "Male",
+        "race": "Caucasian",
+        "hair": "Brown",
+        "eye": "Brown",
+        "debut": "A Plague Tale: Requiem",
+        "voiced by": "Joplin Siptain"
+      },
+      "categories": [
+        "A Plague Tale: Requiem characters",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/5/5c/Milo.png/revision/latest?cb=20221019151129",
+      "url": "https://aplaguetale.fandom.com/wiki/Milo",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Milo.png"
+    },
+    {
+      "title": "Émilie de Arles",
+      "wikiTitle": "Émilie de Arles",
+      "collection": "characters",
+      "facts": {
+        "title(s)": "Countess",
+        "age(d)": "26",
+        "condition": "Uninfected",
+        "status": "Deceased",
+        "death": "Central Stage of La Cuna, circa 1349",
+        "cause of death": "Thrown into a rat swarm and eviscerated",
+        "occupation(s)": "Countess",
+        "relative(s)": "Victor (spouse)",
+        "resides": "La Cuna",
+        "species": "Human",
+        "gender": "Female",
+        "race": "Caucasian",
+        "hair": "Blonde",
+        "eye": "Blue",
+        "debut": "\"A Sea of Promises\"",
+        "voiced by": "Ellie Heydon",
+        "mo-capped by": "Giorgia Sinicorni"
+      },
+      "categories": [
+        "A Plague Tale: Requiem characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/b/b2/Emilie.jpg/revision/latest?cb=20230104005807",
+      "url": "https://aplaguetale.fandom.com/wiki/%C3%89milie_de_Arles",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/-milie-de-Arles.jpg"
+    },
+    {
+      "title": "Vaudin",
+      "wikiTitle": "Vaudin",
+      "collection": "characters",
+      "facts": {
+        "name(s)": "Magister of the Order",
+        "title(s)": "High Magister",
+        "condition": "Uninfected",
+        "status": "Deceased",
+        "death": "Casualty in the fall of the Red City, circa 1349",
+        "cause of death": "Falls to his death and devoured by rats",
+        "occupation(s)": "Alchemist",
+        "affiliation(s)": "The Order",
+        "resides": "The Red City",
+        "species": "Human",
+        "gender": "Male",
+        "race": "Caucasian",
+        "nationality": "French",
+        "hair": "Brown",
+        "eye": "Brown",
+        "debut": "A Plague Tale: Requiem",
+        "voiced by": "Anthony Byrne",
+        "mo-capped by": "Edouard Chény"
+      },
+      "categories": [
+        "A Plague Tale: Requiem characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/a/aa/Vaudin_infobox.png/revision/latest?cb=20260628162744",
+      "url": "https://aplaguetale.fandom.com/wiki/Vaudin",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Vaudin.png"
+    },
+    {
+      "title": "Joseph",
+      "wikiTitle": "Joseph",
+      "collection": "characters",
+      "facts": {
+        "condition": "Uninfected",
+        "status": "Deceased",
+        "death": "Waterways to Marseille, circa 1349",
+        "cause of death": "Arrow pierced in the neck by archers",
+        "occupation(s)": "Sailor",
+        "affiliation(s)": "The Order",
+        "species": "Human",
+        "gender": "Male",
+        "race": "Caucasian",
+        "nationality": "French",
+        "hair": "Brown",
+        "eye": "Blue",
+        "debut": "A Plague Tale: Requiem",
+        "voiced by": "Ruben Crow",
+        "mo-capped by": "Nicky Naudé"
+      },
+      "categories": [
+        "A Plague Tale: Requiem characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/9/9d/Joseph_infobox.png/revision/latest?cb=20260628162848",
+      "url": "https://aplaguetale.fandom.com/wiki/Joseph",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Joseph.png"
+    },
+    {
+      "title": "Basilius",
+      "wikiTitle": "Basilius",
+      "collection": "characters",
+      "facts": {
+        "name(s)": "Child of Embers",
+        "born": "Circa 534 CE",
+        "condition": "Uninfected",
+        "status": "Deceased",
+        "death": "Died at a secret holding facility",
+        "cause of death": "Crossed the Final Threshold of the Prima Macula",
+        "occupation(s)": "Carrier of the Prima Macula",
+        "affiliation(s)": "Prima Macula",
+        "species": "Human",
+        "gender": "Male",
+        "debut": "A Plague Tale: Requiem"
+      },
+      "categories": [
+        "A Plague Tale: Requiem characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/5/5f/Basilius.jpg/revision/latest?cb=20230110175126",
+      "url": "https://aplaguetale.fandom.com/wiki/Basilius",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Basilius.jpg"
+    },
+    {
+      "title": "Aelia Dragas",
+      "wikiTitle": "Aelia Dragas",
+      "collection": "characters",
+      "facts": {
+        "name(s)": "The Carrier's Protector",
+        "title(s)": "Protector",
+        "condition": "Uninfected",
+        "status": "Deceased",
+        "death": "Died in a battle against and the Order's forces",
+        "cause of death": "Overwhelmed at the final tower where Basilius was held",
+        "occupation(s)": "Protector of the Carrier",
+        "species": "Human",
+        "gender": "Female",
+        "debut": "A Plague Tale: Requiem"
+      },
+      "categories": [
+        "A Plague Tale: Requiem characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/7/71/Aelia.png/revision/latest?cb=20221204111737",
+      "url": "https://aplaguetale.fandom.com/wiki/Aelia_Dragas",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Aelia-Dragas.png"
+    },
+    {
+      "title": "La Cuna",
+      "wikiTitle": "La Cuna",
+      "collection": "regions",
+      "facts": {
+        "name(s)": "Island of Cuna",
+        "type": "Island",
+        "location": "Off the southern coast of modern day France",
+        "inhabitant(s)": "Victor de Arles Émilie de Arles Milo The Order",
+        "debut": "A Plague Tale: Requiem",
+        "chapter(s)": "\"A Sea of Promises\""
+      },
+      "categories": [
+        "A Plague Tale: Requiem locations"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/1/14/Island_Fresco.jpg/revision/latest?cb=20221204155646",
+      "url": "https://aplaguetale.fandom.com/wiki/La_Cuna",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/La-Cuna.jpg"
+    },
+    {
+      "title": "Nebula",
+      "wikiTitle": "Nebula",
+      "collection": "regions",
+      "facts": {
+        "name(s)": "The Sun Killer The Light Devourer",
+        "type": "Chrysalis",
+        "location": "La Cuna Marseille",
+        "function(s)": "Chrysalis for the Prima Macula's host",
+        "creator": "Prima Macula",
+        "inhabitant(s)": "Basilius Hugo de Rune",
+        "debut": "A Plague Tale: Requiem",
+        "chapter(s)": "\"Nothing Left\" \"Dying Sun\" \"King Hugo\""
+      },
+      "categories": [
+        "A Plague Tale: Requiem locations",
+        "Events"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/e/e5/APTR_Nebula_4.png/revision/latest?cb=20240317095251",
+      "url": "https://aplaguetale.fandom.com/wiki/Nebula",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Nebula.png"
+    },
+    {
+      "title": "Tonin",
+      "wikiTitle": "Tonin",
+      "collection": "characters",
+      "facts": {
+        "condition": "Uninfected",
+        "status": "Unknown",
+        "occupation(s)": "Beekeeper",
+        "relative(s)": "Unnamed father Unnamed grandfather Unnamed brothers Mathias Remi",
+        "resides": "Beekeepers' Farmstead",
+        "species": "Human",
+        "gender": "Male",
+        "race": "Caucasian",
+        "nationality": "French",
+        "hair": "Blond",
+        "eye": "Green",
+        "debut": "A Plague Tale: Requiem",
+        "voiced by": "Claire Morgan"
+      },
+      "categories": [
+        "A Plague Tale: Requiem characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/0/02/Tonin.jpg/revision/latest?cb=20221206095139",
+      "url": "https://aplaguetale.fandom.com/wiki/Tonin",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Tonin.jpg"
+    },
+    {
+      "title": "Mathias",
+      "wikiTitle": "Mathias",
+      "collection": "characters",
+      "facts": {
+        "status": "Deceased",
+        "death": "June 1349, Countryside of Provence",
+        "cause of death": "Devoured by rats summoned by Hugo de Rune",
+        "occupation(s)": "Beekeeper",
+        "relative(s)": "Unnamed father Unnamed grandfather Unnamed brothers Remi Tonin",
+        "resides": "Beekeepers' Farmstead",
+        "weapon(s)": "Axe",
+        "species": "Human",
+        "gender": "Male",
+        "race": "Caucasian",
+        "nationality": "French",
+        "hair": "Brown",
+        "eye": "Brown",
+        "debut": "A Plague Tale: Requiem",
+        "voiced by": "Alex Martin",
+        "mo-capped by": "Alex Martin"
+      },
+      "categories": [
+        "A Plague Tale: Requiem characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/5/52/Mathias_strangles_Tonin_while_Remi_watches.jpg/revision/latest?cb=20260629012143",
+      "url": "https://aplaguetale.fandom.com/wiki/Mathias",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Mathias.jpg"
+    },
+    {
+      "title": "Remi",
+      "wikiTitle": "Remi",
+      "collection": "characters",
+      "facts": {
+        "status": "Deceased",
+        "death": "June 1349, Countryside of Provence",
+        "cause of death": "Devoured by rats summoned by Hugo de Rune",
+        "occupation(s)": "Beekeeper",
+        "relative(s)": "Unnamed father Unnamed grandfather Unnamed brothers Mathias Tonin",
+        "resides": "Beekeepers' Farmstead",
+        "weapon(s)": "Axe",
+        "species": "Human",
+        "gender": "Male",
+        "race": "Caucasian",
+        "nationality": "French",
+        "hair": "Blond",
+        "eye": "Blue",
+        "debut": "A Plague Tale: Requiem"
+      },
+      "categories": [
+        "A Plague Tale: Requiem characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/0/0b/Remi.jpg/revision/latest?cb=20260629012209",
+      "url": "https://aplaguetale.fandom.com/wiki/Remi",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Remi.jpg"
+    },
+    {
+      "title": "Red City",
+      "wikiTitle": "Red City",
+      "collection": "regions",
+      "facts": {
+        "type": "City",
+        "location": "Provence",
+        "debut": "A Plague Tale: Requiem"
+      },
+      "categories": [
+        "A Plague Tale: Requiem locations"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/d/d6/The_Red_City.jpg/revision/latest?cb=20221205040522",
+      "url": "https://aplaguetale.fandom.com/wiki/Red_City",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Red-City.jpg"
+    },
+    {
+      "title": "Beast",
+      "wikiTitle": "Beast",
+      "collection": "characters",
+      "facts": {
+        "title(s)": "Captain",
+        "condition": "Uninfected",
+        "status": "Deceased",
+        "death": "The Red City, July 1349",
+        "cause of death": "Killed by Amicia de Rune",
+        "occupation(s)": "Captain",
+        "religion": "Christianity",
+        "weapon(s)": "Mace",
+        "species": "Human",
+        "gender": "Male",
+        "hair": "Unknown",
+        "eye": "Unknown",
+        "debut": "A Plague Tale: Requiem"
+      },
+      "categories": [
+        "A Plague Tale: Requiem characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/b/b9/The_Beast.jpg/revision/latest?cb=20221205040506",
+      "url": "https://aplaguetale.fandom.com/wiki/Beast",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Beast.jpg"
+    },
+    {
+      "title": "Perreux",
+      "wikiTitle": "Perreux",
+      "collection": "characters",
+      "facts": {
+        "title(s)": "Leader of the Pilgrimage",
+        "condition": "Uninfected",
+        "status": "Alive",
+        "occupation(s)": "Leader of the Pilgrimage",
+        "affiliation(s)": "The Catholic Church",
+        "religion": "Christianity",
+        "species": "Human",
+        "gender": "Male",
+        "hair": "Brown",
+        "eye": "Brown",
+        "debut": "A Plague Tale: Requiem",
+        "voiced by": "Nico Lennon",
+        "mo-capped by": "Edouard Chény"
+      },
+      "categories": [
+        "A Plague Tale: Requiem characters",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/a/ac/Perreux.jpg/revision/latest?cb=20221206081235",
+      "url": "https://aplaguetale.fandom.com/wiki/Perreux",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Perreux.jpg"
+    },
+    {
+      "title": "Child of Embers",
+      "wikiTitle": "Child of Embers",
+      "collection": "characters",
+      "facts": {
+        "name(s)": "Child of Light",
+        "type": "Deity",
+        "location": "La Cuna",
+        "creator": "Count Victor de Arles",
+        "debut": "A Plague Tale: Requiem"
+      },
+      "categories": [
+        "A Plague Tale: Requiem characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/6/63/Child_of_Embers_Altar.jpg/revision/latest?cb=20221220184637",
+      "url": "https://aplaguetale.fandom.com/wiki/Child_of_Embers",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Child-of-Embers.jpg"
+    },
+    {
+      "title": "Regional Outskirts",
+      "wikiTitle": "Regional Outskirts",
+      "collection": "regions",
+      "facts": {
+        "location": "Aquitaine",
+        "debut": "A Plague Tale: Innocence",
+        "chapter(s)": "\"For Each Other\""
+      },
+      "categories": [
+        "A Plague Tale: Innocence locations"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/9/96/FEO_Road.jpg/revision/latest?cb=20230128161550",
+      "url": "https://aplaguetale.fandom.com/wiki/Regional_Outskirts",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Regional-Outskirts.jpg"
+    },
+    {
+      "title": "Phoenix",
+      "wikiTitle": "Phoenix",
+      "collection": "characters",
+      "facts": {
+        "species": "Bird",
+        "race": "Mythical",
+        "hair": "Scarlet",
+        "eye": "Black",
+        "debut": "A Plague Tale: Requiem"
+      },
+      "categories": [
+        "A Plague Tale: Requiem characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/8/85/Phoenix_infobox.png/revision/latest?cb=20260628160256",
+      "url": "https://aplaguetale.fandom.com/wiki/Phoenix",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Phoenix.png"
+    },
+    {
+      "title": "Gaubert",
+      "wikiTitle": "Gaubert",
+      "collection": "characters",
+      "facts": {
+        "condition": "Unknown",
+        "status": "Unknown",
+        "affiliation(s)": "Afflicted Village",
+        "species": "Human",
+        "gender": "Male",
+        "debut": "A Plague Tale: Innocence"
+      },
+      "categories": [
+        "A Plague Tale: Innocence characters"
+      ],
+      "image": null,
+      "url": "https://aplaguetale.fandom.com/wiki/Gaubert"
+    },
+    {
+      "title": "Beekeepers' Farmstead",
+      "wikiTitle": "Beekeepers' Farmstead",
+      "collection": "regions",
+      "facts": {
+        "type": "Settlement",
+        "location": "Provençal countryside",
+        "function(s)": "Honey production",
+        "creator": "Unknown",
+        "inhabitant(s)": "Tonin Mathias Remi Tonin's father Tonin's grandfather Local farm workers",
+        "debut": "A Plague Tale: Requiem",
+        "chapter(s)": "\"Under a New Sun\""
+      },
+      "categories": [
+        "A Plague Tale: Requiem locations"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/1/14/Destroyed_Hives.jpg/revision/latest?cb=20221204154810",
+      "url": "https://aplaguetale.fandom.com/wiki/Beekeepers'_Farmstead",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Beekeepers-Farmstead.jpg"
+    },
+    {
+      "title": "Paul",
+      "wikiTitle": "Paul",
+      "collection": "characters",
+      "facts": {
+        "condition": "Unknown",
+        "status": "Unknown",
+        "relative(s)": "Unnamed wife",
+        "resides": "Red City",
+        "species": "Human",
+        "gender": "Male",
+        "debut": "A Plague Tale: Requiem"
+      },
+      "categories": [
+        "A Plague Tale: Requiem characters"
+      ],
+      "image": null,
+      "url": "https://aplaguetale.fandom.com/wiki/Paul"
+    },
+    {
+      "title": "Hugo's Dreamscape",
+      "wikiTitle": "Hugo's Dreamscape",
+      "collection": "regions",
+      "facts": {
+        "type": "Fictional",
+        "location": "Hugo de Rune's conciousness",
+        "function(s)": "Manifestations created by the Prima Macula to lure Hugo toward La Cuna",
+        "creator": "Prima Macula",
+        "inhabitant(s)": "Hugo de Rune Phoenix",
+        "debut": "A Plague Tale: Requiem",
+        "chapter(s)": "\"Under a New Sun\""
+      },
+      "categories": [
+        "A Plague Tale: Requiem locations"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/d/d4/Hugo%27s_Dreamscape_3.jpg/revision/latest?cb=20260705110801",
+      "url": "https://aplaguetale.fandom.com/wiki/Hugo's_Dreamscape",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Hugo-s-Dreamscape.jpg"
+    },
+    {
+      "title": "Las Madres",
+      "wikiTitle": "Las Madres",
+      "collection": "regions",
+      "facts": {
+        "type": "Mountain range",
+        "location": "La Cuna",
+        "function(s)": "Landmark",
+        "debut": "A Plague Tale: Requiem",
+        "chapter(s)": "\"Under a New Sun\" \"Tales and Revelations\""
+      },
+      "categories": [
+        "A Plague Tale: Requiem locations"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/9/9c/Hugo%27s_Dreamscape_2.jpg/revision/latest?cb=20260705110800",
+      "url": "https://aplaguetale.fandom.com/wiki/Las_Madres",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Las-Madres.jpg"
+    },
+    {
+      "title": "Vaudin's Laboratory",
+      "wikiTitle": "Vaudin's Laboratory",
+      "collection": "regions",
+      "facts": {
+        "type": "Laboratory",
+        "location": "Red City, Provence",
+        "function(s)": "Research",
+        "creator": "The Order",
+        "inhabitant(s)": "Vaudin",
+        "debut": "A Plague Tale: Requiem",
+        "chapter(s)": "\"Newcomers\""
+      },
+      "categories": [
+        "A Plague Tale: Requiem locations"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/9/94/Vaudin%27s_Laboratory.jpg/revision/latest?cb=20221204155629",
+      "url": "https://aplaguetale.fandom.com/wiki/Vaudin's_Laboratory",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Vaudin-s-Laboratory.jpg"
+    },
+    {
+      "title": "Butchers' District",
+      "wikiTitle": "Butchers' District",
+      "collection": "regions",
+      "facts": {
+        "type": "Urban district",
+        "location": "Red City",
+        "inhabitant(s)": "Paul",
+        "debut": "A Plague Tale: Requiem",
+        "chapter(s)": "\"A Burden of Blood\""
+      },
+      "categories": [
+        "A Plague Tale: Requiem locations"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/9/97/Butcher%27s_Dump.jpg/revision/latest?cb=20221205040356",
+      "url": "https://aplaguetale.fandom.com/wiki/Butchers'_District",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Butchers-District.jpg"
+    },
+    {
+      "title": "Herbalist's Forest",
+      "wikiTitle": "Herbalist's Forest",
+      "collection": "regions",
+      "facts": {
+        "type": "Woodland",
+        "location": "Red City",
+        "inhabitant(s)": "Florist Martin",
+        "debut": "A Plague Tale: Requiem",
+        "chapter(s)": "\"A Burden of Blood\""
+      },
+      "categories": [
+        "A Plague Tale: Requiem locations"
+      ],
+      "image": "https://static.wikia.nocookie.net/a-plague-tale-innocence/images/3/3b/Herbalist%27s_Forest_6.jpg/revision/latest?cb=20260709052121",
+      "url": "https://aplaguetale.fandom.com/wiki/Herbalist's_Forest",
+      "imageFile": "assets/_wiki/resonance-a-plague-tale-legacy/Herbalist-s-Forest.jpg"
     }
   ]
 }

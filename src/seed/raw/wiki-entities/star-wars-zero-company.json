@@ -2,5 +2,2553 @@
   "slug": "star-wars-zero-company",
   "host": "starwars.fandom.com",
   "fetchedAt": "2026-09-15",
-  "entities": []
+  "entities": [
+    {
+      "title": "Alexander Freed",
+      "wikiTitle": "Alexander Freed",
+      "collection": "characters",
+      "facts": {
+        "url": "https://www.polygon.com/star-wars/2021/2/23/22294554/star-wars-victorys-price-alphabet-squadron-book-read-preview",
+        "text": "A new Star Wars trilogy comes to an end in an exclusive preview of Victory's Price",
+        "author": "Alexander Freed",
+        "date": "2021-02-23",
+        "work": "Polygon",
+        "quote": "Read an excerpt of the new and final Alphabet Squadron novel",
+        "archivedate": "20211102144304"
+      },
+      "categories": [
+        "Author stubs",
+        "Comic authors",
+        "Game screenwriters",
+        "Novel authors",
+        "Real-world people",
+        "Short story authors"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/2/23/Alex-Freed.png/revision/latest?cb=20121220040105",
+      "url": "https://starwars.fandom.com/wiki/Alexander_Freed",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Alexander-Freed.png"
+    },
+    {
+      "title": "Admiral",
+      "wikiTitle": "Admiral",
+      "collection": "characters",
+      "facts": {
+        "cs": "Admirál",
+        "es": "Almirante",
+        "fi": "Amiraali",
+        "ja": "提督",
+        "ka": "ადმირალი",
+        "ko": "제독",
+        "pt": "Almirante",
+        "tr": "Amiral"
+      },
+      "categories": [
+        "Alliance to Restore the Republic ranks",
+        "Canon articles",
+        "Chiss Ascendancy military ranks",
+        "Confederacy of Independent Systems military ranks",
+        "Final Order",
+        "First Order ranks",
+        "Imperial Navy ranks",
+        "Military stubs",
+        "Mon Calamari culture",
+        "New Republic Defense Force ranks",
+        "Republic Military ranks"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/d/dd/Admiral_Ackbar_2016_Regional_Championship_Prize.png/revision/latest?cb=20171129064342",
+      "url": "https://starwars.fandom.com/wiki/Admiral",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Admiral.png"
+    },
+    {
+      "title": "Aleena",
+      "wikiTitle": "Aleena",
+      "collection": "characters",
+      "facts": {
+        "designation": "Sentient",
+        "class": "Reptile",
+        "height": "c. 0.78&ndash;0.79 meters",
+        "skincolor": "Beige",
+        "distinctions": "Short stature, scaly skin, large mouth with tiny teeth",
+        "origin": "Aleen",
+        "habitat": "Rocky",
+        "language": "Aleena"
+      },
+      "categories": [
+        "Canon articles",
+        "Mid Rim sentient species",
+        "Races and species stubs",
+        "Reptilian sentient species",
+        "Species enslaved by the Infinite Empire"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/8/82/RattsTyerell-EpIVD.png/revision/latest?cb=20260406235030",
+      "url": "https://starwars.fandom.com/wiki/Aleena",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Aleena.png"
+    },
+    {
+      "title": "ARC trooper armor",
+      "wikiTitle": "ARC trooper armor",
+      "collection": "items",
+      "facts": {
+        "type": "Clone trooper armor",
+        "cost": "6,000 credits, 5,500 credits",
+        "height": "Around 1.83 meters",
+        "affiliation": "Galactic Republic"
+      },
+      "categories": [
+        "Canon articles",
+        "Clone trooper armor variants",
+        "Clothing stubs",
+        "Incomplete lists"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/c/c5/UmbraOperativeARCTrooper-SS.png/revision/latest?cb=20240328232234",
+      "url": "https://starwars.fandom.com/wiki/ARC_trooper_armor",
+      "imageFile": "assets/_wiki/star-wars-zero-company/ARC-trooper-armor.png"
+    },
+    {
+      "title": "41st Elite Corps",
+      "wikiTitle": "41st Elite Corps",
+      "collection": "characters",
+      "facts": {
+        "type": "Infantry, armor, aerial",
+        "formation": "Corps",
+        "commander": "Jedi General Luminara Unduli, Jedi General Yoda",
+        "second": "Jedi Commander Barriss Offee, Clone Commander Gree",
+        "staff": "Jedi General Depa Billaba, Jedi Commander Caleb Dume, Green Leader, An ARF trooper officer, A Clone Captain, Clone Lieutenant Remo",
+        "subunit": "41st Ranger Platoon, 41st Scout Battalion, *Green Leader's squad, A squad",
+        "strength": "Advanced Recon Force trooper, Clone sharpshooters, Clone scout troopers, Clone trooper pilots, Clone troopers, Clone trooper officers, Heavy weapons clone troopers",
+        "vehicles": "All Terrain Attack Pods, All Terrain Reconnaissance Transports, All Terrain Tactical Enforcers, BARC speeders, HAVw A6 Juggernauts, Infantry Support Platforms, LAAT/i gunships, LAAT carriers",
+        "location": "Coruscant, Geonosis, Guarlara, Kashyyyk, Rodia, Tranquility, Utapau",
+        "affiliation": "Galactic Republic"
+      },
+      "categories": [
+        "Articles in need of updating",
+        "Canon articles",
+        "Grand Army of the Republic corps"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/0/0f/Vigilance-SWL75.png/revision/latest?cb=20210205054233",
+      "url": "https://starwars.fandom.com/wiki/41st_Elite_Corps",
+      "imageFile": "assets/_wiki/star-wars-zero-company/41st-Elite-Corps.png"
+    },
+    {
+      "title": "Aleen",
+      "wikiTitle": "Aleen",
+      "collection": "regions",
+      "facts": {
+        "region": "Mid Rim Territories",
+        "sector": "Bright Jewel sector",
+        "system": "Aleen system",
+        "coordinates": "L-7",
+        "suns": "Aleen",
+        "moons": "1: Trohlu",
+        "routes": "Celanon Spur",
+        "lengthday": "31 hours",
+        "lengthyear": "399 days",
+        "class": "Terrestrial",
+        "atmosphere": "Dual atmosphere, *Surface: Type I Breathable, *Underworld: Non-oxygen",
+        "climate": "Temperate",
+        "terrain": "Surface:, *Rocky mesas and buttes, *Desert plains, *Isolated forests, Underworld:, *Geological and arboreal root caverns, *Luminescent vegetation groves",
+        "water": "Shallow seas",
+        "interest": "Aleen Underworld, Aleen mainframe station, Aleena village, Jedi chapter house, Great Seal",
+        "flora": "Arbozoic tree",
+        "fauna": "Bogwing, Can-cell, Firefly, Sagcatcher",
+        "species": "Aleena, Kindalo, Sollux",
+        "language": "Aleena, Kindalo, Galactic Basic Standard",
+        "government": "Surface: Monarchy, Underworld: Anarchical consensus",
+        "population": "At least 18,000,000, *99% Aleena, *1% other, Underworld: Unknown",
+        "cities": "None",
+        "imports": "None",
+        "exports": "None",
+        "affiliation": "Infinite Empire, Galactic Republic, Jedi Order, Galactic Empire"
+      },
+      "categories": [
+        "Aleen system locations",
+        "Articles in need of updating",
+        "Canon articles",
+        "Galactic Republic planets",
+        "Infinite Empire planets",
+        "Jedi planets",
+        "Locations in grid square L-7",
+        "Planets in the Mid Rim",
+        "Planets in the New Territories",
+        "Rocky planets",
+        "Type I atmosphere planets"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/1/1d/AleenTVE.png/revision/latest?cb=20220212054508",
+      "url": "https://starwars.fandom.com/wiki/Aleen",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Aleen.png"
+    },
+    {
+      "title": "9000 Z001 landspeeder",
+      "wikiTitle": "9000 Z001 landspeeder",
+      "collection": "items",
+      "facts": {
+        "series": "Star Wars By the Numbers",
+        "text": "Every Surface Vehicle in Star Wars Movies",
+        "video": "k7dVRY2QRV0",
+        "nolive": "1"
+      },
+      "categories": [
+        "Articles with conjectural capitalization",
+        "Canon articles",
+        "Landspeeder models",
+        "Vehicle stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/2/24/Z001landspeeder-ANewHope.png/revision/latest?cb=20240309000915",
+      "url": "https://starwars.fandom.com/wiki/9000_Z001_landspeeder",
+      "imageFile": "assets/_wiki/star-wars-zero-company/9000-Z001-landspeeder.png"
+    },
+    {
+      "title": "Abednedo",
+      "wikiTitle": "Abednedo",
+      "collection": "characters",
+      "facts": {
+        "cs": "Abednedo (druh)",
+        "de": "Abednedo (Spezies)",
+        "fi": "Abednedot",
+        "fr": "Abednedo (espèce)",
+        "ja": "アベドネド（種族）",
+        "ko": "아베드네도 (종족)",
+        "nl": "Abednedo",
+        "pl": "Abednedoanie"
+      },
+      "categories": [
+        "Articles to be expanded",
+        "Canon articles",
+        "Colonies sentient species",
+        "Mammalian sentient species"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/d/d2/CaiThrenalli-CGSWG.png/revision/latest?cb=20241125024304",
+      "url": "https://starwars.fandom.com/wiki/Abednedo",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Abednedo.png"
+    },
+    {
+      "title": "87th Sentinel Corps",
+      "wikiTitle": "87th Sentinel Corps",
+      "collection": "characters",
+      "facts": {
+        "es": "87º Cuerpo de Centinelas",
+        "fr": "87e Corps Sentinel",
+        "ja": "第87哨戒兵団",
+        "pl": "87 Korpus Wartowniczy",
+        "tr": "87. Gözcü Kolordusu"
+      },
+      "categories": [
+        "Canon articles",
+        "Grand Army of the Republic corps",
+        "Wookieepedia Comprehensive articles"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/a/ae/SWBF2_87th_Sentinel_clean.jpg/revision/latest?cb=20190227231539",
+      "url": "https://starwars.fandom.com/wiki/87th_Sentinel_Corps",
+      "imageFile": "assets/_wiki/star-wars-zero-company/87th-Sentinel-Corps.jpg"
+    },
+    {
+      "title": "Aaron Contreras",
+      "wikiTitle": "Aaron Contreras",
+      "collection": "characters",
+      "facts": {
+        "occupation": "Author",
+        "companies": "Respawn Entertainment"
+      },
+      "categories": [
+        "People stubs",
+        "Real-world people",
+        "Reference work authors",
+        "Star Wars production staff"
+      ],
+      "image": null,
+      "url": "https://starwars.fandom.com/wiki/Aaron_Contreras"
+    },
+    {
+      "title": "Advanced Science Division",
+      "wikiTitle": "Advanced Science Division",
+      "collection": "characters",
+      "facts": {
+        "es": "División de Ciencias Avanzadas",
+        "fr": "Division Scientifique Avancée",
+        "ja": "先端科学部門",
+        "ka": "მოწინავე სამეცნიერო განყოფილება",
+        "tr": "İleri Bilim Bölümü"
+      },
+      "categories": [
+        "Canon articles",
+        "Galactic Empire organizations",
+        "Scientific organizations"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/f/f4/Advanced_Science_Division.png/revision/latest?cb=20230323095933",
+      "url": "https://starwars.fandom.com/wiki/Advanced_Science_Division",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Advanced-Science-Division.png"
+    },
+    {
+      "title": "Alex Damon",
+      "wikiTitle": "Alex Damon",
+      "collection": "characters",
+      "facts": {
+        "email": "File:StarWarsExplained-Email.png",
+        "creator": "Star Wars Explained",
+        "date": "2025-02-12"
+      },
+      "categories": [
+        "Articles needing illustration",
+        "People stubs",
+        "Real-world people",
+        "Star Wars Zero Company production staff"
+      ],
+      "image": null,
+      "url": "https://starwars.fandom.com/wiki/Alex_Damon"
+    },
+    {
+      "title": "100th Clone Company",
+      "wikiTitle": "100th Clone Company",
+      "collection": "characters",
+      "facts": {
+        "formation": "Company",
+        "commander": "Captain Tesh Keff Hawks",
+        "staff": "Clone Sergeant Sawtooth",
+        "strength": "Clone troopers",
+        "dissolved": "c. 22 BBY",
+        "restored": "By 19 BBY, as Zero Company",
+        "affiliation": "Galactic Republic, *Grand Army of the Republic"
+      },
+      "categories": [
+        "Articles with spoilers",
+        "Canon articles",
+        "Grand Army of the Republic companies",
+        "Military stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/6/66/100thCloneCoArmor-DeluxeEdition.png/revision/latest?cb=20260606174701",
+      "url": "https://starwars.fandom.com/wiki/100th_Clone_Company",
+      "imageFile": "assets/_wiki/star-wars-zero-company/100th-Clone-Company.png"
+    },
+    {
+      "title": "Abyssal Academy",
+      "wikiTitle": "Abyssal Academy",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "Articles with gameplay alternatives",
+        "Articles with spoilers",
+        "Canon articles",
+        "Places of learning"
+      ],
+      "image": null,
+      "url": "https://starwars.fandom.com/wiki/Abyssal_Academy"
+    },
+    {
+      "title": "Ahto City",
+      "wikiTitle": "Ahto City",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "Articles with gameplay alternatives",
+        "Articles with spoilers",
+        "Canon articles",
+        "Cities",
+        "Manaan locations"
+      ],
+      "image": null,
+      "url": "https://starwars.fandom.com/wiki/Ahto_City"
+    },
+    {
+      "title": "534-C",
+      "wikiTitle": "534-C",
+      "collection": "quests",
+      "facts": {},
+      "categories": [
+        "Articles with spoilers",
+        "Canon articles",
+        "Galactic Republic laws and acts"
+      ],
+      "image": null,
+      "url": "https://starwars.fandom.com/wiki/534-C"
+    },
+    {
+      "title": "Ambush on Dantooine",
+      "wikiTitle": "Ambush on Dantooine",
+      "collection": "quests",
+      "facts": {
+        "conflict": "Great Jedi Purge",
+        "date": "18 BBY",
+        "place": "Dantooine",
+        "side1": "Galactic Empire",
+        "side2": "Surviving Jedi",
+        "commanders1": "Second Sister",
+        "forces1": "1 Inquisitor, Stormtroopers",
+        "forces2": "Rawn Shonson",
+        "casual2": "Rawn Shonson"
+      },
+      "categories": [
+        "Articles needing illustration",
+        "Articles with conjectural titles",
+        "Articles with spoilers",
+        "Battles in 18 BBY",
+        "Battles of Dantooine",
+        "Canon articles",
+        "Event stubs",
+        "Missions of the Great Jedi Purge"
+      ],
+      "image": null,
+      "url": "https://starwars.fandom.com/wiki/Ambush_on_Dantooine"
+    },
+    {
+      "title": "Anakin Skywalker",
+      "wikiTitle": "Anakin Skywalker",
+      "collection": "characters",
+      "facts": {
+        "type": "Jedi",
+        "option1": "Anakin Skywalker",
+        "option2": "Darth Vader",
+        "option3": "Young Anakin",
+        "homeworld": "Tatooine",
+        "birth": "41 BBY, Tatooine",
+        "death": "4 ABY,",
+        "species": "Human",
+        "gender": "Male",
+        "pronouns": "He/him",
+        "height": "1.35 meters - 1.88 meters ,",
+        "mass": "120 kilograms in armor",
+        "hair": "Blond, light, and dark",
+        "eyes": "Blue, Yellow and red",
+        "skin": "Light, later pale",
+        "cyber": "Cybernetic right arm; later prosthetic arms and legs, and a life-support system",
+        "families": "Skywalker family, Naberrie family",
+        "parents": "Shmi Skywalker Lars, Cliegg Lars",
+        "partners": "Padmé Amidala",
+        "siblings": "Owen Lars",
+        "children": "Luke Skywalker, Leia Skywalker Organa Solo",
+        "affiliation": "Jedi Order, *302nd Battalion, *501st Legion, *Office of the Chancellor, *Shadow Platoon, *1st Legion, *501st Legion, *Imperial High Command, *Imperial Ruling Council, *Joint Chiefs of the Imperial Military, Vader's crew,",
+        "masters": "Qui-Gon Jinn",
+        "apprentices": "Ahsoka Tano, Corvax descendant"
+      },
+      "categories": [
+        "7th Sky Corps personnel",
+        "Aces",
+        "Articles in need of updating",
+        "Articles needing illustration",
+        "Articles to be expanded",
+        "Articles with multiple issues",
+        "Canon articles",
+        "Cyborgs with prosthetics",
+        "Dark Lords of the Sith",
+        "Darths",
+        "Death Squadron personnel",
+        "Force-sensitive navigators",
+        "Force ghosts",
+        "Former Sith"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/6/6f/Anakin_Skywalker_RotS.png/revision/latest?cb=20130621175844",
+      "url": "https://starwars.fandom.com/wiki/Anakin_Skywalker",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Anakin-Skywalker.png"
+    },
+    {
+      "title": "Armored Assault Tank Mk I",
+      "wikiTitle": "Armored Assault Tank Mk I",
+      "collection": "items",
+      "facts": {
+        "manufacturer": "Baktoid Armor Workshop",
+        "model": "Medium Repulsor Tank/AAT-1",
+        "type": "Repulsorlift tank vehicle",
+        "cost": "75,000 credits",
+        "length": "9.19 meters",
+        "speed": "55 kph",
+        "power": "Four-chambered multi-reactor power plant, Power generators",
+        "sensor": "Turret-mounted battlefield sensor package",
+        "target": "Stereoscopic rangefinder camera",
+        "armament": "Turret-mounted heavy laser cannon (1), *Lateral range-finding lasers (2), *Lateral antipersonnel lasers (2), Coaxial short-range blasters, Hull-mounted energized projectile launchers (6), *\"Bunker Buster\" shell, *Armor-P",
+        "crew": "Commander (1), Pilot (1), Gunners (2)",
+        "passengers": "6 on exterior",
+        "capacity": "10 metric tons",
+        "communications": "Control and Command receiver antenna",
+        "affiliation": "Trade Federation, *Separatist Droid Army, *Grand Army of the Republic, Nightsisters, Onderon rebels, Separatist holdouts, *Desix Separatist holdout, Trandoshans, Hutt Clan, *Jabba's criminal empire, Alliance to Restore t"
+      },
+      "categories": [
+        "Articles to be expanded",
+        "Articles with conflicting sources",
+        "Baktoid Armor Workshop products",
+        "Canon articles",
+        "Hovertank models",
+        "Vehicle classes of the Alliance to Restore the Republic",
+        "Vehicle classes of the Confederacy of Independent Systems",
+        "Vehicle classes of the Galactic Empire",
+        "Vehicle classes of the Trade Federation"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/c/c9/AAT_BF2.png/revision/latest?cb=20170825000512",
+      "url": "https://starwars.fandom.com/wiki/Armored_Assault_Tank_Mk_I",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Armored-Assault-Tank-Mk-I.png"
+    },
+    {
+      "title": "Anooba",
+      "wikiTitle": "Anooba",
+      "collection": "enemies",
+      "facts": {
+        "designation": "Non-sentient",
+        "class": "Mammal",
+        "length": "Up to 2.7 meters",
+        "haircolor": "Black",
+        "eyecolor": "Blue, Yellow",
+        "distinctions": "Lower jaw",
+        "habitat": "Desert",
+        "diet": "Carnivore"
+      },
+      "categories": [
+        "Canines",
+        "Canon articles",
+        "Carnivorous creatures",
+        "Creature stubs",
+        "Creatures of Nal Hutta",
+        "Creatures of Tatooine",
+        "Desert creatures",
+        "Domesticated creatures",
+        "Herd and pack creatures",
+        "Incomplete lists",
+        "Mammals",
+        "Non-sentient species",
+        "Predatory creatures"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/d/df/Anooba.png/revision/latest?cb=20200427003151",
+      "url": "https://starwars.fandom.com/wiki/Anooba",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Anooba.png"
+    },
+    {
+      "title": "Ansion",
+      "wikiTitle": "Ansion",
+      "collection": "regions",
+      "facts": {
+        "region": "Mid Rim Territories",
+        "sector": "Churnis sector",
+        "system": "Ansion system",
+        "coordinates": "I-6",
+        "routes": "Namadii Corridor",
+        "interest": "Unidentified Imperial base",
+        "affiliation": "Galactic Empire"
+      },
+      "categories": [
+        "Ansion system locations",
+        "Articles in need of updating",
+        "Canon articles",
+        "Galactic Empire planets",
+        "Locations in grid square I-6",
+        "Planets in the Mid Rim"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/9/9f/Nora-SWGalaxyMap.jpg/revision/latest?cb=20251118105746",
+      "url": "https://starwars.fandom.com/wiki/Ansion",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Ansion.jpg"
+    },
+    {
+      "title": "Antar 4",
+      "wikiTitle": "Antar 4",
+      "collection": "regions",
+      "facts": {
+        "region": "Inner Rim Territories, The Slice",
+        "sector": "None",
+        "system": "Prindaar system",
+        "coordinates": "N-12",
+        "orbited": "Antar",
+        "routes": "Nanth'ri Trade Route",
+        "water": "60%, >60%",
+        "species": "Gotal",
+        "otherspecies": "Gossam, Koorivar",
+        "affiliation": "Galactic Republic, Galactic Empire"
+      },
+      "categories": [
+        "Articles in need of updating",
+        "Canon articles",
+        "Confederacy of Independent Systems moons",
+        "Corporate Alliance locations",
+        "Fortress worlds",
+        "Galactic Empire moons",
+        "Galactic Republic moons",
+        "Locations in grid square N-12",
+        "Moons in the Inner Rim",
+        "Moons in the Slice",
+        "Prindaar system locations"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/c/c5/Antar_Atlas.png/revision/latest?cb=20161005215041",
+      "url": "https://starwars.fandom.com/wiki/Antar_4",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Antar-4.png"
+    },
+    {
+      "title": "Aratech Repulsor Company",
+      "wikiTitle": "Aratech Repulsor Company",
+      "collection": "items",
+      "facts": {
+        "cs": "Aratech Repulsor Company",
+        "es": "Compañía de Repulsores Aratech",
+        "fr": "Compagnie des répulseurs Aratech",
+        "ja": "アラテック・リパルサー社",
+        "nl": "Aratech Repulsor Company",
+        "pl": "Aratech Repulsor Company"
+      },
+      "categories": [
+        "Canon articles",
+        "Company stubs",
+        "Galactic Empire corporations",
+        "Galactic Republic corporations",
+        "Vehicle manufacturing companies"
+      ],
+      "image": null,
+      "url": "https://starwars.fandom.com/wiki/Aratech_Repulsor_Company"
+    },
+    {
+      "title": "Arquitens-class light cruiser",
+      "wikiTitle": "Arquitens-class light cruiser",
+      "collection": "items",
+      "facts": {
+        "manufacturer": "Kuat Drive Yards",
+        "model": "Arquitens-class light cruiser",
+        "type": "Light cruiser",
+        "cost": "4,000,000 credits",
+        "length": "325 meters",
+        "max accel": "1,800G",
+        "max speed": "750 km/h",
+        "engine": "Dyne 577 radial atomizer engines (3)",
+        "hyperdrive": "Class 2, Class 12",
+        "hdsystem": "Equipped",
+        "power": "Reactor",
+        "shield gen": "Energy shielding layers",
+        "hull": "Armored hull",
+        "sensor": "Medium-range sensors",
+        "target": "Equipped",
+        "navigation": "Navigation computer",
+        "armament": "Configuration 1:, *Turret-mounted twin light turbolaser batteries (4), *Missile/torpedo launchers (4), *Ventral quad laser cannon (1)",
+        "complement": "3 TIE fighter series starfighters, 2 Lambda-class shuttles, Landspeeders, Ship's boats",
+        "bays": "Circular docking bays (2)",
+        "crew": "100 officers, enlisted crew and pilots",
+        "passengers": "100",
+        "capacity": "1,200 tons",
+        "consumables": "3 months",
+        "role": "All-purpose, Escort, Support ship, Picket, Light warship, Patrol",
+        "firstuse": "By 22 BBY",
+        "affiliation": "Galactic Republic, *Imperial Navy"
+      },
+      "categories": [
+        "Articles with spoilers",
+        "Canon articles",
+        "Kuat Drive Yards products",
+        "Light cruiser classes",
+        "Starship classes of the Galactic Empire",
+        "Starship classes of the Galactic Republic"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/4/4c/ArquitensclassLightCruiser-MF60-76.png/revision/latest?cb=20260314174003",
+      "url": "https://starwars.fandom.com/wiki/Arquitens-class_light_cruiser",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Arquitens-class-light-cruiser.png"
+    },
+    {
+      "title": "Arquitens-class command cruiser",
+      "wikiTitle": "Arquitens-class command cruiser",
+      "collection": "items",
+      "facts": {
+        "manufacturer": "Kuat Drive Yards",
+        "model": "Arquitens-class, Arquitens-class command cruiser, *Class 546 Cruiser",
+        "type": "Light cruiser",
+        "cost": "5,000,000 credits",
+        "length": "230 meters, 380.34 meters",
+        "width": "162.99 meters",
+        "height": "66.72 meters",
+        "engine": "3",
+        "hyperdrive": "Class 2, Class 12",
+        "hdsystem": "Equipped",
+        "shield gen": "Equipped",
+        "sensor": "Medium-range sensors",
+        "navigation": "Navigation computer",
+        "armament": "Turret-mounted twin light turbolaser batteries (4), Quad laser batteries (8), Concussion missile launchers (4), Medium tractor beam projector (1)",
+        "complement": "3 TIE fighter series starfighters (tripled with retrofitted hangar), 2 TIE line bombers or 1 Sentinel-class landing craft, *TIE/IN interceptors, *TIE/ln space superiority starfighters, Small shuttles, Landspeeders, Ship'",
+        "bays": "Retrofitted hangar",
+        "escapepods": "8",
+        "crew": "750 officers, enlisted crew and pilots",
+        "passengers": "100",
+        "consumables": "3 months",
+        "role": "Light multipurpose cruiser, Support ship, Electronic warfare, Reconnaissance, Armed transport",
+        "firstuse": "By 18 BBY",
+        "affiliation": "Galactic Empire, New Republic, *New Republic Defense Fleet, *Mandalorian fleet"
+      },
+      "categories": [
+        "Articles in need of updating",
+        "Articles with spoilers",
+        "Canon articles",
+        "Incomplete OOU lists",
+        "Kuat Drive Yards products",
+        "Light cruiser classes",
+        "Starship classes of the Galactic Empire",
+        "Starship classes of the Imperial Remnant"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/c/ca/SWBII-ImperialCruiser.png/revision/latest?cb=20171030172526",
+      "url": "https://starwars.fandom.com/wiki/Arquitens-class_command_cruiser",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Arquitens-class-command-cruiser.png"
+    },
+    {
+      "title": "Ask Aak",
+      "wikiTitle": "Ask Aak",
+      "collection": "characters",
+      "facts": {
+        "type": "Galactic Republic",
+        "homeworld": "Malastare",
+        "species": "Gran",
+        "gender": "Male",
+        "pronouns": "He/him",
+        "height": "1.80 meters",
+        "eyes": "Black",
+        "skin": "Orange-brown",
+        "families": "new",
+        "parents": "new",
+        "partners": "new",
+        "siblings": "new",
+        "children": "new",
+        "affiliation": "Galactic Republic"
+      },
+      "categories": [
+        "Articles in need of updating",
+        "Canon articles",
+        "Gran",
+        "Individuals with he/him pronouns",
+        "Loyalist Committee",
+        "Males"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/d/d3/AskAaakDatabank.jpg/revision/latest?cb=20180115235202",
+      "url": "https://starwars.fandom.com/wiki/Ask_Aak",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Ask-Aak.jpg"
+    },
+    {
+      "title": "Anaxes",
+      "wikiTitle": "Anaxes",
+      "collection": "regions",
+      "facts": {
+        "region": "Outer Rim Territories, The Slice",
+        "sector": "Azure sector",
+        "system": "Azure system",
+        "coordinates": "[[Standard Galactic Grid",
+        "R-7]]<ref name": "\"CLNE\">Star Wars: Complete Locations, New Edition",
+        "routes": "Perlemian Trade Route",
+        "class": "Terrestrial{{TCW",
+        "atmosphere": "[[Atmosphere",
+        "Breathable]]<ref name": "\"The Bad Batch\" />",
+        "climate": "[[Temperature",
+        "Temperate]]<ref name": "\"Databank\">{{Databank",
+        "terrain": "Canyons, Caverns, Forests, Valleys, Jungles",
+        "interest": "Anaxes canyon{{SW",
+        "url": "tv-shows/the-clone-wars-legacy/bad-batch-concept-art-gallery",
+        "text": "Bad Batch Concept Art Gallery}} {{C",
+        "Separatist stronghold]]<ref name": "\"Dawn\" />",
+        "fauna": "Fyrnock",
+        "exports": "Starships",
+        "affiliation": "Galactic Republic"
+      },
+      "categories": [
+        "Arboreal planets",
+        "Articles to be expanded",
+        "Azure system locations",
+        "Canon articles",
+        "Destroyed planets",
+        "Galactic Republic planets",
+        "Jungle planets",
+        "Locations in grid square R-7",
+        "Planets in the Outer Rim Territories",
+        "Planets in the Slice",
+        "Planets with shipyards",
+        "Rocky planets"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/9/90/AnaxesBattles.png/revision/latest?cb=20211112025247",
+      "url": "https://starwars.fandom.com/wiki/Anaxes",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Anaxes.png"
+    },
+    {
+      "title": "Anoat sector",
+      "wikiTitle": "Anoat sector",
+      "collection": "regions",
+      "facts": {
+        "region": "Outer Rim Territories, *Greater Javin, Western Reaches",
+        "coordinates": "K-18",
+        "systems": "Allyuen system, Anoat system, Bavva system, Bendeluum system, Bespin system, Burnin Konn system, Council system, Darlyn Boda system, Delphon system, Ertegas system, Gerrenthum system, Gutretee system, Hoth system, Ione s",
+        "otherplanets": "Gallowyss, Ripurni, Sinsara",
+        "stations": "An asteroid monitoring station",
+        "routes": "Corellian Trade Spine, Ison Trade Corridor",
+        "other": "The Ring",
+        "capital": "Anoat, Gerrenthum",
+        "affiliation": "Noble Court, Galactic Empire, Ubrik Adelhard's Imperial remnant",
+        "battles1": "Local conflict",
+        "b1": "Subjugation of the Anoat sector - Anoat (I)",
+        "battles2": "Galactic Civil War",
+        "b2": "Kiax Nebula - Hoth (I) - Bespin (I) - Cloud City, ----, Iron Blockade, Anoat (II) - The Crypt - Mataou - Hoth (II) - Anoat (III) - Bespin (II)",
+        "battles3": "Uprising against the First Order",
+        "b3": "Uprising on Cloud City"
+      },
+      "categories": [
+        "Canon articles",
+        "Locations in grid square K-18",
+        "Sector stubs",
+        "Subsectors of the Outer Rim Territories",
+        "Subsectors of the Western Reaches"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/3/37/Sector_Anoat.jpg/revision/latest?cb=20150902180702",
+      "url": "https://starwars.fandom.com/wiki/Anoat_sector",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Anoat-sector.jpg"
+    },
+    {
+      "title": "Atrocity on Mahranee",
+      "wikiTitle": "Atrocity on Mahranee",
+      "collection": "quests",
+      "facts": {
+        "prev": "Mission to Utapau",
+        "conc": "Hunt for Kundri Fathom, *Attack on the Storm Basin refinery, Outer Rim Sieges",
+        "next": "Capture of Moregi",
+        "conflict": "Clone Wars",
+        "date": "19 BBY",
+        "place": "Mahranee",
+        "result": "Confederacy of Independent Systems victory, *Genocide of all Mahran refugees and the Galactic Republic task force, *Confederacy claims control of Mahranee",
+        "side1": "Galactic Republic, Jedi Order",
+        "side2": "Confederacy of Independent Systems",
+        "commanders1": "Jedi General Chubor&dagger;",
+        "commanders2": "Head of State Count Dooku",
+        "forces1": "1 Jedi&dagger;, Clone troopers&dagger;, At least 1 Consular-class cruiser&dagger;",
+        "forces2": "Various space forces",
+        "casual1": "All forces",
+        "civilian": "Thousands of Mahran refugees, All Mahran starships, Destruction of Mahranee's capital city"
+      },
+      "categories": [
+        "Articles with an excess of redlinks",
+        "Articles with gameplay alternatives",
+        "Articles with spoilers",
+        "Battles in 19 BBY",
+        "Battles in the Taldot sector",
+        "Battles of the Clone Wars",
+        "Canon articles",
+        "Genocides and massacres",
+        "Wookieepedia Good articles"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/8/8b/Darth_Tyranus_RotS.png/revision/latest?cb=20140321182527",
+      "url": "https://starwars.fandom.com/wiki/Atrocity_on_Mahranee",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Atrocity-on-Mahranee.png"
+    },
+    {
+      "title": "Ankhural",
+      "wikiTitle": "Ankhural",
+      "collection": "regions",
+      "facts": {
+        "region": "Hutt Space",
+        "sector": "None",
+        "system": "Ankhural system",
+        "coordinates": "R-9",
+        "terrain": "Silicon fields",
+        "interest": "Ankhural cantina, Ankhural podracing track",
+        "otherspecies": "Umbaran",
+        "cities": "Unidentified city"
+      },
+      "categories": [
+        "Ankhural locations",
+        "Canon articles",
+        "Locations in grid square R-9",
+        "Planets in Hutt Space",
+        "Terrestrial planets"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/9/90/Ankhural-SWT.jpg/revision/latest?cb=20250914174455",
+      "url": "https://starwars.fandom.com/wiki/Ankhural",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Ankhural.jpg"
+    },
+    {
+      "title": "Ando Prime",
+      "wikiTitle": "Ando Prime",
+      "collection": "regions",
+      "facts": {
+        "region": "Mid Rim Territories, The Slice",
+        "sector": "Lambda sector",
+        "system": "Ando system",
+        "coordinates": "Q-15",
+        "terrain": "Ice",
+        "interest": "Ando Prime Centrum"
+      },
+      "categories": [
+        "Ando system locations",
+        "Articles in need of updating",
+        "Articles with spoilers",
+        "Canon articles",
+        "Ice planets",
+        "Locations in grid square Q-15",
+        "Planets in the Mid Rim",
+        "Planets in the Slice"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/8/80/AndoPrime-Galactic_Racer.png/revision/latest?cb=20260430181331",
+      "url": "https://starwars.fandom.com/wiki/Ando_Prime",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Ando-Prime.png"
+    },
+    {
+      "title": "Azure sector",
+      "wikiTitle": "Azure sector",
+      "collection": "regions",
+      "facts": {
+        "region": "Outer Rim Territories",
+        "coordinates": "R-7",
+        "systems": "Azure system",
+        "asteroids": "Anaxes asteroid belt, *PM-1203, *PM-6986",
+        "routes": "Perlemian Trade Route",
+        "battles1": "Local conflict",
+        "b1": "Destruction of Anaxes",
+        "battles2": "Clone Wars",
+        "b2": "Battle of Anaxes",
+        "battles3": "Early rebellion against the Galactic Empire",
+        "b3": "Rescue of Tseebo"
+      },
+      "categories": [
+        "Canon articles",
+        "Locations in grid square R-7",
+        "Sector stubs",
+        "Sectors of the Outer Rim Territories"
+      ],
+      "image": null,
+      "url": "https://starwars.fandom.com/wiki/Azure_sector"
+    },
+    {
+      "title": "Ardennia",
+      "wikiTitle": "Ardennia",
+      "collection": "regions",
+      "facts": {
+        "region": "Outer Rim Territories, New Territories",
+        "sector": "Fath sector",
+        "system": "Ardennia system",
+        "coordinates": "K-6",
+        "routes": "Entralla Route",
+        "class": "Terrestrial",
+        "species": "Ardennian",
+        "affiliation": "New Republic"
+      },
+      "categories": [
+        "Articles in need of updating",
+        "Canon articles",
+        "Fath sector locations",
+        "Locations along the Entralla Route",
+        "Locations in grid square K-6",
+        "New Republic planets",
+        "Planets in the New Territories",
+        "Planets in the Outer Rim Territories",
+        "Terrestrial planets",
+        "Wookieepedia Good articles"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/2/22/Ardennia-SWGalaxyMap.jpg/revision/latest?cb=20240328205658",
+      "url": "https://starwars.fandom.com/wiki/Ardennia",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Ardennia.jpg"
+    },
+    {
+      "title": "Antine",
+      "wikiTitle": "Antine",
+      "collection": "regions",
+      "facts": {
+        "region": "Outer Rim Territories",
+        "sector": "N/A",
+        "system": "Antine system",
+        "coordinates": "I-19",
+        "class": "Terrestrial"
+      },
+      "categories": [
+        "Articles in need of updating",
+        "Astronomical objects in the Outer Rim Territories",
+        "Canon articles",
+        "Locations in grid square I-19",
+        "Terrestrial astronomical objects"
+      ],
+      "image": null,
+      "url": "https://starwars.fandom.com/wiki/Antine"
+    },
+    {
+      "title": "B2-series super battle droid",
+      "wikiTitle": "B2-series super battle droid",
+      "collection": "enemies",
+      "facts": {
+        "manufacturer": "Baktoid Combat Automata",
+        "homeworld": "Geonosis",
+        "line": "B-series battle droid",
+        "class": "Battle droid",
+        "degree": "Class four droid",
+        "height": "1.93 meters",
+        "gender": "Masculine programming",
+        "sensor": "Black, Red",
+        "plating": "Dull silver",
+        "armament": "Dual wrist blaster",
+        "affiliation": "Techno Union, Confederacy of Independent Systems, Bedlam Raiders, Plazir-15's government, Droid Gotra, The Twins"
+      },
+      "categories": [
+        "B-series battle droid models",
+        "Baktoid Combat Automata products",
+        "Canon articles",
+        "Droid models of the Confederacy of Independent Systems",
+        "Droid models of the Trade Federation"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/7/7b/SuperBattleDroidDetail-SWE.png/revision/latest?cb=20241201185102",
+      "url": "https://starwars.fandom.com/wiki/B2-series_super_battle_droid",
+      "imageFile": "assets/_wiki/star-wars-zero-company/B2-series-super-battle-droid.png"
+    },
+    {
+      "title": "BX-series droid commando",
+      "wikiTitle": "BX-series droid commando",
+      "collection": "enemies",
+      "facts": {
+        "manufacturer": "Baktoid Combat Automata, Confederacy of Independent Systems",
+        "class": "Battle droid",
+        "degree": "Fourth-degree droid",
+        "height": "1.91 meters",
+        "gender": "Masculine programing",
+        "sensor": "White",
+        "plating": "Black,",
+        "armament": "E-5 blaster rifle, BX Sniper Rifle, RPS-6 rocket launcher, Droid commando personal shield, Electrostaff",
+        "equipment": "Vocabulator",
+        "affiliation": "Confederacy of Independent Systems, *Ziro the Hutt's criminal organization, *Desix Separatist holdout, Tech Masters, Darth Vader's secret forces, Kay Vess' crew, The Twins"
+      },
+      "categories": [
+        "Articles to be expanded",
+        "B-series battle droid models",
+        "Baktoid Combat Automata products",
+        "Canon articles",
+        "Droid models of the Confederacy of Independent Systems"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/2/27/CommandoDroid-TCWCEJtB.png/revision/latest?cb=20230705020437",
+      "url": "https://starwars.fandom.com/wiki/BX-series_droid_commando",
+      "imageFile": "assets/_wiki/star-wars-zero-company/BX-series-droid-commando.png"
+    },
+    {
+      "title": "Battle of Christophsis",
+      "wikiTitle": "Battle of Christophsis",
+      "collection": "quests",
+      "facts": {
+        "prev": "Mission to Kudo III",
+        "conc": "Assault on Christophsis",
+        "next": "Battle of Teth",
+        "conflict": "Clone Wars",
+        "date": "22 BBY",
+        "place": "Christophsis",
+        "result": "Galactic Republic strategic and psychological victory, Full retreat of Separatist blockade, Republic High Command uses campaign as an example of Jedi&ndash;clone cooperation, Separatist occupation ended",
+        "side1": "Galactic Republic",
+        "side2": "Confederacy of Independent Systems, *Retail Caucus, Sith",
+        "commanders1": "Senator Bail Prestor Organa, Jedi General Yoda, Jedi General Anakin Skywalker, Fleet Admiral Wullf Yularen, Clone Marshal Commander Cody, Clone Commander Blackout, Clone Captain Rex",
+        "commanders2": "Dark Acolyte Asajj Ventress, General Whorm Loathsom, Admiral Trench, TI-99&dagger;, TJ-55&dagger;",
+        "unit1": "Grand Army of the Republic, **Torrent Company",
+        "unit2": "Separatist Droid Army, *TJ-55's battle droid battalion, *Whorm Loathsom's army, Confederacy of Independent Systems Navy, *Christophsis blockade",
+        "forces1": "7 Venator-class Star Destroyers, *Clone commandos, *Clone navigation officers, *Clone trooper pilots, *Special ops clone troopers, *Stealth clone pilot, All Terrain Reconnaissance Transports, All Terrain Tactical Enforce",
+        "forces2": "1 Providence-class Dreadnought&dagger;, At least 7 C-9979 landing craft, Thousands of, *DSD1 dwarf spider droids, *LR-57 combat/retail droids, *OOM command battle droids, *Octuptarra magna tri-droids, *At least 3 T-serie",
+        "casual1": "Moderate, Many clone troopers, Heavy walker and gunship losses, 1 frigate, All support ships, Christophsians, Republic weapons depot heavily damaged",
+        "casual2": "Heavy, Whorm Loathsom and Slick captured",
+        "civilian": "Chaleydonia damaged"
+      },
+      "categories": [
+        "Articles in need of updating",
+        "Battles in 22 BBY",
+        "Battles of Christophsis",
+        "Battles of the Clone Wars",
+        "Blockades",
+        "Canon articles",
+        "Invasions",
+        "Lightsaber duels"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/5/5c/Battle_of_Christophsis.png/revision/latest?cb=20121013044237",
+      "url": "https://starwars.fandom.com/wiki/Battle_of_Christophsis",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Battle-of-Christophsis.png"
+    },
+    {
+      "title": "B1-series battle droid",
+      "wikiTitle": "B1-series battle droid",
+      "collection": "enemies",
+      "facts": {
+        "creator": "Geonosians",
+        "manufacturer": "Techno Union, *Baktoid Combat Automata, *Baktoid Armor Workshop, Geonosis Industries",
+        "homeworld": "Geonosian droid factories, Geonosis, Kudo droid foundry, Kudo III, Akiva droid factory, Akiva",
+        "line": "B-series battle droid, Neimoidian battle droid",
+        "class": "Battle droid",
+        "degree": "Fourth-degree droid",
+        "height": "1.93 meters",
+        "mass": "65 kilograms",
+        "gender": "Masculine programming",
+        "sensor": "Black",
+        "plating": "Bone-white, rust brown,",
+        "armament": "E-5 blaster rifle, Electropole, Thermal detonators, RPS-6 rocket launcher",
+        "equipment": "Comlink booster pack, Datapad, Macrobinoculars",
+        "affiliation": "Trade Federation, *Confederacy military, Galactic Republic, Infinite Coil, Separatist holdouts, Bedlam Raiders, Hutt Cartel, Crimson Dawn, Droid uprising, Galactic Empire, Schism Imperial, Plazir-15's government, Droid G"
+      },
+      "categories": [
+        "Articles to be expanded",
+        "Articles with spoilers",
+        "B-series battle droid models",
+        "Canon articles",
+        "Droid models of the Confederacy of Independent Systems",
+        "Droid models of the Galactic Republic",
+        "Droid models of the Hutt Clan",
+        "Droid models of the Trade Federation",
+        "Droids with masculine programming",
+        "Geonosian Industries products"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/c/cd/Battle_Droid.png/revision/latest?cb=20160910192832",
+      "url": "https://starwars.fandom.com/wiki/B1-series_battle_droid",
+      "imageFile": "assets/_wiki/star-wars-zero-company/B1-series-battle-droid.png"
+    },
+    {
+      "title": "Battle of Coruscant",
+      "wikiTitle": "Battle of Coruscant",
+      "collection": "quests",
+      "facts": {
+        "prev": "Battle of Yerbana",
+        "conc": "Hunt for Kundri Fathom, Siege of Mandalore",
+        "next": "Battle of Utapau",
+        "conflict": "Clone Wars",
+        "date": "19 BBY",
+        "place": "Coruscant",
+        "result": "Decisive Galactic Republic victory and escapes, prolonging the Clone Wars, Darth Sidious brings Anakin Skywalker closer to the dark side of the Force",
+        "side1": "Galactic Republic, Jedi Order",
+        "side2": "Confederacy of Independent Systems, Sith",
+        "commanders1": "Supreme Chancellor Sheev Palpatine, Jedi General Shaak Ti, Jedi General Anakin Skywalker Honor Salima",
+        "commanders2": "Head of State Count Dooku&dagger;, Supreme Martial Commander of the Separatist Droid Armies General Grievous, Captain Lushros Dofine",
+        "unit1": "Blue Squadron, Coruscant Home Defense Fleet, Coruscant Rescue Ops, *Fifth Fleet, Shadow Squadron",
+        "unit2": "Coruscant attack fleet, Another security squad&dagger;",
+        "forces1": "At least 7 Jedi Masters, *Roron Corobb&dagger;, At least 1 Jedi Knight, **Contrail, **Clone Commander Davijaan \"Odd Ball\", *Clone Commander Gree, Carrack-class light cruisers, **Guarlara, **Ro-ti-Mundi, 2 stolen Lucrehul",
+        "forces2": "1 Dark Lord of the Sith, *Droidekas, *OOM command battle droids, Munificent-class star frigates, At least 2 Providence-class Dreadnoughts, *Invisible Hand&dagger;, *Prosperous, Lucrehulk-class Battleships, *Profusion",
+        "casual1": "Heavy, *Two members of Fire Team Three killed",
+        "casual2": "Heavy, **Munificent-class star frigates, **2 Providence-class Dreadnoughts, **Recusant-class light destroyers",
+        "civilian": "Galactic City extensively damaged, Tens of thousands killed"
+      },
+      "categories": [
+        "Articles in need of updating",
+        "Articles with gameplay alternatives",
+        "Articles with spoilers",
+        "Battles in 19 BBY",
+        "Battles of Coruscant",
+        "Battles of the Clone Wars",
+        "Canon articles",
+        "Lightsaber duels",
+        "Rescue missions"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/3/34/Spacebattle.jpg/revision/latest?cb=20091019154628",
+      "url": "https://starwars.fandom.com/wiki/Battle_of_Coruscant",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Battle-of-Coruscant.jpg"
+    },
+    {
+      "title": "Battle of Umbara",
+      "wikiTitle": "Battle of Umbara",
+      "collection": "quests",
+      "facts": {
+        "prev": "Rescue of Adi Gallia",
+        "next": "Destruction of the Ledeve Jedi Temple",
+        "conflict": "Clone Wars",
+        "date": "20 BBY",
+        "place": "Umbara",
+        "result": "Galactic Republic/Jedi Order victory, *Recapture and occupation of Umbara, *Execution of Pong Krell for treason against the Republic, Clone trooper Dogma arrested",
+        "side1": "Galactic Republic, Jedi Order",
+        "side2": "Confederacy of Independent Systems",
+        "commanders1": "High Jedi General Obi-Wan Kenobi, Clone Captain Rex, Clone Sergeant Appo",
+        "commanders2": "Jedi General Pong Krell&dagger;",
+        "unit1": "Republic Navy, Grand Army of the Republic, *Several other battalions",
+        "unit2": "Confederacy of Independent Systems Navy, *Umbara blockade, Confederacy military, *Umbaran Militia",
+        "forces1": "5 Jedi, Aggressive ReConnaissance-170 starfighters, Clone troopers, *1 Advanced Recon Commando, *At least 1 Clone medic, *Advanced Recon Force troopers, *Clone trooper pilots, All Terrain Reconnaissance Transports",
+        "forces2": "1 self-proclaimed Sith acolyte&dagger;, B1-series battle droids, At least 1 T-series military strategic analysis and tactics droid&dagger;, Scutiger-100 stealth droids, Umbaran hover tanks, Impeding Assault Tanks, Umbara",
+        "casual1": "At least 1 Low Altitude Assault Transport/infantry gunship, Many All Terrain Recon Transports, Many BTL-B Y-wing starfighter/bombers, Many Clone Z-95 starfighters, Heavy clone trooper losses, *Many Advanced Recon Force t",
+        "casual2": "At least 1 Munificent-class star frigate, Several Umbaran hover tanks, Some Scutiger-100 stealth droid, Several Impeding Assault Tanks, Some Umbaran mobile heavy cannons, Severe Umbaran soldier casualties, Many Vulture-c"
+      },
+      "categories": [
+        "Articles in need of updating",
+        "Articles with spoilers",
+        "Battles in 20 BBY",
+        "Battles of Umbara",
+        "Battles of the Clone Wars",
+        "Canon articles"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/6/6e/BattleOfUmbara-DOU.png/revision/latest?cb=20121126025715",
+      "url": "https://starwars.fandom.com/wiki/Battle_of_Umbara",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Battle-of-Umbara.png"
+    },
+    {
+      "title": "Batuu",
+      "wikiTitle": "Batuu",
+      "collection": "regions",
+      "facts": {
+        "region": "Outer Rim Territories, *Galactic Frontier, Western Reaches",
+        "sector": "Trilon sector",
+        "system": "Batuu system",
+        "coordinates": "G-15",
+        "xyz": "-401.72, -561.84, 004.32",
+        "suns": "3:, Ubaat I, Ubaat II, Ubaat III",
+        "moons": "2:, Valara",
+        "routes": "Batuu–Ponemah hyperlane, Xala–Cermau hyperlane",
+        "lengthday": "24 hours",
+        "lengthyear": "365 days",
+        "class": "Terrestrial",
+        "diameter": "12,750 kilometers",
+        "atmosphere": "Breathable",
+        "climate": "Temperate",
+        "terrain": "Cenotes, Forests, Mountains",
+        "water": "Rivers",
+        "interest": "Batuu Wilds, Black Spire Ruins, Surabat River Valley, Batuu Jedi temple",
+        "flora": "Batuu tree, Surabat grain",
+        "fauna": "Numerous, including:, Batlizard, Batuuan braga bear, Flintwing, Gant spider, Gruffin, Ollopom, Pipa bird, Skindle, Tooke",
+        "otherlife": "Golden Lichen",
+        "species": "Ancients",
+        "otherspecies": "Numerous, including:, Amani, Artiodac, Bith, Blutopian, Devaronian, Grysk, Lurmen, Toydarian, Twi'lek, Weequay, Wookiee",
+        "language": "Galactic Basic Standard, Huttese, Rhodese, Twi'leki",
+        "population": "200,000",
+        "demonym": "Batuuan",
+        "cities": "Black Spire Outpost, Surabat",
+        "imports": "Green milk, Blue milk, Soda",
+        "affiliation": "Jedi Order, First Order"
+      },
+      "categories": [
+        "Arboreal planets",
+        "Articles in need of updating",
+        "Batuu system locations",
+        "Canon articles",
+        "First Order planets",
+        "Jedi planets",
+        "Locations along the Batuu–Ponemah hyperlane",
+        "Locations along the Xala–Cermau hyperlane",
+        "Locations in grid square G-15",
+        "Planets in the Outer Rim Territories",
+        "Planets in the Western Reaches",
+        "Rocky planets",
+        "Shadowports"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/d/d3/Batuu-system.png/revision/latest?cb=20200822003007",
+      "url": "https://starwars.fandom.com/wiki/Batuu",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Batuu.png"
+    },
+    {
+      "title": "Bakura",
+      "wikiTitle": "Bakura",
+      "collection": "regions",
+      "facts": {
+        "region": "Wild Space",
+        "sector": "None",
+        "system": "Bakura system",
+        "coordinates": "G-16",
+        "routes": "Bakura Trace",
+        "flora": "Bakuran fire philodendron",
+        "cities": "Salis D'aar"
+      },
+      "categories": [
+        "Articles in need of updating",
+        "Bakura system locations",
+        "Canon articles",
+        "Locations in grid square G-16",
+        "Planets in Wild Space"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/4/4e/Bakura-VaderImmortal.png/revision/latest?cb=20190529174654",
+      "url": "https://starwars.fandom.com/wiki/Bakura",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Bakura.png"
+    },
+    {
+      "title": "Azure system",
+      "wikiTitle": "Azure system",
+      "collection": "mechanics",
+      "facts": {
+        "region": "Outer Rim Territories, The Slice",
+        "sector": "Azure sector",
+        "coordinates": "R-7",
+        "suns": "1",
+        "orbits": "Anaxes",
+        "asteroids": "Anaxes asteroid belt",
+        "routes": "Perlemian Trade Route",
+        "species": "Fyrnocks",
+        "exports": "Starships",
+        "affiliation": "Galactic Republic"
+      },
+      "categories": [
+        "Azure sector locations (Outer Rim)",
+        "Canon articles",
+        "Galactic Republic star systems",
+        "Locations along the Perlemian Trade Route",
+        "Locations in grid square R-7",
+        "Star systems in the Outer Rim Territories",
+        "Star systems in the Slice",
+        "Star systems with shipyards"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/6/6f/Anaxes-asteroid-belt.jpg/revision/latest?cb=20141112122246",
+      "url": "https://starwars.fandom.com/wiki/Azure_system",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Azure-system.jpg"
+    },
+    {
+      "title": "B-series battle droid",
+      "wikiTitle": "B-series battle droid",
+      "collection": "enemies",
+      "facts": {
+        "es": "Droide de combate serie B",
+        "fi": "B-sarjan taisteludroidi",
+        "ka": "სერია B-ის საბრძოლო დროიდი",
+        "pt": "Droide de batalha série B"
+      },
+      "categories": [
+        "Battle droid models",
+        "Canon articles",
+        "Droid lines",
+        "Droid models of the Confederacy of Independent Systems",
+        "Droid models of the Trade Federation",
+        "Droid stubs",
+        "Incomplete lists"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/e/ee/Legion-LetTheExecutionsBegin.png/revision/latest?cb=20250718223830",
+      "url": "https://starwars.fandom.com/wiki/B-series_battle_droid",
+      "imageFile": "assets/_wiki/star-wars-zero-company/B-series-battle-droid.png"
+    },
+    {
+      "title": "BR-1",
+      "wikiTitle": "BR-1",
+      "collection": "characters",
+      "facts": {
+        "type": "Criminal",
+        "line": "BR-series",
+        "class": "Astromech droid",
+        "gender": "Masculine programming",
+        "pronouns": "He/him",
+        "sensor": "Black",
+        "plating": "Red, white, silver",
+        "affiliation": "Zero Company"
+      },
+      "categories": [
+        "Articles with spoilers",
+        "Astromech droids",
+        "Canon articles",
+        "Character stubs",
+        "Droids with he/him pronouns",
+        "Droids with masculine programming",
+        "Zero Company personnel"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/5/56/BR-1.jpg/revision/latest?cb=20260901143826",
+      "url": "https://starwars.fandom.com/wiki/BR-1",
+      "imageFile": "assets/_wiki/star-wars-zero-company/BR-1.jpg"
+    },
+    {
+      "title": "Battle of Antine",
+      "wikiTitle": "Battle of Antine",
+      "collection": "quests",
+      "facts": {
+        "prev": "Eventually the First Battle of Geonosis",
+        "next": "Hawks' court-martial",
+        "conflict": "Clone Wars",
+        "date": "c. 22 BBY",
+        "place": "Antine",
+        "result": "Disastrous defeat for the Galactic Republic, *Decimation of the 100th Clone Company, *Captain Tesh Keff Hawks is blamed as a scapegoat and loses their career",
+        "side1": "Galactic Republic, Jedi Order",
+        "side2": "Confederacy of Independent Systems",
+        "commanders1": "Jedi General Pong Krell, Captain Tesh Hawks",
+        "unit1": "100th Clone Company&dagger;",
+        "forces1": "1 Jedi General, 1 human captain, Clone troopers, *Sawtooth, *Trick",
+        "casual1": "Most clone troopers"
+      },
+      "categories": [
+        "Articles in need of updating",
+        "Articles needing illustration",
+        "Articles with gameplay alternatives",
+        "Articles with spoilers",
+        "Battles in 22 BBY",
+        "Battles in the Outer Rim",
+        "Battles of the Clone Wars",
+        "Canon articles",
+        "Genocides and massacres"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/0/0d/Hawks-Zero.png/revision/latest?cb=20260905181017",
+      "url": "https://starwars.fandom.com/wiki/Battle_of_Antine",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Battle-of-Antine.png"
+    },
+    {
+      "title": "Battle of Serolonis",
+      "wikiTitle": "Battle of Serolonis",
+      "collection": "quests",
+      "facts": {
+        "conc": "Serolonis job",
+        "conflict": "Clone Wars",
+        "date": "19 BBY",
+        "place": "Serolonis, Serolonis system",
+        "result": "Confederacy of Independent Systems/Infinite Coil victory",
+        "side1": "Confederacy of Independent Systems, Infinite Coil",
+        "side2": "Galactic Republic",
+        "commanders1": "Supreme Martial Commander General Grievous",
+        "commanders2": "Admiral Dorrun, A Clone Sergeant",
+        "unit1": "Confederate Navy, *Serolonis Separatist fleet, Separatist Droid Army",
+        "unit2": "Grand Army of the Republic, Republic Navy, *Dorrun's fleet",
+        "forces1": "2 Lucrehulk-class Battleships, Vulture-class starfighters, Armored Assault Tank Mk Is, Multi-Troop Transports, IG-227 Hailfire-class droid tanks, B1-series battle droids, Infinite Coil soldiers",
+        "forces2": "3 Venator-class Star Destroyers, 2 Arquitens-class light cruisers, Clone Z-95 starfighters, LAAT/i gunships, All Terrain Tactical Enforcers, Clone troopers, Heavy weapons clone troopers, Clone sharpshooters",
+        "casual1": "Several B1-series battle droids, Several Infinite Coil soldiers",
+        "casual2": "Many clone troopers, At least 1 LAAT/i gunship, At least 1 Venator-class Star Destroyer"
+      },
+      "categories": [
+        "Articles with conjectural titles",
+        "Articles with spoilers",
+        "Battle stubs",
+        "Battles in 19 BBY",
+        "Battles of Serolonis",
+        "Battles of the Clone Wars",
+        "Canon articles"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/f/f0/SpaceBattleofSerolonis-ZeroCompany.png/revision/latest?cb=20260904141910",
+      "url": "https://starwars.fandom.com/wiki/Battle_of_Serolonis",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Battle-of-Serolonis.png"
+    },
+    {
+      "title": "Baker",
+      "wikiTitle": "Baker",
+      "collection": "characters",
+      "facts": {
+        "type": "Rebel",
+        "homeworld": "Kamino",
+        "species": "Human",
+        "gender": "Male",
+        "pronouns": "He/him",
+        "donor": "Jango Fett",
+        "height": "1.83 meters",
+        "mass": "80 kilograms",
+        "hair": "Black",
+        "skin": "Tan",
+        "affiliation": "Galactic Republic, Galactic Empire, *Project War-Mantle, Clone Underground"
+      },
+      "categories": [
+        "Articles with spoilers",
+        "Canon articles",
+        "Character stubs",
+        "Clone Underground members",
+        "Clone commandos",
+        "Clone stormtroopers",
+        "Clone trooper captains",
+        "Combat instructors and training officers",
+        "Individuals with he/him pronouns",
+        "Males"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/f/f4/CloneCaptainBaker-ZeroCompany.png/revision/latest?cb=20260831014358",
+      "url": "https://starwars.fandom.com/wiki/Baker",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Baker.png"
+    },
+    {
+      "title": "Battle of Gan Tarre",
+      "wikiTitle": "Battle of Gan Tarre",
+      "collection": "quests",
+      "facts": {
+        "conflict": "Clone Wars",
+        "date": "19 BBY",
+        "place": "Gan Tarre",
+        "side1": "Confederacy of Independent Systems",
+        "side2": "Galactic Republic, Tarran rebels"
+      },
+      "categories": [
+        "Articles with conjectural titles",
+        "Articles with spoilers",
+        "Battle stubs",
+        "Battles in 19 BBY",
+        "Battles in the Treskall sector",
+        "Battles of the Clone Wars",
+        "Canon articles"
+      ],
+      "image": null,
+      "url": "https://starwars.fandom.com/wiki/Battle_of_Gan_Tarre"
+    },
+    {
+      "title": "Baloo Nunn",
+      "wikiTitle": "Baloo Nunn",
+      "collection": "characters",
+      "facts": {
+        "type": "Athlete",
+        "death": "During or before 19 BBY",
+        "species": "Abednedo",
+        "pronouns": "He/him"
+      },
+      "categories": [
+        "Abednedo",
+        "Articles with spoilers",
+        "Canon articles",
+        "Individuals of unspecified gender",
+        "Individuals with he/him pronouns",
+        "Podracer pilots"
+      ],
+      "image": null,
+      "url": "https://starwars.fandom.com/wiki/Baloo_Nunn"
+    },
+    {
+      "title": "Bailey Bela",
+      "wikiTitle": "Bailey Bela",
+      "collection": "characters",
+      "facts": {
+        "species": "Neimoidian",
+        "pronouns": "She/her",
+        "eyes": "Dark brass",
+        "skin": "Green"
+      },
+      "categories": [
+        "Articles needing illustration",
+        "Articles with spoilers",
+        "Canon articles",
+        "Character stubs",
+        "Individuals of unspecified gender",
+        "Individuals with she/her pronouns",
+        "Neimoidians",
+        "Thieves"
+      ],
+      "image": null,
+      "url": "https://starwars.fandom.com/wiki/Bailey_Bela"
+    },
+    {
+      "title": "Bespin",
+      "wikiTitle": "Bespin",
+      "collection": "regions",
+      "facts": {
+        "region": "Outer Rim Territories, Western Reaches",
+        "sector": "Anoat sector",
+        "system": "Bespin system",
+        "coordinates": "K-18",
+        "distance": "49,100 light-years",
+        "moons": "2",
+        "lengthday": "12 standard-hours",
+        "lengthyear": "14 standard-years",
+        "class": "Gas giant",
+        "diameter": "118,000 kilometers",
+        "atmosphere": "Breathable",
+        "terrain": "Gaseous",
+        "flora": "Algae",
+        "fauna": "Air shrimp, Beldon, Crab glider, Rawwk, Thranta, Velker",
+        "otherspecies": "Human, Ugnaught",
+        "language": "Galactic Basic Standard, Ugnaught",
+        "population": "6,000,000",
+        "demonym": "Bespinite",
+        "cities": "Chinook Station, Cloud City, Ugnorgrad",
+        "exports": "Tibanna",
+        "affiliation": "Galactic Empire"
+      },
+      "categories": [
+        "Articles to be expanded",
+        "Articles with spoilers",
+        "Bespin system locations",
+        "Canon articles",
+        "First Order planets",
+        "Galactic Empire planets",
+        "Gas giants",
+        "Imperial holdouts planets",
+        "Locations in grid square K-18",
+        "New Republic planets",
+        "Planets in the Outer Rim Territories",
+        "Planets in the Western Reaches"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/1/11/Bespin-SWCT.png/revision/latest?cb=20181010054421",
+      "url": "https://starwars.fandom.com/wiki/Bespin",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Bespin.png"
+    },
+    {
+      "title": "Black Sun",
+      "wikiTitle": "Black Sun",
+      "collection": "characters",
+      "facts": {
+        "de": "Schwarze Sonne",
+        "el": "Μαύρος Ήλιος",
+        "es": "Sol Negro",
+        "fi": "Musta aurinko",
+        "fr": "Soleil Noir",
+        "ka": "შავი მზე",
+        "pl": "Czarne Słońce",
+        "pt": "Sol Negro",
+        "ro": "Soarele Negru",
+        "tr": "Kara Güneş",
+        "uk": "Чорне сонце"
+      },
+      "categories": [
+        "Articles in need of updating",
+        "Canon articles",
+        "Criminal organizations",
+        "Criminal syndicates and cartels",
+        "Shadow Collective organizations"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/5/54/Blacksun.svg/revision/latest?cb=20250716001233",
+      "url": "https://starwars.fandom.com/wiki/Black_Sun",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Black-Sun.png"
+    },
+    {
+      "title": "Behavioral modification biochip",
+      "wikiTitle": "Behavioral modification biochip",
+      "collection": "characters",
+      "facts": {
+        "de": "Inhibitor-Chip#kanon",
+        "es": "Biochip de modificación conductual",
+        "fi": "Käytöstä muokkaava biosiru",
+        "fr": "Puce inhibitrice",
+        "ka": "ქცევის მოდიფიცირების ბიოჩიპი",
+        "pl": "Czip inhibicyjny",
+        "pt": "Chip inibidor",
+        "tr": "Davranışsal modifikasyon biyoçipi"
+      },
+      "categories": [
+        "Articles in need of updating",
+        "Articles needing illustration",
+        "Articles with multiple issues",
+        "Canon articles",
+        "Cybernetic implants",
+        "Grand Army of the Republic"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/5/5e/CloneInhibitorChip-Fugitive.png/revision/latest?cb=20150410035444",
+      "url": "https://starwars.fandom.com/wiki/Behavioral_modification_biochip",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Behavioral-modification-biochip.png"
+    },
+    {
+      "title": "Bothawui",
+      "wikiTitle": "Bothawui",
+      "collection": "regions",
+      "facts": {
+        "region": "Mid Rim Territories, The Slice",
+        "sector": "Bothan Space",
+        "system": "Bothawui system",
+        "coordinates": "R-14",
+        "moons": "At least 1",
+        "class": "Gas giant",
+        "interest": "Institute for Quantitative Studies"
+      },
+      "categories": [
+        "Bothawui system locations",
+        "Canon articles",
+        "Gas giants",
+        "Locations in grid square R-14",
+        "Planet stubs",
+        "Planets in the Mid Rim",
+        "Planets in the Slice"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/c/c0/Golm-DoaD.png/revision/latest?cb=20120921014308",
+      "url": "https://starwars.fandom.com/wiki/Bothawui",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Bothawui.png"
+    },
+    {
+      "title": "Bombing of the Jedi Temple hangar",
+      "wikiTitle": "Bombing of the Jedi Temple hangar",
+      "collection": "characters",
+      "facts": {
+        "prev": "Battle of Mandalore",
+        "conc": "Battle of Cato Neimoidia",
+        "next": "Funeral of the Jedi Temple bombing victims",
+        "date": "19 BBY",
+        "place": "Jedi Temple, Coruscant",
+        "outcome": "Damage inflicted on the Jedi Temple hangar and 6 Jedi killed, *Tutso Mara killed, *Jackar Bowmani killed, Dozens wounded",
+        "participants": "Jackar Bowmani, Letta Turmond"
+      },
+      "categories": [
+        "Battles of the Jedi Temple",
+        "Battles of the Republic Era",
+        "Canon articles",
+        "Coruscant terrorist attacks",
+        "Events during the Clone Wars",
+        "Events in 19 BBY"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/b/b0/Jedi_Temple_Bombing_Explosion.png/revision/latest?cb=20190104043453",
+      "url": "https://starwars.fandom.com/wiki/Bombing_of_the_Jedi_Temple_hangar",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Bombing-of-the-Jedi-Temple-hangar.png"
+    },
+    {
+      "title": "Ben Quadinaros",
+      "wikiTitle": "Ben Quadinaros",
+      "collection": "characters",
+      "facts": {
+        "type": "Athlete",
+        "homeworld": "Tund",
+        "species": "Toong",
+        "gender": "Male",
+        "pronouns": "He/him",
+        "height": "1.63 meters",
+        "eyes": "Orange",
+        "skin": "Yellow"
+      },
+      "categories": [
+        "Articles with spoilers",
+        "Canon articles",
+        "Individuals with he/him pronouns",
+        "Males",
+        "Podracer pilots",
+        "Semi-protected pages",
+        "Toong",
+        "Wookieepedia Featured articles"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/7/77/BenQuadinaros-CGSWG.png/revision/latest?cb=20241124183127",
+      "url": "https://starwars.fandom.com/wiki/Ben_Quadinaros",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Ben-Quadinaros.png"
+    },
+    {
+      "title": "Blue Shadow Virus",
+      "wikiTitle": "Blue Shadow Virus",
+      "collection": "quests",
+      "facts": {
+        "de": "Blauschattenvirus",
+        "es": "Virus Sombra Azul",
+        "fr": "Virus de l'Ombre Bleue",
+        "ja": "ブルー・シャドウ・ウイルス",
+        "ka": "ვირუსი ლურჯი აჩრდილი",
+        "pl": "Wirus Błękitnego Cienia",
+        "tr": "Mavi Gölge Virüsü"
+      },
+      "categories": [
+        "Articles in need of updating",
+        "Articles with spoilers",
+        "Biological superweapons",
+        "Canon articles",
+        "Separatist projects and operations",
+        "Viruses",
+        "Weaponized plagues and viruses"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/f/fb/Blue_shadow_virus_vial.png/revision/latest?cb=20121002020116",
+      "url": "https://starwars.fandom.com/wiki/Blue_Shadow_Virus",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Blue-Shadow-Virus.png"
+    },
+    {
+      "title": "Beldon",
+      "wikiTitle": "Beldon",
+      "collection": "enemies",
+      "facts": {
+        "designation": "Non-sentient",
+        "length": "0.8-10 kilometers",
+        "distinctions": "Orange gas bladders, fleshy fins, long tendrils",
+        "origin": "Bespin",
+        "habitat": "Lower atmosphere",
+        "diet": "Atmospheric plankton and chemicals"
+      },
+      "categories": [
+        "Articles in need of updating",
+        "Canon articles",
+        "Creatures of Bespin",
+        "Flying creatures",
+        "Non-sentient species"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/6/64/Beldons_SWGA.jpg/revision/latest?cb=20161122193734",
+      "url": "https://starwars.fandom.com/wiki/Beldon",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Beldon.jpg"
+    },
+    {
+      "title": "Bespin system",
+      "wikiTitle": "Bespin system",
+      "collection": "regions",
+      "facts": {
+        "region": "Outer Rim Territories, *Greater Javin, Western Reaches",
+        "sector": "Javin sector, *Anoat sector",
+        "coordinates": "[[Standard Galactic Grid",
+        "K-18]]<ref name": "\"TFABG\">[[Star Wars: The Force Awakens Beginner Game",
+        "orbits": "#Miser{{EncyclopediaCite",
+        "routes": "Ison Trade Corridor{{BuildFalconCite"
+      },
+      "categories": [
+        "Anoat sector locations",
+        "Canon articles",
+        "Locations along the Ison Trade Corridor",
+        "Locations in grid square K-18",
+        "Star systems in the Outer Rim Territories",
+        "Star systems in the Western Reaches",
+        "System stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/2/25/Bespin_system.png/revision/latest?cb=20130324211515",
+      "url": "https://starwars.fandom.com/wiki/Bespin_system",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Bespin-system.png"
+    },
+    {
+      "title": "Bormea sector",
+      "wikiTitle": "Bormea sector",
+      "collection": "regions",
+      "facts": {
+        "region": "Core Worlds",
+        "coordinates": "L-9",
+        "systems": "Bormea system, Brentaal system, Chandrila system, Corulag system, Galitan system, Ganthel system, Kebro system, Nadiri system, Nopces system",
+        "stations": "Nadiri Dockyards",
+        "nebulae": "Ringali Nebula",
+        "routes": "Hydian Way, Perlemian Trade Route",
+        "affiliation": "Galactic Republic, New Republic",
+        "battles1": "Galactic Civil War",
+        "b1": "Incursion in the Bormea sector, Battle at the Nadiri Dockyards, Battle of Galitan, Mission to secure the Nadiri Dockyards, Attack on Chandrila"
+      },
+      "categories": [
+        "Canon articles",
+        "Locations in grid square L-9",
+        "Sector stubs",
+        "Sectors of the Core Worlds"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/b/b1/NadiriDockyardsConceptArt.jpg/revision/latest?cb=20200619022016",
+      "url": "https://starwars.fandom.com/wiki/Bormea_sector",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Bormea-sector.jpg"
+    },
+    {
+      "title": "Bespin Wing Guard",
+      "wikiTitle": "Bespin Wing Guard",
+      "collection": "regions",
+      "facts": {
+        "leader": "Landonis Balthazar Calrissian",
+        "headquarters": "Cloud City",
+        "locations": "Bespin"
+      },
+      "categories": [
+        "Articles with spoilers",
+        "Canon articles",
+        "Cloud City organizations",
+        "Law enforcement agencies",
+        "Military stubs",
+        "Military units"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/2/26/Isdam_Edian-USW.png/revision/latest?cb=20220319102441",
+      "url": "https://starwars.fandom.com/wiki/Bespin_Wing_Guard",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Bespin-Wing-Guard.png"
+    },
+    {
+      "title": "Bilbousa Bazaar",
+      "wikiTitle": "Bilbousa Bazaar",
+      "collection": "regions",
+      "facts": {
+        "location": "Bilbousa, Nal Hutta",
+        "interest": "Pablo's pawnshop",
+        "affiliation": "Hutt Clan"
+      },
+      "categories": [
+        "Canon articles",
+        "General location stubs",
+        "Hutt Clan locations",
+        "Markets",
+        "Nal Hutta locations"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/4/43/BilbousaBazaar-FAE.png/revision/latest?cb=20130602044718",
+      "url": "https://starwars.fandom.com/wiki/Bilbousa_Bazaar",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Bilbousa-Bazaar.png"
+    },
+    {
+      "title": "Berzite",
+      "wikiTitle": "Berzite",
+      "collection": "regions",
+      "facts": {
+        "region": "Wild Space",
+        "sector": "None",
+        "system": "Yost system",
+        "coordinates": "U-8",
+        "moons": "At least 1",
+        "affiliation": "Galactic Empire"
+      },
+      "categories": [
+        "Canon articles",
+        "Galactic Empire planets",
+        "Locations in grid square U-8",
+        "Planets in Wild Space",
+        "Wookieepedia Good articles"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/a/ae/Berzite_hologram.jpg/revision/latest?cb=20160318065549",
+      "url": "https://starwars.fandom.com/wiki/Berzite",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Berzite.jpg"
+    },
+    {
+      "title": "Boonta",
+      "wikiTitle": "Boonta",
+      "collection": "regions",
+      "facts": {
+        "region": "Outer Rim Territories, The Slice",
+        "sector": "Suolriep sector",
+        "system": "Boonta system",
+        "coordinates": "S-8",
+        "routes": "Zeltros–Junkfort Station hyperlane, Salin Corridor"
+      },
+      "categories": [
+        "Astronomical objects in the Outer Rim Territories",
+        "Astronomical objects in the Slice",
+        "Canon articles",
+        "Locations along the Salin Corridor",
+        "Locations along the Zeltros–Junkfort Station hyperlane",
+        "Locations in grid square S-8",
+        "Suolriep sector locations"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/6/64/Solarine-GalaxyMap.png/revision/latest?cb=20260329195818",
+      "url": "https://starwars.fandom.com/wiki/Boonta",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Boonta.png"
+    },
+    {
+      "title": "Bit Reactor",
+      "wikiTitle": "Bit Reactor",
+      "collection": "regions",
+      "facts": {
+        "founded": "2021",
+        "founder": "Greg Foertsch",
+        "headquarters": "Hunt Valley, Maryland, US",
+        "website": "bitreactor.com"
+      },
+      "categories": [
+        "Computer and video game companies",
+        "Real-world companies",
+        "Real world company stubs"
+      ],
+      "image": null,
+      "url": "https://starwars.fandom.com/wiki/Bit_Reactor"
+    },
+    {
+      "title": "Bennic Halloren",
+      "wikiTitle": "Bennic Halloren",
+      "collection": "characters",
+      "facts": {
+        "type": "Criminal",
+        "option1": "Zero Company",
+        "option2": "ISB Supervisor",
+        "option3": "Republic Intelligence",
+        "homeworld": "Klendar XI",
+        "species": "Human",
+        "gender": "Male",
+        "pronouns": "He/him",
+        "hair": "Black",
+        "eyes": "Brown",
+        "skin": "Light",
+        "parents": "Bennic Halloren's father",
+        "affiliation": "Galactic Republic, *Republic Intelligence, Galactic Empire, *Imperial Security Bureau, Zero Company"
+      },
+      "categories": [
+        "Articles with spoilers",
+        "Canon articles",
+        "Character stubs",
+        "Galactic Republic intelligence personnel",
+        "Humans",
+        "Imperial Security Bureau officers",
+        "Imperial defectors",
+        "Individuals with he/him pronouns",
+        "Males",
+        "Spies",
+        "Zero Company personnel"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/3/3d/BennicHallorenInfobox-ZeroCompany.png/revision/latest?cb=20260828135131",
+      "url": "https://starwars.fandom.com/wiki/Bennic_Halloren",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Bennic-Halloren.png"
+    },
+    {
+      "title": "Bishop",
+      "wikiTitle": "Bishop",
+      "collection": "characters",
+      "facts": {
+        "type": "Galactic Republic",
+        "homeworld": "Kamino",
+        "species": "Human",
+        "gender": "Male",
+        "donor": "Jango Fett",
+        "height": "1.83 meters (6 ft)",
+        "mass": "80 kilograms",
+        "skin": "Tan",
+        "affiliation": "Galactic Republic, *Grand Army of the Republic, Galactic Empire, *Stormtrooper Corps"
+      },
+      "categories": [
+        "Articles with spoilers",
+        "Canon articles",
+        "Character stubs",
+        "Clone stormtroopers",
+        "Clone troopers",
+        "Individuals with unspecified pronouns",
+        "Males"
+      ],
+      "image": null,
+      "url": "https://starwars.fandom.com/wiki/Bishop"
+    },
+    {
+      "title": "Bay-Yon Orrick",
+      "wikiTitle": "Bay-Yon Orrick",
+      "collection": "characters",
+      "facts": {
+        "species": "Neimoidian",
+        "pronouns": "He/him",
+        "eyes": "Red",
+        "skin": "Green",
+        "affiliation": "Trade Federation"
+      },
+      "categories": [
+        "Articles needing illustration",
+        "Articles with spoilers",
+        "Canon articles",
+        "Character stubs",
+        "Guards",
+        "Individuals of unspecified gender",
+        "Individuals with he/him pronouns",
+        "Neimoidians",
+        "Security personnel",
+        "Trade Federation members"
+      ],
+      "image": null,
+      "url": "https://starwars.fandom.com/wiki/Bay-Yon_Orrick"
+    },
+    {
+      "title": "Captain",
+      "wikiTitle": "Captain",
+      "collection": "characters",
+      "facts": {
+        "es": "Capitán",
+        "fi": "Kapteeni",
+        "fr": "Capitaine",
+        "hu": "Kapitány",
+        "ja": "キャプテン",
+        "ka": "კაპიტანი",
+        "ko": "캡틴",
+        "pt": "Capitão",
+        "tr": "Yüzbaşı",
+        "uk": "Капітан"
+      },
+      "categories": [
+        "Alliance to Restore the Republic ranks",
+        "Articles needing additional sources",
+        "Canon articles",
+        "Chiss Ascendancy military ranks",
+        "First Order ranks",
+        "Imperial Army ranks",
+        "Imperial Navy ranks",
+        "Incomplete lists",
+        "New Republic Defense Force ranks"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/8/87/Phasma2-Fathead.png/revision/latest?cb=20161109023158",
+      "url": "https://starwars.fandom.com/wiki/Captain",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Captain.png"
+    },
+    {
+      "title": "Cato Neimoidia",
+      "wikiTitle": "Cato Neimoidia",
+      "collection": "regions",
+      "facts": {
+        "region": "Colonies, The Slice",
+        "sector": "Quellor sector",
+        "system": "Cato Neimoidia system",
+        "coordinates": "N-11",
+        "suns": "1: Neri",
+        "moons": "At least 2",
+        "routes": "Quellor Run",
+        "lengthday": "25 standard hours",
+        "lengthyear": "278 local days",
+        "atmosphere": "Breathable",
+        "terrain": "Acidic oceans, Grasslands, Forests",
+        "interest": "Bridge cities, Reya's palace, University of Cato Neimoidia",
+        "fauna": "Neimiodian kreehawk",
+        "otherspecies": "Neimoidian",
+        "language": "Pak-Pak",
+        "government": "Cato Neimoidian government, Protectorate",
+        "cities": "Tarko-se",
+        "affiliation": "Galactic Republic, Confederacy of Independent Systems, Galactic Empire"
+      },
+      "categories": [
+        "Articles in need of updating",
+        "Canon articles",
+        "Confederacy of Independent Systems planets",
+        "Galactic Empire planets",
+        "Galactic Republic planets",
+        "InterGalactic Banking Clan planets",
+        "Locations along the Quellor Run",
+        "Locations in grid square N-11",
+        "Neimoidian planets",
+        "Planets in the Colonies",
+        "Planets in the Slice",
+        "Purse worlds",
+        "Quellor sector locations",
+        "Rocky planets"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/f/fe/CatoNeimoidia-BTCG.png/revision/latest?cb=20211111010658",
+      "url": "https://starwars.fandom.com/wiki/Cato_Neimoidia",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Cato-Neimoidia.png"
+    },
+    {
+      "title": "Breath mask",
+      "wikiTitle": "Breath mask",
+      "collection": "items",
+      "facts": {
+        "url": "news/back-from-the-drawing-board-recycled-star-wars-aliens",
+        "text": "Back from the Drawing Board: Recycled Star Wars Aliens",
+        "int": "Back from the Drawing Board",
+        "nolive": "1"
+      },
+      "categories": [
+        "Apparel for health and survival",
+        "Canon articles",
+        "Incomplete lists",
+        "Masks",
+        "Survival gear",
+        "Technology stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/6/63/Finn_breath_mask.png/revision/latest?cb=20180127235635",
+      "url": "https://starwars.fandom.com/wiki/Breath_mask",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Breath-mask.png"
+    },
+    {
+      "title": "Brentaal IV",
+      "wikiTitle": "Brentaal IV",
+      "collection": "regions",
+      "facts": {
+        "region": "Core Worlds",
+        "sector": "Bormea sector",
+        "system": "Brentaal system",
+        "coordinates": "L-9",
+        "moons": "At least 1",
+        "routes": "Hydian Way, Perlemian Trade Route",
+        "class": "Terrestrial",
+        "atmosphere": "Breathable",
+        "terrain": "Rocky",
+        "interest": "Republic Futures Program",
+        "otherspecies": "Human, Herglic",
+        "cities": "Kantiema",
+        "affiliation": "Galactic Republic, New Republic"
+      },
+      "categories": [
+        "Articles in need of updating",
+        "Brentaal system locations",
+        "Canon articles",
+        "Galactic Republic planets",
+        "Locations in grid square L-9",
+        "New Republic planets",
+        "Planets in the Core Worlds",
+        "Rocky planets"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/e/e9/BrentaalIV-ZeroCompany.png/revision/latest?cb=20260905165005",
+      "url": "https://starwars.fandom.com/wiki/Brentaal_IV",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Brentaal-IV.png"
+    },
+    {
+      "title": "Boz Pity",
+      "wikiTitle": "Boz Pity",
+      "collection": "regions",
+      "facts": {
+        "region": "Mid Rim Territories, *Foundry of the Confederacy, The Slice",
+        "sector": "Halla sector",
+        "system": "Boz Pity system",
+        "coordinates": "S-9",
+        "affiliation": "Galactic Republic, Techno Union, Confederacy of Independent Systems"
+      },
+      "categories": [
+        "Articles in need of updating",
+        "Articles needing illustration",
+        "Boz Pity system locations",
+        "Canon articles",
+        "Confederacy of Independent Systems planets",
+        "Factory worlds",
+        "Galactic Republic planets",
+        "Locations in grid square S-9",
+        "Planets in the Mid Rim",
+        "Planets in the Slice",
+        "Techno Union planets"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/f/fb/BozPity-TEA.jpg/revision/latest?cb=20100502171318",
+      "url": "https://starwars.fandom.com/wiki/Boz_Pity",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Boz-Pity.jpg"
+    },
+    {
+      "title": "Carida",
+      "wikiTitle": "Carida",
+      "collection": "regions",
+      "facts": {
+        "region": "Colonies, The Slice",
+        "sector": "None",
+        "system": "Carida system",
+        "coordinates": "M-9",
+        "suns": "2",
+        "atmosphere": "Breathable",
+        "terrain": "Mountains",
+        "interest": "Carida Academy, Imperial Navy Deepdock Facility Two, Valor",
+        "fauna": "Combat arachnid",
+        "otherspecies": "Human",
+        "demonym": "Caridan",
+        "affiliation": "Galactic Republic, *Grand Army of the Republic, Galactic Empire, *Imperial Academy"
+      },
+      "categories": [
+        "Articles in need of updating",
+        "Canon articles",
+        "Galactic Empire planets",
+        "Galactic Republic planets",
+        "Locations in grid square M-9",
+        "Planets in the Colonies",
+        "Planets in the Slice",
+        "Planets with shipyards",
+        "Rocky planets"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/e/e7/Carida-PoNR.png/revision/latest?cb=20150406040836",
+      "url": "https://starwars.fandom.com/wiki/Carida",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Carida.png"
+    },
+    {
+      "title": "Canto Bight",
+      "wikiTitle": "Canto Bight",
+      "collection": "regions",
+      "facts": {
+        "cs": "Canto Bight",
+        "de": "Canto Bight#kanon",
+        "el": "Κάντο Μπάιτ",
+        "es": "Canto Bight",
+        "fr": "Canto Bight",
+        "ja": "カント・バイト",
+        "ka": "კანტო ბაიტი",
+        "nl": "Canto Bight",
+        "pl": "Canto Bight",
+        "pt": "Canto Bight",
+        "tr": "Canto Koyu",
+        "uk": "Канто-Байт",
+        "zh": "坎托拜"
+      },
+      "categories": [
+        "Articles in need of updating",
+        "Canon articles",
+        "Cantonica locations",
+        "Capital cities"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/d/d8/CantoBight-SWBC49.png/revision/latest?cb=20231223213756",
+      "url": "https://starwars.fandom.com/wiki/Canto_Bight",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Canto-Bight.png"
+    },
+    {
+      "title": "Cantonica",
+      "wikiTitle": "Cantonica",
+      "collection": "regions",
+      "facts": {
+        "region": "Outer Rim Territories, New Territories",
+        "sector": "Corporate Sector",
+        "system": "Cantonica system",
+        "coordinates": "S-4",
+        "xyz": "737.41, 575.70, 5.15",
+        "suns": "1",
+        "moons": "2",
+        "lengthyear": "206 days",
+        "class": "Terrestrial",
+        "diameter": "11,440 km",
+        "atmosphere": "Breathable",
+        "terrain": "Desert, Mountains",
+        "water": "Artificial ocean",
+        "interest": "Sea of Cantonica",
+        "flora": "Cantonican cactus, Chinar tree",
+        "fauna": "Fathier",
+        "language": "Cantonican",
+        "government": "Canto Bight legislative body",
+        "population": "850,000",
+        "demonym": "Cantonican",
+        "cities": "Canto Bight",
+        "affiliation": "New Republic"
+      },
+      "categories": [
+        "Articles in need of updating",
+        "Canon articles",
+        "Corporate Sector locations",
+        "Desert planets",
+        "Locations in grid square S-4",
+        "Planets in the New Territories",
+        "Planets in the Outer Rim Territories"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/d/da/Cantonica_TLJVD.png/revision/latest?cb=20250130064231",
+      "url": "https://starwars.fandom.com/wiki/Cantonica",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Cantonica.png"
+    },
+    {
+      "title": "Cassander sector",
+      "wikiTitle": "Cassander sector",
+      "collection": "regions",
+      "facts": {
+        "region": "Outer Rim Territories, *Borderlands",
+        "coordinates": "K-5 & L-5",
+        "subsectors": "Tadrin sector, Tendrannan sector",
+        "systems": "Altunna system, Arron Prime system, Caraxl system, Cassander system, Forsen system, Kaller system, Mamkoda system, Ord Canfre system, Peldon Minor system, Sheh Soahi system",
+        "battles1": "Cold War",
+        "b1": "Mamkoda - Caraxl - Sheh Soahi"
+      },
+      "categories": [
+        "Articles in need of updating",
+        "Canon articles",
+        "Locations in grid square K-5",
+        "Locations in grid square L-5",
+        "Sectors of the Outer Rim Territories",
+        "Wookieepedia former Good articles"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/6/66/Ninka_DB.png/revision/latest?cb=20190414212149",
+      "url": "https://starwars.fandom.com/wiki/Cassander_sector",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Cassander-sector.png"
+    },
+    {
+      "title": "Castilon",
+      "wikiTitle": "Castilon",
+      "collection": "regions",
+      "facts": {
+        "region": "Mid Rim Territories, Western Reaches",
+        "sector": "Tashtor sector",
+        "system": "Castilon system",
+        "coordinates": "I-16",
+        "suns": "1",
+        "moons": "2",
+        "class": "Terrestrial",
+        "atmosphere": "Breathable",
+        "terrain": "Islands",
+        "water": "Oceans",
+        "interest": "Colossus, Karavian Trench",
+        "fauna": "Castilon gorg, Sharvo fish, Speagull",
+        "species": "Chelidae",
+        "language": "Chelidae language, Galactic Basic Standard"
+      },
+      "categories": [
+        "Articles with conflicting sources",
+        "Canon articles",
+        "Castilon system locations",
+        "Locations in grid square I-16",
+        "Planets in the Mid Rim",
+        "Planets in the Western Reaches",
+        "Waterworlds"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/6/62/Castilon-USWNE.png/revision/latest?cb=20200616055540",
+      "url": "https://starwars.fandom.com/wiki/Castilon",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Castilon.png"
+    },
+    {
+      "title": "Cere Junda",
+      "wikiTitle": "Cere Junda",
+      "collection": "characters",
+      "facts": {
+        "type": "Jedi",
+        "option1": "9 BBY",
+        "option2": "14 BBY",
+        "option3": "41 BBY",
+        "death": "9 BBY, Jedha",
+        "species": "Human",
+        "gender": "Female",
+        "pronouns": "She/her",
+        "height": "1.65 meters",
+        "hair": "Black",
+        "eyes": "Brown",
+        "skin": "Dark",
+        "affiliation": "Jedi Order, Stinger Mantis crew, Hidden Path",
+        "masters": "Eno Cordova",
+        "apprentices": "Trilla Suduri, Cal Kestis, Numerous Narkis Anchorites"
+      },
+      "categories": [
+        "Articles needing illustration",
+        "Articles to be expanded",
+        "Articles with multiple issues",
+        "Canon articles",
+        "Females",
+        "Humans",
+        "Individuals with she/her pronouns",
+        "Jedi Masters of the Jedi Order",
+        "Jedi Purge victims",
+        "Jedi seekers",
+        "Slicers",
+        "Stinger Mantis crew"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/3/31/CereJundaPose-JediSurvivor.png/revision/latest?cb=20250308170605",
+      "url": "https://starwars.fandom.com/wiki/Cere_Junda",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Cere-Junda.png"
+    },
+    {
+      "title": "Camtono",
+      "wikiTitle": "Camtono",
+      "collection": "mechanics",
+      "facts": {
+        "de": "Camtono",
+        "es": "Camtono",
+        "fr": "Camtono",
+        "ja": "カムトノ",
+        "ka": "კამტონო",
+        "pl": "Kamtono"
+      },
+      "categories": [
+        "Articles in need of updating",
+        "Articles with gameplay alternatives",
+        "Canon articles",
+        "Containers"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/5/5c/Camtono.jpg/revision/latest?cb=20220206224837",
+      "url": "https://starwars.fandom.com/wiki/Camtono",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Camtono.jpg"
+    },
+    {
+      "title": "Brentaal system",
+      "wikiTitle": "Brentaal system",
+      "collection": "regions",
+      "facts": {
+        "region": "Core Worlds",
+        "sector": "Bormea sector",
+        "coordinates": "L-9",
+        "orbits": "Brentaal IV, Cavas",
+        "routes": "Commenor Run, Hydian Way, Perlemian Trade Route"
+      },
+      "categories": [
+        "Bormea sector locations",
+        "Canon articles",
+        "Hyperlane nexuses",
+        "Locations along the Commenor Run",
+        "Locations along the Hydian Way",
+        "Locations along the Perlemian Trade Route",
+        "Locations in grid square L-9",
+        "Star systems in the Core Worlds",
+        "System stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/9/98/Cavas-and-moons-Squadrons.png/revision/latest?cb=20201018103358",
+      "url": "https://starwars.fandom.com/wiki/Brentaal_system",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Brentaal-system.png"
+    },
+    {
+      "title": "Bruckner",
+      "wikiTitle": "Bruckner",
+      "collection": "characters",
+      "facts": {
+        "type": "Hutt Cartel",
+        "pronouns": "He/him",
+        "affiliation": "Galactic Republic, Hutt Clan"
+      },
+      "categories": [
+        "Articles with spoilers",
+        "Businesspeople",
+        "Canon articles",
+        "Galactic Republic individuals",
+        "Hutt Clan individuals",
+        "Individuals of unspecified gender",
+        "Individuals of unspecified species",
+        "Individuals with he/him pronouns",
+        "Spies"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/a/a1/Gorga-Hawks-ZeroCompany.png/revision/latest?cb=20260901184545",
+      "url": "https://starwars.fandom.com/wiki/Bruckner",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Bruckner.png"
+    },
+    {
+      "title": "CT-4646",
+      "wikiTitle": "CT-4646",
+      "collection": "characters",
+      "facts": {
+        "type": "Galactic Empire",
+        "homeworld": "Kamino",
+        "death": "18 BBY, Umbara",
+        "species": "Human",
+        "gender": "Male",
+        "pronouns": "He/him",
+        "donor": "Jango Fett",
+        "height": "1.83 meters",
+        "mass": "80 kilograms",
+        "hair": "Black",
+        "eyes": "White, Brown",
+        "skin": "Tan",
+        "affiliation": "Galactic Republic, Galactic Empire, *Project Blackstaff"
+      },
+      "categories": [
+        "Articles with gameplay alternatives",
+        "Articles with spoilers",
+        "Canon articles",
+        "Clone stormtroopers",
+        "Clones of Jango Fett",
+        "Galactic Empire science and engineering personnel",
+        "Individuals with he/him pronouns",
+        "Males"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/b/bb/CT-4646-ZeroCompany.png/revision/latest?cb=20260831013213",
+      "url": "https://starwars.fandom.com/wiki/CT-4646",
+      "imageFile": "assets/_wiki/star-wars-zero-company/CT-4646.png"
+    },
+    {
+      "title": "C6R-R3",
+      "wikiTitle": "C6R-R3",
+      "collection": "characters",
+      "facts": {
+        "class": "Astromech droid",
+        "pronouns": "They/them",
+        "sensor": "Black",
+        "plating": "Blue, Gray, Green, Purple"
+      },
+      "categories": [
+        "Articles needing illustration",
+        "Articles with spoilers",
+        "Astromech droids",
+        "Canon articles",
+        "Character stubs",
+        "Droids with they/them pronouns"
+      ],
+      "image": null,
+      "url": "https://starwars.fandom.com/wiki/C6R-R3"
+    },
+    {
+      "title": "Capture of Luunata",
+      "wikiTitle": "Capture of Luunata",
+      "collection": "quests",
+      "facts": {
+        "next": "Eventually the Battle of Serolonis",
+        "conflict": "Clone Wars",
+        "date": "Sometime before 19 BBY",
+        "place": "Luunata, Luunata system",
+        "result": "Confederacy of Independent Systems/Infinite Coil victory, Baroness Jae Mordant begins working with Lieutenant Bennic Halloren of Republic Intelligence to retake Luunata, Mordant's Mining citadel is transformed into the I",
+        "side1": "Confederacy of Independent Systems, Infinite Coil",
+        "side2": "House Mordant",
+        "commanders1": "Kundri Fathom, Typhon",
+        "commanders2": "Baroness Jae Mordant, Castellan Kinro Billix",
+        "forces1": "Infinite Coil cultists",
+        "forces2": "House Mordant servants",
+        "casual2": "Damage to mining citadel"
+      },
+      "categories": [
+        "Articles needing illustration",
+        "Articles with conjectural titles",
+        "Articles with spoilers",
+        "Battles in the Mid Rim",
+        "Battles of the Republic Era",
+        "Canon articles",
+        "Conquests and occupations",
+        "Events during the Clone Wars"
+      ],
+      "image": null,
+      "url": "https://starwars.fandom.com/wiki/Capture_of_Luunata"
+    },
+    {
+      "title": "Cerea",
+      "wikiTitle": "Cerea",
+      "collection": "regions",
+      "facts": {
+        "region": "Mid Rim Territories",
+        "sector": "Semagi sector",
+        "system": "Cerea system",
+        "coordinates": "I-16",
+        "routes": "Cerean Reach, Great Gran Run, Spar Trade Route",
+        "terrain": "Forests",
+        "fauna": "Aryx",
+        "species": "Cerean",
+        "otherspecies": "Human",
+        "cities": "Asphodar 3"
+      },
+      "categories": [
+        "Articles in need of updating",
+        "Canon articles",
+        "Locations along the Cerean Reach",
+        "Locations along the Great Gran Run",
+        "Locations along the Spar Trade Route",
+        "Locations in grid square I-16",
+        "Planets in the Mid Rim",
+        "Semagi sector locations"
+      ],
+      "image": null,
+      "url": "https://starwars.fandom.com/wiki/Cerea"
+    },
+    {
+      "title": "Champala",
+      "wikiTitle": "Champala",
+      "collection": "regions",
+      "facts": {
+        "region": "Inner Rim Territories, The Interior",
+        "sector": "None",
+        "system": "Champala system",
+        "coordinates": "L-8",
+        "routes": "Hydian Way",
+        "terrain": "Seas",
+        "interest": "Separatist base",
+        "species": "Chagrian",
+        "demonym": "Champalan",
+        "cities": "Tidros",
+        "affiliation": "Galactic Empire"
+      },
+      "categories": [
+        "Canon articles",
+        "Galactic Empire planets",
+        "Locations along the Hydian Way",
+        "Locations in grid square L-8",
+        "Planet stubs",
+        "Planets in the Inner Rim",
+        "Planets in the Interior",
+        "Waterworlds"
+      ],
+      "image": "https://static.wikia.nocookie.net/starwars/images/4/45/Champala-SWT.jpg/revision/latest?cb=20260409223713",
+      "url": "https://starwars.fandom.com/wiki/Champala",
+      "imageFile": "assets/_wiki/star-wars-zero-company/Champala.jpg"
+    },
+    {
+      "title": "Chommell sector",
+      "wikiTitle": "Chommell sector",
+      "collection": "regions",
+      "facts": {
+        "region": "Mid Rim Territories, Occlusion Zone",
+        "coordinates": "O-16 & O-17",
+        "systems": "Chommell Minor system, Jafan system, Karlinus system, Kreeling system, Lofquar system, Naboo system, Necr'ygor system",
+        "routes": "Enarc Run, Old Trade Federation Route",
+        "species": "Gungans",
+        "capital": "Naboo",
+        "affiliation": "Galactic Republic, Galactic Empire, New Republic",
+        "battles1": "Invasion of Naboo",
+        "b1": "Naboo",
+        "battles2": "Clone Wars",
+        "b2": "Nuvo Vindi's laboratory, Jan-gwa city, Naboo",
+        "battles3": "Partisan missions",
+        "b3": "Onoam",
+        "battles4": "Galactic Civil War",
+        "b4": "Operation: Cinder"
+      },
+      "categories": [
+        "Canon articles",
+        "Locations in grid square O-16",
+        "Locations in grid square O-17",
+        "Occlusion Zone locations",
+        "Sector stubs",
+        "Sectors of the Mid Rim"
+      ],
+      "image": null,
+      "url": "https://starwars.fandom.com/wiki/Chommell_sector"
+    }
+  ]
 }

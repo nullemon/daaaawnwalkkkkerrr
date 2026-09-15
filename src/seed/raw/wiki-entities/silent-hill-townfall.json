@@ -4,6 +4,184 @@
   "fetchedAt": "2026-09-15",
   "entities": [
     {
+      "title": "Silent Hill",
+      "wikiTitle": "Silent Hill (video game)",
+      "collection": "regions",
+      "facts": {
+        "director": "Keiichiro Toyama",
+        "producer": "Gozo Kitao",
+        "writer": "Keiichiro Toyama",
+        "composer": "Akira Yamaoka",
+        "developer": "Team Silent",
+        "publisher": "Konami",
+        "platforms": "PlayStation (available in the PlayStation Store for PS3 and PSP)",
+        "genre": "Survival horror",
+        "modes": "Single-player",
+        "release": "NA: February 23, 1999, JP: March 4, 1999, EU: August 1, 1999",
+        "esrb": "M",
+        "pegi": "MA 15+ (OFLC/Australia)",
+        "cero": "15/C",
+        "bbfc": "15 (ELSPA)",
+        "acb": "15",
+        "media": "1 x CD-ROM",
+        "input": "Controller"
+      },
+      "categories": [
+        "Articles needing cleanup",
+        "Games",
+        "Main Series",
+        "Silent Hill",
+        "The Real World"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/c/c2/SH1Boxart.png/revision/latest?cb=20151123185611",
+      "url": "https://silenthill.fandom.com/wiki/Silent_Hill_(video_game)",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Silent-Hill-video-game-.png"
+    },
+    {
+      "title": "Silent Hill 2",
+      "wikiTitle": "Silent Hill 2",
+      "collection": "regions",
+      "facts": {
+        "director": "Masashi Tsuboyama",
+        "producer": "Akihiro Imamura",
+        "writer": "Hiroyuki Owaku",
+        "composer": "Akira Yamaoka",
+        "developer": "Team Silent",
+        "publisher": "Konami",
+        "platforms": "*PlayStation 2, Xbox, PC",
+        "genre": "Survival horror",
+        "modes": "Single-player",
+        "release": "PlayStation 2, NA: September 25, 2001, JP: September 27, 2001, EU: November 23, 2001, Xbox, NA: December 19, 2001, JP: February 22, 2002, EU: November 23, 2001, PC, NA: December 2, 2002, EU: February 28, 2003",
+        "esrb": "M (Mature)",
+        "pegi": "16",
+        "cero": "15/C",
+        "bbfc": "15",
+        "requirements": "Windows (PC): Windows 98, 700 MHZ Pentium III CPU, 64MB RAM, 32MB 3D-Graphics Card, DirectX 8.1, 1.8GB available space, 4× CD-ROM drive",
+        "media": "1 × CD-ROM",
+        "input": "Controller, Keyboard"
+      },
+      "categories": [
+        "Articles needing cleanup",
+        "Featured Articles",
+        "Games",
+        "Main Series",
+        "Silent Hill 2",
+        "The Real World"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/1/15/SH2.png/revision/latest?cb=20140810064114",
+      "url": "https://silenthill.fandom.com/wiki/Silent_Hill_2",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Silent-Hill-2.png"
+    },
+    {
+      "title": "Silent Hill 3",
+      "wikiTitle": "Silent Hill 3",
+      "collection": "regions",
+      "facts": {
+        "director": "Kazuhide Nakazawa",
+        "producer": "Hirotaka Ishikawa",
+        "writer": "Hiroyuki Owaku",
+        "composer": "Akira Yamaoka",
+        "developer": "Team Silent",
+        "publisher": "Konami",
+        "platforms": "*PlayStation 2, PC, Xbox 360 (HD Collection), PlayStation 3 (HD Collection), Xbox One (HD Collection), PlayStation 4 (HD Collection), Xbox Series S/X (HD Collection), PlayStation 5 (HD Collection)",
+        "genre": "Survival horror",
+        "modes": "Single-player",
+        "release": "*May 23, 2003 (Europe), July 3, 2003 (Japan), August 5, 2003 (North America)",
+        "esrb": "M (Mature)",
+        "pegi": "18",
+        "cero": "15/C",
+        "bbfc": "15",
+        "acb": "15",
+        "requirements": "Windows (PC): Windows 98, 1 GHz Pentium III CPU, 256 MB RAM, 32MB 3D-Graphics Card, DirectX 8.1, 4.7 GB available space, 4X CD-ROM drive",
+        "media": "1 x CD-ROM",
+        "input": "*Controller, Keyboard"
+      },
+      "categories": [
+        "Games",
+        "Main Series",
+        "Silent Hill 3",
+        "The Real World"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/0/05/SilentHill3Boxart.png/revision/latest?cb=20140809061027",
+      "url": "https://silenthill.fandom.com/wiki/Silent_Hill_3",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Silent-Hill-3.png"
+    },
+    {
+      "title": "Silent Hill 4: The Room",
+      "wikiTitle": "Silent Hill 4: The Room",
+      "collection": "regions",
+      "facts": {
+        "director": "Suguru Murakoshi",
+        "producer": "Akira Yamaoka, Akihiro Imamura (sub-producer)",
+        "writer": "Suguru Murakoshi",
+        "composer": "Akira Yamaoka",
+        "othernames": "サイレントヒル4 ザ・ルーム, Sairento Hiru Fō Za Rūmu (Japan)",
+        "developer": "Team Silent",
+        "publisher": "Konami",
+        "platforms": "PlayStation 2, Xbox, Windows",
+        "release": "PlayStation 2, Xbox:, June 17, 2004 (Japan, PlayStation 2), September 4, 2004 (North America), September 17, 2004 (Europe), Windows:, September 7, 2004 (North America), September 24, 2004 (Europe)",
+        "esrb": "M",
+        "pegi": "PEGI 18 (Windows)",
+        "cero": "CERO-15, CERO-C (Konami Dendou Collection re-release)"
+      },
+      "categories": [
+        "Articles needing cleanup",
+        "Games",
+        "Main Series",
+        "Silent Hill 4: The Room",
+        "The Real World"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/b/b7/SilentHill4Boxart.png/revision/latest?cb=20141001202028",
+      "url": "https://silenthill.fandom.com/wiki/Silent_Hill_4%3A_The_Room",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Silent-Hill-4-The-Room.png"
+    },
+    {
+      "title": "Team Silent",
+      "wikiTitle": "Team Silent",
+      "collection": "characters",
+      "facts": {},
+      "categories": [
+        "Corporate",
+        "Crew",
+        "Silent Hill 2 People",
+        "Silent Hill 3 People",
+        "Silent Hill 4 People",
+        "Silent Hill People",
+        "Staff",
+        "Team Silent",
+        "The Real World",
+        "Writers"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/7/71/TeamSilentGroup.png/revision/latest?cb=20160710064237",
+      "url": "https://silenthill.fandom.com/wiki/Team_Silent",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Team-Silent.png"
+    },
+    {
+      "title": "Konami",
+      "wikiTitle": "Konami",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "Corporate",
+        "The Real World"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/e/eb/Foot_poster.png/revision/latest?cb=20141006232803",
+      "url": "https://silenthill.fandom.com/wiki/Konami",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Konami.png"
+    },
+    {
+      "title": "Climax Studios",
+      "wikiTitle": "Climax Studios",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "Corporate",
+        "The Real World"
+      ],
+      "image": null,
+      "url": "https://silenthill.fandom.com/wiki/Climax_Studios"
+    },
+    {
       "title": "Pipe",
       "wikiTitle": "Pipe",
       "collection": "items",
@@ -30,10 +208,11 @@
         "Silent Hill 3 Weapons",
         "Silent Hill 4: The Room Weapons",
         "Silent Hill Weapons",
-        "Silent Hill f Weapons",
-        "Weapons"
+        "Silent Hill f Weapons"
       ],
-      "url": "https://silenthill.fandom.com/wiki/Pipe"
+      "image": "https://static.wikia.nocookie.net/silent/images/9/99/TubeItem.gif/revision/latest?cb=20160619000206",
+      "url": "https://silenthill.fandom.com/wiki/Pipe",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Pipe.gif"
     },
     {
       "title": "Revolver",
@@ -56,7 +235,50 @@
         "Silent Hill 4: The Room Weapons",
         "Weapons"
       ],
-      "url": "https://silenthill.fandom.com/wiki/Revolver"
+      "image": "https://static.wikia.nocookie.net/silent/images/6/6d/Revolver.png/revision/latest?cb=20090809011933",
+      "url": "https://silenthill.fandom.com/wiki/Revolver",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Revolver.png"
+    },
+    {
+      "title": "Franck Besançon",
+      "wikiTitle": "Franck Besançon",
+      "collection": "characters",
+      "facts": {},
+      "categories": [
+        "Crew",
+        "Silent Hill: Townfall People",
+        "Staff",
+        "The Real World"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/f/f6/Franck-besancon-c.jpg/revision/latest?cb=20230110144032",
+      "url": "https://silenthill.fandom.com/wiki/Franck_Besan%C3%A7on",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Franck-Besan-on.jpg"
+    },
+    {
+      "title": "Motoi Okamoto",
+      "wikiTitle": "Motoi Okamoto",
+      "collection": "characters",
+      "facts": {
+        "characterimage": "22525-motoi-okamoto.jpg",
+        "image_caption": "Motoi Okamoto",
+        "gender": "Male",
+        "company": "Konami",
+        "occupation": "Producer",
+        "status": "Active",
+        "role": "*Director, Programmer, Writer, Producer",
+        "games": "*Silent Hill: The Short Message, Silent Hill 2 (2024), Silent Hill ƒ, Silent Hill: Townfall",
+        "media": "Luigi's Mansion, Pikmin, The Legend of Zelda: The Wind Waker, Pikmin 2, Super Mario 64 DS, New Super Mario Bros., Wii Play, Wii Fit"
+      },
+      "categories": [
+        "Silent Hill: Ascension People",
+        "Silent Hill: The Short Message People",
+        "Silent Hill: Townfall People",
+        "Silent Hill 2 (2024 video game) People",
+        "Silent Hill f People"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/a/ae/22525-motoi-okamoto.jpg/revision/latest?cb=20230117161621",
+      "url": "https://silenthill.fandom.com/wiki/Motoi_Okamoto",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Motoi-Okamoto.jpg"
     },
     {
       "title": "Simon Ordell",
@@ -76,7 +298,9 @@
         "Protagonists",
         "Silent Hill: Townfall Characters"
       ],
-      "url": "https://silenthill.fandom.com/wiki/Simon_Ordell"
+      "image": "https://static.wikia.nocookie.net/silent/images/e/e8/Simon_Ordell_artwork.png/revision/latest?cb=20260213005808",
+      "url": "https://silenthill.fandom.com/wiki/Simon_Ordell",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Simon-Ordell.png"
     },
     {
       "title": "Zoe Ellis",
@@ -93,7 +317,84 @@
         "Female Characters",
         "Silent Hill: Townfall Characters"
       ],
-      "url": "https://silenthill.fandom.com/wiki/Zoe_Ellis"
+      "image": "https://static.wikia.nocookie.net/silent/images/c/c9/Silent_Hill_Townfall_-_Zoe_art.png/revision/latest?cb=20260602234945",
+      "url": "https://silenthill.fandom.com/wiki/Zoe_Ellis",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Zoe-Ellis.png"
+    },
+    {
+      "title": "Jovan Adepo",
+      "wikiTitle": "Jovan Adepo",
+      "collection": "characters",
+      "facts": {
+        "gender": "Male",
+        "hometown": "Upper Heyford, Oxfordshire, England",
+        "occupation": "Actor",
+        "debut": "Silent Hill: Townfall",
+        "otherappearances": "The Leftovers, 3 Body Problem, It: Welcome To Derry, The Odyssey",
+        "portrayed": "Simon Ordell"
+      },
+      "categories": [
+        "Actors",
+        "Corporate",
+        "Silent Hill Townfall People",
+        "Staff",
+        "Templates",
+        "The Real World",
+        "Utility Templates"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/8/8b/Jovan_Adepo_profile.jpeg/revision/latest?cb=20260826084739",
+      "url": "https://silenthill.fandom.com/wiki/Jovan_Adepo",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Jovan-Adepo.jpeg"
+    },
+    {
+      "title": "Kezia Burrows",
+      "wikiTitle": "Kezia Burrows",
+      "collection": "characters",
+      "facts": {
+        "gender": "Female",
+        "born": "May 11",
+        "hometown": "Neath, Wales, United Kingdom",
+        "occupation": "Actress",
+        "debut": "Silent Hill: Townfall",
+        "otherappearances": "Crash, Elden Ring, Observation",
+        "portrayed": "Zoe Ellis"
+      },
+      "categories": [
+        "Actors",
+        "Corporate",
+        "Silent Hill Townfall People",
+        "Staff",
+        "The Real World"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/6/64/Kezia_Burrows_profile.jpg/revision/latest?cb=20260826085136",
+      "url": "https://silenthill.fandom.com/wiki/Kezia_Burrows",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Kezia-Burrows.jpg"
+    },
+    {
+      "title": "Terry O'Quinn",
+      "wikiTitle": "Terry O'Quinn",
+      "collection": "characters",
+      "facts": {
+        "fullname": "Terrence Quinn",
+        "gender": "Male",
+        "hometown": "Sault Ste. Marie, Michigan, U.S.",
+        "occupation": "Actor",
+        "debut": "Silent Hill: Townfall",
+        "otherappearances": "Lost, The Walking Dead: The Ones Who Live",
+        "portrayed": "Richard"
+      },
+      "categories": [
+        "Actors",
+        "Corporate",
+        "Silent Hill Townfall People",
+        "Staff",
+        "Templates",
+        "The Real World",
+        "Utility Templates"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/f/fc/Terry_O%27Quinn_profile.jpeg/revision/latest?cb=20260826091843",
+      "url": "https://silenthill.fandom.com/wiki/Terry_O'Quinn",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Terry-O-Quinn.jpeg"
     },
     {
       "title": "Richard",
@@ -109,7 +410,825 @@
         "Male Characters",
         "Silent Hill: Townfall Characters"
       ],
-      "url": "https://silenthill.fandom.com/wiki/Richard"
+      "image": "https://static.wikia.nocookie.net/silent/images/0/0b/Silent_Hill_Townfall_-_Richard_art.png/revision/latest?cb=20260903160813",
+      "url": "https://silenthill.fandom.com/wiki/Richard",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Richard.png"
+    },
+    {
+      "title": "Jon McKellan",
+      "wikiTitle": "Jon McKellan",
+      "collection": "characters",
+      "facts": {
+        "characterimage": "Jon McKellan profile.jpg",
+        "image_caption": "Jon McKellan",
+        "gender": "Male",
+        "company": "Screen Burn",
+        "status": "Active",
+        "role": "*Director, Writer",
+        "games": "Silent Hill: Townfall",
+        "media": "Silent Hill: Townfall - The Dock House, Stories Untold, Alien: Isolation, Observation"
+      },
+      "categories": [
+        "Silent Hill: Townfall People"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/a/a2/Jon_McKellan_profile.jpg/revision/latest?cb=20260910164453",
+      "url": "https://silenthill.fandom.com/wiki/Jon_McKellan",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Jon-McKellan.jpg"
+    },
+    {
+      "title": "Silent Hill: Homecoming",
+      "wikiTitle": "Silent Hill: Homecoming",
+      "collection": "regions",
+      "facts": {
+        "director": "Cordy Rierson",
+        "producer": "Jeremy Lee",
+        "writer": "*Patrick J. Doody, Chris Valenziano",
+        "composer": "Akira Yamaoka",
+        "developer": "Double Helix Games",
+        "publisher": "Konami",
+        "platforms": "PlayStation 3, Xbox 360, PC",
+        "genre": "Survival horror",
+        "modes": "Single-player",
+        "release": "*September 30, 2008 (North America), November 6, 2008 (Steam), February 27, 2009 (Europe)",
+        "esrb": "M",
+        "pegi": "18",
+        "cero": "18/Z",
+        "bbfc": "18",
+        "acb": "15",
+        "media": "*DVD-ROM, Blu-ray Disc, Digital Download",
+        "input": "*Controller (PS3, Xbox 360), Keyboard + Mouse (PC)"
+      },
+      "categories": [
+        "Games",
+        "Main Series",
+        "Silent Hill: Homecoming",
+        "The Real World"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/b/b5/JoshAlex.png/revision/latest?cb=20151007141621",
+      "url": "https://silenthill.fandom.com/wiki/Silent_Hill%3A_Homecoming",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Silent-Hill-Homecoming.png"
+    },
+    {
+      "title": "Silent Hill: Origins",
+      "wikiTitle": "Silent Hill: Origins",
+      "collection": "regions",
+      "facts": {
+        "director": "Mark Simmons",
+        "producer": "*Simon Gardner, Karl Jeffery, William Oertel, Jim Walker",
+        "writer": "Sam Barlow",
+        "composer": "Akira Yamaoka",
+        "othernames": "Silent Hill: Zero (Japan)",
+        "developer": "Climax Studios",
+        "publisher": "Konami",
+        "platforms": "*PlayStation Portable, PlayStation 2",
+        "genre": "Survival horror",
+        "modes": "Single-player",
+        "release": "*November 6, 2007 (North America), November 16, 2007 (Europe), December 6, 2007 (Japan)",
+        "esrb": "M (Mature)",
+        "pegi": "18",
+        "cero": "15/C",
+        "bbfc": "15",
+        "acb": "15",
+        "media": "*1 x UMD (PlayStation Portable), 1 x CD-ROM (PlayStation 2)",
+        "input": "Controller (PlayStation 2)"
+      },
+      "categories": [
+        "Games",
+        "Main Series",
+        "Silent Hill: Origins",
+        "The Real World"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/e/ea/OriginsBoxart.png/revision/latest?cb=20110407105251",
+      "url": "https://silenthill.fandom.com/wiki/Silent_Hill%3A_Origins",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Silent-Hill-Origins.png"
+    },
+    {
+      "title": "Play Novel: Silent Hill",
+      "wikiTitle": "Play Novel: Silent Hill",
+      "collection": "regions",
+      "facts": {
+        "developer": "WILL Co.",
+        "publisher": "Konami",
+        "release": "March 21, 2001 (Japan)",
+        "platforms": "Game Boy Advance",
+        "director": "Mitsuo Hasunuma",
+        "producer": "Shogo Kumasaka",
+        "writer": "Hideki Sakamoto",
+        "composer": "NoisyCroak",
+        "genre": "Visual Novel",
+        "modes": "Single-player",
+        "media": "1 x Cartridge"
+      },
+      "categories": [
+        "Games",
+        "The Real World"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/7/72/Play_Novel_Silent_Hill_logo.png/revision/latest?cb=20181104032113",
+      "url": "https://silenthill.fandom.com/wiki/Play_Novel%3A_Silent_Hill",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Play-Novel-Silent-Hill.png"
+    },
+    {
+      "title": "Silent Hill: Orphan",
+      "wikiTitle": "Silent Hill: Orphan",
+      "collection": "regions",
+      "facts": {
+        "othernames": "Silent Hill: Mobile",
+        "developer": "Gamefederation Studio",
+        "publisher": "Konami",
+        "release": "November, 2007 (Europe)December, 2007 (Japan)October, 2008 (North America)",
+        "esrb": "None",
+        "platforms": "Mobile phone"
+      },
+      "categories": [
+        "Games",
+        "Spin Offs",
+        "The Real World"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/2/27/Sh_orphan.jpg/revision/latest?cb=20080929002828",
+      "url": "https://silenthill.fandom.com/wiki/Silent_Hill%3A_Orphan",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Silent-Hill-Orphan.jpg"
+    },
+    {
+      "title": "Silent Hill: The Arcade",
+      "wikiTitle": "Silent Hill: The Arcade",
+      "collection": "regions",
+      "facts": {
+        "developer": "Konami",
+        "publisher": "Konami",
+        "platforms": "Arcade cabinet",
+        "genre": "Rail-shooter",
+        "modes": "Single player and multi-player",
+        "release": "July 25, 20072008 (Europe)"
+      },
+      "categories": [
+        "Games",
+        "Silent Hill: The Arcade",
+        "Spin Offs",
+        "The Real World"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/b/b4/Arcade_title.png/revision/latest?cb=20140218071224",
+      "url": "https://silenthill.fandom.com/wiki/Silent_Hill%3A_The_Arcade",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Silent-Hill-The-Arcade.png"
+    },
+    {
+      "title": "Silent Hill",
+      "wikiTitle": "Silent Hill (franchise)",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "Content",
+        "Corporate",
+        "The Real World"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/a/a5/SILENT_HILL_Transmission_%28EN%29_-_KONAMI/revision/latest?cb=20240531141336",
+      "url": "https://silenthill.fandom.com/wiki/Silent_Hill_(franchise)",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Silent-Hill-franchise-.png"
+    },
+    {
+      "title": "Silent Hill: The Escape",
+      "wikiTitle": "Silent Hill: The Escape",
+      "collection": "regions",
+      "facts": {
+        "othernames": "The Escape",
+        "developer": "Konami",
+        "publisher": "Konami",
+        "release": "December 17, 2008 (Japan)December 23, 2008 (North America)",
+        "platforms": "iPhone / iPod Touch"
+      },
+      "categories": [
+        "Games",
+        "Spin Offs",
+        "The Real World"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/b/b3/SHTE.jpg/revision/latest?cb=20090118155140",
+      "url": "https://silenthill.fandom.com/wiki/Silent_Hill%3A_The_Escape",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Silent-Hill-The-Escape.jpg"
+    },
+    {
+      "title": "Silent Hill: Mobile 2",
+      "wikiTitle": "Silent Hill: Mobile 2",
+      "collection": "regions",
+      "facts": {
+        "developer": "Gamefederation Studio",
+        "publisher": "Konami",
+        "release": "September, 2008",
+        "esrb": "None",
+        "platforms": "Mobile phone"
+      },
+      "categories": [
+        "Games",
+        "Spin Offs",
+        "The Real World"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/b/ba/Silent_Hill_Mobile_2.jpg/revision/latest?cb=20190715200232",
+      "url": "https://silenthill.fandom.com/wiki/Silent_Hill%3A_Mobile_2",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Silent-Hill-Mobile-2.jpg"
+    },
+    {
+      "title": "Silent Hill",
+      "wikiTitle": "Silent Hill (mobile game)",
+      "collection": "regions",
+      "facts": {
+        "othernames": "サイレントヒル (SILENT HILL), サイレントヒル （携帯アプリ版） (SILENT HILL (mobile version))",
+        "developer": "Konami",
+        "publisher": "Konami",
+        "release": "July, 2006 (Japan)",
+        "esrb": "None",
+        "platforms": "Mobile phones supporting 3G (FOMA900i/901i/902i/903 series, BREW3.1, 3G)"
+      },
+      "categories": [
+        "Games",
+        "The Real World"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/8/8e/Silent_Hill_-_mobile_version_-_title_screen.png/revision/latest?cb=20170817124052",
+      "url": "https://silenthill.fandom.com/wiki/Silent_Hill_(mobile_game)",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Silent-Hill-mobile-game-.png"
+    },
+    {
+      "title": "Silent Hill: Shattered Memories",
+      "wikiTitle": "Silent Hill: Shattered Memories",
+      "collection": "regions",
+      "facts": {
+        "developer": "Climax Studios",
+        "publisher": "Konami",
+        "release": "Wii: December 8, 2009 PS2, PSP: January 19, 2010 (North America)February, 2010 (Europe)March 25, 2010 (Japan)",
+        "esrb": "M",
+        "platforms": "Nintendo Wii, PlayStation 2, PlayStation Portable",
+        "pegi": "16",
+        "cero": "C (ages 15 and up)",
+        "bbfc": "15"
+      },
+      "categories": [
+        "Featured Articles",
+        "Games",
+        "Remakes",
+        "Silent Hill: Shattered Memories",
+        "The Real World"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/c/cc/SHSMboxart.PNG/revision/latest?cb=20140810070219",
+      "url": "https://silenthill.fandom.com/wiki/Silent_Hill%3A_Shattered_Memories",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Silent-Hill-Shattered-Memories.png"
+    },
+    {
+      "title": "Double Helix Games",
+      "wikiTitle": "Double Helix Games",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "Corporate",
+        "The Real World"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/2/2b/Double_Helix_Games_logo.jpg/revision/latest?cb=20120710150245",
+      "url": "https://silenthill.fandom.com/wiki/Double_Helix_Games",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Double-Helix-Games.jpg"
+    },
+    {
+      "title": "Silent Hill: Downpour",
+      "wikiTitle": "Silent Hill: Downpour",
+      "collection": "regions",
+      "facts": {
+        "developer": "Vatra Games",
+        "publisher": "Konami",
+        "release": "March 13, 2012 (North America)April 6, 2012 (Europe)November 8, 2012 (Japan)",
+        "esrb": "M",
+        "platforms": "PlayStation 3, Xbox 360, Xbox One",
+        "pegi": "18",
+        "cero": "D (ages 17 and up)",
+        "bbfc": "15"
+      },
+      "categories": [
+        "Featured Articles",
+        "Games",
+        "Main Series",
+        "Silent Hill: Downpour",
+        "The Real World"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/4/4d/Downpour_boxart.png/revision/latest?cb=20140809064206",
+      "url": "https://silenthill.fandom.com/wiki/Silent_Hill%3A_Downpour",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Silent-Hill-Downpour.png"
+    },
+    {
+      "title": "Silent Hill: Mobile 3",
+      "wikiTitle": "Silent Hill: Mobile 3",
+      "collection": "regions",
+      "facts": {
+        "othernames": "Silent Hill: Orphan 3",
+        "developer": "Playsoft",
+        "publisher": "Konami",
+        "release": "March 5, 2010",
+        "platforms": "Mobile phone"
+      },
+      "categories": [
+        "Games",
+        "Spin Offs",
+        "The Real World"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/2/26/Mobile3.jpg/revision/latest?cb=20100625045319",
+      "url": "https://silenthill.fandom.com/wiki/Silent_Hill%3A_Mobile_3",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Silent-Hill-Mobile-3.jpg"
+    },
+    {
+      "title": "Vatra Games",
+      "wikiTitle": "Vatra Games",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "Corporate",
+        "The Real World"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/d/d0/VatraGames.png/revision/latest?cb=20110226054233",
+      "url": "https://silenthill.fandom.com/wiki/Vatra_Games",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Vatra-Games.png"
+    },
+    {
+      "title": "Silent Hill: Book of Memories",
+      "wikiTitle": "Silent Hill: Book of Memories",
+      "collection": "regions",
+      "facts": {
+        "developer": "WayForward Technologies",
+        "publisher": "Konami",
+        "release": "October 16, 2012 (North America)November 2, 2012 (Europe)February 14, 2013 (Japan)",
+        "esrb": "M",
+        "platforms": "PlayStation Vita",
+        "director": "Adam Tierney",
+        "producer": "Tomm Hulett",
+        "writer": "Tomm Hulett",
+        "composer": "Daniel Licht",
+        "genre": "Dungeon Crawler",
+        "modes": "Single-player, Multiplayer",
+        "pegi": "16",
+        "cero": "D",
+        "media": "1 x Cartridge"
+      },
+      "categories": [
+        "Articles needing cleanup",
+        "Games",
+        "Silent Hill: Book of Memories",
+        "Spin Offs",
+        "The Real World"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/3/33/Bookofmemories.png/revision/latest?cb=20140809055320",
+      "url": "https://silenthill.fandom.com/wiki/Silent_Hill%3A_Book_of_Memories",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Silent-Hill-Book-of-Memories.png"
+    },
+    {
+      "title": "Silent Hill HD Collection",
+      "wikiTitle": "Silent Hill HD Collection",
+      "collection": "regions",
+      "facts": {
+        "othernames": "Silent Hill HD Edition (Japan)",
+        "developer": "Team Silent (original developer)Hijinx Studios (port)",
+        "publisher": "Konami",
+        "release": "March 20, 2012 (North America)March 20, 2012 (Europe)March 29, 2012 (Japan)",
+        "platforms": "PlayStation 3, Xbox 360"
+      },
+      "categories": [
+        "Games",
+        "Main Series",
+        "Silent Hill 2",
+        "Silent Hill 3",
+        "The Real World"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/e/e5/Hdcollection.png/revision/latest?cb=20110828194418",
+      "url": "https://silenthill.fandom.com/wiki/Silent_Hill_HD_Collection",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Silent-Hill-HD-Collection.png"
+    },
+    {
+      "title": "WayForward Technologies",
+      "wikiTitle": "WayForward Technologies",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "Corporate",
+        "The Real World"
+      ],
+      "image": null,
+      "url": "https://silenthill.fandom.com/wiki/WayForward_Technologies"
+    },
+    {
+      "title": "Horror Adventure",
+      "wikiTitle": "Horror Adventure",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "Corporate",
+        "The Real World"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/c/c1/Silent_Hill_2_-_Japanese_PS2_release_-_Front_cover_reversed.jpg/revision/latest?cb=20170921000324",
+      "url": "https://silenthill.fandom.com/wiki/Horror_Adventure",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Horror-Adventure.jpg"
+    },
+    {
+      "title": "Silent Hill",
+      "wikiTitle": "Silent Hill (pachislot)",
+      "collection": "regions",
+      "facts": {
+        "othernames": "Pachislot Silent Hill(パチスロ「サイレントヒル」)",
+        "developer": "TAKASAGO",
+        "publisher": "Konami",
+        "release": "October 5, 2015 (Japan)",
+        "esrb": "N/A",
+        "platforms": "Pachislot cabinet"
+      },
+      "categories": [
+        "Games",
+        "Pachislot",
+        "The Real World"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/1/13/Silent_Hill_pachislot_logo.png/revision/latest?cb=20171221020343",
+      "url": "https://silenthill.fandom.com/wiki/Silent_Hill_(pachislot)",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Silent-Hill-pachislot-.png"
+    },
+    {
+      "title": "Silent Hill: The Short Message",
+      "wikiTitle": "Silent Hill: The Short Message",
+      "collection": "regions",
+      "facts": {
+        "director": "Motoi Okamoto",
+        "producer": "Motoi Okamoto",
+        "writer": "Kiichi Kanoh",
+        "composer": "Akira Yamaoka",
+        "othernames": "Sakura: Playable Concept",
+        "developer": "*HexaDrive, Konami Digital Entertainment",
+        "publisher": "Konami Digital Entertainment",
+        "platforms": "PlayStation 5",
+        "genre": "Psychological horror",
+        "modes": "Single-player",
+        "release": "January 31, 2024",
+        "esrb": "Mature 17+",
+        "pegi": "18"
+      },
+      "categories": [
+        "Featured Articles",
+        "Games",
+        "Silent Hill: The Short Message",
+        "The Real World"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/4/4e/Silent_Hill-_The_Short_Message_banner.jpg/revision/latest?cb=20240131235421",
+      "url": "https://silenthill.fandom.com/wiki/Silent_Hill%3A_The_Short_Message",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Silent-Hill-The-Short-Message.jpg"
+    },
+    {
+      "title": "Silent Hill: Escape",
+      "wikiTitle": "Silent Hill: Escape",
+      "collection": "regions",
+      "facts": {
+        "developer": "Konami Gaming, Inc.",
+        "publisher": "Konami",
+        "platforms": "Pachislot",
+        "genre": "Horror"
+      },
+      "categories": [
+        "Games",
+        "Pachislot",
+        "The Real World"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/8/84/Screenshot_20210223-205021_YouTube.jpg/revision/latest?cb=20210224025348",
+      "url": "https://silenthill.fandom.com/wiki/Silent_Hill%3A_Escape",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Silent-Hill-Escape.jpg"
+    },
+    {
+      "title": "Silent Hill: Return",
+      "wikiTitle": "Silent Hill: Return",
+      "collection": "regions",
+      "facts": {
+        "developer": "Konami Gaming, Inc.",
+        "publisher": "Konami",
+        "platforms": "Pachislot",
+        "genre": "Horror"
+      },
+      "categories": [
+        "Games",
+        "Pachislot",
+        "The Real World"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/2/2b/Returnlogo.jpg/revision/latest?cb=20210224024354",
+      "url": "https://silenthill.fandom.com/wiki/Silent_Hill%3A_Return",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Silent-Hill-Return.jpg"
+    },
+    {
+      "title": "Return to Silent Hill",
+      "wikiTitle": "Return to Silent Hill",
+      "collection": "regions",
+      "facts": {
+        "director": "Christophe Gans",
+        "producer": "*Victor Hadida, Molly Hassell, Philipp Kreuzer, Joe Neurauter, John Jencks, Jay Taylor, Alexa Seligman",
+        "writer": "*Christophe Gans, Sandra Vo-Anh, William Josef Schneider",
+        "starring": "*Jeremy Irvine, Hannah Emily Anderson",
+        "composer": "Akira Yamaoka",
+        "cinematography": "*Benoit Debie, Pablo Rosso",
+        "editor": "Sébastian Prangère",
+        "distributor": "CAA Media Finance (Domestic), The Veterans (Worldwide), Leonine Distribution (Germany), Metropolitan (France)",
+        "release": "January 23, 2026"
+      },
+      "categories": [
+        "Films",
+        "Pages with reference errors",
+        "Return to Silent Hill",
+        "The Real World"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/c/c4/Return_To_Silent_Hill_%28Poster%29.webp/revision/latest?cb=20221020160104",
+      "url": "https://silenthill.fandom.com/wiki/Return_to_Silent_Hill",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Return-to-Silent-Hill.webp"
+    },
+    {
+      "title": "Silent Hill f",
+      "wikiTitle": "Silent Hill f",
+      "collection": "regions",
+      "facts": {
+        "director": "Al Yang",
+        "producer": "Motoi Okamoto",
+        "writer": "Ryukishi07",
+        "composer": "*Akira Yamaoka, Kensuke Inage, dai, xaki",
+        "developer": "NeoBards Entertainment",
+        "publisher": "Konami",
+        "platforms": "*PlayStation 5, Xbox Series X",
+        "release": "September 25, 2025",
+        "esrb": "Mature 17+",
+        "pegi": "18",
+        "cero": "18+"
+      },
+      "categories": [
+        "Games",
+        "Silent Hill f",
+        "Spin Offs",
+        "The Real World"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/2/2a/SHf_-_Visual_Artwork.png/revision/latest?cb=20250313225510",
+      "url": "https://silenthill.fandom.com/wiki/Silent_Hill_f",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Silent-Hill-f.png"
+    },
+    {
+      "title": "Silent Hill: Ascension",
+      "wikiTitle": "Silent Hill: Ascension",
+      "collection": "regions",
+      "facts": {
+        "developer": "Genvid Technologies, Bad Robot Games, Behaviour Interactive, Senscape, Martian Brothel, DJ2 Entertainment (formerly)",
+        "publisher": "Genvid Entertainment",
+        "platforms": "Live event:, Desktop browser, App Store, Google Play, Series:, Video on Demand, Sony Pictures Core, Tubi",
+        "release": "Live event:, October 31, 2023, Series:, November 8, 2023",
+        "esrb": "M for Mature",
+        "pegi": "17+"
+      },
+      "categories": [
+        "Featured Articles",
+        "Games",
+        "Silent Hill: Ascension",
+        "Spin Offs",
+        "Television",
+        "The Real World"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/f/f0/SHAscension_Final_Poster.png/revision/latest?cb=20240606040859",
+      "url": "https://silenthill.fandom.com/wiki/Silent_Hill%3A_Ascension",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Silent-Hill-Ascension.png"
+    },
+    {
+      "title": "Silent Hill 2",
+      "wikiTitle": "Silent Hill 2 (2024 video game)",
+      "collection": "regions",
+      "facts": {
+        "director": "Mateusz Lenart",
+        "composer": "*Akira Yamaoka, Arkadiusz Reikowski",
+        "producer": "*Motoi Okamoto, Maciej Głomb",
+        "developer": "Bloober Team",
+        "publisher": "Konami",
+        "platforms": "*PlayStation 5, Windows, Xbox Series X",
+        "release": "October 8, 2024",
+        "esrb": "M",
+        "pegi": "18+"
+      },
+      "categories": [
+        "Featured Articles",
+        "Games",
+        "Remakes",
+        "Silent Hill 2 (2024 video game)",
+        "The Real World"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/3/30/SH2R_Steam_Library_Thumbnail.jpg/revision/latest?cb=20241022131945",
+      "url": "https://silenthill.fandom.com/wiki/Silent_Hill_2_(2024_video_game)",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Silent-Hill-2-2024-video-game-.jpg"
+    },
+    {
+      "title": "Annapurna Interactive",
+      "wikiTitle": "Annapurna Interactive",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "Corporate",
+        "The Real World"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/c/c5/Annapurna_Interactive_Logo.png/revision/latest?cb=20221028235811",
+      "url": "https://silenthill.fandom.com/wiki/Annapurna_Interactive",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Annapurna-Interactive.png"
+    },
+    {
+      "title": "Screen Burn",
+      "wikiTitle": "Screen Burn",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "Corporate",
+        "The Real World"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/6/6e/No_Code_logo.png/revision/latest?cb=20241106012851",
+      "url": "https://silenthill.fandom.com/wiki/Screen_Burn",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Screen-Burn.png"
+    },
+    {
+      "title": "Silent Hill",
+      "wikiTitle": "Silent Hill (upcoming video game)",
+      "collection": "regions",
+      "facts": {
+        "developer": "Bloober Team",
+        "publisher": "Konami"
+      },
+      "categories": [
+        "Games",
+        "The Real World"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/6/67/Silent_Hill_Upcoming_game_-_ph_screen.png/revision/latest?cb=20250612162343",
+      "url": "https://silenthill.fandom.com/wiki/Silent_Hill_(upcoming_video_game)",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Silent-Hill-upcoming-video-game-.png"
+    },
+    {
+      "title": "Radio",
+      "wikiTitle": "Radio",
+      "collection": "items",
+      "facts": {
+        "imagesize": "150px",
+        "image_caption": "The radio in Silent Hill",
+        "description": "\"Portable radio that emits static when monsters are near.\""
+      },
+      "categories": [
+        "Articles needing cleanup",
+        "Items",
+        "Recurring Items",
+        "Silent Hill: Downpour Items",
+        "Silent Hill: Homecoming Items",
+        "Silent Hill: Origins Items",
+        "Silent Hill: Shattered Memories Items",
+        "Silent Hill: The Arcade Items",
+        "Silent Hill: The Short Message Items",
+        "Silent Hill 2 Items",
+        "Silent Hill 3 Items",
+        "Silent Hill 4: The Room Items",
+        "Silent Hill Items"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/6/64/Radio.gif/revision/latest?cb=20160807151717",
+      "url": "https://silenthill.fandom.com/wiki/Radio",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Radio.gif"
+    },
+    {
+      "title": "Silent Hill, Maine",
+      "wikiTitle": "Silent Hill, Maine",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "Articles needing cleanup",
+        "Dead by Daylight: Chapter XVI - Silent Hill Locations",
+        "Featured Articles",
+        "Locations",
+        "Silent Hill: Downpour Locations",
+        "Silent Hill: Homecoming Locations",
+        "Silent Hill: Origins Locations",
+        "Silent Hill: Shattered Memories Locations",
+        "Silent Hill: The Arcade Locations",
+        "Silent Hill 2 (2024 video game) Locations",
+        "Silent Hill 2 Locations",
+        "Silent Hill 3 Locations",
+        "Silent Hill 4: The Room Locations",
+        "Silent Hill Locations"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/8/86/EntireSH2map.png/revision/latest?cb=20170224012733",
+      "url": "https://silenthill.fandom.com/wiki/Silent_Hill%2C_Maine",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Silent-Hill-Maine.png"
+    },
+    {
+      "title": "Monster",
+      "wikiTitle": "Monster",
+      "collection": "enemies",
+      "facts": {},
+      "categories": [
+        "Among the Damned",
+        "Articles needing cleanup",
+        "Comic Mythology",
+        "Dead/Alive",
+        "Dying Inside",
+        "Film Mythology",
+        "Hunger",
+        "Monsters",
+        "Mythology",
+        "Silent Hill",
+        "Silent Hill: Book of Memories",
+        "Silent Hill: Downpour",
+        "Silent Hill: Homecoming",
+        "Silent Hill: Origins"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/d/dd/Sh0_art_creature_01.jpg/revision/latest?cb=20120815122219",
+      "url": "https://silenthill.fandom.com/wiki/Monster",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Monster.jpg"
+    },
+    {
+      "title": "Christophe Gans",
+      "wikiTitle": "Christophe Gans",
+      "collection": "characters",
+      "facts": {
+        "creatorimage": "Christophe G.png",
+        "image_caption": "Christophe on the set of the Silent Hill movie.",
+        "dod": "NA",
+        "shmovies": "Silent Hill, Return to Silent Hill",
+        "role": "Director Writer (uncredited)"
+      },
+      "categories": [
+        "Corporate",
+        "Return to Silent Hill People",
+        "Silent Hill Movie People",
+        "Staff",
+        "The Real World",
+        "Writers"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/7/7f/Image_view_%2818%29.jpg/revision/latest?cb=20130721083053",
+      "url": "https://silenthill.fandom.com/wiki/Christophe_Gans",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Christophe-Gans.jpg"
+    },
+    {
+      "title": "Bloober Team",
+      "wikiTitle": "Bloober Team",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "Corporate",
+        "The Real World"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/3/34/SILENT_HILL_2_-_Bloober_Team_Dev_Diaries_-_KONAMI/revision/latest?cb=20240530234553",
+      "url": "https://silenthill.fandom.com/wiki/Bloober_Team",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Bloober-Team.png"
+    },
+    {
+      "title": "NeoBards Entertainment",
+      "wikiTitle": "NeoBards Entertainment",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "Corporate",
+        "The Real World"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/a/a0/NB_LOGO.jpg/revision/latest?cb=20221108082423",
+      "url": "https://silenthill.fandom.com/wiki/NeoBards_Entertainment",
+      "imageFile": "assets/_wiki/silent-hill-townfall/NeoBards-Entertainment.jpg"
+    },
+    {
+      "title": "Behaviour Interactive",
+      "wikiTitle": "Behaviour Interactive",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "Corporate",
+        "The Real World"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/5/54/DBDart.jpg/revision/latest?cb=20200616172928",
+      "url": "https://silenthill.fandom.com/wiki/Behaviour_Interactive",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Behaviour-Interactive.jpg"
+    },
+    {
+      "title": "Bad Robot Games",
+      "wikiTitle": "Bad Robot Games",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "Corporate",
+        "The Real World"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/6/65/BRG-Share.png/revision/latest?cb=20230107010000",
+      "url": "https://silenthill.fandom.com/wiki/Bad_Robot_Games",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Bad-Robot-Games.png"
+    },
+    {
+      "title": "Genvid Technologies",
+      "wikiTitle": "Genvid Technologies",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "Corporate",
+        "Staff",
+        "The Real World"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/1/13/Genvid.png/revision/latest?cb=20240504023729",
+      "url": "https://silenthill.fandom.com/wiki/Genvid_Technologies",
+      "imageFile": "assets/_wiki/silent-hill-townfall/Genvid-Technologies.png"
+    },
+    {
+      "title": "HexaDrive",
+      "wikiTitle": "HexaDrive",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "Corporate",
+        "The Real World"
+      ],
+      "image": "https://static.wikia.nocookie.net/silent/images/f/fb/HexaDrive_logo.png/revision/latest?cb=20240203141152",
+      "url": "https://silenthill.fandom.com/wiki/HexaDrive",
+      "imageFile": "assets/_wiki/silent-hill-townfall/HexaDrive.png"
     }
   ]
 }

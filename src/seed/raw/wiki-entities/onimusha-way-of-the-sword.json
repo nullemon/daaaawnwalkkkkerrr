@@ -16,7 +16,280 @@
         "Onimusha 3: Demon Siege weapons",
         "Weapons"
       ],
-      "url": "https://onimusha.fandom.com/wiki/Raizan"
+      "image": "https://static.wikia.nocookie.net/onimusha/images/b/ba/55-jerks50.jpg/revision/latest?cb=20130416052554",
+      "url": "https://onimusha.fandom.com/wiki/Raizan",
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Raizan.jpg"
+    },
+    {
+      "title": "Hitotsume Gasa",
+      "wikiTitle": "Hitotsume Gasa",
+      "collection": "enemies",
+      "facts": {},
+      "categories": [
+        "Enemies",
+        "Genma",
+        "Onimusha: Way of the Sword Genma"
+      ],
+      "image": "https://static.wikia.nocookie.net/onimusha/images/0/0a/Onimusha_Way_of_the_Sword_Screenshot_9.jpg/revision/latest?cb=20250813025619",
+      "url": "https://onimusha.fandom.com/wiki/Hitotsume_Gasa",
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Hitotsume-Gasa.jpg"
+    },
+    {
+      "title": "Byakue",
+      "wikiTitle": "Byakue",
+      "collection": "enemies",
+      "facts": {},
+      "categories": [
+        "Enemies",
+        "Genma",
+        "Onimusha: Way of the Sword Genma"
+      ],
+      "image": "https://static.wikia.nocookie.net/onimusha/images/0/07/Byakue.png/revision/latest?cb=20250212230943",
+      "url": "https://onimusha.fandom.com/wiki/Byakue",
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Byakue.png"
+    },
+    {
+      "title": "Kubi Akari",
+      "wikiTitle": "Kubi Akari",
+      "collection": "enemies",
+      "facts": {},
+      "categories": [
+        "Enemies",
+        "Genma",
+        "Onimusha: Way of the Sword Genma"
+      ],
+      "image": "https://static.wikia.nocookie.net/onimusha/images/2/23/Kubi_Akari.png/revision/latest?cb=20250607060744",
+      "url": "https://onimusha.fandom.com/wiki/Kubi_Akari",
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Kubi-Akari.png"
+    },
+    {
+      "title": "Greater Nue",
+      "wikiTitle": "Greater Nue",
+      "collection": "enemies",
+      "facts": {},
+      "categories": [
+        "Enemies",
+        "Genma",
+        "Onimusha: Way of the Sword Genma"
+      ],
+      "image": "https://static.wikia.nocookie.net/onimusha/images/c/c0/Greater_Nue.png/revision/latest?cb=20250819204715",
+      "url": "https://onimusha.fandom.com/wiki/Greater_Nue",
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Greater-Nue.png"
+    },
+    {
+      "title": "Kogashira",
+      "wikiTitle": "Kogashira",
+      "collection": "enemies",
+      "facts": {},
+      "categories": [
+        "Enemies",
+        "Genma",
+        "Onimusha: Way of the Sword Genma"
+      ],
+      "image": "https://static.wikia.nocookie.net/onimusha/images/f/f8/Kogashira.png/revision/latest?cb=20250819205311",
+      "url": "https://onimusha.fandom.com/wiki/Kogashira",
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Kogashira.png"
+    },
+    {
+      "title": "Chijiko",
+      "wikiTitle": "Chijiko",
+      "collection": "enemies",
+      "facts": {},
+      "categories": [
+        "Enemies",
+        "Genma",
+        "Onimusha: Way of the Sword Genma"
+      ],
+      "image": "https://static.wikia.nocookie.net/onimusha/images/8/84/Chijiko_Top_Eye.jpg/revision/latest?cb=20260913161515",
+      "url": "https://onimusha.fandom.com/wiki/Chijiko",
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Chijiko.jpg"
+    },
+    {
+      "title": "The Two Celestials",
+      "wikiTitle": "The Two Celestials",
+      "collection": "items",
+      "facts": {},
+      "categories": [
+        "Onimusha: Way of The Sword weapons",
+        "Weapons"
+      ],
+      "image": "https://static.wikia.nocookie.net/onimusha/images/c/ca/The_Two_Celestials.png/revision/latest?cb=20260905202856",
+      "url": "https://onimusha.fandom.com/wiki/The_Two_Celestials",
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/The-Two-Celestials.png"
+    },
+    {
+      "title": "Earth-Shakers",
+      "wikiTitle": "Earth-Shakers",
+      "collection": "items",
+      "facts": {},
+      "categories": [
+        "Onimusha: Way of The Sword weapons",
+        "Weapons"
+      ],
+      "image": "https://static.wikia.nocookie.net/onimusha/images/f/fd/Earth-Shakers.png/revision/latest?cb=20260907000848",
+      "url": "https://onimusha.fandom.com/wiki/Earth-Shakers",
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Earth-Shakers.png"
+    },
+    {
+      "title": "Wind-Whipper",
+      "wikiTitle": "Wind-Whipper",
+      "collection": "items",
+      "facts": {},
+      "categories": [
+        "Onimusha: Way of The Sword weapons",
+        "Weapons"
+      ],
+      "image": "https://static.wikia.nocookie.net/onimusha/images/2/25/Wind-Whipper.png/revision/latest?cb=20260907000847",
+      "url": "https://onimusha.fandom.com/wiki/Wind-Whipper",
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Wind-Whipper.png"
+    },
+    {
+      "title": "Kiyomizu-dera Temple",
+      "wikiTitle": "Kiyomizu-dera Temple",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "Article stubs",
+        "Locations",
+        "Onimusha: Way of the Sword"
+      ],
+      "image": "https://static.wikia.nocookie.net/onimusha/images/a/ac/Kiyomizu-dera_Temple.png/revision/latest?cb=20260305004447",
+      "url": "https://onimusha.fandom.com/wiki/Kiyomizu-dera_Temple",
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Kiyomizu-dera-Temple.png"
+    },
+    {
+      "title": "Oni Refuge",
+      "wikiTitle": "Oni Refuge",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "Article stubs",
+        "Locations",
+        "Onimusha: Way of the Sword"
+      ],
+      "image": "https://static.wikia.nocookie.net/onimusha/images/9/9c/Oni_Refuge.png/revision/latest?cb=20260305005323",
+      "url": "https://onimusha.fandom.com/wiki/Oni_Refuge",
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Oni-Refuge.png"
+    },
+    {
+      "title": "Shuten Doji",
+      "wikiTitle": "Shuten Doji",
+      "collection": "enemies",
+      "facts": {
+        "Japanese Name": "酒呑童子",
+        "Voice Actors": "Anthony Howell (English)Shinnosuke Hai (Japanese)Gao Sihang (Mandarin Chinese)"
+      },
+      "categories": [
+        "Enemies",
+        "Genma",
+        "Onimusha: Way of the Sword Genma",
+        "Onimusha: Way of the Sword characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/onimusha/images/c/c8/Shuten_Doji.png/revision/latest?cb=20260603031956",
+      "url": "https://onimusha.fandom.com/wiki/Shuten_Doji",
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Shuten-Doji.png"
+    },
+    {
+      "title": "Oboro Garasu",
+      "wikiTitle": "Oboro Garasu",
+      "collection": "enemies",
+      "facts": {},
+      "categories": [
+        "Enemies",
+        "Genma",
+        "Onimusha: Way of the Sword Genma"
+      ],
+      "image": "https://static.wikia.nocookie.net/onimusha/images/c/c2/Oboro_Garasu.png/revision/latest?cb=20260603032253",
+      "url": "https://onimusha.fandom.com/wiki/Oboro_Garasu",
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Oboro-Garasu.png"
+    },
+    {
+      "title": "Rasho-gan",
+      "wikiTitle": "Rasho-gan",
+      "collection": "enemies",
+      "facts": {
+        "Japanese Name": "羅掌願",
+        "Voice Actors": "Adam Longworth (English)Yasuhiro Mamiya (Japanese)Liu Beichen (Mandarin Chinese)"
+      },
+      "categories": [
+        "Enemies",
+        "Genma",
+        "Onimusha: Way of the Sword Genma",
+        "Onimusha: Way of the Sword characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/onimusha/images/0/0b/Rasho-gan.png/revision/latest?cb=20260626031558",
+      "url": "https://onimusha.fandom.com/wiki/Rasho-gan",
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Rasho-gan.png"
+    },
+    {
+      "title": "Dohatsu-ten",
+      "wikiTitle": "Dohatsu-ten",
+      "collection": "enemies",
+      "facts": {},
+      "categories": [
+        "Enemies",
+        "Genma",
+        "Onimusha: Way of the Sword Genma"
+      ],
+      "image": "https://static.wikia.nocookie.net/onimusha/images/d/d6/Dohatsu-ten.png/revision/latest?cb=20260626031645",
+      "url": "https://onimusha.fandom.com/wiki/Dohatsu-ten",
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Dohatsu-ten.png"
+    },
+    {
+      "title": "Costumes",
+      "wikiTitle": "Costumes",
+      "collection": "enemies",
+      "facts": {},
+      "categories": [
+        "Onimusha: Dawn of Dreams",
+        "Onimusha: Warlords",
+        "Onimusha: Way of the Sword",
+        "Onimusha 2: Samurai's Destiny",
+        "Onimusha 3: Demon Siege"
+      ],
+      "image": "https://static.wikia.nocookie.net/onimusha/images/5/52/Panda_Costume_Warlords.png/revision/latest?cb=20250628225344",
+      "url": "https://onimusha.fandom.com/wiki/Costumes",
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Costumes.png"
+    },
+    {
+      "title": "Oni Bow",
+      "wikiTitle": "Oni Bow",
+      "collection": "items",
+      "facts": {},
+      "categories": [
+        "Onimusha: Way of The Sword weapons",
+        "Weapons"
+      ],
+      "image": "https://static.wikia.nocookie.net/onimusha/images/e/ee/OniBow.png/revision/latest?cb=20260907000846",
+      "url": "https://onimusha.fandom.com/wiki/Oni_Bow",
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Oni-Bow.png"
+    },
+    {
+      "title": "Kyoto",
+      "wikiTitle": "Kyoto (Onimusha: Way of the Sword)",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "Locations",
+        "Onimusha: Way of the Sword"
+      ],
+      "image": null,
+      "url": "https://onimusha.fandom.com/wiki/Kyoto_(Onimusha%3A_Way_of_the_Sword)"
+    },
+    {
+      "title": "Bishamon Sword",
+      "wikiTitle": "Bishamon Sword",
+      "collection": "items",
+      "facts": {},
+      "categories": [
+        "Onimusha: Blade Warriors weapons",
+        "Onimusha: Warlords weapons",
+        "Onimusha 3: Demon Siege weapons",
+        "Weapons"
+      ],
+      "image": "https://static.wikia.nocookie.net/onimusha/images/5/5b/Bishamon_Sword_%28BW%29.png/revision/latest?cb=20240130130256",
+      "url": "https://onimusha.fandom.com/wiki/Bishamon_Sword",
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Bishamon-Sword.png"
     },
     {
       "title": "Musashi Miyamoto",
@@ -35,40 +308,30 @@
         "Characters",
         "Onimusha: Way of the Sword characters"
       ],
-      "url": "https://onimusha.fandom.com/wiki/Musashi_Miyamoto"
+      "image": "https://static.wikia.nocookie.net/onimusha/images/a/a0/Miyamoto_Musashi_WotS.png/revision/latest?cb=20250212230930",
+      "url": "https://onimusha.fandom.com/wiki/Musashi_Miyamoto",
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Musashi-Miyamoto.png"
     },
     {
-      "title": "Hitotsume Gasa",
-      "wikiTitle": "Hitotsume Gasa",
-      "collection": "enemies",
+      "title": "Issen",
+      "wikiTitle": "Issen",
+      "collection": "mechanics",
       "facts": {},
       "categories": [
-        "Enemies",
-        "Genma",
-        "Onimusha: Way of the Sword Genma"
+        "Gameplay"
       ],
-      "url": "https://onimusha.fandom.com/wiki/Hitotsume_Gasa"
-    },
-    {
-      "title": "Byakue",
-      "wikiTitle": "Byakue",
-      "collection": "enemies",
-      "facts": {},
-      "categories": [
-        "Enemies",
-        "Genma",
-        "Onimusha: Way of the Sword Genma"
-      ],
-      "url": "https://onimusha.fandom.com/wiki/Byakue"
+      "image": "https://static.wikia.nocookie.net/onimusha/images/8/85/Onimusha-_A_Basic_Guide_to_Issen_-_The_Ultimate_Counter_Attack/revision/latest?cb=20200819051346",
+      "url": "https://onimusha.fandom.com/wiki/Issen",
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Issen.png"
     },
     {
       "title": "Ganryu Sasaki",
       "wikiTitle": "Ganryu Sasaki",
-      "collection": "characters",
+      "collection": "enemies",
       "facts": {
-        "tab1": "Main",
-        "tab2": "Netflix",
-        "tab3": "Other"
+        "Japanese Name": "佐々木 巖流",
+        "Aliases": "Kojirō Sasaki",
+        "Voice Actors": "Tashinga Bepete (English)Okamoto Nobuhiko (Japanese)Zhang Pei (Mandarin Chinese)"
       },
       "categories": [
         "Bosses",
@@ -76,24 +339,14 @@
         "Enemies",
         "Onimusha: Way of the Sword characters"
       ],
-      "url": "https://onimusha.fandom.com/wiki/Ganryu_Sasaki"
-    },
-    {
-      "title": "Kubi Akari",
-      "wikiTitle": "Kubi Akari",
-      "collection": "enemies",
-      "facts": {},
-      "categories": [
-        "Enemies",
-        "Genma",
-        "Onimusha: Way of the Sword Genma"
-      ],
-      "url": "https://onimusha.fandom.com/wiki/Kubi_Akari"
+      "image": "https://static.wikia.nocookie.net/onimusha/images/a/a5/Sasaki_Ganryu.png/revision/latest?cb=20250607060242",
+      "url": "https://onimusha.fandom.com/wiki/Ganryu_Sasaki",
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Ganryu-Sasaki.png"
     },
     {
       "title": "Daidara",
       "wikiTitle": "Daidara",
-      "collection": "characters",
+      "collection": "enemies",
       "facts": {
         "Japanese Name": "大唾拉",
         "Voice Actors": "Abe Jarman (English)Miyake Kenta (Japanese)Su Xin (Mandarin Chinese)"
@@ -103,24 +356,26 @@
         "Genma",
         "Onimusha: Way of the Sword characters"
       ],
-      "url": "https://onimusha.fandom.com/wiki/Daidara"
+      "image": "https://static.wikia.nocookie.net/onimusha/images/2/22/Daidara.png/revision/latest?cb=20250607061018",
+      "url": "https://onimusha.fandom.com/wiki/Daidara",
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Daidara.png"
     },
     {
-      "title": "Greater Nue",
-      "wikiTitle": "Greater Nue",
-      "collection": "enemies",
+      "title": "Panda Costume",
+      "wikiTitle": "Panda Costume",
+      "collection": "items",
       "facts": {},
       "categories": [
-        "Enemies",
-        "Genma",
-        "Onimusha: Way of the Sword Genma"
+        "Armor"
       ],
-      "url": "https://onimusha.fandom.com/wiki/Greater_Nue"
+      "image": "https://static.wikia.nocookie.net/onimusha/images/d/d7/Baby_Panda_Bamboo.jpg/revision/latest?cb=20250628234506",
+      "url": "https://onimusha.fandom.com/wiki/Panda_Costume",
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Panda-Costume.jpg"
     },
     {
       "title": "Dokyo",
       "wikiTitle": "Dokyo",
-      "collection": "characters",
+      "collection": "enemies",
       "facts": {
         "Japanese Name": "道狂輝夜姫",
         "Voice Actors": "Clare Corbett (English)Fushida Riho (Japanese)Xu Hui (Mandarin Chinese)"
@@ -130,31 +385,9 @@
         "Genma",
         "Onimusha: Way of the Sword characters"
       ],
-      "url": "https://onimusha.fandom.com/wiki/Dokyo"
-    },
-    {
-      "title": "Kogashira",
-      "wikiTitle": "Kogashira",
-      "collection": "enemies",
-      "facts": {},
-      "categories": [
-        "Enemies",
-        "Genma",
-        "Onimusha: Way of the Sword Genma"
-      ],
-      "url": "https://onimusha.fandom.com/wiki/Kogashira"
-    },
-    {
-      "title": "Chijiko",
-      "wikiTitle": "Chijiko",
-      "collection": "enemies",
-      "facts": {},
-      "categories": [
-        "Enemies",
-        "Genma",
-        "Onimusha: Way of the Sword Genma"
-      ],
-      "url": "https://onimusha.fandom.com/wiki/Chijiko"
+      "image": "https://static.wikia.nocookie.net/onimusha/images/6/6e/Dokyo.png/revision/latest?cb=20250819204935",
+      "url": "https://onimusha.fandom.com/wiki/Dokyo",
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Dokyo.png"
     },
     {
       "title": "Shizuka Gozen",
@@ -169,7 +402,9 @@
         "Characters",
         "Onimusha: Way of the Sword characters"
       ],
-      "url": "https://onimusha.fandom.com/wiki/Shizuka_Gozen"
+      "image": "https://static.wikia.nocookie.net/onimusha/images/c/cc/Oni_Lady.png/revision/latest?cb=20250924165029",
+      "url": "https://onimusha.fandom.com/wiki/Shizuka_Gozen",
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Shizuka-Gozen.png"
     },
     {
       "title": "Takamura Ono",
@@ -189,7 +424,9 @@
         "Characters",
         "Onimusha: Way of the Sword characters"
       ],
-      "url": "https://onimusha.fandom.com/wiki/Takamura_Ono"
+      "image": "https://static.wikia.nocookie.net/onimusha/images/d/db/Ono_no_Takamura.png/revision/latest?cb=20250924165053",
+      "url": "https://onimusha.fandom.com/wiki/Takamura_Ono",
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Takamura-Ono.png"
     },
     {
       "title": "Okuni Izumo",
@@ -204,7 +441,9 @@
         "Characters",
         "Onimusha: Way of the Sword characters"
       ],
-      "url": "https://onimusha.fandom.com/wiki/Okuni_Izumo"
+      "image": "https://static.wikia.nocookie.net/onimusha/images/b/b3/Izumo_no_Okuni.png/revision/latest?cb=20250924165114",
+      "url": "https://onimusha.fandom.com/wiki/Okuni_Izumo",
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Okuni-Izumo.png"
     },
     {
       "title": "Togemaru",
@@ -216,101 +455,28 @@
         "Genma",
         "Onimusha: Way of the Sword Genma"
       ],
-      "url": "https://onimusha.fandom.com/wiki/Togemaru"
+      "image": "https://static.wikia.nocookie.net/onimusha/images/2/2e/Togemaru.png/revision/latest?cb=20250924170500",
+      "url": "https://onimusha.fandom.com/wiki/Togemaru",
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Togemaru.png"
     },
     {
-      "title": "The Two Celestials",
-      "wikiTitle": "The Two Celestials",
-      "collection": "items",
-      "facts": {},
-      "categories": [
-        "Onimusha: Way of The Sword weapons",
-        "Weapons"
-      ],
-      "url": "https://onimusha.fandom.com/wiki/The_Two_Celestials"
-    },
-    {
-      "title": "Earth-Shakers",
-      "wikiTitle": "Earth-Shakers",
-      "collection": "items",
-      "facts": {},
-      "categories": [
-        "Onimusha: Way of The Sword weapons",
-        "Weapons"
-      ],
-      "url": "https://onimusha.fandom.com/wiki/Earth-Shakers"
-    },
-    {
-      "title": "Wind-Whipper",
-      "wikiTitle": "Wind-Whipper",
-      "collection": "items",
-      "facts": {},
-      "categories": [
-        "Onimusha: Way of The Sword weapons",
-        "Weapons"
-      ],
-      "url": "https://onimusha.fandom.com/wiki/Wind-Whipper"
-    },
-    {
-      "title": "Shuten Doji",
-      "wikiTitle": "Shuten Doji",
-      "collection": "enemies",
-      "facts": {
-        "Japanese Name": "酒呑童子",
-        "Voice Actors": "Anthony Howell (English)Shinnosuke Hai (Japanese)Gao Sihang (Mandarin Chinese)"
-      },
-      "categories": [
-        "Enemies",
-        "Genma",
-        "Onimusha: Way of the Sword Genma",
-        "Onimusha: Way of the Sword characters"
-      ],
-      "url": "https://onimusha.fandom.com/wiki/Shuten_Doji"
-    },
-    {
-      "title": "Oboro Garasu",
-      "wikiTitle": "Oboro Garasu",
+      "title": "Dark Armor Demon",
+      "wikiTitle": "Dark Armor Demon",
       "collection": "enemies",
       "facts": {},
       "categories": [
         "Enemies",
         "Genma",
-        "Onimusha: Way of the Sword Genma"
+        "Onimusha: Warlords genma"
       ],
-      "url": "https://onimusha.fandom.com/wiki/Oboro_Garasu"
-    },
-    {
-      "title": "Rasho-gan",
-      "wikiTitle": "Rasho-gan",
-      "collection": "enemies",
-      "facts": {
-        "Japanese Name": "羅掌願",
-        "Voice Actors": "Adam Longworth (English)Yasuhiro Mamiya (Japanese)Liu Beichen (Mandarin Chinese)"
-      },
-      "categories": [
-        "Enemies",
-        "Genma",
-        "Onimusha: Way of the Sword Genma",
-        "Onimusha: Way of the Sword characters"
-      ],
-      "url": "https://onimusha.fandom.com/wiki/Rasho-gan"
-    },
-    {
-      "title": "Dohatsu-ten",
-      "wikiTitle": "Dohatsu-ten",
-      "collection": "enemies",
-      "facts": {},
-      "categories": [
-        "Enemies",
-        "Genma",
-        "Onimusha: Way of the Sword Genma"
-      ],
-      "url": "https://onimusha.fandom.com/wiki/Dohatsu-ten"
+      "image": "https://static.wikia.nocookie.net/onimusha/images/e/e7/Empowered_Dark_Armor_Demon.jpg/revision/latest?cb=20260104200014",
+      "url": "https://onimusha.fandom.com/wiki/Dark_Armor_Demon",
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Dark-Armor-Demon.jpg"
     },
     {
       "title": "Burai",
       "wikiTitle": "Burai",
-      "collection": "characters",
+      "collection": "enemies",
       "facts": {
         "Japanese Name": "撫雷",
         "Family": "Ifuu (younger brother)",
@@ -321,12 +487,14 @@
         "Genma",
         "Onimusha: Way of the Sword characters"
       ],
-      "url": "https://onimusha.fandom.com/wiki/Burai"
+      "image": "https://static.wikia.nocookie.net/onimusha/images/3/32/Burai.png/revision/latest?cb=20260825205042",
+      "url": "https://onimusha.fandom.com/wiki/Burai",
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Burai.png"
     },
     {
       "title": "Ifuu",
       "wikiTitle": "Ifuu",
-      "collection": "characters",
+      "collection": "enemies",
       "facts": {
         "Japanese Name": "畏風",
         "Family": "Burai (older brother)",
@@ -337,7 +505,9 @@
         "Genma",
         "Onimusha: Way of the Sword characters"
       ],
-      "url": "https://onimusha.fandom.com/wiki/Ifuu"
+      "image": "https://static.wikia.nocookie.net/onimusha/images/8/8b/Ifuu.png/revision/latest?cb=20260825205058",
+      "url": "https://onimusha.fandom.com/wiki/Ifuu",
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Ifuu.png"
     },
     {
       "title": "Lady Murasaki",
@@ -357,7 +527,9 @@
         "Characters",
         "Onimusha: Way of the Sword characters"
       ],
-      "url": "https://onimusha.fandom.com/wiki/Lady_Murasaki"
+      "image": "https://static.wikia.nocookie.net/onimusha/images/a/ae/Lady_Murasaki.png/revision/latest?cb=20260902035817",
+      "url": "https://onimusha.fandom.com/wiki/Lady_Murasaki",
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Lady-Murasaki.png"
     },
     {
       "title": "Yoshitsune Minamoto",
@@ -368,18 +540,9 @@
         "Characters",
         "Onimusha: Way of the Sword characters"
       ],
-      "url": "https://onimusha.fandom.com/wiki/Yoshitsune_Minamoto"
-    },
-    {
-      "title": "Oni Bow",
-      "wikiTitle": "Oni Bow",
-      "collection": "items",
-      "facts": {},
-      "categories": [
-        "Onimusha: Way of The Sword weapons",
-        "Weapons"
-      ],
-      "url": "https://onimusha.fandom.com/wiki/Oni_Bow"
+      "image": "https://static.wikia.nocookie.net/onimusha/images/2/23/Man_in_White.png/revision/latest?cb=20260903031342",
+      "url": "https://onimusha.fandom.com/wiki/Yoshitsune_Minamoto",
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Yoshitsune-Minamoto.png"
     },
     {
       "title": "Seijuro Yoshioka/Way of the Sword",
@@ -395,7 +558,32 @@
         "Deceased",
         "Onimusha: Way of the Sword characters"
       ],
+      "image": null,
       "url": "https://onimusha.fandom.com/wiki/Seijuro_Yoshioka%2FWay_of_the_Sword"
+    },
+    {
+      "title": "Oni Armament",
+      "wikiTitle": "Oni Armament",
+      "collection": "items",
+      "facts": {},
+      "categories": [
+        "Weapons"
+      ],
+      "image": null,
+      "url": "https://onimusha.fandom.com/wiki/Oni_Armament"
+    },
+    {
+      "title": "Kyoto",
+      "wikiTitle": "Kyoto",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "Locations",
+        "Onimusha: Dawn of Dreams"
+      ],
+      "image": "https://static.wikia.nocookie.net/onimusha/images/2/2a/Kyoto_Map_Complete_FIXED.jpg/revision/latest?cb=20260801194825",
+      "url": "https://onimusha.fandom.com/wiki/Kyoto",
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Kyoto.jpg"
     }
   ]
 }

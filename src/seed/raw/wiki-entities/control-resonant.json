@@ -32,7 +32,274 @@
         "Parautilitarians",
         "Prime Candidates"
       ],
-      "url": "https://control.fandom.com/wiki/Jesse_Faden"
+      "image": "https://static.wikia.nocookie.net/control6745/images/3/38/Director_Faden_Photograph.png/revision/latest?cb=20220607001407",
+      "url": "https://control.fandom.com/wiki/Jesse_Faden",
+      "imageFile": "assets/_wiki/control-resonant/Jesse-Faden.png"
+    },
+    {
+      "title": "Federal Bureau of Control",
+      "wikiTitle": "Federal Bureau of Control",
+      "collection": "characters",
+      "facts": {
+        "formed": "Pre-1954",
+        "headquarters": "Oldest House, Manhattan, New York, NY, U.S.",
+        "motto": "Invenio, Investigatio, Imperium (Find, Research, Control)",
+        "goals": "To contain, research, and control paranatural phenomena.",
+        "director": "Jesse Faden"
+      },
+      "categories": [
+        "Federal Bureau of Control",
+        "Organizations"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/e/ea/Federal_Bureau_of_Control_Logo.png/revision/latest?cb=20180804003227",
+      "url": "https://control.fandom.com/wiki/Federal_Bureau_of_Control",
+      "imageFile": "assets/_wiki/control-resonant/Federal-Bureau-of-Control.png"
+    },
+    {
+      "title": "Oldest House",
+      "wikiTitle": "Oldest House",
+      "collection": "regions",
+      "facts": {
+        "type": "Place of Power, skyscraper",
+        "constructed": "Unknown (possibly 1964)",
+        "location": "34 Thomas Street, New York City, New York U.S.A.",
+        "tenants": "Federal Bureau of Control",
+        "discovered": "August 4, 1964"
+      },
+      "categories": [
+        "Locations",
+        "Oldest House"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/e/e0/Oldest_House_Exterior.png/revision/latest?cb=20180808204904",
+      "url": "https://control.fandom.com/wiki/Oldest_House",
+      "imageFile": "assets/_wiki/control-resonant/Oldest-House.png"
+    },
+    {
+      "title": "Zachariah Trench",
+      "wikiTitle": "Zachariah Trench",
+      "collection": "characters",
+      "facts": {
+        "gender": "Male",
+        "affiliation": "Federal Bureau of Control",
+        "occupation": "Director of the Federal Bureau of Control",
+        "death": "October 29, 2019",
+        "status": "Deceased",
+        "cause_of_death": "Apparent suicide",
+        "residence": "New York City, New York, U.S.",
+        "relatives": "Kate Trench (ex-wife), Susanna Trench (daughter, deceased)",
+        "type": "Parautilitarian",
+        "predecessor": "Broderick Northmoor",
+        "successor": "Jesse Faden",
+        "actor": "James McCaffrey",
+        "appearances": "Control"
+      },
+      "categories": [
+        "Control characters",
+        "Directors",
+        "FBC personnel",
+        "Needs attention",
+        "Paranatural entities",
+        "Parautilitarians"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/1/1e/Trench.png/revision/latest?cb=20180928183919",
+      "url": "https://control.fandom.com/wiki/Zachariah_Trench",
+      "imageFile": "assets/_wiki/control-resonant/Zachariah-Trench.png"
+    },
+    {
+      "title": "The Hiss",
+      "wikiTitle": "The Hiss",
+      "collection": "enemies",
+      "facts": {
+        "origin": "Unidentified alternate dimension (accessible through the Slide Projector O.o.P.)",
+        "type": "Resonance-based paranatural entity",
+        "allies": "Dylan Faden, Zachariah Trench (Deceased)",
+        "status": "Active; source of resonance cut off, agents still present in Oldest House"
+      },
+      "categories": [
+        "Enemies",
+        "Hiss",
+        "Paranatural entities"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/6/69/Hiss_-_Pattern_-_Red.png/revision/latest?cb=20190905070858",
+      "url": "https://control.fandom.com/wiki/The_Hiss",
+      "imageFile": "assets/_wiki/control-resonant/The-Hiss.png"
+    },
+    {
+      "title": "Altered Item",
+      "wikiTitle": "Altered Item",
+      "collection": "items",
+      "facts": {},
+      "categories": [
+        "Altered Items",
+        "Paranatural phenomena"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/4/45/Roulette_Table_%28case_file_photo%29.png/revision/latest?cb=20220902122300",
+      "url": "https://control.fandom.com/wiki/Altered_Item",
+      "imageFile": "assets/_wiki/control-resonant/Altered-Item.png"
+    },
+    {
+      "title": "Object of Power",
+      "wikiTitle": "Object of Power",
+      "collection": "perks",
+      "facts": {},
+      "categories": [
+        "Needs attention",
+        "Objects of Power"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/f/f1/Ashtray_and_Cigarette_%28case_file_photo%29.png/revision/latest?cb=20220616135601",
+      "url": "https://control.fandom.com/wiki/Object_of_Power",
+      "imageFile": "assets/_wiki/control-resonant/Object-of-Power.png"
+    },
+    {
+      "title": "Altered World Event",
+      "wikiTitle": "Altered World Event",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "Altered World Events",
+        "Paranatural phenomena"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/b/b7/Sterling_AWE_object.jpg/revision/latest?cb=20210831030615",
+      "url": "https://control.fandom.com/wiki/Altered_World_Event",
+      "imageFile": "assets/_wiki/control-resonant/Altered-World-Event.jpg"
+    },
+    {
+      "title": "Oceanview Motel",
+      "wikiTitle": "Oceanview Motel",
+      "collection": "regions",
+      "facts": {
+        "location": "Unknown",
+        "type": "Place of Power",
+        "discovered": "09/23/1992"
+      },
+      "categories": [
+        "Locations",
+        "Places of Power"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/c/c4/Wayfarer.png/revision/latest?cb=20180719045443",
+      "url": "https://control.fandom.com/wiki/Oceanview_Motel",
+      "imageFile": "assets/_wiki/control-resonant/Oceanview-Motel.png"
+    },
+    {
+      "title": "Service Weapon",
+      "wikiTitle": "Service Weapon",
+      "collection": "items",
+      "facts": {
+        "containment_location": "N/A (Currently in the possession of Jesse Faden)",
+        "type": "Object of Power",
+        "designation": "OOP1-KE",
+        "acquisition_date": "08/04/1964",
+        "ability": "Can be held and fired without causing the user's deathSymbol of FBC Directorship"
+      },
+      "categories": [
+        "Objects of Power",
+        "Weapons"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/e/e4/Service_Weapon_in_Astral_Plane.png/revision/latest?cb=20211113030040",
+      "url": "https://control.fandom.com/wiki/Service_Weapon",
+      "imageFile": "assets/_wiki/control-resonant/Service-Weapon.png"
+    },
+    {
+      "title": "Emily Pope",
+      "wikiTitle": "Emily Pope",
+      "collection": "characters",
+      "facts": {
+        "gender": "Female",
+        "affiliation": "Federal Bureau of Control",
+        "occupation": "Research SpecialistHead of Research",
+        "status": "Alive",
+        "nationality": "American",
+        "predecessor": "Casper Darling",
+        "actor": "Antonia Bernath",
+        "appearances": "Control"
+      },
+      "categories": [
+        "Control characters",
+        "FBC: Firebreak characters",
+        "FBC personnel"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/2/2b/Emily_Pope.png/revision/latest?cb=20190603231014",
+      "url": "https://control.fandom.com/wiki/Emily_Pope",
+      "imageFile": "assets/_wiki/control-resonant/Emily-Pope.png"
+    },
+    {
+      "title": "Remedy Entertainment",
+      "wikiTitle": "Remedy Entertainment",
+      "collection": "characters",
+      "facts": {
+        "formed": "August 18, 1995",
+        "headquarters": "Espoo, Finland",
+        "ceo": "Tero Virtala",
+        "chairman": "Markus Mäki",
+        "creative_director": "Sam Lake",
+        "cfo": "Terhi Kauppi"
+      },
+      "categories": [
+        "Developers",
+        "Organizations"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/d/dc/Remedy_Entertainment_Logo.svg/revision/latest?cb=20220907200117",
+      "url": "https://control.fandom.com/wiki/Remedy_Entertainment",
+      "imageFile": "assets/_wiki/control-resonant/Remedy-Entertainment.png"
+    },
+    {
+      "title": "Courtney Hope",
+      "wikiTitle": "Courtney Hope",
+      "collection": "characters",
+      "facts": {
+        "birth": "August 15, 1989Dallas, Texas, U.S.",
+        "gender": "Female",
+        "affiliation": "Remedy Entertainment",
+        "occupation": "Actress"
+      },
+      "categories": [
+        "Cast"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/0/0d/Courtney_Hope.png/revision/latest?cb=20181001223934",
+      "url": "https://control.fandom.com/wiki/Courtney_Hope",
+      "imageFile": "assets/_wiki/control-resonant/Courtney-Hope.png"
+    },
+    {
+      "title": "Casper Darling",
+      "wikiTitle": "Casper Darling",
+      "collection": "characters",
+      "facts": {
+        "gender": "Male",
+        "affiliation": "Federal Bureau of Control",
+        "occupation": "Head of Research (1995-2019)",
+        "status": "Missing",
+        "predecessor": "Theodore Ash, Jr.",
+        "successor": "Emily Pope",
+        "actor": "Matthew Porretta",
+        "appearances": "ControlAlan Wake II"
+      },
+      "categories": [
+        "Alan Wake characters",
+        "Control characters",
+        "FBC personnel",
+        "Paranatural entities"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/5/59/Dr._Darling.png/revision/latest?cb=20190326202227",
+      "url": "https://control.fandom.com/wiki/Casper_Darling",
+      "imageFile": "assets/_wiki/control-resonant/Casper-Darling.png"
+    },
+    {
+      "title": "James McCaffrey",
+      "wikiTitle": "James McCaffrey",
+      "collection": "characters",
+      "facts": {
+        "birth": "1959Belfast, Northern Ireland",
+        "age": "65",
+        "gender": "Male",
+        "affiliation": "Remedy Entertainment",
+        "occupation": "Actor"
+      },
+      "categories": [
+        "Cast"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/1/1e/Jimm.jpg/revision/latest?cb=20181001224740",
+      "url": "https://control.fandom.com/wiki/James_McCaffrey",
+      "imageFile": "assets/_wiki/control-resonant/James-McCaffrey.jpg"
     },
     {
       "title": "Dylan Faden",
@@ -58,7 +325,1519 @@
         "Parautilitarians",
         "Prime Candidates"
       ],
-      "url": "https://control.fandom.com/wiki/Dylan_Faden"
+      "image": "https://static.wikia.nocookie.net/control6745/images/1/12/Control_Resonant_announcement_Dylan_Faden_profile.png/revision/latest?cb=20251212084134",
+      "url": "https://control.fandom.com/wiki/Dylan_Faden",
+      "imageFile": "assets/_wiki/control-resonant/Dylan-Faden.png"
+    },
+    {
+      "title": "Matthew Porretta",
+      "wikiTitle": "Matthew Porretta",
+      "collection": "characters",
+      "facts": {
+        "full_name": "Matthew Charles Porretta",
+        "birth": "May 29, 1965Darien, Connecticut, U.S.",
+        "gender": "Male",
+        "nationality": "American",
+        "affiliation": "Remedy Entertainment",
+        "occupation": "Actor"
+      },
+      "categories": [
+        "Cast"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/f/f4/Matthew_Poretta.jpg/revision/latest?cb=20181001225458",
+      "url": "https://control.fandom.com/wiki/Matthew_Porretta",
+      "imageFile": "assets/_wiki/control-resonant/Matthew-Porretta.jpg"
+    },
+    {
+      "title": "Quarry Threshold",
+      "wikiTitle": "Quarry Threshold",
+      "collection": "regions",
+      "facts": {
+        "type": "Threshold",
+        "location": "Maintenance Sector, Oldest House",
+        "tenants": "Federal Bureau of Control"
+      },
+      "categories": [
+        "Locations",
+        "Maintenance Sector",
+        "Needs attention",
+        "Thresholds"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/2/22/Black_Rock_Quarry_-_Cinematic.jpg/revision/latest?cb=20190123000619",
+      "url": "https://control.fandom.com/wiki/Quarry_Threshold",
+      "imageFile": "assets/_wiki/control-resonant/Quarry-Threshold.jpg"
+    },
+    {
+      "title": "Place of Power",
+      "wikiTitle": "Place of Power",
+      "collection": "regions",
+      "facts": {},
+      "categories": [
+        "Article stubs",
+        "Paranatural phenomena",
+        "Places of Power"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/3/32/Prime_Candidate_Program_-_Spiral.jpg/revision/latest?cb=20190206031132",
+      "url": "https://control.fandom.com/wiki/Place_of_Power",
+      "imageFile": "assets/_wiki/control-resonant/Place-of-Power.jpg"
+    },
+    {
+      "title": "Astral Spike",
+      "wikiTitle": "Astral Spike",
+      "collection": "enemies",
+      "facts": {
+        "type": "Metastructural Entity",
+        "origin": "Astral Plane",
+        "affiliation": "Neutrally/Hostile"
+      },
+      "categories": [
+        "Astral entities",
+        "Enemies"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/1/1a/AstralSpike.jpg/revision/latest?cb=20200524150926",
+      "url": "https://control.fandom.com/wiki/Astral_Spike",
+      "imageFile": "assets/_wiki/control-resonant/Astral-Spike.jpg"
+    },
+    {
+      "title": "Helen Marshall",
+      "wikiTitle": "Helen Marshall",
+      "collection": "enemies",
+      "facts": {
+        "status": "Deceased",
+        "nationality": "American",
+        "occupation": "Head of Operations (? - 2019)",
+        "affiliation": "Federal Bureau of Control",
+        "actor": "Brig Bennett (likeness)Jade Anouka (voice)",
+        "appearances": "ControlThe Foundation"
+      },
+      "categories": [
+        "Bosses",
+        "Control characters",
+        "FBC personnel",
+        "Hiss"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/c/c2/Helen_Marshall_2.jpg/revision/latest?cb=20190906191800",
+      "url": "https://control.fandom.com/wiki/Helen_Marshall",
+      "imageFile": "assets/_wiki/control-resonant/Helen-Marshall.jpg"
+    },
+    {
+      "title": "Frederick Langston",
+      "wikiTitle": "Frederick Langston",
+      "collection": "characters",
+      "facts": {
+        "status": "Alive",
+        "occupation": "Panopticon Supervisor",
+        "affiliation": "Federal Bureau of Control",
+        "gender": "Male",
+        "actor": "Derek Hagen",
+        "appearances": "ControlAWE"
+      },
+      "categories": [
+        "Control characters",
+        "FBC personnel"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/9/99/Frederick_Langston.jpg/revision/latest?cb=20190906192017",
+      "url": "https://control.fandom.com/wiki/Frederick_Langston",
+      "imageFile": "assets/_wiki/control-resonant/Frederick-Langston.jpg"
+    },
+    {
+      "title": "Hiss invasion",
+      "wikiTitle": "Hiss invasion",
+      "collection": "regions",
+      "facts": {
+        "date": "October 29, 2019",
+        "location": "Oldest House",
+        "result": "* Tentative FBC Victory, Overhaul of FBC leadership",
+        "side_1": "Federal Bureau of Control",
+        "side_2": "The Hiss",
+        "side_a": "Jesse Faden, The Board, Polaris, Hedron, Casper Darling, Helen Marshall, Emily Pope, Simon Arish",
+        "side_b": "Dylan Faden, Zachariah Trench"
+      },
+      "categories": [
+        "Altered World Events",
+        "Conflicts",
+        "Events",
+        "Hiss"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/b/be/Hiss_invasion.jpg/revision/latest?cb=20190716000434",
+      "url": "https://control.fandom.com/wiki/Hiss_invasion",
+      "imageFile": "assets/_wiki/control-resonant/Hiss-invasion.jpg"
+    },
+    {
+      "title": "Hotline",
+      "wikiTitle": "Hotline",
+      "collection": "perks",
+      "facts": {
+        "type": "Object of Power",
+        "designation": "OOP3-UE",
+        "acquisition_date": "08/09/1965",
+        "containment_location": "Hotline Chamber (Executive Sector)",
+        "ability": "Communication with the Board and extradimensional entities"
+      },
+      "categories": [
+        "Objects of Power"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/e/ed/Hotlinecutscene.png/revision/latest?cb=20190829185024",
+      "url": "https://control.fandom.com/wiki/Hotline",
+      "imageFile": "assets/_wiki/control-resonant/Hotline.png"
+    },
+    {
+      "title": "Research Sector",
+      "wikiTitle": "Research Sector",
+      "collection": "regions",
+      "facts": {
+        "type": "Sector",
+        "location": "Oldest House",
+        "tenants": "Federal Bureau of Control"
+      },
+      "categories": [
+        "Needs attention",
+        "Research Sector"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/2/2e/Research_Logo.png/revision/latest?cb=20200901053217",
+      "url": "https://control.fandom.com/wiki/Research_Sector",
+      "imageFile": "assets/_wiki/control-resonant/Research-Sector.png"
+    },
+    {
+      "title": "Containment Sector",
+      "wikiTitle": "Containment Sector",
+      "collection": "regions",
+      "facts": {
+        "location": "Oldest House",
+        "tenants": "Federal Bureau of Control",
+        "type": "Sector"
+      },
+      "categories": [
+        "Containment Sector"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/6/61/Containment_Logo.png/revision/latest?cb=20200329095930",
+      "url": "https://control.fandom.com/wiki/Containment_Sector",
+      "imageFile": "assets/_wiki/control-resonant/Containment-Sector.png"
+    },
+    {
+      "title": "Ahti",
+      "wikiTitle": "Ahti",
+      "collection": "characters",
+      "facts": {
+        "nationality": "Appears Finnish",
+        "residence": "Oldest House",
+        "occupation": "Janitor",
+        "affiliation": "Federal Bureau of Control",
+        "gender": "Male",
+        "type": "Paranatural entity",
+        "origin": "Unknown",
+        "actor": "Martti Suosalo",
+        "appearances": "ControlAlan Wake 2"
+      },
+      "categories": [
+        "Alan Wake characters",
+        "Control characters",
+        "FBC personnel",
+        "Paranatural entities"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/3/3a/Ahti.jpg/revision/latest?cb=20190603161921",
+      "url": "https://control.fandom.com/wiki/Ahti",
+      "imageFile": "assets/_wiki/control-resonant/Ahti.jpg"
+    },
+    {
+      "title": "Simon Arish",
+      "wikiTitle": "Simon Arish",
+      "collection": "characters",
+      "facts": {
+        "status": "Alive",
+        "occupation": "Ranger (formerly) Maintenance Security ChiefHead of Security (effective)",
+        "affiliation": "Federal Bureau of Control",
+        "predecessor": "Lin Salvador",
+        "actor": "Ronan Summers",
+        "appearances": "Control"
+      },
+      "categories": [
+        "Control characters",
+        "FBC: Firebreak characters",
+        "FBC personnel"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/8/80/Simon_Arish.png/revision/latest?cb=20190613230523",
+      "url": "https://control.fandom.com/wiki/Simon_Arish",
+      "imageFile": "assets/_wiki/control-resonant/Simon-Arish.png"
+    },
+    {
+      "title": "Maintenance Sector",
+      "wikiTitle": "Maintenance Sector",
+      "collection": "regions",
+      "facts": {
+        "location": "Oldest House",
+        "tenants": "Federal Bureau of Control",
+        "type": "Sector"
+      },
+      "categories": [
+        "Maintenance Sector"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/3/3b/Maintenance_Sector_Logo.png/revision/latest?cb=20200314095823",
+      "url": "https://control.fandom.com/wiki/Maintenance_Sector",
+      "imageFile": "assets/_wiki/control-resonant/Maintenance-Sector.png"
+    },
+    {
+      "title": "Ordinary",
+      "wikiTitle": "Ordinary",
+      "collection": "regions",
+      "facts": {
+        "location": "Maine, United States",
+        "type": "Town"
+      },
+      "categories": [
+        "AWE locations",
+        "Article stubs",
+        "Locations",
+        "Needs attention"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/4/43/Control_Ultimate_Edition_-_Photo_of_downtown_Ordinary_%28found_in_Prime_Candidate_Program%29.jpg/revision/latest?cb=20240924213530",
+      "url": "https://control.fandom.com/wiki/Ordinary",
+      "imageFile": "assets/_wiki/control-resonant/Ordinary.jpg"
+    },
+    {
+      "title": "Executive Sector",
+      "wikiTitle": "Executive Sector",
+      "collection": "regions",
+      "facts": {
+        "type": "Sector",
+        "location": "Oldest House",
+        "tenants": "Federal Bureau of Control"
+      },
+      "categories": [
+        "Executive Sector"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/e/e4/Central_Executive_Logo.png/revision/latest?cb=20200306000342",
+      "url": "https://control.fandom.com/wiki/Executive_Sector",
+      "imageFile": "assets/_wiki/control-resonant/Executive-Sector.png"
+    },
+    {
+      "title": "Collectibles",
+      "wikiTitle": "Collectibles",
+      "collection": "items",
+      "facts": {},
+      "categories": [
+        "Collectibles"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/c/c2/Collectibles_Menu.jpg/revision/latest?cb=20200310060749",
+      "url": "https://control.fandom.com/wiki/Collectibles",
+      "imageFile": "assets/_wiki/control-resonant/Collectibles.jpg"
+    },
+    {
+      "title": "Slide Projector",
+      "wikiTitle": "Slide Projector",
+      "collection": "perks",
+      "facts": {
+        "type": "Object of Power",
+        "designation": "OOP15-UE",
+        "acquisition_date": "[REDACTED] (9/14/2002)",
+        "containment_location": "Dimensional Research, Research Sector (formerly)",
+        "related_awes": "Ordinary AWE"
+      },
+      "categories": [
+        "Objects of Power"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/9/95/Slide_Projector_01.png/revision/latest?cb=20220810135856",
+      "url": "https://control.fandom.com/wiki/Slide_Projector",
+      "imageFile": "assets/_wiki/control-resonant/Slide-Projector.png"
+    },
+    {
+      "title": "The Board",
+      "wikiTitle": "The Board",
+      "collection": "characters",
+      "facts": {
+        "type": "Paranatural entity",
+        "residence": "Astral Plane",
+        "affiliation": "Federal Bureau of Control",
+        "allies": "Jesse Faden",
+        "alias": "The Black Pyramid"
+      },
+      "categories": [
+        "Control characters",
+        "Paranatural entities"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/f/fd/The_Board.jpg/revision/latest?cb=20190913074253",
+      "url": "https://control.fandom.com/wiki/The_Board",
+      "imageFile": "assets/_wiki/control-resonant/The-Board.jpg"
+    },
+    {
+      "title": "Mold-1",
+      "wikiTitle": "Mold-1",
+      "collection": "enemies",
+      "facts": {
+        "type": "Mold-based paranatural entity",
+        "status": "Destroyed",
+        "death": "2019",
+        "cause_of_death": "Killed by Jesse Faden",
+        "origin": "Mold Threshold",
+        "residence": "Mold Threshold"
+      },
+      "categories": [
+        "Bosses",
+        "Paranatural entities"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/6/66/Mold-1.png/revision/latest?cb=20190326223944",
+      "url": "https://control.fandom.com/wiki/Mold-1",
+      "imageFile": "assets/_wiki/control-resonant/Mold-1.png"
+    },
+    {
+      "title": "EsseJ",
+      "wikiTitle": "EsseJ",
+      "collection": "enemies",
+      "facts": {
+        "type": "Paranatural entity",
+        "residence": "Mirrored Synchronicity Lab, Research Sector"
+      },
+      "categories": [
+        "Bosses",
+        "Needs attention",
+        "Paranatural entities"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/c/cf/EsseJ_behind_safety_glass.png/revision/latest?cb=20220705212347",
+      "url": "https://control.fandom.com/wiki/EsseJ",
+      "imageFile": "assets/_wiki/control-resonant/EsseJ.png"
+    },
+    {
+      "title": "Former",
+      "wikiTitle": "Former",
+      "collection": "enemies",
+      "facts": {
+        "type": "Paranatural entity",
+        "residence": "Astral Plane"
+      },
+      "categories": [
+        "Bosses",
+        "Paranatural entities"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/f/f9/Former_1.png/revision/latest?cb=20211008091137",
+      "url": "https://control.fandom.com/wiki/Former",
+      "imageFile": "assets/_wiki/control-resonant/Former.png"
+    },
+    {
+      "title": "Welcome to the Oldest House",
+      "wikiTitle": "Welcome to the Oldest House",
+      "collection": "quests",
+      "facts": {
+        "location": "Executive Sector:Director's OfficeExecutive AffairsCentral ExecutiveAstral Plane:Astral Plane Challenge",
+        "rewards": "Portrait of Director Zachariah Trench1x House Memory1x random Personal Mod",
+        "next_mission": "Unknown Caller"
+      },
+      "categories": [
+        "Control story missions"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/5/58/Mission_1.png/revision/latest?cb=20211218223235",
+      "url": "https://control.fandom.com/wiki/Welcome_to_the_Oldest_House",
+      "imageFile": "assets/_wiki/control-resonant/Welcome-to-the-Oldest-House.png"
+    },
+    {
+      "title": "Unknown Caller",
+      "wikiTitle": "Unknown Caller",
+      "collection": "quests",
+      "facts": {
+        "location": "Executive Sector:CafeteriaDead LettersCommunications DepartmentPneumaticsMail RoomHotline ChamberAstral Plane:Astral Plane ChallengesOceanview Motel",
+        "rewards": "4 Ability Points1x House Memory1x random Grade 1 Personal ModBoard Countermeasure missions unlockedBoard Countermeasures (Collectible)",
+        "previous_mission": "Welcome to the Oldest House",
+        "next_mission": "Directorial Override"
+      },
+      "categories": [
+        "Control story missions"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/1/16/Hotline_Chamber_-_Trench_presence.png/revision/latest?cb=20220613021821",
+      "url": "https://control.fandom.com/wiki/Unknown_Caller",
+      "imageFile": "assets/_wiki/control-resonant/Unknown-Caller.png"
+    },
+    {
+      "title": "Directorial Override",
+      "wikiTitle": "Directorial Override",
+      "collection": "quests",
+      "facts": {
+        "location": "Maintenance SectorVentilationJanitor's OfficeNSC Power PlantNSC Coolant PumpsNSC Energy ConvertersNSC Control Room",
+        "rewards": "4 Ability Points1x Threshold Remnant1x random Grade 1 Personal ModThe Hiss (Collectible)Bureau Alerts unlocked",
+        "previous_mission": "Unknown Caller",
+        "next_mission": "Old Boys' Club"
+      },
+      "categories": [
+        "Control story missions"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/6/6c/NSC-02_Hiss_corruption.png/revision/latest?cb=20220517040503",
+      "url": "https://control.fandom.com/wiki/Directorial_Override",
+      "imageFile": "assets/_wiki/control-resonant/Directorial-Override.png"
+    },
+    {
+      "title": "Old Boys' Club",
+      "wikiTitle": "Old Boys' Club",
+      "collection": "quests",
+      "facts": {
+        "location": "Research Sector",
+        "previous_mission": "Directorial Override",
+        "next_mission": "Threshold"
+      },
+      "categories": [
+        "Control story missions"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/0/05/Old_Boys%27_Club.jpg/revision/latest?cb=20190906181633",
+      "url": "https://control.fandom.com/wiki/Old_Boys'_Club",
+      "imageFile": "assets/_wiki/control-resonant/Old-Boys-Club.jpg"
+    },
+    {
+      "title": "Threshold",
+      "wikiTitle": "Threshold (mission)",
+      "collection": "quests",
+      "facts": {
+        "location": "Black Rock Quarry",
+        "previous_mission": "Old Boys' Club",
+        "next_mission": "My Brother's Keeper"
+      },
+      "categories": [
+        "Control story missions"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/3/39/Threshold_%28mission%29.jpg/revision/latest?cb=20190906182835",
+      "url": "https://control.fandom.com/wiki/Threshold_(mission)",
+      "imageFile": "assets/_wiki/control-resonant/Threshold-mission-.jpg"
+    },
+    {
+      "title": "My Brother's Keeper",
+      "wikiTitle": "My Brother's Keeper",
+      "collection": "quests",
+      "facts": {
+        "location": "Containment Sector",
+        "rewards": "Benicoff TV, Control Points, Entropic Echo, Low Health Boost, 3 Ability Points",
+        "previous_mission": "Threshold",
+        "next_mission": "The Face of the Enemy"
+      },
+      "categories": [
+        "Control story missions"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/9/9c/My_Brother%27s_Keeper.jpg/revision/latest?cb=20190906185946",
+      "url": "https://control.fandom.com/wiki/My_Brother's_Keeper",
+      "imageFile": "assets/_wiki/control-resonant/My-Brother-s-Keeper.jpg"
+    },
+    {
+      "title": "The Face of the Enemy",
+      "wikiTitle": "The Face of the Enemy",
+      "collection": "quests",
+      "facts": {
+        "location": "Containment Sector",
+        "rewards": "Dylan Faden, Dissent, Entropic Echo, Energy Boost, 3 Ability Points",
+        "previous_mission": "My Brother's Keeper",
+        "next_mission": "Finnish TangoA Dark Place"
+      },
+      "categories": [
+        "Control story missions"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/7/74/The_Face_of_the_Enemy.jpg/revision/latest?cb=20190906192621",
+      "url": "https://control.fandom.com/wiki/The_Face_of_the_Enemy",
+      "imageFile": "assets/_wiki/control-resonant/The-Face-of-the-Enemy.jpg"
+    },
+    {
+      "title": "Finnish Tango",
+      "wikiTitle": "Finnish Tango",
+      "collection": "quests",
+      "facts": {
+        "location": "Research Sector:Ashtray MazeMaintenance Sector:Janitor's OfficeNSC Coolant PumpsRestricted Area",
+        "rewards": "Foundation, Astral Blip, Accuracy Boost, 3 Ability Points",
+        "previous_mission": "The Face of the Enemy",
+        "next_mission": "Polaris"
+      },
+      "categories": [
+        "Control story missions"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/a/aa/Finnish_Tango.jpg/revision/latest?cb=20190906194207",
+      "url": "https://control.fandom.com/wiki/Finnish_Tango",
+      "imageFile": "assets/_wiki/control-resonant/Finnish-Tango.jpg"
+    },
+    {
+      "title": "Polaris",
+      "wikiTitle": "Polaris (mission)",
+      "collection": "quests",
+      "facts": {
+        "location": "Research Sector:Ashtray MazeDimensional ResearchHedron Chamber",
+        "rewards": "Untapped Potential, Levitation Ammo Efficiency, 3 Ability Points",
+        "previous_mission": "Finnish Tango",
+        "next_mission": "Take Control"
+      },
+      "categories": [
+        "Control story missions"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/5/52/Polaris_%28mission%29.png/revision/latest?cb=20220808220137",
+      "url": "https://control.fandom.com/wiki/Polaris_(mission)",
+      "imageFile": "assets/_wiki/control-resonant/Polaris-mission-.png"
+    },
+    {
+      "title": "Take Control",
+      "wikiTitle": "Take Control (mission)",
+      "collection": "quests",
+      "facts": {
+        "location": "Executive Sector, Oceanview Motel, Astral Plane",
+        "rewards": "Outfits \"Office Assistant\" and \"Director Suit\", Slide Projector, Director Faden Photograph, Rate of Fire Boost, Health Boost, 3 Ability Points",
+        "previous_mission": "Polaris",
+        "next_mission": "The Foundation, Board Countermeasures, Bureau Alerts"
+      },
+      "categories": [
+        "Control story missions"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/f/f9/Take_Control_%28mission%29_01.png/revision/latest?cb=20220808223255",
+      "url": "https://control.fandom.com/wiki/Take_Control_(mission)",
+      "imageFile": "assets/_wiki/control-resonant/Take-Control-mission-.png"
+    },
+    {
+      "title": "Ordinary AWE",
+      "wikiTitle": "Ordinary AWE",
+      "collection": "regions",
+      "facts": {
+        "id": "AWE-24",
+        "event_date": "08/30/2002 - 09/14/2002",
+        "event_location": "Ordinary, Maine",
+        "related_ais/oops": "* Slide Projector, Dylan Faden, Jesse Faden, Slidescape-36, Hedron, Polaris, The Hiss"
+      },
+      "categories": [
+        "Altered World Events",
+        "Needs attention"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/a/a7/Ordinary_Summary.png/revision/latest?cb=20220903162148",
+      "url": "https://control.fandom.com/wiki/Ordinary_AWE",
+      "imageFile": "assets/_wiki/control-resonant/Ordinary-AWE.png"
+    },
+    {
+      "title": "Bright Falls AWE",
+      "wikiTitle": "Bright Falls AWE",
+      "collection": "regions",
+      "facts": {
+        "id": "AWE-35",
+        "event_date": "09/01/2010 - 09/14/2010",
+        "event_location": "Bright Falls, Washington",
+        "related_ais/oops": "Oh Deer Diner Coffee Thermos, Typewritten Page"
+      },
+      "categories": [
+        "Alan Wake",
+        "Altered World Events"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/7/79/Bright_Falls_Summary.png/revision/latest?cb=20220902154404",
+      "url": "https://control.fandom.com/wiki/Bright_Falls_AWE",
+      "imageFile": "assets/_wiki/control-resonant/Bright-Falls-AWE.png"
+    },
+    {
+      "title": "Ashtray Maze",
+      "wikiTitle": "Ashtray Maze",
+      "collection": "regions",
+      "facts": {
+        "location": "Oldest House",
+        "sector": "Research Sector",
+        "missions": "Finnish Tango"
+      },
+      "categories": [
+        "Research Sector"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/5/5f/Ashtray_Maze_-_Hallway.png/revision/latest?cb=20190326224321",
+      "url": "https://control.fandom.com/wiki/Ashtray_Maze",
+      "imageFile": "assets/_wiki/control-resonant/Ashtray-Maze.png"
+    },
+    {
+      "title": "Slidescape-36",
+      "wikiTitle": "Slidescape-36",
+      "collection": "regions",
+      "facts": {
+        "type": "Alternate dimension",
+        "discovered": "2002",
+        "residents": "HedronPolarisThe Hiss (partially)",
+        "location": "Unknown"
+      },
+      "categories": [
+        "Dimensions",
+        "Locations",
+        "Needs attention"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/6/6f/Odqelcwlxsu41.png/revision/latest?cb=20200715000248",
+      "url": "https://control.fandom.com/wiki/Slidescape-36",
+      "imageFile": "assets/_wiki/control-resonant/Slidescape-36.png"
+    },
+    {
+      "title": "Alan Wake",
+      "wikiTitle": "Alan Wake (character)",
+      "collection": "characters",
+      "facts": {
+        "status": "Alive",
+        "relatives": "Alice Wake (Wife)",
+        "nationality": "American",
+        "occupation": "Novelist",
+        "birth": "1978",
+        "actor": "Ilkka Villi (model)Matthew Porretta (voice)",
+        "age": "-1978}} (in )",
+        "appearances": "\"Bright Falls\"Alan WakeAlan Wake's American NightmareControlAWEAlan Wake II"
+      },
+      "categories": [
+        "Alan Wake",
+        "Alan Wake characters",
+        "Control characters",
+        "Paranatural entities",
+        "Parautilitarians",
+        "Prime Candidates"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/2/2a/Alan_Wake_-_Portrait.jpg/revision/latest?cb=20200904051945",
+      "url": "https://control.fandom.com/wiki/Alan_Wake_(character)",
+      "imageFile": "assets/_wiki/control-resonant/Alan-Wake-character-.jpg"
+    },
+    {
+      "title": "Hiss Agent",
+      "wikiTitle": "Hiss Agent (Collectible)",
+      "collection": "items",
+      "facts": {
+        "type": "Research & Records / Hiss Research",
+        "compiled_by": "Emily Pope, Research Specialist",
+        "by_order_of": "Director Jesse Faden"
+      },
+      "categories": [
+        "Collectibles / Research & Records / Hiss Research"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/9/99/Hiss_Agent_%28record%29.png/revision/latest?cb=20220904090424",
+      "url": "https://control.fandom.com/wiki/Hiss_Agent_(Collectible)",
+      "imageFile": "assets/_wiki/control-resonant/Hiss-Agent-Collectible-.png"
+    },
+    {
+      "title": "Hiss Barrier",
+      "wikiTitle": "Hiss Barrier (Collectible)",
+      "collection": "items",
+      "facts": {
+        "type": "Research & Records / Hiss Research",
+        "compiled_by": "Emily Pope, Research Specialist",
+        "by_order_of": "Director Jesse Faden"
+      },
+      "categories": [
+        "Collectibles / Research & Records / Hiss Research"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/7/7c/Hiss_Barrier_%28record%29.png/revision/latest?cb=20220912112109",
+      "url": "https://control.fandom.com/wiki/Hiss_Barrier_(Collectible)",
+      "imageFile": "assets/_wiki/control-resonant/Hiss-Barrier-Collectible-.png"
+    },
+    {
+      "title": "Hiss Charged",
+      "wikiTitle": "Hiss Charged (Collectible)",
+      "collection": "items",
+      "facts": {
+        "type": "Research & Records / Hiss Research",
+        "compiled_by": "Emily Pope, Research Specialist",
+        "by_order_of": "Director Jesse Faden"
+      },
+      "categories": [
+        "Collectibles / Research & Records / Hiss Research"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/f/fa/Hiss_Charged_%28record%29.png/revision/latest?cb=20220912115015",
+      "url": "https://control.fandom.com/wiki/Hiss_Charged_(Collectible)",
+      "imageFile": "assets/_wiki/control-resonant/Hiss-Charged-Collectible-.png"
+    },
+    {
+      "title": "Hiss Cluster",
+      "wikiTitle": "Hiss Cluster (Collectible)",
+      "collection": "items",
+      "facts": {
+        "type": "Research & Records / Hiss Research",
+        "compiled_by": "Emily Pope, Research Specialist",
+        "by_order_of": "Director Jesse Faden"
+      },
+      "categories": [
+        "Collectibles / Research & Records / Hiss Research"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/7/7c/Hiss_Cluster_%28record%29.png/revision/latest?cb=20220912121647",
+      "url": "https://control.fandom.com/wiki/Hiss_Cluster_(Collectible)",
+      "imageFile": "assets/_wiki/control-resonant/Hiss-Cluster-Collectible-.png"
+    },
+    {
+      "title": "Hiss Demolition Expert",
+      "wikiTitle": "Hiss Demolition Expert (Collectible)",
+      "collection": "items",
+      "facts": {
+        "type": "Research & Records / Hiss Research",
+        "compiled_by": "Emily Pope, Research Specialist",
+        "by_order_of": "Director Jesse Faden"
+      },
+      "categories": [
+        "Collectibles / Research & Records / Hiss Research"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/2/24/Hiss_Demolition_Expert_%28record%29.png/revision/latest?cb=20220912123639",
+      "url": "https://control.fandom.com/wiki/Hiss_Demolition_Expert_(Collectible)",
+      "imageFile": "assets/_wiki/control-resonant/Hiss-Demolition-Expert-Collectible-.png"
+    },
+    {
+      "title": "Hiss Distorted",
+      "wikiTitle": "Hiss Distorted (Collectible)",
+      "collection": "items",
+      "facts": {
+        "type": "Research & Records / Hiss Research",
+        "compiled_by": "Emily Pope, Research Specialist",
+        "by_order_of": "Director Jesse Faden"
+      },
+      "categories": [
+        "Collectibles / Research & Records / Hiss Research"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/f/fe/Hiss_Distorted_%28record%29.png/revision/latest?cb=20220913134928",
+      "url": "https://control.fandom.com/wiki/Hiss_Distorted_(Collectible)",
+      "imageFile": "assets/_wiki/control-resonant/Hiss-Distorted-Collectible-.png"
+    },
+    {
+      "title": "Hiss Elevated",
+      "wikiTitle": "Hiss Elevated (Collectible)",
+      "collection": "items",
+      "facts": {
+        "type": "Research & Records / Hiss Research",
+        "compiled_by": "Emily Pope, Research Specialist",
+        "by_order_of": "Director Jesse Faden"
+      },
+      "categories": [
+        "Collectibles / Research & Records / Hiss Research"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/6/62/Hiss_Elevated_%28record%29.png/revision/latest?cb=20220913143004",
+      "url": "https://control.fandom.com/wiki/Hiss_Elevated_(Collectible)",
+      "imageFile": "assets/_wiki/control-resonant/Hiss-Elevated-Collectible-.png"
+    },
+    {
+      "title": "Hiss Guard",
+      "wikiTitle": "Hiss Guard (Collectible)",
+      "collection": "items",
+      "facts": {
+        "type": "Research & Records / Hiss Research",
+        "compiled_by": "Emily Pope, Research Specialist",
+        "by_order_of": "Director Jesse Faden"
+      },
+      "categories": [
+        "Collectibles / Research & Records / Hiss Research"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/7/79/Hiss_Guard_%28record%29.png/revision/latest?cb=20220913145704",
+      "url": "https://control.fandom.com/wiki/Hiss_Guard_(Collectible)",
+      "imageFile": "assets/_wiki/control-resonant/Hiss-Guard-Collectible-.png"
+    },
+    {
+      "title": "Hiss Ranger",
+      "wikiTitle": "Hiss Ranger (Collectible)",
+      "collection": "items",
+      "facts": {
+        "type": "Research & Records / Hiss Research",
+        "compiled_by": "Emily Pope, Research Specialist",
+        "by_order_of": "Director Jesse Faden"
+      },
+      "categories": [
+        "Collectibles / Research & Records / Hiss Research"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/5/5b/Hiss_Ranger_%28record%29.png/revision/latest?cb=20220914113529",
+      "url": "https://control.fandom.com/wiki/Hiss_Ranger_(Collectible)",
+      "imageFile": "assets/_wiki/control-resonant/Hiss-Ranger-Collectible-.png"
+    },
+    {
+      "title": "Hiss Sniper",
+      "wikiTitle": "Hiss Sniper (Collectible)",
+      "collection": "items",
+      "facts": {
+        "type": "Research & Records / Hiss Research",
+        "compiled_by": "Emily Pope, Research Specialist",
+        "by_order_of": "Director Jesse Faden"
+      },
+      "categories": [
+        "Collectibles / Research & Records / Hiss Research"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/2/23/Hiss_Sniper_%28record%29.png/revision/latest?cb=20220914130448",
+      "url": "https://control.fandom.com/wiki/Hiss_Sniper_(Collectible)",
+      "imageFile": "assets/_wiki/control-resonant/Hiss-Sniper-Collectible-.png"
+    },
+    {
+      "title": "Hiss Trooper",
+      "wikiTitle": "Hiss Trooper (Collectible)",
+      "collection": "items",
+      "facts": {
+        "type": "Research & Records / Hiss Research",
+        "compiled_by": "Emily Pope, Research Specialist",
+        "by_order_of": "Director Jesse Faden"
+      },
+      "categories": [
+        "Collectibles / Research & Records / Hiss Research"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/e/ef/Hiss_Trooper_%28record%29.png/revision/latest?cb=20220914132558",
+      "url": "https://control.fandom.com/wiki/Hiss_Trooper_(Collectible)",
+      "imageFile": "assets/_wiki/control-resonant/Hiss-Trooper-Collectible-.png"
+    },
+    {
+      "title": "Hiss Warped",
+      "wikiTitle": "Hiss Warped (Collectible)",
+      "collection": "items",
+      "facts": {
+        "type": "Research & Records / Hiss Research",
+        "compiled_by": "Emily Pope, Research Specialist",
+        "by_order_of": "Director Jesse Faden"
+      },
+      "categories": [
+        "Collectibles / Research & Records / Hiss Research"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/c/c5/Hiss_Warped_%28record%29.png/revision/latest?cb=20220914134558",
+      "url": "https://control.fandom.com/wiki/Hiss_Warped_(Collectible)",
+      "imageFile": "assets/_wiki/control-resonant/Hiss-Warped-Collectible-.png"
+    },
+    {
+      "title": "Initial Impressions",
+      "wikiTitle": "Initial Impressions",
+      "collection": "items",
+      "facts": {
+        "type": "Research & Records / Hiss Research",
+        "compiled_by": "Emily Pope, Research Specialist",
+        "by_order_of": "Director Jesse Faden"
+      },
+      "categories": [
+        "Collectibles / Research & Records / Hiss Research"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/8/81/Initial_Impressions.png/revision/latest?cb=20220915174647",
+      "url": "https://control.fandom.com/wiki/Initial_Impressions",
+      "imageFile": "assets/_wiki/control-resonant/Initial-Impressions.png"
+    },
+    {
+      "title": "Linguistic Ability",
+      "wikiTitle": "Linguistic Ability",
+      "collection": "items",
+      "facts": {
+        "type": "Research & Records / Hiss Research",
+        "compiled_by": "Emily Pope, Research Specialist",
+        "by_order_of": "Director Jesse Faden"
+      },
+      "categories": [
+        "Collectibles / Research & Records / Hiss Research"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/3/3b/Linguistic_Ability.png/revision/latest?cb=20220915175603",
+      "url": "https://control.fandom.com/wiki/Linguistic_Ability",
+      "imageFile": "assets/_wiki/control-resonant/Linguistic-Ability.png"
+    },
+    {
+      "title": "Speech Analysis",
+      "wikiTitle": "Speech Analysis",
+      "collection": "items",
+      "facts": {
+        "type": "Research & Records / Hiss Research",
+        "compiled_by": "Emily Pope, Research Specialist",
+        "by_order_of": "Director Jesse Faden"
+      },
+      "categories": [
+        "Collectibles / Research & Records / Hiss Research"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/b/b4/Speech_Analysis.png/revision/latest?cb=20220915180841",
+      "url": "https://control.fandom.com/wiki/Speech_Analysis",
+      "imageFile": "assets/_wiki/control-resonant/Speech-Analysis.png"
+    },
+    {
+      "title": "Timeline of Events",
+      "wikiTitle": "Timeline of Events",
+      "collection": "items",
+      "facts": {
+        "type": "Research & Records / Hiss Research",
+        "compiled_by": "Emily Pope, Research Specialist",
+        "by_order_of": "Director Jesse Faden"
+      },
+      "categories": [
+        "Collectibles / Research & Records / Hiss Research"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/d/da/Timeline_of_Events.png/revision/latest?cb=20220915181344",
+      "url": "https://control.fandom.com/wiki/Timeline_of_Events",
+      "imageFile": "assets/_wiki/control-resonant/Timeline-of-Events.png"
+    },
+    {
+      "title": "Variance in Alterations",
+      "wikiTitle": "Variance in Alterations",
+      "collection": "items",
+      "facts": {
+        "type": "Research & Records / Hiss Research",
+        "compiled_by": "Emily Pope, Research Specialist",
+        "by_order_of": "Director Jesse Faden"
+      },
+      "categories": [
+        "Collectibles / Research & Records / Hiss Research"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/9/91/Variance_in_Alterations.png/revision/latest?cb=20220915182002",
+      "url": "https://control.fandom.com/wiki/Variance_in_Alterations",
+      "imageFile": "assets/_wiki/control-resonant/Variance-in-Alterations.png"
+    },
+    {
+      "title": "Theodore Ash, Jr.",
+      "wikiTitle": "Theodore Ash, Jr.",
+      "collection": "characters",
+      "facts": {
+        "status": "Unknown",
+        "nationality": "American",
+        "occupation": "Head of Research (pre-1964 - 1995)",
+        "affiliation": "Federal Bureau of Control",
+        "relatives": "Theodore Ash, Sr. (father)",
+        "type": "Human",
+        "predecessor": "Unknown",
+        "successor": "Casper Darling",
+        "actor": "Jonathan Hilden",
+        "appearances": "ControlThe Foundation"
+      },
+      "categories": [
+        "Control characters",
+        "FBC personnel"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/8/8f/Theodore_Ash%2C_Jr_%28Central_Research_quote%29.png/revision/latest?cb=20211017115615",
+      "url": "https://control.fandom.com/wiki/Theodore_Ash%2C_Jr.",
+      "imageFile": "assets/_wiki/control-resonant/Theodore-Ash-Jr..png"
+    },
+    {
+      "title": "Hiss Sharpened",
+      "wikiTitle": "Hiss Sharpened (Collectible)",
+      "collection": "items",
+      "facts": {
+        "type": "Research & Records / Hiss Research",
+        "compiled_by": "Dr. Emily Pope, Head of Research",
+        "by_order_of": "Director Jesse Faden"
+      },
+      "categories": [
+        "Collectibles / Research & Records / Hiss Research"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/6/61/Hiss_Sharpened_%28record%29.png/revision/latest?cb=20220914123556",
+      "url": "https://control.fandom.com/wiki/Hiss_Sharpened_(Collectible)",
+      "imageFile": "assets/_wiki/control-resonant/Hiss-Sharpened-Collectible-.png"
+    },
+    {
+      "title": "Kyiv AWE",
+      "wikiTitle": "Kyiv AWE",
+      "collection": "regions",
+      "facts": {
+        "id": "AWE-37",
+        "event_date": "8/13/2011",
+        "event_location": "Kyiv, Ukraine"
+      },
+      "categories": [
+        "Altered World Events",
+        "Needs attention"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/c/c0/Kyiv_Summary.png/revision/latest?cb=20220903145239",
+      "url": "https://control.fandom.com/wiki/Kyiv_AWE",
+      "imageFile": "assets/_wiki/control-resonant/Kyiv-AWE.png"
+    },
+    {
+      "title": "Neil Hosenberg",
+      "wikiTitle": "Neil Hosenberg",
+      "collection": "characters",
+      "facts": {
+        "type": "Paranatural entity",
+        "birth": "1991-1993",
+        "status": "Missing",
+        "alias": "Nosebleed Neil",
+        "nationality": "American",
+        "residence": "Ordinary",
+        "allies": "Jesse Faden, Dylan Faden"
+      },
+      "categories": [
+        "Control characters"
+      ],
+      "image": null,
+      "url": "https://control.fandom.com/wiki/Neil_Hosenberg"
+    },
+    {
+      "title": "Tom Barlow",
+      "wikiTitle": "Tom Barlow",
+      "collection": "characters",
+      "facts": {
+        "type": "Paranatural entity",
+        "birth": "1991-1993",
+        "status": "Missing",
+        "nationality": "American",
+        "residence": "Ordinary",
+        "allies": "Frederick Bartwell, Hugo"
+      },
+      "categories": [
+        "Control characters"
+      ],
+      "image": null,
+      "url": "https://control.fandom.com/wiki/Tom_Barlow"
+    },
+    {
+      "title": "Frederick Bartwell",
+      "wikiTitle": "Frederick Bartwell",
+      "collection": "characters",
+      "facts": {
+        "type": "Paranatural entity",
+        "birth": "1991-1993",
+        "status": "Missing",
+        "nationality": "American",
+        "alias": "Freddy",
+        "residence": "Ordinary",
+        "allies": "Tom Barlow, Hugo"
+      },
+      "categories": [
+        "Control characters",
+        "Needs attention"
+      ],
+      "image": null,
+      "url": "https://control.fandom.com/wiki/Frederick_Bartwell"
+    },
+    {
+      "title": "Hugo",
+      "wikiTitle": "Hugo",
+      "collection": "characters",
+      "facts": {
+        "type": "Paranatural entity",
+        "birth": "1991-1993",
+        "status": "Missing",
+        "nationality": "American",
+        "residence": "Ordinary",
+        "allies": "Tom Barlow, Frederick Bartwell"
+      },
+      "categories": [
+        "Control characters",
+        "Needs attention"
+      ],
+      "image": null,
+      "url": "https://control.fandom.com/wiki/Hugo"
+    },
+    {
+      "title": "Kate Trench",
+      "wikiTitle": "Kate Trench",
+      "collection": "characters",
+      "facts": {
+        "status": "Unknown",
+        "nationality": "American",
+        "residence": "New York City, New York",
+        "relatives": "Zachariah Trench (Ex-Husband), Susanna Trench (Daughter, Deceased)"
+      },
+      "categories": [
+        "Control characters"
+      ],
+      "image": null,
+      "url": "https://control.fandom.com/wiki/Kate_Trench"
+    },
+    {
+      "title": "Susanna Trench",
+      "wikiTitle": "Susanna Trench",
+      "collection": "characters",
+      "facts": {
+        "status": "Deceased",
+        "cause_of_death": "Paranatural illness",
+        "nationality": "American",
+        "residence": "New York City, New York",
+        "relatives": "Zachariah Trench (Father), Kate Trench (Mother)"
+      },
+      "categories": [
+        "Control characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/c/c1/Trench_photo_baby.png/revision/latest?cb=20221206074808",
+      "url": "https://control.fandom.com/wiki/Susanna_Trench",
+      "imageFile": "assets/_wiki/control-resonant/Susanna-Trench.png"
+    },
+    {
+      "title": "Astral Plane",
+      "wikiTitle": "Astral Plane",
+      "collection": "regions",
+      "facts": {
+        "type": "Alternate dimension",
+        "discovered": "1964",
+        "residents": "The Board, Former, Astral Spikes"
+      },
+      "categories": [
+        "Dimensions",
+        "Locations",
+        "Needs attention"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/0/00/Astraks.png/revision/latest?cb=20190326154604",
+      "url": "https://control.fandom.com/wiki/Astral_Plane",
+      "imageFile": "assets/_wiki/control-resonant/Astral-Plane.png"
+    },
+    {
+      "title": "Alberto Tommasi",
+      "wikiTitle": "Alberto Tommasi",
+      "collection": "enemies",
+      "facts": {
+        "status": "Deceased",
+        "death": "Oct 29, 2019",
+        "cause_of_death": "Corrupted by the Hiss",
+        "occupation": "Head of Communications",
+        "affiliation": "Federal Bureau of Control"
+      },
+      "categories": [
+        "Bosses",
+        "Control characters",
+        "FBC personnel",
+        "Hiss",
+        "Needs attention"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/0/0f/Alberto_Tommasi_poster_cropped.png/revision/latest?cb=20220609012452",
+      "url": "https://control.fandom.com/wiki/Alberto_Tommasi",
+      "imageFile": "assets/_wiki/control-resonant/Alberto-Tommasi.png"
+    },
+    {
+      "title": "Broderick Northmoor",
+      "wikiTitle": "Broderick Northmoor",
+      "collection": "characters",
+      "facts": {
+        "occupation": "FBC Director (1964 - ?)",
+        "affiliation": "Federal Bureau of Control",
+        "age": "Unknown",
+        "status": "Alive",
+        "nationality": "American",
+        "residence": "Maintenance Sector, Oldest House",
+        "predecessor": "Theodore Ash, Sr.",
+        "successor": "Zachariah Trench"
+      },
+      "categories": [
+        "Control characters",
+        "Directors",
+        "FBC: Firebreak characters",
+        "FBC personnel",
+        "Needs attention",
+        "Parautilitarians"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/2/2d/Broderick_Northmoor.png/revision/latest?cb=20220608164420",
+      "url": "https://control.fandom.com/wiki/Broderick_Northmoor",
+      "imageFile": "assets/_wiki/control-resonant/Broderick-Northmoor.png"
+    },
+    {
+      "title": "Dark Presence",
+      "wikiTitle": "Dark Presence",
+      "collection": "enemies",
+      "facts": {},
+      "categories": [
+        "Article stubs",
+        "Enemies",
+        "Paranatural entities"
+      ],
+      "image": null,
+      "url": "https://control.fandom.com/wiki/Dark_Presence"
+    },
+    {
+      "title": "Blessed Organization",
+      "wikiTitle": "Blessed Organization",
+      "collection": "items",
+      "facts": {
+        "type": "Research & Records / Reports",
+        "compiled_by": "Agent Tim Spalder",
+        "by_order_of": "Remy Denis, Chief Investigator"
+      },
+      "categories": [
+        "Blessed Organization",
+        "Collectibles / Research & Records / Reports"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/b/b7/Blessed_Organization.png/revision/latest?cb=20220919144359",
+      "url": "https://control.fandom.com/wiki/Blessed_Organization",
+      "imageFile": "assets/_wiki/control-resonant/Blessed-Organization.png"
+    },
+    {
+      "title": "Hartman Arrest",
+      "wikiTitle": "Hartman Arrest",
+      "collection": "items",
+      "facts": {},
+      "categories": [
+        "Collectibles / Research & Records / Reports"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/e/e4/Hartman_Arrest.png/revision/latest?cb=20220927123246",
+      "url": "https://control.fandom.com/wiki/Hartman_Arrest",
+      "imageFile": "assets/_wiki/control-resonant/Hartman-Arrest.png"
+    },
+    {
+      "title": "Hiss Ranger (Airborne)",
+      "wikiTitle": "Hiss Ranger (Airborne) (Collectible)",
+      "collection": "items",
+      "facts": {
+        "type": "Research & Records / Hiss Research",
+        "compiled_by": "Emily Pope, Research Specialist",
+        "by_order_of": "Director Jesse Faden"
+      },
+      "categories": [
+        "Collectibles / Research & Records / Hiss Research"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/d/dc/Hiss_Ranger_%28Airborne%29_%28record%29.png/revision/latest?cb=20220914115532",
+      "url": "https://control.fandom.com/wiki/Hiss_Ranger_(Airborne)_(Collectible)",
+      "imageFile": "assets/_wiki/control-resonant/Hiss-Ranger-Airborne-Collectible-.png"
+    },
+    {
+      "title": "\"Blessed\" organization",
+      "wikiTitle": "\"Blessed\" organization",
+      "collection": "characters",
+      "facts": {},
+      "categories": [
+        "Blessed Organization",
+        "Organizations",
+        "Paracriminals"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/5/56/Blessedmovingbox.png.png/revision/latest?cb=20250331171915",
+      "url": "https://control.fandom.com/wiki/%22Blessed%22_organization",
+      "imageFile": "assets/_wiki/control-resonant/-Blessed-organization.png"
+    },
+    {
+      "title": "Active Threshold",
+      "wikiTitle": "Active Threshold",
+      "collection": "regions",
+      "facts": {
+        "type": "Threshold",
+        "location": "Research Sector, Oldest House",
+        "tenants": "Federal Bureau of Control"
+      },
+      "categories": [
+        "Article stubs",
+        "Hidden locations",
+        "Research Sector",
+        "Thresholds"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/6/66/Mold-1.png/revision/latest?cb=20190326223944",
+      "url": "https://control.fandom.com/wiki/Active_Threshold",
+      "imageFile": "assets/_wiki/control-resonant/Active-Threshold.png"
+    },
+    {
+      "title": "Clog",
+      "wikiTitle": "Clog",
+      "collection": "enemies",
+      "facts": {
+        "type": "Paranatural entity",
+        "residence": "Maintenance Sector"
+      },
+      "categories": [
+        "Enemies",
+        "Needs attention",
+        "Paranatural entities"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/4/45/The_Clog.png/revision/latest?cb=20230526033246",
+      "url": "https://control.fandom.com/wiki/Clog",
+      "imageFile": "assets/_wiki/control-resonant/Clog.png"
+    },
+    {
+      "title": "Central Executive",
+      "wikiTitle": "Central Executive",
+      "collection": "regions",
+      "facts": {
+        "type": "Sector hub",
+        "location": "Oldest House",
+        "sector": "Executive Sector",
+        "id": "EXECUTIVE_BASE"
+      },
+      "categories": [
+        "Executive Sector"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/2/27/Central_Executive_-_Mission_1.png/revision/latest?cb=20220417223757",
+      "url": "https://control.fandom.com/wiki/Central_Executive",
+      "imageFile": "assets/_wiki/control-resonant/Central-Executive.png"
+    },
+    {
+      "title": "Corrupted Item",
+      "wikiTitle": "Corrupted Item",
+      "collection": "items",
+      "facts": {},
+      "categories": [
+        "Corrupted Items",
+        "Paranatural phenomena"
+      ],
+      "image": null,
+      "url": "https://control.fandom.com/wiki/Corrupted_Item"
+    },
+    {
+      "title": "Aberrant",
+      "wikiTitle": "Aberrant",
+      "collection": "items",
+      "facts": {},
+      "categories": [
+        "Article stubs",
+        "Objects of Power",
+        "Weapons"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/d/d7/Control_Resonant_announcement_SS_13.jpg/revision/latest?cb=20251212082329",
+      "url": "https://control.fandom.com/wiki/Aberrant",
+      "imageFile": "assets/_wiki/control-resonant/Aberrant.jpg"
+    },
+    {
+      "title": "Phillip Philson",
+      "wikiTitle": "Phillip Philson",
+      "collection": "characters",
+      "facts": {
+        "status": "Missing",
+        "nationality": "American",
+        "occupation": "Junior Agent",
+        "affiliation": "Federal Bureau of ControlBureau Book Bunch",
+        "gender": "Male",
+        "cause_of_death": "Former"
+      },
+      "categories": [
+        "Bureau Book Bunch",
+        "Control characters",
+        "FBC personnel"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/a/a8/Arctic_Queen_and_Phillip.png/revision/latest?cb=20190731025419",
+      "url": "https://control.fandom.com/wiki/Phillip_Philson",
+      "imageFile": "assets/_wiki/control-resonant/Phillip-Philson.png"
+    },
+    {
+      "title": "Lin Salvador",
+      "wikiTitle": "Lin Salvador",
+      "collection": "enemies",
+      "facts": {
+        "status": "Deceased",
+        "death": "October 29, 2019",
+        "cause_of_death": "The Hiss",
+        "occupation": "Head of Security",
+        "affiliation": "Federal Bureau of Control",
+        "successor": "Simon Arish",
+        "type": "FBC security chief (formerly), Hiss Warp"
+      },
+      "categories": [
+        "Bosses",
+        "Control characters",
+        "FBC personnel",
+        "Hiss"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/0/0a/Lin_Salvador_employee_headshot.png/revision/latest?cb=20220608201035",
+      "url": "https://control.fandom.com/wiki/Lin_Salvador",
+      "imageFile": "assets/_wiki/control-resonant/Lin-Salvador.png"
+    },
+    {
+      "title": "Raya Underhill",
+      "wikiTitle": "Raya Underhill",
+      "collection": "characters",
+      "facts": {
+        "status": "Alive",
+        "occupation": "Threshold Specialist",
+        "affiliation": "Federal Bureau of Control",
+        "actor": "Charlotte Randle",
+        "appearances": "ControlFBC: Firebreak"
+      },
+      "categories": [
+        "Control characters",
+        "FBC: Firebreak characters",
+        "FBC personnel"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/7/7f/Underhill_ColorCorrected.jpg/revision/latest?cb=20200518023729",
+      "url": "https://control.fandom.com/wiki/Raya_Underhill",
+      "imageFile": "assets/_wiki/control-resonant/Raya-Underhill.jpg"
+    },
+    {
+      "title": "Theodore Ash, Sr.",
+      "wikiTitle": "Theodore Ash, Sr.",
+      "collection": "characters",
+      "facts": {
+        "status": "Deceased",
+        "occupation": "FBC Director (? - 1964)",
+        "affiliation": "Federal Bureau of Control",
+        "relatives": "Theodore Ash, Jr.",
+        "death": "July 1964",
+        "predecessor": "10 unknown Directors",
+        "successor": "Broderick Northmoor"
+      },
+      "categories": [
+        "Control characters",
+        "Directors",
+        "FBC personnel"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/1/10/Theodore_Ash%2C_Sr.png/revision/latest?cb=20220608164201",
+      "url": "https://control.fandom.com/wiki/Theodore_Ash%2C_Sr.",
+      "imageFile": "assets/_wiki/control-resonant/Theodore-Ash-Sr..png"
+    },
+    {
+      "title": "William Kirklund",
+      "wikiTitle": "William Kirklund",
+      "collection": "characters",
+      "facts": {
+        "status": "Resigned",
+        "occupation": "Head of Investigations (? - 2019)",
+        "affiliation": "Federal Bureau of ControlInvestigations Sector",
+        "successor": "Remy Denis"
+      },
+      "categories": [
+        "Alan Wake characters",
+        "Control characters",
+        "FBC personnel"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/5/55/Night_springs_kirklund.png/revision/latest?cb=20210817142458",
+      "url": "https://control.fandom.com/wiki/William_Kirklund",
+      "imageFile": "assets/_wiki/control-resonant/William-Kirklund.png"
+    },
+    {
+      "title": "Emil Hartman",
+      "wikiTitle": "Emil Hartman",
+      "collection": "characters",
+      "facts": {
+        "age": "55",
+        "status": "Deceased",
+        "death": "2019",
+        "cause_of_death": "Killed by Jesse Faden",
+        "occupation": "Psychiatrist",
+        "actor": "Alan WakeMark Blum (voice)AWEMartin McDougall (voice)",
+        "appearances": "Alan WakePsycho Thriller: An Alan Wake StoryControl (AWE)"
+      },
+      "categories": [
+        "Alan Wake characters",
+        "Bosses",
+        "Control characters",
+        "Hiss",
+        "Paracriminals"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/a/a4/Hartman_evil.jpg/revision/latest?cb=20201012125241",
+      "url": "https://control.fandom.com/wiki/Emil_Hartman",
+      "imageFile": "assets/_wiki/control-resonant/Emil-Hartman.jpg"
+    },
+    {
+      "title": "Maneki-neko Statue",
+      "wikiTitle": "Maneki-neko Statue",
+      "collection": "items",
+      "facts": {
+        "type": "Altered Item",
+        "other_names": "Maneki-Neko",
+        "designation": "AI48-PE",
+        "acquisition_date": "03/21/1999",
+        "containment_location": "n/a"
+      },
+      "categories": [
+        "Altered Items",
+        "Needs attention",
+        "Objects of Power"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/5/59/Maneki-neko_Statue_%28case_file_photo%29.png/revision/latest?cb=20220830192555",
+      "url": "https://control.fandom.com/wiki/Maneki-neko_Statue",
+      "imageFile": "assets/_wiki/control-resonant/Maneki-neko-Statue.png"
+    },
+    {
+      "title": "Kevin Horowitz",
+      "wikiTitle": "Kevin Horowitz",
+      "collection": "characters",
+      "facts": {
+        "status": "Deceased",
+        "death": "Corrupted by the Hiss and killed by Jesse Faden",
+        "cause_of_death": "The Hiss",
+        "affiliation": "Federal Bureau of Control",
+        "occupation": "Ranger"
+      },
+      "categories": [
+        "Control characters",
+        "FBC personnel",
+        "Hiss",
+        "Needs attention",
+        "Rangers"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/7/74/Ranger_Horowitz_1.png/revision/latest?cb=20230526033715",
+      "url": "https://control.fandom.com/wiki/Kevin_Horowitz",
+      "imageFile": "assets/_wiki/control-resonant/Kevin-Horowitz.png"
+    },
+    {
+      "title": "Rupert Wells",
+      "wikiTitle": "Rupert Wells",
+      "collection": "characters",
+      "facts": {
+        "status": "Alive",
+        "affiliation": "Federal Bureau of Control",
+        "occupation": "RangerMedic",
+        "actor": "Alex Lanipekun",
+        "appearances": "Control"
+      },
+      "categories": [
+        "Control characters",
+        "FBC personnel",
+        "Needs attention",
+        "Rangers"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/f/f2/Control_Ultimate_Edition_-_Rupert_Wells_head_shot.jpg/revision/latest?cb=20240717223134",
+      "url": "https://control.fandom.com/wiki/Rupert_Wells",
+      "imageFile": "assets/_wiki/control-resonant/Rupert-Wells.jpg"
+    },
+    {
+      "title": "New York City",
+      "wikiTitle": "New York City",
+      "collection": "regions",
+      "facts": {
+        "type": "City",
+        "location": "New York, United States"
+      },
+      "categories": [
+        "Locations"
+      ],
+      "image": "https://static.wikia.nocookie.net/control6745/images/e/e0/Oldest_House_Exterior.png/revision/latest?cb=20180808204904",
+      "url": "https://control.fandom.com/wiki/New_York_City",
+      "imageFile": "assets/_wiki/control-resonant/New-York-City.png"
     }
   ]
 }

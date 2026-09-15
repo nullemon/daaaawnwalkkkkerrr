@@ -23,7 +23,7 @@
     "assets:match": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/match-assets.ts",
     "ingest": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/import.ts",
     "clean:db": "node tools/reset-db.mjs",
-    "db:reset": "pnpm run clean:db && pnpm run seed && pnpm run ingest && pnpm run seed:games && pnpm run seed:entities && pnpm run assets && pnpm run seed:art && pnpm run seed:avatars",
+    "db:reset": "pnpm run clean:db && pnpm run seed && pnpm run ingest && pnpm run seed:games && pnpm run seed:entities && pnpm run seed:guides && pnpm run assets && pnpm run seed:art && pnpm run seed:avatars",
     "indexnow": "cross-env NODE_OPTIONS=--no-deprecation node tools/indexnow.mjs",
     "verify": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/verify.ts",
     "seed:games": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/game-content.ts",
@@ -34,7 +34,9 @@
     "fetch:entities": "node tools/fetch-wiki-entities.mjs",
     "seed:entities": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/wiki-entities.ts",
     "check:launch": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/audit.ts",
-    "refresh": "pnpm run fetch:games && pnpm run fetch:entities && pnpm run seed:games && pnpm run seed:entities && pnpm run seed:art && node tools/make-wiki-icons.mjs"
+    "refresh": "pnpm run fetch:games && pnpm run harvest:all && pnpm run seed:games && pnpm run seed:entities && pnpm run seed:guides && pnpm run seed:art && node tools/make-wiki-icons.mjs",
+    "seed:guides": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/game-guides.ts",
+    "harvest:all": "node tools/harvest-all.mjs"
   },
   "dependencies": {
     "@payloadcms/db-sqlite": "3.89.0",
