@@ -4,9 +4,10 @@ A network of game wikis sharing one admin, one account system and one set of
 editorial rules. Next.js 16 + Payload CMS 3 on libSQL. Every public page
 prerenders to static HTML; `/admin` is a full CMS.
 
-Seven wikis today, ~780 pages. *The Blood of Dawnwalker* is the first and by
-far the largest — 422 of the 594 records — and its 480-segment run planner is
-the model for what each wiki is meant to have: one tool nobody else has.
+Eight wikis today, ~1,670 prerendered pages. *The Blood of Dawnwalker* is the
+first and still the largest — 422 of the 1,472 records — and its 480-segment
+run planner is the model for what each wiki is meant to have: one tool nobody
+else has.
 
 The other seven are built from two sourced pipelines and nothing else:
 
@@ -32,8 +33,8 @@ prefix; `src/proxy.ts` maps host to the internal `/[game]/…` route. See
 ```bash
 pnpm install      # NOT npm — see gotchas
 pnpm dev          # http://dawnwalker.localhost:3000 — see 'Local dev' below
-pnpm build        # prerenders ~600 pages across seven wikis
-pnpm test         # unit tests (99)
+pnpm build        # prerenders ~1,670 pages across eight wikis
+pnpm test         # unit tests (106)
 pnpm seed         # hand-written seed content, idempotent on slug
 pnpm ingest       # ingest researched JSON from src/seed/raw/
 pnpm db:reset     # delete the database and rebuild it from seed + raw
@@ -229,7 +230,14 @@ pnpm seed:guides    # hand-written, per game
 pnpm seed:articles  # eight topics a Steam listing settles outright
 pnpm seed:deep      # engine/composer/series facts, rarity bands, category roundups
 pnpm seed:topics    # store features, stat comparisons, coverage, the demand side
+pnpm seed:cite      # cite the pages that compile this wiki's own records
 ```
+
+All of them are in `pnpm db:reset`, in that order, and a new one belongs
+there too. A pass that only ever runs by hand is a pass that is missing the
+next time somebody rebuilds from scratch — `seed:topics` and `seed:cite` were
+both left out of the chain once, and the only symptom was a hundred and
+thirty-eight fewer guides than the run before.
 
 `seed:topics` is the one with the rule worth remembering: **it is the only
 pass that answers in the negative**, and a negative answer is always phrased
