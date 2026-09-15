@@ -69,6 +69,17 @@ const PRETTY: Record<string, string> = {
 }
 const label = (key: string) => PRETTY[key.toLowerCase()] ?? key.replace(/_/g, ' ').toLowerCase()
 
+/**
+ * The separator between values inside one infobox field.
+ *
+ * Comma *and whitespace*, never a bare comma: a bare comma splits "6,000
+ * credits" into "6" and "000 credits", which then renders as "cost: 6, 000
+ * credits" - a corrupted figure presented as a fact, which is the worst
+ * thing this file could produce. Thousands separators have no space after
+ * them and list separators do.
+ */
+const VALUES = /,\s+/
+
 /** A different screenshot per page, cycling the game's own library. */
 const screenshots = (slug: string, payload: Payload, credit: string) => {
   const dir = path.join(ART_DIR, slug)
@@ -558,13 +569,19 @@ async function run(): Promise<void> {
           .sort((a, b) => b[1] - a[1])
           .map(([key]) => key)
 
+        /* Compare on the leading value, not the whole string: "Coalition of
+           Ordered Governments" and "Coalition of Ordered Governments, COG
+           Army, Stranded" are different strings and the same answer. */
+        const head = (value: string | undefined) =>
+          (value ?? '').split(VALUES)[0].trim().toLowerCase()
+
         const shared: string[] = []
         for (const key of ranked) {
           if (shared.length >= 3) break
           const differs = members.filter((member) => {
-            const value = member.facts?.[key]
+            const value = head(member.facts?.[key])
             if (!value) return false
-            return shared.every((chosen) => member.facts?.[chosen] !== value)
+            return shared.every((chosen) => head(member.facts?.[chosen]) !== value)
           }).length
           if (shared.length === 0 || differs >= members.length * 0.5) shared.push(key)
         }
@@ -579,7 +596,15 @@ async function run(): Promise<void> {
           page carries the full list.
         */
         const trim = (value: string) => {
-          const values = value.split(/,\s*/).filter(Boolean)
+          /* An infobox that separated its values with <br> arrives here as
+             "Ami Okumura Jones (English)Yuka Terasaki (Japanese)" - the tag
+             was stripped without anything put in its place, upstream of this
+             file. Putting the separator back is formatting the same facts,
+             not changing them. */
+          const values = value
+            .replace(/\)(?=[A-Z぀-ヿ一-鿿])/g, '), ')
+            .split(VALUES)
+            .filter(Boolean)
           return values.length > 3
             ? `${values.slice(0, 3).join(', ')} +${values.length - 3} more`
             : value
