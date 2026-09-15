@@ -23,6 +23,21 @@ import { getSiteSettings } from '@/lib/payload'
 
 type Source = { title?: string | null; url?: string | null; retrieved?: string | null }
 
+/**
+ * The date a source was read, as a reader would write it.
+ *
+ * Payload stores a date field as a full ISO timestamp, so the raw value put
+ * "read 2026-09-15T00:00:00.000Z" in the middle of an English sentence on
+ * every attributed page. The midnight Z is an artefact of a day-only picker,
+ * not a time anybody recorded, so it has no business being shown.
+ */
+const readOn = (value: string) => {
+  const date = new Date(value)
+  return Number.isNaN(date.getTime())
+    ? value
+    : date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
+}
+
 /** Hosts whose content arrives under a Creative Commons licence. */
 const CC_SOURCES: { test: RegExp; name: string; licence: string; url: string }[] = [
   {
@@ -66,7 +81,7 @@ export async function Attribution({ sources }: { sources?: Source[] | null }) {
             {entry.source.title ?? entry.name}
           </a>{' '}
           on {entry.name}
-          {entry.source.retrieved ? `, read ${entry.source.retrieved}` : ''}, and used under{' '}
+          {entry.source.retrieved ? `, read ${readOn(entry.source.retrieved)}` : ''}, and used under{' '}
           <a href={entry.url} rel="license noopener noreferrer" target="_blank">
             {entry.licence}
           </a>
