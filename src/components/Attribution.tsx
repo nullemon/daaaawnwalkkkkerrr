@@ -16,9 +16,13 @@ import { getSiteSettings } from '@/lib/payload'
  * would be using the content outside its terms — so the admin controls how
  * prominent it is, not whether it appears.
  *
- * The distinction is written into the field description too, because the
- * obvious next request is to turn it off and the reason it cannot be turned
- * off should be readable where somebody would go looking.
+ * The owner has since set it to hidden by default, which is their call to
+ * make and not this file's to override. What this file can do is keep the
+ * reason visible where somebody would go looking — the admin field carries
+ * it, and so does this comment: with the line off and no credit elsewhere,
+ * the Fandom- and Wikipedia-derived facts are being used outside the terms
+ * they arrived under. A site-wide credits page is the usual way to satisfy
+ * that without a line on every page.
  */
 
 type Source = { title?: string | null; url?: string | null; retrieved?: string | null }
@@ -54,13 +58,70 @@ const CC_SOURCES: { test: RegExp; name: string; licence: string; url: string }[]
   },
 ]
 
+type Licensed = {
+  source: Source
+  name: string
+  licence: string
+  url: string
+}
+
+/**
+ * Fill the editable template, turning two of the tokens into links.
+ *
+ * Splitting on the token pattern rather than replacing into a string keeps
+ * this out of `dangerouslySetInnerHTML`: the template is admin-editable, and
+ * an admin-editable string that reaches the DOM as markup is a stored-XSS
+ * hole waiting for the first editor account that should not have had one.
+ * Each piece is rendered as a React child, so any angle brackets somebody
+ * types come out as text.
+ *
+ * An unknown token is left alone rather than blanked - somebody who typos
+ * `{soruce}` should see their typo, not a sentence with a hole in it.
+ */
+const TOKEN = /(\{(?:source|site|date|licence)\})/g
+
+function fill(template: string, entry: Licensed) {
+  return template.split(TOKEN).map((piece, index) => {
+    switch (piece) {
+      case '{source}':
+        return (
+          <a
+            key={index}
+            href={entry.source.url ?? entry.url}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            {entry.source.title ?? entry.name}
+          </a>
+        )
+      case '{site}':
+        return <span key={index}>{entry.name}</span>
+      case '{date}':
+        return (
+          <span key={index}>
+            {entry.source.retrieved ? readOn(entry.source.retrieved) : 'an unrecorded date'}
+          </span>
+        )
+      case '{licence}':
+        return (
+          <a key={index} href={entry.url} rel="license noopener noreferrer" target="_blank">
+            {entry.licence}
+          </a>
+        )
+      default:
+        return <span key={index}>{piece}</span>
+    }
+  })
+}
+
 export async function Attribution({ sources }: { sources?: Source[] | null }) {
   if (!sources?.length) return null
 
   const settings = await getSiteSettings()
-  // Default to showing it when the setting has never been touched: the safe
-  // state for a licence condition is on.
-  const style = (settings.attributionStyle as string) ?? 'compact'
+  // Off unless switched on. See the note at the top of this file for what
+  // that means for the licence; it is a decision taken with the reason in
+  // front of it rather than by accident.
+  const style = (settings.attributionStyle as string) ?? 'hidden'
   if (style === 'hidden') return null
 
   const licensed = sources
@@ -72,20 +133,15 @@ export async function Attribution({ sources }: { sources?: Source[] | null }) {
 
   if (licensed.length === 0) return null
 
+  const template =
+    (settings.attributionText as string)?.trim() ||
+    'Some facts on this page are restated from {source} on {site}, read {date}, and used under {licence}.'
+
   return (
     <aside className="attribution" aria-label="Content attribution">
       {licensed.map((entry) => (
         <p key={entry.source.url ?? entry.name} className="note">
-          Some facts on this page are restated from{' '}
-          <a href={entry.source.url ?? entry.url} rel="noopener noreferrer" target="_blank">
-            {entry.source.title ?? entry.name}
-          </a>{' '}
-          on {entry.name}
-          {entry.source.retrieved ? `, read ${readOn(entry.source.retrieved)}` : ''}, and used under{' '}
-          <a href={entry.url} rel="license noopener noreferrer" target="_blank">
-            {entry.licence}
-          </a>
-          .{' '}
+          {fill(template, entry)}{' '}
           {style === 'full'
             ? 'The wording on this page is our own; only the facts are reused. Reusing this page carries the same licence onward.'
             : null}

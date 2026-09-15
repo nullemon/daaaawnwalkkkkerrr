@@ -131,16 +131,37 @@ export const SiteSettings: GlobalConfig = {
             {
               name: 'attributionStyle',
               type: 'select',
-              defaultValue: 'compact',
+              defaultValue: 'hidden',
               label: 'Licence attribution for wiki-sourced facts',
               options: [
+                { label: 'Hidden — no line on any page (default)', value: 'hidden' },
                 { label: 'Compact — one line naming the wiki and licence', value: 'compact' },
                 { label: 'Full — adds what reuse of this page means', value: 'full' },
-                { label: 'Hidden — see the warning below', value: 'hidden' },
               ],
               admin: {
                 description:
-                  'Around five hundred records restate facts from Fandom and Wikipedia, both CC BY-SA. That licence REQUIRES attribution as a condition of using the content — so this chooses how prominent the line is, not whether we comply. "Hidden" puts the site outside the licence it relies on, and exists only for a page carrying attribution some other way.',
+                  'Off by default, switched on here for every page at once. Read this before leaving it off: around five hundred records restate facts from Fandom and Wikipedia, both CC BY-SA, and that licence requires attribution as a condition of reusing the content. With this hidden and no attribution elsewhere, those pages are outside the terms the facts on them arrived under. The usual way to keep it off page-by-page is a single site-wide credits page instead — that is a legitimate choice, an absence of any credit is not.',
+              },
+            },
+            {
+              /*
+                An editable template rather than a fixed sentence.
+
+                The wording is a legal-ish line that different people want
+                phrased differently, and hard-coding it meant the only options
+                were our sentence or nothing. The tokens are filled per source,
+                so one template covers every page: a wiki has several hundred
+                attributed records and nobody is editing them individually.
+              */
+              name: 'attributionText',
+              type: 'textarea',
+              label: 'Attribution wording',
+              admin: {
+                condition: (_, siblings) => siblings?.attributionStyle !== 'hidden',
+                description:
+                  'Leave blank for the default sentence. Tokens filled in per page: {source} the article title, {site} the wiki it came from, {date} when it was read, {licence} the licence name. The {source} and {licence} tokens render as links.',
+                placeholder:
+                  'Some facts on this page are restated from {source} on {site}, read {date}, and used under {licence}.',
               },
             },
             {

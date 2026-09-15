@@ -34,6 +34,22 @@ export const siteSettings = {
   heroSubheading:
     'The numbers sourced, the gaps admitted, and nothing invented to fill them.',
   /*
+    The licence line is off unless somebody turns it on.
+
+    Seeded explicitly rather than left to the field's default, because a
+    default only applies to a record that does not exist yet - the global is
+    created on the first seed and every later change to `defaultValue` sails
+    past it. Leaving it implicit meant the setting read "hidden" in the admin
+    while the stored value was still `compact` and the line was still on every
+    page, which is the worst of both: the switch says one thing and the site
+    does another.
+
+    Read the field description in `SiteSettings.ts` before leaving this off -
+    the Fandom and Wikipedia facts are CC BY-SA and that licence asks for
+    credit somewhere.
+  */
+  attributionStyle: 'hidden',
+  /*
    * Every section that has an index, in the order a reader wants them: the two
    * tools first, then the database.
    *

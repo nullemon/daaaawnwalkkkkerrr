@@ -3022,9 +3022,13 @@ export interface SiteSetting {
   heroHeading?: string | null;
   heroSubheading?: string | null;
   /**
-   * Around five hundred records restate facts from Fandom and Wikipedia, both CC BY-SA. That licence REQUIRES attribution as a condition of using the content — so this chooses how prominent the line is, not whether we comply. "Hidden" puts the site outside the licence it relies on, and exists only for a page carrying attribution some other way.
+   * Off by default, switched on here for every page at once. Read this before leaving it off: around five hundred records restate facts from Fandom and Wikipedia, both CC BY-SA, and that licence requires attribution as a condition of reusing the content. With this hidden and no attribution elsewhere, those pages are outside the terms the facts on them arrived under. The usual way to keep it off page-by-page is a single site-wide credits page instead — that is a legitimate choice, an absence of any credit is not.
    */
-  attributionStyle?: ('compact' | 'full' | 'hidden') | null;
+  attributionStyle?: ('hidden' | 'compact' | 'full') | null;
+  /**
+   * Leave blank for the default sentence. Tokens filled in per page: {source} the article title, {site} the wiki it came from, {date} when it was read, {licence} the licence name. The {source} and {licence} tokens render as links.
+   */
+  attributionText?: string | null;
   /**
    * Off by default. Sources are always stored and always required on import; this only controls whether the list is printed under each page.
    */
@@ -3117,6 +3121,7 @@ export interface SiteSettingsSelect<T extends boolean = true> {
   heroHeading?: T;
   heroSubheading?: T;
   attributionStyle?: T;
+  attributionText?: T;
   showSources?: T;
   verification?:
     | T

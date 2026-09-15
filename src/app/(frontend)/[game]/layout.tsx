@@ -121,10 +121,29 @@ export default async function GameLayout({
   const tools = toolsFor(game)
   const name = game.shortTitle || game.title
 
+  /*
+    The way back to the network.
+
+    Every wiki is its own host, so `/` on a wiki is that wiki's front page and
+    there was no link anywhere in the chrome that reached the hub - a reader
+    who arrived on a Gears page from a search had no way to discover the other
+    seven except by editing the address bar. The footer carried "All wikis",
+    which is the sitemap rather than the navigation, and nobody scrolls to a
+    footer to go up a level.
+
+    It sits last so it reads as leaving rather than as one more section of this
+    wiki, and it is `external` because it points at a different host.
+  */
   const rail: RailItem[] = [
     { label: 'Home', href: '/', icon: 'home' },
     ...tools,
     ...sections.map(({ label, href, icon }) => ({ label, href, icon })),
+    {
+      label: `All ${settings.siteName} wikis`,
+      href: hub('/'),
+      icon: 'external',
+      external: true,
+    },
   ]
 
   /*
