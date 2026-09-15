@@ -55,37 +55,44 @@ const GAMES = {
   'star-wars-zero-company': ['star wars zero company', 'zero company'],
 }
 
-/** Question and intent stems, then the alphabet. */
+/**
+ * What to append to each game's name before asking for completions.
+ *
+ * Three layers, each returning a different shape of query:
+ *
+ *   Question stems   the long tail — "how many endings", "where is".
+ *   Intent words     commercial and comparison searches — "vs", "worth it".
+ *   The alphabet     everything else. Google completes each prefix with its
+ *                    most-searched continuations, so cheap requests return far
+ *                    more than guessed phrases would.
+ *
+ * The two-letter pairs are the deepest layer. A single letter's ten slots are
+ * taken by the most popular terms; "…ac", "…be" reach past them, which is
+ * where the genuinely specific questions live.
+ */
 const STEMS = [
   '',
-  'how',
-  'how to',
-  'how long',
-  'how many',
-  'how big',
-  'where',
-  'where is',
-  'what',
-  'what is',
-  'when',
-  'when does',
-  'why',
-  'is',
-  'does',
-  'can you',
-  'best',
-  'all',
-  'guide',
-  'walkthrough',
-  'tips',
-  'list of',
+  'how', 'how to', 'how long', 'how many', 'how big', 'how much', 'how hard',
+  'where', 'where is', 'where to', 'what', 'what is', 'what are', 'what happens',
+  'when', 'when does', 'when is', 'why', 'which', 'who',
+  'is', 'is it', 'are', 'does', 'do', 'can', 'can you', 'should', 'will',
+  'best', 'worst', 'all', 'every', 'list of', 'number of',
+  'guide', 'walkthrough', 'tips', 'tricks', 'help', 'explained',
+  'vs', 'or', 'like', 'compared to', 'similar',
+  'review', 'worth it', 'price', 'cheapest', 'free', 'deal',
+  'release', 'gameplay', 'story', 'ending', 'characters', 'bosses',
+  'weapons', 'items', 'map', 'length', 'difficulty', 'settings',
+  'pc', 'ps5', 'xbox', 'switch', 'steam', 'requirements', 'fps', 'mods',
   ...'abcdefghijklmnopqrstuvwxyz'.split(''),
+  ...'abcdefghijklmnopqrstuvwxyz'
+    .split('')
+    .flatMap((first) => ['a', 'e', 'i', 'o', 'u', 'r', 'l'].map((second) => first + second)),
 ]
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
-const suggest = async (phrase, attempt = 0) => {
-  const url = `https://suggestqueries.google.com/complete/search?client=firefox&hl=en&q=${encodeURIComponent(phrase)}`
+const suggest = async (phrase, locale = 'en', attempt = 0) => {
+  const url = `https://suggestqueries.google.com/complete/search?client=firefox&hl=${locale}&q=${encodeURIComponent(phrase)}`
   try {
     const response = await fetch(url, { headers: { 'User-Agent': UA } })
     if (!response.ok) throw new Error(`HTTP ${response.status}`)
@@ -94,7 +101,7 @@ const suggest = async (phrase, attempt = 0) => {
   } catch (error) {
     if (attempt < 2) {
       await sleep(900 * (attempt + 1))
-      return suggest(phrase, attempt + 1)
+      return suggest(phrase, locale, attempt + 1)
     }
     return []
   }
@@ -128,7 +135,9 @@ for (const [slug, terms] of Object.entries(GAMES)) {
   for (const term of terms) {
     for (const stem of STEMS) {
       const phrase = stem ? `${term} ${stem}` : term
-      const results = await suggest(phrase)
+      // Two locales: the same prefix ranks differently in en and en-GB, and
+      // the tails barely overlap.
+      const results = [...(await suggest(phrase, 'en')), ...(await suggest(phrase, 'en-GB'))]
 
       for (const raw of results) {
         const query = String(raw).toLowerCase().trim()
@@ -146,8 +155,8 @@ for (const [slug, terms] of Object.entries(GAMES)) {
         seen.set(query, (seen.get(query) ?? 0) + 1)
       }
 
-      // Autocomplete is generous but not free. One request every 250ms.
-      await sleep(250)
+      // Autocomplete is generous but not free.
+      await sleep(160)
     }
     process.stdout.write(`  "${term}": ${seen.size} unique so far\n`)
   }

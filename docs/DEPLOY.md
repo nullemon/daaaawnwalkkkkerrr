@@ -175,6 +175,47 @@ So the honest position is that four wikis are staged rather than finished, and
 `pnpm refresh` is the thing that finishes them. Put a reminder in a calendar
 for each of those four dates.
 
+## Adding pages to a live site from a terminal
+
+Once the network is deployed, adding a page normally means opening the admin
+in a browser. That is right for writing prose and wrong for everything else —
+a batch of forty generated guides, one correction applied across eight wikis,
+a refresh the week a game ships. Those are terminal jobs.
+
+`pnpm remote` talks to the running site's own REST API over HTTPS. No SSH, no
+database credentials, no redeploy, and it behaves identically against
+localhost and production.
+
+**Setup, once.** In the admin: **Users → your account → tick "Enable API Key"
+→ Save**, and copy the key it generates. Then in `.env`:
+
+```bash
+REMOTE_URL=https://your-domain.com
+REMOTE_API_KEY=<the key>
+```
+
+The key carries exactly that user's permissions — an editor assigned to one
+wiki cannot write to another with theirs, because the same access rules run.
+Revoking one is unticking the box. Never commit it; `.env` is gitignored.
+
+**Then:**
+
+```bash
+pnpm remote whoami                      # confirm which site and which account
+pnpm remote list guides --game onimusha-way-of-the-sword
+pnpm remote get guides all-items --game onimusha-way-of-the-sword
+pnpm remote create guides ./page.json --game onimusha-way-of-the-sword
+pnpm remote update guides all-items ./patch.json --game onimusha-way-of-the-sword
+pnpm remote delete guides old-slug --game onimusha-way-of-the-sword --yes
+```
+
+`create` and `update` take a JSON file shaped like the record — the same
+fields the admin form shows. `pnpm remote get` on an existing page prints one
+to copy.
+
+This is also how a future session at a terminal adds content to the live site
+without touching the repository.
+
 ## Adding the eighth wiki
 
 No deploy, no DNS change:

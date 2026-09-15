@@ -40,6 +40,7 @@ pnpm db:reset     # delete the database and rebuild it from seed + raw
 pnpm clean        # delete .next (devsafe does this, then starts dev)
 pnpm assets       # attach images from assets/<collection>/<slug>.<ext>
 pnpm verify       # every content record belongs to a game (see below)
+pnpm remote <cmd> # content operations against a RUNNING site over its API
 pnpm refresh      # re-read every store page and wiki, reseed, rebuild icons
 pnpm check:launch # the launch checklist — NOT `pnpm audit`, that is pnpm's own
 pnpm fetch:games  # just the store pages

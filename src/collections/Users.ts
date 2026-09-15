@@ -8,7 +8,18 @@ export const Users: CollectionConfig = {
     useAsTitle: 'email',
     defaultColumns: ['email', 'name', 'role', 'games'],
   },
-  auth: true,
+  /*
+    API keys, as well as the email/password login the admin uses.
+
+    This is what lets content be added to a *running* site from outside the
+    browser — a script, a terminal, a scheduled job — without SSH, a redeploy,
+    or a database connection string. `tools/remote.mjs` is the client.
+
+    A key is issued per user and carries exactly that user's permissions, so an
+    editor assigned to one wiki cannot write to another with theirs. Revoking
+    is unticking a box on their record.
+  */
+  auth: { useAPIKey: true },
   access: {
     /**
      * Editor accounts are staff records and must not be visible to reader
