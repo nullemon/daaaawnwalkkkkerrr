@@ -314,7 +314,13 @@ const cleanValue = (value) =>
     .replace(/\{\{[^}]*\}\}/g, '')
     .replace(/'''?/g, '')
     .replace(/<[^>]*>/g, '')
-    .replace(/^\*\s*/gm, '')
+    /*
+      Leading bullets, allowing for the whitespace that follows `=` in
+      wikitext. Anchoring on `^\*` alone missed every value written as
+      `| magazine = *8 Shells`, because the line starts with a space — which
+      left a stray asterisk visible on the rendered page.
+    */
+    .replace(/^[ \t]*\*+[ \t]*/gm, '')
     .split('\n')
     .map((line) => line.trim())
     .filter(Boolean)

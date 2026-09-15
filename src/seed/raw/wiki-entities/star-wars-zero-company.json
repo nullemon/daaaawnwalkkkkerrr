@@ -114,7 +114,7 @@
         "commander": "Jedi General Luminara Unduli, Jedi General Yoda",
         "second": "Jedi Commander Barriss Offee, Clone Commander Gree",
         "staff": "Jedi General Depa Billaba, Jedi Commander Caleb Dume, Green Leader, An ARF trooper officer, A Clone Captain, Clone Lieutenant Remo",
-        "subunit": "41st Ranger Platoon, 41st Scout Battalion, *Green Leader's squad, A squad",
+        "subunit": "41st Ranger Platoon, 41st Scout Battalion, Green Leader's squad, A squad",
         "strength": "Advanced Recon Force trooper, Clone sharpshooters, Clone scout troopers, Clone trooper pilots, Clone troopers, Clone trooper officers, Heavy weapons clone troopers",
         "vehicles": "All Terrain Attack Pods, All Terrain Reconnaissance Transports, All Terrain Tactical Enforcers, BARC speeders, HAVw A6 Juggernauts, Infantry Support Platforms, LAAT/i gunships, LAAT carriers",
         "location": "Coruscant, Geonosis, Guarlara, Kashyyyk, Rodia, Tranquility, Utapau",
@@ -144,9 +144,9 @@
         "lengthday": "31 hours",
         "lengthyear": "399 days",
         "class": "Terrestrial",
-        "atmosphere": "Dual atmosphere, *Surface: Type I Breathable, *Underworld: Non-oxygen",
+        "atmosphere": "Dual atmosphere, Surface: Type I Breathable, Underworld: Non-oxygen",
         "climate": "Temperate",
-        "terrain": "Surface:, *Rocky mesas and buttes, *Desert plains, *Isolated forests, Underworld:, *Geological and arboreal root caverns, *Luminescent vegetation groves",
+        "terrain": "Surface:, Rocky mesas and buttes, Desert plains, Isolated forests, Underworld:, Geological and arboreal root caverns, Luminescent vegetation groves",
         "water": "Shallow seas",
         "interest": "Aleen Underworld, Aleen mainframe station, Aleena village, Jedi chapter house, Great Seal",
         "flora": "Arbozoic tree",
@@ -154,7 +154,7 @@
         "species": "Aleena, Kindalo, Sollux",
         "language": "Aleena, Kindalo, Galactic Basic Standard",
         "government": "Surface: Monarchy, Underworld: Anarchical consensus",
-        "population": "At least 18,000,000, *99% Aleena, *1% other, Underworld: Unknown",
+        "population": "At least 18,000,000, 99% Aleena, 1% other, Underworld: Unknown",
         "cities": "None",
         "imports": "None",
         "exports": "None",
@@ -307,7 +307,7 @@
         "strength": "Clone troopers",
         "dissolved": "c. 22 BBY",
         "restored": "By 19 BBY, as Zero Company",
-        "affiliation": "Galactic Republic, *Grand Army of the Republic"
+        "affiliation": "Galactic Republic, Grand Army of the Republic"
       },
       "categories": [
         "Articles with spoilers",
@@ -415,7 +415,7 @@
         "partners": "Padmé Amidala",
         "siblings": "Owen Lars",
         "children": "Luke Skywalker, Leia Skywalker Organa Solo",
-        "affiliation": "Jedi Order, *302nd Battalion, *501st Legion, *Office of the Chancellor, *Shadow Platoon, *1st Legion, *501st Legion, *Imperial High Command, *Imperial Ruling Council, *Joint Chiefs of the Imperial Military, Vader's crew,",
+        "affiliation": "Jedi Order, 302nd Battalion, 501st Legion, Office of the Chancellor, Shadow Platoon, 1st Legion, 501st Legion, Imperial High Command, Imperial Ruling Council, Joint Chiefs of the Imperial Military, Vader's crew, Droid up",
         "masters": "Qui-Gon Jinn",
         "apprentices": "Ahsoka Tano, Corvax descendant"
       },
@@ -453,12 +453,12 @@
         "power": "Four-chambered multi-reactor power plant, Power generators",
         "sensor": "Turret-mounted battlefield sensor package",
         "target": "Stereoscopic rangefinder camera",
-        "armament": "Turret-mounted heavy laser cannon (1), *Lateral range-finding lasers (2), *Lateral antipersonnel lasers (2), Coaxial short-range blasters, Hull-mounted energized projectile launchers (6), *\"Bunker Buster\" shell, *Armor-P",
+        "armament": "Turret-mounted heavy laser cannon (1), Lateral range-finding lasers (2), Lateral antipersonnel lasers (2), Coaxial short-range blasters, Hull-mounted energized projectile launchers (6), \"Bunker Buster\" shell, Armor-Pierc",
         "crew": "Commander (1), Pilot (1), Gunners (2)",
         "passengers": "6 on exterior",
         "capacity": "10 metric tons",
         "communications": "Control and Command receiver antenna",
-        "affiliation": "Trade Federation, *Separatist Droid Army, *Grand Army of the Republic, Nightsisters, Onderon rebels, Separatist holdouts, *Desix Separatist holdout, Trandoshans, Hutt Clan, *Jabba's criminal empire, Alliance to Restore t"
+        "affiliation": "Trade Federation, Separatist Droid Army, Grand Army of the Republic, Nightsisters, Onderon rebels, Separatist holdouts, Desix Separatist holdout, Trandoshans, Hutt Clan, Jabba's criminal empire, Alliance to Restore the R"
       },
       "categories": [
         "Articles to be expanded",
@@ -609,7 +609,7 @@
         "sensor": "Medium-range sensors",
         "target": "Equipped",
         "navigation": "Navigation computer",
-        "armament": "Configuration 1:, *Turret-mounted twin light turbolaser batteries (4), *Missile/torpedo launchers (4), *Ventral quad laser cannon (1)",
+        "armament": "Configuration 1:, Turret-mounted twin light turbolaser batteries (4), Missile/torpedo launchers (4), Ventral quad laser cannon (1)",
         "complement": "3 TIE fighter series starfighters, 2 Lambda-class shuttles, Landspeeders, Ship's boats",
         "bays": "Circular docking bays (2)",
         "crew": "100 officers, enlisted crew and pilots",
@@ -618,7 +618,7 @@
         "consumables": "3 months",
         "role": "All-purpose, Escort, Support ship, Picket, Light warship, Patrol",
         "firstuse": "By 22 BBY",
-        "affiliation": "Galactic Republic, *Imperial Navy"
+        "affiliation": "Galactic Republic, Imperial Navy"
       },
       "categories": [
         "Articles with spoilers",
@@ -638,7 +638,7 @@
       "collection": "items",
       "facts": {
         "manufacturer": "Kuat Drive Yards",
-        "model": "Arquitens-class, Arquitens-class command cruiser, *Class 546 Cruiser",
+        "model": "Arquitens-class, Arquitens-class command cruiser, Class 546 Cruiser",
         "type": "Light cruiser",
         "cost": "5,000,000 credits",
         "length": "230 meters, 380.34 meters",
@@ -651,7 +651,7 @@
         "sensor": "Medium-range sensors",
         "navigation": "Navigation computer",
         "armament": "Turret-mounted twin light turbolaser batteries (4), Quad laser batteries (8), Concussion missile launchers (4), Medium tractor beam projector (1)",
-        "complement": "3 TIE fighter series starfighters (tripled with retrofitted hangar), 2 TIE line bombers or 1 Sentinel-class landing craft, *TIE/IN interceptors, *TIE/ln space superiority starfighters, Small shuttles, Landspeeders, Ship'",
+        "complement": "3 TIE fighter series starfighters (tripled with retrofitted hangar), 2 TIE line bombers or 1 Sentinel-class landing craft, TIE/IN interceptors, TIE/ln space superiority starfighters, Small shuttles, Landspeeders, Ship's ",
         "bays": "Retrofitted hangar",
         "escapepods": "8",
         "crew": "750 officers, enlisted crew and pilots",
@@ -659,7 +659,7 @@
         "consumables": "3 months",
         "role": "Light multipurpose cruiser, Support ship, Electronic warfare, Reconnaissance, Armed transport",
         "firstuse": "By 18 BBY",
-        "affiliation": "Galactic Empire, New Republic, *New Republic Defense Fleet, *Mandalorian fleet"
+        "affiliation": "Galactic Empire, New Republic, New Republic Defense Fleet, Mandalorian fleet"
       },
       "categories": [
         "Articles in need of updating",
@@ -755,7 +755,7 @@
       "wikiTitle": "Anoat sector",
       "collection": "regions",
       "facts": {
-        "region": "Outer Rim Territories, *Greater Javin, Western Reaches",
+        "region": "Outer Rim Territories, Greater Javin, Western Reaches",
         "coordinates": "K-18",
         "systems": "Allyuen system, Anoat system, Bavva system, Bendeluum system, Bespin system, Burnin Konn system, Council system, Darlyn Boda system, Delphon system, Ertegas system, Gerrenthum system, Gutretee system, Hoth system, Ione s",
         "otherplanets": "Gallowyss, Ripurni, Sinsara",
@@ -788,12 +788,12 @@
       "collection": "quests",
       "facts": {
         "prev": "Mission to Utapau",
-        "conc": "Hunt for Kundri Fathom, *Attack on the Storm Basin refinery, Outer Rim Sieges",
+        "conc": "Hunt for Kundri Fathom, Attack on the Storm Basin refinery, Outer Rim Sieges",
         "next": "Capture of Moregi",
         "conflict": "Clone Wars",
         "date": "19 BBY",
         "place": "Mahranee",
-        "result": "Confederacy of Independent Systems victory, *Genocide of all Mahran refugees and the Galactic Republic task force, *Confederacy claims control of Mahranee",
+        "result": "Confederacy of Independent Systems victory, Genocide of all Mahran refugees and the Galactic Republic task force, Confederacy claims control of Mahranee",
         "side1": "Galactic Republic, Jedi Order",
         "side2": "Confederacy of Independent Systems",
         "commanders1": "Jedi General Chubor&dagger;",
@@ -877,7 +877,7 @@
         "region": "Outer Rim Territories",
         "coordinates": "R-7",
         "systems": "Azure system",
-        "asteroids": "Anaxes asteroid belt, *PM-1203, *PM-6986",
+        "asteroids": "Anaxes asteroid belt, PM-1203, PM-6986",
         "routes": "Perlemian Trade Route",
         "battles1": "Local conflict",
         "b1": "Destruction of Anaxes",
@@ -988,7 +988,7 @@
         "plating": "Black,",
         "armament": "E-5 blaster rifle, BX Sniper Rifle, RPS-6 rocket launcher, Droid commando personal shield, Electrostaff",
         "equipment": "Vocabulator",
-        "affiliation": "Confederacy of Independent Systems, *Ziro the Hutt's criminal organization, *Desix Separatist holdout, Tech Masters, Darth Vader's secret forces, Kay Vess' crew, The Twins"
+        "affiliation": "Confederacy of Independent Systems, Ziro the Hutt's criminal organization, Desix Separatist holdout, Tech Masters, Darth Vader's secret forces, Kay Vess' crew, The Twins"
       },
       "categories": [
         "Articles to be expanded",
@@ -1014,13 +1014,13 @@
         "place": "Christophsis",
         "result": "Galactic Republic strategic and psychological victory, Full retreat of Separatist blockade, Republic High Command uses campaign as an example of Jedi&ndash;clone cooperation, Separatist occupation ended",
         "side1": "Galactic Republic",
-        "side2": "Confederacy of Independent Systems, *Retail Caucus, Sith",
+        "side2": "Confederacy of Independent Systems, Retail Caucus, Sith",
         "commanders1": "Senator Bail Prestor Organa, Jedi General Yoda, Jedi General Anakin Skywalker, Fleet Admiral Wullf Yularen, Clone Marshal Commander Cody, Clone Commander Blackout, Clone Captain Rex",
         "commanders2": "Dark Acolyte Asajj Ventress, General Whorm Loathsom, Admiral Trench, TI-99&dagger;, TJ-55&dagger;",
-        "unit1": "Grand Army of the Republic, **Torrent Company",
-        "unit2": "Separatist Droid Army, *TJ-55's battle droid battalion, *Whorm Loathsom's army, Confederacy of Independent Systems Navy, *Christophsis blockade",
-        "forces1": "7 Venator-class Star Destroyers, *Clone commandos, *Clone navigation officers, *Clone trooper pilots, *Special ops clone troopers, *Stealth clone pilot, All Terrain Reconnaissance Transports, All Terrain Tactical Enforce",
-        "forces2": "1 Providence-class Dreadnought&dagger;, At least 7 C-9979 landing craft, Thousands of, *DSD1 dwarf spider droids, *LR-57 combat/retail droids, *OOM command battle droids, *Octuptarra magna tri-droids, *At least 3 T-serie",
+        "unit1": "Grand Army of the Republic, Torrent Company",
+        "unit2": "Separatist Droid Army, TJ-55's battle droid battalion, Whorm Loathsom's army, Confederacy of Independent Systems Navy, Christophsis blockade",
+        "forces1": "7 Venator-class Star Destroyers, Clone commandos, Clone navigation officers, Clone trooper pilots, Special ops clone troopers, Stealth clone pilot, All Terrain Reconnaissance Transports, All Terrain Tactical Enforcers, 4",
+        "forces2": "1 Providence-class Dreadnought&dagger;, At least 7 C-9979 landing craft, Thousands of, DSD1 dwarf spider droids, LR-57 combat/retail droids, OOM command battle droids, Octuptarra magna tri-droids, At least 3 T-series tac",
         "casual1": "Moderate, Many clone troopers, Heavy walker and gunship losses, 1 frigate, All support ships, Christophsians, Republic weapons depot heavily damaged",
         "casual2": "Heavy, Whorm Loathsom and Slick captured",
         "civilian": "Chaleydonia damaged"
@@ -1045,7 +1045,7 @@
       "collection": "enemies",
       "facts": {
         "creator": "Geonosians",
-        "manufacturer": "Techno Union, *Baktoid Combat Automata, *Baktoid Armor Workshop, Geonosis Industries",
+        "manufacturer": "Techno Union, Baktoid Combat Automata, Baktoid Armor Workshop, Geonosis Industries",
         "homeworld": "Geonosian droid factories, Geonosis, Kudo droid foundry, Kudo III, Akiva droid factory, Akiva",
         "line": "B-series battle droid, Neimoidian battle droid",
         "class": "Battle droid",
@@ -1057,7 +1057,7 @@
         "plating": "Bone-white, rust brown,",
         "armament": "E-5 blaster rifle, Electropole, Thermal detonators, RPS-6 rocket launcher",
         "equipment": "Comlink booster pack, Datapad, Macrobinoculars",
-        "affiliation": "Trade Federation, *Confederacy military, Galactic Republic, Infinite Coil, Separatist holdouts, Bedlam Raiders, Hutt Cartel, Crimson Dawn, Droid uprising, Galactic Empire, Schism Imperial, Plazir-15's government, Droid G"
+        "affiliation": "Trade Federation, Confederacy military, Galactic Republic, Infinite Coil, Separatist holdouts, Bedlam Raiders, Hutt Cartel, Crimson Dawn, Droid uprising, Galactic Empire, Schism Imperial, Plazir-15's government, Droid Go"
       },
       "categories": [
         "Articles to be expanded",
@@ -1091,12 +1091,12 @@
         "side2": "Confederacy of Independent Systems, Sith",
         "commanders1": "Supreme Chancellor Sheev Palpatine, Jedi General Shaak Ti, Jedi General Anakin Skywalker Honor Salima",
         "commanders2": "Head of State Count Dooku&dagger;, Supreme Martial Commander of the Separatist Droid Armies General Grievous, Captain Lushros Dofine",
-        "unit1": "Blue Squadron, Coruscant Home Defense Fleet, Coruscant Rescue Ops, *Fifth Fleet, Shadow Squadron",
+        "unit1": "Blue Squadron, Coruscant Home Defense Fleet, Coruscant Rescue Ops, Fifth Fleet, Shadow Squadron",
         "unit2": "Coruscant attack fleet, Another security squad&dagger;",
-        "forces1": "At least 7 Jedi Masters, *Roron Corobb&dagger;, At least 1 Jedi Knight, **Contrail, **Clone Commander Davijaan \"Odd Ball\", *Clone Commander Gree, Carrack-class light cruisers, **Guarlara, **Ro-ti-Mundi, 2 stolen Lucrehul",
-        "forces2": "1 Dark Lord of the Sith, *Droidekas, *OOM command battle droids, Munificent-class star frigates, At least 2 Providence-class Dreadnoughts, *Invisible Hand&dagger;, *Prosperous, Lucrehulk-class Battleships, *Profusion",
-        "casual1": "Heavy, *Two members of Fire Team Three killed",
-        "casual2": "Heavy, **Munificent-class star frigates, **2 Providence-class Dreadnoughts, **Recusant-class light destroyers",
+        "forces1": "At least 7 Jedi Masters, Roron Corobb&dagger;, At least 1 Jedi Knight, Contrail, Clone Commander Davijaan \"Odd Ball\", Clone Commander Gree, Carrack-class light cruisers, Guarlara, Ro-ti-Mundi, 2 stolen Lucrehulk-class Ba",
+        "forces2": "1 Dark Lord of the Sith, Droidekas, OOM command battle droids, Munificent-class star frigates, At least 2 Providence-class Dreadnoughts, Invisible Hand&dagger;, Prosperous, Lucrehulk-class Battleships, Profusion",
+        "casual1": "Heavy, Two members of Fire Team Three killed",
+        "casual2": "Heavy, Munificent-class star frigates, 2 Providence-class Dreadnoughts, Recusant-class light destroyers",
         "civilian": "Galactic City extensively damaged, Tens of thousands killed"
       },
       "categories": [
@@ -1124,16 +1124,16 @@
         "conflict": "Clone Wars",
         "date": "20 BBY",
         "place": "Umbara",
-        "result": "Galactic Republic/Jedi Order victory, *Recapture and occupation of Umbara, *Execution of Pong Krell for treason against the Republic, Clone trooper Dogma arrested",
+        "result": "Galactic Republic/Jedi Order victory, Recapture and occupation of Umbara, Execution of Pong Krell for treason against the Republic, Clone trooper Dogma arrested",
         "side1": "Galactic Republic, Jedi Order",
         "side2": "Confederacy of Independent Systems",
         "commanders1": "High Jedi General Obi-Wan Kenobi, Clone Captain Rex, Clone Sergeant Appo",
         "commanders2": "Jedi General Pong Krell&dagger;",
-        "unit1": "Republic Navy, Grand Army of the Republic, *Several other battalions",
-        "unit2": "Confederacy of Independent Systems Navy, *Umbara blockade, Confederacy military, *Umbaran Militia",
-        "forces1": "5 Jedi, Aggressive ReConnaissance-170 starfighters, Clone troopers, *1 Advanced Recon Commando, *At least 1 Clone medic, *Advanced Recon Force troopers, *Clone trooper pilots, All Terrain Reconnaissance Transports",
+        "unit1": "Republic Navy, Grand Army of the Republic, Several other battalions",
+        "unit2": "Confederacy of Independent Systems Navy, Umbara blockade, Confederacy military, Umbaran Militia",
+        "forces1": "5 Jedi, Aggressive ReConnaissance-170 starfighters, Clone troopers, 1 Advanced Recon Commando, At least 1 Clone medic, Advanced Recon Force troopers, Clone trooper pilots, All Terrain Reconnaissance Transports",
         "forces2": "1 self-proclaimed Sith acolyte&dagger;, B1-series battle droids, At least 1 T-series military strategic analysis and tactics droid&dagger;, Scutiger-100 stealth droids, Umbaran hover tanks, Impeding Assault Tanks, Umbara",
-        "casual1": "At least 1 Low Altitude Assault Transport/infantry gunship, Many All Terrain Recon Transports, Many BTL-B Y-wing starfighter/bombers, Many Clone Z-95 starfighters, Heavy clone trooper losses, *Many Advanced Recon Force t",
+        "casual1": "At least 1 Low Altitude Assault Transport/infantry gunship, Many All Terrain Recon Transports, Many BTL-B Y-wing starfighter/bombers, Many Clone Z-95 starfighters, Heavy clone trooper losses, Many Advanced Recon Force tr",
         "casual2": "At least 1 Munificent-class star frigate, Several Umbaran hover tanks, Some Scutiger-100 stealth droid, Several Impeding Assault Tanks, Some Umbaran mobile heavy cannons, Severe Umbaran soldier casualties, Many Vulture-c"
       },
       "categories": [
@@ -1153,7 +1153,7 @@
       "wikiTitle": "Batuu",
       "collection": "regions",
       "facts": {
-        "region": "Outer Rim Territories, *Galactic Frontier, Western Reaches",
+        "region": "Outer Rim Territories, Galactic Frontier, Western Reaches",
         "sector": "Trilon sector",
         "system": "Batuu system",
         "coordinates": "G-15",
@@ -1315,12 +1315,12 @@
         "conflict": "Clone Wars",
         "date": "c. 22 BBY",
         "place": "Antine",
-        "result": "Disastrous defeat for the Galactic Republic, *Decimation of the 100th Clone Company, *Captain Tesh Keff Hawks is blamed as a scapegoat and loses their career",
+        "result": "Disastrous defeat for the Galactic Republic, Decimation of the 100th Clone Company, Captain Tesh Keff Hawks is blamed as a scapegoat and loses their career",
         "side1": "Galactic Republic, Jedi Order",
         "side2": "Confederacy of Independent Systems",
         "commanders1": "Jedi General Pong Krell, Captain Tesh Hawks",
         "unit1": "100th Clone Company&dagger;",
-        "forces1": "1 Jedi General, 1 human captain, Clone troopers, *Sawtooth, *Trick",
+        "forces1": "1 Jedi General, 1 human captain, Clone troopers, Sawtooth, Trick",
         "casual1": "Most clone troopers"
       },
       "categories": [
@@ -1352,8 +1352,8 @@
         "side2": "Galactic Republic",
         "commanders1": "Supreme Martial Commander General Grievous",
         "commanders2": "Admiral Dorrun, A Clone Sergeant",
-        "unit1": "Confederate Navy, *Serolonis Separatist fleet, Separatist Droid Army",
-        "unit2": "Grand Army of the Republic, Republic Navy, *Dorrun's fleet",
+        "unit1": "Confederate Navy, Serolonis Separatist fleet, Separatist Droid Army",
+        "unit2": "Grand Army of the Republic, Republic Navy, Dorrun's fleet",
         "forces1": "2 Lucrehulk-class Battleships, Vulture-class starfighters, Armored Assault Tank Mk Is, Multi-Troop Transports, IG-227 Hailfire-class droid tanks, B1-series battle droids, Infinite Coil soldiers",
         "forces2": "3 Venator-class Star Destroyers, 2 Arquitens-class light cruisers, Clone Z-95 starfighters, LAAT/i gunships, All Terrain Tactical Enforcers, Clone troopers, Heavy weapons clone troopers, Clone sharpshooters",
         "casual1": "Several B1-series battle droids, Several Infinite Coil soldiers",
@@ -1387,7 +1387,7 @@
         "mass": "80 kilograms",
         "hair": "Black",
         "skin": "Tan",
-        "affiliation": "Galactic Republic, Galactic Empire, *Project War-Mantle, Clone Underground"
+        "affiliation": "Galactic Republic, Galactic Empire, Project War-Mantle, Clone Underground"
       },
       "categories": [
         "Articles with spoilers",
@@ -1607,7 +1607,7 @@
         "next": "Funeral of the Jedi Temple bombing victims",
         "date": "19 BBY",
         "place": "Jedi Temple, Coruscant",
-        "outcome": "Damage inflicted on the Jedi Temple hangar and 6 Jedi killed, *Tutso Mara killed, *Jackar Bowmani killed, Dozens wounded",
+        "outcome": "Damage inflicted on the Jedi Temple hangar and 6 Jedi killed, Tutso Mara killed, Jackar Bowmani killed, Dozens wounded",
         "participants": "Jackar Bowmani, Letta Turmond"
       },
       "categories": [
@@ -1704,8 +1704,8 @@
       "wikiTitle": "Bespin system",
       "collection": "regions",
       "facts": {
-        "region": "Outer Rim Territories, *Greater Javin, Western Reaches",
-        "sector": "Javin sector, *Anoat sector",
+        "region": "Outer Rim Territories, Greater Javin, Western Reaches",
+        "sector": "Javin sector, Anoat sector",
         "coordinates": "[[Standard Galactic Grid",
         "K-18]]<ref name": "\"TFABG\">[[Star Wars: The Force Awakens Beginner Game",
         "orbits": "#Miser{{EncyclopediaCite",
@@ -1872,7 +1872,7 @@
         "eyes": "Brown",
         "skin": "Light",
         "parents": "Bennic Halloren's father",
-        "affiliation": "Galactic Republic, *Republic Intelligence, Galactic Empire, *Imperial Security Bureau, Zero Company"
+        "affiliation": "Galactic Republic, Republic Intelligence, Galactic Empire, Imperial Security Bureau, Zero Company"
       },
       "categories": [
         "Articles with spoilers",
@@ -1904,7 +1904,7 @@
         "height": "1.83 meters (6 ft)",
         "mass": "80 kilograms",
         "skin": "Tan",
-        "affiliation": "Galactic Republic, *Grand Army of the Republic, Galactic Empire, *Stormtrooper Corps"
+        "affiliation": "Galactic Republic, Grand Army of the Republic, Galactic Empire, Stormtrooper Corps"
       },
       "categories": [
         "Articles with spoilers",
@@ -2079,7 +2079,7 @@
       "wikiTitle": "Boz Pity",
       "collection": "regions",
       "facts": {
-        "region": "Mid Rim Territories, *Foundry of the Confederacy, The Slice",
+        "region": "Mid Rim Territories, Foundry of the Confederacy, The Slice",
         "sector": "Halla sector",
         "system": "Boz Pity system",
         "coordinates": "S-9",
@@ -2118,7 +2118,7 @@
         "fauna": "Combat arachnid",
         "otherspecies": "Human",
         "demonym": "Caridan",
-        "affiliation": "Galactic Republic, *Grand Army of the Republic, Galactic Empire, *Imperial Academy"
+        "affiliation": "Galactic Republic, Grand Army of the Republic, Galactic Empire, Imperial Academy"
       },
       "categories": [
         "Articles in need of updating",
@@ -2210,7 +2210,7 @@
       "wikiTitle": "Cassander sector",
       "collection": "regions",
       "facts": {
-        "region": "Outer Rim Territories, *Borderlands",
+        "region": "Outer Rim Territories, Borderlands",
         "coordinates": "K-5 & L-5",
         "subsectors": "Tadrin sector, Tendrannan sector",
         "systems": "Altunna system, Arron Prime system, Caraxl system, Cassander system, Forsen system, Kaller system, Mamkoda system, Ord Canfre system, Peldon Minor system, Sheh Soahi system",
@@ -2390,7 +2390,7 @@
         "hair": "Black",
         "eyes": "White, Brown",
         "skin": "Tan",
-        "affiliation": "Galactic Republic, Galactic Empire, *Project Blackstaff"
+        "affiliation": "Galactic Republic, Galactic Empire, Project Blackstaff"
       },
       "categories": [
         "Articles with gameplay alternatives",

@@ -15,8 +15,8 @@
         "fire": "Single Shot",
         "ammotype": "Armor-Piercing Grenade",
         "accuracy": "Accurate at Close Range",
-        "counterpart": "Boomshot Grenade Launcher, *Heavy Boomshot, Booshka Grenade Launcher, Stomper",
-        "era": "*Pendulum Wars, Locust War",
+        "counterpart": "Boomshot Grenade Launcher, Heavy Boomshot, Booshka Grenade Launcher, Stomper",
+        "era": "Pendulum Wars, Locust War",
         "affiliation": "Coalition of Ordered Governments",
         "operation": "Pump-Action",
         "maxammo": "12"
@@ -43,8 +43,8 @@
         "side2": "25px Locust Horde",
         "commanders1": "Col. Trench, Mayor Shaw, Lt. Brown, Cpt. Akila Grey",
         "commanders2": "Queen Myrrah, Vraahk",
-        "forces1": "Kalona Police Force, COG Army, *Theta squad, *Charlie-One, *Whiskey Squad, *26th Royal Tyran Infantry, **C Company, ***Bravo Squad, King Raven, Centaur Tanks, *Centaur Zero-Two, *Centaur Zero-Five, *Centaur One-One, *Cen",
-        "forces2": "Locust Army, *Scorched Legion",
+        "forces1": "Kalona Police Force, COG Army, Theta squad, Charlie-One, Whiskey Squad, 26th Royal Tyran Infantry, C Company, Bravo Squad, King Raven, Centaur Tanks, Centaur Zero-Two, Centaur Zero-Five, Centaur One-One, Centaur One-Four",
+        "forces2": "Locust Army, Scorched Legion",
         "casual1": "Very Heavy",
         "casual2": "Unknown, probably moderate",
         "previous": "Emergence in Ephyra",
@@ -239,7 +239,7 @@
         "occupation": "Gear",
         "rank": "Private",
         "era": "Pendulum Wars, Locust War",
-        "affiliation": "Coalition of Ordered Governments, Coalition of Ordered Governments Army, *Theta Squad",
+        "affiliation": "Coalition of Ordered Governments, Coalition of Ordered Governments Army, Theta Squad",
         "family": "Manu Kemara - Twin Brother"
       },
       "categories": [
@@ -436,7 +436,7 @@
         "rank": "Sergeant Major",
         "era": "Pendulum Wars, Locust War",
         "notable": "Redesigned the Gnasher Shotgun with Adam Fenix, Creator of the Chainsaw Lancer Prototype",
-        "affiliation": "Coalition of Ordered Governments, *Coalition of Ordered Governments Army"
+        "affiliation": "Coalition of Ordered Governments, Coalition of Ordered Governments Army"
       },
       "categories": [
         "COG",
@@ -460,7 +460,7 @@
         "size": "Small",
         "era": "Pendulum Wars, Locust War",
         "counterpart": "Frag Grenade, Smoke Grenade, Incendiary Grenade, Stim-Gas Grenade",
-        "affiliation": "Coalition of Ordered Governments, *NCOG Corps of Marines"
+        "affiliation": "Coalition of Ordered Governments, NCOG Corps of Marines"
       },
       "categories": [
         "Gears of War: E-Day",
@@ -488,7 +488,7 @@
         "era": "Pendulum WarsLocust WarStranded InsurgencyLambent PandemicOutsider MovementSwarm Invasion",
         "notable": "Embry Star Recipient",
         "family": "Adam Fenix - Father †, Elain Fenix - Mother †, (Unnamed) - Paternal Grandfather †, Roland Fenix - Paternal Great-Grandfather †, Anya Stroud - Wife †, Helena Stroud - Mother-in-law †, James Fenix - Son",
-        "affiliation": "COG, COG Army, *26th RTI, **Alpha-Five, **Omega-Two, **Delta-One, **Delta-Two"
+        "affiliation": "COG, COG Army, 26th RTI, Alpha-Five, Omega-Two, Delta-One, Delta-Two"
       },
       "categories": [
         "26th Royal Tyran Infantry",
@@ -555,13 +555,13 @@
         "speed": "180 kph",
         "engine": "Coaxial Rotors",
         "hull": "Medium",
-        "armament": "*Frontal Machine Gun, Frontal Chain Guns, Rocket Pods, Missile Launchers",
+        "armament": "Frontal Machine Gun, Frontal Chain Guns, Rocket Pods, Missile Launchers",
         "equipment": "UV-filtered Searchlight",
-        "crew": "*One pilot, One co-pilot, One crew chief",
+        "crew": "One pilot, One co-pilot, One crew chief",
         "capacity": "4-6 Gears",
-        "role": "*Assault, Air strikes",
-        "era": "*Pendulum Wars, Locust War, Swarm Invasion",
-        "affiliation": "*Coalition of Ordered Governments, *Coalition of Ordered Governments Air Corps"
+        "role": "Assault, Air strikes",
+        "era": "Pendulum Wars, Locust War, Swarm Invasion",
+        "affiliation": "Coalition of Ordered Governments, Coalition of Ordered Governments Air Corps"
       },
       "categories": [
         "COG",
@@ -584,11 +584,11 @@
         "result": "Major Locust Strategic Victory, 25% of the Human population wiped out, Beginning of the Locust War",
         "side1": "25px COG25px UIR",
         "side2": "25px Locust Horde",
-        "commanders1": "Council of Sovereigns, *Chairman Tomas Dalyell, *Deputy Chairman Richard Prescott, Coalition High Command, *Chief of the COG Defense Staff General Bardry Salaman, *Colonel Victor Hoffman, *Lieutenant Anya Stroud, Gorasni",
-        "commanders2": "Locust Council, *Queen Myrrah, *Ukkon, Locust Army, *Uzil RAAM, *Zamil Karn, *Svore Vraahk, *Krav Jermad, *Vold Sraak †, Trinity of Worms, *Ketor Vrol, *Acolyte Skorge",
+        "commanders1": "Council of Sovereigns, Chairman Tomas Dalyell, Deputy Chairman Richard Prescott, Coalition High Command, Chief of the COG Defense Staff General Bardry Salaman, Colonel Victor Hoffman, Lieutenant Anya Stroud, Gorasni High",
+        "commanders2": "Locust Council, Queen Myrrah, Ukkon, Locust Army, Uzil RAAM, Zamil Karn, Svore Vraahk, Krav Jermad, Vold Sraak †, Trinity of Worms, Ketor Vrol, Acolyte Skorge",
         "forces1": "COG Armed Forces, Gorasni Armed Forces",
         "forces2": "Locust Horde, Hollow Creatures",
-        "casual1": "25% of total human population, *Billions of civilians and personnel in the first 26 hours, *Eight million Gorasni",
+        "casual1": "25% of total human population, Billions of civilians and personnel in the first 26 hours, Eight million Gorasni",
         "casual2": "Unknown, probably light, Vold Sraak (Executed by RAAM in Jannermont)"
       },
       "categories": [
@@ -616,7 +616,7 @@
         "hair": "Black (Greying)",
         "era": "Pendulum Wars, Locust War, Stranded Insurgency, Lambent Pandemic, Interwar Period, Outsider Movement, Swarm Invasion",
         "family": "Mr. Cole - Father †, Mrs. Cole - Mother †, (Unammed) - Wife, Hana Cole - Daughter",
-        "affiliation": "COG, COG Army, *Alpha Squad, *Delta-One, *Foxtrot-Six, *Kilo Squad, *Sigma-One"
+        "affiliation": "COG, COG Army, Alpha Squad, Delta-One, Foxtrot-Six, Kilo Squad, Sigma-One"
       },
       "categories": [
         "Articles needing citations",
@@ -651,10 +651,10 @@
         "rate of fire": "500/M",
         "accuracy": "Medium",
         "range": "Short to Medium",
-        "era": "*Pendulum Wars, Locust War, Lambent Pandemic, Outsider Movement, Swarm Invasion",
-        "counterpart": "*Talon Autopistol",
-        "counterwep": "*Boltok Pistol, Gorgon Burst Pistol",
-        "affiliation": "*Coalition of Ordered Governments, Locust Horde"
+        "era": "Pendulum Wars, Locust War, Lambent Pandemic, Outsider Movement, Swarm Invasion",
+        "counterpart": "Talon Autopistol",
+        "counterwep": "Boltok Pistol, Gorgon Burst Pistol",
+        "affiliation": "Coalition of Ordered Governments, Locust Horde"
       },
       "categories": [
         "Articles that need Gearsify-ing",
@@ -681,17 +681,17 @@
         "type": "Lever-Action Shotgun",
         "size": "Medium",
         "damage per hit": "High to Lethal",
-        "magazine": "*8 Shells (GOW, GOW2, GOW3, GOWJ, GOW4), 6 Shells (Gears 5 & GOW: E-Day)",
+        "magazine": "8 Shells (GOW, GOW2, GOW3, GOWJ, GOW4), 6 Shells (Gears 5 & GOW: E-Day)",
         "maxammo": "Varies, 39 Shells (GOW, GOW2, GOW3, GOWJ), 48 shells (GOW4), 30 shells (Gears 5), 36 shells (GOW: E-Day)",
         "ammotype": "12-Gauge Shotgun Shells",
         "operation": "Manual Lever-Action",
         "rate of fire": "60/M",
         "accuracy": "Varies; depends on range",
         "range": "Short to Medium",
-        "era": "*Pendulum Wars, Locust War, Lambent Pandemic, Swarm War",
-        "counterpart": "*Overkill, Sawed-Off Shotgun",
-        "counterwep": "*Chainsaw Bayonet, Longshot Sniper Rifle, Mk 2 Lancer Assault Rifle",
-        "affiliation": "*Coalition of Ordered Governments, *Coalition of Ordered Governments Army, Lambent, Locust Horde, Stranded"
+        "era": "Pendulum Wars, Locust War, Lambent Pandemic, Swarm War",
+        "counterpart": "Overkill, Sawed-Off Shotgun",
+        "counterwep": "Chainsaw Bayonet, Longshot Sniper Rifle, Mk 2 Lancer Assault Rifle",
+        "affiliation": "Coalition of Ordered Governments, Coalition of Ordered Governments Army, Lambent, Locust Horde, Stranded"
       },
       "categories": [
         "Articles that need Gearsify-ing",
@@ -724,10 +724,10 @@
         "rate of fire": "130/M",
         "accuracy": "Very High",
         "range": "Extreme",
-        "era": "*Pendulum Wars, Locust War, Lambent Pandemic, Swarm War",
-        "counterpart": "*One-Shot, Breechshot, EMBAR, Markza",
-        "counterwep": "*One-Shot, Torque Bow, Boltok Pistol, Gnasher Shotgun, Hammerburst II, Hammerburst Assault Rifle",
-        "affiliation": "*Coalition of Ordered Governments, *Coalition of Ordered Governments Army, Locust Horde, Stranded"
+        "era": "Pendulum Wars, Locust War, Lambent Pandemic, Swarm War",
+        "counterpart": "One-Shot, Breechshot, EMBAR, Markza",
+        "counterwep": "One-Shot, Torque Bow, Boltok Pistol, Gnasher Shotgun, Hammerburst II, Hammerburst Assault Rifle",
+        "affiliation": "Coalition of Ordered Governments, Coalition of Ordered Governments Army, Locust Horde, Stranded"
       },
       "categories": [
         "Articles that need Gearsify-ing",
@@ -750,15 +750,15 @@
       "wikiTitle": "Frag Grenade",
       "collection": "items",
       "facts": {
-        "manufacturer": "*Coalition of Ordered Governments, Locust Horde",
+        "manufacturer": "Coalition of Ordered Governments, Locust Horde",
         "type": "Fragmentation Grenade",
         "size": "Small",
         "damage per hit": "Very High to Lethal (depends on target's proximity to blast radius)",
         "accuracy": "Varies",
         "range": "Varies on User",
-        "era": "*Pendulum Wars, Locust War, Lambent War, Lambent Pandemic, Swarm War",
-        "counterpart": "*Beacon Grenade, Ink Grenade, Smoke Grenade, Stim-Gas Grenade, Shock Grenade, Flashbang",
-        "affiliation": "*Coalition of Ordered Governments, *Coalition of Ordered Governments Army, Locust Horde, Swarm"
+        "era": "Pendulum Wars, Locust War, Lambent War, Lambent Pandemic, Swarm War",
+        "counterpart": "Beacon Grenade, Ink Grenade, Smoke Grenade, Stim-Gas Grenade, Shock Grenade, Flashbang",
+        "affiliation": "Coalition of Ordered Governments, Coalition of Ordered Governments Army, Locust Horde, Swarm"
       },
       "categories": [
         "Articles that need Gearsify-ing",
@@ -796,9 +796,9 @@
         "rate of fire": "180/M",
         "accuracy": "Pinpoint",
         "range": "Long",
-        "era": "*Locust War, Lambent Pandemic, Swarm War",
-        "counterpart": "*One-Shot, Longshot Sniper Rifle, GZ18 Markza Sniper Rifle, Breechshot",
-        "affiliation": "*Locust Horde, *Theron Guard"
+        "era": "Locust War, Lambent Pandemic, Swarm War",
+        "counterpart": "One-Shot, Longshot Sniper Rifle, GZ18 Markza Sniper Rifle, Breechshot",
+        "affiliation": "Locust Horde, Theron Guard"
       },
       "categories": [
         "Articles that need Gearsify-ing",
@@ -834,9 +834,9 @@
         "rate of fire": "Extremely High",
         "accuracy": "Low to Medium",
         "range": "Short to Medium",
-        "era": "*Locust War, Lambent Pandemic",
-        "counterpart": "*RAAM's Troika, Chain Gun, Mulcher, Vulcan Cannon",
-        "counterwep": "*One-Shot, Torque Bow, Boltok Pistol, Digger Launcher, Mortar, Longshot Sniper Rifle",
+        "era": "Locust War, Lambent Pandemic",
+        "counterpart": "RAAM's Troika, Chain Gun, Mulcher, Vulcan Cannon",
+        "counterwep": "One-Shot, Torque Bow, Boltok Pistol, Digger Launcher, Mortar, Longshot Sniper Rifle",
         "affiliation": "Locust Horde"
       },
       "categories": [
@@ -866,10 +866,10 @@
         "damage per hit": "Lethal",
         "operation": "Motorized Chain Mechanism",
         "range": "Close",
-        "era": "*Locust War, Lambent Pandemic, Swarm War",
-        "counterpart": "*Mark 1 Lancer Bayonet, Dual Chainsaw Staff",
-        "counterwep": "*Sawed-Off Shotgun, Mark 1 Lancer Assault Rifle, Enforcer, Gnasher Shotgun, Overkill Shotgun, Scorcher Flamethrower",
-        "affiliation": "*Coalition of Ordered Governments, *Coalition of Ordered Governments Army"
+        "era": "Locust War, Lambent Pandemic, Swarm War",
+        "counterpart": "Mark 1 Lancer Bayonet, Dual Chainsaw Staff",
+        "counterwep": "Sawed-Off Shotgun, Mark 1 Lancer Assault Rifle, Enforcer, Gnasher Shotgun, Overkill Shotgun, Scorcher Flamethrower",
+        "affiliation": "Coalition of Ordered Governments, Coalition of Ordered Governments Army"
       },
       "categories": [
         "Articles that need Gearsify-ing",
@@ -905,7 +905,7 @@
         "rate of fire": "Medium-High",
         "accuracy": "Medium-High",
         "range": "Medium",
-        "era": "*Locust War, Lambent Pandemic",
+        "era": "Locust War, Lambent Pandemic",
         "counterpart": "Hammerburst II",
         "counterwep": "Lancer Assault Rifle",
         "affiliation": "Locust Horde"
@@ -940,10 +940,10 @@
         "rate of fire": "Varies, 650 RPM (GOW3), 450 RPM (GOW4), 500 RPM (GOW5)",
         "accuracy": "Low to Medium",
         "range": "Short to Medium",
-        "era": "*Pendulum Wars, Locust War, Lambent Pandemic, Swarm War",
-        "counterpart": "*Mk 2 Lancer Assault Rifle, *Chainsaw Lancer Prototype, Mk 3 Lancer Assault Rifle, *Lancer GL Assault Rifle",
-        "counterwep": "*Markza Mk 1 Marksman Rifle, Hammerburst Assault Rifle, Hammerburst II",
-        "affiliation": "*Coalition of Ordered Governments, *Coalition of Ordered Governments Army, Locust Horde, *Savage Locust, Stranded, Outsiders"
+        "era": "Pendulum Wars, Locust War, Lambent Pandemic, Swarm War",
+        "counterpart": "Mk 2 Lancer Assault Rifle, Chainsaw Lancer Prototype, Mk 3 Lancer Assault Rifle, Lancer GL Assault Rifle",
+        "counterwep": "Markza Mk 1 Marksman Rifle, Hammerburst Assault Rifle, Hammerburst II",
+        "affiliation": "Coalition of Ordered Governments, Coalition of Ordered Governments Army, Locust Horde, Savage Locust, Stranded, Outsiders"
       },
       "categories": [
         "Gears 5 weapons",
@@ -974,9 +974,9 @@
         "rate of fire": "2000/M",
         "accuracy": "Medium-Low",
         "range": "Close to Medium",
-        "era": "*Pendulum Wars, Locust War, Lambent Pandemic",
-        "counterpart": "*Chain Gun, Mulcher, Troika Heavy Machine Gun, UIR Minigun",
-        "affiliation": "*Coalition of Ordered Governments, *Coalition of Ordered Governments Army, *Coalition of Ordered Governments Air Corps, Stranded"
+        "era": "Pendulum Wars, Locust War, Lambent Pandemic",
+        "counterpart": "Chain Gun, Mulcher, Troika Heavy Machine Gun, UIR Minigun",
+        "affiliation": "Coalition of Ordered Governments, Coalition of Ordered Governments Army, Coalition of Ordered Governments Air Corps, Stranded"
       },
       "categories": [
         "Gears of War: E-Day weapons",
@@ -1000,16 +1000,16 @@
         "size": "Medium",
         "damage per hit": "High",
         "magazine": "4 rounds",
-        "maxammo": "*20 rounds (GOW: E-Day), 36 rounds (GOW:J)",
+        "maxammo": "20 rounds (GOW: E-Day), 36 rounds (GOW:J)",
         "fire": "Semi-Automatic",
         "ammotype": "Cartridge",
         "operation": "Straight-Pull Bolt-Action",
         "rate of fire": "66/M",
         "accuracy": "Medium-High",
         "range": "Long",
-        "era": "*Lambent War, Locust War, Lambent Pandemic, Swarm Invasion",
-        "counterpart": "*Longshot Sniper Rifle, Markza Sniper Rifle",
-        "affiliation": "*Locust Horde, *Ragers"
+        "era": "Lambent War, Locust War, Lambent Pandemic, Swarm Invasion",
+        "counterpart": "Longshot Sniper Rifle, Markza Sniper Rifle",
+        "affiliation": "Locust Horde, Ragers"
       },
       "categories": [
         "Gears of War: E-Day weapons",
@@ -1032,9 +1032,9 @@
         "damage per hit": "Medium-High",
         "operation": "Physical Cutting",
         "range": "Close",
-        "era": "*Pendulum Wars, Locust War, Lambent Pandemic",
-        "counterpart": "*Combat Knife",
-        "affiliation": "*Coalition of Ordered Governments, *Coalition of Ordered Governments Army, **Commando"
+        "era": "Pendulum Wars, Locust War, Lambent Pandemic",
+        "counterpart": "Combat Knife",
+        "affiliation": "Coalition of Ordered Governments, Coalition of Ordered Governments Army, Commando"
       },
       "categories": [
         "Gears of War: E-Day weapons",
@@ -1106,10 +1106,10 @@
         "rate of fire": "900/M (GOW1 & GOWJ), 500/M (GOW2 & GOW3), 600/M (GOW4 & GOW5)",
         "accuracy": "Medium-High",
         "range": "Medium",
-        "era": "*Locust War, Lambent Pandemic, Swarm Invasion",
-        "counterpart": "*Mk 1 Lancer Assault Rifle, Mk 3 Lancer Assault Rifle, *Lancer GL Assault Rifle, Custom Lancer",
-        "counterwep": "*Hammerburst Assault Rifle, Hammerburst II",
-        "affiliation": "*Coalition of Ordered Governments, *Coalition of Ordered Governments Army, Lambent, Locust Horde, Stranded, Outsiders, Swarm"
+        "era": "Locust War, Lambent Pandemic, Swarm Invasion",
+        "counterpart": "Mk 1 Lancer Assault Rifle, Mk 3 Lancer Assault Rifle, Lancer GL Assault Rifle, Custom Lancer",
+        "counterwep": "Hammerburst Assault Rifle, Hammerburst II",
+        "affiliation": "Coalition of Ordered Governments, Coalition of Ordered Governments Army, Lambent, Locust Horde, Stranded, Outsiders, Swarm"
       },
       "categories": [
         "Articles that need Gearsify-ing",
@@ -1136,7 +1136,7 @@
         "gender": "Male",
         "height": "6'7\" ft. (Average)",
         "weight": "265 lbs (Average)",
-        "equipment": "*Drone Armor",
+        "equipment": "Drone Armor",
         "era": "Pendulum Wars, Lambent War, Locust War, Lambent Pandemic, Swarm Invasion",
         "affiliation": "Locust Horde, Queen's Guard, Savage Locust, Bloodied Vanguard, Swarm",
         "body color": "Grey skin with black scales",
@@ -1171,10 +1171,10 @@
         "gender": "Male",
         "height": "8'0\" ft. (Average)",
         "eyes": "Black",
-        "weapons": "*Boomshot Grenade Launcher, Butcher Cleaver, Digger Launcher, Gorehook, Heavy Boomshot, Mulcher, Scorcher",
-        "equipment": "*Boomer Armor, Boomshield (Maulers only), Thumper (Tremors only)",
+        "weapons": "Boomshot Grenade Launcher, Butcher Cleaver, Digger Launcher, Gorehook, Heavy Boomshot, Mulcher, Scorcher",
+        "equipment": "Boomer Armor, Boomshield (Maulers only), Thumper (Tremors only)",
         "era": "Pendulum Wars, Lambent War, Locust War, Lambent Invasion",
-        "types": "Butcher, Flame Boomer, Flayer, Grinder, Mauler, *Mauler Elite, Savage Boomer, Tremor",
+        "types": "Butcher, Flame Boomer, Flayer, Grinder, Mauler, Mauler Elite, Savage Boomer, Tremor",
         "affiliation": "Locust Horde, Bloodied Vanguard, Savage Locust",
         "body color": "Grey skin",
         "notable": "Large size, Physically powerful, Dimwitted and mentally degraded",
@@ -1206,12 +1206,12 @@
         "height": "36'0\" ft. (Average)",
         "eyes": "Orange",
         "body color": "Grey/White skin",
-        "weapons": "*Claws, Mass, Corpser Mine Layer (optional)",
-        "equipment": "*Armor",
-        "era": "*Lambent War, Locust War, Lambent Pandemic",
-        "types": "*Shibboleth, Corpser Adolescent, Corpser Hatchling",
-        "notable": "*Dug Locust Tunnels, Extremely Durable, High Intelligence, Weaponised and Engineered by Ukkon",
-        "affiliation": "*Locust Horde",
+        "weapons": "Claws, Mass, Corpser Mine Layer (optional)",
+        "equipment": "Armor",
+        "era": "Lambent War, Locust War, Lambent Pandemic",
+        "types": "Shibboleth, Corpser Adolescent, Corpser Hatchling",
+        "notable": "Dug Locust Tunnels, Extremely Durable, High Intelligence, Weaponised and Engineered by Ukkon",
+        "affiliation": "Locust Horde",
         "rank": "Logistical Support"
       },
       "categories": [
@@ -1244,12 +1244,12 @@
         "length": "10-15 feet",
         "eyes": "White/Yellow",
         "body color": "Black and Grey skin",
-        "weapons": "*Gunner (either Drone with Hammerburst or Theron Guard with Torque Bow), Reaver Rocket Launcher, Reaver Chain Gun (optional), Tentacles (for melee use on the ground)",
-        "mounts": "*One pilot, One gunner",
-        "era": "*Locust War, Lambent Pandemic",
-        "types": "*Hydra",
-        "notable": "*Has ability to fly, Can also be considered a vehicle, Extremely tough skin",
-        "affiliation": "*Locust Horde",
+        "weapons": "Gunner (either Drone with Hammerburst or Theron Guard with Torque Bow), Reaver Rocket Launcher, Reaver Chain Gun (optional), Tentacles (for melee use on the ground)",
+        "mounts": "One pilot, One gunner",
+        "era": "Locust War, Lambent Pandemic",
+        "types": "Hydra",
+        "notable": "Has ability to fly, Can also be considered a vehicle, Extremely tough skin",
+        "affiliation": "Locust Horde",
         "rank": "Calvary, Fire Support, Air Superiority"
       },
       "categories": [
@@ -1326,7 +1326,7 @@
       "facts": {
         "homeland": "Ephyra, Tyrus",
         "birth": "c. 45 B.E.",
-        "death": "*Frost 10 A.E. (Faked), Bloom 17 A.E.",
+        "death": "Frost 10 A.E. (Faked), Bloom 17 A.E.",
         "occupation": "Physicist for Defense Research Agency, Professor for La Croix University, Professor for East Barricade Academy, Scientist for the Locust Horde, Scientist for Azura Research Facility",
         "rank": "Major (Retired)",
         "hair": "Black (Balding and Graying)",
@@ -1382,14 +1382,14 @@
       "collection": "enemies",
       "facts": {
         "homeland": "Hollow",
-        "rank": "*Artillery, Self-Propelled Anti-Aircraft Gun, Radio Jammer",
+        "rank": "Artillery, Self-Propelled Anti-Aircraft Gun, Radio Jammer",
         "species": "Locust",
         "eyes": "Black",
         "body color": "Grey/Pinkish skin",
-        "weapons": "*Nemacyst Spores",
+        "weapons": "Nemacyst Spores",
         "equipment": "Armor",
-        "mounts": "*One Nemacyst loader",
-        "era": "*Locust War, Lambent Pandemic",
+        "mounts": "One Nemacyst loader",
+        "era": "Locust War, Lambent Pandemic",
         "affiliation": "Locust Horde"
       },
       "categories": [
@@ -1417,9 +1417,9 @@
         "height": "5-6 feet",
         "body color": "Dark Grey skin",
         "weapons": "Themselves",
-        "equipment": "*Armor",
+        "equipment": "Armor",
         "era": "Locust War",
-        "affiliation": "*Locust Horde",
+        "affiliation": "Locust Horde",
         "rank": "Explosive Ordnance"
       },
       "categories": [
@@ -1494,17 +1494,17 @@
         "model": "APC",
         "speed": "Unknown",
         "hull": "Armored hull",
-        "armament": "*Side Guns, Rear Gun, 8 Grenade Launchers (depends on model)",
-        "crew": "*One driver, One gunner",
+        "armament": "Side Guns, Rear Gun, 8 Grenade Launchers (depends on model)",
+        "crew": "One driver, One gunner",
         "capacity": "2-5 Gears",
-        "othersystems": "*Frontal shovel, JACK pod, Radio communications system, Headlights",
-        "role": "*Assault, Transportation",
-        "era": "*Pendulum Wars, Locust War, Lambent Pandemic",
-        "affiliation": "*Coalition of Ordered Governments, *Coalition of Ordered Governments Army, Stranded",
+        "othersystems": "Frontal shovel, JACK pod, Radio communications system, Headlights",
+        "role": "Assault, Transportation",
+        "era": "Pendulum Wars, Locust War, Lambent Pandemic",
+        "affiliation": "Coalition of Ordered Governments, Coalition of Ordered Governments Army, Stranded",
         "length": "7 meters",
         "width": "3.81 meters",
         "height": "4 meters",
-        "passengers": "*One Gear squad, One Jack",
+        "passengers": "One Gear squad, One Jack",
         "engine": "Lightmass Engine"
       },
       "categories": [
@@ -1526,18 +1526,18 @@
       "wikiTitle": "Centaur",
       "collection": "items",
       "facts": {
-        "manufacturer": "*Coalition of Ordered Governments, *Speyer Metalworks",
+        "manufacturer": "Coalition of Ordered Governments, Speyer Metalworks",
         "class": "Light Tank",
         "speed": "High, with boost capabilities",
         "engine": "Modified nitro-boosted imulsion engine",
         "hull": "Reinforced armored hull",
-        "armament": "*High Velocity Main Cannon",
-        "crew": "*One driver, One gunner, One commander",
+        "armament": "High Velocity Main Cannon",
+        "crew": "One driver, One gunner, One commander",
         "capacity": "4 Gears",
-        "othersystems": "*Frontal shovel, Radio communications system, Headlights",
-        "role": "*Assault, Escort",
-        "era": "*Pendulum Wars, Locust War, Lambent Pandemic",
-        "affiliation": "*Coalition of Ordered Governments, *Coalition of Ordered Governments Army",
+        "othersystems": "Frontal shovel, Radio communications system, Headlights",
+        "role": "Assault, Escort",
+        "era": "Pendulum Wars, Locust War, Lambent Pandemic",
+        "affiliation": "Coalition of Ordered Governments, Coalition of Ordered Governments Army",
         "length": "Unknown",
         "height": "Several meters",
         "passengers": "Unknown, but capable of holding at least four Gears and several Stranded"
@@ -1561,12 +1561,12 @@
         "species": "Ticker",
         "body color": "Grey skin",
         "length": "2'0\" ft. (Average)",
-        "weapons": "*Back-Strapped Imulsion Explosive, Claws, Beak",
+        "weapons": "Back-Strapped Imulsion Explosive, Claws, Beak",
         "equipment": "Back-Strapped Imulsion Explosive",
-        "era": "*Locust War, Lambent Pandemic",
-        "types": "*Wild Ticker",
-        "notable": "*Capable of Eating Weapons and Ammunition",
-        "affiliation": "*Locust Horde, *Savage Locust",
+        "era": "Locust War, Lambent Pandemic",
+        "types": "Wild Ticker",
+        "notable": "Capable of Eating Weapons and Ammunition",
+        "affiliation": "Locust Horde, Savage Locust",
         "rank": "Suicide Bomber"
       },
       "categories": [
@@ -1600,9 +1600,9 @@
         "hair": "Black",
         "eyes": "Brown",
         "era": "Pendulum Wars, Locust War",
-        "notable": "*Raised on South Islander Warrior Traditions, Possesses Tribal Tattoos, Veteran of Aspho Fields, Inspired Creation of Chainsaw Bayonet, Former POW to the Locust, Member of Zeta-Six, Went head to head with Skorge in a cha",
+        "notable": "Raised on South Islander Warrior Traditions, Possesses Tribal Tattoos, Veteran of Aspho Fields, Inspired Creation of Chainsaw Bayonet, Former POW to the Locust, Member of Zeta-Six, Went head to head with Skorge in a chai",
         "family": "(Unnamed) - Grandfather (Deceased), (Unnamed) - Paternal Uncle (Deceased), Lahni Kaliso - Paternal Cousin",
-        "affiliation": "COG, COG Army, *Delta-One, *Zeta-Six, *Unidentified Squad"
+        "affiliation": "COG, COG Army, Delta-One, Zeta-Six, Unidentified Squad"
       },
       "categories": [
         "26th Royal Tyran Infantry",
@@ -1634,8 +1634,8 @@
         "era": "Pendulum Wars",
         "notable": "Awarded the Embry Star, Member of Alpha-Five, Member of 26th Royal Tyran infantry",
         "family": "Eduardo Santiago - Father †, Eva Santiago - Mother †, Rosa Santiago - Paternal Aunt †, Dominic Santiago - Brother †, Maria Santiago - Sister-in-law †, Benedicto Santiago - Nephew †, Sylvia Santiago - Niece †",
-        "weapons": "Mark 1 Lancer Assault Rifle, *Gut-Puncher Grenade Launcher",
-        "affiliation": "Coalition of Ordered Governments, *Coalition of Ordered Governments Army, **Alpha-Five, **26th RTI"
+        "weapons": "Mark 1 Lancer Assault Rifle, Gut-Puncher Grenade Launcher",
+        "affiliation": "Coalition of Ordered Governments, Coalition of Ordered Governments Army, Alpha-Five, 26th RTI"
       },
       "categories": [
         "26th Royal Tyran Infantry",
@@ -1656,8 +1656,8 @@
       "collection": "regions",
       "facts": {
         "author": "Karen Traviss",
-        "artist": "*James Hawkins, Mike Buck",
-        "publisher": "*Del Rey Books (US), Orbit (UK)",
+        "artist": "James Hawkins, Mike Buck",
+        "publisher": "Del Rey Books (US), Orbit (UK)",
         "availability": "Novel",
         "date released": "28th October 2008",
         "us price": "$15.00",
@@ -1680,11 +1680,11 @@
       "collection": "regions",
       "facts": {
         "characters": "Damon Baird, Michael Barrick, Blake, Augustus Cole, Draper (Unnamed), Emma, Marcus Fenix, Gil Gonzalez, Victor Hoffman, Jace's Brother, Jace's Father, Jace's Mother, Jerry, Jonboy, Lily, Nash, Polanski, Richard Prescott,",
-        "creatures": "Bloodmount, Brumak, Corpser, Human, Kryll, Locust, *Beast Rider, *Drone, Nemacyst, Seeder, Wretch",
-        "events": "Locust War, *Mission to Montevado, *Mission to the Pirnah Badlands, *Siege of Jacinto",
-        "locations": "Tyrus, *Jacinto City, *Montevado",
-        "organizations": "Coalition of Ordered Governments, *Coalition of Ordered Governments Army, **Delta-One, Stranded",
-        "vehicles": "Centaur, *Centaur II-W080I, King Raven",
+        "creatures": "Bloodmount, Brumak, Corpser, Human, Kryll, Locust, Beast Rider, Drone, Nemacyst, Seeder, Wretch",
+        "events": "Locust War, Mission to Montevado, Mission to the Pirnah Badlands, Siege of Jacinto",
+        "locations": "Tyrus, Jacinto City, Montevado",
+        "organizations": "Coalition of Ordered Governments, Coalition of Ordered Governments Army, Delta-One, Stranded",
+        "vehicles": "Centaur, Centaur II-W080I, King Raven",
         "technology": "Boomshot Grenade Launcher, Gnasher Shotgun, Hammerburst II, Hammer of Dawn, Lancer Assault Rifle, Snub Pistol",
         "miscellanea": "COG Armor, COG Tag, Tyran"
       },
@@ -1789,10 +1789,10 @@
         "species": "Locust Drone",
         "gender": "Male",
         "height": "6'7\" ft.",
-        "weapons": "*Longshot Sniper Rifle, Mortar, One-Shot",
-        "equipment": "*Sniper Goggles, Sniper Helmet, Drone Armor",
-        "era": "*Locust War, Lambent Pandemic",
-        "affiliation": "*Locust Horde",
+        "weapons": "Longshot Sniper Rifle, Mortar, One-Shot",
+        "equipment": "Sniper Goggles, Sniper Helmet, Drone Armor",
+        "era": "Locust War, Lambent Pandemic",
+        "affiliation": "Locust Horde",
         "body color": "Grey skin with Black scales",
         "notable": "Skilled with the Longshot, Unmatched patience unlike other Drones, Killed Anthony Carmine with a headshot while using the Longshot"
       },
@@ -1857,16 +1857,16 @@
       "facts": {
         "birth": "Before Emergence Day",
         "death": "Bloom, 17 A.E.",
-        "rank": "*Captain, Head of the Navy",
+        "rank": "Captain, Head of the Navy",
         "species": "Human",
         "gender": "Male",
         "hair": "Grey",
         "eyes": "Blue",
-        "equipment": "*Binoculars, COG Armor, Combat boot, Captain's Log",
-        "vehicles": "*CNV Pomeroy, CNV Falconer, CNV Sovereign, Sea Raven",
-        "era": "*Pendulum Wars, Locust War, Lambent Pandemic",
-        "notable": "*Led the naval task force at Aspho Fields, In charge of counter piracy during Locust War, Became head of the COG Navy and Marine Corps after the Sinking of Jacinto",
-        "affiliation": "*Coalition of Ordered Governments, *Coalition of Ordered Governments Navy, **NCOG Corps of Marines"
+        "equipment": "Binoculars, COG Armor, Combat boot, Captain's Log",
+        "vehicles": "CNV Pomeroy, CNV Falconer, CNV Sovereign, Sea Raven",
+        "era": "Pendulum Wars, Locust War, Lambent Pandemic",
+        "notable": "Led the naval task force at Aspho Fields, In charge of counter piracy during Locust War, Became head of the COG Navy and Marine Corps after the Sinking of Jacinto",
+        "affiliation": "Coalition of Ordered Governments, Coalition of Ordered Governments Navy, NCOG Corps of Marines"
       },
       "categories": [
         "COG",
@@ -1905,7 +1905,7 @@
         "species": "Human",
         "gender": "Male",
         "era": "Golden AgePendulum Wars",
-        "notable": "*Early COG Chairman, Ordered opening of New Hope Research Facility to cure Rustlung, Shut down New Hope after Dr. Niles Samson's crimes came to light",
+        "notable": "Early COG Chairman, Ordered opening of New Hope Research Facility to cure Rustlung, Shut down New Hope after Dr. Niles Samson's crimes came to light",
         "affiliation": "Coalition of Ordered Governments"
       },
       "categories": [
@@ -1931,11 +1931,11 @@
         "gender": "Female",
         "hair": "Blond",
         "eyes": "Blue",
-        "weapons": "*Chain Gun",
-        "vehicles": "*King Raven, *KR Eight-Zero",
-        "era": "*Locust War, Lambent Pandemic",
+        "weapons": "Chain Gun",
+        "vehicles": "King Raven, KR Eight-Zero",
+        "era": "Locust War, Lambent Pandemic",
         "notable": "Highest ranking member of the COG Air Corps left by 10 A.E.",
-        "affiliation": "*Coalition of Ordered Governments, *Coalition of Ordered Governments Air Corps, **Butcherbird Squadron"
+        "affiliation": "Coalition of Ordered Governments, Coalition of Ordered Governments Air Corps, Butcherbird Squadron"
       },
       "categories": [
         "COG",
@@ -1954,9 +1954,9 @@
       "wikiTitle": "Gears of War: Jacinto's Remnant",
       "collection": "regions",
       "facts": {
-        "author": "*Karen Traviss",
-        "artist": "*James Hawkins, Mike Buck",
-        "publisher": "*Del Rey Books (US), Orbit (UK)",
+        "author": "Karen Traviss",
+        "artist": "James Hawkins, Mike Buck",
+        "publisher": "Del Rey Books (US), Orbit (UK)",
         "availability": "Novel",
         "date released": "July 28th 2009",
         "us price": "$15.00",
@@ -2002,13 +2002,13 @@
       "wikiTitle": "Comic Series",
       "collection": "regions",
       "facts": {
-        "publisher": "*Wildstorm / DC Comics, IDW Publishing (The Rise of RAAM, Hivebusters)",
+        "publisher": "Wildstorm / DC Comics, IDW Publishing (The Rise of RAAM, Hivebusters)",
         "availability": "Comic Series",
         "date released": "December 2008 -",
         "us price": "$3.99",
         "uk price": "£3.60",
-        "authors": "*Joshua Ortega, Mike Capps, Karen Traviss",
-        "artists": "*Liam Sharp, Leonardo Manco, Simon Bisley, Trevor Hairsine, Joel Gomez, Colin Wilson, Philip Tan, Julius Gopez, Pop Mhan, Pete Woods"
+        "authors": "Joshua Ortega, Mike Capps, Karen Traviss",
+        "artists": "Liam Sharp, Leonardo Manco, Simon Bisley, Trevor Hairsine, Joel Gomez, Colin Wilson, Philip Tan, Julius Gopez, Pop Mhan, Pete Woods"
       },
       "categories": [
         "Comic",
@@ -2069,7 +2069,7 @@
         "capacity": "12 Gears",
         "role": "Assault, Carrier, Troop Transport",
         "era": "Locust War, Lambent Pandemic",
-        "affiliation": "Coalition of Ordered Governments, *Coalition of Ordered Governments Air Corps"
+        "affiliation": "Coalition of Ordered Governments, Coalition of Ordered Governments Air Corps"
       },
       "categories": [
         "COG",
@@ -2085,8 +2085,8 @@
       "wikiTitle": "Gears of War: Anvil Gate",
       "collection": "regions",
       "facts": {
-        "author": "*Karen Traviss",
-        "publisher": "*Del Rey Books (US), Orbit (UK)",
+        "author": "Karen Traviss",
+        "publisher": "Del Rey Books (US), Orbit (UK)",
         "availability": "Novel",
         "date released": "31st August 2010",
         "us price": "$15.00",
@@ -2109,13 +2109,13 @@
       "collection": "regions",
       "facts": {
         "characters": "Alan, Jason Almsted, Zoe Almsted, Amy, Damon Baird, Samantha Byrne, Samuel K. Byrne, Sheraya Byrne, Anthony Carmine, Benjamin Carmine, Clayton Carmine, Miles Carver, Anton Chambers, Augustus Cole, Cragen, Tomas Dalyell, ",
-        "creatures": "Bloodmount, Brumak, Corpser, Lambent, *Former, *Lambent Gunker, *Lambent Berserker, *Lambent Drone, *Lambent Drudge, *Lambent Leviathan, *Lambent Stalks, *Lambent Wretch, *Polyp, Locust, *Boomer, **Butcher, **Grinder, **",
-        "events": "Pendulum Wars, *Siege of Anvil Gate, Lambent Pandemic, *First Battle of New Jacinto, *Victory Day, **Mission to Hanover, **Battle of Cougars Stadium, **Attack on the Sovereign, **Battle of Centennial Bridge, **Battle of ",
-        "locations": "Sera, *Azura, **Acanthus Station, **Pinnacle Tower, **Rose Station, *Bridge of Sera, *Deadlands, *Kashkur, **Anvegad, **Anvegad Plains, **Anvil Gate, *Jacinto Maximum Security Prison, *Lesser Islands Chain, **Vectes, *Or",
-        "organizations": "Coalition of Ordered Governments, *Coalition of Ordered Governments Air Corps, *Coalition of Ordered Governments Army, **9th Division, **26th Royal Tyran Infantry, ***Connaught Platoon, **501st Legion, **Delta-One, **Ony",
-        "vehicles": "Armadillo, Assault Derrick, *Rig 314, Bartlett, Centaur, Gorasni Destroyer, King Raven, *KR Zero-One, *KR Zero-Three, *KR Zero-Six, *KR Seven-Zero, Mechanical Loader, Raven's Nest Class, *CNV Sovereign, Silverback, Subma",
-        "technology": "Boltok Pistol, Boom Shield, Boomshot Grenade Launcher, Butcher Cleaver, Digger Launcher, Frag Grenade, Gnasher Shotgun, Gorgon SMG, Hammerburst II, Hammer of Dawn, Mk 1 Lancer Assault Rifle, Mk 2 Lancer Assault Rifle, *C",
-        "miscellanea": "*A2897, Adam Fenix's data disk, Allfathers Trophy, COG Armor, COG Tag, Dispute, Fifth Dawn at Anvegad, Gorasni, Grayson Cup Championship, Hanover Times-Tribune, HMT, Imulsion, JACK (model), *JACK, Kashkuri, Octus Medal, "
+        "creatures": "Bloodmount, Brumak, Corpser, Lambent, Former, Lambent Gunker, Lambent Berserker, Lambent Drone, Lambent Drudge, Lambent Leviathan, Lambent Stalks, Lambent Wretch, Polyp, Locust, Boomer, Butcher, Grinder, Mauler, Drones, ",
+        "events": "Pendulum Wars, Siege of Anvil Gate, Lambent Pandemic, First Battle of New Jacinto, Victory Day, Mission to Hanover, Battle of Cougars Stadium, Attack on the Sovereign, Battle of Centennial Bridge, Battle of Anvil Gate, M",
+        "locations": "Sera, Azura, Acanthus Station, Pinnacle Tower, Rose Station, Bridge of Sera, Deadlands, Kashkur, Anvegad, Anvegad Plains, Anvil Gate, Jacinto Maximum Security Prison, Lesser Islands Chain, Vectes, Oracle Academy, Pinion ",
+        "organizations": "Coalition of Ordered Governments, Coalition of Ordered Governments Air Corps, Coalition of Ordered Governments Army, 9th Division, 26th Royal Tyran Infantry, Connaught Platoon, 501st Legion, Delta-One, Onyx Guard, Coalit",
+        "vehicles": "Armadillo, Assault Derrick, Rig 314, Bartlett, Centaur, Gorasni Destroyer, King Raven, KR Zero-One, KR Zero-Three, KR Zero-Six, KR Seven-Zero, Mechanical Loader, Raven's Nest Class, CNV Sovereign, Silverback, Submarine, ",
+        "technology": "Boltok Pistol, Boom Shield, Boomshot Grenade Launcher, Butcher Cleaver, Digger Launcher, Frag Grenade, Gnasher Shotgun, Gorgon SMG, Hammerburst II, Hammer of Dawn, Mk 1 Lancer Assault Rifle, Mk 2 Lancer Assault Rifle, Ch",
+        "miscellanea": "A2897, Adam Fenix's data disk, Allfathers Trophy, COG Armor, COG Tag, Dispute, Fifth Dawn at Anvegad, Gorasni, Grayson Cup Championship, Hanover Times-Tribune, HMT, Imulsion, JACK (model), JACK, Kashkuri, Octus Medal, So"
       },
       "categories": [
         "Games",
@@ -2132,12 +2132,12 @@
       "collection": "regions",
       "facts": {
         "characters": "Ailsa, Alonzo, Rory Andresen, Robb Arden, Damon Baird, Nat Barber, Dan Barrett, Baz, Frederic Benten, William Berenz, Alex Brand, Samantha Byrne, Samuel Byrne, Sheraya Byrne, Clayton Carmine, Chalky, Chuck, Augustus Cole",
-        "creatures": "Cat, *Sosca, Cow, *Rose (Cow), Dog, *Mac, *Moss, Human, Lambent, *Lambent Bull, *Lambent Cat, *Lambent Dog, *Lambent Leviathan, *Lambent Stalk, *Polyp, Locust, *Berserker, *Boomer, *Drone, Sires, Ticker",
-        "events": "Lambent Pandemic, *Battle of Edlar Farm, *Battle of the Emerald Spar Platform, *Battle of Grid Echo-Five, *Battle of the Vectes Imulsion Field, *Vectes Imulsion Field Incident, *Meadow Skirmish, *Second Battle of New Jac",
-        "locations": "Abyssal trench, Emerald Spar Imulsion Platform, Ingarez, *Brabaio, Kashkur, *Anvegad, *Anvegad Plain, *Anvil Gate, Lesser Islands Chain, *Vectes, **Edlar Farm, **Jackson Farm, **Merris Farm, **Pelruan, **Vectes Imulsion ",
-        "organizations": "Coalition of Ordered Governments, *Chairman, *Coalition of Ordered Governments Army, **3rd Ephyran Engineers, **4th Ephyra Light Infantry, ***Bravo Company, ***Kilo Squad, **5th Kaian Grenadiers, **25th Sherrith Cavalry,",
-        "vehicles": "Armadillo, Assault Derrick, *Rig 314, Betancourt Star, C-One, Centaur, COG Frigate, *CNV Timgad, COG Destroyer, *CNV Audacious, *CNV Fenmont, *CNV Fort Andius, Gelen Class Frigate, *Nezark, Khimera, King Raven, *KR-239, ",
-        "technology": "Bolo Grenade, Gnasher Shotgun, Hammerburst Assault Rifle, Hammer of Dawn, JACK (model), *JACK, Longshot Sniper Rifle, Longspear, Mk 2 Lancer Assault Rifle",
+        "creatures": "Cat, Sosca, Cow, Rose (Cow), Dog, Mac, Moss, Human, Lambent, Lambent Bull, Lambent Cat, Lambent Dog, Lambent Leviathan, Lambent Stalk, Polyp, Locust, Berserker, Boomer, Drone, Sires, Ticker",
+        "events": "Lambent Pandemic, Battle of Edlar Farm, Battle of the Emerald Spar Platform, Battle of Grid Echo-Five, Battle of the Vectes Imulsion Field, Vectes Imulsion Field Incident, Meadow Skirmish, Second Battle of New Jacinto, F",
+        "locations": "Abyssal trench, Emerald Spar Imulsion Platform, Ingarez, Brabaio, Kashkur, Anvegad, Anvegad Plain, Anvil Gate, Lesser Islands Chain, Vectes, Edlar Farm, Jackson Farm, Merris Farm, Pelruan, Vectes Imulsion Field, Vectes N",
+        "organizations": "Coalition of Ordered Governments, Chairman, Coalition of Ordered Governments Army, 3rd Ephyran Engineers, 4th Ephyra Light Infantry, Bravo Company, Kilo Squad, 5th Kaian Grenadiers, 25th Sherrith Cavalry, 26th Royal Tyra",
+        "vehicles": "Armadillo, Assault Derrick, Rig 314, Betancourt Star, C-One, Centaur, COG Frigate, CNV Timgad, COG Destroyer, CNV Audacious, CNV Fenmont, CNV Fort Andius, Gelen Class Frigate, Nezark, Khimera, King Raven, KR-239, KR One-",
+        "technology": "Bolo Grenade, Gnasher Shotgun, Hammerburst Assault Rifle, Hammer of Dawn, JACK (model), JACK, Longshot Sniper Rifle, Longspear, Mk 2 Lancer Assault Rifle",
         "miscellanea": "A2897, COG Armor, COG Tag, Gorasni, Gorasni (language), Governor, Hanover Cougars, Imulsion, Operation Lifeboat, Pesan, Pesanga, Seasons on Sera, Sharks, Silver Age, Tyran, Tyran (language)"
       },
       "categories": [
@@ -2210,11 +2210,11 @@
       "collection": "regions",
       "facts": {
         "characters": "J. Ademi, Aigle, Monro Alleyn, William Alva, Benjamin L. Amberley, Jay Assandris, Damon Baird, Esther Bakos, Nat Barber, Barry, Baz, Baz (JACK), Beresford, Jillian Beston, Julian Bissell, Brendan, Bradeley Campbell, Care",
-        "creatures": "Brumak, Corpser, Dog, *Jerry (Dog), Human, Kryll, Lambent, Locust, *Boomer, *Drone, Reaver, Sires, Ticker, Wretch",
-        "events": "Archipelago War, Locust War, *Battle of Ephyra, *Battle of Estana, *Battle on the Andius Highway, *Emergence Day, *Hammer of Dawn Counterattack, *Lightmass Offensive, *Raid on Ginnet Drive, *Raid on the CIC, *Siege of th",
-        "locations": "Azura, *Landa Tower, *Pinnacle Tower, Independent Republic of Furlin, Kashkur, Lesser Islands Chain, *Vectes, Pelles Republic, South Islands, *Arohma Island, Tyrus, *Endeavor Naval Shipyard, *Jacinto Plateau, **Andius, *",
-        "organizations": "Coalition of Ordered Governments, *Chairman, *Chief of the COG Defense Staff, *Coalition of Ordered Governments Air Corps, **802nd Raven Squadron, *Coalition of Ordered Governments Army, **4th Ephyra Light Infantry, **26",
-        "vehicles": "Armadillo, Centaur, CNV Kalona, King Raven, *KR One-One, *KR Four-Nine, *KR Six-One, *KR Six-Two, *KR Six-Four, *KR Seven-Five, *KR Seven-Seven, *KR Eight-Zero, *KR Nine-Six, *KR-239, Mammoth, Packhorse, Silverback",
+        "creatures": "Brumak, Corpser, Dog, Jerry (Dog), Human, Kryll, Lambent, Locust, Boomer, Drone, Reaver, Sires, Ticker, Wretch",
+        "events": "Archipelago War, Locust War, Battle of Ephyra, Battle of Estana, Battle on the Andius Highway, Emergence Day, Hammer of Dawn Counterattack, Lightmass Offensive, Raid on Ginnet Drive, Raid on the CIC, Siege of the Slab, S",
+        "locations": "Azura, Landa Tower, Pinnacle Tower, Independent Republic of Furlin, Kashkur, Lesser Islands Chain, Vectes, Pelles Republic, South Islands, Arohma Island, Tyrus, Endeavor Naval Shipyard, Jacinto Plateau, Andius, Cressy Es",
+        "organizations": "Coalition of Ordered Governments, Chairman, Chief of the COG Defense Staff, Coalition of Ordered Governments Air Corps, 802nd Raven Squadron, Coalition of Ordered Governments Army, 4th Ephyra Light Infantry, 26th Royal T",
+        "vehicles": "Armadillo, Centaur, CNV Kalona, King Raven, KR One-One, KR Four-Nine, KR Six-One, KR Six-Two, KR Six-Four, KR Seven-Five, KR Seven-Seven, KR Eight-Zero, KR Nine-Six, KR-239, Mammoth, Packhorse, Silverback",
         "technology": "Brader, Frag Grenade, Hammer of Dawn, Lightmass Bomb, Longshot Sniper Rifle, Longspear, Mk 2 Lancer Assault Rifle, Police Lancer Assault Rifle, Stomper",
         "miscellanea": "Adaptive Atmospheric Manipulation System, COG Armor, COG Tag, Embry Star, Emergence Hole, Ephyra World Service, Imulsion, Jacinto Daily, Octus Medal"
       },
@@ -2276,13 +2276,13 @@
       "collection": "regions",
       "facts": {
         "characters": "M. Alexieff, D. Andrade, Roy Antebi, K. Axford, Kai Axford, Damon Baird, K. Barrick, Malcolm Benjafield, S. Bishop, G. Bixhorn, M. Blythe, Michael Greg Blythe, Coleen Bracy, Alexandra Brand, Daniel Brunner, Dennis Bye, R",
-        "creatures": "Bloodmount, Corpser, *Shibboleth, Human, Kryll, Lambent, *Former, *Lambent Wretch, Locust, *Boomer, **Butcher, **Flame Boomer, **Grinder, **Mauler, **Mauler Elite, *Drone, **Beast Rider, **Berserker, **Bolter, **Cyclops,",
-        "events": "Lambent Pandemic, *Mission to Halvo Bay, Locust War, *Destruction of Halvo Bay, Pendulum Wars, *Battle of Aspho Fields, *Battle of Autrin (Pendulum Wars), *Battle of Berephus, *Battle of Irohma Island, *Battle of Shavad,",
-        "locations": "Emerald Spar Imulsion Platform, South Islands, *Autrin, *Lake Station, *Soteroa, Tyrus, *Andius, *East Timgad, *Ephyra, *Gerrenhalt, *Halvo Bay, **Agora Foothills, **Alexiy Desipich Memorial Library, **Amador Park, **Ang",
-        "organizations": "Coalition of Ordered Governments, *Coalition of Ordered Governments Army, **Kilo Squad, **Omega-Two, **Onyx Guard, ***Black-Four, Union of Independent Republics",
+        "creatures": "Bloodmount, Corpser, Shibboleth, Human, Kryll, Lambent, Former, Lambent Wretch, Locust, Boomer, Butcher, Flame Boomer, Grinder, Mauler, Mauler Elite, Drone, Beast Rider, Berserker, Bolter, Cyclops, Grenadier, Sniper, Spo",
+        "events": "Lambent Pandemic, Mission to Halvo Bay, Locust War, Destruction of Halvo Bay, Pendulum Wars, Battle of Aspho Fields, Battle of Autrin (Pendulum Wars), Battle of Berephus, Battle of Irohma Island, Battle of Shavad, Fall o",
+        "locations": "Emerald Spar Imulsion Platform, South Islands, Autrin, Lake Station, Soteroa, Tyrus, Andius, East Timgad, Ephyra, Gerrenhalt, Halvo Bay, Agora Foothills, Alexiy Desipich Memorial Library, Amador Park, Angry Bear Waste Di",
+        "organizations": "Coalition of Ordered Governments, Coalition of Ordered Governments Army, Kilo Squad, Omega-Two, Onyx Guard, Black-Four, Union of Independent Republics",
         "vehicles": "Assault Barque, CNV Pomeroy, Gorasni Destroyer, King Raven, Packhorse, Rat Truck, Silverback",
         "technology": "Auto-Turret, Beacon Grenade, Blow Torch, Boltok Pistol, Boomshot Grenade Launcher, Booshka Grenade Launcher, Breechshot, Butcher Cleaver, Digger Launcher, Frag Grenade, Gnasher Shotgun, Gorgon Submachine Gun, GZ18 Markza",
-        "miscellanea": "COG Armor, COG Combat Helmet, COG Tag, Emergence Hole, Flame-Away aerosol, Gear, Imulsion, JACK (model), *Troy, Open Arms Program, Thrashball"
+        "miscellanea": "COG Armor, COG Combat Helmet, COG Tag, Emergence Hole, Flame-Away aerosol, Gear, Imulsion, JACK (model), Troy, Open Arms Program, Thrashball"
       },
       "categories": [
         "Games",
@@ -2375,13 +2375,13 @@
       "collection": "regions",
       "facts": {
         "characters": "Damon Baird, Balgan, J. Beckman, Samantha Byrne, Carew, Gary Carmine, Chuzz, John Clement, Augustus Cole, Culda, Richard Dalmore, Gabriel Diaz, Kait Diaz, Oscar Diaz, Reyna Diaz, Dyer, James Fenix, Marcus Fenix, Eli, Ger",
-        "events": "Pendulum Wars, *Siege of Anvil Gate, *Battle of Aspho Fields, Lambent Pandemic, *Battle of Anvil Gate, Locust War, *Emergence Day, **First Battle of Ephyra, *Evacuation of Ilima, *Battle of Tollen Dam, *Evacuation of Spe",
-        "creatures": "*Brumak, Corpser, DeeBees, *DR-1, **DR-1 Devastator, **DR-1 Oppressor, **DR-1 Protector, *Shepherd, **Command Bot, **Deadeye, **Peace Keeper, **Peace Maker, *Tracker, **Shock Tracker, *Watcher, **Guardian (DeeBee), **Sen",
-        "locations": "*Sera, *Hollow, *Kashkur, **Anvegad, ***Anvil Gate, *Ostri Republic, **Aspho Point, *Tyrus, **Bronn, **Fort Umson, **Ephyra, ***House of Sovereigns, **Fort Reval, ***Fort Reval Military Museum, **Halvo Bay, **Ilima, **Ja",
-        "organizations": "*Carmine Construction Company, Coalition of Ordered Governments, *First Minister, *Ministry of Settlements, DB Industries, Nethercutt Mining, Outsiders, Speyer Metalworks, Union of Independent Republics, *Union of Indepe",
-        "vehicles": "Bot-Transport Cart, Centaur, Condor, Construction Mech, *Mega Mech, Kestrel, King Raven, *KR Three-Seven, *KR Five-Eight, *KR Six-Four, Marlin, Mechanical Loader, Ore Transporter, Track Mule, Vulture",
-        "technology": "Blow Torch, Boltok Pistol, Boomshot Grenade Launcher, Buzzkill, Combat Knife, Dropshot Munitions Launcher, EMBAR, Enforcer Submachine Gun, *Shock Enforcer, Frag Grenade, *Dom's Toms, Gnasher Shotgun, Hammerburst II, Hamm",
-        "miscellanea": "COG Tag, Emergence Hole, Hive, JACK (model), *Bruce, Imulsion, Locust Emblem, Locust Shell, Nest, Osmium, Phoenix Omen, Pod, Seran Movies, *It Ate My Face, *They Came From B-Low, The New Ephyran, Windflare"
+        "events": "Pendulum Wars, Siege of Anvil Gate, Battle of Aspho Fields, Lambent Pandemic, Battle of Anvil Gate, Locust War, Emergence Day, First Battle of Ephyra, Evacuation of Ilima, Battle of Tollen Dam, Evacuation of Speyer, Evac",
+        "creatures": "Brumak, Corpser, DeeBees, DR-1, DR-1 Devastator, DR-1 Oppressor, DR-1 Protector, Shepherd, Command Bot, Deadeye, Peace Keeper, Peace Maker, Tracker, Shock Tracker, Watcher, Guardian (DeeBee), Sentinel, Horse, Human, Ostr",
+        "locations": "Sera, Hollow, Kashkur, Anvegad, Anvil Gate, Ostri Republic, Aspho Point, Tyrus, Bronn, Fort Umson, Ephyra, House of Sovereigns, Fort Reval, Fort Reval Military Museum, Halvo Bay, Ilima, Jacinto City, Montevado, New Ephyr",
+        "organizations": "Carmine Construction Company, Coalition of Ordered Governments, First Minister, Ministry of Settlements, DB Industries, Nethercutt Mining, Outsiders, Speyer Metalworks, Union of Independent Republics, Union of Independen",
+        "vehicles": "Bot-Transport Cart, Centaur, Condor, Construction Mech, Mega Mech, Kestrel, King Raven, KR Three-Seven, KR Five-Eight, KR Six-Four, Marlin, Mechanical Loader, Ore Transporter, Track Mule, Vulture",
+        "technology": "Blow Torch, Boltok Pistol, Boomshot Grenade Launcher, Buzzkill, Combat Knife, Dropshot Munitions Launcher, EMBAR, Enforcer Submachine Gun, Shock Enforcer, Frag Grenade, Dom's Toms, Gnasher Shotgun, Hammerburst II, Hammer",
+        "miscellanea": "COG Tag, Emergence Hole, Hive, JACK (model), Bruce, Imulsion, Locust Emblem, Locust Shell, Nest, Osmium, Phoenix Omen, Pod, Seran Movies, It Ate My Face, They Came From B-Low, The New Ephyran, Windflare"
       },
       "categories": [
         "Games",
@@ -2406,8 +2406,8 @@
         "commanders1": "Chairman Tomas Dalyell, Deputy Chairman Richard Prescott, Col. Victor Hoffman, Lt. Anya Stroud, Pvt. Minh Young Kim",
         "commanders2": "Queen Myrrah",
         "forces1": "COG Army, Hammer of Dawn",
-        "forces2": "Locust Army, *Drones, *Boomers, *Wretches, *Reavers, *Corpsers",
-        "casual1": "Heavy, *At least 100,000 soldiers and civilians",
+        "forces2": "Locust Army, Drones, Boomers, Wretches, Reavers, Corpsers",
+        "casual1": "Heavy, At least 100,000 soldiers and civilians",
         "casual2": "Heavy",
         "previous": "Emergence in Porta Ogari",
         "conc": "Emergence Day",
@@ -2460,14 +2460,14 @@
       "wikiTitle": "Gears 5",
       "collection": "regions",
       "facts": {
-        "characters": "*Agent 9, Ahman, Akagi, M. Alexieff, James Allvord, D. Andrade, Rory Andresen, Ben Andrews, Roy Antebi, Zajnal Arifin, AX-331-2, K. Axford, Kai Axford, Damon Baird, Balgan, Josh Barnhill, K. Barrick, Michael Barrick, Baz",
-        "creatures": "*Brumak, Corpser, DeeBees, *Command Bot, *DR-1, *Guardian, *Shepherd, **Peace Maker, *Tracker, **Shock Tracker, Horse, Human, Kryll, Locust, *Drone, *Sire, *Matriarch, Mangler, Reaver, Riftworm, Rockworm, Serapede, Swarm",
-        "events": "*Gold Rush, Pendulum Wars, *Mount Kadar Laboratory Uprising, *UIR Occupation of Vasgar, *Expedition to the Moons of Sera, *Battle of Bonbourg, *Mutiny at OZP-11, *UIR-COG Armistice, Locust War, *Emergence Day, *Destructi",
-        "locations": "*Sera, *Deadlands, *Independent Republic of Furlin, **Ghato City, **Tenla, *Republic of Gorasnaya, **Chalitz, **Gorasnayan Sea, *Hollow, **Nexus, *Kashkur, **Anvegad, *Khindago, *Ostri Republic, **Berephus, **Bonbourg, *",
-        "organizations": "*DB Industries, Coalition of Ordered Governments, *Coalition of Ordered Governments Army, **4th Infantry Division, **81st \"Brash\" Brigade, **Delta-One, **Echo Squad, **Lima Squad, **Onyx Guard, **Sierra Squad, *First Min",
-        "vehicles": "*Asp, Assault Derrick, Centaur, *Delta's Centaur, COG Rocket, COG Train, Condor, *Baird's Condor, Grindlift, Kestrel, King Raven, King Raven Mark 2, *KR Zero-Seven, *KR One-Three, *KR Two-Two, *KR Two-Nine, *KR Four-Thre",
-        "technology": "*Adrenaline Injector, Boltok Pistol, Boomshot Grenade Launcher, Breaker Mace, *Pipe, Buzzkill, Chain Gun, Claw Light Machine Gun, Combat Knife, Cryo Cannon, Dropshot Munitions Launcher, EMBAR, Enforcer Submachine Gun, Fl",
-        "miscellanea": "*Bonbourg Convention, COG Armor, COG Fertility Program, COG Reclamation Program, COG Tag, Components, Embry Star, Endorphicin, Festival of Cinema, Hive, Hivemind, JACK (model), Locust Emblem, Locust Shell, Nest, Octus Ca"
+        "characters": "Agent 9, Ahman, Akagi, M. Alexieff, James Allvord, D. Andrade, Rory Andresen, Ben Andrews, Roy Antebi, Zajnal Arifin, AX-331-2, K. Axford, Kai Axford, Damon Baird, Balgan, Josh Barnhill, K. Barrick, Michael Barrick, Baz,",
+        "creatures": "Brumak, Corpser, DeeBees, Command Bot, DR-1, Guardian, Shepherd, Peace Maker, Tracker, Shock Tracker, Horse, Human, Kryll, Locust, Drone, Sire, Matriarch, Mangler, Reaver, Riftworm, Rockworm, Serapede, Swarm, Carrier, Ca",
+        "events": "Gold Rush, Pendulum Wars, Mount Kadar Laboratory Uprising, UIR Occupation of Vasgar, Expedition to the Moons of Sera, Battle of Bonbourg, Mutiny at OZP-11, UIR-COG Armistice, Locust War, Emergence Day, Destruction of Hal",
+        "locations": "Sera, Deadlands, Independent Republic of Furlin, Ghato City, Tenla, Republic of Gorasnaya, Chalitz, Gorasnayan Sea, Hollow, Nexus, Kashkur, Anvegad, Khindago, Ostri Republic, Berephus, Bonbourg, Pelles Republic, Andros, ",
+        "organizations": "DB Industries, Coalition of Ordered Governments, Coalition of Ordered Governments Army, 4th Infantry Division, 81st \"Brash\" Brigade, Delta-One, Echo Squad, Lima Squad, Onyx Guard, Sierra Squad, First Minister, Fringe COG",
+        "vehicles": "Asp, Assault Derrick, Centaur, Delta's Centaur, COG Rocket, COG Train, Condor, Baird's Condor, Grindlift, Kestrel, King Raven, King Raven Mark 2, KR Zero-Seven, KR One-Three, KR Two-Two, KR Two-Nine, KR Four-Three, KR Fi",
+        "technology": "Adrenaline Injector, Boltok Pistol, Boomshot Grenade Launcher, Breaker Mace, Pipe, Buzzkill, Chain Gun, Claw Light Machine Gun, Combat Knife, Cryo Cannon, Dropshot Munitions Launcher, EMBAR, Enforcer Submachine Gun, Flas",
+        "miscellanea": "Bonbourg Convention, COG Armor, COG Fertility Program, COG Reclamation Program, COG Tag, Components, Embry Star, Endorphicin, Festival of Cinema, Hive, Hivemind, JACK (model), Locust Emblem, Locust Shell, Nest, Octus Can"
       },
       "categories": [
         "Games",
@@ -2483,14 +2483,14 @@
       "wikiTitle": "Gears of War: Hivebusters",
       "collection": "regions",
       "facts": {
-        "characters": "*Amanda Macallister, Danny, Paul Dury, Hana, Victor Hoffman, Lahni Kaliso, Jeremiah Keegan, Dillon Macallister, Donald Macallister, Leslie Macallister, Leslie Macallister's adoptive father, Leslie Macallister's mother, R",
-        "creatures": "*DeeBees, *Shepherd, Swarm, *Drone, *Elite Drone, *Flock, **Leech, *Juvie, *Scion, **Warden, *Snatcher",
-        "events": "*Locust War, *Destruction of Halvo Bay, *Operation: Hollow Storm, **Sinking of Jacinto City, Swarm Invasion, *Ambush on Croya, *Ambush on Bravelle, *Hivebuster Offensive, **Hivebust of Pahanu, **Mission to Croya, **Hiveb",
-        "locations": "*Sera, *South Islands, **Pahanu, *Tyrus, **Bravelle, **Croya, ***Croya Square, **Halvo Bay",
-        "organizations": "*Coalition of Ordered Governments, *Coalition of Ordered Governments Army, **81st \"Brash\" Brigade, **Hivebuster, ***Team Scorpio, **Onyx Guard, Outsiders",
-        "vehicles": "*Armadillo, King Raven Mark 2, *Tak's King Raven, Rat Truck, *Mister Reliable",
-        "technology": "*Adrenaline Injector, Boltok Pistol, Chain Gun, Combat Knife, Frag Grenade, Gnasher Shotgun, Hammerburst, Mark 2 Lancer Assault Rifle, Mark 3 Lancer Assault Rifle, MX8 Snub Pistol, Talon Autopistol, Venom Bomb",
-        "miscellanea": "*COG Armor, Swarm Hive, Swarm Pod"
+        "characters": "Amanda Macallister, Danny, Paul Dury, Hana, Victor Hoffman, Lahni Kaliso, Jeremiah Keegan, Dillon Macallister, Donald Macallister, Leslie Macallister, Leslie Macallister's adoptive father, Leslie Macallister's mother, Ri",
+        "creatures": "DeeBees, Shepherd, Swarm, Drone, Elite Drone, Flock, Leech, Juvie, Scion, Warden, Snatcher",
+        "events": "Locust War, Destruction of Halvo Bay, Operation: Hollow Storm, Sinking of Jacinto City, Swarm Invasion, Ambush on Croya, Ambush on Bravelle, Hivebuster Offensive, Hivebust of Pahanu, Mission to Croya, Hivebust of Bravell",
+        "locations": "Sera, South Islands, Pahanu, Tyrus, Bravelle, Croya, Croya Square, Halvo Bay",
+        "organizations": "Coalition of Ordered Governments, Coalition of Ordered Governments Army, 81st \"Brash\" Brigade, Hivebuster, Team Scorpio, Onyx Guard, Outsiders",
+        "vehicles": "Armadillo, King Raven Mark 2, Tak's King Raven, Rat Truck, Mister Reliable",
+        "technology": "Adrenaline Injector, Boltok Pistol, Chain Gun, Combat Knife, Frag Grenade, Gnasher Shotgun, Hammerburst, Mark 2 Lancer Assault Rifle, Mark 3 Lancer Assault Rifle, MX8 Snub Pistol, Talon Autopistol, Venom Bomb",
+        "miscellanea": "COG Armor, Swarm Hive, Swarm Pod"
       },
       "categories": [
         "Comic",
@@ -2506,14 +2506,14 @@
       "wikiTitle": "Gears of War: Ascendance",
       "collection": "regions",
       "facts": {
-        "characters": "*Damon Baird, Becca, Samantha Byrne, Augustus Cole, Gabriel Diaz, Kait Diaz, Oscar Diaz, Reyna Diaz, Eli, Adam Fenix, James Dominic Fenix, Marcus Fenix, Hansen, IRIS, Mina Jinn, Yoon Kieho, Mackenzie, Richard Prescott, S",
-        "creatures": "*DeeBees, *Command Bot, *DR-1, *Shepherd, **Deadeye, *Tracker, *Watcher, **Guardian, Horse, *Chuzz, Human, Locust Horde, Riftworm, Rockworm, Snapjaw, Swarm, *Carrier, *Drone, **Grenadier, *Juvie, *Pouncer, *Scion, **Scio",
-        "events": "Locust War, *Hammer of Dawn Strikes, *Fall of Ephyra, Outsider Movement, *Settlement 2 Protest Massacre, *Raid on Settlement 5, *Battle of Fort Umson, *Assault on the Stroud Estate, Swarm War, *Rescue of Fort Umson, **Am",
-        "locations": "*Sera, *Serano Ocean, **Azura, *Tyrus, **Jacinto Plateau, ***Ephyra, ***Jacinto City, ***New Ephyra, ****Baird estate, ****Government House, **Montevado, **Orzabal Crater, **Settlement 2, **Settlement 5, **Settlement 6, ",
-        "organizations": "Carmine Construction Company, Coalition of Ordered Governments, *First Minister, DB Industries, Outsiders, Pickers",
-        "vehicles": "Condor, *CO One-Zero-Six, Construction Mech, Kestrel, King Raven, Vulture",
-        "technology": "Boltok Pistol, Breechshot, Buzzkill, Chain Gun, Combat Knife, Dropshot Munitions Launcher, EMBAR, Enforcer Submachine Gun, *Shock Enforcer, Gnasher Shotgun, Hammerburst II, Hammer of Dawn, Mark 2 Lancer Assault Rifle, *C",
-        "miscellanea": "Adam Fenix's data disk, COG Armor, COG Tag, JACK (model), *Dave, Project Morning Star, Windflare"
+        "characters": "Damon Baird, Becca, Samantha Byrne, Augustus Cole, Gabriel Diaz, Kait Diaz, Oscar Diaz, Reyna Diaz, Eli, Adam Fenix, James Dominic Fenix, Marcus Fenix, Hansen, IRIS, Mina Jinn, Yoon Kieho, Mackenzie, Richard Prescott, Sp",
+        "creatures": "DeeBees, Command Bot, DR-1, Shepherd, Deadeye, Tracker, Watcher, Guardian, Horse, Chuzz, Human, Locust Horde, Riftworm, Rockworm, Snapjaw, Swarm, Carrier, Drone, Grenadier, Juvie, Pouncer, Scion, Scion Elite, Snatcher, S",
+        "events": "Locust War, Hammer of Dawn Strikes, Fall of Ephyra, Outsider Movement, Settlement 2 Protest Massacre, Raid on Settlement 5, Battle of Fort Umson, Assault on the Stroud Estate, Swarm War, Rescue of Fort Umson, Ambush on F",
+        "locations": "Sera, Serano Ocean, Azura, Tyrus, Jacinto Plateau, Ephyra, Jacinto City, New Ephyra, Baird estate, Government House, Montevado, Orzabal Crater, Settlement 2, Settlement 5, Settlement 6, Tollen, Tollen Dam, Wilds, Fort Um",
+        "organizations": "Carmine Construction Company, Coalition of Ordered Governments, First Minister, DB Industries, Outsiders, Pickers",
+        "vehicles": "Condor, CO One-Zero-Six, Construction Mech, Kestrel, King Raven, Vulture",
+        "technology": "Boltok Pistol, Breechshot, Buzzkill, Chain Gun, Combat Knife, Dropshot Munitions Launcher, EMBAR, Enforcer Submachine Gun, Shock Enforcer, Gnasher Shotgun, Hammerburst II, Hammer of Dawn, Mark 2 Lancer Assault Rifle, Cha",
+        "miscellanea": "Adam Fenix's data disk, COG Armor, COG Tag, JACK (model), Dave, Project Morning Star, Windflare"
       },
       "categories": [
         "Books",
@@ -2548,11 +2548,11 @@
       "facts": {
         "homeland": "Sera",
         "species": "Human",
-        "weapons": "*Longshot Sniper Rifle, Mark 2 Lancer Assault Rifle, Combat Knife, Concussion Grenade",
-        "equipment": "*Marine Armor, COG Combat Helmet, Combat boot, Helmet light, Gas canisters, Radio",
-        "vehicles": "*King Raven, *KR One-Six, Sea Raven",
-        "era": "*Pendulum Wars, Locust War, Lambent Pandemic",
-        "affiliation": "*Coalition of Ordered Governments, *Coalition of Ordered Governments Navy, **NCOG Corps of Marines",
+        "weapons": "Longshot Sniper Rifle, Mark 2 Lancer Assault Rifle, Combat Knife, Concussion Grenade",
+        "equipment": "Marine Armor, COG Combat Helmet, Combat boot, Helmet light, Gas canisters, Radio",
+        "vehicles": "King Raven, KR One-Six, Sea Raven",
+        "era": "Pendulum Wars, Locust War, Lambent Pandemic",
+        "affiliation": "Coalition of Ordered Governments, Coalition of Ordered Governments Navy, NCOG Corps of Marines",
         "rank": "Standard Infantry"
       },
       "categories": [
@@ -2584,14 +2584,14 @@
       "wikiTitle": "Gears of War: Bloodlines",
       "collection": "regions",
       "facts": {
-        "characters": "*Abbot, Akino, Damon Baird, Blair, Samuel Bowden, Samantha Byrne, Wyatt Callahan, Elizabeth Carmine, Carter, Fahz Chutani, Augustus Cole, Davis, Deevers, Ciprian Demov, Gabriel Diaz, Kait Diaz, Oscar Diaz, Reyna Diaz, El",
-        "creatures": "*DeeBees, *DR-1, *Tracker, Human, Monkey, Swarm, *Drone (Swarm), *Flock, *Juvie, *Leech, *Pouncer, *Reject, *Scion, *Snatcher",
-        "events": "*Pendulum Wars, *Mission to Knifespire, *Battle of Gatka Ridge, Locust War, *Assassination of Ukkon, Outsider Movement, *Settlement 2 Protest Massacre, Swarm Invasion, *Rescue of Fort Umson, **Ambush of Fort Umson, **Mis",
-        "locations": "*Sera, *Emerald Spar Imulsion Platform, *Lesser Islands Chain, **Adena Island, ***Shallow Bay, **Knifespire, ***Cathedral Cave, ***Gatka Ridge, ***Scabbard Cove, **Vectes, ***Vectes Naval Base, *Reinvar, *Republic of Gor",
-        "organizations": "*Coalition of Ordered Governments, *Coalition of Ordered Governments Army, **7th Brigade, ***Black Squad, ***Blue Squad, ***Green Squad, ***Orange Squad, ***White Squad, **Ghost Squad, *Coalition of Ordered Governments N",
-        "vehicles": "*CNV Defiant, COG Patrol Boat, *CNV 146, *CNV Domino, *CNV Mighty, *CNV Righteous, Corva, *Corva One, *Corva Two, *Corva Three, King Raven Mark 2, Landing Craft Utility, *CNV Vigil, Mega Mech, Minotaur, *Old Gal, UIR Bat",
-        "technology": "Booshka Grenade Launcher, Enforcer Submachine Gun, Frag Grenade, Gnasher Shotgun, Hammer of Dawn, Industrial Staple Gun, Mark 1 Lancer Assault Rifle, Mark 2 Lancer Assault Rifle, *Custom Lancer, Mark 3 Lancer Assault Rif",
-        "miscellanea": "*Goras, Imulsion, JACK (model), *Dave, *JACK, Rustlung"
+        "characters": "Abbot, Akino, Damon Baird, Blair, Samuel Bowden, Samantha Byrne, Wyatt Callahan, Elizabeth Carmine, Carter, Fahz Chutani, Augustus Cole, Davis, Deevers, Ciprian Demov, Gabriel Diaz, Kait Diaz, Oscar Diaz, Reyna Diaz, Eli",
+        "creatures": "DeeBees, DR-1, Tracker, Human, Monkey, Swarm, Drone (Swarm), Flock, Juvie, Leech, Pouncer, Reject, Scion, Snatcher",
+        "events": "Pendulum Wars, Mission to Knifespire, Battle of Gatka Ridge, Locust War, Assassination of Ukkon, Outsider Movement, Settlement 2 Protest Massacre, Swarm Invasion, Rescue of Fort Umson, Ambush of Fort Umson, Mission to Fo",
+        "locations": "Sera, Emerald Spar Imulsion Platform, Lesser Islands Chain, Adena Island, Shallow Bay, Knifespire, Cathedral Cave, Gatka Ridge, Scabbard Cove, Vectes, Vectes Naval Base, Reinvar, Republic of Gorasnaya, Meschov, Tyrus, Al",
+        "organizations": "Coalition of Ordered Governments, Coalition of Ordered Governments Army, 7th Brigade, Black Squad, Blue Squad, Green Squad, Orange Squad, White Squad, Ghost Squad, Coalition of Ordered Governments Navy, Coalition of Orde",
+        "vehicles": "CNV Defiant, COG Patrol Boat, CNV 146, CNV Domino, CNV Mighty, CNV Righteous, Corva, Corva One, Corva Two, Corva Three, King Raven Mark 2, Landing Craft Utility, CNV Vigil, Mega Mech, Minotaur, Old Gal, UIR Battleship, U",
+        "technology": "Booshka Grenade Launcher, Enforcer Submachine Gun, Frag Grenade, Gnasher Shotgun, Hammer of Dawn, Industrial Staple Gun, Mark 1 Lancer Assault Rifle, Mark 2 Lancer Assault Rifle, Custom Lancer, Mark 3 Lancer Assault Rifl",
+        "miscellanea": "Goras, Imulsion, JACK (model), Dave, JACK, Rustlung"
       },
       "categories": [
         "Books",
@@ -2643,13 +2643,13 @@
       "wikiTitle": "Gears of War: Ephyra Rising",
       "collection": "regions",
       "facts": {
-        "characters": "*Damon Baird, Samantha Byrne, Clayton Carmine, Augustus Cole, Diana Egami, Adam Fenix, Elain Fenix, Marcus Fenix, Mr. Flores, Mrs. Flores, Aaron Griffin, Roger Hahn, Raul Hasterwith, Eric Hernandez, Victor Hoffman, Nigel",
-        "creatures": "*Human, Lambent, *Lambent Stalk, Locust, *Boomer, *Drone, *Grenadier",
-        "events": "*Locust War, *Victory Day, **Mission to Mercy, **Mission to Char, **Battle of Azura, Lambent Pandemic, *Victory Day, **Mission to Hanover, **Attack on the Sovereign, **Mission to Mercy, **Mission to Char, **Battle of Azu",
-        "locations": "*Sera, *Serano Ocean, **Azura, *Tyrus, **Char, **Ephyra, ***House of Sovereigns, **Hanover, ***Cougars Stadium, **Mercy, **New Ephyra, **Wilds, ***Stroud Estate",
-        "organizations": "*Coalition of Ordered Governments, *Coalition of Ordered Governments Army, Griffin Imulsion Corporation, Lambent, Locust Horde, Stranded",
-        "vehicles": "*Raven's Nest Class, *CNV Sovereign",
-        "technology": "*Boomshot Grenade Launcher, Gnasher Shotgun, Hammerburst II, Imulsion Countermeasure Weapon, Mark 2 Lancer Assault Rifle, Longshot Sniper Rifle, Snub Pistol",
+        "characters": "Damon Baird, Samantha Byrne, Clayton Carmine, Augustus Cole, Diana Egami, Adam Fenix, Elain Fenix, Marcus Fenix, Mr. Flores, Mrs. Flores, Aaron Griffin, Roger Hahn, Raul Hasterwith, Eric Hernandez, Victor Hoffman, Nigel ",
+        "creatures": "Human, Lambent, Lambent Stalk, Locust, Boomer, Drone, Grenadier",
+        "events": "Locust War, Victory Day, Mission to Mercy, Mission to Char, Battle of Azura, Lambent Pandemic, Victory Day, Mission to Hanover, Attack on the Sovereign, Mission to Mercy, Mission to Char, Battle of Azura, Interwar Period",
+        "locations": "Sera, Serano Ocean, Azura, Tyrus, Char, Ephyra, House of Sovereigns, Hanover, Cougars Stadium, Mercy, New Ephyra, Wilds, Stroud Estate",
+        "organizations": "Coalition of Ordered Governments, Coalition of Ordered Governments Army, Griffin Imulsion Corporation, Lambent, Locust Horde, Stranded",
+        "vehicles": "Raven's Nest Class, CNV Sovereign",
+        "technology": "Boomshot Grenade Launcher, Gnasher Shotgun, Hammerburst II, Imulsion Countermeasure Weapon, Mark 2 Lancer Assault Rifle, Longshot Sniper Rifle, Snub Pistol",
         "miscellanea": "COG Armor, COG Tag"
       },
       "categories": [
@@ -2713,7 +2713,7 @@
         "era": "Locust War",
         "weapons": "Gorehook",
         "equipment": "Boomer Armor",
-        "affiliation": "*Locust Horde, *Boomers"
+        "affiliation": "Locust Horde, Boomers"
       },
       "categories": [
         "Characters",
@@ -2730,18 +2730,18 @@
       "collection": "enemies",
       "facts": {
         "homeland": "The Hollow",
-        "rank": "*Walking Tank, Rocket Artillery",
+        "rank": "Walking Tank, Rocket Artillery",
         "species": "Brumak",
         "height": "40'0\" ft. (Average)",
         "weight": "11 tons",
         "eyes": "Yellow",
         "body color": "Grey/White skin",
-        "weapons": "*Mass, One Brumak Rocket Launcher, Two Wrist-Mounted Chain Guns, Four Brumak Rocket Mortars",
-        "mounts": "*One rider, One gunner",
-        "era": "*Lambent War, Locust War, Lambent Pandemic, Swarm Invasion (as Swarmaks)",
-        "types": "*Lambent Brumak, Swarmak",
-        "notable": "*Bred from apes, Created by Ukkon",
-        "affiliation": "*Locust Horde, Savage Locust, Queen's Guard, Lambent (Lambent Brumak), Swarm (as Swarmaks)"
+        "weapons": "Mass, One Brumak Rocket Launcher, Two Wrist-Mounted Chain Guns, Four Brumak Rocket Mortars",
+        "mounts": "One rider, One gunner",
+        "era": "Lambent War, Locust War, Lambent Pandemic, Swarm Invasion (as Swarmaks)",
+        "types": "Lambent Brumak, Swarmak",
+        "notable": "Bred from apes, Created by Ukkon",
+        "affiliation": "Locust Horde, Savage Locust, Queen's Guard, Lambent (Lambent Brumak), Swarm (as Swarmaks)"
       },
       "categories": [
         "Characters",
@@ -2792,9 +2792,9 @@
         "rate of fire": "180/M",
         "accuracy": "Medium",
         "range": "Medium",
-        "era": "*Locust War, Lambent War, Lambent Pandemic, Swarm War",
-        "counterpart": "*Booshka Grenade Launcher, Digger Launcher",
-        "affiliation": "*Locust Horde, Stranded, Swarm"
+        "era": "Locust War, Lambent War, Lambent Pandemic, Swarm War",
+        "counterpart": "Booshka Grenade Launcher, Digger Launcher",
+        "affiliation": "Locust Horde, Stranded, Swarm"
       },
       "categories": [
         "Articles that need Gearsify-ing",
@@ -2825,7 +2825,7 @@
         "passengers": "Unknown, but capable of holding at least two Gears and several Stranded",
         "role": "Assault, Escort",
         "era": "Locust War",
-        "affiliation": "Coalition of Ordered Governments, *Coalition of Ordered Governments Army"
+        "affiliation": "Coalition of Ordered Governments, Coalition of Ordered Governments Army"
       },
       "categories": [
         "COG",
@@ -2868,8 +2868,8 @@
         "rate of fire": "60/M",
         "accuracy": "Medium",
         "range": "Medium-Long",
-        "counterpart": "*Boomshot Grenade Launcher, Digger Launcher",
-        "affiliation": "*Coalition of Ordered Governments, Union of Independent Republics"
+        "counterpart": "Boomshot Grenade Launcher, Digger Launcher",
+        "affiliation": "Coalition of Ordered Governments, Union of Independent Republics"
       },
       "categories": [
         "Gears of War: Judgment weapons",
@@ -2894,7 +2894,7 @@
         "defacto": "Coalition High Command (Gale, 15 A.E. - Bloom, 15 A.E.)",
         "executive": "Chairman (Former), First Minister (Current)",
         "legislative": "Council of Sovereigns (Former), Unknown (Current)",
-        "judicial": "Coalition Judicial System, *Fortification Act (Former)",
+        "judicial": "Coalition Judicial System, Fortification Act (Former)",
         "capital": "Ephyra (Unknown B.E. - Frost, 10 A.E.), Jacinto (Frost, 10 A.E. - 2nd Frost, 14 A.E.), Port Farrall (2nd Frost, 14 A.E. - Thaw, 14 A.E.), New Jacinto (Thaw, 14 A.E. - Bloom, 15 A.E.), New Ephyra (Bloom, 17 A.E. - Current",
         "language": "Tyran",
         "currency": "Dollar (Former), Iron (Current)",
@@ -2941,7 +2941,7 @@
         "role": "Assault, Escort",
         "destroyed": "1st Frost, 14 A.E.",
         "era": "Locust War",
-        "affiliation": "Coalition of Ordered Governments, *Coalition of Ordered Governments Army"
+        "affiliation": "Coalition of Ordered Governments, Coalition of Ordered Governments Army"
       },
       "categories": [
         "COG",
@@ -2956,12 +2956,12 @@
       "collection": "characters",
       "facts": {
         "type": "Army",
-        "headofgov": "*Chairman (Formerly), First Minister",
+        "headofgov": "Chairman (Formerly), First Minister",
         "commander": "Colonel Victor Hoffman",
-        "judicial": "*Victor Hoffman (Partial participation), Colonel Ezra Loomis (Partial participation)",
-        "capital": "*Ephyra (Founding - Frost, 10 A.E.), Jacinto City (Frost, 10 A.E. - 2nd Frost, 14 A.E.), Port Farrall (2nd Frost, 14 A.E. - Thaw, 14 A.E.), Vectes (Thaw, 14 A.E. - Bloom, 15 A.E.), New Ephyra (18 A.E. - current)",
+        "judicial": "Victor Hoffman (Partial participation), Colonel Ezra Loomis (Partial participation)",
+        "capital": "Ephyra (Founding - Frost, 10 A.E.), Jacinto City (Frost, 10 A.E. - 2nd Frost, 14 A.E.), Port Farrall (2nd Frost, 14 A.E. - Thaw, 14 A.E.), Vectes (Thaw, 14 A.E. - Bloom, 15 A.E.), New Ephyra (18 A.E. - current)",
         "language": "Tyran",
-        "holiday": "*Day of the Fallen, Victory Day",
+        "holiday": "Day of the Fallen, Victory Day",
         "established": "Pre-Pendulum Wars",
         "fragmented": "15 A.E.",
         "dissolved": "15 A.E.",
@@ -2982,9 +2982,9 @@
       "collection": "characters",
       "facts": {
         "type": "Air Force",
-        "headofgov": "*Chairman (formerly), First Minister",
+        "headofgov": "Chairman (formerly), First Minister",
         "commander": "Major Gill Gettner",
-        "capital": "*Ephyra (until the Battle of Ephyra), Jacinto (until its sinking), Vectes (until the COG collapsed), New Ephyra (after the re-establishment of the COG)",
+        "capital": "Ephyra (until the Battle of Ephyra), Jacinto (until its sinking), Vectes (until the COG collapsed), New Ephyra (after the re-establishment of the COG)",
         "language": "Tyran",
         "established": "Pre-Pendulum Wars",
         "fragmented": "15 A.E.",
@@ -3082,8 +3082,8 @@
         "height": "8'1",
         "eyes": "Black",
         "weapons": "Mulcher",
-        "equipment": "*Boomer Armor, Grinder Helmet",
-        "era": "*Locust War, Lambent Invasion",
+        "equipment": "Boomer Armor, Grinder Helmet",
+        "era": "Locust War, Lambent Invasion",
         "affiliation": "Locust Horde",
         "body color": "Grey skin",
         "rank": "Heavy Shock Troops"
@@ -3149,9 +3149,9 @@
         "type": "Incendiary Grenade",
         "accuracy": "N/A",
         "range": "Depends on the User",
-        "era": "*Locust War, Lambent Pandemic, Swarm War",
-        "counterpart": "*Beacon Grenade, Bolo Grenade, Ink Grenade, Smoke Grenade, Stim-Gas Grenade",
-        "affiliation": "*Coalition of Ordered Governments, Locust Horde, *Savage Locust, Stranded"
+        "era": "Locust War, Lambent Pandemic, Swarm War",
+        "counterpart": "Beacon Grenade, Bolo Grenade, Ink Grenade, Smoke Grenade, Stim-Gas Grenade",
+        "affiliation": "Coalition of Ordered Governments, Locust Horde, Savage Locust, Stranded"
       },
       "categories": [
         "Articles that need Gearsify-ing",
@@ -3173,11 +3173,11 @@
       "collection": "regions",
       "facts": {
         "characters": "Damon Baird, Nat Barber, Augustus Cole, Paul Dury, Nevil Estrom, Adam Fenix, Marcus Fenix, Gill Gettner, Victor Hoffman, Jasi, Jon, Yanik Laas, Lowe, Mac, Teodor Marisc, Bernadette Mataki, Donneld Mathieson, Quentin Mich",
-        "creatures": "Brumak, Dog, Gas Barge, Human, Locust, *Armored Kantus, *Drone, Lambent, *Lambent Brumak, *Lambent Shale Eel, *Lambent Stalk, Mangler, Polyp, Reaver, Tempest",
-        "events": "Lambent Pandemic, *Battle of Gerrenhalt, *Emergence on the Southwest Coast of Vectes, *Flooding of Pelruan, *Sinking of the Harvest, *Sinking of the Nezark, Locust War, *First Battle of Azura, *Hammer of Dawn Counteratta",
-        "locations": "Azura, *Pinnacle Tower, Kashkur, *Anvil Gate, **The Mess, *Kashkur Foothills, Learan Prison, Republic of Gorasnaya, *Branascu, *Ramascu, Tyrus, *Endeavor Naval Shipyard, *Gerrenhalt, *Jacinto City, **Wrightman Base, *Por",
-        "organizations": "Coalition of Ordered Governments, *Coalition of Ordered Governments Air Corps, *Coalition of Ordered Governments Army, **Delta-One, **Onyx Guard, ***Red Squad, *Coalition of Ordered Governments Navy, Stranded, Union of I",
-        "vehicles": "C-One, Centaur, Gelen Class Frigate, *Nezark, King Raven, *KR Zero-One, *KR Zero-Three, *KR Zero-Four, *KR Zero-Five, *KR Three-Three, *KR Eight-Zero, *KR-239, *KR-471, Packhorse, Paryk, Raven's Nest Class, *CNV Sovereig",
+        "creatures": "Brumak, Dog, Gas Barge, Human, Locust, Armored Kantus, Drone, Lambent, Lambent Brumak, Lambent Shale Eel, Lambent Stalk, Mangler, Polyp, Reaver, Tempest",
+        "events": "Lambent Pandemic, Battle of Gerrenhalt, Emergence on the Southwest Coast of Vectes, Flooding of Pelruan, Sinking of the Harvest, Sinking of the Nezark, Locust War, First Battle of Azura, Hammer of Dawn Counterattack, Ope",
+        "locations": "Azura, Pinnacle Tower, Kashkur, Anvil Gate, The Mess, Kashkur Foothills, Learan Prison, Republic of Gorasnaya, Branascu, Ramascu, Tyrus, Endeavor Naval Shipyard, Gerrenhalt, Jacinto City, Wrightman Base, Port Farrall, Re",
+        "organizations": "Coalition of Ordered Governments, Coalition of Ordered Governments Air Corps, Coalition of Ordered Governments Army, Delta-One, Onyx Guard, Red Squad, Coalition of Ordered Governments Navy, Stranded, Union of Independent",
+        "vehicles": "C-One, Centaur, Gelen Class Frigate, Nezark, King Raven, KR Zero-One, KR Zero-Three, KR Zero-Four, KR Zero-Five, KR Three-Three, KR Eight-Zero, KR-239, KR-471, Packhorse, Paryk, Raven's Nest Class, CNV Sovereign",
         "technology": "Boomshot Grenade Launcher, Hammer of Dawn, Hammerburst II, Imulsion Countermeasure Weapon, Longshot Sniper Rifle, Mk 1 Lancer Assault Rifle, Mk 2 Lancer Assault Rifle, Rocket Launcher, Snub Pistol",
         "miscellanea": "A2897, Adaptive Atmospheric Manipulation System, COG Armor, Emergence Hole, Gorasni, Gorasni (language), Kashkuri, Pesanga, South Islander, Tyran, Tyran (language)"
       },
@@ -3194,13 +3194,13 @@
       "wikiTitle": "Gears of War: The Rise of RAAM",
       "collection": "regions",
       "facts": {
-        "characters": "*Droak, Jermad, Karn, Myrrah, Praax, RAAM, Skorge, Sraak, Ukkon, Vrol, Will Carmine",
-        "creatures": "*Corpser, Lambent, *Lambent Drudge, *Lambent Wretch, Locust, *Boomer, *Drone, *Kantus, *Sire, *Theron Guard, **Theron Elite, **Theron Sentinel, Shibboleth, Riftworm",
-        "events": "*Lambent War, Pendulum Wars, Locust War",
-        "locations": "*Sera, *Hollow, **Outer Hollow, ***Gorgon Front, **Inner Hollow, ***Nexus, ****Royal Palace, ****Temple of the Trinity, ****Ukkon's Laboratory, *Tyrus, **Jannermont, ***Jannermont Army Base",
-        "organizations": "*Coalition of Ordered Governments, *Coalition of Ordered Governments Army, Locust Horde, *Bloodied Vanguard, Union of Independent Republics, *Union of Independent Republics Infantry",
-        "technology": "*Boomshot Grenade Launcher, Breechshot, Gnasher Shotgun, Gorgon-Hammerburst Rifle, Hammerburst Assault Rifle, Mark 1 Lancer Assault Rifle, Torque Bow",
-        "miscellanea": "*Blight, Imulsion, Ketor, Krav, Maag, Trinity of Worms, Uzil, Vold, Vurl, Zamil"
+        "characters": "Droak, Jermad, Karn, Myrrah, Praax, RAAM, Skorge, Sraak, Ukkon, Vrol, Will Carmine",
+        "creatures": "Corpser, Lambent, Lambent Drudge, Lambent Wretch, Locust, Boomer, Drone, Kantus, Sire, Theron Guard, Theron Elite, Theron Sentinel, Shibboleth, Riftworm",
+        "events": "Lambent War, Pendulum Wars, Locust War",
+        "locations": "Sera, Hollow, Outer Hollow, Gorgon Front, Inner Hollow, Nexus, Royal Palace, Temple of the Trinity, Ukkon's Laboratory, Tyrus, Jannermont, Jannermont Army Base",
+        "organizations": "Coalition of Ordered Governments, Coalition of Ordered Governments Army, Locust Horde, Bloodied Vanguard, Union of Independent Republics, Union of Independent Republics Infantry",
+        "technology": "Boomshot Grenade Launcher, Breechshot, Gnasher Shotgun, Gorgon-Hammerburst Rifle, Hammerburst Assault Rifle, Mark 1 Lancer Assault Rifle, Torque Bow",
+        "miscellanea": "Blight, Imulsion, Ketor, Krav, Maag, Trinity of Worms, Uzil, Vold, Vurl, Zamil"
       },
       "categories": [
         "Comic",
@@ -3234,7 +3234,7 @@
         "characters": "Nevil Estrom, Adam Fenix, Marcus Fenix, Victor Hoffman, Tai Kaliso, Bernadette Mataki, Myrrah, Dominic Santiago, Anya Stroud, Helena Stroud, Bai Tak, Miran Trescu",
         "creatures": "Human, Locust",
         "events": "Pendulum Wars",
-        "organizations": "Coalition of Ordered Governments, *Coalition of Ordered Governments Air Corps, *Coalition of Ordered Governments Army, Union of Independent Republics, *UIR Infantry",
+        "organizations": "Coalition of Ordered Governments, Coalition of Ordered Governments Air Corps, Coalition of Ordered Governments Army, Union of Independent Republics, UIR Infantry",
         "vehicles": "King Raven",
         "technology": "Hammer of Dawn, Longshot Sniper Rifle, Mk 1 Lancer Assault Rifle",
         "miscellanea": "COG Armor, Gorasni, Gorasni (language), Kashkuri, Pesanga, South Islander, Tyran, Tyran (language)"
@@ -3291,15 +3291,15 @@
         "end": "Bloom 17 A.E.",
         "place": "Sera",
         "result": "Pyrrhic Human Victory, Forced evolution of the Locust into the Swarm after the deployment of the Imulsion Countermeasure Weapon during the battle of Azura, Total devastation of most of Sera's habitable environment, Near-",
-        "battles": "*Emergence Day, Emergence in Kalona, Destruction of Halvo Bay, Hammer of Dawn Strikes, Assassination of Ukkon, Fall of Landown, Evacuation of Ilima, Fall of Ephyra, West Barricade Campaign, Jilane Massacre, Lightmass Off",
+        "battles": "Emergence Day, Emergence in Kalona, Destruction of Halvo Bay, Hammer of Dawn Strikes, Assassination of Ukkon, Fall of Landown, Evacuation of Ilima, Fall of Ephyra, West Barricade Campaign, Jilane Massacre, Lightmass Offe",
         "side1": "25px COG, 25px UIR, Stranded",
         "side2": "25px Locust Horde, Queen's Guard, Savage Locust",
-        "commanders1": "*Council of Sovereigns, *Chairman Tomas Dalyell †, *Chairman Richard Prescott †, *Premier Yori Deschenko †, Coalition High Command, *Chief of Defense Col. Victor Hoffman, *Commander Alisder Fyne, *Chief of Defense Gen. J",
-        "commanders2": "*Locust Council, *Queen Myrrah †, *Ukkon †, Locust Army, *Uzil RAAM †, *Zamil Karn †, *Vold Sraak †, *Krav Jermad †, *Krav Gurst †, Trinity of Worms, *Ketor Vrol †, *Ketor Skorge †",
-        "forces1": "*COG Armed Forces, *Coalition of Ordered Governments Army, *Coalition of Ordered Governments Air Corps, *Coalition of Ordered Governments Navy, Gorasni Armed Forces, *Gorasni Army, *Gorasni Navy, Stranded Gangs",
-        "forces2": "*Locust Army, *Bloodied Vanguard, *Palace Guard, *Theron Guard",
-        "casual1": "*99.9% of the Human race, *Most of the COG leadership, *Near-total military and civilian casualities",
-        "casual2": "*Majority of Locust forces, *All surviving Locust are forced to evolve"
+        "commanders1": "Council of Sovereigns, Chairman Tomas Dalyell †, Chairman Richard Prescott †, Premier Yori Deschenko †, Coalition High Command, Chief of Defense Col. Victor Hoffman, Commander Alisder Fyne, Chief of Defense Gen. Jolyon I",
+        "commanders2": "Locust Council, Queen Myrrah †, Ukkon †, Locust Army, Uzil RAAM †, Zamil Karn †, Vold Sraak †, Krav Jermad †, Krav Gurst †, Trinity of Worms, Ketor Vrol †, Ketor Skorge †",
+        "forces1": "COG Armed Forces, Coalition of Ordered Governments Army, Coalition of Ordered Governments Air Corps, Coalition of Ordered Governments Navy, Gorasni Armed Forces, Gorasni Army, Gorasni Navy, Stranded Gangs",
+        "forces2": "Locust Army, Bloodied Vanguard, Palace Guard, Theron Guard",
+        "casual1": "99.9% of the Human race, Most of the COG leadership, Near-total military and civilian casualities",
+        "casual2": "Majority of Locust forces, All surviving Locust are forced to evolve"
       },
       "categories": [
         "Battles",
@@ -3318,7 +3318,7 @@
         "location": "Tyrus",
         "pendulum wars allegiance": "Coalition of Ordered Governments",
         "locust-human war allegiance": "Locust Horde",
-        "notable facts": "*The first city to attacked by the Locust Horde on Emergence Day"
+        "notable facts": "The first city to attacked by the Locust Horde on Emergence Day"
       },
       "categories": [
         "COG",
@@ -3391,17 +3391,17 @@
         "size": "Large",
         "damage per hit": "Low to Medium",
         "magazine": "N/A",
-        "maxammo": "*500, 250 (GOW4)",
+        "maxammo": "500, 250 (GOW4)",
         "fire": "Automatic",
         "ammotype": "High-Caliber Machine Gun Ammunition",
         "operation": "Hand Crank",
         "rate of fire": "1200/M",
         "accuracy": "Low-Medium",
         "range": "Short to Medium",
-        "era": "*Locust War, Lambent Pandemic, Swarm War",
-        "counterpart": "*Chain Gun, Tri-Shot, Troika Heavy Machine Gun, Vulcan Cannon, UIR Minigun",
-        "counterwep": "*Breechshot, Gnasher Shotgun, Longshot Sniper Rifle, Sawed-Off Shotgun",
-        "affiliation": "*Coalition of Ordered Governments, Locust Horde, Swarm"
+        "era": "Locust War, Lambent Pandemic, Swarm War",
+        "counterpart": "Chain Gun, Tri-Shot, Troika Heavy Machine Gun, Vulcan Cannon, UIR Minigun",
+        "counterwep": "Breechshot, Gnasher Shotgun, Longshot Sniper Rifle, Sawed-Off Shotgun",
+        "affiliation": "Coalition of Ordered Governments, Locust Horde, Swarm"
       },
       "categories": [
         "Articles that need Gearsify-ing",
@@ -3432,7 +3432,7 @@
         "eyes": "Blue",
         "family": "J. Salton - Relative †",
         "era": "Pendulum Wars, Locust War, Lambent Pandemic",
-        "notable": "*Has tribal tattoos, Expert sniper, 400 plus kills during the Pendulum Wars, Went MIA during the Locust War",
+        "notable": "Has tribal tattoos, Expert sniper, 400 plus kills during the Pendulum Wars, Went MIA during the Locust War",
         "affiliation": "COG, Stranded (Formerly)"
       },
       "categories": [
@@ -3461,7 +3461,7 @@
         "side2": "25px Locust Horde",
         "commanders1": "Sgt. Marcus Fenix (late battle)",
         "commanders2": "Unknown",
-        "forces1": "One Gear squad, One APC, *APC-Two-Eighty",
+        "forces1": "One Gear squad, One APC, APC-Two-Eighty",
         "forces2": "Drones",
         "casual1": "None, heavy civilian losses",
         "casual2": "All Locust forces encountered",
@@ -3513,10 +3513,10 @@
         "size": "Small",
         "accuracy": "Varies",
         "range": "Varies on User",
-        "era": "*Pendulum Wars, Locust War, Lambent Pandemic, Outsider Movement, Swarm War",
-        "counterpart": "*Beacon Grenade, Bolo Grenade, Ink Grenade, Stim-Gas Grenade",
-        "counterwep": "*Beacon Grenade",
-        "affiliation": "*Coalition of Ordered Governments, Locust Horde"
+        "era": "Pendulum Wars, Locust War, Lambent Pandemic, Outsider Movement, Swarm War",
+        "counterpart": "Beacon Grenade, Bolo Grenade, Ink Grenade, Stim-Gas Grenade",
+        "counterwep": "Beacon Grenade",
+        "affiliation": "Coalition of Ordered Governments, Locust Horde"
       },
       "categories": [
         "Articles that need Gearsify-ing",
@@ -3585,8 +3585,8 @@
         "rate of fire": "Slow",
         "accuracy": "Varies",
         "range": "Medium",
-        "counterpart": "*Beacon Grenade, Bolo Grenade, Incendiary Grenade, Ink Grenade",
-        "affiliation": "*Coalition of Ordered Governments, *Onyx Guard"
+        "counterpart": "Beacon Grenade, Bolo Grenade, Incendiary Grenade, Ink Grenade",
+        "affiliation": "Coalition of Ordered Governments, Onyx Guard"
       },
       "categories": [
         "Coalition of Ordered Governments Armed Forces technology",
@@ -3633,14 +3633,14 @@
       "wikiTitle": "Union of Independent Republics",
       "collection": "characters",
       "facts": {
-        "type": "*Supranational and intergovernmental military alliance (Former), Separatist movement (Former), Military dictatorship (Current)",
+        "type": "Supranational and intergovernmental military alliance (Former), Separatist movement (Former), Military dictatorship (Current)",
         "headofstate": "Chairman (Former)",
         "headofgov": "Premier (Former)",
         "commander": "Chairman (Former)",
-        "defacto": "*High Council of Gorasnaya (11th Reap, 0 A.E. - Bounty, 0 A.E.), Commander Miran Trescu (Bounty, 0 A.E. - Brume, 14 A.E.; Bloom, 15 A.E. - Current)",
+        "defacto": "High Council of Gorasnaya (11th Reap, 0 A.E. - Bounty, 0 A.E.), Commander Miran Trescu (Bounty, 0 A.E. - Brume, 14 A.E.; Bloom, 15 A.E. - Current)",
         "executive": "Chairman (Former)",
-        "capital": "*Unnamed capital of Pelles (Unknown B.E. - 11th Reap, 0 A.E.), Unnamed capital of Gorasnaya (11th Reap, 0 A.E. - Bounty, 0 A.E.), Gorasnayan Protectorate in the Lesser Islands (Unknown A.E. - Brume, 14 A.E.)",
-        "language": "*Pellesian, Ostrini, Gorasni",
+        "capital": "Unnamed capital of Pelles (Unknown B.E. - 11th Reap, 0 A.E.), Unnamed capital of Gorasnaya (11th Reap, 0 A.E. - Bounty, 0 A.E.), Gorasnayan Protectorate in the Lesser Islands (Unknown A.E. - Brume, 14 A.E.)",
+        "language": "Pellesian, Ostrini, Gorasni",
         "established": "Approximately 80 B.E.",
         "fragmented": "11th Reap, 0 A.E.",
         "dissolved": "Brume, 14 A.E.",
@@ -3665,13 +3665,13 @@
       "facts": {
         "species": "Human",
         "height": "6'0\" ft. (Average)",
-        "weapons": "*Markza Mk 1 Marksman Rifle, *GZ18 Markza Sniper Rifle, Booshka Grenade Launcher, Mark 1 Lancer Assault Rifle, Snub Pistol, UIR Assault Rifle, UIR Mortar, UIR Pistol",
-        "equipment": "*UIR Armor, UIR Helmet",
-        "vehicles": "*Asp, Khimera, LAV, Pariah Tank, UIR APC, UIR Transport Helicopter",
+        "weapons": "Markza Mk 1 Marksman Rifle, GZ18 Markza Sniper Rifle, Booshka Grenade Launcher, Mark 1 Lancer Assault Rifle, Snub Pistol, UIR Assault Rifle, UIR Mortar, UIR Pistol",
+        "equipment": "UIR Armor, UIR Helmet",
+        "vehicles": "Asp, Khimera, LAV, Pariah Tank, UIR APC, UIR Transport Helicopter",
         "era": "Pendulum Wars",
-        "types": "*Standard Infantry, UIR Officer, Commandos, Sandswept Unit, UIR Elite, Saboteurs, Cosmonauts",
+        "types": "Standard Infantry, UIR Officer, Commandos, Sandswept Unit, UIR Elite, Saboteurs, Cosmonauts",
         "notable": "UIR Counterpart to Gears",
-        "affiliation": "*Union of Independent Republics, *Union of Independent Republics Army",
+        "affiliation": "Union of Independent Republics, Union of Independent Republics Army",
         "rank": "Standard Infantry"
       },
       "categories": [

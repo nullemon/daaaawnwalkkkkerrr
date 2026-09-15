@@ -48,7 +48,7 @@
         "composer": "Akira Yamaoka",
         "developer": "Team Silent",
         "publisher": "Konami",
-        "platforms": "*PlayStation 2, Xbox, PC",
+        "platforms": "PlayStation 2, Xbox, PC",
         "genre": "Survival horror",
         "modes": "Single-player",
         "release": "PlayStation 2, NA: September 25, 2001, JP: September 27, 2001, EU: November 23, 2001, Xbox, NA: December 19, 2001, JP: February 22, 2002, EU: November 23, 2001, PC, NA: December 2, 2002, EU: February 28, 2003",
@@ -83,10 +83,10 @@
         "composer": "Akira Yamaoka",
         "developer": "Team Silent",
         "publisher": "Konami",
-        "platforms": "*PlayStation 2, PC, Xbox 360 (HD Collection), PlayStation 3 (HD Collection), Xbox One (HD Collection), PlayStation 4 (HD Collection), Xbox Series S/X (HD Collection), PlayStation 5 (HD Collection)",
+        "platforms": "PlayStation 2, PC, Xbox 360 (HD Collection), PlayStation 3 (HD Collection), Xbox One (HD Collection), PlayStation 4 (HD Collection), Xbox Series S/X (HD Collection), PlayStation 5 (HD Collection)",
         "genre": "Survival horror",
         "modes": "Single-player",
-        "release": "*May 23, 2003 (Europe), July 3, 2003 (Japan), August 5, 2003 (North America)",
+        "release": "May 23, 2003 (Europe), July 3, 2003 (Japan), August 5, 2003 (North America)",
         "esrb": "M (Mature)",
         "pegi": "18",
         "cero": "15/C",
@@ -94,7 +94,7 @@
         "acb": "15",
         "requirements": "Windows (PC): Windows 98, 1 GHz Pentium III CPU, 256 MB RAM, 32MB 3D-Graphics Card, DirectX 8.1, 4.7 GB available space, 4X CD-ROM drive",
         "media": "1 x CD-ROM",
-        "input": "*Controller, Keyboard"
+        "input": "Controller, Keyboard"
       },
       "categories": [
         "Games",
@@ -192,7 +192,7 @@
         "strength": "Medium",
         "location": "Varies",
         "debut": "Silent Hill",
-        "otherappearances": "*Silent Hill 2, Silent Hill 3, Silent Hill 4: The Room, Silent Hill: Homecoming, Silent Hill: Downpour, Silent Hill: Book of Memories, Silent Hill 2 (2024), Silent Hill ƒ"
+        "otherappearances": "Silent Hill 2, Silent Hill 3, Silent Hill 4: The Room, Silent Hill: Homecoming, Silent Hill: Downpour, Silent Hill: Book of Memories, Silent Hill 2 (2024), Silent Hill ƒ"
       },
       "categories": [
         "Blunt",
@@ -224,7 +224,7 @@
         "strength": "Low-High",
         "location": "Varies",
         "debut": "Silent Hill 2: Born from a Wish",
-        "otherappearances": "*Silent Hill 4: The Room, Silent Hill: Origins"
+        "otherappearances": "Silent Hill 4: The Room, Silent Hill: Origins"
       },
       "categories": [
         "Firearms",
@@ -265,8 +265,8 @@
         "company": "Konami",
         "occupation": "Producer",
         "status": "Active",
-        "role": "*Director, Programmer, Writer, Producer",
-        "games": "*Silent Hill: The Short Message, Silent Hill 2 (2024), Silent Hill ƒ, Silent Hill: Townfall",
+        "role": "Director, Programmer, Writer, Producer",
+        "games": "Silent Hill: The Short Message, Silent Hill 2 (2024), Silent Hill ƒ, Silent Hill: Townfall",
         "media": "Luigi's Mansion, Pikmin, The Legend of Zelda: The Wind Waker, Pikmin 2, Super Mario 64 DS, New Super Mario Bros., Wii Play, Wii Fit"
       },
       "categories": [
@@ -424,7 +424,7 @@
         "gender": "Male",
         "company": "Screen Burn",
         "status": "Active",
-        "role": "*Director, Writer",
+        "role": "Director, Writer",
         "games": "Silent Hill: Townfall",
         "media": "Silent Hill: Townfall - The Dock House, Stories Untold, Alien: Isolation, Observation"
       },
@@ -442,21 +442,21 @@
       "facts": {
         "director": "Cordy Rierson",
         "producer": "Jeremy Lee",
-        "writer": "*Patrick J. Doody, Chris Valenziano",
+        "writer": "Patrick J. Doody, Chris Valenziano",
         "composer": "Akira Yamaoka",
         "developer": "Double Helix Games",
         "publisher": "Konami",
         "platforms": "PlayStation 3, Xbox 360, PC",
         "genre": "Survival horror",
         "modes": "Single-player",
-        "release": "*September 30, 2008 (North America), November 6, 2008 (Steam), February 27, 2009 (Europe)",
+        "release": "September 30, 2008 (North America), November 6, 2008 (Steam), February 27, 2009 (Europe)",
         "esrb": "M",
         "pegi": "18",
         "cero": "18/Z",
         "bbfc": "18",
         "acb": "15",
-        "media": "*DVD-ROM, Blu-ray Disc, Digital Download",
-        "input": "*Controller (PS3, Xbox 360), Keyboard + Mouse (PC)"
+        "media": "DVD-ROM, Blu-ray Disc, Digital Download",
+        "input": "Controller (PS3, Xbox 360), Keyboard + Mouse (PC)"
       },
       "categories": [
         "Games",
@@ -474,22 +474,22 @@
       "collection": "regions",
       "facts": {
         "director": "Mark Simmons",
-        "producer": "*Simon Gardner, Karl Jeffery, William Oertel, Jim Walker",
+        "producer": "Simon Gardner, Karl Jeffery, William Oertel, Jim Walker",
         "writer": "Sam Barlow",
         "composer": "Akira Yamaoka",
         "othernames": "Silent Hill: Zero (Japan)",
         "developer": "Climax Studios",
         "publisher": "Konami",
-        "platforms": "*PlayStation Portable, PlayStation 2",
+        "platforms": "PlayStation Portable, PlayStation 2",
         "genre": "Survival horror",
         "modes": "Single-player",
-        "release": "*November 6, 2007 (North America), November 16, 2007 (Europe), December 6, 2007 (Japan)",
+        "release": "November 6, 2007 (North America), November 16, 2007 (Europe), December 6, 2007 (Japan)",
         "esrb": "M (Mature)",
         "pegi": "18",
         "cero": "15/C",
         "bbfc": "15",
         "acb": "15",
-        "media": "*1 x UMD (PlayStation Portable), 1 x CD-ROM (PlayStation 2)",
+        "media": "1 x UMD (PlayStation Portable), 1 x CD-ROM (PlayStation 2)",
         "input": "Controller (PlayStation 2)"
       },
       "categories": [
@@ -849,7 +849,7 @@
         "writer": "Kiichi Kanoh",
         "composer": "Akira Yamaoka",
         "othernames": "Sakura: Playable Concept",
-        "developer": "*HexaDrive, Konami Digital Entertainment",
+        "developer": "HexaDrive, Konami Digital Entertainment",
         "publisher": "Konami Digital Entertainment",
         "platforms": "PlayStation 5",
         "genre": "Psychological horror",
@@ -912,11 +912,11 @@
       "collection": "regions",
       "facts": {
         "director": "Christophe Gans",
-        "producer": "*Victor Hadida, Molly Hassell, Philipp Kreuzer, Joe Neurauter, John Jencks, Jay Taylor, Alexa Seligman",
-        "writer": "*Christophe Gans, Sandra Vo-Anh, William Josef Schneider",
-        "starring": "*Jeremy Irvine, Hannah Emily Anderson",
+        "producer": "Victor Hadida, Molly Hassell, Philipp Kreuzer, Joe Neurauter, John Jencks, Jay Taylor, Alexa Seligman",
+        "writer": "Christophe Gans, Sandra Vo-Anh, William Josef Schneider",
+        "starring": "Jeremy Irvine, Hannah Emily Anderson",
         "composer": "Akira Yamaoka",
-        "cinematography": "*Benoit Debie, Pablo Rosso",
+        "cinematography": "Benoit Debie, Pablo Rosso",
         "editor": "Sébastian Prangère",
         "distributor": "CAA Media Finance (Domestic), The Veterans (Worldwide), Leonine Distribution (Germany), Metropolitan (France)",
         "release": "January 23, 2026"
@@ -939,10 +939,10 @@
         "director": "Al Yang",
         "producer": "Motoi Okamoto",
         "writer": "Ryukishi07",
-        "composer": "*Akira Yamaoka, Kensuke Inage, dai, xaki",
+        "composer": "Akira Yamaoka, Kensuke Inage, dai, xaki",
         "developer": "NeoBards Entertainment",
         "publisher": "Konami",
-        "platforms": "*PlayStation 5, Xbox Series X",
+        "platforms": "PlayStation 5, Xbox Series X",
         "release": "September 25, 2025",
         "esrb": "Mature 17+",
         "pegi": "18",
@@ -988,11 +988,11 @@
       "collection": "regions",
       "facts": {
         "director": "Mateusz Lenart",
-        "composer": "*Akira Yamaoka, Arkadiusz Reikowski",
-        "producer": "*Motoi Okamoto, Maciej Głomb",
+        "composer": "Akira Yamaoka, Arkadiusz Reikowski",
+        "producer": "Motoi Okamoto, Maciej Głomb",
         "developer": "Bloober Team",
         "publisher": "Konami",
-        "platforms": "*PlayStation 5, Windows, Xbox Series X",
+        "platforms": "PlayStation 5, Windows, Xbox Series X",
         "release": "October 8, 2024",
         "esrb": "M",
         "pegi": "18+"
