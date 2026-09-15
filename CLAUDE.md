@@ -202,9 +202,53 @@ that inherits the default would let any reader who signs up edit content.
   satisfies the *rest* of the pattern, which means skipping the optional group
   entirely. Split into blocks and read each field from its own block; do not
   write one regular expression that spans a whole record.
+- **A blocked autocomplete endpoint writes an empty file over a good one.**
+  After a few thousand requests in a day Google answers `suggestqueries` with
+  a 403 "your computer or network may be sending automated queries" page, and
+  it keeps answering it. The harvester's retry loop turned every one of those
+  into an empty array, so a run stayed "successful" for an hour, found
+  nothing, and would have replaced several thousand real searches — the only
+  copy, gathered over days — with a valid empty file. Nothing would have
+  errored; the generators downstream would simply have written fewer pages.
+  `tools/fetch-search-queries.mjs` now treats 403/429 as terminal, stops the
+  sweep, and refuses to write a harvest smaller than 90% of the one on disk.
+  Keep that guard: it is the only thing standing between a rate limit and
+  silent data loss.
+
 - **Grid and flex children default to `min-width: auto`**, so a wide table
   inside an `overflow-x` container drags the page sideways on a phone. The
   shrink-fix is at the end of `globals.css`; keep it.
+
+## How a guide gets written
+
+Four passes, each grounded in a different source, each idempotent on
+`(game, slug)` so they can be re-run in any order:
+
+```bash
+pnpm seed:guides    # hand-written, per game
+pnpm seed:articles  # eight topics a Steam listing settles outright
+pnpm seed:deep      # engine/composer/series facts, rarity bands, category roundups
+pnpm seed:topics    # store features, stat comparisons, coverage, the demand side
+```
+
+`seed:topics` is the one with the rule worth remembering: **it is the only
+pass that answers in the negative**, and a negative answer is always phrased
+as "the store listing does not carry this, read on <date>" rather than "no".
+A listing is strong evidence of presence and weak evidence of absence,
+especially before release, and a wiki that says "no crossplay" the week a
+publisher adds it has spent the only thing this site has.
+
+The demand-side pages (`most-searched`, `open-questions`) are built from
+`src/seed/raw/queries/`, which `tools/fetch-search-queries.mjs` fills. They
+match a query to a page on the words that are *not* the game's own name —
+without that discount every question matches every page, because every
+question names the game. `src/lib/asking.ts` needs the same correction and
+has it; if you write a third matcher, it needs it too.
+
+**Guide counts are data-bound, not effort-bound.** A wiki for a game with a
+twelve-article community wiki does not reach forty guides, and padding it is
+the one thing that would cost this network its argument. `pnpm seed:topics`
+prints a per-wiki count; the gap is the finding, not the failure.
 
 ## Outstanding
 

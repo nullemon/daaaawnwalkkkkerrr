@@ -352,7 +352,7 @@ async function run(): Promise<void> {
       const inBand = achievements
         .filter((a) => a.rarity === band.key)
         .sort((a, b) => (a.globalPercent ?? 100) - (b.globalPercent ?? 100))
-      if (inBand.length < 4) continue
+      if (inBand.length < 3) continue
 
       await write(
         `${band.key}-achievements`,
@@ -412,10 +412,17 @@ async function run(): Promise<void> {
         }
       }
 
+      /*
+        Four is the floor for a grouping worth its own page. Three is a
+        coincidence of filing; four is the point where a reader scanning the
+        list gets something a search result would not have given them. The cap
+        is twenty because Gears alone has thirty-eight eligible groups, and
+        past twenty they are groups of exactly four with overlapping members.
+      */
       const worthwhile = [...groups.entries()]
-        .filter(([, group]) => group.titles.length >= 6)
+        .filter(([, group]) => new Set(group.titles).size >= 4)
         .sort((a, b) => b[1].titles.length - a[1].titles.length)
-        .slice(0, 10)
+        .slice(0, 20)
 
       for (const [category, group] of worthwhile) {
         const slug = `all-${slugify(category)}`.slice(0, 60)

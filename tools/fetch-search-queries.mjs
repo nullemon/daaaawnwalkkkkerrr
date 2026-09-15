@@ -50,8 +50,8 @@ const GAMES = {
   'control-resonant': ['control resonant', 'control 2'],
   'resonance-a-plague-tale-legacy': ['a plague tale resonance', 'plague tale legacy'],
   'gears-of-war-e-day': ['gears of war e day', 'gears e day'],
-  'phantom-blade-zero': ['phantom blade zero'],
-  'silent-hill-townfall': ['silent hill townfall'],
+  'phantom-blade-zero': ['phantom blade zero', 'phantom blade 0'],
+  'silent-hill-townfall': ['silent hill townfall', 'townfall'],
   'star-wars-zero-company': ['star wars zero company', 'zero company'],
 }
 
@@ -91,10 +91,24 @@ const STEMS = [
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
+/** Set once the endpoint starts refusing us; nothing after it is trustworthy. */
+let blocked = false
+
 const suggest = async (phrase, locale = 'en', attempt = 0) => {
   const url = `https://suggestqueries.google.com/complete/search?client=firefox&hl=${locale}&q=${encodeURIComponent(phrase)}`
   try {
     const response = await fetch(url, { headers: { 'User-Agent': UA } })
+    /*
+      A 403 here is not a transient error. Google serves its "your computer or
+      network may be sending automated queries" page once a run has asked for
+      too much in a day, and it keeps serving it. Retrying is pointless, and
+      the retry loop is worse than pointless: every call returns [], the sweep
+      finishes looking successful, and the file it writes is empty.
+    */
+    if (response.status === 403 || response.status === 429) {
+      blocked = true
+      throw new Error(`HTTP ${response.status} (rate limited)`)
+    }
     if (!response.ok) throw new Error(`HTTP ${response.status}`)
     const body = await response.json()
     return Array.isArray(body?.[1]) ? body[1] : []
@@ -134,6 +148,9 @@ for (const [slug, terms] of Object.entries(GAMES)) {
 
   for (const term of terms) {
     for (const stem of STEMS) {
+      // Once refused, every further request is a wasted two seconds and
+      // returns nothing. Stop and let the guard below keep the old file.
+      if (blocked) break
       const phrase = stem ? `${term} ${stem}` : term
       // Two locales: the same prefix ranks differently in en and en-GB, and
       // the tails barely overlap.
@@ -165,8 +182,32 @@ for (const [slug, terms] of Object.entries(GAMES)) {
     .map(([query, weight]) => ({ query, weight }))
     .sort((a, b) => b.weight - a.weight || a.query.localeCompare(b.query))
 
+  /*
+    Never replace a harvest with a smaller one.
+
+    These files are the only copy of several thousand real searches, gathered
+    over hours across several days. A blocked run produces zero results per
+    prefix and would write a valid, empty, permanent replacement, and the
+    generators that read it would quietly produce fewer pages with nobody
+    able to say why. Ninety per cent is the floor: autocomplete drifts a
+    little between runs, and a real re-sweep never loses a tenth of its tail.
+  */
+  const outFile = path.join(OUT_DIR, `${slug}.json`)
+  const previous = fs.existsSync(outFile)
+    ? JSON.parse(fs.readFileSync(outFile, 'utf8')).queries.length
+    : 0
+
+  if (previous > 0 && queries.length < previous * 0.9) {
+    console.log(
+      `  !! KEPT the existing file: this run found ${queries.length}, it already had ${previous}.`,
+    )
+    if (blocked) console.log('     The endpoint refused us part-way through (HTTP 403/429).')
+    console.log('     Nothing was written. Try again tomorrow, or from another network.')
+    continue
+  }
+
   fs.writeFileSync(
-    path.join(OUT_DIR, `${slug}.json`),
+    outFile,
     `${JSON.stringify(
       { slug, fetchedAt: new Date().toISOString().slice(0, 10), terms, queries },
       null,
@@ -174,7 +215,7 @@ for (const [slug, terms] of Object.entries(GAMES)) {
     )}\n`,
   )
 
-  console.log(`  => ${queries.length} distinct queries`)
+  console.log(`  => ${queries.length} distinct queries${previous ? ` (was ${previous})` : ''}`)
   console.log(`     top: ${queries.slice(0, 5).map((q) => q.query).join(' | ')}`)
 }
 
