@@ -10,7 +10,9 @@ export async function generateMetadata(): Promise<Metadata> {
   const names = wikis.slice(0, 4).map((wiki) => wiki.game.shortTitle || wiki.game.title)
 
   return {
-    title: `All wikis — ${settings.siteName}`,
+    // Just the page. The layout's template appends the network name, and
+    // including it here as well produced "All wikis — X · X".
+    title: 'All wikis',
     description: `Every game wiki on the network${names.length ? `, including ${names.join(', ')}` : ''}. Page counts are read from the database, not claimed.`,
     alternates: { canonical: '/wikis' },
   }

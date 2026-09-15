@@ -52,12 +52,17 @@ export async function generateMetadata(): Promise<Metadata> {
   const base = await siteUrl()
   return {
     metadataBase: new URL(base),
-    title: {
-      default: `${settings.siteName} — ${settings.tagline}`,
-      template: `%s · ${settings.siteName}`,
-    },
+    /*
+      Deliberately no title here.
+
+      This layout wraps both the hub and all seven wikis, so it cannot know
+      which site it is. It used to set `title.template` from the network name,
+      and a child's `title.default` augments the closest parent's template —
+      which is why every wiki's home read "Onimusha: Way of the Sword guide,
+      wiki and database · Dawnwalker Guide". The title belongs to whichever
+      layout knows the answer: `(network)` or `[game]`.
+    */
     description: settings.description ?? settings.tagline,
-    applicationName: settings.siteName,
     icons: {
       icon: [
         { url: '/icon.svg', type: 'image/svg+xml' },

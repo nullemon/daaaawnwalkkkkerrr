@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { Shell } from '@/components/Shell'
 import type { RailItem } from '@/components/SiteRail'
 import type { FooterColumn } from '@/components/SiteFooter'
@@ -5,9 +6,23 @@ import { getPublishedGames, getSiteSettings, gameUrl } from '@/lib/payload'
 import { Analytics } from '@/components/Analytics'
 import { resolveTags, verificationMetadata } from '@/lib/tags'
 
-/** The apex domain's own verification tokens. Each wiki has its own. */
-export async function generateMetadata() {
-  return { verification: verificationMetadata(await resolveTags()) }
+/**
+ * The hub's identity and its own verification tokens.
+ *
+ * The title lives here rather than in the root layout because the root wraps
+ * every wiki too and cannot tell which site it is rendering.
+ */
+export async function generateMetadata(): Promise<Metadata> {
+  const settings = await getSiteSettings()
+  return {
+    title: {
+      default: `${settings.siteName} — ${settings.tagline}`,
+      template: `%s · ${settings.siteName}`,
+    },
+    applicationName: settings.siteName,
+    openGraph: { siteName: settings.siteName, type: 'website', locale: 'en' },
+    verification: verificationMetadata(await resolveTags()),
+  }
 }
 
 /**

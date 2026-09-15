@@ -70,7 +70,29 @@ pnpm build        # ~600 pages
 `pnpm verify` is not optional ceremony. A record with no game does not error —
 it silently never appears on any page. Run it after any import.
 
-## 5. Tell the search engines
+## 5. Name the network and set the tags
+
+**Admin → Site settings → Identity.** The network ships as "Vellum", which is
+a working name and nothing depends on it. Change it here and every wiki picks
+it up — the footer, the hub title, the open-graph site name.
+
+**Admin → Site settings → SEO & analytics.** Network-wide defaults for the
+apex domain.
+
+**Admin → Network → Games → *each game* → Search engine verification.** This
+is the part that is easy to miss and expensive to miss. Each wiki is its own
+origin, so Search Console treats it as a separate property and issues a
+separate verification token. The network's token will not verify a subdomain.
+
+The same screen holds that wiki's analytics. Any field left empty inherits the
+network value, so if one GA4 property covers everything, set it once on Site
+settings and leave the games blank.
+
+The dashboard flags both: a live wiki with no verification token and no
+analytics shows under "Needs attention", because neither failure is visible on
+the site itself.
+
+## 6. Tell the search engines
 
 ```bash
 pnpm indexnow            # dry run: prints the hosts and URL counts
@@ -89,6 +111,21 @@ the proof that the key is yours. It is served by every host because there is
 one deployment.
 
 ---
+
+## Keeping the game data current
+
+The six wikis opened alongside Dawnwalker are built from their store pages.
+When a release date moves or an edition changes:
+
+```bash
+pnpm fetch:games   # re-read all six from their store pages
+pnpm seed:games    # update the mechanics pages and achievements
+pnpm seed:art      # pick up any new art
+```
+
+`fetch:games` also collects the achievement list once a game ships, so running
+it in the week after a launch is what turns an upcoming wiki into one with
+fifty real pages.
 
 ## Adding the eighth wiki
 

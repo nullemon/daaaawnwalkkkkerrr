@@ -12,13 +12,27 @@ import { cite } from './sources'
  */
 
 export const siteSettings = {
-  siteName: 'Dawnwalker Guide',
-  tagline: 'A run planner and database for The Blood of Dawnwalker',
+  /*
+    The network's name, not one game's.
+
+    This said "Dawnwalker Guide" while the network was one wiki, which put a
+    single game's name in the tab title of all seven and in the footer of the
+    hub. "Vellum" is a working name and nothing depends on it — change it here
+    or, better, in Site settings → Identity, and every wiki picks it up.
+  */
+  siteName: 'Vellum',
+  tagline: 'Game wikis with the sources shown',
   description:
-    'Plan your 480 segments. Quests, endings, Court Activities and the mechanics behind the thirty-day clock — with every figure sourced and its confidence shown.',
-  heroHeading: 'You have 480 segments. Spend them well.',
+    'Wikis and databases for games worth playing carefully. Every figure carries a confidence rating, and where sources disagree we say so rather than picking one.',
+  /*
+    Hub copy. These were Dawnwalker's — "You have 480 segments. Spend them
+    well." — because the hub did not exist when they were written, and they now
+    feed the masthead on the apex domain where a line about one game's clock
+    makes no sense. Each wiki's own hero comes from its game record instead.
+  */
+  heroHeading: 'Wikis for games that reward playing carefully.',
   heroSubheading:
-    'Thirty days and thirty nights, eight segments each. The clock only moves when you let it. Work out what you can still reach from where you actually are.',
+    'The numbers sourced, the gaps admitted, and nothing invented to fill them.',
   /*
    * Every section that has an index, in the order a reader wants them: the two
    * tools first, then the database.

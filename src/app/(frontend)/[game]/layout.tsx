@@ -54,7 +54,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     // gets its own canonical origin, its own title template and its own feeds.
     metadataBase: new URL(base),
     title: {
-      default: game.seo?.title || `${game.title} guide, wiki and database`,
+      /*
+        `absolute`, not `default`: a default is augmented by the closest
+        parent's template, and this wiki's name is the whole title. `template`
+        still applies to child pages, which is what gives every record page its
+        "· Onimusha Wiki" suffix.
+      */
+      absolute: game.seo?.title || `${game.title} guide, wiki and database`,
       template: `%s · ${name} Wiki`,
     },
     description: game.seo?.description || game.summary || undefined,

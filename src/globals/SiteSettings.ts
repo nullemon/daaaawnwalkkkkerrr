@@ -122,7 +122,9 @@ export const SiteSettings: GlobalConfig = {
           ],
         },
         {
-          label: 'Home page',
+          label: 'Hub home page',
+          description:
+            'The apex domain only. Each wiki takes its own heading and lede from its Game record, so nothing here appears on a wiki.',
           fields: [
             { name: 'heroHeading', type: 'text' },
             { name: 'heroSubheading', type: 'textarea' },
