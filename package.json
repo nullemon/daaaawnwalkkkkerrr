@@ -43,7 +43,8 @@
     "seed:reference": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/reference-facts.ts",
     "remote": "node tools/remote.mjs",
     "seed:deep": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/deep-guides.ts",
-    "seed:topics": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/topic-guides.ts"
+    "seed:topics": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/topic-guides.ts",
+    "seed:cite": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/cite-compilations.ts"
   },
   "dependencies": {
     "@payloadcms/db-sqlite": "3.89.0",
