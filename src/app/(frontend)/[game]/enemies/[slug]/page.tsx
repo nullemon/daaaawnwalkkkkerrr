@@ -5,6 +5,7 @@ import { PageHeader } from '@/components/PageHeader'
 import { Badge, Confidence, PhaseBadge } from '@/components/Badges'
 import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
+import { Attribution } from '@/components/Attribution'
 import { CommentThread } from '@/components/CommentThread'
 import { FactPanel } from '@/components/FactPanel'
 import { EntityImage } from '@/components/EntityImage'
@@ -95,6 +96,7 @@ export default async function EnemyPage({ params }: Props) {
           </div>
         </div>
         <Sources sources={doc.sources} />
+        <Attribution sources={doc.sources} />
         <CommentThread game={game} path={`/enemies/${slug}`} />
       </div>
     </>

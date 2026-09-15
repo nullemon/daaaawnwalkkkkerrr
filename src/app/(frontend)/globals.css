@@ -1397,11 +1397,18 @@ th.num { text-align: right; }
 .rule h3 { font-size: 15px; color: var(--ink); margin: 0; }
 .rule p { font-size: 13.5px; color: var(--ink-soft); margin: 0; }
 
-/* Per-game art in the hub rail, in place of an identical chevron each. */
+/* Per-game art in the hub rail, in place of an identical chevron each.
+
+   Square by construction — these are the 1:1 favicon crops, not the wide
+   capsule art, which the rail used to squash into this slot and cut in half. */
 .navrail-art {
-  width: 26px; height: 26px; border-radius: 4px;
+  width: 24px; height: 24px; border-radius: 5px;
   object-fit: cover; display: block;
+  border: 1px solid var(--rule);
+  background: var(--raised);
 }
+.navrail-link[aria-current='page'] .navrail-art,
+.navrail-link:hover .navrail-art { border-color: var(--accent-dim); }
 
 /* ===========================================================================
    Polish pass.
@@ -1703,3 +1710,134 @@ a.chip:hover {
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
   overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
 }
+
+/* ===========================================================================
+   Professional pass.
+
+   The reference points are u.gg and Fextralife, and they solve two different
+   problems. u.gg is dense and instrumented: figures first, everything
+   scannable, no decoration that is not carrying data. Fextralife is a
+   directory: art-led cards, a reader choosing which wiki to enter.
+
+   The hub is the directory problem, so it borrows Fextralife's shape. A
+   record page is the u.gg problem, so it borrows that density. What is
+   deliberately not borrowed from either is the clutter — neither site has to
+   say "this figure is unverified", and that is the one thing this network is
+   for.
+   =========================================================================== */
+
+/* --- Masthead: art-led, not a coloured band -------------------------------
+   The hub's masthead carried the largest wiki's key art at 16% opacity, which
+   read as a smudge. A proper treatment: full-bleed art, a real scrim, and the
+   type sitting on top of it with enough contrast to be legible at any crop. */
+
+.masthead { padding-block: clamp(44px, 9vw, 96px); }
+
+.masthead-art { opacity: 0.42; filter: saturate(0.85) contrast(1.05); }
+
+/* Two layers rather than one: a vertical fade so the page below joins
+   seamlessly, and a horizontal one so the text side stays readable when the
+   art behind it is bright. */
+.masthead::before {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--bg) 55%, transparent), var(--bg) 97%),
+    linear-gradient(100deg, var(--bg) 8%, color-mix(in srgb, var(--bg) 60%, transparent) 58%, transparent);
+}
+
+.masthead-title { text-wrap: balance; letter-spacing: -0.015em; }
+
+/* Figures are the thing a directory is judged on, so they get the weight. */
+.masthead-stats { gap: 12px 40px; padding-top: 4px; }
+.masthead-stats dd {
+  font-size: clamp(28px, 4vw, 38px);
+  font-variant-numeric: tabular-nums;
+  background: linear-gradient(180deg, var(--ink), color-mix(in srgb, var(--ink) 62%, var(--accent)));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* --- Buttons --------------------------------------------------------------
+   There was one button style and it was a bordered box. A primary action
+   should look like one.                                                     */
+
+.button {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 9px 17px; border-radius: 7px;
+  background: var(--accent); color: #fff;
+  border: 1px solid var(--accent);
+  font-weight: 600; font-size: 14px; line-height: 1;
+  cursor: pointer;
+  transition: transform 140ms var(--ease), box-shadow 140ms var(--ease), background-color 140ms var(--ease);
+}
+.button:hover {
+  background: var(--accent-hot); border-color: var(--accent-hot);
+  text-decoration: none; transform: translateY(-1px);
+  box-shadow: var(--lift-soft);
+}
+.button:active { transform: translateY(0); }
+.button:disabled { opacity: 0.55; cursor: default; transform: none; box-shadow: none; }
+
+/* --- Wiki cards: the directory ------------------------------------------- */
+
+.wiki-card { position: relative; }
+
+/* A game's own accent as a top edge. Four pixels is enough to tell eight
+   cards apart at a glance, which is the job the directory has. */
+.wiki-card::before {
+  content: '';
+  position: absolute; inset: 0 0 auto 0; height: 3px;
+  background: var(--card-accent, var(--accent));
+  opacity: 0.85; z-index: 1;
+  border-radius: var(--r) var(--r) 0 0;
+}
+.wiki-card-art { aspect-ratio: 16 / 8; position: relative; }
+.wiki-card-art::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 45%, color-mix(in srgb, var(--surface) 88%, transparent));
+}
+.wiki-card h3 { letter-spacing: -0.01em; }
+.wiki-card-count { font-variant-numeric: tabular-nums; }
+
+/* --- Section tiles: the wiki home ---------------------------------------- */
+
+.tile { min-height: 132px; }
+.tile-count { font-variant-numeric: tabular-nums; opacity: 0.88; }
+.tile-name { letter-spacing: -0.01em; }
+
+/* --- Record pages: u.gg density ------------------------------------------
+   Fact panels and tables are the reason somebody is on a record page. They
+   were the same visual weight as the prose around them.                      */
+
+.factpanel, .tablewrap {
+  border-radius: var(--r);
+  overflow: hidden;
+}
+.tablewrap table th {
+  position: sticky; top: 0; z-index: 1;
+  background: var(--raised);
+  font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em;
+  color: var(--muted);
+}
+.tablewrap table td { font-variant-numeric: tabular-nums; }
+.tablewrap table td:first-child { font-variant-numeric: normal; }
+
+/* --- Attribution ----------------------------------------------------------
+   Required by CC BY-SA, so it has to be visible — but it is housekeeping, not
+   content, and should read that way.                                        */
+
+.attribution {
+  margin-top: 18px; padding: 11px 14px;
+  border-left: 2px solid var(--rule);
+  background: color-mix(in srgb, var(--raised) 35%, transparent);
+  border-radius: 0 var(--r) var(--r) 0;
+}
+.attribution .note { margin: 0; font-size: 12.5px; }
+.attribution .note + .note { margin-top: 5px; }
+
+/* --- Typography ----------------------------------------------------------- */
+
+h1, h2, h3 { text-wrap: balance; }
+.lede { text-wrap: pretty; }
+.page-head h1 { letter-spacing: -0.02em; }

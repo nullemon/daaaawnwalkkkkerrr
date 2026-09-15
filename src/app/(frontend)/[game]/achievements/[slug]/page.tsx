@@ -4,6 +4,7 @@ import { PageHeader } from '@/components/PageHeader'
 import { Confidence, Badge } from '@/components/Badges'
 import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
+import { Attribution } from '@/components/Attribution'
 import { EntityImage } from '@/components/EntityImage'
 import { FactPanel } from '@/components/FactPanel'
 import { RelatedList, type RelatedItem } from '@/components/RelatedList'
@@ -200,6 +201,8 @@ export default async function AchievementPage({ params }: Props) {
         </div>
 
         <Sources sources={doc.sources} />
+
+        <Attribution sources={doc.sources} />
 
         <CommentThread game={game} path={`/achievements/${slug}`} />
       </div>

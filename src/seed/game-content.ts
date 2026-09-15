@@ -11,6 +11,52 @@ import { rarityFor } from '../collections/Achievements'
 import { slugify } from '../fields/shared'
 
 /**
+ * A screenshot for each generated mechanics page, cycling through the game's
+ * own library so no two pages share one.
+ *
+ * Decorative placement: these illustrate the game, not a claim about a named
+ * place or person, which is what `docs/ASSETS.md` permits.
+ */
+const screenshotPicker = (slug: string, payload: Payload, credit: string) => {
+  const dir = path.resolve('assets/_games', slug)
+  const files = fs.existsSync(dir)
+    ? fs.readdirSync(dir).filter((name) => /^screenshot-\d+\.(jpg|png)$/i.test(name)).sort()
+    : []
+  let index = 0
+
+  return async (pageSlug: string, alt: string): Promise<number | string | null> => {
+    if (files.length === 0) return null
+    const file = files[index % files.length]
+    index += 1
+
+    const filename = `${slug}-mechanic-${pageSlug}${path.extname(file)}`
+    const existing = await payload.find({
+      collection: 'media',
+      where: { filename: { equals: filename } },
+      limit: 1,
+      depth: 0,
+    })
+    if (existing.docs.length > 0) return existing.docs[0].id
+
+    try {
+      const created = await payload.create({
+        collection: 'media',
+        data: { alt, credit } as never,
+        file: {
+          data: fs.readFileSync(path.join(dir, file)),
+          mimetype: file.toLowerCase().endsWith('.png') ? 'image/png' : 'image/jpeg',
+          name: filename,
+          size: fs.statSync(path.join(dir, file)).size,
+        },
+      })
+      return created.id
+    } catch {
+      return null
+    }
+  }
+}
+
+/**
  * Turns `src/seed/raw/games/*.json` into pages on each new wiki.
  *
  *   pnpm seed:games
@@ -273,9 +319,17 @@ async function run(): Promise<void> {
     console.log(`${game.title}`)
 
     // --- Mechanics --------------------------------------------------------
+    const pickShot = screenshotPicker(
+      game.slug,
+      payload,
+      `${game.title} © ${game.publishers[0] ?? 'its publisher'}. Used for identification and commentary.`,
+    )
+
     let mechanics = 0
     for (const page of mechanicsFor(game)) {
+      const image = await pickShot(page.slug, `${game.title} — ${page.title}`)
       await upsert(payload, 'mechanics', gameId, page.slug, {
+        ...(image ? { image } : {}),
         title: page.title,
         slug: page.slug,
         summary: page.summary,

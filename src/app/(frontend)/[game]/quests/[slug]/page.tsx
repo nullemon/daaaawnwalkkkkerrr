@@ -5,6 +5,7 @@ import { PageHeader } from '@/components/PageHeader'
 import { Confidence, PhaseBadge } from '@/components/Badges'
 import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
+import { Attribution } from '@/components/Attribution'
 import { CommentThread } from '@/components/CommentThread'
 import { AdSlot } from '@/components/AdSlot'
 import { QuestToggle } from '@/components/QuestToggle'
@@ -164,6 +165,7 @@ export default async function QuestPage({ params }: Props) {
 
         <AdSlot />
         <Sources sources={quest.sources} />
+        <Attribution sources={quest.sources} />
         <CommentThread game={game} path={`/quests/${slug}`} />
       </div>
     </>

@@ -1533,6 +1533,10 @@ export interface Mechanic {
    */
   order?: number | null;
   /**
+   * Optional. Mechanics pages had no image slot at all, which left fifty-one of them — the release, requirements and credits pages every wiki opens with — as walls of text.
+   */
+  image?: (number | null) | Media;
+  /**
    * The numbers a reader came for. Rendered as a table at the top of the page.
    */
   keyFacts?:
@@ -2595,6 +2599,7 @@ export interface MechanicsSelect<T extends boolean = true> {
   title?: T;
   slug?: T;
   order?: T;
+  image?: T;
   keyFacts?:
     | T
     | {
@@ -3011,6 +3016,10 @@ export interface SiteSetting {
   heroHeading?: string | null;
   heroSubheading?: string | null;
   /**
+   * Around five hundred records restate facts from Fandom and Wikipedia, both CC BY-SA. That licence REQUIRES attribution as a condition of using the content — so this chooses how prominent the line is, not whether we comply. "Hidden" puts the site outside the licence it relies on, and exists only for a page carrying attribution some other way.
+   */
+  attributionStyle?: ('compact' | 'full' | 'hidden') | null;
+  /**
    * Off by default. Sources are always stored and always required on import; this only controls whether the list is printed under each page.
    */
   showSources?: boolean | null;
@@ -3101,6 +3110,7 @@ export interface SiteSettingsSelect<T extends boolean = true> {
   footerNote?: T;
   heroHeading?: T;
   heroSubheading?: T;
+  attributionStyle?: T;
   showSources?: T;
   verification?:
     | T

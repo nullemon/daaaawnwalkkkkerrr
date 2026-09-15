@@ -4,6 +4,7 @@ import { PageHeader } from '@/components/PageHeader'
 import { Confidence } from '@/components/Badges'
 import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
+import { Attribution } from '@/components/Attribution'
 import { CommentThread } from '@/components/CommentThread'
 import { Byline } from '@/components/Byline'
 import { EntityImage } from '@/components/EntityImage'
@@ -141,6 +142,8 @@ export default async function GuidePage({ params }: Props) {
             ) : null}
 
             <Sources sources={doc.sources} />
+
+            <Attribution sources={doc.sources} />
 
             <CommentThread game={game} path={`/guides/${slug}`} />
           </div>

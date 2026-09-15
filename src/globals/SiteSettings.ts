@@ -129,6 +129,21 @@ export const SiteSettings: GlobalConfig = {
             { name: 'heroHeading', type: 'text' },
             { name: 'heroSubheading', type: 'textarea' },
             {
+              name: 'attributionStyle',
+              type: 'select',
+              defaultValue: 'compact',
+              label: 'Licence attribution for wiki-sourced facts',
+              options: [
+                { label: 'Compact — one line naming the wiki and licence', value: 'compact' },
+                { label: 'Full — adds what reuse of this page means', value: 'full' },
+                { label: 'Hidden — see the warning below', value: 'hidden' },
+              ],
+              admin: {
+                description:
+                  'Around five hundred records restate facts from Fandom and Wikipedia, both CC BY-SA. That licence REQUIRES attribution as a condition of using the content — so this chooses how prominent the line is, not whether we comply. "Hidden" puts the site outside the licence it relies on, and exists only for a page carrying attribution some other way.',
+              },
+            },
+            {
               /*
                 Citations are collected on every record and validated on import
                 — `src/seed/import.ts` still rejects anything without a source

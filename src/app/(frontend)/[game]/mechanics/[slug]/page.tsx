@@ -4,6 +4,7 @@ import { PageHeader } from '@/components/PageHeader'
 import { Confidence } from '@/components/Badges'
 import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
+import { Attribution } from '@/components/Attribution'
 import { CommentThread } from '@/components/CommentThread'
 import { getBySlug } from '@/lib/payload'
 import { gameSlugParams } from '@/lib/params'
@@ -68,6 +69,7 @@ export default async function MechanicPage({ params }: Props) {
         ) : null}
         <RichText data={doc.body} />
         <Sources sources={doc.sources} />
+        <Attribution sources={doc.sources} />
         <CommentThread game={game} path={`/mechanics/${slug}`} />
       </div>
     </>

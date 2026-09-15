@@ -6,6 +6,7 @@ import { Confidence, PhaseBadge } from '@/components/Badges'
 import { Facts } from '@/components/Facts'
 import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
+import { Attribution } from '@/components/Attribution'
 import { CommentThread } from '@/components/CommentThread'
 import { getBySlug, rel } from '@/lib/payload'
 import { gameSlugParams } from '@/lib/params'
@@ -80,6 +81,7 @@ export default async function CourtActivityPage({ params }: Props) {
           </p>
         ) : null}
         <Sources sources={doc.sources} />
+        <Attribution sources={doc.sources} />
         <CommentThread game={game} path={`/court-activities/${slug}`} />
       </div>
     </>

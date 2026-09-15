@@ -6,6 +6,7 @@ import { Badge, Confidence, PhaseBadge } from '@/components/Badges'
 import { Facts } from '@/components/Facts'
 import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
+import { Attribution } from '@/components/Attribution'
 import { CommentThread } from '@/components/CommentThread'
 import { EntityImage } from '@/components/EntityImage'
 import { getAll, getBySlug, rel } from '@/lib/payload'
@@ -110,6 +111,8 @@ export default async function PerkPage({ params }: Props) {
         ) : null}
 
         <Sources sources={doc.sources} />
+
+        <Attribution sources={doc.sources} />
 
         <CommentThread game={game} path={`/perks/${slug}`} />
       </div>

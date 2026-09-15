@@ -20,6 +20,15 @@ export const Mechanics: CollectionConfig = {
       admin: { position: 'sidebar', description: 'Lower sorts first in the mechanics index.' },
     },
     {
+      name: 'image',
+      type: 'upload',
+      relationTo: 'media',
+      admin: {
+        description:
+          'Optional. Mechanics pages had no image slot at all, which left fifty-one of them — the release, requirements and credits pages every wiki opens with — as walls of text.',
+      },
+    },
+    {
       name: 'keyFacts',
       type: 'array',
       admin: { description: 'The numbers a reader came for. Rendered as a table at the top of the page.' },

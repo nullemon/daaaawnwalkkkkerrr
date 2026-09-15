@@ -5,6 +5,7 @@ import { PageHeader } from '@/components/PageHeader'
 import { Badge, Confidence } from '@/components/Badges'
 import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
+import { Attribution } from '@/components/Attribution'
 import { CommentThread } from '@/components/CommentThread'
 import { EntityImage } from '@/components/EntityImage'
 import { FactPanel } from '@/components/FactPanel'
@@ -126,6 +127,7 @@ export default async function ItemPage({ params }: Props) {
           </div>
         ) : null}
         <Sources sources={doc.sources} />
+        <Attribution sources={doc.sources} />
         <CommentThread game={game} path={`/items/${slug}`} />
       </div>
     </>

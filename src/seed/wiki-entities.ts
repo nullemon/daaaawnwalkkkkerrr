@@ -300,9 +300,10 @@ const REHOME: Record<string, string> = { perks: 'mechanics', endings: 'mechanics
  * silently — no error, no warning, and the pages rendered with a fallback icon
  * as though nothing had been fetched at all.
  *
- * `mechanics` is absent on purpose: it has no upload field, so a harvested
- * illustration has nowhere to go and the image is skipped rather than lost in
- * the library.
+ * `mechanics` was absent at first because the collection had no upload field
+ * at all — fifty-one pages, the release, requirements and credits pages every
+ * wiki opens with, were walls of text with nowhere to put a picture. It has
+ * one now.
  */
 const IMAGE_FIELD: Record<string, string> = {
   characters: 'portrait',
@@ -316,6 +317,7 @@ const IMAGE_FIELD: Record<string, string> = {
   courts: 'image',
   'court-activities': 'image',
   'skill-trees': 'image',
+  mechanics: 'image',
 }
 
 async function run(): Promise<void> {

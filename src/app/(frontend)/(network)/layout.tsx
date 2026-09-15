@@ -66,16 +66,22 @@ export default async function NetworkLayout({ children }: { children: React.Reac
     seven indistinguishable things.
   */
   const wikis = await Promise.all(
-    games.slice(0, 10).map(async (game) => {
-      const logo = typeof game.theme?.logo === 'object' ? game.theme.logo : null
-      return {
-        label: game.shortTitle || game.title,
-        href: await gameUrl(game),
-        icon: 'book' as const,
-        image: logo?.url ?? null,
-        external: true,
-      }
-    }),
+    games.slice(0, 10).map(async (game) => ({
+      label: game.shortTitle || game.title,
+      href: await gameUrl(game),
+      icon: 'book' as const,
+      /*
+        The square icon, not the capsule.
+
+        `theme.logo` is store capsule art — roughly 2:1 — and the rail slot is
+        a 26px square, so every entry was a centre-cropped sliver with the
+        title sliced off. `tools/make-wiki-icons.mjs` already produces a proper
+        1:1 crop per wiki for the favicon; that is the right image for a square
+        hole, and it is served from `public/` on every host.
+      */
+      image: `/wiki-assets/${game.slug}/icon-32.png`,
+      external: true,
+    })),
   )
 
   const rail: RailItem[] = [
