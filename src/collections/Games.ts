@@ -158,6 +158,7 @@ export const Games: CollectionConfig = {
       options: [
         { label: 'Run checker (Dawnwalker’s 480-segment planner)', value: 'run-checker' },
         { label: 'Build planner', value: 'build-planner' },
+        { label: 'Completion tracker (needs a published achievement list)', value: 'completion-tracker' },
         { label: 'Comments', value: 'comments' },
       ],
       admin: {

@@ -1402,3 +1402,304 @@ th.num { text-align: right; }
   width: 26px; height: 26px; border-radius: 4px;
   object-fit: cover; display: block;
 }
+
+/* ===========================================================================
+   Polish pass.
+
+   The site read as plain, and it was: flat one-pixel borders on flat panels,
+   no hover feedback beyond a border colour, and headings that sat at the same
+   visual weight as the body around them. None of that is a missing feature —
+   it is the absence of the small signals that make a page feel built.
+
+   Everything below is additive and token-driven, so light and dark both get it
+   and nothing above needs revisiting.
+   =========================================================================== */
+
+/* --- Motion, once ---------------------------------------------------------
+   Declared in one place so every interactive surface moves the same way. A
+   card that eases and a button that snaps read as two different sites.       */
+
+:root {
+  --ease: cubic-bezier(0.2, 0.7, 0.3, 1);
+  --lift: 0 6px 20px -8px rgba(0, 0, 0, 0.45), 0 2px 6px -3px rgba(0, 0, 0, 0.3);
+  --lift-soft: 0 2px 10px -6px rgba(0, 0, 0, 0.35);
+}
+:root[data-theme='light'] {
+  --lift: 0 8px 24px -10px rgba(17, 20, 27, 0.18), 0 2px 6px -3px rgba(17, 20, 27, 0.1);
+  --lift-soft: 0 2px 10px -6px rgba(17, 20, 27, 0.12);
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme='dark']) {
+    --lift: 0 8px 24px -10px rgba(17, 20, 27, 0.18), 0 2px 6px -3px rgba(17, 20, 27, 0.1);
+    --lift-soft: 0 2px 10px -6px rgba(17, 20, 27, 0.12);
+  }
+}
+
+/* Anyone who has asked their system not to animate gets none of it. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* --- Cards ----------------------------------------------------------------
+   A card that only changes border colour on hover reads as a static box with
+   a bug. Lift, shadow and a brightening edge together read as "this is a
+   thing you can press".                                                      */
+
+.card,
+.tile,
+.guidetile,
+.wiki-card,
+.rule {
+  transition:
+    transform 160ms var(--ease),
+    box-shadow 160ms var(--ease),
+    border-color 160ms var(--ease),
+    background-color 160ms var(--ease);
+}
+
+.entity-card:hover,
+.guidetile:hover,
+.wiki-card:hover,
+.tile:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--lift);
+}
+
+.entity-card:active,
+.guidetile:active,
+.wiki-card:active,
+.tile:active {
+  transform: translateY(0);
+  box-shadow: var(--lift-soft);
+}
+
+/* The thumbnail is the part that should feel alive, not the whole card. */
+.entity-card .thumb,
+.guidetile-image,
+.wiki-card-art {
+  overflow: hidden;
+}
+.entity-card .thumb img,
+.guidetile-image,
+.wiki-card-art img {
+  transition: transform 320ms var(--ease);
+}
+.entity-card:hover .thumb img,
+.guidetile:hover .guidetile-image,
+.wiki-card:hover .wiki-card-art img {
+  transform: scale(1.04);
+}
+
+/* --- Section headings -----------------------------------------------------
+   A rule under a heading is the cheapest way to give a long page structure,
+   and the accent tick tells you where a section starts without another
+   heading level.                                                             */
+
+.section-head {
+  position: relative;
+  padding-bottom: 9px;
+  border-bottom: 1px solid var(--rule);
+}
+.section-head::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 42px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+/* --- Tables ---------------------------------------------------------------
+   Row striping and a hover row. On a four-hundred-row database this is the
+   difference between scanning and losing your place.                         */
+
+.tablewrap table tbody tr {
+  transition: background-color 120ms var(--ease);
+}
+.tablewrap table tbody tr:nth-child(even) {
+  background: color-mix(in srgb, var(--raised) 45%, transparent);
+}
+.tablewrap table tbody tr:hover {
+  background: color-mix(in srgb, var(--accent) 9%, transparent);
+}
+
+/* --- Chips and badges -----------------------------------------------------
+   These carry the counts and the rarities, which are the facts people came
+   for, and they were the same grey as the surrounding note text.             */
+
+.chip {
+  transition: border-color 140ms var(--ease), color 140ms var(--ease);
+}
+a.chip:hover {
+  border-color: var(--accent-dim);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+/* --- The page header ------------------------------------------------------
+   A subtle gradient behind the title separates the header from the body
+   without a hard line, which matters on record pages that have no art.       */
+
+.page-head {
+  position: relative;
+}
+.page-head::before {
+  content: '';
+  position: absolute;
+  inset: -18px -24px 0;
+  z-index: -1;
+  background: radial-gradient(
+    120% 90% at 0% 0%,
+    color-mix(in srgb, var(--accent) 7%, transparent),
+    transparent 62%
+  );
+  pointer-events: none;
+}
+
+/* --- Links in prose -------------------------------------------------------
+   An underline that grows from the left on hover, rather than appearing all
+   at once. Costs nothing and makes body copy feel considered.                */
+
+.prose a,
+.payload-richtext a {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 220ms var(--ease);
+  text-decoration: none;
+}
+.prose a:hover,
+.payload-richtext a:hover {
+  background-size: 100% 1px;
+}
+
+/* --- Empty states ---------------------------------------------------------
+   Half this network is wikis for games that are not out, so "nothing here
+   yet" is a state the site is in constantly. It should look deliberate.      */
+
+.note:only-child {
+  padding: 18px 20px;
+  border: 1px dashed var(--rule);
+  border-radius: var(--r);
+  background: color-mix(in srgb, var(--raised) 40%, transparent);
+}
+
+/* --- Focus ----------------------------------------------------------------
+   Keyboard focus was a 2px outline on some things and nothing on others.     */
+
+.card:focus-visible,
+.tile:focus-visible,
+.guidetile:focus-visible,
+.wiki-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  transform: translateY(-2px);
+  box-shadow: var(--lift);
+}
+
+/* ---------------------------------------------------------------------------
+   The completion tracker.
+
+   Two headline figures rather than one, because a plain count says you are
+   ninety-six per cent done while you stare at the five achievements that will
+   take longer than the other hundred and thirty-six combined.
+--------------------------------------------------------------------------- */
+
+.tracker { display: flex; flex-direction: column; gap: 16px; }
+
+.tracker-summary {
+  display: grid; gap: 12px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 720px) { .tracker-summary { grid-template-columns: repeat(3, 1fr); } }
+
+.tracker-figure {
+  display: flex; flex-direction: column; gap: 6px;
+  padding: 15px 16px;
+  border: 1px solid var(--rule); border-radius: var(--r);
+  background: var(--surface);
+}
+.tracker-big {
+  font-family: var(--f-display); font-size: 34px; font-weight: 700;
+  line-height: 1; color: var(--ink);
+}
+.tracker-next a { font-size: 15.5px; font-weight: 600; }
+
+.tracker-bar {
+  display: block; height: 5px; border-radius: 3px;
+  background: var(--raised); overflow: hidden; margin-top: 3px;
+}
+.tracker-bar span { display: block; height: 100%; background: var(--accent); transition: width 260ms var(--ease); }
+.tracker-bar-alt span { background: var(--accent-hot); }
+
+.tracker-rarity { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip[data-rarity='ultra-rare'] { border-color: var(--accent-dim); color: var(--accent-hot); }
+
+.tracker-controls {
+  display: flex; flex-wrap: wrap; gap: 10px;
+  align-items: center; justify-content: space-between;
+}
+.tracker-filters { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.tracker-tab {
+  padding: 6px 11px; border-radius: 999px;
+  border: 1px solid var(--rule); background: var(--surface);
+  color: var(--ink-soft); font-size: 13px; font-weight: 500;
+  cursor: pointer; transition: all 140ms var(--ease);
+}
+.tracker-tab:hover { border-color: var(--accent-dim); color: var(--ink); }
+.tracker-tab[aria-pressed='true'] { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+.tracker-search input {
+  padding: 7px 11px; border-radius: var(--r);
+  border: 1px solid var(--rule); background: var(--surface);
+  color: var(--ink); font: inherit; font-size: 13.5px; min-width: 240px;
+}
+.tracker-search input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+.tracker-list { display: flex; flex-direction: column; gap: 4px; margin: 0; padding: 0; list-style: none; }
+
+.tracker-row {
+  display: flex; align-items: center; gap: 12px;
+  padding: 9px 12px; border-radius: var(--r);
+  border: 1px solid transparent;
+  transition: background-color 130ms var(--ease), border-color 130ms var(--ease);
+}
+.tracker-row:hover { background: var(--surface); border-color: var(--rule); }
+/* Earned rows recede rather than disappear — the list stays a list. */
+.tracker-row[data-done] { opacity: 0.55; }
+.tracker-row[data-done] .tracker-name > a { text-decoration: line-through; }
+
+.tracker-check { display: flex; align-items: center; gap: 11px; flex: 1 1 auto; min-width: 0; cursor: pointer; }
+.tracker-check input { position: absolute; opacity: 0; width: 0; height: 0; }
+
+.tracker-box {
+  flex: none; width: 19px; height: 19px; border-radius: 4px;
+  border: 1.5px solid var(--rule); background: var(--surface);
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; transition: all 140ms var(--ease);
+}
+.tracker-check input:checked + .tracker-box { background: var(--accent); border-color: var(--accent); }
+.tracker-check input:focus-visible + .tracker-box { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.tracker-name { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+.tracker-name > a { font-size: 14.5px; font-weight: 500; color: var(--ink); }
+.tracker-name .note { font-size: 12.5px; }
+
+.tracker-rate {
+  flex: none; font-size: 13px; font-variant-numeric: tabular-nums;
+  color: var(--muted); min-width: 48px; text-align: right;
+}
+
+/* Screen-reader-only label for the search box. */
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}

@@ -700,7 +700,7 @@ export interface Game {
   /**
    * Bespoke tools this game switches on. Most games have none — a tool nobody built for this game should not appear in its navigation.
    */
-  features?: ('run-checker' | 'build-planner' | 'comments')[] | null;
+  features?: ('run-checker' | 'build-planner' | 'completion-tracker' | 'comments')[] | null;
   /**
    * Sideways links between wikis — the same series, or the obvious "if you liked this". How a new wiki gets its first traffic.
    */

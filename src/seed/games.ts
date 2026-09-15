@@ -64,7 +64,8 @@ export const games: SeedGame[] = [
     releaseDateConfirmed: true,
     platforms: ['PC'],
     storeUrl: 'https://store.steampowered.com/app/2638890/',
-    features: ['comments'],
+    // Its achievement list is published, so the tracker has something to track.
+    features: ['comments', 'completion-tracker'],
     theme: { accent: '#9b1c1c' },
   },
   {
@@ -135,7 +136,8 @@ export const games: SeedGame[] = [
     releaseDateConfirmed: true,
     platforms: ['PC'],
     storeUrl: 'https://store.steampowered.com/app/2075800/',
-    features: ['comments'],
+    // Its achievement list is published, so the tracker has something to track.
+    features: ['comments', 'completion-tracker'],
     theme: { accent: '#1f6f9b' },
   },
   {
@@ -152,7 +154,8 @@ export const games: SeedGame[] = [
     releaseDateConfirmed: true,
     platforms: ['PC'],
     storeUrl: 'https://store.steampowered.com/app/2713000/',
-    features: ['comments'],
+    // Its achievement list is published, so the tracker has something to track.
+    features: ['comments', 'completion-tracker'],
     theme: { accent: '#8a6a2f' },
   },
   {

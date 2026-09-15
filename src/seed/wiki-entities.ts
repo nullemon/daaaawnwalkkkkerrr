@@ -287,6 +287,37 @@ const REQUIRED_DEFAULTS: Record<string, Record<string, unknown>> = {
  */
 const REHOME: Record<string, string> = { perks: 'mechanics', endings: 'mechanics' }
 
+/**
+ * Which field holds the picture, per collection.
+ *
+ * Almost every collection calls it `image`. `characters` calls it `portrait`,
+ * because a character page shows a person rather than a scene, and that
+ * distinction was worth a different name when there was one game.
+ *
+ * The seeder wrote `image` regardless, so two hundred and fourteen character
+ * portraits were downloaded, uploaded to the media library, and attached to a
+ * field that does not exist on that collection. Payload drops an unknown key
+ * silently — no error, no warning, and the pages rendered with a fallback icon
+ * as though nothing had been fetched at all.
+ *
+ * `mechanics` is absent on purpose: it has no upload field, so a harvested
+ * illustration has nowhere to go and the image is skipped rather than lost in
+ * the library.
+ */
+const IMAGE_FIELD: Record<string, string> = {
+  characters: 'portrait',
+  items: 'image',
+  enemies: 'image',
+  regions: 'image',
+  quests: 'image',
+  guides: 'image',
+  builds: 'image',
+  endings: 'image',
+  courts: 'image',
+  'court-activities': 'image',
+  'skill-trees': 'image',
+}
+
 async function run(): Promise<void> {
   if (!fs.existsSync(RAW_DIR)) {
     console.log(`No ${RAW_DIR}. Run \`node tools/fetch-wiki-entities.mjs\` first.`)
@@ -342,8 +373,9 @@ async function run(): Promise<void> {
         named character is a picture of that character. The rule about
         unidentified screenshots in docs/ASSETS.md is about the opposite case.
       */
+      const imageField = IMAGE_FIELD[entity.collection]
       let imageId: number | string | null = null
-      if (entity.imageFile) {
+      if (entity.imageFile && imageField) {
         imageId = await uploadImage(
           payload,
           path.resolve(entity.imageFile),
@@ -356,7 +388,7 @@ async function run(): Promise<void> {
       try {
         await upsert(payload, entity.collection as CollectionSlug, game.id, slug, {
         ...(REQUIRED_DEFAULTS[entity.collection] ?? {}),
-        ...(imageId ? { image: imageId } : {}),
+        ...(imageId && imageField ? { [imageField]: imageId } : {}),
         title: entity.title,
         slug,
         summary: summaryFor(entity, gameTitle),

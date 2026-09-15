@@ -58,6 +58,9 @@ const TOOLS: Record<string, { label: string; href: string; icon: IconName }[]> =
     { label: 'Run checker', href: '/tools/run-checker', icon: 'hourglass' },
   ],
   'build-planner': [{ label: 'Build planner', href: '/tools/build-planner', icon: 'shield' }],
+  'completion-tracker': [
+    { label: 'Completion tracker', href: '/tools/completion', icon: 'check' },
+  ],
 }
 
 export type SectionWithCount = Section & { count: number }
