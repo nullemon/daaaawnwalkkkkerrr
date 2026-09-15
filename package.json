@@ -33,7 +33,8 @@
     "make:avatars": "node tools/make-avatars.mjs",
     "fetch:entities": "node tools/fetch-wiki-entities.mjs",
     "seed:entities": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/wiki-entities.ts",
-    "check:launch": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/audit.ts"
+    "check:launch": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/audit.ts",
+    "refresh": "pnpm run fetch:games && pnpm run fetch:entities && pnpm run seed:games && pnpm run seed:entities && pnpm run seed:art && node tools/make-wiki-icons.mjs"
   },
   "dependencies": {
     "@payloadcms/db-sqlite": "3.89.0",

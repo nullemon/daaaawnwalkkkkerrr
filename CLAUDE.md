@@ -8,12 +8,20 @@ Seven wikis today, ~780 pages. *The Blood of Dawnwalker* is the first and by
 far the largest — 422 of the 594 records — and its 480-segment run planner is
 the model for what each wiki is meant to have: one tool nobody else has.
 
-The other six open on what a publisher's own store page states: release,
-editions, system requirements, declared features, languages, and the full
-achievement list with each one's global unlock rate. That is deliberate. Every
-other wiki fills launch day with walkthroughs written from trailers; these
-carry only what is first-party and cited, and the gameplay pages stay empty
-with a line saying why.
+The other seven are built from two sourced pipelines and nothing else:
+
+- **Store pages** (`fetch:games`) — release, editions, system requirements,
+  declared features, languages, and the achievement list with each one's
+  global unlock rate once the game ships.
+- **Community wikis** (`fetch:entities`) — characters, weapons, bosses and
+  locations, taken as infobox *facts* with summaries composed by us. Only
+  categories naming the specific game, because a franchise wiki covers eight
+  of them and importing the wrong one is the hardest error to spot.
+
+Four of the eight cover games that are not out yet, so they are thin on
+purpose: there is no item list for a game nobody has played. `pnpm refresh`
+the week each launches is what fills them, and it is the plan rather than an
+afterthought. No walkthroughs written from trailers.
 
 Each wiki is a subdomain (`dawnwalker.example.com`). Readers never see a game
 prefix; `src/proxy.ts` maps host to the internal `/[game]/…` route. See
@@ -32,8 +40,12 @@ pnpm db:reset     # delete the database and rebuild it from seed + raw
 pnpm clean        # delete .next (devsafe does this, then starts dev)
 pnpm assets       # attach images from assets/<collection>/<slug>.<ext>
 pnpm verify       # every content record belongs to a game (see below)
-pnpm fetch:games  # re-read the six new games from their store pages
-pnpm seed:games   # turn that JSON into mechanics pages and achievements
+pnpm refresh      # re-read every store page and wiki, reseed, rebuild icons
+pnpm check:launch # the launch checklist — NOT `pnpm audit`, that is pnpm's own
+pnpm fetch:games  # just the store pages
+pnpm fetch:entities  # just the community wikis
+pnpm seed:games   # store-page facts -> mechanics pages and achievements
+pnpm seed:entities   # harvested entities -> characters, items, enemies…
 pnpm seed:art     # attach game key art and achievement icons
 pnpm make:avatars # redraw contributor monograms
 pnpm seed:avatars # attach them

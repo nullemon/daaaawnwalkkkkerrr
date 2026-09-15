@@ -114,18 +114,40 @@ one deployment.
 
 ## Keeping the game data current
 
-The six wikis opened alongside Dawnwalker are built from their store pages.
-When a release date moves or an edition changes:
-
 ```bash
-pnpm fetch:games   # re-read all six from their store pages
-pnpm seed:games    # update the mechanics pages and achievements
-pnpm seed:art      # pick up any new art
+pnpm refresh
 ```
 
-`fetch:games` also collects the achievement list once a game ships, so running
-it in the week after a launch is what turns an upcoming wiki into one with
-fifty real pages.
+One command: re-read every store page, re-harvest the community wikis,
+rewrite the pages and achievements, pick up new art, rebuild the icons. Safe
+to run as often as you like — everything is keyed on (game, slug), so it
+updates rather than duplicates.
+
+**Run it the week each game launches.** That is not housekeeping, it is the
+whole plan for the wikis that are currently thin.
+
+Four of the eight cover games that are not out yet:
+
+| Wiki | Releases | Records today |
+| --- | --- | --- |
+| Control Resonant | 24 Sep 2026 | 7 |
+| Silent Hill: Townfall | 23 Sep 2026 | 11 |
+| Phantom Blade Zero | 28 Oct 2026 | 11 |
+| Gears of War: E-Day | 6 Oct 2026 | 26 |
+
+They are thin because nothing exists to put on them. There is no item list for
+a game nobody has played, and the community wikis for these titles are
+near-empty too. Two things change on launch day and both are automatic:
+
+- **The achievement list appears.** Developers publish it at release, and it is
+  typically forty to sixty pages. That is what took Onimusha from 34 records to
+  86 and Zero Company to 58.
+- **The community wikis fill up.** The harvester reads them again and picks up
+  every character, weapon and location added since.
+
+So the honest position is that four wikis are staged rather than finished, and
+`pnpm refresh` is the thing that finishes them. Put a reminder in a calendar
+for each of those four dates.
 
 ## Adding the eighth wiki
 
