@@ -49,6 +49,7 @@ export const SECTIONS: Section[] = [
   { label: 'Builds', href: SECTION_PATH['builds'], icon: 'shield', collection: 'builds', kind: 'Build', priority: 0.8 },
   { label: 'Mechanics', href: SECTION_PATH['mechanics'], icon: 'spark', collection: 'mechanics', kind: 'Mechanic', priority: 0.8 },
   { label: 'Guides', href: SECTION_PATH['guides'], icon: 'book', collection: 'guides', kind: 'Guide', priority: 0.7 },
+  { label: 'Maps', href: SECTION_PATH['maps'], icon: 'map', collection: 'maps', kind: 'Map', priority: 0.8 },
 ]
 
 /** Tools are switched on per game rather than derived, since they are code. */

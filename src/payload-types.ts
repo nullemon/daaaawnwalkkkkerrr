@@ -82,6 +82,7 @@ export interface Config {
     builds: Build;
     mechanics: Mechanic;
     guides: Guide;
+    maps: Map;
     authors: Author;
     games: Game;
     comments: Comment;
@@ -111,6 +112,7 @@ export interface Config {
     builds: BuildsSelect<false> | BuildsSelect<true>;
     mechanics: MechanicsSelect<false> | MechanicsSelect<true>;
     guides: GuidesSelect<false> | GuidesSelect<true>;
+    maps: MapsSelect<false> | MapsSelect<true>;
     authors: AuthorsSelect<false> | AuthorsSelect<true>;
     games: GamesSelect<false> | GamesSelect<true>;
     comments: CommentsSelect<false> | CommentsSelect<true>;
@@ -1763,6 +1765,140 @@ export interface Author {
   createdAt: string;
 }
 /**
+ * A base image plus pins. A pin needs a source saying where the thing is — see the note on Marker source.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "maps".
+ */
+export interface Map {
+  id: number;
+  title: string;
+  /**
+   * URL segment. Auto-filled from the title. Changing it breaks existing links.
+   */
+  slug: string;
+  /**
+   * The base map. Everything else is positioned as a percentage of this image, so replacing it with a differently-cropped one moves every pin.
+   */
+  image: number | Media;
+  /**
+   * One or two sentences. Shown under the title and used as the meta description.
+   */
+  summary?: string | null;
+  /**
+   * Lower sorts first in the maps index.
+   */
+  order?: number | null;
+  /**
+   * The filter buttons above the map. Define these first — a marker picks one of them.
+   */
+  categories?:
+    | {
+        /**
+         * Short id, e.g. "collectible". Used in the URL when a category is filtered.
+         */
+        key: string;
+        label: string;
+        /**
+         * CSS colour for the pin. Leave blank for the site accent.
+         */
+        colour?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Each pin. Use the placement editor on the map above rather than typing coordinates.
+   */
+  markers?:
+    | {
+        label: string;
+        /**
+         * One of the category keys defined above.
+         */
+        category?: string | null;
+        /**
+         * Percent from the left edge.
+         */
+        x: number;
+        /**
+         * Percent from the top edge.
+         */
+        y: number;
+        /**
+         * What a reader needs once they are standing there.
+         */
+        note?: string | null;
+        /**
+         * Optional. Links the pin to the page for that thing.
+         */
+        record?:
+          | ({
+              relationTo: 'items';
+              value: number | Item;
+            } | null)
+          | ({
+              relationTo: 'enemies';
+              value: number | Enemy;
+            } | null)
+          | ({
+              relationTo: 'characters';
+              value: number | Character;
+            } | null)
+          | ({
+              relationTo: 'regions';
+              value: number | Region;
+            } | null)
+          | ({
+              relationTo: 'quests';
+              value: number | Quest;
+            } | null);
+        /**
+         * Where this position came from — a URL, a video with a timestamp, or a named person who found it. Required, and not bureaucracy: a pin is a claim that a reader will walk to, and an unsourced one is the most expensive kind of guess this site could print.
+         */
+        markerSource: string;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Shown to readers as a badge. Be honest — it is the whole point of this site.
+   */
+  confidence: 'high' | 'medium' | 'low';
+  /**
+   * Cite every figure. Two independent sources before marking confidence high.
+   */
+  sources?:
+    | {
+        title: string;
+        url: string;
+        retrieved?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Leave blank to derive from the title and summary.
+   */
+  seo?: {
+    /**
+     * Under ~60 characters. Overrides the <title> tag.
+     */
+    title?: string | null;
+    /**
+     * Under ~155 characters. Overrides the meta description.
+     */
+    description?: string | null;
+    /**
+     * Hide this page from search engines.
+     */
+    noindex?: boolean | null;
+  };
+  /**
+   * Which wiki this belongs to. Moving a record between games changes its URL.
+   */
+  game: number | Game;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * Nothing here is public until you approve it. Sorted worst-first by spam score — work the top of the list.
  *
  * This interface was referenced by `Config`'s JSON-Schema
@@ -2054,6 +2190,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'guides';
         value: number | Guide;
+      } | null)
+    | ({
+        relationTo: 'maps';
+        value: number | Map;
       } | null)
     | ({
         relationTo: 'authors';
@@ -2676,6 +2816,56 @@ export interface GuidesSelect<T extends boolean = true> {
   updatedAt?: T;
   createdAt?: T;
   _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "maps_select".
+ */
+export interface MapsSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  image?: T;
+  summary?: T;
+  order?: T;
+  categories?:
+    | T
+    | {
+        key?: T;
+        label?: T;
+        colour?: T;
+        id?: T;
+      };
+  markers?:
+    | T
+    | {
+        label?: T;
+        category?: T;
+        x?: T;
+        y?: T;
+        note?: T;
+        record?: T;
+        markerSource?: T;
+        id?: T;
+      };
+  confidence?: T;
+  sources?:
+    | T
+    | {
+        title?: T;
+        url?: T;
+        retrieved?: T;
+        id?: T;
+      };
+  seo?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        noindex?: T;
+      };
+  game?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

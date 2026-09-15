@@ -1112,6 +1112,95 @@ th.num { text-align: right; }
 .related-main a { font-weight: 500; }
 .related-main .sub { font-size: 13px; color: var(--muted); }
 
+
+/* ---- Interactive maps ---------------------------------------------------- */
+
+.gamemap { display: flex; flex-direction: column; gap: 10px; }
+
+.gamemap-bar {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 10px 14px;
+}
+.gamemap-filters { display: flex; flex-wrap: wrap; gap: 7px; min-width: 0; }
+.gamemap-tools { display: flex; align-items: center; gap: 7px; }
+
+.gamemap-chip {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 5px 10px; border: 1px solid var(--rule); border-radius: 999px;
+  background: var(--surface); color: inherit; cursor: pointer;
+  font-family: var(--f-label); font-size: 12.5px; line-height: 1.2;
+  transition: border-color 140ms var(--ease), opacity 140ms var(--ease);
+}
+.gamemap-chip:hover { border-color: var(--accent); }
+/* Off rather than hidden: a filter you have switched off still has to be
+   visible and re-clickable, so it dims instead of disappearing. */
+.gamemap-chip[data-off='true'] { opacity: 0.42; }
+.gamemap-chip-count { color: var(--muted); font-size: 11.5px; }
+.gamemap-swatch { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+.gamemap-progress { font-family: var(--f-label); font-size: 12.5px; color: var(--muted); }
+
+/*
+  The viewport.
+
+  `touch-action: none` is what makes dragging work on a phone: without it the
+  browser claims the gesture for scrolling before a pointermove ever fires,
+  and the map simply will not move under a finger.
+*/
+.gamemap-frame {
+  position: relative; overflow: hidden; touch-action: none; cursor: grab;
+  border: 1px solid var(--rule); border-radius: var(--r);
+  background: var(--sunken);
+  aspect-ratio: 16 / 10; max-width: 100%;
+}
+.gamemap-frame:active { cursor: grabbing; }
+.gamemap-plane { position: absolute; inset: 0; transform-origin: 0 0; }
+.gamemap-image {
+  display: block; width: 100%; height: 100%; object-fit: contain;
+  user-select: none; -webkit-user-drag: none;
+}
+
+.gamemap-pin {
+  position: absolute; width: 16px; height: 16px; padding: 0;
+  border: 2px solid rgba(255, 255, 255, 0.92); border-radius: 50% 50% 50% 0;
+  background: var(--pin, var(--accent));
+  rotate: -45deg; transform-origin: center;
+  cursor: pointer; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.45);
+}
+.gamemap-pin:hover { filter: brightness(1.25); }
+.gamemap-pin:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.gamemap-pin[data-found='true'] { opacity: 0.4; }
+
+.gamemap-popup {
+  position: absolute; right: 12px; bottom: 12px; z-index: 3;
+  width: min(300px, calc(100% - 24px));
+  padding: 13px 14px; border: 1px solid var(--rule); border-radius: var(--r);
+  background: var(--surface); box-shadow: var(--lift);
+}
+.gamemap-popup h3 { margin: 0 26px 6px 0; font-size: 15.5px; }
+.gamemap-popup p { margin: 0 0 8px; }
+.gamemap-popup-close {
+  position: absolute; top: 8px; right: 9px;
+  border: 0; background: none; color: var(--muted);
+  font-size: 19px; line-height: 1; cursor: pointer;
+}
+.gamemap-found {
+  display: flex; align-items: center; gap: 8px;
+  font-family: var(--f-label); font-size: 12.5px; cursor: pointer;
+}
+.gamemap-source { margin: 8px 0 0; font-size: 11.5px; color: var(--muted); }
+.gamemap-help { margin: 0; }
+
+.mapcard {
+  display: flex; flex-direction: column; overflow: hidden;
+  border: 1px solid var(--rule); border-radius: var(--r);
+  background: var(--surface); color: inherit;
+  transition: transform 160ms var(--ease), box-shadow 160ms var(--ease), border-color 160ms var(--ease);
+}
+.mapcard:hover { text-decoration: none; border-color: var(--accent); transform: translateY(-2px); box-shadow: var(--lift); }
+.mapcard-image { width: 100%; aspect-ratio: 16 / 9; max-width: 100%; object-fit: cover; display: block; }
+.mapcard-body { display: flex; flex-direction: column; gap: 5px; padding: 12px 13px 14px; }
+.mapcard-body h3 { margin: 0; font-size: 15.5px; line-height: 1.3; }
+
 /* ---- The wiki front page ------------------------------------------------ */
 
 /*

@@ -19,6 +19,7 @@ import { Quests } from './collections/Quests'
 import { CourtActivities } from './collections/CourtActivities'
 import { Endings } from './collections/Endings'
 import { Achievements } from './collections/Achievements'
+import { Maps } from './collections/Maps'
 import { Mechanics } from './collections/Mechanics'
 import { Authors } from './collections/Authors'
 import { Guides } from './collections/Guides'
@@ -73,6 +74,10 @@ export default buildConfig({
     // Editorial
     scopedToGame(Mechanics),
     scopedToGame(Guides),
+    // Appended last, and it stays last — see the note in lib/tenancy.ts about
+    // what inserting a game-scoped collection anywhere else does to the
+    // compound index names.
+    scopedToGame(Maps),
     Authors,
     // Network-wide
     Games,

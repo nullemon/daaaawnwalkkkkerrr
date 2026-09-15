@@ -28,6 +28,16 @@ export const GAME_SCOPED = [
   'builds',
   'mechanics',
   'guides',
+  /*
+    Appended, and it has to stay appended.
+
+    Payload names a compound index by its position in this list -
+    `game_slug_5_idx` and so on - so inserting a collection anywhere but the
+    end renames every later collection's index and the next write fails with
+    "index game_slug_N_idx already exists". Adding at the end is the only
+    change that costs nothing.
+  */
+  'maps',
 ] as const
 
 export type GameScopedCollection = (typeof GAME_SCOPED)[number]
@@ -78,4 +88,5 @@ export const SECTION_PATH: Record<GameScopedCollection, string> = {
   builds: '/builds',
   mechanics: '/mechanics',
   guides: '/guides',
+  maps: '/maps',
 }
