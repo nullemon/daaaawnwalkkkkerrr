@@ -63,24 +63,16 @@ export async function generateMetadata(): Promise<Metadata> {
       layout knows the answer: `(network)` or `[game]`.
     */
     description: settings.description ?? settings.tagline,
-    icons: {
-      icon: [
-        { url: '/icon.svg', type: 'image/svg+xml' },
-        { url: '/favicon-32.png', type: 'image/png', sizes: '32x32' },
-        { url: '/icon-512.png', type: 'image/png', sizes: '512x512' },
-      ],
-      apple: '/apple-touch-icon.png',
-    },
-    openGraph: {
-      siteName: settings.siteName,
-      type: 'website',
-      locale: 'en',
-      images: [{ url: '/og.png', width: 1200, height: 630, alt: settings.tagline }],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      images: ['/og.png'],
-    },
+    /*
+      No icons and no open-graph image here either, for the same reason as the
+      title: this layout wraps eight sites and cannot tell which one it is
+      rendering. A child's `icons` replaces a parent's outright rather than
+      merging, so leaving a set here would only ever have applied to whichever
+      site forgot to declare its own — which is the wrong way round.
+
+      The hub sets its own in `(network)/layout.tsx`; each wiki sets its own in
+      `[game]/layout.tsx`.
+    */
     robots: { index: true, follow: true },
   }
 }

@@ -1,0 +1,91 @@
+{
+  "slug": "phantom-blade-zero",
+  "host": "phantomblade.fandom.com",
+  "fetchedAt": "2026-09-15",
+  "entities": [
+    {
+      "title": "Combat",
+      "wikiTitle": "Combat",
+      "collection": "mechanics",
+      "facts": {},
+      "categories": [
+        "Gameplay in Phantom Blade Zero"
+      ],
+      "url": "https://phantomblade.fandom.com/wiki/Combat"
+    },
+    {
+      "title": "Tie Sha the Frenzy",
+      "wikiTitle": "Tie Sha the Frenzy",
+      "collection": "enemies",
+      "facts": {
+        "gender": "Male",
+        "appearsin": "Phantom Blade Zero"
+      },
+      "categories": [
+        "Bosses",
+        "Bosses in Phantom Blade Zero",
+        "Characters",
+        "Characters in Phantom Blade Zero"
+      ],
+      "url": "https://phantomblade.fandom.com/wiki/Tie_Sha_the_Frenzy"
+    },
+    {
+      "title": "Chief Disciple of the Seven Stars",
+      "wikiTitle": "Chief Disciple of the Seven Stars",
+      "collection": "enemies",
+      "facts": {
+        "gender": "Male",
+        "appearsin": "Phantom Blade Zero"
+      },
+      "categories": [
+        "Bosses",
+        "Bosses in Phantom Blade Zero",
+        "Characters",
+        "Characters in Phantom Blade Zero"
+      ],
+      "url": "https://phantomblade.fandom.com/wiki/Chief_Disciple_of_the_Seven_Stars"
+    },
+    {
+      "title": "Red Wraith",
+      "wikiTitle": "Red Wraith",
+      "collection": "enemies",
+      "facts": {
+        "gender": "Female",
+        "appearsin": "Phantom Blade Zero"
+      },
+      "categories": [
+        "Bosses",
+        "Bosses in Phantom Blade Zero",
+        "Characters",
+        "Characters in Phantom Blade Zero"
+      ],
+      "url": "https://phantomblade.fandom.com/wiki/Red_Wraith"
+    },
+    {
+      "title": "Wan Jun \"Coppermaul\"",
+      "wikiTitle": "Wan Jun \"Coppermaul\"",
+      "collection": "enemies",
+      "facts": {
+        "gender": "Male",
+        "appearsin": "Phantom Blade Zero"
+      },
+      "categories": [
+        "Bosses",
+        "Bosses in Phantom Blade Zero",
+        "Characters",
+        "Characters in Phantom Blade Zero"
+      ],
+      "url": "https://phantomblade.fandom.com/wiki/Wan_Jun_%22Coppermaul%22"
+    },
+    {
+      "title": "Weapons",
+      "wikiTitle": "Weapons",
+      "collection": "mechanics",
+      "facts": {},
+      "categories": [
+        "Gameplay in Phantom Blade Zero"
+      ],
+      "url": "https://phantomblade.fandom.com/wiki/Weapons"
+    }
+  ]
+}

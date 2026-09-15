@@ -1,0 +1,277 @@
+{
+  "dawnwalker": {
+    "host": "bloodofdawnwalker.fandom.com",
+    "match": null,
+    "categories": [
+      {
+        "name": "Cast",
+        "collection": "characters"
+      },
+      {
+        "name": "Cast (The Blood of Dawnwalker)",
+        "collection": "characters"
+      },
+      {
+        "name": "Character introductions",
+        "collection": "characters"
+      },
+      {
+        "name": "Character introductions (The Blood of Dawnwalker)",
+        "collection": "characters"
+      },
+      {
+        "name": "Characters",
+        "collection": "characters"
+      },
+      {
+        "name": "Characters (The Blood of Dawnwalker)",
+        "collection": "characters"
+      },
+      {
+        "name": "Characters (The Secret History of Vale Sangora)",
+        "collection": "characters"
+      },
+      {
+        "name": "Locations",
+        "collection": "regions"
+      },
+      {
+        "name": "Locations (The Blood of Dawnwalker)",
+        "collection": "regions"
+      },
+      {
+        "name": "Locations (The Secret History of Vale Sangora)",
+        "collection": "regions"
+      }
+    ],
+    "reachable": true
+  },
+  "onimusha-way-of-the-sword": {
+    "host": "onimusha.fandom.com",
+    "match": "Way of the Sword",
+    "categories": [
+      {
+        "name": "Onimusha: Way of The Sword weapons",
+        "collection": "items"
+      },
+      {
+        "name": "Onimusha: Way of the Sword Genma",
+        "collection": "enemies"
+      },
+      {
+        "name": "Onimusha: Way of the Sword characters",
+        "collection": "characters"
+      },
+      {
+        "name": "Onimusha: Way of the Sword weapons",
+        "collection": "items"
+      }
+    ],
+    "reachable": true
+  },
+  "control-resonant": {
+    "host": "control.fandom.com",
+    "match": "Resonant",
+    "categories": [
+      {
+        "name": "Control Resonant characters",
+        "collection": "characters"
+      }
+    ],
+    "reachable": true
+  },
+  "resonance-a-plague-tale-legacy": {
+    "host": "aplaguetale.fandom.com",
+    "match": "Resonance",
+    "categories": [
+      {
+        "name": "Resonance: A Plague Tale Legacy chapters",
+        "collection": "quests"
+      },
+      {
+        "name": "Resonance: A Plague Tale Legacy characters",
+        "collection": "characters"
+      },
+      {
+        "name": "Resonance: A Plague Tale Legacy collectibles",
+        "collection": "items"
+      },
+      {
+        "name": "Resonance: A Plague Tale Legacy locations",
+        "collection": "regions"
+      }
+    ],
+    "reachable": true
+  },
+  "gears-of-war-e-day": {
+    "host": "gearsofwar.fandom.com",
+    "match": "E-Day",
+    "categories": [
+      {
+        "name": "Gears of War: E-Day weapons",
+        "collection": "items"
+      }
+    ],
+    "reachable": true
+  },
+  "star-wars-zero-company": {
+    "host": "starwars.fandom.com",
+    "match": "Zero Company",
+    "categories": [],
+    "reachable": true
+  },
+  "phantom-blade-zero": {
+    "host": "phantomblade.fandom.com",
+    "match": null,
+    "categories": [
+      {
+        "name": "Aerial Skills",
+        "collection": "perks"
+      },
+      {
+        "name": "Bosses",
+        "collection": "enemies"
+      },
+      {
+        "name": "Bosses in Phantom Blade: Executioners",
+        "collection": "enemies"
+      },
+      {
+        "name": "Bosses in Phantom Blade Zero",
+        "collection": "enemies"
+      },
+      {
+        "name": "Characters",
+        "collection": "characters"
+      },
+      {
+        "name": "Characters in Phantom Blade: Executioners",
+        "collection": "characters"
+      },
+      {
+        "name": "Characters in Phantom Blade Zero",
+        "collection": "characters"
+      },
+      {
+        "name": "Characters in Rainblood: Town of Death",
+        "collection": "characters"
+      },
+      {
+        "name": "Characters in Rainblood 2: City of Flame",
+        "collection": "characters"
+      },
+      {
+        "name": "Characters in Rainblood Chronicles: Mirage",
+        "collection": "characters"
+      },
+      {
+        "name": "Debuffing Skills",
+        "collection": "perks"
+      },
+      {
+        "name": "Gameplay in Phantom Blade: Executioners",
+        "collection": "mechanics"
+      },
+      {
+        "name": "Gameplay in Phantom Blade Zero",
+        "collection": "mechanics"
+      },
+      {
+        "name": "General Skills",
+        "collection": "perks"
+      },
+      {
+        "name": "Ground/Aerial Skills",
+        "collection": "perks"
+      },
+      {
+        "name": "Ground Overdrive Skills",
+        "collection": "perks"
+      },
+      {
+        "name": "Ground Skills",
+        "collection": "perks"
+      },
+      {
+        "name": "Mu Xiaokui Skills",
+        "collection": "perks"
+      },
+      {
+        "name": "NPCs",
+        "collection": "characters"
+      },
+      {
+        "name": "NPCs in Phantom Blade: Executioners",
+        "collection": "characters"
+      },
+      {
+        "name": "Normal Skills",
+        "collection": "perks"
+      },
+      {
+        "name": "Overdrive Charge Generating Skills",
+        "collection": "perks"
+      },
+      {
+        "name": "Overdrive Skills",
+        "collection": "perks"
+      },
+      {
+        "name": "Phantom Blade: Executioners Character Skills",
+        "collection": "characters"
+      },
+      {
+        "name": "Playable Characters in Phantom Blade: Executioners",
+        "collection": "characters"
+      },
+      {
+        "name": "Playable Characters in Rainblood: Town of Death",
+        "collection": "characters"
+      },
+      {
+        "name": "Playable Characters in Rainblood 2: City of Flame",
+        "collection": "characters"
+      },
+      {
+        "name": "Playable Characters in Rainblood Chronicles: Mirage",
+        "collection": "characters"
+      },
+      {
+        "name": "Sha-Chi Consuming Skills",
+        "collection": "perks"
+      },
+      {
+        "name": "Sha-Chi Generating Skills",
+        "collection": "perks"
+      },
+      {
+        "name": "Soul Skills",
+        "collection": "perks"
+      },
+      {
+        "name": "The Chord Skills",
+        "collection": "perks"
+      },
+      {
+        "name": "Zuo Shang Skills",
+        "collection": "perks"
+      }
+    ],
+    "reachable": true
+  },
+  "silent-hill-townfall": {
+    "host": "silenthill.fandom.com",
+    "match": "Townfall",
+    "categories": [
+      {
+        "name": "Silent Hill: Townfall Characters",
+        "collection": "characters"
+      },
+      {
+        "name": "Silent Hill: Townfall Weapons",
+        "collection": "items"
+      }
+    ],
+    "reachable": true
+  }
+}

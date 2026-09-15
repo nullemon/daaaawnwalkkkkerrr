@@ -1,0 +1,184 @@
+{
+  "slug": "resonance-a-plague-tale-legacy",
+  "host": "aplaguetale.fandom.com",
+  "fetchedAt": "2026-09-15",
+  "entities": [
+    {
+      "title": "Sophia",
+      "wikiTitle": "Sophia",
+      "collection": "characters",
+      "facts": {
+        "name(s)": "Soph",
+        "title(s)": "The Scorpion of the Seas or the Sea Scorpion",
+        "born": "c. 1312",
+        "age(d)": "22 37",
+        "condition": "Uninfected",
+        "status": "Alive",
+        "occupation(s)": "Smuggler Brigand",
+        "affiliation(s)": "Smugglers",
+        "rank": "Captain",
+        "relative(s)": "Alec Unnamed mother",
+        "resides": "Smugglers' Hideout",
+        "weapon(s)": "Sword Dagger Minoan Sphere Prism",
+        "species": "Human",
+        "gender": "Female",
+        "ethnicity": "Mediterranean",
+        "hair": "Brown",
+        "eye": "Brown",
+        "debut": "A Plague Tale: Requiem",
+        "mo-capped by": "Giorgia Sinicorni Anna Demetriou",
+        "portrayed by": "Anna Demetriou"
+      },
+      "categories": [
+        "A Plague Tale: Requiem characters",
+        "Articles to be expanded",
+        "Resonance: A Plague Tale Legacy characters"
+      ],
+      "url": "https://aplaguetale.fandom.com/wiki/Sophia"
+    },
+    {
+      "title": "Theseus",
+      "wikiTitle": "Theseus",
+      "collection": "characters",
+      "facts": {
+        "born": "Ancient Greece",
+        "condition": "Uninfected",
+        "status": "Deceased",
+        "religion": "Greek polytheism",
+        "weapon(s)": "Minoan Sword",
+        "species": "Human",
+        "gender": "Male",
+        "race": "Greek",
+        "nationality": "Greek",
+        "debut": "Resonance: A Plague Tale Legacy",
+        "created by": "Greek mythology"
+      },
+      "categories": [
+        "Resonance: A Plague Tale Legacy characters",
+        "Stubs"
+      ],
+      "url": "https://aplaguetale.fandom.com/wiki/Theseus"
+    },
+    {
+      "title": "Leni",
+      "wikiTitle": "Leni",
+      "collection": "characters",
+      "facts": {
+        "condition": "Uninfected",
+        "status": "Deceased",
+        "species": "Human",
+        "gender": "Female",
+        "debut": "Resonance: A Plague Tale Legacy"
+      },
+      "categories": [
+        "Resonance: A Plague Tale Legacy characters",
+        "Stubs"
+      ],
+      "url": "https://aplaguetale.fandom.com/wiki/Leni"
+    },
+    {
+      "title": "Minotaur",
+      "wikiTitle": "Minotaur",
+      "collection": "characters",
+      "facts": {
+        "species": "Minotaur",
+        "race": "Mythical",
+        "debut": "Resonance: A Plague Tale Legacy"
+      },
+      "categories": [
+        "Resonance: A Plague Tale Legacy characters",
+        "Stubs"
+      ],
+      "url": "https://aplaguetale.fandom.com/wiki/Minotaur"
+    },
+    {
+      "title": "Crete",
+      "wikiTitle": "Crete",
+      "collection": "regions",
+      "facts": {
+        "type": "Island",
+        "location": "Mediterranean Sea",
+        "function(s)": "Center of the Minoan civilization",
+        "inhabitant(s)": "Minoans",
+        "debut": "Resonance: A Plague Tale Legacy"
+      },
+      "categories": [
+        "Resonance: A Plague Tale Legacy locations",
+        "Stubs"
+      ],
+      "url": "https://aplaguetale.fandom.com/wiki/Crete"
+    },
+    {
+      "title": "Alec",
+      "wikiTitle": "Alec",
+      "collection": "characters",
+      "facts": {
+        "condition": "Uninfected",
+        "status": "Deceased",
+        "occupation(s)": "Smuggler",
+        "affiliation(s)": "His brigand",
+        "rank": "Leader",
+        "relative(s)": "Unnamed wife Sophia",
+        "species": "Human",
+        "gender": "Male",
+        "ethnicity": "Mediterranean",
+        "debut": "Resonance: A Plague Tale Legacy"
+      },
+      "categories": [
+        "Resonance: A Plague Tale Legacy characters"
+      ],
+      "url": "https://aplaguetale.fandom.com/wiki/Alec"
+    },
+    {
+      "title": "Minotaur's Island",
+      "wikiTitle": "Minotaur's Island",
+      "collection": "regions",
+      "facts": {
+        "type": "Island",
+        "location": "Mediterranean Sea",
+        "function(s)": "Site of Theseus's trials",
+        "creator": "Unknown",
+        "debut": "Resonance: A Plague Tale Legacy"
+      },
+      "categories": [
+        "Resonance: A Plague Tale Legacy locations",
+        "Stubs"
+      ],
+      "url": "https://aplaguetale.fandom.com/wiki/Minotaur's_Island"
+    },
+    {
+      "title": "Ezra",
+      "wikiTitle": "Ezra",
+      "collection": "characters",
+      "facts": {
+        "condition": "Uninfected",
+        "status": "Deceased",
+        "species": "Human",
+        "gender": "Male",
+        "debut": "Resonance: A Plague Tale Legacy"
+      },
+      "categories": [
+        "Resonance: A Plague Tale Legacy characters",
+        "Stubs"
+      ],
+      "url": "https://aplaguetale.fandom.com/wiki/Ezra"
+    },
+    {
+      "title": "Venice",
+      "wikiTitle": "Venice",
+      "collection": "regions",
+      "facts": {
+        "type": "City",
+        "location": "Northeastern Italy",
+        "function(s)": "Trading hub",
+        "inhabitant(s)": "Venetians Merchants Sailors",
+        "debut": "Resonance: A Plague Tale Legacy"
+      },
+      "categories": [
+        "Resonance: A Plague Tale Legacy locations",
+        "Stubs"
+      ],
+      "url": "https://aplaguetale.fandom.com/wiki/Venice"
+    }
+  ]
+}

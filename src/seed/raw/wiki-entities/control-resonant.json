@@ -1,0 +1,64 @@
+{
+  "slug": "control-resonant",
+  "host": "control.fandom.com",
+  "fetchedAt": "2026-09-15",
+  "entities": [
+    {
+      "title": "Jesse Faden",
+      "wikiTitle": "Jesse Faden",
+      "collection": "characters",
+      "facts": {
+        "status": "Alive",
+        "residence": "Ordinary, Maine (formerly), Cheyenne, Wyoming (formerly), Oldest House",
+        "occupation": "Director of the FBC",
+        "affiliation": "Federal Bureau of Control",
+        "relatives": "Dylan Faden (Brother), Unnamed father, Unnamed mother",
+        "type": "Parautilitarian",
+        "alias": "Prime Candidate 7",
+        "predecessor": "Zachariah Trench",
+        "birth": "c. 1991",
+        "age": "-1991}} (in )",
+        "actor": "Courtney Hope",
+        "appearances": "ControlThe FoundationAWEAlan Wake 2 (cameo) Alan Wake 2, Night Springs: North Star (as The Sibling)",
+        "mentions": "Alan Wake 2, The Lake House'",
+        "successor": "Incumbent"
+      },
+      "categories": [
+        "Control Resonant characters",
+        "Control characters",
+        "Directors",
+        "FBC: Firebreak characters",
+        "FBC personnel",
+        "Parautilitarians",
+        "Prime Candidates"
+      ],
+      "url": "https://control.fandom.com/wiki/Jesse_Faden"
+    },
+    {
+      "title": "Dylan Faden",
+      "wikiTitle": "Dylan Faden",
+      "collection": "characters",
+      "facts": {
+        "age": "-1992}} (in )",
+        "status": "Alive",
+        "birth": "1992",
+        "relatives": "Jesse Faden (Older Sister), Unnamed Father, Unnamed Mother",
+        "nationality": "American",
+        "residence": "Oldest House",
+        "affiliation": "The Hiss",
+        "actor": "Sean Durrie",
+        "appearances": "ControlAlan Wake 2: The Lake House (cameo)Control Resonant",
+        "alias": "Prime Candidate 6P6"
+      },
+      "categories": [
+        "Alan Wake characters",
+        "Control Resonant characters",
+        "Control characters",
+        "Hiss",
+        "Parautilitarians",
+        "Prime Candidates"
+      ],
+      "url": "https://control.fandom.com/wiki/Dylan_Faden"
+    }
+  ]
+}

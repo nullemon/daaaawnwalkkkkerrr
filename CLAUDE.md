@@ -98,8 +98,12 @@ that inherits the default would let any reader who signs up edit content.
   (reading 'edgesOut')`) on this dependency tree and cannot install it.
 - **Do not name a script after a pnpm built-in.** `pnpm ingest` was once
   `pnpm import`, which silently ran pnpm's own lockfile-import command instead
-  and failed with `ERR_PNPM_LOCKFILE_NOT_FOUND`. `pnpm run <name>` always
-  reaches the script, but the plain form is what people type.
+  and failed with `ERR_PNPM_LOCKFILE_NOT_FOUND`. It happened a second time with
+  `pnpm audit`, which printed a CVE report for the dependency tree while the
+  launch checklist it was meant to run never executed — and the report looks
+  enough like output that it takes a moment to notice. It is `check:launch`
+  now. `pnpm run <name>` always reaches the script, but the plain form is what
+  people type.
 - **Font variables belong on `<html>`, not `<body>`.** The tokens that
   reference them are declared on `:root`; a custom property referencing an
   undefined custom property computes to guaranteed-invalid, which silently

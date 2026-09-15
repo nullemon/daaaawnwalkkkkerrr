@@ -1,0 +1,139 @@
+{
+  "slug": "silent-hill-townfall",
+  "appId": 1636440,
+  "storeUrl": "https://store.steampowered.com/app/1636440/",
+  "fetchedAt": "2026-09-15",
+  "title": "SILENT HILL: Townfall",
+  "developers": [
+    "Screen Burn"
+  ],
+  "publishers": [
+    "KONAMI",
+    " Annapurna Interactive"
+  ],
+  "releaseDate": "Sep 23, 2026",
+  "comingSoon": true,
+  "shortDescription": "Returning to an island town to ‘put things right’, Simon Ordell descends into a world of tense evasion, explosive confrontations, and mind-bending puzzles that slowly surface the truth of St. Amelia.",
+  "aboutText": "Simon Ordell is called back to the island of St. Amelia to ‘put things right’, encountering a town lying quiet beneath a heavy fog, seemingly abandoned but not at rest.\nVenturing deeper, and driven to understand his connection to the place and its inhabitants, Simon begins to discover fragments of a past rising to the surface. \nExperienced entirely in first person, Simon must explore, evade, and survive using a limited set of weapons and tools, including the CRTV, a pocket television used to tune into unstable signals. Evasion is tense; combat is frenetic, while narrative driven puzzles reveal a truth that refuses to stay submerged.\nSILENT HILL: Townfall is a full-length, self-contained psychological horror set against the cold, isolated backdrop of Scotland, 1996.\n\nExplore St. Amelia in 1996\nFog-soaked streets, abandoned communities, and forgotten corners tell their story through atmosphere and history. Reality and delusion subtly intertwine to lure players into the depths of the grounded, tangible world of St. Amelia.\n\nA Brand-new, Memorable SILENT HILL\nSILENT HILL: Townfall exudes the beautiful and foggy streets of Scotland, offering a new setting to tell a unique and haunting story. More than just a horror game, this is a tale of introspection, loss, and consequence. Fear grows from small details, quiet moments, and the long shadow of Simon's past.\n\nStrategic Stealth and Combat\nSwing and block with melee weapons in frenetic melee combat, or keep your distance and use firearms to survive.\nChoose how to engage in each encounter, using both the tools at your disposal and the environment around you.\nBeyond fighting or fleeing, carefully sneak past danger through stealth, tracking enemy positions from cover or luring them away with distractions.\n\nNarrative Puzzles Guided by the CRTV\nThe iconic SILENT HILL radio makes a comeback as the CRTV, a portable television device.\nThreats lurking nearby, story fragments, & mysterious clues drift through unstable analog signals, which players can pick up by tuning the CRTV.\nThrough narrative-driven puzzles closely tied to these fragments, players can relive past events and catch glimpses of everyday life in town, remaining constantly aware of the story.\n\nA First-Person SILENT HILL Experience\nThe first full-length SILENT HILL game to be presented in first-person perspective, players experience the fog-shrouded town directly through the eyes of Simon.\nWith limited visibility and a heightened sense of proximity to danger, stealth, combat, exploration and the CRTV feel intimate, close and terrifying.\n\nMultiple Endings\nEndings shaped by the player’s actions leave a lasting emotional impression long after the story comes to an end.\nTension-Building Audio Design & Music\nEvery creak, signal, and cry pulls the danger closer, with creative audio design building a rich and terrifying soundscape.\nA fully dynamic soundtrack by Pilotpriest builds and twists with player and enemy actions, reacting and building tension and release with the ebb and flow of action and stealth.",
+  "genres": [
+    "Action",
+    "Adventure"
+  ],
+  "categories": [
+    "Single-player",
+    "Full controller support",
+    "Gamepad Recommended",
+    "DualShock Controller Support",
+    "DualShock Controller Support",
+    "DualSense Controller Support",
+    "DualSense Controller Support",
+    "Family Sharing"
+  ],
+  "languages": "English",
+  "contentDescriptors": "This Game may contain content not appropriate for all ages, or may not be appropriate for viewing at work: Frequent Violence, General Mature Content",
+  "platforms": [
+    "windows"
+  ],
+  "requirements": {
+    "minimum": [
+      {
+        "label": "OS",
+        "value": "Windows 11 x64"
+      },
+      {
+        "label": "Processor",
+        "value": "AMD Ryzen 5 3600 / Intel i7-8700K"
+      },
+      {
+        "label": "Memory",
+        "value": "16 GB RAM"
+      },
+      {
+        "label": "Graphics",
+        "value": "NVIDIA GeForce RTX 2060 Super / AMD Radeon RX 6600"
+      },
+      {
+        "label": "DirectX",
+        "value": "Version 12"
+      },
+      {
+        "label": "Storage",
+        "value": "75 GB available space"
+      },
+      {
+        "label": "Sound Card",
+        "value": "Windows Compatible Audio Device"
+      },
+      {
+        "label": "Additional Notes",
+        "value": "Playing on minimum requirements should enable to play on Low settings at 1080p 30fps."
+      }
+    ],
+    "recommended": [
+      {
+        "label": "OS",
+        "value": "Windows 11 x64"
+      },
+      {
+        "label": "Processor",
+        "value": "AMD Ryzen 7 5700X / Intel i7-9700K"
+      },
+      {
+        "label": "Memory",
+        "value": "32 GB RAM"
+      },
+      {
+        "label": "Graphics",
+        "value": "NVIDIA GeForce RTX 3080 / AMD Radeon RX 7800 XT"
+      },
+      {
+        "label": "DirectX",
+        "value": "Version 12"
+      },
+      {
+        "label": "Storage",
+        "value": "75 GB available space"
+      },
+      {
+        "label": "Sound Card",
+        "value": "Windows Compatible Audio Device"
+      },
+      {
+        "label": "Additional Notes",
+        "value": "Playing on recommended requirements should enable play on High settings at 4K 30fps (using DLSS,FSR or TSR Balanced mode)."
+      }
+    ]
+  },
+  "editions": [
+    {
+      "title": "SILENT HILL: Townfall",
+      "priceText": "$49.99"
+    },
+    {
+      "title": "SILENT HILL: Townfall - Deluxe Edition",
+      "priceText": "$59.99"
+    }
+  ],
+  "dlc": [],
+  "metacritic": null,
+  "achievements": [],
+  "art": {
+    "header": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1636440/0ed1cb4bc30631f95b92f7f13bb06c15d49b4afa/header.jpg?t=1787716129",
+    "capsule": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1636440/f0dfc016ffde1f3001a60e106bc0c2063fefd695/capsule_231x87.jpg?t=1787716129",
+    "background": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1636440/779287a739513d34f016ba1983d0f3155cd43dd9/page_bg_raw.jpg?t=1787716129",
+    "screenshots": [
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1636440/c6ae9fc8011c59932651baa3d45709ef0df69cb0/ss_c6ae9fc8011c59932651baa3d45709ef0df69cb0.1920x1080.jpg?t=1787716129",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1636440/5d6dd464769f53e6565b5a3d301bcd5ba51a799f/ss_5d6dd464769f53e6565b5a3d301bcd5ba51a799f.1920x1080.jpg?t=1787716129",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1636440/3f79747b702cf5bc1af778dd8963c0a17d7444f8/ss_3f79747b702cf5bc1af778dd8963c0a17d7444f8.1920x1080.jpg?t=1787716129",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1636440/46c6a3f4cf75a54d6f0ca902dad45ca881922fb3/ss_46c6a3f4cf75a54d6f0ca902dad45ca881922fb3.1920x1080.jpg?t=1787716129",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1636440/c6f28edca491f4d0ef1cea00d502065fbc605abf/ss_c6f28edca491f4d0ef1cea00d502065fbc605abf.1920x1080.jpg?t=1787716129",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1636440/7333f82d29729d43f7088629bcc3c398e61a9d83/ss_7333f82d29729d43f7088629bcc3c398e61a9d83.1920x1080.jpg?t=1787716129",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1636440/9546770d94919d74d3867d218a66b58a0bd5cc6b/ss_9546770d94919d74d3867d218a66b58a0bd5cc6b.1920x1080.jpg?t=1787716129",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1636440/a41ef8372ff2c28bf7c45abf042da1be4119b831/ss_a41ef8372ff2c28bf7c45abf042da1be4119b831.1920x1080.jpg?t=1787716129",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1636440/2cc8a7a9459fb8a8fe3dc62c6bec3b7471f7abdc/ss_2cc8a7a9459fb8a8fe3dc62c6bec3b7471f7abdc.1920x1080.jpg?t=1787716129",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1636440/90197e8d0c4868ac154f7aa0c4d3a7378390db43/ss_90197e8d0c4868ac154f7aa0c4d3a7378390db43.1920x1080.jpg?t=1787716129",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1636440/7d260fd4007fccdf13f2c2e93857ee2545a35bbf/ss_7d260fd4007fccdf13f2c2e93857ee2545a35bbf.1920x1080.jpg?t=1787716129",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1636440/3ef02e6c7914c755532f6f5b5d3f3d63bd731e57/ss_3ef02e6c7914c755532f6f5b5d3f3d63bd731e57.1920x1080.jpg?t=1787716129"
+    ]
+  }
+}

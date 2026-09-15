@@ -1,0 +1,584 @@
+{
+  "slug": "gears-of-war-e-day",
+  "host": "gearsofwar.fandom.com",
+  "fetchedAt": "2026-09-15",
+  "entities": [
+    {
+      "title": "MX8 Snub Pistol",
+      "wikiTitle": "MX8 Snub Pistol",
+      "collection": "items",
+      "facts": {
+        "manufacturer": "Coalition of Ordered Governments",
+        "type": "Semi-Automatic Handgun",
+        "size": "Small",
+        "damage per hit": "Low",
+        "magazine": "12 rounds",
+        "maxammo": "Varies, 72 rounds (GOW), 132 Rounds (GOW2), 84 Rounds (GOW3, GOWJ), 108 Rounds (GOW4)",
+        "fire": "Semi-Automatic",
+        "ammotype": "Kal .50",
+        "operation": "Gas",
+        "rate of fire": "500/M",
+        "accuracy": "Medium",
+        "range": "Short to Medium",
+        "era": "*Pendulum Wars, Locust War, Lambent Pandemic, Outsider Movement, Swarm Invasion",
+        "counterpart": "*Talon Autopistol",
+        "counterwep": "*Boltok Pistol, Gorgon Burst Pistol",
+        "affiliation": "*Coalition of Ordered Governments, Locust Horde"
+      },
+      "categories": [
+        "Articles that need Gearsify-ing",
+        "Gears 5 weapons",
+        "Gears of War: E-Day weapons",
+        "Gears of War: Judgment weapons",
+        "Gears of War 2 weapons",
+        "Gears of War 3 weapons",
+        "Gears of War 4 weapons",
+        "Gears of War weapons",
+        "Weapons",
+        "Weapons of the Coalition of Ordered Governments"
+      ],
+      "url": "https://gearsofwar.fandom.com/wiki/MX8_Snub_Pistol"
+    },
+    {
+      "title": "Gnasher Shotgun",
+      "wikiTitle": "Gnasher Shotgun",
+      "collection": "items",
+      "facts": {
+        "manufacturer": "Coalition of Ordered Governments",
+        "type": "Lever-Action Shotgun",
+        "size": "Medium",
+        "damage per hit": "High to Lethal",
+        "magazine": "*8 Shells (GOW, GOW2, GOW3, GOWJ, GOW4), 6 Shells (Gears 5 & GOW: E-Day)",
+        "maxammo": "Varies, 39 Shells (GOW, GOW2, GOW3, GOWJ), 48 shells (GOW4), 30 shells (Gears 5), 36 shells (GOW: E-Day)",
+        "ammotype": "12-Gauge Shotgun Shells",
+        "operation": "Manual Lever-Action",
+        "rate of fire": "60/M",
+        "accuracy": "Varies; depends on range",
+        "range": "Short to Medium",
+        "era": "*Pendulum Wars, Locust War, Lambent Pandemic, Swarm War",
+        "counterpart": "*Overkill, Sawed-Off Shotgun",
+        "counterwep": "*Chainsaw Bayonet, Longshot Sniper Rifle, Mk 2 Lancer Assault Rifle",
+        "affiliation": "*Coalition of Ordered Governments, *Coalition of Ordered Governments Army, Lambent, Locust Horde, Stranded"
+      },
+      "categories": [
+        "Articles that need Gearsify-ing",
+        "Gears 5 weapons",
+        "Gears of War: E-Day weapons",
+        "Gears of War: Judgment weapons",
+        "Gears of War 2 weapons",
+        "Gears of War 3 weapons",
+        "Gears of War weapons",
+        "Weapons",
+        "Weapons of the Coalition of Ordered Governments"
+      ],
+      "url": "https://gearsofwar.fandom.com/wiki/Gnasher_Shotgun"
+    },
+    {
+      "title": "Longshot Sniper Rifle",
+      "wikiTitle": "Longshot Sniper Rifle",
+      "collection": "items",
+      "facts": {
+        "manufacturer": "Coalition of Ordered Governments",
+        "type": "Anti-Personnel Sniper Rifle",
+        "size": "Large",
+        "damage per hit": "Very High to Lethal",
+        "magazine": "1 round",
+        "maxammo": "24 rounds",
+        "ammotype": "Sniper Bullet FMJ",
+        "operation": "Bolt-Action",
+        "rate of fire": "130/M",
+        "accuracy": "Very High",
+        "range": "Extreme",
+        "era": "*Pendulum Wars, Locust War, Lambent Pandemic, Swarm War",
+        "counterpart": "*One-Shot, Breechshot, EMBAR, Markza",
+        "counterwep": "*One-Shot, Torque Bow, Boltok Pistol, Gnasher Shotgun, Hammerburst II, Hammerburst Assault Rifle",
+        "affiliation": "*Coalition of Ordered Governments, *Coalition of Ordered Governments Army, Locust Horde, Stranded"
+      },
+      "categories": [
+        "Articles that need Gearsify-ing",
+        "Gears 5 weapons",
+        "Gears of War: E-Day weapons",
+        "Gears of War: Judgment weapons",
+        "Gears of War 2 weapons",
+        "Gears of War 3 weapons",
+        "Gears of War 4 weapons",
+        "Gears of War weapons",
+        "Weapons",
+        "Weapons of the Coalition of Ordered Governments"
+      ],
+      "url": "https://gearsofwar.fandom.com/wiki/Longshot_Sniper_Rifle"
+    },
+    {
+      "title": "Frag Grenade",
+      "wikiTitle": "Frag Grenade",
+      "collection": "items",
+      "facts": {
+        "manufacturer": "*Coalition of Ordered Governments, Locust Horde",
+        "type": "Fragmentation Grenade",
+        "size": "Small",
+        "damage per hit": "Very High to Lethal (depends on target's proximity to blast radius)",
+        "accuracy": "Varies",
+        "range": "Varies on User",
+        "era": "*Pendulum Wars, Locust War, Lambent War, Lambent Pandemic, Swarm War",
+        "counterpart": "*Beacon Grenade, Ink Grenade, Smoke Grenade, Stim-Gas Grenade, Shock Grenade, Flashbang",
+        "affiliation": "*Coalition of Ordered Governments, *Coalition of Ordered Governments Army, Locust Horde, Swarm"
+      },
+      "categories": [
+        "Articles that need Gearsify-ing",
+        "Articles to be cleaned up",
+        "Gears 5 weapons",
+        "Gears of War: E-Day weapons",
+        "Gears of War: Judgment weapons",
+        "Gears of War 2 weapons",
+        "Gears of War 3 weapons",
+        "Gears of War 4 weapons",
+        "Gears of War weapons",
+        "Weapons",
+        "Weapons of the Coalition of Ordered Governments",
+        "Weapons of the Locust Horde",
+        "Weapons of the Swarm"
+      ],
+      "url": "https://gearsofwar.fandom.com/wiki/Frag_Grenade"
+    },
+    {
+      "title": "Torque Bow",
+      "wikiTitle": "Torque Bow",
+      "collection": "items",
+      "facts": {
+        "manufacturer": "Locust Horde",
+        "type": "Laser-Sighted Coilgun",
+        "size": "Medium",
+        "damage per hit": "Very High to Lethal",
+        "magazine": "1 bolt",
+        "maxammo": "12 bolts",
+        "fire": "Charge Shot",
+        "ammotype": "Imulsion-Tipped Bolts",
+        "operation": "Torque Mechanism",
+        "rate of fire": "180/M",
+        "accuracy": "Pinpoint",
+        "range": "Long",
+        "era": "*Locust War, Lambent Pandemic, Swarm War",
+        "counterpart": "*One-Shot, Longshot Sniper Rifle, GZ18 Markza Sniper Rifle, Breechshot",
+        "affiliation": "*Locust Horde, *Theron Guard"
+      },
+      "categories": [
+        "Articles that need Gearsify-ing",
+        "Articles to be cleaned up",
+        "Gears 5 weapons",
+        "Gears of War: E-Day weapons",
+        "Gears of War: Judgment weapons",
+        "Gears of War 2 weapons",
+        "Gears of War 3 weapons",
+        "Gears of War 4 weapons",
+        "Gears of War weapons",
+        "Weapons",
+        "Weapons of the Locust Horde",
+        "Weapons of the Swarm"
+      ],
+      "url": "https://gearsofwar.fandom.com/wiki/Torque_Bow"
+    },
+    {
+      "title": "Troika Heavy Machine Gun",
+      "wikiTitle": "Troika Heavy Machine Gun",
+      "collection": "items",
+      "facts": {
+        "manufacturer": "Locust Horde",
+        "type": "Mounted Heavy Machine Gun",
+        "size": "Large",
+        "damage per hit": "Medium-High",
+        "magazine": "Unlimited",
+        "maxammo": "Unlimited",
+        "fire": "Automatic",
+        "ammotype": "Cartridge",
+        "rate of fire": "Extremely High",
+        "accuracy": "Low to Medium",
+        "range": "Short to Medium",
+        "era": "*Locust War, Lambent Pandemic",
+        "counterpart": "*RAAM's Troika, Chain Gun, Mulcher, Vulcan Cannon",
+        "counterwep": "*One-Shot, Torque Bow, Boltok Pistol, Digger Launcher, Mortar, Longshot Sniper Rifle",
+        "affiliation": "Locust Horde"
+      },
+      "categories": [
+        "Articles that need Gearsify-ing",
+        "Gears of War: E-Day weapons",
+        "Gears of War: Judgment weapons",
+        "Gears of War 2 weapons",
+        "Gears of War 3 weapons",
+        "Gears of War weapons",
+        "Weapons",
+        "Weapons of the Locust Horde"
+      ],
+      "url": "https://gearsofwar.fandom.com/wiki/Troika_Heavy_Machine_Gun"
+    },
+    {
+      "title": "Chainsaw Bayonet",
+      "wikiTitle": "Chainsaw Bayonet",
+      "collection": "items",
+      "facts": {
+        "caption1": "A Blueprint showing the internals of the Chainsaw Bayonet.",
+        "manufacturer": "Coalition of Ordered Governments",
+        "model": "Chainsaw",
+        "type": "Bayonet",
+        "size": "Small",
+        "damage per hit": "Lethal",
+        "operation": "Motorized Chain Mechanism",
+        "range": "Close",
+        "era": "*Locust War, Lambent Pandemic, Swarm War",
+        "counterpart": "*Mark 1 Lancer Bayonet, Dual Chainsaw Staff",
+        "counterwep": "*Sawed-Off Shotgun, Mark 1 Lancer Assault Rifle, Enforcer, Gnasher Shotgun, Overkill Shotgun, Scorcher Flamethrower",
+        "affiliation": "*Coalition of Ordered Governments, *Coalition of Ordered Governments Army"
+      },
+      "categories": [
+        "Articles that need Gearsify-ing",
+        "Gears 5 weapons",
+        "Gears of War: E-Day weapons",
+        "Gears of War: Judgment weapons",
+        "Gears of War 2 weapons",
+        "Gears of War 3 weapons",
+        "Gears of War 4 weapons",
+        "Gears of War weapons",
+        "Weapons",
+        "Weapons of the Coalition of Ordered Governments"
+      ],
+      "url": "https://gearsofwar.fandom.com/wiki/Chainsaw_Bayonet"
+    },
+    {
+      "title": "Gut-Puncher Grenade Launcher",
+      "wikiTitle": "Gut-Puncher Grenade Launcher",
+      "collection": "items",
+      "facts": {
+        "manufacturer": "Coalition of Ordered Governments",
+        "type": "Under-barrel Grenade Launcher, Heavy Belt-fed Grenade Launcher",
+        "size": "Small (Under-barrel version), Medium (Heavy version)",
+        "magazine": "1 Grenade (Under-barrel variant), 4 Grenades (Heavy variant)",
+        "fire": "Single Shot",
+        "ammotype": "Armor-Piercing Grenade",
+        "accuracy": "Accurate at Close Range",
+        "counterpart": "Boomshot Grenade Launcher, *Heavy Boomshot, Booshka Grenade Launcher, Stomper",
+        "era": "*Pendulum Wars, Locust War",
+        "affiliation": "Coalition of Ordered Governments",
+        "operation": "Pump-Action",
+        "maxammo": "12"
+      },
+      "categories": [
+        "Gears of War: E-Day",
+        "Gears of War: E-Day weapons",
+        "Weapons",
+        "Weapons of the Coalition of Ordered Governments"
+      ],
+      "url": "https://gearsofwar.fandom.com/wiki/Gut-Puncher_Grenade_Launcher"
+    },
+    {
+      "title": "Hammerburst Assault Rifle",
+      "wikiTitle": "Hammerburst Assault Rifle",
+      "collection": "items",
+      "facts": {
+        "manufacturer": "Locust Horde",
+        "model": "Mark I",
+        "type": "Burst-Fire Assault Rifle",
+        "size": "Medium",
+        "damage per hit": "High",
+        "magazine": "Varies, 48 rounds (GOW:J & GOW: E-Day), 78 rounds (GOW1)",
+        "maxammo": "Varies, 336 rounds (GOW: E-Day), 480 rounds (GOW:J), 780 rounds (GOW1)",
+        "fire": "Six-Round Burst",
+        "ammotype": "Cartridge",
+        "operation": "Gas-Operated Rotating Bolt",
+        "rate of fire": "Medium-High",
+        "accuracy": "Medium-High",
+        "range": "Medium",
+        "era": "*Locust War, Lambent Pandemic",
+        "counterpart": "Hammerburst II",
+        "counterwep": "Lancer Assault Rifle",
+        "affiliation": "Locust Horde"
+      },
+      "categories": [
+        "Articles that need Gearsify-ing",
+        "Gears of War: E-Day weapons",
+        "Gears of War: Judgment weapons",
+        "Gears of War weapons",
+        "Weapons",
+        "Weapons of the Locust Horde"
+      ],
+      "url": "https://gearsofwar.fandom.com/wiki/Hammerburst_Assault_Rifle"
+    },
+    {
+      "title": "Mark 1 Lancer Assault Rifle",
+      "wikiTitle": "Mark 1 Lancer Assault Rifle",
+      "collection": "items",
+      "facts": {
+        "manufacturer": "Coalition of Ordered Governments",
+        "model": "Mark 1",
+        "type": "Automatic Assault Rifle",
+        "size": "Medium",
+        "damage per hit": "Medium-High",
+        "magazine": "Varies, 30 rounds (GOW3 & GOW: E-Day), 20 rounds (GOW4), 25 rounds (GOW5)",
+        "maxammo": "Varies, 210 rounds (GOW3), 240 rounds (GOWJ), 200 rounds (GOW4), 300 rounds (GOW5 & GOW: E-Day)",
+        "fire": "Automatic",
+        "ammotype": "Cartridge",
+        "operation": "Gas",
+        "rate of fire": "Varies, 650 RPM (GOW3), 450 RPM (GOW4), 500 RPM (GOW5)",
+        "accuracy": "Low to Medium",
+        "range": "Short to Medium",
+        "era": "*Pendulum Wars, Locust War, Lambent Pandemic, Swarm War",
+        "counterpart": "*Mk 2 Lancer Assault Rifle, *Chainsaw Lancer Prototype, Mk 3 Lancer Assault Rifle, *Lancer GL Assault Rifle",
+        "counterwep": "*Markza Mk 1 Marksman Rifle, Hammerburst Assault Rifle, Hammerburst II",
+        "affiliation": "*Coalition of Ordered Governments, *Coalition of Ordered Governments Army, Locust Horde, *Savage Locust, Stranded, Outsiders"
+      },
+      "categories": [
+        "Gears 5 weapons",
+        "Gears of War: E-Day weapons",
+        "Gears of War: Judgment weapons",
+        "Gears of War 3 weapons",
+        "Gears of War 4 weapons",
+        "Weapons",
+        "Weapons of the Coalition of Ordered Governments"
+      ],
+      "url": "https://gearsofwar.fandom.com/wiki/Mark_1_Lancer_Assault_Rifle"
+    },
+    {
+      "title": "Vulcan Gatling Gun",
+      "wikiTitle": "Vulcan Gatling Gun",
+      "collection": "items",
+      "facts": {
+        "manufacturer": "Coalition of Ordered Governments",
+        "type": "Gatling Gun",
+        "size": "Large",
+        "damage per hit": "High",
+        "magazine": "80 rounds",
+        "maxammo": "720 rounds",
+        "fire": "Automatic",
+        "ammotype": "High-Caliber Machine Gun Ammunition",
+        "rate of fire": "2000/M",
+        "accuracy": "Medium-Low",
+        "range": "Close to Medium",
+        "era": "*Pendulum Wars, Locust War, Lambent Pandemic",
+        "counterpart": "*Chain Gun, Mulcher, Troika Heavy Machine Gun, UIR Minigun",
+        "affiliation": "*Coalition of Ordered Governments, *Coalition of Ordered Governments Army, *Coalition of Ordered Governments Air Corps, Stranded"
+      },
+      "categories": [
+        "Gears of War: E-Day weapons",
+        "Gears of War: Judgment weapons",
+        "Gears of War 3 weapons",
+        "Stubs",
+        "Weapons",
+        "Weapons of the Coalition of Ordered Governments"
+      ],
+      "url": "https://gearsofwar.fandom.com/wiki/Vulcan_Gatling_Gun"
+    },
+    {
+      "title": "Breechshot",
+      "wikiTitle": "Breechshot",
+      "collection": "items",
+      "facts": {
+        "manufacturer": "Union of Independent Republics, Heavily Modified by the Locust",
+        "type": "Bolt-Action Sniper Rifle",
+        "size": "Medium",
+        "damage per hit": "High",
+        "magazine": "4 rounds",
+        "maxammo": "*20 rounds (GOW: E-Day), 36 rounds (GOW:J)",
+        "fire": "Semi-Automatic",
+        "ammotype": "Cartridge",
+        "operation": "Straight-Pull Bolt-Action",
+        "rate of fire": "66/M",
+        "accuracy": "Medium-High",
+        "range": "Long",
+        "era": "*Lambent War, Locust War, Lambent Pandemic, Swarm Invasion",
+        "counterpart": "*Longshot Sniper Rifle, Markza Sniper Rifle",
+        "affiliation": "*Locust Horde, *Ragers"
+      },
+      "categories": [
+        "Gears of War: E-Day weapons",
+        "Gears of War: Judgment weapons",
+        "Weapons",
+        "Weapons of the Locust Horde"
+      ],
+      "url": "https://gearsofwar.fandom.com/wiki/Breechshot"
+    },
+    {
+      "title": "Commando Knife",
+      "wikiTitle": "Commando Knife",
+      "collection": "items",
+      "facts": {
+        "manufacturer": "Coalition of Ordered Governments",
+        "type": "Knife",
+        "size": "Small",
+        "damage per hit": "Medium-High",
+        "operation": "Physical Cutting",
+        "range": "Close",
+        "era": "*Pendulum Wars, Locust War, Lambent Pandemic",
+        "counterpart": "*Combat Knife",
+        "affiliation": "*Coalition of Ordered Governments, *Coalition of Ordered Governments Army, **Commando"
+      },
+      "categories": [
+        "Gears of War: E-Day weapons",
+        "Gears of War 2 weapons",
+        "Gears of War 3 weapons",
+        "Gears of War weapons",
+        "Weapons",
+        "Weapons of the Coalition of Ordered Governments"
+      ],
+      "url": "https://gearsofwar.fandom.com/wiki/Commando_Knife"
+    },
+    {
+      "title": "Chainsaw Lancer Prototype",
+      "wikiTitle": "Chainsaw Lancer Prototype",
+      "collection": "items",
+      "facts": {
+        "manufacturer": "Coalition of Ordered Governments",
+        "model": "Mark 1",
+        "type": "Assault Rifle",
+        "fire": "Full Auto",
+        "magazine": "60",
+        "maxammo": "600",
+        "era": "Locust War",
+        "counterwep": "Hammerburst Assault Rifle",
+        "affiliation": "Coalition of Ordered Governments, Coalition of Ordered Governments Army"
+      },
+      "categories": [
+        "Gears of War: E-Day",
+        "Gears of War: E-Day weapons",
+        "Weapons",
+        "Weapons of the Coalition of Ordered Governments"
+      ],
+      "url": "https://gearsofwar.fandom.com/wiki/Chainsaw_Lancer_Prototype"
+    },
+    {
+      "title": "Incinerator Shotgun",
+      "wikiTitle": "Incinerator Shotgun",
+      "collection": "items",
+      "facts": {
+        "manufacturer": "Locust Horde, Scorched Legion",
+        "type": "Shotgun",
+        "magazine": "3",
+        "maxammo": "12",
+        "range": "Short",
+        "era": "Locust War",
+        "counterwep": "Gnasher Shotgun",
+        "affiliation": "Locust Horde",
+        "ammotype": "Imulsion"
+      },
+      "categories": [
+        "Gears of War: E-Day",
+        "Gears of War: E-Day weapons",
+        "Weapons",
+        "Weapons of the Locust Horde"
+      ],
+      "url": "https://gearsofwar.fandom.com/wiki/Incinerator_Shotgun"
+    },
+    {
+      "title": "Gorehook",
+      "wikiTitle": "Gorehook",
+      "collection": "items",
+      "facts": {
+        "manufacturer": "Locust Horde",
+        "type": "Harpoon Launcher",
+        "magazine": "10",
+        "range": "Short",
+        "era": "Locust War",
+        "affiliation": "Locust Horde",
+        "size": "Large",
+        "ammotype": "Harpoons"
+      },
+      "categories": [
+        "Gears of War: E-Day",
+        "Gears of War: E-Day weapons",
+        "Weapons",
+        "Weapons of the Locust Horde"
+      ],
+      "url": "https://gearsofwar.fandom.com/wiki/Gorehook"
+    },
+    {
+      "title": "Striga Pistol",
+      "wikiTitle": "Striga Pistol",
+      "collection": "items",
+      "facts": {
+        "manufacturer": "Locust Horde, Scorched Legion",
+        "type": "Pistol",
+        "magazine": "3 (27 spikes)",
+        "maxammo": "12 (108 spikes)",
+        "range": "Short",
+        "era": "Locust War",
+        "affiliation": "Locust Horde",
+        "size": "Small",
+        "ammotype": "Spikes",
+        "fire": "Burst-fire",
+        "counterpart": "Boltok Pistol, Gorgon Submachine Gun",
+        "counterwep": "MX8 Snub Pistol"
+      },
+      "categories": [
+        "Gears of War: E-Day",
+        "Gears of War: E-Day weapons",
+        "Weapons",
+        "Weapons of the Locust Horde"
+      ],
+      "url": "https://gearsofwar.fandom.com/wiki/Striga_Pistol"
+    },
+    {
+      "title": "Ripper Light Machine Gun",
+      "wikiTitle": "Ripper Light Machine Gun",
+      "collection": "items",
+      "facts": {
+        "manufacturer": "Locust Horde",
+        "type": "Light Machine Gun",
+        "magazine": "70 (35 per magazine)",
+        "range": "Medium",
+        "era": "Locust War",
+        "affiliation": "Locust Horde",
+        "size": "Medium",
+        "fire": "Full Auto",
+        "maxammo": "210",
+        "rate of fire": "Variable",
+        "accuracy": "Medium"
+      },
+      "categories": [
+        "Gears of War: E-Day",
+        "Gears of War: E-Day weapons",
+        "Weapons",
+        "Weapons of the Locust Horde"
+      ],
+      "url": "https://gearsofwar.fandom.com/wiki/Ripper_Light_Machine_Gun"
+    },
+    {
+      "title": "Heavy Boomshot",
+      "wikiTitle": "Heavy Boomshot",
+      "collection": "items",
+      "facts": {
+        "manufacturer": "Locust Horde",
+        "type": "Heavy Grenade Launcher",
+        "size": "Large",
+        "magazine": "9",
+        "ammotype": "Cluster Grenade",
+        "range": "Short-Medium",
+        "era": "Locust War",
+        "affiliation": "Locust Horde"
+      },
+      "categories": [
+        "Gears of War: E-Day",
+        "Gears of War: E-Day weapons",
+        "Weapons",
+        "Weapons of the Locust Horde"
+      ],
+      "url": "https://gearsofwar.fandom.com/wiki/Heavy_Boomshot"
+    },
+    {
+      "title": "Concussion Grenade",
+      "wikiTitle": "Concussion Grenade",
+      "collection": "items",
+      "facts": {
+        "manufacturer": "Coalition of Ordered Governments",
+        "type": "Anti-Personnel Grenade",
+        "size": "Small",
+        "era": "Pendulum Wars, Locust War",
+        "counterpart": "Frag Grenade, Smoke Grenade, Incendiary Grenade, Stim-Gas Grenade",
+        "affiliation": "Coalition of Ordered Governments, *NCOG Corps of Marines"
+      },
+      "categories": [
+        "Gears of War: E-Day",
+        "Gears of War: E-Day weapons",
+        "Weapons",
+        "Weapons of the Coalition of Ordered Governments"
+      ],
+      "url": "https://gearsofwar.fandom.com/wiki/Concussion_Grenade"
+    }
+  ]
+}

@@ -36,7 +36,17 @@ import { NextResponse, type NextRequest } from 'next/server'
  * cannot be written at all: `sitemap` is a Next metadata convention and it
  * claims any route folder of that name.
  */
-const PASS_THROUGH = new Set(['_next', 'api', 'admin', 'robots.txt', 'sitemap.xml'])
+const PASS_THROUGH = new Set([
+  '_next',
+  'api',
+  'admin',
+  'robots.txt',
+  'sitemap.xml',
+  // Per-wiki favicons and share cards, in public/wiki-assets/<slug>/. They are
+  // referenced by absolute path from whichever host is serving, so rewriting
+  // them onto a game prefix would look for a file that is not there.
+  'wiki-assets',
+])
 
 /**
  * First path segments that belong to the hub and must never be read as a game

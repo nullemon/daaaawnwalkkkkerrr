@@ -158,7 +158,7 @@
       "title": "To the Victor Go the Spoils",
       "description": "Unlocked a Zone Reward",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/983b859e1e8b80bdfbf734094104c049856873dd.jpg",
-      "globalPercent": 81.8
+      "globalPercent": 81.9
     },
     {
       "title": "Do or Do Not",
@@ -200,7 +200,13 @@
       "title": "One Less Clanker",
       "description": null,
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/13e01b57f3b000bb5903c7321524e92264a8fae1.jpg",
-      "globalPercent": 59.5
+      "globalPercent": 59.6
+    },
+    {
+      "title": "Forceful",
+      "description": null,
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/00623e6e80a6d6457cf465bdc2cfc8b2f8d0d4c3.jpg",
+      "globalPercent": 47.2
     },
     {
       "title": "Sky High",
@@ -209,22 +215,16 @@
       "globalPercent": 47.1
     },
     {
-      "title": "Forceful",
-      "description": null,
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/00623e6e80a6d6457cf465bdc2cfc8b2f8d0d4c3.jpg",
-      "globalPercent": 47.1
-    },
-    {
       "title": "A Way to Pass the Time",
       "description": null,
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/424d991ee816a8c66929817ec3ee4e57f70b89a5.jpg",
-      "globalPercent": 42.2
+      "globalPercent": 42.3
     },
     {
       "title": "Luunata Reclaimed",
       "description": null,
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/b197eb7cd87780f1f29eb0cded5f1436a73bcd99.jpg",
-      "globalPercent": 32.5
+      "globalPercent": 32.6
     },
     {
       "title": "Never Tell Me the Odds",
@@ -248,7 +248,7 @@
       "title": "Jungle Warfare",
       "description": null,
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/c3a875bbeeda839529efc2c4513a8beceed05d0f.jpg",
-      "globalPercent": 26.3
+      "globalPercent": 26.4
     },
     {
       "title": "The Baroness",
@@ -260,19 +260,19 @@
       "title": "Old Friends",
       "description": null,
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/4cca4bbb87bcb53b567cc11a05809afb18763c35.jpg",
-      "globalPercent": 25.4
+      "globalPercent": 25.5
     },
     {
       "title": "With Friends Like These",
       "description": null,
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/7f41243fa93fccd9a645fd3b52ea27b66da764b0.jpg",
-      "globalPercent": 24.1
+      "globalPercent": 24.2
     },
     {
       "title": "The Mandalorian",
       "description": null,
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/f9316101bf05453888ee332ac45c4eae28e2a257.jpg",
-      "globalPercent": 21.7
+      "globalPercent": 21.8
     },
     {
       "title": "See Your Own Demise",
@@ -296,25 +296,25 @@
       "title": "An End of the Infinite",
       "description": null,
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/32f57cf64caa9323b5d56bcd412e699de4c1fdf8.jpg",
-      "globalPercent": 19
+      "globalPercent": 19.1
     },
     {
       "title": "The Padawan",
       "description": null,
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/771c68083b62dc37dc4e827efc1b750e69493afd.jpg",
-      "globalPercent": 18.8
+      "globalPercent": 18.9
     },
     {
       "title": "Hired Gun",
       "description": "Beat the game on Story or higher",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/e155a2068219bcb7237f9958e04fa217b2878d76.jpg",
-      "globalPercent": 18.7
+      "globalPercent": 18.8
     },
     {
       "title": "Veteran",
       "description": "Beat the game on Normal or higher",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/b589d5bc5023196fef0ad002cfa50e7f86bf49b8.jpg",
-      "globalPercent": 17.2
+      "globalPercent": 17.3
     },
     {
       "title": "The Umbaran",
@@ -350,7 +350,7 @@
       "title": "Fully Geared",
       "description": "Equipped 4 Weapon Mods to a Weapon",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/21f608d8835632e19d33e0b2d007850c32311cd9.jpg",
-      "globalPercent": 5.4
+      "globalPercent": 5.5
     },
     {
       "title": "Word Of Honor",

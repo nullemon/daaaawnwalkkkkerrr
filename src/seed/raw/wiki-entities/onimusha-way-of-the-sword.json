@@ -1,0 +1,401 @@
+{
+  "slug": "onimusha-way-of-the-sword",
+  "host": "onimusha.fandom.com",
+  "fetchedAt": "2026-09-15",
+  "entities": [
+    {
+      "title": "Raizan",
+      "wikiTitle": "Raizan",
+      "collection": "items",
+      "facts": {},
+      "categories": [
+        "Onimusha: Blade Warriors weapons",
+        "Onimusha: Dawn of Dreams weapons",
+        "Onimusha: Warlords weapons",
+        "Onimusha: Way of The Sword weapons",
+        "Onimusha 3: Demon Siege weapons",
+        "Weapons"
+      ],
+      "url": "https://onimusha.fandom.com/wiki/Raizan"
+    },
+    {
+      "title": "Musashi Miyamoto",
+      "wikiTitle": "Musashi Miyamoto",
+      "collection": "characters",
+      "facts": {
+        "Japanese Name": "宮本 武蔵",
+        "Birthdate": "1583",
+        "Age": "21",
+        "Alignment": "Good",
+        "Occupation": "Ronin",
+        "Voice Actors": "Yoshimasa Hosoya (Japanese), Kenichiro Thomson (English), Cao Zhen (Mandarin Chinese)",
+        "Face Models": "Toshiro Mifune"
+      },
+      "categories": [
+        "Characters",
+        "Onimusha: Way of the Sword characters"
+      ],
+      "url": "https://onimusha.fandom.com/wiki/Musashi_Miyamoto"
+    },
+    {
+      "title": "Hitotsume Gasa",
+      "wikiTitle": "Hitotsume Gasa",
+      "collection": "enemies",
+      "facts": {},
+      "categories": [
+        "Enemies",
+        "Genma",
+        "Onimusha: Way of the Sword Genma"
+      ],
+      "url": "https://onimusha.fandom.com/wiki/Hitotsume_Gasa"
+    },
+    {
+      "title": "Byakue",
+      "wikiTitle": "Byakue",
+      "collection": "enemies",
+      "facts": {},
+      "categories": [
+        "Enemies",
+        "Genma",
+        "Onimusha: Way of the Sword Genma"
+      ],
+      "url": "https://onimusha.fandom.com/wiki/Byakue"
+    },
+    {
+      "title": "Ganryu Sasaki",
+      "wikiTitle": "Ganryu Sasaki",
+      "collection": "characters",
+      "facts": {
+        "tab1": "Main",
+        "tab2": "Netflix",
+        "tab3": "Other"
+      },
+      "categories": [
+        "Bosses",
+        "Characters",
+        "Enemies",
+        "Onimusha: Way of the Sword characters"
+      ],
+      "url": "https://onimusha.fandom.com/wiki/Ganryu_Sasaki"
+    },
+    {
+      "title": "Kubi Akari",
+      "wikiTitle": "Kubi Akari",
+      "collection": "enemies",
+      "facts": {},
+      "categories": [
+        "Enemies",
+        "Genma",
+        "Onimusha: Way of the Sword Genma"
+      ],
+      "url": "https://onimusha.fandom.com/wiki/Kubi_Akari"
+    },
+    {
+      "title": "Daidara",
+      "wikiTitle": "Daidara",
+      "collection": "characters",
+      "facts": {
+        "Japanese Name": "大唾拉",
+        "Voice Actors": "Abe Jarman (English)Miyake Kenta (Japanese)Su Xin (Mandarin Chinese)"
+      },
+      "categories": [
+        "Enemies",
+        "Genma",
+        "Onimusha: Way of the Sword characters"
+      ],
+      "url": "https://onimusha.fandom.com/wiki/Daidara"
+    },
+    {
+      "title": "Greater Nue",
+      "wikiTitle": "Greater Nue",
+      "collection": "enemies",
+      "facts": {},
+      "categories": [
+        "Enemies",
+        "Genma",
+        "Onimusha: Way of the Sword Genma"
+      ],
+      "url": "https://onimusha.fandom.com/wiki/Greater_Nue"
+    },
+    {
+      "title": "Dokyo",
+      "wikiTitle": "Dokyo",
+      "collection": "characters",
+      "facts": {
+        "Japanese Name": "道狂輝夜姫",
+        "Voice Actors": "Clare Corbett (English)Fushida Riho (Japanese)Xu Hui (Mandarin Chinese)"
+      },
+      "categories": [
+        "Enemies",
+        "Genma",
+        "Onimusha: Way of the Sword characters"
+      ],
+      "url": "https://onimusha.fandom.com/wiki/Dokyo"
+    },
+    {
+      "title": "Kogashira",
+      "wikiTitle": "Kogashira",
+      "collection": "enemies",
+      "facts": {},
+      "categories": [
+        "Enemies",
+        "Genma",
+        "Onimusha: Way of the Sword Genma"
+      ],
+      "url": "https://onimusha.fandom.com/wiki/Kogashira"
+    },
+    {
+      "title": "Chijiko",
+      "wikiTitle": "Chijiko",
+      "collection": "enemies",
+      "facts": {},
+      "categories": [
+        "Enemies",
+        "Genma",
+        "Onimusha: Way of the Sword Genma"
+      ],
+      "url": "https://onimusha.fandom.com/wiki/Chijiko"
+    },
+    {
+      "title": "Shizuka Gozen",
+      "wikiTitle": "Shizuka Gozen",
+      "collection": "characters",
+      "facts": {
+        "Japanese Name": "静御前鬼の佳人",
+        "Aliases": "Oni no Kajin",
+        "Voice Actors": "Yuriri Naka (English)Aya Endo (Japanese)Li Chanfei (Mandarin Chinese)"
+      },
+      "categories": [
+        "Characters",
+        "Onimusha: Way of the Sword characters"
+      ],
+      "url": "https://onimusha.fandom.com/wiki/Shizuka_Gozen"
+    },
+    {
+      "title": "Takamura Ono",
+      "wikiTitle": "Takamura Ono",
+      "collection": "characters",
+      "facts": {
+        "Full Name": "Ono no Takamura",
+        "Japanese Name": "小野 篁",
+        "Aliases": "Ono no Takamura",
+        "Birthdate": "802",
+        "Age": "803",
+        "Alignment": "Good",
+        "Allegiances": "The Oni",
+        "Voice Actors": "Shogo Miyakita (English)Akihiko Ishizumi (Japanese)Meng Xianglong (Mandarin Chinese)"
+      },
+      "categories": [
+        "Characters",
+        "Onimusha: Way of the Sword characters"
+      ],
+      "url": "https://onimusha.fandom.com/wiki/Takamura_Ono"
+    },
+    {
+      "title": "Okuni Izumo",
+      "wikiTitle": "Okuni Izumo",
+      "collection": "characters",
+      "facts": {
+        "Japanese Name": "出雲 阿国",
+        "Aliases": "Izumo no Okuni",
+        "Voice Actors": "Leader Looi (English)Chiharu (Japanese)Xie Ying (Mandarin Chinese)"
+      },
+      "categories": [
+        "Characters",
+        "Onimusha: Way of the Sword characters"
+      ],
+      "url": "https://onimusha.fandom.com/wiki/Okuni_Izumo"
+    },
+    {
+      "title": "Togemaru",
+      "wikiTitle": "Togemaru",
+      "collection": "enemies",
+      "facts": {},
+      "categories": [
+        "Enemies",
+        "Genma",
+        "Onimusha: Way of the Sword Genma"
+      ],
+      "url": "https://onimusha.fandom.com/wiki/Togemaru"
+    },
+    {
+      "title": "The Two Celestials",
+      "wikiTitle": "The Two Celestials",
+      "collection": "items",
+      "facts": {},
+      "categories": [
+        "Onimusha: Way of The Sword weapons",
+        "Weapons"
+      ],
+      "url": "https://onimusha.fandom.com/wiki/The_Two_Celestials"
+    },
+    {
+      "title": "Earth-Shakers",
+      "wikiTitle": "Earth-Shakers",
+      "collection": "items",
+      "facts": {},
+      "categories": [
+        "Onimusha: Way of The Sword weapons",
+        "Weapons"
+      ],
+      "url": "https://onimusha.fandom.com/wiki/Earth-Shakers"
+    },
+    {
+      "title": "Wind-Whipper",
+      "wikiTitle": "Wind-Whipper",
+      "collection": "items",
+      "facts": {},
+      "categories": [
+        "Onimusha: Way of The Sword weapons",
+        "Weapons"
+      ],
+      "url": "https://onimusha.fandom.com/wiki/Wind-Whipper"
+    },
+    {
+      "title": "Shuten Doji",
+      "wikiTitle": "Shuten Doji",
+      "collection": "enemies",
+      "facts": {
+        "Japanese Name": "酒呑童子",
+        "Voice Actors": "Anthony Howell (English)Shinnosuke Hai (Japanese)Gao Sihang (Mandarin Chinese)"
+      },
+      "categories": [
+        "Enemies",
+        "Genma",
+        "Onimusha: Way of the Sword Genma",
+        "Onimusha: Way of the Sword characters"
+      ],
+      "url": "https://onimusha.fandom.com/wiki/Shuten_Doji"
+    },
+    {
+      "title": "Oboro Garasu",
+      "wikiTitle": "Oboro Garasu",
+      "collection": "enemies",
+      "facts": {},
+      "categories": [
+        "Enemies",
+        "Genma",
+        "Onimusha: Way of the Sword Genma"
+      ],
+      "url": "https://onimusha.fandom.com/wiki/Oboro_Garasu"
+    },
+    {
+      "title": "Rasho-gan",
+      "wikiTitle": "Rasho-gan",
+      "collection": "enemies",
+      "facts": {
+        "Japanese Name": "羅掌願",
+        "Voice Actors": "Adam Longworth (English)Yasuhiro Mamiya (Japanese)Liu Beichen (Mandarin Chinese)"
+      },
+      "categories": [
+        "Enemies",
+        "Genma",
+        "Onimusha: Way of the Sword Genma",
+        "Onimusha: Way of the Sword characters"
+      ],
+      "url": "https://onimusha.fandom.com/wiki/Rasho-gan"
+    },
+    {
+      "title": "Dohatsu-ten",
+      "wikiTitle": "Dohatsu-ten",
+      "collection": "enemies",
+      "facts": {},
+      "categories": [
+        "Enemies",
+        "Genma",
+        "Onimusha: Way of the Sword Genma"
+      ],
+      "url": "https://onimusha.fandom.com/wiki/Dohatsu-ten"
+    },
+    {
+      "title": "Burai",
+      "wikiTitle": "Burai",
+      "collection": "characters",
+      "facts": {
+        "Japanese Name": "撫雷",
+        "Family": "Ifuu (younger brother)",
+        "Voice Actors": "Richard Reed (English)Saitou Jirou (Japanese)"
+      },
+      "categories": [
+        "Enemies",
+        "Genma",
+        "Onimusha: Way of the Sword characters"
+      ],
+      "url": "https://onimusha.fandom.com/wiki/Burai"
+    },
+    {
+      "title": "Ifuu",
+      "wikiTitle": "Ifuu",
+      "collection": "characters",
+      "facts": {
+        "Japanese Name": "畏風",
+        "Family": "Burai (older brother)",
+        "Voice Actors": "Adam Stickler (English)Kanuka Mitsuaki (Japanese)"
+      },
+      "categories": [
+        "Enemies",
+        "Genma",
+        "Onimusha: Way of the Sword characters"
+      ],
+      "url": "https://onimusha.fandom.com/wiki/Ifuu"
+    },
+    {
+      "title": "Lady Murasaki",
+      "wikiTitle": "Lady Murasaki",
+      "collection": "characters",
+      "facts": {
+        "Full Name": "Shikibu Murasaki",
+        "Japanese Name": "紫式部",
+        "Aliases": "The Lady of the Chronicles",
+        "Birthdate": "973",
+        "Age": "41 (At Time of Death)630+ (Spirit)",
+        "Alignment": "Good",
+        "Occupation": "NovelistPoet",
+        "Voice Actors": "Ami Okumura Jones (English)Yuka Terasaki (Japanese)Zhang Anqi (Mandarin Chinese)"
+      },
+      "categories": [
+        "Characters",
+        "Onimusha: Way of the Sword characters"
+      ],
+      "url": "https://onimusha.fandom.com/wiki/Lady_Murasaki"
+    },
+    {
+      "title": "Yoshitsune Minamoto",
+      "wikiTitle": "Yoshitsune Minamoto",
+      "collection": "characters",
+      "facts": {},
+      "categories": [
+        "Characters",
+        "Onimusha: Way of the Sword characters"
+      ],
+      "url": "https://onimusha.fandom.com/wiki/Yoshitsune_Minamoto"
+    },
+    {
+      "title": "Oni Bow",
+      "wikiTitle": "Oni Bow",
+      "collection": "items",
+      "facts": {},
+      "categories": [
+        "Onimusha: Way of The Sword weapons",
+        "Weapons"
+      ],
+      "url": "https://onimusha.fandom.com/wiki/Oni_Bow"
+    },
+    {
+      "title": "Seijuro Yoshioka/Way of the Sword",
+      "wikiTitle": "Seijuro Yoshioka/Way of the Sword",
+      "collection": "characters",
+      "facts": {
+        "Full Name": "Seijuro Yoshioka",
+        "Japanese Name": "吉岡清十郎",
+        "Occupation": "Samurai"
+      },
+      "categories": [
+        "Characters",
+        "Deceased",
+        "Onimusha: Way of the Sword characters"
+      ],
+      "url": "https://onimusha.fandom.com/wiki/Seijuro_Yoshioka%2FWay_of_the_Sword"
+    }
+  ]
+}

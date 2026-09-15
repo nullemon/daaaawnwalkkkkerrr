@@ -139,19 +139,19 @@
       "title": "Get This Thing Off Me",
       "description": "Absorb 30 or more souls at once.",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/6df5400daef82f23e33ff79dd4774dfa430fb0fd.jpg",
-      "globalPercent": 88.1
+      "globalPercent": 88
     },
     {
       "title": "Get Stuffed",
       "description": null,
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/8c069f7d49c87359ff339bd1639b3bffbd1b3b17.jpg",
-      "globalPercent": 87.6
+      "globalPercent": 87.5
     },
     {
       "title": "Looking Sharp",
       "description": "Enhance a piece of equipment for the first time.",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/49b532c6cb039b436e4d8312dbf59ce9f541a1b1.jpg",
-      "globalPercent": 84
+      "globalPercent": 83.9
     },
     {
       "title": "Twisted Fates",
@@ -163,7 +163,7 @@
       "title": "Berserker",
       "description": "Defeat 3 enemies with continuous Break Issen attacks.",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/ef77c7a658ff6d24fc283c3edb3d47387c7c8d6c.jpg",
-      "globalPercent": 75.4
+      "globalPercent": 75.3
     },
     {
       "title": "Howling Wind",
@@ -220,15 +220,15 @@
       "globalPercent": 57.9
     },
     {
-      "title": "Serves You Right",
-      "description": "Defeat the Byakue at Kiyomizu-dera Temple.",
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/1bf022afa8baf2313ca444b5ef31d4bdc848dc19.jpg",
-      "globalPercent": 53.7
-    },
-    {
       "title": "Helm Splitter",
       "description": "Break 100 shields or pieces of enemy armor.",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/20c9367ad2855b1442179c3e6692d0c20ff0c342.jpg",
+      "globalPercent": 53.8
+    },
+    {
+      "title": "Serves You Right",
+      "description": "Defeat the Byakue at Kiyomizu-dera Temple.",
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/1bf022afa8baf2313ca444b5ef31d4bdc848dc19.jpg",
       "globalPercent": 53.7
     },
     {
@@ -241,7 +241,7 @@
       "title": "Burning Blade",
       "description": "Defeat 50 foes while in the Blazing State.",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/2e2985f716db9a7f1b0ead66a9f6a442847aeb79.jpg",
-      "globalPercent": 52.3
+      "globalPercent": 52.4
     },
     {
       "title": "Untouchable",
@@ -259,7 +259,7 @@
       "title": "Selfish Selflessness",
       "description": "Rescue a merchant that's being attacked by Genma.",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/5a8ca195af887717d70689537b1c406ddf23d489.jpg",
-      "globalPercent": 49.4
+      "globalPercent": 49.5
     },
     {
       "title": "Wide Awake",
@@ -271,7 +271,7 @@
       "title": "Brutalist",
       "description": "Land 50 Issen attacks.",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/fe85b6d7273801eb03db2f67e757d8ecf958e0bd.jpg",
-      "globalPercent": 42.1
+      "globalPercent": 42.2
     },
     {
       "title": "Health Is Wealth",
@@ -283,7 +283,7 @@
       "title": "The Perfect Storm",
       "description": null,
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/6da6e51f95a3b364e8ebfb4afcca338e61a6f759.jpg",
-      "globalPercent": 39.3
+      "globalPercent": 39.4
     },
     {
       "title": "Deadeye",
@@ -295,7 +295,7 @@
       "title": "We Done Here?",
       "description": null,
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/f08bf1689ea5078269987d69586d650f3ccaa99c.jpg",
-      "globalPercent": 35
+      "globalPercent": 35.1
     },
     {
       "title": "Stop Motion",
@@ -325,13 +325,13 @@
       "title": "Demystified",
       "description": "Complete all Mysteries of Kyoto.",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/2f4a06092f14d69eef0098e5c32ca9ec75450a65.jpg",
-      "globalPercent": 31.6
+      "globalPercent": 31.7
     },
     {
       "title": "Baited by Benkei",
       "description": null,
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/9fc7faf06213a568ef577a70407002e867c6385d.jpg",
-      "globalPercent": 31
+      "globalPercent": 31.1
     },
     {
       "title": "Truly, Thank You",
@@ -355,7 +355,7 @@
       "title": "For the Love of Dog",
       "description": "Rescue all the Lion Dogs.",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/d636d85597ce87f0e0fb6146864a1034589d900c.jpg",
-      "globalPercent": 23.1
+      "globalPercent": 23.2
     },
     {
       "title": "The Winding Way of the Sword",
@@ -379,7 +379,7 @@
       "title": "Well-Rounded",
       "description": "Learn and upgrade all basic and special skills.",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/10c15c122e9297e808e86c3cdedbb6f3231f1b11.jpg",
-      "globalPercent": 11.9
+      "globalPercent": 12
     },
     {
       "title": "Flow State",

@@ -1,0 +1,115 @@
+{
+  "slug": "silent-hill-townfall",
+  "host": "silenthill.fandom.com",
+  "fetchedAt": "2026-09-15",
+  "entities": [
+    {
+      "title": "Pipe",
+      "wikiTitle": "Pipe",
+      "collection": "items",
+      "facts": {
+        "imagesize": "150px",
+        "description": "\"A pipe used for plumbing, usually steel.\"",
+        "range": "Low-Medium",
+        "strength": "Medium",
+        "location": "Varies",
+        "debut": "Silent Hill",
+        "otherappearances": "*Silent Hill 2, Silent Hill 3, Silent Hill 4: The Room, Silent Hill: Homecoming, Silent Hill: Downpour, Silent Hill: Book of Memories, Silent Hill 2 (2024), Silent Hill ƒ"
+      },
+      "categories": [
+        "Blunt",
+        "Breakable",
+        "Melee",
+        "Ranged",
+        "Silent Hill: Book of Memories Weapons",
+        "Silent Hill: Downpour Weapons",
+        "Silent Hill: Homecoming Weapons",
+        "Silent Hill: Townfall Weapons",
+        "Silent Hill 2 (2024 video game) Weapons",
+        "Silent Hill 2 Weapons",
+        "Silent Hill 3 Weapons",
+        "Silent Hill 4: The Room Weapons",
+        "Silent Hill Weapons",
+        "Silent Hill f Weapons",
+        "Weapons"
+      ],
+      "url": "https://silenthill.fandom.com/wiki/Pipe"
+    },
+    {
+      "title": "Revolver",
+      "wikiTitle": "Revolver",
+      "collection": "items",
+      "facts": {
+        "description": "\"Max load is 10 bullets.Easy to use but not much power.\"",
+        "range": "Medium",
+        "strength": "Low-High",
+        "location": "Varies",
+        "debut": "Silent Hill 2: Born from a Wish",
+        "otherappearances": "*Silent Hill 4: The Room, Silent Hill: Origins"
+      },
+      "categories": [
+        "Firearms",
+        "Ranged",
+        "Silent Hill: Origins Weapons",
+        "Silent Hill: Townfall Weapons",
+        "Silent Hill 2 Weapons",
+        "Silent Hill 4: The Room Weapons",
+        "Weapons"
+      ],
+      "url": "https://silenthill.fandom.com/wiki/Revolver"
+    },
+    {
+      "title": "Simon Ordell",
+      "wikiTitle": "Simon Ordell",
+      "collection": "characters",
+      "facts": {
+        "fullname": "Simon Ordell",
+        "gender": "Male",
+        "debut": "Silent Hill: Townfall",
+        "actor": "Jovan Adepo, Hiroki Yasumoto (Japanese dub)",
+        "born": "October 15, 1959"
+      },
+      "categories": [
+        "Characters",
+        "Male Characters",
+        "Playable Characters",
+        "Protagonists",
+        "Silent Hill: Townfall Characters"
+      ],
+      "url": "https://silenthill.fandom.com/wiki/Simon_Ordell"
+    },
+    {
+      "title": "Zoe Ellis",
+      "wikiTitle": "Zoe Ellis",
+      "collection": "characters",
+      "facts": {
+        "fullname": "Zoe Ellis",
+        "gender": "Female",
+        "debut": "Silent Hill: Townfall",
+        "actor": "Kezia Burrows, Yuko Kaida (Japanese dub)"
+      },
+      "categories": [
+        "Characters",
+        "Female Characters",
+        "Silent Hill: Townfall Characters"
+      ],
+      "url": "https://silenthill.fandom.com/wiki/Zoe_Ellis"
+    },
+    {
+      "title": "Richard",
+      "wikiTitle": "Richard",
+      "collection": "characters",
+      "facts": {
+        "gender": "Male",
+        "debut": "Silent Hill: Townfall",
+        "actor": "Terry O'Quinn, Akio Otsuka (Japanese dub)"
+      },
+      "categories": [
+        "Characters",
+        "Male Characters",
+        "Silent Hill: Townfall Characters"
+      ],
+      "url": "https://silenthill.fandom.com/wiki/Richard"
+    }
+  ]
+}

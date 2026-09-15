@@ -49,6 +49,7 @@ const GAMES = [
   { slug: 'gears-of-war-e-day', appId: 3010850 },
   { slug: 'star-wars-zero-company', appId: 2075800 },
   { slug: 'resonance-a-plague-tale-legacy', appId: 2713000 },
+  { slug: 'silent-hill-townfall', appId: 1636440 },
 ]
 
 const OUT_DIR = path.resolve('src/seed/raw/games')

@@ -20,7 +20,22 @@ export async function generateMetadata(): Promise<Metadata> {
       template: `%s · ${settings.siteName}`,
     },
     applicationName: settings.siteName,
-    openGraph: { siteName: settings.siteName, type: 'website', locale: 'en' },
+    // The hub's own. Each wiki overrides these with its game's art.
+    icons: {
+      icon: [
+        { url: '/icon.svg', type: 'image/svg+xml' },
+        { url: '/favicon-32.png', type: 'image/png', sizes: '32x32' },
+        { url: '/icon-512.png', type: 'image/png', sizes: '512x512' },
+      ],
+      apple: '/apple-touch-icon.png',
+    },
+    openGraph: {
+      siteName: settings.siteName,
+      type: 'website',
+      locale: 'en',
+      images: [{ url: '/og.png', width: 1200, height: 630, alt: settings.tagline ?? settings.siteName }],
+    },
+    twitter: { card: 'summary_large_image', images: ['/og.png'] },
     verification: verificationMetadata(await resolveTags()),
   }
 }

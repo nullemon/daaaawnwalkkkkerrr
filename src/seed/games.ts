@@ -155,6 +155,23 @@ export const games: SeedGame[] = [
     features: ['comments'],
     theme: { accent: '#8a6a2f' },
   },
+  {
+    slug: 'silent-hill-townfall',
+    title: 'Silent Hill: Townfall',
+    shortTitle: 'Silent Hill Townfall',
+    status: 'building',
+    tagline: 'A new town, and the same problem with it.',
+    summary:
+      'Screen Burn’s entry in the Silent Hill series, published by Konami with Annapurna Interactive. A first-person psychological horror game.',
+    publisher: 'Konami, Annapurna Interactive',
+    developer: 'Screen Burn',
+    releaseDate: '2026-09-23',
+    releaseDateConfirmed: true,
+    platforms: ['PC'],
+    storeUrl: 'https://store.steampowered.com/app/1636440/',
+    features: ['comments'],
+    theme: { accent: '#6b6f52' },
+  },
 ]
 
 /** The game every existing record belongs to, and the one the tools were built for. */
