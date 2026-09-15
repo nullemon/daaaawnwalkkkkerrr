@@ -56,6 +56,19 @@ const listOf = (values: string[]) =>
     ? (values[0] ?? '')
     : `${values.slice(0, -1).join(', ')} and ${values[values.length - 1]}`
 
+/**
+ * Fields that make a fine comparison column and a useless grouping.
+ *
+ * Splitting a cast in two by `gender` tells a reader nothing they came for,
+ * and `developer` or `publisher` on an entity record is franchise metadata
+ * that leaked in from the wiki's own infobox templates - grouping locations
+ * on it produced "Every location in Silent Hill: Townfall with developer
+ * Konami". A grouping has to be a property of the thing, not of the product
+ * it appears in.
+ */
+const NOT_A_GROUPING_KEY =
+  /^(gender|sex|developer|publisher|director|producer|composer|designer|writer|artist|platforms?|released?|engine|series|debut|voice ?actors?|language)$/i
+
 /** Infobox keys that identify rather than describe, so make poor comparisons. */
 const NOT_COMPARABLE =
   /^(name|title|image|caption|imagecaption|alt|wiki|url|id|appearances?|voice|actor|portrayed|quote|hidecat|width|height|px)$/i
@@ -644,7 +657,14 @@ async function run(): Promise<void> {
           manufacturer, every character by allegiance. A different axis from
           the category roundups, which use the source wiki's own filing.
         */
-        const groupKey = shared[0]
+        /*
+          The grouping field is not always the strongest field. "Every enemy
+          with gender Male" is a true statement about the data and a
+          worthless page. Take the strongest field worth sorting on, or write
+          no grouping page for this collection at all.
+        */
+        const groupKey = shared.find((key) => !NOT_A_GROUPING_KEY.test(key))
+        if (!groupKey) continue
         const groups = new Map<string, string[]>()
         for (const member of sorted) {
           const value = member.facts?.[groupKey]

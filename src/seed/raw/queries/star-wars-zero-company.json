@@ -8,598 +8,6706 @@
   "queries": [
     {
       "query": "star wars zero company is it multiplayer",
-      "weight": 7
+      "weight": 30
     },
     {
       "query": "star wars zero company is it canon",
-      "weight": 6
+      "weight": 28
     },
     {
       "query": "star wars zero company is it like xcom",
-      "weight": 6
+      "weight": 28
     },
     {
       "query": "star wars zero company can you be a jedi",
-      "weight": 5
-    },
-    {
-      "query": "star wars zero company how long to beat",
-      "weight": 5
-    },
-    {
-      "query": "star wars zero company what is it",
-      "weight": 5
-    },
-    {
-      "query": "star wars zero company can you make your own character",
-      "weight": 4
-    },
-    {
-      "query": "star wars zero company how long",
-      "weight": 4
-    },
-    {
-      "query": "star wars zero company how long will it be",
-      "weight": 4
-    },
-    {
-      "query": "star wars zero company how many characters",
-      "weight": 4
-    },
-    {
-      "query": "star wars zero company is it coop",
-      "weight": 4
-    },
-    {
-      "query": "star wars zero company is it out",
-      "weight": 4
-    },
-    {
-      "query": "star wars zero company is there romance",
-      "weight": 4
-    },
-    {
-      "query": "star wars zero company trophy guide",
-      "weight": 4
-    },
-    {
-      "query": "star wars zero company when does it take place",
-      "weight": 4
-    },
-    {
-      "query": "what is a net zero company",
-      "weight": 4
-    },
-    {
-      "query": "zero company when does it take place",
-      "weight": 4
-    },
-    {
-      "query": "star wars zero company all characters",
-      "weight": 3
-    },
-    {
-      "query": "star wars zero company all classes",
-      "weight": 3
-    },
-    {
-      "query": "star wars zero company best buy",
-      "weight": 3
-    },
-    {
-      "query": "star wars zero company best price",
-      "weight": 3
-    },
-    {
-      "query": "star wars zero company can you create your own character",
-      "weight": 3
-    },
-    {
-      "query": "star wars zero company can you customize jedi",
-      "weight": 3
-    },
-    {
-      "query": "star wars zero company can you play as a jedi",
-      "weight": 3
-    },
-    {
-      "query": "star wars zero company can you turn off permadeath",
-      "weight": 3
-    },
-    {
-      "query": "star wars zero company characters",
-      "weight": 3
-    },
-    {
-      "query": "star wars zero company gameplay",
-      "weight": 3
-    },
-    {
-      "query": "star wars zero company how many planets",
-      "weight": 3
-    },
-    {
-      "query": "star wars zero company how many players",
-      "weight": 3
-    },
-    {
-      "query": "star wars zero company how much",
-      "weight": 3
-    },
-    {
-      "query": "star wars zero company is expected to release in 2026",
-      "weight": 3
-    },
-    {
-      "query": "star wars zero company is it an rpg",
-      "weight": 3
-    },
-    {
-      "query": "star wars zero company microsoft windows store",
-      "weight": 3
-    },
-    {
-      "query": "star wars zero company ps5",
-      "weight": 3
-    },
-    {
-      "query": "star wars zero company ps5 disc",
-      "weight": 3
-    },
-    {
-      "query": "star wars zero company reddit",
-      "weight": 3
-    },
-    {
-      "query": "star wars zero company release date",
-      "weight": 3
-    },
-    {
-      "query": "star wars zero company steam",
-      "weight": 3
-    },
-    {
-      "query": "star wars zero company system requirements",
-      "weight": 3
-    },
-    {
-      "query": "star wars zero company walkthrough",
-      "weight": 3
-    },
-    {
-      "query": "star wars zero company when does it come out",
-      "weight": 3
-    },
-    {
-      "query": "star wars zero company when is it coming out",
-      "weight": 3
-    },
-    {
-      "query": "star wars zero company when is it set",
-      "weight": 3
-    },
-    {
-      "query": "zero company baby clothes",
-      "weight": 3
-    },
-    {
-      "query": "zero company clothes",
-      "weight": 3
-    },
-    {
-      "query": "zero company how long to beat",
-      "weight": 3
-    },
-    {
-      "query": "zero company india",
-      "weight": 3
-    },
-    {
-      "query": "zero company kids clothes",
-      "weight": 3
-    },
-    {
-      "query": "zero company mobile",
-      "weight": 3
-    },
-    {
-      "query": "zero company owner",
-      "weight": 3
-    },
-    {
-      "query": "zero company phone",
-      "weight": 3
-    },
-    {
-      "query": "zero company reviews",
-      "weight": 3
-    },
-    {
-      "query": "zero company shirt",
-      "weight": 3
-    },
-    {
-      "query": "star wars zero company all clones",
-      "weight": 2
-    },
-    {
-      "query": "star wars zero company big w",
-      "weight": 2
-    },
-    {
-      "query": "star wars zero company can hawks be a jedi",
-      "weight": 2
-    },
-    {
-      "query": "star wars zero company can you have multiple clones",
-      "weight": 2
-    },
-    {
-      "query": "star wars zero company can you run it",
-      "weight": 2
-    },
-    {
-      "query": "star wars zero company com",
-      "weight": 2
-    },
-    {
-      "query": "star wars zero company how many classes",
-      "weight": 2
-    },
-    {
-      "query": "star wars zero company how many jedi",
-      "weight": 2
-    },
-    {
-      "query": "star wars zero company how many missions",
-      "weight": 2
-    },
-    {
-      "query": "star wars zero company is it co op",
-      "weight": 2
-    },
-    {
-      "query": "star wars zero company q&a",
-      "weight": 2
-    },
-    {
-      "query": "star wars zero company quando esce",
-      "weight": 2
-    },
-    {
-      "query": "star wars zero company que es",
-      "weight": 2
-    },
-    {
-      "query": "star wars zero company what console",
-      "weight": 2
-    },
-    {
-      "query": "star wars zero company what kind of game is it",
-      "weight": 2
-    },
-    {
-      "query": "star wars zero company what platform",
-      "weight": 2
-    },
-    {
-      "query": "star wars zero company what type of game",
-      "weight": 2
-    },
-    {
-      "query": "star wars zero company when",
-      "weight": 2
-    },
-    {
-      "query": "star wars zero company when was it announced",
-      "weight": 2
-    },
-    {
-      "query": "star wars zero company where to play",
-      "weight": 2
+      "weight": 22
     },
     {
       "query": "star wars zero company will it have multiplayer",
-      "weight": 2
+      "weight": 22
+    },
+    {
+      "query": "what is a net zero company",
+      "weight": 22
+    },
+    {
+      "query": "star wars zero company is it coop",
+      "weight": 18
+    },
+    {
+      "query": "star wars zero company is it out",
+      "weight": 18
     },
     {
       "query": "star wars zero company will there be romance",
-      "weight": 2
+      "weight": 18
     },
     {
-      "query": "star wars zero company youtube",
-      "weight": 2
+      "query": "star wars zero company can you make your own character",
+      "weight": 17
     },
     {
-      "query": "zero company all characters",
-      "weight": 2
+      "query": "star wars zero company can you create your own character",
+      "weight": 16
     },
     {
-      "query": "zero company all classes",
-      "weight": 2
+      "query": "star wars zero company is it an rpg",
+      "weight": 16
     },
     {
-      "query": "zero company in bangalore",
-      "weight": 2
+      "query": "star wars zero company release date",
+      "weight": 16
     },
     {
-      "query": "zero company isthereanydeal",
-      "weight": 2
+      "query": "star wars zero company similar to xcom",
+      "weight": 16
     },
     {
-      "query": "zero company star wars",
-      "weight": 2
+      "query": "star wars zero company can you customize jedi",
+      "weight": 14
     },
     {
-      "query": "de que va star wars zero company",
-      "weight": 1
+      "query": "star wars zero company can you play as a jedi",
+      "weight": 14
     },
     {
-      "query": "does zero company have a release date",
-      "weight": 1
+      "query": "star wars zero company free to play",
+      "weight": 14
     },
     {
-      "query": "how big will star wars zero company be",
-      "weight": 1
+      "query": "star wars zero company how long to beat",
+      "weight": 14
     },
     {
-      "query": "is zero company out yet",
-      "weight": 1
+      "query": "star wars zero company how much",
+      "weight": 14
     },
     {
-      "query": "quand sort star wars zero company",
-      "weight": 1
+      "query": "star wars zero company is there romance",
+      "weight": 14
     },
     {
-      "query": "quando lança star wars zero company",
-      "weight": 1
+      "query": "star wars zero company number of players",
+      "weight": 14
     },
     {
-      "query": "star wars zero company",
-      "weight": 1
+      "query": "star wars zero company what is it",
+      "weight": 14
     },
     {
-      "query": "star wars zero company achievements",
-      "weight": 1
+      "query": "star wars zero company when does it take place",
+      "weight": 14
     },
     {
-      "query": "star wars zero company actors",
-      "weight": 1
+      "query": "zero company when does it take place",
+      "weight": 14
     },
     {
-      "query": "star wars zero company age rating",
-      "weight": 1
+      "query": "star wars zero company can you turn off permadeath",
+      "weight": 13
     },
     {
-      "query": "star wars zero company all companions",
-      "weight": 1
+      "query": "star wars zero company all characters",
+      "weight": 12
     },
     {
-      "query": "star wars zero company all editions",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company all outfits",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company all races",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company all species",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company all weapons",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company allkeyshop",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company amazon",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company anakin",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company anakin skywalker",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company announcement",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company any good",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company any news",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company arc trooper",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company base building",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company best class",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company best platform",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company beta",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company beta test",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company bit reactor",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company br-1 droid",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company budget",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company buy",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company can you make your own jedi",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company can you name characters",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company can you play it early",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company can you recruit clones",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company cast",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company character creation",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company character customization",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company classes",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company cly kullervo",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company co to za gra",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company collector's edition",
-      "weight": 1
+      "query": "star wars zero company best price",
+      "weight": 12
     },
     {
       "query": "star wars zero company coming to switch 2",
-      "weight": 1
+      "weight": 12
     },
     {
-      "query": "star wars zero company consoles",
-      "weight": 1
+      "query": "star wars zero company how long",
+      "weight": 12
     },
     {
-      "query": "star wars zero company coop",
-      "weight": 1
+      "query": "star wars zero company how long will it be",
+      "weight": 12
     },
     {
-      "query": "star wars zero company cost",
-      "weight": 1
+      "query": "star wars zero company how many characters",
+      "weight": 12
     },
     {
-      "query": "star wars zero company customization",
-      "weight": 1
+      "query": "star wars zero company release date ps5",
+      "weight": 12
     },
     {
-      "query": "star wars zero company de que trata",
-      "weight": 1
+      "query": "star wars zero company trophy guide",
+      "weight": 12
     },
     {
-      "query": "star wars zero company deluxe",
-      "weight": 1
+      "query": "star wars zero company when does it come out",
+      "weight": 12
     },
     {
-      "query": "star wars zero company deluxe edition",
-      "weight": 1
+      "query": "star wars zero company will it be good",
+      "weight": 12
     },
     {
-      "query": "star wars zero company deluxe edition content",
-      "weight": 1
+      "query": "zero company release date",
+      "weight": 12
     },
     {
-      "query": "star wars zero company deluxe edition physical copy",
-      "weight": 1
+      "query": "zero company release date ps5",
+      "weight": 12
     },
     {
-      "query": "star wars zero company deluxe edition ps5",
-      "weight": 1
+      "query": "zero company release time",
+      "weight": 12
     },
     {
-      "query": "star wars zero company demo",
-      "weight": 1
+      "query": "zero company reviews",
+      "weight": 12
     },
     {
-      "query": "star wars zero company developer",
-      "weight": 1
+      "query": "star wars zero company best buy",
+      "weight": 10
     },
     {
-      "query": "star wars zero company devs",
-      "weight": 1
+      "query": "star wars zero company can hawks be a jedi",
+      "weight": 10
+    },
+    {
+      "query": "star wars zero company can you have multiple clones",
+      "weight": 10
+    },
+    {
+      "query": "star wars zero company can you run it",
+      "weight": 10
     },
     {
       "query": "star wars zero company difficulty settings",
-      "weight": 1
+      "weight": 10
+    },
+    {
+      "query": "star wars zero company gameplay",
+      "weight": 10
+    },
+    {
+      "query": "star wars zero company how many planets",
+      "weight": 10
+    },
+    {
+      "query": "star wars zero company how many players",
+      "weight": 10
+    },
+    {
+      "query": "star wars zero company is expected to release in 2026",
+      "weight": 10
+    },
+    {
+      "query": "star wars zero company is it open world",
+      "weight": 10
+    },
+    {
+      "query": "star wars zero company price",
+      "weight": 10
+    },
+    {
+      "query": "star wars zero company que es",
+      "weight": 10
+    },
+    {
+      "query": "star wars zero company que tipo de juego es",
+      "weight": 10
+    },
+    {
+      "query": "star wars zero company reddit",
+      "weight": 10
+    },
+    {
+      "query": "star wars zero company steam key",
+      "weight": 10
+    },
+    {
+      "query": "star wars zero company switch 2",
+      "weight": 10
+    },
+    {
+      "query": "star wars zero company switch 2 reddit",
+      "weight": 10
+    },
+    {
+      "query": "star wars zero company time to beat",
+      "weight": 10
+    },
+    {
+      "query": "star wars zero company turn based",
+      "weight": 10
+    },
+    {
+      "query": "star wars zero company when is it coming out",
+      "weight": 10
+    },
+    {
+      "query": "star wars zero company when is it set",
+      "weight": 10
+    },
+    {
+      "query": "star wars zero company where to play",
+      "weight": 10
+    },
+    {
+      "query": "zero company all characters",
+      "weight": 10
+    },
+    {
+      "query": "star wars zero company all classes",
+      "weight": 9
+    },
+    {
+      "query": "star wars zero company microsoft windows store",
+      "weight": 9
+    },
+    {
+      "query": "star wars zero company release",
+      "weight": 9
+    },
+    {
+      "query": "star wars zero company review",
+      "weight": 9
+    },
+    {
+      "query": "zero company release",
+      "weight": 9
+    },
+    {
+      "query": "star wars zero company all clones",
+      "weight": 8
+    },
+    {
+      "query": "star wars zero company all races",
+      "weight": 8
+    },
+    {
+      "query": "star wars zero company characters",
+      "weight": 8
+    },
+    {
+      "query": "star wars zero company com",
+      "weight": 8
+    },
+    {
+      "query": "star wars zero company de que trata",
+      "weight": 8
+    },
+    {
+      "query": "star wars zero company deluxe edition worth it",
+      "weight": 8
+    },
+    {
+      "query": "star wars zero company game length",
+      "weight": 8
+    },
+    {
+      "query": "star wars zero company gameplay trailer",
+      "weight": 8
+    },
+    {
+      "query": "star wars zero company geforce now",
+      "weight": 8
+    },
+    {
+      "query": "star wars zero company jae mordant",
+      "weight": 8
+    },
+    {
+      "query": "star wars zero company jedi race",
+      "weight": 8
+    },
+    {
+      "query": "star wars zero company length",
+      "weight": 8
+    },
+    {
+      "query": "star wars zero company like bg3",
+      "weight": 8
+    },
+    {
+      "query": "star wars zero company like kotor",
+      "weight": 8
+    },
+    {
+      "query": "star wars zero company like xcom",
+      "weight": 8
+    },
+    {
+      "query": "star wars zero company minimum requirements",
+      "weight": 8
+    },
+    {
+      "query": "star wars zero company mod support",
+      "weight": 8
+    },
+    {
+      "query": "star wars zero company mods",
+      "weight": 8
+    },
+    {
+      "query": "star wars zero company news today",
+      "weight": 8
+    },
+    {
+      "query": "star wars zero company pc or console",
+      "weight": 8
+    },
+    {
+      "query": "star wars zero company pre order",
+      "weight": 8
+    },
+    {
+      "query": "star wars zero company pre order bonus",
+      "weight": 8
+    },
+    {
+      "query": "star wars zero company preview",
+      "weight": 8
+    },
+    {
+      "query": "star wars zero company price ps5",
+      "weight": 8
+    },
+    {
+      "query": "star wars zero company ps5",
+      "weight": 8
+    },
+    {
+      "query": "star wars zero company ps5 disc",
+      "weight": 8
+    },
+    {
+      "query": "star wars zero company quando esce",
+      "weight": 8
+    },
+    {
+      "query": "star wars zero company release date reddit",
+      "weight": 8
+    },
+    {
+      "query": "star wars zero company release date xbox",
+      "weight": 8
+    },
+    {
+      "query": "star wars zero company similar games",
+      "weight": 8
+    },
+    {
+      "query": "star wars zero company system requirements",
+      "weight": 8
+    },
+    {
+      "query": "star wars zero company time period",
+      "weight": 8
+    },
+    {
+      "query": "star wars zero company tognath",
+      "weight": 8
+    },
+    {
+      "query": "star wars zero company togruta",
+      "weight": 8
+    },
+    {
+      "query": "star wars zero company turn based tactics game coming 2026",
+      "weight": 8
+    },
+    {
+      "query": "star wars zero company vic michaelis",
+      "weight": 8
+    },
+    {
+      "query": "star wars zero company vs xcom",
+      "weight": 8
+    },
+    {
+      "query": "star wars zero company walkthrough",
+      "weight": 8
+    },
+    {
+      "query": "star wars zero company weapons",
+      "weight": 8
+    },
+    {
+      "query": "star wars zero company when was it announced",
+      "weight": 8
+    },
+    {
+      "query": "star wars zero company who do you play as",
+      "weight": 8
+    },
+    {
+      "query": "star wars zero company youtube",
+      "weight": 8
+    },
+    {
+      "query": "will zero company be multiplayer",
+      "weight": 8
+    },
+    {
+      "query": "zero company all classes",
+      "weight": 8
+    },
+    {
+      "query": "zero company all races",
+      "weight": 8
+    },
+    {
+      "query": "zero company baby clothes",
+      "weight": 8
+    },
+    {
+      "query": "zero company clothes",
+      "weight": 8
+    },
+    {
+      "query": "zero company game length",
+      "weight": 8
+    },
+    {
+      "query": "zero company hand free",
+      "weight": 8
+    },
+    {
+      "query": "zero company how long to beat",
+      "weight": 8
+    },
+    {
+      "query": "zero company ke earbuds",
+      "weight": 8
+    },
+    {
+      "query": "zero company ki smart watch",
+      "weight": 8
+    },
+    {
+      "query": "zero company ki watch",
+      "weight": 8
+    },
+    {
+      "query": "zero company kids clothes",
+      "weight": 8
+    },
+    {
+      "query": "zero company mobile",
+      "weight": 8
+    },
+    {
+      "query": "zero company number",
+      "weight": 8
+    },
+    {
+      "query": "zero company pre order bonus",
+      "weight": 8
+    },
+    {
+      "query": "zero company review embargo",
+      "weight": 8
+    },
+    {
+      "query": "zero company earbuds price in pakistan",
+      "weight": 7
+    },
+    {
+      "query": "de que va star wars zero company",
+      "weight": 6
+    },
+    {
+      "query": "does star wars zero company have a release date",
+      "weight": 6
+    },
+    {
+      "query": "is star wars zero company out yet",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company all editions",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company any good",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company any news",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company arc trooper",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company base building",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company beta",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company big w",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company bit reactor",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company campaign length and linear story confirmed",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company canon",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company cast",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company co to za gra",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company deals",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company difficulty",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company difficulty levels",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company difficulty options",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company download",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company duration",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company fate of the old republic",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company features",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company features a jedi padawan named tel",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company fecha de salida",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company female characters",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company for switch 2",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company free",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company game pass",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company genre",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company gog",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company good",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company grand army of the republic pack",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company hawks customization",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company hawks jedi",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company hawks voice actor",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company hltb",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company how many classes",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company is it co op",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company is it turn based",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company jae",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company jedi class",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company jedi customization",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company jedi droid",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company kopen",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company kotor",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company kpop",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company launch date",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company looks bad",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company luco bronc",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company map",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company nintendo",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company nintendo switch",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company nintendo switch 2",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company no custom jedi",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company o'que é",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company order 66",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company pc",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company pc requirements",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company playstation 5 store",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company pre order collector's edition",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company pre order deluxe edition",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company pre order xbox",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company protagonist",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company ps5 or pc",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company q&a",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company qa",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company rating",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company release date 2026",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company requirements",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company requires content download",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company review embargo",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company romance",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company romance options",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company runa blask",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company steam",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company steam deck",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company story",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company story length",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company story mode",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company switch",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company timeline",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company trick",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company turn off permadeath",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company ui",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company ultimate edition",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company versions",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company video",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company video game",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company voice cast",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company voices",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company website",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company what kind of game is it",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company who is making it",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company worth it",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company xbox",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company xbox game pass",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company xbox one",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company xbox series x",
+      "weight": 6
+    },
+    {
+      "query": "wann kommt star wars zero company raus",
+      "weight": 6
+    },
+    {
+      "query": "zero and company",
+      "weight": 6
+    },
+    {
+      "query": "zero and company reviews",
+      "weight": 6
+    },
+    {
+      "query": "zero and company srl",
+      "weight": 6
+    },
+    {
+      "query": "zero company airpods price in pakistan",
+      "weight": 6
+    },
+    {
+      "query": "zero company all clones",
+      "weight": 6
+    },
+    {
+      "query": "zero company base building",
+      "weight": 6
+    },
+    {
+      "query": "zero company can you make a jedi",
+      "weight": 6
+    },
+    {
+      "query": "zero company character creation",
+      "weight": 6
+    },
+    {
+      "query": "zero company ea",
+      "weight": 6
+    },
+    {
+      "query": "zero company earbuds",
+      "weight": 6
+    },
+    {
+      "query": "zero company early access",
+      "weight": 6
+    },
+    {
+      "query": "zero company early reviews",
+      "weight": 6
+    },
+    {
+      "query": "zero company gameplay",
+      "weight": 6
+    },
+    {
+      "query": "zero company gameplay trailer",
+      "weight": 6
+    },
+    {
+      "query": "zero company geforce now",
+      "weight": 6
+    },
+    {
+      "query": "zero company hawks voice actor",
+      "weight": 6
+    },
+    {
+      "query": "zero company in bangalore",
+      "weight": 6
+    },
+    {
+      "query": "zero company india",
+      "weight": 6
+    },
+    {
+      "query": "zero company ka mobile",
+      "weight": 6
+    },
+    {
+      "query": "zero company ka number",
+      "weight": 6
+    },
+    {
+      "query": "zero company ka phone",
+      "weight": 6
+    },
+    {
+      "query": "zero company ke headphone",
+      "weight": 6
+    },
+    {
+      "query": "zero company kids wear",
+      "weight": 6
+    },
+    {
+      "query": "zero company launch date",
+      "weight": 6
+    },
+    {
+      "query": "zero company length",
+      "weight": 6
+    },
+    {
+      "query": "zero company location",
+      "weight": 6
+    },
+    {
+      "query": "zero company meta quest",
+      "weight": 6
+    },
+    {
+      "query": "zero company mod support",
+      "weight": 6
+    },
+    {
+      "query": "zero company mods",
+      "weight": 6
+    },
+    {
+      "query": "zero company net worth",
+      "weight": 6
+    },
+    {
+      "query": "zero company nintendo switch",
+      "weight": 6
+    },
+    {
+      "query": "zero company order 66",
+      "weight": 6
+    },
+    {
+      "query": "zero company origin",
+      "weight": 6
+    },
+    {
+      "query": "zero company owner",
+      "weight": 6
+    },
+    {
+      "query": "zero company phone",
+      "weight": 6
+    },
+    {
+      "query": "zero company price",
+      "weight": 6
+    },
+    {
+      "query": "zero company reddit",
+      "weight": 6
+    },
+    {
+      "query": "zero company release date and time",
+      "weight": 6
+    },
+    {
+      "query": "zero company release date early access",
+      "weight": 6
+    },
+    {
+      "query": "zero company requirements",
+      "weight": 6
+    },
+    {
+      "query": "zero company shirt",
+      "weight": 6
+    },
+    {
+      "query": "zero company trick",
+      "weight": 6
+    },
+    {
+      "query": "zero company turn based",
+      "weight": 6
+    },
+    {
+      "query": "zero company vic michaelis",
+      "weight": 6
+    },
+    {
+      "query": "zero company vs xcom",
+      "weight": 6
+    },
+    {
+      "query": "zero company watch price",
+      "weight": 6
+    },
+    {
+      "query": "zero company watch price in pakistan",
+      "weight": 6
+    },
+    {
+      "query": "zero company weapons",
+      "weight": 6
+    },
+    {
+      "query": "zero company wiki",
+      "weight": 6
+    },
+    {
+      "query": "zero one company qatar",
+      "weight": 6
+    },
+    {
+      "query": "zero to company",
+      "weight": 6
+    },
+    {
+      "query": "star wars zero company date de sortie",
+      "weight": 5
+    },
+    {
+      "query": "star wars zero company era",
+      "weight": 5
+    },
+    {
+      "query": "star wars zero company gameplay video",
+      "weight": 5
+    },
+    {
+      "query": "star wars zero company jedi",
+      "weight": 5
+    },
+    {
+      "query": "star wars zero company jedi characters",
+      "weight": 5
+    },
+    {
+      "query": "star wars zero company jedi species",
+      "weight": 5
+    },
+    {
+      "query": "star wars zero company multiplayer",
+      "weight": 5
+    },
+    {
+      "query": "star wars zero company release time",
+      "weight": 5
+    },
+    {
+      "query": "star wars zero company setting",
+      "weight": 5
+    },
+    {
+      "query": "star wars zero company wiki",
+      "weight": 5
+    },
+    {
+      "query": "zero company custom jedi",
+      "weight": 5
+    },
+    {
+      "query": "zero company difficulty",
+      "weight": 5
+    },
+    {
+      "query": "zero company helpline number",
+      "weight": 5
+    },
+    {
+      "query": "zero company ke bluetooth",
+      "weight": 5
+    },
+    {
+      "query": "zero company night suit",
+      "weight": 5
+    },
+    {
+      "query": "zero company release date xbox",
+      "weight": 5
+    },
+    {
+      "query": "zero gravity company jaipur",
+      "weight": 5
+    },
+    {
+      "query": "double zero pizza company flanders nj",
+      "weight": 4
+    },
+    {
+      "query": "flipper zero company name",
+      "weight": 4
+    },
+    {
+      "query": "go zero company valuation",
+      "weight": 4
+    },
+    {
+      "query": "how big will star wars zero company be",
+      "weight": 4
+    },
+    {
+      "query": "is zero company out yet",
+      "weight": 4
+    },
+    {
+      "query": "jonathan freeman star wars zero company",
+      "weight": 4
+    },
+    {
+      "query": "quand sort star wars zero company",
+      "weight": 4
+    },
+    {
+      "query": "quando lança star wars zero company",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company 2",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company 2 player",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company age rating",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company all species",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company allkeyshop",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company are there jedi",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company art",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company artwork",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company august 2026",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company battle droid",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company behind the voice actors",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company best class",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company best platform",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company beta test",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company blog",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company bo katan",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company br-1 droid",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company brad pitt",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company budget",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company buy",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company campaign length",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company can i run it",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company can you make your own jedi",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company character creation",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company character customization",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company classes",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company clone customization",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company cly kullervo",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company collector's edition",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company consoles",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company coop",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company cost",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company cross save",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company cuando sale",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company customization",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company date de sortie initiale",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company day one game pass",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company dee bradley baker",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company deluxe",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company deluxe edition",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company deluxe edition content",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company deluxe edition physical copy",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company deluxe edition ps5",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company demo",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company developer",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company devs",
+      "weight": 4
     },
     {
       "query": "star wars zero company disc",
-      "weight": 1
+      "weight": 4
     },
     {
-      "query": "star wars zero company ea",
-      "weight": 1
+      "query": "star wars zero company dlc",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company do you create your own character",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company download size",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company duracion",
+      "weight": 4
     },
     {
       "query": "star wars zero company ea play",
-      "weight": 1
+      "weight": 4
     },
     {
       "query": "star wars zero company ea play pro",
-      "weight": 1
+      "weight": 4
     },
     {
       "query": "star wars zero company early access",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company early release",
-      "weight": 1
+      "weight": 4
     },
     {
       "query": "star wars zero company early review",
-      "weight": 1
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company easy mode",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company erscheinungsdatum",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company everything we know",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company factions",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company fanatical",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company fandom",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company fathom",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company fecha de lanzamiento",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company file size",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company firaxis",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company first person",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company for mac",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company for pc",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company for ps5",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company for switch",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company for xbox",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company forsworn trooper",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company fortnite",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company free roam",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company full clone squad",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company game",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company game engine",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company game size",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company gameplay deep dive",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company gameplay reveal",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company gameplay style",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company gg deals",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company gif",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company giveaway",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company guide",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company have multiplayer",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company hawks",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company hawks class",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company hawks species",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company historia",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company how many clones can you have",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company how many jedi",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company how many missions",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company ios",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company is a single player turn based tactics game",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company is it good",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company jake solomon",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company jedi padawan",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company kabb",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company kabb uppercut",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company key",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company key art",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company kiedy",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company kiedy premiera",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company klassen",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company konsole",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company latest news",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company launches august 27 for consoles and pc",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company launches in august according to reports",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company launches in august on multiple platforms",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company leaks",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company leaks reveal an august 2026 launch",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company like midnight suns",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company limited edition",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company limited run",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company linux",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company loaded",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company local co op",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company local multiplayer",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company logo",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company lore",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company luco",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company mac",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company made by xcom",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company made by xcom devs",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company main character",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company mandalorian",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company metacritic",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company midnight suns",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company mobile",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company multi",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company music",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company new game plus",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company new trailer",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company new zealand trick",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company news",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company no mod support",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company novel",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company official website",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company on gamepass",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company on ps5",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company on steam",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company on switch 2",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company on xbox",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company online multiplayer",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company open world",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company out",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company party size",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company pc gamer",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company pc key",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company platforms",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company playable characters",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company playable races",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company ps5 vs pc",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company publisher",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company queer",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company races",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company release date and time",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company release date and.time",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company release date early access",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company release date switch 2",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company releases august 27 featuring anakin skywalker",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company roona",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company roster",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company rumors",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company runa",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company rutube",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company similar to bg3",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company size",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company steam workshop",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company story characters",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company story trailer",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company storyline",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company summary",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company summer game fest",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company switch 2 release",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company switch 2 release date",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company time",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company tips",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company tips and tricks",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company trailer",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company trophies",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company type of game",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company uk",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company uk release date",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company va",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company villain",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company voice actor",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company wallpaper",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company what console",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company what platform",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company when",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company who is the clone",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company will it be on game pass",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company will it get dlc",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company will there be dlc",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company will there be jedi",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company wookieepedia",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company writer",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company xbox play anywhere",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company xbox pre order",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company xbox release date",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company xbox series x and series s store",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company xcom 2",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company zeb",
+      "weight": 4
+    },
+    {
+      "query": "star wars zero company zero company",
+      "weight": 4
+    },
+    {
+      "query": "summer game fest 2026 star wars zero company",
+      "weight": 4
+    },
+    {
+      "query": "what company owns star wars",
+      "weight": 4
+    },
+    {
+      "query": "what year does star wars zero company take place",
+      "weight": 4
+    },
+    {
+      "query": "when did star wars zero company come out",
+      "weight": 4
+    },
+    {
+      "query": "why is star wars zero company cheaper on pc",
+      "weight": 4
+    },
+    {
+      "query": "wie viel wird star wars zero company kosten",
+      "weight": 4
+    },
+    {
+      "query": "will star wars zero company be multiplayer",
+      "weight": 4
+    },
+    {
+      "query": "will star wars zero company be worth it",
+      "weight": 4
+    },
+    {
+      "query": "will star wars zero company support mods",
+      "weight": 4
+    },
+    {
+      "query": "zero 2 company",
+      "weight": 4
+    },
+    {
+      "query": "zero brokerage company gurgaon",
+      "weight": 4
+    },
+    {
+      "query": "zero bullet company fire",
+      "weight": 4
+    },
+    {
+      "query": "zero carbon company germany",
+      "weight": 4
+    },
+    {
+      "query": "zero company airpods",
+      "weight": 4
+    },
+    {
+      "query": "zero company all clone squad",
+      "weight": 4
+    },
+    {
+      "query": "zero company all species",
+      "weight": 4
+    },
+    {
+      "query": "zero company all weapons",
+      "weight": 4
+    },
+    {
+      "query": "zero company arc trooper",
+      "weight": 4
+    },
+    {
+      "query": "zero company australia",
+      "weight": 4
+    },
+    {
+      "query": "zero company baby dress",
+      "weight": 4
+    },
+    {
+      "query": "zero company baby vest",
+      "weight": 4
+    },
+    {
+      "query": "zero company bangalore",
+      "weight": 4
+    },
+    {
+      "query": "zero company beskar mode",
+      "weight": 4
+    },
+    {
+      "query": "zero company beta",
+      "weight": 4
+    },
+    {
+      "query": "zero company bit reactor",
+      "weight": 4
+    },
+    {
+      "query": "zero company bluetooth",
+      "weight": 4
+    },
+    {
+      "query": "zero company bluetooth price in pakistan",
+      "weight": 4
+    },
+    {
+      "query": "zero company br-1 droid",
+      "weight": 4
+    },
+    {
+      "query": "zero company brad pitt",
+      "weight": 4
+    },
+    {
+      "query": "zero company builds",
+      "weight": 4
+    },
+    {
+      "query": "zero company buy",
+      "weight": 4
+    },
+    {
+      "query": "zero company canon",
+      "weight": 4
+    },
+    {
+      "query": "zero company cast",
+      "weight": 4
+    },
+    {
+      "query": "zero company ceo",
+      "weight": 4
+    },
+    {
+      "query": "zero company character creator",
+      "weight": 4
+    },
+    {
+      "query": "zero company character customization",
+      "weight": 4
+    },
+    {
+      "query": "zero company characters",
+      "weight": 4
+    },
+    {
+      "query": "zero company classes",
+      "weight": 4
+    },
+    {
+      "query": "zero company clone",
+      "weight": 4
+    },
+    {
+      "query": "zero company clone trooper",
+      "weight": 4
+    },
+    {
+      "query": "zero company collector's edition",
+      "weight": 4
+    },
+    {
+      "query": "zero company customization",
+      "weight": 4
+    },
+    {
+      "query": "zero company deluxe edition",
+      "weight": 4
+    },
+    {
+      "query": "zero company deluxe edition ps5",
+      "weight": 4
+    },
+    {
+      "query": "zero company demo",
+      "weight": 4
+    },
+    {
+      "query": "zero company denuvo",
+      "weight": 4
+    },
+    {
+      "query": "zero company developer",
+      "weight": 4
+    },
+    {
+      "query": "zero company devs",
+      "weight": 4
+    },
+    {
+      "query": "zero company difficulty levels",
+      "weight": 4
+    },
+    {
+      "query": "zero company difficulty options",
+      "weight": 4
+    },
+    {
+      "query": "zero company dlc",
+      "weight": 4
+    },
+    {
+      "query": "zero company download size",
+      "weight": 4
+    },
+    {
+      "query": "zero company dress",
+      "weight": 4
+    },
+    {
+      "query": "zero company drink",
+      "weight": 4
+    },
+    {
+      "query": "zero company earbuds price",
+      "weight": 4
+    },
+    {
+      "query": "zero company early release",
+      "weight": 4
+    },
+    {
+      "query": "zero company fanatical",
+      "weight": 4
+    },
+    {
+      "query": "zero company faq",
+      "weight": 4
+    },
+    {
+      "query": "zero company fathom",
+      "weight": 4
+    },
+    {
+      "query": "zero company features",
+      "weight": 4
+    },
+    {
+      "query": "zero company female hawks",
+      "weight": 4
+    },
+    {
+      "query": "zero company final trailer",
+      "weight": 4
+    },
+    {
+      "query": "zero company first impressions",
+      "weight": 4
+    },
+    {
+      "query": "zero company forsworn trooper",
+      "weight": 4
+    },
+    {
+      "query": "zero company fortnite",
+      "weight": 4
+    },
+    {
+      "query": "zero company full clone squad",
+      "weight": 4
+    },
+    {
+      "query": "zero company game",
+      "weight": 4
+    },
+    {
+      "query": "zero company game engine",
+      "weight": 4
+    },
+    {
+      "query": "zero company game pass",
+      "weight": 4
+    },
+    {
+      "query": "zero company game release date",
+      "weight": 4
+    },
+    {
+      "query": "zero company game type",
+      "weight": 4
+    },
+    {
+      "query": "zero company gameplay deep dive",
+      "weight": 4
+    },
+    {
+      "query": "zero company gamestop",
+      "weight": 4
+    },
+    {
+      "query": "zero company hands on",
+      "weight": 4
+    },
+    {
+      "query": "zero company hawks",
+      "weight": 4
+    },
+    {
+      "query": "zero company hawks class",
+      "weight": 4
+    },
+    {
+      "query": "zero company hawks customization",
+      "weight": 4
+    },
+    {
+      "query": "zero company hawks races",
+      "weight": 4
+    },
+    {
+      "query": "zero company hawks species",
+      "weight": 4
+    },
+    {
+      "query": "zero company headphone",
+      "weight": 4
+    },
+    {
+      "query": "zero company in australia",
+      "weight": 4
+    },
+    {
+      "query": "zero company ireland",
+      "weight": 4
+    },
+    {
+      "query": "zero company isthereanydeal",
+      "weight": 4
+    },
+    {
+      "query": "zero company it",
+      "weight": 4
+    },
+    {
+      "query": "zero company jacket",
+      "weight": 4
+    },
+    {
+      "query": "zero company jae",
+      "weight": 4
+    },
+    {
+      "query": "zero company japan",
+      "weight": 4
+    },
+    {
+      "query": "zero company jedi",
+      "weight": 4
+    },
+    {
+      "query": "zero company jedi character",
+      "weight": 4
+    },
+    {
+      "query": "zero company jobs",
+      "weight": 4
+    },
+    {
+      "query": "zero company ke airport",
+      "weight": 4
+    },
+    {
+      "query": "zero company key",
+      "weight": 4
+    },
+    {
+      "query": "zero company ki",
+      "weight": 4
+    },
+    {
+      "query": "zero company lasat",
+      "weight": 4
+    },
+    {
+      "query": "zero company launch",
+      "weight": 4
+    },
+    {
+      "query": "zero company launch time",
+      "weight": 4
+    },
+    {
+      "query": "zero company leaks",
+      "weight": 4
+    },
+    {
+      "query": "zero company like xcom",
+      "weight": 4
+    },
+    {
+      "query": "zero company loaded",
+      "weight": 4
+    },
+    {
+      "query": "zero company logo",
+      "weight": 4
+    },
+    {
+      "query": "zero company logo png",
+      "weight": 4
+    },
+    {
+      "query": "zero company mac",
+      "weight": 4
+    },
+    {
+      "query": "zero company main character",
+      "weight": 4
+    },
+    {
+      "query": "zero company maldives",
+      "weight": 4
+    },
+    {
+      "query": "zero company mandalorian",
+      "weight": 4
+    },
+    {
+      "query": "zero company massage chair",
+      "weight": 4
+    },
+    {
+      "query": "zero company meaning",
+      "weight": 4
+    },
+    {
+      "query": "zero company metacritic",
+      "weight": 4
+    },
+    {
+      "query": "zero company mobile price in pakistan",
+      "weight": 4
+    },
+    {
+      "query": "zero company multiplayer",
+      "weight": 4
+    },
+    {
+      "query": "zero company name",
+      "weight": 4
+    },
+    {
+      "query": "zero company near me",
+      "weight": 4
+    },
+    {
+      "query": "zero company new game plus",
+      "weight": 4
+    },
+    {
+      "query": "zero company new trailer",
+      "weight": 4
+    },
+    {
+      "query": "zero company news",
+      "weight": 4
+    },
+    {
+      "query": "zero company on game pass",
+      "weight": 4
+    },
+    {
+      "query": "zero company on switch 2",
+      "weight": 4
+    },
+    {
+      "query": "zero company on xbox",
+      "weight": 4
+    },
+    {
+      "query": "zero company pc specs",
+      "weight": 4
+    },
+    {
+      "query": "zero company permadeath",
+      "weight": 4
+    },
+    {
+      "query": "zero company platforms",
+      "weight": 4
+    },
+    {
+      "query": "zero company playable characters",
+      "weight": 4
+    },
+    {
+      "query": "zero company playable races",
+      "weight": 4
+    },
+    {
+      "query": "zero company pre order",
+      "weight": 4
+    },
+    {
+      "query": "zero company preorder",
+      "weight": 4
+    },
+    {
+      "query": "zero company preview",
+      "weight": 4
+    },
+    {
+      "query": "zero company ps5",
+      "weight": 4
+    },
+    {
+      "query": "zero company races",
+      "weight": 4
+    },
+    {
+      "query": "zero company rapper",
+      "weight": 4
+    },
+    {
+      "query": "zero company rating",
+      "weight": 4
+    },
+    {
+      "query": "zero company release date australia",
+      "weight": 4
+    },
+    {
+      "query": "zero company release date pc",
+      "weight": 4
+    },
+    {
+      "query": "zero company release time uk",
+      "weight": 4
+    },
+    {
+      "query": "zero company romance",
+      "weight": 4
+    },
+    {
+      "query": "zero company runa blask",
+      "weight": 4
+    },
+    {
+      "query": "zero company saudi arabia",
+      "weight": 4
+    },
+    {
+      "query": "zero company setting",
+      "weight": 4
+    },
+    {
+      "query": "zero company size",
+      "weight": 4
+    },
+    {
+      "query": "zero company star wars",
+      "weight": 4
+    },
+    {
+      "query": "zero company steam",
+      "weight": 4
+    },
+    {
+      "query": "zero company steam deck",
+      "weight": 4
+    },
+    {
+      "query": "zero company story",
+      "weight": 4
+    },
+    {
+      "query": "zero company switch",
+      "weight": 4
+    },
+    {
+      "query": "zero company switch 2",
+      "weight": 4
+    },
+    {
+      "query": "zero company tactical droid",
+      "weight": 4
+    },
+    {
+      "query": "zero company talents",
+      "weight": 4
+    },
+    {
+      "query": "zero company time period",
+      "weight": 4
+    },
+    {
+      "query": "zero company timeline",
+      "weight": 4
+    },
+    {
+      "query": "zero company trailer",
+      "weight": 4
+    },
+    {
+      "query": "zero company treadmill price in pakistan",
+      "weight": 4
+    },
+    {
+      "query": "zero company trick cosplay",
+      "weight": 4
+    },
+    {
+      "query": "zero company trophies",
+      "weight": 4
+    },
+    {
+      "query": "zero company trophy guide",
+      "weight": 4
+    },
+    {
+      "query": "zero company ultimate edition",
+      "weight": 4
+    },
+    {
+      "query": "zero company va",
+      "weight": 4
+    },
+    {
+      "query": "zero company versions",
+      "weight": 4
+    },
+    {
+      "query": "zero company video",
+      "weight": 4
+    },
+    {
+      "query": "zero company video game",
+      "weight": 4
+    },
+    {
+      "query": "zero company villains",
+      "weight": 4
+    },
+    {
+      "query": "zero company visser",
+      "weight": 4
+    },
+    {
+      "query": "zero company voice actors",
+      "weight": 4
+    },
+    {
+      "query": "zero company voice cast",
+      "weight": 4
+    },
+    {
+      "query": "zero company wallpaper",
+      "weight": 4
+    },
+    {
+      "query": "zero company watch",
+      "weight": 4
+    },
+    {
+      "query": "zero company weapons list",
+      "weight": 4
+    },
+    {
+      "query": "zero company website",
+      "weight": 4
+    },
+    {
+      "query": "zero company wookieepedia",
+      "weight": 4
+    },
+    {
+      "query": "zero company writer",
+      "weight": 4
+    },
+    {
+      "query": "zero company youtube",
+      "weight": 4
+    },
+    {
+      "query": "zero company zabrak",
+      "weight": 4
+    },
+    {
+      "query": "zero dollar company",
+      "weight": 4
+    },
+    {
+      "query": "zero dot company",
+      "weight": 4
+    },
+    {
+      "query": "zero down company",
+      "weight": 4
+    },
+    {
+      "query": "zero gravity company nungambakkam",
+      "weight": 4
+    },
+    {
+      "query": "zero human company crypto",
+      "weight": 4
+    },
+    {
+      "query": "zero human company github",
+      "weight": 4
+    },
+    {
+      "query": "zero networks company size",
+      "weight": 4
+    },
+    {
+      "query": "zero one company for ict solutions",
+      "weight": 4
+    },
+    {
+      "query": "zero one company for ict solutions reviews",
+      "weight": 4
+    },
+    {
+      "query": "zero roofing company cincinnati",
+      "weight": 4
+    },
+    {
+      "query": "zero tattoo company reviews",
+      "weight": 4
+    },
+    {
+      "query": "zero tax company reviews",
+      "weight": 4
+    },
+    {
+      "query": "zero turn company",
+      "weight": 4
+    },
+    {
+      "query": "zero uk company",
+      "weight": 4
+    },
+    {
+      "query": "zero waste company saudi arabia",
+      "weight": 4
+    },
+    {
+      "query": "zero zero company",
+      "weight": 4
+    },
+    {
+      "query": "is star wars zero company like baldur's gate 3",
+      "weight": 3
+    },
+    {
+      "query": "star wars zero company duree de vie",
+      "weight": 3
+    },
+    {
+      "query": "star wars zero company release date switch",
+      "weight": 3
+    },
+    {
+      "query": "star wars zero company what type of game",
+      "weight": 3
+    },
+    {
+      "query": "will star wars zero company be on geforce now",
+      "weight": 3
+    },
+    {
+      "query": "xero new zealand company",
+      "weight": 3
+    },
+    {
+      "query": "zero company contact number",
+      "weight": 3
+    },
+    {
+      "query": "zero company deluxe",
+      "weight": 3
+    },
+    {
+      "query": "zero company ea play pro",
+      "weight": 3
+    },
+    {
+      "query": "zero company pc",
+      "weight": 3
+    },
+    {
+      "query": "zero company planets",
+      "weight": 3
+    },
+    {
+      "query": "zero company steam key",
+      "weight": 3
+    },
+    {
+      "query": "zero company togruta",
+      "weight": 3
+    },
+    {
+      "query": "zero company tropes",
+      "weight": 3
+    },
+    {
+      "query": "ash sroka star wars zero company",
+      "weight": 2
+    },
+    {
+      "query": "being zero company salary",
+      "weight": 2
+    },
+    {
+      "query": "below zero oil company",
+      "weight": 2
+    },
+    {
+      "query": "best zero turn company",
+      "weight": 2
+    },
+    {
+      "query": "bit reactor zero company runtime",
+      "weight": 2
+    },
+    {
+      "query": "black zero company",
+      "weight": 2
+    },
+    {
+      "query": "brightstone star wars zero company",
+      "weight": 2
+    },
+    {
+      "query": "channel zero company wikipedia",
+      "weight": 2
+    },
+    {
+      "query": "chaos zero nightmare company",
+      "weight": 2
+    },
+    {
+      "query": "chaos zero nightmare company country",
+      "weight": 2
+    },
+    {
+      "query": "company like zero foxtrot",
+      "weight": 2
+    },
+    {
+      "query": "company zero fire force",
+      "weight": 2
+    },
+    {
+      "query": "does star wars zero company have romance",
+      "weight": 2
+    },
+    {
+      "query": "does star wars zero company take place during the clone wars",
+      "weight": 2
+    },
+    {
+      "query": "does zero company have a release date",
+      "weight": 2
+    },
+    {
+      "query": "double zero pizza company",
+      "weight": 2
+    },
+    {
+      "query": "electronic arts star wars zero company",
+      "weight": 2
+    },
+    {
+      "query": "element zero company",
+      "weight": 2
+    },
+    {
+      "query": "enerzal zero company name",
+      "weight": 2
+    },
+    {
+      "query": "flipper zero company",
+      "weight": 2
+    },
+    {
+      "query": "flipper zero company location",
+      "weight": 2
+    },
+    {
+      "query": "go zero company",
+      "weight": 2
+    },
+    {
+      "query": "go zero company name",
+      "weight": 2
+    },
+    {
+      "query": "go zero company turnover",
+      "weight": 2
+    },
+    {
+      "query": "goal zero company",
+      "weight": 2
+    },
+    {
+      "query": "ground zero company vacancies",
+      "weight": 2
+    },
+    {
+      "query": "how big is star wars zero company",
+      "weight": 2
+    },
+    {
+      "query": "how much will star wars zero company be",
+      "weight": 2
+    },
+    {
+      "query": "how much will star wars zero company cost",
+      "weight": 2
+    },
+    {
+      "query": "inbox zero furniture company",
+      "weight": 2
+    },
+    {
+      "query": "is star wars zero company a story game",
+      "weight": 2
+    },
+    {
+      "query": "is star wars zero company a turn based game",
+      "weight": 2
+    },
+    {
+      "query": "is star wars zero company coming out in 2026",
+      "weight": 2
+    },
+    {
+      "query": "is star wars zero company coming to game pass",
+      "weight": 2
+    },
+    {
+      "query": "is star wars zero company fps",
+      "weight": 2
+    },
+    {
+      "query": "is star wars zero company getting a physical copy",
+      "weight": 2
+    },
+    {
+      "query": "is star wars zero company getting a physical release",
+      "weight": 2
+    },
+    {
+      "query": "is star wars zero company going to be like baldur's gate 3",
+      "weight": 2
+    },
+    {
+      "query": "is star wars zero company going to be multiplayer",
+      "weight": 2
+    },
+    {
+      "query": "is star wars zero company going to be on game pass",
+      "weight": 2
+    },
+    {
+      "query": "is star wars zero company like baldur's gate",
+      "weight": 2
+    },
+    {
+      "query": "is star wars zero company like fire emblem",
+      "weight": 2
+    },
+    {
+      "query": "is star wars zero company like halo wars",
+      "weight": 2
+    },
+    {
+      "query": "is star wars zero company like midnight suns",
+      "weight": 2
+    },
+    {
+      "query": "is zero company a story game",
+      "weight": 2
+    },
+    {
+      "query": "is zero company good",
+      "weight": 2
+    },
+    {
+      "query": "is zero company like baldurs gate",
+      "weight": 2
+    },
+    {
+      "query": "is zero company out",
+      "weight": 2
+    },
+    {
+      "query": "is zero company single player",
+      "weight": 2
+    },
+    {
+      "query": "jeux vidéo star wars zero company",
+      "weight": 2
+    },
+    {
+      "query": "jogo star wars zero company",
+      "weight": 2
+    },
+    {
+      "query": "juego star wars zero company",
+      "weight": 2
+    },
+    {
+      "query": "just zero company",
+      "weight": 2
+    },
+    {
+      "query": "just zero company reviews",
+      "weight": 2
+    },
+    {
+      "query": "kiedy wyjdzie star wars zero company",
+      "weight": 2
+    },
+    {
+      "query": "limited run games star wars zero company",
+      "weight": 2
+    },
+    {
+      "query": "manicure company zero gel",
+      "weight": 2
+    },
+    {
+      "query": "manicure company zero gel polish",
+      "weight": 2
+    },
+    {
+      "query": "matrix company zero llc",
+      "weight": 2
+    },
+    {
+      "query": "net zero company australia",
+      "weight": 2
+    },
+    {
+      "query": "net zero company benchmark",
+      "weight": 2
+    },
+    {
+      "query": "net zero company canada",
+      "weight": 2
+    },
+    {
+      "query": "net zero company ireland",
+      "weight": 2
+    },
+    {
+      "query": "net zero company reviews",
+      "weight": 2
+    },
+    {
+      "query": "net zero company saudi arabia",
+      "weight": 2
+    },
+    {
+      "query": "net zero company website",
+      "weight": 2
+    },
+    {
+      "query": "new zero turn company",
+      "weight": 2
+    },
+    {
+      "query": "niche zero company",
+      "weight": 2
+    },
+    {
+      "query": "non zero company",
+      "weight": 2
+    },
+    {
+      "query": "not zero company",
+      "weight": 2
+    },
+    {
+      "query": "nouveau jeu star wars zero company",
+      "weight": 2
+    },
+    {
+      "query": "one by zero company salary",
+      "weight": 2
+    },
+    {
+      "query": "one zero eight company",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero which company",
+      "weight": 2
+    },
+    {
+      "query": "pi zero company",
+      "weight": 2
+    },
+    {
+      "query": "point zero music company",
+      "weight": 2
+    },
+    {
+      "query": "point zero music company owner",
+      "weight": 2
+    },
+    {
+      "query": "polsia zero human company",
+      "weight": 2
+    },
+    {
+      "query": "positive zero company dubai",
+      "weight": 2
+    },
+    {
+      "query": "re zero limbus company ao3",
+      "weight": 2
+    },
+    {
+      "query": "re zero muse company",
+      "weight": 2
+    },
+    {
+      "query": "re zero publishing company",
+      "weight": 2
+    },
+    {
+      "query": "risc zero company",
+      "weight": 2
+    },
+    {
+      "query": "rule zero company",
+      "weight": 2
+    },
+    {
+      "query": "run zero company",
+      "weight": 2
+    },
+    {
+      "query": "six zero pickleball company",
+      "weight": 2
+    },
+    {
+      "query": "slashed zero company",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company achievements",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company actors",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company ai",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company alien races",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company alien species",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company aliens",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company all companions",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company all outfits",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company all weapons",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company amazon",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company anakin",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company anakin skywalker",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company anakin voice actor",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company announcement",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company argos",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company armor",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company art book",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company article",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company august 27",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company aurelio",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company authored characters",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company background",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company bad batch",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company baldur's gate",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company base",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company before you buy",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company beskar mode",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company blasters",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company bond system",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company bonus",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company book",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company br 1 droid",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company br-1",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company builds",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company bundle",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company cal kestis",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company campaign",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company can characters die",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company can hawks be female",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company can you name characters",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company can you play it early",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company can you recruit clones",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company cancelled",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company cd key",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company cena",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company cestina",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company character classes",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company character creator",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company cheap",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company cheapest price",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company clone",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company clone armor",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company clone commando",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company clone name",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company clone squad",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company clone trooper",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company clone wars",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company cloud gaming",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company cly",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company co op",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company collector's edition australia",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company collector's edition price",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company collector's edition uk",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company collectors",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company coming out",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company companions",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company concept art",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company config",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company controller",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company couch co op",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company couch coop",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company countdown",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company create a character",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company creators",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company credits",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company crew",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company cross platform",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company cross progression",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company crossplay",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company crpg",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company custom characters",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company custom jedi",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company custom operators",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company customization options",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company darth maul",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company data de lançamento",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company date",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company date sortie",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company datum der erstveröffentlichung",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company details",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company dialogue choices",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company different editions",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company digital deluxe",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company discord",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company discount",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company dlss",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company drm",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company droids",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company ea",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company ea app",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company early",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company early release",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company early release date",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company early reviews",
+      "weight": 2
     },
     {
       "query": "star wars zero company eb games",
-      "weight": 1
+      "weight": 2
     },
     {
       "query": "star wars zero company editions",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company edycja kolekcjonerska",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company engine",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company esrb rating",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company expected price",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company explained",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company faq",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company fecha salida",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company female hawks",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company figures",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company final trailer",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company fire emblem",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company first announcement",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company first impressions",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company first look",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company first trailer",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company for sale",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company fortnite skin",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company fps",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company fr",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company full game on disc",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company fully on disc",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company galaxy map",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company game genre",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company game release date",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company game review",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company game type",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company gameplay hours",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company gameplay ps5",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company gameplay reddit",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company gameplay review",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company gameplay youtube",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company gamestop",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company general grievous",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company general skywalker",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company gonna be good",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company good or bad",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company gordy haab",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company gra",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company gra ps5",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company grand army of the republic",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company grand army of the republic cosmetic pack",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company graphics",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company green man gaming",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company grievous",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company gry online",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company gunslinger",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company hands on",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company hands on preview",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company have romance",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company hawks female",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company heroes",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company hours",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company how long will the game be",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company how to play early",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company ign",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company ign review",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company imdb",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company impressions",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company info",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company is canon",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company is it like bg3",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company is like xcom",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company is there any deal",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company jb",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company jb hi fi",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company jbhifi",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company kaufen",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company kiedy premierą",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company lasat",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company launch",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company launch time",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company launch trailer",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company leaked screenshots",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company leaks reveal an august 27 launch",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company leclerc",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company lego",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company lets play",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company lightsaber",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company linear",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company locations",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company logo png",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company macbook",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company macos",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company made by",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company main characters",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company mass effect",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company max squad size",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company mechanics",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company mediamarkt",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company medic",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company melee",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company melee weapons",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company members",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company memes",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company merch",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company microsoft store",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company microtransactions",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company midia fisica",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company missions",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company mobile game",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company moddable",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company modes",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company movie",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company new details",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company new gameplay",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company news reddit",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company no multiplayer",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company normal vs deluxe",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company noticias",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company nuuvem",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company nvidia geforce now",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company official",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company official announce trailer",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company official gameplay trailer",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company official site",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company official story trailer",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company official trailer",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company offline",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company on mac",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company on steam deck",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company on switch",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company online",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company only one jedi",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company outfits",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company pa5",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company padawan",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company panel",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company panel sdcc",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company parents guide",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company party members",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company pc game pass",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company pc or ps5",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company pc preorder",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company pc price",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company pc release date",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company pegi",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company performance",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company permadeath",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company personajes",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company personalities",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company physical copy",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company planets",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company play anywhere",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company play early",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company play time",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company playstation",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company playstation 5",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company plot",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company polygon",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company pong krell",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company post game",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company poster",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company pre order ps5",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company preorder bonus",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company press kit",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company price compare",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company price reddit",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company price steam",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company price xbox",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company prices",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company ps store",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company ps5 deluxe edition",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company ps5 performance",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company ps5 physical copy",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company ps5 pre order",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company ps5 price",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company ps5 pro",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company ps5 release date",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company ps5 review",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company pt br",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company q and a",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company races and classes",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company ray tracing",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company release date and price",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company release date rumors",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company release price",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company replayability",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company review date",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company review embargo date",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company review ign",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company review ps5",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company review reddit",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company roadmap",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company rock paper shotgun",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company rog ally",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company rog ally x",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company roles",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company sale",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company salida",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company san diego comic con",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company secret class",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company sera gratis",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company series",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company shadow drop",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company single player",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company site",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company sith",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company sortie",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company soundtrack",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company species",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company specs",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company squad customization",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company squad members",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company squad size",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company standard vs deluxe",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company star wars",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company steam code",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company steam deck compatibility",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company steam deck reddit",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company steam machine",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company steam price",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company steamdb",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company steelbook",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company sur ps5",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company switch2",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company tactical droid",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company take place",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company takes place",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company talents",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company target",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company team",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company team members",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company teaser",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company tel rea",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company test",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company third person",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company time limit",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company tm key",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company tm microsoft windows store",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company trailer gameplay",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company trailer music",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company trial",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company trick face",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company trooper",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company tropes",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company trophy list",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company tv tropes",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company twitter",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company umbaran",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company units",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company unlock time",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company unreal engine 5",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company updates",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company uppercut",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company vic",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company video game release news",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company vorbestellen",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company vorbesteller bonus",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company wallpaper 4k",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company walmart",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company was ist das für ein spiel",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company weapon customization",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company weapon types",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company what platforms",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company what we know",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company which platform",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company who made it",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company whos making it",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company will it have romance",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company wookie",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company xbox key",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company xbox price",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company xbox series s",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company xbox store",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero company zwiastun",
+      "weight": 2
+    },
+    {
+      "query": "star wars zero.company explained",
+      "weight": 2
+    },
+    {
+      "query": "sub zero company cedar rapids iowa",
+      "weight": 2
+    },
+    {
+      "query": "sub zero company headquarters",
+      "weight": 2
+    },
+    {
+      "query": "sub zero company history",
+      "weight": 2
+    },
+    {
+      "query": "sub zero company website",
+      "weight": 2
+    },
+    {
+      "query": "sub zero freezer company",
+      "weight": 2
+    },
+    {
+      "query": "sub zero freezer company madison wi",
+      "weight": 2
+    },
+    {
+      "query": "sw zero company characters",
+      "weight": 2
+    },
+    {
+      "query": "sw zero company gameplay",
+      "weight": 2
+    },
+    {
+      "query": "sw zero company jedi",
+      "weight": 2
+    },
+    {
+      "query": "sw zero company multiplayer",
+      "weight": 2
+    },
+    {
+      "query": "sw zero company romance",
+      "weight": 2
+    },
+    {
+      "query": "sw zero company steam",
+      "weight": 2
+    },
+    {
+      "query": "sw zero company switch",
+      "weight": 2
+    },
+    {
+      "query": "sw zero company switch 2",
+      "weight": 2
+    },
+    {
+      "query": "tecta america zero company llc",
+      "weight": 2
+    },
+    {
+      "query": "the manicure company zero gel polish review",
+      "weight": 2
+    },
+    {
+      "query": "videojuego star wars zero company",
+      "weight": 2
+    },
+    {
+      "query": "vistra zero operating company llc",
+      "weight": 2
+    },
+    {
+      "query": "void zero company",
+      "weight": 2
+    },
+    {
+      "query": "volume zero company",
+      "weight": 2
+    },
+    {
+      "query": "wann erscheint star wars zero company",
+      "weight": 2
+    },
+    {
+      "query": "wann kommt star wars zero company",
+      "weight": 2
+    },
+    {
+      "query": "what company is beyond zero about",
+      "weight": 2
+    },
+    {
+      "query": "what company is called zero",
+      "weight": 2
+    },
+    {
+      "query": "what company is net zero",
+      "weight": 2
+    },
+    {
+      "query": "what company is sub zero",
+      "weight": 2
+    },
+    {
+      "query": "what company is zero base one",
+      "weight": 2
+    },
+    {
+      "query": "what company is zero base one under",
+      "weight": 2
+    },
+    {
+      "query": "what does sub zero company do",
+      "weight": 2
+    },
+    {
+      "query": "what does zero company do",
+      "weight": 2
+    },
+    {
+      "query": "what is star wars zero company",
+      "weight": 2
+    },
+    {
+      "query": "what is star wars zero company like",
+      "weight": 2
+    },
+    {
+      "query": "what is zero company game",
+      "weight": 2
+    },
+    {
+      "query": "what kind of game will star wars zero company be",
+      "weight": 2
+    },
+    {
+      "query": "when does star wars zero company",
+      "weight": 2
+    },
+    {
+      "query": "when does star wars zero company come out",
+      "weight": 2
+    },
+    {
+      "query": "when does star wars zero company drop",
+      "weight": 2
+    },
+    {
+      "query": "when does star wars zero company get released",
+      "weight": 2
+    },
+    {
+      "query": "when does star wars zero company take place",
+      "weight": 2
+    },
+    {
+      "query": "when does zero company",
+      "weight": 2
+    },
+    {
+      "query": "when does zero company come out",
+      "weight": 2
+    },
+    {
+      "query": "when is star wars zero company come out",
+      "weight": 2
+    },
+    {
+      "query": "when is star wars zero company out",
+      "weight": 2
+    },
+    {
+      "query": "when is star wars zero company release",
+      "weight": 2
+    },
+    {
+      "query": "when is star wars zero company supposed to come.out",
+      "weight": 2
+    },
+    {
+      "query": "when is zero company coming out",
+      "weight": 2
+    },
+    {
+      "query": "when will star wars zero company come out",
+      "weight": 2
+    },
+    {
+      "query": "when will star wars zero company take place",
+      "weight": 2
+    },
+    {
+      "query": "where does star wars zero company take place",
+      "weight": 2
+    },
+    {
+      "query": "where is star wars zero company",
+      "weight": 2
+    },
+    {
+      "query": "who are the characters in star wars zero company",
+      "weight": 2
+    },
+    {
+      "query": "who is developing star wars zero company",
+      "weight": 2
+    },
+    {
+      "query": "who is the jedi in star wars zero company",
+      "weight": 2
+    },
+    {
+      "query": "who voices anakin in star wars zero company",
+      "weight": 2
+    },
+    {
+      "query": "will star wars zero company be free",
+      "weight": 2
+    },
+    {
+      "query": "will star wars zero company be on game pass",
+      "weight": 2
+    },
+    {
+      "query": "will star wars zero company be on nintendo switch",
+      "weight": 2
+    },
+    {
+      "query": "will star wars zero company be open world",
+      "weight": 2
+    },
+    {
+      "query": "will star wars zero company come out on switch 2",
+      "weight": 2
+    },
+    {
+      "query": "will star wars zero company have a physical copy",
+      "weight": 2
+    },
+    {
+      "query": "will star wars zero company have a story",
+      "weight": 2
+    },
+    {
+      "query": "will star wars zero company have character creation",
+      "weight": 2
+    },
+    {
+      "query": "will star wars zero company have coop",
+      "weight": 2
+    },
+    {
+      "query": "will star wars zero company have difficulty levels",
+      "weight": 2
+    },
+    {
+      "query": "will star wars zero company have dlc",
+      "weight": 2
+    },
+    {
+      "query": "will star wars zero company have microtransactions",
+      "weight": 2
+    },
+    {
+      "query": "will star wars zero company have multiplayer",
+      "weight": 2
+    },
+    {
+      "query": "will star wars zero company have permadeath",
+      "weight": 2
+    },
+    {
+      "query": "will star wars zero company have romance",
+      "weight": 2
+    },
+    {
+      "query": "will star wars zero company have steam workshop",
+      "weight": 2
+    },
+    {
+      "query": "will star wars zero company run on steam deck",
+      "weight": 2
+    },
+    {
+      "query": "will star wars zero company work on steam deck",
+      "weight": 2
+    },
+    {
+      "query": "will zero company be canon",
+      "weight": 2
+    },
+    {
+      "query": "will zero company be like xcom",
+      "weight": 2
+    },
+    {
+      "query": "will zero company be on game pass",
+      "weight": 2
+    },
+    {
+      "query": "will zero company be on switch",
+      "weight": 2
+    },
+    {
+      "query": "will zero company be on switch 2",
+      "weight": 2
+    },
+    {
+      "query": "will zero company have dlc",
+      "weight": 2
+    },
+    {
+      "query": "will zero company have mod support",
+      "weight": 2
+    },
+    {
+      "query": "will zero company have mods",
+      "weight": 2
+    },
+    {
+      "query": "will zero company have romance",
+      "weight": 2
+    },
+    {
+      "query": "will zero company work on steam deck",
+      "weight": 2
+    },
+    {
+      "query": "xero software company",
+      "weight": 2
+    },
+    {
+      "query": "zenless zone zero company name",
+      "weight": 2
+    },
+    {
+      "query": "zero & company fatturato",
+      "weight": 2
+    },
+    {
+      "query": "zero & company srl",
+      "weight": 2
+    },
+    {
+      "query": "zero & company srl fatturato",
+      "weight": 2
+    },
+    {
+      "query": "zero & company srl terlizzi",
+      "weight": 2
+    },
+    {
+      "query": "zero 10 company",
+      "weight": 2
+    },
+    {
+      "query": "zero 6 company",
+      "weight": 2
+    },
+    {
+      "query": "zero accident flight company",
+      "weight": 2
+    },
+    {
+      "query": "zero alcohol company",
+      "weight": 2
+    },
+    {
+      "query": "zero and company brea",
+      "weight": 2
+    },
+    {
+      "query": "zero artistic company",
+      "weight": 2
+    },
+    {
+      "query": "zero b company name",
+      "weight": 2
+    },
+    {
+      "query": "zero b company turnover",
+      "weight": 2
+    },
+    {
+      "query": "zero b company wikipedia",
+      "weight": 2
+    },
+    {
+      "query": "zero b water purifier company",
+      "weight": 2
+    },
+    {
+      "query": "zero b water purifier company details",
+      "weight": 2
+    },
+    {
+      "query": "zero balance company current account",
+      "weight": 2
+    },
+    {
+      "query": "zero balance company reviews",
+      "weight": 2
+    },
+    {
+      "query": "zero below company",
+      "weight": 2
+    },
+    {
+      "query": "zero beverage company",
+      "weight": 2
+    },
+    {
+      "query": "zero bike company",
+      "weight": 2
+    },
+    {
+      "query": "zero bill company",
+      "weight": 2
+    },
+    {
+      "query": "zero billion company",
+      "weight": 2
+    },
+    {
+      "query": "zero board company",
+      "weight": 2
+    },
+    {
+      "query": "zero bomb company",
+      "weight": 2
+    },
+    {
+      "query": "zero bond company",
+      "weight": 2
+    },
+    {
+      "query": "zero brand company",
+      "weight": 2
+    },
+    {
+      "query": "zero breeze company",
+      "weight": 2
+    },
+    {
+      "query": "zero brewing company",
+      "weight": 2
+    },
+    {
+      "query": "zero brokerage company",
+      "weight": 2
+    },
+    {
+      "query": "zero bullet company",
+      "weight": 2
+    },
+    {
+      "query": "zero bullet company cullman",
+      "weight": 2
+    },
+    {
+      "query": "zero candle company",
+      "weight": 2
+    },
+    {
+      "query": "zero carb company",
+      "weight": 2
+    },
+    {
+      "query": "zero carbon company",
+      "weight": 2
+    },
+    {
+      "query": "zero carbon company egypt",
+      "weight": 2
+    },
+    {
+      "query": "zero carbon company jobs",
+      "weight": 2
+    },
+    {
+      "query": "zero carbon company tea",
+      "weight": 2
+    },
+    {
+      "query": "zero circle company",
+      "weight": 2
+    },
+    {
+      "query": "zero co company",
+      "weight": 2
+    },
+    {
+      "query": "zero co2 public company limited",
+      "weight": 2
+    },
+    {
+      "query": "zero code company hiring process",
+      "weight": 2
+    },
+    {
+      "query": "zero code company kuwait",
+      "weight": 2
+    },
+    {
+      "query": "zero code hr company hyderabad",
+      "weight": 2
+    },
+    {
+      "query": "zero company",
+      "weight": 2
+    },
+    {
+      "query": "zero company airbus",
+      "weight": 2
+    },
+    {
+      "query": "zero company airpods price",
+      "weight": 2
+    },
+    {
+      "query": "zero company aliens",
+      "weight": 2
+    },
+    {
+      "query": "zero company amazon",
+      "weight": 2
+    },
+    {
+      "query": "zero company anakin",
+      "weight": 2
+    },
+    {
+      "query": "zero company anakin skywalker",
+      "weight": 2
+    },
+    {
+      "query": "zero company arc trooper armor",
+      "weight": 2
+    },
+    {
+      "query": "zero company armor",
+      "weight": 2
+    },
+    {
+      "query": "zero company art",
+      "weight": 2
+    },
+    {
+      "query": "zero company astromech",
+      "weight": 2
+    },
+    {
+      "query": "zero company authored characters",
+      "weight": 2
+    },
+    {
+      "query": "zero company baby",
+      "weight": 2
+    },
+    {
+      "query": "zero company baby clothes online",
+      "weight": 2
+    },
+    {
+      "query": "zero company baby underwear",
+      "weight": 2
+    },
+    {
+      "query": "zero company baniyan",
+      "weight": 2
+    },
+    {
+      "query": "zero company base",
+      "weight": 2
+    },
+    {
+      "query": "zero company before you buy",
+      "weight": 2
+    },
+    {
+      "query": "zero company big w",
+      "weight": 2
+    },
+    {
+      "query": "zero company blasters",
+      "weight": 2
+    },
+    {
+      "query": "zero company bleach",
+      "weight": 2
+    },
+    {
+      "query": "zero company blog",
+      "weight": 2
+    },
+    {
+      "query": "zero company bloomers",
+      "weight": 2
+    },
+    {
+      "query": "zero company br-1",
+      "weight": 2
+    },
+    {
+      "query": "zero company brea",
+      "weight": 2
+    },
+    {
+      "query": "zero company builder",
+      "weight": 2
+    },
+    {
+      "query": "zero company california",
+      "weight": 2
+    },
+    {
+      "query": "zero company captain rex",
+      "weight": 2
+    },
+    {
+      "query": "zero company chief",
+      "weight": 2
+    },
+    {
+      "query": "zero company clone armor",
+      "weight": 2
+    },
+    {
+      "query": "zero company clone customization",
+      "weight": 2
+    },
+    {
+      "query": "zero company clone squad",
+      "weight": 2
+    },
+    {
+      "query": "zero company clone wars",
+      "weight": 2
+    },
+    {
+      "query": "zero company cloud gaming",
+      "weight": 2
+    },
+    {
+      "query": "zero company cly",
+      "weight": 2
+    },
+    {
+      "query": "zero company co op",
+      "weight": 2
+    },
+    {
+      "query": "zero company collectors",
+      "weight": 2
+    },
+    {
+      "query": "zero company comic con",
+      "weight": 2
+    },
+    {
+      "query": "zero company companions",
+      "weight": 2
+    },
+    {
+      "query": "zero company console",
+      "weight": 2
+    },
+    {
+      "query": "zero company controller",
+      "weight": 2
+    },
+    {
+      "query": "zero company controller giveaway",
+      "weight": 2
+    },
+    {
+      "query": "zero company coop",
+      "weight": 2
+    },
+    {
+      "query": "zero company cost",
+      "weight": 2
+    },
+    {
+      "query": "zero company countdown",
+      "weight": 2
+    },
+    {
+      "query": "zero company creators",
+      "weight": 2
+    },
+    {
+      "query": "zero company crew",
+      "weight": 2
+    },
+    {
+      "query": "zero company crossplay",
+      "weight": 2
+    },
+    {
+      "query": "zero company custom characters",
+      "weight": 2
+    },
+    {
+      "query": "zero company custom clones",
+      "weight": 2
+    },
+    {
+      "query": "zero company custom operators",
+      "weight": 2
+    },
+    {
+      "query": "zero company date",
+      "weight": 2
+    },
+    {
+      "query": "zero company deep dive",
+      "weight": 2
+    },
+    {
+      "query": "zero company deluxe edition worth it",
+      "weight": 2
+    },
+    {
+      "query": "zero company details",
+      "weight": 2
+    },
+    {
+      "query": "zero company digital deluxe",
+      "weight": 2
+    },
+    {
+      "query": "zero company disc",
+      "weight": 2
+    },
+    {
+      "query": "zero company discord",
+      "weight": 2
+    },
+    {
+      "query": "zero company discount",
+      "weight": 2
+    },
+    {
+      "query": "zero company drm",
+      "weight": 2
+    },
+    {
+      "query": "zero company droid",
+      "weight": 2
+    },
+    {
+      "query": "zero company dubai",
+      "weight": 2
+    },
+    {
+      "query": "zero company duros",
+      "weight": 2
+    },
+    {
+      "query": "zero company ea play",
+      "weight": 2
+    },
+    {
+      "query": "zero company earphone",
+      "weight": 2
+    },
+    {
+      "query": "zero company editions",
+      "weight": 2
+    },
+    {
+      "query": "zero company embargo",
+      "weight": 2
+    },
+    {
+      "query": "zero company engine",
+      "weight": 2
+    },
+    {
+      "query": "zero company era",
+      "weight": 2
+    },
+    {
+      "query": "zero company exotic classes",
+      "weight": 2
+    },
+    {
+      "query": "zero company firaxis",
+      "weight": 2
+    },
+    {
+      "query": "zero company foot massager",
+      "weight": 2
+    },
+    {
+      "query": "zero company founder",
+      "weight": 2
+    },
+    {
+      "query": "zero company general skywalker",
+      "weight": 2
+    },
+    {
+      "query": "zero company genre",
+      "weight": 2
+    },
+    {
+      "query": "zero company gg deals",
+      "weight": 2
+    },
+    {
+      "query": "zero company gog",
+      "weight": 2
+    },
+    {
+      "query": "zero company gordy haab",
+      "weight": 2
+    },
+    {
+      "query": "zero company grand army of the republic pack",
+      "weight": 2
+    },
+    {
+      "query": "zero company green man gaming",
+      "weight": 2
+    },
+    {
+      "query": "zero company gunslinger",
+      "weight": 2
+    },
+    {
+      "query": "zero company gurgaon",
+      "weight": 2
+    },
+    {
+      "query": "zero company heavy class",
+      "weight": 2
+    },
+    {
+      "query": "zero company heroes",
+      "weight": 2
+    },
+    {
+      "query": "zero company hours",
+      "weight": 2
+    },
+    {
+      "query": "zero company ign",
+      "weight": 2
+    },
+    {
+      "query": "zero company ign review",
+      "weight": 2
+    },
+    {
+      "query": "zero company imdb",
+      "weight": 2
+    },
+    {
+      "query": "zero company infinite coil",
+      "weight": 2
+    },
+    {
+      "query": "zero company info",
+      "weight": 2
+    },
+    {
+      "query": "zero company instant gaming",
+      "weight": 2
+    },
+    {
+      "query": "zero company itch io",
+      "weight": 2
+    },
+    {
+      "query": "zero company jedi padawan",
+      "weight": 2
+    },
+    {
+      "query": "zero company ka",
+      "weight": 2
+    },
+    {
+      "query": "zero company ka bluetooth",
+      "weight": 2
+    },
+    {
+      "query": "zero company ke mobile",
+      "weight": 2
+    },
+    {
+      "query": "zero company kids underwear",
+      "weight": 2
+    },
+    {
+      "query": "zero company lahore",
+      "weight": 2
+    },
+    {
+      "query": "zero company laptop",
+      "weight": 2
+    },
+    {
+      "query": "zero company last class",
+      "weight": 2
+    },
+    {
+      "query": "zero company latest news",
+      "weight": 2
+    },
+    {
+      "query": "zero company lets play",
+      "weight": 2
+    },
+    {
+      "query": "zero company limited",
+      "weight": 2
+    },
+    {
+      "query": "zero company limited edition",
+      "weight": 2
+    },
+    {
+      "query": "zero company limited run",
+      "weight": 2
+    },
+    {
+      "query": "zero company linkedin",
+      "weight": 2
+    },
+    {
+      "query": "zero company linux",
+      "weight": 2
+    },
+    {
+      "query": "zero company lore",
+      "weight": 2
+    },
+    {
+      "query": "zero company mandalorian armor",
+      "weight": 2
+    },
+    {
+      "query": "zero company mandalorian customization",
+      "weight": 2
+    },
+    {
+      "query": "zero company mando",
+      "weight": 2
+    },
+    {
+      "query": "zero company mass effect",
+      "weight": 2
+    },
+    {
+      "query": "zero company max squad size",
+      "weight": 2
+    },
+    {
+      "query": "zero company melbourne",
+      "weight": 2
+    },
+    {
+      "query": "zero company melee",
+      "weight": 2
+    },
+    {
+      "query": "zero company members",
+      "weight": 2
+    },
+    {
+      "query": "zero company merch",
+      "weight": 2
+    },
+    {
+      "query": "zero company meta",
+      "weight": 2
+    },
+    {
+      "query": "zero company milton keynes",
+      "weight": 2
+    },
+    {
+      "query": "zero company minimum specs",
+      "weight": 2
+    },
+    {
+      "query": "zero company music",
+      "weight": 2
+    },
+    {
+      "query": "zero company neimoidian",
+      "weight": 2
+    },
+    {
+      "query": "zero company nz",
+      "weight": 2
+    },
+    {
+      "query": "zero company on steam",
+      "weight": 2
+    },
+    {
+      "query": "zero company on steam deck",
+      "weight": 2
+    },
+    {
+      "query": "zero company on switch",
+      "weight": 2
+    },
+    {
+      "query": "zero company operators",
+      "weight": 2
+    },
+    {
+      "query": "zero company outfits",
+      "weight": 2
+    },
+    {
+      "query": "zero company owner name",
+      "weight": 2
+    },
+    {
+      "query": "zero company padawan",
+      "weight": 2
+    },
+    {
+      "query": "zero company pakistan",
+      "weight": 2
+    },
+    {
+      "query": "zero company panel",
+      "weight": 2
+    },
+    {
+      "query": "zero company panties",
+      "weight": 2
+    },
+    {
+      "query": "zero company pants",
+      "weight": 2
+    },
+    {
+      "query": "zero company party members",
+      "weight": 2
+    },
+    {
+      "query": "zero company pc gamer",
+      "weight": 2
+    },
+    {
+      "query": "zero company pc key",
+      "weight": 2
+    },
+    {
+      "query": "zero company pc or console",
+      "weight": 2
+    },
+    {
+      "query": "zero company pc or ps5",
+      "weight": 2
+    },
+    {
+      "query": "zero company pc requirements",
+      "weight": 2
+    },
+    {
+      "query": "zero company pc vs xbox",
+      "weight": 2
+    },
+    {
+      "query": "zero company performance",
+      "weight": 2
+    },
+    {
+      "query": "zero company performance marketing",
+      "weight": 2
+    },
+    {
+      "query": "zero company personalities",
+      "weight": 2
+    },
+    {
+      "query": "zero company planet list",
+      "weight": 2
+    },
+    {
+      "query": "zero company play anywhere",
+      "weight": 2
+    },
+    {
+      "query": "zero company play early",
+      "weight": 2
+    },
+    {
+      "query": "zero company playstation",
+      "weight": 2
+    },
+    {
+      "query": "zero company playtime",
+      "weight": 2
+    },
+    {
+      "query": "zero company plot",
+      "weight": 2
+    },
+    {
+      "query": "zero company pong krell",
+      "weight": 2
+    },
+    {
+      "query": "zero company poster",
+      "weight": 2
+    },
+    {
+      "query": "zero company power bank",
+      "weight": 2
+    },
+    {
+      "query": "zero company pre download",
+      "weight": 2
+    },
+    {
+      "query": "zero company pre order release date",
+      "weight": 2
+    },
+    {
+      "query": "zero company preload",
+      "weight": 2
+    },
+    {
+      "query": "zero company premium edition",
+      "weight": 2
+    },
+    {
+      "query": "zero company products",
+      "weight": 2
+    },
+    {
+      "query": "zero company pronouns",
+      "weight": 2
+    },
+    {
+      "query": "zero company protagonist",
+      "weight": 2
+    },
+    {
+      "query": "zero company ps5 deluxe",
+      "weight": 2
+    },
+    {
+      "query": "zero company ps5 disc",
+      "weight": 2
+    },
+    {
+      "query": "zero company ps5 or pc",
+      "weight": 2
+    },
+    {
+      "query": "zero company ps5 performance",
+      "weight": 2
+    },
+    {
+      "query": "zero company ps5 physical copy",
+      "weight": 2
+    },
+    {
+      "query": "zero company ps5 price",
+      "weight": 2
+    },
+    {
+      "query": "zero company ps5 pro",
+      "weight": 2
+    },
+    {
+      "query": "zero company ps5 release date",
+      "weight": 2
+    },
+    {
+      "query": "zero company ps5 review",
+      "weight": 2
+    },
+    {
+      "query": "zero company publisher",
+      "weight": 2
+    },
+    {
+      "query": "zero company q and a",
+      "weight": 2
+    },
+    {
+      "query": "zero company q&a",
+      "weight": 2
+    },
+    {
+      "query": "zero company race options",
+      "weight": 2
+    },
+    {
+      "query": "zero company release window",
+      "weight": 2
+    },
+    {
+      "query": "zero company review embargo date",
+      "weight": 2
+    },
+    {
+      "query": "zero company review ign",
+      "weight": 2
+    },
+    {
+      "query": "zero company reviews reddit",
+      "weight": 2
+    },
+    {
+      "query": "zero company roadmap",
+      "weight": 2
+    },
+    {
+      "query": "zero company runa",
+      "weight": 2
+    },
+    {
+      "query": "zero company san diego comic con",
+      "weight": 2
+    },
+    {
+      "query": "zero company secret class",
+      "weight": 2
+    },
+    {
+      "query": "zero company soundtrack",
+      "weight": 2
+    },
+    {
+      "query": "zero company species",
+      "weight": 2
+    },
+    {
+      "query": "zero company squad size",
+      "weight": 2
+    },
+    {
+      "query": "zero company star wars release date",
+      "weight": 2
+    },
+    {
+      "query": "zero company steam charts",
+      "weight": 2
+    },
+    {
+      "query": "zero company steam deck compatibility",
+      "weight": 2
+    },
+    {
+      "query": "zero company steam machine",
+      "weight": 2
+    },
+    {
+      "query": "zero company steamdb",
+      "weight": 2
+    },
+    {
+      "query": "zero company summer games fest",
+      "weight": 2
+    },
+    {
+      "query": "zero company system requirements",
+      "weight": 2
+    },
+    {
+      "query": "zero company tax",
+      "weight": 2
+    },
+    {
+      "query": "zero company tax countries",
+      "weight": 2
+    },
+    {
+      "query": "zero company tax return",
+      "weight": 2
+    },
+    {
+      "query": "zero company team",
+      "weight": 2
+    },
+    {
+      "query": "zero company tel-rea",
+      "weight": 2
+    },
+    {
+      "query": "zero company trailer star wars",
+      "weight": 2
+    },
+    {
+      "query": "zero company treadmill",
+      "weight": 2
+    },
+    {
+      "query": "zero company trophy list",
+      "weight": 2
+    },
+    {
+      "query": "zero company tv tropes",
+      "weight": 2
+    },
+    {
+      "query": "zero company uk release time",
+      "weight": 2
+    },
+    {
+      "query": "zero company umbara",
+      "weight": 2
+    },
+    {
+      "query": "zero company umbaran",
+      "weight": 2
+    },
+    {
+      "query": "zero company underwear",
+      "weight": 2
+    },
+    {
+      "query": "zero company units",
+      "weight": 2
+    },
+    {
+      "query": "zero company update",
+      "weight": 2
+    },
+    {
+      "query": "zero company uppercut",
+      "weight": 2
+    },
+    {
+      "query": "zero company usa",
+      "weight": 2
+    },
+    {
+      "query": "zero company valuation",
+      "weight": 2
+    },
+    {
+      "query": "zero company vape",
+      "weight": 2
+    },
+    {
+      "query": "zero company vest",
+      "weight": 2
+    },
+    {
+      "query": "zero company vibration machine",
+      "weight": 2
+    },
+    {
+      "query": "zero company vr",
+      "weight": 2
+    },
+    {
+      "query": "zero company washing machine",
+      "weight": 2
+    },
+    {
+      "query": "zero company weapon customization",
+      "weight": 2
+    },
+    {
+      "query": "zero company when",
+      "weight": 2
+    },
+    {
+      "query": "zero company with",
+      "weight": 2
+    },
+    {
+      "query": "zero company worth",
+      "weight": 2
+    },
+    {
+      "query": "zero company xbox",
+      "weight": 2
+    },
+    {
+      "query": "zero company xbox game pass",
+      "weight": 2
+    },
+    {
+      "query": "zero company xbox play anywhere",
+      "weight": 2
+    },
+    {
+      "query": "zero company. store",
+      "weight": 2
+    },
+    {
+      "query": "zero credit company",
+      "weight": 2
+    },
+    {
+      "query": "zero crossing company",
+      "weight": 2
+    },
+    {
+      "query": "zero cushion company",
+      "weight": 2
+    },
+    {
+      "query": "zero cws.company.works-hi.com",
+      "weight": 2
+    },
+    {
+      "query": "zero dark company",
+      "weight": 2
+    },
+    {
+      "query": "zero data company",
+      "weight": 2
+    },
+    {
+      "query": "zero dawn company",
+      "weight": 2
+    },
+    {
+      "query": "zero day company",
+      "weight": 2
+    },
+    {
+      "query": "zero day nutrition company",
+      "weight": 2
+    },
+    {
+      "query": "zero deposit electric company",
+      "weight": 2
+    },
+    {
+      "query": "zero dimensions company number",
+      "weight": 2
+    },
+    {
+      "query": "zero dirt company turnover",
+      "weight": 2
+    },
+    {
+      "query": "zero down electric company",
+      "weight": 2
+    },
+    {
+      "query": "zero dpd company salary",
+      "weight": 2
+    },
+    {
+      "query": "zero dpd company turbhe",
+      "weight": 2
+    },
+    {
+      "query": "zero draft company",
+      "weight": 2
+    },
+    {
+      "query": "zero drag company",
+      "weight": 2
+    },
+    {
+      "query": "zero drift company",
+      "weight": 2
+    },
+    {
+      "query": "zero dues company",
+      "weight": 2
+    },
+    {
+      "query": "zero earth company",
+      "weight": 2
+    },
+    {
+      "query": "zero eight company",
+      "weight": 2
+    },
+    {
+      "query": "zero electric company",
+      "weight": 2
+    },
+    {
+      "query": "zero emission company sro",
+      "weight": 2
+    },
+    {
+      "query": "zero energy electric company",
+      "weight": 2
+    },
+    {
+      "query": "zero err company",
+      "weight": 2
+    },
+    {
+      "query": "zero error company",
+      "weight": 2
+    },
+    {
+      "query": "zero fan company",
+      "weight": 2
+    },
+    {
+      "query": "zero farming company",
+      "weight": 2
+    },
+    {
+      "query": "zero filter company",
+      "weight": 2
+    },
+    {
+      "query": "zero finance company",
+      "weight": 2
+    },
+    {
+      "query": "zero fintech company",
+      "weight": 2
+    },
+    {
+      "query": "zero foods company",
+      "weight": 2
+    },
+    {
+      "query": "zero footprint company",
+      "weight": 2
+    },
+    {
+      "query": "zero foxtrot company",
+      "weight": 2
+    },
+    {
+      "query": "zero frame company",
+      "weight": 2
+    },
+    {
+      "query": "zero friction company",
+      "weight": 2
+    },
+    {
+      "query": "zero fridge company",
+      "weight": 2
+    },
+    {
+      "query": "zero frizz company",
+      "weight": 2
+    },
+    {
+      "query": "zero fuel company",
+      "weight": 2
+    },
+    {
+      "query": "zero g flight company",
+      "weight": 2
+    },
+    {
+      "query": "zero geared company",
+      "weight": 2
+    },
+    {
+      "query": "zero gravity bed sleep company",
+      "weight": 2
+    },
+    {
+      "query": "zero gravity company",
+      "weight": 2
+    },
+    {
+      "query": "zero gravity company chennai",
+      "weight": 2
+    },
+    {
+      "query": "zero gravity company t shirt",
+      "weight": 2
+    },
+    {
+      "query": "zero gravity dance company goderich",
+      "weight": 2
+    },
+    {
+      "query": "zero gravity furniture company",
+      "weight": 2
+    },
+    {
+      "query": "zero gravity sleep company",
+      "weight": 2
+    },
+    {
+      "query": "zero ground company",
+      "weight": 2
+    },
+    {
+      "query": "zero group company",
+      "weight": 2
+    },
+    {
+      "query": "zero growth company",
+      "weight": 2
+    },
+    {
+      "query": "zero guru company",
+      "weight": 2
+    },
+    {
+      "query": "zero hash trust company llc",
+      "weight": 2
+    },
+    {
+      "query": "zero healthcare company",
+      "weight": 2
+    },
+    {
+      "query": "zero height company",
+      "weight": 2
+    },
+    {
+      "query": "zero hiring company",
+      "weight": 2
+    },
+    {
+      "query": "zero homes company",
+      "weight": 2
+    },
+    {
+      "query": "zero hour company",
+      "weight": 2
+    },
+    {
+      "query": "zero hr company",
+      "weight": 2
+    },
+    {
+      "query": "zero human company",
+      "weight": 2
+    },
+    {
+      "query": "zero human company ai",
+      "weight": 2
+    },
+    {
+      "query": "zero human company brian roemmele",
+      "weight": 2
+    },
+    {
+      "query": "zero human company coin",
+      "weight": 2
+    },
+    {
+      "query": "zero human company home",
+      "weight": 2
+    },
+    {
+      "query": "zero human company paperclip",
+      "weight": 2
+    },
+    {
+      "query": "zero human company polsia",
+      "weight": 2
+    },
+    {
+      "query": "zero hunger company",
+      "weight": 2
+    },
+    {
+      "query": "zero in company",
+      "weight": 2
+    },
+    {
+      "query": "zero kelvin company",
+      "weight": 2
+    },
+    {
+      "query": "zero latency vr company",
+      "weight": 2
+    },
+    {
+      "query": "zero leakage company",
+      "weight": 2
+    },
+    {
+      "query": "zero lethal company",
+      "weight": 2
+    },
+    {
+      "query": "zero level company",
+      "weight": 2
+    },
+    {
+      "query": "zero leverage company",
+      "weight": 2
+    },
+    {
+      "query": "zero lifestyle company",
+      "weight": 2
+    },
+    {
+      "query": "zero lifestyle company name",
+      "weight": 2
+    },
+    {
+      "query": "zero lifestyle company owner",
+      "weight": 2
+    },
+    {
+      "query": "zero lifestyle company valuation",
+      "weight": 2
+    },
+    {
+      "query": "zero lifestyle company worth",
+      "weight": 2
+    },
+    {
+      "query": "zero light company",
+      "weight": 2
+    },
+    {
+      "query": "zero loan company",
+      "weight": 2
+    },
+    {
+      "query": "zero loss company",
+      "weight": 2
+    },
+    {
+      "query": "zero machine best company",
+      "weight": 2
+    },
+    {
+      "query": "zero meat company",
+      "weight": 2
+    },
+    {
+      "query": "zero metal company",
+      "weight": 2
+    },
+    {
+      "query": "zero mile company",
+      "weight": 2
+    },
+    {
+      "query": "zero mission company",
+      "weight": 2
+    },
+    {
+      "query": "zero mobit company",
+      "weight": 2
+    },
+    {
+      "query": "zero moblt company",
+      "weight": 2
+    },
+    {
+      "query": "zero mold company",
+      "weight": 2
+    },
+    {
+      "query": "zero motorcycle company",
+      "weight": 2
+    },
+    {
+      "query": "zero moving company",
+      "weight": 2
+    },
+    {
+      "query": "zero national insurance company",
+      "weight": 2
+    },
+    {
+      "query": "zero net company",
+      "weight": 2
+    },
+    {
+      "query": "zero networks company",
+      "weight": 2
+    },
+    {
+      "query": "zero nine company",
+      "weight": 2
+    },
+    {
+      "query": "zero north company",
+      "weight": 2
+    },
+    {
+      "query": "zero odor company llc",
+      "weight": 2
+    },
+    {
+      "query": "zero oil company",
+      "weight": 2
+    },
+    {
+      "query": "zero one brewing company san angelo",
+      "weight": 2
+    },
+    {
+      "query": "zero one company",
+      "weight": 2
+    },
+    {
+      "query": "zero people company",
+      "weight": 2
+    },
+    {
+      "query": "zero percent company",
+      "weight": 2
+    },
+    {
+      "query": "zero person company kpmg",
+      "weight": 2
+    },
+    {
+      "query": "zero person company sander klous",
+      "weight": 2
+    },
+    {
+      "query": "zero pest company",
+      "weight": 2
+    },
+    {
+      "query": "zero petroleum company",
+      "weight": 2
+    },
+    {
+      "query": "zero pixel company",
+      "weight": 2
+    },
+    {
+      "query": "zero point company",
+      "weight": 2
+    },
+    {
+      "query": "zero pollution company",
+      "weight": 2
+    },
+    {
+      "query": "zero power company",
+      "weight": 2
+    },
+    {
+      "query": "zero rated company in the philippines",
+      "weight": 2
+    },
+    {
+      "query": "zero rated company meaning",
+      "weight": 2
+    },
+    {
+      "query": "zero rideshare company",
+      "weight": 2
+    },
+    {
+      "query": "zero risk company",
+      "weight": 2
+    },
+    {
+      "query": "zero security company",
+      "weight": 2
+    },
+    {
+      "query": "zero sequence company",
+      "weight": 2
+    },
+    {
+      "query": "zero signal company",
+      "weight": 2
+    },
+    {
+      "query": "zero six company",
+      "weight": 2
+    },
+    {
+      "query": "zero sleep company",
+      "weight": 2
+    },
+    {
+      "query": "zero soap company",
+      "weight": 2
+    },
+    {
+      "query": "zero solar company",
+      "weight": 2
+    },
+    {
+      "query": "zero solutions company",
+      "weight": 2
+    },
+    {
+      "query": "zero sound company",
+      "weight": 2
+    },
+    {
+      "query": "zero sugar company",
+      "weight": 2
+    },
+    {
+      "query": "zero sum company",
+      "weight": 2
+    },
+    {
+      "query": "zero tattoo company",
+      "weight": 2
+    },
+    {
+      "query": "zero tattoo company photos",
+      "weight": 2
+    },
+    {
+      "query": "zero tax company meaning",
+      "weight": 2
+    },
+    {
+      "query": "zero tax dubai company",
+      "weight": 2
+    },
+    {
+      "query": "zero tier company",
+      "weight": 2
+    },
+    {
+      "query": "zero tolerance company",
+      "weight": 2
+    },
+    {
+      "query": "zero tolerance company policy",
+      "weight": 2
+    },
+    {
+      "query": "zero trust company name",
+      "weight": 2
+    },
+    {
+      "query": "zero two company",
+      "weight": 2
+    },
+    {
+      "query": "zero two company abu dhabi",
+      "weight": 2
+    },
+    {
+      "query": "zero value company",
+      "weight": 2
+    },
+    {
+      "query": "zero variance company",
+      "weight": 2
+    },
+    {
+      "query": "zero vat company",
+      "weight": 2
+    },
+    {
+      "query": "zero vector company",
+      "weight": 2
+    },
+    {
+      "query": "zero volt company",
+      "weight": 2
+    },
+    {
+      "query": "zero waste company",
+      "weight": 2
+    },
+    {
+      "query": "zero waste company drink bottle",
+      "weight": 2
+    },
+    {
+      "query": "zero waste company tunbridge wells",
+      "weight": 2
+    },
+    {
+      "query": "zero waste energy development company llc",
+      "weight": 2
+    },
+    {
+      "query": "zero waste international company saudi arabia",
+      "weight": 2
+    },
+    {
+      "query": "zero water company",
+      "weight": 2
+    },
+    {
+      "query": "zero watt company",
+      "weight": 2
+    },
+    {
+      "query": "zero west company",
+      "weight": 2
+    },
+    {
+      "query": "zero zero robotics company",
+      "weight": 2
+    },
+    {
+      "query": "zero zone company",
+      "weight": 2
+    },
+    {
+      "query": "zero-person company experiment",
+      "weight": 2
+    },
+    {
+      "query": "zerobounce company",
+      "weight": 2
+    },
+    {
+      "query": "zerofox company",
+      "weight": 2
+    },
+    {
+      "query": "zeroo time company",
+      "weight": 2
+    },
+    {
+      "query": "quando uscirà star wars zero company",
+      "weight": 1
+    },
+    {
+      "query": "star wars 0 company date de sortie",
+      "weight": 1
+    },
+    {
+      "query": "star wars zero company ea play trial",
+      "weight": 1
+    },
+    {
+      "query": "star wars zero company early impressions",
       "weight": 1
     },
     {
@@ -607,1663 +6715,55 @@
       "weight": 1
     },
     {
-      "query": "star wars zero company engine",
+      "query": "star wars zero company epic games",
       "weight": 1
     },
     {
-      "query": "star wars zero company fanatical",
+      "query": "star wars zero company exotic classes",
       "weight": 1
     },
     {
-      "query": "star wars zero company fathom",
+      "query": "star wars zero company release platforms",
       "weight": 1
     },
     {
-      "query": "star wars zero company features",
+      "query": "star wars zero companytm",
       "weight": 1
     },
     {
-      "query": "star wars zero company female characters",
+      "query": "sub zero company phone number",
       "weight": 1
     },
     {
-      "query": "star wars zero company file size",
+      "query": "will star wars zero company be like xcom",
       "weight": 1
     },
     {
-      "query": "star wars zero company firaxis",
+      "query": "will star wars zero company have mod support",
       "weight": 1
     },
     {
-      "query": "star wars zero company for switch 2",
+      "query": "will star wars zero company have mods",
       "weight": 1
     },
     {
-      "query": "star wars zero company forsworn trooper",
+      "query": "zero company phone number",
       "weight": 1
     },
     {
-      "query": "star wars zero company fortnite",
+      "query": "zero company wikipedia",
       "weight": 1
     },
     {
-      "query": "star wars zero company free to play",
+      "query": "zero earbuds company owner",
       "weight": 1
     },
     {
-      "query": "star wars zero company full clone squad",
+      "query": "zero tolerance security company",
       "weight": 1
     },
     {
-      "query": "star wars zero company game",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company game engine",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company game length",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company game pass",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company gameplay trailer",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company geforce now",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company genre",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company gog",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company good",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company grand army of the republic pack",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company guide",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company hawks",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company hawks class",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company hawks customization",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company hawks jedi",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company hawks species",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company hawks voice actor",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company hltb",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company how long will the game be",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company how many clones can you have",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company how to play early",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company ign",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company ign review",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company imdb",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company impressions",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company info",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company is canon",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company is it good",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company is it open world",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company is it turn based",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company is like xcom",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company is there any deal",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company jae",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company jae mordant",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company jb",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company jbhifi",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company jedi",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company jedi characters",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company jedi class",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company jedi customization",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company jedi race",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company jedi species",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company kabb",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company kabb uppercut",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company key",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company key art",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company kiedy",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company kiedy premiera",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company kopen",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company kotor",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company kpop",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company launch date",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company leaks",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company length",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company like bg3",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company like xcom",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company limited edition",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company linux",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company loaded",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company logo",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company lore",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company mac",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company main character",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company mandalorian",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company metacritic",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company minimum requirements",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company mobile",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company mod support",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company mods",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company multiplayer",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company new game plus",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company new trailer",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company new zealand trick",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company news",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company news today",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company nintendo",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company nintendo switch",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company nintendo switch 2",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company no mod support",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company number of players",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company nvidia geforce now",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company o'que é",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company on gamepass",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company on ps5",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company on steam",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company on steam deck",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company on switch 2",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company on xbox",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company online",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company online multiplayer",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company open world",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company order 66",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company pc",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company physical copy",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company platforms",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company playstation 5 store",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company pre order",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company pre order bonus",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company preview",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company price",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company qa",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company que tipo de juego es",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company queer",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company races",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company rating",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company release date ps5",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company replayability",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company review",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company review embargo",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company romance",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company romance options",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company similar to xcom",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company species",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company specs",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company steam deck",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company steam key",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company steelbook",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company story",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company switch",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company switch 2",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company time period",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company timeline",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company tips",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company tips and tricks",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company tognath",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company togruta",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company trailer",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company trick",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company trophies",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company turn based",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company tv tropes",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company twitter",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company type of game",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company ui",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company uk",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company uk release date",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company ultimate edition",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company umbaran",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company units",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company unlock time",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company unreal engine 5",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company updates",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company uppercut",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company va",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company versions",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company vic michaelis",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company video",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company video game",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company villain",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company voice actor",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company voice cast",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company voices",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company vs xcom",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company wallpaper",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company weapons",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company website",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company what platforms",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company what we know",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company who do you play as",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company wiki",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company wookieepedia",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company xbox",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company zeb",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company zero company",
-      "weight": 1
-    },
-    {
-      "query": "star wars zero company zwiastun",
-      "weight": 1
-    },
-    {
-      "query": "what company is beyond zero about",
-      "weight": 1
-    },
-    {
-      "query": "what company is called zero",
-      "weight": 1
-    },
-    {
-      "query": "what company is net zero",
-      "weight": 1
-    },
-    {
-      "query": "what company is sub zero",
-      "weight": 1
-    },
-    {
-      "query": "what company is zero base one",
-      "weight": 1
-    },
-    {
-      "query": "what company is zero base one under",
-      "weight": 1
-    },
-    {
-      "query": "what company owns star wars",
-      "weight": 1
-    },
-    {
-      "query": "what does sub zero company do",
-      "weight": 1
-    },
-    {
-      "query": "what does zero company do",
-      "weight": 1
-    },
-    {
-      "query": "what is zero company game",
-      "weight": 1
-    },
-    {
-      "query": "when did star wars zero company come out",
-      "weight": 1
-    },
-    {
-      "query": "when does star wars zero company",
-      "weight": 1
-    },
-    {
-      "query": "when does zero company",
-      "weight": 1
-    },
-    {
-      "query": "when does zero company come out",
-      "weight": 1
-    },
-    {
-      "query": "when is star wars zero company out",
-      "weight": 1
-    },
-    {
-      "query": "when is star wars zero company release",
-      "weight": 1
-    },
-    {
-      "query": "when will star wars zero company come out",
-      "weight": 1
-    },
-    {
-      "query": "where does star wars zero company take place",
-      "weight": 1
-    },
-    {
-      "query": "where is star wars zero company",
-      "weight": 1
-    },
-    {
-      "query": "why is star wars zero company cheaper on pc",
-      "weight": 1
-    },
-    {
-      "query": "zero company",
-      "weight": 1
-    },
-    {
-      "query": "zero company airpods",
-      "weight": 1
-    },
-    {
-      "query": "zero company airpods price in pakistan",
-      "weight": 1
-    },
-    {
-      "query": "zero company all clone squad",
-      "weight": 1
-    },
-    {
-      "query": "zero company all clones",
-      "weight": 1
-    },
-    {
-      "query": "zero company all races",
-      "weight": 1
-    },
-    {
-      "query": "zero company all species",
-      "weight": 1
-    },
-    {
-      "query": "zero company all weapons",
-      "weight": 1
-    },
-    {
-      "query": "zero company amazon",
-      "weight": 1
-    },
-    {
-      "query": "zero company anakin",
-      "weight": 1
-    },
-    {
-      "query": "zero company anakin skywalker",
-      "weight": 1
-    },
-    {
-      "query": "zero company arc trooper",
-      "weight": 1
-    },
-    {
-      "query": "zero company astromech",
-      "weight": 1
-    },
-    {
-      "query": "zero company australia",
-      "weight": 1
-    },
-    {
-      "query": "zero company bangalore",
-      "weight": 1
-    },
-    {
-      "query": "zero company base building",
-      "weight": 1
-    },
-    {
-      "query": "zero company beskar mode",
-      "weight": 1
-    },
-    {
-      "query": "zero company beta",
-      "weight": 1
-    },
-    {
-      "query": "zero company bit reactor",
-      "weight": 1
-    },
-    {
-      "query": "zero company bluetooth",
-      "weight": 1
-    },
-    {
-      "query": "zero company br-1 droid",
-      "weight": 1
-    },
-    {
-      "query": "zero company builds",
-      "weight": 1
-    },
-    {
-      "query": "zero company buy",
-      "weight": 1
-    },
-    {
-      "query": "zero company can you make a jedi",
-      "weight": 1
-    },
-    {
-      "query": "zero company character creation",
-      "weight": 1
-    },
-    {
-      "query": "zero company character customization",
-      "weight": 1
-    },
-    {
-      "query": "zero company characters",
-      "weight": 1
-    },
-    {
-      "query": "zero company chief",
-      "weight": 1
-    },
-    {
-      "query": "zero company classes",
-      "weight": 1
-    },
-    {
-      "query": "zero company clone",
-      "weight": 1
-    },
-    {
-      "query": "zero company clone trooper",
-      "weight": 1
-    },
-    {
-      "query": "zero company collector's edition",
-      "weight": 1
-    },
-    {
-      "query": "zero company customization",
-      "weight": 1
-    },
-    {
-      "query": "zero company deluxe",
-      "weight": 1
-    },
-    {
-      "query": "zero company deluxe edition",
-      "weight": 1
-    },
-    {
-      "query": "zero company deluxe edition ps5",
-      "weight": 1
-    },
-    {
-      "query": "zero company demo",
-      "weight": 1
-    },
-    {
-      "query": "zero company denuvo",
-      "weight": 1
-    },
-    {
-      "query": "zero company developer",
-      "weight": 1
-    },
-    {
-      "query": "zero company devs",
-      "weight": 1
-    },
-    {
-      "query": "zero company dlc",
-      "weight": 1
-    },
-    {
-      "query": "zero company dress",
-      "weight": 1
-    },
-    {
-      "query": "zero company drink",
-      "weight": 1
-    },
-    {
-      "query": "zero company ea",
-      "weight": 1
-    },
-    {
-      "query": "zero company ea play",
-      "weight": 1
-    },
-    {
-      "query": "zero company earbuds",
-      "weight": 1
-    },
-    {
-      "query": "zero company earbuds price in pakistan",
-      "weight": 1
-    },
-    {
-      "query": "zero company early access",
-      "weight": 1
-    },
-    {
-      "query": "zero company early reviews",
-      "weight": 1
-    },
-    {
-      "query": "zero company editions",
-      "weight": 1
-    },
-    {
-      "query": "zero company embargo",
-      "weight": 1
-    },
-    {
-      "query": "zero company engine",
-      "weight": 1
-    },
-    {
-      "query": "zero company exotic classes",
-      "weight": 1
-    },
-    {
-      "query": "zero company fanatical",
-      "weight": 1
-    },
-    {
-      "query": "zero company faq",
-      "weight": 1
-    },
-    {
-      "query": "zero company fathom",
-      "weight": 1
-    },
-    {
-      "query": "zero company features",
-      "weight": 1
-    },
-    {
-      "query": "zero company female hawks",
-      "weight": 1
-    },
-    {
-      "query": "zero company final trailer",
-      "weight": 1
-    },
-    {
-      "query": "zero company first impressions",
-      "weight": 1
-    },
-    {
-      "query": "zero company forsworn trooper",
-      "weight": 1
-    },
-    {
-      "query": "zero company fortnite",
-      "weight": 1
-    },
-    {
-      "query": "zero company full clone squad",
-      "weight": 1
-    },
-    {
-      "query": "zero company game",
-      "weight": 1
-    },
-    {
-      "query": "zero company game engine",
-      "weight": 1
-    },
-    {
-      "query": "zero company game length",
-      "weight": 1
-    },
-    {
-      "query": "zero company game pass",
-      "weight": 1
-    },
-    {
-      "query": "zero company game release date",
-      "weight": 1
-    },
-    {
-      "query": "zero company game type",
-      "weight": 1
-    },
-    {
-      "query": "zero company gameplay",
-      "weight": 1
-    },
-    {
-      "query": "zero company gameplay trailer",
-      "weight": 1
-    },
-    {
-      "query": "zero company gamestop",
-      "weight": 1
-    },
-    {
-      "query": "zero company geforce now",
-      "weight": 1
-    },
-    {
-      "query": "zero company hand free",
-      "weight": 1
-    },
-    {
-      "query": "zero company hands on",
-      "weight": 1
-    },
-    {
-      "query": "zero company hawks",
-      "weight": 1
-    },
-    {
-      "query": "zero company hawks class",
-      "weight": 1
-    },
-    {
-      "query": "zero company hawks customization",
-      "weight": 1
-    },
-    {
-      "query": "zero company hawks races",
-      "weight": 1
-    },
-    {
-      "query": "zero company hawks species",
-      "weight": 1
-    },
-    {
-      "query": "zero company hawks voice actor",
-      "weight": 1
-    },
-    {
-      "query": "zero company headphone",
-      "weight": 1
-    },
-    {
-      "query": "zero company ign",
-      "weight": 1
-    },
-    {
-      "query": "zero company ign review",
-      "weight": 1
-    },
-    {
-      "query": "zero company imdb",
-      "weight": 1
-    },
-    {
-      "query": "zero company in australia",
-      "weight": 1
-    },
-    {
-      "query": "zero company infinite coil",
-      "weight": 1
-    },
-    {
-      "query": "zero company info",
-      "weight": 1
-    },
-    {
-      "query": "zero company instant gaming",
-      "weight": 1
-    },
-    {
-      "query": "zero company it",
-      "weight": 1
-    },
-    {
-      "query": "zero company jacket",
-      "weight": 1
-    },
-    {
-      "query": "zero company jae",
-      "weight": 1
-    },
-    {
-      "query": "zero company japan",
-      "weight": 1
-    },
-    {
-      "query": "zero company jedi",
-      "weight": 1
-    },
-    {
-      "query": "zero company jedi character",
-      "weight": 1
-    },
-    {
-      "query": "zero company jedi padawan",
-      "weight": 1
-    },
-    {
-      "query": "zero company jobs",
-      "weight": 1
-    },
-    {
-      "query": "zero company ka mobile",
-      "weight": 1
-    },
-    {
-      "query": "zero company ka phone",
-      "weight": 1
-    },
-    {
-      "query": "zero company ke bluetooth",
-      "weight": 1
-    },
-    {
-      "query": "zero company ke earbuds",
-      "weight": 1
-    },
-    {
-      "query": "zero company ke headphone",
-      "weight": 1
-    },
-    {
-      "query": "zero company key",
-      "weight": 1
-    },
-    {
-      "query": "zero company ki smart watch",
-      "weight": 1
-    },
-    {
-      "query": "zero company ki watch",
-      "weight": 1
-    },
-    {
-      "query": "zero company kids wear",
-      "weight": 1
-    },
-    {
-      "query": "zero company lasat",
-      "weight": 1
-    },
-    {
-      "query": "zero company launch",
-      "weight": 1
-    },
-    {
-      "query": "zero company launch date",
-      "weight": 1
-    },
-    {
-      "query": "zero company launch time",
-      "weight": 1
-    },
-    {
-      "query": "zero company leaks",
-      "weight": 1
-    },
-    {
-      "query": "zero company length",
-      "weight": 1
-    },
-    {
-      "query": "zero company loaded",
-      "weight": 1
-    },
-    {
-      "query": "zero company location",
-      "weight": 1
-    },
-    {
-      "query": "zero company logo",
-      "weight": 1
-    },
-    {
-      "query": "zero company logo png",
-      "weight": 1
-    },
-    {
-      "query": "zero company mac",
-      "weight": 1
-    },
-    {
-      "query": "zero company main character",
-      "weight": 1
-    },
-    {
-      "query": "zero company maldives",
-      "weight": 1
-    },
-    {
-      "query": "zero company mandalorian",
-      "weight": 1
-    },
-    {
-      "query": "zero company massage chair",
-      "weight": 1
-    },
-    {
-      "query": "zero company meta quest",
-      "weight": 1
-    },
-    {
-      "query": "zero company metacritic",
-      "weight": 1
-    },
-    {
-      "query": "zero company mod support",
-      "weight": 1
-    },
-    {
-      "query": "zero company mods",
-      "weight": 1
-    },
-    {
-      "query": "zero company multiplayer",
-      "weight": 1
-    },
-    {
-      "query": "zero company name",
-      "weight": 1
-    },
-    {
-      "query": "zero company near me",
-      "weight": 1
-    },
-    {
-      "query": "zero company net worth",
-      "weight": 1
-    },
-    {
-      "query": "zero company new game plus",
-      "weight": 1
-    },
-    {
-      "query": "zero company new trailer",
-      "weight": 1
-    },
-    {
-      "query": "zero company news",
-      "weight": 1
-    },
-    {
-      "query": "zero company night suit",
-      "weight": 1
-    },
-    {
-      "query": "zero company nintendo switch",
-      "weight": 1
-    },
-    {
-      "query": "zero company number",
-      "weight": 1
-    },
-    {
-      "query": "zero company nz",
-      "weight": 1
-    },
-    {
-      "query": "zero company on game pass",
-      "weight": 1
-    },
-    {
-      "query": "zero company on steam",
-      "weight": 1
-    },
-    {
-      "query": "zero company on steam deck",
-      "weight": 1
-    },
-    {
-      "query": "zero company on switch",
-      "weight": 1
-    },
-    {
-      "query": "zero company on switch 2",
-      "weight": 1
-    },
-    {
-      "query": "zero company on xbox",
-      "weight": 1
-    },
-    {
-      "query": "zero company operators",
-      "weight": 1
-    },
-    {
-      "query": "zero company order 66",
-      "weight": 1
-    },
-    {
-      "query": "zero company origin",
-      "weight": 1
-    },
-    {
-      "query": "zero company pc specs",
-      "weight": 1
-    },
-    {
-      "query": "zero company permadeath",
-      "weight": 1
-    },
-    {
-      "query": "zero company planets",
-      "weight": 1
-    },
-    {
-      "query": "zero company platforms",
-      "weight": 1
-    },
-    {
-      "query": "zero company pre order bonus",
-      "weight": 1
-    },
-    {
-      "query": "zero company preorder",
-      "weight": 1
-    },
-    {
-      "query": "zero company preview",
-      "weight": 1
-    },
-    {
-      "query": "zero company price",
-      "weight": 1
-    },
-    {
-      "query": "zero company ps5",
-      "weight": 1
-    },
-    {
-      "query": "zero company q and a",
-      "weight": 1
-    },
-    {
-      "query": "zero company races",
-      "weight": 1
-    },
-    {
-      "query": "zero company rapper",
-      "weight": 1
-    },
-    {
-      "query": "zero company reddit",
-      "weight": 1
-    },
-    {
-      "query": "zero company release",
-      "weight": 1
-    },
-    {
-      "query": "zero company release date",
-      "weight": 1
-    },
-    {
-      "query": "zero company release date ps5",
-      "weight": 1
-    },
-    {
-      "query": "zero company release time",
-      "weight": 1
-    },
-    {
-      "query": "zero company review embargo",
-      "weight": 1
-    },
-    {
-      "query": "zero company romance",
-      "weight": 1
-    },
-    {
-      "query": "zero company species",
-      "weight": 1
-    },
-    {
-      "query": "zero company star wars release date",
-      "weight": 1
-    },
-    {
-      "query": "zero company steam",
-      "weight": 1
-    },
-    {
-      "query": "zero company steam deck",
-      "weight": 1
-    },
-    {
-      "query": "zero company story",
-      "weight": 1
-    },
-    {
-      "query": "zero company switch",
-      "weight": 1
-    },
-    {
-      "query": "zero company switch 2",
-      "weight": 1
-    },
-    {
-      "query": "zero company system requirements",
-      "weight": 1
-    },
-    {
-      "query": "zero company talents",
-      "weight": 1
-    },
-    {
-      "query": "zero company time period",
-      "weight": 1
-    },
-    {
-      "query": "zero company timeline",
-      "weight": 1
-    },
-    {
-      "query": "zero company togruta",
-      "weight": 1
-    },
-    {
-      "query": "zero company trailer",
-      "weight": 1
-    },
-    {
-      "query": "zero company trick",
-      "weight": 1
-    },
-    {
-      "query": "zero company trophies",
-      "weight": 1
-    },
-    {
-      "query": "zero company trophy guide",
-      "weight": 1
-    },
-    {
-      "query": "zero company turn based",
-      "weight": 1
-    },
-    {
-      "query": "zero company tv tropes",
-      "weight": 1
-    },
-    {
-      "query": "zero company uk release time",
-      "weight": 1
-    },
-    {
-      "query": "zero company ultimate edition",
-      "weight": 1
-    },
-    {
-      "query": "zero company umbara",
-      "weight": 1
-    },
-    {
-      "query": "zero company umbaran",
-      "weight": 1
-    },
-    {
-      "query": "zero company underwear",
-      "weight": 1
-    },
-    {
-      "query": "zero company units",
-      "weight": 1
-    },
-    {
-      "query": "zero company update",
-      "weight": 1
-    },
-    {
-      "query": "zero company uppercut",
-      "weight": 1
-    },
-    {
-      "query": "zero company usa",
-      "weight": 1
-    },
-    {
-      "query": "zero company va",
-      "weight": 1
-    },
-    {
-      "query": "zero company versions",
-      "weight": 1
-    },
-    {
-      "query": "zero company vic michaelis",
-      "weight": 1
-    },
-    {
-      "query": "zero company video",
-      "weight": 1
-    },
-    {
-      "query": "zero company video game",
-      "weight": 1
-    },
-    {
-      "query": "zero company villains",
-      "weight": 1
-    },
-    {
-      "query": "zero company visser",
-      "weight": 1
-    },
-    {
-      "query": "zero company voice actors",
-      "weight": 1
-    },
-    {
-      "query": "zero company voice cast",
-      "weight": 1
-    },
-    {
-      "query": "zero company vs xcom",
-      "weight": 1
-    },
-    {
-      "query": "zero company wallpaper",
-      "weight": 1
-    },
-    {
-      "query": "zero company watch",
-      "weight": 1
-    },
-    {
-      "query": "zero company watch price",
-      "weight": 1
-    },
-    {
-      "query": "zero company watch price in pakistan",
-      "weight": 1
-    },
-    {
-      "query": "zero company weapons",
-      "weight": 1
-    },
-    {
-      "query": "zero company website",
-      "weight": 1
-    },
-    {
-      "query": "zero company when",
-      "weight": 1
-    },
-    {
-      "query": "zero company wiki",
-      "weight": 1
-    },
-    {
-      "query": "zero company wookieepedia",
-      "weight": 1
-    },
-    {
-      "query": "zero company writer",
-      "weight": 1
-    },
-    {
-      "query": "zero company youtube",
-      "weight": 1
-    },
-    {
-      "query": "zero company zabrak",
-      "weight": 1
-    },
-    {
-      "query": "zero in company",
-      "weight": 1
-    },
-    {
-      "query": "zero machine best company",
-      "weight": 1
-    },
-    {
-      "query": "zero one company qatar",
-      "weight": 1
-    },
-    {
-      "query": "zero uk company",
-      "weight": 1
-    },
-    {
-      "query": "zero zero company",
+      "query": "zero water company phone number",
       "weight": 1
     }
   ]

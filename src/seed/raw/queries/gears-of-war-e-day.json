@@ -8,38 +8,338 @@
   "queries": [
     {
       "query": "what is e day gears of war",
-      "weight": 13
+      "weight": 59
     },
     {
       "query": "how long is gears of war ultimate edition",
-      "weight": 9
+      "weight": 38
+    },
+    {
+      "query": "how to get the new day in gears 5",
+      "weight": 26
+    },
+    {
+      "query": "gears of war ultimate edition release date",
+      "weight": 22
+    },
+    {
+      "query": "how many games are in gears of war ultimate edition",
+      "weight": 18
     },
     {
       "query": "how long to beat gears of war ultimate edition",
-      "weight": 8
+      "weight": 14
     },
     {
-      "query": "gears of war e day is a prequel",
-      "weight": 6
+      "query": "how to get new day in gears 5",
+      "weight": 11
     },
     {
-      "query": "gears of war e day what is it",
-      "weight": 5
-    },
-    {
-      "query": "gears of war e day when does it take place",
-      "weight": 5
+      "query": "will there be a gears 6",
+      "weight": 11
     },
     {
       "query": "gears e day beta",
-      "weight": 4
+      "weight": 9
+    },
+    {
+      "query": "how long is gears 5 campaign",
+      "weight": 9
+    },
+    {
+      "query": "gears e day will it be on pc",
+      "weight": 8
+    },
+    {
+      "query": "gears e day no roadie run",
+      "weight": 7
+    },
+    {
+      "query": "gears e day para que consolas saldra",
+      "weight": 7
+    },
+    {
+      "query": "gears e day price",
+      "weight": 7
+    },
+    {
+      "query": "gears e day release date beta",
+      "weight": 7
+    },
+    {
+      "query": "gears hours",
+      "weight": 7
+    },
+    {
+      "query": "gears of war e day beta",
+      "weight": 7
+    },
+    {
+      "query": "gears e day beta times",
+      "weight": 6
+    },
+    {
+      "query": "gears e day is it a prequel",
+      "weight": 6
+    },
+    {
+      "query": "gears e day ray tracing",
+      "weight": 6
+    },
+    {
+      "query": "gears e day release",
+      "weight": 6
+    },
+    {
+      "query": "gears e day release date",
+      "weight": 6
+    },
+    {
+      "query": "gears e day trash",
+      "weight": 6
+    },
+    {
+      "query": "gears e day will beta progress carry over",
+      "weight": 6
+    },
+    {
+      "query": "gears of war e day will it be on pc",
+      "weight": 6
+    },
+    {
+      "query": "gears ride schedule",
+      "weight": 6
+    },
+    {
+      "query": "gears e day beta dates",
+      "weight": 5
+    },
+    {
+      "query": "gears e day de que trata",
+      "weight": 5
+    },
+    {
+      "query": "gears e day que es",
+      "weight": 5
+    },
+    {
+      "query": "gears e day requirements",
+      "weight": 5
     },
     {
       "query": "gears e day when does beta end",
+      "weight": 5
+    },
+    {
+      "query": "gears of war e day dom voice actor",
+      "weight": 5
+    },
+    {
+      "query": "gears of war e day high ping",
+      "weight": 5
+    },
+    {
+      "query": "gears of war e day lead writer",
+      "weight": 5
+    },
+    {
+      "query": "gears of war e day minimum requirements",
+      "weight": 5
+    },
+    {
+      "query": "gears of war e day narrator voice",
+      "weight": 5
+    },
+    {
+      "query": "gears of war e day will it be on game pass",
+      "weight": 5
+    },
+    {
+      "query": "gears of war e day will it be on ps5",
+      "weight": 5
+    },
+    {
+      "query": "gears of war e day will it be on xbox one",
+      "weight": 5
+    },
+    {
+      "query": "is gears e day out yet",
+      "weight": 5
+    },
+    {
+      "query": "which gears of war is ultimate edition",
+      "weight": 5
+    },
+    {
+      "query": "gears e day beta release date",
       "weight": 4
     },
     {
-      "query": "gears of war e day how long is the campaign",
+      "query": "gears e day beta rewards",
+      "weight": 4
+    },
+    {
+      "query": "gears e day beta start time",
+      "weight": 4
+    },
+    {
+      "query": "gears e day beta steam",
+      "weight": 4
+    },
+    {
+      "query": "gears e day coming to ps5",
+      "weight": 4
+    },
+    {
+      "query": "gears e day controller or mouse and keyboard",
+      "weight": 4
+    },
+    {
+      "query": "gears e day cost to make",
+      "weight": 4
+    },
+    {
+      "query": "gears e day does beta progress carry over",
+      "weight": 4
+    },
+    {
+      "query": "gears e day does progress carry over",
+      "weight": 4
+    },
+    {
+      "query": "gears e day high ping",
+      "weight": 4
+    },
+    {
+      "query": "gears e day is bad",
+      "weight": 4
+    },
+    {
+      "query": "gears e day maps",
+      "weight": 4
+    },
+    {
+      "query": "gears e day marcus voice actor",
+      "weight": 4
+    },
+    {
+      "query": "gears e day new weapons",
+      "weight": 4
+    },
+    {
+      "query": "gears e day no longer on ps5",
+      "weight": 4
+    },
+    {
+      "query": "gears e day poor performance",
+      "weight": 4
+    },
+    {
+      "query": "gears e day pre order",
+      "weight": 4
+    },
+    {
+      "query": "gears e day pre order bonus",
+      "weight": 4
+    },
+    {
+      "query": "gears e day pre order collector's edition",
+      "weight": 4
+    },
+    {
+      "query": "gears e day pre order skin",
+      "weight": 4
+    },
+    {
+      "query": "gears e day precio",
+      "weight": 4
+    },
+    {
+      "query": "gears e day premium",
+      "weight": 4
+    },
+    {
+      "query": "gears e day premium edition",
+      "weight": 4
+    },
+    {
+      "query": "gears e day premium edition upgrade",
+      "weight": 4
+    },
+    {
+      "query": "gears e day premium upgrade",
+      "weight": 4
+    },
+    {
+      "query": "gears e day ranked tiers",
+      "weight": 4
+    },
+    {
+      "query": "gears e day ranking system",
+      "weight": 4
+    },
+    {
+      "query": "gears e day ranks",
+      "weight": 4
+    },
+    {
+      "query": "gears e day recommended specs",
+      "weight": 4
+    },
+    {
+      "query": "gears e day reddit",
+      "weight": 4
+    },
+    {
+      "query": "gears e day release date xbox",
+      "weight": 4
+    },
+    {
+      "query": "gears e day review",
+      "weight": 4
+    },
+    {
+      "query": "gears e day rig not working",
+      "weight": 4
+    },
+    {
+      "query": "gears e day roadie run",
+      "weight": 4
+    },
+    {
+      "query": "gears e day sensitivity settings",
+      "weight": 4
+    },
+    {
+      "query": "gears e day settings",
+      "weight": 4
+    },
+    {
+      "query": "gears e day tai voice actor",
+      "weight": 4
+    },
+    {
+      "query": "gears of war e day battle royale",
+      "weight": 4
+    },
+    {
+      "query": "gears of war e day best mods",
+      "weight": 4
+    },
+    {
+      "query": "gears of war e day best weapon mods",
+      "weight": 4
+    },
+    {
+      "query": "gears of war e day city name",
+      "weight": 4
+    },
+    {
+      "query": "gears of war e day coming to pc",
+      "weight": 4
+    },
+    {
+      "query": "gears of war e day how many players",
       "weight": 4
     },
     {
@@ -47,43 +347,155 @@
       "weight": 4
     },
     {
-      "query": "gears of war e day is it a remake",
+      "query": "gears of war e day price",
       "weight": 4
     },
     {
-      "query": "gears of war e day is it coming to pc",
+      "query": "gears of war e day price uk",
       "weight": 4
     },
     {
-      "query": "gears of war e day is it on ps5",
+      "query": "gears of war e day que dia sale",
       "weight": 4
     },
     {
-      "query": "gears of war e day is xbox exclusive",
+      "query": "gears of war e day que es",
       "weight": 4
     },
     {
-      "query": "gears of war e day when does it come out",
+      "query": "gears of war e day release date",
       "weight": 4
     },
     {
-      "query": "gears of war e day when does the beta end",
+      "query": "gears of war e day release year",
       "weight": 4
     },
     {
-      "query": "gears of war e day will it be on pc",
+      "query": "gears of war e day uir",
       "weight": 4
     },
     {
-      "query": "gears of war e day will it be on ps5",
+      "query": "gears of war e day ultimate edition locust edition",
       "weight": 4
     },
     {
-      "query": "how to get the new day in gears 5",
+      "query": "gears of war e day video",
       "weight": 4
     },
     {
-      "query": "gears e day how many players",
+      "query": "gears of war e day what is it",
+      "weight": 4
+    },
+    {
+      "query": "gears of war e day will there be a carmine",
+      "weight": 4
+    },
+    {
+      "query": "gears of war e day woke",
+      "weight": 4
+    },
+    {
+      "query": "gears of war e day xbox one",
+      "weight": 4
+    },
+    {
+      "query": "gears of war e day year",
+      "weight": 4
+    },
+    {
+      "query": "gears of war e day young marcus",
+      "weight": 4
+    },
+    {
+      "query": "gears of war e day young marcus fenix",
+      "weight": 4
+    },
+    {
+      "query": "gears of war e day youtube",
+      "weight": 4
+    },
+    {
+      "query": "gears of war e-day na jakie platformy",
+      "weight": 4
+    },
+    {
+      "query": "is gears of war 2 still online",
+      "weight": 4
+    },
+    {
+      "query": "what games are in gears of war ultimate edition",
+      "weight": 4
+    },
+    {
+      "query": "can you play gears e day on pc",
+      "weight": 3
+    },
+    {
+      "query": "can you play gears e day on xbox one",
+      "weight": 3
+    },
+    {
+      "query": "gears e day aim acceleration",
+      "weight": 3
+    },
+    {
+      "query": "gears e day aim assist",
+      "weight": 3
+    },
+    {
+      "query": "gears e day all weapons",
+      "weight": 3
+    },
+    {
+      "query": "gears e day bad performance",
+      "weight": 3
+    },
+    {
+      "query": "gears e day beta end time",
+      "weight": 3
+    },
+    {
+      "query": "gears e day calibrate the rig",
+      "weight": 3
+    },
+    {
+      "query": "gears e day cant hear voice chat",
+      "weight": 3
+    },
+    {
+      "query": "gears e day closed beta",
+      "weight": 3
+    },
+    {
+      "query": "gears e day controller or keyboard",
+      "weight": 3
+    },
+    {
+      "query": "gears e day development cost",
+      "weight": 3
+    },
+    {
+      "query": "gears e day feels slow",
+      "weight": 3
+    },
+    {
+      "query": "gears e day field of view",
+      "weight": 3
+    },
+    {
+      "query": "gears e day file size",
+      "weight": 3
+    },
+    {
+      "query": "gears e day game pass day one",
+      "weight": 3
+    },
+    {
+      "query": "gears e day gut puncher",
+      "weight": 3
+    },
+    {
+      "query": "gears e day how to get weapon parts",
       "weight": 3
     },
     {
@@ -91,31 +503,167 @@
       "weight": 3
     },
     {
-      "query": "gears e day how to throw blast charge",
-      "weight": 3
-    },
-    {
       "query": "gears e day how to use blast charge",
       "weight": 3
     },
     {
-      "query": "gears e day is bad",
+      "query": "gears e day lock on aim assist",
       "weight": 3
     },
     {
-      "query": "gears e day on pc",
+      "query": "gears e day marcus",
       "weight": 3
     },
     {
-      "query": "gears e day on playstation",
+      "query": "gears e day merch",
       "weight": 3
     },
     {
-      "query": "gears e day on ps5",
+      "query": "gears e day metallica",
       "weight": 3
     },
     {
-      "query": "gears e day on steam",
+      "query": "gears e day mods",
+      "weight": 3
+    },
+    {
+      "query": "gears e day movement",
+      "weight": 3
+    },
+    {
+      "query": "gears e day multiplayer",
+      "weight": 3
+    },
+    {
+      "query": "gears e day multiplayer beta",
+      "weight": 3
+    },
+    {
+      "query": "gears e day multiplayer characters",
+      "weight": 3
+    },
+    {
+      "query": "gears e day multiplayer gameplay",
+      "weight": 3
+    },
+    {
+      "query": "gears e day multiplayer maps",
+      "weight": 3
+    },
+    {
+      "query": "gears e day multiplayer reveal",
+      "weight": 3
+    },
+    {
+      "query": "gears e day new enemies",
+      "weight": 3
+    },
+    {
+      "query": "gears e day new guns",
+      "weight": 3
+    },
+    {
+      "query": "gears e day new locust",
+      "weight": 3
+    },
+    {
+      "query": "gears e day news",
+      "weight": 3
+    },
+    {
+      "query": "gears e day next beta",
+      "weight": 3
+    },
+    {
+      "query": "gears e day no wall bouncing",
+      "weight": 3
+    },
+    {
+      "query": "gears e day not coming to ps5",
+      "weight": 3
+    },
+    {
+      "query": "gears e day power weapons",
+      "weight": 3
+    },
+    {
+      "query": "gears e day quando esce",
+      "weight": 3
+    },
+    {
+      "query": "gears e day release date ps5",
+      "weight": 3
+    },
+    {
+      "query": "gears e day tips",
+      "weight": 3
+    },
+    {
+      "query": "gears e day ue5",
+      "weight": 3
+    },
+    {
+      "query": "gears e day ultimate",
+      "weight": 3
+    },
+    {
+      "query": "gears e day ultimate edition",
+      "weight": 3
+    },
+    {
+      "query": "gears e day versions",
+      "weight": 3
+    },
+    {
+      "query": "gears e day versus",
+      "weight": 3
+    },
+    {
+      "query": "gears e day versus modes",
+      "weight": 3
+    },
+    {
+      "query": "gears e day villain",
+      "weight": 3
+    },
+    {
+      "query": "gears e day voice actors",
+      "weight": 3
+    },
+    {
+      "query": "gears e day voice chat not working",
+      "weight": 3
+    },
+    {
+      "query": "gears e day vraahk",
+      "weight": 3
+    },
+    {
+      "query": "gears e day vrr",
+      "weight": 3
+    },
+    {
+      "query": "gears e day weapons",
+      "weight": 3
+    },
+    {
+      "query": "gears e day weapons list",
+      "weight": 3
+    },
+    {
+      "query": "gears e day xbox one",
+      "weight": 3
+    },
+    {
+      "query": "gears e day xbox one x",
+      "weight": 3
+    },
+    {
+      "query": "gears e day ya salio",
+      "weight": 3
+    },
+    {
+      "query": "gears e day youtube",
       "weight": 3
     },
     {
@@ -123,7 +671,79 @@
       "weight": 3
     },
     {
-      "query": "gears of war e day game guide",
+      "query": "gears of war e day best gnasher mods",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day best lancer mods",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day best settings",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day beta high ping",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day beta narrator",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day beta new zealand",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day bloodied hunter tai",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day cast",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day co op",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day collector's edition",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day coming to ps5",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day console exclusive",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day controller",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day czy bedzie na pc",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day czy bedzie na ps5",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day field of view",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day free beta",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day game pass",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day graphics settings",
       "weight": 3
     },
     {
@@ -131,15 +751,11 @@
       "weight": 3
     },
     {
-      "query": "gears of war e day how long to beat",
+      "query": "gears of war e day how long is the campaign",
       "weight": 3
     },
     {
-      "query": "gears of war e day how many players",
-      "weight": 3
-    },
-    {
-      "query": "gears of war e day how many players for campaign",
+      "query": "gears of war e day how old is marcus",
       "weight": 3
     },
     {
@@ -147,15 +763,175 @@
       "weight": 3
     },
     {
-      "query": "gears of war e day is it co op",
+      "query": "gears of war e day ludicrous settings",
       "weight": 3
     },
     {
-      "query": "gears of war e day strategy guide",
+      "query": "gears of war e day mods",
       "weight": 3
     },
     {
-      "query": "gears of war e day walkthrough",
+      "query": "gears of war e day multiplayer video",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day na ps5",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day narrator",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day new zealand",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day nintendo switch",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day nintendo switch 2",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day number of players",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day old",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day out",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day out now",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day piattaforma",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day pictures",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day ping",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day price xbox",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day quando esce",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day quando lança",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day que significa",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day raven pilot",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day reddit",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day release",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day release date beta",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day release date pc",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day release date ps5",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day release date xbox",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day review",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day rumors",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day rusher",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day summary",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day summer game fest",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day summerslam",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day support",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day tai kaliso voice actor",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day ultimate edition release date",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day va a salir para pc",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day vai sair para ps5",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day vai ter midia fisica",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day video game",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day villain",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day voice actors",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day vs wolverine",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day weapon mods",
       "weight": 3
     },
     {
@@ -163,23 +939,139 @@
       "weight": 3
     },
     {
-      "query": "gears of war e day when is it set",
+      "query": "gears of war e day what we know",
       "weight": 3
     },
     {
-      "query": "gears of war e day when is open beta",
+      "query": "gears of war e day will it have multiplayer",
       "weight": 3
     },
     {
-      "query": "gears of war e day will it be on game pass",
+      "query": "gears of war e day women",
       "weight": 3
     },
     {
-      "query": "how many games are in gears of war ultimate edition",
+      "query": "gears of war e day worth it",
       "weight": 3
     },
     {
-      "query": "can you play gears e day on pc",
+      "query": "gears of war e day xbox",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day xbox console",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day xbox controller",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day xbox edition",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day xbox exclusive",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day xbox game pass",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day xbox series s",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day xbox series x",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day xbox series x console",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day ya salio",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e day ya se puede jugar",
+      "weight": 3
+    },
+    {
+      "query": "gears of war e-day 1660 super",
+      "weight": 3
+    },
+    {
+      "query": "how long is gears 1",
+      "weight": 3
+    },
+    {
+      "query": "how many missions are in gears of war",
+      "weight": 3
+    },
+    {
+      "query": "quando lança gears eday",
+      "weight": 3
+    },
+    {
+      "query": "wanneer komt gears of war e day uit",
+      "weight": 3
+    },
+    {
+      "query": "are di2 gears worth it",
+      "weight": 2
+    },
+    {
+      "query": "are electronic gears worth it",
+      "weight": 2
+    },
+    {
+      "query": "avexys gears e day settings",
+      "weight": 2
+    },
+    {
+      "query": "best aim assist for gears e day",
+      "weight": 2
+    },
+    {
+      "query": "can you play gears e day",
+      "weight": 2
+    },
+    {
+      "query": "can you play gears e day beta on pc",
+      "weight": 2
+    },
+    {
+      "query": "can you play gears e day beta with game pass",
+      "weight": 2
+    },
+    {
+      "query": "can you play gears e day right now",
+      "weight": 2
+    },
+    {
+      "query": "cuando fue anunciado gears of war e day",
+      "weight": 2
+    },
+    {
+      "query": "does gears e day have fov slider",
+      "weight": 2
+    },
+    {
+      "query": "gears 5 ultimate edition vs standard",
+      "weight": 2
+    },
+    {
+      "query": "gears e day 400 million",
+      "weight": 2
+    },
+    {
+      "query": "gears e day ai",
+      "weight": 2
+    },
+    {
+      "query": "gears e day aiming",
       "weight": 2
     },
     {
@@ -187,67 +1079,459 @@
       "weight": 2
     },
     {
-      "query": "gears e day all weapons",
+      "query": "gears e day battle royale",
       "weight": 2
     },
     {
-      "query": "gears e day beta dates",
+      "query": "gears e day best settings",
       "weight": 2
     },
     {
-      "query": "gears e day beta when",
+      "query": "gears e day beta do i need to buy the game",
       "weight": 2
     },
     {
-      "query": "gears e day collector's edition",
+      "query": "gears e day beta drop",
       "weight": 2
     },
     {
-      "query": "gears e day does beta progress carry over",
+      "query": "gears e day beta end",
       "weight": 2
     },
     {
-      "query": "gears e day does progress carry over",
+      "query": "gears e day beta game pass ultimate",
       "weight": 2
     },
     {
-      "query": "gears e day how many horde maps",
+      "query": "gears e day beta new zealand",
       "weight": 2
     },
     {
-      "query": "gears e day how many maps",
+      "query": "gears e day beta not working",
       "weight": 2
     },
     {
-      "query": "gears e day how to get beta",
+      "query": "gears e day beta out",
       "weight": 2
     },
     {
-      "query": "gears e day how to get weapon parts",
+      "query": "gears e day beta out now",
       "weight": 2
     },
     {
-      "query": "gears e day how to play",
+      "query": "gears e day beta performance",
       "weight": 2
     },
     {
-      "query": "gears e day how to wall bounce",
+      "query": "gears e day beta performance issues",
       "weight": 2
     },
     {
-      "query": "gears e day is a prequel",
+      "query": "gears e day beta run time",
       "weight": 2
     },
     {
-      "query": "gears e day is it a prequel",
+      "query": "gears e day beta settings",
       "weight": 2
     },
     {
-      "query": "gears e day issues",
+      "query": "gears e day beta sign up",
       "weight": 2
     },
     {
-      "query": "gears e day no longer on ps5",
+      "query": "gears e day beta size",
+      "weight": 2
+    },
+    {
+      "query": "gears e day beta time uk",
+      "weight": 2
+    },
+    {
+      "query": "gears e day beta uk",
+      "weight": 2
+    },
+    {
+      "query": "gears e day beta uk time",
+      "weight": 2
+    },
+    {
+      "query": "gears e day beta with game pass",
+      "weight": 2
+    },
+    {
+      "query": "gears e day bravo squad",
+      "weight": 2
+    },
+    {
+      "query": "gears e day breacher",
+      "weight": 2
+    },
+    {
+      "query": "gears e day breechshot",
+      "weight": 2
+    },
+    {
+      "query": "gears e day brumak",
+      "weight": 2
+    },
+    {
+      "query": "gears e day campaign co op",
+      "weight": 2
+    },
+    {
+      "query": "gears e day can't activate r i g",
+      "weight": 2
+    },
+    {
+      "query": "gears e day can't calibrate rig",
+      "weight": 2
+    },
+    {
+      "query": "gears e day cant activate rig",
+      "weight": 2
+    },
+    {
+      "query": "gears e day cant calibrate rig",
+      "weight": 2
+    },
+    {
+      "query": "gears e day carmine",
+      "weight": 2
+    },
+    {
+      "query": "gears e day classes",
+      "weight": 2
+    },
+    {
+      "query": "gears e day classic controls",
+      "weight": 2
+    },
+    {
+      "query": "gears e day classic horde",
+      "weight": 2
+    },
+    {
+      "query": "gears e day classic horde mode",
+      "weight": 2
+    },
+    {
+      "query": "gears e day closed beta dates",
+      "weight": 2
+    },
+    {
+      "query": "gears e day closed beta times",
+      "weight": 2
+    },
+    {
+      "query": "gears e day cloud",
+      "weight": 2
+    },
+    {
+      "query": "gears e day cloud gaming",
+      "weight": 2
+    },
+    {
+      "query": "gears e day clunky",
+      "weight": 2
+    },
+    {
+      "query": "gears e day cog soldier",
+      "weight": 2
+    },
+    {
+      "query": "gears e day collector's edition sold out",
+      "weight": 2
+    },
+    {
+      "query": "gears e day collectors edition price",
+      "weight": 2
+    },
+    {
+      "query": "gears e day come out",
+      "weight": 2
+    },
+    {
+      "query": "gears e day coming to pc",
+      "weight": 2
+    },
+    {
+      "query": "gears e day controller not working",
+      "weight": 2
+    },
+    {
+      "query": "gears e day controller settings",
+      "weight": 2
+    },
+    {
+      "query": "gears e day cost",
+      "weight": 2
+    },
+    {
+      "query": "gears e day cuando sale",
+      "weight": 2
+    },
+    {
+      "query": "gears e day feels bad",
+      "weight": 2
+    },
+    {
+      "query": "gears e day fov slider",
+      "weight": 2
+    },
+    {
+      "query": "gears e day free",
+      "weight": 2
+    },
+    {
+      "query": "gears e day free beta",
+      "weight": 2
+    },
+    {
+      "query": "gears e day free weekend",
+      "weight": 2
+    },
+    {
+      "query": "gears e day freezing",
+      "weight": 2
+    },
+    {
+      "query": "gears e day freezing pc",
+      "weight": 2
+    },
+    {
+      "query": "gears e day gpu minimum",
+      "weight": 2
+    },
+    {
+      "query": "gears e day graphics settings",
+      "weight": 2
+    },
+    {
+      "query": "gears e day guns",
+      "weight": 2
+    },
+    {
+      "query": "gears e day hdr settings",
+      "weight": 2
+    },
+    {
+      "query": "gears e day high cpu usage",
+      "weight": 2
+    },
+    {
+      "query": "gears e day highest rank",
+      "weight": 2
+    },
+    {
+      "query": "gears e day hit reg",
+      "weight": 2
+    },
+    {
+      "query": "gears e day hit registration",
+      "weight": 2
+    },
+    {
+      "query": "gears e day horde siege",
+      "weight": 2
+    },
+    {
+      "query": "gears e day jb hi fi",
+      "weight": 2
+    },
+    {
+      "query": "gears e day launch date",
+      "weight": 2
+    },
+    {
+      "query": "gears e day link microsoft account",
+      "weight": 2
+    },
+    {
+      "query": "gears e day longshot",
+      "weight": 2
+    },
+    {
+      "query": "gears e day looks bad",
+      "weight": 2
+    },
+    {
+      "query": "gears e day low fps",
+      "weight": 2
+    },
+    {
+      "query": "gears e day mags",
+      "weight": 2
+    },
+    {
+      "query": "gears e day mags carter",
+      "weight": 2
+    },
+    {
+      "query": "gears e day main menu",
+      "weight": 2
+    },
+    {
+      "query": "gears e day mako",
+      "weight": 2
+    },
+    {
+      "query": "gears e day mako kemara",
+      "weight": 2
+    },
+    {
+      "query": "gears e day marcus skin",
+      "weight": 2
+    },
+    {
+      "query": "gears e day max level",
+      "weight": 2
+    },
+    {
+      "query": "gears e day meaning",
+      "weight": 2
+    },
+    {
+      "query": "gears e day meat shield",
+      "weight": 2
+    },
+    {
+      "query": "gears e day medic",
+      "weight": 2
+    },
+    {
+      "query": "gears e day meme",
+      "weight": 2
+    },
+    {
+      "query": "gears e day menu",
+      "weight": 2
+    },
+    {
+      "query": "gears e day menu music",
+      "weight": 2
+    },
+    {
+      "query": "gears e day meta",
+      "weight": 2
+    },
+    {
+      "query": "gears e day metallica skin",
+      "weight": 2
+    },
+    {
+      "query": "gears e day metallica song",
+      "weight": 2
+    },
+    {
+      "query": "gears e day microsoft",
+      "weight": 2
+    },
+    {
+      "query": "gears e day microsoft store",
+      "weight": 2
+    },
+    {
+      "query": "gears e day midia fisica",
+      "weight": 2
+    },
+    {
+      "query": "gears e day minimum requirements",
+      "weight": 2
+    },
+    {
+      "query": "gears e day minimum specs",
+      "weight": 2
+    },
+    {
+      "query": "gears e day missing features",
+      "weight": 2
+    },
+    {
+      "query": "gears e day modern controls",
+      "weight": 2
+    },
+    {
+      "query": "gears e day modes",
+      "weight": 2
+    },
+    {
+      "query": "gears e day motion sensor",
+      "weight": 2
+    },
+    {
+      "query": "gears e day mouse acceleration",
+      "weight": 2
+    },
+    {
+      "query": "gears e day mouse and keyboard",
+      "weight": 2
+    },
+    {
+      "query": "gears e day mouse or controller",
+      "weight": 2
+    },
+    {
+      "query": "gears e day mouse smoothing",
+      "weight": 2
+    },
+    {
+      "query": "gears e day movement reddit",
+      "weight": 2
+    },
+    {
+      "query": "gears e day multiplayer beta dates",
+      "weight": 2
+    },
+    {
+      "query": "gears e day multiplayer modes",
+      "weight": 2
+    },
+    {
+      "query": "gears e day multiplayer reddit",
+      "weight": 2
+    },
+    {
+      "query": "gears e day multiplayer trailer",
+      "weight": 2
+    },
+    {
+      "query": "gears e day narrator",
+      "weight": 2
+    },
+    {
+      "query": "gears e day new characters",
+      "weight": 2
+    },
+    {
+      "query": "gears e day new horde mode",
+      "weight": 2
+    },
+    {
+      "query": "gears e day new trailer",
+      "weight": 2
+    },
+    {
+      "query": "gears e day no battle pass",
+      "weight": 2
+    },
+    {
+      "query": "gears e day no meat shield",
+      "weight": 2
+    },
+    {
+      "query": "gears e day no more wall bouncing",
+      "weight": 2
+    },
+    {
+      "query": "gears e day normal horde",
+      "weight": 2
+    },
+    {
+      "query": "gears e day not launching",
+      "weight": 2
+    },
+    {
+      "query": "gears e day not on ps5",
       "weight": 2
     },
     {
@@ -255,43 +1539,619 @@
       "weight": 2
     },
     {
+      "query": "gears e day on pc",
+      "weight": 2
+    },
+    {
+      "query": "gears e day on playstation",
+      "weight": 2
+    },
+    {
+      "query": "gears e day on ps5",
+      "weight": 2
+    },
+    {
       "query": "gears e day on series s",
       "weight": 2
     },
     {
-      "query": "gears e day open beta",
+      "query": "gears e day on steam",
       "weight": 2
     },
     {
-      "query": "gears e day pc",
+      "query": "gears e day on steam deck",
       "weight": 2
     },
     {
-      "query": "gears e day ps5",
+      "query": "gears e day open world",
       "weight": 2
     },
     {
-      "query": "gears e day release date",
+      "query": "gears e day optimized settings",
       "weight": 2
     },
     {
-      "query": "gears e day steam",
+      "query": "gears e day pa5",
       "weight": 2
     },
     {
-      "query": "gears e day system requirements",
+      "query": "gears e day pantalla dividida",
       "weight": 2
     },
     {
-      "query": "gears e day tips",
+      "query": "gears e day para pc",
       "weight": 2
     },
     {
-      "query": "gears e day will it be on pc",
+      "query": "gears e day para play",
       "weight": 2
     },
     {
-      "query": "gears e day youtube",
+      "query": "gears e day para ps5",
+      "weight": 2
+    },
+    {
+      "query": "gears e day para xbox one",
+      "weight": 2
+    },
+    {
+      "query": "gears e day para xbox series s",
+      "weight": 2
+    },
+    {
+      "query": "gears e day patch",
+      "weight": 2
+    },
+    {
+      "query": "gears e day patch notes",
+      "weight": 2
+    },
+    {
+      "query": "gears e day pegi",
+      "weight": 2
+    },
+    {
+      "query": "gears e day people can fly",
+      "weight": 2
+    },
+    {
+      "query": "gears e day performance",
+      "weight": 2
+    },
+    {
+      "query": "gears e day performance issues",
+      "weight": 2
+    },
+    {
+      "query": "gears e day performance pc",
+      "weight": 2
+    },
+    {
+      "query": "gears e day performance reddit",
+      "weight": 2
+    },
+    {
+      "query": "gears e day pilot",
+      "weight": 2
+    },
+    {
+      "query": "gears e day ping",
+      "weight": 2
+    },
+    {
+      "query": "gears e day platforms",
+      "weight": 2
+    },
+    {
+      "query": "gears e day play anywhere",
+      "weight": 2
+    },
+    {
+      "query": "gears e day playable characters",
+      "weight": 2
+    },
+    {
+      "query": "gears e day player count",
+      "weight": 2
+    },
+    {
+      "query": "gears e day playstation",
+      "weight": 2
+    },
+    {
+      "query": "gears e day playstation 5",
+      "weight": 2
+    },
+    {
+      "query": "gears e day playtest",
+      "weight": 2
+    },
+    {
+      "query": "gears e day plot",
+      "weight": 2
+    },
+    {
+      "query": "gears e day podcast",
+      "weight": 2
+    },
+    {
+      "query": "gears e day poster",
+      "weight": 2
+    },
+    {
+      "query": "gears e day pre order price",
+      "weight": 2
+    },
+    {
+      "query": "gears e day production cost",
+      "weight": 2
+    },
+    {
+      "query": "gears e day public beta",
+      "weight": 2
+    },
+    {
+      "query": "gears e day push to talk",
+      "weight": 2
+    },
+    {
+      "query": "gears e day push to talk button",
+      "weight": 2
+    },
+    {
+      "query": "gears e day push to talk controller",
+      "weight": 2
+    },
+    {
+      "query": "gears e day raam",
+      "weight": 2
+    },
+    {
+      "query": "gears e day ranked divisions",
+      "weight": 2
+    },
+    {
+      "query": "gears e day ranked emblems",
+      "weight": 2
+    },
+    {
+      "query": "gears e day ranked levels",
+      "weight": 2
+    },
+    {
+      "query": "gears e day ranks explained",
+      "weight": 2
+    },
+    {
+      "query": "gears e day rating",
+      "weight": 2
+    },
+    {
+      "query": "gears e day release date pc",
+      "weight": 2
+    },
+    {
+      "query": "gears e day release date reddit",
+      "weight": 2
+    },
+    {
+      "query": "gears e day release date time",
+      "weight": 2
+    },
+    {
+      "query": "gears e day release platforms",
+      "weight": 2
+    },
+    {
+      "query": "gears e day release time",
+      "weight": 2
+    },
+    {
+      "query": "gears e day release trailer",
+      "weight": 2
+    },
+    {
+      "query": "gears e day release window",
+      "weight": 2
+    },
+    {
+      "query": "gears e day reveal",
+      "weight": 2
+    },
+    {
+      "query": "gears e day rewards",
+      "weight": 2
+    },
+    {
+      "query": "gears e day rig bug",
+      "weight": 2
+    },
+    {
+      "query": "gears e day rig not activating",
+      "weight": 2
+    },
+    {
+      "query": "gears e day ripper",
+      "weight": 2
+    },
+    {
+      "query": "gears e day roadmap",
+      "weight": 2
+    },
+    {
+      "query": "gears e day rog ally",
+      "weight": 2
+    },
+    {
+      "query": "gears e day rog ally x",
+      "weight": 2
+    },
+    {
+      "query": "gears e day rumors",
+      "weight": 2
+    },
+    {
+      "query": "gears e day running",
+      "weight": 2
+    },
+    {
+      "query": "gears e day runs bad",
+      "weight": 2
+    },
+    {
+      "query": "gears e day saldra en game pass",
+      "weight": 2
+    },
+    {
+      "query": "gears e day saldra en pc",
+      "weight": 2
+    },
+    {
+      "query": "gears e day saldra en play",
+      "weight": 2
+    },
+    {
+      "query": "gears e day saldra en ps5",
+      "weight": 2
+    },
+    {
+      "query": "gears e day saldra para xbox one",
+      "weight": 2
+    },
+    {
+      "query": "gears e day saldra para xbox series s",
+      "weight": 2
+    },
+    {
+      "query": "gears e day sale en pc",
+      "weight": 2
+    },
+    {
+      "query": "gears e day sale para pc",
+      "weight": 2
+    },
+    {
+      "query": "gears e day sales",
+      "weight": 2
+    },
+    {
+      "query": "gears e day salida",
+      "weight": 2
+    },
+    {
+      "query": "gears e day seasons",
+      "weight": 2
+    },
+    {
+      "query": "gears e day second beta",
+      "weight": 2
+    },
+    {
+      "query": "gears e day seeder",
+      "weight": 2
+    },
+    {
+      "query": "gears e day sensitivity",
+      "weight": 2
+    },
+    {
+      "query": "gears e day series s",
+      "weight": 2
+    },
+    {
+      "query": "gears e day series s performance",
+      "weight": 2
+    },
+    {
+      "query": "gears e day server slam",
+      "weight": 2
+    },
+    {
+      "query": "gears e day servers",
+      "weight": 2
+    },
+    {
+      "query": "gears e day settings pc",
+      "weight": 2
+    },
+    {
+      "query": "gears e day siege",
+      "weight": 2
+    },
+    {
+      "query": "gears e day siege mode",
+      "weight": 2
+    },
+    {
+      "query": "gears e day size",
+      "weight": 2
+    },
+    {
+      "query": "gears e day slide",
+      "weight": 2
+    },
+    {
+      "query": "gears e day soldier",
+      "weight": 2
+    },
+    {
+      "query": "gears e day support",
+      "weight": 2
+    },
+    {
+      "query": "gears e day tai",
+      "weight": 2
+    },
+    {
+      "query": "gears e day tai kaliso",
+      "weight": 2
+    },
+    {
+      "query": "gears e day tai skin",
+      "weight": 2
+    },
+    {
+      "query": "gears e day team",
+      "weight": 2
+    },
+    {
+      "query": "gears e day teaser",
+      "weight": 2
+    },
+    {
+      "query": "gears e day tech demo",
+      "weight": 2
+    },
+    {
+      "query": "gears e day technical director",
+      "weight": 2
+    },
+    {
+      "query": "gears e day telcel",
+      "weight": 2
+    },
+    {
+      "query": "gears e day tendra multijugador",
+      "weight": 2
+    },
+    {
+      "query": "gears e day tendra pantalla dividida",
+      "weight": 2
+    },
+    {
+      "query": "gears e day test",
+      "weight": 2
+    },
+    {
+      "query": "gears e day text to speech",
+      "weight": 2
+    },
+    {
+      "query": "gears e day textures not loading",
+      "weight": 2
+    },
+    {
+      "query": "gears e day ticker",
+      "weight": 2
+    },
+    {
+      "query": "gears e day time",
+      "weight": 2
+    },
+    {
+      "query": "gears e day time to beat",
+      "weight": 2
+    },
+    {
+      "query": "gears e day timed exclusive",
+      "weight": 2
+    },
+    {
+      "query": "gears e day timeline",
+      "weight": 2
+    },
+    {
+      "query": "gears e day title screen",
+      "weight": 2
+    },
+    {
+      "query": "gears e day tracker",
+      "weight": 2
+    },
+    {
+      "query": "gears e day trailer",
+      "weight": 2
+    },
+    {
+      "query": "gears e day trailer 2",
+      "weight": 2
+    },
+    {
+      "query": "gears e day trailer release date",
+      "weight": 2
+    },
+    {
+      "query": "gears e day trans",
+      "weight": 2
+    },
+    {
+      "query": "gears e day trench",
+      "weight": 2
+    },
+    {
+      "query": "gears e day tropes",
+      "weight": 2
+    },
+    {
+      "query": "gears e day va a estar en game pass",
+      "weight": 2
+    },
+    {
+      "query": "gears e day va a salir en game pass",
+      "weight": 2
+    },
+    {
+      "query": "gears e day va a salir en pc",
+      "weight": 2
+    },
+    {
+      "query": "gears e day va a salir en ps5",
+      "weight": 2
+    },
+    {
+      "query": "gears e day vai sair para pc",
+      "weight": 2
+    },
+    {
+      "query": "gears e day vai sair para ps5",
+      "weight": 2
+    },
+    {
+      "query": "gears e day video",
+      "weight": 2
+    },
+    {
+      "query": "gears e day vrak",
+      "weight": 2
+    },
+    {
+      "query": "gears e day waiting for other players",
+      "weight": 2
+    },
+    {
+      "query": "gears e day wall bouncing",
+      "weight": 2
+    },
+    {
+      "query": "gears e day wall bouncing changes",
+      "weight": 2
+    },
+    {
+      "query": "gears e day wallpaper",
+      "weight": 2
+    },
+    {
+      "query": "gears e day wallpaper 4k",
+      "weight": 2
+    },
+    {
+      "query": "gears e day walmart",
+      "weight": 2
+    },
+    {
+      "query": "gears e day weapon mods",
+      "weight": 2
+    },
+    {
+      "query": "gears e day weapon parts",
+      "weight": 2
+    },
+    {
+      "query": "gears e day weapon skins",
+      "weight": 2
+    },
+    {
+      "query": "gears e day weapon tier list",
+      "weight": 2
+    },
+    {
+      "query": "gears e day website",
+      "weight": 2
+    },
+    {
+      "query": "gears e day weekend 2",
+      "weight": 2
+    },
+    {
+      "query": "gears e day wiki",
+      "weight": 2
+    },
+    {
+      "query": "gears e day wikipedia",
+      "weight": 2
+    },
+    {
+      "query": "gears e day windows",
+      "weight": 2
+    },
+    {
+      "query": "gears e day wingman",
+      "weight": 2
+    },
+    {
+      "query": "gears e day wireless controller",
+      "weight": 2
+    },
+    {
+      "query": "gears e day woke",
+      "weight": 2
+    },
+    {
+      "query": "gears e day woman",
+      "weight": 2
+    },
+    {
+      "query": "gears e day wont be on pc",
+      "weight": 2
+    },
+    {
+      "query": "gears e day wretch",
+      "weight": 2
+    },
+    {
+      "query": "gears e day writer",
+      "weight": 2
+    },
+    {
+      "query": "gears e day xbox wire",
+      "weight": 2
+    },
+    {
+      "query": "gears e-day se puede jugar en la nube",
+      "weight": 2
+    },
+    {
+      "query": "gears of war 1 how many years after e day",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day a prequel",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day aaa",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day aim assist",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day aimbot",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day all editions",
       "weight": 2
     },
     {
@@ -307,7 +2167,83 @@
       "weight": 2
     },
     {
-      "query": "gears of war e day allkeyshop",
+      "query": "gears of war e day all weapons",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day august 6th",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day background",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day bad",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day bad performance",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day baird",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day banner",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day barrick",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day battle pass",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day best weapons",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day beta dates",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day beta do you keep progress",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day beta download",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day beta numbers",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day beta release date",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day beta rewards",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day beta settings",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day beta sign up",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day beta steam",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day beta times",
       "weight": 2
     },
     {
@@ -315,7 +2251,31 @@
       "weight": 2
     },
     {
+      "query": "gears of war e day black screen",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day black woman",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day blast damage mags",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day blitz",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day blog",
+      "weight": 2
+    },
+    {
       "query": "gears of war e day budget",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day campaign",
       "weight": 2
     },
     {
@@ -323,35 +2283,295 @@
       "weight": 2
     },
     {
+      "query": "gears of war e day cancelled",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day cancelled for ps5",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day character list",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day cinematic",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day cinematic trailer",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day city",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day collector's edition how much",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day collector's edition ireland",
+      "weight": 2
+    },
+    {
       "query": "gears of war e day collector's edition where to buy",
       "weight": 2
     },
     {
-      "query": "gears of war e day how long",
+      "query": "gears of war e day compiling shaders slow",
       "weight": 2
     },
     {
-      "query": "gears of war e day how long is the beta",
+      "query": "gears of war e day console",
       "weight": 2
     },
     {
-      "query": "gears of war e day how to get weapon parts",
+      "query": "gears of war e day controller settings",
       "weight": 2
     },
     {
-      "query": "gears of war e day how to play",
+      "query": "gears of war e day cost to make",
       "weight": 2
     },
     {
-      "query": "gears of war e day how to use blast charge",
+      "query": "gears of war e day customization",
       "weight": 2
     },
     {
-      "query": "gears of war e day is bad",
+      "query": "gears of war e day customization packs",
       "weight": 2
     },
     {
-      "query": "gears of war e day is it coming to ps5",
+      "query": "gears of war e day doblaje",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day dock",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day dom",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day dom age",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day dom brother",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day dom skin",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day dominic santiago",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day donde jugar",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day down",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day drama",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day driver issue",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day driver update",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day drivers",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day drone",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day drone snub",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day drop date",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day drops",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day early access",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day early release date",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day en vivo",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day everything we know",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day figures",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day fov slider",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day freezing",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day full release",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day funko pop",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day game engine",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day game guide",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day game modes",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day gameplay",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day gamestop",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day gif",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day gift card",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day gill gettner",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day gill-gutpuncher",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day girl",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day girl boss",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day graphics",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day gtx 1660 super",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day hacks",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day hdr settings",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day high cpu usage",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day hit reg",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day hit registration",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day horde classes",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day horde mode",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day horde siege",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day horde siege mode",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day how long to beat",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day how many horde maps",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day how many maps",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day how many players for campaign",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day how much",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day how much did it cost to make",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day is a prequel",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day is it a remake",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day is it co op",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day is it coming to pc",
       "weight": 2
     },
     {
@@ -359,15 +2579,11 @@
       "weight": 2
     },
     {
-      "query": "gears of war e day is it open world",
+      "query": "gears of war e day is it on ps5",
       "weight": 2
     },
     {
-      "query": "gears of war e day is not coming to ps5",
-      "weight": 2
-    },
-    {
-      "query": "gears of war e day jb hi fi",
+      "query": "gears of war e day is xbox exclusive",
       "weight": 2
     },
     {
@@ -375,67 +2591,211 @@
       "weight": 2
     },
     {
-      "query": "gears of war e day juvies",
+      "query": "gears of war e day jon bernthal",
       "weight": 2
     },
     {
-      "query": "gears of war e day launch date",
+      "query": "gears of war e day kalona",
       "weight": 2
     },
     {
-      "query": "gears of war e day multiplayer",
+      "query": "gears of war e day kantus",
       "weight": 2
     },
     {
-      "query": "gears of war e day multiplayer beta",
+      "query": "gears of war e day launch maps",
       "weight": 2
     },
     {
-      "query": "gears of war e day on pc",
+      "query": "gears of war e day main villain",
       "weight": 2
     },
     {
-      "query": "gears of war e day on ps5",
+      "query": "gears of war e day marcus voice actor",
       "weight": 2
     },
     {
-      "query": "gears of war e day open beta",
+      "query": "gears of war e day merch",
       "weight": 2
     },
     {
-      "query": "gears of war e day ps5",
+      "query": "gears of war e day metacritic",
       "weight": 2
     },
     {
-      "query": "gears of war e day quando esce",
+      "query": "gears of war e day metallica",
       "weight": 2
     },
     {
-      "query": "gears of war e day quando lança",
+      "query": "gears of war e day ne zaman çıkacak",
       "weight": 2
     },
     {
-      "query": "gears of war e day que dia sale",
+      "query": "gears of war e day new characters",
       "weight": 2
     },
     {
-      "query": "gears of war e day que es",
+      "query": "gears of war e day new guns",
       "weight": 2
     },
     {
-      "query": "gears of war e day que significa",
+      "query": "gears of war e day new weapons",
       "weight": 2
     },
     {
-      "query": "gears of war e day release date",
+      "query": "gears of war e day nuevo",
       "weight": 2
     },
     {
-      "query": "gears of war e day release year",
+      "query": "gears of war e day nuevo trailer",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day nvidia driver",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day optimized settings",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day original voice actors",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day poster",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day pre order numbers",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day pre order xbox gift card",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day pulled from ps5",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day purchase",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day push to talk",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day push to.talk button",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day que consolas saldra",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day recommended specs",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day requirements",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day ride the lightning",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day rig bug",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day rig not working",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day roadmap content",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day rog ally x",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day sequel or prequel",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day settings",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day settings pc",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day settings xbox",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day sliding",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day song",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day sony",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day steam charts",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day steam deck",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day steam numbers",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day steamdb",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day strategy guide",
       "weight": 2
     },
     {
       "query": "gears of war e day system requirements",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day tai",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day tai actor",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day tai va",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day taika waititi",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day take place",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day tier list",
       "weight": 2
     },
     {
@@ -447,83 +2807,143 @@
       "weight": 2
     },
     {
+      "query": "gears of war e day trailer 2",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day triple aaa",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day turn off ray tracing",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day twitch drops",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day ue5",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day uk",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day ultimate edition",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day vraahk",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day vs judgement",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day vs reloaded",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day vulcan",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day walkthrough",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day wall bouncing",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day wallpaper",
+      "weight": 2
+    },
+    {
+      "query": "gears of war e day wallpaper 4k",
+      "weight": 2
+    },
+    {
       "query": "gears of war e day what platforms",
       "weight": 2
     },
     {
-      "query": "gears of war e day when",
+      "query": "gears of war e day when does it come out",
       "weight": 2
     },
     {
-      "query": "gears of war e day when was it announced",
+      "query": "gears of war e day when does it take place",
       "weight": 2
     },
     {
-      "query": "gears of war e day where to buy",
+      "query": "gears of war e day when does the beta end",
       "weight": 2
     },
     {
-      "query": "gears of war e day where to play",
+      "query": "gears of war e day will flop",
       "weight": 2
     },
     {
-      "query": "gears of war e day xbox",
+      "query": "gears of war e day will it be on steam",
       "weight": 2
     },
     {
-      "query": "gears of war e day xbox console",
+      "query": "gears of war e day will it have horde mode",
       "weight": 2
     },
     {
-      "query": "gears of war e day xbox controller",
+      "query": "gears of war e day wretch",
       "weight": 2
     },
     {
-      "query": "gears of war e day xbox edition",
+      "query": "gears of war e day writer",
       "weight": 2
     },
     {
-      "query": "gears of war e day xbox exclusive",
+      "query": "gears of war e day x aaa",
       "weight": 2
     },
     {
-      "query": "gears of war e day xbox game pass",
+      "query": "gears of war e day xbox gift card",
       "weight": 2
     },
     {
-      "query": "gears of war e day xbox one",
+      "query": "gears of war e-day aiming",
       "weight": 2
     },
     {
-      "query": "gears of war e day xbox series s",
+      "query": "gears of war e-day publisher",
       "weight": 2
     },
     {
-      "query": "gears of war e day xbox series x",
+      "query": "gears of war e-day sortira t'il sur ps5",
       "weight": 2
     },
     {
-      "query": "gears of war e day xbox series x console",
+      "query": "gears of war e-day voice chat not working",
       "weight": 2
     },
     {
-      "query": "gears of war e day year",
+      "query": "gears of war how many people died on e day",
       "weight": 2
     },
     {
-      "query": "gears of war e day young marcus",
+      "query": "gears war e day",
       "weight": 2
     },
     {
-      "query": "gears of war e day young marcus fenix",
+      "query": "gears war e day beta",
       "weight": 2
     },
     {
-      "query": "gears of war e day youtube",
+      "query": "gears war e day ps5",
       "weight": 2
     },
     {
-      "query": "how long is gears 5 campaign",
+      "query": "gears war e day release date",
       "weight": 2
     },
     {
@@ -531,35 +2951,123 @@
       "weight": 2
     },
     {
-      "query": "how many missions are in gears of war",
+      "query": "how many gigabytes is gears of war e-day",
       "weight": 2
     },
     {
-      "query": "can you play gears e day",
-      "weight": 1
+      "query": "how to join gears e day beta",
+      "weight": 2
     },
     {
-      "query": "can you play gears e day beta now",
-      "weight": 1
+      "query": "is gears e day center screen aiming",
+      "weight": 2
     },
     {
-      "query": "can you play gears e day beta on pc",
-      "weight": 1
+      "query": "is gears e day coming out on pc",
+      "weight": 2
     },
     {
-      "query": "can you play gears e day beta right now",
-      "weight": 1
+      "query": "is gears e day out",
+      "weight": 2
     },
     {
-      "query": "can you play gears e day beta with game pass",
-      "weight": 1
+      "query": "is gears of war e day fully on disc",
+      "weight": 2
     },
     {
-      "query": "can you play gears e day on xbox one",
-      "weight": 1
+      "query": "is gears of war e day out yet",
+      "weight": 2
     },
     {
-      "query": "can you play gears e day right now",
+      "query": "registra tu linea gears e day",
+      "weight": 2
+    },
+    {
+      "query": "road to gears e day",
+      "weight": 2
+    },
+    {
+      "query": "sraak gears e day",
+      "weight": 2
+    },
+    {
+      "query": "tai kaliso gears of war e day voice actor",
+      "weight": 2
+    },
+    {
+      "query": "vrak gears of war e day",
+      "weight": 2
+    },
+    {
+      "query": "was gears e day supposed to be on ps5",
+      "weight": 2
+    },
+    {
+      "query": "what year does gears e day take place",
+      "weight": 2
+    },
+    {
+      "query": "when does gears e day beta come out",
+      "weight": 2
+    },
+    {
+      "query": "when does gears e day beta go live",
+      "weight": 2
+    },
+    {
+      "query": "when does gears e day come out",
+      "weight": 2
+    },
+    {
+      "query": "when does gears e day take place",
+      "weight": 2
+    },
+    {
+      "query": "when is gears e day supposed to come out",
+      "weight": 2
+    },
+    {
+      "query": "when is gears of war e day supposed to come out",
+      "weight": 2
+    },
+    {
+      "query": "who wrote gears of war e day",
+      "weight": 2
+    },
+    {
+      "query": "will gears e day be on ultimate on xbox gamepass",
+      "weight": 2
+    },
+    {
+      "query": "will gears e day have horde",
+      "weight": 2
+    },
+    {
+      "query": "will gears e day have multiplayer",
+      "weight": 2
+    },
+    {
+      "query": "will gears e day run on series s",
+      "weight": 2
+    },
+    {
+      "query": "will gears e day run on steam deck",
+      "weight": 2
+    },
+    {
+      "query": "will gears of war e day be fully on disc",
+      "weight": 2
+    },
+    {
+      "query": "ya puedo jugar gears e day",
+      "weight": 2
+    },
+    {
+      "query": "ya salio el gears e day",
+      "weight": 2
+    },
+    {
+      "query": "can you play gears of war e day",
       "weight": 1
     },
     {
@@ -567,7 +3075,27 @@
       "weight": 1
     },
     {
+      "query": "can you play gears of war e day on ps5",
+      "weight": 1
+    },
+    {
       "query": "can you play gears of war e day on xbox one",
+      "weight": 1
+    },
+    {
+      "query": "can you play gears of war e day on xbox series s",
+      "weight": 1
+    },
+    {
+      "query": "can you play gears of war e day right now",
+      "weight": 1
+    },
+    {
+      "query": "can you play gears of war e day yet",
+      "weight": 1
+    },
+    {
+      "query": "come giocare alla beta di gears of war e day",
       "weight": 1
     },
     {
@@ -579,7 +3107,19 @@
       "weight": 1
     },
     {
-      "query": "gears e day",
+      "query": "elizabeth ludlow gears of war e day",
+      "weight": 1
+    },
+    {
+      "query": "gears 2 maps list",
+      "weight": 1
+    },
+    {
+      "query": "gears e day 120 fps",
+      "weight": 1
+    },
+    {
+      "query": "gears e day 6 de agosto",
       "weight": 1
     },
     {
@@ -591,19 +3131,7 @@
       "weight": 1
     },
     {
-      "query": "gears e day aim acceleration",
-      "weight": 1
-    },
-    {
-      "query": "gears e day aim assist",
-      "weight": 1
-    },
-    {
       "query": "gears e day all editions",
-      "weight": 1
-    },
-    {
-      "query": "gears e day all skins",
       "weight": 1
     },
     {
@@ -623,35 +3151,7 @@
       "weight": 1
     },
     {
-      "query": "gears e day best class",
-      "weight": 1
-    },
-    {
-      "query": "gears e day best controller settings",
-      "weight": 1
-    },
-    {
-      "query": "gears e day best graphics settings",
-      "weight": 1
-    },
-    {
-      "query": "gears e day best guns",
-      "weight": 1
-    },
-    {
-      "query": "gears e day best horde class",
-      "weight": 1
-    },
-    {
-      "query": "gears e day best keybinds",
-      "weight": 1
-    },
-    {
-      "query": "gears e day best pc settings",
-      "weight": 1
-    },
-    {
-      "query": "gears e day best settings",
+      "query": "gears e day best lancer mods",
       "weight": 1
     },
     {
@@ -663,15 +3163,35 @@
       "weight": 1
     },
     {
-      "query": "gears e day beta do i need to buy the game",
+      "query": "gears e day beta black screen",
       "weight": 1
     },
     {
-      "query": "gears e day beta end",
+      "query": "gears e day beta download",
       "weight": 1
     },
     {
-      "query": "gears e day beta end time",
+      "query": "gears e day beta download size",
+      "weight": 1
+    },
+    {
+      "query": "gears e day beta end date",
+      "weight": 1
+    },
+    {
+      "query": "gears e day beta end time uk",
+      "weight": 1
+    },
+    {
+      "query": "gears e day beta ending",
+      "weight": 1
+    },
+    {
+      "query": "gears e day beta error",
+      "weight": 1
+    },
+    {
+      "query": "gears e day beta freezing",
       "weight": 1
     },
     {
@@ -679,27 +3199,11 @@
       "weight": 1
     },
     {
-      "query": "gears e day beta new zealand",
+      "query": "gears e day beta maps",
       "weight": 1
     },
     {
-      "query": "gears e day beta release date",
-      "weight": 1
-    },
-    {
-      "query": "gears e day beta rewards",
-      "weight": 1
-    },
-    {
-      "query": "gears e day beta start time",
-      "weight": 1
-    },
-    {
-      "query": "gears e day beta steam",
-      "weight": 1
-    },
-    {
-      "query": "gears e day beta times",
+      "query": "gears e day beta review",
       "weight": 1
     },
     {
@@ -707,15 +3211,31 @@
       "weight": 1
     },
     {
+      "query": "gears e day black screen",
+      "weight": 1
+    },
+    {
+      "query": "gears e day blast damage mags",
+      "weight": 1
+    },
+    {
+      "query": "gears e day blog",
+      "weight": 1
+    },
+    {
+      "query": "gears e day bosses",
+      "weight": 1
+    },
+    {
       "query": "gears e day budget",
       "weight": 1
     },
     {
-      "query": "gears e day campaign co op",
+      "query": "gears e day campaign",
       "weight": 1
     },
     {
-      "query": "gears e day campaign how many players",
+      "query": "gears e day campaign length",
       "weight": 1
     },
     {
@@ -723,7 +3243,23 @@
       "weight": 1
     },
     {
-      "query": "gears e day carmine",
+      "query": "gears e day cancelled",
+      "weight": 1
+    },
+    {
+      "query": "gears e day cant link microsoft account",
+      "weight": 1
+    },
+    {
+      "query": "gears e day carlos",
+      "weight": 1
+    },
+    {
+      "query": "gears e day carter",
+      "weight": 1
+    },
+    {
+      "query": "gears e day cast",
       "weight": 1
     },
     {
@@ -731,7 +3267,11 @@
       "weight": 1
     },
     {
-      "query": "gears e day closed beta",
+      "query": "gears e day city",
+      "weight": 1
+    },
+    {
+      "query": "gears e day collector's edition",
       "weight": 1
     },
     {
@@ -751,7 +3291,31 @@
       "weight": 1
     },
     {
-      "query": "gears e day cuando sale",
+      "query": "gears e day cuando saldra",
+      "weight": 1
+    },
+    {
+      "query": "gears e day cuando sale beta",
+      "weight": 1
+    },
+    {
+      "query": "gears e day cuando se estrena",
+      "weight": 1
+    },
+    {
+      "query": "gears e day cuanto cuesta",
+      "weight": 1
+    },
+    {
+      "query": "gears e day cuanto pesa",
+      "weight": 1
+    },
+    {
+      "query": "gears e day customization",
+      "weight": 1
+    },
+    {
+      "query": "gears e day customization packs",
       "weight": 1
     },
     {
@@ -759,7 +3323,19 @@
       "weight": 1
     },
     {
-      "query": "gears e day de que trata",
+      "query": "gears e day date release",
+      "weight": 1
+    },
+    {
+      "query": "gears e day deep dive",
+      "weight": 1
+    },
+    {
+      "query": "gears e day delay",
+      "weight": 1
+    },
+    {
+      "query": "gears e day deluxe",
       "weight": 1
     },
     {
@@ -771,27 +3347,23 @@
       "weight": 1
     },
     {
+      "query": "gears e day details",
+      "weight": 1
+    },
+    {
+      "query": "gears e day dev team",
+      "weight": 1
+    },
+    {
       "query": "gears e day developer",
       "weight": 1
     },
     {
-      "query": "gears e day development cost",
+      "query": "gears e day devs",
       "weight": 1
     },
     {
-      "query": "gears e day direct",
-      "weight": 1
-    },
-    {
-      "query": "gears e day disc",
-      "weight": 1
-    },
-    {
-      "query": "gears e day discord",
-      "weight": 1
-    },
-    {
-      "query": "gears e day divisions",
+      "query": "gears e day dlss",
       "weight": 1
     },
     {
@@ -799,7 +3371,7 @@
       "weight": 1
     },
     {
-      "query": "gears e day dom",
+      "query": "gears e day early",
       "weight": 1
     },
     {
@@ -811,7 +3383,27 @@
       "weight": 1
     },
     {
+      "query": "gears e day early access date",
+      "weight": 1
+    },
+    {
+      "query": "gears e day early access game pass",
+      "weight": 1
+    },
+    {
+      "query": "gears e day early access rewards",
+      "weight": 1
+    },
+    {
+      "query": "gears e day early access time",
+      "weight": 1
+    },
+    {
       "query": "gears e day early beta",
+      "weight": 1
+    },
+    {
+      "query": "gears e day early beta start time",
       "weight": 1
     },
     {
@@ -819,27 +3411,19 @@
       "weight": 1
     },
     {
-      "query": "gears e day editions",
+      "query": "gears e day error",
       "weight": 1
     },
     {
-      "query": "gears e day enemies",
+      "query": "gears e day error codes",
       "weight": 1
     },
     {
-      "query": "gears e day engine",
+      "query": "gears e day error hank-ephyra",
       "weight": 1
     },
     {
-      "query": "gears e day esports",
-      "weight": 1
-    },
-    {
-      "query": "gears e day exclusive",
-      "weight": 1
-    },
-    {
-      "query": "gears e day executions",
+      "query": "gears e day features",
       "weight": 1
     },
     {
@@ -855,7 +3439,23 @@
       "weight": 1
     },
     {
+      "query": "gears e day feels terrible",
+      "weight": 1
+    },
+    {
+      "query": "gears e day feels weird",
+      "weight": 1
+    },
+    {
+      "query": "gears e day female",
+      "weight": 1
+    },
+    {
       "query": "gears e day female characters",
+      "weight": 1
+    },
+    {
+      "query": "gears e day figura",
       "weight": 1
     },
     {
@@ -863,7 +3463,27 @@
       "weight": 1
     },
     {
-      "query": "gears e day file size",
+      "query": "gears e day filtraciones",
+      "weight": 1
+    },
+    {
+      "query": "gears e day first announcement",
+      "weight": 1
+    },
+    {
+      "query": "gears e day first impressions",
+      "weight": 1
+    },
+    {
+      "query": "gears e day first trailer",
+      "weight": 1
+    },
+    {
+      "query": "gears e day fisico",
+      "weight": 1
+    },
+    {
+      "query": "gears e day for pc",
       "weight": 1
     },
     {
@@ -871,15 +3491,31 @@
       "weight": 1
     },
     {
-      "query": "gears e day fov",
+      "query": "gears e day fps",
       "weight": 1
     },
     {
-      "query": "gears e day fov slider",
+      "query": "gears e day fps counter",
       "weight": 1
     },
     {
-      "query": "gears e day freezing",
+      "query": "gears e day frame gen",
+      "weight": 1
+    },
+    {
+      "query": "gears e day frame rate",
+      "weight": 1
+    },
+    {
+      "query": "gears e day frog",
+      "weight": 1
+    },
+    {
+      "query": "gears e day game",
+      "weight": 1
+    },
+    {
+      "query": "gears e day game engine",
       "weight": 1
     },
     {
@@ -891,43 +3527,35 @@
       "weight": 1
     },
     {
+      "query": "gears e day game pass beta",
+      "weight": 1
+    },
+    {
+      "query": "gears e day game pass pc",
+      "weight": 1
+    },
+    {
       "query": "gears e day gameplay",
       "weight": 1
     },
     {
-      "query": "gears e day geforce now",
+      "query": "gears e day gameplay trailer",
       "weight": 1
     },
     {
-      "query": "gears e day gif",
+      "query": "gears e day gamestop",
       "weight": 1
     },
     {
-      "query": "gears e day gnasher",
+      "query": "gears e day guitar",
       "weight": 1
     },
     {
-      "query": "gears e day graphics",
+      "query": "gears e day gun skins",
       "weight": 1
     },
     {
-      "query": "gears e day graphics settings",
-      "weight": 1
-    },
-    {
-      "query": "gears e day grenade launcher",
-      "weight": 1
-    },
-    {
-      "query": "gears e day gut puncher",
-      "weight": 1
-    },
-    {
-      "query": "gears e day horde best class",
-      "weight": 1
-    },
-    {
-      "query": "gears e day horde classes",
+      "query": "gears e day gut punch",
       "weight": 1
     },
     {
@@ -935,15 +3563,15 @@
       "weight": 1
     },
     {
-      "query": "gears e day horde mode",
-      "weight": 1
-    },
-    {
-      "query": "gears e day horde siege",
-      "weight": 1
-    },
-    {
       "query": "gears e day how to change menu music",
+      "weight": 1
+    },
+    {
+      "query": "gears e day how to get beta",
+      "weight": 1
+    },
+    {
+      "query": "gears e day how to play",
       "weight": 1
     },
     {
@@ -951,47 +3579,15 @@
       "weight": 1
     },
     {
+      "query": "gears e day how to throw blast charge",
+      "weight": 1
+    },
+    {
       "query": "gears e day how to use grenade launcher",
       "weight": 1
     },
     {
-      "query": "gears e day ign",
-      "weight": 1
-    },
-    {
-      "query": "gears e day imdb",
-      "weight": 1
-    },
-    {
-      "query": "gears e day impressions",
-      "weight": 1
-    },
-    {
-      "query": "gears e day inconsistent",
-      "weight": 1
-    },
-    {
-      "query": "gears e day input delay",
-      "weight": 1
-    },
-    {
-      "query": "gears e day input lag",
-      "weight": 1
-    },
-    {
-      "query": "gears e day interview",
-      "weight": 1
-    },
-    {
-      "query": "gears e day iron",
-      "weight": 1
-    },
-    {
-      "query": "gears e day is hard",
-      "weight": 1
-    },
-    {
-      "query": "gears e day jb hi fi",
+      "query": "gears e day how to wall bounce",
       "weight": 1
     },
     {
@@ -1011,43 +3607,11 @@
       "weight": 1
     },
     {
-      "query": "gears e day keeps crashing",
+      "query": "gears e day lag",
       "weight": 1
     },
     {
-      "query": "gears e day keeps crashing pc",
-      "weight": 1
-    },
-    {
-      "query": "gears e day kelowna",
-      "weight": 1
-    },
-    {
-      "query": "gears e day key",
-      "weight": 1
-    },
-    {
-      "query": "gears e day keybinds",
-      "weight": 1
-    },
-    {
-      "query": "gears e day keyboard",
-      "weight": 1
-    },
-    {
-      "query": "gears e day keyboard and mouse",
-      "weight": 1
-    },
-    {
-      "query": "gears e day keyboard controls",
-      "weight": 1
-    },
-    {
-      "query": "gears e day keyboard or controller",
-      "weight": 1
-    },
-    {
-      "query": "gears e day known issues",
+      "query": "gears e day laggy",
       "weight": 1
     },
     {
@@ -1055,27 +3619,35 @@
       "weight": 1
     },
     {
+      "query": "gears e day lancer mods",
+      "weight": 1
+    },
+    {
+      "query": "gears e day lancer replica",
+      "weight": 1
+    },
+    {
+      "query": "gears e day lanzamiento",
+      "weight": 1
+    },
+    {
+      "query": "gears e day latency",
+      "weight": 1
+    },
+    {
       "query": "gears e day launch",
       "weight": 1
     },
     {
-      "query": "gears e day launch date",
+      "query": "gears e day launch error",
       "weight": 1
     },
     {
-      "query": "gears e day leaks",
+      "query": "gears e day launch maps",
       "weight": 1
     },
     {
-      "query": "gears e day limited edition",
-      "weight": 1
-    },
-    {
-      "query": "gears e day limited edition console",
-      "weight": 1
-    },
-    {
-      "query": "gears e day linux",
+      "query": "gears e day loaded",
       "weight": 1
     },
     {
@@ -1091,91 +3663,19 @@
       "weight": 1
     },
     {
-      "query": "gears e day longshot",
+      "query": "gears e day logo png",
       "weight": 1
     },
     {
-      "query": "gears e day maps",
+      "query": "gears e day lore",
       "weight": 1
     },
     {
-      "query": "gears e day marcus",
+      "query": "gears e day maps at launch",
       "weight": 1
     },
     {
-      "query": "gears e day merch",
-      "weight": 1
-    },
-    {
-      "query": "gears e day metallica",
-      "weight": 1
-    },
-    {
-      "query": "gears e day movement",
-      "weight": 1
-    },
-    {
-      "query": "gears e day multiplayer",
-      "weight": 1
-    },
-    {
-      "query": "gears e day multiplayer beta",
-      "weight": 1
-    },
-    {
-      "query": "gears e day multiplayer characters",
-      "weight": 1
-    },
-    {
-      "query": "gears e day multiplayer gameplay",
-      "weight": 1
-    },
-    {
-      "query": "gears e day multiplayer reveal",
-      "weight": 1
-    },
-    {
-      "query": "gears e day new enemies",
-      "weight": 1
-    },
-    {
-      "query": "gears e day new guns",
-      "weight": 1
-    },
-    {
-      "query": "gears e day new locust",
-      "weight": 1
-    },
-    {
-      "query": "gears e day new weapons",
-      "weight": 1
-    },
-    {
-      "query": "gears e day news",
-      "weight": 1
-    },
-    {
-      "query": "gears e day next beta",
-      "weight": 1
-    },
-    {
-      "query": "gears e day no roadie run",
-      "weight": 1
-    },
-    {
-      "query": "gears e day no wall bouncing",
-      "weight": 1
-    },
-    {
-      "query": "gears e day not coming to ps5",
-      "weight": 1
-    },
-    {
-      "query": "gears e day on gamepass",
-      "weight": 1
-    },
-    {
-      "query": "gears e day on steam deck",
+      "query": "gears e day onyx guard",
       "weight": 1
     },
     {
@@ -1183,183 +3683,31 @@
       "weight": 1
     },
     {
-      "query": "gears e day open beta details",
+      "query": "gears e day open beta free",
       "weight": 1
     },
     {
-      "query": "gears e day open beta steam",
+      "query": "gears e day pc requirements",
       "weight": 1
     },
     {
-      "query": "gears e day open beta time",
+      "query": "gears e day ps5 cancelled",
       "weight": 1
     },
     {
-      "query": "gears e day para que consolas saldra",
+      "query": "gears e day release day",
       "weight": 1
     },
     {
-      "query": "gears e day pc specs",
+      "query": "gears e day series x",
       "weight": 1
     },
     {
-      "query": "gears e day performance",
+      "query": "gears e day series x performance",
       "weight": 1
     },
     {
-      "query": "gears e day platforms",
-      "weight": 1
-    },
-    {
-      "query": "gears e day playstation",
-      "weight": 1
-    },
-    {
-      "query": "gears e day pre order",
-      "weight": 1
-    },
-    {
-      "query": "gears e day pre order bonus",
-      "weight": 1
-    },
-    {
-      "query": "gears e day premium edition",
-      "weight": 1
-    },
-    {
-      "query": "gears e day price",
-      "weight": 1
-    },
-    {
-      "query": "gears e day quando esce",
-      "weight": 1
-    },
-    {
-      "query": "gears e day que es",
-      "weight": 1
-    },
-    {
-      "query": "gears e day ranking system",
-      "weight": 1
-    },
-    {
-      "query": "gears e day ranks",
-      "weight": 1
-    },
-    {
-      "query": "gears e day ray tracing",
-      "weight": 1
-    },
-    {
-      "query": "gears e day recommended specs",
-      "weight": 1
-    },
-    {
-      "query": "gears e day reddit",
-      "weight": 1
-    },
-    {
-      "query": "gears e day release",
-      "weight": 1
-    },
-    {
-      "query": "gears e day release date beta",
-      "weight": 1
-    },
-    {
-      "query": "gears e day requirements",
-      "weight": 1
-    },
-    {
-      "query": "gears e day review",
-      "weight": 1
-    },
-    {
-      "query": "gears e day rog ally",
-      "weight": 1
-    },
-    {
-      "query": "gears e day settings",
-      "weight": 1
-    },
-    {
-      "query": "gears e day skins",
-      "weight": 1
-    },
-    {
-      "query": "gears e day special edition",
-      "weight": 1
-    },
-    {
-      "query": "gears e day specs",
-      "weight": 1
-    },
-    {
-      "query": "gears e day split screen",
-      "weight": 1
-    },
-    {
-      "query": "gears e day statue",
-      "weight": 1
-    },
-    {
-      "query": "gears e day steam charts",
-      "weight": 1
-    },
-    {
-      "query": "gears e day steam deck",
-      "weight": 1
-    },
-    {
-      "query": "gears e day tai",
-      "weight": 1
-    },
-    {
-      "query": "gears e day tai skin",
-      "weight": 1
-    },
-    {
-      "query": "gears e day tai voice actor",
-      "weight": 1
-    },
-    {
-      "query": "gears e day time",
-      "weight": 1
-    },
-    {
-      "query": "gears e day timeline",
-      "weight": 1
-    },
-    {
-      "query": "gears e day trailer",
-      "weight": 1
-    },
-    {
-      "query": "gears e day trailer 2",
-      "weight": 1
-    },
-    {
-      "query": "gears e day trash",
-      "weight": 1
-    },
-    {
-      "query": "gears e day twitch drops",
-      "weight": 1
-    },
-    {
-      "query": "gears e day twitter",
-      "weight": 1
-    },
-    {
-      "query": "gears e day ue5",
-      "weight": 1
-    },
-    {
-      "query": "gears e day ultimate",
-      "weight": 1
-    },
-    {
-      "query": "gears e day ultimate edition",
+      "query": "gears e day system requirements",
       "weight": 1
     },
     {
@@ -1391,87 +3739,11 @@
       "weight": 1
     },
     {
-      "query": "gears e day versions",
-      "weight": 1
-    },
-    {
-      "query": "gears e day versus",
-      "weight": 1
-    },
-    {
-      "query": "gears e day versus modes",
-      "weight": 1
-    },
-    {
-      "query": "gears e day villain",
-      "weight": 1
-    },
-    {
-      "query": "gears e day voice actors",
-      "weight": 1
-    },
-    {
-      "query": "gears e day voice chat not working",
-      "weight": 1
-    },
-    {
-      "query": "gears e day vraahk",
-      "weight": 1
-    },
-    {
-      "query": "gears e day vrr",
-      "weight": 1
-    },
-    {
       "query": "gears e day vs gears 5",
       "weight": 1
     },
     {
-      "query": "gears e day wall bouncing",
-      "weight": 1
-    },
-    {
-      "query": "gears e day wallpaper",
-      "weight": 1
-    },
-    {
-      "query": "gears e day wallpaper 4k",
-      "weight": 1
-    },
-    {
-      "query": "gears e day weapon parts",
-      "weight": 1
-    },
-    {
-      "query": "gears e day weapons",
-      "weight": 1
-    },
-    {
-      "query": "gears e day weapons list",
-      "weight": 1
-    },
-    {
       "query": "gears e day what carries over",
-      "weight": 1
-    },
-    {
-      "query": "gears e day wiki",
-      "weight": 1
-    },
-    {
-      "query": "gears e day will beta progress carry over",
-      "weight": 1
-    },
-    {
-      "query": "gears e day woke",
-      "weight": 1
-    },
-    {
-      "query": "gears e day wretch",
-      "weight": 1
-    },
-    {
-      "query": "gears e day wwe",
       "weight": 1
     },
     {
@@ -1495,14 +3767,6 @@
       "weight": 1
     },
     {
-      "query": "gears e day xbox one",
-      "weight": 1
-    },
-    {
-      "query": "gears e day xbox one x",
-      "weight": 1
-    },
-    {
       "query": "gears e day xbox series s",
       "weight": 1
     },
@@ -1515,7 +3779,7 @@
       "weight": 1
     },
     {
-      "query": "gears e day ya salio",
+      "query": "gears e-day day one game pass",
       "weight": 1
     },
     {
@@ -1523,7 +3787,19 @@
       "weight": 1
     },
     {
-      "query": "gears of war 1 how many years after e day",
+      "query": "gears of war 14 years after e day",
+      "weight": 1
+    },
+    {
+      "query": "gears of war 2 day one",
+      "weight": 1
+    },
+    {
+      "query": "gears of war 2 day one map",
+      "weight": 1
+    },
+    {
+      "query": "gears of war 2 ultimate edition release date",
       "weight": 1
     },
     {
@@ -1531,7 +3807,31 @@
       "weight": 1
     },
     {
-      "query": "gears of war e day a prequel",
+      "query": "gears of war e day 2",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day 2 player",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day 400 million",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day 6",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day 60 fps",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day a new game",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day a remake",
       "weight": 1
     },
     {
@@ -1559,10 +3859,6 @@
       "weight": 1
     },
     {
-      "query": "gears of war e day all editions",
-      "weight": 1
-    },
-    {
       "query": "gears of war e day all enemies",
       "weight": 1
     },
@@ -1571,7 +3867,7 @@
       "weight": 1
     },
     {
-      "query": "gears of war e day all weapons",
+      "query": "gears of war e day alpha",
       "weight": 1
     },
     {
@@ -1588,6 +3884,50 @@
     },
     {
       "query": "gears of war e day art book",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day audio",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day audio bug",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day audio issues",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day audio settings",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day august",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day august 13",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day august 6",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day australia",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day australian servers",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day baird and cole",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day bar scene",
       "weight": 1
     },
     {
@@ -1611,39 +3951,31 @@
       "weight": 1
     },
     {
-      "query": "gears of war e day best mods",
-      "weight": 1
-    },
-    {
       "query": "gears of war e day best pc settings",
       "weight": 1
     },
     {
-      "query": "gears of war e day best settings",
+      "query": "gears of war e day beta ending",
       "weight": 1
     },
     {
-      "query": "gears of war e day best weapon mods",
+      "query": "gears of war e day beta ending time",
       "weight": 1
     },
     {
-      "query": "gears of war e day best weapons",
+      "query": "gears of war e day beta error code",
       "weight": 1
     },
     {
-      "query": "gears of war e day beta",
+      "query": "gears of war e day beta fps",
       "weight": 1
     },
     {
-      "query": "gears of war e day beta dates",
+      "query": "gears of war e day beta freezing",
       "weight": 1
     },
     {
-      "query": "gears of war e day beta do you keep progress",
-      "weight": 1
-    },
-    {
-      "query": "gears of war e day beta download",
+      "query": "gears of war e day beta hour",
       "weight": 1
     },
     {
@@ -1651,7 +3983,11 @@
       "weight": 1
     },
     {
-      "query": "gears of war e day beta new zealand",
+      "query": "gears of war e day beta maps",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day beta out",
       "weight": 1
     },
     {
@@ -1659,11 +3995,19 @@
       "weight": 1
     },
     {
-      "query": "gears of war e day beta release date",
+      "query": "gears of war e day beta price",
       "weight": 1
     },
     {
-      "query": "gears of war e day beta rewards",
+      "query": "gears of war e day beta review",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day beta review reddit",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day beta run time",
       "weight": 1
     },
     {
@@ -1671,11 +4015,23 @@
       "weight": 1
     },
     {
-      "query": "gears of war e day beta steam",
+      "query": "gears of war e day beta uk",
       "weight": 1
     },
     {
-      "query": "gears of war e day beta times",
+      "query": "gears of war e day beta uk release date",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day beta uk release time",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day beta uk time",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day beta weapons",
       "weight": 1
     },
     {
@@ -1683,7 +4039,79 @@
       "weight": 1
     },
     {
-      "query": "gears of war e day campaign",
+      "query": "gears of war e day big w",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day bile frog",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day black screen xbox",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day blast charge",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day blurry",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day boltok",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day bonuses",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day book",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day boomer",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day boring",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day boss",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day bots",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day box",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day box art",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day box set",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day campaign 4 player",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day campaign co op",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day campaign how many players",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day can i run it",
       "weight": 1
     },
     {
@@ -1691,11 +4119,43 @@
       "weight": 1
     },
     {
-      "query": "gears of war e day cast",
+      "query": "gears of war e day cant hear voice chat",
       "weight": 1
     },
     {
-      "query": "gears of war e day character list",
+      "query": "gears of war e day cant link microsoft account",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day carlos",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day carmine",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day character creation",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day character customization",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day character skins",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day characters",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day characters reddit",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day cliff bleszinski",
       "weight": 1
     },
     {
@@ -1703,31 +4163,87 @@
       "weight": 1
     },
     {
-      "query": "gears of war e day co op",
+      "query": "gears of war e day collector's edition europe",
       "weight": 1
     },
     {
-      "query": "gears of war e day collector's edition",
+      "query": "gears of war e day collector's edition price",
       "weight": 1
     },
     {
-      "query": "gears of war e day collector's edition how much",
+      "query": "gears of war e day collector's edition uk",
       "weight": 1
     },
     {
-      "query": "gears of war e day coming to pc",
+      "query": "gears of war e day collector's edition where to pre order",
       "weight": 1
     },
     {
-      "query": "gears of war e day coming to ps5",
+      "query": "gears of war e day collectors edition eu",
       "weight": 1
     },
     {
-      "query": "gears of war e day console exclusive",
+      "query": "gears of war e day collectors edition kaufen",
       "weight": 1
     },
     {
-      "query": "gears of war e day controller",
+      "query": "gears of war e day coming out",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day coming out on pc",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day coming to playstation",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day connecting to required services",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day console edition",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day controller or keyboard",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day controller or mouse and keyboard",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day cost 400 million",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day cuando sale",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day cube",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day curb stomp",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day custom console",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day custom controller",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day custom xbox",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day cutscenes",
       "weight": 1
     },
     {
@@ -1735,23 +4251,35 @@
       "weight": 1
     },
     {
-      "query": "gears of war e day deluxe edition",
+      "query": "gears of war e day date release",
       "weight": 1
     },
     {
-      "query": "gears of war e day demo",
+      "query": "gears of war e day day one",
       "weight": 1
     },
     {
-      "query": "gears of war e day denuvo",
+      "query": "gears of war e day day one game pass",
       "weight": 1
     },
     {
-      "query": "gears of war e day dev team",
+      "query": "gears of war e day de que tratara",
       "weight": 1
     },
     {
-      "query": "gears of war e day developer",
+      "query": "gears of war e day deals",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day different editions",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day difficulty",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day digital",
       "weight": 1
     },
     {
@@ -1759,7 +4287,19 @@
       "weight": 1
     },
     {
+      "query": "gears of war e day direct uk time",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day director",
+      "weight": 1
+    },
+    {
       "query": "gears of war e day disc",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day disc version",
       "weight": 1
     },
     {
@@ -1767,15 +4307,23 @@
       "weight": 1
     },
     {
+      "query": "gears of war e day divisions",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day dizzy",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day dlc",
+      "weight": 1
+    },
+    {
       "query": "gears of war e day does beta progress carry over",
       "weight": 1
     },
     {
-      "query": "gears of war e day dom",
-      "weight": 1
-    },
-    {
-      "query": "gears of war e day early access",
+      "query": "gears of war e day duree de vie",
       "weight": 1
     },
     {
@@ -1783,7 +4331,15 @@
       "weight": 1
     },
     {
+      "query": "gears of war e day early access beta start time",
+      "weight": 1
+    },
+    {
       "query": "gears of war e day early access date",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day early access game pass",
       "weight": 1
     },
     {
@@ -1791,7 +4347,23 @@
       "weight": 1
     },
     {
+      "query": "gears of war e day early access release date",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day early access time",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day early beta",
+      "weight": 1
+    },
+    {
       "query": "gears of war e day early release",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day early reviews",
       "weight": 1
     },
     {
@@ -1803,6 +4375,14 @@
       "weight": 1
     },
     {
+      "query": "gears of war e day elite controller",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day ending",
+      "weight": 1
+    },
+    {
       "query": "gears of war e day enemies",
       "weight": 1
     },
@@ -1811,7 +4391,23 @@
       "weight": 1
     },
     {
+      "query": "gears of war e day error code",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day error code hank ephyra",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day error message",
+      "weight": 1
+    },
+    {
       "query": "gears of war e day exclusive",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day executions",
       "weight": 1
     },
     {
@@ -1823,11 +4419,15 @@
       "weight": 1
     },
     {
-      "query": "gears of war e day figures",
+      "query": "gears of war e day file size",
       "weight": 1
     },
     {
-      "query": "gears of war e day file size",
+      "query": "gears of war e day flooder",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day flyer",
       "weight": 1
     },
     {
@@ -1851,27 +4451,31 @@
       "weight": 1
     },
     {
-      "query": "gears of war e day free beta",
+      "query": "gears of war e day fps counter",
       "weight": 1
     },
     {
-      "query": "gears of war e day game engine",
+      "query": "gears of war e day free open beta",
       "weight": 1
     },
     {
-      "query": "gears of war e day game modes",
+      "query": "gears of war e day game",
       "weight": 1
     },
     {
-      "query": "gears of war e day game pass",
+      "query": "gears of war e day game pass beta",
       "weight": 1
     },
     {
-      "query": "gears of war e day gameplay",
+      "query": "gears of war e day game pass pc",
       "weight": 1
     },
     {
-      "query": "gears of war e day gamestop",
+      "query": "gears of war e day game pass ultimate",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day gameplay trailer",
       "weight": 1
     },
     {
@@ -1887,11 +4491,59 @@
       "weight": 1
     },
     {
-      "query": "gears of war e day graphics",
+      "query": "gears of war e day graphics card",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day graphics reddit",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day green man gaming",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day grenade launcher",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day grenade tagging",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day grenadier",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day grinder",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day grinder incinerator",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day guns",
       "weight": 1
     },
     {
       "query": "gears of war e day gut puncher",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day hammerburst",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day headset",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day heavy weapons",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day helmet",
       "weight": 1
     },
     {
@@ -1903,19 +4555,23 @@
       "weight": 1
     },
     {
-      "query": "gears of war e day horde classes",
+      "query": "gears of war e day horde bosses",
       "weight": 1
     },
     {
-      "query": "gears of war e day horde mode",
+      "query": "gears of war e day horde maps",
       "weight": 1
     },
     {
-      "query": "gears of war e day horde siege",
+      "query": "gears of war e day horde mode review",
       "weight": 1
     },
     {
-      "query": "gears of war e day horde siege mode",
+      "query": "gears of war e day horde siege maps",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day how long",
       "weight": 1
     },
     {
@@ -1923,75 +4579,19 @@
       "weight": 1
     },
     {
-      "query": "gears of war e day how many chapters",
+      "query": "gears of war e day how long is the beta",
       "weight": 1
     },
     {
-      "query": "gears of war e day how many horde maps",
+      "query": "gears of war e day human shield",
       "weight": 1
     },
     {
-      "query": "gears of war e day how many maps",
+      "query": "gears of war e day ireland",
       "weight": 1
     },
     {
-      "query": "gears of war e day how much",
-      "weight": 1
-    },
-    {
-      "query": "gears of war e day how much did it cost to make",
-      "weight": 1
-    },
-    {
-      "query": "gears of war e day how old is marcus",
-      "weight": 1
-    },
-    {
-      "query": "gears of war e day how to access beta",
-      "weight": 1
-    },
-    {
-      "query": "gears of war e day how to get beta",
-      "weight": 1
-    },
-    {
-      "query": "gears of war e day how to ping",
-      "weight": 1
-    },
-    {
-      "query": "gears of war e day how to plant grenades",
-      "weight": 1
-    },
-    {
-      "query": "gears of war e day how to play open beta",
-      "weight": 1
-    },
-    {
-      "query": "gears of war e day how to wall bounce",
-      "weight": 1
-    },
-    {
-      "query": "gears of war e day ign",
-      "weight": 1
-    },
-    {
-      "query": "gears of war e day images",
-      "weight": 1
-    },
-    {
-      "query": "gears of war e day imdb",
-      "weight": 1
-    },
-    {
-      "query": "gears of war e day impressions",
-      "weight": 1
-    },
-    {
-      "query": "gears of war e day incinerator",
-      "weight": 1
-    },
-    {
-      "query": "gears of war e day iphone wallpaper",
+      "query": "gears of war e day iron",
       "weight": 1
     },
     {
@@ -2007,7 +4607,27 @@
       "weight": 1
     },
     {
+      "query": "gears of war e day is it a new game",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day is it a prequel",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day is it coming to ps5",
+      "weight": 1
+    },
+    {
       "query": "gears of war e day is it console exclusive",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day is it open world",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day is not coming to ps5",
       "weight": 1
     },
     {
@@ -2015,19 +4635,23 @@
       "weight": 1
     },
     {
+      "query": "gears of war e day jack",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day jacob fatu",
+      "weight": 1
+    },
+    {
       "query": "gears of war e day jake gyllenhaal",
       "weight": 1
     },
     {
-      "query": "gears of war e day jb",
+      "query": "gears of war e day jermad",
       "weight": 1
     },
     {
-      "query": "gears of war e day jd",
-      "weight": 1
-    },
-    {
-      "query": "gears of war e day juego fisico",
+      "query": "gears of war e day juego",
       "weight": 1
     },
     {
@@ -2035,23 +4659,23 @@
       "weight": 1
     },
     {
-      "query": "gears of war e day july 30th",
+      "query": "gears of war e day juvies",
       "weight": 1
     },
     {
-      "query": "gears of war e day jump",
+      "query": "gears of war e day kampagne",
       "weight": 1
     },
     {
-      "query": "gears of war e day june 7",
+      "query": "gears of war e day kate",
       "weight": 1
     },
     {
-      "query": "gears of war e day kalona",
+      "query": "gears of war e day kate rayner",
       "weight": 1
     },
     {
-      "query": "gears of war e day kantus",
+      "query": "gears of war e day kaufen",
       "weight": 1
     },
     {
@@ -2087,7 +4711,35 @@
       "weight": 1
     },
     {
+      "query": "gears of war e day kryll",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day lag",
+      "weight": 1
+    },
+    {
       "query": "gears of war e day lancer",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day lancer mods",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day lancer prototype",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day lancer replica",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day lanzamiento",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day latest news",
       "weight": 1
     },
     {
@@ -2095,7 +4747,47 @@
       "weight": 1
     },
     {
+      "query": "gears of war e day launch date",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day launch error",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day leaderboard",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day leaked gameplay",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day leaks reddit",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day legacy controls",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day legacy rewards",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day legendary edition",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day legion go",
+      "weight": 1
+    },
+    {
       "query": "gears of war e day length",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day level 20",
       "weight": 1
     },
     {
@@ -2111,15 +4803,67 @@
       "weight": 1
     },
     {
-      "query": "gears of war e day locust",
+      "query": "gears of war e day limited edition xbox",
       "weight": 1
     },
     {
-      "query": "gears of war e day logo",
+      "query": "gears of war e day link microsoft account",
       "weight": 1
     },
     {
-      "query": "gears of war e day logo png",
+      "query": "gears of war e day linux",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day live",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day live service",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day live stream",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day live wallpaper",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day low fps",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day lucas",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day lucas reyes",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day ludacris",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day ludicrous",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day ludicrous reddit",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day ludicrous vs ultra",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day mad world",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day mad world song",
       "weight": 1
     },
     {
@@ -2127,19 +4871,75 @@
       "weight": 1
     },
     {
-      "query": "gears of war e day merch",
+      "query": "gears of war e day meaning",
       "weight": 1
     },
     {
-      "query": "gears of war e day metacritic",
+      "query": "gears of war e day meat shield",
       "weight": 1
     },
     {
-      "query": "gears of war e day metallica",
+      "query": "gears of war e day medic",
       "weight": 1
     },
     {
-      "query": "gears of war e day minimum requirements",
+      "query": "gears of war e day meme",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day menu music",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day merchandise",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day metallica skin",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day microsoft",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day microsoft store",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day microsoft windows store",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day microtransactions",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day midia fisica",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day midnight release",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day min specs",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day missing features",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day multiplayer",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day multiplayer beta",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day multiplayer beta review",
       "weight": 1
     },
     {
@@ -2151,15 +4951,19 @@
       "weight": 1
     },
     {
+      "query": "gears of war e day multiplayer characters",
+      "weight": 1
+    },
+    {
       "query": "gears of war e day multiplayer gameplay",
       "weight": 1
     },
     {
-      "query": "gears of war e day ne zaman çıkacak",
+      "query": "gears of war e day multiplayer review",
       "weight": 1
     },
     {
-      "query": "gears of war e day new characters",
+      "query": "gears of war e day network error",
       "weight": 1
     },
     {
@@ -2167,15 +4971,15 @@
       "weight": 1
     },
     {
+      "query": "gears of war e day new game",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day new horde mode",
+      "weight": 1
+    },
+    {
       "query": "gears of war e day new trailer",
-      "weight": 1
-    },
-    {
-      "query": "gears of war e day new weapons",
-      "weight": 1
-    },
-    {
-      "query": "gears of war e day new zealand",
       "weight": 1
     },
     {
@@ -2187,43 +4991,15 @@
       "weight": 1
     },
     {
-      "query": "gears of war e day no ps5",
+      "query": "gears of war e day onyx guard",
       "weight": 1
     },
     {
-      "query": "gears of war e day no roadie run",
+      "query": "gears of war e day open beta",
       "weight": 1
     },
     {
-      "query": "gears of war e day not launching",
-      "weight": 1
-    },
-    {
-      "query": "gears of war e day not on ps5",
-      "weight": 1
-    },
-    {
-      "query": "gears of war e day on game pass",
-      "weight": 1
-    },
-    {
-      "query": "gears of war e day on playstation",
-      "weight": 1
-    },
-    {
-      "query": "gears of war e day on steam",
-      "weight": 1
-    },
-    {
-      "query": "gears of war e day on xbox one",
-      "weight": 1
-    },
-    {
-      "query": "gears of war e day open beta date",
-      "weight": 1
-    },
-    {
-      "query": "gears of war e day open beta time",
+      "query": "gears of war e day open beta review",
       "weight": 1
     },
     {
@@ -2231,7 +5007,23 @@
       "weight": 1
     },
     {
+      "query": "gears of war e day original",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day outfits",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day outpost",
+      "weight": 1
+    },
+    {
       "query": "gears of war e day para que consola es",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day para que consolas",
       "weight": 1
     },
     {
@@ -2239,11 +5031,19 @@
       "weight": 1
     },
     {
+      "query": "gears of war e day para que plataformas saldra",
+      "weight": 1
+    },
+    {
       "query": "gears of war e day pc",
       "weight": 1
     },
     {
-      "query": "gears of war e day pc release date",
+      "query": "gears of war e day pc fps",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day pc price",
       "weight": 1
     },
     {
@@ -2251,15 +5051,59 @@
       "weight": 1
     },
     {
-      "query": "gears of war e day platforms",
+      "query": "gears of war e day people can fly",
       "weight": 1
     },
     {
-      "query": "gears of war e day player count",
+      "query": "gears of war e day pilot",
       "weight": 1
     },
     {
-      "query": "gears of war e day playstation",
+      "query": "gears of war e day playable characters",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day podcast",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day poor performance",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day portada",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day post launch",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day power weapons",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day pre order",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day pre order bonus",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day pre order collector's edition",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day pre order gift card",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day pre order price",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day premium",
       "weight": 1
     },
     {
@@ -2267,15 +5111,19 @@
       "weight": 1
     },
     {
-      "query": "gears of war e day price",
+      "query": "gears of war e day premium edition physical copy",
       "weight": 1
     },
     {
-      "query": "gears of war e day ps5 release date",
+      "query": "gears of war e day premium edition pre order",
       "weight": 1
     },
     {
-      "query": "gears of war e day que consolas saldra",
+      "query": "gears of war e day premium edition upgrade",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day ps5",
       "weight": 1
     },
     {
@@ -2283,39 +5131,79 @@
       "weight": 1
     },
     {
-      "query": "gears of war e day ranking system",
+      "query": "gears of war e day raven extract cinematic",
       "weight": 1
     },
     {
-      "query": "gears of war e day ranks",
+      "query": "gears of war e day release date steam",
       "weight": 1
     },
     {
-      "query": "gears of war e day recommended specs",
+      "query": "gears of war e day release date uk",
       "weight": 1
     },
     {
-      "query": "gears of war e day reddit",
+      "query": "gears of war e day release on ps5",
       "weight": 1
     },
     {
-      "query": "gears of war e day release",
+      "query": "gears of war e day release platforms",
       "weight": 1
     },
     {
-      "query": "gears of war e day release date ps5",
+      "query": "gears of war e day requirements pc",
       "weight": 1
     },
     {
-      "query": "gears of war e day release date xbox",
+      "query": "gears of war e day review ign",
       "weight": 1
     },
     {
-      "query": "gears of war e day requirements",
+      "query": "gears of war e day review reddit",
       "weight": 1
     },
     {
-      "query": "gears of war e day review",
+      "query": "gears of war e day roadie run",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day running",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day running sensitivity",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day runtime",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day se podra jugar en pantalla dividida",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day se podra jugar en pc",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day se podra jugar en xbox one",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day se podra jugar en xbox series s",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day series s performance",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day shoulder swap",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day skins",
       "weight": 1
     },
     {
@@ -2331,23 +5219,35 @@
       "weight": 1
     },
     {
-      "query": "gears of war e day statue",
-      "weight": 1
-    },
-    {
       "query": "gears of war e day steam",
       "weight": 1
     },
     {
-      "query": "gears of war e day steam charts",
+      "query": "gears of war e day steam beta",
       "weight": 1
     },
     {
-      "query": "gears of war e day steam deck",
+      "query": "gears of war e day steam collector's edition",
       "weight": 1
     },
     {
-      "query": "gears of war e day steamdb",
+      "query": "gears of war e day steam controller",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day steam key",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day steam machine",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day steam player count",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day steam price",
       "weight": 1
     },
     {
@@ -2355,7 +5255,19 @@
       "weight": 1
     },
     {
-      "query": "gears of war e day tai",
+      "query": "gears of war e day su pc",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day sur pc",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day sur ps5",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day switch 2",
       "weight": 1
     },
     {
@@ -2367,11 +5279,23 @@
       "weight": 1
     },
     {
-      "query": "gears of war e day take place",
+      "query": "gears of war e day ticker",
       "weight": 1
     },
     {
-      "query": "gears of war e day tier list",
+      "query": "gears of war e day tickets",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day time",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day time to beat",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day timed exclusive",
       "weight": 1
     },
     {
@@ -2379,39 +5303,51 @@
       "weight": 1
     },
     {
+      "query": "gears of war e day title",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day to ps5",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day tracker",
+      "weight": 1
+    },
+    {
       "query": "gears of war e day trailer",
       "weight": 1
     },
     {
-      "query": "gears of war e day trailer 2",
+      "query": "gears of war e day trailer music",
       "weight": 1
     },
     {
-      "query": "gears of war e day tv tropes",
+      "query": "gears of war e day trailer release date",
       "weight": 1
     },
     {
-      "query": "gears of war e day twitch",
+      "query": "gears of war e day trailer song",
       "weight": 1
     },
     {
-      "query": "gears of war e day twitter",
+      "query": "gears of war e day trans",
       "weight": 1
     },
     {
-      "query": "gears of war e day uir",
+      "query": "gears of war e day trash",
       "weight": 1
     },
     {
-      "query": "gears of war e day uk",
+      "query": "gears of war e day trench",
       "weight": 1
     },
     {
-      "query": "gears of war e day ultimate edition",
+      "query": "gears of war e day tropes",
       "weight": 1
     },
     {
-      "query": "gears of war e day ultimate edition locust edition",
+      "query": "gears of war e day ui",
       "weight": 1
     },
     {
@@ -2439,6 +5375,30 @@
       "weight": 1
     },
     {
+      "query": "gears of war e day va",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day va a estar en game pass",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day va a estar en pc",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day vai sair no gamepass",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day vai ter coop local",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day vai ter para pc",
+      "weight": 1
+    },
+    {
       "query": "gears of war e day versions",
       "weight": 1
     },
@@ -2451,19 +5411,19 @@
       "weight": 1
     },
     {
-      "query": "gears of war e day video",
+      "query": "gears of war e day voice chat",
       "weight": 1
     },
     {
-      "query": "gears of war e day villain",
+      "query": "gears of war e day voice chat not working",
       "weight": 1
     },
     {
-      "query": "gears of war e day voice actors",
+      "query": "gears of war e day voices",
       "weight": 1
     },
     {
-      "query": "gears of war e day vraahk",
+      "query": "gears of war e day vorbestellen",
       "weight": 1
     },
     {
@@ -2471,23 +5431,31 @@
       "weight": 1
     },
     {
-      "query": "gears of war e day vs reloaded",
+      "query": "gears of war e day vs gears 5",
       "weight": 1
     },
     {
-      "query": "gears of war e day vs wolverine",
+      "query": "gears of war e day waiting for game",
       "weight": 1
     },
     {
-      "query": "gears of war e day wall bouncing",
+      "query": "gears of war e day waiting for other players",
       "weight": 1
     },
     {
-      "query": "gears of war e day wallpaper",
+      "query": "gears of war e day wall bouncing removed",
       "weight": 1
     },
     {
-      "query": "gears of war e day wallpaper 4k",
+      "query": "gears of war e day wallpaper hd",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day wallpaper iphone",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day wallpaper phone",
       "weight": 1
     },
     {
@@ -2507,15 +5475,15 @@
       "weight": 1
     },
     {
-      "query": "gears of war e day what we know",
-      "weight": 1
-    },
-    {
       "query": "gears of war e day whats new",
       "weight": 1
     },
     {
-      "query": "gears of war e day when can i play",
+      "query": "gears of war e day where to buy",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day where to play",
       "weight": 1
     },
     {
@@ -2523,15 +5491,15 @@
       "weight": 1
     },
     {
-      "query": "gears of war e day will it be on playstation",
+      "query": "gears of war e day will beta progress carry over",
       "weight": 1
     },
     {
-      "query": "gears of war e day will it be on steam",
+      "query": "gears of war e day will come to pc",
       "weight": 1
     },
     {
-      "query": "gears of war e day will it be on xbox one",
+      "query": "gears of war e day will fail",
       "weight": 1
     },
     {
@@ -2539,39 +5507,51 @@
       "weight": 1
     },
     {
-      "query": "gears of war e day will it have horde mode",
+      "query": "gears of war e day woke reddit",
       "weight": 1
     },
     {
-      "query": "gears of war e day will it have multiplayer",
+      "query": "gears of war e day wont be on pc",
       "weight": 1
     },
     {
-      "query": "gears of war e day woke",
+      "query": "gears of war e day wont launch",
       "weight": 1
     },
     {
-      "query": "gears of war how many people died on e day",
+      "query": "gears of war e day xbox and pc",
       "weight": 1
     },
     {
-      "query": "gears of war tips",
+      "query": "gears of war e day xbox fps",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day xbox one console",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e day xbox one x",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e-day august 6",
+      "weight": 1
+    },
+    {
+      "query": "gears of war e-day vai sair para pc",
+      "weight": 1
+    },
+    {
+      "query": "gears of war judgement a day",
+      "weight": 1
+    },
+    {
+      "query": "gears of war months",
       "weight": 1
     },
     {
       "query": "how big is gears e day",
-      "weight": 1
-    },
-    {
-      "query": "how big is the gears e day beta",
-      "weight": 1
-    },
-    {
-      "query": "how long has gears of war e day been in development",
-      "weight": 1
-    },
-    {
-      "query": "how long is gears 1",
       "weight": 1
     },
     {
@@ -2583,11 +5563,23 @@
       "weight": 1
     },
     {
-      "query": "how many maps in gears e day beta",
+      "query": "how many chapters in gears of war ultimate edition",
       "weight": 1
     },
     {
-      "query": "how many missions in gears 5",
+      "query": "how many gears are there one piece",
+      "weight": 1
+    },
+    {
+      "query": "how many re ups in gears 4",
+      "weight": 1
+    },
+    {
+      "query": "how old is dom in. gears of war e day",
+      "weight": 1
+    },
+    {
+      "query": "how old is marcus fenix in gears of war e day",
       "weight": 1
     },
     {
@@ -2595,23 +5587,87 @@
       "weight": 1
     },
     {
-      "query": "is gears e day out yet",
+      "query": "how to turn off narrator in gears of war e day",
       "weight": 1
     },
     {
-      "query": "is gears of war e day out yet",
+      "query": "is gears 5 gears of war",
       "weight": 1
     },
     {
-      "query": "is gears of war ultimate edition",
+      "query": "is gears e day a console exclusive",
       "weight": 1
     },
     {
-      "query": "is it normal to hear the gears change",
+      "query": "is gears e day a prequel",
       "weight": 1
     },
     {
-      "query": "quando lança gears eday",
+      "query": "is gears e day a reboot",
+      "weight": 1
+    },
+    {
+      "query": "is gears e day a remake",
+      "weight": 1
+    },
+    {
+      "query": "is gears e day free on game pass",
+      "weight": 1
+    },
+    {
+      "query": "is gears of war e day coming out this year",
+      "weight": 1
+    },
+    {
+      "query": "is gears of war e day free on xbox game pass",
+      "weight": 1
+    },
+    {
+      "query": "is gears of war e day free roam",
+      "weight": 1
+    },
+    {
+      "query": "is gears of war e day out already",
+      "weight": 1
+    },
+    {
+      "query": "is gears of war on ps5",
+      "weight": 1
+    },
+    {
+      "query": "is slowing down with gears bad",
+      "weight": 1
+    },
+    {
+      "query": "jeff grubb gears of war e day",
+      "weight": 1
+    },
+    {
+      "query": "karen traviss gears of war e day",
+      "weight": 1
+    },
+    {
+      "query": "nickmercs gears of war e day",
+      "weight": 1
+    },
+    {
+      "query": "shop deals on gears of war e day for pc",
+      "weight": 1
+    },
+    {
+      "query": "shop deals on gears of war e day video game",
+      "weight": 1
+    },
+    {
+      "query": "sraak gears of war e day",
+      "weight": 1
+    },
+    {
+      "query": "was gears e day ever announced for ps5",
+      "weight": 1
+    },
+    {
+      "query": "was gears of war e day supposed to be on ps5",
       "weight": 1
     },
     {
@@ -2623,10 +5679,6 @@
       "weight": 1
     },
     {
-      "query": "what games are in gears of war ultimate edition",
-      "weight": 1
-    },
-    {
       "query": "what is gears e day direct",
       "weight": 1
     },
@@ -2635,23 +5687,15 @@
       "weight": 1
     },
     {
+      "query": "what is gears of war ultimate edition",
+      "weight": 1
+    },
+    {
       "query": "what time does gears e day beta start",
       "weight": 1
     },
     {
-      "query": "when can you play the gears e day beta",
-      "weight": 1
-    },
-    {
-      "query": "when does gears e day beta come out",
-      "weight": 1
-    },
-    {
-      "query": "when does gears e day beta go live",
-      "weight": 1
-    },
-    {
-      "query": "when does gears e day come out",
+      "query": "what year does gears of war e day take place",
       "weight": 1
     },
     {
@@ -2659,43 +5703,55 @@
       "weight": 1
     },
     {
-      "query": "where does gears e day take place",
+      "query": "which gears of war is the hardest",
       "weight": 1
     },
     {
-      "query": "where to get gears e day beta",
+      "query": "will gears e day ever come to ps5",
       "weight": 1
     },
     {
-      "query": "where to play gears e day beta",
+      "query": "will gears of war e day be free on game pass",
       "weight": 1
     },
     {
-      "query": "why is gears e day on steam",
+      "query": "will gears of war e day run on series s",
       "weight": 1
     },
     {
-      "query": "why is gears of war e day an xbox exclusive",
+      "query": "will gears of war e day run on steam deck",
       "weight": 1
     },
     {
-      "query": "why is gears of war e day not coming to ps5",
+      "query": "will gears of war e day run on xbox series s",
       "weight": 1
     },
     {
-      "query": "why is gears of war e day on steam",
+      "query": "will sraak be in gears of war e day",
       "weight": 1
     },
     {
-      "query": "will gears of war e day be on game pass",
+      "query": "ya puedo jugar gears of war e day",
       "weight": 1
     },
     {
-      "query": "will queen myrrah be in gears of war e day",
+      "query": "ya puedo jugar la beta de gears of war e day",
       "weight": 1
     },
     {
-      "query": "will there be a gears 6",
+      "query": "ya salio el gears of war e day",
+      "weight": 1
+    },
+    {
+      "query": "ya salio la beta de gears of war e day",
+      "weight": 1
+    },
+    {
+      "query": "ya se estreno gears of war e day",
+      "weight": 1
+    },
+    {
+      "query": "ya se puede jugar gears of war e day beta",
       "weight": 1
     }
   ]

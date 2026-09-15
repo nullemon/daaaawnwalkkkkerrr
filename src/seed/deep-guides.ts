@@ -55,9 +55,20 @@ const listOf = (values: string[]) =>
     ? (values[0] ?? '')
     : `${values.slice(0, -1).join(', ')} and ${values[values.length - 1]}`
 
-/** Categories that describe the wiki's housekeeping, not the subject. */
+/**
+ * Categories that are not groupings of things in this game.
+ *
+ * Two kinds. The first is the wiki's own housekeeping - stubs, candidates
+ * for deletion, image galleries. The second is franchise scaffolding, and it
+ * only became a problem when the member threshold dropped from six to four:
+ * a series wiki files its own articles under "Main series", "Spin-offs",
+ * "Staff" and "Companies", and those clear four easily. What came out was a
+ * page titled "Every Main series in Silent Hill: Townfall", which is not a
+ * sentence, let alone a guide. A category has to name things inside the game
+ * to be worth a page about the game.
+ */
 const NOT_A_GROUPING =
-  /\b(articles?|stubs?|pages?|canon|legends|real world|images?|galler|templates?|candidates|needing|browse|wiki|unidentified|conjectural|all )\b/i
+  /\b(articles?|stubs?|pages?|canon|legends|real world|images?|galler|templates?|candidates|needing|browse|wiki|unidentified|conjectural|all |games?|main series|spin[- ]?offs?|staff|corporate|companies|developers?|publishers?|soundtracks?|films?|novels?|comics?|books?|manga|merchandise|music|media|voice actors?|trademarks?)\b/i
 
 const RARITY = [
   { key: 'ultra-rare', label: 'ultra-rare', gloss: 'fewer than one player in twenty' },

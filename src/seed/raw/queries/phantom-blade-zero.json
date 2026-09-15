@@ -6,231 +6,3983 @@
   ],
   "queries": [
     {
-      "query": "phantom blade zero is chinese",
-      "weight": 5
-    },
-    {
-      "query": "phantom blade zero is free",
-      "weight": 5
-    },
-    {
-      "query": "phantom blade zero is it ps5 exclusive",
-      "weight": 5
-    },
-    {
-      "query": "phantom blade zero is ps exclusive",
-      "weight": 5
-    },
-    {
-      "query": "phantom blade zero how long to beat",
-      "weight": 4
-    },
-    {
-      "query": "phantom blade zero how long",
-      "weight": 3
-    },
-    {
-      "query": "phantom blade zero how many bosses",
-      "weight": 3
-    },
-    {
-      "query": "phantom blade zero how many hours",
-      "weight": 3
-    },
-    {
-      "query": "phantom blade zero how many weapons",
-      "weight": 3
-    },
-    {
-      "query": "phantom blade zero how much",
-      "weight": 3
-    },
-    {
-      "query": "phantom blade zero is a soulslike",
-      "weight": 3
-    },
-    {
-      "query": "phantom blade zero is it open world",
-      "weight": 3
-    },
-    {
-      "query": "phantom blade zero is it souls like",
-      "weight": 3
-    },
-    {
-      "query": "phantom blade zero is open world",
-      "weight": 3
-    },
-    {
-      "query": "phantom blade zero is souls like",
-      "weight": 3
-    },
-    {
-      "query": "phantom blade zero trophy guide",
-      "weight": 3
-    },
-    {
-      "query": "phantom blade zero when is it coming out",
-      "weight": 3
-    },
-    {
-      "query": "phantom blade zero will be on pc",
-      "weight": 3
-    },
-    {
-      "query": "phantom blade zero will have denuvo",
-      "weight": 3
+      "query": "what kind of ghost is a phantom",
+      "weight": 36
     },
     {
       "query": "how to get phantom membrane without phantoms",
-      "weight": 2
+      "weight": 35
     },
     {
-      "query": "how to increase phantom blade capacity",
-      "weight": 2
+      "query": "jagged ghost blade vs ghost blade",
+      "weight": 18
     },
     {
-      "query": "phantom blade zero best buy",
-      "weight": 2
+      "query": "phantom blade zero is free",
+      "weight": 18
     },
     {
-      "query": "phantom blade zero coming to pc",
-      "weight": 2
+      "query": "phantom blade zero is it ps5 exclusive",
+      "weight": 18
     },
     {
-      "query": "phantom blade zero coming to xbox",
-      "weight": 2
+      "query": "blade of the phantom master characters",
+      "weight": 16
     },
     {
-      "query": "phantom blade zero donnie yen",
-      "weight": 2
+      "query": "phantom blade zero is chinese",
+      "weight": 16
     },
     {
-      "query": "phantom blade zero for pc",
-      "weight": 2
+      "query": "phantom blade zero is ps exclusive",
+      "weight": 15
     },
     {
-      "query": "phantom blade zero for xbox",
-      "weight": 2
+      "query": "ghost phantom difference",
+      "weight": 14
     },
     {
-      "query": "phantom blade zero free to play",
-      "weight": 2
+      "query": "phantom blade zero how many weapons",
+      "weight": 14
     },
     {
-      "query": "phantom blade zero how to play demo",
-      "weight": 2
+      "query": "phantom blade zero is it open world",
+      "weight": 14
     },
     {
-      "query": "phantom blade zero is exclusive",
-      "weight": 2
+      "query": "phantom blade zero is it souls like",
+      "weight": 14
     },
     {
-      "query": "phantom blade zero is it exclusive",
-      "weight": 2
+      "query": "what type of ghost is a phantom",
+      "weight": 14
     },
     {
-      "query": "phantom blade zero is not soulslike",
-      "weight": 2
+      "query": "zero turn blade won't engage",
+      "weight": 14
     },
     {
-      "query": "phantom blade zero is souls game",
-      "weight": 2
+      "query": "phantom blade zero difficulty settings",
+      "weight": 12
     },
     {
-      "query": "phantom blade zero microsoft windows store",
-      "weight": 2
+      "query": "phantom blade zero how long to beat",
+      "weight": 12
     },
     {
-      "query": "phantom blade zero parents guide",
-      "weight": 2
+      "query": "phantom blade zero how many bosses",
+      "weight": 12
     },
     {
-      "query": "phantom blade zero pc",
-      "weight": 2
-    },
-    {
-      "query": "phantom blade zero pc release date",
-      "weight": 2
-    },
-    {
-      "query": "phantom blade zero pc requirements",
-      "weight": 2
-    },
-    {
-      "query": "phantom blade zero playstation 5 store",
-      "weight": 2
-    },
-    {
-      "query": "phantom blade zero price",
-      "weight": 2
-    },
-    {
-      "query": "phantom blade zero ps5",
-      "weight": 2
+      "query": "phantom blade zero how much",
+      "weight": 12
     },
     {
       "query": "phantom blade zero release date",
-      "weight": 2
+      "weight": 12
     },
     {
-      "query": "phantom blade zero system requirements",
-      "weight": 2
+      "query": "phantom blade zero release date pc",
+      "weight": 12
     },
     {
-      "query": "phantom blade zero walkthrough",
-      "weight": 2
+      "query": "phantom blade zero release date ps5",
+      "weight": 12
     },
     {
-      "query": "phantom blade zero what engine",
-      "weight": 2
+      "query": "phantom blade zero trophy guide",
+      "weight": 12
     },
     {
-      "query": "phantom blade zero what is it about",
-      "weight": 2
+      "query": "phantom blade zero will be on pc",
+      "weight": 12
     },
     {
-      "query": "phantom blade zero what platforms",
-      "weight": 2
+      "query": "phantom blade zero will have denuvo",
+      "weight": 12
     },
     {
-      "query": "phantom blade zero when",
-      "weight": 2
+      "query": "phantom blade zero is it exclusive",
+      "weight": 11
     },
     {
-      "query": "phantom blade zero when does it come out",
-      "weight": 2
+      "query": "phantom blade zero vs where winds meet",
+      "weight": 11
     },
     {
-      "query": "phantom blade zero when was it announced",
-      "weight": 2
+      "query": "can you still get the karambit in phantom forces",
+      "weight": 10
+    },
+    {
+      "query": "phantom blade zero all bosses",
+      "weight": 10
+    },
+    {
+      "query": "phantom blade zero all weapons",
+      "weight": 10
+    },
+    {
+      "query": "phantom blade zero coming to xbox",
+      "weight": 10
+    },
+    {
+      "query": "phantom blade zero development time",
+      "weight": 10
+    },
+    {
+      "query": "phantom blade zero donnie yen",
+      "weight": 10
+    },
+    {
+      "query": "phantom blade zero free to play",
+      "weight": 10
+    },
+    {
+      "query": "phantom blade zero how long",
+      "weight": 10
+    },
+    {
+      "query": "phantom blade zero no physical release",
+      "weight": 10
+    },
+    {
+      "query": "phantom blade zero release",
+      "weight": 10
+    },
+    {
+      "query": "phantom blade zero vs black myth wukong",
+      "weight": 10
+    },
+    {
+      "query": "how to increase phantom blade capacity",
+      "weight": 8
+    },
+    {
+      "query": "phantom blade zero best buy",
+      "weight": 8
+    },
+    {
+      "query": "phantom blade zero can i run it",
+      "weight": 8
+    },
+    {
+      "query": "phantom blade zero can you play as female",
+      "weight": 8
+    },
+    {
+      "query": "phantom blade zero coming to pc",
+      "weight": 8
+    },
+    {
+      "query": "phantom blade zero delayed",
+      "weight": 8
+    },
+    {
+      "query": "phantom blade zero demo",
+      "weight": 8
+    },
+    {
+      "query": "phantom blade zero demo release date",
+      "weight": 8
+    },
+    {
+      "query": "phantom blade zero developer",
+      "weight": 8
+    },
+    {
+      "query": "phantom blade zero download",
+      "weight": 8
+    },
+    {
+      "query": "phantom blade zero for pc",
+      "weight": 8
+    },
+    {
+      "query": "phantom blade zero for xbox",
+      "weight": 8
+    },
+    {
+      "query": "phantom blade zero how many hours",
+      "weight": 8
+    },
+    {
+      "query": "phantom blade zero how to play demo",
+      "weight": 8
+    },
+    {
+      "query": "phantom blade zero kung fu punk",
+      "weight": 8
+    },
+    {
+      "query": "phantom blade zero like games",
+      "weight": 8
+    },
+    {
+      "query": "phantom blade zero no steam",
+      "weight": 8
+    },
+    {
+      "query": "phantom blade zero or onimusha",
+      "weight": 8
+    },
+    {
+      "query": "phantom blade zero parents guide",
+      "weight": 8
+    },
+    {
+      "query": "phantom blade zero pre order",
+      "weight": 8
+    },
+    {
+      "query": "phantom blade zero price",
+      "weight": 8
+    },
+    {
+      "query": "phantom blade zero que tipo de juego es",
+      "weight": 8
+    },
+    {
+      "query": "phantom blade zero release platforms",
+      "weight": 8
+    },
+    {
+      "query": "phantom blade zero requirements",
+      "weight": 8
+    },
+    {
+      "query": "phantom blade zero requirements pc",
+      "weight": 8
+    },
+    {
+      "query": "phantom blade zero review",
+      "weight": 8
+    },
+    {
+      "query": "phantom blade zero souls like",
+      "weight": 8
+    },
+    {
+      "query": "phantom blade zero soulslike or not",
+      "weight": 8
+    },
+    {
+      "query": "phantom blade zero tokyo game show",
+      "weight": 8
+    },
+    {
+      "query": "phantom blade zero tokyo game show 2025",
+      "weight": 8
+    },
+    {
+      "query": "phantom blade zero vs onimusha",
+      "weight": 8
+    },
+    {
+      "query": "phantom blade zero vs wukong",
+      "weight": 8
+    },
+    {
+      "query": "phantom blade zero when is it coming out",
+      "weight": 8
     },
     {
       "query": "phantom blade zero where to buy",
-      "weight": 2
+      "weight": 8
     },
     {
       "query": "phantom blade zero where to play",
-      "weight": 2
+      "weight": 8
     },
     {
       "query": "phantom blade zero will it be on steam",
-      "weight": 2
+      "weight": 8
     },
     {
       "query": "phantom blade zero will it be on xbox",
-      "weight": 2
+      "weight": 8
+    },
+    {
+      "query": "phantom blade zero is not soulslike",
+      "weight": 7
+    },
+    {
+      "query": "is phantom blade zero like black myth wukong",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero before you buy",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero boss ai",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero boss fight",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero bosses",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero campaign length",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero deluxe edition",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero demo pc",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero demo ps5",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero difficulty",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero disc",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero download for android",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero download size",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero file size",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero final boss",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero free",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero game size",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero gameplay",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero gameplay time",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero hack and slash",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero how hard",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero is a soulslike",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero is open world",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero is souls like",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero kenji tanigaki",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero key art",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero korea",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero kung fu",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero legacy outfit",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero length",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero like sekiro",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero main villain",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero metal gear rising",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero microsoft windows store",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero minimum requirements",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero mo yuan",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero muestra su jugabilidad en nuevos vídeos",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero ne zaman çıkacak",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero no xbox",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero official website",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero origin",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero original release date",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero pc",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero pc minimum requirements",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero pc release date",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero pc requirements",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero playstation 5 store",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero ps5",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero puppet boss",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero que es",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero que genero es",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero recommended specs",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero reddit",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero side quest impact",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero similar games",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero size",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero size pc",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero story length",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero switch 2",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero system requirements",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero time to beat",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero video quest",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero vs gta 6",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero vs ninja gaiden 4",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero vs sekiro",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero vs wuchang fallen feathers",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero walkthrough",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero weapons",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero what is it about",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero when does it come out",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero when was it announced",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero where winds meet",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero which company",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero which engine",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero which studio",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero will release on pc",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero xbox one",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero year of the horse",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero year of the snake",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero year of the snake gameplay trailer",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero year of the snake release date",
+      "weight": 6
+    },
+    {
+      "query": "phantom blade zero year of the snake trailer",
+      "weight": 6
     },
     {
       "query": "phantom blade zero youtube",
-      "weight": 2
+      "weight": 6
+    },
+    {
+      "query": "phantom ultralight specs",
+      "weight": 6
+    },
+    {
+      "query": "shadow force vs phantom force",
+      "weight": 6
+    },
+    {
+      "query": "does phantom blade zero have difficulty settings",
+      "weight": 5
+    },
+    {
+      "query": "phantom blade zero download pc",
+      "weight": 5
+    },
+    {
+      "query": "phantom blade zero is it coming to pc",
+      "weight": 5
+    },
+    {
+      "query": "phantom blade zero main character name",
+      "weight": 5
+    },
+    {
+      "query": "phantom blade zero which country",
+      "weight": 5
+    },
+    {
+      "query": "will phantom blade zero have difficulty settings",
+      "weight": 5
     },
     {
       "query": "can you preorder phantom blade zero",
-      "weight": 1
+      "weight": 4
+    },
+    {
+      "query": "does phantom blade zero use ai",
+      "weight": 4
+    },
+    {
+      "query": "everything we know about phantom blade zero",
+      "weight": 4
+    },
+    {
+      "query": "how much will phantom blade zero cost",
+      "weight": 4
+    },
+    {
+      "query": "is phantom blade zero like elden ring",
+      "weight": 4
+    },
+    {
+      "query": "is phantom blade zero out yet",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade 0 boss",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero 11 minute",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero 11 minute extended gameplay trailer",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero 11 minute trailer",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero 2",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero age rating",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero all editions",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero allkeyshop",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero and where winds meet",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero and wukong",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero baby",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero bao giờ ra mắt",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero based on",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero beta",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero beta test",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero black myth wukong",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero blood steel form",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero box art",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero budget",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero buy",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero cantonese",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero cantonese dub",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero cast",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero character creation",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero character creation female",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero character creation reddit",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero character creator",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero character customization",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero character name",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero characters",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero chinese or korean",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero collector's edition",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero combat",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero coming to steam",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero company",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero cost",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero creators",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero denuvo",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero difficulty levels",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero digital deluxe edition",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero disc ps5",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero disc release date",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero discord server",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero donnie",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero donnie yen character",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero donnie yen interview",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero donnie yen reddit",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero early access",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero elden ring",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero english voice actors",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero female protagonist",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero first announcement",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero first trailer",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero for android",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero for ps4",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero for ps5",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero fortnite",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero fortnite skin",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero free demo",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero game download",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero game engine",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero game length",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero game release date",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero gameplay hours",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero genre",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero good",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero hard",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero hd wallpaper",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero hellwalker difficulty",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero hong kong",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero is exclusive",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero is souls game",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero jackie chan",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero jade dancer",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero japan",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero japanese",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero japanese or chinese",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero jb hi fi",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero juego",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero kapan rilis",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero katana",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero key",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero kiedy premiera",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero korean",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero lançamento",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero laptop requirements",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero latest news",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero launch date",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero like wukong",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero limited edition",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero live wallpaper",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero logo",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero logo png",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero made by",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero main character",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero makers",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero map",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero mobile",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero mobile download",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero morgan freeman",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero motion capture",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero movie",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero mu xiaokui",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero multiplayer",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero multiple endings",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero na jakie platformy",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero new gameplay",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero new release date",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero new trailer",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero news",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero nintendo switch",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero nintendo switch 2",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero no pc",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero no physical",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero no physical copy",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero not on xbox",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero on pc",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero on steam",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero on xbox",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero open world",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero or mortal shell 2",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero order",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero original language",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero original trailer",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero outfits",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero pc ne zaman çıkacak",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero plot",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero pre order best buy",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero pre order date",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero price in india",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero price pc",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero price ps5",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero ps5 allegro",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero ps5 buy",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero ps5 disc",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero ps5 fps",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero ps5 performance",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero ps5 release date",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero pushed back",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero quais plataformas",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero quando esce",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero quando lança",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero quando sai",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero quest discord",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero rating",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero release date delay",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero release date india",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero release date pushed back",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero release date system requirements",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero release date xbox",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero release price",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero satın al",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero setting",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero similar to where winds meet",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero steam",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero steam key",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero steam price",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero story",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero tiếng việt",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero time limit",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero time period",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero total bosses",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero trailer",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero trailer 2025",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero trailer gameplay",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero ultimate",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero ultimate edition",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero video",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero video game",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero villain",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero voice actor",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero vram requirements",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero vs crimson desert",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero vs onimusha way of the sword",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero wallpaper 4k",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero wann kommt es raus",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero weapons list",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero weapons types",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero website",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero what engine",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero what kind of game",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero what platforms",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero when",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero which platforms",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero who made it",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero wiki",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero will it be free",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero will it be good",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero will there be a demo",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero will there be a physical copy",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero worth it",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero wulin legend",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero xbox",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero xbox game pass",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero xbox reddit",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero xbox release",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero xbox release date",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero xbox series s",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero xbox series x",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero youtube gameplay",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero yucheng",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero zero",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero zuo shang",
+      "weight": 4
+    },
+    {
+      "query": "phantom.blade zero game length",
+      "weight": 4
+    },
+    {
+      "query": "phantom.blade zero release year",
+      "weight": 4
+    },
+    {
+      "query": "tanggal rilis phantom blade zero",
+      "weight": 4
+    },
+    {
+      "query": "wann kann man phantom blade zero vorbestellen",
+      "weight": 4
+    },
+    {
+      "query": "where does phantom blade zero take place",
+      "weight": 4
+    },
+    {
+      "query": "which is better ghost or phantom",
+      "weight": 4
+    },
+    {
+      "query": "will phantom blade zero be open world",
+      "weight": 4
+    },
+    {
+      "query": "phantom blade zero disk",
+      "weight": 3
+    },
+    {
+      "query": "phantom blade zero game",
+      "weight": 3
+    },
+    {
+      "query": "phantom blade zero geforce now",
+      "weight": 3
+    },
+    {
+      "query": "phantom blade zero new game plus",
+      "weight": 3
+    },
+    {
+      "query": "phantom blade zero no disc",
+      "weight": 3
+    },
+    {
+      "query": "phantom blade zero polskie napisy",
+      "weight": 3
+    },
+    {
+      "query": "phantom blade zero soul voice actor",
+      "weight": 3
+    },
+    {
+      "query": "phantom blade zero voice cast",
+      "weight": 3
+    },
+    {
+      "query": "phantom blade zero wallpaper",
+      "weight": 3
+    },
+    {
+      "query": "phantom blade zero wallpaper phone",
+      "weight": 3
+    },
+    {
+      "query": "phantom knights fog blade ruling",
+      "weight": 3
+    },
+    {
+      "query": "avis sur phantom blade zero",
+      "weight": 2
+    },
+    {
+      "query": "can you play phantom blade zero demo",
+      "weight": 2
+    },
+    {
+      "query": "can you play phantom blade zero on pc",
+      "weight": 2
+    },
+    {
+      "query": "can you play phantom blade zero on xbox",
+      "weight": 2
+    },
+    {
+      "query": "cuando saldra phantom blade zero",
+      "weight": 2
+    },
+    {
+      "query": "cuando sale el.phantom blade zero",
+      "weight": 2
+    },
+    {
+      "query": "did phantom blade zero get delayed",
+      "weight": 2
+    },
+    {
+      "query": "does phantom force go through substitute",
+      "weight": 2
+    },
+    {
+      "query": "does the phantom die in phantom of the opera",
+      "weight": 2
+    },
+    {
+      "query": "ghost vs phantom supernatural",
+      "weight": 2
+    },
+    {
+      "query": "how big will phantom blade zero be",
+      "weight": 2
     },
     {
       "query": "how long has phantom blade zero been in development",
+      "weight": 2
+    },
+    {
+      "query": "how to defeat phantom",
+      "weight": 2
+    },
+    {
+      "query": "is phantom blade 0 out",
+      "weight": 2
+    },
+    {
+      "query": "is phantom blade zero a aaa game",
+      "weight": 2
+    },
+    {
+      "query": "is phantom blade zero a japanese game",
+      "weight": 2
+    },
+    {
+      "query": "is phantom blade zero a story game",
+      "weight": 2
+    },
+    {
+      "query": "is phantom blade zero an open world game",
+      "weight": 2
+    },
+    {
+      "query": "is phantom blade zero getting a demo",
+      "weight": 2
+    },
+    {
+      "query": "is phantom blade zero getting a physical release",
+      "weight": 2
+    },
+    {
+      "query": "is phantom blade zero going to be free",
+      "weight": 2
+    },
+    {
+      "query": "is phantom blade zero going to be hard",
+      "weight": 2
+    },
+    {
+      "query": "is phantom blade zero going to be on xbox",
+      "weight": 2
+    },
+    {
+      "query": "is phantom blade zero going to be open world",
+      "weight": 2
+    },
+    {
+      "query": "is phantom blade zero gonna be free",
+      "weight": 2
+    },
+    {
+      "query": "is phantom blade zero like ghost of tsushima",
+      "weight": 2
+    },
+    {
+      "query": "is phantom blade zero out",
+      "weight": 2
+    },
+    {
+      "query": "is phantom blade zero out now",
+      "weight": 2
+    },
+    {
+      "query": "is phantom blade zero out on ps5",
+      "weight": 2
+    },
+    {
+      "query": "is phantom blade zero published by sony",
+      "weight": 2
+    },
+    {
+      "query": "is phantom blade zero set in japan",
+      "weight": 2
+    },
+    {
+      "query": "is phantom blade zero ue5",
+      "weight": 2
+    },
+    {
+      "query": "is phantom requiem for the phantom good",
+      "weight": 2
+    },
+    {
+      "query": "ist phantom blade zero ein soulslike",
+      "weight": 2
+    },
+    {
+      "query": "ist phantom blade zero open world",
+      "weight": 2
+    },
+    {
+      "query": "jogo phantom blade zero data de lançamento",
+      "weight": 2
+    },
+    {
+      "query": "jogo phantom blade zero ps5",
+      "weight": 2
+    },
+    {
+      "query": "juggernaut phantom blade zero",
+      "weight": 2
+    },
+    {
+      "query": "nome do jogo phantom blade zero",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade 0 buy",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade 0 cuando sale",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade 0 date release",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade 0 donnie yen",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade 0 game length",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade 0 jackie chan",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade 0 souls like",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade 0 switch",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade 0 vorbestellen",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero 11",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero 11 august",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero 2 release date",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero 2025 s-party demo walkthrough",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero 8 endings",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero a souls like",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero aaa",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero actor",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero ai",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero allegro",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero amazon",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero android",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero android download",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero android release date",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero anime",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero announcement date",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero argos",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero armor",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero art",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero art book",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero artstation",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero artwork",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero august",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero august 11",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero australia",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero available on pc",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero background",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero backloggd",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero banner",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero base ps5",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero behind the voice actors",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero beta ps5",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero big w",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero bilibili",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero blacksmith",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero blade",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero booth",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero brutal",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero buy pc",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero cancelled",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero capcom",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero cd",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero cd key",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero cena",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero ceo",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero cero",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero ces",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero character design",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero che gioco è",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero china hero project",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero chinese aaa game",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero chinese name",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero chinese or japanese",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero chinese title",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero cikis tarihi",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero çıkış tarihi",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero classes",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero có tiếng việt không",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero collector's edition ps5",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero coming out",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero company name",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero concept art",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero config",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero configuration pc",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero console exclusive",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero coop",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero country of origin",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero cover art",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero creator program",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero crossplay",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero cuando sale",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero cuando sale en ps5",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero cuando se estrena",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero cuanto costara",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero customization",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero dark souls",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero data de lançamento",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero datablitz",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero date",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero date de sortie",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero date release",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero dawn",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero de que trata",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero death mechanic",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero deluxe edition outfits",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero demo download",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero demo download pc",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero demo review",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero demo when",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero development budget",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero devil may cry",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero difficulty modes",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero difficulty options",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero dlc",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero dlss",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero dlss 5",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero download demo",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero drm",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero drunken sword",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero duration",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero é exclusivo",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero early",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero early reviews",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero easy",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero easy mode",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero eb games",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero editions",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero edycja kolekcjonerska",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero előrendelés",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero en que plataforma esta",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero ending",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero engine",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero epic games",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero erscheinung",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero erscheinungsdatum",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero ertelendi mi",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero esce su pc",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero esrb rating",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero est il un souls like",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero eurogamer",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero exclusive",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero exclusive ps5",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero expected price",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero expected system requirements",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero extended look",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero face",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero face model",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero facebook",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero fall 2026",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero fanart",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero fanatical",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero fandom",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero female characters",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero fight",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero fighting style",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero figure",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero first game",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero first reveal",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero fisico",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero for steam",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero forge",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero fortnite release date",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero fortnite skin release date",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero fps",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero franchise",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero from",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero from china",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero from which country",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero fromsoftware",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero full",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero full 4k demo",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero full game",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero full gameplay",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero future games show 2026",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero game genre",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero game of the year",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero game review",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero game studio",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero gameplay boss",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero gameplay deep dive",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero gameplay footage",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero gameplay ps5",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero gameplay reddit",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero gameplay reveal",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero gameplay trailer",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero gameplay youtube",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero gb size",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero gematsu",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero genero",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero gepigeny",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero gg deals",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero giá",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero gif",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero girl",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero gog",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero gold",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero gone gold",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero got delayed",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero goty",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero gra",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero graphics",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero greenmangaming",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero gry online",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero gta 6",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero gtx 1650",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero hack n slash",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero hands on",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero hard copy",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero hard mode",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero hardest difficulty",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero hardware requirements",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero has gone gold",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero have disc",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero hellwalker",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero hero",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero hisense",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero histoire",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero história",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero hltb",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero horas de jogo",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero hours",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero huangxing",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero hype",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero i",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero ign",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero ign review",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero in chinese",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero india",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero initial release date",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero ios",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero is aaa",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero is it a sequel",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero is it a souls game",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero is it chinese",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero is it multiplayer",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero is it on pc",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero is it on xbox",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero is it out",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero is ps5 exclusive",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero italiano",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero ja lançou",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero jb",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero jd.com",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero jogo",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero jp",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero kaufen",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero khi nào ra mắt",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero kiedy",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero kiedy premierą",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero kiedy wychodzi",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero kiedy wyjdzie",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero konusu",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero kopen",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero kosten",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero lança quando",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero language",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero lanzamiento",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero latest",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero launch",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero launcher",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero leaks",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero leclerc",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero linear",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero lion",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero lion dance",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero live",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero live stream",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero llega a pc",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero llegara a xbox",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero llegará a xbox",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero loaded",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero location",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero looks bad",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero looks like where winds meet",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero lore",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero mac",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero main character male or female",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero male or female",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero mask",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero matt mercer",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero mechanics",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero megjelenés",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero merch",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero meta",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero metacritic",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero metal gear",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero micromania",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero midia fisica",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero midia fisica ps5",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero minecraft skin",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero mobile release date",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero mocap",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero mod",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero model",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero mods",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero motor grafico",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero music",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero na pc",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero napisy pl",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero narrator",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero ne kadar",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero ne zaman",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero ne zaman çıkıyor",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero new demo",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero new double",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero new gameplay demo",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero new gameplay trailer",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero ninja gaiden",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero nintendo",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero nioh",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero niveles de dificultad",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero no aparece en sale ps5",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero no demo",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero no disc no buy",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero no physical disc",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero not soulslike",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero nuuvem",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero official",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero on game pass",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero on ps4",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero on ps5",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero online or offline",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero optimization",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero ore di gioco",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero out",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero pa4",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero pa5",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero pagina oficial",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero para pc",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero para ps4",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero para ps5",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero para que consolas saldra",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero para venda",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero parry",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero path tracing",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero pc download",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero pc download free",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero pc game",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero pc key",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero pc price",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero pc release",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero pc size",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero pc specs",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero pegi",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero pelicula",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero performance",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero personagens",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero personajes",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero piattaforma",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero piattaforme",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero picture",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero pinterest",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero pivigames",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero platforms",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero playable characters",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero playasia",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero playstation",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero playstation 5 release date",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero playstation 5 store price",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero playstation exclusive",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero playtime",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero po polsku",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero polska wersja",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero poster",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero pre order disc",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero pre order india",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero pre order price",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero press kit",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero price malaysia",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero price reddit",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero price steam",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero price uk",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero protagonist",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero protagonist name",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero ps5 cena",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero ps5 erscheinungsdatum",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero ps5 exclusive",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero ps5 kaufen",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero ps5 kiedy",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero ps5 kiedy premiera",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero ps5 physical copy",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero ps5 pre order",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero ps5 price",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero ps5 vorbestellen",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero public demo",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero public relations",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero publisher",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero purchase",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero ra mắt",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero ra mắt chưa",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero rain and blood",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero rainblood",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero ranton",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero rated m",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero ray tracing",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero re",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero red wraith",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero release date australia",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero release date leak",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero reviews ps5",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero rilis",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero rinviato",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero rinvio",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero roguelike",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero romance",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero rpg souls like",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero runtime",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero rutube",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero sai quando",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero saldra en pc",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero saldra para pc",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero saldra para xbox",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero sale en pc",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero sale para pc",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero sales",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero salida",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero samurai",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero sanguine",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero sekiro",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero sekiro mod",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero september 2026",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero september 9 2026",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero sequel",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero sera soulslike",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero series",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero sha chi",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero side content",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero similar",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero single player",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero sistem gereksinimleri",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero site",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero sony",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero sony exclusive",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero soul",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero soulframe",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero souls game",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero souls like reddit",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero soulslike mı",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero soundtrack",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero specs",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero stamina bar",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero steam charts",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero steam deck",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero steam demo",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero steam page",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero steam release date",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero steam sales",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero steamdb",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero studio",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero summer game fest",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero summer game fest 2026",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero summer showcase",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero sur pc",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero sur xbox",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero switch",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero system requirements pc",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero tamhongame",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero target",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero tattoo",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero team ninja",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero tempo de jogo",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero tiktok",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero timed exclusive",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero tipo de juego",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero title",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero total playtime",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero trailer 2026",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero trailer music",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero trailer reddit",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero trailer time",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero trial",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero tropes",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero trophies",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero trophy list",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero türkçe olacak mı",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero tv tropes",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero twitter",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero type of game",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero ui",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero uk",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero uk pre order",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero uk release date",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero unreal engine",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero unreal engine 5",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero upcoming",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero update",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero uscirà su pc",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero uscita",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero va",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero vai lançar para pc",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero vai lancar pra pc",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero vai sair para pc",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero vai sair para xbox",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero vai ser exclusivo",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero vai ter midia fisica",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero vai ter para pc",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero valor",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero vandal",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero veröffentlichung",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero versions",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero video game release date",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero video quest discord",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero voice",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero vorbestellen",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero voz",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero vs black myth zhong kui",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero vs ghost of tsushima",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero vs ghost of yotei",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero vs mortal shell 2",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero vs wuchang",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero wallpaper 2k",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero walmart",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero wayfarer",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero web",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero what country",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero what type of game",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero when release",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero who do you play as",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero wikipedia",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero will be free",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero will it be hard",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero wishlist",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero woman",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero women",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero world",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero worten",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero wukong",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero wulin",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero wulin legend outfit",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero wulin outfit",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero wuxia",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero x",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero x fortnite",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero xbox x",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero ya salio",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero yapımcısı",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade zero yorumları",
+      "weight": 2
+    },
+    {
+      "query": "phantom blade. zero closed beta",
+      "weight": 2
+    },
+    {
+      "query": "phantom ghost price",
+      "weight": 2
+    },
+    {
+      "query": "phantom of the opera what happened to the phantom",
+      "weight": 2
+    },
+    {
+      "query": "phantom.blade zero difficulty levels",
+      "weight": 2
+    },
+    {
+      "query": "phantom.blade zero ps5 open world",
+      "weight": 2
+    },
+    {
+      "query": "phantom.blade zero.meme",
+      "weight": 2
+    },
+    {
+      "query": "philips one blade not charging",
+      "weight": 2
+    },
+    {
+      "query": "qiwei liang phantom blade zero interview",
+      "weight": 2
+    },
+    {
+      "query": "the furious phantom blade zero",
+      "weight": 2
+    },
+    {
+      "query": "wann erscheint phantom blade zero",
+      "weight": 2
+    },
+    {
+      "query": "wann kommt phantom blade zero",
+      "weight": 2
+    },
+    {
+      "query": "was the hidden blade a real weapon",
+      "weight": 2
+    },
+    {
+      "query": "what happens to the phantom at the end of phantom of the opera",
+      "weight": 2
+    },
+    {
+      "query": "what is phantom blade zero based on",
+      "weight": 2
+    },
+    {
+      "query": "what is phantom blade zero coming out on",
+      "weight": 2
+    },
+    {
+      "query": "where can you play phantom blade zero",
+      "weight": 2
+    },
+    {
+      "query": "which is more expensive ghost or phantom",
+      "weight": 2
+    },
+    {
+      "query": "who developed phantom blade zero",
+      "weight": 2
+    },
+    {
+      "query": "who makes phantom blade zero",
+      "weight": 2
+    },
+    {
+      "query": "whos making phantom blade zero",
+      "weight": 2
+    },
+    {
+      "query": "why is phantom blade zero not on steam",
+      "weight": 2
+    },
+    {
+      "query": "why is phantom blade zero not on xbox",
+      "weight": 2
+    },
+    {
+      "query": "why was phantom blade zero delayed",
+      "weight": 2
+    },
+    {
+      "query": "will phantom blade zero be multiplayer",
+      "weight": 2
+    },
+    {
+      "query": "will phantom blade zero be on pc",
+      "weight": 2
+    },
+    {
+      "query": "will phantom blade zero be on steam",
+      "weight": 2
+    },
+    {
+      "query": "will phantom blade zero be on switch 2",
+      "weight": 2
+    },
+    {
+      "query": "will phantom blade zero be on xbox",
+      "weight": 2
+    },
+    {
+      "query": "will phantom blade zero have a good story",
+      "weight": 2
+    },
+    {
+      "query": "will phantom blade zero have a physical release",
+      "weight": 2
+    },
+    {
+      "query": "will phantom blade zero have character creation",
+      "weight": 2
+    },
+    {
+      "query": "will phantom blade zero have character customization",
+      "weight": 2
+    },
+    {
+      "query": "will phantom blade zero have customization",
+      "weight": 2
+    },
+    {
+      "query": "will phantom blade zero have easy mode",
+      "weight": 2
+    },
+    {
+      "query": "will phantom blade zero have romance",
+      "weight": 2
+    },
+    {
+      "query": "can i play phantom blade zero demo",
       "weight": 1
     },
     {
@@ -238,1035 +3990,87 @@
       "weight": 1
     },
     {
-      "query": "phantom blade zero",
+      "query": "how much is phantom blade zero gonna cost",
       "weight": 1
     },
     {
-      "query": "phantom blade zero 2025 s-party demo walkthrough",
+      "query": "phantom blade 0 multiplayer",
       "weight": 1
     },
     {
-      "query": "phantom blade zero a souls like",
+      "query": "phantom blade zero czy bedzie na pc",
       "weight": 1
     },
     {
-      "query": "phantom blade zero actor",
+      "query": "phantom blade zero digital deluxe",
       "weight": 1
     },
     {
-      "query": "phantom blade zero age rating",
+      "query": "phantom blade zero digital only",
       "weight": 1
     },
     {
-      "query": "phantom blade zero all bosses",
+      "query": "phantom blade zero direct",
       "weight": 1
     },
     {
-      "query": "phantom blade zero all editions",
+      "query": "phantom blade zero director",
       "weight": 1
     },
     {
-      "query": "phantom blade zero all weapons",
+      "query": "phantom blade zero discord",
       "weight": 1
     },
     {
-      "query": "phantom blade zero allkeyshop",
+      "query": "phantom blade zero is a chinese game",
       "weight": 1
     },
     {
-      "query": "phantom blade zero amazon",
+      "query": "phantom blade zero is it hard",
       "weight": 1
     },
     {
-      "query": "phantom blade zero android",
+      "query": "phantom blade zero is on pc",
       "weight": 1
     },
     {
-      "query": "phantom blade zero android download",
+      "query": "phantom blade zero is there a demo",
       "weight": 1
     },
     {
-      "query": "phantom blade zero android release date",
+      "query": "phantom blade zero platinum",
       "weight": 1
     },
     {
-      "query": "phantom blade zero anime",
+      "query": "phantom blade zero playstation 5",
       "weight": 1
     },
     {
-      "query": "phantom blade zero announcement date",
+      "query": "phantom blade zero sera mundo abierto",
       "weight": 1
     },
     {
-      "query": "phantom blade zero available on pc",
+      "query": "phantom blade zero vorgänger",
       "weight": 1
     },
     {
-      "query": "phantom blade zero baby",
+      "query": "what is phantom blade zero release date",
       "weight": 1
     },
     {
-      "query": "phantom blade zero based on",
+      "query": "will phantom blade zero have difficulty options",
       "weight": 1
     },
     {
-      "query": "phantom blade zero beta",
+      "query": "will phantom blade zero have multiplayer",
       "weight": 1
     },
     {
-      "query": "phantom blade zero beta test",
+      "query": "will the game phantom blade zero have difficulty settings",
       "weight": 1
     },
     {
-      "query": "phantom blade zero blood steel form",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero boss fight",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero bosses",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero budget",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero buy",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero can you play as female",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero cast",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero cd",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero characters",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero collector's edition",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero combat",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero coming to steam",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero company",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero cost",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero creators",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero delayed",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero demo",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero demo release date",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero demo when",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero developer",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero development time",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero difficulty",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero difficulty settings",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero disc",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero download",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero early access",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero eb games",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero editions",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero engine",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero english voice actors",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero epic games",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero exclusive",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero exclusive ps5",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero expected price",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero expected system requirements",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero female protagonist",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero file size",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero first announcement",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero first trailer",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero for android",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero for ps4",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero for ps5",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero for steam",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero fortnite",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero fortnite skin",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero free",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero game",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero game download",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero game engine",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero game length",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero game release date",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero game size",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero gameplay",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero gameplay time",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero genre",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero good",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero gtx 1650",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero hack and slash",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero hard",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero hd wallpaper",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero how hard",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero hype",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero ign",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero india",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero initial release date",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero is aaa",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero is it coming to pc",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero is it out",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero is ps5 exclusive",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero jackie chan",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero jade dancer",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero japan",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero japanese",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero japanese or chinese",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero jb",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero jb hi fi",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero jd.com",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero jp",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero juego",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero katana",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero kenji tanigaki",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero key",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero key art",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero khi nào ra mắt",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero kiedy premiera",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero korea",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero korean",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero kung fu",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero kung fu punk",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero lançamento",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero laptop requirements",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero latest news",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero launch date",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero legacy outfit",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero length",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero like games",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero limited edition",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero logo",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero logo png",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero main character",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero main character name",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero main villain",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero makers",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero minimum specs",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero mo yuan",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero mobile",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero mobile download",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero movie",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero multiplayer",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero ne zaman çıkacak",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero new gameplay",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero new release date",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero new trailer",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero news",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero nintendo switch",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero nintendo switch 2",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero no disc",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero no physical",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero no physical copy",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero not on xbox",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero official website",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero on game pass",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero on pc",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero on steam",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero on xbox",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero open world",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero optimization",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero origin",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero original release date",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero outfits",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero pc ne zaman çıkacak",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero pre order",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero pre order best buy",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero pre order date",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero ps5 allegro",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero ps5 disc",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero ps5 release date",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero quais plataformas",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero quando esce",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero quando lança",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero quando sai",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero que es",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero que genero es",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero que tipo de juego es",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero quest discord",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero rating",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero recommended specs",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero reddit",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero release",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero release date pc",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero release date ps5",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero requirements",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero requirements pc",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero review",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero side quest impact",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero size",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero size pc",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero souls like",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero specs",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero steam",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero steam price",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero story",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero studio",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero system requirements pc",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero time limit",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero time to beat",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero tokyo game show",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero tokyo game show 2025",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero total bosses",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero trailer",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero trailer 2025",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero trailer gameplay",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero tv tropes",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero twitter",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero type of game",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero uk",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero uk pre order",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero uk release date",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero ultimate",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero ultimate edition",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero unreal engine",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero unreal engine 5",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero upcoming",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero update",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero uscita",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero video",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero video game",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero video quest",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero villain",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero voice actor",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero voice cast",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero vram requirements",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero vs black myth wukong",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero vs gta 6",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero vs onimusha",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero vs onimusha way of the sword",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero vs where winds meet",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero wallpaper",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero wallpaper 4k",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero weapons",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero website",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero what country",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero what kind of game",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero what type of game",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero when release",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero where winds meet",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero which company",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero which country",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero which engine",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero which studio",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero wiki",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero x",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero x fortnite",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero xbox",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero xbox game pass",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero xbox one",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero xbox reddit",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero xbox release",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero xbox release date",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero xbox series s",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero xbox series x",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero year of the horse",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero year of the snake",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero year of the snake gameplay trailer",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero year of the snake release date",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero year of the snake trailer",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero youtube gameplay",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero yucheng",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero zero",
-      "weight": 1
-    },
-    {
-      "query": "phantom blade zero zuo shang",
-      "weight": 1
-    },
-    {
-      "query": "what is phantom blade zero based on",
-      "weight": 1
-    },
-    {
-      "query": "what is phantom blade zero coming out on",
-      "weight": 1
-    },
-    {
-      "query": "what kind of ghost is a phantom",
-      "weight": 1
-    },
-    {
-      "query": "where can you play phantom blade zero",
-      "weight": 1
-    },
-    {
-      "query": "where does phantom blade zero take place",
-      "weight": 1
-    },
-    {
-      "query": "why is phantom blade zero not on steam",
-      "weight": 1
-    },
-    {
-      "query": "why is phantom blade zero not on xbox",
-      "weight": 1
-    },
-    {
-      "query": "why was phantom blade zero delayed",
+      "query": "will.phantom blade zero have difficulty levels",
       "weight": 1
     }
   ]

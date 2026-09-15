@@ -6,255 +6,3355 @@
   ],
   "queries": [
     {
-      "query": "silent hill 4 phone number",
-      "weight": 7
+      "query": "silent hill address",
+      "weight": 103
     },
     {
-      "query": "silent hill townfall is it good",
-      "weight": 6
+      "query": "silent hill 4 phone number",
+      "weight": 98
+    },
+    {
+      "query": "silent hill location",
+      "weight": 78
     },
     {
       "query": "silent hill 4 locations",
-      "weight": 5
+      "weight": 52
+    },
+    {
+      "query": "silent hill meaning",
+      "weight": 30
+    },
+    {
+      "query": "silent hill townfall is it good",
+      "weight": 22
     },
     {
       "query": "silent hill townfall is it a remake",
-      "weight": 5
+      "weight": 20
     },
     {
       "query": "silent hill townfall is it exclusive",
-      "weight": 5
+      "weight": 20
+    },
+    {
+      "query": "silent hill codes",
+      "weight": 18
     },
     {
       "query": "silent hill townfall where is it set",
-      "weight": 5
+      "weight": 18
     },
     {
-      "query": "silent hill townfall how long to beat",
-      "weight": 4
+      "query": "why is silent hill abandoned",
+      "weight": 18
     },
     {
       "query": "silent hill townfall is first person",
-      "weight": 4
+      "weight": 16
     },
     {
       "query": "silent hill townfall is it coming to xbox",
-      "weight": 4
-    },
-    {
-      "query": "is silent hill abandoned",
-      "weight": 3
-    },
-    {
-      "query": "silent hill townfall alien isolation",
-      "weight": 3
-    },
-    {
-      "query": "silent hill townfall how long",
-      "weight": 3
-    },
-    {
-      "query": "silent hill townfall how much",
-      "weight": 3
+      "weight": 16
     },
     {
       "query": "silent hill townfall is ps5 exclusive",
-      "weight": 3
-    },
-    {
-      "query": "silent hill townfall is there combat",
-      "weight": 3
-    },
-    {
-      "query": "silent hill townfall preorder guide",
-      "weight": 3
-    },
-    {
-      "query": "silent hill townfall what is it about",
-      "weight": 3
-    },
-    {
-      "query": "silent hill townfall will it be on xbox",
-      "weight": 3
-    },
-    {
-      "query": "silent hill.townfall trophy guide",
-      "weight": 3
-    },
-    {
-      "query": "how long has silent hill townfall been in development",
-      "weight": 2
-    },
-    {
-      "query": "silent hill address",
-      "weight": 2
-    },
-    {
-      "query": "silent hill recap",
-      "weight": 2
-    },
-    {
-      "query": "silent hill townfall",
-      "weight": 2
-    },
-    {
-      "query": "silent hill townfall akira yamaoka",
-      "weight": 2
-    },
-    {
-      "query": "silent hill townfall any good",
-      "weight": 2
-    },
-    {
-      "query": "silent hill townfall best buy",
-      "weight": 2
-    },
-    {
-      "query": "silent hill townfall big w",
-      "weight": 2
-    },
-    {
-      "query": "silent hill townfall coming to xbox",
-      "weight": 2
-    },
-    {
-      "query": "silent hill townfall game length",
-      "weight": 2
-    },
-    {
-      "query": "silent hill townfall gameplay",
-      "weight": 2
-    },
-    {
-      "query": "silent hill townfall is it first person",
-      "weight": 2
-    },
-    {
-      "query": "silent hill townfall lebron james",
-      "weight": 2
-    },
-    {
-      "query": "silent hill townfall not coming to xbox",
-      "weight": 2
-    },
-    {
-      "query": "silent hill townfall pc",
-      "weight": 2
-    },
-    {
-      "query": "silent hill townfall pc requirements",
-      "weight": 2
-    },
-    {
-      "query": "silent hill townfall price",
-      "weight": 2
-    },
-    {
-      "query": "silent hill townfall ps5",
-      "weight": 2
-    },
-    {
-      "query": "silent hill townfall release date",
-      "weight": 2
-    },
-    {
-      "query": "silent hill townfall steelbook us",
-      "weight": 2
-    },
-    {
-      "query": "silent hill townfall story",
-      "weight": 2
-    },
-    {
-      "query": "silent hill townfall system requirements",
-      "weight": 2
-    },
-    {
-      "query": "silent hill townfall town",
-      "weight": 2
-    },
-    {
-      "query": "silent hill townfall walkthrough",
-      "weight": 2
-    },
-    {
-      "query": "silent hill townfall what consoles",
-      "weight": 2
-    },
-    {
-      "query": "silent hill townfall what type of game",
-      "weight": 2
-    },
-    {
-      "query": "silent hill townfall what we know",
-      "weight": 2
-    },
-    {
-      "query": "silent hill townfall when does it come out",
-      "weight": 2
-    },
-    {
-      "query": "silent hill townfall when does it take place",
-      "weight": 2
-    },
-    {
-      "query": "silent hill townfall when is it coming out",
-      "weight": 2
-    },
-    {
-      "query": "silent hill townfall where does it take place",
-      "weight": 2
-    },
-    {
-      "query": "silent hill townfall where is it based",
-      "weight": 2
-    },
-    {
-      "query": "silent hill townfall where to watch",
-      "weight": 2
-    },
-    {
-      "query": "silent hill townfall why is it cheaper",
-      "weight": 2
+      "weight": 16
     },
     {
       "query": "silent hill townfall will flop",
-      "weight": 2
+      "weight": 16
+    },
+    {
+      "query": "silent hill townfall will it be on xbox",
+      "weight": 16
+    },
+    {
+      "query": "silent hill characters explained",
+      "weight": 14
+    },
+    {
+      "query": "silent hill townfall first or third person",
+      "weight": 14
+    },
+    {
+      "query": "silent hill townfall is there combat",
+      "weight": 14
     },
     {
       "query": "silent hill townfall will it be good",
-      "weight": 2
+      "weight": 14
     },
     {
-      "query": "silent hill townfall youtube",
-      "weight": 2
+      "query": "silent hill townfall how long to beat",
+      "weight": 12
     },
     {
-      "query": "all silent hill townfall",
-      "weight": 1
+      "query": "silent hill townfall how much",
+      "weight": 12
     },
     {
-      "query": "can you play silent hill townfall in 3rd person",
-      "weight": 1
+      "query": "silent hill townfall when does it come out",
+      "weight": 12
     },
     {
-      "query": "can you pre order silent hill townfall",
-      "weight": 1
+      "query": "silent hill townfall coming to xbox",
+      "weight": 10
     },
     {
-      "query": "hardest silent hill puzzle",
-      "weight": 1
+      "query": "silent hill townfall de que va",
+      "weight": 10
     },
     {
-      "query": "how long is silent hill townfall going to be",
-      "weight": 1
+      "query": "silent hill townfall town",
+      "weight": 10
     },
     {
-      "query": "how long will silent hill townfall be",
-      "weight": 1
+      "query": "silent hill townfall town name",
+      "weight": 10
+    },
+    {
+      "query": "silent hill townfall where to watch",
+      "weight": 10
+    },
+    {
+      "query": "which silent hill is the best",
+      "weight": 10
+    },
+    {
+      "query": "will silent hill townfall have combat",
+      "weight": 10
+    },
+    {
+      "query": "silent hill townfall how long",
+      "weight": 9
+    },
+    {
+      "query": "silent hill townfall real town",
+      "weight": 9
+    },
+    {
+      "query": "silent hill townfall where does it take place",
+      "weight": 9
+    },
+    {
+      "query": "does silent hill townfall have a release date",
+      "weight": 8
     },
     {
       "query": "how much will silent hill townfall be",
+      "weight": 8
+    },
+    {
+      "query": "is silent hill abandoned",
+      "weight": 8
+    },
+    {
+      "query": "silent hill 4 explained",
+      "weight": 8
+    },
+    {
+      "query": "silent hill horror characters",
+      "weight": 8
+    },
+    {
+      "query": "silent hill recap",
+      "weight": 8
+    },
+    {
+      "query": "silent hill townfall alien isolation",
+      "weight": 8
+    },
+    {
+      "query": "silent hill townfall any good",
+      "weight": 8
+    },
+    {
+      "query": "silent hill townfall are you town",
+      "weight": 8
+    },
+    {
+      "query": "silent hill townfall best buy",
+      "weight": 8
+    },
+    {
+      "query": "silent hill townfall coming to pc",
+      "weight": 8
+    },
+    {
+      "query": "silent hill townfall de que trata",
+      "weight": 8
+    },
+    {
+      "query": "silent hill townfall gameplay",
+      "weight": 8
+    },
+    {
+      "query": "silent hill townfall lebron james",
+      "weight": 8
+    },
+    {
+      "query": "silent hill townfall looks bad",
+      "weight": 8
+    },
+    {
+      "query": "silent hill townfall not coming to xbox",
+      "weight": 8
+    },
+    {
+      "query": "silent hill townfall pc requirements",
+      "weight": 8
+    },
+    {
+      "query": "silent hill townfall pre order",
+      "weight": 8
+    },
+    {
+      "query": "silent hill townfall preorder guide",
+      "weight": 8
+    },
+    {
+      "query": "silent hill townfall price",
+      "weight": 8
+    },
+    {
+      "query": "silent hill townfall que se sabe",
+      "weight": 8
+    },
+    {
+      "query": "silent hill townfall release date",
+      "weight": 8
+    },
+    {
+      "query": "silent hill townfall switch 2",
+      "weight": 8
+    },
+    {
+      "query": "silent hill townfall time to beat",
+      "weight": 8
+    },
+    {
+      "query": "silent hill townfall vs f",
+      "weight": 8
+    },
+    {
+      "query": "silent hill townfall walkthrough",
+      "weight": 8
+    },
+    {
+      "query": "silent hill townfall what is it",
+      "weight": 8
+    },
+    {
+      "query": "silent hill townfall where is it based",
+      "weight": 8
+    },
+    {
+      "query": "silent hill vs silent hill revelation",
+      "weight": 8
+    },
+    {
+      "query": "silent hill.townfall trophy guide",
+      "weight": 8
+    },
+    {
+      "query": "who is the killer in silent hill",
+      "weight": 8
+    },
+    {
+      "query": "will silent hill townfall have guns",
+      "weight": 7
+    },
+    {
+      "query": "does silent hill townfall have combat",
+      "weight": 6
+    },
+    {
+      "query": "how long has silent hill townfall been in development",
+      "weight": 6
+    },
+    {
+      "query": "is silent hill townfall out",
+      "weight": 6
+    },
+    {
+      "query": "quando sai silent hill townfall",
+      "weight": 6
+    },
+    {
+      "query": "silent hill 3 voice actors",
+      "weight": 6
+    },
+    {
+      "query": "silent hill best to worst",
+      "weight": 6
+    },
+    {
+      "query": "silent hill difficulty differences",
+      "weight": 6
+    },
+    {
+      "query": "silent hill joke ending",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall akira yamaoka",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall and f",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall big w",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall black guy",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall box art",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall campaign length",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall come out",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall data de lançamento",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall day one edition",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall demo download",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall difficulty settings",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall download",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall early reviews",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall everything we know",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall face model",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall first person",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall first person only",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall for pc",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall for xbox",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall game length",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall gameplay footage",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall guns",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall have guns",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall is it first person",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall jeux vidéo",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall key art",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall length",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall looks good",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall main character",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall main character name",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall map",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall microsoft windows store",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall minimum requirements",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall ne zaman çıkacak",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall official website",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall onde se passa",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall original",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall pc",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall pre order bonus",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall pre order collector's edition",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall pre order steelbook",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall ps5",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall ps5 disc",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall que es",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall release",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall release date ps5",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall release date uk",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall release date xbox",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall review",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall sequel to f",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall setting",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall simon cadell actor",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall simon ordell",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall story",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall system requirements",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall takes place",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall time period",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall trailer 2",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall vai sair para xbox",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall vai ter midia fisica",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall weapons",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall what is it about",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall what we know",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall when does it take place",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall when is it coming out",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall when was it announced",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall why is it cheaper",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall xbox one",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall year",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall year set",
+      "weight": 6
+    },
+    {
+      "query": "silent hill townfall youtube",
+      "weight": 6
+    },
+    {
+      "query": "when does silent hill townfall",
+      "weight": 6
+    },
+    {
+      "query": "when does silent hill townfall release",
+      "weight": 6
+    },
+    {
+      "query": "is silent hill townfall out yet",
+      "weight": 5
+    },
+    {
+      "query": "silent hill townfall cover art",
+      "weight": 5
+    },
+    {
+      "query": "silent hill townfall looks bad reddit",
+      "weight": 5
+    },
+    {
+      "query": "silent hill townfall not in silent hill",
+      "weight": 5
+    },
+    {
+      "query": "silent hill townfall requirements",
+      "weight": 5
+    },
+    {
+      "query": "where is silent hill townfall located",
+      "weight": 5
+    },
+    {
+      "query": "all silent hill townfall",
+      "weight": 4
+    },
+    {
+      "query": "can you play silent hill townfall in 3rd person",
+      "weight": 4
+    },
+    {
+      "query": "cuando saldra silent hill townfall",
+      "weight": 4
+    },
+    {
+      "query": "cuando sale el silent hill townfall",
+      "weight": 4
+    },
+    {
+      "query": "does silent hill townfall have a demo",
+      "weight": 4
+    },
+    {
+      "query": "hardest silent hill puzzle",
+      "weight": 4
+    },
+    {
+      "query": "how long will silent hill townfall be",
+      "weight": 4
+    },
+    {
+      "query": "is silent hill a real town",
+      "weight": 4
+    },
+    {
+      "query": "is silent hill townfall a full length game",
+      "weight": 4
+    },
+    {
+      "query": "is silent hill.townfall a new story",
+      "weight": 4
+    },
+    {
+      "query": "konami silent hill townfall setting",
+      "weight": 4
+    },
+    {
+      "query": "ps5 silent hill townfall cuando sale",
+      "weight": 4
+    },
+    {
+      "query": "quando uscirà silent hill townfall",
+      "weight": 4
+    },
+    {
+      "query": "quien desarrolla silent hill townfall",
+      "weight": 4
+    },
+    {
+      "query": "silent hill 2 box code",
+      "weight": 4
+    },
+    {
+      "query": "silent hill 2 downfall",
+      "weight": 4
+    },
+    {
+      "query": "silent hill 2 review",
+      "weight": 4
+    },
+    {
+      "query": "silent hill 3 cheats",
+      "weight": 4
+    },
+    {
+      "query": "silent hill 4 levels",
+      "weight": 4
+    },
+    {
+      "query": "silent hill game size",
+      "weight": 4
+    },
+    {
+      "query": "silent hill homecoming town hall",
+      "weight": 4
+    },
+    {
+      "query": "silent hill names",
+      "weight": 4
+    },
+    {
+      "query": "silent hill system requirements",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall 2",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall age rating",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall ai",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall all weapons",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall allegro",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall allkeyshop",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall bad",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall based in uk",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall based on",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall black bars",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall black character",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall black protagonist",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall bloober team",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall bonus application",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall budget",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall buy",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall cancelled",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall canon",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall cast",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall characters",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall collector's edition",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall combat",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall composer",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall cover",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall crtv",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall cuando sale",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall cuando salio",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall cuando se anuncio",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall cuando se estrena",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall date",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall date de sortie",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall day one edition ps5",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall day one edition steelbook bundle",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall day one edition steelbook bundle ps5",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall deluxe edition",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall demo",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall demo pc",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall denuvo",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall dev team",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall developer",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall devs",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall di cosa parla",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall difficulty",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall difficulty levels",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall disc",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall duration",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall dusk golem",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall early access",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall endings",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall fanatical",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall fecha de estreno inicial",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall fecha de lanzamiento",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall fecha de salida",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall fife",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall first person reddit",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall fps",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall free",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall game",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall game engine",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall game pass",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall game release date",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall gameplay leak",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall gameplay time",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall gameplay trailer",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall gamestop",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall geforce now",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall gg deals",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall gog",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall good",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall graphics",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall hands on",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall home",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall hours of gameplay",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall in scotland",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall ireland",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall japan",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall jogo",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall juego",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall kapan rilis",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall kaufen",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall key",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall key steam",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall kiedy",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall kiedy premiera",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall kojima",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall konami",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall konami details",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall kopen",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall latest news",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall leaks",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall limited edition",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall loaded",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall location",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall logo",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall logo png",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall lore",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall main character actor",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall mercado livre",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall merch",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall metacritic",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall monsters",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall movie",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall multiple endings",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall music",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall music composer",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall new gameplay",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall new trailer",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall news",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall nintendo switch 2",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall no combat",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall no xbox",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall not on xbox",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall o czym jest",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall on pc",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall on steam",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall on xbox",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall para que consolas saldra",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall pc key",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall pc release date",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall pc steam",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall playstation 5 store",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall playstation blog",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall pre order ps5",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall price reddit",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall ps5 exclusive",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall ps5 pre order",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall ps5 review",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall pyramid head",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall quando esce",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall quando lança",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall quien lo desarrolla",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall radio",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall rating",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall reddit",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall related to f",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall saldra para xbox",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall set in scotland",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall set in uk",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall silent hill f",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall simon voice actor",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall size",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall steam",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall steam deck",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall steam forum",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall steam price",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall steelbook canada",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall steelbook us",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall summary",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall summer game fest",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall tempo de jogo",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall theories",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall third person",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall timed exclusive",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall trailer",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall trailer music",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall trailer song",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall trophies",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall va",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall vai se passar onde",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall versions",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall video",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall video game",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall villain",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall voice actors",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall voice actress",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall vr",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall vs silent hill 2 remake",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall wallpaper",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall wallpaper 4k",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall what consoles",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall what type of game",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall where",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall who made it",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall wiki",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall woke",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall worth it",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall writer",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall xbox",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall xbox release",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall xbox series s",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall xbox series x",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall xbox store",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall yamaoka",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall zoe",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall zoe actress",
+      "weight": 4
+    },
+    {
+      "query": "silent hill townfall's rumored release date was revealed by a retailer",
+      "weight": 4
+    },
+    {
+      "query": "silent hill.townfall gameplay length",
+      "weight": 4
+    },
+    {
+      "query": "wann kommt silent hill townfall",
+      "weight": 4
+    },
+    {
+      "query": "what year does silent hill townfall take place",
+      "weight": 4
+    },
+    {
+      "query": "where will silent hill townfall take place",
+      "weight": 4
+    },
+    {
+      "query": "who's working on silent hill townfall",
+      "weight": 4
+    },
+    {
+      "query": "why is silent hill so scary",
+      "weight": 4
+    },
+    {
+      "query": "why is silent hill townfall 50 dollars",
+      "weight": 4
+    },
+    {
+      "query": "will silent hill townfall be a full game",
+      "weight": 4
+    },
+    {
+      "query": "will silent hill townfall be free",
+      "weight": 4
+    },
+    {
+      "query": "will silent hill townfall have 3rd person",
+      "weight": 4
+    },
+    {
+      "query": "will silent hill townfall have a physical release",
+      "weight": 4
+    },
+    {
+      "query": "will silent hill townfall have a steelbook",
+      "weight": 4
+    },
+    {
+      "query": "will silent hill townfall have denuvo",
+      "weight": 4
+    },
+    {
+      "query": "will silent hill townfall have difficulty settings",
+      "weight": 4
+    },
+    {
+      "query": "will silent hill townfall have multiple endings",
+      "weight": 4
+    },
+    {
+      "query": "will silent hill townfall have weapons",
+      "weight": 4
+    },
+    {
+      "query": "silent hill downfall xbox",
+      "weight": 3
+    },
+    {
+      "query": "silent hill townfall collectors",
+      "weight": 3
+    },
+    {
+      "query": "silent hill townfall console",
+      "weight": 3
+    },
+    {
+      "query": "silent hill townfall cost",
+      "weight": 3
+    },
+    {
+      "query": "silent hill townfall deluxe",
+      "weight": 3
+    },
+    {
+      "query": "silent hill townfall looks terrible",
+      "weight": 3
+    },
+    {
+      "query": "silent hill townfall xbox reddit",
+      "weight": 3
+    },
+    {
+      "query": "silent hill townfall xbox release date",
+      "weight": 3
+    },
+    {
+      "query": "are there zombies in silent hill",
+      "weight": 2
+    },
+    {
+      "query": "can you pre order silent hill townfall",
+      "weight": 2
+    },
+    {
+      "query": "cenega ps5 silent hill townfall",
+      "weight": 2
+    },
+    {
+      "query": "characters in silent hill",
+      "weight": 2
+    },
+    {
+      "query": "cuanto costara silent hill townfall",
+      "weight": 2
+    },
+    {
+      "query": "data lançamento silent hill townfall",
+      "weight": 2
+    },
+    {
+      "query": "difference between silent and silence in hindi",
+      "weight": 2
+    },
+    {
+      "query": "does silent hill townfall take place in scotland",
+      "weight": 2
+    },
+    {
+      "query": "fanatical silent hill townfall preorder",
+      "weight": 2
+    },
+    {
+      "query": "fecha estreno silent hill townfall",
+      "weight": 2
+    },
+    {
+      "query": "gra silent hill townfall",
+      "weight": 2
+    },
+    {
+      "query": "how long is silent hill townfall going to be",
+      "weight": 2
+    },
+    {
+      "query": "is silent hill and silent hill revelation connected",
+      "weight": 2
+    },
+    {
+      "query": "is silent hill based on a real story",
+      "weight": 2
+    },
+    {
+      "query": "is silent hill free",
+      "weight": 2
+    },
+    {
+      "query": "is silent hill townfall a mainline game",
+      "weight": 2
+    },
+    {
+      "query": "is silent hill townfall a vr game",
+      "weight": 2
+    },
+    {
+      "query": "is silent hill townfall coming out on xbox",
+      "weight": 2
+    },
+    {
+      "query": "is silent hill townfall coming to switch",
+      "weight": 2
+    },
+    {
+      "query": "is silent hill townfall coming to switch 2",
+      "weight": 2
+    },
+    {
+      "query": "is silent hill townfall getting a steelbook",
+      "weight": 2
+    },
+    {
+      "query": "is silent hill townfall going to be first person",
+      "weight": 2
+    },
+    {
+      "query": "is silent hill townfall going to be on pc",
+      "weight": 2
+    },
+    {
+      "query": "is silent hill townfall going to be on xbox",
+      "weight": 2
+    },
+    {
+      "query": "is silent hill townfall going to be short",
+      "weight": 2
+    },
+    {
+      "query": "is silent hill townfall gonna be good",
+      "weight": 2
+    },
+    {
+      "query": "is silent hill townfall in first person",
+      "weight": 2
+    },
+    {
+      "query": "is silent hill townfall in the uk",
+      "weight": 2
+    },
+    {
+      "query": "is silent hill townfall open world",
+      "weight": 2
+    },
+    {
+      "query": "is silent hill townfall release",
+      "weight": 2
+    },
+    {
+      "query": "is silent hill townfall silent hill 1",
+      "weight": 2
+    },
+    {
+      "query": "ist silent hill townfall ein remake",
+      "weight": 2
+    },
+    {
+      "query": "jeu silent hill townfall",
+      "weight": 2
+    },
+    {
+      "query": "konami confirms silent hill townfall",
+      "weight": 2
+    },
+    {
+      "query": "konami silent hill townfall perspective",
+      "weight": 2
+    },
+    {
+      "query": "konami townfall silent hill playstation 5",
+      "weight": 2
+    },
+    {
+      "query": "new silent hill townfall release date",
+      "weight": 2
+    },
+    {
+      "query": "next silent hill townfall",
+      "weight": 2
+    },
+    {
+      "query": "nocode developer of silent hill townfall rebrands to screen burn",
+      "weight": 2
+    },
+    {
+      "query": "nuovo silent hill townfall",
+      "weight": 2
+    },
+    {
+      "query": "pt silent hill explained",
+      "weight": 2
+    },
+    {
+      "query": "quand sort silent hill townfall",
+      "weight": 2
+    },
+    {
+      "query": "release date for silent hill townfall",
+      "weight": 2
+    },
+    {
+      "query": "silent hill 1 joke ending",
+      "weight": 2
+    },
+    {
+      "query": "silent hill 1 review",
+      "weight": 2
+    },
+    {
+      "query": "silent hill 1 weapons locations",
+      "weight": 2
+    },
+    {
+      "query": "silent hill 2 best difficulty",
+      "weight": 2
+    },
+    {
+      "query": "silent hill 2 codes",
+      "weight": 2
+    },
+    {
+      "query": "silent hill 2 cost",
+      "weight": 2
+    },
+    {
+      "query": "silent hill 2 difficulty differences",
+      "weight": 2
+    },
+    {
+      "query": "silent hill 2 facts",
+      "weight": 2
+    },
+    {
+      "query": "silent hill 2 quotes",
+      "weight": 2
+    },
+    {
+      "query": "silent hill 2 tips",
+      "weight": 2
+    },
+    {
+      "query": "silent hill 2 tips and tricks",
+      "weight": 2
+    },
+    {
+      "query": "silent hill 2 townfall release date",
+      "weight": 2
+    },
+    {
+      "query": "silent hill 2 value",
+      "weight": 2
+    },
+    {
+      "query": "silent hill 3 characters",
+      "weight": 2
+    },
+    {
+      "query": "silent hill 3 employees only code",
+      "weight": 2
+    },
+    {
+      "query": "silent hill 3 lock code",
+      "weight": 2
+    },
+    {
+      "query": "silent hill 3 map locations",
+      "weight": 2
+    },
+    {
+      "query": "silent hill 3 weapon locations",
+      "weight": 2
+    },
+    {
+      "query": "silent hill 4 how to get good ending",
+      "weight": 2
+    },
+    {
+      "query": "silent hill 4 price",
+      "weight": 2
+    },
+    {
+      "query": "silent hill 4 review",
+      "weight": 2
+    },
+    {
+      "query": "silent hill 4 stun gun location",
+      "weight": 2
+    },
+    {
+      "query": "silent hill 4 system requirements",
+      "weight": 2
+    },
+    {
+      "query": "silent hill 4 tips",
+      "weight": 2
+    },
+    {
+      "query": "silent hill bad ending explained",
+      "weight": 2
+    },
+    {
+      "query": "silent hill downfall setting",
+      "weight": 2
+    },
+    {
+      "query": "silent hill ending explained",
+      "weight": 2
+    },
+    {
+      "query": "silent hill enemies and what they mean",
+      "weight": 2
+    },
+    {
+      "query": "silent hill nuevo townfall",
+      "weight": 2
+    },
+    {
+      "query": "silent hill origin story",
+      "weight": 2
+    },
+    {
+      "query": "silent hill phone number",
+      "weight": 2
+    },
+    {
+      "query": "silent hill playable characters",
+      "weight": 2
+    },
+    {
+      "query": "silent hill ps4 price",
+      "weight": 2
+    },
+    {
+      "query": "silent hill pt explained",
+      "weight": 2
+    },
+    {
+      "query": "silent hill rifle location",
+      "weight": 2
+    },
+    {
+      "query": "silent hill silent hill townfall",
+      "weight": 2
+    },
+    {
+      "query": "silent hill story explained",
+      "weight": 2
+    },
+    {
+      "query": "silent hill tips",
+      "weight": 2
+    },
+    {
+      "query": "silent hill town fall date de sortie",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall a remake",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall about",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall actor",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall alessa",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall alza",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall amazon",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall amazon uk",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall analysis",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall annapurna",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall announcement",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall argos",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall argumento",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall art",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall artist",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall arvostelu",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall aspect ratio",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall axe head",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall background",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall backlash",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall backloggd",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall bande annonce",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall banner",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall based in",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall bestellen",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall black",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall black protagonist reddit",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall black reddit",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall bloober",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall bonus",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall box",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall british",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall by screen burn remains in active development",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall camera",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall carrefour",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall cd key",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall ceg",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall cena",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall ceneo",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall city",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall çıkış tarihi",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall concept art",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall controversy",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall creator",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall creature designer",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall creatures",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall critica",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall crt",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall cuanto dura",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall czas gry",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall datablitz",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall date release",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall day",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall day one",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall day one edition - playstation 5",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall day one edition difference",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall day one ps5 steelbook",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall dei",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall deluxe upgrade",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall demo ps5",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall demo steam",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall developer nocode rebrand",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall development time",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall digital deluxe",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall director",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall discussion",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall dlc",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall donde se ambienta",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall durata",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall duree de vie",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall é bom",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall early impressions",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall eb games",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall editions",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall elenco",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall előrendelés",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall enemies",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall engine",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall epic games",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall erscheinungsdatum",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall esrb rating",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall eurogamer",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall exclusive",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall expectations",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall explained",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall f",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall fabuła",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall facebook",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall fanart",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall fandom",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall fecha lanzamiento",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall fecha salida",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall film",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall first announcement",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall first impressions",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall first person or third person",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall first trailer",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall fisico",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall flop",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall font",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall forum",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall fr",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall full game",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall gameplay demo",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall gameplay reddit",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall gameplay trailer reddit",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall gamespot",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall gematsu",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall genre",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall geschichte",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall gif",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall glasgow",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall gra ps5",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall green man gaming",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall gry online",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall have combat",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall histoire",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall historia",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall hltb",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall horas de juego",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall how many hours",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall i",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall ign",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall ign preview gameplay",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall imdb",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall impressions",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall initial release date",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall inspiration",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall is a remake",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall jb",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall jbhifi",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall jvc",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall kritik",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall lança quando",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall lançamento",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall lanzamiento",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall launch",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall launch date",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall leaks reddit",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall leclerc",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall letterboxd",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall limited",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall limited steelbook",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall live",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall liverpool",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall mac",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall main theme",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall march",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall march 2026",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall march 26",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall masahiro ito",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall media expert",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall media markt",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall megjelenés",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall memes",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall mercado libre",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall meta",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall micromania",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall microsoft store",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall midia fisica",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall mobile",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall monster designer",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall monsters reddit",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall multiplayer",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall new game",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall neymar",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall nintendo switch",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall no code",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall noticias",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall nuuvem",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall o que é",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall official",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall official site",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall official trailer",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall old",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall only $50",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall only on ps5",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall open world",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall ore di gioco",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall ost",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall otherworld",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall pa5",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall para pc",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall para xbox",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall part 1",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall pc release",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall pc steelbook",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall pegi",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall pegi 16",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall pelicula",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall piano",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall piattaforma",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall pilotpriest",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall plaisio",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall platforms",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall playstation",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall playstation 5",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall playstation exclusive",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall playstation store",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall playtime",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall plot",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall portable tv",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall portada",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall poster",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall pre order bonus gamestop",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall pre order bonus steelbook",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall pre order deluxe edition",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall premise",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall preorder bonus",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall press kit",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall preview",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall price ps5",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall protagonist",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall ps5 collector's edition",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall ps5 date de sortie",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall ps5 erscheinungsdatum",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall ps5 fps",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall ps5 gameplay",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall ps5 kaufen",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall ps5 kiedy premierą",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall ps5 metacritic",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall ps5 midia fisica",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall ps5 pc",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall ps5 performance",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall ps5 physical",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall ps5 physical copy",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall ps5 release date",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall ps5 sortie",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall ps5 steelbook",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall ps5 wishlist",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall public",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall publisher",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall puzzles",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall ray tracing",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall release date 2026",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall release date month",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall release date pc",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall release date reddit",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall release date rumor",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall release date steam",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall release date switch",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall release platforms",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall release price",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall release trailer",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall release window",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall remake",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall retail leak",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall review ign",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall review reddit",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall rumors",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall runtime",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall salida",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall scotland setting",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall screen burn",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall september 24",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall sequel",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall será en primera persona",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall sera exclusivo",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall series",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall series x",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall set in",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall set in silent hill",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall short message",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall silent hill 2",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall simon",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall simon actor",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall simon odell voice actor",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall sinopsis",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall site",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall song",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall sortie",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall sound designer",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall soundtrack",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall special edition",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall st monans",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall state of play",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall state of play trailer",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall steam key",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall steamdb",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall steel book",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall steel case",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall steelbook",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall steelbook bundle",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall steelbook bundle ps5",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall steelbook uk",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall story explained",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall story reddit",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall studio",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall sur ps5",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall switch",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall synopsis",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall tagline",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall target",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall team",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall teaser",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall terceira pessoa",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall terza persona",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall teszt",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall theories reddit",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall timeline",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall trailer details",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall trailer konami",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall trailer reddit",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall transmission",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall tropes",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall trophy guide",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall tv tropes",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall uk",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall um was geht es",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall unreal engine",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall unreal engine 5",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall upcoming",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall updates",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall uscirà su xbox",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall uscita",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall vai sair para pc",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall vai ser em primeira pessoa",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall vai ser exclusivo",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall vai ter armas",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall valor",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall voice cast",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall vorbestellen",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall vs silent hill f",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall walmart",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall website",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall what kind of game",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall when",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall why no xbox",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall wikipedia",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall wishlist",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall x",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall xbox series x release date",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall xbox x",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall yt",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall zwiastun",
+      "weight": 2
+    },
+    {
+      "query": "silent hill townfall's release date was leaked by a retailer",
+      "weight": 2
+    },
+    {
+      "query": "silent hills ranked",
+      "weight": 2
+    },
+    {
+      "query": "silent mode settings",
+      "weight": 2
+    },
+    {
+      "query": "story behind silent hill",
+      "weight": 2
+    },
+    {
+      "query": "test silent hill townfall",
+      "weight": 2
+    },
+    {
+      "query": "wann erscheint silent hill townfall",
+      "weight": 2
+    },
+    {
+      "query": "wann kommt silent hill townfall raus",
+      "weight": 2
+    },
+    {
+      "query": "what is silent hill townfall based on",
+      "weight": 2
+    },
+    {
+      "query": "what is silent hills",
+      "weight": 2
+    },
+    {
+      "query": "what town is silent hill townfall based on",
+      "weight": 2
+    },
+    {
+      "query": "what will silent hill townfall be about",
+      "weight": 2
+    },
+    {
+      "query": "what's after silent hill townfall",
+      "weight": 2
+    },
+    {
+      "query": "when did silent hill townfall start development",
+      "weight": 2
+    },
+    {
+      "query": "when did silent hill.townfall come out",
+      "weight": 2
+    },
+    {
+      "query": "when does silent hill townfall come out",
+      "weight": 2
+    },
+    {
+      "query": "when silent hill townfall release date",
+      "weight": 2
+    },
+    {
+      "query": "where does silent hill townfall take place",
+      "weight": 2
+    },
+    {
+      "query": "who is writing silent hill townfall",
+      "weight": 2
+    },
+    {
+      "query": "whos making silent hill townfall",
+      "weight": 2
+    },
+    {
+      "query": "why is silent hill cursed",
+      "weight": 2
+    },
+    {
+      "query": "why is silent hill townfall $50",
+      "weight": 2
+    },
+    {
+      "query": "why is silent hill townfall cheaper than f",
+      "weight": 2
+    },
+    {
+      "query": "why is silent hill townfall first person",
+      "weight": 2
+    },
+    {
+      "query": "why was silent hills cancelled",
+      "weight": 2
+    },
+    {
+      "query": "will silent hill townfall be 3rd person",
+      "weight": 2
+    },
+    {
+      "query": "will silent hill townfall be canon",
+      "weight": 2
+    },
+    {
+      "query": "will silent hill townfall be first person",
+      "weight": 2
+    },
+    {
+      "query": "will silent hill townfall be good",
+      "weight": 2
+    },
+    {
+      "query": "will silent hill townfall be on pc",
+      "weight": 2
+    },
+    {
+      "query": "will silent hill townfall be on steam",
+      "weight": 2
+    },
+    {
+      "query": "will silent hill townfall be on switch 2",
+      "weight": 2
+    },
+    {
+      "query": "will silent hill townfall be on xbox",
+      "weight": 2
+    },
+    {
+      "query": "will silent hill townfall be ps5 exclusive",
+      "weight": 2
+    },
+    {
+      "query": "wo spielt silent hill townfall",
+      "weight": 2
+    },
+    {
+      "query": "worst silent hill game",
+      "weight": 2
+    },
+    {
+      "query": "does silent hill townfall have guns",
       "weight": 1
     },
     {
@@ -262,71 +3362,7 @@
       "weight": 1
     },
     {
-      "query": "is silent hill a real town",
-      "weight": 1
-    },
-    {
-      "query": "is silent hill townfall out yet",
-      "weight": 1
-    },
-    {
-      "query": "quando sai silent hill townfall",
-      "weight": 1
-    },
-    {
-      "query": "quando uscirà silent hill townfall",
-      "weight": 1
-    },
-    {
-      "query": "quien desarrolla silent hill townfall",
-      "weight": 1
-    },
-    {
-      "query": "silent hill 2 tips",
-      "weight": 1
-    },
-    {
-      "query": "silent hill 2 tips and tricks",
-      "weight": 1
-    },
-    {
-      "query": "silent hill 3 cheats",
-      "weight": 1
-    },
-    {
-      "query": "silent hill 4 explained",
-      "weight": 1
-    },
-    {
-      "query": "silent hill 4 how to get good ending",
-      "weight": 1
-    },
-    {
-      "query": "silent hill 4 levels",
-      "weight": 1
-    },
-    {
-      "query": "silent hill 4 tips",
-      "weight": 1
-    },
-    {
-      "query": "silent hill best to worst",
-      "weight": 1
-    },
-    {
-      "query": "silent hill downfall xbox",
-      "weight": 1
-    },
-    {
-      "query": "silent hill game size",
-      "weight": 1
-    },
-    {
-      "query": "silent hill homecoming town hall",
-      "weight": 1
-    },
-    {
-      "query": "silent hill location",
+      "query": "silent hill downfall steam",
       "weight": 1
     },
     {
@@ -334,1011 +3370,31 @@
       "weight": 1
     },
     {
-      "query": "silent hill tips",
+      "query": "silent hill town hall xbox",
       "weight": 1
     },
     {
-      "query": "silent hill townfall a remake",
+      "query": "silent hill townfall deluxe edition physical copy",
       "weight": 1
     },
     {
-      "query": "silent hill townfall about",
+      "query": "silent hill townfall description",
       "weight": 1
     },
     {
-      "query": "silent hill townfall actor",
+      "query": "silent hill townfall details",
       "weight": 1
     },
     {
-      "query": "silent hill townfall age rating",
+      "query": "silent hill townfall looks awful",
       "weight": 1
     },
     {
-      "query": "silent hill townfall ai",
+      "query": "silent hill townfall pre order steam",
       "weight": 1
     },
     {
-      "query": "silent hill townfall all weapons",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall allegro",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall allkeyshop",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall amazon",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall amazon uk",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall annapurna",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall announcement",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall are you town",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall based on",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall bestellen",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall black bars",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall black guy",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall black protagonist",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall bonus application",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall box art",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall budget",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall buy",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall cast",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall characters",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall collector's edition",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall collectors",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall combat",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall coming to pc",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall composer",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall cover",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall cover art",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall crtv",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall date",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall day one edition",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall de que trata",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall de que va",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall deluxe",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall deluxe edition",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall deluxe upgrade",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall demo",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall denuvo",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall developer",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall devs",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall disc",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall duration",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall early access",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall early reviews",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall eb games",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall editions",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall endings",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall enemies",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall engine",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall epic games",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall everything we know",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall exclusive",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall expectations",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall f",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall face model",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall fanatical",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall fife",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall first or third person",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall first person",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall first person only",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall for pc",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall for xbox",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall fps",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall game",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall game engine",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall game release date",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall gameplay footage",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall gamestop",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall gog",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall good",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall graphics",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall guns",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall hands on",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall home",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall hours of gameplay",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall ign",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall ign preview gameplay",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall imdb",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall impressions",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall initial release date",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall inspiration",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall is a remake",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall japan",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall jb",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall jbhifi",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall jeux vidéo",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall jogo",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall juego",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall jvc",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall kaufen",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall key",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall key art",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall key steam",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall kiedy",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall kiedy premiera",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall kojima",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall konami",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall konami details",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall kopen",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall leaks",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall length",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall limited edition",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall loaded",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall location",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall logo",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall logo png",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall looks bad",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall looks good",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall lore",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall main character",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall map",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall merch",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall metacritic",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall microsoft windows store",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall minimum requirements",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall monsters",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall movie",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall music",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall music composer",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall ne zaman çıkacak",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall new gameplay",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall new trailer",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall news",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall nintendo switch 2",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall no combat",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall no xbox",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall not in silent hill",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall not on xbox",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall o czym jest",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall official website",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall on pc",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall on steam",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall on xbox",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall only $50",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall only on ps5",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall open world",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall original",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall ost",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall otherworld",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall pc release date",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall playstation 5 store",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall pre order",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall ps5 disc",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall ps5 exclusive",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall ps5 pre order",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall pyramid head",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall quando esce",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall quando lança",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall que es",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall que se sabe",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall quien lo desarrolla",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall radio",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall rating",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall real town",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall reddit",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall related to f",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall release",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall release date ps5",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall release date uk",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall release date xbox",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall requirements",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall review",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall sequel to f",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall setting",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall special edition",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall steam",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall steam deck",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall steelbook",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall steelbook uk",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall studio",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall switch 2",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall takes place",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall tempo de jogo",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall theories",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall third person",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall time period",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall time to beat",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall timed exclusive",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall town name",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall trailer",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall trophies",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall tv tropes",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall uk",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall unreal engine",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall unreal engine 5",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall upcoming",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall updates",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall uscita",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall va",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall versions",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall video",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall video game",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall villain",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall voice actors",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall voice actress",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall vr",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall vs f",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall vs silent hill 2 remake",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall wallpaper",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall wallpaper 4k",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall weapons",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall what is it",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall when",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall when was it announced",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall where",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall where is it",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall why no xbox",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall wiki",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall woke",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall writer",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall x",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall xbox",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall xbox one",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall xbox reddit",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall xbox release",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall xbox release date",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall xbox series s",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall xbox series x",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall xbox store",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall yamaoka",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall year",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall year set",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall yt",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall zoe",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall zoe actress",
-      "weight": 1
-    },
-    {
-      "query": "silent hill townfall zwiastun",
-      "weight": 1
-    },
-    {
-      "query": "silent hills ranked",
-      "weight": 1
-    },
-    {
-      "query": "what is silent hill townfall based on",
-      "weight": 1
-    },
-    {
-      "query": "what town is silent hill townfall based on",
-      "weight": 1
-    },
-    {
-      "query": "what will silent hill townfall be about",
-      "weight": 1
-    },
-    {
-      "query": "what year does silent hill townfall take place",
-      "weight": 1
-    },
-    {
-      "query": "what's after silent hill townfall",
-      "weight": 1
-    },
-    {
-      "query": "when did silent hill townfall start development",
-      "weight": 1
-    },
-    {
-      "query": "when did silent hill.townfall come out",
-      "weight": 1
-    },
-    {
-      "query": "when does silent hill townfall",
-      "weight": 1
-    },
-    {
-      "query": "when does silent hill townfall release",
-      "weight": 1
-    },
-    {
-      "query": "when silent hill townfall release date",
-      "weight": 1
-    },
-    {
-      "query": "where is silent hill townfall located",
-      "weight": 1
-    },
-    {
-      "query": "where will silent hill townfall take place",
-      "weight": 1
-    },
-    {
-      "query": "which silent hill is the best",
-      "weight": 1
-    },
-    {
-      "query": "why is silent hill abandoned",
-      "weight": 1
-    },
-    {
-      "query": "why is silent hill cursed",
-      "weight": 1
-    },
-    {
-      "query": "why is silent hill townfall $50",
-      "weight": 1
-    },
-    {
-      "query": "why is silent hill townfall cheaper than f",
-      "weight": 1
-    },
-    {
-      "query": "why is silent hill townfall first person",
-      "weight": 1
-    },
-    {
-      "query": "why was silent hills cancelled",
-      "weight": 1
-    },
-    {
-      "query": "will silent hill townfall have combat",
-      "weight": 1
-    },
-    {
-      "query": "will silent hill townfall have guns",
+      "query": "silent hill townfall takes place where",
       "weight": 1
     }
   ]
