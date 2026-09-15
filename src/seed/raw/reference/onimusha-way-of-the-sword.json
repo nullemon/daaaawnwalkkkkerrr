@@ -1,0 +1,25 @@
+{
+  "slug": "onimusha-way-of-the-sword",
+  "fetchedAt": "2026-09-15",
+  "wikipedia": {
+    "title": "Onimusha: Way of the Sword",
+    "url": "https://en.wikipedia.org/wiki/Onimusha%3A_Way_of_the_Sword",
+    "licence": "CC BY-SA 4.0",
+    "facts": {
+      "developer": "Capcom",
+      "publisher": "Capcom",
+      "director": "Satoru Nihei",
+      "producer": "Akihito Kadowaki, Koichi Shibata, Kosuke Tanaka",
+      "designer": "Tatsuo Isoko, Katsuhiro Eguchi",
+      "programmer": "Keita Konno",
+      "artist": "Hiroyuki Nara, Hiroshi Yugen",
+      "composer": "Marika Suzuki, Nozomi Ohmoto, Kota Suzuki, Tomoki Kameyama",
+      "writer": "Hiroshi Yamashita",
+      "series": "Onimusha",
+      "engine": "RE Engine",
+      "released": "September 4, 2026",
+      "genre": "Action-adventure",
+      "modes": "Single-player"
+    }
+  }
+}

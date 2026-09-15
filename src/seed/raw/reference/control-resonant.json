@@ -1,0 +1,21 @@
+{
+  "slug": "control-resonant",
+  "fetchedAt": "2026-09-15",
+  "wikipedia": {
+    "title": "Control Resonant",
+    "url": "https://en.wikipedia.org/wiki/Control_Resonant",
+    "licence": "CC BY-SA 4.0",
+    "facts": {
+      "developer": "Remedy Entertainment",
+      "publisher": "Remedy Entertainment",
+      "director": "Mikael Kasurinen",
+      "producer": "Juha Vainio",
+      "programmer": "Sean Donnelly",
+      "artist": "Elmeri Raitanen",
+      "composer": "Petri Alanko",
+      "engine": "Northlight Engine",
+      "genre": "Action role-playing",
+      "modes": "Single-player"
+    }
+  }
+}

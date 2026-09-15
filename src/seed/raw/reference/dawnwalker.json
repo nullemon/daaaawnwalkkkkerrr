@@ -1,0 +1,22 @@
+{
+  "slug": "dawnwalker",
+  "fetchedAt": "2026-09-15",
+  "wikipedia": {
+    "title": "The Blood of Dawnwalker",
+    "url": "https://en.wikipedia.org/wiki/The_Blood_of_Dawnwalker",
+    "licence": "CC BY-SA 4.0",
+    "facts": {
+      "developer": "Rebel Wolves",
+      "publisher": "Bandai Namco Entertainment",
+      "director": "Konrad Tomaszkiewicz",
+      "designer": "Daniel Sadowski",
+      "artist": "Bartłomiej Gaweł",
+      "writer": "Jakub Szamałek, Ariana Siarkiewicz",
+      "composer": "Nikola Kołodziejczyk, Piotr Musiał, Mikolai Stroinski, Karolina Matuszkiewicz, Adam Jędrysik",
+      "engine": "Unreal Engine 5",
+      "released": "3 September 2026",
+      "genre": "Action role-playing",
+      "modes": "Single-player"
+    }
+  }
+}

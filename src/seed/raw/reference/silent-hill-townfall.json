@@ -1,0 +1,22 @@
+{
+  "slug": "silent-hill-townfall",
+  "fetchedAt": "2026-09-15",
+  "wikipedia": {
+    "title": "Silent Hill: Townfall",
+    "url": "https://en.wikipedia.org/wiki/Silent_Hill%3A_Townfall",
+    "licence": "CC BY-SA 4.0",
+    "facts": {
+      "developer": "Screen Burn Interactive",
+      "director": "Jon McKellan",
+      "designer": "Graeme McKellan",
+      "artist": "Paul Abbott",
+      "writer": "Jon McKellan",
+      "composer": "Pilotpriest",
+      "series": "Silent Hill",
+      "engine": "Unreal Engine 5",
+      "released": "September 24, 2026",
+      "genre": "Survival horror",
+      "modes": "Single-player"
+    }
+  }
+}

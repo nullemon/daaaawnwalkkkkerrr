@@ -1,0 +1,24 @@
+{
+  "slug": "star-wars-zero-company",
+  "fetchedAt": "2026-09-15",
+  "wikipedia": {
+    "title": "Star Wars Zero Company",
+    "url": "https://en.wikipedia.org/wiki/Star_Wars_Zero_Company",
+    "licence": "CC BY-SA 4.0",
+    "facts": {
+      "developer": "Bit Reactor, Respawn Entertainment",
+      "publisher": "Electronic Arts",
+      "director": "Greg Foertsch",
+      "producer": "Caydence Funk",
+      "programmer": "Ryan McFall",
+      "designer": "James Brawley, Grayson Scantlebury",
+      "writer": "Aaron Contreras",
+      "composer": "Gordy Haab",
+      "released": "August 27, 2026",
+      "series": "Star Wars",
+      "engine": "Unreal Engine 5",
+      "genre": "Turn-based tactics",
+      "modes": "Single-player"
+    }
+  }
+}

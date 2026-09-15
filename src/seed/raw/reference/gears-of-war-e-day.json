@@ -1,0 +1,22 @@
+{
+  "slug": "gears-of-war-e-day",
+  "fetchedAt": "2026-09-15",
+  "wikipedia": {
+    "title": "Gears of War: E-Day",
+    "url": "https://en.wikipedia.org/wiki/Gears_of_War%3A_E-Day",
+    "licence": "CC BY-SA 4.0",
+    "facts": {
+      "developer": "The Coalition, People Can Fly",
+      "publisher": "Xbox Game Studios",
+      "director": "Matt Searcy",
+      "artist": "Aryan Hanbeck",
+      "writer": "Vee Nyarko",
+      "composer": "Adam Lastiwka",
+      "series": "Gears of War",
+      "engine": "Unreal Engine 5",
+      "released": "October 6, 2026",
+      "genre": "Third-person shooter",
+      "modes": "Single-player, multiplayer"
+    }
+  }
+}

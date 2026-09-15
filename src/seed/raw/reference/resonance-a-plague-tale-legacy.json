@@ -1,0 +1,22 @@
+{
+  "slug": "resonance-a-plague-tale-legacy",
+  "fetchedAt": "2026-09-15",
+  "wikipedia": {
+    "title": "Resonance: A Plague Tale Legacy",
+    "url": "https://en.wikipedia.org/wiki/Resonance%3A_A_Plague_Tale_Legacy",
+    "licence": "CC BY-SA 4.0",
+    "facts": {
+      "developer": "Asobo Studio",
+      "publisher": "Focus Entertainment",
+      "director": "David Dedeine",
+      "artist": "Olivier Ponsonnet",
+      "writer": "Carol Ann Bañuls",
+      "composer": "Olivier Deriviere",
+      "series": "A Plague Tale",
+      "engine": "Zouna",
+      "released": "27 August 2026",
+      "genre": "Action-adventure",
+      "modes": "Single-player"
+    }
+  }
+}

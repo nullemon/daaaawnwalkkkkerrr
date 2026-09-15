@@ -1,0 +1,21 @@
+{
+  "slug": "phantom-blade-zero",
+  "fetchedAt": "2026-09-15",
+  "wikipedia": {
+    "title": "Phantom Blade Zero",
+    "url": "https://en.wikipedia.org/wiki/Phantom_Blade_Zero",
+    "licence": "CC BY-SA 4.0",
+    "facts": {
+      "developer": "S-Game",
+      "publisher": "S-Game",
+      "director": "Soulframe Liang or Soulframe.",
+      "producer": "Soulframe Liang",
+      "artist": "Michael Chang",
+      "composer": "Caisheng Bo",
+      "engine": "Unreal Engine 5",
+      "released": "29 October 2026",
+      "genre": "Action role-playing",
+      "modes": "Single-player"
+    }
+  }
+}

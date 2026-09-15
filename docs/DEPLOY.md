@@ -112,16 +112,42 @@ one deployment.
 
 ---
 
+## Where the data comes from, and what is off limits
+
+Worth knowing before adding a ninth wiki, because the question comes up every
+time and the answer is not "whatever is on the internet".
+
+| Source | Terms | Used |
+| --- | --- | --- |
+| Publisher store pages | First-party facts | Yes — release, editions, requirements, achievements |
+| Fandom | robots.txt `Allow: /api.php?`, CC BY-SA | Yes — characters, items, bosses, locations |
+| Wikipedia | No mining or AI prohibition, CC BY-SA 4.0 | Yes — production credits, engine, composer |
+| Google autocomplete | Open | Yes — what to write about |
+| **Fextralife / Valnet** | robots.txt prohibits automated retrieval outright, bans text and data mining, blocks `/wiki/*` | **No** |
+| **PCGamingWiki** | Permissive robots.txt, but the server answers **403 to any client that identifies itself** | **No** |
+
+The last two are the ones people ask about. Fextralife's prohibition is
+unconditional — being non-commercial does not lift it, because commercial use
+is only item (4) in a list that also bans text and data mining and dataset
+creation. PCGamingWiki's robots.txt reads permissively and its server does not
+behave that way: the same URL returns 142 KB to a browser and a 403 to an
+honest client. Getting into either would mean disguising the request, which is
+not something to do quietly.
+
+Every record says where it came from and under which licence. `pnpm
+check:launch` reports anything that does not.
+
 ## Keeping the game data current
 
 ```bash
 pnpm refresh
 ```
 
-One command: re-read every store page, re-harvest the community wikis,
-rewrite the pages and achievements, pick up new art, rebuild the icons. Safe
-to run as often as you like — everything is keyed on (game, slug), so it
-updates rather than duplicates.
+One command, and it does all of it: re-read every store page, re-read
+Wikipedia's credits, re-harvest the community wikis with their images, re-run
+the search-query sweep, rewrite every generated page, and rebuild the icons.
+Safe to repeat — everything is keyed on (game, slug), so it updates rather
+than duplicates.
 
 **Run it the week each game launches.** That is not housekeeping, it is the
 whole plan for the wikis that are currently thin.
