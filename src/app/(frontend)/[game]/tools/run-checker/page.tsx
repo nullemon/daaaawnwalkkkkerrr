@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { PageHeader } from '@/components/PageHeader'
 import { RunChecker } from '@/components/RunChecker'
 import { getRunGraph } from '@/lib/runData'
+import { requireFeature } from '@/lib/features'
 
 type Props = { params: Promise<{ game: string }> }
 
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
 
 export default async function RunCheckerPage({ params }: Props) {
   const { game } = await params
+  await requireFeature(game, 'run-checker')
   const { quests, endings } = await getRunGraph(game)
 
   return (

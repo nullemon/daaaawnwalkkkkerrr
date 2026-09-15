@@ -5,6 +5,7 @@ import { PageHeader } from '@/components/PageHeader'
 import { BuildPlanner, type PlannerPerk, type PlannerTree } from '@/components/BuildPlanner'
 import { getAll } from '@/lib/payload'
 import type { SkillTree } from '@/payload-types'
+import { requireFeature } from '@/lib/features'
 
 type Props = { params: Promise<{ game: string }> }
 
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
 
 export default async function BuildPlannerPage({ params }: Props) {
   const { game } = await params
+  await requireFeature(game, 'build-planner')
   const [perkDocs, treeDocs] = await Promise.all([
     getAll('perks', { game, depth: 1, sort: 'title' }),
     getAll('skill-trees', { game, depth: 0 }),
