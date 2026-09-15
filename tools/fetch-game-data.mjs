@@ -1,0 +1,257 @@
+/**
+ * Pulls everything a publisher's own store page states about a game.
+ *
+ *   node tools/fetch-game-data.mjs            # fetch and write JSON
+ *   node tools/fetch-game-data.mjs --art      # also download the art
+ *
+ * ## Why Steam, and why only Steam
+ *
+ * Every wiki on this network opens on the same problem: the game is not out,
+ * or is a fortnight old, and nobody has played it enough to write a
+ * walkthrough. The temptation is to write one anyway from trailers and
+ * previews. That is how every other new wiki starts and it is exactly what
+ * this network is supposed to not be.
+ *
+ * What a publisher's store page states is different: it is first-party, dated,
+ * and citable. Release date, editions, what is in each edition, system
+ * requirements, supported languages, controller support, DLC, content
+ * descriptors, the achievement list once the game ships. Dozens of facts per
+ * game that readers genuinely search for, none of them invented.
+ *
+ * So this fetches those, and the seed turns them into pages that each cite the
+ * store page they came from. Nothing here writes prose about how a game plays.
+ *
+ * ## What it saves
+ *
+ *   src/seed/raw/games/<slug>.json   the facts, for the seed to read
+ *   assets/_games/<slug>/            header, capsule, background, screenshots
+ *
+ * Re-running is safe: JSON is overwritten, art is skipped if already present.
+ */
+import fs from 'fs'
+import path from 'path'
+
+const WANT_ART = process.argv.includes('--art')
+
+const UA =
+  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36'
+
+/**
+ * The six wikis opened alongside Dawnwalker, with the Steam app id each was
+ * verified against. The id is the load-bearing part — a title search returns
+ * demos, soundtracks and playtests, and picking the wrong one silently
+ * attributes another product's facts to this game.
+ */
+const GAMES = [
+  { slug: 'onimusha-way-of-the-sword', appId: 2638890 },
+  { slug: 'phantom-blade-zero', appId: 4115450 },
+  { slug: 'control-resonant', appId: 3669870 },
+  { slug: 'gears-of-war-e-day', appId: 3010850 },
+  { slug: 'star-wars-zero-company', appId: 2075800 },
+  { slug: 'resonance-a-plague-tale-legacy', appId: 2713000 },
+]
+
+const OUT_DIR = path.resolve('src/seed/raw/games')
+const ART_DIR = path.resolve('assets/_games')
+
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+
+const getJson = async (url) => {
+  const response = await fetch(url, { headers: { 'User-Agent': UA, Accept: 'application/json' } })
+  if (!response.ok) throw new Error(`HTTP ${response.status} for ${url}`)
+  return response.json()
+}
+
+/** Store descriptions are HTML. We keep the text only — the prose is ours. */
+const stripHtml = (value) =>
+  String(value ?? '')
+    .replace(/<br\s*\/?>/gi, '\n')
+    .replace(/<\/(p|li|h[1-6])>/gi, '\n')
+    .replace(/<li>/gi, '• ')
+    .replace(/<[^>]*>/g, '')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/\n{3,}/g, '\n\n')
+    .replace(/[ \t]{2,}/g, ' ')
+    .trim()
+
+/**
+ * System requirements arrive as one HTML blob with <strong>Label:</strong>
+ * value pairs. Split into rows so the page can render a table rather than a
+ * paragraph nobody reads.
+ */
+const parseRequirements = (html) => {
+  if (!html) return []
+  const rows = []
+  for (const match of String(html).matchAll(
+    /<strong>([^<]+?):?\s*<\/strong>\s*([^<]*(?:<br>)?)/gi,
+  )) {
+    const label = stripHtml(match[1]).replace(/:$/, '').trim()
+    const value = stripHtml(match[2]).trim()
+    if (label && value && !/minimum|recommended/i.test(label)) rows.push({ label, value })
+  }
+  return rows
+}
+
+/**
+ * The public achievement list, with each one's global unlock rate.
+ *
+ * `ISteamUserStats/GetSchemaForGame` needs an API key; this community page
+ * does not, and carries the same names, descriptions and icons plus the
+ * percentage of owners who have it — which is the thing a reader actually
+ * wants, because "0.4% of players have this" is what makes an achievement
+ * worth a page.
+ *
+ * Absent for a game that has not shipped, which is not an error but the
+ * answer: there is nothing to document yet.
+ *
+ * Note `class="achieveRow "` — with a trailing space. Matching the class
+ * attribute exactly returned zero rows from a page containing fifty-two of
+ * them, silently, which is the whole hazard of scraping by regex.
+ */
+const fetchAchievements = async (appId) => {
+  const response = await fetch(`https://steamcommunity.com/stats/${appId}/achievements/`, {
+    headers: { 'User-Agent': UA },
+  })
+  if (!response.ok) return []
+
+  const html = await response.text()
+  const achievements = []
+
+  for (const block of html.matchAll(
+    /<div class="achieveRow[^"]*">[\s\S]*?<img[^>]+src="([^"]+)"[\s\S]*?(?:<div class="achievePercent">([\d.]+)%<\/div>)?[\s\S]*?<h3>([^<]*)<\/h3>\s*<h5>([\s\S]*?)<\/h5>/g,
+  )) {
+    const title = stripHtml(block[3])
+    if (!title) continue
+    achievements.push({
+      title,
+      description: stripHtml(block[4]) || null,
+      icon: block[1],
+      globalPercent: block[2] ? Number(block[2]) : null,
+    })
+  }
+
+  return achievements
+}
+
+const download = async (url, file) => {
+  if (fs.existsSync(file)) return 'skipped'
+  const response = await fetch(url, { headers: { 'User-Agent': UA } })
+  if (!response.ok) return `HTTP ${response.status}`
+  fs.writeFileSync(file, Buffer.from(await response.arrayBuffer()))
+  return 'saved'
+}
+
+fs.mkdirSync(OUT_DIR, { recursive: true })
+
+for (const { slug, appId } of GAMES) {
+  process.stdout.write(`\n${slug} (${appId})\n`)
+
+  const payload = await getJson(
+    `https://store.steampowered.com/api/appdetails?appids=${appId}&l=english&cc=us`,
+  )
+  const entry = payload[String(appId)]
+  if (!entry?.success) {
+    console.error('  no store data — skipped')
+    continue
+  }
+
+  const app = entry.data
+  const achievements = await fetchAchievements(appId)
+
+  const record = {
+    slug,
+    appId,
+    storeUrl: `https://store.steampowered.com/app/${appId}/`,
+    fetchedAt: new Date().toISOString().slice(0, 10),
+
+    title: app.name,
+    developers: app.developers ?? [],
+    publishers: app.publishers ?? [],
+    releaseDate: app.release_date?.date ?? null,
+    comingSoon: Boolean(app.release_date?.coming_soon),
+
+    shortDescription: stripHtml(app.short_description),
+    // Kept for reference only. Never rendered — the prose on this site is ours.
+    aboutText: stripHtml(app.about_the_game).slice(0, 4000),
+
+    genres: (app.genres ?? []).map((genre) => genre.description),
+    categories: (app.categories ?? []).map((category) => category.description),
+    languages: stripHtml(app.supported_languages).replace(/\*.*$/s, '').trim(),
+    contentDescriptors: app.content_descriptors?.notes
+      ? stripHtml(app.content_descriptors.notes)
+      : null,
+
+    platforms: Object.entries(app.platforms ?? {})
+      .filter(([, supported]) => supported)
+      .map(([name]) => name),
+
+    requirements: {
+      minimum: parseRequirements(app.pc_requirements?.minimum),
+      recommended: parseRequirements(app.pc_requirements?.recommended),
+    },
+
+    editions: (app.package_groups ?? []).flatMap((group) =>
+      (group.subs ?? []).map((sub) => ({
+        title: stripHtml(sub.option_text).replace(/\s*-\s*\$[\d.,]+.*$/, '').trim(),
+        priceText: (stripHtml(sub.option_text).match(/\$[\d.,]+/) ?? [null])[0],
+      })),
+    ),
+
+    dlc: app.dlc ?? [],
+    metacritic: app.metacritic?.score ?? null,
+    achievements,
+
+    art: {
+      header: app.header_image ?? null,
+      capsule: app.capsule_image ?? null,
+      background: app.background_raw ?? app.background ?? null,
+      screenshots: (app.screenshots ?? []).map((shot) => shot.path_full).slice(0, 12),
+    },
+  }
+
+  fs.writeFileSync(path.join(OUT_DIR, `${slug}.json`), `${JSON.stringify(record, null, 2)}\n`)
+
+  console.log(`  ${record.title}`)
+  console.log(`  release ${record.releaseDate}${record.comingSoon ? ' (upcoming)' : ''}`)
+  console.log(`  ${record.genres.length} genres, ${record.categories.length} categories`)
+  console.log(
+    `  ${record.requirements.minimum.length} min / ${record.requirements.recommended.length} rec requirement rows`,
+  )
+  console.log(`  ${record.editions.length} editions, ${record.dlc.length} DLC`)
+  console.log(`  ${record.achievements.length} achievements`)
+  console.log(`  ${record.art.screenshots.length} screenshots`)
+
+  if (WANT_ART) {
+    const dir = path.join(ART_DIR, slug)
+    fs.mkdirSync(dir, { recursive: true })
+
+    const jobs = [
+      [record.art.header, 'header.jpg'],
+      [record.art.capsule, 'capsule.jpg'],
+      [record.art.background, 'background.jpg'],
+      ...record.art.screenshots.map((url, index) => [
+        url,
+        `screenshot-${String(index + 1).padStart(2, '0')}.jpg`,
+      ]),
+    ].filter(([url]) => url)
+
+    let saved = 0
+    for (const [url, name] of jobs) {
+      const result = await download(url.split('?')[0], path.join(dir, name))
+      if (result === 'saved') saved += 1
+      await sleep(120)
+    }
+    console.log(`  art: ${saved} new of ${jobs.length} into assets/_games/${slug}/`)
+  }
+
+  // One request a second against a store that is doing us a favour.
+  await sleep(1200)
+}
+
+console.log(`\nWrote ${GAMES.length} files to src/seed/raw/games/`)
+if (!WANT_ART) console.log('Re-run with --art to download the images too.')

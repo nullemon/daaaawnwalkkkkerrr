@@ -1,6 +1,7 @@
 import type { CollectionConfig } from 'payload'
 import { slugField, publicRead, seoGroup } from '../fields/shared'
 import { APEX_ONLY } from '../proxy'
+import { analyticsFields, verificationFields } from '../fields/analytics'
 
 /**
  * A game in the network. One row here is one wiki.
@@ -176,5 +177,7 @@ export const Games: CollectionConfig = {
       },
     },
     seoGroup(),
+    verificationFields('game'),
+    analyticsFields('game'),
   ],
 }

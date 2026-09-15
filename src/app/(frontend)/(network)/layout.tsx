@@ -1,7 +1,14 @@
 import { Shell } from '@/components/Shell'
 import type { RailItem } from '@/components/SiteRail'
 import type { FooterColumn } from '@/components/SiteFooter'
-import { getPublishedGames, getSiteSettings } from '@/lib/payload'
+import { getPublishedGames, getSiteSettings, gameUrl } from '@/lib/payload'
+import { Analytics } from '@/components/Analytics'
+import { resolveTags, verificationMetadata } from '@/lib/tags'
+
+/** The apex domain's own verification tokens. Each wiki has its own. */
+export async function generateMetadata() {
+  return { verification: verificationMetadata(await resolveTags()) }
+}
 
 /**
  * The hub: everything that belongs to the network rather than to one game.
@@ -12,23 +19,48 @@ import { getPublishedGames, getSiteSettings } from '@/lib/payload'
  * company on every wiki, so publishing seven copies of a privacy policy would
  * be seven pages competing with each other for the same search.
  */
-
-const railFor = (games: { slug: string; title: string; shortTitle?: string | null }[]): RailItem[] => [
-  { label: 'Home', href: '/', icon: 'home' },
-  { label: 'All wikis', href: '/wikis', icon: 'book' },
-  ...games.slice(0, 10).map((game) => ({
-    label: game.shortTitle || game.title,
-    // The directory, anchored at this game — not the wiki itself. The rail is
-    // the hub's own navigation, so it stays on the hub; the directory card is
-    // what carries the cross-origin link to the wiki.
-    href: `/wikis#${game.slug}`,
-    icon: 'chevron' as const,
-  })),
-]
-
 export default async function NetworkLayout({ children }: { children: React.ReactNode }) {
-  const settings = await getSiteSettings()
-  const games = await getPublishedGames()
+  const [settings, games, tags] = await Promise.all([
+    getSiteSettings(),
+    getPublishedGames(),
+    resolveTags(),
+  ])
+
+  /*
+    Each wiki carries its own capsule art and links straight to its host.
+
+    The first version did both wrong: seven identical chevrons, every one of
+    them pointing at an anchor on the directory page rather than at the wiki.
+    The rail collapses to icons at rest, so the icon *is* the label most of the
+    time — seven rows sharing one glyph is not navigation, it is a list of
+    seven indistinguishable things.
+  */
+  const wikis = await Promise.all(
+    games.slice(0, 10).map(async (game) => {
+      const logo = typeof game.theme?.logo === 'object' ? game.theme.logo : null
+      return {
+        label: game.shortTitle || game.title,
+        href: await gameUrl(game),
+        icon: 'book' as const,
+        image: logo?.url ?? null,
+        external: true,
+      }
+    }),
+  )
+
+  const rail: RailItem[] = [
+    { label: 'Home', href: '/', icon: 'home' },
+    { label: 'All wikis', href: '/wikis', icon: 'map' },
+    { label: 'Contributors', href: '/authors', icon: 'person' },
+    ...wikis,
+  ]
+
+  const footerWikis = await Promise.all(
+    games.slice(0, 8).map(async (game) => ({
+      label: game.shortTitle || game.title,
+      href: await gameUrl(game),
+    })),
+  )
 
   const columns: FooterColumn[] = [
     {
@@ -39,17 +71,16 @@ export default async function NetworkLayout({ children }: { children: React.Reac
         { label: 'Your account', href: '/account' },
       ],
     },
+    { heading: 'Wikis', links: footerWikis },
     {
-      heading: 'Wikis',
-      links: games.slice(0, 8).map((game) => ({
-        label: game.shortTitle || game.title,
-        href: `/wikis#${game.slug}`,
-      })),
-    },
-    {
+      /*
+        No "About the data" here. That page belongs to a wiki and describes
+        that wiki's sourcing, so on the hub it would have to be about seven
+        different databases at once. The house rules are on the hub home
+        instead, where they are about the network rather than about one game.
+      */
       heading: 'This site',
       links: [
-        { label: 'About the data', href: '/about' },
         { label: 'Contact', href: '/contact' },
         { label: 'Privacy', href: '/privacy' },
         { label: 'Terms', href: '/terms' },
@@ -60,7 +91,7 @@ export default async function NetworkLayout({ children }: { children: React.Reac
   return (
     <Shell
       siteName={settings.siteName}
-      items={railFor(games)}
+      items={rail}
       footer={{
         blurb:
           settings.description ||
@@ -74,6 +105,7 @@ export default async function NetworkLayout({ children }: { children: React.Reac
       }}
     >
       {children}
+      <Analytics tags={tags} />
     </Shell>
   )
 }

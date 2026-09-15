@@ -71,6 +71,7 @@ export interface Config {
     quests: Quest;
     'court-activities': CourtActivity;
     endings: Ending;
+    achievements: Achievement;
     regions: Region;
     courts: Court;
     characters: Character;
@@ -99,6 +100,7 @@ export interface Config {
     quests: QuestsSelect<false> | QuestsSelect<true>;
     'court-activities': CourtActivitiesSelect<false> | CourtActivitiesSelect<true>;
     endings: EndingsSelect<false> | EndingsSelect<true>;
+    achievements: AchievementsSelect<false> | AchievementsSelect<true>;
     regions: RegionsSelect<false> | RegionsSelect<true>;
     courts: CourtsSelect<false> | CourtsSelect<true>;
     characters: CharactersSelect<false> | CharactersSelect<true>;
@@ -406,7 +408,7 @@ export interface Media {
   alt: string;
   caption?: string | null;
   /**
-   * Attribution. Game screenshots and art belong to Bandai Namco / Rebel Wolves — credit them.
+   * Attribution. Every screenshot and piece of key art on this network belongs to the game’s publisher — name them. The seed fills this in for art it downloads.
    */
   credit?: string | null;
   updatedAt: string;
@@ -714,6 +716,56 @@ export interface Game {
      * Hide this page from search engines.
      */
     noindex?: boolean | null;
+  };
+  /**
+   * This wiki is its own site to a search engine, so it needs its own verification token. Search Console will not accept the network’s.
+   */
+  verification?: {
+    /**
+     * The content value from the HTML tag method — the long string, not the whole tag. Leave empty to use the network-wide value from Site settings.
+     */
+    google?: string | null;
+    /**
+     * The msvalidate.01 content value. Leave empty to use the network-wide value from Site settings.
+     */
+    bing?: string | null;
+    /**
+     * Leave empty to use the network-wide value from Site settings.
+     */
+    yandex?: string | null;
+    /**
+     * Leave empty to use the network-wide value from Site settings.
+     */
+    pinterest?: string | null;
+    /**
+     * Leave empty to use the network-wide value from Site settings.
+     */
+    facebookDomain?: string | null;
+  };
+  /**
+   * Nothing loads unless a value is set here, so an unconfigured site ships no third-party script at all — which is both faster and one fewer cookie banner to justify.
+   */
+  analytics?: {
+    /**
+     * Measurement ID, beginning G-. Leave empty to use the network-wide value from Site settings.
+     */
+    ga4Id?: string | null;
+    /**
+     * Container ID, beginning GTM-. Use this *or* GA4, not both — Tag Manager usually loads GA4 itself, and configuring both is the classic way to double-count every pageview. Leave empty to use the network-wide value from Site settings.
+     */
+    gtmId?: string | null;
+    /**
+     * The domain as registered with Plausible. Cookieless, so it needs no consent banner. Leave empty to use the network-wide value from Site settings.
+     */
+    plausibleDomain?: string | null;
+    /**
+     * Project ID. Leave empty to use the network-wide value from Site settings.
+     */
+    clarityId?: string | null;
+    /**
+     * Raw HTML, injected into every page on this site. The escape hatch for a tool with no field above. It is not validated and not escaped, so anything pasted here runs on every page — treat it as giving whoever pasted it the keys.
+     */
+    headHtml?: string | null;
   };
   updatedAt: string;
   createdAt: string;
@@ -1031,6 +1083,108 @@ export interface CourtActivity {
    */
   angerValue?: number | null;
   howToStart?: string | null;
+  /**
+   * Shown to readers as a badge. Be honest — it is the whole point of this site.
+   */
+  confidence: 'high' | 'medium' | 'low';
+  /**
+   * One or two sentences. Used on cards, in search results and as the page lede.
+   */
+  summary: string;
+  /**
+   * The main article. Original prose only — never paste from another site.
+   */
+  body?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  /**
+   * Cite every figure. Two independent sources before marking confidence high.
+   */
+  sources?:
+    | {
+        title: string;
+        url: string;
+        retrieved?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Leave blank to derive from the title and summary.
+   */
+  seo?: {
+    /**
+     * Under ~60 characters. Overrides the <title> tag.
+     */
+    title?: string | null;
+    /**
+     * Under ~155 characters. Overrides the meta description.
+     */
+    description?: string | null;
+    /**
+     * Hide this page from search engines.
+     */
+    noindex?: boolean | null;
+  };
+  /**
+   * Which wiki this belongs to. Moving a record between games changes its URL.
+   */
+  game: number | Game;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Achievements and trophies. Seeded from the developer’s own list; the "how to get it" is written by us and starts empty.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "achievements".
+ */
+export interface Achievement {
+  id: number;
+  title: string;
+  /**
+   * URL segment. Auto-filled from the title. Changing it breaks existing links.
+   */
+  slug: string;
+  /**
+   * The developer’s own description, verbatim. Some are deliberately blank — a hidden achievement has no description until you unlock it, and inventing one would be a spoiler we made up.
+   */
+  description?: string | null;
+  /**
+   * The official icon.
+   */
+  icon?: (number | null) | Media;
+  /**
+   * Share of owners who have unlocked it, as the platform reports it. Moves over time; the retrieved date on the source says when this was read.
+   */
+  globalPercent?: number | null;
+  /**
+   * Derived from the percentage when seeded. Editable if you disagree.
+   */
+  rarity?: ('common' | 'uncommon' | 'rare' | 'very-rare' | 'ultra-rare') | null;
+  /**
+   * A hidden achievement, whose name or description the game withholds until you earn it.
+   */
+  hidden?: boolean | null;
+  /**
+   * Can be permanently missed in a playthrough. Only tick this when a source says so — it is the single most consequential claim on the page, because a reader plans a run around it.
+   */
+  missable?: boolean | null;
+  /**
+   * How to actually get it, in our own words. Leave empty until somebody has done it — an empty field reads as a gap, a guessed one reads as a lie.
+   */
+  howTo?: string | null;
   /**
    * Shown to readers as a badge. Be honest — it is the whole point of this site.
    */
@@ -1839,6 +1993,10 @@ export interface PayloadLockedDocument {
         value: number | Ending;
       } | null)
     | ({
+        relationTo: 'achievements';
+        value: number | Achievement;
+      } | null)
+    | ({
         relationTo: 'regions';
         value: number | Region;
       } | null)
@@ -2076,6 +2234,42 @@ export interface EndingsSelect<T extends boolean = true> {
   isEarlyExit?: T;
   howToGet?: T;
   outcome?: T;
+  confidence?: T;
+  summary?: T;
+  body?: T;
+  sources?:
+    | T
+    | {
+        title?: T;
+        url?: T;
+        retrieved?: T;
+        id?: T;
+      };
+  seo?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        noindex?: T;
+      };
+  game?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "achievements_select".
+ */
+export interface AchievementsSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  description?: T;
+  icon?: T;
+  globalPercent?: T;
+  rarity?: T;
+  hidden?: T;
+  missable?: T;
+  howTo?: T;
   confidence?: T;
   summary?: T;
   body?: T;
@@ -2518,6 +2712,24 @@ export interface GamesSelect<T extends boolean = true> {
         description?: T;
         noindex?: T;
       };
+  verification?:
+    | T
+    | {
+        google?: T;
+        bing?: T;
+        yandex?: T;
+        pinterest?: T;
+        facebookDomain?: T;
+      };
+  analytics?:
+    | T
+    | {
+        ga4Id?: T;
+        gtmId?: T;
+        plausibleDomain?: T;
+        clarityId?: T;
+        headHtml?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
 }
@@ -2790,6 +3002,56 @@ export interface SiteSetting {
    */
   showSources?: boolean | null;
   /**
+   * Only used on the apex domain. Each wiki has its own, on its Game record.
+   */
+  verification?: {
+    /**
+     * The content value from the HTML tag method — the long string, not the whole tag. Used by every wiki unless that wiki sets its own.
+     */
+    google?: string | null;
+    /**
+     * The msvalidate.01 content value. Used by every wiki unless that wiki sets its own.
+     */
+    bing?: string | null;
+    /**
+     * Used by every wiki unless that wiki sets its own.
+     */
+    yandex?: string | null;
+    /**
+     * Used by every wiki unless that wiki sets its own.
+     */
+    pinterest?: string | null;
+    /**
+     * Used by every wiki unless that wiki sets its own.
+     */
+    facebookDomain?: string | null;
+  };
+  /**
+   * Nothing loads unless a value is set here, so an unconfigured site ships no third-party script at all — which is both faster and one fewer cookie banner to justify.
+   */
+  analytics?: {
+    /**
+     * Measurement ID, beginning G-. Used by every wiki unless that wiki sets its own.
+     */
+    ga4Id?: string | null;
+    /**
+     * Container ID, beginning GTM-. Use this *or* GA4, not both — Tag Manager usually loads GA4 itself, and configuring both is the classic way to double-count every pageview. Used by every wiki unless that wiki sets its own.
+     */
+    gtmId?: string | null;
+    /**
+     * The domain as registered with Plausible. Cookieless, so it needs no consent banner. Used by every wiki unless that wiki sets its own.
+     */
+    plausibleDomain?: string | null;
+    /**
+     * Project ID. Used by every wiki unless that wiki sets its own.
+     */
+    clarityId?: string | null;
+    /**
+     * Raw HTML, injected into every page on this site. The escape hatch for a tool with no field above. It is not validated and not escaped, so anything pasted here runs on every page — treat it as giving whoever pasted it the keys.
+     */
+    headHtml?: string | null;
+  };
+  /**
    * Leave off until there is traffic and an approved ad account.
    */
   adsEnabled?: boolean | null;
@@ -2797,10 +3059,6 @@ export interface SiteSetting {
    * e.g. AdSense ca-pub-XXXXXXXX.
    */
   adClientId?: string | null;
-  /**
-   * Plausible domain or GA4 measurement ID. Left blank, no analytics load.
-   */
-  analyticsId?: string | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -2831,9 +3089,26 @@ export interface SiteSettingsSelect<T extends boolean = true> {
   heroHeading?: T;
   heroSubheading?: T;
   showSources?: T;
+  verification?:
+    | T
+    | {
+        google?: T;
+        bing?: T;
+        yandex?: T;
+        pinterest?: T;
+        facebookDomain?: T;
+      };
+  analytics?:
+    | T
+    | {
+        ga4Id?: T;
+        gtmId?: T;
+        plausibleDomain?: T;
+        clarityId?: T;
+        headHtml?: T;
+      };
   adsEnabled?: T;
   adClientId?: T;
-  analyticsId?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

@@ -18,6 +18,7 @@ import { Builds } from './collections/Builds'
 import { Quests } from './collections/Quests'
 import { CourtActivities } from './collections/CourtActivities'
 import { Endings } from './collections/Endings'
+import { Achievements } from './collections/Achievements'
 import { Mechanics } from './collections/Mechanics'
 import { Authors } from './collections/Authors'
 import { Guides } from './collections/Guides'
@@ -58,6 +59,7 @@ export default buildConfig({
     scopedToGame(Quests),
     scopedToGame(CourtActivities),
     scopedToGame(Endings),
+    scopedToGame(Achievements),
     // World
     scopedToGame(Regions),
     scopedToGame(Courts),

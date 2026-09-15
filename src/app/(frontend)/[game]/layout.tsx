@@ -6,6 +6,8 @@ import type { FooterColumn } from '@/components/SiteFooter'
 import { getGame, getPublishedGames, getSiteSettings, gameUrl } from '@/lib/payload'
 import { sectionsFor, toolsFor } from '@/lib/sections'
 import { hub } from '@/lib/urls'
+import { Analytics } from '@/components/Analytics'
+import { resolveTags, verificationMetadata } from '@/lib/tags'
 
 /**
  * One game's wiki.
@@ -57,6 +59,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     description: game.seo?.description || game.summary || undefined,
     applicationName: `${name} Wiki`,
+    // This wiki's own Search Console token, falling back to the network's.
+    // Google will not accept the apex's token on a subdomain.
+    verification: verificationMetadata(await resolveTags(slug)),
     openGraph: { siteName: `${name} Wiki`, type: 'website', locale: 'en' },
     alternates: {
       canonical: '/',
@@ -77,6 +82,7 @@ export default async function GameLayout({
   if (!game || game.status === 'planned') notFound()
 
   const settings = await getSiteSettings()
+  const tags = await resolveTags(slug)
   const sections = await sectionsFor(slug)
   const tools = toolsFor(game)
   const name = game.shortTitle || game.title
@@ -150,6 +156,7 @@ export default async function GameLayout({
       }}
     >
       {children}
+      <Analytics tags={tags} />
     </Shell>
   )
 }

@@ -15,6 +15,7 @@
  */
 export const GAME_SCOPED = [
   'quests',
+  'achievements',
   'court-activities',
   'endings',
   'regions',
@@ -50,3 +51,31 @@ export type GameScopedCollection = (typeof GAME_SCOPED)[number]
  */
 export const isGameScoped = (collection: string): collection is GameScopedCollection =>
   (GAME_SCOPED as readonly string[]).includes(collection)
+
+/**
+ * The public URL path each collection lives under.
+ *
+ * Mostly the collection slug, but not always — `courts` is served at `/court`
+ * and `skill-trees` at `/skills`, because those read better in a URL than the
+ * schema names do.
+ *
+ * Kept here, next to the list itself and with no imports, so the routing
+ * layer, the navigation, the sitemap and the admin's "View on site" button all
+ * read one map. Each of those had its own copy once and they disagreed.
+ */
+export const SECTION_PATH: Record<GameScopedCollection, string> = {
+  quests: '/quests',
+  achievements: '/achievements',
+  'court-activities': '/court-activities',
+  endings: '/endings',
+  regions: '/regions',
+  courts: '/court',
+  characters: '/characters',
+  enemies: '/enemies',
+  'skill-trees': '/skills',
+  perks: '/perks',
+  items: '/items',
+  builds: '/builds',
+  mechanics: '/mechanics',
+  guides: '/guides',
+}

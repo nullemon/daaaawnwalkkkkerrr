@@ -1310,3 +1310,95 @@ th.num { text-align: right; }
 
 .comment-form { display: flex; flex-direction: column; gap: 11px; }
 .comment-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+
+/* ---------------------------------------------------------------------------
+   The hub masthead.
+
+   A wiki's home opens on its own hero; the hub needed something that says
+   "network" instead — a wordmark, a claim, and three counted figures. The art
+   behind it is the largest wiki's key art, which changes on its own as the
+   network grows rather than being a favourite that goes stale.
+--------------------------------------------------------------------------- */
+
+.masthead {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-bottom: 1px solid var(--rule);
+  background: var(--raised);
+  padding-block: clamp(36px, 7vw, 76px);
+}
+
+.masthead-art {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  /* Heavily knocked back: this is a backdrop, not a picture of anything we
+     are making a claim about. See docs/ASSETS.md on unidentified screenshots. */
+  opacity: 0.16;
+  filter: saturate(0.7);
+}
+.masthead::before {
+  content: '';
+  position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(180deg, transparent, var(--bg) 96%);
+}
+
+.masthead-inner { display: flex; flex-direction: column; gap: 14px; }
+
+.masthead-wordmark {
+  display: flex; align-items: center; gap: 9px;
+  font-family: var(--f-display); font-size: 17px; font-weight: 700;
+  letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink);
+}
+.masthead-wordmark .glyph { color: var(--accent); display: flex; }
+
+.masthead-title {
+  font-family: var(--f-display);
+  font-size: clamp(27px, 4.6vw, 46px);
+  line-height: 1.1; max-width: 20ch; margin: 0;
+}
+.masthead-lede { max-width: 58ch; font-size: 16px; line-height: 1.5; color: var(--ink-soft); }
+
+.masthead-stats {
+  display: flex; flex-wrap: wrap; gap: 10px 32px; margin: 6px 0 0;
+}
+.masthead-stats div { display: flex; flex-direction: column-reverse; gap: 1px; }
+.masthead-stats dt {
+  font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--muted);
+}
+.masthead-stats dd {
+  margin: 0; font-family: var(--f-display); font-size: 27px; font-weight: 700;
+  line-height: 1; color: var(--ink);
+}
+
+.masthead-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin: 8px 0 0; }
+
+/* ---------------------------------------------------------------------------
+   The four house rules.
+
+   Was one column of prose with half the window empty beside it, which made the
+   most important thing on the page read like a footnote.
+--------------------------------------------------------------------------- */
+
+.rulegrid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+@media (min-width: 620px) { .rulegrid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1050px) { .rulegrid { grid-template-columns: repeat(4, 1fr); } }
+
+.rule {
+  display: flex; flex-direction: column; gap: 7px;
+  padding: 15px 16px;
+  border: 1px solid var(--rule); border-radius: var(--r);
+  background: var(--surface);
+}
+.rule-icon { color: var(--accent); display: flex; }
+.rule h3 { font-size: 15px; color: var(--ink); margin: 0; }
+.rule p { font-size: 13.5px; color: var(--ink-soft); margin: 0; }
+
+/* Per-game art in the hub rail, in place of an identical chevron each. */
+.navrail-art {
+  width: 26px; height: 26px; border-radius: 4px;
+  object-fit: cover; display: block;
+}

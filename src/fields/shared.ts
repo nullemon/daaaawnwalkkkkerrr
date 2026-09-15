@@ -1,4 +1,12 @@
-import type { CollectionConfig, Field, FieldHook, TextFieldSingleValidation, Where } from 'payload'
+import type {
+  CollectionConfig,
+  Field,
+  FieldHook,
+  GeneratePreviewURL,
+  TextFieldSingleValidation,
+  Where,
+} from 'payload'
+import { SECTION_PATH, type GameScopedCollection } from '../lib/tenancy'
 
 /** Turn any string into a URL-safe slug. */
 export const slugify = (value: string): string =>
@@ -244,6 +252,43 @@ export const gameField = (): Field => ({
  * with the same slug in the same game, and the detail page then renders
  * whichever the database returns first.
  */
+/**
+ * "View on site", for the admin's edit screen.
+ *
+ * Every record lives on a different host — its game's subdomain — which is
+ * exactly the thing an editor cannot work out from the admin, where all seven
+ * wikis look identical. Without this, checking how a page actually reads means
+ * knowing which wiki you are in and typing the subdomain by hand.
+ *
+ * The URL uses the internal path form on the apex, and `proxy.ts` redirects it
+ * to the right host. That keeps this to one lookup and means it stays correct
+ * if a game's subdomain is ever changed.
+ */
+const previewUrlFor = (collection: string): GeneratePreviewURL =>
+  async (doc, { req }) => {
+    const path = SECTION_PATH[collection as GameScopedCollection]
+    const slug = (doc as { slug?: string }).slug
+    if (!path || !slug) return null
+
+    const reference = (doc as { game?: unknown }).game
+    const gameId = typeof reference === 'object' && reference
+      ? (reference as { id: number | string }).id
+      : reference
+
+    if (gameId === undefined || gameId === null) return null
+
+    const game = await req.payload.findByID({
+      collection: 'games',
+      id: gameId as number,
+      depth: 0,
+      disableErrors: true,
+    })
+    if (!game) return null
+
+    const base = (process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000').replace(/\/$/, '')
+    return `${base}/${game.slug}${path}/${slug}`
+  }
+
 export const scopedToGame = (collection: CollectionConfig): CollectionConfig => ({
   ...collection,
   /*
@@ -258,6 +303,7 @@ export const scopedToGame = (collection: CollectionConfig): CollectionConfig => 
     // Which wiki a record belongs to is the first thing a network editor needs
     // from a list, so it goes in the columns rather than behind a filter.
     defaultColumns: ['game', ...(collection.admin?.defaultColumns ?? ['title'])],
+    preview: collection.admin?.preview ?? previewUrlFor(collection.slug),
   },
   fields: [
     ...collection.fields.map((field) =>

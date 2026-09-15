@@ -18,7 +18,7 @@ export const Media: CollectionConfig = {
       type: 'text',
       admin: {
         description:
-          'Attribution. Game screenshots and art belong to Bandai Namco / Rebel Wolves — credit them.',
+          'Attribution. Every screenshot and piece of key art on this network belongs to the game’s publisher — name them. The seed fills this in for art it downloads.',
       },
     },
   ],

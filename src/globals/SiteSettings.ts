@@ -1,5 +1,6 @@
 import type { GlobalConfig } from 'payload'
 import { isEditor } from '../fields/shared'
+import { analyticsFields, verificationFields } from '../fields/analytics'
 
 /**
  * Everything chrome-level that should be changeable without a deploy:
@@ -146,6 +147,12 @@ export const SiteSettings: GlobalConfig = {
           ],
         },
         {
+          label: 'SEO & analytics',
+          description:
+            'Network-wide defaults. Each wiki is its own site to a search engine, so each has its own copy of these on its Game record — set those, and use this tab for the apex domain.',
+          fields: [verificationFields('network'), analyticsFields('network')],
+        },
+        {
           label: 'Monetisation',
           description: 'Ad slots are reserved in the layout whether or not they are switched on, so enabling them shifts nothing.',
           fields: [
@@ -162,11 +169,6 @@ export const SiteSettings: GlobalConfig = {
                 description: 'e.g. AdSense ca-pub-XXXXXXXX.',
                 condition: (_, siblingData) => Boolean(siblingData?.adsEnabled),
               },
-            },
-            {
-              name: 'analyticsId',
-              type: 'text',
-              admin: { description: 'Plausible domain or GA4 measurement ID. Left blank, no analytics load.' },
             },
           ],
         },
