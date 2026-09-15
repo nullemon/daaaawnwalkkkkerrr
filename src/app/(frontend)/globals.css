@@ -1111,6 +1111,111 @@ th.num { text-align: right; }
 .related-main { display: flex; flex-direction: column; gap: 2px; min-width: 0; flex: 1 1 20ch; }
 .related-main a { font-weight: 500; }
 .related-main .sub { font-size: 13px; color: var(--muted); }
+
+/* ---- The wiki front page ------------------------------------------------ */
+
+/*
+  A masthead rather than a hero.
+
+  The old one centred a wordmark, a lede and a search box over full-bleed art
+  and gave the same weight to all three. The game's own key art and its logo
+  are the two things that tell a reader in half a second which wiki they are
+  on, so they lead; everything else is subordinate to them. The art is an
+  <img> rather than a background so it can be lazily decoded and so a missing
+  one leaves a clean panel instead of a transparent gap.
+*/
+.wiki-masthead {
+  position: relative; isolation: isolate; z-index: 2; overflow: hidden;
+  background: var(--sunken);
+  border-bottom: 1px solid var(--rule);
+}
+.wiki-masthead-art {
+  position: absolute; inset: 0; z-index: -2;
+  width: 100%; height: 100%; object-fit: cover;
+}
+.wiki-masthead::before {
+  content: ''; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(180deg, rgba(7, 7, 32, 0.55) 0%, rgba(7, 7, 32, 0.9) 82%);
+}
+.wiki-masthead-inner {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 16px;
+  padding-block: 56px 44px;
+}
+.wiki-logo { max-width: min(420px, 78%); height: auto; }
+.wiki-masthead-lede {
+  max-width: 62ch; margin: 0; font-size: 16.5px; line-height: 1.55;
+  color: rgba(255, 255, 255, 0.82);
+}
+.wiki-masthead-meta {
+  margin: 0; font-family: var(--f-label); font-size: 12.5px;
+  letter-spacing: 0.04em; text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.58);
+}
+
+/*
+  Front and rail.
+
+  One column until there is genuinely room for two — a 300px rail beside a
+  main column narrower than about 600px is two cramped columns rather than a
+  layout. Below that the rail simply follows the page, which is the right
+  reading order anyway: a reader on a phone wants the guides before the
+  reference box.
+*/
+.wikihome { display: grid; grid-template-columns: 1fr; gap: 28px; align-items: start; }
+.wikihome-main { min-width: 0; }
+.wikihome-rail { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+
+@media (min-width: 1000px) {
+  .wikihome { grid-template-columns: minmax(0, 1fr) 318px; gap: 34px; }
+  .wikihome-rail { position: sticky; top: 18px; }
+}
+
+.railbox {
+  padding: 15px 16px; border: 1px solid var(--rule); border-radius: var(--r);
+  background: var(--surface);
+}
+.railbox h2 {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 10px;
+  margin: 0 0 11px; font-size: 14px; letter-spacing: 0.02em;
+}
+.railnote { margin: 10px 0 0; font-size: 13px; line-height: 1.5; color: var(--muted); }
+.raillist { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 9px; }
+.raillist a { font-size: 14px; line-height: 1.35; }
+
+.factlist { margin: 0; display: flex; flex-direction: column; gap: 9px; }
+.factlist > div {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 12px;
+  padding-bottom: 9px; border-bottom: 1px solid var(--rule-soft);
+}
+.factlist > div:last-child { padding-bottom: 0; border-bottom: 0; }
+.factlist dt {
+  flex: none; font-family: var(--f-label); font-size: 11.5px;
+  letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted);
+}
+.factlist dd { margin: 0; font-size: 14px; font-weight: 500; text-align: right; min-width: 0; }
+
+/*
+  Start here.
+
+  Three cards, picture first, at the top of the page. A reader arriving from a
+  search has one question and these are the three it is most often one of, so
+  they get the only part of the page above the database tiles.
+*/
+.startgrid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+@media (min-width: 620px) { .startgrid { grid-template-columns: repeat(3, 1fr); } }
+
+.startcard {
+  display: flex; flex-direction: column; overflow: hidden;
+  border: 1px solid var(--rule); border-radius: var(--r);
+  background: var(--surface); color: inherit;
+  transition: transform 160ms var(--ease), box-shadow 160ms var(--ease), border-color 160ms var(--ease);
+}
+.startcard:hover { text-decoration: none; border-color: var(--accent); transform: translateY(-2px); box-shadow: var(--lift); }
+.startcard:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.startcard-image { width: 100%; aspect-ratio: 16 / 9; max-width: 100%; object-fit: cover; display: block; }
+.startcard-body { display: flex; flex-direction: column; gap: 5px; padding: 12px 13px 14px; }
+.startcard-body h3 { margin: 0; font-size: 15.5px; line-height: 1.3; }
+
 .achievement-list li { align-items: center; gap: 3px 12px; }
 .achievement-icon {
   flex: none;

@@ -216,6 +216,19 @@ that inherits the default would let any reader who signs up edit content.
   Keep that guard: it is the only thing standing between a rate limit and
   silent data loss.
 
+- **A draft is a complete record that 404s, and every check agrees it is
+  there.** `guides` is the one collection with `versions: { drafts: true }`,
+  and Payload defaults a document it *creates* to `_status: 'draft'`. The
+  generators never said otherwise, so 335 of 397 guides were written, counted,
+  verified, committed and reported as finished while every one of them
+  returned 404. `pnpm verify` passed, because the rows exist and carry a game.
+  Counting the collection passed, because it counts rows. `pnpm build` was
+  green and reported 1,666 pages, because a route whose `generateStaticParams`
+  returns nothing is not an error. The only thing that found it was somebody
+  opening a URL. Anything that creates a guide must pass `_status:
+  'published'`; `pnpm verify` now fails while any draft exists and
+  `pnpm seed:publish` backfills. **Counting rows is not checking pages.**
+
 - **Grid and flex children default to `min-width: auto`**, so a wide table
   inside an `overflow-x` container drags the page sideways on a phone. The
   shrink-fix is at the end of `globals.css`; keep it.
@@ -232,6 +245,8 @@ pnpm seed:deep      # engine/composer/series facts, rarity bands, category round
 pnpm seed:topics    # store features, stat comparisons, coverage, the demand side
 pnpm seed:prune     # delete pages a generator would no longer write
 pnpm seed:cite      # cite the pages that compile this wiki's own records
+pnpm seed:guide-images  # a picture on every guide, from its own game
+pnpm seed:publish   # publish drafts — see the gotcha above, this matters
 ```
 
 `seed:prune` exists because the other passes upsert and never delete, so
