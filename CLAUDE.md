@@ -1,21 +1,30 @@
-# Dawnwalker Guide — working notes
+# Game wiki network — working notes
 
-A guide, database and run planner for *The Blood of Dawnwalker*, built around
-the game's 480-segment time budget. Next.js 16 + Payload CMS 3 on libSQL.
-Every public page prerenders to static HTML; `/admin` is a full CMS.
+A network of game wikis sharing one admin, one account system and one set of
+editorial rules. Next.js 16 + Payload CMS 3 on libSQL. Every public page
+prerenders to static HTML; `/admin` is a full CMS.
+
+Seven wikis today. *The Blood of Dawnwalker* is the first and by far the
+largest — 422 of the 422 records — and its 480-segment run planner is the
+model for what each wiki is meant to have: one tool nobody else has.
+
+Each wiki is a subdomain (`dawnwalker.example.com`). Readers never see a game
+prefix; `src/proxy.ts` maps host to the internal `/[game]/…` route. See
+`docs/NETWORK.md` for the design and the decisions behind it.
 
 ## Commands
 
 ```bash
 pnpm install      # NOT npm — see gotchas
-pnpm dev          # http://localhost:3000
-pnpm build        # prerenders ~400 pages
-pnpm test         # unit tests (30)
+pnpm dev          # http://dawnwalker.localhost:3000 — see 'Local dev' below
+pnpm build        # prerenders ~600 pages across seven wikis
+pnpm test         # unit tests (99)
 pnpm seed         # hand-written seed content, idempotent on slug
 pnpm ingest       # ingest researched JSON from src/seed/raw/
 pnpm db:reset     # delete the database and rebuild it from seed + raw
 pnpm clean        # delete .next (devsafe does this, then starts dev)
 pnpm assets       # attach images from assets/<collection>/<slug>.<ext>
+pnpm verify       # every content record belongs to a game (see below)
 pnpm assets:match <dir> [--apply]   # match extracted game files to records
 pnpm generate:types                 # after any collection change
 ```
@@ -40,6 +49,16 @@ and in `docs/DATA.md`, not into a coin flip. See those files for the live list.
 
 **Write original prose.** Facts are free to compile; sentences are not. Never
 paste from another site.
+
+**Every content record belongs to a game.** Thirteen collections carry a
+`game` relationship, and every public read filters on it. A record without one
+does not error — it simply never appears on any page, anywhere, with nothing in
+any log. `pnpm verify` is the check; run it after any import.
+
+The filter lives in `getAll`/`getBySlug` and nowhere else, and the types make
+omitting it a compile error. `getAllAcrossGames` is the deliberate way to ask
+for every game at once, and there are exactly two legitimate callers: a
+contributor's profile and the hub.
 
 ## Architecture
 
@@ -113,6 +132,35 @@ that inherits the default would let any reader who signs up edit content.
   search dropdown could not rise above the tiles that come after the hero in
   the DOM — no z-index inside an isolated context escapes it. The container
   needs a z-index of its own, not the overlay.
+- **Local dev needs a subdomain.** `http://localhost:3000` is the hub. A wiki
+  is `http://dawnwalker.localhost:3000` — Chrome and Firefox resolve any
+  `*.localhost` to 127.0.0.1 with no hosts-file entry. Browsing the internal
+  path form (`localhost:3000/dawnwalker/quests`) mostly works but every
+  root-relative link and `/search-index.json` will 404, because those are
+  written for the subdomain.
+- **It is `proxy.ts`, not `middleware.ts`.** Next.js 16 renamed the convention.
+  The old name still resolves and is deprecated, so a file written from memory
+  against middleware docs silently never runs.
+- **A child `generateStaticParams` does not compose with its parent's.** The
+  documented "top down" approach — a layout generating `[game]`, each child
+  page generating its own `[slug]` — calls the child once per game with the
+  right params, receives the right slugs back, and prerenders *none of them*.
+  No error. The page count fell from ~400 to 185 and nothing said why. Every
+  detail page generates the full `(game, slug)` set itself through
+  `gameSlugParams` in `src/lib/params.ts`. Do not "tidy" that back.
+- **Do not name a route folder `sitemap.xml`.** Next's metadata convention
+  claims it. `[game]/sitemap.xml/route.ts` built without complaint and emitted
+  one file at the literal path `/-/sitemap.xml` — the dash being the
+  placeholder for `generateSitemaps`' `id` — while the route it was supposed to
+  serve did not exist. `robots.txt` and `sitemap.xml` both answer per host by
+  reading the Host header instead; they are the only two dynamic routes.
+- **SQLite needs WAL and a real busy timeout.** `next build` prerenders with
+  twenty-one workers all reading the same file. The adapter defaults to a
+  rollback journal and `busyTimeout: 0` — fail rather than wait a millisecond —
+  which aborted the build with SQLITE_BUSY at around page six hundred. Both are
+  set in `payload.config.ts`. While chasing it, the navigation also turned out
+  to be loading every row of thirteen collections to take its `.length` on
+  every page render; that is `countRecords` now.
 - **Grid and flex children default to `min-width: auto`**, so a wide table
   inside an `overflow-x` container drags the page sideways on a phone. The
   shrink-fix is at the end of `globals.css`; keep it.

@@ -3,7 +3,9 @@
 How to turn the Dawnwalker site into a Fextralife-shaped network — one brand, one
 admin, many games — without rebuilding what already works.
 
-Written 15 September 2026. Nothing here is built yet; this is the plan.
+Written 15 September 2026. **Phases 1 to 4 are built.** The plan below is kept
+because the reasoning still applies; see "What was actually built" at the end
+for where reality differs from it, and `docs/DEPLOY.md` for putting it live.
 
 ---
 
@@ -325,3 +327,77 @@ audience, which is most of this kind of search traffic.
 
 The "Routing" section recommends paths. That recommendation was not taken.
 Treat this section as current where the two disagree.
+
+
+---
+
+## What was actually built
+
+Phases 1 to 4 landed on 15 September 2026, in two commits. What follows is the
+difference between the plan above and the thing that exists.
+
+### Done
+
+**Tenancy.** A `games` collection and a `game` relationship on all thirteen
+content collections, applied by one `scopedToGame()` wrapper so the pieces that
+must happen together cannot be applied by halves — the field, dropping the
+global unique on `slug`, the compound `(game, slug)` index that replaces it,
+and per-game write access.
+
+The filter lives in `getAll`/`getBySlug` and nowhere else, and the type
+signature makes omitting it a compile error. That guard did not work on the
+first attempt: every call site passed the document type explicitly, which made
+TypeScript fall back to the default for the collection generic and collapsed
+the requirement to "optional" at every site at once. Inferring the document
+type from the slug fixed it and removed 99 redundant annotations.
+
+**Routing.** `[game]` internally, subdomains publicly, `proxy.ts` mapping one
+to the other and 308ing the apex path form onto the game's host so nothing is
+reachable at two URLs.
+
+**The hub.** Directory with live page counts, latest writing across all wikis,
+contributor index, the legal pages, and the house rules stated plainly.
+
+**Per-host SEO.** `robots.txt` and `sitemap.xml` answer for whichever host
+asked; feeds and search index are per game; canonicals point at the game's own
+origin. IndexNow submits per host.
+
+**Comments.** Nothing auto-publishes, links removed before storage, 35 tests
+covering the obfuscations. Details in `collections/Comments.ts`.
+
+**The admin.** A dashboard showing the queues and every wiki's real record
+count; editors assignable to particular games; groups renamed off Dawnwalker's
+vocabulary.
+
+### Not done, deliberately
+
+**Phase 2's neutral vocabulary.** The plan proposed renaming the collections to
+`entries`, `missions`, `locations` and so on, with a `kind` field and an
+attributes array. That has not been done, and should not be until there is a
+second game with real content in it.
+
+The reason is that the rename is only worth its cost if it is informed. Six of
+the seven wikis are empty; renaming `court-activities` to `missions` now would
+be guessing at what Onimusha and Gears of War actually need from the schema,
+and a guess baked into a migration is harder to undo than a rename done later
+with evidence. The section navigation already derives from what a game has, so
+an empty collection costs a game nothing today.
+
+**Per-game section copy.** Every wiki's Regions index currently says "Ten
+regions across roughly ten square kilometres", which is Dawnwalker's. It is
+invisible while the other six have no regions, and it is the first thing to fix
+when one of them does.
+
+**Cross-game search on the hub.** `/wikis` lists seven games on one screen,
+which is a better answer at this size than a search box. Worth revisiting at
+fifteen.
+
+### The test the plan set itself
+
+> **Phase 5 — game two.** The real test. If it is a week of engineering rather
+> than a day of content, phases 1–3 were wrong.
+
+Adding a wiki is now: create a row in the admin, write content. No deploy, no
+DNS change, no code. Six were added that way during the build. Whether the
+*content model* survives a game unlike Dawnwalker is still untested, and that
+is the honest open question — see "Not done, deliberately" above.
