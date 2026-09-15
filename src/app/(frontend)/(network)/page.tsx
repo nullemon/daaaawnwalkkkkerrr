@@ -3,8 +3,9 @@ import Link from 'next/link'
 import { Icon, type IconName } from '@/components/Icon'
 import { Logo } from '@/components/Logo'
 import { WikiCard } from '@/components/WikiCard'
-import { EntityCard } from '@/components/EntityCard'
-import { directory } from '@/lib/directory'
+import { HubSearch, type HubTarget } from '@/components/HubSearch'
+import { directory, releaseLine } from '@/lib/directory'
+import { whatPeopleAreAsking } from '@/lib/asking'
 import { getAllAcrossGames, getSiteSettings, gameUrl } from '@/lib/payload'
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -20,128 +21,185 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
-/**
- * The four rules, as cards.
- *
- * These were a single column of prose, which on a wide screen left half the
- * window empty and made the most important thing on the page look like a
- * footnote. They are the pitch — the reason to read one of these wikis instead
- * of the bigger one that already ranks above it — so they get the full width
- * and an icon each.
- */
 const RULES: { icon: IconName; heading: string; body: string }[] = [
   {
     icon: 'check',
     heading: 'Nothing is invented',
-    body: 'Every figure comes from a source, carries a confidence rating, and can be traced back. A record with no source does not get published — the importer refuses it.',
+    body: 'Every figure comes from a source and can be traced. A record with no source is refused at import.',
   },
   {
     icon: 'warn',
     heading: 'Unknown is not zero',
-    body: 'Where nobody has published a number, the page says so. A blank is honest. A plausible-looking figure that turns out to be a guess costs a reader a playthrough.',
+    body: 'Where nobody has published a number, the page says so. A plausible guess costs a reader a playthrough.',
   },
   {
     icon: 'scroll',
     heading: 'Disagreements are recorded',
-    body: 'Where two guides give different answers, both appear, and so does the fact that they disagree. Quietly picking one hides exactly what a careful reader came to find out.',
+    body: 'Where two sources differ, both appear. Quietly picking one hides what a careful reader came for.',
   },
   {
     icon: 'book',
     heading: 'The prose is ours',
-    body: 'Facts are free to compile; sentences are not. Nothing on this network is pasted from another site, and nothing is generated from a trailer.',
+    body: 'Facts are free to compile; sentences are not. Nothing here is pasted, and nothing is written from a trailer.',
   },
 ]
 
+/**
+ * The hub.
+ *
+ * ## The shape, and why
+ *
+ * The two obvious models solve different problems. Fextralife is a directory —
+ * art-led cards, a reader choosing which wiki to enter. u.gg is an instrument
+ * — search first, figures everywhere, nothing decorative. A hub is the first
+ * problem wearing the second's clothes: the job is routing somebody to the
+ * right wiki, and it should feel like a tool while it does it.
+ *
+ * So, in order: a search that can reach any wiki, the figures that say how big
+ * this is, the directory itself, and then the one section neither model has —
+ * what people are actually searching for, matched to the page that answers it.
+ * That last one is the whole argument for this network on one screen.
+ *
+ * The house rules come last rather than first. They are the reason to trust
+ * the site, but nobody arrives wanting to read a manifesto.
+ */
 export default async function HubHome() {
-  const [settings, wikis] = await Promise.all([getSiteSettings(), directory()])
+  const [settings, wikis, asking] = await Promise.all([
+    getSiteSettings(),
+    directory(),
+    whatPeopleAreAsking(12),
+  ])
 
-  // The newest writing anywhere on the network. This is the cross-linking the
-  // hub exists for: a reader who arrived for one game leaves knowing there are
-  // six others, and a new wiki gets its first traffic from here.
-  const recent = await getAllAcrossGames('guides', { depth: 1, sort: '-updatedAt', limit: 8 })
-
+  const recent = await getAllAcrossGames('guides', { depth: 1, sort: '-updatedAt', limit: 6 })
   const latest = await Promise.all(
-    recent.slice(0, 8).map(async ({ doc, game }) => ({
+    recent.slice(0, 6).map(async ({ doc, game }) => ({
       id: `${game.slug}-${doc.id}`,
       title: doc.title,
       href: `${await gameUrl(game)}/guides/${doc.slug}`,
       summary: doc.summary,
-      game: game.shortTitle || game.title,
+      wiki: game.shortTitle || game.title,
+      icon: `/wiki-assets/${game.slug}/icon-32.png`,
     })),
   )
 
   const totalPages = wikis.reduce((sum, wiki) => sum + wiki.pages, 0)
-  const live = wikis.filter((wiki) => wiki.game.status !== 'archived').length
   const upcoming = wikis.filter(
     (wiki) => wiki.game.releaseDate && new Date(wiki.game.releaseDate).getTime() > Date.now(),
   ).length
 
-  // The biggest wiki's art carries the masthead. It changes on its own as the
-  // network grows, rather than being a hardcoded favourite that goes stale.
   const featured = wikis[0]
   const heroArt =
     featured && typeof featured.game.theme?.hero === 'object' ? featured.game.theme.hero : null
 
+  /* Wikis first in search, then the headline pages of each. */
+  const targets: HubTarget[] = [
+    ...wikis.map((entry) => ({
+      label: entry.game.shortTitle || entry.game.title,
+      sub: `${entry.pages.toLocaleString('en-GB')} pages · ${entry.game.status}`,
+      href: entry.url,
+      icon: `/wiki-assets/${entry.game.slug}/icon-32.png`,
+      kind: 'wiki' as const,
+    })),
+    ...latest.map((entry) => ({
+      label: entry.title,
+      sub: entry.wiki,
+      href: entry.href,
+      icon: entry.icon,
+      kind: 'page' as const,
+    })),
+  ]
+
   return (
     <>
-      <header className="masthead">
+      {/* ---- Hero: art, name, search, figures ---- */}
+      <header className="hub-hero">
         {heroArt?.url ? (
-          <img className="masthead-art" src={heroArt.url} alt="" aria-hidden="true" />
+          <img className="hub-hero-art" src={heroArt.url} alt="" aria-hidden="true" />
         ) : null}
 
-        <div className="page masthead-inner">
-          <p className="masthead-wordmark">
+        <div className="page hub-hero-inner">
+          <p className="hub-wordmark">
             <span className="glyph">
-              <Logo size={26} />
+              <Logo size={28} />
             </span>
             {settings.siteName}
           </p>
 
-          <h1 className="masthead-title">
+          <h1 className="hub-title">
             {settings.heroHeading || 'Wikis for games that reward playing carefully.'}
           </h1>
-
-          <p className="masthead-lede">
+          <p className="hub-lede">
             {settings.description ||
               'The numbers sourced, the gaps admitted, and nothing invented to fill them.'}
           </p>
 
-          {/*
-            Counted from the database at build time. A directory that claims a
-            number is a directory a reader checks once and then distrusts.
-          */}
-          <dl className="masthead-stats">
+          <HubSearch targets={targets} />
+
+          <dl className="hub-stats">
             <div>
               <dt>Wikis</dt>
-              <dd>{live}</dd>
+              <dd>{wikis.length}</dd>
             </div>
             <div>
               <dt>Sourced pages</dt>
               <dd>{totalPages.toLocaleString('en-GB')}</dd>
             </div>
             <div>
-              <dt>Games not out yet</dt>
+              <dt>Not out yet</dt>
               <dd>{upcoming}</dd>
             </div>
           </dl>
-
-          <p className="masthead-actions">
-            <Link className="button" href="/wikis">
-              Browse every wiki
-            </Link>
-            {featured ? (
-              <a className="linkish" href={featured.url}>
-                Or start with {featured.game.shortTitle || featured.game.title} →
-              </a>
-            ) : null}
-          </p>
         </div>
       </header>
 
+      {/* ---- The wiki switcher: every wiki, one row, always reachable ---- */}
+      <nav className="hub-strip" aria-label="All wikis">
+        <div className="page hub-strip-inner">
+          {wikis.map((entry) => (
+            <a key={entry.game.id} className="hub-chip" href={entry.url}>
+              <img src={`/wiki-assets/${entry.game.slug}/icon-32.png`} alt="" loading="lazy" />
+              <span className="hub-chip-name">{entry.game.shortTitle || entry.game.title}</span>
+              <span className="hub-chip-count">{entry.pages.toLocaleString('en-GB')}</span>
+            </a>
+          ))}
+        </div>
+      </nav>
+
       <div className="page body-main">
+        {/* ---- What people are asking: the differentiator ---- */}
+        {asking.length > 0 ? (
+          <section className="section">
+            <div className="section-head">
+              <h2>What people are asking</h2>
+              <p className="note">
+                Real searches, harvested from Google&rsquo;s own autocomplete, matched to the page
+                that answers each. Where a question has no answer here, it is in the queue rather
+                than filled with a guess.
+              </p>
+            </div>
+            <ul className="asking">
+              {asking.map((entry) => (
+                <li key={`${entry.wikiSlug}-${entry.query}`}>
+                  <a href={entry.href ?? '#'}>
+                    <span className="asking-q">
+                      <Icon name="search" size={14} className="ic" />
+                      {entry.query}
+                    </span>
+                    <span className="asking-a">
+                      {entry.title}
+                      <span className="chip">{entry.wiki}</span>
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
+
+        {/* ---- The directory ---- */}
         <section className="section">
           <div className="section-head">
-            <h2>The wikis</h2>
+            <h2>Every wiki</h2>
             <p className="note">
               Page counts are read from each database when this page is built, so they are what is
               actually there rather than what we would like to claim.
@@ -154,12 +212,39 @@ export default async function HubHome() {
           </div>
         </section>
 
+        {/* ---- Latest, as a list rather than more cards ---- */}
+        {latest.length > 0 ? (
+          <section className="section">
+            <div className="section-head">
+              <h2>Newest writing</h2>
+              <Link href="/wikis" className="eyebrow">
+                All wikis
+              </Link>
+            </div>
+            <ul className="feed">
+              {latest.map((entry) => (
+                <li key={entry.id}>
+                  <a href={entry.href}>
+                    <img src={entry.icon} alt="" className="feed-icon" loading="lazy" />
+                    <span className="feed-text">
+                      <strong>{entry.title}</strong>
+                      {entry.summary ? <span className="note">{entry.summary}</span> : null}
+                    </span>
+                    <span className="chip">{entry.wiki}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
+
+        {/* ---- The rules, last ---- */}
         <section className="section">
           <div className="section-head">
             <h2>How these are written</h2>
             <p className="note">
-              Four rules, kept on every wiki here. They are the whole reason to read one of these
-              instead of the bigger site that already ranks above it.
+              Four rules, on every wiki here. They are the whole reason to read one of these instead
+              of the bigger site that already ranks above it.
             </p>
           </div>
           <div className="rulegrid">
@@ -174,27 +259,6 @@ export default async function HubHome() {
             ))}
           </div>
         </section>
-
-        {latest.length > 0 ? (
-          <section className="section">
-            <div className="section-head">
-              <h2>Latest across the network</h2>
-              <p className="note">New and recently revised guides, from every wiki.</p>
-            </div>
-            <div className="grid">
-              {latest.map((item) => (
-                <EntityCard
-                  key={item.id}
-                  href={item.href}
-                  title={item.title}
-                  summary={item.summary}
-                  icon="book"
-                  badges={<span className="chip">{item.game}</span>}
-                />
-              ))}
-            </div>
-          </section>
-        ) : null}
       </div>
     </>
   )
