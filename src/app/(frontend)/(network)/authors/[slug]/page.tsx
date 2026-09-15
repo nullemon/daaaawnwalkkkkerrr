@@ -3,7 +3,8 @@ import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
 import { EntityImage } from '@/components/EntityImage'
 import { RelatedList, type RelatedItem } from '@/components/RelatedList'
-import { getAll, getAllAcrossGames, getBySlug, gameUrl } from '@/lib/payload'
+import { getAll, getAllAcrossGames, getBySlug, gameUrl, relMany } from '@/lib/payload'
+import type { Game } from '@/payload-types'
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -44,6 +45,13 @@ export default async function AuthorPage({ params }: Props) {
       guide.author && typeof guide.author === 'object' && guide.author.slug === slug,
   )
 
+  const covers = await Promise.all(
+    relMany<Game>(doc.covers).map(async (wiki) => ({
+      label: wiki.shortTitle || wiki.title,
+      href: await gameUrl(wiki),
+    })),
+  )
+
   const items: RelatedItem[] = await Promise.all(
     written.map(async ({ doc: guide, game }) => ({
       id: guide.id,
@@ -67,6 +75,27 @@ export default async function AuthorPage({ params }: Props) {
         <div className="split">
           <div className="stack">
             {doc.bio ? <p className="lede">{doc.bio}</p> : null}
+
+            {/*
+              Which wikis they write for, from the record rather than inferred
+              from what they happen to have published. A contributor assigned
+              to a game they have not written for yet is still the person
+              responsible for it, and that is worth saying.
+            */}
+            {covers.length > 0 ? (
+              <section className="section">
+                <div className="section-head">
+                  <h2>Writes for</h2>
+                </div>
+                <p className="badges">
+                  {covers.map((wiki) => (
+                    <a key={wiki.href} className="chip" href={wiki.href}>
+                      {wiki.label}
+                    </a>
+                  ))}
+                </p>
+              </section>
+            ) : null}
             {doc.links?.length ? (
               <section className="section">
                 <div className="section-head">

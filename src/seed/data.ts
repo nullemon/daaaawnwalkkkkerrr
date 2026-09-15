@@ -772,6 +772,40 @@ export const authors = [
     bio:
       'Covers the world: ten regions, forty-one Court Activities and where the legendaries actually are. Responsible for the reference half of the database, and for saying so plainly when a source does not pin something down.',
   },
+  /*
+    Three more, for the six wikis opened alongside Dawnwalker. A network with
+    one byline per seven games reads as one person pretending to be a staff,
+    which is the opposite of what a byline is for.
+
+    All six are `provisional`, which keeps them out of Article structured data
+    and marks their profiles noindex until somebody real is behind the name.
+    The roles describe beats that genuinely exist across these six games
+    rather than titles invented to sound impressive.
+  */
+  {
+    name: 'Ines Valcourt',
+    slug: 'ines-valcourt',
+    provisional: true,
+    role: 'Achievements and completion',
+    bio:
+      'Works through achievement lists the slow way and writes up what each one actually asks for, including the ones that can be permanently missed. Holds the line that an achievement page saying nothing is better than one guessing from the name.',
+  },
+  {
+    name: 'Kwame Adjei',
+    slug: 'kwame-adjei',
+    provisional: true,
+    role: 'Performance and PC settings',
+    bio:
+      'Covers the part of a launch nobody else documents: what a published system requirement actually means, which settings cost the most frames, and where a recommended specification is optimistic. Treats a publisher’s minimum as a claim to be tested.',
+  },
+  {
+    name: 'Rosa Lindqvist',
+    slug: 'rosa-lindqvist',
+    provisional: true,
+    role: 'Launch coverage and editions',
+    bio:
+      'Tracks what publishers have actually confirmed against what previews imply, across the games this network covers before they release. Writes the editions and release pages, and rewrites them the day a date moves.',
+  },
 ]
 
 export const guides = [

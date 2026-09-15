@@ -4,9 +4,16 @@ A network of game wikis sharing one admin, one account system and one set of
 editorial rules. Next.js 16 + Payload CMS 3 on libSQL. Every public page
 prerenders to static HTML; `/admin` is a full CMS.
 
-Seven wikis today. *The Blood of Dawnwalker* is the first and by far the
-largest — 422 of the 422 records — and its 480-segment run planner is the
-model for what each wiki is meant to have: one tool nobody else has.
+Seven wikis today, ~780 pages. *The Blood of Dawnwalker* is the first and by
+far the largest — 422 of the 594 records — and its 480-segment run planner is
+the model for what each wiki is meant to have: one tool nobody else has.
+
+The other six open on what a publisher's own store page states: release,
+editions, system requirements, declared features, languages, and the full
+achievement list with each one's global unlock rate. That is deliberate. Every
+other wiki fills launch day with walkthroughs written from trailers; these
+carry only what is first-party and cited, and the gameplay pages stay empty
+with a line saying why.
 
 Each wiki is a subdomain (`dawnwalker.example.com`). Readers never see a game
 prefix; `src/proxy.ts` maps host to the internal `/[game]/…` route. See
@@ -25,6 +32,11 @@ pnpm db:reset     # delete the database and rebuild it from seed + raw
 pnpm clean        # delete .next (devsafe does this, then starts dev)
 pnpm assets       # attach images from assets/<collection>/<slug>.<ext>
 pnpm verify       # every content record belongs to a game (see below)
+pnpm fetch:games  # re-read the six new games from their store pages
+pnpm seed:games   # turn that JSON into mechanics pages and achievements
+pnpm seed:art     # attach game key art and achievement icons
+pnpm make:avatars # redraw contributor monograms
+pnpm seed:avatars # attach them
 pnpm assets:match <dir> [--apply]   # match extracted game files to records
 pnpm generate:types                 # after any collection change
 ```
@@ -161,6 +173,18 @@ that inherits the default would let any reader who signs up edit content.
   set in `payload.config.ts`. While chasing it, the navigation also turned out
   to be loading every row of thirteen collections to take its `.length` on
   every page render; that is `countRecords` now.
+- **Adding a game-scoped collection anywhere but the end renumbers indexes.**
+  Payload names compound indexes by position — `game_slug_5_idx` and so on — so
+  inserting `achievements` after `endings` renamed every later collection's
+  index and the next write failed with `index game_slug_5_idx already exists`.
+  There is no way to name them; `pnpm db:reset` is the fix, and it now runs the
+  whole seed chain including the new games' content and art.
+- **Lazy quantifiers skip past optional groups.** The achievement scraper read
+  fifty-two rows and captured a null unlock percentage for every one of them,
+  silently. `[\s\S]*?` before an optional group matches the shortest thing that
+  satisfies the *rest* of the pattern, which means skipping the optional group
+  entirely. Split into blocks and read each field from its own block; do not
+  write one regular expression that spans a whole record.
 - **Grid and flex children default to `min-width: auto`**, so a wide table
   inside an `overflow-x` container drags the page sideways on a phone. The
   shrink-fix is at the end of `globals.css`; keep it.

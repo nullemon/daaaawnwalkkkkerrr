@@ -397,15 +397,20 @@ export interface Region {
   createdAt: string;
 }
 /**
+ * Every image on the network. Shared across all wikis, so upload once and reference it anywhere.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "media".
  */
 export interface Media {
   id: number;
   /**
-   * Describe the image for screen readers and search engines.
+   * What the image shows, for screen readers and search engines. Required — an image with no alt text is invisible to a third of the reasons we publish it. Describe the subject, do not repeat the page title.
    */
   alt: string;
+  /**
+   * Optional. Printed under the image where one is shown with a caption.
+   */
   caption?: string | null;
   /**
    * Attribution. Every screenshot and piece of key art on this network belongs to the game’s publisher — name them. The seed fills this in for art it downloads.
@@ -1732,6 +1737,13 @@ export interface Author {
    * Why this person is worth reading on this subject. Specific beats flattering — what they have actually done with the game.
    */
   bio?: string | null;
+  /**
+   * Which wikis this person writes for. A contributor working across several games is the strongest thing a profile can show — a body of work beats a job title.
+   */
+  covers?: (number | Game)[] | null;
+  /**
+   * A photograph of the person, once there is a real one. The seeded profiles carry a monogram instead — not a stock portrait, because a stranger’s face attached to a name that is not theirs is the one thing worse than no picture.
+   */
   avatar?: (number | null) | Media;
   /**
    * Somewhere a reader can verify the person exists.
@@ -2667,6 +2679,7 @@ export interface AuthorsSelect<T extends boolean = true> {
   provisional?: T;
   role?: T;
   bio?: T;
+  covers?: T;
   avatar?: T;
   links?:
     | T

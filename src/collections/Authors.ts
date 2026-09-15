@@ -20,7 +20,8 @@ export const Authors: CollectionConfig = {
   admin: {
     group: 'Editorial',
     useAsTitle: 'name',
-    defaultColumns: ['name', 'role', 'provisional', 'updatedAt'],
+    defaultColumns: ['name', 'role', 'covers', 'provisional', 'updatedAt'],
+    listSearchableFields: ['name', 'role', 'bio'],
     description:
       'Bylines for guides. Replace the seeded placeholders with real people before launch and untick "provisional" on each.',
   },
@@ -53,7 +54,25 @@ export const Authors: CollectionConfig = {
           'Why this person is worth reading on this subject. Specific beats flattering — what they have actually done with the game.',
       },
     },
-    { name: 'avatar', type: 'upload', relationTo: 'media' },
+    {
+      name: 'covers',
+      type: 'relationship',
+      relationTo: 'games',
+      hasMany: true,
+      admin: {
+        description:
+          'Which wikis this person writes for. A contributor working across several games is the strongest thing a profile can show — a body of work beats a job title.',
+      },
+    },
+    {
+      name: 'avatar',
+      type: 'upload',
+      relationTo: 'media',
+      admin: {
+        description:
+          'A photograph of the person, once there is a real one. The seeded profiles carry a monogram instead — not a stock portrait, because a stranger’s face attached to a name that is not theirs is the one thing worse than no picture.',
+      },
+    },
     {
       name: 'links',
       type: 'array',

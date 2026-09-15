@@ -21,9 +21,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   ])
   const name = doc?.shortTitle || doc?.title || 'this game'
 
+  const ultraRare = achievements.filter((a) => a.rarity === 'ultra-rare').length
+
   return {
-    title: `All ${achievements.length} achievements`,
-    description: `Every achievement in ${name}, with the share of players who have unlocked each one. ${achievements.filter((a) => a.rarity === 'ultra-rare').length} are held by fewer than one player in twenty.`,
+    title: achievements.length > 0 ? `All ${achievements.length} achievements` : 'Achievements',
+    description:
+      achievements.length === 0
+        ? `No achievement list has been published for ${name} yet. This page fills itself in when the developer publishes one.`
+        : [
+            `Every achievement in ${name}, with the share of players who have unlocked each one.`,
+            // Only worth a sentence when there is a number in it. "0 are held
+            // by fewer than one player in twenty" is worse than silence.
+            ultraRare > 0
+              ? `${ultraRare} are held by fewer than one player in twenty.`
+              : '',
+          ]
+            .filter(Boolean)
+            .join(' '),
     alternates: { canonical: '/achievements' },
   }
 }
@@ -80,7 +94,12 @@ export default async function AchievementsIndex({ params }: Props) {
         lede={
           achievements.length === 0
             ? `No achievement list has been published for ${name} yet. Developers usually add one at launch; this page fills itself in when they do.`
-            : `All ${achievements.length} of them, rarest first, with the share of owners who have each one. ${ultraRare > 0 ? `${ultraRare} are held by fewer than one player in twenty.` : ''}`
+            : [
+                `All ${achievements.length} of them, rarest first, with the share of owners who have each one.`,
+                ultraRare > 0 ? `${ultraRare} are held by fewer than one player in twenty.` : '',
+              ]
+                .filter(Boolean)
+                .join(' ')
         }
       />
       <div className="page body-main">

@@ -304,6 +304,21 @@ export const scopedToGame = (collection: CollectionConfig): CollectionConfig => 
     // from a list, so it goes in the columns rather than behind a filter.
     defaultColumns: ['game', ...(collection.admin?.defaultColumns ?? ['title'])],
     preview: collection.admin?.preview ?? previewUrlFor(collection.slug),
+    /*
+      Search the summary as well as the title.
+
+      Payload's default searches only the `useAsTitle` field, which on a
+      database of four hundred quests means you can find a record if you
+      already remember its exact name — and the times you reach for search are
+      precisely the times you do not. Slug is in there because editors think in
+      URLs when they are chasing a broken link.
+    */
+    listSearchableFields: collection.admin?.listSearchableFields ?? ['title', 'slug', 'summary'],
+    pagination: collection.admin?.pagination ?? {
+      // Ten rows is a page of scrolling to see a tenth of one section.
+      defaultLimit: 50,
+      limits: [25, 50, 100, 250],
+    },
   },
   fields: [
     ...collection.fields.map((field) =>

@@ -120,18 +120,37 @@ const fetchAchievements = async (appId) => {
   if (!response.ok) return []
 
   const html = await response.text()
+
+  /*
+    Split into row blocks first, then read each field out of its own block.
+
+    The previous version was one regular expression spanning the whole row,
+    with the percentage in an optional group. It never matched: the `[\s\S]*?`
+    before the group is lazy, so it skipped straight past the percentage to
+    something that satisfied the rest of the pattern, and the optional group
+    then matched nothing. Fifty-two achievements imported with a null rarity
+    each, no error anywhere, and the single most useful field on the page
+    silently absent.
+
+    Splitting first removes the ambiguity entirely — each field is found in a
+    block that contains exactly one of it.
+  */
+  const blocks = html.split(/<div class="achieveRow/).slice(1)
   const achievements = []
 
-  for (const block of html.matchAll(
-    /<div class="achieveRow[^"]*">[\s\S]*?<img[^>]+src="([^"]+)"[\s\S]*?(?:<div class="achievePercent">([\d.]+)%<\/div>)?[\s\S]*?<h3>([^<]*)<\/h3>\s*<h5>([\s\S]*?)<\/h5>/g,
-  )) {
-    const title = stripHtml(block[3])
+  for (const block of blocks) {
+    const title = stripHtml((block.match(/<h3>([\s\S]*?)<\/h3>/) ?? [])[1] ?? '')
     if (!title) continue
+
+    const description = stripHtml((block.match(/<h5>([\s\S]*?)<\/h5>/) ?? [])[1] ?? '')
+    const icon = (block.match(/<img[^>]+src="([^"]+)"/) ?? [])[1] ?? null
+    const percent = (block.match(/<div class="achievePercent">\s*([\d.]+)\s*%/) ?? [])[1]
+
     achievements.push({
       title,
-      description: stripHtml(block[4]) || null,
-      icon: block[1],
-      globalPercent: block[2] ? Number(block[2]) : null,
+      description: description || null,
+      icon,
+      globalPercent: percent ? Number(percent) : null,
     })
   }
 
