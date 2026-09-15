@@ -38,8 +38,39 @@ async function run(): Promise<void> {
 
   console.log(`\n${total} records, ${orphans} with no game`)
 
-  if (orphans > 0) {
-    console.error('\nRecords with no game are invisible on every page. Fix before deploying.')
+  /*
+    The second way a complete record stays invisible.
+
+    `guides` is the one collection with drafts enabled, and Payload defaults
+    a document it creates to `_status: 'draft'`. A draft is a full, correct
+    row that no public page will serve, so it looks present to every count
+    taken against the database and 404s to a reader. 335 guides shipped that
+    way, and the only reason it was caught was somebody opening a URL.
+
+    It belongs next to the orphan check because it is the same failure: a row
+    that exists, satisfies every query you thought to run, and is not on the
+    site.
+  */
+  const drafts = await payload.count({
+    collection: 'guides',
+    where: { _status: { not_equals: 'published' } },
+  })
+
+  if (drafts.totalDocs > 0) {
+    console.log(`  guides unpublished ${String(drafts.totalDocs).padStart(4)}  WILL 404`)
+  }
+
+  if (orphans > 0 || drafts.totalDocs > 0) {
+    if (orphans > 0) {
+      console.error(
+        '\nRecords with no game are invisible on every page. Fix before deploying.',
+      )
+    }
+    if (drafts.totalDocs > 0) {
+      console.error(
+        `\n${drafts.totalDocs} guides are drafts, so every one of them 404s. Run: pnpm seed:publish`,
+      )
+    }
     process.exit(1)
   }
   process.exit(0)

@@ -320,6 +320,19 @@ const UNANSWERABLE: { id: string; match: RegExp; why: string }[] = [
   { id: 'endings', match: /\b(ending|endings|secret ending|true ending)\b/, why: 'Needs somebody who has reached them.' },
 ]
 
+/*
+  Every generated guide is published, explicitly.
+
+  `Guides` has `versions: { drafts: true }`, and Payload defaults a document
+  it creates to `_status: 'draft'`. A draft is a complete, correct, fully
+  populated row that the public site will not serve: the page 404s,
+  `generateStaticParams` never sees it, and every count taken against the
+  database still agrees the page is there. Nothing errors and nothing warns.
+  Three hundred and thirty-five pages were written that way.
+
+  If a generated page should ever start life unpublished, that has to be a
+  decision somebody writes down here - not the default winning by silence.
+*/
 async function upsertGuide(
   payload: Payload,
   gameId: number | string,
@@ -333,10 +346,19 @@ async function upsertGuide(
     depth: 0,
   })
   if (existing.docs.length > 0) {
-    await payload.update({ collection: 'guides', id: existing.docs[0].id, data: { ...data, game: gameId } as never, depth: 0 })
+    await payload.update({
+      collection: 'guides',
+      id: existing.docs[0].id,
+      data: { ...data, game: gameId, _status: 'published' } as never,
+      depth: 0,
+    })
     return
   }
-  await payload.create({ collection: 'guides', data: { ...data, game: gameId } as never, depth: 0 })
+  await payload.create({
+    collection: 'guides',
+    data: { ...data, game: gameId, _status: 'published' } as never,
+    depth: 0,
+  })
 }
 
 /**

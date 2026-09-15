@@ -1,3 +1,5 @@
+import fs from 'fs'
+import path from 'path'
 import type { HeaderArt } from '@/components/PageHeader'
 import credits from './art-credits.json'
 
@@ -33,4 +35,26 @@ export function sectionArt(name: string, tall = false): HeaderArt | undefined {
   const band = BANDS[name]
   if (!band) return undefined
   return { src: band.src, credit: band.credit, tall }
+}
+
+/**
+ * A front-page tile's picture, cut from that wiki's own game.
+ *
+ * `sectionArt` above is Dawnwalker's band set and stays that way, so for every
+ * other wiki the honest options were its own screenshots or nothing. It was
+ * nothing for a while, and seven front pages were a grid of flat boxes with an
+ * icon in the corner - correct about attribution and plain enough to read as
+ * unfinished.
+ *
+ * `tools/make-tile-art.mjs` cuts these from `assets/_games/<slug>/`, so a
+ * wiki only ever shows its own game. The existence check is a filesystem read
+ * at build time rather than a fetch: these are static files under `public/`,
+ * a missing one would render as a broken tile, and a tile with no picture is
+ * a better failure than a tile with a broken one.
+ */
+const TILE_ROOT = path.resolve('public/wiki-assets')
+
+export function tileArt(game: string, name: string): string | undefined {
+  const file = path.join(TILE_ROOT, game, 'tiles', `${name}.jpg`)
+  return fs.existsSync(file) ? `/wiki-assets/${game}/tiles/${name}.jpg` : undefined
 }

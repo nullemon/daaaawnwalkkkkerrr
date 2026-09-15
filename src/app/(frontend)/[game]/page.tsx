@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ART_GAME, sectionArt } from '@/lib/art'
+import { ART_GAME, sectionArt, tileArt } from '@/lib/art'
 import { HeroSearch } from '@/components/HeroSearch'
 import { Logo } from '@/components/Logo'
 import { Icon } from '@/components/Icon'
@@ -113,29 +113,42 @@ export default async function Home({ params }: Props) {
 
         {sections.length > 0 || tools.length > 0 ? (
           <div className="tilegrid">
-            {tools.map((tool) => (
-              <Link key={tool.href} href={tool.href} className="tile">
-                <span className="tile-icon">
-                  <Icon name={tool.icon} size={19} />
-                </span>
-                <span className="tile-name">{tool.label}</span>
-                <span className="tile-count">Tool</span>
-              </Link>
-            ))}
+            {tools.map((tool) => {
+              // `/tools/completion` -> `tool-completion`, `/run` -> `tool-run`.
+              const art = tileArt(slug, `tool-${tool.href.replace(/^\/(tools\/)?/, '')}`)
+              return (
+                <Link
+                  key={tool.href}
+                  href={tool.href}
+                  className="tile"
+                  style={art ? { backgroundImage: `url(${art})` } : undefined}
+                >
+                  <span className="tile-icon">
+                    <Icon name={tool.icon} size={19} />
+                  </span>
+                  <span className="tile-name">{tool.label}</span>
+                  <span className="tile-count">Tool</span>
+                </Link>
+              )
+            })}
 
             {sections.map((section) => {
               // The band set belongs to one game, so only that game's tiles
               // carry it. The rest render as plain tiles, which is correct
               // rather than a shortfall.
-              const art = ownArt
-                ? sectionArt(section.collection === 'skill-trees' ? 'skills' : section.collection)
-                : undefined
+              const key = section.collection === 'skill-trees' ? 'skills' : section.collection
+              /*
+                Dawnwalker keeps its bespoke band set; every other wiki gets a
+                crop of its own game's screenshots. Neither ever borrows from
+                the other, which is the whole point of the split.
+              */
+              const art = ownArt ? sectionArt(key)?.src : tileArt(slug, key)
               return (
                 <Link
                   key={section.href}
                   href={section.href}
                   className="tile"
-                  style={art ? { backgroundImage: `url(${art.src})` } : undefined}
+                  style={art ? { backgroundImage: `url(${art})` } : undefined}
                 >
                   <span className="tile-icon">
                     <Icon name={section.icon} size={19} />
@@ -198,18 +211,32 @@ export default async function Home({ params }: Props) {
               Fewest players have these. The figures come from the platform and move as more people
               finish the game.
             </p>
-            <ul className="related">
-              {rarest.map((entry) => (
-                <li key={entry.id}>
-                  <span className="related-main">
-                    <Link href={`/achievements/${entry.slug}`}>{entry.title}</Link>
-                    <span className="note">
-                      {entry.hidden ? 'Hidden until unlocked' : entry.description}
+            {/*
+              The platform ships an icon with every achievement and this list
+              was printing the names alone, which made the most visual section
+              on the page the plainest thing on it. `pnpm seed:art` attaches
+              them; where one is missing the row simply has no image rather
+              than a placeholder, because a grey square is worse than a gap.
+            */}
+            <ul className="related achievement-list">
+              {rarest.map((entry) => {
+                const icon =
+                  entry.icon && typeof entry.icon === 'object' ? entry.icon.url : undefined
+                return (
+                  <li key={entry.id}>
+                    {icon ? (
+                      <img className="achievement-icon" src={icon} alt="" loading="lazy" />
+                    ) : null}
+                    <span className="related-main">
+                      <Link href={`/achievements/${entry.slug}`}>{entry.title}</Link>
+                      <span className="note">
+                        {entry.hidden ? 'Hidden until unlocked' : entry.description}
+                      </span>
                     </span>
-                  </span>
-                  <span className="related-meta">{entry.globalPercent}%</span>
-                </li>
-              ))}
+                    <span className="related-meta">{entry.globalPercent}%</span>
+                  </li>
+                )
+              })}
             </ul>
           </section>
         ) : null}

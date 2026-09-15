@@ -1111,6 +1111,17 @@ th.num { text-align: right; }
 .related-main { display: flex; flex-direction: column; gap: 2px; min-width: 0; flex: 1 1 20ch; }
 .related-main a { font-weight: 500; }
 .related-main .sub { font-size: 13px; color: var(--muted); }
+.achievement-list li { align-items: center; gap: 3px 12px; }
+.achievement-icon {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  background: var(--sunk);
+}
+
 .related-meta { flex: none; font-size: 13px; color: var(--muted); }
 
 .section-head h2 { display: flex; align-items: center; gap: 9px; }
