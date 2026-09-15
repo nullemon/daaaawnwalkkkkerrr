@@ -281,6 +281,56 @@ twelve-article community wiki does not reach forty guides, and padding it is
 the one thing that would cost this network its argument. `pnpm seed:topics`
 prints a per-wiki count; the gap is the finding, not the failure.
 
+## Maps
+
+A base image, pins positioned as a percentage of it, and a found list kept in
+the reader's own browser. `src/components/GameMap.tsx` is the viewer,
+`src/collections/Maps.ts` the schema, and `src/components/admin/MarkerPlacer`
+the click-to-place editor in the admin.
+
+**Percentages, never pixels.** The pin data then survives the base image being
+re-exported at a different size, which it will be the first time somebody
+finds a cleaner scan. Replacing a base map with a differently *cropped* one
+still moves every pin, and nothing can fix that but re-placing them.
+
+**`markerSource` is required and stays required.** A pin is a claim a reader
+will physically walk to, so it is the field on this site somebody would most
+be tempted to eyeball - the same reason `src/seed/import.ts` rejects a record
+with no source URL.
+
+There are no maps yet, and that is a finding rather than a gap. Every
+map-named file on all eight source wikis belongs to an *earlier* game in that
+franchise - Azuchi Castle is not Way of the Sword - and using one would be the
+misattribution `ART_GAME` exists to prevent, arriving through another door.
+
+## Comments
+
+Replies go exactly one level deep. Flat turns every disagreement into people
+quoting each other by name; unlimited nesting eats the column on a phone until
+the argument at the bottom is four words wide. A reply to a reply attaches to
+the same top-level comment.
+
+A reply whose parent is missing or unapproved is **promoted to top-level**
+rather than dropped - a moderator has already approved it, and it reads fine
+on its own. `parent` arrives from the public create endpoint like everything
+else, so the beforeValidate hook drops one that is not a root comment on the
+same page.
+
+## The licence line
+
+Site settings -> Hub home page -> attribution. **Off by default, by the
+owner's decision, with the reason recorded at both ends.** Around five hundred
+records restate facts from Fandom and Wikipedia, both CC BY-SA, and that
+licence asks for credit as a condition of reuse; with the line off and nothing
+else carrying it those pages sit outside the terms the facts arrived under. A
+site-wide credits page is the usual way to satisfy it without a line on every
+page. Do not quietly re-enable it, and do not quietly remove the warning.
+
+The wording is an editable template. It is split on its token pattern and
+rendered as React children, never `dangerouslySetInnerHTML` - an
+admin-editable string that reaches the DOM as markup is a stored-XSS hole
+waiting for the first editor account that should not have had one.
+
 ## Outstanding
 
 - **Per-quest segment costs** — only 15 of 93 have one. Biggest single gap;

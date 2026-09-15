@@ -23,6 +23,17 @@ import path from 'node:path'
  */
 const STYLESHEETS = ['src/app/(frontend)/globals.css', 'src/app/(payload)/custom.css']
 
+/*
+ * Classes that belong to Payload's own admin stylesheet.
+ *
+ * A component rendered inside /admin is styled by Payload, not by us, so
+ * `field-type` on a custom field is correct and reporting it as orphaned is
+ * the same crying-wolf problem the note above describes — one directory
+ * further on. Only the admin tree is exempt: a class used on the public site
+ * still has to exist in a stylesheet this repository owns.
+ */
+const VENDOR_STYLED = /[\\\/]components[\\\/]admin[\\\/]/
+
 const defined = new Set(
   STYLESHEETS.filter((file) => fs.existsSync(file)).flatMap((file) =>
     [...fs.readFileSync(file, 'utf8').matchAll(/\.([a-zA-Z][\w-]*)/g)].map((m) => m[1]),
@@ -36,6 +47,7 @@ const walk = (dir) => fs.readdirSync(dir, { withFileTypes: true }).flatMap((e) =
 
 const used = new Map()
 for (const file of [...walk('src/components'), ...walk('src/app')]) {
+  if (VENDOR_STYLED.test(file)) continue
   const src = fs.readFileSync(file, 'utf8')
   for (const m of src.matchAll(/className=(?:"([^"]*)"|\{`([^`]*)`\}|\{'([^']*)'\})/g)) {
     // A template literal such as `rarity-${value}` is one class built at

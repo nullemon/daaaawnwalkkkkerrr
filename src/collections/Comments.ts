@@ -53,7 +53,7 @@ export const Comments: CollectionConfig = {
   },
   hooks: {
     beforeValidate: [
-      ({ data, operation, req }) => {
+      async ({ data, operation, req }) => {
         if (!data) return data
 
         // Screening runs on create, and again if an editor edits the body —
@@ -79,6 +79,34 @@ export const Comments: CollectionConfig = {
         if (operation === 'create') {
           data.status = 'pending'
           data.submittedBy = req.user?.id ?? undefined
+
+          /*
+            A reply has to be a reply to something on this page.
+
+            `parent` arrives from the same public endpoint as everything else,
+            so it is an arbitrary id until checked. Nothing catastrophic
+            follows from a crafted one - the thread groups within a page, so a
+            foreign parent simply renders as a top-level comment - but a
+            moderator reading the queue should not have to work out why a reply
+            is attached to a comment on another wiki. An invalid parent is
+            dropped rather than rejected: the comment itself is still worth
+            keeping, it is just not a reply.
+          */
+          if (data.parent) {
+            const parentId = typeof data.parent === 'object' ? data.parent.id : data.parent
+            const found = await req.payload
+              .findByID({
+                collection: 'comments',
+                id: parentId as string,
+                depth: 0,
+                overrideAccess: true,
+              })
+              .catch(() => null)
+
+            const sharesPage = found && found.pageUrl === data.pageUrl
+            const isRoot = found && !found.parent
+            data.parent = sharesPage && isRoot ? parentId : undefined
+          }
         }
 
         return data
@@ -109,6 +137,29 @@ export const Comments: CollectionConfig = {
       type: 'text',
       maxLength: 60,
       admin: { description: 'What the reader called themselves. Not verified.' },
+    },
+    {
+      /*
+        One level of replies, and only one.
+
+        A flat list turns every disagreement into people quoting each other by
+        name, which is how a thread stops being readable. Unlimited nesting is
+        the other failure: past about three levels the indent eats the column
+        on a phone and the argument at the bottom is four words wide. One level
+        is the shape that stays legible, so a reply to a reply attaches to the
+        same top-level comment rather than indenting further.
+
+        A reply goes through the same moderation queue as anything else. It is
+        a comment with a parent, not a privileged kind of post.
+      */
+      name: 'parent',
+      type: 'relationship',
+      relationTo: 'comments',
+      index: true,
+      admin: {
+        position: 'sidebar',
+        description: 'Set when this is a reply. Replies are moderated like any other comment.',
+      },
     },
     {
       name: 'pageUrl',

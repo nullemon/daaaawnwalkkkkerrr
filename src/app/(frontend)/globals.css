@@ -1497,24 +1497,91 @@ th.num { text-align: right; }
    the page rather than as more of the page.
 --------------------------------------------------------------------------- */
 
-.comments { margin-top: 28px; }
+.comments { margin-top: 30px; }
 
-.comment-list { display: flex; flex-direction: column; gap: 10px; margin: 0 0 18px; padding: 0; list-style: none; }
-
-.comment {
-  border: 1px solid var(--rule); border-radius: var(--r);
-  background: var(--surface); padding: 11px 13px;
+.comments .section-head h2 { display: flex; align-items: center; gap: 9px; }
+.comment-count {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 24px; height: 21px; padding: 0 7px;
+  border-radius: 999px; background: var(--accent-wash); color: var(--accent);
+  font-family: var(--f-label); font-size: 12px; font-weight: 600;
 }
+.comment-sort {
+  border: 1px solid var(--rule); border-radius: 999px; background: var(--surface);
+  padding: 4px 11px; color: var(--muted); cursor: pointer;
+  font-family: var(--f-label); font-size: 12px;
+}
+.comment-sort:hover { border-color: var(--accent); color: var(--ink); }
+
+.comment-rule { margin: 0 0 14px; }
+
+/*
+  The box first.
+
+  It used to sit under the thread, which is the wrong way round on a page
+  where most of the traffic arrives to say one thing and leave. Putting it at
+  the top costs a returning reader one scroll and saves everybody else a hunt.
+*/
+.comment-form {
+  display: flex; flex-direction: column; gap: 9px; margin-bottom: 22px;
+  padding: 13px; border: 1px solid var(--rule); border-radius: var(--r);
+  background: var(--surface);
+}
+.comment-form textarea,
+.comment-form input[type='text'] {
+  width: 100%; padding: 9px 11px; border: 1px solid var(--rule); border-radius: 8px;
+  background: var(--ground); color: var(--ink); font: inherit; font-size: 14px;
+}
+.comment-form textarea { resize: vertical; min-height: 78px; }
+.comment-form textarea:focus, .comment-form input[type='text']:focus {
+  outline: none; border-color: var(--accent);
+}
+.comment-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.comment-actions input[type='text'] { flex: 1 1 200px; min-width: 0; }
+.comment-replying {
+  display: flex; align-items: center; gap: 10px; margin: 0;
+  font-size: 13px; color: var(--muted);
+}
+
+.comment-list,
+.comment-group { display: flex; flex-direction: column; margin: 0; padding: 0; list-style: none; }
+.comment-list { gap: 12px; }
+.comment-thread {
+  border: 1px solid var(--rule); border-radius: var(--r);
+  background: var(--surface); overflow: hidden;
+}
+.comment-group { gap: 0; }
+
+.comment { display: flex; gap: 11px; padding: 12px 13px; }
+.comment + .comment { border-top: 1px solid var(--rule-soft); }
+/*
+  A reply is indented and tinted rather than boxed again. A second border
+  inside the first reads as two separate comments that happen to touch, which
+  is the opposite of what the indent is saying.
+*/
+.comment[data-reply='true'] { padding-left: 42px; background: var(--sunken); }
+
+.comment-avatar {
+  flex: none; width: 34px; height: 34px; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: hsl(var(--hue, 210) 42% 34%); color: #fff;
+  font-family: var(--f-label); font-size: 12.5px; font-weight: 600; letter-spacing: 0.02em;
+}
+.comment-main { min-width: 0; flex: 1 1 auto; }
 .comment-meta {
-  display: flex; align-items: baseline; justify-content: space-between;
-  gap: 10px; margin-bottom: 5px;
+  display: flex; align-items: baseline; flex-wrap: wrap;
+  gap: 4px 10px; margin: 0 0 4px;
   font-size: 12.5px; color: var(--muted);
 }
 .comment-author { font-weight: 600; color: var(--ink-soft); }
-.comment-body { font-size: 14px; color: var(--ink); white-space: pre-wrap; overflow-wrap: anywhere; }
-
-.comment-form { display: flex; flex-direction: column; gap: 11px; }
-.comment-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.comment-body { margin: 0; font-size: 14px; line-height: 1.55; color: var(--ink); white-space: pre-wrap; overflow-wrap: anywhere; }
+.comment-reply {
+  margin-top: 7px; padding: 0; border: 0; background: none;
+  color: var(--muted); cursor: pointer;
+  font-family: var(--f-label); font-size: 12px;
+}
+.comment-reply:hover { color: var(--accent); }
+.comment-empty { margin: 0; }
 
 /* ---------------------------------------------------------------------------
    The hub masthead.

@@ -1919,6 +1919,10 @@ export interface Comment {
    */
   authorName?: string | null;
   /**
+   * Set when this is a reply. Replies are moderated like any other comment.
+   */
+  parent?: (number | null) | Comment;
+  /**
    * The page this belongs under. Comments are fetched by this.
    */
   pageUrl: string;
@@ -2952,6 +2956,7 @@ export interface CommentsSelect<T extends boolean = true> {
   excerpt?: T;
   body?: T;
   authorName?: T;
+  parent?: T;
   pageUrl?: T;
   game?: T;
   status?: T;
