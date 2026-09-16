@@ -1061,6 +1061,57 @@ th.num { text-align: right; }
    the logo already are the design, and an <h1> default would fight them. */
 .wiki-logo-heading { margin: 0; font-size: 0; line-height: 0; }
 
+/* ---------- the rest of the section ----------
+   Sibling navigation on every record page. The measured problem it answers:
+   detail pages carried eleven to twenty-one internal links, so a reader who
+   arrived from a search had the back button and nothing else. ------------- */
+
+.neighbours { margin-top: 26px; padding-top: 18px; border-top: 1px solid var(--rule); }
+.neighbours-step { display: flex; gap: 10px; justify-content: space-between; flex-wrap: wrap; }
+.neighbours-step > a {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1 1 220px;
+  min-width: 0;
+  padding: 9px 13px;
+  border: 1px solid var(--rule);
+  border-radius: var(--r);
+  background: var(--surface);
+}
+.neighbours-step > a:hover { border-color: var(--accent); text-decoration: none; }
+/* Named rather than positional, so `check:css` can see both and so the pair
+   reads the same way in the markup. */
+.neighbours-prev { align-items: flex-start; }
+.neighbours-next { text-align: right; align-items: flex-end; }
+.neighbours-dir {
+  font-family: var(--f-label);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.neighbours-name { font-size: 14px; font-weight: 500; overflow-wrap: anywhere; }
+.neighbours-head {
+  margin: 16px 0 8px;
+  font-family: var(--f-label);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.neighbours-list { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.neighbours-list li { margin: 0; }
+.neighbours-list a {
+  display: inline-block;
+  padding: 3px 10px;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--surface);
+  font-size: 13px;
+}
+.neighbours-list a:hover { border-color: var(--accent); text-decoration: none; }
+
 /* ---------- company profiles ----------
    A logo is not a screenshot. `.entity-figure img` fills its box, which is
    right for key art and wrong for a wordmark: most of these arrive as a

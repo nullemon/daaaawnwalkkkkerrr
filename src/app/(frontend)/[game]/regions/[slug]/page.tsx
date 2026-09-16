@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { SectionNeighbours } from '@/components/SectionNeighbours'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
@@ -184,6 +185,12 @@ export default async function RegionPage({ params }: Props) {
 
         <Attribution sources={doc.sources} />
 
+        <SectionNeighbours
+          collection="regions"
+          game={game}
+          slug={slug}
+          label="regions"
+        />
         <CommentThread game={game} path={`/regions/${slug}`} />
       </div>
     </>

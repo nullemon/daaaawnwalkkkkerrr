@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { SectionNeighbours } from '@/components/SectionNeighbours'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
@@ -115,6 +116,12 @@ export default async function PerkPage({ params }: Props) {
 
         <Attribution sources={doc.sources} />
 
+        <SectionNeighbours
+          collection="perks"
+          game={game}
+          slug={slug}
+          label="perks"
+        />
         <CommentThread game={game} path={`/perks/${slug}`} />
       </div>
     </>

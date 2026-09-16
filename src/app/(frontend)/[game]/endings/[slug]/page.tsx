@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { SectionNeighbours } from '@/components/SectionNeighbours'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
@@ -157,6 +158,12 @@ export default async function EndingPage({ params }: Props) {
         <AdSlot />
         <Sources sources={ending.sources} />
         <Attribution sources={ending.sources} />
+        <SectionNeighbours
+          collection="endings"
+          game={game}
+          slug={slug}
+          label="endings"
+        />
         <CommentThread game={game} path={`/endings/${slug}`} />
       </div>
     </>

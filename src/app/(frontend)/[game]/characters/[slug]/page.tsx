@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { SectionNeighbours } from '@/components/SectionNeighbours'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
@@ -145,6 +146,12 @@ export default async function CharacterPage({ params }: Props) {
         />
         <Sources sources={doc.sources} />
         <Attribution sources={doc.sources} />
+        <SectionNeighbours
+          collection="characters"
+          game={game}
+          slug={slug}
+          label="characters"
+        />
         <CommentThread game={game} path={`/characters/${slug}`} />
       </div>
     </>

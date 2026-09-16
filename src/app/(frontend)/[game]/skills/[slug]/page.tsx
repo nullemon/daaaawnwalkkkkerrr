@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { SectionNeighbours } from '@/components/SectionNeighbours'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
@@ -103,6 +104,12 @@ export default async function SkillTreePage({ params }: Props) {
         />
         <Sources sources={doc.sources} />
         <Attribution sources={doc.sources} />
+        <SectionNeighbours
+          collection="skill-trees"
+          game={game}
+          slug={slug}
+          label="skill trees"
+        />
         <CommentThread game={game} path={`/skills/${slug}`} />
       </div>
     </>

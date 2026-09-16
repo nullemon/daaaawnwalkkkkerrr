@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { SectionNeighbours } from '@/components/SectionNeighbours'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
@@ -118,6 +119,12 @@ export default async function BuildPage({ params }: Props) {
         <AdSlot />
         <Sources sources={doc.sources} />
         <Attribution sources={doc.sources} />
+        <SectionNeighbours
+          collection="builds"
+          game={game}
+          slug={slug}
+          label="builds"
+        />
         <CommentThread game={game} path={`/builds/${slug}`} />
       </div>
     </>

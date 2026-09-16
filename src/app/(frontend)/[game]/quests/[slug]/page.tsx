@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { SectionNeighbours } from '@/components/SectionNeighbours'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
@@ -167,6 +168,12 @@ export default async function QuestPage({ params }: Props) {
         <AdSlot />
         <Sources sources={quest.sources} />
         <Attribution sources={quest.sources} />
+        <SectionNeighbours
+          collection="quests"
+          game={game}
+          slug={slug}
+          label="quests"
+        />
         <CommentThread game={game} path={`/quests/${slug}`} />
       </div>
     </>

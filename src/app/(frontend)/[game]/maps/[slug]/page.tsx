@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { SectionNeighbours } from '@/components/SectionNeighbours'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
 import { Confidence } from '@/components/Badges'
@@ -108,6 +109,12 @@ export default async function MapPage({ params }: Props) {
 
         <Sources sources={doc.sources} />
         <Attribution sources={doc.sources} />
+        <SectionNeighbours
+          collection="maps"
+          game={game}
+          slug={slug}
+          label="maps"
+        />
         <CommentThread game={game} path={`/maps/${doc.slug}`} />
       </div>
     </>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { SectionNeighbours } from '@/components/SectionNeighbours'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
 import { Confidence } from '@/components/Badges'
@@ -71,6 +72,12 @@ export default async function MechanicPage({ params }: Props) {
         <RichText data={doc.body} />
         <Sources sources={doc.sources} />
         <Attribution sources={doc.sources} />
+        <SectionNeighbours
+          collection="mechanics"
+          game={game}
+          slug={slug}
+          label="mechanics"
+        />
         <CommentThread game={game} path={`/mechanics/${slug}`} />
       </div>
     </>

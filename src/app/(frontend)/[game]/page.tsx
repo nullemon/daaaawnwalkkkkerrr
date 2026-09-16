@@ -177,7 +177,26 @@ export default async function Home({ params }: Props) {
 
           <HeroSearch />
 
-          {release ? <p className="wiki-masthead-meta">{release}</p> : null}
+          {/*
+            The release line, and the game's own listing beside it.
+
+            Every game record has carried a `storeUrl` from the first store
+            harvest and nothing rendered it anywhere until the About page. The
+            official listing is the one external link on this page a reader
+            might actually want, and a wiki that will not point at the thing it
+            is about reads as though it would rather keep the traffic.
+          */}
+          {release || game.storeUrl ? (
+            <p className="wiki-masthead-meta">
+              {release}
+              {release && game.storeUrl ? ' · ' : ''}
+              {game.storeUrl ? (
+                <a href={game.storeUrl} rel="nofollow noopener noreferrer" target="_blank">
+                  Official listing
+                </a>
+              ) : null}
+            </p>
+          ) : null}
         </div>
       </header>
 

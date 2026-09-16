@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { SectionNeighbours } from '@/components/SectionNeighbours'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
 import { Confidence, Badge } from '@/components/Badges'
@@ -204,6 +205,12 @@ export default async function AchievementPage({ params }: Props) {
 
         <Attribution sources={doc.sources} />
 
+        <SectionNeighbours
+          collection="achievements"
+          game={game}
+          slug={slug}
+          label="achievements"
+        />
         <CommentThread game={game} path={`/achievements/${slug}`} />
       </div>
     </>

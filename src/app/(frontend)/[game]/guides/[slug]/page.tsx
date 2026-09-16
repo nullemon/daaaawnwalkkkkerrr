@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { SectionNeighbours } from '@/components/SectionNeighbours'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
 import { Confidence } from '@/components/Badges'
@@ -149,7 +150,13 @@ export default async function GuidePage({ params }: Props) {
 
             <Attribution sources={doc.sources} />
 
-            <CommentThread game={game} path={`/guides/${slug}`} />
+            <SectionNeighbours
+          collection="guides"
+          game={game}
+          slug={slug}
+          label="guides"
+        />
+        <CommentThread game={game} path={`/guides/${slug}`} />
           </div>
 
           {/*
