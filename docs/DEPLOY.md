@@ -65,7 +65,7 @@ pnpm install
 pnpm db:reset     # sixteen passes: seed, ingest, four guide generators, images
 pnpm verify       # 1,467 records, 0 with no game
 pnpm check:launch # what still wants a decision. Nothing here blocks a launch
-pnpm build        # ~1,670 pages
+pnpm build        # ~1,700 pages
 ```
 
 `pnpm db:reset` is the whole content pipeline in one command, and the order in

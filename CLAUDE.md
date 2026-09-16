@@ -4,7 +4,7 @@ A network of game wikis sharing one admin, one account system and one set of
 editorial rules. Next.js 16 + Payload CMS 3 on libSQL. Every public page
 prerenders to static HTML; `/admin` is a full CMS.
 
-Eight wikis today, ~1,670 prerendered pages. *The Blood of Dawnwalker* is the
+Eight wikis today, 1,702 prerendered pages. *The Blood of Dawnwalker* is the
 first and still the largest — 440 of the 1,467 records — and its 480-segment
 run planner is the model for what each wiki is meant to have: one tool nobody
 else has.
@@ -33,7 +33,7 @@ prefix; `src/proxy.ts` maps host to the internal `/[game]/…` route. See
 ```bash
 pnpm install      # NOT npm — see gotchas
 pnpm dev          # http://dawnwalker.localhost:3000 — see 'Local dev' below
-pnpm build        # prerenders ~1,670 pages across eight wikis
+pnpm build        # prerenders ~1,700 pages across eight wikis
 pnpm test         # unit tests (106)
 pnpm seed         # hand-written seed content, idempotent on slug
 pnpm ingest       # ingest researched JSON from src/seed/raw/
