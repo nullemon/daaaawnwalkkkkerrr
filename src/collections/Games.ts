@@ -1,6 +1,7 @@
 import type { CollectionConfig } from 'payload'
 import { slugField, publicRead, seoGroup } from '../fields/shared'
 import { APEX_ONLY, NETWORK_SUBDOMAINS } from '../proxy'
+import { hostLabelProblem } from '../lib/host-label'
 import { analyticsFields, verificationFields } from '../fields/analytics'
 
 /**
@@ -48,7 +49,13 @@ export const Games: CollectionConfig = {
         if (APEX_ONLY.has(value)) {
           return `"${value}" is a reserved path on the network's own domain. Choose another slug.`
         }
-        return true
+        /*
+          The slug is also the host label unless `subdomain` overrides it, so
+          it has to be something DNS will accept. Nothing checked that, and a
+          slug with an underscore in it would have saved, produced a hostname
+          no resolver accepts, and 404ed with nothing saying why.
+        */
+        return hostLabelProblem(value) ?? true
       },
     }),
     {
@@ -145,13 +152,40 @@ export const Games: CollectionConfig = {
 
     // --- Wiring ----------------------------------------------------------
     {
+      /*
+        The wiki's own host, and the only per-wiki step there is.
+
+        There is no DNS record to add and no certificate to request: the
+        deployment answers on `*.<domain>` with a wildcard certificate, and
+        `proxy.ts` maps any single label onto the matching first path segment.
+        Creating the row is creating the site. See docs/DEPLOY.md.
+
+        Validated now, which it was not: anything typed here became a hostname
+        unchecked, so a stray space or underscore produced a wiki that resolved
+        nowhere and explained nothing.
+      */
       name: 'subdomain',
       type: 'text',
       unique: true,
+      hooks: {
+        // Hostnames are case-insensitive; store the form that will be served.
+        beforeValidate: [({ value }) => (typeof value === 'string' ? value.trim().toLowerCase() : value)],
+      },
+      validate: (value: unknown) => {
+        if (value === null || value === undefined || value === '') return true
+        if (typeof value !== 'string') return 'A host label must be text.'
+        if (NETWORK_SUBDOMAINS.has(value)) {
+          return `"${value}" is one of the network's own hosts. Choose another label.`
+        }
+        if (APEX_ONLY.has(value)) {
+          return `"${value}" is reserved on the network's own domain. Choose another label.`
+        }
+        return hostLabelProblem(value) ?? true
+      },
       admin: {
         position: 'sidebar',
         description:
-          'Host label, if it differs from the slug. Almost always leave this empty — the slug is used when it is.',
+          'Host label, if it differs from the slug. Almost always leave this empty — the slug is used when it is. Whatever is here becomes <label>.<your domain>, which needs no DNS change because the domain is served by a wildcard.',
       },
     },
     {

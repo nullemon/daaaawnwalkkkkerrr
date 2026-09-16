@@ -404,6 +404,29 @@ rendered as React children, never `dangerouslySetInnerHTML` - an
 admin-editable string that reaches the DOM as markup is a stored-XSS hole
 waiting for the first editor account that should not have had one.
 
+## Adding a wiki
+
+Creating the row **is** creating the site. There is no DNS record and no
+certificate to add per wiki, because the deployment answers on `*.<domain>`
+behind a wildcard certificate and `proxy.ts` maps any single label onto the
+matching first path segment. `docs/DEPLOY.md` section 2 has the two records
+that make that true; they are set up once, for the network, not once per game.
+
+Two things had to be fixed before that was actually true:
+
+- `[game]` carried `dynamicParams = false`, so only slugs known at build time
+  rendered and a wiki created in the admin answered 404 until a rebuild. It is
+  `true` now; an unknown slug is still a 404, decided by the database.
+- Nothing checked that a slug was a **legal hostname label**. `slugify` covers
+  the character rules by construction, but not the 63-character limit and not
+  an all-digit label, either of which produces a host no resolver will serve.
+  `src/lib/host-label.ts` is the check, and both `slug` and `subdomain` run it
+  so the refusal happens in the admin where it can be explained rather than as
+  a 404 with nothing anywhere saying why.
+
+`pnpm check:launch` prints the host each wiki will serve on, and treats an
+unservable label as blocking.
+
 ## The companies host
 
 `companies.<network domain>` carries one page per studio and publisher. It

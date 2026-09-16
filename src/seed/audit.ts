@@ -4,6 +4,7 @@ import path from 'path'
 import { getPayload } from 'payload'
 import config from '../payload.config'
 import { GAME_SCOPED } from '../lib/tenancy'
+import { hostFor, hostLabelProblem } from '../lib/host-label'
 
 /**
  * Is this network actually ready to launch?
@@ -34,6 +35,9 @@ async function run(): Promise<void> {
   const payload = await getPayload({ config })
 
   const settings = await payload.findGlobal({ slug: 'site-settings', depth: 0 })
+  const root = (process.env.NEXT_PUBLIC_SITE_URL || 'example.com')
+    .replace(/^https?:\/\//, '')
+    .replace(/\/.*$/, '')
   const games = await payload.find({ collection: 'games', limit: 100, sort: 'title', depth: 1 })
 
   // --- The network itself --------------------------------------------------
@@ -62,6 +66,24 @@ async function run(): Promise<void> {
   // --- Per wiki ------------------------------------------------------------
   for (const game of games.docs) {
     const where = { game: { equals: game.id } }
+
+    /*
+      The host this wiki will answer on.
+
+      There is nothing to configure per wiki - the deployment serves
+      `*.<domain>` behind a wildcard certificate and `proxy.ts` maps the label
+      onto the path - so the only way this goes wrong is a label DNS will not
+      accept. That is now refused in the admin, but a record created before
+      the check existed, or written by a script, can still carry one.
+    */
+    const wikiHost = String((game as { subdomain?: string }).subdomain || game.slug)
+    const hostProblem = hostLabelProblem(wikiHost)
+    if (hostProblem) {
+      add('blocking', String(game.slug), `host label "${wikiHost}" will not resolve — ${hostProblem}`)
+    } else {
+      add('note', String(game.slug), `serves on ${hostFor(wikiHost, root)}`)
+    }
+
     const counts = await Promise.all(
       GAME_SCOPED.map(async (collection) => ({
         collection,

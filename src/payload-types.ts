@@ -698,7 +698,7 @@ export interface Game {
     logo?: (number | null) | Media;
   };
   /**
-   * Host label, if it differs from the slug. Almost always leave this empty — the slug is used when it is.
+   * Host label, if it differs from the slug. Almost always leave this empty — the slug is used when it is. Whatever is here becomes <label>.<your domain>, which needs no DNS change because the domain is served by a wildcard.
    */
   subdomain?: string | null;
   /**

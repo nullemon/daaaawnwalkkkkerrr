@@ -49,6 +49,26 @@ const PASS_THROUGH = new Set([
 ])
 
 /**
+ * The IndexNow key file, which has to answer on every host.
+ *
+ * IndexNow verifies ownership by fetching `<host>/<key>.txt` and checking it
+ * contains the key. The submission is rejected if it 404s — and it did, on
+ * every host: the file sat in `public/` and nothing exempted it, so a wiki
+ * host rewrote it into `/<game>/<key>.txt` and the apex *redirected* it to
+ * `<key>.txt.<domain>` because an unreserved first segment is read as a game
+ * slug. `tools/indexnow.mjs` states in its own docstring that the key "is
+ * served by every subdomain already". It never was, and every submission the
+ * tool has ever made would have failed verification.
+ *
+ * Matched by shape rather than by name so rotating the key is dropping a new
+ * file into `public/` and deleting the old one. An IndexNow key is 8 to 128
+ * hexadecimal characters; no game slug can collide, because `slugField`
+ * strips the dot and `hostLabelProblem` refuses an all-hex-and-digits label
+ * of that length on its own merits.
+ */
+const INDEXNOW_KEY = /^[a-f0-9]{8,128}\.txt$/i
+
+/**
  * First path segments that belong to the hub and must never be read as a game
  * slug. The Games collection refuses these as slugs, so the two lists agreeing
  * is enforced rather than hoped for — see RESERVED_SLUGS in
@@ -117,7 +137,7 @@ export function proxy(request: NextRequest) {
   const label = subdomainOf(host, root)
   const first = url.pathname.split('/')[1] ?? ''
 
-  if (PASS_THROUGH.has(first)) return NextResponse.next()
+  if (PASS_THROUGH.has(first) || INDEXNOW_KEY.test(first)) return NextResponse.next()
 
   // --- On a wiki's host: hide the game prefix ------------------------------
   if (label) {

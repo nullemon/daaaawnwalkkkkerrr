@@ -114,8 +114,15 @@ subdomain decision, accepted knowingly. See `docs/NETWORK.md`.
 
 The IndexNow key is already generated and committed at `public/<key>.txt`. It
 is published by design, not a secret; the file being reachable is the whole of
-the proof that the key is yours. It is served by every host because there is
-one deployment.
+the proof that the key is yours.
+
+It is served by every host because there is one deployment — **but only since
+`proxy.ts` learned to leave it alone**. Nothing exempted it before, so a wiki
+host rewrote `/<key>.txt` into `/<game>/<key>.txt` and 404ed, and the apex
+redirected it to `<key>.txt.<domain>` because an unreserved first segment is
+read as a game slug. Every submission would have failed verification. The
+proxy matches the key by shape now (8–128 hex characters and `.txt`), so
+rotating it is dropping a new file in `public/` and deleting the old one.
 
 ---
 
