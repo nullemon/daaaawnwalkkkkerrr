@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PageHeader } from '@/components/PageHeader'
+import { Callout } from '@/components/Callout'
 import { sectionArt } from '@/lib/art'
 import { DataTable, type Row } from '@/components/DataTable'
 import { ICON_FOR_QUEST_KIND } from '@/components/Icon'
@@ -98,17 +99,19 @@ export default async function QuestIndex({ params }: Props) {
           blank, is the 480-segment clock — which is Dawnwalker's. A wiki for a
           game with no such cost has nothing to apologise for here.
         */}
-        {game?.slug === 'dawnwalker' ? (
-          <div className="callout">
-            <h2>Why so many costs are unknown</h2>
-            <p>
-              Published segment costs for individual quests disagree between sites, and we have no
-              way to verify them against the game. Rather than copy a number we cannot stand
-              behind, we leave it blank and say so. If you know a real figure,{' '}
-              <Link href="/corrections">send it in</Link> — it goes straight to our review queue.
-            </p>
-          </div>
-        ) : null}
+        <Callout
+          game={game}
+          where="quests-index"
+          heading="Why so many costs are unknown"
+          builtIn={game?.slug === 'dawnwalker'}
+        >
+          <p>
+            Published segment costs for individual quests disagree between sites, and we have no
+            way to verify them against the game. Rather than copy a number we cannot stand
+            behind, we leave it blank and say so. If you know a real figure,{' '}
+            <Link href="/corrections">send it in</Link> — it goes straight to our review queue.
+          </p>
+        </Callout>
       </div>
     </>
   )

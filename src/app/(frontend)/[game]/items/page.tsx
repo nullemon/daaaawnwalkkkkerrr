@@ -1,9 +1,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PageHeader } from '@/components/PageHeader'
+import { Callout } from '@/components/Callout'
 import { sectionArt } from '@/lib/art'
 import { ICON_FOR_CATEGORY } from '@/components/Icon'
 import { DataTable, type Row } from '@/components/DataTable'
+import { getUi } from '@/lib/ui'
 import { getAll, getGame } from '@/lib/payload'
 import { acquisitionLabel } from '@/lib/items'
 import { sectionCopy } from '@/lib/section-copy'
@@ -27,15 +29,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ItemsIndex({ params }: Props) {
   const { game: slug } = await params
-  const [game, items] = await Promise.all([
+  const [game, items, ui] = await Promise.all([
     getGame(slug),
     getAll('items', { game: slug, depth: 1 }),
+    getUi(),
   ])
   const copy = sectionCopy('items', game, { total: items.length })
 
   const rows: Row[] = items.map((item) => {
     const region = typeof item.region === 'object' ? (item.region as Region) : null
-    const acquisition = acquisitionLabel(item)
+    const acquisition = acquisitionLabel(item, ui)
     return {
       id: item.id,
       icon: ICON_FOR_CATEGORY[item.category] ?? 'key',
@@ -87,20 +90,22 @@ export default async function ItemsIndex({ params }: Props) {
           words, and a callout naming Bakir's treasury on the Onimusha wiki is
           the same mistake as the heading that used to say "Vale Sangora".
         */}
-        {game?.slug === 'dawnwalker' ? (
-          <div className="callout">
-            <h2>Why so few items name a region</h2>
-            <p>
-              Guides describe where a thing is by quest and landmark — &ldquo;the Kobold
-              Nest&rdquo;, &ldquo;Bakir&rsquo;s treasury&rdquo; — and almost never say which of the
-              ten regions holds it. Where a source does say, the region is linked. Where it does
-              not, the column says how the item is obtained instead, because most of these have no
-              single region at all: a herb that grows across the map and a reward handed over at
-              the end of a questline are not missing data.{' '}
-              <Link href="/regions">Browse by region</Link> for the ones that are pinned down.
-            </p>
-          </div>
-        ) : null}
+        <Callout
+          game={game}
+          where="items-index"
+          heading="Why so few items name a region"
+          builtIn={game?.slug === 'dawnwalker'}
+        >
+          <p>
+            Guides describe where a thing is by quest and landmark — &ldquo;the Kobold
+            Nest&rdquo;, &ldquo;Bakir&rsquo;s treasury&rdquo; — and almost never say which of the
+            ten regions holds it. Where a source does say, the region is linked. Where it does
+            not, the column says how the item is obtained instead, because most of these have no
+            single region at all: a herb that grows across the map and a reward handed over at
+            the end of a questline are not missing data.{' '}
+            <Link href="/regions">Browse by region</Link> for the ones that are pinned down.
+          </p>
+        </Callout>
       </div>
     </>
   )

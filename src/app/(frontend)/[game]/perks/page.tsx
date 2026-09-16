@@ -5,21 +5,37 @@ import { PageHeader } from '@/components/PageHeader'
 import { sectionArt } from '@/lib/art'
 import { Badge } from '@/components/Badges'
 import { DataTable, type Row } from '@/components/DataTable'
-import { getAll } from '@/lib/payload'
+import { Callout } from '@/components/Callout'
+import { getAll, getGame } from '@/lib/payload'
+import { sectionCopy } from '@/lib/section-copy'
 import type { Perk, SkillTree } from '@/payload-types'
 
 type Props = { params: Promise<{ game: string }> }
 
-export const metadata: Metadata = {
-  title: 'Every perk, across all three trees',
-  description:
-    'All known perks in The Blood of Dawnwalker — Swordmastery, Witchcraft and Vampirism — with what each one does and which are the nine ultimates.',
-  alternates: { canonical: '/perks' },
+/** A function rather than a static object — see the note in `endings/page.tsx`. */
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { game: slug } = await params
+  const [game, perks] = await Promise.all([
+    getGame(slug),
+    getAll('perks', { game: slug, depth: 0 }),
+  ])
+  const copy = sectionCopy('perks', game, {
+    total: perks.length,
+    detail: perks.filter((perk) => perk.isUltimate).length,
+  })
+  return {
+    title: copy.title,
+    description: copy.description,
+    alternates: { canonical: '/perks' },
+  }
 }
 
 export default async function PerksIndex({ params }: Props) {
   const { game } = await params
-  const perks = await getAll('perks', { game, depth: 1, sort: 'title' })
+  const [doc, perks] = await Promise.all([
+    getGame(game),
+    getAll('perks', { game, depth: 1, sort: 'title' }),
+  ])
 
   /*
    * A section with no records is not this game's section. The rail and the
@@ -44,6 +60,7 @@ export default async function PerksIndex({ params }: Props) {
     }
   })
   const ultimates = perks.filter((perk) => perk.isUltimate)
+  const copy = sectionCopy('perks', doc, { total: perks.length, detail: ultimates.length })
 
   return (
     <>
@@ -52,8 +69,8 @@ export default async function PerksIndex({ params }: Props) {
         eyebrow="Database"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Perks' }]}
         icon="star"
-        title="Perks"
-        lede={`${perks.length} perks catalogued, ${ultimates.length} of them ultimates. You may take one ultimate per tree, so picking any of the nine closes two others.`}
+        title={copy.heading}
+        lede={copy.lede}
       />
       <div className="page body-main">
         <DataTable
@@ -71,13 +88,17 @@ export default async function PerksIndex({ params }: Props) {
             { key: 'segments', label: 'Segments', type: 'num' },
           ]}
         />
-        <div className="callout">
-          <h2>Plan a full build</h2>
+        <Callout
+          game={doc}
+          where="perks-index"
+          heading="Plan a full build"
+          builtIn={(doc?.features ?? []).includes('build-planner')}
+        >
           <p>
             The <Link href="/tools/build-planner">build planner</Link> enforces one ultimate per
             tree, totals what a spec costs in segments, and gives you a link to share.
           </p>
-        </div>
+        </Callout>
       </div>
     </>
   )

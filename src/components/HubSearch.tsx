@@ -25,7 +25,21 @@ export type HubTarget = {
   kind: 'wiki' | 'page'
 }
 
-export function HubSearch({ targets }: { targets: HubTarget[] }) {
+export function HubSearch({
+  targets,
+  placeholder,
+}: {
+  targets: HubTarget[]
+  /*
+    Resolved by the hub page, not read here.
+
+    This is the one component in the search path that runs in the browser, and
+    `getSiteSettings` is a server-only Payload call — importing it into a
+    client component builds, then fails at request time. The editable string
+    arrives already chosen and already filled.
+  */
+  placeholder?: string
+}) {
   const [query, setQuery] = useState('')
   const [open, setOpen] = useState(false)
   const [cursor, setCursor] = useState(0)
@@ -68,7 +82,7 @@ export function HubSearch({ targets }: { targets: HubTarget[] }) {
         <input
           type="search"
           value={query}
-          placeholder="Search the network — a game, a boss, a guide…"
+          placeholder={placeholder || 'Search the network — a game, a boss, a guide…'}
           aria-label="Search the network"
           onChange={(event) => {
             setQuery(event.target.value)

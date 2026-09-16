@@ -10,6 +10,7 @@ import { Attribution } from '@/components/Attribution'
 import { CommentThread } from '@/components/CommentThread'
 import { FactPanel } from '@/components/FactPanel'
 import { EntityImage } from '@/components/EntityImage'
+import { getUi } from '@/lib/ui'
 import { getBySlug, getGame, rel } from '@/lib/payload'
 import { gameName } from '@/lib/section-copy'
 import { gameSlugParams } from '@/lib/params'
@@ -42,7 +43,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function EnemyPage({ params }: Props) {
   const { game, slug } = await params
-  const doc = await getBySlug('enemies', slug, { game, depth: 1 })
+  const [doc, ui] = await Promise.all([
+    getBySlug('enemies', slug, { game, depth: 1 }),
+    getUi(),
+  ])
   if (!doc) notFound()
   const region = rel<Region>(doc.region)
 
@@ -98,7 +102,15 @@ export default async function EnemyPage({ params }: Props) {
                   */
                   label: 'Region',
                   value: region ? <Link href={`/regions/${region.slug}`}>{region.title}</Link> : undefined,
-                  absent: doc.isBoss ? 'unrecorded' : 'found across the vale',
+                  /*
+                    "the vale" is Vale Sangora, and this line was printing it
+                    on the enemy pages of every wiki in the network — a Gears
+                    of War drone "found across the vale". The general claim is
+                    true everywhere; the place name is true in one game.
+                  */
+                  absent: ui.t(
+                    doc.isBoss ? 'facts.region-unrecorded' : 'facts.region-everywhere',
+                  ),
                 },
               ]}
             />

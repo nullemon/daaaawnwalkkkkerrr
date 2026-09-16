@@ -30,6 +30,9 @@ import { Comments } from './collections/Comments'
 import { Players } from './collections/Players'
 import { Games } from './collections/Games'
 import { SiteSettings } from './globals/SiteSettings'
+import { LegalPages } from './globals/LegalPages'
+import { InterfaceStrings } from './globals/InterfaceStrings'
+import { CompaniesSite } from './globals/CompaniesSite'
 import { scopedToGame } from './fields/shared'
 
 const filename = fileURLToPath(import.meta.url)
@@ -91,7 +94,7 @@ export default buildConfig({
     Players,
     Users,
   ],
-  globals: [SiteSettings],
+  globals: [SiteSettings, LegalPages, InterfaceStrings, CompaniesSite],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: { outputFile: path.resolve(dirname, 'payload-types.ts') },

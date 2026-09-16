@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { SectionNeighbours } from '@/components/SectionNeighbours'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
+import { Callout } from '@/components/Callout'
 import { Confidence } from '@/components/Badges'
 import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
@@ -49,7 +50,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function GuidePage({ params }: Props) {
   const { game, slug } = await params
-  const doc = await getBySlug('guides', slug, { game, depth: 1 })
+  const [wiki, doc] = await Promise.all([
+    getGame(game),
+    getBySlug('guides', slug, { game, depth: 1 }),
+  ])
   if (!doc) notFound()
 
   // Only entries whose upload actually resolved; a broken one renders nothing
@@ -90,7 +94,7 @@ export default async function GuidePage({ params }: Props) {
 
   // Whose game the pictures are from, read off this game's own record rather
   // than assumed to be Dawnwalker's. See `rightsCredit`.
-  const credit = rightsCredit(await getGame(game))
+  const credit = rightsCredit(wiki)
 
   /*
     Article markup, so the byline and the date are readable by something other
@@ -189,14 +193,18 @@ export default async function GuidePage({ params }: Props) {
 
             <RelatedList heading="Covered here" icon="scroll" items={covered} />
 
-            <div className="callout">
-              <h2>Answer this for your own run</h2>
+            <Callout
+              game={wiki}
+              where="guides-detail"
+              heading="Answer this for your own run"
+              builtIn={(wiki?.features ?? []).includes('run-checker')}
+            >
               <p>
                 The <Link href="/tools/run-checker">run checker</Link> takes the quests you have
                 actually finished and works out which endings are still reachable. The{' '}
                 <Link href="/tools/build-planner">build planner</Link> does the same for a spec.
               </p>
-            </div>
+            </Callout>
 
             <RelatedList heading="More guides" icon="book" items={more} href="/guides" />
           </div>

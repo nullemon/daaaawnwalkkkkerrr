@@ -161,6 +161,19 @@ export default async function GameLayout({
     { label: 'Home', href: '/', icon: 'home' },
     ...tools,
     ...sections.map(({ label, href, icon }) => ({ label, href, icon })),
+    /*
+      Extra links an editor added, under the derived sections and above the way
+      out. Deliberately additive: the sections above come from `sectionsFor`,
+      which returns only indexes with records in them, and nothing typed here
+      can add one — a rail entry pointing at an empty index reads as a broken
+      site, which is why that list is derived and stays derived.
+    */
+    ...(settings.railItems ?? []).map((item) => ({
+      label: item.label,
+      href: item.href,
+      icon: item.icon ?? 'book',
+      external: /^https?:\/\//i.test(item.href),
+    })),
     {
       label: `All ${settings.siteName} wikis`,
       href: hub('/'),
@@ -185,7 +198,7 @@ export default async function GameLayout({
     ['quests', 'builds', 'guides'].includes(section.collection),
   )
 
-  const columns: FooterColumn[] = [
+  const builtInColumns: FooterColumn[] = [
     {
       heading: 'Plan a run',
       links: [...tools, ...planning].map(({ label, href }) => ({ label, href })),
@@ -213,7 +226,27 @@ export default async function GameLayout({
         { label: 'Terms', href: hub('/terms') },
       ],
     },
-  ].filter((column) => column.links.length > 0)
+  ]
+
+  /*
+    An editor's own columns replace the derived ones outright rather than
+    merging with them. Merging would be the friendlier default and the wrong
+    one: the built-in columns are this wiki's section list, so a merge means
+    every column an editor writes is followed by links they cannot remove, and
+    the way to drop one becomes "edit the code". All or nothing is a rule
+    somebody can hold in their head; blank keeps what shipped.
+
+    Empty columns are dropped either way — a heading with nothing under it is
+    what a wiki with no tools would otherwise print.
+  */
+  const columns: FooterColumn[] = (
+    settings.footerColumns && settings.footerColumns.length > 0
+      ? settings.footerColumns.map((column) => ({
+          heading: column.heading,
+          links: (column.links ?? []).map(({ label, href }) => ({ label, href })),
+        }))
+      : builtInColumns
+  ).filter((column) => column.links.length > 0)
 
   return (
     <Shell

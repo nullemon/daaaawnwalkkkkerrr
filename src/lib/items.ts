@@ -1,4 +1,5 @@
 import type { Item } from '@/payload-types'
+import { labelGroup, type Ui } from './ui-registry'
 
 /**
  * How an item is obtained, in words.
@@ -12,25 +13,20 @@ import type { Item } from '@/payload-types'
  * over at the end of a questline never had one. See docs/ASSETS.md's sibling
  * rule in docs/DATA.md — an empty field must mean "nobody published this", so
  * anything that has a real answer needs somewhere to put it.
+ *
+ * The wording lives in the interface-text registry as `acquisition.*` (the
+ * column) and `acquisition-why.*` (the fuller sentence on the item's own
+ * page), so it is editable in the admin and declared once.
+ *
+ * `ui` is optional and every page passes it. It stays optional because
+ * resolving an override is async and this is called from places that are not —
+ * without it the caller gets the registry default, which is the wording that
+ * shipped, rather than nothing.
  */
-export const ACQUISITION_LABEL: Record<string, string> = {
-  world: 'Fixed location',
-  'quest-reward': 'Quest reward',
-  merchant: 'Merchant',
-  drop: 'Enemy drop',
-  gathered: 'Across the map',
-  crafted: 'Crafted',
+export const acquisitionLabel = (
+  item: Pick<Item, 'acquisition'>,
+  ui?: Ui,
+): string | undefined => {
+  if (!item.acquisition) return undefined
+  return ui ? ui.label('acquisition', item.acquisition) : labelGroup('acquisition')[item.acquisition]
 }
-
-/** A fuller phrasing for the item's own page, where there is room for one. */
-export const ACQUISITION_SENTENCE: Record<string, string> = {
-  world: 'Found at a fixed spot in the world.',
-  'quest-reward': 'Handed over for finishing a quest, so it has no world location.',
-  merchant: 'Bought from a merchant rather than found.',
-  drop: 'Taken from something you kill.',
-  gathered: 'Gathered across the map rather than in one place.',
-  crafted: 'Made rather than found.',
-}
-
-export const acquisitionLabel = (item: Pick<Item, 'acquisition'>): string | undefined =>
-  item.acquisition ? ACQUISITION_LABEL[item.acquisition] : undefined

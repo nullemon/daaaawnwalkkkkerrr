@@ -3,6 +3,7 @@ import { SectionNeighbours } from '@/components/SectionNeighbours'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
+import { Callout } from '@/components/Callout'
 import { Confidence, PhaseBadge } from '@/components/Badges'
 import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
@@ -41,7 +42,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function QuestPage({ params }: Props) {
   const { game, slug } = await params
-  const quest = await getBySlug('quests', slug, { game, depth: 2 })
+  const [wiki, quest] = await Promise.all([
+    getGame(game),
+    getBySlug('quests', slug, { game, depth: 2 }),
+  ])
   if (!quest) notFound()
 
   const region = rel<Region>(quest.region)
@@ -128,14 +132,18 @@ export default async function QuestPage({ params }: Props) {
                 { label: 'Closes off', value: excludes.length || undefined },
               ]}
             />
-            <div className="callout">
-              <h2>Where does this leave your run?</h2>
+            <Callout
+              game={wiki}
+              where="quests-detail"
+              heading="Where does this leave your run?"
+              builtIn={(wiki?.features ?? []).includes('run-checker')}
+            >
               <p>
                 The <Link href="/tools/run-checker">run checker</Link> takes the quests you have
                 actually finished and works out which endings are still reachable from where you
                 are.
               </p>
-            </div>
+            </Callout>
           </div>
         </div>
 

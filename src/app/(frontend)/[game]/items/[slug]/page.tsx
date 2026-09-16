@@ -10,10 +10,11 @@ import { Attribution } from '@/components/Attribution'
 import { CommentThread } from '@/components/CommentThread'
 import { EntityImage } from '@/components/EntityImage'
 import { FactPanel } from '@/components/FactPanel'
+import { getUi } from '@/lib/ui'
 import { getBySlug, getGame } from '@/lib/payload'
 import { gameName } from '@/lib/section-copy'
 import { gameSlugParams } from '@/lib/params'
-import { ACQUISITION_SENTENCE, acquisitionLabel } from '@/lib/items'
+import { acquisitionLabel } from '@/lib/items'
 import type { Item, Region } from '@/payload-types'
 import { clamp, itemMeta } from '@/lib/seo'
 
@@ -43,11 +44,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ItemPage({ params }: Props) {
   const { game, slug } = await params
-  const doc = await getBySlug('items', slug, { game, depth: 1 })
+  const [doc, ui] = await Promise.all([
+    getBySlug('items', slug, { game, depth: 1 }),
+    getUi(),
+  ])
   if (!doc) notFound()
 
   const region = doc.region && typeof doc.region === 'object' ? (doc.region as Region) : null
-  const acquisitionSentence = doc.acquisition ? ACQUISITION_SENTENCE[doc.acquisition] : undefined
+  const acquisitionSentence = doc.acquisition
+    ? ui.label('acquisition-why', doc.acquisition)
+    : undefined
 
   return (
     <>
@@ -82,7 +88,7 @@ export default async function ItemPage({ params }: Props) {
                   value: region ? <Link href={`/regions/${region.slug}`}>{region.title}</Link> : undefined,
                   absent: doc.acquisition ? 'no single region' : 'unrecorded',
                 },
-                { label: 'How to get', value: acquisitionLabel(doc) },
+                { label: 'How to get', value: acquisitionLabel(doc, ui) },
               ]}
             />
           </div>

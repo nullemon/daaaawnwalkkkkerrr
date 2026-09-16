@@ -119,6 +119,136 @@ export const SiteSettings: GlobalConfig = {
               defaultValue:
                 'Unofficial fan project. The Blood of Dawnwalker is developed by Rebel Wolves and published by Bandai Namco Entertainment. No affiliation is claimed.',
             },
+            {
+              /*
+                The footer's link columns, on all three kinds of site.
+
+                They were three separate hardcoded lists — one in the hub
+                layout, one in a wiki layout, one on the companies host — which
+                is how the hub came to link to a page the wikis do not have.
+                Empty falls back to those lists, so nothing moves until
+                somebody fills this in.
+              */
+              name: 'footerColumns',
+              type: 'array',
+              label: 'Footer columns',
+              labels: { singular: 'Column', plural: 'Columns' },
+              admin: {
+                description: 'Leave empty to keep the built-in columns. Links are relative to whichever host the footer is on unless they start with http.',
+                initCollapsed: true,
+              },
+              fields: [
+                { name: 'heading', type: 'text', required: true },
+                {
+                  name: 'links',
+                  type: 'array',
+                  fields: [
+                    { name: 'label', type: 'text', required: true },
+                    { name: 'href', type: 'text', required: true },
+                  ],
+                },
+              ],
+            },
+            {
+              name: 'railItems',
+              type: 'array',
+              label: 'Extra rail links',
+              labels: { singular: 'Link', plural: 'Links' },
+              admin: {
+                description:
+                  'Appended to the left rail on every wiki, under the sections. The sections themselves are derived from what each wiki has and are not listed here — a link to an empty index reads as a broken site.',
+                initCollapsed: true,
+              },
+              fields: [
+                { name: 'label', type: 'text', required: true },
+                { name: 'href', type: 'text', required: true },
+                {
+                  name: 'icon',
+                  type: 'select',
+                  defaultValue: 'book',
+                  options: ['book', 'map', 'person', 'star', 'search', 'shield', 'spark', 'check', 'crown', 'scroll'],
+                },
+              ],
+            },
+          ],
+        },
+        {
+          label: 'Directory & standing notes',
+          description:
+            'The hub’s own listing pages, and the two or three sentences that appear on literally every page of the network.',
+          fields: [
+            {
+              type: 'collapsible',
+              label: 'The wikis directory',
+              fields: [
+                { name: 'wikisTitle', type: 'text', label: 'Page title' },
+                { name: 'wikisLede', type: 'textarea', label: 'Lede' },
+                {
+                  type: 'row',
+                  fields: [
+                    { name: 'outNowHeading', type: 'text', label: 'Out now', admin: { width: '50%' } },
+                    { name: 'notOutYetHeading', type: 'text', label: 'Not out yet', admin: { width: '50%' } },
+                  ],
+                },
+                {
+                  name: 'notOutYetNote',
+                  type: 'textarea',
+                  label: 'Note under "not out yet"',
+                  admin: {
+                    description:
+                      'Four of the eight are pre-release and thin on purpose. This is where that is explained rather than looking like neglect.',
+                  },
+                },
+              ],
+            },
+            {
+              type: 'collapsible',
+              label: 'The contributors directory',
+              fields: [
+                { name: 'authorsTitle', type: 'text', label: 'Page title' },
+                { name: 'authorsLede', type: 'textarea', label: 'Lede' },
+              ],
+            },
+            {
+              type: 'collapsible',
+              label: 'Standing notes',
+              admin: {
+                description:
+                  'Printed on every page that has sources, a byline or an attribution line. Changing one of these changes several thousand pages, which is the reason it is worth being editable and the reason to read it twice.',
+              },
+              fields: [
+                {
+                  name: 'sourcesCaveat',
+                  type: 'textarea',
+                  label: 'Under the source list',
+                  admin: {
+                    description:
+                      'The "compiled from public sources, tell us if it is wrong" line. Token: {corrections}, which renders as the link to the corrections queue — delete it and the page loses its only way for a reader to report an error.',
+                  },
+                },
+                {
+                  name: 'attributionFullExtra',
+                  type: 'textarea',
+                  label: 'Extra sentence on full attribution',
+                  admin: {
+                    description:
+                      'Shown only when Licence attribution is set to Full. The template itself is on the Hub home page tab; this is the sentence after it.',
+                  },
+                },
+                {
+                  name: 'bylineTeamFallback',
+                  type: 'text',
+                  label: 'Byline when nobody is named',
+                  admin: { description: 'e.g. "the editorial team". Token: {site}, the network name.' },
+                },
+                {
+                  name: 'maintainerLine',
+                  type: 'text',
+                  label: 'Footer maintainer line',
+                  admin: { description: 'Token: {maintainer}, from the Identity tab.' },
+                },
+              ],
+            },
           ],
         },
         {
@@ -128,6 +258,117 @@ export const SiteSettings: GlobalConfig = {
           fields: [
             { name: 'heroHeading', type: 'text' },
             { name: 'heroSubheading', type: 'textarea' },
+            {
+              name: 'searchPlaceholder',
+              type: 'text',
+              label: 'Search box placeholder',
+              admin: { description: 'In the hero. Blank uses the built-in wording.' },
+            },
+            {
+              type: 'collapsible',
+              label: 'The three counters',
+              admin: {
+                description:
+                  'The numbers themselves are counted when the page is built and cannot be typed here — which is the point of them.',
+              },
+              fields: [
+                {
+                  type: 'row',
+                  fields: [
+                    { name: 'statWikisLabel', type: 'text', label: 'Wikis', admin: { width: '33%' } },
+                    { name: 'statPagesLabel', type: 'text', label: 'Sourced pages', admin: { width: '33%' } },
+                    { name: 'statUpcomingLabel', type: 'text', label: 'Not out yet', admin: { width: '34%' } },
+                  ],
+                },
+              ],
+            },
+            {
+              type: 'collapsible',
+              label: 'Section headings',
+              fields: [
+                {
+                  type: 'row',
+                  fields: [
+                    { name: 'askingHeading', type: 'text', label: 'What people are asking', admin: { width: '50%' } },
+                    { name: 'askingNote', type: 'textarea', label: 'Note', admin: { width: '50%' } },
+                  ],
+                },
+                {
+                  type: 'row',
+                  fields: [
+                    { name: 'directoryHeading', type: 'text', label: 'Every wiki', admin: { width: '50%' } },
+                    { name: 'directoryNote', type: 'textarea', label: 'Note', admin: { width: '50%' } },
+                  ],
+                },
+                { name: 'latestHeading', type: 'text', label: 'Newest writing' },
+              ],
+            },
+            {
+              /*
+                The four house rules at the foot of the hub.
+
+                They are the site's entire argument for existing, printed once,
+                and they were an array literal in the page component — which
+                meant the one paragraph on the network that states what the
+                network promises could not be changed without a deploy.
+
+                Leave the list empty and the four that shipped are shown.
+              */
+              name: 'rules',
+              type: 'array',
+              label: 'House rules',
+              labels: { singular: 'Rule', plural: 'Rules' },
+              admin: {
+                description:
+                  'Leave empty to show the four that shipped. These are promises the rest of the site has to keep, so change them with that in mind.',
+                initCollapsed: true,
+              },
+              fields: [
+                {
+                  name: 'icon',
+                  type: 'select',
+                  defaultValue: 'check',
+                  options: [
+                    'check',
+                    'warn',
+                    'scroll',
+                    'book',
+                    'star',
+                    'search',
+                    'shield',
+                    'spark',
+                    'lock',
+                    'hourglass',
+                  ],
+                },
+                { name: 'heading', type: 'text', required: true },
+                { name: 'body', type: 'textarea', required: true },
+              ],
+            },
+            {
+              type: 'row',
+              fields: [
+                { name: 'rulesHeading', type: 'text', label: 'Rules heading', admin: { width: '50%' } },
+                { name: 'rulesNote', type: 'textarea', label: 'Rules note', admin: { width: '50%' } },
+              ],
+            },
+            {
+              type: 'row',
+              fields: [
+                {
+                  name: 'metaTitleSuffix',
+                  type: 'text',
+                  label: 'Hub title suffix',
+                  admin: { width: '50%', description: 'Appended to the hub’s browser title.' },
+                },
+                {
+                  name: 'metaDescriptionFallback',
+                  type: 'textarea',
+                  label: 'Hub meta description',
+                  admin: { width: '50%', description: 'Used when Description on the Identity tab is blank.' },
+                },
+              ],
+            },
             {
               name: 'attributionStyle',
               type: 'select',

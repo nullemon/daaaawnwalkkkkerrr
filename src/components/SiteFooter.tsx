@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import { Logo } from './Logo'
+import { copy } from '@/lib/copy'
+import { getSiteSettings } from '@/lib/payload'
 
 /**
  * The footer, as a site map rather than a row of links.
@@ -29,7 +31,7 @@ function FooterLink({ href, children }: { href: string; children: React.ReactNod
   return <Link href={href}>{children}</Link>
 }
 
-export function SiteFooter({
+export async function SiteFooter({
   siteName,
   blurb,
   columns,
@@ -55,6 +57,29 @@ export function SiteFooter({
   contactEmail?: string | null
 }) {
   const year = new Date().getFullYear()
+  const settings = await getSiteSettings()
+
+  /*
+    One edit, three hosts.
+
+    The columns are resolved here rather than in each layout because there are
+    three layouts — hub, wiki, companies — and each had its own hardcoded
+    list, which is how the hub came to link to a page the wikis do not have.
+    The list passed in stays the fallback for whichever host this is, so an
+    empty field changes nothing anywhere.
+
+    A column with no links is dropped: an empty heading over nothing reads as a
+    broken site. If that leaves nothing at all — a half-filled record, headings
+    typed and links not yet — the built-in map is used rather than serving a
+    footer with no way out of it.
+  */
+  const edited = (settings.footerColumns ?? [])
+    .map((column) => ({
+      heading: column.heading,
+      links: (column.links ?? []).map((link) => ({ label: link.label, href: link.href })),
+    }))
+    .filter((column) => column.links.length > 0)
+  const shown = edited.length > 0 ? edited : columns
 
   return (
     <footer className="site-footer">
@@ -67,10 +92,18 @@ export function SiteFooter({
             {siteName}
           </p>
           <p className="note">{blurb}</p>
-          {maintainer ? <p className="note">Written and maintained by {maintainer}.</p> : null}
+          {/* No maintainer, no line. An editable sentence with the name missing
+              from the middle of it is worse than the silence it replaces. */}
+          {maintainer ? (
+            <p className="note">
+              {copy(settings.maintainerLine, 'Written and maintained by {maintainer}.', {
+                maintainer,
+              })}
+            </p>
+          ) : null}
         </div>
 
-        {columns.map((column) => (
+        {shown.map((column) => (
           <nav key={column.heading} aria-label={column.heading} className="site-footer-col">
             <p className="eyebrow">{column.heading}</p>
             <ul>

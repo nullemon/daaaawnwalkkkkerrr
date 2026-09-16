@@ -4,6 +4,8 @@ import { useMemo, useState } from 'react'
 import Link from 'next/link'
 import { Icon, type IconName } from './Icon'
 import { PhaseBadge, Rarity } from './Badges'
+import { useUi } from './UiStrings'
+import { fill } from '@/lib/copy'
 import { applyFilters, applySort, distinct, textOf, type Row as BaseRow, type Sort } from '@/lib/table-filter'
 
 /**
@@ -44,15 +46,20 @@ export function DataTable({
   rows,
   columns,
   facets = [],
-  searchPlaceholder = 'Search…',
-  noun = 'results',
+  searchPlaceholder,
+  noun,
 }: {
   rows: Row[]
   columns: Column[]
   facets?: Facet[]
+  /** Both fall back to the registry, so a page only passes one to say something
+      more specific than "Search…" and "results". */
   searchPlaceholder?: string
   noun?: string
 }) {
+  const ui = useUi()
+  const hint = searchPlaceholder ?? ui.t('table.search-placeholder')
+  const things = noun ?? ui.t('table.noun')
   const [query, setQuery] = useState('')
   const [picked, setPicked] = useState<Record<string, string>>({})
   const [sort, setSort] = useState<Sort | null>(null)
@@ -98,8 +105,8 @@ export function DataTable({
             type="search"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder={searchPlaceholder}
-            aria-label={searchPlaceholder}
+            placeholder={hint}
+            aria-label={hint}
           />
         </div>
 
@@ -113,7 +120,7 @@ export function DataTable({
               }
               data-active={picked[facet.key] ? 'true' : undefined}
             >
-              <option value="">{facet.label}: any</option>
+              <option value="">{fill(ui.t('table.facet-any'), { label: facet.label })}</option>
               {options[facet.key]?.map((option) => (
                 <option key={option} value={option}>
                   {option}
@@ -124,7 +131,7 @@ export function DataTable({
         ))}
 
         <p className="filterbar-count" aria-live="polite">
-          <b>{shown.length}</b> of {rows.length} {noun}
+          <b>{shown.length}</b> {fill(ui.t('table.count'), { total: rows.length, noun: things })}
         </p>
 
         {active ? (
@@ -136,7 +143,7 @@ export function DataTable({
               setPicked({})
             }}
           >
-            Reset
+            {ui.t('table.reset')}
           </button>
         ) : null}
       </div>
@@ -185,7 +192,11 @@ export function DataTable({
 
       {shown.length === 0 ? (
         <p className="note datatable-empty">
-          Nothing matches that. <button type="button" onClick={() => { setQuery(''); setPicked({}) }}>Clear the filters</button> to see all {rows.length}.
+          {ui.t('table.empty')}{' '}
+          <button type="button" onClick={() => { setQuery(''); setPicked({}) }}>
+            {ui.t('table.clear-filters')}
+          </button>{' '}
+          {fill(ui.t('table.empty-tail'), { total: rows.length })}
         </p>
       ) : null}
     </div>
@@ -193,6 +204,7 @@ export function DataTable({
 }
 
 function Cell({ row, column }: { row: Row; column: Column }) {
+  const ui = useUi()
   const value = textOf(row, column.key)
   const href = textOf(row, `${column.key}Href`)
 
@@ -233,7 +245,11 @@ function Cell({ row, column }: { row: Row; column: Column }) {
     const unknown = value === '' || value === 'unknown'
     return (
       <td className="num">
-        {unknown ? <span title="No source publishes this figure">unknown</span> : value}
+        {unknown ? (
+          <span title={ui.t('table.unknown-title')}>{ui.t('table.unknown')}</span>
+        ) : (
+          value
+        )}
       </td>
     )
   }

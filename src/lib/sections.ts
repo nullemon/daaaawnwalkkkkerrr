@@ -2,6 +2,7 @@ import type { IconName } from '@/components/Icon'
 import type { Game } from '@/payload-types'
 import { SECTION_PATH, type GameScopedCollection } from './tenancy'
 import { countRecords } from './payload'
+import { getUi } from './ui'
 
 /**
  * The sections a game's wiki can have, and which of them it actually does.
@@ -75,9 +76,20 @@ export type SectionWithCount = Section & { count: number }
  * take its length. See `countRecords`.
  */
 export const sectionsFor = async (game: string): Promise<SectionWithCount[]> => {
+  /*
+    The labels resolve here rather than at each consumer, because there are
+    four of them - the rail, the home page tiles, the directory card's chips
+    and the search index's type labels - and a section named one thing in the
+    rail and another in search results is the kind of small wrongness nobody
+    reports and everybody notices. `SECTIONS` keeps its literals as the
+    fallback, so this reads identically with an empty override table.
+  */
+  const ui = await getUi()
   const counted = await Promise.all(
     SECTIONS.map(async (section) => ({
       ...section,
+      label: ui.label('section', section.collection, section.label),
+      kind: ui.label('kind', section.collection, section.kind),
       count: await countRecords(section.collection, { game }),
     })),
   )

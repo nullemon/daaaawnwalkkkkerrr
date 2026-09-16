@@ -4,9 +4,10 @@ import Link from 'next/link'
 import { useMemo } from 'react'
 import { useRun } from './RunProvider'
 import { Icon } from './Icon'
+import { useUi } from './UiStrings'
+import { fill } from '@/lib/copy'
 import {
   checkRun,
-  STATUS_LABELS,
   summariseRun,
   type EndingNode,
   type QuestNode,
@@ -30,6 +31,7 @@ export function RunDashboard({
   quests: QuestNode[]
   endings: EndingNode[]
 }) {
+  const ui = useUi()
   const { day, phase, completed, segmentsSpent, segmentsLeft, hydrated, started, reset } = useRun()
 
   const results = useMemo(
@@ -60,7 +62,7 @@ export function RunDashboard({
   }, [live])
 
   if (!hydrated) {
-    return <p className="note">Reading your run…</p>
+    return <p className="note">{ui.t('run.reading')}</p>
   }
 
   const dayPct = Math.min(100, Math.round((segmentsSpent / TOTAL_SEGMENTS) * 100))
@@ -69,27 +71,36 @@ export function RunDashboard({
     <div className="dashboard">
       <div className="statrow">
         <div className="statbox">
-          <span className="statbox-label">Day</span>
+          <span className="statbox-label">{ui.t('run.day-label')}</span>
           <span className="statbox-value">
-            {day} <span className="statbox-of">of {TOTAL_DAYS}</span>
+            {day}{' '}
+            <span className="statbox-of">{fill(ui.t('run.stat-of'), { total: TOTAL_DAYS })}</span>
           </span>
-          <span className="statbox-sub">{phase === 'day' ? 'Daytime' : 'Night'}</span>
+          <span className="statbox-sub">
+            {phase === 'day' ? ui.t('run.daytime') : ui.t('run.nighttime')}
+          </span>
         </div>
         <div className="statbox" data-tone={segmentsLeft < 60 ? 'risk' : undefined}>
-          <span className="statbox-label">Segments left</span>
+          <span className="statbox-label">{ui.t('run.segments-left-label')}</span>
           <span className="statbox-value">{segmentsLeft}</span>
-          <span className="statbox-sub">{segmentsSpent} spent of {TOTAL_SEGMENTS}</span>
+          <span className="statbox-sub">
+            {fill(ui.t('run.stat-spent'), { spent: segmentsSpent, total: TOTAL_SEGMENTS })}
+          </span>
         </div>
         <div className="statbox">
-          <span className="statbox-label">Quests done</span>
+          <span className="statbox-label">{ui.t('run.quests-done-label')}</span>
           <span className="statbox-value">{completed.length}</span>
-          <span className="statbox-sub">of {quests.length} catalogued</span>
+          <span className="statbox-sub">
+            {fill(ui.t('run.stat-catalogued'), { total: quests.length })}
+          </span>
         </div>
         <div className="statbox" data-tone={live.length === 0 ? 'risk' : 'good'}>
-          <span className="statbox-label">Endings open</span>
+          <span className="statbox-label">{ui.t('run.stat-endings-open')}</span>
           <span className="statbox-value">{live.length}</span>
           <span className="statbox-sub">
-            {secured.length > 0 ? `${secured.length} already secured` : `${lost} closed off`}
+            {secured.length > 0
+              ? fill(ui.t('run.stat-secured'), { count: secured.length })
+              : fill(ui.t('run.stat-closed'), { count: lost })}
           </span>
         </div>
       </div>
@@ -100,24 +111,21 @@ export function RunDashboard({
 
       {!started && completed.length === 0 ? (
         <div className="callout">
-          <h2>Nothing tracked yet</h2>
-          <p>
-            Tick a quest anywhere on the site and it appears here. Nothing is sent anywhere —
-            it lives in this browser until you decide otherwise.
-          </p>
+          <h2>{ui.t('run.nothing-tracked-title')}</h2>
+          <p>{ui.t('run.nothing-tracked-body')}</p>
         </div>
       ) : null}
 
       {nextUp ? (
         <section className="panel">
           <div className="panel-head">
-            <h2>Do this next</h2>
-            <span className="meta">cheapest route still open</span>
+            <h2>{ui.t('run.do-next')}</h2>
+            <span className="meta">{ui.t('run.cheapest-route')}</span>
           </div>
           <p className="nextup">
             <Link href={`/quests/${nextUp.quest.slug}`}>{nextUp.quest.title}</Link>
             <span className="nextup-why">
-              first outstanding step towards{' '}
+              {ui.t('run.first-step')}{' '}
               <Link href={`/endings/${nextUp.via.slug}`}>{nextUp.via.title}</Link>
             </span>
           </p>
@@ -126,8 +134,8 @@ export function RunDashboard({
 
       <section className="panel">
         <div className="panel-head">
-          <h2>Every ending, from here</h2>
-          <span className="meta">{results.length} routes</span>
+          <h2>{ui.t('run.every-ending')}</h2>
+          <span className="meta">{fill(ui.t('run.routes'), { count: results.length })}</span>
         </div>
         <ul className="endinglist">
           {results.map((result) => {
@@ -137,15 +145,15 @@ export function RunDashboard({
                 <div className="endinglist-top">
                   <Link href={`/endings/${result.ending.slug}`}>{result.ending.title}</Link>
                   <span className="status" data-status={result.status}>
-                    {STATUS_LABELS[result.status]}
+                    {ui.label('ending-status', result.status)}
                   </span>
                 </div>
                 <p className="endinglist-meta">
                   {result.status === 'achieved' ? (
-                    'Every required quest is done.'
+                    ui.t('run.all-required-done')
                   ) : result.status === 'locked-out' ? (
                     <>
-                      Closed by{' '}
+                      {ui.t('run.closed-by')}{' '}
                       {result.blockedBy.map((quest, index) => (
                         <span key={quest.id}>
                           {index > 0 ? ', ' : ''}
@@ -155,14 +163,19 @@ export function RunDashboard({
                       .
                     </>
                   ) : result.chainLength === 0 ? (
-                    'No source records a required questline for this one yet.'
+                    ui.t('run.no-questline')
                   ) : (
                     <>
-                      {result.outstanding.length} of {result.chainLength} quests left
+                      {fill(ui.t('run.left-of-chain'), {
+                        left: result.outstanding.length,
+                        total: result.chainLength,
+                      })}
                       {result.maxCost > 0
-                        ? ` · ${floor ? 'at least ' : ''}${formatSegments(result.maxCost)}`
+                        ? ` · ${floor ? ui.t('run.at-least') : ''}${formatSegments(result.maxCost)}`
                         : ''}
-                      {floor ? ` · ${result.unknownCostCount} with no published cost` : ''}
+                      {floor
+                        ? ` · ${fill(ui.t('run.no-published-cost'), { count: result.unknownCostCount })}`
+                        : ''}
                       {/*
                         A latest-start day computed from a chain whose costs are
                         mostly unpublished is not a deadline, it is arithmetic on
@@ -170,7 +183,7 @@ export function RunDashboard({
                         the data cannot give. Shown only when every cost is known.
                       */}
                       {!floor && result.latestStartDay !== null && result.status !== 'out-of-time'
-                        ? ` · start by day ${result.latestStartDay}`
+                        ? ` · ${fill(ui.t('run.start-by'), { day: result.latestStartDay })}`
                         : ''}
                     </>
                   )}
@@ -184,9 +197,9 @@ export function RunDashboard({
       {completed.length > 0 ? (
         <p className="note">
           <button type="button" className="linkish" onClick={() => reset()}>
-            Clear this run
+            {ui.t('run.clear-run')}
           </button>{' '}
-          — removes every tick and puts the clock back to day 1.
+          {ui.t('run.clear-run-note')}
         </p>
       ) : null}
     </div>

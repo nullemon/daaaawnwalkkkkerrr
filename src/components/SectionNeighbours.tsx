@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import { getAll } from '@/lib/payload'
+import { getUi } from '@/lib/ui'
+import { fill } from '@/lib/copy'
 import { SECTION_PATH, type GameScopedCollection } from '@/lib/tenancy'
 
 /**
@@ -46,7 +48,10 @@ export async function SectionNeighbours({
   label: string
   window?: number
 }) {
-  const all = await getAll(collection, { game, depth: 0, sort: 'title' })
+  const [all, ui] = await Promise.all([
+    getAll(collection, { game, depth: 0, sort: 'title' }),
+    getUi(),
+  ])
   if (all.length < 2) return null
 
   const index = all.findIndex((record) => String(record.slug) === slug)
@@ -69,11 +74,11 @@ export async function SectionNeighbours({
   const neighbours = all.slice(from, to).filter((record) => String(record.slug) !== slug)
 
   return (
-    <nav className="neighbours" aria-label={`More ${label}`}>
+    <nav className="neighbours" aria-label={fill(ui.t('neighbours.more'), { label })}>
       <div className="neighbours-step">
         {previous ? (
           <Link className="neighbours-prev" href={`${base}/${previous.slug}`} rel="prev">
-            <span className="neighbours-dir">Previous</span>
+            <span className="neighbours-dir">{ui.t('neighbours.previous')}</span>
             <span className="neighbours-name">{previous.title}</span>
           </Link>
         ) : (
@@ -81,7 +86,7 @@ export async function SectionNeighbours({
         )}
         {next ? (
           <Link className="neighbours-next" href={`${base}/${next.slug}`} rel="next">
-            <span className="neighbours-dir">Next</span>
+            <span className="neighbours-dir">{ui.t('neighbours.next')}</span>
             <span className="neighbours-name">{next.title}</span>
           </Link>
         ) : (
@@ -92,7 +97,8 @@ export async function SectionNeighbours({
       {neighbours.length > 0 ? (
         <>
           <p className="neighbours-head">
-            More {label} · <Link href={base}>all {all.length}</Link>
+            {fill(ui.t('neighbours.more'), { label })} ·{' '}
+            <Link href={base}>{fill(ui.t('neighbours.all'), { count: all.length })}</Link>
           </p>
           <ul className="neighbours-list">
             {neighbours.map((record) => (

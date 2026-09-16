@@ -4,11 +4,14 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { useAccount } from './AccountProvider'
 import { useRun } from './RunProvider'
+import { useUi } from './UiStrings'
 import { hub } from '@/lib/urls'
+import { fill } from '@/lib/copy'
 
 type Mode = 'signin' | 'register'
 
 export function AccountPanel() {
+  const ui = useUi()
   const account = useAccount()
   const run = useRun()
   const [mode, setMode] = useState<Mode>('signin')
@@ -23,56 +26,53 @@ export function AccountPanel() {
     const password = String(data.get('password') ?? '')
     const result =
       mode === 'signin' ? await account.login(email, password) : await account.register(email, password)
-    if (!result.ok) setError(result.error ?? 'That did not work.')
+    if (!result.ok) setError(result.error ?? ui.t('account.error-generic'))
   }
 
   if (!account.ready) {
-    return <p className="note">Checking…</p>
+    return <p className="note">{ui.t('account.checking')}</p>
   }
 
   if (account.player) {
     return (
       <div className="checker-panel">
-        <h2>Signed in</h2>
+        <h2>{ui.t('account.signed-in')}</h2>
         <p className="note">
-          {account.player.email}. Your run now follows you between devices.
+          {fill(ui.t('account.signed-in-note'), { email: account.player.email })}
         </p>
         <dl className="facts">
           <div className="fact">
-            <dt>Position</dt>
+            <dt>{ui.t('account.position')}</dt>
             <dd>
               Day {run.day} {run.phase}
             </dd>
           </div>
           <div className="fact">
-            <dt>Segments left</dt>
+            <dt>{ui.t('account.segments-left')}</dt>
             <dd className="mono">{run.segmentsLeft}</dd>
           </div>
           <div className="fact">
-            <dt>Quests done</dt>
+            <dt>{ui.t('account.quests-done')}</dt>
             <dd className="mono">{run.completed.length}</dd>
           </div>
         </dl>
         <p className="note">
-          {run.syncing ? 'Syncing…' : 'Saved. Changes sync automatically.'}
+          {run.syncing ? ui.t('account.syncing') : ui.t('account.saved')}
         </p>
         <div className="field-row">
           <Link className="button" href="/tools/run-checker">
-            Open the run checker
+            {ui.t('account.open-checker')}
           </Link>
           <button type="button" className="linkish" onClick={() => void account.logout()}>
-            Sign out
+            {ui.t('account.sign-out')}
           </button>
         </div>
 
         <div className="danger-zone">
-          <h3>Delete this account</h3>
+          <h3>{ui.t('account.delete-heading')}</h3>
           {confirmingDelete ? (
             <>
-              <p className="note">
-                This removes your email and your saved run from the server for good. Your run stays
-                in this browser — signing out does not wipe it.
-              </p>
+              <p className="note">{ui.t('account.delete-warning')}</p>
               <div className="field-row">
                 <button
                   type="button"
@@ -80,19 +80,19 @@ export function AccountPanel() {
                   disabled={account.busy}
                   onClick={async () => {
                     const result = await account.deleteAccount()
-                    if (!result.ok) setError(result.error ?? 'Could not delete the account.')
+                    if (!result.ok) setError(result.error ?? ui.t('account.error-delete'))
                   }}
                 >
-                  {account.busy ? 'Deleting…' : 'Yes, delete it permanently'}
+                  {account.busy ? ui.t('account.deleting') : ui.t('account.delete-confirm')}
                 </button>
                 <button type="button" className="linkish" onClick={() => setConfirmingDelete(false)}>
-                  Cancel
+                  {ui.t('form.cancel')}
                 </button>
               </div>
             </>
           ) : (
             <button type="button" className="linkish" onClick={() => setConfirmingDelete(true)}>
-              Delete account and saved run
+              {ui.t('account.delete-start')}
             </button>
           )}
           {error ? (
@@ -108,7 +108,7 @@ export function AccountPanel() {
   return (
     <div className="checker-panel">
       <div className="panel-head">
-        <h2>{mode === 'signin' ? 'Sign in' : 'Create an account'}</h2>
+        <h2>{mode === 'signin' ? ui.t('account.sign-in') : ui.t('account.register')}</h2>
         <button
           type="button"
           className="linkish"
@@ -117,22 +117,19 @@ export function AccountPanel() {
             setError('')
           }}
         >
-          {mode === 'signin' ? 'Need an account?' : 'Already have one?'}
+          {mode === 'signin' ? ui.t('account.need-account') : ui.t('account.have-account')}
         </button>
       </div>
 
-      <p className="note">
-        You do not need this. Everything on the site works signed out, with your run kept in this
-        browser. An account exists only so the same run opens on your phone and your desktop.
-      </p>
+      <p className="note">{ui.t('account.optional-note')}</p>
 
       <form onSubmit={onSubmit} className="stack-sm">
         <div className="field">
-          <label htmlFor="account-email">Email</label>
+          <label htmlFor="account-email">{ui.t('account.email-label')}</label>
           <input id="account-email" name="email" type="email" required autoComplete="email" />
         </div>
         <div className="field">
-          <label htmlFor="account-password">Password</label>
+          <label htmlFor="account-password">{ui.t('account.password-label')}</label>
           <input
             id="account-password"
             name="password"
@@ -141,11 +138,17 @@ export function AccountPanel() {
             minLength={8}
             autoComplete={mode === 'signin' ? 'current-password' : 'new-password'}
           />
-          {mode === 'register' ? <span className="note">At least 8 characters.</span> : null}
+          {mode === 'register' ? (
+            <span className="note">{ui.t('account.password-hint')}</span>
+          ) : null}
         </div>
         <div>
           <button type="submit" className="button" disabled={account.busy}>
-            {account.busy ? 'Working…' : mode === 'signin' ? 'Sign in' : 'Create account'}
+            {account.busy
+              ? ui.t('account.working')
+              : mode === 'signin'
+                ? ui.t('account.sign-in')
+                : ui.t('account.create')}
           </button>
         </div>
         {error ? (
@@ -156,8 +159,8 @@ export function AccountPanel() {
       </form>
 
       <p className="note">
-        We store your email and your run. Nothing else. See the{' '}
-        <a href={hub('/privacy')}>privacy policy</a>.
+        {ui.t('account.privacy-note')}{' '}
+        <a href={hub('/privacy')}>{ui.t('account.privacy-link')}</a>.
       </p>
     </div>
   )

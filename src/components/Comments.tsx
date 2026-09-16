@@ -1,6 +1,8 @@
 'use client'
 
 import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useUi } from './UiStrings'
+import type { Ui } from '@/lib/ui-registry'
 
 type Comment = {
   id: string | number
@@ -70,7 +72,7 @@ const RELATIVE: [number, Intl.RelativeTimeFormatUnit][] = [
   [604800, 'day'],
 ]
 
-function when(iso: string) {
+function when(iso: string, ui: Ui) {
   const then = new Date(iso)
   if (Number.isNaN(then.getTime())) return { label: iso, exact: iso }
 
@@ -83,7 +85,7 @@ function when(iso: string) {
   })
 
   const seconds = (Date.now() - then.getTime()) / 1000
-  if (seconds < 45) return { label: 'just now', exact }
+  if (seconds < 45) return { label: ui.t('comments.just-now'), exact }
 
   const format = new Intl.RelativeTimeFormat('en-GB', { numeric: 'auto' })
   let divisor = 1
@@ -105,6 +107,7 @@ const parentIdOf = (comment: Comment) => {
 }
 
 export function Comments({ pageUrl, gameId }: { pageUrl: string; gameId?: number | string }) {
+  const ui = useUi()
   const [comments, setComments] = useState<Comment[] | null>(null)
   const [status, setStatus] = useState<Status>('idle')
   const [error, setError] = useState('')
@@ -188,14 +191,14 @@ export function Comments({ pageUrl, gameId }: { pageUrl: string; gameId?: number
       form.reset()
     } catch (caught) {
       setStatus('error')
-      setError(caught instanceof Error ? caught.message : 'Something went wrong.')
+      setError(caught instanceof Error ? caught.message : ui.t('account.error-generic'))
     }
   }
 
   const row = (comment: Comment, isReply: boolean) => {
-    const name = comment.authorName?.trim() || 'Anonymous'
+    const name = comment.authorName?.trim() || ui.t('comments.anonymous')
     const avatar = avatarFor(name)
-    const time = when(comment.createdAt)
+    const time = when(comment.createdAt, ui)
 
     return (
       <li key={comment.id} className="comment" data-reply={isReply ? 'true' : undefined}>
@@ -224,7 +227,7 @@ export function Comments({ pageUrl, gameId }: { pageUrl: string; gameId?: number
                 document.getElementById('comment-box')?.focus()
               }}
             >
-              Reply
+              {ui.t('comments.reply')}
             </button>
           ) : null}
         </div>
@@ -236,40 +239,35 @@ export function Comments({ pageUrl, gameId }: { pageUrl: string; gameId?: number
     <section className="section comments" id="comments">
       <div className="section-head">
         <h2>
-          Comments{total > 0 ? <span className="comment-count">{total}</span> : null}
+          {ui.t('comments.heading')}
+          {total > 0 ? <span className="comment-count">{total}</span> : null}
         </h2>
         {total > 1 ? (
           <button type="button" className="comment-sort" onClick={() => setNewest((on) => !on)}>
-            {newest ? 'Newest first' : 'Oldest first'}
+            {newest ? ui.t('comments.sort-newest') : ui.t('comments.sort-oldest')}
           </button>
         ) : null}
       </div>
 
-      <p className="comment-rule note">
-        Every comment is read by an editor before it appears, so yours will not show up straight
-        away. Links are removed automatically — if you have a source, describe where it is and we
-        will find it.
-      </p>
+      <p className="comment-rule note">{ui.t('comments.rule')}</p>
 
       {/* The box first: the people who came to say something look for it here. */}
       {status === 'sent' ? (
         <div className="callout">
-          <h2>Thank you — that is with a moderator</h2>
-          <p>
-            It will appear once an editor has read it. We approve by hand, which is slower and is
-            the reason this section is worth reading.
-          </p>
+          <h2>{ui.t('comments.sent-title')}</h2>
+          <p>{ui.t('comments.sent-body')}</p>
           <button type="button" className="linkish" onClick={() => setStatus('idle')}>
-            Write another
+            {ui.t('comments.sent-again')}
           </button>
         </div>
       ) : (
         <form className="comment-form" onSubmit={onSubmit}>
           {replyTo ? (
             <p className="comment-replying">
-              Replying to <strong>{replyTo.authorName?.trim() || 'Anonymous'}</strong>
+              {ui.t('comments.replying-to')}{' '}
+              <strong>{replyTo.authorName?.trim() || ui.t('comments.anonymous')}</strong>
               <button type="button" className="linkish" onClick={() => setReplyTo(null)}>
-                Cancel
+                {ui.t('form.cancel')}
               </button>
             </p>
           ) : null}
@@ -281,9 +279,7 @@ export function Comments({ pageUrl, gameId }: { pageUrl: string; gameId?: number
             required
             maxLength={4000}
             placeholder={
-              replyTo
-                ? 'Your reply…'
-                : 'Corrections, things we have missed, or what happened on your run.'
+              replyTo ? ui.t('comments.reply-placeholder') : ui.t('comments.body-placeholder')
             }
           />
           <div className="comment-actions">
@@ -292,10 +288,14 @@ export function Comments({ pageUrl, gameId }: { pageUrl: string; gameId?: number
               type="text"
               maxLength={60}
               autoComplete="nickname"
-              placeholder="Your name (optional)"
+              placeholder={ui.t('comments.name-placeholder')}
             />
             <button type="submit" className="button" disabled={status === 'sending'}>
-              {status === 'sending' ? 'Sending…' : replyTo ? 'Post reply' : 'Post comment'}
+              {status === 'sending'
+                ? ui.t('form.sending')
+                : replyTo
+                  ? ui.t('comments.post-reply')
+                  : ui.t('comments.post')}
             </button>
           </div>
           {status === 'error' ? <p className="note">{error}</p> : null}
@@ -303,9 +303,9 @@ export function Comments({ pageUrl, gameId }: { pageUrl: string; gameId?: number
       )}
 
       {comments === null ? (
-        <p className="note">Loading…</p>
+        <p className="note">{ui.t('comments.loading')}</p>
       ) : threads.length === 0 ? (
-        <p className="comment-empty note">Nothing here yet. Be the first.</p>
+        <p className="comment-empty note">{ui.t('comments.empty')}</p>
       ) : (
         <ul className="comment-list">
           {threads.map(({ comment, replies }) => (

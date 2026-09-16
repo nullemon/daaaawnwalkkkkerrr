@@ -3,6 +3,7 @@ import { SectionNeighbours } from '@/components/SectionNeighbours'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
+import { Callout } from '@/components/Callout'
 import { Badge, Confidence } from '@/components/Badges'
 import { Facts } from '@/components/Facts'
 import { RichText } from '@/components/RichText'
@@ -48,7 +49,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function EndingPage({ params }: Props) {
   const { game, slug } = await params
-  const ending = await getBySlug('endings', slug, { game, depth: 2 })
+  const [wiki, ending] = await Promise.all([
+    getGame(game),
+    getBySlug('endings', slug, { game, depth: 2 }),
+  ])
   if (!ending) notFound()
 
   const ally = rel<Character>(ending.ally)
@@ -154,13 +158,17 @@ export default async function EndingPage({ params }: Props) {
 
         <RichText data={ending.body} />
 
-        <div className="callout">
-          <h2>Is it still reachable from where you are?</h2>
+        <Callout
+          game={wiki}
+          where="endings-detail"
+          heading="Is it still reachable from where you are?"
+          builtIn={(wiki?.features ?? []).includes('run-checker')}
+        >
           <p>
             The <Link href="/tools/run-checker">run checker</Link> takes your current day and the
             quests you have finished, and tells you whether this one is still on the table.
           </p>
-        </div>
+        </Callout>
 
         <AdSlot />
         <Sources sources={ending.sources} />

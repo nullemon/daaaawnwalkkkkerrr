@@ -3,22 +3,42 @@ import Link from 'next/link'
 import { Suspense } from 'react'
 import { PageHeader } from '@/components/PageHeader'
 import { BuildPlanner, type PlannerPerk, type PlannerTree } from '@/components/BuildPlanner'
-import { getAll } from '@/lib/payload'
+import { getAll, getGame } from '@/lib/payload'
 import type { SkillTree } from '@/payload-types'
 import { requireFeature } from '@/lib/features'
+import { toolCopy } from '@/lib/game-copy'
+import { copy } from '@/lib/copy'
+import { gameName } from '@/lib/section-copy'
 
 type Props = { params: Promise<{ game: string }> }
 
-export const metadata: Metadata = {
-  title: 'Build planner — pick perks across all three trees',
-  description:
-    'Plan a Blood of Dawnwalker build across Swordmastery, Witchcraft and Vampirism. Enforces one ultimate per tree, totals the segment cost, and gives you a.',
-  alternates: { canonical: '/tools/build-planner' },
+/*
+  The description shipped reading "…totals the segment cost, and gives you a."
+  A sentence cut off mid-clause, in the one place a reader sees before they
+  decide whether to click: the search result. Nothing errors on a truncated
+  string and no test covers meta text, so it sat there. The clause it was
+  missing is the shareable link, which the planner has always produced.
+*/
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { game: slug } = await params
+  const doc = await getGame(slug)
+  const words = toolCopy(doc)
+  const tokens = { game: gameName(doc) }
+
+  return {
+    title: copy(words.buildPlannerTitle, 'Build planner — pick perks across all three trees', tokens),
+    description: copy(
+      words.buildPlannerDescription,
+      'Plan a {game} build across Swordmastery, Witchcraft and Vampirism. Enforces one ultimate per tree, totals the segment cost, and gives you a link you can share.',
+      tokens,
+    ),
+    alternates: { canonical: '/tools/build-planner' },
+  }
 }
 
 export default async function BuildPlannerPage({ params }: Props) {
   const { game } = await params
-  await requireFeature(game, 'build-planner')
+  const doc = await requireFeature(game, 'build-planner')
   const [perkDocs, treeDocs] = await Promise.all([
     getAll('perks', { game, depth: 1, sort: 'title' }),
     getAll('skill-trees', { game, depth: 0 }),
@@ -48,13 +68,20 @@ export default async function BuildPlannerPage({ params }: Props) {
       }
     })
 
+  const words = toolCopy(doc)
+  const tokens = { game: gameName(doc), trees: trees.length, perks: perks.length }
+
   return (
     <>
       <PageHeader
         eyebrow="Tool"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Build planner' }]}
-        title="Build planner"
-        lede="Three trees, nine ultimates, one ultimate per tree. Pick your way through and share the result as a link."
+        title={copy(words.buildPlannerHeading, 'Build planner', tokens)}
+        lede={copy(
+          words.buildPlannerLede,
+          'Three trees, nine ultimates, one ultimate per tree. Pick your way through and share the result as a link.',
+          tokens,
+        )}
       />
       <div className="page body-main">
         {/* useSearchParams renders this subtree on the client; the boundary is

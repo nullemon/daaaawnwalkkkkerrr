@@ -81,6 +81,18 @@ and in `docs/DATA.md`, not into a coin flip. See those files for the live list.
 **Write original prose.** Facts are free to compile; sentences are not. Never
 paste from another site.
 
+**A sentence about one game does not belong in a component.** It is invisible
+until a second game exists, and then it is on every page of all of them - the
+Regions index on the Gears of War wiki headed "Vale Sangora", in the `<title>`
+and the meta description too. Reader-visible copy is a field: on the Game for
+a wiki's own words, in a global for the hub, the legal pages, the companies
+host and the interface. Every one of those fields is optional and falls back to
+the wording in the code, so a blank record renders the site the code does.
+`pnpm seed:copy` writes that wording in so an editor opens a real sentence.
+See `docs/COPY.md` - it also lists the four things that stay hardcoded, and
+why making the "this page is not ready to publish" warning editable would
+defeat it.
+
 **Every content record belongs to a game.** Thirteen collections carry a
 `game` relationship, and every public read filters on it. A record without one
 does not error — it simply never appears on any page, anywhere, with nothing in
@@ -320,6 +332,7 @@ pnpm seed:prune     # delete pages a generator would no longer write
 pnpm seed:cite      # cite the pages that compile this wiki's own records
 pnpm seed:guide-images  # a picture on every guide, from its own game
 pnpm seed:publish   # publish drafts — see the gotcha above, this matters
+pnpm seed:copy      # put the shipped wording into the fields that can change it
 ```
 
 `seed:prune` exists because the other passes upsert and never delete, so

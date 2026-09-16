@@ -6,15 +6,34 @@ import { sectionArt } from '@/lib/art'
 import { Badge, Confidence } from '@/components/Badges'
 import { EntityCard } from '@/components/EntityCard'
 import { RunOutlook } from '@/components/RunOutlook'
-import { getAll } from '@/lib/payload'
+import { Callout } from '@/components/Callout'
+import { getAll, getGame } from '@/lib/payload'
+import { sectionCopy } from '@/lib/section-copy'
 import { getRunGraph } from '@/lib/runData'
 
 type Props = { params: Promise<{ game: string }> }
 
-export const metadata: Metadata = {
-  title: 'All seven endings and how each one is gated',
-  description:
-    'The seven endings of The Blood of Dawnwalker, sorted by what decides them: an ally questline, a choice at the finale, or the thirty-day clock.',
+/*
+  A function, not a `metadata` object.
+
+  This page exported a module-level `metadata` naming The Blood of Dawnwalker,
+  so all eight wikis' ending indexes shipped the same <title> and the same
+  description — eight pages competing for one search result, seven of them
+  describing a game they are not about. A static export cannot read the game
+  it is rendering for; that is the whole bug.
+*/
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { game: slug } = await params
+  const [game, endings] = await Promise.all([
+    getGame(slug),
+    getAll('endings', { game: slug, depth: 0 }),
+  ])
+  const copy = sectionCopy('endings', game, { total: endings.length })
+  return {
+    title: copy.title,
+    description: copy.description,
+    alternates: { canonical: '/endings' },
+  }
 }
 
 const GATE_LABEL: Record<string, string> = {
@@ -25,7 +44,11 @@ const GATE_LABEL: Record<string, string> = {
 
 export default async function EndingsIndex({ params }: Props) {
   const { game } = await params
-  const endings = await getAll('endings', { game, sort: 'title', depth: 0 })
+  const [doc, endings] = await Promise.all([
+    getGame(game),
+    getAll('endings', { game, sort: 'title', depth: 0 }),
+  ])
+  const copy = sectionCopy('endings', doc, { total: endings.length })
 
   /*
    * A section with no records is not this game's section. The rail and the
@@ -46,8 +69,8 @@ export default async function EndingsIndex({ params }: Props) {
         eyebrow="Database"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Endings' }]}
         icon="crown"
-        title="The seven endings"
-        lede="Five of these are decided at the finale and cannot be lost early. Two are gated on questlines you have to finish long before you get there — those are the ones people lose without noticing."
+        title={copy.heading}
+        lede={copy.lede}
       />
       <div className="page body-main">
         <RunOutlook quests={graph.quests} endings={graph.endings} />
@@ -88,13 +111,17 @@ export default async function EndingsIndex({ params }: Props) {
             </section>
           )
         })}
-        <div className="callout">
-          <h2>Can you still reach the one you want?</h2>
+        <Callout
+          game={doc}
+          where="endings-index"
+          heading="Can you still reach the one you want?"
+          builtIn={(doc?.features ?? []).includes('run-checker')}
+        >
           <p>
             The <Link href="/tools/run-checker">run checker</Link> compares the chain each ending
             needs against the segments you have left.
           </p>
-        </div>
+        </Callout>
       </div>
     </>
   )

@@ -2,16 +2,20 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PageHeader } from '@/components/PageHeader'
 import { getAll, getGame } from '@/lib/payload'
+import { sectionCopy } from '@/lib/section-copy'
 
 type Props = { params: Promise<{ game: string }> }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { game: slug } = await params
-  const game = await getGame(slug)
-  const name = game?.shortTitle || game?.title || 'this game'
+  const [game, maps] = await Promise.all([
+    getGame(slug),
+    getAll('maps', { game: slug, depth: 0 }),
+  ])
+  const copy = sectionCopy('maps', game, { total: maps.length })
   return {
-    title: `${name} maps`,
-    description: `Interactive maps for ${name}, with every marked location linking to what is recorded about it.`,
+    title: copy.title,
+    description: copy.description,
     alternates: { canonical: '/maps' },
   }
 }
@@ -23,6 +27,7 @@ export default async function MapsIndex({ params }: Props) {
     getAll('maps', { game: slug, sort: 'order', depth: 1 }),
   ])
   const name = game?.shortTitle || game?.title || 'this game'
+  const copy = sectionCopy('maps', game, { total: maps.length })
 
   return (
     <>
@@ -30,8 +35,8 @@ export default async function MapsIndex({ params }: Props) {
         eyebrow="Database"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Maps' }]}
         icon="map"
-        title="Maps"
-        lede={`Every map published for ${name}, with what is marked on it linking to the record for that thing.`}
+        title={copy.heading}
+        lede={copy.lede}
       />
       <div className="page body-main">
         {maps.length === 0 ? (

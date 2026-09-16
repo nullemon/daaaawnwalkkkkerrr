@@ -4,8 +4,9 @@ import Link from 'next/link'
 import { useMemo, useState } from 'react'
 import { useRun } from './RunProvider'
 import { SpoilerSetting } from './Spoiler'
+import { useUi } from './UiStrings'
+import { fill } from '@/lib/copy'
 import {
-  STATUS_LABELS,
   checkRun,
   type EndingNode,
   type QuestNode,
@@ -29,7 +30,23 @@ const STATUS_TONE: Record<ReachabilityStatus, 'good' | 'warn' | 'risk'> = {
 
 const BADGE_LEVEL = { good: 'high', warn: 'medium', risk: 'low' } as const
 
-export function RunChecker({ quests, endings }: { quests: QuestNode[]; endings: EndingNode[] }) {
+export function RunChecker({
+  quests,
+  endings,
+  /*
+    The one sentence on this page that is an editorial position rather than a
+    result: a total built on costs nobody published is a floor. It is editable
+    per wiki - see `runCheckerFloorNote` in `src/fields/gameCopy.ts` - and it
+    falls back to the wording that shipped, because a blank must never leave
+    the numbers above it standing unqualified.
+  */
+  floorNote,
+}: {
+  quests: QuestNode[]
+  endings: EndingNode[]
+  floorNote?: string
+}) {
+  const ui = useUi()
   const run = useRun()
   const [filter, setFilter] = useState('')
 
@@ -68,15 +85,12 @@ export function RunChecker({ quests, endings }: { quests: QuestNode[]; endings: 
   return (
     <div className="checker">
       <section className="checker-panel" aria-labelledby="where-heading">
-        <h2 id="where-heading">Where are you?</h2>
-        <p className="note">
-          Your journal shows the day. Segments only advance on actions marked with an hourglass, so
-          this is a budget, not a clock.
-        </p>
+        <h2 id="where-heading">{ui.t('run.where-heading')}</h2>
+        <p className="note">{ui.t('run.where-note')}</p>
 
         <div className="field-row">
           <div className="field">
-            <label htmlFor="run-day">Day</label>
+            <label htmlFor="run-day">{ui.t('run.day-label')}</label>
             <input
               id="run-day"
               type="number"
@@ -87,18 +101,18 @@ export function RunChecker({ quests, endings }: { quests: QuestNode[]; endings: 
             />
           </div>
           <div className="field">
-            <label htmlFor="run-phase">Phase</label>
+            <label htmlFor="run-phase">{ui.t('run.phase-label')}</label>
             <select
               id="run-phase"
               value={run.phase}
               onChange={(event) => run.setClock({ phase: event.target.value as Phase })}
             >
-              <option value="day">Day</option>
-              <option value="night">Night</option>
+              <option value="day">{ui.label('phase', 'day')}</option>
+              <option value="night">{ui.label('phase', 'night')}</option>
             </select>
           </div>
           <div className="field">
-            <label htmlFor="run-into">Segments into phase</label>
+            <label htmlFor="run-into">{ui.t('run.into-label')}</label>
             <input
               id="run-into"
               type="number"
@@ -114,16 +128,20 @@ export function RunChecker({ quests, endings }: { quests: QuestNode[]; endings: 
           <div
             className="budget-bar"
             role="img"
-            aria-label={`${run.segmentsSpent} of ${TOTAL_SEGMENTS} segments spent`}
+            aria-label={fill(ui.t('run.budget-aria'), {
+              spent: run.segmentsSpent,
+              total: TOTAL_SEGMENTS,
+            })}
           >
             <span className="budget-spent" style={{ width: `${spentPct}%` }} />
           </div>
           <div className="budget-figures">
             <span>
-              <strong className="mono">{run.segmentsSpent}</strong> spent
+              <strong className="mono">{run.segmentsSpent}</strong> {ui.t('run.spent')}
             </span>
             <span>
-              <strong className="mono">{run.segmentsLeft}</strong> left ({formatSegments(run.segmentsLeft)})
+              <strong className="mono">{run.segmentsLeft}</strong> {ui.t('run.left')} (
+              {formatSegments(run.segmentsLeft)})
             </span>
           </div>
         </div>
@@ -133,20 +151,18 @@ export function RunChecker({ quests, endings }: { quests: QuestNode[]; endings: 
 
       <section className="checker-panel" aria-labelledby="done-heading">
         <div className="panel-head">
-          <h2 id="done-heading">What have you finished?</h2>
+          <h2 id="done-heading">{ui.t('run.done-heading')}</h2>
           <button type="button" className="linkish" onClick={run.reset}>
-            Reset run
+            {ui.t('run.reset')}
           </button>
         </div>
-        <p className="note">
-          Ticked here or on any quest page — it is the same run either way, kept in this browser.
-        </p>
+        <p className="note">{ui.t('run.done-note')}</p>
         <div className="field">
-          <label htmlFor="quest-filter">Filter quests</label>
+          <label htmlFor="quest-filter">{ui.t('run.filter-label')}</label>
           <input
             id="quest-filter"
             type="search"
-            placeholder="Start typing a quest name"
+            placeholder={ui.t('run.filter-placeholder')}
             value={filter}
             onChange={(event) => setFilter(event.target.value)}
           />
@@ -164,32 +180,39 @@ export function RunChecker({ quests, endings }: { quests: QuestNode[]; endings: 
                 <span>
                   {quest.title}
                   <span className="sub">
-                    {quest.phase === 'either' ? 'Day or night' : `${quest.phase} only`}
-                    {quest.costKnown ? ` · ${quest.timeMax} segments` : ' · cost unconfirmed'}
+                    {ui.label('quest-phase', quest.phase)}
+                    {quest.costKnown
+                      ? ` · ${fill(ui.t('run.segments'), { count: quest.timeMax })}`
+                      : ` · ${ui.t('run.cost-unconfirmed')}`}
                   </span>
                 </span>
               </label>
             </li>
           ))}
-          {visibleQuests.length === 0 ? <li className="note">No quest matches that.</li> : null}
+          {visibleQuests.length === 0 ? (
+            <li className="note">{ui.t('run.no-quest-match')}</li>
+          ) : null}
         </ul>
       </section>
 
       <section className="checker-results" aria-labelledby="next-heading">
-        <h2 id="next-heading">What you can start right now</h2>
+        <h2 id="next-heading">{ui.t('run.next-heading')}</h2>
         {availableNow.length > 0 ? (
           <>
             <p className="note">
-              Prerequisites met, and playable during {run.phase === 'night' ? 'the night' : 'the day'}.
-              Everything else needs either another quest finished first or the other phase.
+              {fill(ui.t('run.next-note'), { phase: ui.label('phase-lower', run.phase) })}
             </p>
             <ul className="next-up">
               {availableNow.map((quest) => (
                 <li key={quest.id}>
                   <Link href={`/quests/${quest.slug}`}>{quest.title}</Link>
                   <span className="sub">
-                    {quest.phase === 'either' ? 'Either phase' : `${quest.phase} only`}
-                    {quest.costKnown ? ` · ${quest.timeMax} segments` : ''}
+                    {quest.phase === 'either'
+                      ? ui.t('run.either-phase')
+                      : ui.label('quest-phase', quest.phase)}
+                    {quest.costKnown
+                      ? ` · ${fill(ui.t('run.segments'), { count: quest.timeMax })}`
+                      : ''}
                   </span>
                 </li>
               ))}
@@ -197,14 +220,15 @@ export function RunChecker({ quests, endings }: { quests: QuestNode[]; endings: 
           </>
         ) : (
           <p className="note">
-            Nothing in an ending chain is startable in this phase. Switch to{' '}
-            {run.phase === 'night' ? 'day' : 'night'} above, or finish a prerequisite first.
+            {fill(ui.t('run.next-empty'), {
+              phase: ui.label('phase-lower', run.phase === 'night' ? 'day' : 'night'),
+            })}
           </p>
         )}
       </section>
 
       <section className="checker-results" aria-labelledby="results-heading">
-        <h2 id="results-heading">What is still reachable</h2>
+        <h2 id="results-heading">{ui.t('run.results-heading')}</h2>
         <ul className="results">
           {results.map((result) => {
             const tone = STATUS_TONE[result.status]
@@ -215,36 +239,54 @@ export function RunChecker({ quests, endings }: { quests: QuestNode[]; endings: 
                     <Link href={`/endings/${result.ending.slug}`}>{result.ending.title}</Link>
                   </h3>
                   <span className="badge" data-level={BADGE_LEVEL[tone]}>
-                    {STATUS_LABELS[result.status]}
+                    {ui.label('ending-status', result.status)}
                   </span>
                 </div>
 
                 {result.status === 'locked-out' ? (
                   <p className="result-detail">
-                    Closed by {result.blockedBy.map((quest) => quest.title).join(', ')}. No amount of
-                    remaining time reopens it.
+                    {fill(ui.t('run.locked-out-detail'), {
+                      quests: result.blockedBy.map((quest) => quest.title).join(', '),
+                    })}
                   </p>
                 ) : result.chainLength === 0 ? (
                   <p className="result-detail">
                     {result.ending.isFailure
-                      ? 'Reached by overrunning the thirty days. Nothing can bar it.'
-                      : 'Needs no advance preparation. Decided at the finale, so it stays open as long as you get there.'}
+                      ? ui.t('run.failure-detail')
+                      : ui.t('run.no-prep-detail')}
                   </p>
                 ) : result.status === 'achieved' ? (
-                  <p className="result-detail">Everything this ending needs is already done.</p>
+                  <p className="result-detail">{ui.t('run.achieved-detail')}</p>
                 ) : (
                   <p className="result-detail">
-                    {result.outstanding.length} quest{result.outstanding.length === 1 ? '' : 's'} left
+                    {fill(
+                      ui.t(
+                        result.outstanding.length === 1
+                          ? 'run.quests-left-one'
+                          : 'run.quests-left-many',
+                      ),
+                      { count: result.outstanding.length },
+                    )}
                     {result.unknownCostCount > 0
-                      ? `, of which ${result.unknownCostCount} ${result.unknownCostCount === 1 ? 'has' : 'have'} no confirmed cost`
-                      : ` · ${result.maxCost} segments of your ${result.segmentsLeft}`}
+                      ? fill(
+                          ui.t(
+                            result.unknownCostCount === 1
+                              ? 'run.unconfirmed-one'
+                              : 'run.unconfirmed-many',
+                          ),
+                          { count: result.unknownCostCount },
+                        )
+                      : fill(ui.t('run.cost-of-yours'), {
+                          cost: result.maxCost,
+                          left: result.segmentsLeft,
+                        })}
                     .
                   </p>
                 )}
 
                 {result.outstanding.length > 0 ? (
                   <details>
-                    <summary>What is left</summary>
+                    <summary>{ui.t('run.whats-left')}</summary>
                     <ol className="chain">
                       {result.outstanding.map((quest, position) => (
                         <li key={quest.id}>
@@ -261,12 +303,10 @@ export function RunChecker({ quests, endings }: { quests: QuestNode[]; endings: 
         </ul>
 
         <div className="callout" data-tone="risk">
-          <h2>Read these as a floor, not a verdict</h2>
+          <h2>{floorNote?.trim() || ui.t('run.floor-title')}</h2>
           <p>
-            Reliable per-quest segment costs are not published anywhere we trust, so the checker
-            counts what it knows and tells you what it does not. The prerequisite and lock-out logic
-            is sound. The arithmetic is only as good as the costs behind it.{' '}
-            <Link href="/corrections">Send us real numbers</Link> and this sharpens for everyone.
+            {ui.t('run.floor-body')}{' '}
+            <Link href="/corrections">{ui.t('run.floor-link')}</Link> {ui.t('run.floor-tail')}
           </p>
         </div>
       </section>

@@ -4,6 +4,8 @@ import Link from 'next/link'
 import { useMemo } from 'react'
 import { useRun } from './RunProvider'
 import { Icon } from './Icon'
+import { useUi } from './UiStrings'
+import { fill } from '@/lib/copy'
 import { indexQuests, type QuestNode } from '@/lib/reachability'
 import { chainPlan } from '@/lib/unlock'
 import { formatSegments } from '@/lib/segments'
@@ -21,17 +23,21 @@ export function UnlockPath({
   roots,
   quests,
   questId,
-  heading = 'How to unlock this',
-  emptyNote = 'Nothing has to happen first — this is open from the start of the run.',
+  heading,
+  emptyNote,
 }: {
   /** Where to start walking: one quest, or an ending's whole questline. */
   roots: string[]
   quests: QuestNode[]
   /** Set when the page is about a quest, so it renders as the last step. */
   questId?: string
+  /** Both fall back to the registry; a page passes one to say something else. */
   heading?: string
   emptyNote?: string
 }) {
+  const ui = useUi()
+  const title = heading ?? ui.t('unlock.heading')
+  const empty = emptyNote ?? ui.t('unlock.empty-note')
   const { completed, hydrated, isDone, toggleQuest, segmentsLeft } = useRun()
 
   const plan = useMemo(
@@ -54,16 +60,16 @@ export function UnlockPath({
     return (
       <section className="section">
         <div className="section-head">
-          <h2>{heading}</h2>
+          <h2>{title}</h2>
         </div>
         <div className="callout" data-tone="risk">
           <h2>
-            <Icon name="lock" size={14} /> Closed for this run
+            <Icon name="lock" size={14} /> {ui.t('unlock.closed-title')}
           </h2>
           <p>
-            You marked <Link href={`/quests/${lockedBy.slug}`}>{lockedBy.title}</Link> as done, and
-            it permanently locks this route out. No amount of time left changes that — it is a
-            different playthrough, not a longer one.
+            {ui.t('unlock.closed-before')}{' '}
+            <Link href={`/quests/${lockedBy.slug}`}>{lockedBy.title}</Link>{' '}
+            {ui.t('unlock.closed-after')}
           </p>
         </div>
       </section>
@@ -77,7 +83,6 @@ export function UnlockPath({
     remainingMin === remainingMax
       ? formatSegments(remainingMin)
       : `${remainingMin}\u2013${formatSegments(remainingMax)}`
-  const plural = unknownCount === 1 ? '' : 's'
 
   /*
    * "At least 0 segments" is true and useless — it is what you get when the
@@ -87,39 +92,46 @@ export function UnlockPath({
   const costLine =
     unknownCount === 0
       ? remainingMin === 0
-        ? 'Nothing left to pay for.'
-        : `${span} left.`
+        ? ui.t('unlock.nothing-to-pay')
+        : fill(ui.t('unlock.left'), { span })
       : remainingMin === 0
-        ? `No source publishes a cost for any of the ${unknownCount} remaining step${plural}, so there is no total to give — only that there are ${unknownCount} of them.`
-        : `At least ${span}, plus ${unknownCount} step${plural} nobody has published a cost for. Treat it as a floor, not a total.`
+        ? fill(ui.t(unknownCount === 1 ? 'unlock.no-total-one' : 'unlock.no-total-many'), {
+            count: unknownCount,
+          })
+        : fill(ui.t(unknownCount === 1 ? 'unlock.floor-one' : 'unlock.floor-many'), {
+            span,
+            count: unknownCount,
+          })
 
   return (
     <section className="section">
       <div className="section-head">
-        <h2>{heading}</h2>
+        <h2>{title}</h2>
         {personal && !soloQuest ? (
           <span className="eyebrow">
-            {doneCount} of {total} done
+            {fill(ui.t('unlock.done-count'), { done: doneCount, total })}
           </span>
         ) : null}
       </div>
 
       {soloQuest ? (
-        <p className="note">{emptyNote}</p>
+        <p className="note">{empty}</p>
       ) : (
         <p className="note">
-          {total - 1} quest{total - 1 === 1 ? '' : 's'} stand between the start of a run and this
-          one. They have to happen in this order.
+          {fill(
+            ui.t(total - 1 === 1 ? 'unlock.stand-between-one' : 'unlock.stand-between-many'),
+            { count: total - 1 },
+          )}
         </p>
       )}
 
       {personal && achieved ? (
         <p className="unlockpath-state" data-tone="good">
-          <Icon name="check" size={14} /> Done in your run.
+          <Icon name="check" size={14} /> {ui.t('unlock.done-in-run')}
         </p>
       ) : personal && next ? (
         <p className="unlockpath-state">
-          Next: <Link href={`/quests/${next.slug}`}>{next.title}</Link>
+          {ui.t('unlock.next')} <Link href={`/quests/${next.slug}`}>{next.title}</Link>
         </p>
       ) : null}
 
@@ -136,7 +148,7 @@ export function UnlockPath({
                 onClick={() => toggleQuest(step.quest.id)}
                 aria-pressed={isDone(step.quest.id)}
                 disabled={!hydrated}
-                title={done ? 'Mark as not done' : 'Mark as done'}
+                title={done ? ui.t('unlock.mark-not-done') : ui.t('unlock.mark-done')}
               >
                 {done ? <Icon name="check" size={13} /> : <span>{index + 1}</span>}
               </button>
@@ -151,7 +163,7 @@ export function UnlockPath({
                     ? step.quest.timeMin === step.quest.timeMax
                       ? formatSegments(step.quest.timeMin)
                       : `${step.quest.timeMin}–${formatSegments(step.quest.timeMax)}`
-                    : 'cost unpublished'}
+                    : ui.t('unlock.cost-unpublished')}
                 </span>
               </span>
             </li>
@@ -162,7 +174,7 @@ export function UnlockPath({
       {personal && !achieved ? (
         <p className="note unlockpath-cost">
           {costLine}
-          {affordable === false ? ' That is more than you have left in this run.' : null}
+          {affordable === false ? ui.t('unlock.unaffordable') : null}
         </p>
       ) : null}
     </section>

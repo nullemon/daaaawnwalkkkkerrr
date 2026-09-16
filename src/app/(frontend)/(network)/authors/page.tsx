@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { PageHeader } from '@/components/PageHeader'
 import { EntityCard } from '@/components/EntityCard'
 import { getAll, getAllAcrossGames, getSiteSettings } from '@/lib/payload'
+import { copy } from '@/lib/copy'
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await getSiteSettings()
@@ -22,7 +23,8 @@ export async function generateMetadata(): Promise<Metadata> {
  * from the guides rather than written in.
  */
 export default async function AuthorsIndex() {
-  const [authors, guides] = await Promise.all([
+  const [settings, authors, guides] = await Promise.all([
+    getSiteSettings(),
     getAll('authors', { depth: 1, sort: 'name' }),
     getAllAcrossGames('guides', { depth: 1 }),
   ])
@@ -41,8 +43,11 @@ export default async function AuthorsIndex() {
         eyebrow="The network"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Contributors' }]}
         icon="person"
-        title="Contributors"
-        lede="Guides are signed; the database pages are not, because a compiled fact sheet has no author to claim. Where a byline is still a placeholder the page credits the editorial team instead of a name, and says so."
+        title={copy(settings.authorsTitle, 'Contributors')}
+        lede={copy(
+          settings.authorsLede,
+          'Guides are signed; the database pages are not, because a compiled fact sheet has no author to claim. Where a byline is still a placeholder the page credits the editorial team instead of a name, and says so.',
+        )}
       />
       <div className="page body-main">
         <div className="grid">

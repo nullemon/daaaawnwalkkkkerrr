@@ -11,7 +11,8 @@ import { CommentThread } from '@/components/CommentThread'
 import { EntityImage } from '@/components/EntityImage'
 import { FactPanel } from '@/components/FactPanel'
 import { RelatedList, type RelatedItem } from '@/components/RelatedList'
-import { ROLE } from '@/lib/characters'
+import { roleLabel } from '@/lib/characters'
+import { getUi } from '@/lib/ui'
 import { getAll, getBySlug, getGame, relMany } from '@/lib/payload'
 import { gameName } from '@/lib/section-copy'
 import { gameSlugParams } from '@/lib/params'
@@ -44,7 +45,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function CharacterPage({ params }: Props) {
   const { game, slug } = await params
-  const doc = await getBySlug('characters', slug, { game, depth: 2 })
+  const [doc, ui] = await Promise.all([
+    getBySlug('characters', slug, { game, depth: 2 }),
+    getUi(),
+  ])
   if (!doc) notFound()
   const questline = relMany<Quest>(doc.questline)
 
@@ -102,7 +106,7 @@ export default async function CharacterPage({ params }: Props) {
             <EntityImage media={doc.portrait} shape="portrait" />
             <FactPanel
               facts={[
-                { label: 'Role', value: doc.role ? ROLE[doc.role] ?? doc.role : undefined },
+                { label: 'Role', value: roleLabel(doc.role, ui) },
                 { label: 'Romance', value: doc.romanceable ? 'Available' : undefined },
                 {
                   label: 'Home region',

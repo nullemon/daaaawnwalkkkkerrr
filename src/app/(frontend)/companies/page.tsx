@@ -1,18 +1,30 @@
 import type { Metadata } from 'next'
+import type { ReactNode } from 'react'
 import { PageHeader } from '@/components/PageHeader'
 import { EntityCard } from '@/components/EntityCard'
 import { Badge, Confidence } from '@/components/Badges'
 import { client } from '@/lib/payload'
+import { copy, pick, splitTokens } from '@/lib/copy'
+import { COMPANIES_BUILT_IN, EMPHASISED_CLAUSE, getCompaniesSite } from '@/lib/companies-copy'
 import { hub } from '@/lib/urls'
 import type { Company, Game } from '@/payload-types'
 
-export const metadata: Metadata = {
-  title: { absolute: 'Studios and publishers' },
-  description:
-    'Every developer and publisher behind the games this network covers, with which of their games are here and where each claim comes from.',
-  alternates: { canonical: '/' },
+/**
+ * Metadata reads the global, so it cannot be a module-level constant: the title
+ * and the description on this page are editable like everything else, and a
+ * `const metadata` is evaluated once at import with no way to await a read.
+ */
+export async function generateMetadata(): Promise<Metadata> {
+  const site = await getCompaniesSite()
+  return {
+    title: { absolute: copy(site.title, COMPANIES_BUILT_IN.title) },
+    description: copy(site.metaDescription, COMPANIES_BUILT_IN.metaDescription),
+    alternates: { canonical: '/' },
+  }
 }
 
+// Duplicated in `companies/[slug]/page.tsx`; both belong in the central label
+// registry (`src/lib/ui-registry.ts`) so a role is worded once for the network.
 const ROLE_LABEL: Record<string, string> = {
   developer: 'Developer',
   publisher: 'Publisher',
@@ -26,15 +38,56 @@ const logoOf = (company: Company): { url?: string | null; alt?: string | null } 
     ? (company.logo as { url?: string | null; alt?: string | null })
     : null
 
+/** A section note, or nothing at all when neither the editor nor the code has one. */
+function Note({ text }: { text?: string | null }) {
+  const value = (text ?? '').trim()
+  if (!value) return null
+  const at = value.indexOf(EMPHASISED_CLAUSE)
+  if (at < 0) return <p className="note">{value}</p>
+  return (
+    <p className="note">
+      {value.slice(0, at)}
+      <strong>{EMPHASISED_CLAUSE}</strong>
+      {value.slice(at + EMPHASISED_CLAUSE.length)}
+    </p>
+  )
+}
+
+/**
+ * The callout body, with `{authorsLink}` as a real anchor.
+ *
+ * Parts, not markup: the alternative is an admin-editable string reaching the
+ * DOM through `dangerouslySetInnerHTML`, which is a stored-XSS hole waiting for
+ * the first editor account that should not have had one. An unknown token is
+ * left visible — a typo somebody fixes in a minute beats a silent gap.
+ */
+function whyBodyNodes(text: string): ReactNode[] {
+  return splitTokens(text).map((part, index) => {
+    if (!('token' in part)) return <span key={index}>{part.text}</span>
+    if (part.token === 'authorsLink') {
+      return (
+        <a key={index} href={hub('/authors')}>
+          contributors
+        </a>
+      )
+    }
+    return <span key={index}>{`{${part.token}}`}</span>
+  })
+}
+
 export default async function CompaniesIndex() {
   const payload = await client()
-  const { docs } = await payload.find({
-    collection: 'companies',
-    limit: 500,
-    depth: 1,
-    sort: 'name',
-  })
+  const [{ docs }, site] = await Promise.all([
+    payload.find({
+      collection: 'companies',
+      limit: 500,
+      depth: 1,
+      sort: 'name',
+    }),
+    getCompaniesSite(),
+  ])
   const companies = docs as Company[]
+  const groups = site.groups ?? {}
 
   /*
     Companies whose games we cover first, then the rest. A reader arriving
@@ -59,17 +112,22 @@ export default async function CompaniesIndex() {
   return (
     <>
       <PageHeader
-        eyebrow="Network"
+        eyebrow={copy(site.eyebrow, COMPANIES_BUILT_IN.eyebrow)}
         crumbs={[{ label: 'Companies' }]}
         icon="person"
-        title="Studios and publishers"
-        lede={`${companies.length} companies: the largest in games by published revenue, the studios behind the games this network covers, and everything those two name as a parent or a subsidiary. Every figure on a profile comes from that company's own article, with the date it was read.`}
+        title={copy(site.title, COMPANIES_BUILT_IN.title)}
+        /* The count is filled at render time: a typed-in total is a sentence
+           that goes wrong the week somebody harvests another parent company. */
+        lede={copy(site.lede, COMPANIES_BUILT_IN.lede, { count: companies.length })}
       />
       <div className="page body-main">
         <section className="section">
           <div className="section-head">
-            <h2>Behind a game we cover</h2>
+            <h2>{copy(groups.coveredHeading, COMPANIES_BUILT_IN.groups.coveredHeading)}</h2>
           </div>
+          {/* No note shipped with this section, so there is one only if an
+              editor writes one. */}
+          <Note text={groups.coveredNote} />
           <div className="grid">
             {withGames.map((company) => {
               const games = (company.games ?? []).map(rel).filter(Boolean) as Game[]
@@ -98,13 +156,9 @@ export default async function CompaniesIndex() {
         {ranked.length > 0 ? (
           <section className="section">
             <div className="section-head">
-              <h2>The largest in games</h2>
+              <h2>{copy(groups.rankedHeading, COMPANIES_BUILT_IN.groups.rankedHeading)}</h2>
             </div>
-            <p className="note">
-              Ranked by published revenue. <strong>Popularity is not a measurable quantity</strong>,
-              so this is the ranking somebody actually publishes rather than one we invented — and
-              it means revenue, on the date the list was read.
-            </p>
+            <Note text={pick(groups.rankedNote, COMPANIES_BUILT_IN.groups.rankedNote)} />
             <div className="grid">
               {ranked.map((company) => (
                 <EntityCard
@@ -130,12 +184,9 @@ export default async function CompaniesIndex() {
         {catalogued.length > 0 ? (
           <section className="section">
             <div className="section-head">
-              <h2>Developers and publishers</h2>
+              <h2>{copy(groups.cataloguedHeading, COMPANIES_BUILT_IN.groups.cataloguedHeading)}</h2>
             </div>
-            <p className="note">
-              Every company Wikipedia files under video game development or publishing, which is a
-              claim somebody else maintains rather than a list we drew up.
-            </p>
+            <Note text={pick(groups.cataloguedNote, COMPANIES_BUILT_IN.groups.cataloguedNote)} />
             <div className="grid">
               {catalogued.map((company) => (
                 <EntityCard
@@ -161,13 +212,9 @@ export default async function CompaniesIndex() {
         {mentioned.length > 0 ? (
           <section className="section">
             <div className="section-head">
-              <h2>Named by another company</h2>
+              <h2>{copy(groups.mentionedHeading, COMPANIES_BUILT_IN.groups.mentionedHeading)}</h2>
             </div>
-            <p className="note">
-              These are here because a company above names them as a parent or a subsidiary in its
-              own article. Nobody drew up this list — it is what the corporate graph contains once
-              you follow it one step, which is also why it is worth reading.
-            </p>
+            <Note text={pick(groups.mentionedNote, COMPANIES_BUILT_IN.groups.mentionedNote)} />
             <div className="grid">
               {mentioned.map((company) => (
                 <EntityCard
@@ -185,13 +232,8 @@ export default async function CompaniesIndex() {
         ) : null}
 
         <div className="callout">
-          <h2>Why these have their own site</h2>
-          <p>
-            A studio turns up on more than one wiki, and a company page that exists once carries its
-            whole body of work instead of being three thin copies that disagree the first time one
-            is corrected. It is the same reason{' '}
-            <a href={hub('/authors')}>contributors</a> live on the hub rather than on each wiki.
-          </p>
+          <h2>{copy(site.whyHeading, COMPANIES_BUILT_IN.whyHeading)}</h2>
+          <p>{whyBodyNodes(copy(site.whyBody, COMPANIES_BUILT_IN.whyBody))}</p>
         </div>
       </div>
     </>

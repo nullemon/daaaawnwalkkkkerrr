@@ -358,6 +358,21 @@ reachable at two URLs.
 **The hub.** Directory with live page counts, latest writing across all wikis,
 contributor index, the legal pages, and the house rules stated plainly.
 
+**Editable copy.** Every reader-visible sentence that is not a record's own
+words is a field: on the Game for a wiki's headings, ledes, callouts, guide
+groups, home page, about page and tool pages; in globals for the hub, the legal
+pages, the companies host and the interface. Each is optional and falls back to
+the wording in the code, so a blank record renders the site the code does, and
+`pnpm seed:copy` writes that wording in so an editor opens a real sentence
+rather than an empty box.
+
+That was not a tidying pass. Copy written when there was one wiki is wrong on
+eight and says so in search results, and ten section indexes were still
+exporting a module-level `metadata` object — one `<title>` and one description
+served by all eight at once. `docs/COPY.md` is the design, including the four
+things that stay hardcoded and why making the "not ready to publish" warning
+editable would defeat it.
+
 **Per-host SEO.** `robots.txt` and `sitemap.xml` answer for whichever host
 asked; feeds and search index are per game; canonicals point at the game's own
 origin. IndexNow submits per host.

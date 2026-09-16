@@ -11,7 +11,8 @@ import { Attribution } from '@/components/Attribution'
 import { CommentThread } from '@/components/CommentThread'
 import { FactPanel } from '@/components/FactPanel'
 import { RelatedList, type RelatedItem } from '@/components/RelatedList'
-import { getAll, getBySlug } from '@/lib/payload'
+import { Callout } from '@/components/Callout'
+import { getAll, getBySlug, getGame } from '@/lib/payload'
 import { gameSlugParams } from '@/lib/params'
 
 type Props = { params: Promise<{ game: string; slug: string }> }
@@ -38,7 +39,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function SkillTreePage({ params }: Props) {
   const { game, slug } = await params
-  const doc = await getBySlug('skill-trees', slug, { game, depth: 1 })
+  const [wiki, doc] = await Promise.all([
+    getGame(game),
+    getBySlug('skill-trees', slug, { game, depth: 1 }),
+  ])
   if (!doc) notFound()
   const perks = (await getAll('perks', { game, depth: 1, sort: 'title' })).filter(
     (perk) => typeof perk.tree === 'object' && perk.tree?.slug === slug,
@@ -103,14 +107,18 @@ export default async function SkillTreePage({ params }: Props) {
                 { label: 'Corruption-gated', value: doc.gatedByCorruption ? 'Yes' : undefined },
               ]}
             />
-            <div className="callout">
-              <h2>One ultimate per tree</h2>
+            <Callout
+              game={wiki}
+              where="skill-trees-detail"
+              heading="One ultimate per tree"
+              builtIn={(wiki?.features ?? []).includes('build-planner')}
+            >
               <p>
                 Taking any ultimate here closes the other two, so a tree is a choice as much as a
                 path. The <Link href="/tools/build-planner">build planner</Link> enforces it and
                 totals what a spec costs.
               </p>
-            </div>
+            </Callout>
           </div>
         </div>
 

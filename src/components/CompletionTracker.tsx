@@ -3,6 +3,8 @@
 import { useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
 import { Icon } from './Icon'
+import { useUi } from './UiStrings'
+import { fill } from '@/lib/copy'
 
 /**
  * Tick off what you have earned; see what is left and how hard it gets.
@@ -36,14 +38,13 @@ export type TrackedAchievement = {
   hidden?: boolean | null
 }
 
-const RARITY_LABEL: Record<string, string> = {
-  common: 'Common',
-  uncommon: 'Uncommon',
-  rare: 'Rare',
-  'very-rare': 'Very rare',
-  'ultra-rare': 'Ultra rare',
-}
-
+/*
+  The wording is `achievement-rarity.*` in the interface-text registry. It used
+  to be a `RARITY_LABEL` const here, another in the achievements index and a
+  third on the achievement page — three copies of one map, which is what the
+  registry exists to stop. The order below is a display decision, not wording,
+  so it stays.
+*/
 const RARITY_ORDER = ['ultra-rare', 'very-rare', 'rare', 'uncommon', 'common']
 
 type Filter = 'all' | 'todo' | 'done' | 'hardest' | 'hidden'
@@ -55,6 +56,7 @@ export function CompletionTracker({
   game: string
   achievements: TrackedAchievement[]
 }) {
+  const ui = useUi()
   const storageKey = `completion:${game}`
 
   const [earned, setEarned] = useState<Set<string>>(new Set())
@@ -123,12 +125,12 @@ export function CompletionTracker({
       hardestLeft,
       byRarity: RARITY_ORDER.map((rarity) => ({
         rarity,
-        label: RARITY_LABEL[rarity],
+        label: ui.label('achievement-rarity', rarity),
         total: achievements.filter((entry) => entry.rarity === rarity).length,
         done: done.filter((entry) => entry.rarity === rarity).length,
       })).filter((row) => row.total > 0),
     }
-  }, [achievements, earned])
+  }, [achievements, earned, ui])
 
   const shown = useMemo(() => {
     const text = query.trim().toLowerCase()
@@ -156,11 +158,14 @@ export function CompletionTracker({
   }, [achievements, earned, filter, query])
 
   const FILTERS: { key: Filter; label: string }[] = [
-    { key: 'todo', label: `Still to do (${stats.total - stats.done})` },
-    { key: 'hardest', label: 'Hardest left' },
-    { key: 'hidden', label: 'Hidden' },
-    { key: 'done', label: `Earned (${stats.done})` },
-    { key: 'all', label: 'All' },
+    {
+      key: 'todo',
+      label: fill(ui.t('tracker.still-to-do'), { count: stats.total - stats.done }),
+    },
+    { key: 'hardest', label: ui.t('tracker.hardest-left') },
+    { key: 'hidden', label: ui.t('tracker.hidden') },
+    { key: 'done', label: fill(ui.t('tracker.earned'), { count: stats.done }) },
+    { key: 'all', label: ui.t('tracker.all') },
   ]
 
   return (
@@ -169,7 +174,7 @@ export function CompletionTracker({
         <div className="tracker-figure">
           <span className="tracker-big">{stats.percent}%</span>
           <span className="note">
-            {stats.done} of {stats.total} earned
+            {fill(ui.t('tracker.earned-of'), { done: stats.done, total: stats.total })}
           </span>
           <span className="tracker-bar" aria-hidden="true">
             <span style={{ width: `${stats.percent}%` }} />
@@ -178,7 +183,7 @@ export function CompletionTracker({
 
         <div className="tracker-figure">
           <span className="tracker-big">{stats.effort}%</span>
-          <span className="note">of the effort, weighted by rarity</span>
+          <span className="note">{ui.t('tracker.effort')}</span>
           <span className="tracker-bar tracker-bar-alt" aria-hidden="true">
             <span style={{ width: `${stats.effort}%` }} />
           </span>
@@ -186,19 +191,16 @@ export function CompletionTracker({
 
         {stats.hardestLeft ? (
           <div className="tracker-figure tracker-next">
-            <span className="eyebrow">Hardest one left</span>
+            <span className="eyebrow">{ui.t('tracker.hardest-one-left')}</span>
             <Link href={`/achievements/${stats.hardestLeft.slug}`}>{stats.hardestLeft.title}</Link>
-            <span className="note">{stats.hardestLeft.globalPercent}% of players have it</span>
+            <span className="note">
+              {fill(ui.t('tracker.have-it'), { percent: stats.hardestLeft.globalPercent })}
+            </span>
           </div>
         ) : null}
       </div>
 
-      <p className="note">
-        Two figures, because they answer different questions. The first is the count. The second
-        weights every achievement by how few players have it, so finishing the last handful of
-        ultra-rares moves it a long way and mopping up commons barely moves it at all — which is
-        what the work actually feels like.
-      </p>
+      <p className="note">{ui.t('tracker.two-figures')}</p>
 
       <div className="tracker-rarity">
         {stats.byRarity.map((row) => (
@@ -223,12 +225,12 @@ export function CompletionTracker({
           ))}
         </div>
         <label className="tracker-search">
-          <span className="visually-hidden">Search achievements</span>
+          <span className="visually-hidden">{ui.t('tracker.search-label')}</span>
           <input
             type="search"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="Search by name or description…"
+            placeholder={ui.t('tracker.search-placeholder')}
           />
         </label>
       </div>
@@ -236,8 +238,8 @@ export function CompletionTracker({
       {shown.length === 0 ? (
         <p className="note">
           {filter === 'todo' && stats.done === stats.total
-            ? 'Every one of them. Nothing left.'
-            : 'Nothing matches that.'}
+            ? ui.t('tracker.all-done')
+            : ui.t('tracker.no-match')}
         </p>
       ) : (
         <ul className="tracker-list">
@@ -254,7 +256,7 @@ export function CompletionTracker({
                     <Link href={`/achievements/${entry.slug}`}>{entry.title}</Link>
                     <span className="note">
                       {entry.hidden && !entry.description
-                        ? 'Hidden — the game does not say what it wants'
+                        ? ui.t('tracker.hidden-desc')
                         : entry.description}
                     </span>
                   </span>
@@ -268,10 +270,7 @@ export function CompletionTracker({
         </ul>
       )}
 
-      <p className="note">
-        Kept in this browser only. Nothing is sent anywhere and there is no account — which also
-        means clearing your site data clears this.
-      </p>
+      <p className="note">{ui.t('tracker.local-note')}</p>
     </div>
   )
 }

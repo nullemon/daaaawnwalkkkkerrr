@@ -1,5 +1,12 @@
 import { describe, expect, it } from 'vitest'
-import { rich, __spansForTest as spans } from './lexical'
+import { rich, __spansForTest } from './lexical'
+
+/*
+  `spans` now returns link nodes as well as text nodes, and every assertion
+  below is about text. Narrowed once here rather than at forty call sites.
+*/
+type Span = { text: string; format: number }
+const spans = (value: string) => __spansForTest(value) as unknown as Span[]
 
 /**
  * Bold in seed prose.
@@ -65,5 +72,46 @@ describe('rich', () => {
   it('never leaves a literal asterisk pair in rendered text', () => {
     const doc = rich('A **bold** claim', { h: '**Heading**' }, { ul: ['**Item**'] })
     expect(JSON.stringify(doc)).not.toContain('**')
+  })
+})
+
+describe('links', () => {
+  it('turns [words](/path) into a link node and keeps the words', () => {
+    const [before, anchor, after] = __spansForTest(
+      'If you can confirm something, [tell us](/corrections) about it.',
+    ) as unknown as [
+      { text: string },
+      { type: string; fields: { url: string; newTab: boolean }; children: { text: string }[] },
+      { text: string },
+    ]
+    expect(before.text).toBe('If you can confirm something, ')
+    expect(anchor.type).toBe('link')
+    expect(anchor.fields.url).toBe('/corrections')
+    expect(anchor.fields.newTab).toBe(false)
+    expect(anchor.children[0].text).toBe('tell us')
+    expect(after.text).toBe(' about it.')
+  })
+
+  it('opens an outbound link in a new tab and an internal one in place', () => {
+    const [outbound] = __spansForTest('[the store page](https://example.com/app)') as unknown as [
+      { fields: { newTab: boolean } },
+    ]
+    expect(outbound.fields.newTab).toBe(true)
+  })
+
+  it('leaves bracket text that is not a link alone', () => {
+    const nodes = spans('A [bracketed] aside, and [another] one.')
+    expect(nodes).toHaveLength(1)
+    expect(nodes[0].text).toBe('A [bracketed] aside, and [another] one.')
+  })
+
+  it('applies bold and links in the order they appear', () => {
+    const nodes = __spansForTest('**Bold** then [a link](/x) then more.') as unknown as {
+      type?: string
+      text?: string
+      format?: number
+    }[]
+    expect(nodes.map((node) => node.type ?? 'text')).toEqual(['text', 'text', 'link', 'text'])
+    expect(nodes[0].format).toBe(1)
   })
 })

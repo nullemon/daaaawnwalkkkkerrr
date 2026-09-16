@@ -27,6 +27,10 @@ import { hostFor, hostLabelProblem } from '../lib/host-label'
 
 type Finding = { level: 'blocking' | 'warn' | 'note'; area: string; detail: string }
 
+/** A whole `export const metadata: Metadata = { … }` object, braces included. */
+const METADATA_OBJECT = new RegExp(String.raw`export const metadata: Metadata = \{[\s\S]*?\n\}`)
+const TITLE_OR_DESCRIPTION = new RegExp(String.raw`\btitle:|\bdescription:`)
+
 const findings: Finding[] = []
 const add = (level: Finding['level'], area: string, detail: string) =>
   findings.push({ level, area, detail })
@@ -169,6 +173,64 @@ async function run(): Promise<void> {
   }
   const noAvatar = authors.docs.filter((doc) => !(doc as { avatar?: unknown }).avatar).length
   if (noAvatar > 0) add('warn', 'authors', `${noAvatar} have no avatar`)
+
+  // --- Copy that cannot vary per wiki --------------------------------------
+  /*
+    A `export const metadata` object under `[game]` is one title and one
+    description served by all eight wikis at once — eight pages competing for
+    the same search result, seven of them describing a game they are not about.
+    It is invisible: the page renders, the build is green, and the only symptom
+    is a ranking nobody was watching. Ten pages shipped like this.
+
+    A noindex page is exempt, because nothing is competing for anything.
+  */
+  const routes = path.resolve('src', 'app', '(frontend)')
+  const walk = (dir: string): string[] =>
+    fs.existsSync(dir)
+      ? fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
+          const full = path.join(dir, entry.name)
+          return entry.isDirectory() ? walk(full) : entry.name === 'page.tsx' ? [full] : []
+        })
+      : []
+
+  for (const file of walk(path.join(routes, '[game]'))) {
+    const source = fs.readFileSync(file, 'utf8')
+    const block = source.match(METADATA_OBJECT)
+    if (!block) continue
+    if (/index: false/.test(block[0])) continue
+    if (!TITLE_OR_DESCRIPTION.test(block[0])) continue
+    add(
+      'blocking',
+      'per-wiki copy',
+      `${path.relative(process.cwd(), file)} exports a static metadata title or description — every wiki serves the same one`,
+    )
+  }
+
+  /*
+    An override row pointing at a key nobody kept. It does nothing, looks
+    saved, and reads exactly like an edit that would not stick.
+  */
+  try {
+    const ui = await payload.findGlobal({ slug: 'ui-strings', depth: 0 })
+    const registry = await import('../lib/ui-registry')
+    const orphans = [
+      ...((ui?.strings ?? []) as { key?: string | null }[]).filter(
+        (row) => row?.key && !(row.key in registry.UI_DEFAULTS),
+      ),
+      ...((ui?.labels ?? []) as { key?: string | null }[]).filter(
+        (row) => row?.key && !(row.key in registry.LABEL_DEFAULTS),
+      ),
+    ].map((row) => row.key)
+    if (orphans.length > 0) {
+      add(
+        'warn',
+        'interface text',
+        `${orphans.length} override${orphans.length === 1 ? '' : 's'} point at keys that no longer exist: ${orphans.slice(0, 5).join(', ')}`,
+      )
+    }
+  } catch {
+    // The global has never been saved. Nothing to orphan.
+  }
 
   // --- Shared static files -------------------------------------------------
   const publicDir = path.resolve('public')

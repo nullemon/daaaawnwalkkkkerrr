@@ -3,7 +3,9 @@
 import Link from 'next/link'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Icon } from './Icon'
+import { useUi } from './UiStrings'
 import { rank, groupByKind, type IndexRow } from '@/lib/search'
+import { fill } from '@/lib/copy'
 
 /**
  * The search that fronts the site.
@@ -14,12 +16,15 @@ import { rank, groupByKind, type IndexRow } from '@/lib/search'
  * is where the speed advantage over the big wikis comes from.
  */
 export function HeroSearch({
-  placeholder = 'Search quests, items, perks, characters…',
+  placeholder,
   autoFocus = false,
 }: {
+  /** Overrides the registry's wording for one placement, e.g. the hub. */
   placeholder?: string
   autoFocus?: boolean
 }) {
+  const ui = useUi()
+  const hint = placeholder ?? ui.t('search.hero-placeholder')
   const [rows, setRows] = useState<IndexRow[] | null>(null)
   const [query, setQuery] = useState('')
   const [open, setOpen] = useState(false)
@@ -72,8 +77,8 @@ export function HeroSearch({
           type="search"
           value={query}
           autoFocus={autoFocus}
-          placeholder={placeholder}
-          aria-label={placeholder}
+          placeholder={hint}
+          aria-label={hint}
           onChange={(event) => {
             setQuery(event.target.value)
             setCursor(0)
@@ -89,8 +94,7 @@ export function HeroSearch({
         <div className="herosearch-menu">
           {flat.length === 0 ? (
             <p className="herosearch-empty">
-              Nothing matches &ldquo;{query.trim()}&rdquo;. It may simply not be documented yet —
-              this database is honest about its gaps rather than filling them in.
+              {fill(ui.t('search.hero-no-match'), { query: query.trim() })}
             </p>
           ) : (
             groups.map(([kind, items]) => (

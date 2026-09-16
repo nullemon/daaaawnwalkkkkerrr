@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { PageHeader } from '@/components/PageHeader'
 import { DataTable, type Row } from '@/components/DataTable'
 import { getAll, getGame } from '@/lib/payload'
+import { sectionCopy } from '@/lib/section-copy'
 
 type Props = { params: Promise<{ game: string }> }
 
@@ -19,25 +20,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     getGame(slug),
     getAll('achievements', { game: slug, depth: 0 }),
   ])
-  const name = doc?.shortTitle || doc?.title || 'this game'
-
-  const ultraRare = achievements.filter((a) => a.rarity === 'ultra-rare').length
-
+  const copy = sectionCopy('achievements', doc, {
+    total: achievements.length,
+    // The second number this section has: how many almost nobody has.
+    detail: achievements.filter((a) => a.rarity === 'ultra-rare').length,
+  })
   return {
-    title: achievements.length > 0 ? `All ${achievements.length} achievements` : 'Achievements',
-    description:
-      achievements.length === 0
-        ? `No achievement list has been published for ${name} yet. This page fills itself in when the developer publishes one.`
-        : [
-            `Every achievement in ${name}, with the share of players who have unlocked each one.`,
-            // Only worth a sentence when there is a number in it. "0 are held
-            // by fewer than one player in twenty" is worse than silence.
-            ultraRare > 0
-              ? `${ultraRare} are held by fewer than one player in twenty.`
-              : '',
-          ]
-            .filter(Boolean)
-            .join(' '),
+    title: copy.title,
+    description: copy.description,
     alternates: { canonical: '/achievements' },
   }
 }
@@ -82,7 +72,7 @@ export default async function AchievementsIndex({ params }: Props) {
   })
 
   const ultraRare = achievements.filter((a) => a.rarity === 'ultra-rare').length
-  const name = doc?.shortTitle || doc?.title || 'this game'
+  const copy = sectionCopy('achievements', doc, { total: achievements.length, detail: ultraRare })
 
   return (
     <>
@@ -90,17 +80,8 @@ export default async function AchievementsIndex({ params }: Props) {
         eyebrow="Database"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Achievements' }]}
         icon="star"
-        title="Achievements"
-        lede={
-          achievements.length === 0
-            ? `No achievement list has been published for ${name} yet. Developers usually add one at launch; this page fills itself in when they do.`
-            : [
-                `All ${achievements.length} of them, rarest first, with the share of owners who have each one.`,
-                ultraRare > 0 ? `${ultraRare} are held by fewer than one player in twenty.` : '',
-              ]
-                .filter(Boolean)
-                .join(' ')
-        }
+        title={copy.heading}
+        lede={copy.lede}
       />
       <div className="page body-main">
         {achievements.length === 0 ? (

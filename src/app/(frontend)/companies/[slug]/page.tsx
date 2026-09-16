@@ -7,11 +7,15 @@ import { FactPanel } from '@/components/FactPanel'
 import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
 import { client, gameUrl } from '@/lib/payload'
+import { copy } from '@/lib/copy'
+import { COMPANIES_BUILT_IN, getCompaniesSite } from '@/lib/companies-copy'
 import { clamp } from '@/lib/seo'
 import type { Company, Game } from '@/payload-types'
 
 type Props = { params: Promise<{ slug: string }> }
 
+// Duplicated in `companies/page.tsx`; both belong in the central label registry
+// (`src/lib/ui-registry.ts`) so a role is worded once for the network.
 const ROLE_LABEL: Record<string, string> = {
   developer: 'Developer',
   publisher: 'Publisher',
@@ -52,8 +56,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function CompanyPage({ params }: Props) {
   const { slug } = await params
-  const company = await find(slug)
+  const [company, site] = await Promise.all([find(slug), getCompaniesSite()])
   if (!company) notFound()
+  const profile = site.profile ?? {}
 
   const games = (company.games ?? []).map(rel).filter(Boolean) as Game[]
   const links = await Promise.all(
@@ -112,7 +117,7 @@ export default async function CompanyPage({ params }: Props) {
             {links.length > 0 ? (
               <section className="section">
                 <div className="section-head">
-                  <h2>Their games on this network</h2>
+                  <h2>{copy(profile.gamesHeading, COMPANIES_BUILT_IN.profile.gamesHeading)}</h2>
                 </div>
                 <div className="grid">
                   {links.map(({ game, href }) => (
@@ -135,7 +140,7 @@ export default async function CompanyPage({ params }: Props) {
             {company.keyPeople ? (
               <section className="section">
                 <div className="section-head">
-                  <h2>Who runs it</h2>
+                  <h2>{copy(profile.peopleHeading, COMPANIES_BUILT_IN.profile.peopleHeading)}</h2>
                 </div>
                 <p>{company.keyPeople}</p>
                 {/*
@@ -144,7 +149,7 @@ export default async function CompanyPage({ params }: Props) {
                   citation below carries it.
                 */}
                 <p className="note">
-                  Named executives as its own article stated them on the date in the sources below.
+                  {copy(profile.sourcingNote, COMPANIES_BUILT_IN.profile.sourcingNote)}
                 </p>
               </section>
             ) : null}
@@ -152,7 +157,23 @@ export default async function CompanyPage({ params }: Props) {
             {parent || subsidiaries.length > 0 ? (
               <section className="section">
                 <div className="section-head">
-                  <h2>Corporate structure</h2>
+                  {/*
+                    Parent and subsidiaries share one section, and the schema has
+                    a heading for each, so the heading follows whichever relation
+                    this company actually has. Both ship as "Corporate
+                    structure", so nothing on any page moves until somebody edits
+                    one. Leaving either unwired was the other option, and a box
+                    in the admin that changes nothing is the control that reads
+                    as present and does not work.
+                  */}
+                  <h2>
+                    {parent
+                      ? copy(profile.parentHeading, COMPANIES_BUILT_IN.profile.parentHeading)
+                      : copy(
+                          profile.subsidiariesHeading,
+                          COMPANIES_BUILT_IN.profile.subsidiariesHeading,
+                        )}
+                  </h2>
                 </div>
                 {parent ? (
                   <p>
@@ -172,8 +193,7 @@ export default async function CompanyPage({ params }: Props) {
                   </>
                 ) : null}
                 <p className="note">
-                  Each link exists because one of the two companies’ own articles named the other.
-                  A studio missing from this list is not evidence that it is independent.
+                  {copy(profile.structureNote, COMPANIES_BUILT_IN.profile.structureNote)}
                 </p>
               </section>
             ) : null}
@@ -194,12 +214,10 @@ export default async function CompanyPage({ params }: Props) {
             {games.length > 0 || company.basis !== 'related-company' || company.founded ? null : (
               <section className="panel">
                 <div className="panel-head">
-                  <h2>What we know</h2>
+                  <h2>{copy(profile.knownHeading, COMPANIES_BUILT_IN.profile.knownHeading)}</h2>
                 </div>
                 <p className="note">
-                  This name appears in the community-wiki sources compiled for a game on this
-                  network. We have not established what it worked on or when, and would rather say
-                  so than fill the gap with a guess.
+                  {copy(profile.knownNote, COMPANIES_BUILT_IN.profile.knownNote)}
                 </p>
               </section>
             )}

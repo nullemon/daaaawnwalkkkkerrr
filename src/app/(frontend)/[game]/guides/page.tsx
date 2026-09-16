@@ -4,6 +4,7 @@ import { PageHeader } from '@/components/PageHeader'
 import { sectionArt } from '@/lib/art'
 import { getAll, getGame } from '@/lib/payload'
 import { sectionCopy } from '@/lib/section-copy'
+import { guideGroups, guideMatches } from '@/lib/game-copy'
 import type { Guide, Media } from '@/payload-types'
 
 type Props = { params: Promise<{ game: string }> }
@@ -145,15 +146,55 @@ function GuideTile({ guide }: { guide: Guide }) {
 export default async function GuidesIndex({ params }: Props) {
   const { game } = await params
   // depth 1 so each tile can show its own lead image rather than a wall of text.
-  const guides = await getAll('guides', { game, depth: 1, sort: 'title' })
+  const [doc, guides, regions] = await Promise.all([
+    getGame(game),
+    getAll('guides', { game, depth: 1, sort: 'title' }),
+    getAll('regions', { game, depth: 0 }),
+  ])
+  const copy = sectionCopy('guides', doc, { total: guides.length })
+
+  /*
+    The grouping an editor wrote, or the built-in one.
+
+    The built-in one is Dawnwalker's: seven headings written about its run, and
+    ten of its region slugs typed into a Set, applied to every wiki in the
+    network. The stored form replaces that list with a question the records can
+    answer — `matchRegions` asks whether a `<something>-guide` names one of
+    *this* wiki's regions — so a new region files its guide without anybody
+    remembering to come back here.
+  */
+  const regionSlugs = new Set(regions.map((region) => region.slug))
+  const stored = guideGroups(doc)
+  const active: { heading: string; note?: string | null; match: (slug: string) => boolean }[] =
+    stored.length > 0
+      ? stored.map((group) => ({
+          heading: group.heading,
+          note: group.note,
+          match: (slug: string) => guideMatches(group, slug, regionSlugs),
+        }))
+      : /*
+          And nothing at all for a wiki that has written none.
+
+          `GROUPS` is Dawnwalker's: its headings say what its endings turn on
+          and how its 480 segments are spent. They were being applied to every
+          wiki, where `slug.includes('ending')` and the `-guide` suffix match
+          enough guides to file a Silent Hill page under "Five are decided at
+          the finale. Two are decided in your first fortnight." One flat list
+          is the honest shape for a wiki nobody has grouped yet.
+        */
+        doc?.slug === 'dawnwalker'
+        ? GROUPS
+        : []
 
   const claimed = new Set<string>()
-  const sections = GROUPS.map((group) => {
+  const sections = active.map((group) => {
     const inGroup = guides.filter((guide) => !claimed.has(guide.slug) && group.match(guide.slug))
     inGroup.forEach((guide) => claimed.add(guide.slug))
     return { ...group, guides: inGroup }
   })
   const leftovers = guides.filter((guide) => !claimed.has(guide.slug))
+  // "Everything else" only means something when there is something else.
+  const grouped = sections.some((section) => section.guides.length > 0)
 
   return (
     <>
@@ -162,8 +203,8 @@ export default async function GuidesIndex({ params }: Props) {
         eyebrow="Editorial"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Guides' }]}
         icon="book"
-        title="Guides"
-        lede={`${guides.length} guides. One page, one question, answered properly.`}
+        title={copy.heading}
+        lede={copy.lede}
       />
       <div className="page body-main">
         {sections.map((section) =>
@@ -173,7 +214,7 @@ export default async function GuidesIndex({ params }: Props) {
                 <h2>{section.heading}</h2>
                 <span className="eyebrow">{section.guides.length}</span>
               </div>
-              <p className="note">{section.note}</p>
+              {section.note ? <p className="note">{section.note}</p> : null}
               <div className="guidegrid">
                 {section.guides.map((guide) => (
                   <GuideTile key={guide.id} guide={guide} />
@@ -185,10 +226,12 @@ export default async function GuidesIndex({ params }: Props) {
 
         {leftovers.length > 0 ? (
           <section className="section">
-            <div className="section-head">
-              <h2>Everything else</h2>
-              <span className="eyebrow">{leftovers.length}</span>
-            </div>
+            {grouped ? (
+              <div className="section-head">
+                <h2>Everything else</h2>
+                <span className="eyebrow">{leftovers.length}</span>
+              </div>
+            ) : null}
             <div className="guidegrid">
               {leftovers.map((guide) => (
                 <GuideTile key={guide.id} guide={guide} />

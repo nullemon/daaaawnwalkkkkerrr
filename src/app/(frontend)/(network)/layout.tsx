@@ -118,6 +118,15 @@ export default async function NetworkLayout({ children }: { children: React.Reac
     })),
   )
 
+  /*
+    The built-in columns, and now the fallback rather than the last word.
+
+    `SiteFooter` swaps in Site settings → Navigation → Footer columns when an
+    editor has filled it in, for this host and the wikis and the companies site
+    alike — the wiring is there rather than here so one edit does not have to
+    be made three times, which is how the hub came to link to a page the wikis
+    do not have.
+  */
   const columns: FooterColumn[] = [
     {
       heading: 'The network',

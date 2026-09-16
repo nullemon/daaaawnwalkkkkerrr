@@ -5,6 +5,7 @@ import { EntityCard } from '@/components/EntityCard'
 import { Badge } from '@/components/Badges'
 import { getAll, getGame } from '@/lib/payload'
 import { sectionCopy } from '@/lib/section-copy'
+import { getUi } from '@/lib/ui'
 
 type Props = { params: Promise<{ game: string }> }
 
@@ -22,18 +23,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-const DANGER: Record<string, string> = {
-  starting: 'Starting area',
-  moderate: 'Moderate',
-  dangerous: 'Dangerous',
-  late: 'Late run',
-}
-
 export default async function RegionsIndex({ params }: Props) {
   const { game: slug } = await params
-  const [game, regions] = await Promise.all([
+  const [game, regions, ui] = await Promise.all([
     getGame(slug),
     getAll('regions', { game: slug, depth: 0 }),
+    getUi(),
   ])
   const copy = sectionCopy('regions', game, { total: regions.length })
   return (
@@ -55,7 +50,9 @@ export default async function RegionsIndex({ params }: Props) {
               href={`/regions/${region.slug}`}
               title={region.title}
               summary={region.summary}
-              badges={region.dangerRating ? <Badge>{DANGER[region.dangerRating]}</Badge> : null}
+              badges={
+                region.dangerRating ? <Badge>{ui.label('danger', region.dangerRating)}</Badge> : null
+              }
             />
           ))}
         </div>

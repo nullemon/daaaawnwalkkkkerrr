@@ -3,6 +3,8 @@
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useUi } from './UiStrings'
+import { fill } from '@/lib/copy'
 
 /**
  * Pick perks across the three trees and get a link you can paste.
@@ -56,6 +58,7 @@ function sanitise(slugs: string[], bySlug: Map<string, PlannerPerk>): string[] {
 }
 
 export function BuildPlanner({ perks, trees }: { perks: PlannerPerk[]; trees: PlannerTree[] }) {
+  const ui = useUi()
   const [picked, setPicked] = useState<string[]>([])
   const [copied, setCopied] = useState(false)
   /**
@@ -142,12 +145,19 @@ export function BuildPlanner({ perks, trees }: { perks: PlannerPerk[]; trees: Pl
                   <Link href={`/skills/${tree.slug}`}>{tree.title}</Link>
                 </h2>
                 <span className="badge" data-phase={tree.phase === 'either' ? undefined : tree.phase}>
-                  {tree.phase === 'day' ? 'Day' : tree.phase === 'night' ? 'Night' : 'Any time'}
+                  {/*
+                    Anything that is not day or night reads as "Any time", which
+                    is not the same as tidying the stored value — a tree filed
+                    under something unexpected must not print it as a badge.
+                  */}
+                  {tree.phase === 'day' || tree.phase === 'night'
+                    ? ui.label('phase', tree.phase)
+                    : ui.label('phase', 'either')}
                 </span>
               </div>
 
               {treePerks.length === 0 ? (
-                <p className="note">No perks recorded for this tree yet.</p>
+                <p className="note">{ui.t('planner.no-perks')}</p>
               ) : (
                 <ul className="perk-list">
                   {treePerks.map((perk) => {
@@ -164,14 +174,27 @@ export function BuildPlanner({ perks, trees }: { perks: PlannerPerk[]; trees: Pl
                           />
                           <span>
                             <span className="perk-title">
-                              {perk.isUltimate ? <span className="star" aria-label="Ultimate">★</span> : null}
+                              {perk.isUltimate ? (
+                                <span className="star" aria-label={ui.t('planner.ultimate')}>
+                                  ★
+                                </span>
+                              ) : null}
                               {perk.title}
                             </span>
                             {perk.effect ? <span className="sub">{perk.effect}</span> : null}
                             <span className="sub">
-                              {perk.costKnown ? `${perk.cost} segment${perk.cost === 1 ? '' : 's'}` : 'cost unconfirmed'}
-                              {perk.foundInWorld ? ' · found in the world, not bought' : ''}
-                              {blocked ? ' · replaces your current ultimate' : ''}
+                              {perk.costKnown
+                                ? fill(
+                                    ui.t(
+                                      perk.cost === 1
+                                        ? 'planner.segment-one'
+                                        : 'planner.segment-many',
+                                    ),
+                                    { count: perk.cost },
+                                  )
+                                : ui.t('planner.cost-unconfirmed')}
+                              {perk.foundInWorld ? ` · ${ui.t('planner.found-in-world')}` : ''}
+                              {blocked ? ` · ${ui.t('planner.replaces-ultimate')}` : ''}
                             </span>
                           </span>
                         </label>
@@ -186,24 +209,24 @@ export function BuildPlanner({ perks, trees }: { perks: PlannerPerk[]; trees: Pl
       </div>
 
       <aside className="planner-summary">
-        <h2>Your build</h2>
+        <h2>{ui.t('planner.your-build')}</h2>
         {chosen.length === 0 ? (
-          <p className="note">Nothing picked yet. Tick perks on the left and this fills in.</p>
+          <p className="note">{ui.t('planner.nothing-picked')}</p>
         ) : (
           <>
             <dl className="facts">
               <div className="fact">
-                <dt>Perks</dt>
+                <dt>{ui.t('planner.perks')}</dt>
                 <dd className="mono">{chosen.length}</dd>
               </div>
               <div className="fact">
-                <dt>Segments</dt>
+                <dt>{ui.t('planner.segments')}</dt>
                 <dd className="mono">
                   {unknownCount === chosen.length ? '—' : unknownCount > 0 ? `${knownCost}+` : knownCost}
                 </dd>
               </div>
               <div className="fact">
-                <dt>Ultimates</dt>
+                <dt>{ui.t('planner.ultimates')}</dt>
                 <dd className="mono">{chosen.filter((perk) => perk.isUltimate).length} / 3</dd>
               </div>
             </dl>
@@ -221,28 +244,24 @@ export function BuildPlanner({ perks, trees }: { perks: PlannerPerk[]; trees: Pl
             </ul>
 
             {unknownCount === chosen.length ? (
-              <p className="note">
-                No source publishes a segment cost for any of these, so we cannot total them.
-                Reporting puts most skills at about one segment each, which would make this roughly{' '}
-                {chosen.length} — treat that as a rule of thumb, not a figure.
-              </p>
+              <p className="note">{fill(ui.t('planner.no-total'), { count: chosen.length })}</p>
             ) : unknownCount > 0 ? (
               <p className="note">
-                {knownCost} segments confirmed, with {unknownCount} perk
-                {unknownCount === 1 ? '' : 's'} whose cost nobody publishes. The total is a floor.
+                {fill(ui.t(unknownCount === 1 ? 'planner.floor-one' : 'planner.floor-many'), {
+                  known: knownCost,
+                  count: unknownCount,
+                })}
               </p>
             ) : (
-              <p className="note">
-                That is {knownCost} of your 480 segments spent on perks rather than quests.
-              </p>
+              <p className="note">{fill(ui.t('planner.spent'), { known: knownCost })}</p>
             )}
 
             <div className="field-row">
               <button type="button" className="button" onClick={share}>
-                {copied ? 'Link copied' : 'Copy share link'}
+                {copied ? ui.t('planner.copied') : ui.t('planner.copy')}
               </button>
               <button type="button" className="linkish" onClick={() => setPicked([])}>
-                Clear
+                {ui.t('planner.clear')}
               </button>
             </div>
           </>

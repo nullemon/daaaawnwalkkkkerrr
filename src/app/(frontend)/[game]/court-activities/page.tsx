@@ -4,21 +4,32 @@ import Link from 'next/link'
 import { PageHeader } from '@/components/PageHeader'
 import { sectionArt } from '@/lib/art'
 import { DataTable, type Row } from '@/components/DataTable'
-import { getAll } from '@/lib/payload'
+import { Callout } from '@/components/Callout'
+import { getAll, getGame } from '@/lib/payload'
+import { sectionCopy } from '@/lib/section-copy'
 import type { Court, Region } from '@/payload-types'
 
 type Props = { params: Promise<{ game: string }> }
 
-export const metadata: Metadata = {
-  title: 'All Court Activities',
-  description:
-    'Every Court Activity in The Blood of Dawnwalker — filter by vassal, region and phase, and see how many of each court you actually need.',
-  alternates: { canonical: '/court-activities' },
+/** A function rather than a static object — see the note in `endings/page.tsx`. */
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { game: slug } = await params
+  const [game, activities] = await Promise.all([
+    getGame(slug),
+    getAll('court-activities', { game: slug, depth: 0 }),
+  ])
+  const copy = sectionCopy('court-activities', game, { total: activities.length })
+  return {
+    title: copy.title,
+    description: copy.description,
+    alternates: { canonical: '/court-activities' },
+  }
 }
 
 export default async function CourtActivitiesIndex({ params }: Props) {
   const { game } = await params
-  const [activities, courts] = await Promise.all([
+  const [doc, activities, courts] = await Promise.all([
+    getGame(game),
     getAll('court-activities', { game, depth: 1, sort: 'title' }),
     getAll('courts', { game, depth: 0 }),
   ])
@@ -37,6 +48,7 @@ export default async function CourtActivitiesIndex({ params }: Props) {
     0,
   )
   const total = courts.reduce((sum, court) => sum + (court.activityCount ?? 0), 0)
+  const copy = sectionCopy('court-activities', doc, { total: activities.length, detail: needed })
 
   /*
     One filterable table rather than three static ones grouped by vassal.
@@ -72,8 +84,8 @@ export default async function CourtActivitiesIndex({ params }: Props) {
         eyebrow="Database"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Court', href: '/court' }, { label: 'Activities' }]}
         icon="crown"
-        title="Court Activities"
-        lede={`${activities.length} catalogued. These are the real main quest after the prologue — anger a vassal enough and they meet you in a duel. You do not need to clear them all.`}
+        title={copy.heading}
+        lede={copy.lede}
       />
       <div className="page body-main">
         <DataTable
@@ -94,8 +106,12 @@ export default async function CourtActivitiesIndex({ params }: Props) {
           ]}
         />
 
-        <div className="callout">
-          <h2>You need about {needed} of {total}</h2>
+        <Callout
+          game={doc}
+          where="court-activities-index"
+          heading={`You need about ${needed} of ${total}`}
+          tokens={{ needed, total, optional: total - needed }}
+        >
           <p>
             The duel unlocks at roughly three quarters of a vassal&rsquo;s activities, so around{' '}
             {total - needed} of these are optional. That gap is the largest single saving available
@@ -103,7 +119,7 @@ export default async function CourtActivitiesIndex({ params }: Props) {
             without mentioning it.{' '}
             <Link href="/guides/are-court-activities-worth-it">Which ones to skip</Link>.
           </p>
-        </div>
+        </Callout>
       </div>
     </>
   )

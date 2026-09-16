@@ -3,40 +3,89 @@ import Link from 'next/link'
 import { PageHeader } from '@/components/PageHeader'
 import { FactPanel } from '@/components/FactPanel'
 import { RelatedList, type RelatedItem } from '@/components/RelatedList'
+import { RichText } from '@/components/RichText'
+import { LegalField } from '@/components/LegalGap'
 import { getAll, getGame, getSiteSettings } from '@/lib/payload'
 import { gameName } from '@/lib/section-copy'
+import { aboutCopy } from '@/lib/game-copy'
+import { copy, hasRichText, pick, splitTokens } from '@/lib/copy'
 import { clamp } from '@/lib/seo'
 import { companyUrl } from '@/lib/urls'
 import { slugify } from '@/fields/shared'
-import type { Guide } from '@/payload-types'
 import { hub } from '@/lib/urls'
 
 type Props = { params: Promise<{ game: string }> }
 
+/**
+ * The page a reader lands on when deciding whether to trust the rest.
+ *
+ * It is the longest piece of prose on a wiki and it was identical on all eight
+ * apart from a handful of interpolations, so every sentence in it is now a
+ * field on the Game — see the About tab in `src/fields/gameCopy.ts`. Blank
+ * falls back to exactly what shipped, which is what makes a half-filled record
+ * safe: an editor who writes one heading does not blank the other five.
+ *
+ * Two things stay in code on purpose.
+ *
+ * **The counts.** `quests`, `costed`, `guides` and the fact panel are read from
+ * the database at build time. An about page that claims a number the database
+ * outgrew is the same failure as a guide quoting a figure nobody published, on
+ * the one page where it costs the most.
+ *
+ * **"The game itself".** What it says is decided by whether the record has a
+ * store URL and who the rightsholders are, so there is nothing in it for an
+ * editor to write that the record does not already answer.
+ */
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { game: slug } = await params
   const doc = await getGame(slug)
   const name = doc?.shortTitle || doc?.title || 'this wiki'
+  const about = aboutCopy(doc)
+  const tokens = { game: name, title: doc?.title ?? name }
+
   return {
-    title: `About the ${name} Wiki`,
+    title: copy(about.title, 'About the {game} Wiki', tokens),
     /*
       Named, because this was the one description repeated verbatim across all
       eight wikis — eight pages competing with each other for the same result
       and the engine picking one. Everything else on the network composes its
       description from the record it is about; this did not, because it has no
-      record.
+      record. A per-wiki one written by an editor is the proper fix; the
+      built-in at least names the game.
     */
     description: clamp(
-      `Who runs the ${name} wiki, where its facts come from, what the confidence ratings mean, and what we deliberately do not claim to know.`,
+      copy(
+        about.metaDescription,
+        'Who runs the {game} wiki, where its facts come from, what the confidence ratings mean, and what we deliberately do not claim to know.',
+        tokens,
+      ),
     ),
     alternates: { canonical: '/about' },
   }
 }
 
+/**
+ * The sentence naming who is legally responsible for the site.
+ *
+ * This was a string literal in the JSX: the entity from settings, followed by
+ * "a digital agency operating since 2013 with offices in the Philippines, India
+ * and the United States". A description of a real business, compiled into a
+ * React component, on all eight wikis — so correcting it meant a deploy, and
+ * nothing on the page said where it came from or when it was last true.
+ *
+ * `{entity}` stays a token rather than a name so `LegalField` can still mark it
+ * when the details are provisional; `{rightsholders}` renders as links because
+ * an editable string that reaches the DOM as markup is a stored-XSS hole, which
+ * is the same reason the attribution template is split rather than injected.
+ */
+const PUBLISHER_LINE =
+  'The {game} Wiki is published by {entity}, a digital agency operating since 2013 with offices in the Philippines, India and the United States. The site is an independent fan project: it is not affiliated with {rightsholders}, and no endorsement is claimed or implied.'
+
 export default async function AboutPage({ params }: Props) {
   const { game } = await params
   const [settings, doc] = await Promise.all([getSiteSettings(), getGame(game)])
   const name = gameName(doc)
+  const about = aboutCopy(doc)
 
   /*
     The run planner is Dawnwalker's, not every wiki's. This page used to open
@@ -76,25 +125,88 @@ export default async function AboutPage({ params }: Props) {
     sub: author.role,
   }))
 
+  /*
+    `{title}` is the full title and `{game}` the short one, and the difference
+    matters in exactly one sentence: the run-planner lede reads "a run planner
+    and database for The Blood of Dawnwalker", not "for Dawnwalker". It is a
+    token rather than that literal because a sentence naming one game, written
+    into a [game] route, is served on all eight of them.
+  */
+  const tokens = {
+    game: name,
+    title: doc?.title ?? name,
+    quests: quests.length,
+    costed,
+    guides: guides.length,
+  }
+
+  /*
+    Rendered as nodes, not as a string with markup in it. Two of the three
+    tokens are elements — the entity may need its provisional mark, and the
+    rightsholders are anchors onto the companies host — and the alternative is
+    an admin-editable string reaching the DOM as HTML.
+  */
+  const publisherLine = splitTokens(pick(about.publisherLine, PUBLISHER_LINE)).map(
+    (part, index) => {
+      if ('text' in part) return <span key={index}>{part.text}</span>
+      if (part.token === 'game') return <span key={index}>{name}</span>
+      if (part.token === 'entity') {
+        return (
+          <LegalField
+            key={index}
+            field="legalEntity"
+            value={settings.legalEntity}
+            provisional={settings.legalProvisional}
+          />
+        )
+      }
+      if (part.token === 'rightsholders') {
+        if (rightsholders.length === 0) return <span key={index}>the rightsholders</span>
+        return (
+          <span key={index}>
+            {rightsholders.map((holder, position) => (
+              <span key={holder}>
+                {position > 0 ? ' or ' : ''}
+                {/*
+                  Across an origin to the companies host, so a plain anchor
+                  rather than next/link. Each of these has a profile listing
+                  everything of theirs we cover.
+                */}
+                <a href={companyUrl(`/${slugify(holder)}`)}>{holder}</a>
+              </span>
+            ))}
+          </span>
+        )
+      }
+      // An unrecognised token stays visible: a typo somebody fixes beats a gap
+      // nobody notices. Same rule as `fill`.
+      return <span key={index}>{`{${part.token}}`}</span>
+    },
+  )
+
   return (
     <>
       <PageHeader
         eyebrow="About"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'About' }]}
         icon="book"
-        title={`About the ${name} Wiki`}
-        lede={
+        title={copy(about.title, 'About the {game} Wiki', tokens)}
+        lede={copy(
+          about.lede,
           hasRunPlanner
-            ? 'A run planner and database for The Blood of Dawnwalker, built around the one constraint the game never lets you forget: you have 480 segments and you cannot have them back.'
-            : `A database for ${name}, compiled from public sources, with every record carrying its citations and a rating for how far we trust it.`
-        }
+            ? 'A run planner and database for {title}, built around the one constraint the game never lets you forget: you have 480 segments and you cannot have them back.'
+            : 'A database for {game}, compiled from public sources, with every record carrying its citations and a rating for how far we trust it.',
+          tokens,
+        )}
       />
       <div className="page body-main">
         <div className="split">
           <div className="stack">
             <div className="prose">
-              <h2>What this site is for</h2>
-              {hasRunPlanner ? (
+              <h2>{copy(about.purposeHeading, 'What this site is for', tokens)}</h2>
+              {hasRichText(about.purpose) ? (
+                <RichText data={about.purpose} />
+              ) : hasRunPlanner ? (
                 <>
                   <p>
                     Most guides for an open-world game are written as if you will eventually do
@@ -121,31 +233,17 @@ export default async function AboutPage({ params }: Props) {
                 </p>
               )}
 
-              <h2>Who runs it</h2>
-              <p>
-                The {name} Wiki is published by {settings.legalEntity ?? 'CWMI Group'}, a digital
-                agency operating since 2013 with offices in the Philippines, India and the United
-                States. The site is an independent fan project: it is not affiliated with{' '}
-                {rightsholders.length > 0
-                  ? rightsholders.map((holder, index) => (
-                      <span key={holder}>
-                        {index > 0 ? ' or ' : ''}
-                        {/*
-                          Across an origin to the companies host, so a plain
-                          anchor rather than next/link. Each of these has a
-                          profile listing everything of theirs we cover.
-                        */}
-                        <a href={companyUrl(`/${slugify(holder)}`)}>{holder}</a>
-                      </span>
-                    ))
-                  : 'the rightsholders'}
-                , and no endorsement is claimed or implied.
-              </p>
-              <p>
-                Editorial decisions are made by the contributors listed here, not by the publisher,
-                and nothing on the site is paid placement. If that ever changes it will be marked on
-                the page it affects.
-              </p>
+              <h2>{copy(about.runsItHeading, 'Who runs it', tokens)}</h2>
+              <p>{publisherLine}</p>
+              {hasRichText(about.independence) ? (
+                <RichText data={about.independence} />
+              ) : (
+                <p>
+                  Editorial decisions are made by the contributors listed here, not by the
+                  publisher, and nothing on the site is paid placement. If that ever changes it will
+                  be marked on the page it affects.
+                </p>
+              )}
 
               <h2>The game itself</h2>
               <p>
@@ -181,66 +279,109 @@ export default async function AboutPage({ params }: Props) {
                 ) : null}
               </p>
 
-              <h2>Where the facts come from</h2>
-              <p>
-                Every record cites its sources with the date we read them, and the importer that
-                builds this database rejects any record that arrives without one. We compile facts
-                from public wikis, guides and reporting, then write our own prose. We never copy
-                text or reproduce another site&rsquo;s tables. Facts are not anyone&rsquo;s
-                property; the way they were written up is.
-              </p>
-              <p>
-                We do not have privileged access to the game. Nothing here has been verified against
-                a running copy, which is exactly why every record carries a confidence rating rather
-                than presenting everything with the same certainty.
-              </p>
+              <h2>{copy(about.sourcingHeading, 'Where the facts come from', tokens)}</h2>
+              {hasRichText(about.sourcing) ? (
+                <RichText data={about.sourcing} />
+              ) : (
+                <>
+                  <p>
+                    Every record cites its sources with the date we read them, and the importer that
+                    builds this database rejects any record that arrives without one. We compile
+                    facts from public wikis, guides and reporting, then write our own prose. We
+                    never copy text or reproduce another site&rsquo;s tables. Facts are not
+                    anyone&rsquo;s property; the way they were written up is.
+                  </p>
+                  <p>
+                    We do not have privileged access to the game. Nothing here has been verified
+                    against a running copy, which is exactly why every record carries a confidence
+                    rating rather than presenting everything with the same certainty.
+                  </p>
+                </>
+              )}
 
-              <h2>What the confidence ratings mean</h2>
-              <ul>
-                <li>
-                  <strong>High</strong> — agreed by multiple independent sources.
-                </li>
-                <li>
-                  <strong>Medium</strong> — one good source, or sources that disagree on detail.
-                </li>
-                <li>
-                  <strong>Low</strong> — contested, inferred, or not confirmed anywhere we trust.
-                </li>
-              </ul>
-              <p>
-                These are not decoration. Published counts for a game vary widely depending on who
-                is counting and what they count{hasRunPlanner ? (
-                  <>
-                    , and at least one ally questline is described with a different length and a
-                    different final quest name depending on the site
-                  </>
-                ) : null}. Where sources conflict we record the conflict on the page rather than
-                pick a winner.
-              </p>
+              <h2>{copy(about.confidenceHeading, 'What the confidence ratings mean', tokens)}</h2>
+              {hasRichText(about.confidence) ? (
+                <RichText data={about.confidence} />
+              ) : (
+                <>
+                  <ul>
+                    <li>
+                      <strong>High</strong> — agreed by multiple independent sources.
+                    </li>
+                    <li>
+                      <strong>Medium</strong> — one good source, or sources that disagree on detail.
+                    </li>
+                    <li>
+                      <strong>Low</strong> — contested, inferred, or not confirmed anywhere we
+                      trust.
+                    </li>
+                  </ul>
+                  <p>
+                    These are not decoration. Published counts for a game vary widely depending on
+                    who is counting and what they count
+                    {hasRunPlanner ? (
+                      <>
+                        , and at least one ally questline is described with a different length and a
+                        different final quest name depending on the site
+                      </>
+                    ) : null}
+                    . Where sources conflict we record the conflict on the page rather than pick a
+                    winner.
+                  </p>
+                </>
+              )}
 
-              <h2>What we deliberately do not claim to know</h2>
-              {hasRunPlanner ? (
+              <h2>
+                {copy(about.limitsHeading, 'What we deliberately do not claim to know', tokens)}
+              </h2>
+              {hasRichText(about.limits) ? (
+                <RichText data={about.limits} />
+              ) : (
+                <>
+                  {hasRunPlanner ? (
+                    /*
+                      The only two live counts in the prose. They are here and
+                      not in the field because rich text has no tokens — so an
+                      editor who rewrites this section takes the figures with
+                      them and freezes them. The panel on the right keeps
+                      counting either way.
+                    */
+                    <p>
+                      Per-quest segment costs. Only {costed} of {quests.length} quests have a figure
+                      we can stand behind, and the rest are stored as unknown rather than as zero.
+                      An unknown cost is not a free quest, and a planner that quietly treated it as
+                      one would be worse than no planner — so the run checker reports any total
+                      containing one as a floor rather than a figure.
+                    </p>
+                  ) : null}
+                  <p>
+                    The same rule applies everywhere else. A region we cannot source is left blank,
+                    an item whose location nobody publishes says so, and a picture is never
+                    captioned with a place unless a source names it. A gap is honest; an invented
+                    number is not.
+                  </p>
+                </>
+              )}
+
+              <h2>{copy(about.correctionsHeading, 'Corrections', tokens)}</h2>
+              {hasRichText(about.corrections) ? (
+                <RichText data={about.corrections} />
+              ) : (
                 <p>
-                  Per-quest segment costs. Only {costed} of {quests.length} quests have a figure we
-                  can stand behind, and the rest are stored as unknown rather than as zero. An
-                  unknown cost is not a free quest, and a planner that quietly treated it as one
-                  would be worse than no planner — so the run checker reports any total containing
-                  one as a floor rather than a figure.
+                  If you have the game in front of you and can confirm or contradict something here,{' '}
+                  <Link href="/corrections">tell us</Link>. Corrections go to a review queue and are
+                  read. Being wrong in public and fixing it quickly is the only way a site compiled
+                  from second-hand sources earns any trust at all.
                 </p>
-              ) : null}
-              <p>
-                The same rule applies everywhere else. A region we cannot source is left blank, an
-                item whose location nobody publishes says so, and a picture is never captioned with
-                a place unless a source names it. A gap is honest; an invented number is not.
-              </p>
+              )}
 
-              <h2>Corrections</h2>
-              <p>
-                If you have the game in front of you and can confirm or contradict something here,{' '}
-                <Link href="/corrections">tell us</Link>. Corrections go to a review queue and are
-                read. Being wrong in public and fixing it quickly is the only way a site compiled
-                from second-hand sources earns any trust at all.
-              </p>
+              {/* Anything this wiki needs that the other seven do not. */}
+              {(about.extraSections ?? []).map((section) => (
+                <div key={section.id ?? section.heading}>
+                  <h2>{section.heading}</h2>
+                  {hasRichText(section.body) ? <RichText data={section.body} /> : null}
+                </div>
+              ))}
             </div>
           </div>
 

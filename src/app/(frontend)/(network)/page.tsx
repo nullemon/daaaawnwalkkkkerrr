@@ -7,16 +7,27 @@ import { HubSearch, type HubTarget } from '@/components/HubSearch'
 import { directory, releaseLine } from '@/lib/directory'
 import { whatPeopleAreAsking } from '@/lib/asking'
 import { getAllAcrossGames, getSiteSettings, gameUrl } from '@/lib/payload'
+import { copy } from '@/lib/copy'
 
 export async function generateMetadata(): Promise<Metadata> {
   const [settings, wikis] = await Promise.all([getSiteSettings(), directory()])
   const total = wikis.reduce((sum, wiki) => sum + wiki.pages, 0)
 
   return {
-    title: `${settings.siteName} — game wikis, guides and databases`,
+    title: `${settings.siteName} — ${copy(settings.metaTitleSuffix, 'game wikis, guides and databases')}`,
+    /*
+      The counts are tokens, not typed-in numbers. This sentence is what a
+      search result shows, so a hardcoded "eight wikis" would be the network
+      advertising a figure that went stale the day a ninth was added — on the
+      one site whose pitch is that its numbers are real.
+    */
     description:
       settings.description ||
-      `${wikis.length} game wikis and ${total.toLocaleString('en-GB')} sourced pages. Every figure carries a confidence rating, and where sources disagree we say so rather than picking one.`,
+      copy(
+        settings.metaDescriptionFallback,
+        '{wikis} game wikis and {pages} sourced pages. Every figure carries a confidence rating, and where sources disagree we say so rather than picking one.',
+        { wikis: wikis.length, pages: total },
+      ),
     alternates: { canonical: '/' },
   }
 }
@@ -43,6 +54,37 @@ const RULES: { icon: IconName; heading: string; body: string }[] = [
     body: 'Facts are free to compile; sentences are not. Nothing here is pasted, and nothing is written from a trailer.',
   },
 ]
+
+/*
+  The icons an editor may choose for a rule.
+
+  The select in `SiteSettings` offers a subset of `IconName`, so today every
+  stored value is a legal one — but the value arrives from the database as a
+  string, and a select option renamed in the schema leaves the old string in
+  the row. `Icon` renders nothing at all for a name it does not know, so the
+  failure is a rule with a blank square beside it and no error anywhere. This
+  checks the value instead of asserting it.
+*/
+const RULE_ICONS = [
+  'check', 'warn', 'scroll', 'book', 'star', 'search', 'shield', 'spark', 'lock', 'hourglass',
+] as const satisfies readonly IconName[]
+
+const ruleIcon = (name: string | null | undefined): IconName =>
+  (RULE_ICONS as readonly string[]).includes(name ?? '') ? (name as IconName) : 'check'
+
+/*
+  Spelled out, because the sentence it fills is English prose.
+
+  The rules are an editable array now, so the note above them cannot say
+  "Four" in code: an editor who adds a fifth would have the page announce four
+  rules directly above five of them. Past twelve it falls back to digits,
+  which is well past the point where a list of house rules is still a list of
+  house rules.
+*/
+const COUNT_WORDS = [
+  'No', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Eleven', 'Twelve',
+]
+const spellCount = (count: number): string => COUNT_WORDS[count] ?? String(count)
 
 /**
  * The hub.
@@ -90,6 +132,24 @@ export default async function HubHome() {
   const featured = wikis[0]
   const heroArt =
     featured && typeof featured.game.theme?.hero === 'object' ? featured.game.theme.hero : null
+
+  /*
+    The editor's rules if there are any, otherwise the four that shipped.
+
+    A half-filled array is not a reason to fall back — `heading` and `body`
+    are both required in the schema, so a row that exists is a row with words
+    in it. An empty array is the blank that means "use the built-in", the same
+    as an empty string everywhere else.
+  */
+  const stored = settings.rules ?? []
+  const rules =
+    stored.length > 0
+      ? stored.map((rule) => ({
+          icon: ruleIcon(rule.icon),
+          heading: rule.heading,
+          body: rule.body,
+        }))
+      : RULES
 
   /* Wikis first in search, then the headline pages of each. */
   const targets: HubTarget[] = [
@@ -147,19 +207,27 @@ export default async function HubHome() {
               'Every figure sourced, every gap admitted. Start with a search, or pick a wiki below.'}
           </p>
 
-          <HubSearch targets={targets} />
+          <HubSearch
+            targets={targets}
+            placeholder={copy(
+              settings.searchPlaceholder,
+              'Search the network — a game, a boss, a guide…',
+            )}
+          />
 
+          {/* Labels only. The figures under them are counted at build time and
+              have no field anywhere in the admin, which is the point of them. */}
           <dl className="hub-stats">
             <div>
-              <dt>Wikis</dt>
+              <dt>{copy(settings.statWikisLabel, 'Wikis')}</dt>
               <dd>{wikis.length}</dd>
             </div>
             <div>
-              <dt>Sourced pages</dt>
+              <dt>{copy(settings.statPagesLabel, 'Sourced pages')}</dt>
               <dd>{totalPages.toLocaleString('en-GB')}</dd>
             </div>
             <div>
-              <dt>Not out yet</dt>
+              <dt>{copy(settings.statUpcomingLabel, 'Not out yet')}</dt>
               <dd>{upcoming}</dd>
             </div>
           </dl>
@@ -184,11 +252,12 @@ export default async function HubHome() {
         {asking.length > 0 ? (
           <section className="section">
             <div className="section-head">
-              <h2>What people are asking</h2>
+              <h2>{copy(settings.askingHeading, 'What people are asking')}</h2>
               <p className="note">
-                Real searches, harvested from Google&rsquo;s own autocomplete, matched to the page
-                that answers each. Where a question has no answer here, it is in the queue rather
-                than filled with a guess.
+                {copy(
+                  settings.askingNote,
+                  'Real searches, harvested from Google’s own autocomplete, matched to the page that answers each. Where a question has no answer here, it is in the queue rather than filled with a guess.',
+                )}
               </p>
             </div>
             <ul className="asking">
@@ -213,10 +282,12 @@ export default async function HubHome() {
         {/* ---- The directory ---- */}
         <section className="section">
           <div className="section-head">
-            <h2>Every wiki</h2>
+            <h2>{copy(settings.directoryHeading, 'Every wiki')}</h2>
             <p className="note">
-              Page counts are read from each database when this page is built, so they are what is
-              actually there rather than what we would like to claim.
+              {copy(
+                settings.directoryNote,
+                'Page counts are read from each database when this page is built, so they are what is actually there rather than what we would like to claim.',
+              )}
             </p>
           </div>
           <div className="tilegrid">
@@ -230,7 +301,7 @@ export default async function HubHome() {
         {latest.length > 0 ? (
           <section className="section">
             <div className="section-head">
-              <h2>Newest writing</h2>
+              <h2>{copy(settings.latestHeading, 'Newest writing')}</h2>
               <Link href="/wikis" className="eyebrow">
                 All wikis
               </Link>
@@ -255,14 +326,17 @@ export default async function HubHome() {
         {/* ---- The rules, last ---- */}
         <section className="section">
           <div className="section-head">
-            <h2>How these are written</h2>
+            <h2>{copy(settings.rulesHeading, 'How these are written')}</h2>
             <p className="note">
-              Four rules, on every wiki here. They are the whole reason to read one of these instead
-              of the bigger site that already ranks above it.
+              {copy(
+                settings.rulesNote,
+                '{count} rules, on every wiki here. They are the whole reason to read one of these instead of the bigger site that already ranks above it.',
+                { count: spellCount(rules.length) },
+              )}
             </p>
           </div>
           <div className="rulegrid">
-            {RULES.map((rule) => (
+            {rules.map((rule) => (
               <div key={rule.heading} className="rule">
                 <span className="rule-icon">
                   <Icon name={rule.icon} size={20} />

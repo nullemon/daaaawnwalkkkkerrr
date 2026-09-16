@@ -1,17 +1,13 @@
 'use client'
 
 import { useState } from 'react'
+import { useUi } from './UiStrings'
+import { fill } from '@/lib/copy'
 
 type Status = 'idle' | 'sending' | 'sent' | 'error'
 
-const KINDS = [
-  { value: 'feature', label: 'A new feature or tool' },
-  { value: 'data', label: 'Data we are missing' },
-  { value: 'guide', label: 'A guide you want written' },
-  { value: 'usability', label: 'Something that is hard to use' },
-  { value: 'bug', label: 'Something is broken' },
-  { value: 'other', label: 'Something else' },
-]
+/** The stored values. Their wording is `request-kind.*` in the label registry. */
+const KINDS = ['feature', 'data', 'guide', 'usability', 'bug', 'other']
 
 /**
  * Posts into the requests collection, which is publicly writable and privately
@@ -22,6 +18,7 @@ const KINDS = [
  * it is worth building. Merging them buries the accuracy reports.
  */
 export function RequestForm() {
+  const ui = useUi()
   const [status, setStatus] = useState<Status>('idle')
   const [error, setError] = useState('')
 
@@ -49,20 +46,17 @@ export function RequestForm() {
       form.reset()
     } catch (caught) {
       setStatus('error')
-      setError(caught instanceof Error ? caught.message : 'Something went wrong.')
+      setError(caught instanceof Error ? caught.message : ui.t('account.error-generic'))
     }
   }
 
   if (status === 'sent') {
     return (
       <div className="callout">
-        <h2>Thank you — that is on the list</h2>
-        <p>
-          Every request is read. The ones asked for most often get built first, which is the only
-          fair way to order a queue when there is more to do than time to do it in.
-        </p>
+        <h2>{ui.t('request.sent-title')}</h2>
+        <p>{ui.t('request.sent-body')}</p>
         <button type="button" className="linkish" onClick={() => setStatus('idle')}>
-          Ask for something else
+          {ui.t('request.sent-again')}
         </button>
       </div>
     )
@@ -71,53 +65,56 @@ export function RequestForm() {
   return (
     <form className="checker-panel" onSubmit={onSubmit}>
       <div className="field">
-        <label htmlFor="request-kind">What kind of thing is this?</label>
+        <label htmlFor="request-kind">{ui.t('request.kind-label')}</label>
         <select id="request-kind" name="kind" defaultValue="feature">
           {KINDS.map((kind) => (
-            <option key={kind.value} value={kind.value}>
-              {kind.label}
+            <option key={kind} value={kind}>
+              {ui.label('request-kind', kind)}
             </option>
           ))}
         </select>
       </div>
 
       <div className="field">
-        <label htmlFor="request-summary">What would you like?</label>
+        <label htmlFor="request-summary">{ui.t('request.summary-label')}</label>
         <input
           id="request-summary"
           name="summary"
           required
           maxLength={200}
-          placeholder="e.g. let me filter quests by which ending they feed"
+          placeholder={ui.t('request.summary-placeholder')}
         />
       </div>
 
       <div className="field">
-        <label htmlFor="request-detail">Any detail that would help</label>
+        <label htmlFor="request-detail">{ui.t('request.detail-label')}</label>
         <textarea
           id="request-detail"
           name="detail"
           rows={5}
           maxLength={2000}
-          placeholder="What you were trying to do, and what got in the way."
+          placeholder={ui.t('request.detail-placeholder')}
         />
       </div>
 
       <div className="field">
-        <label htmlFor="request-email">Your email, if you want a reply</label>
-        <input id="request-email" name="email" type="email" placeholder="Optional" />
-        <p className="note">
-          Only used to reply about this request. Never added to a list and never passed on.
-        </p>
+        <label htmlFor="request-email">{ui.t('request.email-label')}</label>
+        <input
+          id="request-email"
+          name="email"
+          type="email"
+          placeholder={ui.t('request.email-placeholder')}
+        />
+        <p className="note">{ui.t('request.email-note')}</p>
       </div>
 
       <button type="submit" className="button" disabled={status === 'sending'}>
-        {status === 'sending' ? 'Sending…' : 'Send request'}
+        {status === 'sending' ? ui.t('form.sending') : ui.t('request.submit')}
       </button>
 
       {status === 'error' ? (
         <p className="note" role="alert">
-          That did not send — {error}. Try again, or email us instead.
+          {fill(ui.t('request.error'), { error })}
         </p>
       ) : null}
     </form>

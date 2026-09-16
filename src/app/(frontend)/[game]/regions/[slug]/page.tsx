@@ -13,18 +13,13 @@ import { EntityImage } from '@/components/EntityImage'
 import { FactPanel } from '@/components/FactPanel'
 import { RelatedList, type RelatedItem } from '@/components/RelatedList'
 import { acquisitionLabel } from '@/lib/items'
-import { getAll, getBySlug } from '@/lib/payload'
+import { Callout } from '@/components/Callout'
+import { getUi } from '@/lib/ui'
+import { getAll, getBySlug, getGame } from '@/lib/payload'
 import { gameSlugParams } from '@/lib/params'
 import type { Region } from '@/payload-types'
 
 type Props = { params: Promise<{ game: string; slug: string }> }
-
-const DANGER_LABEL: Record<string, string> = {
-  starting: 'Starting area',
-  moderate: 'Moderate',
-  dangerous: 'Dangerous',
-  'late-run': 'Late run',
-}
 
 export const generateStaticParams = () => gameSlugParams('regions')
 
@@ -52,7 +47,11 @@ const inRegion = (value: unknown, slug: string): boolean =>
 
 export default async function RegionPage({ params }: Props) {
   const { game, slug } = await params
-  const doc = await getBySlug('regions', slug, { game, depth: 1 })
+  const [wiki, doc, ui] = await Promise.all([
+    getGame(game),
+    getBySlug('regions', slug, { game, depth: 1 }),
+    getUi(),
+  ])
   if (!doc) notFound()
 
   // Every relationship pointing here is worth walking back. The page used to
@@ -87,7 +86,7 @@ export default async function RegionPage({ params }: Props) {
     title: item.title,
     href: `/items/${item.slug}`,
     sub: item.howToGet,
-    meta: item.rarity ? <span className={`badge rarity-${item.rarity}`}>{item.rarity}</span> : acquisitionLabel(item),
+    meta: item.rarity ? <span className={`badge rarity-${item.rarity}`}>{item.rarity}</span> : acquisitionLabel(item, ui),
   }))
 
   const courtItems: RelatedItem[] = court.map((activity) => ({
@@ -128,7 +127,19 @@ export default async function RegionPage({ params }: Props) {
           <div className="stack">
             <FactPanel
               facts={[
-                { label: 'Danger', value: doc.dangerRating ? DANGER_LABEL[doc.dangerRating] ?? doc.dangerRating : undefined },
+                {
+                  /*
+                    This map was keyed 'late-run'. The records store 'late' —
+                    the collection's own option, the generated type and both
+                    seed files agree — so the lookup missed and the fallback
+                    printed a bare lower-case "late" in the fact panel while
+                    the index page next to it said "Late run". Two enums that
+                    should have been one, disagreeing quietly for as long as
+                    both existed. There is one now, in the label registry.
+                  */
+                  label: 'Danger',
+                  value: doc.dangerRating ? ui.label('danger', doc.dangerRating) : undefined,
+                },
                 { label: 'Quests', value: quests.length || undefined, absent: 'none filed' },
                 {
                   /*
@@ -147,14 +158,27 @@ export default async function RegionPage({ params }: Props) {
                 { label: 'Legendaries', value: items.filter((i) => i.rarity === 'legendary').length || undefined },
               ]}
             />
-            <div className="callout">
-              <h2>Travel is free</h2>
+            {/*
+              The segment clock is Dawnwalker's. This box told a Gears of War
+              reader that travel between regions costs nothing "because it is
+              the quests inside them that cost you", on every one of fifty-one
+              region pages — the same leak as the heading that used to say
+              "Vale Sangora", arriving through a different door. It now shows
+              only on a wiki that has the clock, and any wiki can write its
+              own.
+            */}
+            <Callout
+              game={wiki}
+              where="regions-detail"
+              heading="Travel is free"
+              builtIn={(wiki?.features ?? []).includes('run-checker')}
+            >
               <p>
                 Walking and fast travel cost no segments at all, so a region is only ever as
                 expensive as the quests you commit to inside it.{' '}
                 <Link href="/tools/run-checker">Check what you can still reach</Link>.
               </p>
-            </div>
+            </Callout>
           </div>
         </div>
 

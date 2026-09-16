@@ -1,6 +1,8 @@
 'use client'
 
 import { useState } from 'react'
+import { useUi } from './UiStrings'
+import { fill } from '@/lib/copy'
 
 type Status = 'idle' | 'sending' | 'sent' | 'error'
 
@@ -9,8 +11,13 @@ type Status = 'idle' | 'sending' | 'sent' | 'error'
  * and privately readable. This is the mechanism that turns the site's central
  * weakness — data compiled without access to the game — into something that
  * gets better rather than staying wrong.
+ *
+ * Every sentence here comes from the interface-text registry. The summary
+ * placeholder is why: it named a Dawnwalker quest, and this form is on all
+ * eight wikis.
  */
 export function CorrectionForm() {
+  const ui = useUi()
   const [status, setStatus] = useState<Status>('idle')
   const [error, setError] = useState('')
 
@@ -37,20 +44,17 @@ export function CorrectionForm() {
       form.reset()
     } catch (caught) {
       setStatus('error')
-      setError(caught instanceof Error ? caught.message : 'Something went wrong.')
+      setError(caught instanceof Error ? caught.message : ui.t('account.error-generic'))
     }
   }
 
   if (status === 'sent') {
     return (
       <div className="callout">
-        <h2>Thank you — that is in the queue</h2>
-        <p>
-          We read every report. If it checks out, the page is corrected and the confidence rating
-          goes up with it.
-        </p>
+        <h2>{ui.t('correction.sent-title')}</h2>
+        <p>{ui.t('correction.sent-body')}</p>
         <button type="button" className="linkish" onClick={() => setStatus('idle')}>
-          Report something else
+          {ui.t('correction.sent-again')}
         </button>
       </div>
     )
@@ -59,31 +63,36 @@ export function CorrectionForm() {
   return (
     <form className="checker-panel" onSubmit={onSubmit}>
       <div className="field">
-        <label htmlFor="correction-summary">What is wrong?</label>
+        <label htmlFor="correction-summary">{ui.t('correction.summary-label')}</label>
         <input
           id="correction-summary"
           name="summary"
           required
           maxLength={200}
-          placeholder="e.g. Hive and Seek costs 3 segments, not unknown"
+          placeholder={ui.t('correction.summary-placeholder')}
         />
       </div>
       <div className="field">
-        <label htmlFor="correction-detail">Any detail you can give</label>
+        <label htmlFor="correction-detail">{ui.t('correction.detail-label')}</label>
         <textarea id="correction-detail" name="detail" rows={4} maxLength={2000} />
       </div>
       <div className="field">
-        <label htmlFor="correction-source">Source, if you have one</label>
-        <input id="correction-source" name="sourceUrl" type="url" placeholder="https://" />
+        <label htmlFor="correction-source">{ui.t('correction.source-label')}</label>
+        <input
+          id="correction-source"
+          name="sourceUrl"
+          type="url"
+          placeholder={ui.t('correction.source-placeholder')}
+        />
       </div>
       <div>
         <button type="submit" className="button" disabled={status === 'sending'}>
-          {status === 'sending' ? 'Sending…' : 'Send correction'}
+          {status === 'sending' ? ui.t('form.sending') : ui.t('correction.submit')}
         </button>
       </div>
       {status === 'error' ? (
         <p className="note" role="alert">
-          That did not send: {error}. Try again in a moment.
+          {fill(ui.t('correction.error'), { error })}
         </p>
       ) : null}
     </form>

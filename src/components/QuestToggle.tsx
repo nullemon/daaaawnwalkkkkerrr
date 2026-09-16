@@ -1,6 +1,8 @@
 'use client'
 
 import { useRun } from './RunProvider'
+import { useUi } from './UiStrings'
+import { fill } from '@/lib/copy'
 
 /**
  * The same tick box, on every quest page. Marking a quest here updates the run
@@ -8,6 +10,7 @@ import { useRun } from './RunProvider'
  * site at once.
  */
 export function QuestToggle({ questId, title }: { questId: string; title: string }) {
+  const ui = useUi()
   const { isDone, toggleQuest, hydrated } = useRun()
   const done = isDone(questId)
 
@@ -24,11 +27,9 @@ export function QuestToggle({ questId, title }: { questId: string; title: string
         {done ? '✓' : ''}
       </span>
       <span>
-        {done ? 'Done in your run' : 'Mark as done'}
+        {done ? ui.t('quest.done') : ui.t('quest.mark-done')}
         <span className="sub">
-          {done
-            ? `${title} counts as finished everywhere on the site`
-            : 'Saved in this browser — no account needed'}
+          {done ? fill(ui.t('quest.done-sub'), { title }) : ui.t('quest.not-done-sub')}
         </span>
       </span>
     </button>

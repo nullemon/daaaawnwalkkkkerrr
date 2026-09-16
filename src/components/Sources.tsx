@@ -1,6 +1,37 @@
 import { getSiteSettings } from '@/lib/payload'
+import { pick, splitTokens } from '@/lib/copy'
 
 type Source = { title?: string | null; url?: string | null; retrieved?: string | null }
+
+/**
+ * The caveat, with its link rendered rather than pasted.
+ *
+ * The sentence is admin-editable and it contains a link, which is the one
+ * combination that must not go through `dangerouslySetInnerHTML`: an editable
+ * string that reaches the DOM as markup is a stored-XSS hole waiting for the
+ * first editor account that should not have had one. So `{corrections}` is a
+ * token and the anchor is a React child, the same way the attribution
+ * template handles `{source}`.
+ *
+ * A token nobody recognises is printed as typed. `{corrcetions}` visible on
+ * the page is a typo somebody fixes in a minute; silently swallowing it is a
+ * page with no way to report an error on it and nothing saying why.
+ */
+const CAVEAT =
+  'Facts compiled from public sources and not verified against the game. Spotted an error? {corrections} — corrections go straight to our review queue.'
+
+function caveat(template: string) {
+  return splitTokens(template).map((part, index) => {
+    if ('text' in part) return <span key={index}>{part.text}</span>
+    if (part.token === 'corrections')
+      return (
+        <a key={index} href="/corrections">
+          Tell us
+        </a>
+      )
+    return <span key={index}>{`{${part.token}}`}</span>
+  })
+}
 
 /**
  * Citations, and the standing caveat that goes with them.
@@ -38,10 +69,7 @@ export async function Sources({ sources }: { sources?: Source[] | null }) {
           </ul>
         </>
       ) : null}
-      <p className="note">
-        Facts compiled from public sources and not verified against the game. Spotted an error?{' '}
-        <a href="/corrections">Tell us</a> — corrections go straight to our review queue.
-      </p>
+      <p className="note">{caveat(pick(settings.sourcesCaveat, CAVEAT))}</p>
     </section>
   )
 }

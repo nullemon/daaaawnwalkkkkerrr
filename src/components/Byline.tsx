@@ -1,5 +1,6 @@
 import type { Author, Media } from '@/payload-types'
 import { getSiteSettings } from '@/lib/payload'
+import { copy } from '@/lib/copy'
 import { hub } from '@/lib/urls'
 
 /**
@@ -50,7 +51,20 @@ export async function Byline({
   const avatar = named?.avatar && typeof named.avatar === 'object' ? (named.avatar as Media) : null
   const checked = updated ? new Date(updated) : null
 
-  const team = settings.maintainer || `the ${settings.siteName ?? 'editorial'} team`
+  /*
+    Who the page is credited to when no real person is.
+
+    The editable line wins outright, including over `maintainer` — a field
+    labelled "Byline when nobody is named" that quietly loses to another field
+    on a different tab is a control that is present, reachable and useless.
+    Left blank it falls back to exactly what shipped: the maintainer if there
+    is one, otherwise the team, named after the site.
+  */
+  const team = copy(
+    settings.bylineTeamFallback,
+    settings.maintainer || 'the {site} team',
+    { site: settings.siteName ?? 'editorial' },
+  )
 
   if (!person && !checked) return null
 

@@ -11,6 +11,7 @@ import { FactPanel } from '@/components/FactPanel'
 import { RelatedList } from '@/components/RelatedList'
 import { EntityImage } from '@/components/EntityImage'
 import Link from 'next/link'
+import { Callout } from '@/components/Callout'
 import { getAll, getBySlug, getGame } from '@/lib/payload'
 import { gameName } from '@/lib/section-copy'
 import { gameSlugParams } from '@/lib/params'
@@ -43,7 +44,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function CourtPage({ params }: Props) {
   const { game, slug } = await params
-  const doc = await getBySlug('courts', slug, { game, depth: 1 })
+  const [wiki, doc] = await Promise.all([
+    getGame(game),
+    getBySlug('courts', slug, { game, depth: 1 }),
+  ])
   if (!doc) notFound()
   const activities = (await getAll('court-activities', { game, depth: 1 })).filter(
     (activity) => typeof activity.court === 'object' && activity.court?.slug === slug,
@@ -84,14 +88,18 @@ export default async function CourtPage({ params }: Props) {
                 { label: 'Documented here', value: activities.length || undefined },
               ]}
             />
-            <div className="callout">
-              <h2>You do not need all of them</h2>
+            <Callout
+              game={wiki}
+              where="courts-detail"
+              heading="You do not need all of them"
+              builtIn={(wiki?.features ?? []).includes('run-checker')}
+            >
               <p>
                 The duel unlocks at roughly three quarters of a vassal&rsquo;s activities, so the
                 gap between that and clearing the lot is the largest saving available to a tight
                 run. <Link href="/tools/run-checker">See what your run can still afford</Link>.
               </p>
-            </div>
+            </Callout>
           </div>
         </div>
 

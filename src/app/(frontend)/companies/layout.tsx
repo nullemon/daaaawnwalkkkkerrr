@@ -4,6 +4,8 @@ import { Shell } from '@/components/Shell'
 import type { FooterColumn } from '@/components/SiteFooter'
 import type { RailItem } from '@/components/SiteRail'
 import { getPublishedGames, getSiteSettings, gameUrl } from '@/lib/payload'
+import { copy } from '@/lib/copy'
+import { COMPANIES_BUILT_IN, getCompaniesSite } from '@/lib/companies-copy'
 import { hub } from '@/lib/urls'
 
 /**
@@ -15,22 +17,31 @@ import { hub } from '@/lib/urls'
  * needs no special case: the rewrite maps any subdomain label onto the
  * matching first path segment, so this host lands on `/companies/...` the same
  * way `dawnwalker.<domain>` lands on `/dawnwalker/...`.
+ *
+ * Its wording is the `companies-site` global. The network's name stays a token
+ * rather than a stored string — it is still a working title, and one rename
+ * should not leave this host introducing itself as the old one.
  */
 export async function generateMetadata(): Promise<Metadata> {
-  const settings = await getSiteSettings()
+  const [settings, site] = await Promise.all([getSiteSettings(), getCompaniesSite()])
   const network = settings.siteName ?? 'the network'
+  const shellName = copy(site.shellName, COMPANIES_BUILT_IN.shellName, { network })
   return {
     title: {
-      default: `Studios and publishers — ${network}`,
-      template: `%s · ${network} Companies`,
+      default: `${copy(site.shellTagline, COMPANIES_BUILT_IN.shellTagline)} — ${network}`,
+      template: `%s · ${shellName}`,
     },
-    description: `Every developer and publisher behind the games ${network} covers, and which of their games are here.`,
-    applicationName: `${network} Companies`,
+    description: copy(site.shellDescription, COMPANIES_BUILT_IN.shellDescription, { network }),
+    applicationName: shellName,
   }
 }
 
 export default async function CompaniesLayout({ children }: { children: ReactNode }) {
-  const [settings, games] = await Promise.all([getSiteSettings(), getPublishedGames()])
+  const [settings, games, site] = await Promise.all([
+    getSiteSettings(),
+    getPublishedGames(),
+    getCompaniesSite(),
+  ])
 
   const rail: RailItem[] = [
     { label: 'All companies', href: '/', icon: 'person' },
@@ -56,20 +67,33 @@ export default async function CompaniesLayout({ children }: { children: ReactNod
     {
       heading: 'This site',
       links: [
+        /*
+          The three hub links are added to, not replaced by, whatever an editor
+          adds below. Contact, privacy and terms are the network's legal pages
+          and they are reachable from every other host; a row added here quietly
+          taking them off this one is not an edit anybody would mean to make.
+
+          The hrefs are built from the network origin at render time, which is
+          also why the seed pass does not write them into the array: storing
+          `http://localhost:3000/privacy` would survive the deploy that stops
+          being true.
+        */
         { label: 'Contact', href: hub('/contact') },
         { label: 'Privacy', href: hub('/privacy') },
         { label: 'Terms', href: hub('/terms') },
+        ...(site.footerLinks ?? []).map((link) => ({ label: link.label, href: link.href })),
       ],
     },
   ]
 
   return (
     <Shell
-      siteName={`${settings.siteName ?? 'Network'} Companies`}
+      siteName={copy(site.shellName, COMPANIES_BUILT_IN.shellName, {
+        network: settings.siteName ?? 'Network',
+      })}
       items={rail}
       footer={{
-        blurb:
-          'Who made the games this network covers. One page per company, with everything of theirs we cover and a source for each claim.',
+        blurb: copy(site.footerBlurb, COMPANIES_BUILT_IN.footerBlurb),
         columns,
         note: settings.footerNote,
         maintainer: settings.maintainer,

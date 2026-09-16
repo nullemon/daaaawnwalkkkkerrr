@@ -3,6 +3,7 @@ import { PageHeader } from '@/components/PageHeader'
 import { WikiCard } from '@/components/WikiCard'
 import { directory } from '@/lib/directory'
 import { getSiteSettings } from '@/lib/payload'
+import { copy } from '@/lib/copy'
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await getSiteSettings()
@@ -26,7 +27,7 @@ export async function generateMetadata(): Promise<Metadata> {
  * halves of this list, and mixing them makes both scroll past the other.
  */
 export default async function WikisIndex() {
-  const wikis = await directory()
+  const [settings, wikis] = await Promise.all([getSiteSettings(), directory()])
   const now = Date.now()
 
   const isUpcoming = (release?: string | null) =>
@@ -41,15 +42,18 @@ export default async function WikisIndex() {
         eyebrow="Directory"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'All wikis' }]}
         icon="book"
-        title="Every wiki on the network"
-        lede="Each one is its own site with its own database. The page counts below are read from those databases when this page is built, so they are what is actually there rather than what we would like to claim."
+        title={copy(settings.wikisTitle, 'Every wiki on the network')}
+        lede={copy(
+          settings.wikisLede,
+          'Each one is its own site with its own database. The page counts below are read from those databases when this page is built, so they are what is actually there rather than what we would like to claim.',
+        )}
       />
 
       <div className="page body-main">
         {out.length > 0 ? (
           <section className="section">
             <div className="section-head">
-              <h2>Out now</h2>
+              <h2>{copy(settings.outNowHeading, 'Out now')}</h2>
             </div>
             <div className="tilegrid">
               {out.map((entry) => (
@@ -62,11 +66,12 @@ export default async function WikisIndex() {
         {upcoming.length > 0 ? (
           <section className="section">
             <div className="section-head">
-              <h2>Not out yet</h2>
+              <h2>{copy(settings.notOutYetHeading, 'Not out yet')}</h2>
               <p className="note">
-                Built ahead of release from what publishers have confirmed. Everything on these is
-                marked with where it came from, and the day the game ships is the day most of it
-                gets checked against it.
+                {copy(
+                  settings.notOutYetNote,
+                  'Built ahead of release from what publishers have confirmed. Everything on these is marked with where it came from, and the day the game ships is the day most of it gets checked against it.',
+                )}
               </p>
             </div>
             <div className="tilegrid">

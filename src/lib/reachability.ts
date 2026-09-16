@@ -4,6 +4,7 @@ import {
   segmentsRemaining,
   type PhaseRequirement,
 } from './segments'
+import { labelGroup } from './ui-registry'
 
 /**
  * The run checker.
@@ -210,13 +211,21 @@ export function checkRun(
     })
 }
 
-export const STATUS_LABELS: Record<ReachabilityStatus, string> = {
-  achieved: 'Already secured',
-  reachable: 'Still reachable',
-  tight: 'Tight — no room for detours',
-  'out-of-time': 'Out of time',
-  'locked-out': 'Locked out',
-}
+/**
+ * The five statuses in words.
+ *
+ * Read out of the interface-text registry rather than written here, so the
+ * wording is editable in the admin and exists once. `ui-registry` is the one
+ * module this file may take: it has no imports of its own and reaches nothing
+ * server-side, which is the property that lets the checker stay unit-testable
+ * without a database and shippable to the browser.
+ *
+ * What this map cannot see is an editor's override, because reading one is
+ * asynchronous and this is a constant. Components resolve the label through
+ * `ui.label('ending-status', status)` and get the edited version; this is the
+ * fallback for anything holding the checker on its own.
+ */
+export const STATUS_LABELS = labelGroup('ending-status') as Record<ReachabilityStatus, string>
 
 /** Statuses that still count as "on the table" when tallying a run. */
 const OPEN: ReachabilityStatus[] = ['achieved', 'reachable', 'tight']

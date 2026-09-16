@@ -4,11 +4,13 @@ import { ART_GAME, sectionArt, tileArt } from '@/lib/art'
 import { HeroSearch } from '@/components/HeroSearch'
 import { Logo } from '@/components/Logo'
 import { Icon } from '@/components/Icon'
-import { DawnwalkerBriefing } from '@/components/home/DawnwalkerBriefing'
+import { Briefing } from '@/components/home/Briefing'
 import { GameProfile } from '@/components/GameProfile'
 import { getAll, getGame } from '@/lib/payload'
 import { sectionsFor, toolsFor } from '@/lib/sections'
 import { releaseLine } from '@/lib/directory'
+import { homeCopy } from '@/lib/game-copy'
+import { copy } from '@/lib/copy'
 
 type Props = { params: Promise<{ game: string }> }
 
@@ -95,6 +97,22 @@ export default async function Home({ params }: Props) {
 
   const release = releaseLine(game)
   const upcoming = Boolean(game.releaseDate && new Date(game.releaseDate).getTime() > Date.now())
+
+  /*
+    This wiki's own wording, where an editor has written any.
+
+    `copy()` takes the built-in as its second argument, so a blank field is the
+    page that shipped rather than an empty heading — a half-filled record must
+    never delete a title.
+  */
+  const words = homeCopy(game)
+  const tokens = {
+    game: name,
+    publisher: game.publisher ?? 'the publisher',
+    count: total,
+    guides: guides.length,
+    achievements: achievements.length,
+  }
 
   /* Start-here picks, in priority order, each guide used at most once. */
   const taken = new Set<string>()
@@ -210,11 +228,23 @@ export default async function Home({ params }: Props) {
           */}
           {total === 0 ? (
             <div className="callout">
-              <h2>{upcoming ? 'This game is not out yet' : 'This wiki is just starting'}</h2>
+              <h2>
+                {upcoming
+                  ? copy(words.upcomingHeading, 'This game is not out yet', tokens)
+                  : copy(words.buildingHeading, 'This wiki is just starting', tokens)}
+              </h2>
               <p>
                 {upcoming
-                  ? `Everything here comes from what ${game.publisher ?? 'the publisher'} has actually confirmed — release, editions, requirements, features. There are no walkthroughs, no item lists and no boss strategies, because nobody has played it. Those arrive when there is something real to put in them.`
-                  : `There is little here yet. What is here is sourced; nothing has been filled in from guesswork to make the wiki look bigger than it is.`}
+                  ? copy(
+                      words.upcomingBody,
+                      'Everything here comes from what {publisher} has actually confirmed — release, editions, requirements, features. There are no walkthroughs, no item lists and no boss strategies, because nobody has played it. Those arrive when there is something real to put in them.',
+                      tokens,
+                    )
+                  : copy(
+                      words.buildingBody,
+                      'There is little here yet. What is here is sourced; nothing has been filled in from guesswork to make the wiki look bigger than it is.',
+                      tokens,
+                    )}
               </p>
               <p>
                 <Link href="/mechanics">What is confirmed so far</Link> ·{' '}
@@ -226,9 +256,13 @@ export default async function Home({ params }: Props) {
           {starters.length > 0 ? (
             <section className="section">
               <div className="section-head">
-                <h2>Start here</h2>
+                <h2>{copy(words.startHereHeading, 'Start here', tokens)}</h2>
                 <p className="note">
-                  The questions most people arrive with, each answered from a source you can check.
+                  {copy(
+                    words.startHereNote,
+                    'The questions most people arrive with, each answered from a source you can check.',
+                    tokens,
+                  )}
                 </p>
               </div>
               <div className="startgrid">
@@ -255,10 +289,13 @@ export default async function Home({ params }: Props) {
           {sections.length > 0 || tools.length > 0 ? (
             <section className="section">
               <div className="section-head">
-                <h2>Browse the database</h2>
+                <h2>{copy(words.browseHeading, 'Browse the database', tokens)}</h2>
                 <p className="note">
-                  Only sections with records in them. A link to an empty index reads as a broken
-                  site, so there are none.
+                  {copy(
+                    words.browseNote,
+                    'Only sections with records in them. A link to an empty index reads as a broken site, so there are none.',
+                    tokens,
+                  )}
                 </p>
               </div>
               <div className="tilegrid">
@@ -314,7 +351,7 @@ export default async function Home({ params }: Props) {
           {latestGuides.length > 0 ? (
             <section className="section">
               <div className="section-head">
-                <h2>Guides</h2>
+                <h2>{copy(words.latestHeading, 'Guides', tokens)}</h2>
                 <span className="eyebrow">
                   <Link href="/guides">all {guides.length}</Link>
                 </span>
@@ -350,10 +387,13 @@ export default async function Home({ params }: Props) {
           */}
           <GameProfile game={game} />
 
-          {/* Only for a game whose systems have actually been catalogued. */}
-          {courts.length > 0 && endings.length > 0 ? (
-            <DawnwalkerBriefing courts={courts} endings={endings} />
-          ) : null}
+          {/*
+            Unconditional, because the switch is on the record now: `Briefing`
+            renders nothing at all unless this wiki has one turned on. Gating it
+            here on "has courts and endings" was how one game's opinions got
+            offered to every game that happened to catalogue the same shapes.
+          */}
+          <Briefing game={game} courts={courts} endings={endings} />
         </div>
 
         {/* ---- The rail: what a reader keeps glancing back at ---- */}
@@ -374,7 +414,7 @@ export default async function Home({ params }: Props) {
           {rarest.length > 0 ? (
             <section className="railbox">
               <h2>
-                Hardest achievements
+                {copy(words.popularHeading, 'Hardest achievements', tokens)}
                 <Link href="/achievements" className="eyebrow">
                   all {achievements.length}
                 </Link>
@@ -413,7 +453,7 @@ export default async function Home({ params }: Props) {
 
           {guides.length > 0 ? (
             <section className="railbox">
-              <h2>Recently updated</h2>
+              <h2>{copy(words.recentHeading, 'Recently updated', tokens)}</h2>
               <ul className="raillist">
                 {guides.slice(0, 5).map((guide) => (
                   <li key={`recent-${guide.id}`}>
@@ -425,11 +465,13 @@ export default async function Home({ params }: Props) {
           ) : null}
 
           <section className="railbox">
-            <h2>How this wiki is written</h2>
+            <h2>{copy(words.trustHeading, 'How this wiki is written', tokens)}</h2>
             <p className="railnote">
-              Every figure here comes from a source and carries a confidence rating. Where nobody
-              has published something, the page says so rather than guessing — a blank is honest,
-              and a plausible-looking number that turns out to be invented costs you a playthrough.
+              {copy(
+                words.trustBody,
+                'Every figure here comes from a source and carries a confidence rating. Where nobody has published something, the page says so rather than guessing — a blank is honest, and a plausible-looking number that turns out to be invented costs you a playthrough.',
+                tokens,
+              )}
             </p>
             <p className="railnote">
               <Link href="/about">How the data is put together</Link>

@@ -3,6 +3,8 @@
 import Link from 'next/link'
 import { useEffect, useMemo, useState } from 'react'
 import { Icon } from './Icon'
+import { useUi } from './UiStrings'
+import { fill } from '@/lib/copy'
 
 type Row = { t: string; u: string; k: string; s: string }
 
@@ -13,6 +15,7 @@ type Row = { t: string; u: string; k: string; s: string }
  * comes from.
  */
 export function SearchBox() {
+  const ui = useUi()
   const [rows, setRows] = useState<Row[] | null>(null)
   const [q, setQ] = useState('')
   const [failed, setFailed] = useState(false)
@@ -57,34 +60,34 @@ export function SearchBox() {
   return (
     <div className="stack-sm">
       <div className="field">
-        <label htmlFor="site-search">Search the database</label>
+        <label htmlFor="site-search">{ui.t('search.label')}</label>
         <input
           id="site-search"
           type="search"
           autoFocus
-          placeholder="A quest, an item, a perk, a character…"
+          placeholder={ui.t('search.placeholder')}
           value={q}
           onChange={(event) => setQ(event.target.value)}
         />
       </div>
 
       {failed ? (
-        <p className="note">The search index could not be loaded. Try the section pages instead.</p>
+        <p className="note">{ui.t('search.failed')}</p>
       ) : !rows ? (
-        <p className="note">Loading the index…</p>
+        <p className="note">{ui.t('search.loading')}</p>
       ) : q.trim().length < 2 ? (
-        <p className="note">
-          {rows.length} records indexed. Type at least two characters.
-        </p>
+        /* A string, not a number: `fill` puts a thousands separator on a number
+           and the index runs past a thousand records, so passing one would
+           quietly restyle this line. */
+        <p className="note">{fill(ui.t('search.prompt'), { count: String(rows.length) })}</p>
       ) : results.length === 0 ? (
-        <p className="note">
-          Nothing matches &ldquo;{q}&rdquo;. It may simply not be documented yet — the database is
-          honest about its gaps rather than filling them in.
-        </p>
+        <p className="note">{fill(ui.t('search.no-match'), { query: q })}</p>
       ) : (
         <>
           <p className="note">
-            {results.length} match{results.length === 1 ? '' : 'es'}
+            {fill(ui.t(results.length === 1 ? 'search.match-one' : 'search.match-many'), {
+              count: results.length,
+            })}
           </p>
           {grouped.map(([kind, items]) => (
             <section className="section" key={kind}>

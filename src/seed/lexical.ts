@@ -37,16 +37,62 @@ const text = (value: string, format = 0): TextNode => ({
  */
 const BOLD = /\*\*(.+?)\*\*/g
 
-const spans = (value: string): TextNode[] => {
-  if (!value.includes('**')) return [text(value)]
+/**
+ * And `[words](/path)`, for the same reason.
+ *
+ * A link is the one piece of a sentence that cannot survive being seeded as
+ * plain text. "If you can confirm something here, tell us" with the link gone
+ * is not a slightly plainer sentence — it is a corrections page nobody can
+ * reach from the page asking them to use it. Three of the seeded legal
+ * sentences and most of the about page carry one, and without this the choice
+ * was between seeding them broken and not seeding them at all.
+ *
+ * Custom links only: an internal link stores a document id, and a seeder that
+ * guessed one would point at whatever happened to have that id.
+ */
+const LINK = /\[([^\]]+)\]\((\/[^)\s]*|https?:\/\/[^)\s]+)\)/g
 
-  const nodes: TextNode[] = []
+type LinkNode = {
+  type: 'link'
+  fields: { linkType: 'custom'; url: string; newTab: boolean }
+  children: TextNode[]
+  direction: 'ltr'
+  format: ''
+  indent: 0
+  version: 3
+}
+
+const link = (label: string, url: string): LinkNode => ({
+  type: 'link',
+  fields: { linkType: 'custom', url, newTab: !url.startsWith('/') },
+  children: [text(label)],
+  direction: 'ltr',
+  format: '',
+  indent: 0,
+  version: 3,
+})
+
+const spans = (value: string): (TextNode | LinkNode)[] => {
+  if (!value.includes('**') && !value.includes('](')) return [text(value)]
+
+  const nodes: (TextNode | LinkNode)[] = []
   let cursor = 0
 
-  for (const match of value.matchAll(BOLD)) {
-    const at = match.index
+  /*
+    Both patterns in one pass, in the order they appear. Running them one after
+    the other would mean the second one re-reading text the first had already
+    turned into nodes — and the bold pass rewriting the label inside a link is
+    exactly the kind of thing that produces a page nobody can explain.
+  */
+  const matches = [...value.matchAll(BOLD), ...value.matchAll(LINK)].sort(
+    (a, b) => (a.index ?? 0) - (b.index ?? 0),
+  )
+
+  for (const match of matches) {
+    const at = match.index ?? 0
+    if (at < cursor) continue
     if (at > cursor) nodes.push(text(value.slice(cursor, at)))
-    nodes.push(text(match[1], 1))
+    nodes.push(match[0].startsWith('**') ? text(match[1], 1) : link(match[1], match[2]))
     cursor = at + match[0].length
   }
 

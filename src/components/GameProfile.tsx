@@ -1,6 +1,8 @@
 import type { Game, Media } from '@/payload-types'
 import { companyUrl } from '@/lib/urls'
 import { slugify } from '@/fields/shared'
+import { getUi } from '@/lib/ui'
+import { fill } from '@/lib/copy'
 
 /**
  * The factsheet on a wiki's front page.
@@ -20,25 +22,10 @@ import { slugify } from '@/fields/shared'
  * is the whole reason that host exists.
  */
 
-const MODE_LABEL: Record<string, string> = {
-  'single-player': 'Single-player',
-  multiplayer: 'Multiplayer',
-  'co-op': 'Co-op',
-  'online-co-op': 'Online co-op',
-  pvp: 'PvP',
-  'online-pvp': 'Online PvP',
-  'cross-platform': 'Cross-platform',
-}
-
-const ONLINE_LABEL: Record<string, string> = {
-  no: 'Not required — plays offline',
-  multiplayer: 'Only for multiplayer',
-  yes: 'Always online',
-}
-
 type Row = { label: string; value: React.ReactNode }
 
-export function GameProfile({ game }: { game: Game }) {
+export async function GameProfile({ game }: { game: Game }) {
+  const ui = await getUi()
   const profile = game.profile ?? {}
   const poster =
     profile.poster && typeof profile.poster === 'object' ? (profile.poster as Media) : null
@@ -70,11 +57,11 @@ export function GameProfile({ game }: { game: Game }) {
 
   /* Only rows that have something to say. */
   const rows: Row[] = [
-    developers.length ? { label: 'Developer', value: join(developers) } : null,
-    publishers.length ? { label: 'Publisher', value: join(publishers) } : null,
+    developers.length ? { label: ui.t('profile.developer'), value: join(developers) } : null,
+    publishers.length ? { label: ui.t('profile.publisher'), value: join(publishers) } : null,
     game.releaseDate
       ? {
-          label: 'Released',
+          label: ui.t('profile.released'),
           value: (
             <>
               {/*
@@ -89,35 +76,42 @@ export function GameProfile({ game }: { game: Game }) {
                 year: 'numeric',
                 timeZone: 'UTC',
               })}
-              {game.releaseDateConfirmed === false ? ' (not confirmed)' : ''}
+              {game.releaseDateConfirmed === false ? ui.t('profile.release-unconfirmed') : ''}
             </>
           ),
         }
       : null,
     profile.priceText || profile.isFree
-      ? { label: 'Price', value: profile.isFree ? 'Free to play' : profile.priceText }
+      ? { label: ui.t('profile.price'), value: profile.isFree ? ui.t('profile.free') : profile.priceText }
       : null,
-    profile.microtransactions ? { label: 'In-app purchases', value: 'Yes, per the store listing' } : null,
-    profile.editionCount ? { label: 'Editions', value: profile.editionCount } : null,
-    profile.dlcCount ? { label: 'DLC and add-ons', value: profile.dlcCount } : null,
+    profile.microtransactions
+      ? { label: ui.t('profile.microtransactions'), value: ui.t('profile.microtransactions-value') }
+      : null,
+    profile.editionCount ? { label: ui.t('profile.editions'), value: profile.editionCount } : null,
+    profile.dlcCount ? { label: ui.t('profile.dlc'), value: profile.dlcCount } : null,
     modes.length
-      ? { label: 'Modes', value: modes.map((m) => MODE_LABEL[m] ?? m).join(' · ') }
+      ? { label: ui.t('profile.modes'), value: modes.map((m) => ui.label('mode', m, m)).join(' · ') }
       : null,
-    profile.maxPlayers ? { label: 'Players', value: profile.maxPlayers } : null,
+    profile.maxPlayers ? { label: ui.t('profile.players'), value: profile.maxPlayers } : null,
     profile.onlineRequired && profile.onlineRequired !== 'unknown'
-      ? { label: 'Internet', value: ONLINE_LABEL[profile.onlineRequired] ?? profile.onlineRequired }
+      ? {
+          label: ui.t('profile.internet'),
+          value: ui.label('online', profile.onlineRequired, profile.onlineRequired),
+        }
       : null,
     (game.platforms ?? []).length
-      ? { label: 'Platforms', value: (game.platforms as string[]).join(' · ') }
+      ? { label: ui.t('profile.platforms'), value: (game.platforms as string[]).join(' · ') }
       : null,
-    profile.engine ? { label: 'Engine', value: profile.engine } : null,
-    profile.series ? { label: 'Series', value: profile.series } : null,
-    profile.director ? { label: 'Director', value: profile.director } : null,
-    profile.composer ? { label: 'Composer', value: profile.composer } : null,
-    profile.metacritic ? { label: 'Metacritic', value: profile.metacritic } : null,
-    profile.budget ? { label: 'Budget', value: profile.budget } : null,
-    profile.marketingSpend ? { label: 'Marketing spend', value: profile.marketingSpend } : null,
-    profile.teamSize ? { label: 'Team size', value: profile.teamSize } : null,
+    profile.engine ? { label: ui.t('profile.engine'), value: profile.engine } : null,
+    profile.series ? { label: ui.t('profile.series'), value: profile.series } : null,
+    profile.director ? { label: ui.t('profile.director'), value: profile.director } : null,
+    profile.composer ? { label: ui.t('profile.composer'), value: profile.composer } : null,
+    profile.metacritic ? { label: ui.t('profile.metacritic'), value: profile.metacritic } : null,
+    profile.budget ? { label: ui.t('profile.budget'), value: profile.budget } : null,
+    profile.marketingSpend
+      ? { label: ui.t('profile.marketing'), value: profile.marketingSpend }
+      : null,
+    profile.teamSize ? { label: ui.t('profile.team-size'), value: profile.teamSize } : null,
   ].filter(Boolean) as Row[]
 
   if (rows.length === 0) return null
@@ -127,7 +121,9 @@ export function GameProfile({ game }: { game: Game }) {
   return (
     <section className="gameprofile" aria-labelledby="gameprofile-head">
       <div className="section-head">
-        <h2 id="gameprofile-head">{game.shortTitle || game.title} at a glance</h2>
+        <h2 id="gameprofile-head">
+          {fill(ui.t('profile.at-a-glance'), { game: game.shortTitle || game.title })}
+        </h2>
       </div>
 
       <div className="gameprofile-body">
@@ -165,10 +161,7 @@ export function GameProfile({ game }: { game: Game }) {
           useful than a figure a forum invented, and is the same rule the quest
           costs follow.
         */
-        <p className="note">
-          Development budget, marketing spend and team size are not published for this game. Where a
-          studio or publisher states one on the record, it will appear here with its source.
-        </p>
+        <p className="note">{ui.t('profile.undisclosed')}</p>
       ) : null}
     </section>
   )

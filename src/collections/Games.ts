@@ -3,6 +3,7 @@ import { slugField, publicRead, seoGroup } from '../fields/shared'
 import { APEX_ONLY, NETWORK_SUBDOMAINS } from '../proxy'
 import { hostLabelProblem } from '../lib/host-label'
 import { gameProfileGroup } from '../fields/gameProfile'
+import { gameCopyTabs } from '../fields/gameCopy'
 import { analyticsFields, verificationFields } from '../fields/analytics'
 
 /**
@@ -216,6 +217,12 @@ export const Games: CollectionConfig = {
           'Sideways links between wikis — the same series, or the obvious "if you liked this". How a new wiki gets its first traffic.',
       },
     },
+    /*
+      Everything this wiki says in its own voice, as fields rather than as
+      sentences in components. Every one of them is optional and falls back to
+      what the code produced before — see the note at the top of the file.
+    */
+    gameCopyTabs(),
     seoGroup(),
     verificationFields('game'),
     analyticsFields('game'),

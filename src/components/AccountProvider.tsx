@@ -1,6 +1,7 @@
 'use client'
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react'
+import { useUi } from './UiStrings'
 
 /**
  * Optional accounts.
@@ -9,6 +10,11 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useState } 
  * someone from a phone to a desktop, and for nothing else. Everything here
  * fails soft: if the account API is unreachable, the site carries on
  * anonymously rather than blocking.
+ *
+ * What it says while failing is a reader-facing sentence like any other, so it
+ * comes from the interface-text registry rather than being typed into a catch.
+ * That is also why `UiStringsProvider` is mounted outside this one in the root
+ * layout — a provider cannot read a context below itself.
  */
 
 export interface Player {
@@ -43,6 +49,7 @@ const readError = async (response: Response, fallback: string): Promise<string> 
 }
 
 export function AccountProvider({ children }: { children: React.ReactNode }) {
+  const ui = useUi()
   const [player, setPlayer] = useState<Player | null>(null)
   const [ready, setReady] = useState(false)
   const [busy, setBusy] = useState(false)
@@ -75,17 +82,17 @@ export function AccountProvider({ children }: { children: React.ReactNode }) {
         body: JSON.stringify({ email, password }),
       })
       if (!response.ok) {
-        return { ok: false, error: await readError(response, 'Those details did not work.') }
+        return { ok: false, error: await readError(response, ui.t('account.error-signin')) }
       }
       const body = await response.json()
       setPlayer(body.user as Player)
       return { ok: true }
     } catch {
-      return { ok: false, error: 'Could not reach the server. Try again in a moment.' }
+      return { ok: false, error: ui.t('account.error-network') }
     } finally {
       setBusy(false)
     }
-  }, [])
+  }, [ui])
 
   const register = useCallback(
     async (email: string, password: string) => {
@@ -98,16 +105,16 @@ export function AccountProvider({ children }: { children: React.ReactNode }) {
           body: JSON.stringify({ email, password }),
         })
         if (!response.ok) {
-          return { ok: false, error: await readError(response, 'Could not create that account.') }
+          return { ok: false, error: await readError(response, ui.t('account.error-register')) }
         }
         return await login(email, password)
       } catch {
-        return { ok: false, error: 'Could not reach the server. Try again in a moment.' }
+        return { ok: false, error: ui.t('account.error-network') }
       } finally {
         setBusy(false)
       }
     },
-    [login],
+    [login, ui],
   )
 
   const logout = useCallback(async () => {
@@ -138,7 +145,7 @@ export function AccountProvider({ children }: { children: React.ReactNode }) {
   )
 
   const deleteAccount = useCallback(async () => {
-    if (!player) return { ok: false, error: 'Not signed in.' }
+    if (!player) return { ok: false, error: ui.t('account.error-signed-out') }
     setBusy(true)
     try {
       const response = await fetch(`/api/players/${player.id}`, {
@@ -146,16 +153,16 @@ export function AccountProvider({ children }: { children: React.ReactNode }) {
         credentials: 'include',
       })
       if (!response.ok) {
-        return { ok: false, error: await readError(response, 'Could not delete the account.') }
+        return { ok: false, error: await readError(response, ui.t('account.error-delete')) }
       }
       await logout()
       return { ok: true }
     } catch {
-      return { ok: false, error: 'Could not reach the server. Try again in a moment.' }
+      return { ok: false, error: ui.t('account.error-network') }
     } finally {
       setBusy(false)
     }
-  }, [player, logout])
+  }, [player, logout, ui])
 
   const value = useMemo<AccountContextValue>(
     () => ({ player, ready, busy, login, register, logout, saveRun, deleteAccount }),

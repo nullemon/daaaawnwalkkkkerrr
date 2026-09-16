@@ -2,6 +2,8 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Icon } from './Icon'
+import { useUi } from './UiStrings'
+import { fill } from '@/lib/copy'
 
 /**
  * An interactive map: pan, zoom, filter, and tick off what you have found.
@@ -58,6 +60,7 @@ export function GameMap({
   markers: MapMarker[]
   categories: MapCategory[]
 }) {
+  const ui = useUi()
   const frame = useRef<HTMLDivElement>(null)
   const [zoom, setZoom] = useState(1)
   const [pan, setPan] = useState({ x: 0, y: 0 })
@@ -227,7 +230,10 @@ export function GameMap({
           {markers.length > 0 && ready ? (
             <>
               <span className="gamemap-progress">
-                {countFound} / {markers.length} found
+                {fill(ui.t('map.found-progress'), {
+                  found: countFound,
+                  total: markers.length,
+                })}
               </span>
               <button
                 type="button"
@@ -236,17 +242,17 @@ export function GameMap({
                 onClick={() => setHideFound((current) => !current)}
                 aria-pressed={hideFound}
               >
-                Hide found
+                {ui.t('map.hide-found')}
               </button>
             </>
           ) : null}
-          <button type="button" className="icon-btn" onClick={() => zoomTo(zoom * 1.4)} aria-label="Zoom in">
+          <button type="button" className="icon-btn" onClick={() => zoomTo(zoom * 1.4)} aria-label={ui.t('map.zoom-in')}>
             +
           </button>
-          <button type="button" className="icon-btn" onClick={() => zoomTo(zoom / 1.4)} aria-label="Zoom out">
+          <button type="button" className="icon-btn" onClick={() => zoomTo(zoom / 1.4)} aria-label={ui.t('map.zoom-out')}>
             &minus;
           </button>
-          <button type="button" className="icon-btn" onClick={reset} aria-label="Reset the view">
+          <button type="button" className="icon-btn" onClick={reset} aria-label={ui.t('map.reset-view')}>
             <Icon name="search" size={15} />
           </button>
         </div>
@@ -296,7 +302,7 @@ export function GameMap({
               type="button"
               className="gamemap-popup-close"
               onClick={() => setOpen(null)}
-              aria-label="Close"
+              aria-label={ui.t('map.close')}
             >
               &times;
             </button>
@@ -304,7 +310,7 @@ export function GameMap({
             {openMarker.note ? <p className="note">{openMarker.note}</p> : null}
             {openMarker.href ? (
               <p>
-                <a href={openMarker.href}>Open its page</a>
+                <a href={openMarker.href}>{ui.t('map.open-page')}</a>
               </p>
             ) : null}
             <label className="gamemap-found">
@@ -313,19 +319,18 @@ export function GameMap({
                 checked={found.has(openMarker.id)}
                 onChange={() => toggleFound(openMarker.id)}
               />
-              Mark as found
+              {ui.t('map.mark-found')}
             </label>
             {openMarker.source ? (
-              <p className="gamemap-source">Position from {openMarker.source}</p>
+              <p className="gamemap-source">
+                {fill(ui.t('map.position-from'), { source: openMarker.source })}
+              </p>
             ) : null}
           </div>
         ) : null}
       </div>
 
-      <p className="note gamemap-help">
-        Drag to move, scroll to zoom, click a pin for what is there. What you tick off is kept in
-        this browser only — there is no account behind it and nothing is sent anywhere.
-      </p>
+      <p className="note gamemap-help">{ui.t('map.help')}</p>
     </div>
   )
 }

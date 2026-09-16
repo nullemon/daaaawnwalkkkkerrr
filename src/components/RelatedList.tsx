@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import type { ReactNode } from 'react'
 import { Icon, type IconName } from './Icon'
+import { getUi } from '@/lib/ui'
 
 export type RelatedItem = {
   id: string | number
@@ -24,7 +25,7 @@ export type RelatedItem = {
  * region with no catalogued enemies is a gap in the data, not a section of the
  * page — and `EntityImage` sets the precedent for staying silent.
  */
-export function RelatedList({
+export async function RelatedList({
   heading,
   icon,
   items,
@@ -44,6 +45,8 @@ export function RelatedList({
 }) {
   if (items.length === 0 && !emptyNote) return null
 
+  const ui = await getUi()
+
   return (
     <section className="section">
       <div className="section-head">
@@ -56,7 +59,7 @@ export function RelatedList({
           {href ? (
             <>
               {items.length > 0 ? ' · ' : ''}
-              <Link href={href}>see all</Link>
+              <Link href={href}>{ui.t('related.see-all')}</Link>
             </>
           ) : null}
         </span>

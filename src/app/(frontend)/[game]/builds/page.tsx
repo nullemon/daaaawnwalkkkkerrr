@@ -4,16 +4,26 @@ import Link from 'next/link'
 import { PageHeader } from '@/components/PageHeader'
 import { sectionArt } from '@/lib/art'
 import { Badge, Confidence } from '@/components/Badges'
-import { getAll } from '@/lib/payload'
+import { Callout } from '@/components/Callout'
+import { getAll, getGame } from '@/lib/payload'
+import { sectionCopy } from '@/lib/section-copy'
 import type { Build, SkillTree } from '@/payload-types'
 
 type Props = { params: Promise<{ game: string }> }
 
-export const metadata: Metadata = {
-  title: 'Builds — day, night and hybrid',
-  description:
-    'Character builds for The Blood of Dawnwalker across Swordmastery, Witchcraft and Vampirism, with the perks and gear each one needs.',
-  alternates: { canonical: '/builds' },
+/** A function rather than a static object — see the note in `endings/page.tsx`. */
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { game: slug } = await params
+  const [game, builds] = await Promise.all([
+    getGame(slug),
+    getAll('builds', { game: slug, depth: 0 }),
+  ])
+  const copy = sectionCopy('builds', game, { total: builds.length })
+  return {
+    title: copy.title,
+    description: copy.description,
+    alternates: { canonical: '/builds' },
+  }
 }
 
 const PLAYSTYLE: Record<string, string> = {
@@ -24,7 +34,10 @@ const PLAYSTYLE: Record<string, string> = {
 
 export default async function BuildsIndex({ params }: Props) {
   const { game } = await params
-  const builds = await getAll('builds', { game, depth: 1 })
+  const [doc, builds] = await Promise.all([
+    getGame(game),
+    getAll('builds', { game, depth: 1 }),
+  ])
 
   /*
    * A section with no records is not this game's section. The rail and the
@@ -33,6 +46,7 @@ export default async function BuildsIndex({ params }: Props) {
    * the one game that does have the section. A 404 is the honest answer.
    */
   if (builds.length === 0) notFound()
+  const copy = sectionCopy('builds', doc, { total: builds.length })
 
   return (
     <>
@@ -41,8 +55,8 @@ export default async function BuildsIndex({ params }: Props) {
         eyebrow="Database"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Builds' }]}
         icon="shield"
-        title="Builds"
-        lede="Coen is two characters sharing a body, so a build is really a decision about which half of the clock you intend to fight in. Each of these says which, and what it costs you in the other."
+        title={copy.heading}
+        lede={copy.lede}
       />
       <div className="page body-main">
         {builds.length === 0 ? (
@@ -80,13 +94,17 @@ export default async function BuildsIndex({ params }: Props) {
             </table>
           </div>
         )}
-        <div className="callout">
-          <h2>Build your own</h2>
+        <Callout
+          game={doc}
+          where="builds-index"
+          heading="Build your own"
+          builtIn={(doc?.features ?? []).includes('build-planner')}
+        >
           <p>
             The <Link href="/tools/build-planner">build planner</Link> lets you pick perks across the
             three trees, shows what it costs in segments, and gives you a link you can share.
           </p>
-        </div>
+        </Callout>
       </div>
     </>
   )

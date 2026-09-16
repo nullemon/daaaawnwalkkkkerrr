@@ -134,9 +134,15 @@ export interface Config {
   fallbackLocale: null;
   globals: {
     'site-settings': SiteSetting;
+    'legal-pages': LegalPage;
+    'ui-strings': UiString;
+    'companies-site': CompaniesSite;
   };
   globalsSelect: {
     'site-settings': SiteSettingsSelect<false> | SiteSettingsSelect<true>;
+    'legal-pages': LegalPagesSelect<false> | LegalPagesSelect<true>;
+    'ui-strings': UiStringsSelect<false> | UiStringsSelect<true>;
+    'companies-site': CompaniesSiteSelect<false> | CompaniesSiteSelect<true>;
   };
   locale: null;
   widgets: {
@@ -773,6 +779,328 @@ export interface Game {
    * Sideways links between wikis — the same series, or the obvious "if you liked this". How a new wiki gets its first traffic.
    */
   relatedGames?: (number | Game)[] | null;
+  /**
+   * One row per section. Tokens: {game}, {count}, {detail}. Any field left blank uses the built-in wording for that section.
+   */
+  sectionCopy?:
+    | {
+        /**
+         * Which index this row is for.
+         */
+        section:
+          | 'quests'
+          | 'achievements'
+          | 'court-activities'
+          | 'endings'
+          | 'regions'
+          | 'courts'
+          | 'characters'
+          | 'enemies'
+          | 'skill-trees'
+          | 'perks'
+          | 'items'
+          | 'builds'
+          | 'mechanics'
+          | 'guides'
+          | 'maps';
+        /**
+         * The <title>, before the layout appends the wiki name. This is what a search result shows, so make it different from every other wiki’s.
+         */
+        title?: string | null;
+        /**
+         * The sentence under the title in search results.
+         */
+        description?: string | null;
+        /**
+         * The <h1>. Usually shorter than the browser title.
+         */
+        heading?: string | null;
+        /**
+         * The paragraph under the heading.
+         */
+        lede?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * The bordered notes inside a section. Leave a row out entirely and the built-in note is shown; add a row and tick "Hide" to show nothing. The Court activities note can use {needed}, {total} and {optional}; everywhere else, {game} and {count}.
+   */
+  callouts?:
+    | {
+        where:
+          | 'quests-index'
+          | 'items-index'
+          | 'endings-index'
+          | 'perks-index'
+          | 'builds-index'
+          | 'courts-index'
+          | 'court-activities-index'
+          | 'quests-detail'
+          | 'endings-detail'
+          | 'guides-detail'
+          | 'skill-trees-detail'
+          | 'courts-detail'
+          | 'regions-detail';
+        /**
+         * Tick to show nothing here. The right answer when the built-in note describes a mechanic this game does not have.
+         */
+        hide?: boolean | null;
+        heading?: string | null;
+        body?: string | null;
+        /**
+         * Optional, e.g. /tools/build-planner.
+         */
+        linkHref?: string | null;
+        linkLabel?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * How the guide index is grouped. Leave empty to use the built-in grouping. A guide matching no group lands in "Everything else", which is deliberate — a guide nobody can find is worse than an untidy heading.
+   */
+  guideGroups?:
+    | {
+        heading: string;
+        note?: string | null;
+        /**
+         * One slug per line, e.g. beginners-guide. A guide is claimed by the first group that matches it, so order these the way you want ties broken.
+         */
+        slugs?: string | null;
+        /**
+         * e.g. -tree-guide.
+         */
+        endsWith?: string | null;
+        /**
+         * e.g. ending.
+         */
+        contains?: string | null;
+        /**
+         * Reads the region records rather than a list typed here, so a new region files its guide without anybody remembering to come back.
+         */
+        matchRegions?: boolean | null;
+        id?: string | null;
+      }[]
+    | null;
+  homeCopy?: {
+    upcomingHeading?: string | null;
+    buildingHeading?: string | null;
+    /**
+     * Tokens: {game}, {publisher}.
+     */
+    upcomingBody?: string | null;
+    buildingBody?: string | null;
+    startHereHeading?: string | null;
+    startHereNote?: string | null;
+    browseHeading?: string | null;
+    browseNote?: string | null;
+    latestHeading?: string | null;
+    popularHeading?: string | null;
+    recentHeading?: string | null;
+    trustHeading?: string | null;
+    trustBody?: string | null;
+  };
+  aboutPage?: {
+    /**
+     * Tokens: {game}, {title}.
+     */
+    title?: string | null;
+    /**
+     * This was the one description repeated verbatim across all eight wikis — eight pages competing for the same result and the engine picking one. Worth writing per wiki.
+     */
+    metaDescription?: string | null;
+    /**
+     * Under the page title. Tokens: {game}.
+     */
+    lede?: string | null;
+    purposeHeading?: string | null;
+    runsItHeading?: string | null;
+    /**
+     * Tokens are not substituted in rich text — write it out.
+     */
+    purpose?: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    /**
+     * Tokens: {game}, {entity} (from Site settings → Legal & contact), {rightsholders} (developer and publisher, linked to their company profiles). Keep {entity} rather than typing the name, so the provisional-details warning keeps working.
+     */
+    publisherLine?: string | null;
+    /**
+     * The paragraph about who makes editorial decisions.
+     */
+    independence?: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    sourcingHeading?: string | null;
+    confidenceHeading?: string | null;
+    /**
+     * Two paragraphs by default.
+     */
+    sourcing?: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    /**
+     * The three-level list and the note under it.
+     */
+    confidence?: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    limitsHeading?: string | null;
+    correctionsHeading?: string | null;
+    limits?: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    corrections?: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    /**
+     * Appended after Corrections. For anything this wiki needs that the others do not.
+     */
+    extraSections?:
+      | {
+          heading: string;
+          body?: {
+            root: {
+              type: string;
+              children: {
+                type: any;
+                version: number;
+                [k: string]: unknown;
+              }[];
+              direction: ('ltr' | 'rtl') | null;
+              format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+              indent: number;
+              version: number;
+            };
+            [k: string]: unknown;
+          } | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  briefing?: {
+    /**
+     * Off unless somebody has actually written one. An empty opinion box is worse than no opinion box.
+     */
+    enabled?: boolean | null;
+    /**
+     * The label above the takes. It is what marks them as opinion rather than record — keep it doing that however it is worded.
+     */
+    eyebrow?: string | null;
+    heading?: string | null;
+    lede?: string | null;
+    endingsHeading?: string | null;
+    endingsNote?: string | null;
+    takes?:
+      | {
+          who: string;
+          claim: string;
+          /**
+           * This is opinion and is labelled as such on the page. It still has to be reasoning a reader can check against the records.
+           */
+          reasoning?: string | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  toolCopy?: {
+    runCheckerTitle?: string | null;
+    runCheckerDescription?: string | null;
+    runCheckerHeading?: string | null;
+    runCheckerLede?: string | null;
+    runCheckerHowHeading?: string | null;
+    /**
+     * States the size of the clock in prose. If this wiki’s game has a different budget, this is the sentence that has to say so.
+     */
+    runCheckerHowBody?: string | null;
+    /**
+     * The central editorial claim of the whole tool: a total containing an unknown cost is a floor. Reword it, but do not turn it into a promise the data cannot keep.
+     */
+    runCheckerFloorNote?: string | null;
+    buildPlannerTitle?: string | null;
+    buildPlannerDescription?: string | null;
+    buildPlannerHeading?: string | null;
+    buildPlannerLede?: string | null;
+    completionTitle?: string | null;
+    completionDescription?: string | null;
+    completionHeading?: string | null;
+    completionLede?: string | null;
+    runTitle?: string | null;
+    runDescription?: string | null;
+    runHeading?: string | null;
+    runLede?: string | null;
+  };
   /**
    * Leave blank to derive from the title and summary.
    */
@@ -3189,6 +3517,123 @@ export interface GamesSelect<T extends boolean = true> {
       };
   features?: T;
   relatedGames?: T;
+  sectionCopy?:
+    | T
+    | {
+        section?: T;
+        title?: T;
+        description?: T;
+        heading?: T;
+        lede?: T;
+        id?: T;
+      };
+  callouts?:
+    | T
+    | {
+        where?: T;
+        hide?: T;
+        heading?: T;
+        body?: T;
+        linkHref?: T;
+        linkLabel?: T;
+        id?: T;
+      };
+  guideGroups?:
+    | T
+    | {
+        heading?: T;
+        note?: T;
+        slugs?: T;
+        endsWith?: T;
+        contains?: T;
+        matchRegions?: T;
+        id?: T;
+      };
+  homeCopy?:
+    | T
+    | {
+        upcomingHeading?: T;
+        buildingHeading?: T;
+        upcomingBody?: T;
+        buildingBody?: T;
+        startHereHeading?: T;
+        startHereNote?: T;
+        browseHeading?: T;
+        browseNote?: T;
+        latestHeading?: T;
+        popularHeading?: T;
+        recentHeading?: T;
+        trustHeading?: T;
+        trustBody?: T;
+      };
+  aboutPage?:
+    | T
+    | {
+        title?: T;
+        metaDescription?: T;
+        lede?: T;
+        purposeHeading?: T;
+        runsItHeading?: T;
+        purpose?: T;
+        publisherLine?: T;
+        independence?: T;
+        sourcingHeading?: T;
+        confidenceHeading?: T;
+        sourcing?: T;
+        confidence?: T;
+        limitsHeading?: T;
+        correctionsHeading?: T;
+        limits?: T;
+        corrections?: T;
+        extraSections?:
+          | T
+          | {
+              heading?: T;
+              body?: T;
+              id?: T;
+            };
+      };
+  briefing?:
+    | T
+    | {
+        enabled?: T;
+        eyebrow?: T;
+        heading?: T;
+        lede?: T;
+        endingsHeading?: T;
+        endingsNote?: T;
+        takes?:
+          | T
+          | {
+              who?: T;
+              claim?: T;
+              reasoning?: T;
+              id?: T;
+            };
+      };
+  toolCopy?:
+    | T
+    | {
+        runCheckerTitle?: T;
+        runCheckerDescription?: T;
+        runCheckerHeading?: T;
+        runCheckerLede?: T;
+        runCheckerHowHeading?: T;
+        runCheckerHowBody?: T;
+        runCheckerFloorNote?: T;
+        buildPlannerTitle?: T;
+        buildPlannerDescription?: T;
+        buildPlannerHeading?: T;
+        buildPlannerLede?: T;
+        completionTitle?: T;
+        completionDescription?: T;
+        completionHeading?: T;
+        completionLede?: T;
+        runTitle?: T;
+        runDescription?: T;
+        runHeading?: T;
+        runLede?: T;
+      };
   seo?:
     | T
     | {
@@ -3483,8 +3928,96 @@ export interface SiteSetting {
    * Disclaimer line in the footer.
    */
   footerNote?: string | null;
+  /**
+   * Leave empty to keep the built-in columns. Links are relative to whichever host the footer is on unless they start with http.
+   */
+  footerColumns?:
+    | {
+        heading: string;
+        links?:
+          | {
+              label: string;
+              href: string;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Appended to the left rail on every wiki, under the sections. The sections themselves are derived from what each wiki has and are not listed here — a link to an empty index reads as a broken site.
+   */
+  railItems?:
+    | {
+        label: string;
+        href: string;
+        icon?:
+          ('book' | 'map' | 'person' | 'star' | 'search' | 'shield' | 'spark' | 'check' | 'crown' | 'scroll') | null;
+        id?: string | null;
+      }[]
+    | null;
+  wikisTitle?: string | null;
+  wikisLede?: string | null;
+  outNowHeading?: string | null;
+  notOutYetHeading?: string | null;
+  /**
+   * Four of the eight are pre-release and thin on purpose. This is where that is explained rather than looking like neglect.
+   */
+  notOutYetNote?: string | null;
+  authorsTitle?: string | null;
+  authorsLede?: string | null;
+  /**
+   * The "compiled from public sources, tell us if it is wrong" line. Token: {corrections}, which renders as the link to the corrections queue — delete it and the page loses its only way for a reader to report an error.
+   */
+  sourcesCaveat?: string | null;
+  /**
+   * Shown only when Licence attribution is set to Full. The template itself is on the Hub home page tab; this is the sentence after it.
+   */
+  attributionFullExtra?: string | null;
+  /**
+   * e.g. "the editorial team". Token: {site}, the network name.
+   */
+  bylineTeamFallback?: string | null;
+  /**
+   * Token: {maintainer}, from the Identity tab.
+   */
+  maintainerLine?: string | null;
   heroHeading?: string | null;
   heroSubheading?: string | null;
+  /**
+   * In the hero. Blank uses the built-in wording.
+   */
+  searchPlaceholder?: string | null;
+  statWikisLabel?: string | null;
+  statPagesLabel?: string | null;
+  statUpcomingLabel?: string | null;
+  askingHeading?: string | null;
+  askingNote?: string | null;
+  directoryHeading?: string | null;
+  directoryNote?: string | null;
+  latestHeading?: string | null;
+  /**
+   * Leave empty to show the four that shipped. These are promises the rest of the site has to keep, so change them with that in mind.
+   */
+  rules?:
+    | {
+        icon?:
+          ('check' | 'warn' | 'scroll' | 'book' | 'star' | 'search' | 'shield' | 'spark' | 'lock' | 'hourglass') | null;
+        heading: string;
+        body: string;
+        id?: string | null;
+      }[]
+    | null;
+  rulesHeading?: string | null;
+  rulesNote?: string | null;
+  /**
+   * Appended to the hub’s browser title.
+   */
+  metaTitleSuffix?: string | null;
+  /**
+   * Used when Description on the Identity tab is blank.
+   */
+  metaDescriptionFallback?: string | null;
   /**
    * Off by default, switched on here for every page at once. Read this before leaving it off: around five hundred records restate facts from Fandom and Wikipedia, both CC BY-SA, and that licence requires attribution as a condition of reusing the content. With this hidden and no attribution elsewhere, those pages are outside the terms the facts on them arrived under. The usual way to keep it off page-by-page is a single site-wide credits page instead — that is a legitimate choice, an absence of any credit is not.
    */
@@ -3563,6 +4096,210 @@ export interface SiteSetting {
   createdAt?: string | null;
 }
 /**
+ * Privacy, terms and contact. The details themselves live in Site settings → Legal & contact and are substituted in — do not type them here.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "legal-pages".
+ */
+export interface LegalPage {
+  id: number;
+  privacy?: {
+    title?: string | null;
+    metaDescription?: string | null;
+    lede?: string | null;
+    /**
+     * In order, each rendering as a heading and its body. Tokens filled from Site settings → Legal & contact: {entity}, {email}, {address}, {jurisdiction}, {site}. On the terms page only, {rightsholders} lists the developers and publishers this network covers — it is the affiliation disclaimer naming them rather than gesturing at them, so deleting it weakens the sentence it sits in. Leave the whole list empty to use the wording that shipped.
+     */
+    sections?:
+      | {
+          heading: string;
+          body?: {
+            root: {
+              type: string;
+              children: {
+                type: any;
+                version: number;
+                [k: string]: unknown;
+              }[];
+              direction: ('ltr' | 'rtl') | null;
+              format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+              indent: number;
+              version: number;
+            };
+            [k: string]: unknown;
+          } | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  terms?: {
+    title?: string | null;
+    metaDescription?: string | null;
+    lede?: string | null;
+    /**
+     * In order, each rendering as a heading and its body. Tokens filled from Site settings → Legal & contact: {entity}, {email}, {address}, {jurisdiction}, {site}. On the terms page only, {rightsholders} lists the developers and publishers this network covers — it is the affiliation disclaimer naming them rather than gesturing at them, so deleting it weakens the sentence it sits in. Leave the whole list empty to use the wording that shipped.
+     */
+    sections?:
+      | {
+          heading: string;
+          body?: {
+            root: {
+              type: string;
+              children: {
+                type: any;
+                version: number;
+                [k: string]: unknown;
+              }[];
+              direction: ('ltr' | 'rtl') | null;
+              format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+              indent: number;
+              version: number;
+            };
+            [k: string]: unknown;
+          } | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  contact?: {
+    title?: string | null;
+    metaDescription?: string | null;
+    lede?: string | null;
+    /**
+     * In order, each rendering as a heading and its body. Tokens filled from Site settings → Legal & contact: {entity}, {email}, {address}, {jurisdiction}, {site}. On the terms page only, {rightsholders} lists the developers and publishers this network covers — it is the affiliation disclaimer naming them rather than gesturing at them, so deleting it weakens the sentence it sits in. Leave the whole list empty to use the wording that shipped.
+     */
+    sections?:
+      | {
+          heading: string;
+          body?: {
+            root: {
+              type: string;
+              children: {
+                type: any;
+                version: number;
+                [k: string]: unknown;
+              }[];
+              direction: ('ltr' | 'rtl') | null;
+              format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+              indent: number;
+              version: number;
+            };
+            [k: string]: unknown;
+          } | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * Buttons, empty states, form hints and badge labels. Everything here has a working default in the code; a row only overrides one.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ui-strings".
+ */
+export interface UiString {
+  id: number;
+  /**
+   * One row per string you want to change. Leave the table empty and the interface reads exactly as it does today.
+   */
+  strings?:
+    | {
+        /**
+         * Must match a key in the registry. An unknown key does nothing.
+         */
+        key: string;
+        text?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Keyed as <group>.<stored value>, e.g. rarity.legendary or danger.late-run.
+   */
+  labels?:
+    | {
+        /**
+         * Must match a key in the registry. An unknown key does nothing.
+         */
+        key: string;
+        text?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * The companies.<domain> host: its front page, its shell and its footer. Company records themselves are in the Companies collection.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "companies-site".
+ */
+export interface CompaniesSite {
+  id: number;
+  title?: string | null;
+  eyebrow?: string | null;
+  metaDescription?: string | null;
+  /**
+   * Token: {count}, the number of company profiles.
+   */
+  lede?: string | null;
+  /**
+   * Four groups, in this order. A group with nothing in it is not rendered at all.
+   */
+  groups?: {
+    coveredHeading?: string | null;
+    coveredNote?: string | null;
+    rankedHeading?: string | null;
+    /**
+     * The note that says this is revenue on a date rather than popularity. Worth keeping the distinction however it is reworded — popularity is not a measurable quantity and this site does not pretend otherwise.
+     */
+    rankedNote?: string | null;
+    cataloguedHeading?: string | null;
+    cataloguedNote?: string | null;
+    mentionedHeading?: string | null;
+    mentionedNote?: string | null;
+  };
+  whyHeading?: string | null;
+  /**
+   * Token: {authorsLink}, a link to the hub’s contributors page.
+   */
+  whyBody?: string | null;
+  profile?: {
+    gamesHeading?: string | null;
+    subsidiariesHeading?: string | null;
+    parentHeading?: string | null;
+    peopleHeading?: string | null;
+    /**
+     * The line saying every figure comes from the company’s own article with the date it was read.
+     */
+    sourcingNote?: string | null;
+    /**
+     * Why a parent or a subsidiary is listed at all — each link exists because one of the two companies’ own articles named the other. That provenance is the reason to trust the graph, so it is worth saying on the page.
+     */
+    structureNote?: string | null;
+    knownHeading?: string | null;
+    knownNote?: string | null;
+  };
+  shellName?: string | null;
+  shellTagline?: string | null;
+  footerBlurb?: string | null;
+  /**
+   * For any page on this host that does not set its own. Both routes here do set one, so this is the safety net rather than the usual case.
+   */
+  shellDescription?: string | null;
+  footerLinks?:
+    | {
+        label: string;
+        href: string;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "site-settings_select".
  */
@@ -3586,8 +4323,61 @@ export interface SiteSettingsSelect<T extends boolean = true> {
         id?: T;
       };
   footerNote?: T;
+  footerColumns?:
+    | T
+    | {
+        heading?: T;
+        links?:
+          | T
+          | {
+              label?: T;
+              href?: T;
+              id?: T;
+            };
+        id?: T;
+      };
+  railItems?:
+    | T
+    | {
+        label?: T;
+        href?: T;
+        icon?: T;
+        id?: T;
+      };
+  wikisTitle?: T;
+  wikisLede?: T;
+  outNowHeading?: T;
+  notOutYetHeading?: T;
+  notOutYetNote?: T;
+  authorsTitle?: T;
+  authorsLede?: T;
+  sourcesCaveat?: T;
+  attributionFullExtra?: T;
+  bylineTeamFallback?: T;
+  maintainerLine?: T;
   heroHeading?: T;
   heroSubheading?: T;
+  searchPlaceholder?: T;
+  statWikisLabel?: T;
+  statPagesLabel?: T;
+  statUpcomingLabel?: T;
+  askingHeading?: T;
+  askingNote?: T;
+  directoryHeading?: T;
+  directoryNote?: T;
+  latestHeading?: T;
+  rules?:
+    | T
+    | {
+        icon?: T;
+        heading?: T;
+        body?: T;
+        id?: T;
+      };
+  rulesHeading?: T;
+  rulesNote?: T;
+  metaTitleSuffix?: T;
+  metaDescriptionFallback?: T;
   attributionStyle?: T;
   attributionText?: T;
   showSources?: T;
@@ -3612,6 +4402,130 @@ export interface SiteSettingsSelect<T extends boolean = true> {
       };
   adsEnabled?: T;
   adClientId?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "legal-pages_select".
+ */
+export interface LegalPagesSelect<T extends boolean = true> {
+  privacy?:
+    | T
+    | {
+        title?: T;
+        metaDescription?: T;
+        lede?: T;
+        sections?:
+          | T
+          | {
+              heading?: T;
+              body?: T;
+              id?: T;
+            };
+      };
+  terms?:
+    | T
+    | {
+        title?: T;
+        metaDescription?: T;
+        lede?: T;
+        sections?:
+          | T
+          | {
+              heading?: T;
+              body?: T;
+              id?: T;
+            };
+      };
+  contact?:
+    | T
+    | {
+        title?: T;
+        metaDescription?: T;
+        lede?: T;
+        sections?:
+          | T
+          | {
+              heading?: T;
+              body?: T;
+              id?: T;
+            };
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ui-strings_select".
+ */
+export interface UiStringsSelect<T extends boolean = true> {
+  strings?:
+    | T
+    | {
+        key?: T;
+        text?: T;
+        id?: T;
+      };
+  labels?:
+    | T
+    | {
+        key?: T;
+        text?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "companies-site_select".
+ */
+export interface CompaniesSiteSelect<T extends boolean = true> {
+  title?: T;
+  eyebrow?: T;
+  metaDescription?: T;
+  lede?: T;
+  groups?:
+    | T
+    | {
+        coveredHeading?: T;
+        coveredNote?: T;
+        rankedHeading?: T;
+        rankedNote?: T;
+        cataloguedHeading?: T;
+        cataloguedNote?: T;
+        mentionedHeading?: T;
+        mentionedNote?: T;
+      };
+  whyHeading?: T;
+  whyBody?: T;
+  profile?:
+    | T
+    | {
+        gamesHeading?: T;
+        subsidiariesHeading?: T;
+        parentHeading?: T;
+        peopleHeading?: T;
+        sourcingNote?: T;
+        structureNote?: T;
+        knownHeading?: T;
+        knownNote?: T;
+      };
+  shellName?: T;
+  shellTagline?: T;
+  footerBlurb?: T;
+  shellDescription?: T;
+  footerLinks?:
+    | T
+    | {
+        label?: T;
+        href?: T;
+        id?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

@@ -4,21 +4,35 @@ import { PageHeader } from '@/components/PageHeader'
 import { sectionArt } from '@/lib/art'
 import { EntityCard } from '@/components/EntityCard'
 import { Badge, Confidence } from '@/components/Badges'
-import { getAll } from '@/lib/payload'
+import { Callout } from '@/components/Callout'
+import { getAll, getGame } from '@/lib/payload'
+import { sectionCopy } from '@/lib/section-copy'
 import type { Court } from '@/payload-types'
 
 type Props = { params: Promise<{ game: string }> }
 
-export const metadata: Metadata = {
-  title: 'The three courts and their Court Activities',
-  description:
-    'Ambrus, Bakir and Xanthe — the three vassal courts of The Blood of Dawnwalker, their 41 Court Activities, and how much of each court you actually need to clear.',
-  alternates: { canonical: '/court' },
+/** A function rather than a static object — see the note in `endings/page.tsx`. */
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { game: slug } = await params
+  const [game, courts] = await Promise.all([
+    getGame(slug),
+    getAll('courts', { game: slug, depth: 0 }),
+  ])
+  const activities = courts.reduce((sum, court) => sum + (court.activityCount ?? 0), 0)
+  const copy = sectionCopy('courts', game, { total: courts.length, detail: activities })
+  return {
+    title: copy.title,
+    description: copy.description,
+    alternates: { canonical: '/court' },
+  }
 }
 
 export default async function CourtIndex({ params }: Props) {
   const { game } = await params
-  const courts = await getAll('courts', { game, depth: 0 })
+  const [doc, courts] = await Promise.all([
+    getGame(game),
+    getAll('courts', { game, depth: 0 }),
+  ])
 
   /*
    * A section with no records is not this game's section. The rail and the
@@ -28,6 +42,7 @@ export default async function CourtIndex({ params }: Props) {
    */
   if (courts.length === 0) notFound()
   const total = courts.reduce((sum, court) => sum + (court.activityCount ?? 0), 0)
+  const copy = sectionCopy('courts', doc, { total: courts.length, detail: total })
 
   return (
     <>
@@ -36,8 +51,8 @@ export default async function CourtIndex({ params }: Props) {
         eyebrow="Database"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Court' }]}
         icon="crown"
-        title="The Court"
-        lede={`After the prologue there is no linear main quest. Progression is ${total} Court Activities across three vassals — anger each of them enough and they will meet you in a duel.`}
+        title={copy.heading}
+        lede={copy.lede}
       />
       <div className="page body-main">
         <div className="grid">
@@ -57,15 +72,14 @@ export default async function CourtIndex({ params }: Props) {
             />
           ))}
         </div>
-        <div className="callout">
-          <h2>You do not need to clear everything</h2>
+        <Callout game={doc} where="courts-index" heading="You do not need to clear everything">
           <p>
             Reporting puts the duel threshold at roughly three quarters of a vassal&rsquo;s
             activities, not all of them. Across all three courts that is the single biggest saving
             available to a tight run. Treat the figure as unconfirmed — it is widely repeated but we
             have not seen it stated by the developer.
           </p>
-        </div>
+        </Callout>
       </div>
     </>
   )

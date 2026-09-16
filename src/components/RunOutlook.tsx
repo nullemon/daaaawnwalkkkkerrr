@@ -3,8 +3,9 @@
 import Link from 'next/link'
 import { useMemo } from 'react'
 import { useRun } from './RunProvider'
+import { useUi } from './UiStrings'
+import { fill } from '@/lib/copy'
 import {
-  STATUS_LABELS,
   checkRun,
   summariseRun,
   type EndingNode,
@@ -36,12 +37,14 @@ const STATUS_TONE: Record<ReachabilityStatus, 'high' | 'medium' | 'low'> = {
 export function RunOutlook({
   quests,
   endings,
-  heading = 'Where your run stands',
+  heading,
 }: {
   quests: QuestNode[]
   endings: EndingNode[]
+  /** Falls back to the registry; passed only where a page wants its own. */
   heading?: string
 }) {
+  const ui = useUi()
   const run = useRun()
 
   const outlook = useMemo(
@@ -60,23 +63,25 @@ export function RunOutlook({
   return (
     <section className="section" aria-labelledby="outlook-heading">
       <div className="section-head">
-        <h2 id="outlook-heading">{heading}</h2>
+        <h2 id="outlook-heading">{heading ?? ui.t('outlook.heading')}</h2>
         <span className="eyebrow">
-          Day {run.day} · {run.segmentsLeft} segments left
+          {fill(ui.t('outlook.eyebrow'), { day: run.day, left: run.segmentsLeft })}
         </span>
       </div>
 
       <p className="outlook-headline">
-        You can still reach <b>{outlook.openCount}</b> of {outlook.totalCount}
+        {ui.t('outlook.reach')} <b>{outlook.openCount}</b>{' '}
+        {fill(ui.t('outlook.of'), { total: outlook.totalCount })}
         {outlook.tightCount > 0 ? (
           <>
             {' '}
-            — <b>{outlook.tightCount}</b> of them with no room for detours
+            — <b>{outlook.tightCount}</b> {ui.t('outlook.tight')}
           </>
         ) : null}
         {outlook.lostCount > 0 ? (
           <>
-            . <b>{outlook.lostCount}</b> {outlook.lostCount === 1 ? 'is' : 'are'} gone.
+            . <b>{outlook.lostCount}</b>{' '}
+            {ui.t(outlook.lostCount === 1 ? 'outlook.gone-one' : 'outlook.gone-many')}
           </>
         ) : (
           '.'
@@ -90,18 +95,27 @@ export function RunOutlook({
             {/* Not an ending you aim for, so it is kept out of the tally above
                 and labelled for what it is. */}
             {result.ending.isFailure ? (
-              <span className="badge" title="Reached by running out of days, not by choosing it">
-                Failure state
+              <span className="badge" title={ui.t('outlook.failure-title')}>
+                {ui.t('outlook.failure-state')}
               </span>
             ) : (
               <span className="badge" data-level={STATUS_TONE[result.status]}>
-                {STATUS_LABELS[result.status]}
+                {ui.label('ending-status', result.status)}
               </span>
             )}
             {result.outstanding.length > 0 ? (
               <span className="note">
-                {result.outstanding.length} quest{result.outstanding.length === 1 ? '' : 's'} left
-                {result.unknownCostCount > 0 ? ', some uncosted' : ` · ${result.maxCost} segments`}
+                {fill(
+                  ui.t(
+                    result.outstanding.length === 1
+                      ? 'run.quests-left-one'
+                      : 'run.quests-left-many',
+                  ),
+                  { count: result.outstanding.length },
+                )}
+                {result.unknownCostCount > 0
+                  ? ui.t('outlook.some-uncosted')
+                  : fill(ui.t('outlook.segments'), { count: result.maxCost })}
               </span>
             ) : null}
           </li>
@@ -109,8 +123,10 @@ export function RunOutlook({
       </ul>
 
       <p className="note">
-        Based on the run in your browser. <Link href="/run">Open the dashboard</Link> for what to do
-        next, or <Link href="/tools/run-checker">change what you have finished</Link>.
+        {ui.t('outlook.based-on')}{' '}
+        <Link href="/run">{ui.t('outlook.dashboard-link')}</Link>{' '}
+        {ui.t('outlook.dashboard-tail')}{' '}
+        <Link href="/tools/run-checker">{ui.t('outlook.checker-link')}</Link>.
       </p>
     </section>
   )

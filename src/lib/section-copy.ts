@@ -1,4 +1,6 @@
 import type { Game } from '@/payload-types'
+import { copy } from './copy'
+import { sectionRow } from './game-copy'
 
 /**
  * The words at the top of a section index, per game.
@@ -18,15 +20,21 @@ import type { Game } from '@/payload-types'
  * failure mode: a hardcoded sentence about one game is invisible until a
  * second game exists.
  *
- * So the specific copy is keyed to the game it was written about, and every
- * other game gets a sentence built from its own records. The generic form is
- * deliberately plain. A thin true sentence is worth more here than a rich one
- * describing somebody else's game — the same rule as leaving a field empty
- * rather than inventing a figure for it.
+ * So there are three layers, in this order:
  *
- * This belongs in the CMS eventually, as fields on the Game, so an editor can
- * write real copy for a wiki without a deploy. It is here for now because that
- * is a schema change and this is a live bug.
+ *   1. **What an editor wrote** — the `sectionCopy` rows on the Game record.
+ *      This is the layer that was missing, and the reason the note at the
+ *      bottom of this file used to say "this belongs in the CMS eventually".
+ *   2. **Dawnwalker's copy**, written from Dawnwalker's sources, kept verbatim
+ *      and keyed to the one game any of these sentences is true about.
+ *   3. **A sentence built from the game's own records** for everybody else.
+ *      Deliberately plain: a thin true sentence is worth more here than a rich
+ *      one describing somebody else's game.
+ *
+ * Counts are never part of layers 1 or 2 as literals. An editable string
+ * carries `{count}` and `{detail}` and the numbers arrive at render time,
+ * because a sentence claiming a figure the database has outgrown is the exact
+ * failure this project refuses everywhere else. See `src/lib/copy.ts`.
  */
 
 export type SectionCopy = {
@@ -49,7 +57,11 @@ const plural = (n: number, one: string, many = `${one}s`): string =>
 
 type Counts = {
   total: number
-  /** Characters with a portrait; quests with a sourced segment cost. */
+  /**
+   * The section's second number, where it has one: characters with a portrait,
+   * quests with a sourced segment cost, perks that are ultimates, activities
+   * a court actually holds. Rendered as `{detail}`.
+   */
   detail?: number
 }
 
@@ -109,6 +121,57 @@ const DAWNWALKER: Record<string, (counts: Counts) => SectionCopy> = {
     heading: 'Guides',
     lede: `${total} guides. One page, one question, answered properly.`,
   }),
+
+  /*
+    The eight below were not here, and the pages they belong to were worse off
+    than the seven above: they exported a module-level `metadata` object rather
+    than a `generateMetadata` function, so their <title> and description were
+    byte-identical on all eight wikis. Eight pages competing for one result
+    with the same words, seven of them describing a game they are not about —
+    an active cannibalisation bug rather than only an editability gap.
+  */
+  endings: () => ({
+    title: 'All seven endings and how each one is gated',
+    description:
+      'The seven endings of The Blood of Dawnwalker, sorted by what decides them: an ally questline, a choice at the finale, or the thirty-day clock.',
+    heading: 'The seven endings',
+    lede: 'Five of these are decided at the finale and cannot be lost early. Two are gated on questlines you have to finish long before you get there — those are the ones people lose without noticing.',
+  }),
+  courts: ({ detail = 0 }) => ({
+    title: 'The three courts and their Court Activities',
+    description:
+      'Ambrus, Bakir and Xanthe — the three vassal courts of The Blood of Dawnwalker, their 41 Court Activities, and how much of each court you actually need to clear.',
+    heading: 'The Court',
+    lede: `After the prologue there is no linear main quest. Progression is ${detail} Court Activities across three vassals — anger each of them enough and they will meet you in a duel.`,
+  }),
+  'court-activities': ({ total }) => ({
+    title: 'All Court Activities',
+    description:
+      'Every Court Activity in The Blood of Dawnwalker — filter by vassal, region and phase, and see how many of each court you actually need.',
+    heading: 'Court Activities',
+    lede: `${total} catalogued. These are the real main quest after the prologue — anger a vassal enough and they meet you in a duel. You do not need to clear them all.`,
+  }),
+  perks: ({ total, detail = 0 }) => ({
+    title: 'Every perk, across all three trees',
+    description:
+      'All known perks in The Blood of Dawnwalker — Swordmastery, Witchcraft and Vampirism — with what each one does and which are the nine ultimates.',
+    heading: 'Perks',
+    lede: `${total} perks catalogued, ${detail} of them ultimates. You may take one ultimate per tree, so picking any of the nine closes two others.`,
+  }),
+  'skill-trees': () => ({
+    title: 'Skill trees and perks',
+    description:
+      'Swordmastery, Witchcraft and Vampirism — the three skill trees of The Blood of Dawnwalker, their ultimate perks, and what each costs in segments.',
+    heading: 'Skill trees',
+    lede: 'Three trees split by phase. Each has three ultimate perks and you may take only one per tree, so nine exist and three are reachable in a run.',
+  }),
+  builds: () => ({
+    title: 'Builds — day, night and hybrid',
+    description:
+      'Character builds for The Blood of Dawnwalker across Swordmastery, Witchcraft and Vampirism, with the perks and gear each one needs.',
+    heading: 'Builds',
+    lede: 'Coen is two characters sharing a body, so a build is really a decision about which half of the clock you intend to fight in. Each of these says which, and what it costs you in the other.',
+  }),
 }
 
 /**
@@ -158,17 +221,90 @@ const GENERIC: Record<string, Builder> = {
     heading: 'Guides',
     lede: `${total} guides. One page, one question, answered properly.`,
   }),
+
+  // The eight that had no generic form at all, because they had no per-game
+  // form either — see the note in DAWNWALKER above.
+  endings: (name, { total }) => ({
+    title: `All ${plural(total, 'ending')}`,
+    description: `Every ending catalogued for ${name}, and what each one turns on.`,
+    heading: 'Endings',
+    lede: `${plural(total, 'ending')} catalogued for ${name}, with what decides each one where a source says.`,
+  }),
+  courts: (name, { total }) => ({
+    title: 'Courts',
+    description: `The courts catalogued for ${name}, and what each one holds.`,
+    heading: 'Courts',
+    lede: `${plural(total, 'court')} catalogued for ${name}.`,
+  }),
+  'court-activities': (name, { total }) => ({
+    title: 'Court activities',
+    description: `Every court activity catalogued for ${name}, filterable by court, region and phase.`,
+    heading: 'Court activities',
+    lede: `${total} catalogued for ${name}.`,
+  }),
+  perks: (name, { total, detail = 0 }) => ({
+    title: 'Perks',
+    description: `Every perk catalogued for ${name}, with what each one does.`,
+    heading: 'Perks',
+    lede: detail
+      ? `${plural(total, 'perk')} catalogued for ${name}, ${detail} of them ultimates.`
+      : `${plural(total, 'perk')} catalogued for ${name}.`,
+  }),
+  'skill-trees': (name, { total }) => ({
+    title: 'Skill trees',
+    description: `The skill trees catalogued for ${name}, and the perks on each.`,
+    heading: 'Skill trees',
+    lede: `${plural(total, 'skill tree')} catalogued for ${name}.`,
+  }),
+  builds: (name, { total }) => ({
+    title: 'Builds',
+    description: `Character builds for ${name}, with the perks and gear each one needs.`,
+    heading: 'Builds',
+    lede: `${plural(total, 'build')} published for ${name}.`,
+  }),
+  achievements: (name, { total, detail = 0 }) => ({
+    /*
+      The one section whose copy has to change shape rather than wording.
+      Four of the eight games are not out yet, and an achievement list is the
+      one thing that genuinely does not exist before release — "All 0
+      achievements" would be a broken-looking page rather than an honest one.
+    */
+    title: total > 0 ? `All ${total} achievements` : 'Achievements',
+    description:
+      total === 0
+        ? `No achievement list has been published for ${name} yet. This page fills itself in when the developer publishes one.`
+        : [
+            `Every achievement in ${name}, with the share of players who have unlocked each one.`,
+            // Only worth a sentence when there is a number in it. "0 are held
+            // by fewer than one player in twenty" is worse than silence.
+            detail > 0 ? `${detail} are held by fewer than one player in twenty.` : '',
+          ]
+            .filter(Boolean)
+            .join(' '),
+    heading: 'Achievements',
+    lede:
+      total === 0
+        ? `No achievement list has been published for ${name} yet. Developers usually add one at launch; this page fills itself in when they do.`
+        : [
+            `All ${total} of them, rarest first, with the share of owners who have each one.`,
+            detail > 0 ? `${detail} are held by fewer than one player in twenty.` : '',
+          ]
+            .filter(Boolean)
+            .join(' '),
+  }),
+  maps: (name, { total }) => ({
+    title: `${name} maps`,
+    description: `Interactive maps for ${name}, with every marked location linking to what is recorded about it.`,
+    heading: 'Maps',
+    lede:
+      total === 0
+        ? `No map has been published for ${name} yet.`
+        : `Every map published for ${name}, with what is marked on it linking to the record for that thing.`,
+  }),
 }
 
-/**
- * The copy for one section of one game.
- *
- * Falls back to the generic form for any game with no specific copy, which is
- * every game but Dawnwalker — and for Dawnwalker too if a section is ever
- * added here without an entry, since a plain true sentence is the safe
- * default in both directions.
- */
-export const sectionCopy = (
+/** The wording before an editor has touched it: Dawnwalker's, or derived. */
+const builtIn = (
   section: string,
   game: Pick<Game, 'slug' | 'shortTitle' | 'title'> | null | undefined,
   counts: Counts,
@@ -187,4 +323,33 @@ export const sectionCopy = (
     }
   }
   return generic(name, counts)
+}
+
+export type CopyGame = Pick<Game, 'slug' | 'shortTitle' | 'title'> & Partial<Pick<Game, 'sectionCopy'>>
+
+/**
+ * The copy for one section of one game.
+ *
+ * What an editor wrote, then Dawnwalker's, then a sentence derived from the
+ * records — and a blank field falls through rather than blanking the page, so
+ * a half-filled row cannot delete a heading. `pnpm seed:copy` writes the
+ * derived wording into the fields, which is what turns an empty admin box into
+ * a live sentence somebody can improve.
+ */
+export const sectionCopy = (
+  section: string,
+  game: CopyGame | null | undefined,
+  counts: Counts,
+): SectionCopy => {
+  const built = builtIn(section, game, counts)
+  const row = sectionRow(game, section)
+  if (!row) return built
+
+  const tokens = { game: gameName(game), count: counts.total, detail: counts.detail ?? 0 }
+  return {
+    title: copy(row.title, built.title, tokens),
+    description: copy(row.description, built.description, tokens),
+    heading: copy(row.heading, built.heading, tokens),
+    lede: copy(row.lede, built.lede, tokens),
+  }
 }

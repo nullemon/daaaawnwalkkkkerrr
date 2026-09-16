@@ -4,6 +4,8 @@ import { PageHeader } from '@/components/PageHeader'
 import { CompletionTracker, type TrackedAchievement } from '@/components/CompletionTracker'
 import { getAll, getGame } from '@/lib/payload'
 import { requireFeature } from '@/lib/features'
+import { toolCopy } from '@/lib/game-copy'
+import { copy } from '@/lib/copy'
 
 type Props = { params: Promise<{ game: string }> }
 
@@ -14,10 +16,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     getAll('achievements', { game: slug, depth: 0 }),
   ])
   const name = doc?.shortTitle || doc?.title || 'this game'
+  const words = toolCopy(doc)
+  /* The count stays a token, so a new achievement corrects the sentence. */
+  const tokens = { game: name, count: achievements.length }
 
   return {
-    title: `${name} completion tracker`,
-    description: `Tick off the ${achievements.length} achievements in ${name} and see what is left, weighted by how few players have each one.`,
+    title: copy(words.completionTitle, '{game} completion tracker', tokens),
+    description: copy(
+      words.completionDescription,
+      'Tick off the {count} achievements in {game} and see what is left, weighted by how few players have each one.',
+      tokens,
+    ),
     alternates: { canonical: '/tools/completion' },
   }
 }
@@ -49,14 +58,21 @@ export default async function CompletionPage({ params }: Props) {
 
   const ultraRare = rows.filter((entry) => entry.rarity === 'ultra-rare').length
 
+  const words = toolCopy(game)
+  const tokens = { game: name, count: rows.length, ultraRare }
+
   return (
     <>
       <PageHeader
         eyebrow="Tool"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Completion tracker' }]}
         icon="check"
-        title="What is left?"
-        lede={`Tick off what you have earned in ${name}. The tracker weights what remains by how few players have each one, so it tells you how much work is actually left rather than how many boxes are unticked.`}
+        title={copy(words.completionHeading, 'What is left?', tokens)}
+        lede={copy(
+          words.completionLede,
+          'Tick off what you have earned in {game}. The tracker weights what remains by how few players have each one, so it tells you how much work is actually left rather than how many boxes are unticked.',
+          tokens,
+        )}
       />
 
       <div className="page body-main">

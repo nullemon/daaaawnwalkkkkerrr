@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { getUi } from '@/lib/ui'
 
 export type Fact = {
   label: string
@@ -20,14 +21,24 @@ export type Fact = {
  * published — the same reason items carry an acquisition kind rather than an
  * empty region.
  */
-export function FactPanel({ title = 'At a glance', facts }: { title?: string; facts: Fact[] }) {
+export async function FactPanel({
+  title,
+  facts,
+}: {
+  /** Falls back to the registry, so a page passes one only to say something else. */
+  title?: string
+  facts: Fact[]
+}) {
   const shown = facts.filter((fact) => fact.value !== undefined && fact.value !== null && fact.value !== '' || fact.absent)
   if (shown.length === 0) return null
+
+  const ui = await getUi()
+  const heading = title ?? ui.t('facts.title')
 
   return (
     <section className="panel factpanel">
       <div className="panel-head">
-        <h2>{title}</h2>
+        <h2>{heading}</h2>
       </div>
       <dl className="factlist">
         {shown.map((fact) => {

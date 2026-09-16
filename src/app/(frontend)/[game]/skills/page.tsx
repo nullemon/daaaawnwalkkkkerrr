@@ -4,21 +4,31 @@ import { PageHeader } from '@/components/PageHeader'
 import { sectionArt } from '@/lib/art'
 import { EntityCard } from '@/components/EntityCard'
 import { Badge, PhaseBadge } from '@/components/Badges'
-import { getAll } from '@/lib/payload'
+import { getAll, getGame } from '@/lib/payload'
+import { sectionCopy } from '@/lib/section-copy'
 import type { Perk } from '@/payload-types'
 
 type Props = { params: Promise<{ game: string }> }
 
-export const metadata: Metadata = {
-  title: 'Skill trees and perks',
-  description:
-    'Swordmastery, Witchcraft and Vampirism — the three skill trees of The Blood of Dawnwalker, their ultimate perks, and what each costs in segments.',
-  alternates: { canonical: '/skills' },
+/** A function rather than a static object — see the note in `endings/page.tsx`. */
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { game: slug } = await params
+  const [game, trees] = await Promise.all([
+    getGame(slug),
+    getAll('skill-trees', { game: slug, depth: 0 }),
+  ])
+  const copy = sectionCopy('skill-trees', game, { total: trees.length })
+  return {
+    title: copy.title,
+    description: copy.description,
+    alternates: { canonical: '/skills' },
+  }
 }
 
 export default async function SkillsIndex({ params }: Props) {
   const { game } = await params
-  const [trees, perks] = await Promise.all([
+  const [doc, trees, perks] = await Promise.all([
+    getGame(game),
     getAll('skill-trees', { game, depth: 0 }),
     getAll('perks', { game, depth: 1 }),
   ])
@@ -30,6 +40,7 @@ export default async function SkillsIndex({ params }: Props) {
    * the one game that does have the section. A 404 is the honest answer.
    */
   if (trees.length === 0) notFound()
+  const copy = sectionCopy('skill-trees', doc, { total: trees.length })
 
   return (
     <>
@@ -38,8 +49,8 @@ export default async function SkillsIndex({ params }: Props) {
         eyebrow="Database"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Skills' }]}
         icon="spark"
-        title="Skill trees"
-        lede="Three trees split by phase. Each has three ultimate perks and you may take only one per tree, so nine exist and three are reachable in a run."
+        title={copy.heading}
+        lede={copy.lede}
       />
       <div className="page body-main">
         <div className="grid">

@@ -2,7 +2,8 @@ import type { Metadata } from 'next'
 import { PageHeader } from '@/components/PageHeader'
 import { sectionArt } from '@/lib/art'
 import { DataTable, type Row } from '@/components/DataTable'
-import { ROLE } from '@/lib/characters'
+import { roleLabel } from '@/lib/characters'
+import { getUi } from '@/lib/ui'
 import { getAll, getGame } from '@/lib/payload'
 import { sectionCopy } from '@/lib/section-copy'
 import type { Character, Media } from '@/payload-types'
@@ -30,9 +31,10 @@ const asMedia = (value: Character['portrait']): Media | null =>
 
 export default async function CharactersIndex({ params }: Props) {
   const { game: slug } = await params
-  const [game, characters] = await Promise.all([
+  const [game, characters, ui] = await Promise.all([
     getGame(slug),
     getAll('characters', { game: slug, depth: 1 }),
+    getUi(),
   ])
 
   const withPortrait = characters.filter((character) => asMedia(character.portrait))
@@ -52,7 +54,7 @@ export default async function CharactersIndex({ params }: Props) {
       icon: 'person',
       title: character.title,
       titleHref: `/characters/${character.slug}`,
-      role: character.role ? (ROLE[character.role] ?? character.role) : '',
+      role: roleLabel(character.role, ui) ?? '',
       romance: character.romanceable ? 'Romanceable' : '',
       summary: character.summary ?? '',
     }

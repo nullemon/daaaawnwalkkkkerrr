@@ -1,4 +1,5 @@
 import { getSiteSettings } from '@/lib/payload'
+import { copy } from '@/lib/copy'
 
 /**
  * The licence line for content taken from a CC-licensed wiki.
@@ -143,7 +144,10 @@ export async function Attribution({ sources }: { sources?: Source[] | null }) {
         <p key={entry.source.url ?? entry.name} className="note">
           {fill(template, entry)}{' '}
           {style === 'full'
-            ? 'The wording on this page is our own; only the facts are reused. Reusing this page carries the same licence onward.'
+            ? copy(
+                settings.attributionFullExtra,
+                'The wording on this page is our own; only the facts are reused. Reusing this page carries the same licence onward.',
+              )
             : null}
         </p>
       ))}

@@ -4,7 +4,9 @@ import Script from 'next/script'
 import { themeScript } from '@/components/ThemeToggle'
 import { RunProvider } from '@/components/RunProvider'
 import { AccountProvider } from '@/components/AccountProvider'
+import { UiStringsProvider } from '@/components/UiStrings'
 import { getSiteSettings, siteUrl } from '@/lib/payload'
+import { getUiMaps } from '@/lib/ui'
 import './globals.css'
 
 /*
@@ -89,7 +91,19 @@ export async function generateMetadata(): Promise<Metadata> {
  */
 const fontVars = `${cinzel.variable} ${barlow.variable} ${barlowCondensed.variable}`
 
-export default function FrontendLayout({ children }: { children: React.ReactNode }) {
+/*
+ * The interface-text overrides are read here and nowhere else.
+ *
+ * This is the one layout above the hub, all eight wikis and the companies host,
+ * so one read covers every page in the network and the cached global is fetched
+ * once per render rather than once per component. The provider sits outside
+ * `AccountProvider` because that one says things to the reader too — "Could not
+ * reach the server" is a registry string, and a provider cannot use a context
+ * mounted below it.
+ */
+export default async function FrontendLayout({ children }: { children: React.ReactNode }) {
+  const ui = await getUiMaps()
+
   return (
     <html lang="en" className={fontVars} suppressHydrationWarning>
       <head>
@@ -112,9 +126,11 @@ export default function FrontendLayout({ children }: { children: React.ReactNode
         />
       </head>
       <body>
-        <AccountProvider>
-          <RunProvider>{children}</RunProvider>
-        </AccountProvider>
+        <UiStringsProvider value={ui}>
+          <AccountProvider>
+            <RunProvider>{children}</RunProvider>
+          </AccountProvider>
+        </UiStringsProvider>
       </body>
     </html>
   )
