@@ -9,6 +9,7 @@ export function EntityCard({
   badges,
   icon,
   image,
+  thumbFit = 'cover',
 }: {
   href: string
   title: string
@@ -17,11 +18,17 @@ export function EntityCard({
   icon?: IconName
   /** Real game art once a record has some; the icon stands in until then. */
   image?: { url?: string | null; alt?: string | null } | null
+  /*
+    Art fills the thumb; a logo must not. Most company marks arrive on a
+    transparent background and are wider than they are tall, so cropping one
+    to a card thumbnail cuts the wordmark in half.
+  */
+  thumbFit?: 'cover' | 'contain'
 }) {
   return (
     <Link href={href} className="card entity-card">
       {image?.url ? (
-        <span className="thumb">
+        <span className={thumbFit === 'contain' ? 'thumb thumb-contain' : 'thumb'}>
           <img src={image.url} alt={image.alt ?? ''} loading="lazy" />
         </span>
       ) : null}

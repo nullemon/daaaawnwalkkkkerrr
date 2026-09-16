@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
 import { Badge, Confidence } from '@/components/Badges'
-import { EntityImage } from '@/components/EntityImage'
 import { FactPanel } from '@/components/FactPanel'
 import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
@@ -61,6 +60,10 @@ export default async function CompanyPage({ params }: Props) {
     games.map(async (game) => ({ game, href: await gameUrl(game) })),
   )
 
+  const logo =
+    company.logo && typeof company.logo === 'object'
+      ? (company.logo as { url?: string | null })
+      : null
   const parent = company.parent && typeof company.parent === 'object' ? (company.parent as Company) : null
   const subsidiaries = ((company.subsidiaries ?? []) as unknown[])
     .filter((value): value is Company => Boolean(value) && typeof value === 'object')
@@ -94,7 +97,11 @@ export default async function CompanyPage({ params }: Props) {
       <div className="page body-main">
         <div className="split">
           <div className="stack">
-            <EntityImage media={company.logo} shape="wide" />
+            {logo?.url ? (
+              <figure className="company-logo">
+                <img src={logo.url} alt={`${company.name} logo`} loading="lazy" />
+              </figure>
+            ) : null}
 
             {company.body ? (
               <div className="prose">
@@ -155,7 +162,7 @@ export default async function CompanyPage({ params }: Props) {
                 {subsidiaries.length > 0 ? (
                   <>
                     <p>{subsidiaries.length === 1 ? 'It owns:' : `It owns ${subsidiaries.length}:`}</p>
-                    <ul>
+                    <ul className="company-tree">
                       {subsidiaries.map((child) => (
                         <li key={child.id}>
                           <Link href={`/${child.slug}`}>{child.name}</Link>

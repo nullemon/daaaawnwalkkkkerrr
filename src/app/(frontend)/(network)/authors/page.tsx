@@ -42,7 +42,7 @@ export default async function AuthorsIndex() {
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Contributors' }]}
         icon="person"
         title="Contributors"
-        lede="Everything on these wikis is written by a named person and signed. Where a figure is contested, the byline is who decided to print the disagreement rather than pick a side."
+        lede="Guides are signed; the database pages are not, because a compiled fact sheet has no author to claim. Where a byline is still a placeholder the page credits the editorial team instead of a name, and says so."
       />
       <div className="page body-main">
         <div className="grid">
