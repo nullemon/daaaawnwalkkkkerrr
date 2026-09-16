@@ -134,6 +134,24 @@ export const gameProfileGroup = (): Field => ({
       ],
     },
     {
+      /*
+        Where the store and the encyclopedia disagree about the release date.
+
+        Three of the eight do, by one day each — a storefront dates a release
+        in its own region and an encyclopedia usually gives the earliest or the
+        publisher's stated day. Picking one and printing it would look tidier
+        and would be a coin flip. The rule here is the same one the Slits/Silts
+        spelling follows: record the conflict in the copy.
+      */
+      name: 'releaseNote',
+      type: 'text',
+      label: 'Release date note',
+      admin: {
+        description:
+          'Filled automatically when the store listing and Wikipedia give different dates. Shown under the release row.',
+      },
+    },
+    {
       name: 'metacritic',
       type: 'number',
       label: 'Metacritic score',

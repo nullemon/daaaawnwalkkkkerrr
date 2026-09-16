@@ -77,10 +77,17 @@ export function GameProfile({ game }: { game: Game }) {
           label: 'Released',
           value: (
             <>
+              {/*
+                Formatted in UTC, because it is stored in UTC. A release is a
+                calendar date rather than an instant, and rendering it in the
+                reader's zone prints the day before for anyone west of the
+                meridian.
+              */}
               {new Date(game.releaseDate).toLocaleDateString('en-GB', {
                 day: 'numeric',
                 month: 'long',
                 year: 'numeric',
+                timeZone: 'UTC',
               })}
               {game.releaseDateConfirmed === false ? ' (not confirmed)' : ''}
             </>
@@ -145,6 +152,8 @@ export function GameProfile({ game }: { game: Game }) {
           ))}
         </dl>
       </div>
+
+      {profile.releaseNote ? <p className="note">{profile.releaseNote}</p> : null}
 
       {profile.commercialNote ? <p className="note">{profile.commercialNote}</p> : null}
 

@@ -737,6 +737,10 @@ export interface Game {
     director?: string | null;
     composer?: string | null;
     /**
+     * Filled automatically when the store listing and Wikipedia give different dates. Shown under the release row.
+     */
+    releaseNote?: string | null;
+    /**
      * Only where the store reports one.
      */
     metacritic?: number | null;
@@ -3175,6 +3179,7 @@ export interface GamesSelect<T extends boolean = true> {
         series?: T;
         director?: T;
         composer?: T;
+        releaseNote?: T;
         metacritic?: T;
         budget?: T;
         marketingSpend?: T;
