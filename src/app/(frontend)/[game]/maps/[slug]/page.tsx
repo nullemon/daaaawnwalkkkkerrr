@@ -96,7 +96,7 @@ export default async function MapPage({ params }: Props) {
 
         {markers.length === 0 ? (
           <div className="callout">
-            <h3>Nothing is marked on this map yet</h3>
+            <h2>Nothing is marked on this map yet</h2>
             <p>
               The base map is real; the pins are not there because nobody has published where
               anything is. A pin is a claim a reader will walk to, so every one of them needs a

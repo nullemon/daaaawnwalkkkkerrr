@@ -63,7 +63,7 @@ export default async function BuildPlannerPage({ params }: Props) {
           <BuildPlanner perks={perks} trees={trees} />
         </Suspense>
         <div className="callout">
-          <h3>Perks cost time, not just points</h3>
+          <h2>Perks cost time, not just points</h2>
           <p>
             Learning a perk spends segments off the same 480 the{' '}
             <Link href="/tools/run-checker">run checker</Link> is watching. A heavy spec is a real

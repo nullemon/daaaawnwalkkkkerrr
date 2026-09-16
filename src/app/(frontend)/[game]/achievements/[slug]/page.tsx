@@ -190,7 +190,7 @@ export default async function AchievementPage({ params }: Props) {
           <div className="stack">
             <EntityImage media={doc.icon} shape="square" />
             <div className="callout">
-              <h3>About these figures</h3>
+              <h2>About these figures</h2>
               <p>
                 The percentage is what the platform reports for {name}, read on the date in the
                 source below. It moves: an achievement gets commoner as more people finish the game,

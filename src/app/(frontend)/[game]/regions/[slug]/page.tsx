@@ -139,7 +139,7 @@ export default async function RegionPage({ params }: Props) {
               ]}
             />
             <div className="callout">
-              <h3>Travel is free</h3>
+              <h2>Travel is free</h2>
               <p>
                 Walking and fast travel cost no segments at all, so a region is only ever as
                 expensive as the quests you commit to inside it.{' '}

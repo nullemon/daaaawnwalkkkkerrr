@@ -254,7 +254,7 @@ export function Comments({ pageUrl, gameId }: { pageUrl: string; gameId?: number
       {/* The box first: the people who came to say something look for it here. */}
       {status === 'sent' ? (
         <div className="callout">
-          <h3>Thank you — that is with a moderator</h3>
+          <h2>Thank you — that is with a moderator</h2>
           <p>
             It will appear once an editor has read it. We approve by hand, which is slower and is
             the reason this section is worth reading.

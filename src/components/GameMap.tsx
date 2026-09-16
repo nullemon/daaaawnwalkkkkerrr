@@ -264,7 +264,7 @@ export function GameMap({
           className="gamemap-plane"
           style={{ transform: `translate(${pan.x}px, ${pan.y}px) scale(${zoom})` }}
         >
-          <img className="gamemap-image" src={image} alt={alt} draggable={false} />
+          <img className="gamemap-image" src={image} alt={alt} draggable={false} decoding="async" />
 
           {visible.map((marker) => (
             <button

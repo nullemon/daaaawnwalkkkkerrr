@@ -57,7 +57,7 @@ export default async function CourtIndex({ params }: Props) {
           ))}
         </div>
         <div className="callout">
-          <h3>You do not need to clear everything</h3>
+          <h2>You do not need to clear everything</h2>
           <p>
             Reporting puts the duel threshold at roughly three quarters of a vassal&rsquo;s
             activities, not all of them. Across all three courts that is the single biggest saving

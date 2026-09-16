@@ -114,7 +114,14 @@ export default async function HubHome() {
       {/* ---- Hero: art, name, search, figures ---- */}
       <header className="hub-hero">
         {heroArt?.url ? (
-          <img className="hub-hero-art" src={heroArt.url} alt="" aria-hidden="true" />
+          <img
+            className="hub-hero-art"
+            src={heroArt.url}
+            alt=""
+            aria-hidden="true"
+            fetchPriority="high"
+            decoding="async"
+          />
         ) : null}
 
         <div className="page hub-hero-inner">

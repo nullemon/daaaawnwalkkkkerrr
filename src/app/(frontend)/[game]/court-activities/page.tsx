@@ -95,7 +95,7 @@ export default async function CourtActivitiesIndex({ params }: Props) {
         />
 
         <div className="callout">
-          <h3>You need about {needed} of {total}</h3>
+          <h2>You need about {needed} of {total}</h2>
           <p>
             The duel unlocks at roughly three quarters of a vassal&rsquo;s activities, so around{' '}
             {total - needed} of these are optional. That gap is the largest single saving available

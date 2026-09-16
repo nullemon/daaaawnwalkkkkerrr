@@ -30,7 +30,7 @@ export default function RequestsPage() {
           </div>
           <div className="stack">
             <div className="callout">
-              <h3>Found something wrong instead?</h3>
+              <h2>Found something wrong instead?</h2>
               <p>
                 That goes in a different queue. <Link href="/corrections">Report an error</Link> —
                 accuracy reports are triaged against sources and get looked at first.

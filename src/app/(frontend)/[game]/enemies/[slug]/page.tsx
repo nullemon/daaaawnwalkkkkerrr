@@ -59,7 +59,7 @@ export default async function EnemyPage({ params }: Props) {
             <EntityImage media={doc.image} shape="wide" />
             {doc.weaknesses?.length ? (
               <div className="callout">
-                <h3>Weak to</h3>
+                <h2>Weak to</h2>
                 <p>{doc.weaknesses.map((weakness) => weakness.value).join(', ')}</p>
               </div>
             ) : null}

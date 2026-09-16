@@ -100,7 +100,7 @@ export function RunDashboard({
 
       {!started && completed.length === 0 ? (
         <div className="callout">
-          <h3>Nothing tracked yet</h3>
+          <h2>Nothing tracked yet</h2>
           <p>
             Tick a quest anywhere on the site and it appears here. Nothing is sent anywhere —
             it lives in this browser until you decide otherwise.

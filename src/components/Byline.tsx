@@ -56,7 +56,15 @@ export async function Byline({
       {named ? (
         <>
           {avatar?.url ? (
-            <img className="byline-avatar" src={avatar.url} alt="" width={34} height={34} />
+            <img
+              className="byline-avatar"
+              src={avatar.url}
+              alt=""
+              width={34}
+              height={34}
+              loading="lazy"
+              decoding="async"
+            />
           ) : null}
           <span className="byline-text">
             <span>

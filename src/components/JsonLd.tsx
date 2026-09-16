@@ -28,16 +28,20 @@ export const videoGame = (
   base: string,
   game: {
     title: string
-    platforms?: { value?: string | null }[] | null
+    /*
+      A plain list of strings on the Game record, not an array of objects.
+      This said `{ value }[]` for as long as it had no callers, which is the
+      quiet cost of dead code: the shape was wrong and the compiler had no
+      reason to say so.
+    */
+    platforms?: (string | null)[] | null
     developer?: string | null
     publisher?: string | null
     releaseDate?: string | null
     releaseDateConfirmed?: boolean | null
   },
 ) => {
-  const platforms = (game.platforms ?? [])
-    .map((platform) => platform?.value)
-    .filter((value): value is string => Boolean(value))
+  const platforms = (game.platforms ?? []).filter((value): value is string => Boolean(value))
 
   return {
     '@context': 'https://schema.org',

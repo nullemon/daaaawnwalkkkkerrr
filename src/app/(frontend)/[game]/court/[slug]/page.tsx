@@ -77,7 +77,7 @@ export default async function CourtPage({ params }: Props) {
               ]}
             />
             <div className="callout">
-              <h3>You do not need all of them</h3>
+              <h2>You do not need all of them</h2>
               <p>
                 The duel unlocks at roughly three quarters of a vassal&rsquo;s activities, so the
                 gap between that and clearing the lot is the largest saving available to a tight
@@ -102,7 +102,7 @@ export default async function CourtPage({ params }: Props) {
           />
         ) : (
           <div className="callout">
-            <h3>Activities not yet catalogued</h3>
+            <h2>Activities not yet catalogued</h2>
             <p>
               We have not documented this court&rsquo;s {doc.activityCount ?? ''} activities
               individually yet. They are the next thing being added.

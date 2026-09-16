@@ -72,7 +72,7 @@ export default async function PerksIndex({ params }: Props) {
           ]}
         />
         <div className="callout">
-          <h3>Plan a full build</h3>
+          <h2>Plan a full build</h2>
           <p>
             The <Link href="/tools/build-planner">build planner</Link> enforces one ultimate per
             tree, totals what a spec costs in segments, and gives you a link to share.

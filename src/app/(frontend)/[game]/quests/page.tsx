@@ -100,7 +100,7 @@ export default async function QuestIndex({ params }: Props) {
         */}
         {game?.slug === 'dawnwalker' ? (
           <div className="callout">
-            <h3>Why so many costs are unknown</h3>
+            <h2>Why so many costs are unknown</h2>
             <p>
               Published segment costs for individual quests disagree between sites, and we have no
               way to verify them against the game. Rather than copy a number we cannot stand

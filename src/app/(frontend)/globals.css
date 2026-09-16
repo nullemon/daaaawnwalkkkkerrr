@@ -602,8 +602,11 @@ th.num { text-align: right; }
   padding: 13px 15px; display: flex; flex-direction: column; gap: 6px; max-width: var(--measure);
 }
 .callout[data-tone='risk'] { border-left-color: var(--danger); background: var(--danger-wash); }
-.callout h3 { font-size: 13.5px; font-weight: 600; display: flex; align-items: center; gap: 7px; }
-.callout[data-tone='risk'] h3 { color: var(--danger); }
+/* A callout's heading is an <h2>: it is a top-level aside, and opening it at
+   h3 skipped a level straight after the page's own h1. Styled small on
+   purpose - the level is about structure, not size. */
+.callout h2 { font-size: 13.5px; font-weight: 600; display: flex; align-items: center; gap: 7px; margin: 0; }
+.callout[data-tone='risk'] h2 { color: var(--danger); }
 .callout p { font-size: 13.5px; color: var(--ink-soft); }
 
 /* ---------- chains / lists ---------- */
@@ -1053,6 +1056,10 @@ th.num { text-align: right; }
   margin-right: 7px;
 }
 .wordmark-sm { display: flex; align-items: center; }
+
+/* The masthead heading carries no heading styling of its own: the wordmark and
+   the logo already are the design, and an <h1> default would fight them. */
+.wiki-logo-heading { margin: 0; font-size: 0; line-height: 0; }
 
 /* ---------- company profiles ----------
    A logo is not a screenshot. `.entity-figure img` fills its box, which is

@@ -87,7 +87,7 @@ export default async function ItemPage({ params }: Props) {
           at all, which reads as though the section were still being written.
         */}
         <div className="callout">
-          <h3>Where to find it</h3>
+          <h2>Where to find it</h2>
           {doc.howToGet ? <p>{doc.howToGet}</p> : null}
           {region || acquisitionSentence ? (
             <p className="note">

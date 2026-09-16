@@ -176,7 +176,7 @@ export default async function GuidePage({ params }: Props) {
             <RelatedList heading="Covered here" icon="scroll" items={covered} />
 
             <div className="callout">
-              <h3>Answer this for your own run</h3>
+              <h2>Answer this for your own run</h2>
               <p>
                 The <Link href="/tools/run-checker">run checker</Link> takes the quests you have
                 actually finished and works out which endings are still reachable. The{' '}

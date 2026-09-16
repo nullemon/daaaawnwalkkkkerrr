@@ -185,7 +185,7 @@ export default async function CompaniesIndex() {
         ) : null}
 
         <div className="callout">
-          <h3>Why these have their own site</h3>
+          <h2>Why these have their own site</h2>
           <p>
             A studio turns up on more than one wiki, and a company page that exists once carries its
             whole body of work instead of being three thin copies that disagree the first time one

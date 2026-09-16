@@ -48,7 +48,7 @@ export function LegalWarning({ missing }: { missing: string[] }) {
   if (missing.length === 0) return null
   return (
     <div className="callout" data-tone="risk">
-      <h3>This page is not ready to publish</h3>
+      <h2>This page is not ready to publish</h2>
       <p>
         {missing.length} detail{missing.length === 1 ? ' is' : 's are'} still a stand-in:{' '}
         {missing.join(', ')}. A site that holds any personal data has to name who is

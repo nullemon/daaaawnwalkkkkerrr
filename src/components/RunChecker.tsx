@@ -261,7 +261,7 @@ export function RunChecker({ quests, endings }: { quests: QuestNode[]; endings: 
         </ul>
 
         <div className="callout" data-tone="risk">
-          <h3>Read these as a floor, not a verdict</h3>
+          <h2>Read these as a floor, not a verdict</h2>
           <p>
             Reliable per-quest segment costs are not published anywhere we trust, so the checker
             counts what it knows and tells you what it does not. The prerequisite and lock-out logic

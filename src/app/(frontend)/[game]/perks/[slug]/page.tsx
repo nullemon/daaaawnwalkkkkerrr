@@ -69,7 +69,7 @@ export default async function PerkPage({ params }: Props) {
 
         {doc.effect ? (
           <div className="callout">
-            <h3>What it does</h3>
+            <h2>What it does</h2>
             <p>{doc.effect}</p>
           </div>
         ) : null}
@@ -90,7 +90,7 @@ export default async function PerkPage({ params }: Props) {
 
         {doc.isUltimate && rivalUltimates.length > 0 ? (
           <div className="callout" data-tone="risk">
-            <h3>Taking this closes the others</h3>
+            <h2>Taking this closes the others</h2>
             <p>
               Only one ultimate per tree. Choosing {doc.title} means giving up{' '}
               {rivalUltimates.map((perk, index) => (

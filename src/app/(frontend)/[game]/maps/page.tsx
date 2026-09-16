@@ -36,7 +36,7 @@ export default async function MapsIndex({ params }: Props) {
       <div className="page body-main">
         {maps.length === 0 ? (
           <div className="callout">
-            <h3>No map has been published for {name} yet</h3>
+            <h2>No map has been published for {name} yet</h2>
             <p>
               A map here is a real one — a base image somebody published, and pins whose positions
               come from somebody who actually found the thing. Neither exists for this game yet,

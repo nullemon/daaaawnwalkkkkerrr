@@ -56,7 +56,7 @@ export function RequestForm() {
   if (status === 'sent') {
     return (
       <div className="callout">
-        <h3>Thank you — that is on the list</h3>
+        <h2>Thank you — that is on the list</h2>
         <p>
           Every request is read. The ones asked for most often get built first, which is the only
           fair way to order a queue when there is more to do than time to do it in.

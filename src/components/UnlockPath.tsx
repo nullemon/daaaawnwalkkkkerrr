@@ -57,9 +57,9 @@ export function UnlockPath({
           <h2>{heading}</h2>
         </div>
         <div className="callout" data-tone="risk">
-          <h3>
+          <h2>
             <Icon name="lock" size={14} /> Closed for this run
-          </h3>
+          </h2>
           <p>
             You marked <Link href={`/quests/${lockedBy.slug}`}>{lockedBy.title}</Link> as done, and
             it permanently locks this route out. No amount of time left changes that — it is a

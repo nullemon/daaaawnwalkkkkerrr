@@ -44,7 +44,7 @@ export function CorrectionForm() {
   if (status === 'sent') {
     return (
       <div className="callout">
-        <h3>Thank you — that is in the queue</h3>
+        <h2>Thank you — that is in the queue</h2>
         <p>
           We read every report. If it checks out, the page is corrected and the confidence rating
           goes up with it.

@@ -6,6 +6,7 @@ import type { FooterColumn } from '@/components/SiteFooter'
 import { getGame, getPublishedGames, getSiteSettings, gameUrl } from '@/lib/payload'
 import { sectionsFor, toolsFor } from '@/lib/sections'
 import { fanProjectNote } from '@/lib/credit'
+import { JsonLd, videoGame } from '@/components/JsonLd'
 import { hub } from '@/lib/urls'
 import { Analytics } from '@/components/Analytics'
 import { resolveTags, verificationMetadata } from '@/lib/tags'
@@ -119,6 +120,8 @@ export default async function GameLayout({
   const settings = await getSiteSettings()
   const tags = await resolveTags(slug)
   const sections = await sectionsFor(slug)
+  // The wiki's own origin, for the structured data below.
+  const canonical = await gameUrl(game)
   const tools = toolsFor(game)
   const name = game.shortTitle || game.title
 
@@ -211,6 +214,22 @@ export default async function GameLayout({
       }}
     >
       {children}
+      {/*
+        The wiki's own identity, once, on every page of it.
+
+        `videoGame` and `breadcrumbs` have existed in `components/JsonLd.tsx`
+        since early on and neither had a single caller: 140 of 152 sampled
+        pages carried no structured data at all, and the only ones that did
+        were guides. A site that argues it is the accurate, sourced one and
+        then tells search engines nothing about what it is describing is
+        leaving the argument unmade in the one place it is read by machine.
+
+        It goes in the layout rather than on each page because the layout is
+        where the canonical origin is already computed, and because what it
+        says - which game this site is about, and who made it - is true of
+        every page under it.
+      */}
+      <JsonLd data={videoGame(canonical, game)} />
       <Analytics tags={tags} />
     </Shell>
   )

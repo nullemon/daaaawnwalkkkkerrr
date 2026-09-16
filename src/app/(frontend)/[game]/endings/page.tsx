@@ -89,7 +89,7 @@ export default async function EndingsIndex({ params }: Props) {
           )
         })}
         <div className="callout">
-          <h3>Can you still reach the one you want?</h3>
+          <h2>Can you still reach the one you want?</h2>
           <p>
             The <Link href="/tools/run-checker">run checker</Link> compares the chain each ending
             needs against the segments you have left.

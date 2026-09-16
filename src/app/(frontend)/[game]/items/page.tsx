@@ -89,7 +89,7 @@ export default async function ItemsIndex({ params }: Props) {
         */}
         {game?.slug === 'dawnwalker' ? (
           <div className="callout">
-            <h3>Why so few items name a region</h3>
+            <h2>Why so few items name a region</h2>
             <p>
               Guides describe where a thing is by quest and landmark — &ldquo;the Kobold
               Nest&rdquo;, &ldquo;Bakir&rsquo;s treasury&rdquo; — and almost never say which of the

@@ -50,6 +50,8 @@ export async function EntityImage({
         alt={image.alt ?? ''}
         width={image.width ?? undefined}
         height={image.height ?? undefined}
+        loading="lazy"
+        decoding="async"
       />
       {showCredit && image.credit ? <figcaption>{image.credit}</figcaption> : null}
     </figure>

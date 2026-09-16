@@ -79,7 +79,7 @@ export default async function SkillTreePage({ params }: Props) {
               ]}
             />
             <div className="callout">
-              <h3>One ultimate per tree</h3>
+              <h2>One ultimate per tree</h2>
               <p>
                 Taking any ultimate here closes the other two, so a tree is a choice as much as a
                 path. The <Link href="/tools/build-planner">build planner</Link> enforces it and

@@ -77,7 +77,7 @@ export default async function EndingPage({ params }: Props) {
 
         {ending.howToGet ? (
           <div className="callout">
-            <h3>What you have to do</h3>
+            <h2>What you have to do</h2>
             <p>{ending.howToGet}</p>
           </div>
         ) : null}
@@ -119,7 +119,7 @@ export default async function EndingPage({ params }: Props) {
 
         {fromScratch && fromScratch.unknownCostCount > 0 ? (
           <div className="callout" data-tone="risk">
-            <h3>We cannot give you a deadline yet</h3>
+            <h2>We cannot give you a deadline yet</h2>
             <p>
               {fromScratch.unknownCostCount} of the {chain.length} quests in this chain have no
               published segment cost, so any total would be a floor rather than a figure. We have
@@ -147,7 +147,7 @@ export default async function EndingPage({ params }: Props) {
         <RichText data={ending.body} />
 
         <div className="callout">
-          <h3>Is it still reachable from where you are?</h3>
+          <h2>Is it still reachable from where you are?</h2>
           <p>
             The <Link href="/tools/run-checker">run checker</Link> takes your current day and the
             quests you have finished, and tells you whether this one is still on the table.

@@ -30,7 +30,7 @@ export default async function RunCheckerPage({ params }: Props) {
       <div className="page body-main">
         <RunChecker quests={quests} endings={endings} />
         <div className="callout">
-          <h3>How this works</h3>
+          <h2>How this works</h2>
           <p>
             A run is 480 segments — thirty days of eight daylight and eight night segments. The
             checker walks each ending&rsquo;s prerequisite chain, subtracts what you have already

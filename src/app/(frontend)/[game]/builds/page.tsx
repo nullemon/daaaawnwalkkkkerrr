@@ -81,7 +81,7 @@ export default async function BuildsIndex({ params }: Props) {
           </div>
         )}
         <div className="callout">
-          <h3>Build your own</h3>
+          <h2>Build your own</h2>
           <p>
             The <Link href="/tools/build-planner">build planner</Link> lets you pick perks across the
             three trees, shows what it costs in segments, and gives you a link you can share.

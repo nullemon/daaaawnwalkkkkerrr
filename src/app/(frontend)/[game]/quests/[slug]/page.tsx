@@ -104,7 +104,7 @@ export default async function QuestPage({ params }: Props) {
               ]}
             />
             <div className="callout">
-              <h3>Where does this leave your run?</h3>
+              <h2>Where does this leave your run?</h2>
               <p>
                 The <Link href="/tools/run-checker">run checker</Link> takes the quests you have
                 actually finished and works out which endings are still reachable from where you
@@ -134,7 +134,7 @@ export default async function QuestPage({ params }: Props) {
 
         {excludes.length > 0 ? (
           <div className="callout" data-tone="risk">
-            <h3>Doing this closes other routes</h3>
+            <h2>Doing this closes other routes</h2>
             <p>
               Completing {quest.title} permanently locks out{' '}
               {excludes.map((locked, index) => (

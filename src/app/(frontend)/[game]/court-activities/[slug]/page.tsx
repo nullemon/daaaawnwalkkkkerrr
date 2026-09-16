@@ -71,7 +71,7 @@ export default async function CourtActivityPage({ params }: Props) {
         />
         {doc.howToStart ? (
           <div className="callout">
-            <h3>How to start it</h3>
+            <h2>How to start it</h2>
             <p>{doc.howToStart}</p>
           </div>
         ) : null}

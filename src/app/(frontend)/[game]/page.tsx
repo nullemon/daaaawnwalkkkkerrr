@@ -139,19 +139,36 @@ export default async function Home({ params }: Props) {
       {/* ---- Masthead: the game's own art, its logo, and the search ---- */}
       <header className="wiki-masthead">
         {heroSrc ? (
-          <img className="wiki-masthead-art" src={heroSrc} alt="" aria-hidden="true" />
+          <img
+            className="wiki-masthead-art"
+            src={heroSrc}
+            alt=""
+            aria-hidden="true"
+            fetchPriority="high"
+            decoding="async"
+          />
         ) : null}
 
         <div className="page wiki-masthead-inner">
+          {/*
+            An <h1>, not a <p>. The masthead is the page's heading whichever
+            branch renders it, and every wiki home was shipping without one:
+            the logo branch is an image and the wordmark branch was a
+            paragraph, so the most important page on each of the eight sites
+            had no top-level heading for a screen reader to land on or a
+            crawler to read as the subject.
+          */}
           {gameLogo?.url ? (
-            <img className="wiki-logo" src={gameLogo.url} alt={game.title} />
+            <h1 className="wiki-logo-heading">
+              <img className="wiki-logo" src={gameLogo.url} alt={game.title} decoding="async" />
+            </h1>
           ) : (
-            <p className="hero-wordmark">
+            <h1 className="hero-wordmark">
               <span className="glyph">
                 <Logo size={36} />
               </span>
               {name}
-            </p>
+            </h1>
           )}
 
           <p className="wiki-masthead-lede">
@@ -173,7 +190,7 @@ export default async function Home({ params }: Props) {
           */}
           {total === 0 ? (
             <div className="callout">
-              <h3>{upcoming ? 'This game is not out yet' : 'This wiki is just starting'}</h3>
+              <h2>{upcoming ? 'This game is not out yet' : 'This wiki is just starting'}</h2>
               <p>
                 {upcoming
                   ? `Everything here comes from what ${game.publisher ?? 'the publisher'} has actually confirmed — release, editions, requirements, features. There are no walkthroughs, no item lists and no boss strategies, because nobody has played it. Those arrive when there is something real to put in them.`
