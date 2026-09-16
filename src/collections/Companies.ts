@@ -138,6 +138,7 @@ export const Companies: CollectionConfig = {
       options: [
         { label: 'Ranked by revenue', value: 'revenue-ranking' },
         { label: 'Makes a game covered here', value: 'network-game' },
+        { label: 'In a gaming-company category', value: 'gaming-category' },
         { label: 'Named by another company’s article', value: 'related-company' },
       ],
       admin: {

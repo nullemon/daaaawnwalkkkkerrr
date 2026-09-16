@@ -138,6 +138,40 @@ export default async function AboutPage({ params }: Props) {
                 the page it affects.
               </p>
 
+              <h2>The game itself</h2>
+              <p>
+                {doc?.storeUrl ? (
+                  <>
+                    The official listing for {name} is{' '}
+                    {/* Outbound, so nofollow like every external link here. */}
+                    <a href={doc.storeUrl} rel="nofollow noopener noreferrer" target="_blank">
+                      on its store page
+                    </a>
+                    . Anything this site says about the game should be checkable against it, and
+                    where the two disagree the publisher is right and we are not.
+                  </>
+                ) : (
+                  <>
+                    No official listing is recorded for {name} yet, which is usually because it has
+                    not been announced on a storefront.
+                  </>
+                )}
+                {rightsholders.length > 0 ? (
+                  <>
+                    {' '}
+                    Its {rightsholders.length === 1 ? 'maker has' : 'makers have'} a profile on this
+                    network:{' '}
+                    {rightsholders.map((holder, index) => (
+                      <span key={holder}>
+                        {index > 0 ? ', ' : ''}
+                        <a href={companyUrl(`/${slugify(holder)}`)}>{holder}</a>
+                      </span>
+                    ))}
+                    .
+                  </>
+                ) : null}
+              </p>
+
               <h2>Where the facts come from</h2>
               <p>
                 Every record cites its sources with the date we read them, and the importer that

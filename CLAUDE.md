@@ -4,7 +4,7 @@ A network of game wikis sharing one admin, one account system and one set of
 editorial rules. Next.js 16 + Payload CMS 3 on libSQL. Every public page
 prerenders to static HTML; `/admin` is a full CMS.
 
-Eight wikis today, 1,723 prerendered pages. *The Blood of Dawnwalker* is the
+Eight wikis today, 1,929 prerendered pages. *The Blood of Dawnwalker* is the
 first and still the largest — 440 of the 1,375 records — and its 480-segment
 run planner is the model for what each wiki is meant to have: one tool nobody
 else has.
@@ -33,7 +33,7 @@ prefix; `src/proxy.ts` maps host to the internal `/[game]/…` route. See
 ```bash
 pnpm install      # NOT npm — see gotchas
 pnpm dev          # http://dawnwalker.localhost:3000 — see 'Local dev' below
-pnpm build        # prerenders ~1,720 pages across eight wikis
+pnpm build        # prerenders ~1,930 pages across eight wikis
 pnpm test         # unit tests (175)
 pnpm seed         # hand-written seed content, idempotent on slug
 pnpm ingest       # ingest researched JSON from src/seed/raw/
@@ -429,10 +429,18 @@ parent or subsidiary in their own infoboxes. A name is there because a sourced
 article named it, and following that edge builds the corporate graph at the
 same time.
 
-**Logos are not downloaded.** A company logo on Wikipedia is almost always
-non-free, under a fair-use rationale covering Wikipedia and not us. CC BY-SA
-text and a fair-use trademark are different things, and copying the second
-because the first was fine is how a site gets a letter.
+**Logos are downloaded only where the licence allows it.** Assuming a company
+logo is non-free is wrong about half the time: the ones uploaded locally to
+en.wikipedia under a fair-use rationale are, and most of the ones on Commons
+are *public domain*, because a logo made of type and flat shapes falls below
+the threshold of originality. So the harvester asks Commons for the licence of
+each file and records it, and the seeder honours the answer - 105 taken, 127
+left alone, each credited with the licence it actually carries.
+
+Ask Commons for a **rendered thumbnail**, not the original. Most logos are SVG
+and Payload cannot measure one - it throws `unable to determine dimensions` and
+the upload fails silently inside a catch, which is how the first run produced
+ten logos out of a hundred and twenty-five free ones.
 
 `pnpm seed:companies` builds it from three sources and keeps them apart:
 

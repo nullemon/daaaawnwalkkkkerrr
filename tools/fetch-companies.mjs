@@ -110,7 +110,29 @@ const get = async (params, attempt = 0) => {
 const LIST_TEMPLATES =
   /^(ubl|unbulleted list|plainlist|flatlist|hlist|nowrap|nobold|small|smaller|nowraplinks)$/i
 const KEEP_ARGS =
-  /^(start date and age|start date|end date|currency|us\$|usd|inr|jpy|eur|gbp|cny|rmb|krw|aud|cad|chf|sek|val|number|formatnum)$/i
+  /^(start date and age|start date|end date|currency|us\$|usd|inr|jpy|eur|gbp|cny|rmb|krw|aud|cad|chf|sek|try|brl|rub|val|number|formatnum|url|circa|c\.|approx|increase|decrease)$/i
+
+/**
+ * Entities survive the wikitext because they are HTML, not wiki markup.
+ *
+ * `{{US$|8.0&nbsp;billion}}` came out as the literal "8.0&nbsp;billion" on
+ * five revenue figures, which is the kind of thing a reader notices and an
+ * author never does, because it only appears once the templates around it
+ * have been stripped.
+ */
+const decodeEntities = (value) =>
+  value
+    .replace(/&nbsp;|&#160;|&#xa0;/gi, ' ')
+    .replace(/&ndash;|&#8211;/gi, '–')
+    .replace(/&mdash;|&#8212;/gi, '—')
+    .replace(/&quot;|&#34;/gi, '"')
+    .replace(/&apos;|&#39;/gi, "'")
+    .replace(/&lt;/gi, '<')
+    .replace(/&gt;/gi, '>')
+    .replace(/&#(\d+);/g, (_, code) => String.fromCodePoint(Number(code)))
+    .replace(/&#x([0-9a-f]+);/gi, (_, code) => String.fromCodePoint(parseInt(code, 16)))
+    /* Last, so an escaped ampersand cannot re-form another entity. */
+    .replace(/&amp;/gi, '&')
 
 /**
  * Split a template body on its own pipes, leaving a piped link intact.
@@ -168,10 +190,12 @@ const resolveTemplates = (input) => {
 }
 
 const clean = (value) =>
-  resolveTemplates(
-    String(value ?? '')
-      .replace(/<ref[^>]*>[\s\S]*?<\/ref>/gi, '')
-      .replace(/<ref[^>]*\/>/gi, ''),
+  decodeEntities(
+    resolveTemplates(
+      String(value ?? '')
+        .replace(/<ref[^>]*>[\s\S]*?<\/ref>/gi, '')
+        .replace(/<ref[^>]*\/>/gi, ''),
+    ),
   )
     .replace(/\[\[[^\]|]*\|([^\]]*)\]\]/g, '$1')
     .replace(/\[\[([^\]]*)\]\]/g, '$1')
@@ -253,6 +277,98 @@ const rawField = (wikitext, key) => {
 
 // --- the run ----------------------------------------------------------------
 
+/**
+ * A logo file's real licence, from Commons.
+ *
+ * The first version of this tool downloaded nothing, on the assumption that a
+ * company logo is non-free. That is true of the ones uploaded locally to
+ * en.wikipedia under a fair-use rationale - and false of most of the ones on
+ * Commons, because a logo made of type and flat shapes is usually below the
+ * threshold of originality and therefore public domain. Electronic Arts and
+ * Capcom both are.
+ *
+ * So rather than assume either way, ask: Commons publishes the licence in
+ * `extmetadata`. Free files are taken and credited with the licence they
+ * actually carry; anything marked non-free, or not on Commons at all, is left
+ * alone and the reason recorded.
+ */
+const FREE_LICENCE = /^(public domain|cc[ -]|pd-|no restrictions)/i
+
+const logoLicence = async (filename) => {
+  if (!filename) return null
+  const clean = filename.replace(/^File:/i, '').replace(/_/g, ' ').trim()
+  if (!clean) return null
+
+  const url = `https://commons.wikimedia.org/w/api.php?${new URLSearchParams({
+    action: 'query',
+    format: 'json',
+    prop: 'imageinfo',
+    iiprop: 'url|extmetadata',
+    /*
+      Ask for a rendered thumbnail as well as the original. Most of these
+      logos are SVG, and Payload cannot read an SVG's dimensions - it throws
+      "unable to determine dimensions" and the upload fails, which is why the
+      first run got ten logos out of a hundred and twenty-five free ones.
+      Commons rasterises on request, so `thumburl` is a PNG it can handle.
+    */
+    iiurlwidth: '512',
+    titles: `File:${clean}`,
+  })}`
+
+  try {
+    const response = await fetch(url, { headers: { 'User-Agent': UA } })
+    if (!response.ok) return null
+    const data = await response.json()
+    const page = data?.query?.pages && Object.values(data.query.pages)[0]
+    if (!page || page.missing !== undefined) {
+      return { file: clean, free: false, reason: 'not on Commons — likely non-free on en.wikipedia' }
+    }
+    const info = page.imageinfo?.[0]
+    const meta = info?.extmetadata ?? {}
+    const licence = meta.LicenseShortName?.value ?? ''
+    const nonFree = String(meta.NonFree?.value ?? '') === '1'
+    const artist = String(meta.Artist?.value ?? '')
+      .replace(/<[^>]*>/g, '')
+      .trim()
+    const free = !nonFree && FREE_LICENCE.test(licence)
+    return {
+      file: clean,
+      free,
+      licence: licence || null,
+      artist: artist || null,
+      /*
+        Prefer the rendered thumbnail: it is a PNG even when the original is
+        an SVG, which is the only form the upload pipeline can measure. Fall
+        back to the original for files that are already raster. The API
+        decorates URLs with campaign parameters; the file is the file.
+      */
+      url: free ? String(info?.thumburl || info?.url || '').split('?')[0] || null : null,
+      reason: free ? null : `licence "${licence || 'unknown'}" does not permit reuse here`,
+    }
+  } catch {
+    return null
+  }
+}
+
+/**
+ * One address out of a website field.
+ *
+ * `{{URL|https://www.tencent.com/|tencent.com}}` carries the link and the text
+ * to show for it, and keeping both produced "https://www.tencent.com/
+ * tencent.com". Take the first thing that is actually an address, and give a
+ * bare domain the scheme it needs to be a working link.
+ */
+const tidyUrl = (value) => {
+  const text = String(value ?? '').trim()
+  if (!text) return null
+
+  const withScheme = text.match(/https?:\/\/[^\s,]+/i)
+  if (withScheme) return withScheme[0].replace(/[.,;]+$/, '')
+
+  const bare = text.match(/(?:www\.)?[a-z0-9-]+(?:\.[a-z0-9-]+)+(?:\/[^\s,]*)?/i)
+  return bare ? `https://${bare[0].replace(/[.,;]+$/, '')}` : null
+}
+
 const fetchArticle = async (title) => {
   const data = await get({
     action: 'query',
@@ -287,18 +403,69 @@ const run = async () => {
   console.log(`ranked by revenue: ${ranked.length}`)
 
   // --- 2. plus the makers of the games we cover ----------------------------
-  const queue = [...ranked]
-  for (const name of NETWORK_HOLDERS) if (!queue.includes(name)) queue.push(name)
-  const seeded = queue.length
-  console.log(`plus this network's own: ${seeded}`)
+  /*
+    Two queues, because order decides what a 300-company harvest contains.
+
+    The ranked companies and our own, plus whatever their infoboxes name, go
+    in the priority queue. The categories are filler. With one queue the
+    thousand category members sat in front of every discovered relative, so
+    the corporate graph - the reason to have a hundred of these rather than
+    fifty - never got harvested at all.
+  */
+  const priority = [...ranked]
+  for (const name of NETWORK_HOLDERS) if (!priority.includes(name)) priority.push(name)
+  const filler = []
+  console.log(`plus this network's own: ${priority.length}`)
+
+  /*
+    --- 2b. plus Wikipedia's own gaming-company categories ------------------
+
+    Definitionally on-topic, which the revenue list and the corporate graph
+    are not on their own: the ranking stops at fifty, and expanding the graph
+    any further than one hop walks out of the industry entirely. A category
+    called "Video game development companies" cannot drift, because membership
+    of it is the claim.
+
+    They seed but never expand. Their parents and subsidiaries would be a
+    second hop, which is the thing that produced an exam board last time.
+  */
+  const categories = ['Video game development companies', 'Video game publishers']
+  const fromCategory = new Set()
+  for (const category of categories) {
+    const data = await get({
+      action: 'query',
+      list: 'categorymembers',
+      cmtitle: `Category:${category}`,
+      cmlimit: '500',
+      cmnamespace: '0',
+    })
+    for (const member of data?.query?.categorymembers ?? []) {
+      const title = String(member.title)
+      if (!title || priority.includes(title) || filler.includes(title)) continue
+      filler.push(title)
+      fromCategory.add(title)
+    }
+    await sleep(350)
+  }
+  console.log(`plus gaming-company categories: ${fromCategory.size}`)
 
   // --- 3. harvest, expanding one hop through parent/subsidiaries -----------
+  /** Why a name is in the harvest, which also decides whether it expands. */
+  const basisFor = (title) =>
+    ranked.includes(title)
+      ? 'revenue-ranking'
+      : NETWORK_HOLDERS.includes(title)
+        ? 'network-game'
+        : fromCategory.has(title)
+          ? 'gaming-category'
+          : 'related-company'
+
   const out = []
   const seen = new Set()
   let expanded = 0
 
-  while (queue.length > 0 && out.length < LIMIT) {
-    const title = queue.shift()
+  while ((priority.length > 0 || filler.length > 0) && out.length < LIMIT) {
+    const title = priority.shift() ?? filler.shift()
     const key = title.toLowerCase()
     if (seen.has(key)) continue
     seen.add(key)
@@ -314,6 +481,9 @@ const run = async () => {
       console.log(`  ${article.title}: no company infobox, skipped`)
       continue
     }
+
+    const logo = await logoLicence(box.logo)
+    if (logo) await sleep(200)
 
     const parents = linkedNames(rawField(article.wikitext, 'parent'))
     const subsidiaries = linkedNames(rawField(article.wikitext, 'subsid'))
@@ -334,26 +504,37 @@ const run = async () => {
       employeesYear: box.num_employees_year ?? null,
       revenue: box.revenue ?? null,
       revenueYear: box.fiscal_year ?? null,
-      website: box.homepage ?? box.website ?? null,
+      website: tidyUrl(box.homepage ?? box.website ?? box.url),
       parents,
       subsidiaries,
       products: box.products ?? null,
+      logo,
       url: `https://en.wikipedia.org/wiki/${encodeURIComponent(article.title.replace(/ /g, '_'))}`,
       licence: LICENCE,
       fetchedAt,
       /* Where the name came from, so the site can be honest about selection. */
-      basis: ranked.includes(title)
-        ? 'revenue-ranking'
-        : NETWORK_HOLDERS.includes(title)
-          ? 'network-game'
-          : 'related-company',
+      basis: basisFor(title),
     })
 
-    // One hop outward, and only to fill the quota.
-    if (out.length + queue.length < LIMIT) {
+    /*
+      One hop, and one hop only.
+
+      Letting discovered companies expand in turn walks straight out of the
+      industry: Sony names Sony Music, which names Universal Music, which
+      eventually named an exam board and a cable TV service. Filtering the
+      results by industry afterwards is not the fix either - Tencent, Nexon,
+      Square Enix and Embracer all describe themselves as conglomerates or
+      leave the field empty, so that rule deletes the very companies this is
+      for.
+
+      Expanding only from the seeded set keeps what was asked for - the
+      corporate structure *of gaming companies* - and nothing further out.
+    */
+    const isSeed = ['revenue-ranking', 'network-game'].includes(basisFor(title))
+    if (isSeed) {
       for (const related of [...parents, ...subsidiaries]) {
-        if (seen.has(related.toLowerCase()) || queue.includes(related)) continue
-        queue.push(related)
+        if (seen.has(related.toLowerCase()) || priority.includes(related)) continue
+        priority.push(related)
         expanded += 1
       }
     }
@@ -361,17 +542,24 @@ const run = async () => {
     if (out.length % 10 === 0) console.log(`  ${out.length} harvested…`)
   }
 
+  const freeLogos = out.filter((entry) => entry.logo?.free).length
+  const blockedLogos = out.filter((entry) => entry.logo && !entry.logo.free).length
   console.log(`\nharvested ${out.length} (${expanded} names discovered via parent/subsidiary)`)
+  console.log(
+    `logos: ${freeLogos} freely licensed, ${blockedLogos} left alone as non-free, ` +
+      `${out.length - freeLogos - blockedLogos} with none named`,
+  )
 
   // --- the guard ----------------------------------------------------------
   if (fs.existsSync(OUT)) {
     try {
       const previous = JSON.parse(fs.readFileSync(OUT, 'utf8'))
       const before = previous.companies?.length ?? 0
-      if (before > 0 && out.length < before * 0.9) {
+      if (before > 0 && out.length < before * 0.9 && !process.argv.includes('--allow-shrink')) {
         console.error(
           `refusing to write: ${out.length} companies against ${before} already on disk. ` +
-            'A harvest that shrinks is a failed harvest, not a smaller world.',
+            'A harvest that shrinks is a failed harvest, not a smaller world. ' +
+            'Pass --allow-shrink if the narrowing is deliberate.',
         )
         process.exit(1)
       }

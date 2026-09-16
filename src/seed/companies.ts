@@ -82,6 +82,13 @@ type Harvested = {
   licence: string
   fetchedAt: string
   basis: string
+  logo?: {
+    file?: string
+    free?: boolean
+    url?: string | null
+    licence?: string | null
+    artist?: string | null
+  } | null
 }
 
 type Draft = {
@@ -116,6 +123,76 @@ const usable = (value?: string | null): string | undefined => {
   if (!text) return undefined
   const outside = text.replace(/\([^)]*\)/g, '').replace(/[^A-Za-z0-9]/g, '')
   return outside.length > 0 ? text : undefined
+}
+
+/**
+ * Download a company's logo, but only where its licence actually allows it.
+ *
+ * The first pass here downloaded nothing, assuming every company logo is
+ * non-free. That is true of the ones uploaded locally to en.wikipedia under a
+ * fair-use rationale, and false of most of the ones on Commons: a logo made of
+ * type and flat shapes is usually below the threshold of originality and so
+ * public domain. Electronic Arts and Capcom both are.
+ *
+ * `fetch:companies` asks Commons for the licence of each one and records it,
+ * so this only has to honour the answer. The licence and the uploader are
+ * written into the credit, which is what CC BY-SA asks for on the ones that
+ * carry it.
+ */
+const fetchLogo = async (
+  payload: Awaited<ReturnType<typeof getPayload>>,
+  company: string,
+  logo: { file?: string; free?: boolean; url?: string | null; licence?: string | null; artist?: string | null } | null | undefined,
+): Promise<string | number | null> => {
+  if (!logo?.free || !logo.url) return null
+
+  const extension = (logo.url.match(/\.(svg|png|jpg|jpeg|gif|webp)$/i)?.[1] ?? 'png').toLowerCase()
+  const filename = `company-${slugify(company)}.${extension}`
+
+  const existing = await payload.find({
+    collection: 'media',
+    where: { filename: { equals: filename } },
+    limit: 1,
+    depth: 0,
+  })
+  if (existing.docs[0]) return existing.docs[0].id
+
+  try {
+    const response = await fetch(logo.url, {
+      headers: { 'User-Agent': 'VellumWikiNetwork/1.0 (game wiki network; non-commercial)' },
+    })
+    if (!response.ok) return null
+    const buffer = Buffer.from(await response.arrayBuffer())
+
+    const mimetype =
+      extension === 'svg'
+        ? 'image/svg+xml'
+        : extension === 'png'
+          ? 'image/png'
+          : extension === 'gif'
+            ? 'image/gif'
+            : extension === 'webp'
+              ? 'image/webp'
+              : 'image/jpeg'
+
+    const credit = [
+      `${company} logo`,
+      logo.licence ? `(${logo.licence})` : '',
+      logo.artist ? `— ${logo.artist}` : '',
+    ]
+      .filter(Boolean)
+      .join(' ')
+
+    const created = await payload.create({
+      collection: 'media',
+      data: { alt: `${company} logo`, credit } as never,
+      file: { data: buffer, mimetype, name: filename, size: buffer.length },
+    })
+    return created.id
+  } catch {
+    // A logo is decoration. Failing to get one is not a reason to fail the run.
+    return null
+  }
 }
 
 const splitHolders = (value?: string | null): string[] =>
@@ -234,6 +311,7 @@ async function run(): Promise<void> {
   // --- 4. Write them ------------------------------------------------------
   let created = 0
   let updated = 0
+  let logos = 0
 
   for (const draft of drafts.values()) {
     const slug = slugify(draft.name)
@@ -291,6 +369,9 @@ async function run(): Promise<void> {
             },
           ]
 
+    const logoId = await fetchLogo(payload, draft.name, facts?.logo)
+    if (logoId) logos += 1
+
     const data = {
       name: draft.name,
       slug,
@@ -309,6 +390,7 @@ async function run(): Promise<void> {
       revenue: usable(facts?.revenue),
       website: usable(facts?.website),
       basis: facts?.basis ?? (draft.gameTitles.length > 0 ? 'network-game' : 'related-company'),
+      ...(logoId ? { logo: logoId } : {}),
     }
 
     const existing = await payload.find({
@@ -370,6 +452,7 @@ async function run(): Promise<void> {
   console.log(`\nmigrated out of game collections: ${migrated.length}`)
   for (const row of migrated) console.log(`  ${row}`)
   console.log(`\ncompanies: ${created} created, ${updated} updated`)
+  console.log(`logos downloaded where the licence allowed it: ${logos}`)
   console.log(`corporate links written on ${linked} of them${harvestedAt ? ` (facts read ${harvestedAt})` : ''}`)
   process.exit(0)
 }

@@ -1963,7 +1963,7 @@ export interface Company {
   /**
    * Why this company is on the network. Shown on the page, because how a name was chosen is part of what a reader is owed.
    */
-  basis?: ('revenue-ranking' | 'network-game' | 'related-company') | null;
+  basis?: ('revenue-ranking' | 'network-game' | 'gaming-category' | 'related-company') | null;
   /**
    * Optional. A logo is a trademark used for identification; credit it like any other art.
    */
