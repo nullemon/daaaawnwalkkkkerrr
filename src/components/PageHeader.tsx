@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import type { ReactNode } from 'react'
 import { Icon, type IconName } from './Icon'
+import { getSiteSettings } from '@/lib/payload'
 
 export type Crumb = { label: string; href?: string }
 
@@ -14,7 +15,7 @@ export type Crumb = { label: string; href?: string }
  */
 export type HeaderArt = { src: string; credit?: string; tall?: boolean }
 
-export function PageHeader({
+export async function PageHeader({
   eyebrow,
   title,
   lede,
@@ -31,6 +32,11 @@ export function PageHeader({
   icon?: IconName
   art?: HeaderArt
 }) {
+  // Same switch as the credit under a record's own image, so the page does not
+  // credit one picture and not the other. See `EntityImage`.
+  const settings = await getSiteSettings()
+  const showCredit = Boolean(settings.showImageCredits)
+
   const head = (
     <div className="page">
       <div className="page-head">
@@ -68,7 +74,7 @@ export function PageHeader({
       data-tall={art.tall ? 'true' : undefined}
     >
       {head}
-      {art.credit ? <p className="art-credit">{art.credit}</p> : null}
+      {showCredit && art.credit ? <p className="art-credit">{art.credit}</p> : null}
     </div>
   )
 }

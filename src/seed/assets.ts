@@ -74,7 +74,8 @@ const wikiCredits = (): Map<string, string> => {
         .filter((entry) => entry.file)
         .map((entry) => [
           entry.file,
-          host(entry.page) ? `${PUBLISHER}. Image via ${host(entry.page)}.` : PUBLISHER,
+          // The publisher, who owns the art. Not the wiki it was found on.
+          PUBLISHER,
         ]),
     )
   } catch {

@@ -182,6 +182,34 @@ export const SiteSettings: GlobalConfig = {
                   'Off by default. Sources are always stored and always required on import; this only controls whether the list is printed under each page.',
               },
             },
+            /*
+              Image credits, on the same footing as the source list: stored
+              either way, printed only if this is on.
+
+              Off by default, by the owner's decision. The reason to turn it on
+              is worth having in front of whoever decides: the harvested images
+              come from community wikis whose text and media are CC BY-SA, and
+              the BY in that licence is an attribution condition rather than a
+              courtesy — it is the thing the licence asks for in exchange. Key
+              art and press screenshots are a different matter again: those are
+              used under no licence at all, on a fair-dealing argument that a
+              credit line supports rather than creates.
+
+              A single credits page naming the wikis is the usual way to keep
+              the credit off every image and still be within the terms. If this
+              stays off and nothing else carries it, that is a choice being
+              made, not a detail being tidied.
+            */
+            {
+              name: 'showImageCredits',
+              type: 'checkbox',
+              defaultValue: false,
+              label: 'Show credits under images',
+              admin: {
+                description:
+                  'Off by default. The credit is still stored on every image. Note that harvested wiki images are CC BY-SA, a licence whose central condition is attribution — see the note on the hub home tab before leaving this off permanently.',
+              },
+            },
           ],
         },
         {

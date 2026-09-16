@@ -390,7 +390,18 @@ async function run(): Promise<void> {
           path.resolve(entity.imageFile),
           `${harvest.slug}-${slug}${path.extname(entity.imageFile) || '.png'}`,
           `${entity.title} in ${gameTitle}`,
-          `Image via ${harvest.host}.`,
+          /*
+            No "Image via <wiki>" here, by the owner's decision. The record's
+            `sources` still carry the page the image came from, so the
+            provenance is kept in the data and simply not printed.
+
+            Worth knowing if this is ever revisited: these wikis are CC BY-SA,
+            and attribution is that licence's condition rather than a
+            courtesy, so an image with no credit anywhere on the site sits
+            outside the terms it arrived under. A credits page naming the
+            wikis is the usual way to satisfy that without a line per image.
+          */
+          '',
         )
       }
 

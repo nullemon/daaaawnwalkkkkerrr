@@ -3229,6 +3229,10 @@ export interface SiteSetting {
    */
   showSources?: boolean | null;
   /**
+   * Off by default. The credit is still stored on every image. Note that harvested wiki images are CC BY-SA, a licence whose central condition is attribution — see the note on the hub home tab before leaving this off permanently.
+   */
+  showImageCredits?: boolean | null;
+  /**
    * Only used on the apex domain. Each wiki has its own, on its Game record.
    */
   verification?: {
@@ -3318,6 +3322,7 @@ export interface SiteSettingsSelect<T extends boolean = true> {
   attributionStyle?: T;
   attributionText?: T;
   showSources?: T;
+  showImageCredits?: T;
   verification?:
     | T
     | {
