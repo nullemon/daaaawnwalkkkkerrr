@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { PageHeader } from '@/components/PageHeader'
 import { sectionArt } from '@/lib/art'
@@ -25,6 +26,14 @@ const GATE_LABEL: Record<string, string> = {
 export default async function EndingsIndex({ params }: Props) {
   const { game } = await params
   const endings = await getAll('endings', { game, sort: 'title', depth: 0 })
+
+  /*
+   * A section with no records is not this game's section. The rail and the
+   * sitemap already derive from what a game has, so an empty index here was
+   * reachable only by typing the URL - and what it served was the copy for
+   * the one game that does have the section. A 404 is the honest answer.
+   */
+  if (endings.length === 0) notFound()
   const byGate = (gate: string) => endings.filter((ending) => ending.gate === gate)
   // The same graph the checker and the unlock paths walk, so the readout
   // above the list cannot drift from either of them.
@@ -33,7 +42,7 @@ export default async function EndingsIndex({ params }: Props) {
   return (
     <>
       <PageHeader
-        art={sectionArt('endings')}
+        art={sectionArt(game, 'endings')}
         eyebrow="Database"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Endings' }]}
         icon="crown"

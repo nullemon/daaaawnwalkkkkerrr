@@ -75,8 +75,16 @@ export const siteSettings = {
     { label: 'Mechanics', href: '/mechanics' },
     { label: 'Guides', href: '/guides' },
   ],
+  /*
+   * The network's note, which is what the hub and any page without a game
+   * shows. It named Dawnwalker's developer and publisher while being rendered
+   * on all eight wikis, so a Silent Hill page disclaimed affiliation with
+   * Rebel Wolves. Each wiki now builds its own from its own record - see
+   * `fanProjectNote` - and this one covers the network, where naming one of
+   * the eight games would be the same mistake again.
+   */
   footerNote:
-    'Unofficial fan project. The Blood of Dawnwalker is developed by Rebel Wolves and published by Bandai Namco Entertainment. No affiliation is claimed. Facts are compiled from public sources and have not been verified against the game.',
+    'Unofficial fan project. Every game covered here is the property of its own developer and publisher, and no affiliation with any of them is claimed. Facts are compiled from public sources and have not been verified against the games themselves.',
   adsEnabled: false,
   /*
    * Operator details for CWMI Group, trading as Code Web Media, with the Manila

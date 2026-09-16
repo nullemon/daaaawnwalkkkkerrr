@@ -4,15 +4,24 @@ import { PageHeader } from '@/components/PageHeader'
 import { sectionArt } from '@/lib/art'
 import { DataTable, type Row } from '@/components/DataTable'
 import { ICON_FOR_QUEST_KIND } from '@/components/Icon'
-import { getAll } from '@/lib/payload'
-import type { Quest, Region } from '@/payload-types'
+import { getAll, getGame } from '@/lib/payload'
+import { sectionCopy } from '@/lib/section-copy'
+import type { Region } from '@/payload-types'
 
 type Props = { params: Promise<{ game: string }> }
 
-export const metadata: Metadata = {
-  title: 'Every quest, with time cost and phase',
-  description:
-    'All known quests in The Blood of Dawnwalker, with day/night phase, prerequisites and segment cost where it has been confirmed.',
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { game: slug } = await params
+  const [game, quests] = await Promise.all([
+    getGame(slug),
+    getAll('quests', { game: slug, depth: 0 }),
+  ])
+  const copy = sectionCopy('quests', game, { total: quests.length })
+  return {
+    title: copy.title,
+    description: copy.description,
+    alternates: { canonical: '/quests' },
+  }
 }
 
 const KIND_LABELS: Record<string, string> = {
@@ -25,9 +34,13 @@ const KIND_LABELS: Record<string, string> = {
 }
 
 export default async function QuestIndex({ params }: Props) {
-  const { game } = await params
-  const quests = await getAll('quests', { game, sort: 'title', depth: 1 })
+  const { game: slug } = await params
+  const [game, quests] = await Promise.all([
+    getGame(slug),
+    getAll('quests', { game: slug, sort: 'title', depth: 1 }),
+  ])
   const confirmed = quests.filter((quest) => quest.time?.known).length
+  const copy = sectionCopy('quests', game, { total: quests.length, detail: confirmed })
 
   // Flattened for the table, which runs in the browser and so can only be
   // handed primitives. `phase` drives the badge, `phaseLabel` the filter.
@@ -55,18 +68,18 @@ export default async function QuestIndex({ params }: Props) {
   return (
     <>
       <PageHeader
-        art={sectionArt('quests')}
+        art={sectionArt(slug, 'quests')}
         eyebrow="Database"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Quests' }]}
         icon="scroll"
-        title="Quests"
-        lede={`${quests.length} quests catalogued. Time costs are shown only where a source actually publishes one — ${confirmed} so far. An unknown cost is not a zero cost, and we would rather leave a gap than fill it with a guess.`}
+        title={copy.heading}
+        lede={copy.lede}
       />
       <div className="page body-main">
         <DataTable
           rows={rows}
           noun="quests"
-          searchPlaceholder="Search 93 quests by name, kind or region…"
+          searchPlaceholder={`Search ${quests.length} quests by name, kind or region…`}
           facets={[
             { key: 'kind', label: 'Kind' },
             { key: 'region', label: 'Region' },
@@ -80,15 +93,22 @@ export default async function QuestIndex({ params }: Props) {
             { key: 'segments', label: 'Segments', type: 'num' },
           ]}
         />
-        <div className="callout">
-          <h3>Why so many costs are unknown</h3>
-          <p>
-            Published segment costs for individual quests disagree between sites, and we have no way
-            to verify them against the game. Rather than copy a number we cannot stand behind, we
-            leave it blank and say so. If you know a real figure,{' '}
-            <Link href="/corrections">send it in</Link> — it goes straight to our review queue.
-          </p>
-        </div>
+        {/*
+          The Segments column, and so this explanation of why most of it is
+          blank, is the 480-segment clock — which is Dawnwalker's. A wiki for a
+          game with no such cost has nothing to apologise for here.
+        */}
+        {game?.slug === 'dawnwalker' ? (
+          <div className="callout">
+            <h3>Why so many costs are unknown</h3>
+            <p>
+              Published segment costs for individual quests disagree between sites, and we have no
+              way to verify them against the game. Rather than copy a number we cannot stand
+              behind, we leave it blank and say so. If you know a real figure,{' '}
+              <Link href="/corrections">send it in</Link> — it goes straight to our review queue.
+            </p>
+          </div>
+        ) : null}
       </div>
     </>
   )

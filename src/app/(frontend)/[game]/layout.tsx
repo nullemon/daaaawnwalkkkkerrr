@@ -5,6 +5,7 @@ import type { RailItem } from '@/components/SiteRail'
 import type { FooterColumn } from '@/components/SiteFooter'
 import { getGame, getPublishedGames, getSiteSettings, gameUrl } from '@/lib/payload'
 import { sectionsFor, toolsFor } from '@/lib/sections'
+import { fanProjectNote } from '@/lib/credit'
 import { hub } from '@/lib/urls'
 import { Analytics } from '@/components/Analytics'
 import { resolveTags, verificationMetadata } from '@/lib/tags'
@@ -201,7 +202,8 @@ export default async function GameLayout({
           game.summary ||
           `A guide and database for ${game.title}. Every figure carries a confidence rating, and where sources disagree we say so rather than picking one.`,
         columns,
-        note: settings.footerNote,
+        // This wiki's own disclaimer, not the network's. See `fanProjectNote`.
+        note: fanProjectNote(game, settings.footerNote),
         maintainer: settings.maintainer,
         legalEntity: settings.legalEntity,
         postalAddress: settings.postalAddress,

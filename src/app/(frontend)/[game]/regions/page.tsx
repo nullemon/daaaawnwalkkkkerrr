@@ -3,15 +3,23 @@ import { PageHeader } from '@/components/PageHeader'
 import { sectionArt } from '@/lib/art'
 import { EntityCard } from '@/components/EntityCard'
 import { Badge } from '@/components/Badges'
-import { getAll } from '@/lib/payload'
+import { getAll, getGame } from '@/lib/payload'
+import { sectionCopy } from '@/lib/section-copy'
 
 type Props = { params: Promise<{ game: string }> }
 
-export const metadata: Metadata = {
-  title: 'All ten regions of Vale Sangora',
-  description:
-    'Every region in The Blood of Dawnwalker, what is in it, and which vassal holds it.',
-  alternates: { canonical: '/regions' },
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { game: slug } = await params
+  const [game, regions] = await Promise.all([
+    getGame(slug),
+    getAll('regions', { game: slug, depth: 0 }),
+  ])
+  const copy = sectionCopy('regions', game, { total: regions.length })
+  return {
+    title: copy.title,
+    description: copy.description,
+    alternates: { canonical: '/regions' },
+  }
 }
 
 const DANGER: Record<string, string> = {
@@ -22,17 +30,21 @@ const DANGER: Record<string, string> = {
 }
 
 export default async function RegionsIndex({ params }: Props) {
-  const { game } = await params
-  const regions = await getAll('regions', { game, depth: 0 })
+  const { game: slug } = await params
+  const [game, regions] = await Promise.all([
+    getGame(slug),
+    getAll('regions', { game: slug, depth: 0 }),
+  ])
+  const copy = sectionCopy('regions', game, { total: regions.length })
   return (
     <>
       <PageHeader
-        art={sectionArt('regions')}
+        art={sectionArt(slug, 'regions')}
         eyebrow="Database"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Regions' }]}
         icon="map"
-        title="Vale Sangora"
-        lede="Ten regions across roughly ten square kilometres. Travel between them is free — it is the quests inside them that cost you."
+        title={copy.heading}
+        lede={copy.lede}
       />
       <div className="page body-main">
         <div className="grid">

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { PageHeader } from '@/components/PageHeader'
 import { sectionArt } from '@/lib/art'
@@ -21,6 +22,14 @@ export default async function CourtActivitiesIndex({ params }: Props) {
     getAll('court-activities', { game, depth: 1, sort: 'title' }),
     getAll('courts', { game, depth: 0 }),
   ])
+
+  /*
+   * A section with no records is not this game's section. The rail and the
+   * sitemap already derive from what a game has, so an empty index here was
+   * reachable only by typing the URL - and what it served was the copy for
+   * the one game that does have the section. A 404 is the honest answer.
+   */
+  if (activities.length === 0) notFound()
 
   const needed = courts.reduce(
     (sum, court) =>
@@ -59,7 +68,7 @@ export default async function CourtActivitiesIndex({ params }: Props) {
   return (
     <>
       <PageHeader
-        art={sectionArt('court-activities')}
+        art={sectionArt(game, 'court-activities')}
         eyebrow="Database"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Court', href: '/court' }, { label: 'Activities' }]}
         icon="crown"

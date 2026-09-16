@@ -25,13 +25,28 @@ import credits from './art-credits.json'
  * which is not a decorative liberty but a misattribution — and one a reader
  * might reasonably mistake for a claim about the game they are reading about.
  *
- * `ART_GAME` names the owner so callers can check before using it. Every other
- * wiki takes its art from its own game record.
+ * `ART_GAME` names the owner, and `sectionArt` takes the game asking rather
+ * than trusting the caller to remember the check. It did trust the caller
+ * once: the wiki home checked, and every one of the fourteen section indexes
+ * did not, so a band of Dawnwalker beta footage sat at the top of the Onimusha
+ * Regions page with "The Blood of Dawnwalker (c) Rebel Wolves / Bandai Namco
+ * Entertainment" printed under it. A rule that has to be remembered at every
+ * call site is a rule that will be missed at one of them; this one is now
+ * impossible to leave out, because there is nowhere to put the name of the
+ * section except after the name of the game.
  */
 export const ART_GAME = 'dawnwalker'
 const BANDS: Record<string, { src: string; credit: string }> = credits.bands
 
-export function sectionArt(name: string, tall = false): HeaderArt | undefined {
+export function sectionArt(
+  game: string | null | undefined,
+  name: string,
+  tall = false,
+): HeaderArt | undefined {
+  // Somebody else's wiki gets no band rather than this one's. A header with
+  // no art is plain; a header with the wrong game's art is a false claim.
+  if (game !== ART_GAME) return undefined
+
   const band = BANDS[name]
   if (!band) return undefined
   return { src: band.src, credit: band.credit, tall }

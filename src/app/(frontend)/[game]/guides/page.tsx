@@ -2,16 +2,24 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PageHeader } from '@/components/PageHeader'
 import { sectionArt } from '@/lib/art'
-import { getAll } from '@/lib/payload'
+import { getAll, getGame } from '@/lib/payload'
+import { sectionCopy } from '@/lib/section-copy'
 import type { Guide, Media } from '@/payload-types'
 
 type Props = { params: Promise<{ game: string }> }
 
-export const metadata: Metadata = {
-  title: 'Guides',
-  description:
-    'Guides to The Blood of Dawnwalker — planning a run, reaching an ending, every region, and the decisions that cannot be undone.',
-  alternates: { canonical: '/guides' },
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { game: slug } = await params
+  const [game, guides] = await Promise.all([
+    getGame(slug),
+    getAll('guides', { game: slug, depth: 0 }),
+  ])
+  const copy = sectionCopy('guides', game, { total: guides.length })
+  return {
+    title: copy.title,
+    description: copy.description,
+    alternates: { canonical: '/guides' },
+  }
 }
 
 /*
@@ -150,7 +158,7 @@ export default async function GuidesIndex({ params }: Props) {
   return (
     <>
       <PageHeader
-        art={sectionArt('guides')}
+        art={sectionArt(game, 'guides')}
         eyebrow="Editorial"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Guides' }]}
         icon="book"

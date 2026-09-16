@@ -3,29 +3,41 @@ import { PageHeader } from '@/components/PageHeader'
 import { sectionArt } from '@/lib/art'
 import { EntityCard } from '@/components/EntityCard'
 import { Confidence } from '@/components/Badges'
-import { getAll } from '@/lib/payload'
+import { getAll, getGame } from '@/lib/payload'
+import { sectionCopy } from '@/lib/section-copy'
 
 type Props = { params: Promise<{ game: string }> }
 
-export const metadata: Metadata = {
-  title: 'Game mechanics explained',
-  description:
-    'The systems that decide a run in The Blood of Dawnwalker: the thirty-day clock, Corruption, Infamy and the Edicts, quickslots and levelling.',
-  alternates: { canonical: '/mechanics' },
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { game: slug } = await params
+  const [game, mechanics] = await Promise.all([
+    getGame(slug),
+    getAll('mechanics', { game: slug, depth: 0 }),
+  ])
+  const copy = sectionCopy('mechanics', game, { total: mechanics.length })
+  return {
+    title: copy.title,
+    description: copy.description,
+    alternates: { canonical: '/mechanics' },
+  }
 }
 
 export default async function MechanicsIndex({ params }: Props) {
-  const { game } = await params
-  const mechanics = await getAll('mechanics', { game, sort: 'order', depth: 0 })
+  const { game: slug } = await params
+  const [game, mechanics] = await Promise.all([
+    getGame(slug),
+    getAll('mechanics', { game: slug, sort: 'order', depth: 0 }),
+  ])
+  const copy = sectionCopy('mechanics', game, { total: mechanics.length })
   return (
     <>
       <PageHeader
-        art={sectionArt('mechanics')}
+        art={sectionArt(slug, 'mechanics')}
         eyebrow="Database"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Mechanics' }]}
         icon="hourglass"
-        title="Mechanics"
-        lede="The four systems that actually decide a run: the clock, Corruption, Infamy, and what you can reach in a given phase."
+        title={copy.heading}
+        lede={copy.lede}
       />
       <div className="page body-main">
         <div className="grid">

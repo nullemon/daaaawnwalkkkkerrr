@@ -82,7 +82,7 @@ export default async function Home({ params }: Props) {
   const ownArt = slug === ART_GAME
   const gameHero = typeof game.theme?.hero === 'object' ? game.theme.hero : null
   const gameLogo = typeof game.theme?.logo === 'object' ? game.theme.logo : null
-  const fallbackHero = ownArt ? sectionArt('hero', true) : undefined
+  const fallbackHero = ownArt ? sectionArt(slug, 'hero', true) : undefined
   const heroSrc = gameHero?.sizes?.hero?.url ?? gameHero?.url ?? fallbackHero?.src
   const heroCredit = gameHero?.credit ?? fallbackHero?.credit
 
@@ -251,7 +251,7 @@ export default async function Home({ params }: Props) {
                     a crop of its own game's screenshots. Neither ever borrows
                     from the other, which is the whole point of the split.
                   */
-                  const art = ownArt ? sectionArt(key)?.src : tileArt(slug, key)
+                  const art = ownArt ? sectionArt(slug, key)?.src : tileArt(slug, key)
                   return (
                     <Link
                       key={section.href}

@@ -3,26 +3,43 @@ import { PageHeader } from '@/components/PageHeader'
 import { sectionArt } from '@/lib/art'
 import { DataTable, type Row } from '@/components/DataTable'
 import { ROLE } from '@/lib/characters'
-import { getAll } from '@/lib/payload'
+import { getAll, getGame } from '@/lib/payload'
+import { sectionCopy } from '@/lib/section-copy'
 import type { Character, Media } from '@/payload-types'
 
 type Props = { params: Promise<{ game: string }> }
 
-export const metadata: Metadata = {
-  title: 'Characters of Vale Sangora',
-  description: 'Allies, vassals and antagonists in The Blood of Dawnwalker, and whose questline gates which ending.',
-  alternates: { canonical: '/characters' },
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { game: slug } = await params
+  const [game, characters] = await Promise.all([
+    getGame(slug),
+    getAll('characters', { game: slug, depth: 0 }),
+  ])
+  const copy = sectionCopy('characters', game, { total: characters.length })
+  return {
+    title: copy.title,
+    description: copy.description,
+    alternates: { canonical: '/characters' },
+  }
 }
 
+// `typeof null === 'object'`, so an unset portrait passes a bare typeof test
+// and every character counts as illustrated. Check the value first.
+const asMedia = (value: Character['portrait']): Media | null =>
+  value && typeof value === 'object' ? (value as Media) : null
+
 export default async function CharactersIndex({ params }: Props) {
-  const { game } = await params
-  const characters = await getAll('characters', { game, depth: 1 })
-  // `typeof null === 'object'`, so an unset portrait passes a bare typeof test
-  // and every character counts as illustrated. Check the value first.
-  const asMedia = (value: Character['portrait']): Media | null =>
-    value && typeof value === 'object' ? (value as Media) : null
+  const { game: slug } = await params
+  const [game, characters] = await Promise.all([
+    getGame(slug),
+    getAll('characters', { game: slug, depth: 1 }),
+  ])
 
   const withPortrait = characters.filter((character) => asMedia(character.portrait))
+  const copy = sectionCopy('characters', game, {
+    total: characters.length,
+    detail: withPortrait.length,
+  })
 
   const rows: Row[] = characters.map((character) => {
     const portrait = asMedia(character.portrait)
@@ -44,12 +61,12 @@ export default async function CharactersIndex({ params }: Props) {
   return (
     <>
       <PageHeader
-        art={sectionArt('characters')}
+        art={sectionArt(slug, 'characters')}
         eyebrow="Database"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Characters' }]}
         icon="person"
-        title="Characters"
-        lede={`${characters.length} catalogued. Two of these gate endings — finish their questlines late and the ending is simply not offered. ${withPortrait.length} have official portraits; the rest are waiting on art a source actually names.`}
+        title={copy.heading}
+        lede={copy.lede}
       />
       <div className="page body-main">
         <DataTable

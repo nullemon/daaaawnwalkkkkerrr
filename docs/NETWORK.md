@@ -376,21 +376,35 @@ vocabulary.
 attributes array. That has not been done, and should not be until there is a
 second game with real content in it.
 
-The reason is that the rename is only worth its cost if it is informed. Six of
-the seven wikis are empty; renaming `court-activities` to `missions` now would
-be guessing at what Onimusha and Gears of War actually need from the schema,
-and a guess baked into a migration is harder to undo than a rename done later
-with evidence. The section navigation already derives from what a game has, so
-an empty collection costs a game nothing today.
+The reason is that the rename is only worth its cost if it is informed.
+Renaming `court-activities` to `missions` now would be guessing at what
+Onimusha and Gears of War actually need from the schema, and a guess baked into
+a migration is harder to undo than a rename done later with evidence. The
+section navigation already derives from what a game has, so an empty collection
+costs a game nothing today.
 
-**Per-game section copy.** Every wiki's Regions index currently says "Ten
-regions across roughly ten square kilometres", which is Dawnwalker's. It is
-invisible while the other six have no regions, and it is the first thing to fix
-when one of them does.
-
-**Cross-game search on the hub.** `/wikis` lists seven games on one screen,
+**Cross-game search on the hub.** `/wikis` lists all eight games on one screen,
 which is a better answer at this size than a search box. Worth revisiting at
 fifteen.
+
+### Done since: per-game section copy
+
+This section used to carry **per-game section copy** as a deliberate deferral,
+on the grounds that Dawnwalker's wording was "invisible while the other six
+have no regions". They have regions now - between four and fifty-one each - and
+the deferral had quietly become a live bug on seven wikis. The Gears of War
+Regions index listed fifty-one Gears regions under the heading "Vale Sangora",
+titled itself "All ten regions of Vale Sangora", and told the reader travel was
+free because it is the quests inside that cost you. The same held for
+Characters, Enemies, Items, Quests, Mechanics and Guides, in the `<title>` and
+the meta description as well as on the page.
+
+The lesson is the one this file keeps relearning: a deferral justified by "no
+other game has any yet" expires the moment one does, and nothing announces it.
+The fix is `src/lib/section-copy.ts`, which keys the hand-written copy to the
+game it was written about and derives a plain sentence for everyone else, and
+`src/lib/credit.ts`, which does the same for the rightsholder credit and the
+footer disclaimer. Both are unit-tested against the specific regression.
 
 ### The test the plan set itself
 

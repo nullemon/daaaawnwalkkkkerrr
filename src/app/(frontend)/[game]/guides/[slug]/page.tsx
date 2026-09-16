@@ -10,7 +10,8 @@ import { Byline } from '@/components/Byline'
 import { EntityImage } from '@/components/EntityImage'
 import { RelatedList, type RelatedItem } from '@/components/RelatedList'
 import Link from 'next/link'
-import { getAll, getBySlug, relMany } from '@/lib/payload'
+import { getAll, getBySlug, getGame, relMany } from '@/lib/payload'
+import { rightsCredit } from '@/lib/credit'
 import { gameSlugParams } from '@/lib/params'
 import { JsonLd } from '@/components/JsonLd'
 import { guideKeywords } from '@/lib/seo'
@@ -78,6 +79,10 @@ export default async function GuidePage({ params }: Props) {
     .slice(0, 6)
     .map((other) => ({ id: other.id, title: other.title, href: `/guides/${other.slug}` }))
 
+  // Whose game the pictures are from, read off this game's own record rather
+  // than assumed to be Dawnwalker's. See `rightsCredit`.
+  const credit = rightsCredit(await getGame(game))
+
   /*
     Article markup, so the byline and the date are readable by something other
     than a person squinting at the page.
@@ -135,9 +140,7 @@ export default async function GuidePage({ params }: Props) {
                   ))}
                 </div>
                 {/* One credit for the row rather than one per picture. */}
-                <p className="note">
-                  The Blood of Dawnwalker © Rebel Wolves / Bandai Namco Entertainment.
-                </p>
+                {credit ? <p className="note">{credit}</p> : null}
               </section>
             ) : null}
 

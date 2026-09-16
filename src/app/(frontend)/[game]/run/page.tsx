@@ -23,7 +23,7 @@ export default async function RunPage({ params }: Props) {
   return (
     <>
       <PageHeader
-        art={sectionArt('skills')}
+        art={sectionArt(game, 'skills')}
         eyebrow="Your run"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Your run' }]}
         icon="hourglass"

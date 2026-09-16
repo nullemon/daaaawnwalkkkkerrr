@@ -4,22 +4,34 @@ import { PageHeader } from '@/components/PageHeader'
 import { sectionArt } from '@/lib/art'
 import { ICON_FOR_CATEGORY } from '@/components/Icon'
 import { DataTable, type Row } from '@/components/DataTable'
-import { getAll } from '@/lib/payload'
+import { getAll, getGame } from '@/lib/payload'
 import { acquisitionLabel } from '@/lib/items'
-import type { Item, Region } from '@/payload-types'
+import { sectionCopy } from '@/lib/section-copy'
+import type { Region } from '@/payload-types'
 
 type Props = { params: Promise<{ game: string }> }
 
-export const metadata: Metadata = {
-  title: 'Legendary weapons, armour and key items',
-  description:
-    'The gear worth going out of your way for in The Blood of Dawnwalker, and where to find it.',
-  alternates: { canonical: '/items' },
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { game: slug } = await params
+  const [game, items] = await Promise.all([
+    getGame(slug),
+    getAll('items', { game: slug, depth: 0 }),
+  ])
+  const copy = sectionCopy('items', game, { total: items.length })
+  return {
+    title: copy.title,
+    description: copy.description,
+    alternates: { canonical: '/items' },
+  }
 }
 
 export default async function ItemsIndex({ params }: Props) {
-  const { game } = await params
-  const items = await getAll('items', { game, depth: 1 })
+  const { game: slug } = await params
+  const [game, items] = await Promise.all([
+    getGame(slug),
+    getAll('items', { game: slug, depth: 1 }),
+  ])
+  const copy = sectionCopy('items', game, { total: items.length })
 
   const rows: Row[] = items.map((item) => {
     const region = typeof item.region === 'object' ? (item.region as Region) : null
@@ -44,12 +56,12 @@ export default async function ItemsIndex({ params }: Props) {
   return (
     <>
       <PageHeader
-        art={sectionArt('items')}
+        art={sectionArt(slug, 'items')}
         eyebrow="Database"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Items' }]}
         icon="sword"
-        title="Items"
-        lede="We cover the legendaries, manuals, recipes and key items rather than all 1,700-odd pickups. The rest are not worth a page and we would only be guessing at their stats."
+        title={copy.heading}
+        lede={copy.lede}
       />
       <div className="page body-main">
         <DataTable
@@ -69,18 +81,26 @@ export default async function ItemsIndex({ params }: Props) {
             { key: 'where', label: 'Where', type: 'link' },
           ]}
         />
-        <div className="callout">
-          <h3>Why so few items name a region</h3>
-          <p>
-            Guides describe where a thing is by quest and landmark — &ldquo;the Kobold Nest&rdquo;,
-            &ldquo;Bakir&rsquo;s treasury&rdquo; — and almost never say which of the ten regions
-            holds it. Where a source does say, the region is linked. Where it does not, the column
-            says how the item is obtained instead, because most of these have no single region at
-            all: a herb that grows across the map and a reward handed over at the end of a
-            questline are not missing data. <Link href="/regions">Browse by region</Link> for the
-            ones that are pinned down.
-          </p>
-        </div>
+        {/*
+          Named landmarks and a region count, so this is Dawnwalker's or it is
+          nobody's. The general point holds for any wiki, but not in these
+          words, and a callout naming Bakir's treasury on the Onimusha wiki is
+          the same mistake as the heading that used to say "Vale Sangora".
+        */}
+        {game?.slug === 'dawnwalker' ? (
+          <div className="callout">
+            <h3>Why so few items name a region</h3>
+            <p>
+              Guides describe where a thing is by quest and landmark — &ldquo;the Kobold
+              Nest&rdquo;, &ldquo;Bakir&rsquo;s treasury&rdquo; — and almost never say which of the
+              ten regions holds it. Where a source does say, the region is linked. Where it does
+              not, the column says how the item is obtained instead, because most of these have no
+              single region at all: a herb that grows across the map and a reward handed over at
+              the end of a questline are not missing data.{' '}
+              <Link href="/regions">Browse by region</Link> for the ones that are pinned down.
+            </p>
+          </div>
+        ) : null}
       </div>
     </>
   )

@@ -8,7 +8,10 @@ import { GAME_SCOPED } from '../lib/tenancy'
 /**
  * Is this network actually ready to launch?
  *
- *   pnpm audit
+ *   pnpm check:launch
+ *
+ * Not `pnpm audit` — that is pnpm's own command, which prints a CVE report for
+ * the dependency tree and never runs a line of this file.
  *
  * Checks the things that do not fail loudly. A wiki with no favicon still
  * renders; a record with no meta description still serves; an image with no

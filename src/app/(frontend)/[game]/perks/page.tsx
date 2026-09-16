@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { PageHeader } from '@/components/PageHeader'
 import { sectionArt } from '@/lib/art'
@@ -20,6 +21,14 @@ export default async function PerksIndex({ params }: Props) {
   const { game } = await params
   const perks = await getAll('perks', { game, depth: 1, sort: 'title' })
 
+  /*
+   * A section with no records is not this game's section. The rail and the
+   * sitemap already derive from what a game has, so an empty index here was
+   * reachable only by typing the URL - and what it served was the copy for
+   * the one game that does have the section. A 404 is the honest answer.
+   */
+  if (perks.length === 0) notFound()
+
   const rows: Row[] = perks.map((perk) => {
     const tree = typeof perk.tree === 'object' ? (perk.tree as SkillTree) : null
     return {
@@ -39,7 +48,7 @@ export default async function PerksIndex({ params }: Props) {
   return (
     <>
       <PageHeader
-        art={sectionArt('perks')}
+        art={sectionArt(game, 'perks')}
         eyebrow="Database"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Perks' }]}
         icon="star"

@@ -1,23 +1,34 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import { PageHeader } from '@/components/PageHeader'
 import { sectionArt } from '@/lib/art'
 import { DataTable, type Row } from '@/components/DataTable'
-import { getAll } from '@/lib/payload'
-import type { Enemy, Region } from '@/payload-types'
+import { getAll, getGame } from '@/lib/payload'
+import { sectionCopy } from '@/lib/section-copy'
+import type { Region } from '@/payload-types'
 
 type Props = { params: Promise<{ game: string }> }
 
-export const metadata: Metadata = {
-  title: 'Enemies and bosses',
-  description:
-    'Every enemy and boss in The Blood of Dawnwalker, what they are weak to, and where you meet them.',
-  alternates: { canonical: '/enemies' },
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { game: slug } = await params
+  const [game, enemies] = await Promise.all([
+    getGame(slug),
+    getAll('enemies', { game: slug, depth: 0 }),
+  ])
+  const copy = sectionCopy('enemies', game, { total: enemies.length })
+  return {
+    title: copy.title,
+    description: copy.description,
+    alternates: { canonical: '/enemies' },
+  }
 }
 
 export default async function EnemiesIndex({ params }: Props) {
-  const { game } = await params
-  const enemies = await getAll('enemies', { game, depth: 1 })
+  const { game: slug } = await params
+  const [game, enemies] = await Promise.all([
+    getGame(slug),
+    getAll('enemies', { game: slug, depth: 1 }),
+  ])
+  const copy = sectionCopy('enemies', game, { total: enemies.length })
   const rows: Row[] = enemies.map((enemy) => {
     const region = typeof enemy.region === 'object' ? (enemy.region as Region) : null
     return {
@@ -37,12 +48,12 @@ export default async function EnemiesIndex({ params }: Props) {
   return (
     <>
       <PageHeader
-        art={sectionArt('enemies')}
+        art={sectionArt(slug, 'enemies')}
         eyebrow="Database"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Enemies' }]}
         icon="skull"
-        title="Enemies and bosses"
-        lede="Half of what you fight, you fight as a different character. What you meet by day and what you meet by night are not the same list."
+        title={copy.heading}
+        lede={copy.lede}
       />
       <div className="page body-main">
         {enemies.length === 0 ? (

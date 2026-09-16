@@ -4,6 +4,7 @@ import { PageHeader } from '@/components/PageHeader'
 import { FactPanel } from '@/components/FactPanel'
 import { RelatedList, type RelatedItem } from '@/components/RelatedList'
 import { getAll, getGame, getSiteSettings } from '@/lib/payload'
+import { gameName } from '@/lib/section-copy'
 import type { Guide } from '@/payload-types'
 import { hub } from '@/lib/urls'
 
@@ -14,7 +15,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const doc = await getGame(slug)
   const name = doc?.shortTitle || doc?.title || 'this wiki'
   return {
-    title: `About the ${name} wiki`,
+    title: `About the ${name} Wiki`,
     description:
       'Who runs this site, where the facts come from, what the confidence ratings mean, and what we deliberately do not claim to know.',
     alternates: { canonical: '/about' },
@@ -23,7 +24,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function AboutPage({ params }: Props) {
   const { game } = await params
-  const settings = await getSiteSettings()
+  const [settings, doc] = await Promise.all([getSiteSettings(), getGame(game)])
+  const name = gameName(doc)
+
+  /*
+    The run planner is Dawnwalker's, not every wiki's. This page used to open
+    by telling a Gears of War reader that the site is built around 480
+    segments, and disclaim affiliation with Rebel Wolves rather than with the
+    people who actually made the game they were reading about. Both come off
+    the game's own record now.
+  */
+  const hasRunPlanner = (doc?.features ?? []).includes('run-checker')
+  const holders = [doc?.developer, doc?.publisher]
+    .map((holder) => holder?.trim())
+    .filter((holder): holder is string => Boolean(holder))
+  const rightsholders = holders.filter((h, i) => holders.indexOf(h) === i)
 
   /*
     Counted at build time rather than written into the copy. An about page that
@@ -56,37 +71,52 @@ export default async function AboutPage({ params }: Props) {
         eyebrow="About"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'About' }]}
         icon="book"
-        title="About the Dawnwalker Guide"
-        lede="A run planner and database for The Blood of Dawnwalker, built around the one constraint the game never lets you forget: you have 480 segments and you cannot have them back."
+        title={`About the ${name} Wiki`}
+        lede={
+          hasRunPlanner
+            ? 'A run planner and database for The Blood of Dawnwalker, built around the one constraint the game never lets you forget: you have 480 segments and you cannot have them back.'
+            : `A database for ${name}, compiled from public sources, with every record carrying its citations and a rating for how far we trust it.`
+        }
       />
       <div className="page body-main">
         <div className="split">
           <div className="stack">
             <div className="prose">
               <h2>What this site is for</h2>
-              <p>
-                Most guides for an open-world game are written as if you will eventually do
-                everything. This one is not, because in this game you will not. Thirty days, sixteen
-                segments each, and when the budget is gone the story ends whether or not you were
-                ready. Two of the seven endings are lost by players who never knew they were on a
-                clock.
-              </p>
-              <p>
-                So the question this site is built to answer is not &ldquo;how do I do this
-                quest&rdquo; but &ldquo;what can I still reach from where I actually am&rdquo;. The{' '}
-                <Link href="/tools/run-checker">run checker</Link> walks every ending&rsquo;s
-                prerequisite chain against the segments you have left. The{' '}
-                <Link href="/tools/build-planner">build planner</Link> does the same for a spec.
-                Everything else on the site exists to feed those two.
-              </p>
+              {hasRunPlanner ? (
+                <>
+                  <p>
+                    Most guides for an open-world game are written as if you will eventually do
+                    everything. This one is not, because in this game you will not. Thirty days,
+                    sixteen segments each, and when the budget is gone the story ends whether or not
+                    you were ready. Two of the seven endings are lost by players who never knew they
+                    were on a clock.
+                  </p>
+                  <p>
+                    So the question this site is built to answer is not &ldquo;how do I do this
+                    quest&rdquo; but &ldquo;what can I still reach from where I actually am&rdquo;.
+                    The <Link href="/tools/run-checker">run checker</Link> walks every
+                    ending&rsquo;s prerequisite chain against the segments you have left. The{' '}
+                    <Link href="/tools/build-planner">build planner</Link> does the same for a spec.
+                    Everything else on the site exists to feed those two.
+                  </p>
+                </>
+              ) : (
+                <p>
+                  One page per thing, each one saying where its facts came from and how far we trust
+                  them. There is no walkthrough written from trailers here and no filler: where a
+                  source does not say something, the field is empty and the page says so rather than
+                  guessing at it.
+                </p>
+              )}
 
               <h2>Who runs it</h2>
               <p>
-                The Dawnwalker Guide is published by {settings.legalEntity ?? 'CWMI Group'}, a
-                digital agency operating since 2013 with offices in the Philippines, India and the
-                United States. The site is an independent fan project: it is not affiliated with
-                Rebel Wolves or Bandai Namco Entertainment, and no endorsement is claimed or
-                implied.
+                The {name} Wiki is published by {settings.legalEntity ?? 'CWMI Group'}, a digital
+                agency operating since 2013 with offices in the Philippines, India and the United
+                States. The site is an independent fan project: it is not affiliated with{' '}
+                {rightsholders.length > 0 ? rightsholders.join(' or ') : 'the rightsholders'}, and
+                no endorsement is claimed or implied.
               </p>
               <p>
                 Editorial decisions are made by the contributors listed here, not by the publisher,
@@ -121,21 +151,26 @@ export default async function AboutPage({ params }: Props) {
                 </li>
               </ul>
               <p>
-                These are not decoration. Published quest counts for this game vary widely depending
-                on who is counting and what they count as a quest, and at least one ally questline
-                is described with a different length and a different final quest name depending on
-                the site. Where sources conflict we record the conflict on the page rather than pick
-                a winner.
+                These are not decoration. Published counts for a game vary widely depending on who
+                is counting and what they count{hasRunPlanner ? (
+                  <>
+                    , and at least one ally questline is described with a different length and a
+                    different final quest name depending on the site
+                  </>
+                ) : null}. Where sources conflict we record the conflict on the page rather than
+                pick a winner.
               </p>
 
               <h2>What we deliberately do not claim to know</h2>
-              <p>
-                Per-quest segment costs. Only {costed} of {quests.length} quests have a figure we
-                can stand behind, and the rest are stored as unknown rather than as zero. An unknown
-                cost is not a free quest, and a planner that quietly treated it as one would be
-                worse than no planner — so the run checker reports any total containing one as a
-                floor rather than a figure.
-              </p>
+              {hasRunPlanner ? (
+                <p>
+                  Per-quest segment costs. Only {costed} of {quests.length} quests have a figure we
+                  can stand behind, and the rest are stored as unknown rather than as zero. An
+                  unknown cost is not a free quest, and a planner that quietly treated it as one
+                  would be worse than no planner — so the run checker reports any total containing
+                  one as a floor rather than a figure.
+                </p>
+              ) : null}
               <p>
                 The same rule applies everywhere else. A region we cannot source is left blank, an
                 item whose location nobody publishes says so, and a picture is never captioned with
@@ -155,15 +190,22 @@ export default async function AboutPage({ params }: Props) {
           <div className="stack">
             <FactPanel
               title="In the database"
+              /*
+                A row reading "Court Activities 0" is not a fact about this
+                game, it is a fact about Dawnwalker's schema. Empty sections
+                are left out the same way the navigation leaves them out.
+              */
               facts={[
                 { label: 'Quests', value: quests.length },
-                { label: 'With a costed time', value: `${costed} of ${quests.length}` },
+                ...(hasRunPlanner
+                  ? [{ label: 'With a costed time', value: `${costed} of ${quests.length}` }]
+                  : []),
                 { label: 'Court Activities', value: activities.length },
                 { label: 'Items', value: items.length },
                 { label: 'Characters', value: characters.length },
                 { label: 'Regions', value: regions.length },
                 { label: 'Guides', value: guides.length },
-              ]}
+              ].filter((fact) => fact.value !== 0)}
             />
 
             <RelatedList heading="Contributors" icon="person" items={team} />

@@ -5,7 +5,7 @@ editorial rules. Next.js 16 + Payload CMS 3 on libSQL. Every public page
 prerenders to static HTML; `/admin` is a full CMS.
 
 Eight wikis today, ~1,670 prerendered pages. *The Blood of Dawnwalker* is the
-first and still the largest — 422 of the 1,472 records — and its 480-segment
+first and still the largest — 440 of the 1,467 records — and its 480-segment
 run planner is the model for what each wiki is meant to have: one tool nobody
 else has.
 
@@ -129,9 +129,10 @@ that inherits the default would let any reader who signs up edit content.
 - **`db:reset` drops attached images, because they are not in the seed.**
   Uploads live in the database and in `media/`, not in `src/seed/raw/`, so a
   rebuild silently takes every record back to its fallback icon — the pages
-  still render, which is exactly why nobody notices. `pnpm db:reset` now ends
-  with `pnpm assets` to put them back; that step no-ops cleanly on a machine
-  with no `assets/` folder, so it is safe in the chain. If portraits vanish,
+  still render, which is exactly why nobody notices. `pnpm db:reset` carries
+  `pnpm assets` in the chain to put them back — after the content passes and
+  before the art ones, not at the end. That step no-ops cleanly on a machine
+  with no `assets/` folder, so it is safe there. If portraits vanish,
   this is what happened, and `pnpm assets` alone fixes it.
 - **Scripts must run on Windows too.** `pnpm devsafe` shipped as `rm -rf .next`
   and died with `'rm' is not recognized` on the machine this is actually
@@ -228,6 +229,38 @@ that inherits the default would let any reader who signs up edit content.
   opening a URL. Anything that creates a guide must pass `_status:
   'published'`; `pnpm verify` now fails while any draft exists and
   `pnpm seed:publish` backfills. **Counting rows is not checking pages.**
+
+- **Copy written when there was one game is wrong on eight, and says so in
+  search results.** Every section index hardcoded Dawnwalker's wording, so the
+  Gears of War Regions page listed fifty-one Gears regions under the heading
+  "Vale Sangora", titled itself "All ten regions of Vale Sangora", and quoted
+  the 480-segment clock at a game that has no clock - in the `<title>` and the
+  meta description as well as on the page. The footer went further: one
+  `footerNote` on the network settings told readers of all eight wikis that
+  "The Blood of Dawnwalker is developed by Rebel Wolves", which is a disclaimer
+  naming the wrong company on every page of seven sites. The navigation was
+  right the whole time, because navigation is derived and copy was not, and no
+  test failed because nothing here is a type error. Section copy now comes from
+  `src/lib/section-copy.ts` and the credits from `src/lib/credit.ts`, both
+  keyed to the game and both unit-tested against exactly this. **If you write a
+  sentence about the game into a `[game]` route, it is a bug** - it will be
+  served on all eight.
+
+- **`ART_GAME` named the owner and nothing made callers ask.** Every band in
+  `src/lib/art.ts` is cut from a Dawnwalker press screenshot, which the module
+  said in its own docstring - and then `sectionArt(name)` handed it to whoever
+  asked. The wiki home checked; all fourteen section indexes did not, so the
+  Onimusha Regions page opened with Dawnwalker beta footage credited to Rebel
+  Wolves and Bandai Namco. `sectionArt(game, name)` takes the asking game
+  first now, so the check cannot be forgotten - there is nowhere to put the
+  section name except after the game's. Do not "tidy" that argument away.
+
+- **A section with no records still served a 200.** `sectionsFor` keeps an
+  empty section out of the rail and the sitemap skips it, so an empty index was
+  reachable only by typing the URL - and what it served was the copy for the
+  one game that does have the section, which is how Phantom Blade Zero came to
+  have a page headed "The three courts and their Court Activities". The
+  Dawnwalker-only indexes `notFound()` on an empty collection now.
 
 - **Grid and flex children default to `min-width: auto`**, so a wide table
   inside an `overflow-x` container drags the page sideways on a phone. The
