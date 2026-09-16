@@ -23,14 +23,19 @@ import type {
  * built at render time from the fields the page is already showing, and a
  * `seo.description` typed in the admin always wins.
  *
+ * The game's name is an argument, not a module constant. It was pinned to
+ * Dawnwalker for as long as there was one wiki, which meant every detail page
+ * on the other seven described its subject as a thing "in The Blood of
+ * Dawnwalker" - in the meta description, which is the sentence a search result
+ * shows. Roughly twelve hundred pages said it, and nothing rendered wrong, so
+ * nothing caught it.
+ *
  * Two rules throughout. Lead with the thing being searched for, because the
  * first forty characters are what survives truncation on a phone. And never
  * assert a figure the record does not have: an item with no region says how it
  * is obtained instead, and a quest with no published cost says so rather than
  * implying one.
  */
-
-const GAME = 'The Blood of Dawnwalker'
 
 /** Google truncates around 155; the field itself caps at 180. */
 const LIMIT = 155
@@ -83,7 +88,7 @@ const PHASE: Record<string, string> = {
   either: 'Playable day or night.',
 }
 
-export const itemMeta = (doc: Item) => {
+export const itemMeta = (doc: Item, game: string) => {
   const region = rel<Region>(doc.region)
   const where = region
     ? `Found in ${region.title}.`
@@ -95,7 +100,7 @@ export const itemMeta = (doc: Item) => {
     title: clamp(`${doc.title} — location and stats`, 60),
     description: clamp(
       sentence(
-        `${doc.title} in ${GAME}:`,
+        `${doc.title} in ${game}:`,
         doc.rarity ? `a ${doc.rarity} ${doc.category}.` : `${doc.category}.`,
         where,
         doc.howToGet ?? '',
@@ -104,7 +109,7 @@ export const itemMeta = (doc: Item) => {
   }
 }
 
-export const questMeta = (doc: Quest) => {
+export const questMeta = (doc: Quest, game: string) => {
   const region = rel<Region>(doc.region)
   const known = doc.time?.known
   const cost = known
@@ -117,7 +122,7 @@ export const questMeta = (doc: Quest) => {
     title: clamp(`${doc.title} — walkthrough and time cost`, 60),
     description: clamp(
       sentence(
-        `${doc.title}, a quest in ${GAME}${region ? ` in ${region.title}` : ''}.`,
+        `${doc.title}, a quest in ${game}${region ? ` in ${region.title}` : ''}.`,
         cost,
         doc.phase ? PHASE[doc.phase] : '',
         doc.summary ?? '',
@@ -126,13 +131,13 @@ export const questMeta = (doc: Quest) => {
   }
 }
 
-export const characterMeta = (doc: Character) => {
+export const characterMeta = (doc: Character, game: string) => {
   const region = rel<Region>(doc.region)
   return {
     title: clamp(`${doc.title} — questline, role and romance`, 60),
     description: clamp(
       sentence(
-        `${doc.title} in ${GAME}.`,
+        `${doc.title} in ${game}.`,
         doc.role ? `${doc.role.charAt(0).toUpperCase()}${doc.role.slice(1)}.` : '',
         doc.romanceable ? 'Romanceable.' : '',
         region ? `Found around ${region.title}.` : '',
@@ -142,24 +147,28 @@ export const characterMeta = (doc: Character) => {
   }
 }
 
-export const regionMeta = (doc: Region, counts: { quests: number; items: number }) => ({
+export const regionMeta = (
+  doc: Region,
+  game: string,
+  counts: { quests: number; items: number },
+) => ({
   title: clamp(`${doc.title} — quests, items and locations`, 60),
   description: clamp(
     sentence(
-      `${doc.title}, one of the ten regions of Vale Sangora in ${GAME}.`,
+      `${doc.title}, a region in ${game}.`,
       counts.quests > 0 ? `${counts.quests} quests filed here.` : '',
       doc.summary ?? '',
     ),
   ),
 })
 
-export const enemyMeta = (doc: Enemy) => {
+export const enemyMeta = (doc: Enemy, game: string) => {
   const weak = doc.weaknesses?.map((w) => w.value).filter(Boolean).join(', ')
   return {
     title: clamp(`${doc.title} — weaknesses and how to beat it`, 60),
     description: clamp(
       sentence(
-        `${doc.title} in ${GAME}.`,
+        `${doc.title} in ${game}.`,
         doc.isBoss ? 'A boss fight.' : '',
         weak ? `Weak to ${weak}.` : '',
         doc.summary ?? '',
@@ -168,13 +177,13 @@ export const enemyMeta = (doc: Enemy) => {
   }
 }
 
-export const perkMeta = (doc: Perk) => {
+export const perkMeta = (doc: Perk, game: string) => {
   const tree = rel<SkillTree>(doc.tree)
   return {
     title: clamp(`${doc.title} — ${tree?.title ?? 'perk'} effect and cost`, 60),
     description: clamp(
       sentence(
-        `${doc.title}, ${doc.isUltimate ? 'an ultimate perk' : `${article('perk')} perk`}${tree ? ` in the ${tree.title} tree` : ''} in ${GAME}.`,
+        `${doc.title}, ${doc.isUltimate ? 'an ultimate perk' : `${article('perk')} perk`}${tree ? ` in the ${tree.title} tree` : ''} in ${game}.`,
         doc.effect ?? '',
         doc.isUltimate ? 'One ultimate per tree, so taking it closes two others.' : '',
       ),
@@ -182,11 +191,11 @@ export const perkMeta = (doc: Perk) => {
   }
 }
 
-export const endingMeta = (doc: Ending) => ({
+export const endingMeta = (doc: Ending, game: string) => ({
   title: clamp(`${doc.title} ending — how to get it`, 60),
   description: clamp(
     sentence(
-      `The ${withoutLeadingThe(doc.title)} ending in ${GAME}.`,
+      `The ${withoutLeadingThe(doc.title)} ending in ${game}.`,
       doc.gate === 'ally'
         ? 'Gated on an ally questline you must finish before the finale.'
         : doc.gate === 'clock'
@@ -197,11 +206,11 @@ export const endingMeta = (doc: Ending) => ({
   ),
 })
 
-export const courtMeta = (doc: Court) => ({
+export const courtMeta = (doc: Court, game: string) => ({
   title: clamp(`${doc.title}'s court — activities and the duel`, 60),
   description: clamp(
     sentence(
-      `${doc.title}'s court in ${GAME}.`,
+      `${doc.title}'s court in ${game}.`,
       doc.activityCount ? `${doc.activityCount} Court Activities,` : '',
       doc.activityCount && doc.angerThresholdPct
         ? `of which roughly ${Math.ceil((doc.activityCount * doc.angerThresholdPct) / 100)} unlock the duel.`
@@ -211,40 +220,39 @@ export const courtMeta = (doc: Court) => ({
   ),
 })
 
-export const activityMeta = (doc: CourtActivity) => {
+export const activityMeta = (doc: CourtActivity, game: string) => {
   const court = rel<Court>(doc.court)
   const region = rel<Region>(doc.region)
   return {
     title: clamp(`${doc.title} — Court Activity walkthrough`, 60),
     description: clamp(
       sentence(
-        `${doc.title}, a Court Activity in ${GAME}${court ? ` for ${court.title}` : ''}${region ? `, in ${region.title}` : ''}.`,
+        `${doc.title}, a Court Activity in ${game}${court ? ` for ${court.title}` : ''}${region ? `, in ${region.title}` : ''}.`,
         doc.howToStart ?? doc.summary ?? '',
       ),
     ),
   }
 }
 
-export const treeMeta = (doc: SkillTree, perkCount: number) => ({
+export const treeMeta = (doc: SkillTree, game: string, perkCount: number) => ({
   title: clamp(`${doc.title} tree — perks and ultimates`, 60),
   description: clamp(
     sentence(
-      `The ${doc.title} skill tree in ${GAME}.`,
-      perkCount > 0 ? `${perkCount} perks,` : '',
-      'three ultimates, and you may take one.',
+      `The ${doc.title} skill tree in ${game}.`,
+      perkCount > 0 ? `${perkCount} perks.` : '',
       doc.summary ?? '',
     ),
   ),
 })
 
-export const buildMeta = (doc: Build) => ({
+export const buildMeta = (doc: Build, game: string) => ({
   title: clamp(`${doc.title} build — perks and gear`, 60),
-  description: clamp(sentence(`The ${doc.title} build for ${GAME}.`, doc.summary ?? '')),
+  description: clamp(sentence(`The ${doc.title} build for ${game}.`, doc.summary ?? '')),
 })
 
-export const mechanicMeta = (doc: Mechanic) => ({
+export const mechanicMeta = (doc: Mechanic, game: string) => ({
   title: clamp(`${doc.title} explained`, 60),
-  description: clamp(sentence(`${doc.title} in ${GAME}, explained.`, doc.summary ?? '')),
+  description: clamp(sentence(`${doc.title} in ${game}, explained.`, doc.summary ?? '')),
 })
 
 /**
@@ -256,10 +264,11 @@ export const mechanicMeta = (doc: Mechanic) => ({
  * query visible in the document for anything that does read it — and because
  * one honest phrase is worth more than twenty guessed ones.
  */
-export const guideKeywords = (doc: Guide): string[] => {
+export const guideKeywords = (doc: Guide, game: string): string[] => {
   const words = new Set<string>()
   if (doc.targetQuery) words.add(doc.targetQuery.toLowerCase())
-  words.add('the blood of dawnwalker')
-  words.add('blood of dawnwalker guide')
+  const name = game.toLowerCase()
+  words.add(name)
+  words.add(`${name} guide`)
   return [...words]
 }

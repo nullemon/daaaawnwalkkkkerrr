@@ -11,7 +11,8 @@ import { CommentThread } from '@/components/CommentThread'
 import { AdSlot } from '@/components/AdSlot'
 import { Spoiler } from '@/components/Spoiler'
 import { EntityImage } from '@/components/EntityImage'
-import { getAll, getBySlug, rel } from '@/lib/payload'
+import { getAll, getBySlug, getGame, rel } from '@/lib/payload'
+import { gameName } from '@/lib/section-copy'
 import { gameSlugParams } from '@/lib/params'
 import { getRunGraph } from '@/lib/runData'
 import { UnlockPath } from '@/components/UnlockPath'
@@ -28,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { game, slug } = await params
   const ending = await getBySlug('endings', slug, { game, depth: 1 })
   if (!ending) return {}
-  const meta = endingMeta(ending)
+  const meta = endingMeta(ending, gameName(await getGame(game)))
   return {
     // Composed from the record's own fields unless an editor has written one.
     title: ending.seo?.title || meta.title,

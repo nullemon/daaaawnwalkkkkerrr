@@ -100,7 +100,12 @@ export const siteSettings = {
   contactEmail: 'hello@codewebmedia.com',
   postalAddress: 'Code Web Media\n77 Casoy St, Pasong Tamo\nQuezon City 1107\nMetro Manila, Philippines',
   jurisdiction: 'the Philippines',
-  maintainer: 'the Dawnwalker Guide team at CWMI Group',
+  /*
+   * Network-wide, and rendered in the footer of every page on every wiki, so
+   * it cannot name one of the eight games. It said "the Dawnwalker Guide team"
+   * on all of them.
+   */
+  maintainer: 'the editorial team at CWMI Group',
 }
 
 export const regions = [

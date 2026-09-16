@@ -6,7 +6,8 @@ import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
 import { Attribution } from '@/components/Attribution'
 import { CommentThread } from '@/components/CommentThread'
-import { getBySlug } from '@/lib/payload'
+import { getBySlug, getGame } from '@/lib/payload'
+import { gameName } from '@/lib/section-copy'
 import { gameSlugParams } from '@/lib/params'
 import type { Mechanic } from '@/payload-types'
 import { mechanicMeta } from '@/lib/seo'
@@ -19,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { game, slug } = await params
   const doc = await getBySlug('mechanics', slug, { game, depth: 1 })
   if (!doc) return {}
-  const meta = mechanicMeta(doc)
+  const meta = mechanicMeta(doc, gameName(await getGame(game)))
   return {
     // Composed from the record's own fields unless an editor has written one.
     title: doc.seo?.title || meta.title,

@@ -13,7 +13,8 @@ import { UnlockPath } from '@/components/UnlockPath'
 import { getRunGraph } from '@/lib/runData'
 import { EntityImage } from '@/components/EntityImage'
 import { FactPanel } from '@/components/FactPanel'
-import { getAll, getBySlug, relMany, rel } from '@/lib/payload'
+import { getAll, getBySlug, getGame, rel, relMany } from '@/lib/payload'
+import { gameName } from '@/lib/section-copy'
 import { gameSlugParams } from '@/lib/params'
 import type { Ending, Quest, Region } from '@/payload-types'
 import { questMeta } from '@/lib/seo'
@@ -27,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // Depth 1: the composed description names the region, so it has to resolve.
   const quest = await getBySlug('quests', slug, { game, depth: 1 })
   if (!quest) return {}
-  const meta = questMeta(quest)
+  const meta = questMeta(quest, gameName(await getGame(game)))
   return {
     // Composed from the record's own fields unless an editor has written one.
     title: quest.seo?.title || meta.title,

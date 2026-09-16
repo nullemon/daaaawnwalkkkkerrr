@@ -1,4 +1,5 @@
 import 'dotenv/config'
+import { isNotAnEntity } from '../lib/harvest'
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
@@ -353,9 +354,15 @@ async function run(): Promise<void> {
     const counts: Record<string, number> = {}
     const seen = new Set<string>()
     let failed = 0
+    let rejected = 0
 
     for (const entity of harvest.entities) {
       entity.collection = REHOME[entity.collection] ?? entity.collection
+
+      if (isNotAnEntity(entity, game.title)) {
+        rejected += 1
+        continue
+      }
 
       let slug = slugify(entity.title)
       if (!slug) continue
@@ -423,7 +430,8 @@ async function run(): Promise<void> {
 
     console.log(
       `  ${joinList(Object.entries(counts).map(([key, value]) => `${value} ${key}`))}` +
-        (failed > 0 ? ` — ${failed} skipped` : ''),
+        (failed > 0 ? ` — ${failed} skipped` : '') +
+        (rejected > 0 ? ` — ${rejected} not in-game things` : ''),
     )
   }
 

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { fanProjectNote, mediaCredit, rightsCredit } from './credit'
+import { fanProjectNote, listSentence, mediaCredit, rightsCredit, rightsholders } from './credit'
 
 const game = (over: Record<string, unknown> = {}) =>
   ({
@@ -91,5 +91,36 @@ describe('mediaCredit', () => {
 
   it('says "its publisher" rather than leaving a hole', () => {
     expect(mediaCredit('Some Game', null)).toContain('© its publisher.')
+  })
+})
+
+describe('rightsholders across the network', () => {
+  const games = [
+    { developer: 'The Coalition', publisher: 'Xbox Game Studios' },
+    { developer: 'Capcom', publisher: 'Capcom' },
+    { developer: 'Screen Burn', publisher: 'Konami, Annapurna Interactive' },
+  ] as never[]
+
+  it('names each company once', () => {
+    expect(rightsholders(games)).toEqual([
+      'Annapurna Interactive',
+      'Capcom',
+      'Konami',
+      'Screen Burn',
+      'The Coalition',
+      'Xbox Game Studios',
+    ])
+  })
+
+  it('splits a field holding two companies, so a list does not run them together', () => {
+    expect(rightsholders(games)).toContain('Konami')
+    expect(rightsholders(games)).toContain('Annapurna Interactive')
+    expect(rightsholders(games)).not.toContain('Konami, Annapurna Interactive')
+  })
+
+  it('reads as a sentence', () => {
+    expect(listSentence(['a', 'b', 'c'])).toBe('a, b and c')
+    expect(listSentence(['a'])).toBe('a')
+    expect(listSentence([])).toBe('')
   })
 })

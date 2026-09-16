@@ -10,7 +10,8 @@ import { Attribution } from '@/components/Attribution'
 import { CommentThread } from '@/components/CommentThread'
 import { AdSlot } from '@/components/AdSlot'
 import { EntityImage } from '@/components/EntityImage'
-import { getBySlug, rel, relMany } from '@/lib/payload'
+import { getBySlug, getGame, rel, relMany } from '@/lib/payload'
+import { gameName } from '@/lib/section-copy'
 import { gameSlugParams } from '@/lib/params'
 import type { Build, Item, Perk, SkillTree } from '@/payload-types'
 import { buildMeta } from '@/lib/seo'
@@ -23,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { game, slug } = await params
   const doc = await getBySlug('builds', slug, { game, depth: 1 })
   if (!doc) return {}
-  const meta = buildMeta(doc)
+  const meta = buildMeta(doc, gameName(await getGame(game)))
   return {
     // Composed from the record's own fields unless an editor has written one.
     title: doc.seo?.title || meta.title,

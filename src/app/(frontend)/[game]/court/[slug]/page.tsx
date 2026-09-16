@@ -10,7 +10,8 @@ import { FactPanel } from '@/components/FactPanel'
 import { RelatedList } from '@/components/RelatedList'
 import { EntityImage } from '@/components/EntityImage'
 import Link from 'next/link'
-import { getAll, getBySlug } from '@/lib/payload'
+import { getAll, getBySlug, getGame } from '@/lib/payload'
+import { gameName } from '@/lib/section-copy'
 import { gameSlugParams } from '@/lib/params'
 import type { Court } from '@/payload-types'
 import { courtMeta } from '@/lib/seo'
@@ -23,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { game, slug } = await params
   const doc = await getBySlug('courts', slug, { game, depth: 1 })
   if (!doc) return {}
-  const meta = courtMeta(doc)
+  const meta = courtMeta(doc, gameName(await getGame(game)))
   return {
     // Composed from the record's own fields unless an editor has written one.
     title: doc.seo?.title || meta.title,

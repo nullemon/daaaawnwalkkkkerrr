@@ -3,7 +3,8 @@ import Link from 'next/link'
 import { PageHeader } from '@/components/PageHeader'
 import { LegalField, LegalWarning } from '@/components/LegalGap'
 import { isProvisional } from '@/lib/legal'
-import { getSiteSettings } from '@/lib/payload'
+import { getPublishedGames, getSiteSettings } from '@/lib/payload'
+import { listSentence, rightsholders } from '@/lib/credit'
 
 export const metadata: Metadata = {
   title: 'Terms of use',
@@ -12,7 +13,9 @@ export const metadata: Metadata = {
 }
 
 export default async function TermsPage() {
-  const settings = await getSiteSettings()
+  const [settings, games] = await Promise.all([getSiteSettings(), getPublishedGames()])
+  // Named, not gestured at - see `rightsholders`.
+  const holders = listSentence(rightsholders(games))
   const provisional = settings.legalProvisional !== false
   const missing = [
     (provisional || isProvisional(settings.legalEntity)) && 'who runs the site',
@@ -31,7 +34,7 @@ export default async function TermsPage() {
         eyebrow="Legal"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Terms' }]}
         title="Terms of use"
-        lede="A fan site, run by one person, describing a game made by someone else. Here is what that does and does not promise."
+        lede="A fan network describing games made by other people. Here is what that does and does not promise."
       />
       <div className="page body-main">
         <LegalWarning missing={missing} />
@@ -39,10 +42,11 @@ export default async function TermsPage() {
         <div className="prose">
           <h2>Who we are not</h2>
           <p>
-            This site is an unofficial fan project operated by {entity}. It has no affiliation with,
-            endorsement from, or connection to Rebel Wolves, Bandai Namco Entertainment, or anyone
-            involved in making The Blood of Dawnwalker. All game names, characters and trademarks
-            belong to their owners, and are used here for identification and commentary.
+            This site is an unofficial fan project operated by {entity}. It has no affiliation
+            with, endorsement from, or connection to the developers and publishers of any game
+            covered here{holders ? <> — {holders} —</> : null} or anyone else involved in making
+            them. All game names, characters and trademarks belong to their owners, and are used
+            here for identification and commentary.
           </p>
 
           <h2>Accuracy</h2>

@@ -9,7 +9,8 @@ import { Attribution } from '@/components/Attribution'
 import { CommentThread } from '@/components/CommentThread'
 import { EntityImage } from '@/components/EntityImage'
 import { FactPanel } from '@/components/FactPanel'
-import { getBySlug } from '@/lib/payload'
+import { getBySlug, getGame } from '@/lib/payload'
+import { gameName } from '@/lib/section-copy'
 import { gameSlugParams } from '@/lib/params'
 import { ACQUISITION_SENTENCE, acquisitionLabel } from '@/lib/items'
 import type { Item, Region } from '@/payload-types'
@@ -23,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { game, slug } = await params
   const doc = await getBySlug('items', slug, { game, depth: 1 })
   if (!doc) return {}
-  const meta = itemMeta(doc)
+  const meta = itemMeta(doc, gameName(await getGame(game)))
   return {
     // Composed from the record's own fields unless an editor has written one.
     title: doc.seo?.title || meta.title,

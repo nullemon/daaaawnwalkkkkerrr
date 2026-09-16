@@ -5,7 +5,7 @@ editorial rules. Next.js 16 + Payload CMS 3 on libSQL. Every public page
 prerenders to static HTML; `/admin` is a full CMS.
 
 Eight wikis today, 1,702 prerendered pages. *The Blood of Dawnwalker* is the
-first and still the largest — 440 of the 1,467 records — and its 480-segment
+first and still the largest — 440 of the 1,451 records — and its 480-segment
 run planner is the model for what each wiki is meant to have: one tool nobody
 else has.
 
@@ -48,6 +48,7 @@ pnpm fetch:games  # just the store pages
 pnpm fetch:entities  # just the community wikis
 pnpm seed:games   # store-page facts -> mechanics pages and achievements
 pnpm seed:entities   # harvested entities -> characters, items, enemies…
+pnpm seed:prune-entities  # drop harvested records that are not things in the game
 pnpm seed:art     # attach game key art and achievement icons
 pnpm make:avatars # redraw contributor monograms
 pnpm seed:avatars # attach them
@@ -261,6 +262,28 @@ that inherits the default would let any reader who signs up edit content.
   one game that does have the section, which is how Phantom Blade Zero came to
   have a page headed "The three courts and their Court Activities". The
   Dawnwalker-only indexes `notFound()` on an empty collection now.
+
+- **A franchise wiki will sell you the film as a location.** The entity
+  harvester takes only categories naming the specific game, which is most of
+  the defence - but "Gears of War (film)" sits in the Gears of War category,
+  and arrived in `regions`. Sixteen of them were live: the Gears TV series, the
+  Silent Hill pachislot machine, four other Silent Hill games, each with a
+  composed summary reading "<name>, a location in <game>". Every one had a real
+  source URL, because the page it came from is real - only the *kind* of thing
+  was wrong, and nothing here was checking kind. `pnpm verify` passed, the
+  build was green, and the pages rendered perfectly.
+
+  `isNotAnEntity` in `src/lib/harvest.ts` rejects them on the wiki's own
+  parenthetical, and `pnpm seed:prune-entities` removes ones already written -
+  the same relationship `seed:prune` has with the guide generators, and it is
+  in `db:reset` for the same reason.
+
+  **The first version of that rule deleted Antar 4**, a real moon on the Star
+  Wars wiki, because it rejected any Title Case name ending in a digit.
+  Numbered names are ordinary in science fiction; only a number after the
+  *franchise's own name* means a sequel. A filter written to stop bad records
+  is still a filter, and an over-broad one throws away the good ones just as
+  silently. The tests pin both directions.
 
 - **Grid and flex children default to `min-width: auto`**, so a wide table
   inside an `overflow-x` container drags the page sideways on a phone. The

@@ -12,6 +12,7 @@ import { RelatedList, type RelatedItem } from '@/components/RelatedList'
 import Link from 'next/link'
 import { getAll, getBySlug, getGame, relMany } from '@/lib/payload'
 import { rightsCredit } from '@/lib/credit'
+import { gameName } from '@/lib/section-copy'
 import { gameSlugParams } from '@/lib/params'
 import { JsonLd } from '@/components/JsonLd'
 import { guideKeywords } from '@/lib/seo'
@@ -33,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: doc.seo?.title || doc.title,
     description: doc.seo?.description || doc.summary,
     alternates: { canonical: `/guides/${doc.slug}` },
-    keywords: guideKeywords(doc),
+    keywords: guideKeywords(doc, gameName(await getGame(game))),
     openGraph: image ? { images: [{ url: image }] } : undefined,
   }
 }

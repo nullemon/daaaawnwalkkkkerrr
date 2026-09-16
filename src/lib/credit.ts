@@ -91,3 +91,39 @@ export const mediaCredit = (title: string, publisher?: string | null): string =>
   const stopped = /[.!?]$/.test(holder) ? holder : `${holder}.`
   return `${title} © ${stopped} Used for identification and commentary.`
 }
+
+/**
+ * Every developer and publisher the network covers, named once each.
+ *
+ * The hub's terms page disclaimed connection to "Rebel Wolves, Bandai Namco
+ * Entertainment, or anyone involved in making The Blood of Dawnwalker", and
+ * the contact page sent people with account problems to Bandai Namco. Both
+ * were written for a one-game site and both sit on the hub, which covers
+ * eight. A disclaimer that names one game's rightsholders does not disclaim
+ * anything about the other seven, which is the half that matters.
+ */
+export const rightsholders = (
+  games: Pick<Game, 'developer' | 'publisher'>[],
+): string[] => {
+  const names: string[] = []
+  for (const game of games) {
+    for (const holder of [game.developer, game.publisher]) {
+      // One field can hold two companies - Townfall is published by "Konami,
+      // Annapurna Interactive" - and inside a comma-separated sentence that
+      // reads as one ambiguous run. Split them so each is named in its own
+      // right.
+      for (const part of (holder ?? '').split(',')) {
+        const name = part.trim()
+        if (name && !names.includes(name)) names.push(name)
+      }
+    }
+  }
+  return names.sort((a, b) => a.localeCompare(b))
+}
+
+/** "a, b and c" - an Oxford-free list for running prose. */
+export const listSentence = (items: string[]): string => {
+  if (items.length === 0) return ''
+  if (items.length === 1) return items[0]
+  return `${items.slice(0, -1).join(', ')} and ${items[items.length - 1]}`
+}

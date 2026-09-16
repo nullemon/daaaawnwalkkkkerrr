@@ -9,7 +9,8 @@ import { Sources } from '@/components/Sources'
 import { Attribution } from '@/components/Attribution'
 import { CommentThread } from '@/components/CommentThread'
 import { EntityImage } from '@/components/EntityImage'
-import { getAll, getBySlug, rel } from '@/lib/payload'
+import { getAll, getBySlug, getGame, rel } from '@/lib/payload'
+import { gameName } from '@/lib/section-copy'
 import { gameSlugParams } from '@/lib/params'
 import type { Perk, SkillTree } from '@/payload-types'
 import { perkMeta } from '@/lib/seo'
@@ -22,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { game, slug } = await params
   const doc = await getBySlug('perks', slug, { game, depth: 1 })
   if (!doc) return {}
-  const meta = perkMeta(doc)
+  const meta = perkMeta(doc, gameName(await getGame(game)))
   return {
     // Composed from the record's own fields unless an editor has written one.
     title: doc.seo?.title || meta.title,

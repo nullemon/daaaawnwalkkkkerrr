@@ -48,9 +48,9 @@ export default async function ContactPage() {
 
           <h2>Not us</h2>
           <p>
-            We cannot help with bugs, refunds, or account problems in the game itself. That is Rebel
-            Wolves and Bandai Namco. See also our <Link href="/terms">terms</Link> on why this is an
-            unofficial site.
+            We cannot help with bugs, refunds, or account problems in any of the games themselves.
+            That is the game&rsquo;s own developer or publisher, named on that wiki&rsquo;s about
+            page. See also our <Link href="/terms">terms</Link> on why this is an unofficial site.
           </p>
         </div>
 
