@@ -72,15 +72,27 @@ export default async function NetworkLayout({ children }: { children: React.Reac
       href: await gameUrl(game),
       icon: 'book' as const,
       /*
-        The square icon, not the capsule.
+        Initials on the game's own accent, not its art.
 
-        `theme.logo` is store capsule art — roughly 2:1 — and the rail slot is
-        a 26px square, so every entry was a centre-cropped sliver with the
-        title sliced off. `tools/make-wiki-icons.mjs` already produces a proper
-        1:1 crop per wiki for the favicon; that is the right image for a square
-        hole, and it is served from `public/` on every host.
+        The art was a square favicon crop, which fixed an earlier problem — a
+        2:1 capsule squeezed into a square hole — and left two others. It sat
+        24px plus a border inside a 22px slot beside 19px glyphs, so every game
+        row was taller than every other row and no left edge lined up; and
+        eight photographic crops beside flat monochrome glyphs is two icon sets
+        in one column. Initials are one system, and the accent is what already
+        distinguishes each wiki everywhere else on the network.
       */
-      image: `/wiki-assets/${game.slug}/icon-32.png`,
+      mark: {
+        initials: (game.shortTitle || game.title)
+          .replace(/^(the|a)\s+/i, '')
+          .split(/[\s:—-]+/)
+          .filter(Boolean)
+          .slice(0, 2)
+          .map((word) => word[0])
+          .join('')
+          .toUpperCase(),
+        accent: game.theme?.accent ?? null,
+      },
       external: true,
     })),
   )

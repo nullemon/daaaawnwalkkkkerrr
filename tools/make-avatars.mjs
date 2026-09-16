@@ -67,16 +67,16 @@ const svgFor = (name) => {
 `
 }
 
-// Kept in step with `authors` in src/seed/data.ts. A name here with no author,
-// or an author with no monogram, is a profile that renders an empty frame.
-const NAMES = [
-  'Corvin Ashe',
-  'Mirela Dunca',
-  'Tobias Renn',
-  'Ines Valcourt',
-  'Kwame Adjei',
-  'Rosa Lindqvist',
-]
+/*
+  Read from the roster rather than retyped.
+
+  This was a hardcoded list with a comment asking whoever came next to keep it
+  in step with `authors` in src/seed/data.ts by hand — an arrangement that
+  survives exactly until somebody adds a name, and then leaves a contributor
+  whose profile renders an empty frame. One file, two readers.
+*/
+const ROSTER = path.resolve('src/seed/raw/contributors.json')
+const NAMES = JSON.parse(fs.readFileSync(ROSTER, 'utf8')).contributors.map((c) => c.name)
 
 fs.mkdirSync(OUT, { recursive: true })
 

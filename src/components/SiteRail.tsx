@@ -23,14 +23,23 @@ export type RailItem = {
   href: string
   icon: IconName
   /**
-   * The game's own capsule art, for the hub's rail.
+   * A game's mark: its initials, in its own accent colour.
    *
-   * Seven entries all carrying the same chevron is a list of seven identical
-   * rows, which is no navigation at all — the rail collapses to icons by
-   * default, so the icon *is* the label most of the time. A game is
-   * recognisable by its key art in a way no glyph in the set can match.
+   * Seven entries carrying the same chevron is a list of seven identical rows,
+   * which is no navigation at all — the rail collapses to icons by default, so
+   * the icon *is* the label most of the time. The first answer to that was the
+   * game's capsule art, and it was the wrong one twice over. Mechanically, a
+   * 24px image with a 1px border sat in a 22px box beside 19px glyphs, so
+   * every game row was four pixels taller than every other row and none of the
+   * left edges lined up. Visually, eight photographic crops with eight
+   * different palettes and subjects sat next to flat monochrome glyphs, which
+   * is two icon sets in one column rather than one.
+   *
+   * Initials on the game's accent are one system: same size, same shape, same
+   * weight as the glyphs, distinguishable at a glance, and the same monogram
+   * language the contributor avatars already use.
    */
-  image?: string | null
+  mark?: { initials: string; accent?: string | null } | null
   /** True for an entry pointing at another host, so it renders as a plain anchor. */
   external?: boolean
 }
@@ -64,9 +73,15 @@ export function SiteRail({
           const inner = (
             <>
               <span className="navrail-icon">
-                {item.image ? (
+                {item.mark ? (
                   // Decorative: the label beside it already names the game.
-                  <img src={item.image} alt="" className="navrail-art" loading="lazy" />
+                  <span
+                    className="navrail-mark"
+                    aria-hidden="true"
+                    style={item.mark.accent ? { background: item.mark.accent } : undefined}
+                  >
+                    {item.mark.initials}
+                  </span>
                 ) : (
                   <Icon name={item.icon} size={19} />
                 )}

@@ -1778,14 +1778,26 @@ th.num { text-align: right; }
 
    Square by construction — these are the 1:1 favicon crops, not the wide
    capsule art, which the rail used to squash into this slot and cut in half. */
-.navrail-art {
-  width: 24px; height: 24px; border-radius: 5px;
-  object-fit: cover; display: block;
-  border: 1px solid var(--rule);
-  background: var(--raised);
+/*
+  A game's mark, sized to the glyphs it sits beside.
+
+  The art it replaces was 24px with a 1px border inside a 22px slot, next to
+  19px glyphs — four pixels taller than every other row, and misaligned on the
+  left. This is 20px, borderless, and optically the same weight as an icon, so
+  the column reads as one set instead of two.
+*/
+.navrail-mark {
+  width: 20px; height: 20px; border-radius: 5px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--f-label);
+  font-size: 9.5px; font-weight: 700; letter-spacing: 0.02em;
+  color: #fff;
+  background: var(--accent);
+  /* Dark accents and light ones both have to carry white type. */
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
 }
-.navrail-link[aria-current='page'] .navrail-art,
-.navrail-link:hover .navrail-art { border-color: var(--accent-dim); }
+.navrail-link[aria-current='page'] .navrail-mark,
+.navrail-link:hover .navrail-mark { box-shadow: 0 0 0 2px var(--accent-dim); }
 
 /* ===========================================================================
    Polish pass.
