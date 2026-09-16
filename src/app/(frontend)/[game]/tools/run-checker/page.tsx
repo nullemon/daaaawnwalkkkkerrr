@@ -10,7 +10,7 @@ type Props = { params: Promise<{ game: string }> }
 export const metadata: Metadata = {
   title: 'Run checker — which endings can you still reach?',
   description:
-    'Enter your current day and the quests you have finished. Find out which of the seven endings are still reachable, which are out of time, and which you have already locked yourself out of.',
+    'Enter your current day and the quests you have finished. Find out which of the seven endings are still reachable, which are out of time, and which you have.',
   alternates: { canonical: '/tools/run-checker' },
 }
 

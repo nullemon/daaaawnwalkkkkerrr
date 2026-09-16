@@ -20,7 +20,7 @@ import { UnlockPath } from '@/components/UnlockPath'
 import { checkEnding, indexQuests } from '@/lib/reachability'
 import { clockAt, formatSegments } from '@/lib/segments'
 import type { Character, Ending } from '@/payload-types'
-import { endingMeta } from '@/lib/seo'
+import { clamp, endingMeta } from '@/lib/seo'
 
 type Props = { params: Promise<{ game: string; slug: string }> }
 
@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     // Composed from the record's own fields unless an editor has written one.
     title: ending.seo?.title || meta.title,
-    description: ending.seo?.description || meta.description,
+    description: clamp(ending.seo?.description || meta.description || ''),
     alternates: { canonical: `/endings/${ending.slug}` },
   }
 }

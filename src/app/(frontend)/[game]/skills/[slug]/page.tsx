@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { clamp } from '@/lib/seo'
 import { SectionNeighbours } from '@/components/SectionNeighbours'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -23,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!doc) return {}
   return {
     title: doc.seo?.title || `${doc.title} — skills, perks and when to use them`,
-    description: doc.seo?.description || doc.summary,
+    description: clamp(doc.seo?.description || doc.summary || ''),
     alternates: { canonical: `/skills/${doc.slug}` },
   }
 }

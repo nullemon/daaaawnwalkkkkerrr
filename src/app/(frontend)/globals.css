@@ -1316,7 +1316,10 @@ th.num { text-align: right; }
   one leaves a clean panel instead of a transparent gap.
 */
 .wiki-masthead {
-  position: relative; isolation: isolate; z-index: 2; overflow: hidden;
+  /* No `overflow: hidden`: this contains the wiki's search, and clipping the
+     masthead clips its results. The art below is inset to this box and does
+     not overflow it. Same reasoning as `.hub-hero`. */
+  position: relative; isolation: isolate; z-index: 2;
   background: var(--sunken);
   border-bottom: 1px solid var(--rule);
 }
@@ -2226,14 +2229,31 @@ h1, h2, h3 { text-wrap: balance; }
    and the demand data up front where it argues for itself.
    =========================================================================== */
 
+/*
+  Two things here decide whether the search results can be read, and this rule
+  had both wrong.
+
+  `isolation: isolate` confines every child's z-index to this element, so the
+  dropdown could not rise above anything outside it — and with no z-index of
+  its own the hero painted in DOM order, underneath the sections that follow.
+  `overflow: hidden` then clipped whatever was left at the hero's bottom edge.
+  The result was results you could not read, which is the whole of a search.
+
+  This is the second time: `.hero` was fixed the same way and the note there
+  says so. The fix did not travel to the masthead the hub was given later,
+  because nothing connects the two but a habit. Clipping now belongs to the
+  art, which is the only thing that needed it.
+*/
 .hub-hero {
-  position: relative; isolation: isolate; overflow: hidden;
+  position: relative; isolation: isolate; z-index: 3;
   padding-block: clamp(40px, 8vw, 88px);
   border-bottom: 1px solid var(--rule);
 }
 .hub-hero-art {
   position: absolute; inset: 0; width: 100%; height: 100%;
-  object-fit: cover; z-index: -2; opacity: 0.4;
+  /* Its own clip, since the hero can no longer do it without eating the
+     search results. `cover` already fills the box exactly; this is a belt. */
+  object-fit: cover; overflow: hidden; z-index: -2; opacity: 0.4;
   filter: saturate(0.85) contrast(1.04);
 }
 /* Two scrims: one so the page below joins, one so type stays readable over a

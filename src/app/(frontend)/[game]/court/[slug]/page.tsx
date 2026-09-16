@@ -15,7 +15,7 @@ import { getAll, getBySlug, getGame } from '@/lib/payload'
 import { gameName } from '@/lib/section-copy'
 import { gameSlugParams } from '@/lib/params'
 import type { Court } from '@/payload-types'
-import { courtMeta } from '@/lib/seo'
+import { clamp, courtMeta } from '@/lib/seo'
 
 type Props = { params: Promise<{ game: string; slug: string }> }
 
@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     // Composed from the record's own fields unless an editor has written one.
     title: doc.seo?.title || meta.title,
-    description: doc.seo?.description || meta.description,
+    description: clamp(doc.seo?.description || meta.description || ''),
     alternates: { canonical: `/court/${doc.slug}` },
   }
 }

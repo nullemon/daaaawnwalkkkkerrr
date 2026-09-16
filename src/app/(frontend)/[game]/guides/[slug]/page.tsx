@@ -16,7 +16,7 @@ import { rightsCredit } from '@/lib/credit'
 import { gameName } from '@/lib/section-copy'
 import { gameSlugParams } from '@/lib/params'
 import { JsonLd } from '@/components/JsonLd'
-import { guideKeywords } from '@/lib/seo'
+import { clamp, guideKeywords } from '@/lib/seo'
 import type { Author, Ending, Guide, Media, Quest } from '@/payload-types'
 import { hub } from '@/lib/urls'
 
@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const image = doc.image && typeof doc.image === 'object' ? doc.image.url : undefined
   return {
     title: doc.seo?.title || doc.title,
-    description: doc.seo?.description || doc.summary,
+    description: clamp(doc.seo?.description || doc.summary || ''),
     alternates: { canonical: `/guides/${doc.slug}` },
     keywords: guideKeywords(doc, gameName(await getGame(game))),
     openGraph: image ? { images: [{ url: image }] } : undefined,
@@ -98,7 +98,7 @@ export default async function GuidePage({ params }: Props) {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: doc.seo?.title || doc.title,
-    description: doc.seo?.description || doc.summary,
+    description: clamp(doc.seo?.description || doc.summary || ''),
     ...(doc.updated ? { dateModified: new Date(doc.updated).toISOString() } : {}),
     ...(person && !person.provisional
       ? { author: { '@type': 'Person', name: person.name, url: `/authors/${person.slug}` } }

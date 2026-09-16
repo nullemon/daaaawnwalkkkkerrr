@@ -18,7 +18,7 @@ import { getAll, getBySlug, getGame, rel, relMany } from '@/lib/payload'
 import { gameName } from '@/lib/section-copy'
 import { gameSlugParams } from '@/lib/params'
 import type { Ending, Quest, Region } from '@/payload-types'
-import { questMeta } from '@/lib/seo'
+import { clamp, questMeta } from '@/lib/seo'
 
 type Props = { params: Promise<{ game: string; slug: string }> }
 
@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     // Composed from the record's own fields unless an editor has written one.
     title: quest.seo?.title || meta.title,
-    description: quest.seo?.description || meta.description,
+    description: clamp(quest.seo?.description || meta.description || ''),
     alternates: { canonical: `/quests/${quest.slug}` },
     robots: quest.seo?.noindex ? { index: false, follow: true } : undefined,
   }

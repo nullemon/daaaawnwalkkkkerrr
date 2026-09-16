@@ -12,7 +12,7 @@ type Props = { params: Promise<{ game: string }> }
 export const metadata: Metadata = {
   title: 'Build planner — pick perks across all three trees',
   description:
-    'Plan a Blood of Dawnwalker build across Swordmastery, Witchcraft and Vampirism. Enforces one ultimate per tree, totals the segment cost, and gives you a shareable link.',
+    'Plan a Blood of Dawnwalker build across Swordmastery, Witchcraft and Vampirism. Enforces one ultimate per tree, totals the segment cost, and gives you a.',
   alternates: { canonical: '/tools/build-planner' },
 }
 

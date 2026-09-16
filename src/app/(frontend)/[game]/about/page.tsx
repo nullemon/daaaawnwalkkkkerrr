@@ -5,6 +5,7 @@ import { FactPanel } from '@/components/FactPanel'
 import { RelatedList, type RelatedItem } from '@/components/RelatedList'
 import { getAll, getGame, getSiteSettings } from '@/lib/payload'
 import { gameName } from '@/lib/section-copy'
+import { clamp } from '@/lib/seo'
 import { companyUrl } from '@/lib/urls'
 import { slugify } from '@/fields/shared'
 import type { Guide } from '@/payload-types'
@@ -18,8 +19,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const name = doc?.shortTitle || doc?.title || 'this wiki'
   return {
     title: `About the ${name} Wiki`,
-    description:
-      'Who runs this site, where the facts come from, what the confidence ratings mean, and what we deliberately do not claim to know.',
+    /*
+      Named, because this was the one description repeated verbatim across all
+      eight wikis — eight pages competing with each other for the same result
+      and the engine picking one. Everything else on the network composes its
+      description from the record it is about; this did not, because it has no
+      record.
+    */
+    description: clamp(
+      `Who runs the ${name} wiki, where its facts come from, what the confidence ratings mean, and what we deliberately do not claim to know.`,
+    ),
     alternates: { canonical: '/about' },
   }
 }

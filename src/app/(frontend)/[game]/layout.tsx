@@ -7,6 +7,7 @@ import { getGame, getPublishedGames, getSiteSettings, gameUrl } from '@/lib/payl
 import { sectionsFor, toolsFor } from '@/lib/sections'
 import { fanProjectNote } from '@/lib/credit'
 import { JsonLd, videoGame } from '@/components/JsonLd'
+import { clamp } from '@/lib/seo'
 import { hub } from '@/lib/urls'
 import { Analytics } from '@/components/Analytics'
 import { resolveTags, verificationMetadata } from '@/lib/tags'
@@ -78,7 +79,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       absolute: game.seo?.title || `${game.title} guide, wiki and database`,
       template: `%s · ${name} Wiki`,
     },
-    description: game.seo?.description || game.summary || undefined,
+    /*
+      Clamped. A game summary is written for the page, where length is fine;
+      a description over about 165 characters is cut mid-sentence in a result,
+      and the wiki home was the longest on the network at 196.
+    */
+    description: clamp(game.seo?.description || game.summary || '') || undefined,
     applicationName: `${name} Wiki`,
     // This wiki's own Search Console token, falling back to the network's.
     // Google will not accept the apex's token on a subdomain.
