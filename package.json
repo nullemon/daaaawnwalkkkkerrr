@@ -23,7 +23,7 @@
     "assets:match": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/match-assets.ts",
     "ingest": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/import.ts",
     "clean:db": "node tools/reset-db.mjs",
-    "db:reset": "pnpm run clean:db && pnpm run seed && pnpm run ingest && pnpm run seed:games && pnpm run seed:reference && pnpm run seed:entities && pnpm run seed:prune-entities && pnpm run seed:companies && pnpm run seed:guides && pnpm run seed:articles && pnpm run seed:deep && pnpm run seed:topics && pnpm run assets && pnpm run seed:art && pnpm run seed:contributors && pnpm run seed:avatars && pnpm run seed:prune && pnpm run seed:cite && pnpm run seed:guide-images && pnpm run seed:publish",
+    "db:reset": "pnpm run clean:db && pnpm run seed && pnpm run ingest && pnpm run seed:games && pnpm run seed:reference && pnpm run seed:game-profile && pnpm run seed:entities && pnpm run seed:prune-entities && pnpm run seed:companies && pnpm run seed:guides && pnpm run seed:articles && pnpm run seed:deep && pnpm run seed:topics && pnpm run assets && pnpm run seed:art && pnpm run seed:contributors && pnpm run seed:avatars && pnpm run seed:prune && pnpm run seed:cite && pnpm run seed:guide-images && pnpm run seed:publish",
     "indexnow": "cross-env NODE_OPTIONS=--no-deprecation node tools/indexnow.mjs",
     "verify": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/verify.ts",
     "seed:games": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/game-content.ts",
@@ -54,7 +54,8 @@
     "seed:prune-media": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/prune-media.ts",
     "check:kind": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/check-kind.ts",
     "fetch:companies": "node tools/fetch-companies.mjs",
-    "seed:contributors": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/contributors.ts"
+    "seed:contributors": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/contributors.ts",
+    "seed:game-profile": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/game-profile.ts"
   },
   "dependencies": {
     "@payloadcms/db-sqlite": "3.89.0",

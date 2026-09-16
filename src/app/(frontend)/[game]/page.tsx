@@ -5,6 +5,7 @@ import { HeroSearch } from '@/components/HeroSearch'
 import { Logo } from '@/components/Logo'
 import { Icon } from '@/components/Icon'
 import { DawnwalkerBriefing } from '@/components/home/DawnwalkerBriefing'
+import { GameProfile } from '@/components/GameProfile'
 import { getAll, getGame } from '@/lib/payload'
 import { sectionsFor, toolsFor } from '@/lib/sections'
 import { releaseLine } from '@/lib/directory'
@@ -341,6 +342,13 @@ export default async function Home({ params }: Props) {
               </div>
             </section>
           ) : null}
+
+          {/*
+            The factsheet, before the game's own systems. A reader arriving on
+            a wiki wants to know what the game is, what it costs and how you
+            play it before they want a briefing on its clock.
+          */}
+          <GameProfile game={game} />
 
           {/* Only for a game whose systems have actually been catalogued. */}
           {courts.length > 0 && endings.length > 0 ? (

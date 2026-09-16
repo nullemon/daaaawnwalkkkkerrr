@@ -702,6 +702,66 @@ export interface Game {
    */
   subdomain?: string | null;
   /**
+   * The factsheet on the wiki home. Most of it is filled from the store listing and Wikipedia by `pnpm seed:game-profile`; the commercial figures are blank because nobody publishes them.
+   */
+  profile?: {
+    /**
+     * As the store shows it, e.g. "$69.99". From the listing.
+     */
+    priceText?: string | null;
+    isFree?: boolean | null;
+    /**
+     * Ticked when the store declares them. Absence is not proof there are none.
+     */
+    microtransactions?: boolean | null;
+    /**
+     * How many the store lists.
+     */
+    dlcCount?: number | null;
+    editionCount?: number | null;
+    /**
+     * Read from the store listing’s own categories.
+     */
+    modes?:
+      ('single-player' | 'multiplayer' | 'co-op' | 'online-co-op' | 'pvp' | 'online-pvp' | 'cross-platform')[] | null;
+    /**
+     * e.g. "1–4". Only where a source states it.
+     */
+    maxPlayers?: string | null;
+    onlineRequired?: ('unknown' | 'no' | 'multiplayer' | 'yes') | null;
+    /**
+     * From Wikipedia’s infobox.
+     */
+    engine?: string | null;
+    series?: string | null;
+    director?: string | null;
+    composer?: string | null;
+    /**
+     * Only where the store reports one.
+     */
+    metacritic?: number | null;
+    /**
+     * Development budget, with a source. Blank unless one exists — almost no publisher discloses this.
+     */
+    budget?: string | null;
+    /**
+     * Marketing spend, with a source. Almost never published.
+     */
+    marketingSpend?: string | null;
+    /**
+     * How many people worked on it, with a source.
+     */
+    teamSize?: string | null;
+    /**
+     * Shown under the budget row when any of those three is filled in — say where the figure came from.
+     */
+    commercialNote?: string | null;
+    /**
+     * Portrait key art for the profile panel. Falls back to the wiki’s hero image when empty.
+     */
+    poster?: (number | null) | Media;
+  };
+  /**
    * Bespoke tools this game switches on. Most games have none — a tool nobody built for this game should not appear in its navigation.
    */
   features?: ('run-checker' | 'build-planner' | 'completion-tracker' | 'comments')[] | null;
@@ -3100,6 +3160,28 @@ export interface GamesSelect<T extends boolean = true> {
         logo?: T;
       };
   subdomain?: T;
+  profile?:
+    | T
+    | {
+        priceText?: T;
+        isFree?: T;
+        microtransactions?: T;
+        dlcCount?: T;
+        editionCount?: T;
+        modes?: T;
+        maxPlayers?: T;
+        onlineRequired?: T;
+        engine?: T;
+        series?: T;
+        director?: T;
+        composer?: T;
+        metacritic?: T;
+        budget?: T;
+        marketingSpend?: T;
+        teamSize?: T;
+        commercialNote?: T;
+        poster?: T;
+      };
   features?: T;
   relatedGames?: T;
   seo?:

@@ -2,6 +2,7 @@ import type { CollectionConfig } from 'payload'
 import { slugField, publicRead, seoGroup } from '../fields/shared'
 import { APEX_ONLY, NETWORK_SUBDOMAINS } from '../proxy'
 import { hostLabelProblem } from '../lib/host-label'
+import { gameProfileGroup } from '../fields/gameProfile'
 import { analyticsFields, verificationFields } from '../fields/analytics'
 
 /**
@@ -188,6 +189,7 @@ export const Games: CollectionConfig = {
           'Host label, if it differs from the slug. Almost always leave this empty — the slug is used when it is. Whatever is here becomes <label>.<your domain>, which needs no DNS change because the domain is served by a wildcard.',
       },
     },
+    gameProfileGroup(),
     {
       name: 'features',
       type: 'select',
