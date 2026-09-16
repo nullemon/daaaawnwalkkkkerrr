@@ -1,4 +1,5 @@
 import 'dotenv/config'
+import { mediaCredit } from '../lib/credit'
 import fs from 'fs'
 import path from 'path'
 import { getPayload } from 'payload'
@@ -122,7 +123,7 @@ async function run(): Promise<void> {
   let done = 0
 
   for (const guide of missing) {
-    const game = (guide as { game?: { slug?: string; title?: string } }).game
+    const game = (guide as { game?: { slug?: string; title?: string; publisher?: string } }).game
     const slug = game?.slug
     if (!slug) continue
 
@@ -141,7 +142,9 @@ async function run(): Promise<void> {
       source,
       filename,
       `${game?.title ?? slug} — ${guide.title}`,
-      `${game?.title ?? slug}, copyright its publisher. Used for identification and commentary.`,
+      // Name them. The record has the publisher, and "copyright its
+      // publisher" is a credit that credits nobody.
+      mediaCredit(game?.title ?? slug, game?.publisher),
     )
     if (!image) continue
 
