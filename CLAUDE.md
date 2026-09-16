@@ -331,21 +331,38 @@ rendered as React children, never `dangerouslySetInnerHTML` - an
 admin-editable string that reaches the DOM as markup is a stored-XSS hole
 waiting for the first editor account that should not have had one.
 
+## Legal & contact
+
+The operator details are real and published as real: CWMI Group (trading as
+Code Web Media), the Manila office, and `the Philippines` as the governing law.
+`legalProvisional` is **off**, which is the single switch that decides whether
+privacy, terms and contact present their values or warn over every one of them
+in red.
+
+Turn it back on the moment any of those details changes and the new one has not
+been confirmed. `isProvisional` in `src/lib/legal.ts` is the backstop for the
+values nobody remembered to flag — an empty field, or text that gives itself
+away, such as an `@example.com` address, which IANA reserves for documentation
+and which can therefore never be a working inbox.
+
 ## Outstanding
+
+Every item here is blocked on something nobody has yet, not on work nobody has
+done. Padding any of them is the one thing that would cost this network its
+argument.
 
 - **Per-quest segment costs** — only 15 of 93 have one. Biggest single gap;
   needs the game or a source nobody has published yet.
 - Common/rare gear, 12 of 28 bestiary entries, most recipe names.
 - Xanthe's 15th Court Activity — never named in any source found.
-- **Images.** Records have image slots and fall back to the icon set. See
-  `docs/ASSETS.md`.
-- **Legal details are stand-ins.** Site settings → Legal & contact ships with a
-  fictional name, an `example.com` address and Royal Mail's documentation
-  postcode, so the pages read as finished. `legalProvisional` is ticked, which
-  makes privacy, terms and contact render a loud warning and mark every value
-  in red. Replace the details and untick it — that one switch is what publishes
-  them as real. `isProvisional` in `src/lib/legal.ts` is the backstop if
-  somebody unticks it with a placeholder still in place.
+- **Images.** Records have image slots and fall back to the icon set. Dawnwalker
+  sits at 61 of 80 items and 5 of 16 enemies. See `docs/ASSETS.md`.
+- **Perk time costs** — 0 of 40. `timeCostSegments` deliberately has no default,
+  so these read as unknown rather than free.
+- **Owner-supplied settings** that `pnpm check:launch` reports and no source can
+  supply: a Search Console token per subdomain (each is its own property), an
+  analytics ID per wiki, six real contributors in place of six placeholder
+  authors, and the network's own name — it is still "Vellum", a working title.
 
 <!-- BEGIN:nextjs-agent-rules -->
 

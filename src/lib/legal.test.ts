@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { isProvisional } from './legal'
+import { siteSettings } from '../seed/data'
 
 describe('provisional legal details', () => {
   it('treats an unset field as provisional', () => {
@@ -35,5 +36,24 @@ describe('provisional legal details', () => {
 
   it('does not flag a real address that merely mentions an example elsewhere', () => {
     expect(isProvisional('example@dawnwalkerguide.com')).toBe(false)
+  })
+})
+
+/*
+ * The guard is only worth having if it is pointed at what actually ships. The
+ * seeded operator details are the ones the privacy, terms and contact pages
+ * present as real, so a stand-in creeping back into them should fail here
+ * rather than on the live site.
+ */
+describe('the details this site actually ships', () => {
+  it('publishes them as real rather than warning over them', () => {
+    expect(siteSettings.legalProvisional).toBe(false)
+  })
+
+  it('carries a value in every field the legal pages name', () => {
+    expect(isProvisional(siteSettings.legalEntity)).toBe(false)
+    expect(isProvisional(siteSettings.contactEmail)).toBe(false)
+    expect(isProvisional(siteSettings.postalAddress)).toBe(false)
+    expect(isProvisional(siteSettings.jurisdiction)).toBe(false)
   })
 })
