@@ -39,7 +39,7 @@ export type RailItem = {
    * weight as the glyphs, distinguishable at a glance, and the same monogram
    * language the contributor avatars already use.
    */
-  mark?: { initials: string; accent?: string | null } | null
+  mark?: { initials: string; accent?: string | null; image?: string | null } | null
   /** True for an entry pointing at another host, so it renders as a plain anchor. */
   external?: boolean
 }
@@ -80,7 +80,19 @@ export function SiteRail({
                     aria-hidden="true"
                     style={item.mark.accent ? { background: item.mark.accent } : undefined}
                   >
-                    {item.mark.initials}
+                    {/*
+                      The game's own art, in a box the same size as a glyph.
+                      The art was never the problem — its footprint was: 24px
+                      and a border inside a 22px slot, four pixels taller than
+                      every other row. Initials were tried instead and read as
+                      placeholder, which they were. The ring is a box-shadow so
+                      it cannot add to the box and put the unevenness back.
+                    */}
+                    {item.mark.image ? (
+                      <img src={item.mark.image} alt="" loading="lazy" decoding="async" />
+                    ) : (
+                      item.mark.initials
+                    )}
                   </span>
                 ) : (
                   <Icon name={item.icon} size={19} />

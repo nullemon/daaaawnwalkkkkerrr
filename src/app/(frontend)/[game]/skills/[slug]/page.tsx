@@ -26,6 +26,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: doc.seo?.title || `${doc.title} — skills, perks and when to use them`,
     description: clamp(doc.seo?.description || doc.summary || ''),
     alternates: { canonical: `/skills/${doc.slug}` },
+    /*
+      The admin's own "Hide this page from search engines" box.
+      `seoGroup()` puts it on every content collection and only the
+      quest page read it, so ticking it anywhere else did nothing at
+      all — a control that is present, reachable and inert.
+    */
+    robots: doc.seo?.noindex ? { index: false, follow: true } : undefined,
   }
 }
 

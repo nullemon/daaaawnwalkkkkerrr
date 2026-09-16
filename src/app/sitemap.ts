@@ -49,16 +49,17 @@ async function hubSitemap(base: string): Promise<MetadataRoute.Sitemap> {
   ]
 
   /*
-    Contributor profiles, but only the ones that are indexable.
+    Contributor profiles, minus any explicitly hidden.
 
-    A profile still marked provisional renders with `noindex`, and listing a
-    noindex page in a sitemap is a contradiction — it asks a crawler to fetch
-    something and then tells it to forget what it found. They appear here the
-    moment the flag comes off in the admin.
+    This used to skip every profile still marked provisional, because the
+    profile rendered `noindex` and listing a noindex page in a sitemap is a
+    contradiction. Indexing no longer follows from that flag — it is its own
+    checkbox — so the only reason to leave a profile out is somebody having
+    ticked it.
   */
   const authors = await getAll('authors', { depth: 0 })
   for (const author of authors) {
-    if (author.provisional) continue
+    if (author.noindex) continue
     entries.push({
       url: `${base}/authors/${author.slug}`,
       lastModified: author.updatedAt ? new Date(author.updatedAt) : now,

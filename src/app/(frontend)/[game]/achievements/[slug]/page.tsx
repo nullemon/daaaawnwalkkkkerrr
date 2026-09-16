@@ -59,6 +59,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         .join(' ')
         .slice(0, 155),
     alternates: { canonical: `/achievements/${doc.slug}` },
+    // The admin's "Hide this page from search engines" box, honoured.
+    robots: doc.seo?.noindex ? { index: false, follow: true } : undefined,
   }
 }
 

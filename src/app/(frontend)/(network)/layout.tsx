@@ -92,6 +92,13 @@ export default async function NetworkLayout({ children }: { children: React.Reac
           .join('')
           .toUpperCase(),
         accent: game.theme?.accent ?? null,
+        /*
+          The 1:1 favicon crop `tools/make-wiki-icons.mjs` already produces,
+          which is the right image for a square hole — the capsule is roughly
+          2:1 and centre-cropping one slices the title off. Served from
+          `public/` on every host.
+        */
+        image: `/wiki-assets/${game.slug}/icon-32.png`,
       },
       external: true,
     })),

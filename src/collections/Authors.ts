@@ -41,6 +41,25 @@ export const Authors: CollectionConfig = {
       },
     },
     {
+      /*
+        Indexing is its own decision, not a side effect of `provisional`.
+
+        Hiding a profile used to follow automatically from the placeholder
+        flag, so a real contributor stayed out of search until somebody
+        remembered to untick it. Two switches: one says the details are still
+        to be written, the other says keep this page out of search.
+      */
+      name: 'noindex',
+      type: 'checkbox',
+      defaultValue: false,
+      label: 'Hide this profile from search engines',
+      admin: {
+        position: 'sidebar',
+        description:
+          'Off by default — profiles are indexed, placeholder or not. Tick it for someone who should not appear in search at all.',
+      },
+    },
+    {
       name: 'role',
       type: 'text',
       admin: { description: 'How they are described under the byline, e.g. "Routing and endings".' },

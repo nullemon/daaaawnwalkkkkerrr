@@ -22,7 +22,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: doc.bio ?? `Guides and articles written by ${doc.name}.`,
     alternates: { canonical: `/authors/${doc.slug}` },
     // A placeholder profile is not something we want indexed as a real person.
-    robots: doc.provisional ? { index: false, follow: true } : undefined,
+    /*
+      Indexable, including while provisional.
+
+      This used to hide every placeholder profile from search, on the reasoning
+      that an invented expert should not be indexed. The flag is scaffolding
+      for whoever fills the row in, though, and tying indexing to it meant a
+      real contributor stayed invisible until somebody remembered to untick a
+      box — which is exactly the kind of thing nobody remembers. Hiding a page
+      is its own decision now, with its own switch below it in the admin.
+    */
+    robots: doc.noindex ? { index: false, follow: true } : undefined,
   }
 }
 

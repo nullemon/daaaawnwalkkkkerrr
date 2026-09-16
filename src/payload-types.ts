@@ -1738,6 +1738,10 @@ export interface Author {
    */
   provisional?: boolean | null;
   /**
+   * Off by default — profiles are indexed, placeholder or not. Tick it for someone who should not appear in search at all.
+   */
+  noindex?: boolean | null;
+  /**
    * How they are described under the byline, e.g. "Routing and endings".
    */
   role?: string | null;
@@ -3014,6 +3018,7 @@ export interface AuthorsSelect<T extends boolean = true> {
   name?: T;
   slug?: T;
   provisional?: T;
+  noindex?: T;
   role?: T;
   bio?: T;
   covers?: T;

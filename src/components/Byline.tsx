@@ -36,7 +36,17 @@ export async function Byline({
 }) {
   const settings = await getSiteSettings()
   const person = author && typeof author === 'object' ? (author as Author) : null
-  const named = person && person.provisional === false ? person : null
+  /*
+    The person, whether or not the row is still a placeholder.
+
+    `provisional` used to swap the name for the editorial team here, hide the
+    profile from search and drop the author out of the Article markup — three
+    behaviours hanging off one editorial checkbox. On a site being filled in
+    that means a real contributor stays invisible until somebody remembers to
+    untick it, and nobody remembers. It marks a row as still-to-be-written and
+    nothing else now; hiding a profile has its own switch beside it.
+  */
+  const named = person
   const avatar = named?.avatar && typeof named.avatar === 'object' ? (named.avatar as Media) : null
   const checked = updated ? new Date(updated) : null
 

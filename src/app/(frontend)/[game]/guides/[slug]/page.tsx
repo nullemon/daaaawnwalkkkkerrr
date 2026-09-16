@@ -35,6 +35,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: doc.seo?.title || doc.title,
     description: clamp(doc.seo?.description || doc.summary || ''),
     alternates: { canonical: `/guides/${doc.slug}` },
+    /*
+      The admin's own "Hide this page from search engines" box.
+      `seoGroup()` puts it on every content collection and only the
+      quest page read it, so ticking it anywhere else did nothing at
+      all — a control that is present, reachable and inert.
+    */
+    robots: doc.seo?.noindex ? { index: false, follow: true } : undefined,
     keywords: guideKeywords(doc, gameName(await getGame(game))),
     openGraph: image ? { images: [{ url: image }] } : undefined,
   }
@@ -100,7 +107,7 @@ export default async function GuidePage({ params }: Props) {
     headline: doc.seo?.title || doc.title,
     description: clamp(doc.seo?.description || doc.summary || ''),
     ...(doc.updated ? { dateModified: new Date(doc.updated).toISOString() } : {}),
-    ...(person && !person.provisional
+    ...(person
       ? { author: { '@type': 'Person', name: person.name, url: `/authors/${person.slug}` } }
       : {}),
   }

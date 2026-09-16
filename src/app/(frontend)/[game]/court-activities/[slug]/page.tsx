@@ -29,6 +29,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: doc.seo?.title || meta.title,
     description: clamp(doc.seo?.description || meta.description || ''),
     alternates: { canonical: `/court-activities/${doc.slug}` },
+    /*
+      The admin's own "Hide this page from search engines" box.
+      `seoGroup()` puts it on every content collection and only the
+      quest page read it, so ticking it anywhere else did nothing at
+      all — a control that is present, reachable and inert.
+    */
+    robots: doc.seo?.noindex ? { index: false, follow: true } : undefined,
   }
 }
 

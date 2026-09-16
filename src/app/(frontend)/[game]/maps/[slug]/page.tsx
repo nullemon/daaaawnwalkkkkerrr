@@ -26,6 +26,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       doc.summary ||
       `An interactive map of ${doc.title}, with each marked location linking to what is recorded about it.`,
     alternates: { canonical: `/maps/${doc.slug}` },
+    // The admin's "Hide this page from search engines" box, honoured.
+    robots: doc.seo?.noindex ? { index: false, follow: true } : undefined,
   }
 }
 
