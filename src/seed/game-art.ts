@@ -1,4 +1,5 @@
 import 'dotenv/config'
+import { mediaCredit } from '../lib/credit'
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
@@ -38,8 +39,7 @@ const ART_DIR = path.resolve(dirname, '..', '..', 'assets', '_games')
 const RAW_DIR = path.join(dirname, 'raw', 'games')
 const FORCE = process.argv.includes('--force')
 
-const CREDIT_FOR = (title: string, publisher: string) =>
-  `${title} © ${publisher}. Used for identification and commentary.`
+const CREDIT_FOR = (title: string, publisher: string) => mediaCredit(title, publisher)
 
 type RawGame = {
   slug: string

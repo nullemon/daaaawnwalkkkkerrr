@@ -1,4 +1,5 @@
 import 'dotenv/config'
+import { mediaCredit } from '../lib/credit'
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
@@ -201,7 +202,7 @@ async function run(): Promise<void> {
     const pick = screenshots(
       game.slug as string,
       payload,
-      `${game.title} © ${steam?.publishers?.[0] ?? 'its publisher'}. Used for identification and commentary.`,
+      mediaCredit(game.title, steam?.publishers?.[0]),
     )
 
     let written = 0

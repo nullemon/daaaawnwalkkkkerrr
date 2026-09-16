@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { fanProjectNote, rightsCredit } from './credit'
+import { fanProjectNote, mediaCredit, rightsCredit } from './credit'
 
 const game = (over: Record<string, unknown> = {}) =>
   ({
@@ -73,5 +73,23 @@ describe('fanProjectNote', () => {
     const note = fanProjectNote(game(), 'Unofficial fan project. The Blood of Dawnwalker is developed by Rebel Wolves.')
     expect(note).not.toContain('Rebel Wolves')
     expect(note).not.toContain('Dawnwalker')
+  })
+})
+
+describe('mediaCredit', () => {
+  it('does not double the full stop when the publisher’s name carries one', () => {
+    expect(mediaCredit('Onimusha: Way of the Sword', 'CAPCOM Co., Ltd.')).toBe(
+      'Onimusha: Way of the Sword © CAPCOM Co., Ltd. Used for identification and commentary.',
+    )
+  })
+
+  it('adds the stop when the name has none', () => {
+    expect(mediaCredit('Gears of War: E-Day', 'Xbox Game Studios')).toBe(
+      'Gears of War: E-Day © Xbox Game Studios. Used for identification and commentary.',
+    )
+  })
+
+  it('says "its publisher" rather than leaving a hole', () => {
+    expect(mediaCredit('Some Game', null)).toContain('© its publisher.')
   })
 })

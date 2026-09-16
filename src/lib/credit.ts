@@ -75,3 +75,19 @@ export const fanProjectNote = (
     .filter(Boolean)
     .join(' ')
 }
+
+/**
+ * The credit stored on an image record.
+ *
+ * Three seed passes built this string by hand as `${title} (c) ${publisher}.`,
+ * which is right until the publisher's legal name ends in a full stop of its
+ * own: "Onimusha: Way of the Sword (c) CAPCOM Co., Ltd.. Used for
+ * identification and commentary." Small, but it is printed under the art on
+ * every page that carries any, and a credit is the wrong place to look
+ * careless.
+ */
+export const mediaCredit = (title: string, publisher?: string | null): string => {
+  const holder = publisher?.trim() || 'its publisher'
+  const stopped = /[.!?]$/.test(holder) ? holder : `${holder}.`
+  return `${title} © ${stopped} Used for identification and commentary.`
+}

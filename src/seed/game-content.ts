@@ -1,4 +1,5 @@
 import 'dotenv/config'
+import { mediaCredit } from '../lib/credit'
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
@@ -322,7 +323,7 @@ async function run(): Promise<void> {
     const pickShot = screenshotPicker(
       game.slug,
       payload,
-      `${game.title} © ${game.publishers[0] ?? 'its publisher'}. Used for identification and commentary.`,
+      mediaCredit(game.title, game.publishers[0]),
     )
 
     let mechanics = 0
