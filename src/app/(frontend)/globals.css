@@ -335,7 +335,7 @@ p { margin: 0; }
   text-shadow: 0 2px 18px rgba(0, 0, 0, 0.6);
 }
 .hero-wordmark .glyph { color: var(--accent); display: flex; }
-.hero-lede { max-width: 62ch; font-size: 16.5px; line-height: 1.5; color: var(--ink-soft); }
+.hero-lede { max-width: 62ch; font-size: 16.5px; line-height: 1.55; color: var(--ink-soft); text-wrap: pretty; }
 .hero-credit {
   position: absolute; right: 14px; bottom: 10px; z-index: 1;
   font-family: var(--f-label); font-size: 10.5px; letter-spacing: 0.07em;
@@ -2255,12 +2255,35 @@ h1, h2, h3 { text-wrap: balance; }
 }
 .hub-wordmark .glyph { color: var(--accent); display: flex; }
 
+/*
+  The headline was capped at `max-width: 17ch`, which at fifty pixels of
+  display type forced it into three or four very short lines with a badly
+  ragged right edge — the "uneven" look. A measure that tight is for a pull
+  quote, not a heading.
+
+  Widened to something a headline can actually sit on, and `text-wrap:
+  balance` does the rest: it evens the lines out rather than filling each one
+  until it overflows, which is precisely the ragged-last-word problem. The
+  lede gets `pretty`, which is the cheaper version of the same idea and mainly
+  stops a one-word final line.
+*/
 .hub-title {
   font-family: var(--f-display);
   font-size: clamp(28px, 5vw, 50px);
-  line-height: 1.06; letter-spacing: -0.02em; margin: 0; max-width: 17ch;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin: 0;
+  max-width: 24ch;
+  text-wrap: balance;
 }
-.hub-lede { font-size: 16.5px; line-height: 1.5; color: var(--ink-soft); max-width: 56ch; }
+.hub-lede {
+  font-size: 16.5px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  max-width: 54ch;
+  text-wrap: pretty;
+  margin: 0;
+}
 
 .hub-stats { display: flex; flex-wrap: wrap; gap: 10px 36px; margin: 4px 0 0; }
 .hub-stats div { display: flex; flex-direction: column-reverse; gap: 1px; }

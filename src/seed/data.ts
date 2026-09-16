@@ -30,9 +30,20 @@ export const siteSettings = {
     feed the masthead on the apex domain where a line about one game's clock
     makes no sense. Each wiki's own hero comes from its game record instead.
   */
-  heroHeading: 'Wikis for games that reward playing carefully.',
+  /*
+    Written to greet somebody rather than to impress them. The previous pair -
+    "Wikis for games that reward playing carefully" over "The numbers sourced,
+    the gaps admitted, and nothing invented to fill them" - said what the site
+    believes before saying what it is, which reads as a manifesto to a reader
+    who arrived looking for a boss fight. Say what they can do here, then why
+    it is worth trusting, then point at the next click.
+
+    No counts in either line: "eight wikis" goes stale the day a ninth is
+    added, and the figures are on the page already, generated.
+  */
+  heroHeading: 'Guides and databases for the games you are playing.',
   heroSubheading:
-    'The numbers sourced, the gaps admitted, and nothing invented to fill them.',
+    'Every quest, item, boss and ending, with a source for each one and an honest gap where nobody has published a number yet. Search below, or pick a wiki.',
   /*
     The licence line is off unless somebody turns it on.
 

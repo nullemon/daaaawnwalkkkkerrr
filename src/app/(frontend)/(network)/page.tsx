@@ -133,11 +133,18 @@ export default async function HubHome() {
           </p>
 
           <h1 className="hub-title">
-            {settings.heroHeading || 'Wikis for games that reward playing carefully.'}
+            {settings.heroHeading || 'Guides and databases for the games you are playing.'}
           </h1>
+          {/*
+            `heroSubheading`, not `description`. The lede was reading the meta
+            description — a line written for a search result, shown to someone
+            who has already arrived — while the Hero subheading field sat in
+            the admin being edited to no effect at all.
+          */}
           <p className="hub-lede">
-            {settings.description ||
-              'The numbers sourced, the gaps admitted, and nothing invented to fill them.'}
+            {settings.heroSubheading ||
+              settings.description ||
+              'Every figure sourced, every gap admitted. Start with a search, or pick a wiki below.'}
           </p>
 
           <HubSearch targets={targets} />
