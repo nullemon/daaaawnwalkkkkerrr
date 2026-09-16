@@ -82,3 +82,28 @@ describe('keeping the things that are actually in the game', () => {
     ).toBe(false)
   })
 })
+
+describe('the hand-reviewed list', () => {
+  it('rejects a novel whose title gives nothing away', () => {
+    expect(isNotAnEntity(entity('Gears of War: Anvil Gate'), 'Gears of War: E-Day')).toBe(true)
+    expect(isNotAnEntity(entity("Gears of War: Jacinto's Remnant"), 'Gears of War: E-Day')).toBe(true)
+  })
+
+  it('rejects a soundtrack, a game mode and a genre', () => {
+    expect(isNotAnEntity(entity('Gears of War 3 Soundtrack'), 'Gears of War: E-Day')).toBe(true)
+    expect(isNotAnEntity(entity('Team Deathmatch'), 'Gears of War: E-Day')).toBe(true)
+    expect(isNotAnEntity(entity('Horror Adventure'), 'Silent Hill: Townfall')).toBe(true)
+  })
+
+  it('is case-insensitive and tolerant of stray spacing', () => {
+    expect(isNotAnEntity(entity('  books  '), 'Gears of War: E-Day')).toBe(true)
+  })
+
+  /* The places on the same wikis, which must survive all of it. */
+  it('keeps the real places it sits next to', () => {
+    for (const place of ['Autrin', 'Jannermont', 'Kaia', 'Kalona', 'Nordesca', 'Oria Stadium', 'Sera', 'South Islands', 'The Armored Prayer Bar']) {
+      expect(isNotAnEntity(entity(place), 'Gears of War: E-Day'), place).toBe(false)
+    }
+    expect(isNotAnEntity(entity('Silent Hill, Maine'), 'Silent Hill: Townfall')).toBe(false)
+  })
+})

@@ -355,8 +355,46 @@ async function run(): Promise<void> {
     const seen = new Set<string>()
     let failed = 0
     let rejected = 0
+    let duplicate = 0
 
+    /*
+      One thing, one page.
+
+      A franchise wiki carries both "Kyoto" and "Kyoto (Onimusha: Way of the
+      Sword)" - the series-wide article and the one about this game - and both
+      arrived, the second as `kyoto-2`, producing two pages with identical
+      titles competing with each other in search. The same shape appears
+      wherever a wiki disambiguates.
+
+      Keep the one whose own URL names the game, since that is the article
+      actually about the game this wiki covers, and drop the other. Where
+      neither is disambiguated the first wins, which is stable because the
+      harvest file is written in a fixed order.
+    */
+    const namesThisGame = (entity: Entity): boolean => {
+      const url = decodeURIComponent(entity.url ?? '').toLowerCase()
+      const words = game.title
+        .toLowerCase()
+        .replace(/[^a-z0-9 ]+/g, ' ')
+        .split(/\s+/)
+        .filter((word) => word.length > 3)
+      return words.length > 0 && words.every((word) => url.includes(word))
+    }
+
+    const preferred = new Map<string, Entity>()
     for (const entity of harvest.entities) {
+      const collection = REHOME[entity.collection] ?? entity.collection
+      const key = `${collection}:${slugify(entity.title)}`
+      const held = preferred.get(key)
+      if (!held) {
+        preferred.set(key, entity)
+        continue
+      }
+      duplicate += 1
+      if (!namesThisGame(held) && namesThisGame(entity)) preferred.set(key, entity)
+    }
+
+    for (const entity of preferred.values()) {
       entity.collection = REHOME[entity.collection] ?? entity.collection
 
       if (isNotAnEntity(entity, game.title)) {
@@ -442,7 +480,8 @@ async function run(): Promise<void> {
     console.log(
       `  ${joinList(Object.entries(counts).map(([key, value]) => `${value} ${key}`))}` +
         (failed > 0 ? ` — ${failed} skipped` : '') +
-        (rejected > 0 ? ` — ${rejected} not in-game things` : ''),
+        (rejected > 0 ? ` — ${rejected} not in-game things` : '') +
+        (duplicate > 0 ? ` — ${duplicate} duplicate titles` : ''),
     )
   }
 

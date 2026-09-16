@@ -26,3 +26,27 @@ export const HUB_ORIGIN = (process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost
  * cannot work.
  */
 export const hub = (path: string): string => `${HUB_ORIGIN}${path.startsWith('/') ? path : `/${path}`}`
+
+/**
+ * An absolute URL on the companies host.
+ *
+ * `companies.<network domain>` carries the studio and publisher profiles. It
+ * is a sibling of the wikis rather than a section of the hub, so a link to it
+ * from anywhere - a wiki, the hub, another company - crosses an origin and
+ * wants a plain `<a>` for the same reason `hub()` does.
+ *
+ * Built from the network domain rather than hardcoded, so a deployment that
+ * changes domain does not leave every studio link pointing at the old one.
+ */
+export const COMPANIES_ORIGIN = (() => {
+  try {
+    const url = new URL(HUB_ORIGIN)
+    url.host = `companies.${url.host}`
+    return url.origin
+  } catch {
+    return HUB_ORIGIN
+  }
+})()
+
+export const companyUrl = (path = '/'): string =>
+  `${COMPANIES_ORIGIN}${path.startsWith('/') ? path : `/${path}`}`

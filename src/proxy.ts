@@ -54,6 +54,21 @@ const PASS_THROUGH = new Set([
  * is enforced rather than hoped for — see RESERVED_SLUGS in
  * `collections/Games.ts`, which imports this very set.
  */
+/**
+ * Hosts of the network that are not wikis.
+ *
+ * `companies.<root>` serves the studio and publisher profiles. It needs no
+ * special routing - the rewrite below maps any subdomain label onto the
+ * matching first path segment, so this one lands on `/companies/...` exactly
+ * as a game lands on `/<game>/...`, and the apex redirect sends
+ * `example.com/companies/x` to `companies.example.com/x` for free.
+ *
+ * What it does need is reserving: `Games.ts` validates a new game's slug
+ * against this as well as against APEX_ONLY, so no wiki can ever be created
+ * that would shadow it.
+ */
+export const NETWORK_SUBDOMAINS = new Set(['companies'])
+
 export const APEX_ONLY = new Set([
   ...PASS_THROUGH,
   'about',

@@ -5,6 +5,7 @@ import type { FooterColumn } from '@/components/SiteFooter'
 import { getPublishedGames, getSiteSettings, gameUrl } from '@/lib/payload'
 import { Analytics } from '@/components/Analytics'
 import { resolveTags, verificationMetadata } from '@/lib/tags'
+import { companyUrl } from '@/lib/urls'
 
 /**
  * The hub's identity and its own verification tokens.
@@ -103,6 +104,7 @@ export default async function NetworkLayout({ children }: { children: React.Reac
       heading: 'The network',
       links: [
         { label: 'All wikis', href: '/wikis' },
+        { label: 'Studios and publishers', href: companyUrl('/') },
         { label: 'Contributors', href: '/authors' },
         { label: 'Your account', href: '/account' },
       ],

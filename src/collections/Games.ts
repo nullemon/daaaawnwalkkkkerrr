@@ -1,6 +1,6 @@
 import type { CollectionConfig } from 'payload'
 import { slugField, publicRead, seoGroup } from '../fields/shared'
-import { APEX_ONLY } from '../proxy'
+import { APEX_ONLY, NETWORK_SUBDOMAINS } from '../proxy'
 import { analyticsFields, verificationFields } from '../fields/analytics'
 
 /**
@@ -42,6 +42,9 @@ export const Games: CollectionConfig = {
       */
       validate: (value) => {
         if (typeof value !== 'string' || !value) return 'A slug is required.'
+        if (NETWORK_SUBDOMAINS.has(value)) {
+          return `"${value}" is one of the network's own hosts. Choose another slug.`
+        }
         if (APEX_ONLY.has(value)) {
           return `"${value}" is a reserved path on the network's own domain. Choose another slug.`
         }

@@ -33,6 +33,83 @@
 const WORK_DISAMBIGUATOR =
   /\((film|movie|tv[ _]series|series|franchise|pachislot|pachinko|mobile[ _]game|arcade[ _]game|video[ _]game|novel|book|comic|manga|soundtrack|album|song|board[ _]game|card[ _]game|anime|toy|magazine|upcoming[ _]video[ _]game|\d{4}[ _]video[ _]game)\)/i
 
+/**
+ * Pages read and judged by hand, because no pattern separates them safely.
+ *
+ * "Gears of War: Anvil Gate" is a novel and "Autrin" is a place, and nothing
+ * in either title or URL says which. The franchise wiki files both under the
+ * same category, so the harvester took both.
+ *
+ * A pattern was tried twice and was wrong both times: one flagged
+ * `b1-series-battle-droid` - a real enemy - for containing "series", and one
+ * deleted Antar 4, a real moon, for ending in a digit. Fifty-odd titles are
+ * few enough to read, and a list somebody reviewed is worth more here than a
+ * rule nobody can predict.
+ *
+ * Kept as titles rather than slugs so the importer can reject them before a
+ * record exists, and the prune can find the ones already written.
+ */
+export const REVIEWED_NOT_ENTITIES = new Set(
+  [
+  'Beneath the Surface: An Inside Look at Gears of War 2',
+  'Books',
+  'Comic Series',
+  'Stand-Alone Comic Issues',
+  'The Art of Gears of War',
+  'Gears 5 Soundtrack',
+  'Gears of War Soundtrack',
+  'Gears of War 2 Soundtrack',
+  'Gears of War 3 Soundtrack',
+  'Gears of War 4 Soundtrack',
+  'Gears of War: Judgment Soundtrack',
+  'Gears of War: A Pendulum Wars Story',
+  'Gears of War: Anvil Gate',
+  'Gears of War: Ascendance',
+  'Gears of War: Aspho Fields',
+  'Gears of War: Barren',
+  'Gears of War: Bloodlines',
+  'Gears of War: Book One',
+  'Gears of War: Book Two',
+  'Gears of War: Book Three',
+  "Gears of War: Coalition's End",
+  'Gears of War: Destroyed Beauty',
+  'Gears of War: Dirty Little Secrets',
+  'Gears of War: Ephyra Rising',
+  'Gears of War: Exile',
+  'Gears of War: Hivebusters',
+  'Gears of War: Hollow',
+  "Gears of War: Jacinto's Remnant",
+  'Gears of War: Judgment',
+  'Gears of War: Reloaded',
+  'Gears of War: Tactics',
+  'Gears of War: The Rise of RAAM',
+  'Gears of War: The Slab',
+  'Mad World',
+  'Team Deathmatch',
+  'Horror Adventure',
+  'Play Novel: Silent Hill',
+  'Return to Silent Hill',
+  'Silent Hill 4: The Room',
+  'Silent Hill HD Collection',
+  'Silent Hill f',
+  'Silent Hill: Ascension',
+  'Silent Hill: Book of Memories',
+  'Silent Hill: Downpour',
+  'Silent Hill: Escape',
+  'Silent Hill: Homecoming',
+  'Silent Hill: Origins',
+  'Silent Hill: Orphan',
+  'Silent Hill: Return',
+  'Silent Hill: Shattered Memories',
+  'Silent Hill: The Arcade',
+  'Silent Hill: The Escape',
+  'Silent Hill: The Short Message',
+  'Timeline',
+  'Timeline of Events',
+  'Phantom Blade Wiki',
+  ].map((title) => title.toLowerCase()),
+)
+
 export type HarvestedEntity = {
   title: string
   url?: string | null
@@ -90,6 +167,7 @@ export const isNotAnEntity = (entity: HarvestedEntity, game = ''): boolean => {
   } catch {
     // A malformed escape is not a reason to let the record through unchecked.
   }
+  if (REVIEWED_NOT_ENTITIES.has(entity.title.trim().toLowerCase())) return true
   if (WORK_DISAMBIGUATOR.test(url)) return true
   if (WORK_DISAMBIGUATOR.test(entity.wikiTitle ?? '')) return true
   return isNumberedSequel(entity.title, game)

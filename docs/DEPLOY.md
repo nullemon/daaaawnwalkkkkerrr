@@ -62,10 +62,10 @@ sitemaps point at the wrong host.
 
 ```bash
 pnpm install
-pnpm db:reset     # seventeen passes: seed, ingest, four guide generators, images
-pnpm verify       # 1,451 records, 0 with no game
+pnpm db:reset     # eighteen passes: seed, ingest, companies, four guide generators, images
+pnpm verify       # 1,378 records, 0 with no game
 pnpm check:launch # what still wants a decision. Nothing here blocks a launch
-pnpm build        # ~1,700 pages
+pnpm build        # ~1,640 pages
 ```
 
 `pnpm db:reset` is the whole content pipeline in one command, and the order in

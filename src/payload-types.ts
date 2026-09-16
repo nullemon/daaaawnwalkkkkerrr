@@ -84,6 +84,7 @@ export interface Config {
     guides: Guide;
     maps: Map;
     authors: Author;
+    companies: Company;
     games: Game;
     comments: Comment;
     corrections: Correction;
@@ -114,6 +115,7 @@ export interface Config {
     guides: GuidesSelect<false> | GuidesSelect<true>;
     maps: MapsSelect<false> | MapsSelect<true>;
     authors: AuthorsSelect<false> | AuthorsSelect<true>;
+    companies: CompaniesSelect<false> | CompaniesSelect<true>;
     games: GamesSelect<false> | GamesSelect<true>;
     comments: CommentsSelect<false> | CommentsSelect<true>;
     corrections: CorrectionsSelect<false> | CorrectionsSelect<true>;
@@ -1899,6 +1901,103 @@ export interface Map {
   createdAt: string;
 }
 /**
+ * Developers and publishers, shared across every wiki. One page per company, listing everything of theirs the network covers.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "companies".
+ */
+export interface Company {
+  id: number;
+  /**
+   * The company’s name as it writes it.
+   */
+  name: string;
+  /**
+   * URL segment. Auto-filled from the title. Changing it breaks existing links.
+   */
+  slug: string;
+  /**
+   * Both is normal — Capcom develops and publishes its own games. Drives how the company is described and which lists it appears in.
+   */
+  role: ('developer' | 'publisher')[];
+  /**
+   * Year, as a source states it. Leave empty rather than guessing.
+   */
+  founded?: string | null;
+  /**
+   * Where the company is based, e.g. "Japan".
+   */
+  country?: string | null;
+  /**
+   * The company’s own site. Linked with rel="nofollow" like every outbound link here.
+   */
+  website?: string | null;
+  /**
+   * Optional. A logo is a trademark used for identification; credit it like any other art.
+   */
+  logo?: (number | null) | Media;
+  /**
+   * Games of theirs that this network covers. Derived from each game’s developer and publisher fields.
+   */
+  games?: (number | Game)[] | null;
+  /**
+   * Shown to readers as a badge. Be honest — it is the whole point of this site.
+   */
+  confidence: 'high' | 'medium' | 'low';
+  /**
+   * One or two sentences. Used on cards, in search results and as the page lede.
+   */
+  summary: string;
+  /**
+   * The main article. Original prose only — never paste from another site.
+   */
+  body?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  /**
+   * Cite every figure. Two independent sources before marking confidence high.
+   */
+  sources?:
+    | {
+        title: string;
+        url: string;
+        retrieved?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Leave blank to derive from the title and summary.
+   */
+  seo?: {
+    /**
+     * Under ~60 characters. Overrides the <title> tag.
+     */
+    title?: string | null;
+    /**
+     * Under ~155 characters. Overrides the meta description.
+     */
+    description?: string | null;
+    /**
+     * Hide this page from search engines.
+     */
+    noindex?: boolean | null;
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * Nothing here is public until you approve it. Sorted worst-first by spam score — work the top of the list.
  *
  * This interface was referenced by `Config`'s JSON-Schema
@@ -2202,6 +2301,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'authors';
         value: number | Author;
+      } | null)
+    | ({
+        relationTo: 'companies';
+        value: number | Company;
       } | null)
     | ({
         relationTo: 'games';
@@ -2889,6 +2992,40 @@ export interface AuthorsSelect<T extends boolean = true> {
         label?: T;
         url?: T;
         id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "companies_select".
+ */
+export interface CompaniesSelect<T extends boolean = true> {
+  name?: T;
+  slug?: T;
+  role?: T;
+  founded?: T;
+  country?: T;
+  website?: T;
+  logo?: T;
+  games?: T;
+  confidence?: T;
+  summary?: T;
+  body?: T;
+  sources?:
+    | T
+    | {
+        title?: T;
+        url?: T;
+        retrieved?: T;
+        id?: T;
+      };
+  seo?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        noindex?: T;
       };
   updatedAt?: T;
   createdAt?: T;

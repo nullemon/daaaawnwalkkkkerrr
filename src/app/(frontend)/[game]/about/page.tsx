@@ -5,6 +5,8 @@ import { FactPanel } from '@/components/FactPanel'
 import { RelatedList, type RelatedItem } from '@/components/RelatedList'
 import { getAll, getGame, getSiteSettings } from '@/lib/payload'
 import { gameName } from '@/lib/section-copy'
+import { companyUrl } from '@/lib/urls'
+import { slugify } from '@/fields/shared'
 import type { Guide } from '@/payload-types'
 import { hub } from '@/lib/urls'
 
@@ -115,8 +117,20 @@ export default async function AboutPage({ params }: Props) {
                 The {name} Wiki is published by {settings.legalEntity ?? 'CWMI Group'}, a digital
                 agency operating since 2013 with offices in the Philippines, India and the United
                 States. The site is an independent fan project: it is not affiliated with{' '}
-                {rightsholders.length > 0 ? rightsholders.join(' or ') : 'the rightsholders'}, and
-                no endorsement is claimed or implied.
+                {rightsholders.length > 0
+                  ? rightsholders.map((holder, index) => (
+                      <span key={holder}>
+                        {index > 0 ? ' or ' : ''}
+                        {/*
+                          Across an origin to the companies host, so a plain
+                          anchor rather than next/link. Each of these has a
+                          profile listing everything of theirs we cover.
+                        */}
+                        <a href={companyUrl(`/${slugify(holder)}`)}>{holder}</a>
+                      </span>
+                    ))
+                  : 'the rightsholders'}
+                , and no endorsement is claimed or implied.
               </p>
               <p>
                 Editorial decisions are made by the contributors listed here, not by the publisher,

@@ -4,8 +4,8 @@ A network of game wikis sharing one admin, one account system and one set of
 editorial rules. Next.js 16 + Payload CMS 3 on libSQL. Every public page
 prerenders to static HTML; `/admin` is a full CMS.
 
-Eight wikis today, 1,702 prerendered pages. *The Blood of Dawnwalker* is the
-first and still the largest — 440 of the 1,451 records — and its 480-segment
+Eight wikis today, 1,639 prerendered pages. *The Blood of Dawnwalker* is the
+first and still the largest — 440 of the 1,378 records — and its 480-segment
 run planner is the model for what each wiki is meant to have: one tool nobody
 else has.
 
@@ -33,8 +33,8 @@ prefix; `src/proxy.ts` maps host to the internal `/[game]/…` route. See
 ```bash
 pnpm install      # NOT npm — see gotchas
 pnpm dev          # http://dawnwalker.localhost:3000 — see 'Local dev' below
-pnpm build        # prerenders ~1,700 pages across eight wikis
-pnpm test         # unit tests (106)
+pnpm build        # prerenders ~1,640 pages across eight wikis
+pnpm test         # unit tests (175)
 pnpm seed         # hand-written seed content, idempotent on slug
 pnpm ingest       # ingest researched JSON from src/seed/raw/
 pnpm db:reset     # delete the database and rebuild it from seed + raw
@@ -49,6 +49,9 @@ pnpm fetch:entities  # just the community wikis
 pnpm seed:games   # store-page facts -> mechanics pages and achievements
 pnpm seed:entities   # harvested entities -> characters, items, enemies…
 pnpm seed:prune-entities  # drop harvested records that are not things in the game
+pnpm seed:companies  # studio and publisher profiles for companies.<domain>
+pnpm seed:prune-media    # delete orphaned images and stray files (--apply)
+pnpm check:kind      # is each record the kind of thing it is filed as?
 pnpm seed:art     # attach game key art and achievement icons
 pnpm make:avatars # redraw contributor monograms
 pnpm seed:avatars # attach them
@@ -285,6 +288,19 @@ that inherits the default would let any reader who signs up edit content.
   is still a filter, and an over-broad one throws away the good ones just as
   silently. The tests pin both directions.
 
+- **Counting rows is not checking kind, either.** `pnpm verify` asks whether a
+  record belongs to a game and the build asks whether a page renders. Both were
+  green while the Gears of War *film*, thirty-odd Gears novels, five Silent
+  Hill soundtracks and thirteen studios sat in `regions`, each with a real
+  source URL and a composed summary reading "<name>, a location in <game>". Of
+  Gears' forty-five regions only nine were places; Silent Hill had one.
+  `pnpm check:kind` is the check, and it reports in two tiers on purpose:
+  mechanical findings fail the run, and anything matched on a guess is printed
+  for somebody to read. Two guesses have already been wrong - one flagged a
+  real enemy for containing "series", one deleted a real moon for ending in a
+  digit - so the fifty-six titles it could not decide are a reviewed list in
+  `src/lib/harvest.ts` rather than a cleverer regex.
+
 - **Grid and flex children default to `min-width: auto`**, so a wide table
   inside an `overflow-x` container drags the page sideways on a phone. The
   shrink-fix is at the end of `globals.css`; keep it.
@@ -387,6 +403,37 @@ rendered as React children, never `dangerouslySetInnerHTML` - an
 admin-editable string that reaches the DOM as markup is a stored-XSS hole
 waiting for the first editor account that should not have had one.
 
+## The companies host
+
+`companies.<network domain>` carries one page per studio and publisher. It
+needs no routing of its own: `proxy.ts` maps a subdomain label onto the
+matching first path segment, so this host lands on `/companies/...` exactly as
+`dawnwalker.<domain>` lands on `/dawnwalker/...`, and the apex redirect sends
+`<domain>/companies/x` to `companies.<domain>/x` for free. What it does need is
+reserving - `NETWORK_SUBDOMAINS` in `proxy.ts`, which `Games.ts` validates new
+slugs against so no wiki can ever shadow it.
+
+`companies` is **not** game-scoped, and that is the point: Capcom appears on
+one wiki today and would appear on three tomorrow, and a studio's page is
+worth more as one record with its whole body of work than as three copies that
+disagree the first time one is corrected. Same reasoning as `authors`.
+
+`pnpm seed:companies` builds it from two sources and keeps them apart:
+
+- **Each game's own `developer` and `publisher`.** Facts the store page states,
+  so the profile can say which games are theirs and in what role. The game
+  record stays the source of truth; the `games` relationship is the reverse
+  index.
+- **Studios the harvester filed as Regions.** Thirteen of them were live -
+  Bloober Team and Konami as *places* in Silent Hill: Townfall. The research
+  was real and sourced, so the migration moves them here rather than deleting
+  them.
+
+The second kind gets low confidence and a summary saying only where the name
+was found. **Appearing on the Silent Hill wiki does not make a studio the
+developer of the game this network covers**, and writing that it does would be
+the invented fact the whole project exists to avoid.
+
 ## Legal & contact
 
 The operator details are real and published as real: CWMI Group (trading as
@@ -411,8 +458,13 @@ argument.
   needs the game or a source nobody has published yet.
 - Common/rare gear, 12 of 28 bestiary entries, most recipe names.
 - Xanthe's 15th Court Activity — never named in any source found.
-- **Images.** Records have image slots and fall back to the icon set. Dawnwalker
-  sits at 61 of 80 items and 5 of 16 enemies. See `docs/ASSETS.md`.
+- **Images.** Records have image slots and fall back to the icon set. There is
+  no art at all for perks, endings, builds, courts, court activities or skill
+  trees, and `assets/` has no folder for any of them - `pnpm assets` attaches
+  everything that exists and finds nothing new. This is a missing-files gap and
+  cannot be closed by attaching something generic: a picture above the words
+  "Walking Fortress" reads as a claim that it shows Walking Fortress, which is
+  the rule `PageHeader` and `docs/ASSETS.md` already state for record pages.
 - **Perk time costs** — 0 of 40. `timeCostSegments` deliberately has no default,
   so these read as unknown rather than free.
 - **Owner-supplied settings** that `pnpm check:launch` reports and no source can
