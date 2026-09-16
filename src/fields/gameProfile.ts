@@ -134,6 +134,24 @@ export const gameProfileGroup = (): Field => ({
       ],
     },
     {
+      type: 'row',
+      fields: [
+        { name: 'designer', type: 'text', admin: { width: '50%' } },
+        { name: 'artist', type: 'text', admin: { width: '50%' } },
+      ],
+    },
+    {
+      type: 'row',
+      fields: [
+        { name: 'writer', type: 'text', admin: { width: '50%' } },
+        {
+          name: 'genre',
+          type: 'text',
+          admin: { width: '50%', description: 'As the infobox states it, e.g. "Action role-playing".' },
+        },
+      ],
+    },
+    {
       /*
         Where the store and the encyclopedia disagree about the release date.
 

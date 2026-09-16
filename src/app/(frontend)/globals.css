@@ -1112,42 +1112,60 @@ th.num { text-align: right; }
 }
 .neighbours-list a:hover { border-color: var(--accent); text-decoration: none; }
 
-/* ---------- the game factsheet on a wiki home ---------- */
+/* ---------- the game factsheet on a wiki home ----------
+   A portrait card, the shape every wiki a reader has ever used puts this
+   information in: top of the right-hand column on a desktop, straight under
+   the search on a phone. It was a full-width band across the main column,
+   below the guides, with a landscape screenshot in it - which is neither
+   where a reader looks for it nor what it should be showing. */
 
-.gameprofile { margin-top: 30px; }
-.gameprofile-body { display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; }
-.gameprofile-art {
-  margin: 0; flex: 0 0 auto; width: min(230px, 100%);
+.gameprofile {
   border: 1px solid var(--rule); border-radius: var(--r);
-  overflow: hidden; background: var(--sunken);
+  background: var(--surface); overflow: hidden;
+  min-width: 0;
 }
+.gameprofile-title {
+  margin: 0; padding: 11px 14px;
+  font-size: 15px; line-height: 1.3; letter-spacing: 0.01em;
+  /* Balanced, because a two-line game title breaking after one word is the
+     first thing you see in this box. */
+  text-wrap: balance;
+  border-bottom: 1px solid var(--rule);
+  background: var(--sunken);
+}
+.gameprofile-art { margin: 0; border-bottom: 1px solid var(--rule); background: var(--sunken); }
 .gameprofile-art img { width: 100%; height: auto; display: block; }
+/* Cover art is shown whole - a box shot cropped to fit is a box shot with its
+   title cut off. A hero image is a fallback and a wide one, so it is cropped
+   to a band rather than allowed to be three lines tall. */
+.gameprofile-art[data-portrait='false'] img {
+  aspect-ratio: 16 / 9; object-fit: cover;
+}
 .gameprofile-art figcaption {
-  padding: 5px 9px; font-family: var(--f-label); font-size: 10.5px;
+  padding: 6px 12px; font-family: var(--f-label); font-size: 10.5px; line-height: 1.45;
   color: var(--muted); border-top: 1px solid var(--rule); background: var(--surface);
 }
 
-/* Two columns where there is room, one where there is not. The rows are pairs,
-   so they must not be allowed to split across a column boundary. */
-.gameprofile-facts {
-  flex: 1 1 340px; margin: 0; min-width: 0;
-  display: grid; gap: 0;
-  grid-template-columns: 1fr;
-  border: 1px solid var(--rule); border-radius: var(--r);
-  background: var(--surface); overflow: hidden;
-}
-@media (min-width: 720px) { .gameprofile-facts { grid-template-columns: 1fr 1fr; } }
+/* One column, always. This box is 318px wide on a desktop and full width on a
+   phone, and two columns of three words is not a table. */
+.gameprofile-facts { margin: 0; display: grid; grid-template-columns: 1fr; gap: 0; }
 .gameprofile-facts > div {
-  display: flex; justify-content: space-between; align-items: baseline; gap: 14px;
-  padding: 9px 13px; border-bottom: 1px solid var(--rule); min-width: 0;
+  display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
+  padding: 8px 14px; border-bottom: 1px solid var(--rule); min-width: 0;
 }
+.gameprofile-facts > div:last-child { border-bottom: 0; }
 .gameprofile-facts dt {
-  font-family: var(--f-label); font-size: 11px; letter-spacing: 0.05em;
+  font-family: var(--f-label); font-size: 10.5px; letter-spacing: 0.05em;
   text-transform: uppercase; color: var(--muted); flex: none;
 }
 .gameprofile-facts dd {
-  margin: 0; font-size: 13.5px; font-weight: 500; text-align: right;
+  margin: 0; font-size: 13px; font-weight: 500; text-align: right;
   min-width: 0; overflow-wrap: anywhere;
+}
+.gameprofile-note {
+  margin: 0; padding: 10px 14px;
+  border-top: 1px solid var(--rule);
+  font-size: 12px; line-height: 1.5; color: var(--muted);
 }
 
 /* ---------- company profiles ----------
@@ -1393,13 +1411,33 @@ th.num { text-align: right; }
   reading order anyway: a reader on a phone wants the guides before the
   reference box.
 */
-.wikihome { display: grid; grid-template-columns: 1fr; gap: 28px; align-items: start; }
-.wikihome-main { min-width: 0; }
+.wikihome {
+  display: grid; grid-template-columns: 1fr; gap: 28px; align-items: start;
+  /* The masthead ends in a rule and the first section head starts with one.
+     With no padding here the two sat against each other and "Start here" read
+     as part of the masthead's border rather than as a new section. */
+  padding-block: 30px 0;
+}
+/* `.wikihome-main` is not `.body-main` and had no gap of its own, so every
+   section inside it stacked flush against the one above. Same 30px as
+   `.body-main` uses everywhere else on the site. */
+.wikihome-main { min-width: 0; display: flex; flex-direction: column; gap: 30px; }
 .wikihome-rail { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
 
+/* The factsheet comes first on a phone - directly under the search, before the
+   guides - and sits at the top of the rail on a desktop. `order` rather than a
+   second copy of the markup, so there is one of it in the DOM and screen
+   readers meet it once. */
+.wikihome > .gameprofile { order: -1; }
+
 @media (min-width: 1000px) {
-  .wikihome { grid-template-columns: minmax(0, 1fr) 318px; gap: 34px; }
-  .wikihome-rail { position: sticky; top: 18px; }
+  .wikihome {
+    grid-template-columns: minmax(0, 1fr) 318px; gap: 34px;
+    grid-template-areas: 'main profile' 'main rail';
+  }
+  .wikihome > .gameprofile { order: 0; grid-area: profile; }
+  .wikihome-main { grid-area: main; }
+  .wikihome-rail { grid-area: rail; position: sticky; top: 18px; }
 }
 
 .railbox {

@@ -155,6 +155,10 @@ async function run(): Promise<void> {
       series: wiki.series || undefined,
       director: wiki.director || undefined,
       composer: wiki.composer || undefined,
+      designer: wiki.designer || undefined,
+      artist: wiki.artist || undefined,
+      writer: wiki.writer || undefined,
+      genre: wiki.genre || undefined,
       metacritic: typeof metacritic === 'number' ? metacritic : undefined,
     }
 

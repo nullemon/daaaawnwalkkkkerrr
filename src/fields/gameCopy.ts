@@ -320,6 +320,15 @@ export const gameCopyTabs = (): Field => ({
                   ],
                 },
                 { name: 'recentHeading', type: 'text', label: 'Recently updated (rail)' },
+                {
+                  name: 'statsHeading',
+                  type: 'text',
+                  label: 'Record counts (rail)',
+                  admin: {
+                    description:
+                      'The box counting what this wiki holds. Not the factsheet — that one is the game’s own details and takes its heading from the Interface text registry.',
+                  },
+                },
               ],
             },
             {

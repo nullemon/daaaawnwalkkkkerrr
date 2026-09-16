@@ -143,10 +143,19 @@ export default async function Home({ params }: Props) {
 
   const latestGuides = guides.filter((guide) => !taken.has(guide.slug)).slice(0, 6)
 
+  /*
+    What the wiki holds, and only that.
+
+    Developer, publisher and the release date used to be here too. They are the
+    game's own details, they are now in the factsheet directly above this box,
+    and printing them twice on one screen makes the second copy read as a
+    different figure somebody forgot to update.
+  */
   const facts: { label: string; value: string }[] = [
-    ...(game.developer ? [{ label: 'Developer', value: game.developer }] : []),
-    ...(game.publisher ? [{ label: 'Publisher', value: game.publisher }] : []),
-    ...(release ? [{ label: 'Release', value: release }] : []),
+    { label: 'Records', value: total.toLocaleString('en-GB') },
+    ...(guides.length
+      ? [{ label: 'Guides', value: guides.length.toLocaleString('en-GB') }]
+      : []),
     ...(achievements.length
       ? [{ label: 'Achievements', value: achievements.length.toLocaleString('en-GB') }]
       : []),
@@ -220,6 +229,15 @@ export default async function Home({ params }: Props) {
       </header>
 
       <div className="page wikihome">
+        {/*
+          A direct child of the grid rather than a block inside the main
+          column, so CSS can put it where a reader looks for it: under the
+          search on a phone, top of the right-hand column on a desktop. It was
+          a full-width band two thirds of the way down the page, which is
+          nowhere.
+        */}
+        <GameProfile game={game} />
+
         <div className="wikihome-main">
           {/*
             A wiki with nothing in it should say so before a reader works it out
@@ -381,13 +399,6 @@ export default async function Home({ params }: Props) {
           ) : null}
 
           {/*
-            The factsheet, before the game's own systems. A reader arriving on
-            a wiki wants to know what the game is, what it costs and how you
-            play it before they want a briefing on its clock.
-          */}
-          <GameProfile game={game} />
-
-          {/*
             Unconditional, because the switch is on the record now: `Briefing`
             renders nothing at all unless this wiki has one turned on. Gating it
             here on "has courts and endings" was how one game's opinions got
@@ -399,7 +410,12 @@ export default async function Home({ params }: Props) {
         {/* ---- The rail: what a reader keeps glancing back at ---- */}
         <aside className="wikihome-rail">
           <section className="railbox">
-            <h2>At a glance</h2>
+            {/*
+              Renamed, because the factsheet above it is now the "at a glance"
+              box and two of those on one page is one too many. This one counts
+              what the wiki holds, which is a different question.
+            */}
+            <h2>{copy(words.statsHeading, 'What is in this wiki', tokens)}</h2>
             <dl className="factlist">
               {facts.map((fact) => (
                 <div key={fact.label}>

@@ -212,7 +212,11 @@ export const UI_DEFAULTS: Record<string, string> = {
   'profile.platforms': 'Platforms',
   'profile.engine': 'Engine',
   'profile.series': 'Series',
+  'profile.genre': 'Genre',
   'profile.director': 'Director',
+  'profile.designer': 'Designer',
+  'profile.artist': 'Artist',
+  'profile.writer': 'Writer',
   'profile.composer': 'Composer',
   'profile.metacritic': 'Metacritic',
   'profile.budget': 'Budget',
@@ -323,13 +327,13 @@ export const UI_DEFAULTS: Record<string, string> = {
     'as done, and it permanently locks this route out. No amount of time left changes that — it is a different playthrough, not a longer one.',
   'unlock.done-count': '{done} of {total} done',
   /*
-    "1 quest stand between" is the wording that shipped. This is now the place
-    to fix it, but fixing it here would change a page on the pass whose whole
-    claim is that it changes none — so it is left reading as it reads today and
-    is an edit somebody can make in the admin.
+    "1 quest stand between" is the wording that shipped, and the sentence went
+    on to say "They have to happen in this order" about a single quest. The
+    pass that lifted these into the registry deliberately changed no wording,
+    so it was left alone then and corrected here, on its own.
   */
   'unlock.stand-between-one':
-    '{count} quest stand between the start of a run and this one. They have to happen in this order.',
+    '{count} quest stands between the start of a run and this one.',
   'unlock.stand-between-many':
     '{count} quests stand between the start of a run and this one. They have to happen in this order.',
   'unlock.done-in-run': 'Done in your run.',

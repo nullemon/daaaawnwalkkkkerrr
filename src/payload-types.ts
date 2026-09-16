@@ -742,6 +742,13 @@ export interface Game {
     series?: string | null;
     director?: string | null;
     composer?: string | null;
+    designer?: string | null;
+    artist?: string | null;
+    writer?: string | null;
+    /**
+     * As the infobox states it, e.g. "Action role-playing".
+     */
+    genre?: string | null;
     /**
      * Filled automatically when the store listing and Wikipedia give different dates. Shown under the release row.
      */
@@ -896,6 +903,10 @@ export interface Game {
     latestHeading?: string | null;
     popularHeading?: string | null;
     recentHeading?: string | null;
+    /**
+     * The box counting what this wiki holds. Not the factsheet — that one is the game’s own details and takes its heading from the Interface text registry.
+     */
+    statsHeading?: string | null;
     trustHeading?: string | null;
     trustBody?: string | null;
   };
@@ -3507,6 +3518,10 @@ export interface GamesSelect<T extends boolean = true> {
         series?: T;
         director?: T;
         composer?: T;
+        designer?: T;
+        artist?: T;
+        writer?: T;
+        genre?: T;
         releaseNote?: T;
         metacritic?: T;
         budget?: T;
@@ -3563,6 +3578,7 @@ export interface GamesSelect<T extends boolean = true> {
         latestHeading?: T;
         popularHeading?: T;
         recentHeading?: T;
+        statsHeading?: T;
         trustHeading?: T;
         trustBody?: T;
       };

@@ -82,6 +82,7 @@ const HOME: Row = {
   latestHeading: 'Guides',
   popularHeading: 'Hardest achievements',
   recentHeading: 'Recently updated',
+  statsHeading: 'What is in this wiki',
   trustHeading: 'How this wiki is written',
   trustBody:
     'Every figure here comes from a source and carries a confidence rating. Where nobody has published something, the page says so rather than guessing — a blank is honest, and a plausible-looking number that turns out to be invented costs you a playthrough.',
