@@ -412,6 +412,15 @@ footer disclaimer. Both are unit-tested against the specific regression.
 > than a day of content, phases 1–3 were wrong.
 
 Adding a wiki is now: create a row in the admin, write content. No deploy, no
-DNS change, no code. Six were added that way during the build. Whether the
+DNS change, no code. Six were added that way during the build.
+
+That claim was **false on a deployed site** until it was tested, and the test
+only happened because somebody asked how to add pages once it was live. The
+`[game]` segment carried `dynamicParams = false`, so the only game slugs that
+rendered were the ones known at build time: a ninth wiki created in the admin
+answered 404 on every request until a rebuild. Records were fine the whole
+time - a new quest appeared on request - because that flag governs the game
+segment and nothing below it. It is `true` now, and an unknown slug is still a
+404, decided by the database rather than by a list frozen at build time. Whether the
 *content model* survives a game unlike Dawnwalker is still untested, and that
 is the honest open question — see "Not done, deliberately" above.

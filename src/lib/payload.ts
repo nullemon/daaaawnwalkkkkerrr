@@ -1,4 +1,5 @@
 import { cache } from 'react'
+import { notFound } from 'next/navigation'
 import { getPayload } from 'payload'
 import type { CollectionSlug, Where } from 'payload'
 import config from '@payload-config'
@@ -95,12 +96,23 @@ export const assertScoped = (collection: string, game: string | undefined): void
 const scopeFor = async (game: string): Promise<Where> => {
   const doc = await getGame(game)
   if (!doc) {
-    // Better a loud failure at build time than a page that silently renders
-    // every game's records because the filter evaluated to "no constraint".
-    throw new Error(
-      `No game with slug "${game}". A scoped query cannot fall back to unfiltered — ` +
-        `check the route param against the games collection.`,
-    )
+    /*
+      A slug with no game is a 404, not a crash.
+
+      This threw, which was right while `[game]` had `dynamicParams = false`
+      and an unknown slug could only mean a bug in a build-time param list.
+      Now that a wiki created in the admin renders without a rebuild, an
+      unknown slug is an ordinary request for something that does not exist —
+      and it arrives here first, because the page component and the layout
+      render in parallel, so this throws before the layout's own `notFound()`
+      is reached. The result was a 500 where a 404 belongs.
+
+      `notFound()` and not a silent empty filter: the original reasoning still
+      holds exactly, and is the reason this function exists. A scoped query
+      must never fall back to unfiltered, because that serves one game's
+      records on another game's page with nothing in any log.
+    */
+    notFound()
   }
   return { game: { equals: doc.id } }
 }

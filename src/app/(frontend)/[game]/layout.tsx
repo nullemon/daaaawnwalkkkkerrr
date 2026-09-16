@@ -35,13 +35,26 @@ export async function generateStaticParams() {
 }
 
 /**
- * A slug that is not a published game is a 404, not a fallback.
+ * A wiki added after the build still works.
  *
- * Without this, an unknown slug would render at request time and the scoped
- * query would throw deep inside a page. Worse, it would let `/about` be
- * interpreted as a game if the static route above it ever moved.
+ * This was `false`, so only the game slugs known at build time rendered and
+ * anything else was a permanent 404. That quietly made a documented promise
+ * untrue: `docs/NETWORK.md` says adding a wiki is "create a row in the admin,
+ * write content. No deploy, no DNS change, no code" — and a ninth wiki created
+ * in the admin on a live deployment answered 404 on every request until
+ * somebody rebuilt. Records behaved correctly the whole time; only a *new
+ * game* was blocked, which is the one case nobody tested because it is the
+ * rarest.
+ *
+ * Turning it on is safe because the guard it was standing in for is real and
+ * lives below: the layout calls `notFound()` for a slug that is not a
+ * published game, so an unknown one is still a 404 — it is just decided by
+ * the database rather than by a list frozen at build time. `/about` and its
+ * siblings cannot be captured either: a static segment wins over a dynamic
+ * one in Next's routing, and `APEX_ONLY` in `proxy.ts` reserves those names
+ * against a game ever claiming them.
  */
-export const dynamicParams = false
+export const dynamicParams = true
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { game: slug } = await params

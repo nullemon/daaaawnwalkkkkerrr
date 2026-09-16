@@ -43,6 +43,7 @@ export default async function CourtIndex({ params }: Props) {
         <div className="grid">
           {courts.map((court) => (
             <EntityCard
+              headingLevel={2}
               key={court.id}
               href={`/court/${court.slug}`}
               title={court.title}

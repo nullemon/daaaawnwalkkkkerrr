@@ -43,6 +43,7 @@ export default async function MechanicsIndex({ params }: Props) {
         <div className="grid">
           {mechanics.map((mechanic) => (
             <EntityCard
+              headingLevel={2}
               key={mechanic.id}
               href={`/mechanics/${mechanic.slug}`}
               title={mechanic.title}

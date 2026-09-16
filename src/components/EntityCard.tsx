@@ -10,6 +10,7 @@ export function EntityCard({
   icon,
   image,
   thumbFit = 'cover',
+  headingLevel = 3,
 }: {
   href: string
   title: string
@@ -24,7 +25,15 @@ export function EntityCard({
     to a card thumbnail cuts the wordmark in half.
   */
   thumbFit?: 'cover' | 'contain'
+  /*
+    An index that is a bare grid has no <h2> between its <h1> and these cards,
+    so a card heading of 3 skips a level - which it did on every section index
+    rendered as a grid rather than a table. Pages that put their grid inside a
+    titled <section> leave this at 3, where it is correct.
+  */
+  headingLevel?: 2 | 3
 }) {
+  const Heading = headingLevel === 2 ? 'h2' : 'h3'
   return (
     <Link href={href} className="card entity-card">
       {image?.url ? (
@@ -34,7 +43,7 @@ export function EntityCard({
       ) : null}
       <span className="card-top">
         {icon ? <Icon name={icon} size={18} className="ic" /> : null}
-        <h3>{title}</h3>
+        <Heading>{title}</Heading>
       </span>
       {summary ? <p>{summary}</p> : null}
       {badges ? <span className="badges">{badges}</span> : null}

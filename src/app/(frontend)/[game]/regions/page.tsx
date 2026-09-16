@@ -50,6 +50,7 @@ export default async function RegionsIndex({ params }: Props) {
         <div className="grid">
           {regions.map((region) => (
             <EntityCard
+              headingLevel={2}
               key={region.id}
               href={`/regions/${region.slug}`}
               title={region.title}

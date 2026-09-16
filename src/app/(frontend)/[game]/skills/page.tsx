@@ -45,6 +45,7 @@ export default async function SkillsIndex({ params }: Props) {
         <div className="grid">
           {trees.map((tree) => (
             <EntityCard
+              headingLevel={2}
               key={tree.id}
               href={`/skills/${tree.slug}`}
               title={tree.title}

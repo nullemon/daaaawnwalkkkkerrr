@@ -50,6 +50,7 @@ export default async function AuthorsIndex() {
             const written = counts.get(author.slug) ?? 0
             return (
               <EntityCard
+              headingLevel={2}
                 key={author.id}
                 href={`/authors/${author.slug}`}
                 title={author.name}
