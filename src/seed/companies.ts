@@ -1,4 +1,7 @@
 import 'dotenv/config'
+import fs from 'fs'
+import path from 'path'
+import { fileURLToPath } from 'url'
 import { getPayload } from 'payload'
 import type { CollectionSlug } from 'payload'
 import config from '../payload.config'
@@ -63,6 +66,24 @@ const MISFILED_IN: CollectionSlug[] = ['regions', 'characters', 'items', 'enemie
 
 type Role = 'developer' | 'publisher'
 
+type Harvested = {
+  wikipediaTitle: string
+  name: string
+  founded?: string | null
+  headquarters?: string | null
+  industry?: string | null
+  keyPeople?: string | null
+  employees?: string | null
+  revenue?: string | null
+  website?: string | null
+  parents: string[]
+  subsidiaries: string[]
+  url: string
+  licence: string
+  fetchedAt: string
+  basis: string
+}
+
 type Draft = {
   name: string
   roles: Set<Role>
@@ -70,6 +91,31 @@ type Draft = {
   gameTitles: string[]
   sources: { title: string; url: string; retrieved?: string | null }[]
   foundOn: string[]
+  facts?: Harvested
+}
+
+/**
+ * Wikipedia disambiguates article titles and we do not want the brackets.
+ * "The Coalition (company)" is "The Coalition" here, which is also what the
+ * game records call it, so the two halves of this seeder meet on one slug.
+ */
+const plainName = (title: string): string =>
+  title.replace(/\s*\((company|division|video game company|developer|publisher)\)\s*$/i, '').trim()
+
+/**
+ * Is this actually a value, or what is left of one after the templates were
+ * stripped out of it?
+ *
+ * A revenue that reads "(2025)" is worse than an empty field: it looks like a
+ * figure and carries none. Anything with no letter or digit outside brackets
+ * is treated as absent, which is the same rule the rest of the site follows -
+ * a gap is honest, a broken value is not.
+ */
+const usable = (value?: string | null): string | undefined => {
+  const text = String(value ?? '').trim()
+  if (!text) return undefined
+  const outside = text.replace(/\([^)]*\)/g, '').replace(/[^A-Za-z0-9]/g, '')
+  return outside.length > 0 ? text : undefined
 }
 
 const splitHolders = (value?: string | null): string[] =>
@@ -153,7 +199,39 @@ async function run(): Promise<void> {
     }
   }
 
-  // --- 3. Write them ------------------------------------------------------
+  // --- 3. The harvest ------------------------------------------------------
+  /*
+    `pnpm fetch:companies` writes this from Wikipedia: the fifty largest by
+    revenue, the makers of our own games, and everything those two name as a
+    parent or a subsidiary. Selection is editorial and the page says so; every
+    figure on it comes from that company's own article with the date read.
+  */
+  const RAW = path.resolve(path.dirname(fileURLToPath(import.meta.url)), 'raw', 'companies.json')
+  let harvestedAt = ''
+  if (fs.existsSync(RAW)) {
+    const file = JSON.parse(fs.readFileSync(RAW, 'utf8')) as {
+      fetchedAt: string
+      companies: Harvested[]
+    }
+    harvestedAt = file.fetchedAt
+    for (const entry of file.companies) {
+      const name = plainName(entry.wikipediaTitle)
+      const draft = draftFor(name)
+      draft.facts = entry
+      if (!draft.sources.some((source) => source.url === entry.url)) {
+        draft.sources.push({
+          title: `${entry.wikipediaTitle} — Wikipedia (${entry.licence})`,
+          url: entry.url,
+          retrieved: entry.fetchedAt,
+        })
+      }
+    }
+    console.log(`harvested facts: ${file.companies.length} companies, read ${file.fetchedAt}`)
+  } else {
+    console.log('no src/seed/raw/companies.json — run `pnpm fetch:companies` for the facts')
+  }
+
+  // --- 4. Write them ------------------------------------------------------
   let created = 0
   let updated = 0
 
@@ -169,6 +247,7 @@ async function run(): Promise<void> {
       company only a franchise wiki mentions gets a sentence about exactly
       that, and nothing about the game this network covers.
     */
+    const facts = draft.facts
     let summary: string
     let confidence: 'high' | 'medium' | 'low'
     if (draft.gameTitles.length > 0) {
@@ -180,6 +259,21 @@ async function run(): Promise<void> {
             : 'develops'
       summary = `${draft.name} ${verb} ${listSentence(draft.gameTitles)}, covered on this network.`
       confidence = 'high'
+    } else if (facts) {
+      /*
+        A company with a harvested article but no game of ours. The sentence
+        is built from its own infobox and says nothing this network cannot
+        show a source for.
+      */
+      const founded = usable(facts.founded)
+      const where = usable(facts.headquarters)
+      summary = [
+        `${draft.name} is a games company`,
+        founded ? ` founded ${founded.replace(/\s*\(.*$/, '')}` : '',
+        where ? `, based in ${where}` : '',
+        '.',
+      ].join('')
+      confidence = 'medium'
     } else {
       const where = draft.foundOn.length > 0 ? listSentence(draft.foundOn) : 'a game covered here'
       summary = `${draft.name} is named in the community-wiki sources compiled for ${where}. What it worked on, and when, is not established here.`
@@ -205,6 +299,16 @@ async function run(): Promise<void> {
       confidence,
       games: draft.games,
       sources: draft.sources.length > 0 ? sources : undefined,
+      // Every one of these is dropped rather than shown when what survived
+      // the wikitext is not actually a value. See `usable`.
+      founded: usable(facts?.founded),
+      headquarters: usable(facts?.headquarters),
+      industry: usable(facts?.industry),
+      keyPeople: usable(facts?.keyPeople),
+      employees: usable(facts?.employees),
+      revenue: usable(facts?.revenue),
+      website: usable(facts?.website),
+      basis: facts?.basis ?? (draft.gameTitles.length > 0 ? 'network-game' : 'related-company'),
     }
 
     const existing = await payload.find({
@@ -223,9 +327,50 @@ async function run(): Promise<void> {
     }
   }
 
+  // --- 5. Wire the corporate graph ----------------------------------------
+  /*
+    A second pass, because a parent cannot be linked to a subsidiary that has
+    not been written yet. Both directions are stored: a studio page says who
+    owns it, a parent page lists what it owns, and each link exists only
+    because one of the two articles named the other.
+  */
+  const all = await payload.find({ collection: 'companies', limit: 1000, depth: 0 })
+  const idBySlug = new Map<string, string | number>()
+  for (const company of all.docs as unknown as { id: string | number; slug: string }[]) {
+    idBySlug.set(company.slug, company.id)
+  }
+
+  let linked = 0
+  for (const draft of drafts.values()) {
+    const facts = draft.facts
+    if (!facts) continue
+    const id = idBySlug.get(slugify(draft.name))
+    if (!id) continue
+
+    const resolve = (names: string[]) =>
+      names
+        .map((name) => idBySlug.get(slugify(plainName(name))))
+        .filter((value): value is string | number => value !== undefined)
+
+    const parentIds = resolve(facts.parents)
+    const subsidiaryIds = resolve(facts.subsidiaries).filter((value) => value !== id)
+    if (parentIds.length === 0 && subsidiaryIds.length === 0) continue
+
+    await payload.update({
+      collection: 'companies',
+      id,
+      data: {
+        ...(parentIds[0] !== undefined ? { parent: parentIds[0] } : {}),
+        ...(subsidiaryIds.length > 0 ? { subsidiaries: subsidiaryIds } : {}),
+      } as never,
+    })
+    linked += 1
+  }
+
   console.log(`\nmigrated out of game collections: ${migrated.length}`)
   for (const row of migrated) console.log(`  ${row}`)
   console.log(`\ncompanies: ${created} created, ${updated} updated`)
+  console.log(`corporate links written on ${linked} of them${harvestedAt ? ` (facts read ${harvestedAt})` : ''}`)
   process.exit(0)
 }
 

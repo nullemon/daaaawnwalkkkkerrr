@@ -4,8 +4,8 @@ A network of game wikis sharing one admin, one account system and one set of
 editorial rules. Next.js 16 + Payload CMS 3 on libSQL. Every public page
 prerenders to static HTML; `/admin` is a full CMS.
 
-Eight wikis today, 1,639 prerendered pages. *The Blood of Dawnwalker* is the
-first and still the largest — 440 of the 1,378 records — and its 480-segment
+Eight wikis today, 1,723 prerendered pages. *The Blood of Dawnwalker* is the
+first and still the largest — 440 of the 1,375 records — and its 480-segment
 run planner is the model for what each wiki is meant to have: one tool nobody
 else has.
 
@@ -33,7 +33,7 @@ prefix; `src/proxy.ts` maps host to the internal `/[game]/…` route. See
 ```bash
 pnpm install      # NOT npm — see gotchas
 pnpm dev          # http://dawnwalker.localhost:3000 — see 'Local dev' below
-pnpm build        # prerenders ~1,640 pages across eight wikis
+pnpm build        # prerenders ~1,720 pages across eight wikis
 pnpm test         # unit tests (175)
 pnpm seed         # hand-written seed content, idempotent on slug
 pnpm ingest       # ingest researched JSON from src/seed/raw/
@@ -49,6 +49,7 @@ pnpm fetch:entities  # just the community wikis
 pnpm seed:games   # store-page facts -> mechanics pages and achievements
 pnpm seed:entities   # harvested entities -> characters, items, enemies…
 pnpm seed:prune-entities  # drop harvested records that are not things in the game
+pnpm fetch:companies # company facts from Wikipedia -> raw/companies.json
 pnpm seed:companies  # studio and publisher profiles for companies.<domain>
 pnpm seed:prune-media    # delete orphaned images and stray files (--apply)
 pnpm check:kind      # is each record the kind of thing it is filed as?
@@ -418,7 +419,22 @@ one wiki today and would appear on three tomorrow, and a studio's page is
 worth more as one record with its whole body of work than as three copies that
 disagree the first time one is corrected. Same reasoning as `authors`.
 
-`pnpm seed:companies` builds it from two sources and keeps them apart:
+`pnpm fetch:companies` harvests the facts from Wikipedia first. **"The top 100
+most popular gaming companies" is not something anyone publishes**, because
+popular is not measurable - so the spine is the published ranking *by revenue*,
+the site says that is what the ranking means, and the date it was read is on
+the page. The list reaches a hundred without anybody inventing one: the fifty
+largest, plus the makers of our own games, plus everything those two name as a
+parent or subsidiary in their own infoboxes. A name is there because a sourced
+article named it, and following that edge builds the corporate graph at the
+same time.
+
+**Logos are not downloaded.** A company logo on Wikipedia is almost always
+non-free, under a fair-use rationale covering Wikipedia and not us. CC BY-SA
+text and a fair-use trademark are different things, and copying the second
+because the first was fine is how a site gets a letter.
+
+`pnpm seed:companies` builds it from three sources and keeps them apart:
 
 - **Each game's own `developer` and `publisher`.** Facts the store page states,
   so the profile can say which games are theirs and in what role. The game

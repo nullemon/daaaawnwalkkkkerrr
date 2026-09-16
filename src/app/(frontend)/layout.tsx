@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Barlow, Barlow_Semi_Condensed, Cinzel } from 'next/font/google'
+import Script from 'next/script'
 import { themeScript } from '@/components/ThemeToggle'
 import { RunProvider } from '@/components/RunProvider'
 import { AccountProvider } from '@/components/AccountProvider'
@@ -92,7 +93,23 @@ export default function FrontendLayout({ children }: { children: React.ReactNode
   return (
     <html lang="en" className={fontVars} suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        {/*
+          `next/script` rather than a bare <script>, which React warns about:
+          a script rendered by a component never executes on a client render,
+          only on the server-rendered document. That is actually fine for this
+          one - it needs to run once, before first paint - but the warning is
+          real and the documented form does the same job without it.
+
+          `beforeInteractive` keeps it inlined ahead of any Next module, and it
+          stays in <head> rather than at the top of <body>: it sets data-theme
+          from localStorage, so anything that runs after the first paint has
+          already let the wrong theme show.
+        */}
+        <Script
+          id="theme-before-paint"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: themeScript }}
+        />
       </head>
       <body>
         <AccountProvider>

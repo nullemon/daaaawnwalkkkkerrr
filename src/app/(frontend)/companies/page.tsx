@@ -38,7 +38,13 @@ export default async function CompaniesIndex() {
     only named in a franchise wiki's history.
   */
   const withGames = companies.filter((company) => (company.games ?? []).length > 0)
-  const mentioned = companies.filter((company) => (company.games ?? []).length === 0)
+  const ranked = companies.filter(
+    (company) => (company.games ?? []).length === 0 && company.basis === 'revenue-ranking',
+  )
+  const related = companies.filter(
+    (company) => (company.games ?? []).length === 0 && company.basis === 'related-company',
+  )
+  const mentioned = related
 
   return (
     <>
@@ -47,7 +53,7 @@ export default async function CompaniesIndex() {
         crumbs={[{ label: 'Companies' }]}
         icon="person"
         title="Studios and publishers"
-        lede={`${companies.length} companies. ${withGames.length} of them made or published a game covered on this network; the rest are named in the sources we compiled and are here so the name resolves to something.`}
+        lede={`${companies.length} companies: the largest in games by published revenue, the studios behind the games this network covers, and everything those two name as a parent or a subsidiary. Every figure on a profile comes from that company's own article, with the date it was read.`}
       />
       <div className="page body-main">
         <section className="section">
@@ -77,15 +83,45 @@ export default async function CompaniesIndex() {
           </div>
         </section>
 
+        {ranked.length > 0 ? (
+          <section className="section">
+            <div className="section-head">
+              <h2>The largest in games</h2>
+            </div>
+            <p className="note">
+              Ranked by published revenue. <strong>Popularity is not a measurable quantity</strong>,
+              so this is the ranking somebody actually publishes rather than one we invented — and
+              it means revenue, on the date the list was read.
+            </p>
+            <div className="grid">
+              {ranked.map((company) => (
+                <EntityCard
+                  key={company.id}
+                  href={`/${company.slug}`}
+                  title={company.name}
+                  summary={company.summary}
+                  badges={
+                    <>
+                      {(company.role ?? []).map((role) => (
+                        <Badge key={role}>{ROLE_LABEL[role] ?? role}</Badge>
+                      ))}
+                    </>
+                  }
+                />
+              ))}
+            </div>
+          </section>
+        ) : null}
+
         {mentioned.length > 0 ? (
           <section className="section">
             <div className="section-head">
-              <h2>Named in the sources</h2>
+              <h2>Named by another company</h2>
             </div>
             <p className="note">
-              These appear in the community wikis compiled for a game here, usually because they
-              worked on an earlier title in the same series. What each one did, and when, is not
-              established on this network — so these pages say only where the name was found.
+              These are here because a company above names them as a parent or a subsidiary in its
+              own article. Nobody drew up this list — it is what the corporate graph contains once
+              you follow it one step, which is also why it is worth reading.
             </p>
             <div className="grid">
               {mentioned.map((company) => (

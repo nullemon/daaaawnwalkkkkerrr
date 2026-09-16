@@ -76,6 +76,77 @@ export const Companies: CollectionConfig = {
       admin: { description: 'The company’s own site. Linked with rel="nofollow" like every outbound link here.' },
     },
     {
+      name: 'headquarters',
+      type: 'text',
+      admin: { description: 'Where the company is run from, as its own article states it.' },
+    },
+    {
+      name: 'keyPeople',
+      type: 'text',
+      admin: {
+        description:
+          'Named executives, with their titles. People change job more often than this page is rebuilt, so it carries the date it was read and the page says so.',
+      },
+    },
+    {
+      type: 'row',
+      fields: [
+        {
+          name: 'employees',
+          type: 'text',
+          admin: { width: '50%', description: 'Headcount, as published, including the year it applies to.' },
+        },
+        {
+          name: 'revenue',
+          type: 'text',
+          admin: { width: '50%', description: 'Annual revenue, as published, with its currency and year.' },
+        },
+      ],
+    },
+    {
+      name: 'industry',
+      type: 'text',
+      admin: { description: 'What the company does, beyond games, where its article says.' },
+    },
+    {
+      /*
+        The corporate graph, and the reason a hundred of these are worth
+        having rather than fifteen. Sony Interactive Entertainment's own
+        article names Bungie; Embracer's names what it bought. Both directions
+        are stored because both are read: a parent page lists what it owns,
+        and a studio page says who owns it.
+
+        Filled by `seed:companies` from each company's own infobox, so a link
+        exists only where a source stated it.
+      */
+      name: 'parent',
+      type: 'relationship',
+      relationTo: 'companies',
+      admin: { description: 'Who owns this company, where its own article names one.' },
+    },
+    {
+      name: 'subsidiaries',
+      type: 'relationship',
+      relationTo: 'companies',
+      hasMany: true,
+      admin: { description: 'Companies this one owns, as its own article names them.' },
+    },
+    {
+      name: 'basis',
+      type: 'select',
+      defaultValue: 'related-company',
+      options: [
+        { label: 'Ranked by revenue', value: 'revenue-ranking' },
+        { label: 'Makes a game covered here', value: 'network-game' },
+        { label: 'Named by another company’s article', value: 'related-company' },
+      ],
+      admin: {
+        position: 'sidebar',
+        description:
+          'Why this company is on the network. Shown on the page, because how a name was chosen is part of what a reader is owed.',
+      },
+    },
+    {
       name: 'logo',
       type: 'upload',
       relationTo: 'media',

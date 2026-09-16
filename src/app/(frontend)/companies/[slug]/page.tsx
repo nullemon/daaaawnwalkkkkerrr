@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
 import { Badge, Confidence } from '@/components/Badges'
@@ -60,10 +61,23 @@ export default async function CompanyPage({ params }: Props) {
     games.map(async (game) => ({ game, href: await gameUrl(game) })),
   )
 
+  const parent = company.parent && typeof company.parent === 'object' ? (company.parent as Company) : null
+  const subsidiaries = ((company.subsidiaries ?? []) as unknown[])
+    .filter((value): value is Company => Boolean(value) && typeof value === 'object')
+
+  /*
+    Only what the record actually has. Every one of these is dropped when the
+    company's own article does not state it, rather than printed as "unknown"
+    — the same rule the game records follow.
+  */
   const facts = [
     { label: 'Role', value: (company.role ?? []).map((r) => ROLE_LABEL[r] ?? r).join(', ') },
     ...(company.founded ? [{ label: 'Founded', value: company.founded }] : []),
-    ...(company.country ? [{ label: 'Based in', value: company.country }] : []),
+    ...(company.headquarters ? [{ label: 'Headquarters', value: company.headquarters }] : []),
+    ...(company.country ? [{ label: 'Country', value: company.country }] : []),
+    ...(company.employees ? [{ label: 'Employees', value: company.employees }] : []),
+    ...(company.revenue ? [{ label: 'Revenue', value: company.revenue }] : []),
+    ...(company.industry ? [{ label: 'Industry', value: company.industry }] : []),
     ...(games.length > 0 ? [{ label: 'Games covered here', value: games.length }] : []),
   ]
 
@@ -111,6 +125,52 @@ export default async function CompanyPage({ params }: Props) {
               </section>
             ) : null}
 
+            {company.keyPeople ? (
+              <section className="section">
+                <div className="section-head">
+                  <h2>Who runs it</h2>
+                </div>
+                <p>{company.keyPeople}</p>
+                {/*
+                  People change job far more often than this page is rebuilt,
+                  so the date the figure was read is part of the figure. The
+                  citation below carries it.
+                */}
+                <p className="note">
+                  Named executives as its own article stated them on the date in the sources below.
+                </p>
+              </section>
+            ) : null}
+
+            {parent || subsidiaries.length > 0 ? (
+              <section className="section">
+                <div className="section-head">
+                  <h2>Corporate structure</h2>
+                </div>
+                {parent ? (
+                  <p>
+                    Owned by <Link href={`/${parent.slug}`}>{parent.name}</Link>.
+                  </p>
+                ) : null}
+                {subsidiaries.length > 0 ? (
+                  <>
+                    <p>{subsidiaries.length === 1 ? 'It owns:' : `It owns ${subsidiaries.length}:`}</p>
+                    <ul>
+                      {subsidiaries.map((child) => (
+                        <li key={child.id}>
+                          <Link href={`/${child.slug}`}>{child.name}</Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                ) : null}
+                <p className="note">
+                  Each link exists because one of the two companies’ own articles named the other.
+                  A studio missing from this list is not evidence that it is independent.
+                </p>
+              </section>
+            ) : null}
+
             {company.website ? (
               <p className="note">
                 <a href={company.website} rel="nofollow noopener noreferrer" target="_blank">
@@ -124,7 +184,7 @@ export default async function CompanyPage({ params }: Props) {
 
           <div className="stack">
             <FactPanel title={company.name} facts={facts} />
-            {games.length > 0 ? null : (
+            {games.length > 0 || company.basis !== 'related-company' || company.founded ? null : (
               <section className="panel">
                 <div className="panel-head">
                   <h2>What we know</h2>

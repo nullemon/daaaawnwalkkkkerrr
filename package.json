@@ -52,7 +52,8 @@
     "seed:prune-entities": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/prune-entities.ts",
     "seed:companies": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/companies.ts",
     "seed:prune-media": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/prune-media.ts",
-    "check:kind": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/check-kind.ts"
+    "check:kind": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/check-kind.ts",
+    "fetch:companies": "node tools/fetch-companies.mjs"
   },
   "dependencies": {
     "@payloadcms/db-sqlite": "3.89.0",

@@ -1933,6 +1933,38 @@ export interface Company {
    */
   website?: string | null;
   /**
+   * Where the company is run from, as its own article states it.
+   */
+  headquarters?: string | null;
+  /**
+   * Named executives, with their titles. People change job more often than this page is rebuilt, so it carries the date it was read and the page says so.
+   */
+  keyPeople?: string | null;
+  /**
+   * Headcount, as published, including the year it applies to.
+   */
+  employees?: string | null;
+  /**
+   * Annual revenue, as published, with its currency and year.
+   */
+  revenue?: string | null;
+  /**
+   * What the company does, beyond games, where its article says.
+   */
+  industry?: string | null;
+  /**
+   * Who owns this company, where its own article names one.
+   */
+  parent?: (number | null) | Company;
+  /**
+   * Companies this one owns, as its own article names them.
+   */
+  subsidiaries?: (number | Company)[] | null;
+  /**
+   * Why this company is on the network. Shown on the page, because how a name was chosen is part of what a reader is owed.
+   */
+  basis?: ('revenue-ranking' | 'network-game' | 'related-company') | null;
+  /**
    * Optional. A logo is a trademark used for identification; credit it like any other art.
    */
   logo?: (number | null) | Media;
@@ -3007,6 +3039,14 @@ export interface CompaniesSelect<T extends boolean = true> {
   founded?: T;
   country?: T;
   website?: T;
+  headquarters?: T;
+  keyPeople?: T;
+  employees?: T;
+  revenue?: T;
+  industry?: T;
+  parent?: T;
+  subsidiaries?: T;
+  basis?: T;
   logo?: T;
   games?: T;
   confidence?: T;
