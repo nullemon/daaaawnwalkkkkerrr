@@ -74,7 +74,10 @@ export default async function BuildPage({ params }: Props) {
         <Facts
           items={[
             { label: 'Plays in', value: doc.playstyle },
-            { label: 'Primary tree', value: tree ? tree.title : '—' },
+            {
+              label: 'Primary tree',
+              value: tree ? <Link href={`/skills/${tree.slug}`}>{tree.title}</Link> : '—',
+            },
             { label: 'Perks', value: perks.length || '—' },
             { label: 'Segment cost', value: doc.segmentCost ?? 'Not confirmed' },
           ]}
@@ -95,7 +98,14 @@ export default async function BuildPage({ params }: Props) {
                 <li key={perk.id}>
                   <span className="step">{perk.isUltimate ? '★' : '·'}</span>
                   <span>
-                    <strong>{perk.title}</strong>
+                    {/*
+                      A link, not bold text. Every one of these is a perk with
+                      its own page and an edge an editor stored deliberately —
+                      sixty-two of them across nine builds, and not one was
+                      clickable. The slugs were already in hand two lines up,
+                      where the planner URL is built from them.
+                    */}
+                    <Link href={`/perks/${perk.slug}`}>{perk.title}</Link>
                     {perk.effect ? <span className="sub">{perk.effect}</span> : null}
                   </span>
                 </li>

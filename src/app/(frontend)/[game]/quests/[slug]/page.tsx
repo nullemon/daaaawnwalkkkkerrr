@@ -47,7 +47,31 @@ export default async function QuestPage({ params }: Props) {
   const region = rel<Region>(quest.region)
   const graph = await getRunGraph(game)
   const prereqs = relMany<Quest>(quest.prereqs)
-  const unlocks = relMany<Quest>(quest.unlocks)
+  /*
+    What this quest opens, computed from the other side of `prereqs`.
+
+    The `unlocks` field exists and is populated on nothing: zero of ninety-three
+    quests, because no seeder has ever written it. So this section rendered for
+    no quest on the site while the same fact sat in the database the whole time
+    — forty-eight `prereqs` edges, each of which is some quest saying "I need
+    that one first". Reading them backwards is the identical claim with the
+    arrow reversed, and it needs no new data and no new query: `getRunGraph`
+    is already awaited above for the unlock path.
+
+    `unlocks` still wins where an editor has filled it in, since a hand-written
+    edge is a deliberate statement and this is a derivation.
+  */
+  const stored = relMany<Quest>(quest.unlocks)
+  const derived = stored.length
+    ? []
+    : graph.quests
+        .filter((other) => (other.prereqs ?? []).includes(String(quest.id)))
+        .map((other) => ({
+          id: other.id,
+          slug: other.slug,
+          title: other.title,
+        }))
+  const unlocks = stored.length ? stored : (derived as unknown as Quest[])
   const excludes = relMany<Quest>(quest.excludes)
   const endings = relMany<Ending>(quest.affectsEndings)
   const known = quest.time?.known

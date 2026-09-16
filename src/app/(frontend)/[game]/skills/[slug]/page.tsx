@@ -43,6 +43,22 @@ export default async function SkillTreePage({ params }: Props) {
   const perks = (await getAll('perks', { game, depth: 1, sort: 'title' })).filter(
     (perk) => typeof perk.tree === 'object' && perk.tree?.slug === slug,
   )
+
+  /*
+    Builds founded on this tree. The build records name their primary tree and
+    nothing read that edge backwards, so a tree page listed its perks and never
+    the builds those perks are for.
+  */
+  const builds = (await getAll('builds', { game, depth: 1 })).filter((build) => {
+    const tree = build.primaryTree
+    return tree && typeof tree === 'object' && (tree as { slug?: string }).slug === slug
+  })
+  const fromTree: RelatedItem[] = builds.map((build) => ({
+    id: build.id,
+    title: build.title,
+    href: `/builds/${build.slug}`,
+    sub: build.summary,
+  }))
   const ultimates = perks.filter((perk) => perk.isUltimate)
 
   const perkItems: RelatedItem[] = perks.map((perk) => ({
@@ -110,6 +126,7 @@ export default async function SkillTreePage({ params }: Props) {
           href="/perks"
           emptyNote="No perk in the database is filed under this tree yet."
         />
+        <RelatedList heading="Builds on this tree" icon="shield" items={fromTree} />
         <Sources sources={doc.sources} />
         <Attribution sources={doc.sources} />
         <SectionNeighbours

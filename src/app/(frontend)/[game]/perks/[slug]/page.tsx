@@ -10,7 +10,8 @@ import { Sources } from '@/components/Sources'
 import { Attribution } from '@/components/Attribution'
 import { CommentThread } from '@/components/CommentThread'
 import { EntityImage } from '@/components/EntityImage'
-import { getAll, getBySlug, getGame, rel } from '@/lib/payload'
+import { getAll, getBySlug, getGame, rel, relMany } from '@/lib/payload'
+import { RelatedList, type RelatedItem } from '@/components/RelatedList'
 import { gameName } from '@/lib/section-copy'
 import { gameSlugParams } from '@/lib/params'
 import type { Perk, SkillTree } from '@/payload-types'
@@ -56,6 +57,23 @@ export default async function PerkPage({ params }: Props) {
     : []
   const rivalUltimates = siblings.filter((perk) => perk.isUltimate)
 
+  /*
+    Which builds take this perk — the other half of an edge the build pages
+    already store. Sixty-two of them across nine builds, and until now they
+    pointed one way only: a build listed its perks, and a perk could not tell
+    you it was in one. Read off the relationship, so a perk appears here
+    because an editor put it in that build and for no other reason.
+  */
+  const builds = (await getAll('builds', { game, depth: 1 })).filter((build) =>
+    relMany<Perk>(build.perks).some((perk) => perk.slug === slug),
+  )
+  const inBuilds: RelatedItem[] = builds.map((build) => ({
+    id: build.id,
+    title: build.title,
+    href: `/builds/${build.slug}`,
+    sub: build.summary,
+  }))
+
   return (
     <>
       <PageHeader
@@ -84,7 +102,10 @@ export default async function PerkPage({ params }: Props) {
 
         <Facts
           items={[
-            { label: 'Tree', value: tree ? tree.title : '—' },
+            {
+              label: 'Tree',
+              value: tree ? <Link href={`/skills/${tree.slug}`}>{tree.title}</Link> : '—',
+            },
             { label: 'Ultimate', value: doc.isUltimate ? 'Yes' : 'No' },
             {
               label: 'Segment cost',
@@ -122,6 +143,12 @@ export default async function PerkPage({ params }: Props) {
         <Sources sources={doc.sources} />
 
         <Attribution sources={doc.sources} />
+
+        <RelatedList
+          heading="Builds that take this"
+          icon="shield"
+          items={inBuilds}
+        />
 
         <SectionNeighbours
           collection="perks"

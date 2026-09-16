@@ -71,8 +71,19 @@ export default async function CourtActivityPage({ params }: Props) {
       <div className="page body-main">
         <Facts
           items={[
-            { label: 'Court', value: court ? court.title : '—' },
-            { label: 'Region', value: region ? region.title : '—' },
+            {
+              label: 'Court',
+              value: court ? <Link href={`/court/${court.slug}`}>{court.title}</Link> : '—',
+            },
+            {
+              /*
+                The region was loaded, printed here, and linked nowhere on the
+                page — the only relationship on the site that was resolved,
+                rendered and never once made clickable.
+              */
+              label: 'Region',
+              value: region ? <Link href={`/regions/${region.slug}`}>{region.title}</Link> : '—',
+            },
             { label: 'Time cost', value: known ? `${doc.time?.max} segments` : 'Not confirmed' },
             { label: 'Anger value', value: doc.angerValue ?? 'Not confirmed' },
           ]}
