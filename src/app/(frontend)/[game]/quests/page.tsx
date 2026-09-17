@@ -6,6 +6,7 @@ import { sectionArt } from '@/lib/art'
 import { DataTable, type Row } from '@/components/DataTable'
 import { ICON_FOR_QUEST_KIND } from '@/components/Icon'
 import { getAll, getGame } from '@/lib/payload'
+import { getUi } from '@/lib/ui'
 import { sectionCopy } from '@/lib/section-copy'
 import type { Region } from '@/payload-types'
 
@@ -25,20 +26,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-const KIND_LABELS: Record<string, string> = {
-  prologue: 'Prologue',
-  main: 'Main',
-  ally: 'Ally questline',
-  court: 'Court activity',
-  side: 'Side',
-  contract: 'Contract',
-}
-
 export default async function QuestIndex({ params }: Props) {
   const { game: slug } = await params
-  const [game, quests] = await Promise.all([
+  /*
+    The kind labels come from the registry, not from a map in this file.
+
+    `quest-kind.*` was declared in `lib/ui-registry.ts` with the same six words
+    and nothing read it, so Site settings → Interface text offered "Ally
+    questline" as editable, an editor could change it, save it, and this table
+    went on saying what the local map said — the inert control the registry
+    exists to stop. The words are unchanged; only where they come from is.
+  */
+  const [game, quests, ui] = await Promise.all([
     getGame(slug),
     getAll('quests', { game: slug, sort: 'title', depth: 1 }),
+    getUi(),
   ])
   const confirmed = quests.filter((quest) => quest.time?.known).length
   const copy = sectionCopy('quests', game, { total: quests.length, detail: confirmed })
@@ -55,7 +57,7 @@ export default async function QuestIndex({ params }: Props) {
       icon: ICON_FOR_QUEST_KIND[quest.kind] ?? 'scroll',
       title: quest.title,
       titleHref: `/quests/${quest.slug}`,
-      kind: KIND_LABELS[quest.kind] ?? quest.kind,
+      kind: ui.label('quest-kind', quest.kind),
       region: region?.title ?? '',
       regionHref: region ? `/regions/${region.slug}` : '',
       phase: quest.phase ?? '',

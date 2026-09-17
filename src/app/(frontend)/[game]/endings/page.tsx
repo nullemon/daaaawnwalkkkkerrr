@@ -11,6 +11,7 @@ import { Callout } from '@/components/Callout'
 import { getAll, getGame } from '@/lib/payload'
 import { sectionCopy } from '@/lib/section-copy'
 import { getRunGraph } from '@/lib/runData'
+import { getUi } from '@/lib/ui'
 
 type Props = { params: Promise<{ game: string }> }
 
@@ -37,17 +38,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-const GATE_LABEL: Record<string, string> = {
-  ally: 'Gated by an ally questline',
-  choice: 'Decided at the finale',
-  clock: 'Decided by the clock',
-}
-
 export default async function EndingsIndex({ params }: Props) {
   const { game } = await params
-  const [doc, endings] = await Promise.all([
+  /*
+    The gate headings come from the registry, not from a map in this file.
+
+    `ending-gate.*` was declared in `lib/ui-registry.ts` with these exact three
+    sentences and nothing read them, so an editor could change "Decided at the
+    finale" in Site settings → Interface text, save it, and this page went on
+    printing the local copy. Same wording, live control.
+  */
+  const [doc, endings, ui] = await Promise.all([
     getGame(game),
     getAll('endings', { game, sort: 'title', depth: 1 }),
+    getUi(),
   ])
   const copy = sectionCopy('endings', doc, { total: endings.length })
 
@@ -81,7 +85,7 @@ export default async function EndingsIndex({ params }: Props) {
           return (
             <section className="section" key={gate}>
               <div className="section-head">
-                <h2>{GATE_LABEL[gate]}</h2>
+                <h2>{ui.label('ending-gate', gate)}</h2>
                 <span className="eyebrow">
                   {group.length} ending{group.length === 1 ? '' : 's'}
                 </span>

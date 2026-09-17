@@ -3,6 +3,7 @@ import type { Payload } from 'payload'
 import type { Game } from '../../payload-types'
 import { GAME_SCOPED } from '../../lib/tenancy'
 import { sectionCopy } from '../../lib/section-copy'
+import { fill } from '../../lib/copy'
 
 /**
  * Write each wiki's section-index copy into the fields that can change it.
@@ -21,6 +22,26 @@ import { sectionCopy } from '../../lib/section-copy'
  * written down: the alternative is a second copy of all fifteen sections'
  * wording kept in step by hand, which is the thing this whole pass exists to
  * stop.
+ *
+ * ## And why some sentences come back as nothing
+ *
+ * A sentinel can stand in for a number. It cannot stand in for a sentence that
+ * changes *shape* with its number, and several of these do: `plural()` drops an
+ * "s" at one, the characters lede swaps clause when every record has a
+ * portrait, the achievements description drops its rarity sentence when nothing
+ * is rare. Whichever branch the sentinels happened to take was frozen into the
+ * database and served for ever after — "All 1 regions" on Silent Hill, "2
+ * catalogued, every one with an official portrait" on a wiki with one portrait,
+ * "0 are held by fewer than one player in twenty" on A Plague Tale, in the
+ * `<title>` and the meta description as well as on the page. Same class of lie
+ * as a frozen count, one level up, and no emptiness check finds it because the
+ * sentence is complete.
+ *
+ * So `faithful` fills each tokenised field back in at a spread of counts and
+ * compares it against what the code would have written for those counts. A
+ * field that fails any of them is not seeded at all, and a blank field renders
+ * the built-in — which is the only thing that can get "1 region" and "227
+ * regions" both right.
  *
  * ## What is deliberately not seeded
  *
@@ -42,9 +63,36 @@ import { sectionCopy } from '../../lib/section-copy'
 /*
   Numbers no wiki will ever have, so finding them in the output is proof they
   came from here rather than from a record.
+
+  `DETAIL` is below `COUNT` because detail is always a subset of total — it is
+  the portraits among the characters, the ultimates among the perks. It used to
+  be above, which is a state no wiki can ever be in, and every sentence in
+  `section-copy.ts` that asks `detail < total` answered the impossible way and
+  had that answer frozen into the database. That is how seven wikis came to
+  say "every one with an official portrait" over a set where most have none.
 */
 const COUNT = 424242
-const DETAIL = 434343
+const DETAIL = 131313
+
+/*
+  The counts a seeded template has to survive before it is written. See the
+  second section of the header for what this is defending against.
+
+  They cover every branch `section-copy.ts` takes: nothing at all, one record,
+  one record that is also the whole of `detail`, a `detail` of none and a
+  `detail` of most. Three digits at most, because `fill` formats through
+  `toLocaleString` and a probe over 999 would compare "1,000" against the
+  template's raw "1000" and refuse every field for the wrong reason.
+*/
+export const PROBES: { total: number; detail: number }[] = [
+  { total: 0, detail: 0 },
+  { total: 1, detail: 0 },
+  { total: 1, detail: 1 },
+  { total: 2, detail: 1 },
+  { total: 9, detail: 0 },
+  { total: 51, detail: 9 },
+  { total: 227, detail: 137 },
+]
 
 /**
  * What this pass last wrote into a row, so it can tell its own work from an
@@ -70,6 +118,22 @@ const fingerprint = (row: { title?: string | null; description?: string | null; 
 
 const tokenise = (text: string): string =>
   text.split(String(COUNT)).join('{count}').split(String(DETAIL)).join('{detail}')
+
+/**
+ * The tokenised sentence, or null where freezing it would make the page lie.
+ *
+ * Null rather than the best available string on purpose. A blank field falls
+ * through to `src/lib/section-copy.ts`, which recomputes the sentence from the
+ * counts on every render and is the only thing that can get a shape right at
+ * one record and at two hundred.
+ */
+export const faithful = (
+  template: string,
+  built: (counts: { total: number; detail: number }) => string,
+): string | null =>
+  PROBES.every((counts) => fill(template, { count: counts.total, detail: counts.detail }) === built(counts))
+    ? template
+    : null
 
 /** Dawnwalker's built-in guide grouping, in the shape the field stores. */
 const DAWNWALKER_GROUPS: NonNullable<Game['guideGroups']> = [
@@ -194,16 +258,19 @@ const seed = async (payload: Payload): Promise<number> => {
         where: { game: { equals: game.id } },
       })
       if (count.totalDocs === 0) continue
-      const built = sectionCopy(section, { ...game, sectionCopy: [] }, {
-        total: COUNT,
-        detail: DETAIL,
-      })
+      /* The same game with its own overrides ignored, so this reads the code's
+         wording rather than whatever a previous run of this pass wrote in. */
+      const bare = { ...game, sectionCopy: [] }
+      const built = sectionCopy(section, bare, { total: COUNT, detail: DETAIL })
       const fresh = {
         section,
-        title: tokenise(built.title),
-        description: tokenise(built.description),
-        heading: tokenise(built.heading),
-        lede: tokenise(built.lede),
+        title: faithful(tokenise(built.title), (c) => sectionCopy(section, bare, c).title),
+        description: faithful(
+          tokenise(built.description),
+          (c) => sectionCopy(section, bare, c).description,
+        ),
+        heading: faithful(tokenise(built.heading), (c) => sectionCopy(section, bare, c).heading),
+        lede: faithful(tokenise(built.lede), (c) => sectionCopy(section, bare, c).lede),
       }
       const stamp = fingerprint(fresh)
 

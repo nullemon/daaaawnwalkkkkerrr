@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 import type { Media, Person } from '@/payload-types'
 import { copy } from '@/lib/copy'
+import { externalSite } from '@/lib/urls'
 import {
   PEOPLE_BUILT_IN,
   PERSON_ROLE_LABEL,
@@ -50,13 +51,12 @@ export async function PersonProfile({ person }: { person: Person }) {
     un-breakable URL in it either overflows or wraps to five lines. The href
     stays exactly what the record holds.
   */
+  const websiteHref = externalSite(person.website)
   const websiteLabel = (() => {
-    if (!person.website) return null
-    try {
-      return new URL(person.website).host.replace(/^www\./, '')
-    } catch {
-      return person.website
-    }
+    const raw = person.website?.trim()
+    if (!raw) return null
+    if (!websiteHref) return raw
+    return new URL(websiteHref).host.replace(/^www\./, '')
   })()
 
   /* Only rows a source actually gave. Nothing prints as "unknown": the schema's
@@ -72,10 +72,22 @@ export async function PersonProfile({ person }: { person: Person }) {
     websiteLabel
       ? {
           label: PERSON_ROW_LABEL.website,
-          value: (
-            <a href={person.website!} rel="nofollow noopener noreferrer" target="_blank">
+          /*
+            A link only when the record holds a URL a browser can follow.
+            Three of these eight values are a bare domain and one is two
+            domains in a space-separated pair, and a bare domain in an `href`
+            is a *relative* path: the Website row on a living person's profile
+            resolved to `people.<domain>/olivierderiviere.com` and answered
+            404. The value still prints, because it is what the source said —
+            it just stops pretending to be somewhere to go. See
+            `externalSite`.
+          */
+          value: websiteHref ? (
+            <a href={websiteHref} rel="nofollow noopener noreferrer" target="_blank">
               {websiteLabel}
             </a>
+          ) : (
+            websiteLabel
           ),
         }
       : null,

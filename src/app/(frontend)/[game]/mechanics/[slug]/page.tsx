@@ -8,6 +8,7 @@ import type { LinkScope } from '@/lib/link-index'
 import { Sources } from '@/components/Sources'
 import { Attribution } from '@/components/Attribution'
 import { CommentThread } from '@/components/CommentThread'
+import { EntityImage } from '@/components/EntityImage'
 import { getBySlug, getGame } from '@/lib/payload'
 import { gameName } from '@/lib/section-copy'
 import { gameSlugParams } from '@/lib/params'
@@ -62,6 +63,18 @@ export default async function MechanicPage({ params }: Props) {
         badges={<Confidence level={doc.confidence} />}
       />
       <div className="page body-main">
+        {/*
+          The image the collection has a field for.
+
+          `Mechanics.image` was added because these pages — release, system
+          requirements, credits — are the ones every wiki opens with and were
+          walls of text, and fifty-one images were attached to them. Nothing
+          here rendered any of them: an upload that saves, appears in the
+          admin, counts in `pnpm check:launch`'s credit tally, and is on no
+          page anywhere. Above the key facts, because the facts table is what
+          a reader came for and a picture under it would be a footer.
+        */}
+        <EntityImage media={doc.image} shape="wide" />
         {doc.keyFacts?.length ? (
           <div className="tablewrap">
             <table>

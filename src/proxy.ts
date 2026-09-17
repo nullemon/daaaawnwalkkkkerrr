@@ -46,6 +46,28 @@ const PASS_THROUGH = new Set([
   // referenced by absolute path from whichever host is serving, so rewriting
   // them onto a game prefix would look for a file that is not there.
   'wiki-assets',
+  /*
+    The network's own icon set and share card, in `public/`, for exactly the
+    same reason as the line above: they are referenced by absolute path from
+    whichever host is serving.
+
+    Only `icon.svg` and `og.png` were exempt, and only on the apex — they were
+    in `APEX_ONLY` and not here — so of the four icons the hub's own
+    `generateMetadata` declares, three answered a 308 to
+    `favicon-32.png.<domain>`, a host that does not exist. Nothing errored: a
+    browser that cannot fetch a declared icon falls back to the next one and
+    says nothing, and `pnpm check:launch` passed the whole time because it
+    checks that the five files are on disk, not that a request for one is
+    answered. Counting files is not checking pages.
+
+    Off the apex they were unreachable outright, which is why the companies and
+    people hosts could not have a favicon at all.
+  */
+  'icon.svg',
+  'favicon-32.png',
+  'icon-512.png',
+  'apple-touch-icon.png',
+  'og.png',
 ])
 
 /**
@@ -99,9 +121,10 @@ export const APEX_ONLY = new Set([
   'account',
   'wikis',
   'search',
+  /* No such file, and that is the point: the name must never be read as a
+     wiki slug. The rest of the icon set is in `PASS_THROUGH` above, which this
+     spreads in, so it is not restated here. */
   'favicon.ico',
-  'icon.svg',
-  'og.png',
 ])
 
 /**

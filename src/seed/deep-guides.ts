@@ -4,12 +4,14 @@ import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import { getPayload } from 'payload'
+import { GAME_SCOPED } from '../lib/tenancy'
 import type { Payload } from 'payload'
 
 import config from '../payload.config'
 import { rich, type Block } from './lexical'
 import { slugify } from '../fields/shared'
 import { SECTION_PATH, type GameScopedCollection } from '../lib/tenancy'
+import { isNotAnEntity, isNotAPlace, type HarvestedEntity } from '../lib/harvest'
 
 /**
  * The second, deeper pass of guide writing.
@@ -206,6 +208,8 @@ async function run(): Promise<void> {
     )
 
     let written = 0
+    /* Declared per game, because the sweep below compares against it. */
+    const writtenRoundups = new Set<string>()
 
     const write = async (
       slug: string,
@@ -431,11 +435,21 @@ async function run(): Promise<void> {
     if (harvest?.entities?.length) {
       const groups = new Map<string, { collection: string; titles: string[] }>()
 
-      for (const entity of harvest.entities as {
-        title: string
+      for (const entity of harvest.entities as (HarvestedEntity & {
         collection: string
-        categories: string[]
-      }[]) {
+      })[]) {
+        /*
+          The same guard the importer and `seed:prune-entities` use.
+
+          This pass reads the raw harvest, not the database, so a record
+          `seed:prune-entities` has deleted is still here — which is how the
+          Gears of War film and four other Silent Hill games kept appearing in
+          category roundups after they had been taken out of `regions`. The
+          research is real; the kind of thing is wrong, and that is exactly
+          what `isNotAnEntity` is for.
+        */
+        if (isNotAnEntity(entity, String(game.title))) continue
+        if (entity.collection === 'regions' && isNotAPlace(entity)) continue
         for (const category of entity.categories ?? []) {
           if (NOT_A_GROUPING.test(category)) continue
           // Skip a category that just names the game — that is the wiki index.
@@ -460,16 +474,26 @@ async function run(): Promise<void> {
 
       for (const [category, group] of worthwhile) {
         const slug = `all-${slugify(category)}`.slice(0, 60)
+        writtenRoundups.add(slug)
         const sectionPath = SECTION_PATH[group.collection as GameScopedCollection] ?? ''
         const unique = [...new Set(group.titles)].sort()
 
         await write(
           slug,
-          `Every ${category} in ${name}`,
+          /*
+            "All", not "Every". The category is the source wiki's own name for
+            it and those are always plural — so the template that reads
+            correctly everywhere else on this site produced "Every Bosses in
+            Phantom Blade Zero" and "Every Weapons in Onimusha", in the <h1>
+            and the <title>, on five of the seven harvested wikis.
+            `FRANCHISE_ROUNDUP` in `prune-guides.ts` matches both spellings
+            so it can still reach the pages written under the old one.
+          */
+          `All ${category} in ${name}`,
           `${name} ${category.toLowerCase()}`,
-          `${plural(unique.length, 'entry')} filed under ${category} in ${game.title}, including ${listOf(unique.slice(0, 3))}.`,
+          `${plural(unique.length, 'entry', 'entries')} filed under ${category} in ${game.title}, including ${listOf(unique.slice(0, 3))}.`,
           [
-            `${plural(unique.length, 'entry')} in ${game.title} are filed under ${category}. Each links to what is recorded about it.`,
+            `${plural(unique.length, 'entry', 'entries')} in ${game.title} are filed under ${category}. Each links to what is recorded about it.`,
             { h: `All ${unique.length}` },
             { ul: unique },
             { h: 'Where the grouping comes from' },
@@ -479,7 +503,47 @@ async function run(): Promise<void> {
       }
     }
 
-    console.log(`  ${name.padEnd(24)} ${written} deeper guides`)
+    /*
+      Delete the roundups this pass no longer writes.
+
+      `seed:prune` matches on generated titles, which cannot reach these: a
+      category roundup is titled after the source wiki's own category name, and
+      that is an open set. So the pass that owns the shape does its own
+      sweeping, the same relationship `seed:prune` has with the other
+      generators.
+
+      It became necessary the moment the roundup started applying
+      `isNotAnEntity` — the Silent Hill pachislot machines and the Control
+      events stopped qualifying, the generator stopped writing their pages, and
+      five stayed live, in the sitemap, saying "5 entrys filed under Altered
+      World Events".
+
+      The `all-` namespace is shared with `seed:guides`, which writes
+      `all-characters`, `all-enemies` and the rest from the collection names —
+      so anything matching one of those is somebody else's page and is never
+      touched here. That collision is worth fixing properly one day; until it
+      is, this is the line that stops a sweep deleting another pass's work.
+    */
+    const owned = new Set(GAME_SCOPED.map((collection) => `all-${collection}`))
+    const existing = await payload.find({
+      collection: 'guides',
+      where: { game: { equals: game.id } },
+      limit: 2000,
+      depth: 0,
+    })
+    let swept = 0
+    for (const doc of existing.docs as unknown as { id: string | number; slug: string }[]) {
+      if (!doc.slug.startsWith('all-')) continue
+      if (owned.has(doc.slug)) continue
+      if (writtenRoundups.has(doc.slug)) continue
+      await payload.delete({ collection: 'guides', id: doc.id })
+      swept += 1
+    }
+
+    console.log(
+      `  ${name.padEnd(24)} ${written} deeper guides` +
+        (swept > 0 ? ` (${swept} roundup${swept === 1 ? '' : 's'} no longer written, removed)` : ''),
+    )
   }
 
   console.log(`\n${total} guides written`)

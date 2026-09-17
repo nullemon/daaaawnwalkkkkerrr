@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { Icon } from './Icon'
+import { useUi } from './UiStrings'
 import type { ReaderScore } from '@/lib/ratings'
 
 /**
@@ -41,12 +42,16 @@ import type { ReaderScore } from '@/lib/ratings'
  *
  * ## Strings
  *
- * These are props with defaults rather than `useUi()` keys, which is a
- * deviation from the house rule in `lib/ui-registry.ts` and a deliberate one:
- * this component landed while that file was being edited elsewhere, and an
- * unknown key renders as the key itself — `rating.thanks` in place of a
- * sentence. When the registry is free, add `rating.prompt`, `rating.yours`,
- * `rating.none`, `rating.from` and `rating.failed` and delete these defaults.
+ * From `useUi()`, like everything else with words in it. They were props with
+ * their own defaults while the registry was being edited elsewhere, and the
+ * seven `rating.*` keys landed in the registry without anything being pointed
+ * at them — so Site settings → Interface text listed "Rate this game out of
+ * 10" as editable, an editor could change it, save it, and the page went on
+ * saying what the component said. A control that is present, reachable and
+ * inert, which is the failure this network has already shipped six times.
+ *
+ * `useUi()` answers the registry's own wording outside a provider, so this
+ * still renders in a test or the admin preview with no layout above it.
  */
 
 const STARS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const
@@ -71,21 +76,13 @@ export type StarRatingProps = {
    * nobody is looking at. Worth turning on where the score is the point.
    */
   refresh?: boolean
-  labels?: Partial<typeof DEFAULT_LABELS>
+  /** Per-call overrides. The rest come from the interface-text registry. */
+  labels?: Partial<Labels>
 }
 
-const DEFAULT_LABELS = {
-  prompt: 'Rate this game out of 10',
-  yours: 'Your rating',
-  none: 'No reader scores yet',
-  one: 'reader',
-  many: 'readers',
-  failed: 'That vote did not save. Try again?',
-  saving: 'Saving…',
-}
+type Labels = Record<'prompt' | 'yours' | 'none' | 'one' | 'many' | 'failed' | 'saving', string>
 
-const plural = (count: number, labels: typeof DEFAULT_LABELS) =>
-  count === 1 ? labels.one : labels.many
+const plural = (count: number, labels: Labels) => (count === 1 ? labels.one : labels.many)
 
 /** One star. `filled` is the visual state; the value is what it means. */
 const Star = ({ filled }: { filled: boolean }) => (
@@ -99,7 +96,17 @@ export function StarRating({
   refresh = false,
   labels: given,
 }: StarRatingProps) {
-  const labels = { ...DEFAULT_LABELS, ...given }
+  const ui = useUi()
+  const labels: Labels = {
+    prompt: ui.t('rating.prompt'),
+    yours: ui.t('rating.yours'),
+    none: ui.t('rating.none'),
+    one: ui.t('rating.one'),
+    many: ui.t('rating.many'),
+    failed: ui.t('rating.failed'),
+    saving: ui.t('rating.saving'),
+    ...given,
+  }
 
   const [score, setScore] = useState<ReaderScore>(readers ?? { average: null, votes: 0 })
   const [mine, setMine] = useState<number | null>(null)

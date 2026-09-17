@@ -168,6 +168,11 @@ export default async function EndingPage({ params }: Props) {
           <UnlockPath
             roots={node.requiredQuests}
             quests={quests}
+            /* The segment costs in this chain are the clock, so they are shown
+               only where the game has one. Endings exist on Dawnwalker alone
+               today, but the gate belongs on the feature rather than on that
+               coincidence. */
+            clock={(wiki?.features ?? []).includes('run-checker')}
             heading="How to reach this ending"
             emptyNote="No source records a required questline for this ending yet."
           />

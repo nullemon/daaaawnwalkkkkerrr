@@ -186,7 +186,12 @@ export default async function QuestPage({ params }: Props) {
           </div>
         </div>
 
-        <UnlockPath roots={[String(quest.id)]} questId={String(quest.id)} quests={graph.quests} />
+        <UnlockPath
+          roots={[String(quest.id)]}
+          questId={String(quest.id)}
+          quests={graph.quests}
+          clock={hasClock}
+        />
 
         {unlocks.length > 0 ? (
           <section className="section">

@@ -1,4 +1,4 @@
-import { companyUrl, personUrl, HUB_ORIGIN } from './urls'
+import { companyUrl, externalSite, personUrl, HUB_ORIGIN } from './urls'
 import { slugify } from '../fields/shared'
 
 /**
@@ -253,7 +253,7 @@ export const organization = (
     came from. That is what lets a consumer reconcile this record with one it
     already holds.
   */
-  const sameAs = [company.website, ...(options.sources ?? [])]
+  const sameAs = [externalSite(company.website), ...(options.sources ?? [])]
     .map((value) => (value ?? '').trim())
     .filter(Boolean)
     .filter((value, index, all) => all.indexOf(value) === index)
@@ -270,8 +270,20 @@ export const organization = (
     image: options.image || undefined,
     foundingDate: isoDate(company.founded) ?? (/^\d{4}$/.test((company.founded ?? '').trim()) ? company.founded!.trim() : undefined),
     /* A dissolution date is the single most useful thing this kind of page can
-       carry, and the one most often missing elsewhere. */
-    dissolutionDate: /^\d{4}$/.test((company.defunct ?? '').trim()) ? company.defunct!.trim() : undefined,
+       carry, and the one most often missing elsewhere.
+
+       Read the same two ways `foundingDate` above is, and that is the fix
+       rather than a tidy-up: a bare-year test alone dropped every closure the
+       source wrote as a full date — "June 7, 2012", "15 April 2015" — which is
+       half of the seventy closed companies on this host. Those profiles
+       published an Organization with a founding date and no dissolution date
+       at all, so a machine reading the graph was told when 38 Studios started
+       and never told it had ended, while the page above it carried a red
+       banner saying so. `isoDate` still refuses anything that is not a real
+       date, so "2000 (2000) (original), 2005 (2005)" stays out. */
+    dissolutionDate:
+      isoDate(company.defunct) ??
+      (/^\d{4}$/.test((company.defunct ?? '').trim()) ? company.defunct!.trim() : undefined),
     founder: (company.founders ?? '')
       .split(',')
       .map((name) => name.trim())
@@ -315,7 +327,7 @@ export const person = (
   } = {},
 ): Json => {
   const url = personUrl(`/${record.slug}`)
-  const sameAs = [record.website, ...(options.sources ?? [])]
+  const sameAs = [externalSite(record.website), ...(options.sources ?? [])]
     .map((value) => (value ?? '').trim())
     .filter(Boolean)
     .filter((value, index, all) => all.indexOf(value) === index)

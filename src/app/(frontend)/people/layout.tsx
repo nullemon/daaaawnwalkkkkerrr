@@ -6,7 +6,7 @@ import type { RailItem } from '@/components/SiteRail'
 import { getPublishedGames, getSiteSettings, gameUrl } from '@/lib/payload'
 import { copy } from '@/lib/copy'
 import { PEOPLE_BUILT_IN, getPeopleSite } from '@/lib/people-copy'
-import { companyUrl, hub } from '@/lib/urls'
+import { PEOPLE_ORIGIN, companyUrl, hub } from '@/lib/urls'
 
 /**
  * The people host.
@@ -28,12 +28,50 @@ export async function generateMetadata(): Promise<Metadata> {
   const network = settings.siteName ?? 'the network'
   const shellName = copy(site.shellName, PEOPLE_BUILT_IN.shellName, { network })
   return {
+    /*
+      This host's own origin, which is the whole reason a canonical is worth
+      printing.
+
+      Every page under here writes `alternates.canonical` as a path, and Next
+      resolves a relative canonical against the nearest `metadataBase`. Nothing
+      set one here, so all 597 profiles inherited the *hub's* — and told every
+      crawler that the canonical address of `people.<domain>/peter-molyneux` is
+      `<domain>/peter-molyneux`, which is not a page: the apex reads an
+      unreserved first segment as a wiki slug and 308s it to
+      `peter-molyneux.<domain>`, a host that does not exist. The directory was
+      worse still, naming the network home page as its own canonical, which is
+      a request to be dropped from the index and folded into a page about
+      something else.
+
+      `[game]/layout.tsx` has always set this per wiki, which is why the eight
+      wikis were right and these two hosts were not. Built from `PEOPLE_ORIGIN`
+      so it cannot drift from `personUrl`, which is what every inbound link,
+      every `@id` and the sitemap already use.
+    */
+    metadataBase: new URL(PEOPLE_ORIGIN),
     title: {
       default: `${copy(site.shellTagline, PEOPLE_BUILT_IN.shellTagline)} — ${network}`,
       template: `%s · ${shellName}`,
     },
     description: copy(site.shellDescription, PEOPLE_BUILT_IN.shellDescription, { network }),
     applicationName: shellName,
+    /*
+      The network's own icon set. The root layout deliberately declares none —
+      it wraps eight wikis and two network hosts and cannot tell which it is
+      rendering — and says the answer belongs to whichever layout knows. The
+      hub answers for itself and each wiki answers with its own key art; this
+      host and the companies host answered with nothing, so 597 profiles served
+      a blank browser tab. These are the network's, because this host is the
+      network's rather than any one game's.
+    */
+    icons: {
+      icon: [
+        { url: '/icon.svg', type: 'image/svg+xml' },
+        { url: '/favicon-32.png', type: 'image/png', sizes: '32x32' },
+        { url: '/icon-512.png', type: 'image/png', sizes: '512x512' },
+      ],
+      apple: '/apple-touch-icon.png',
+    },
   }
 }
 

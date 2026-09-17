@@ -23,6 +23,7 @@ export function UnlockPath({
   roots,
   quests,
   questId,
+  clock = false,
   heading,
   emptyNote,
 }: {
@@ -31,6 +32,19 @@ export function UnlockPath({
   quests: QuestNode[]
   /** Set when the page is about a quest, so it renders as the last step. */
   questId?: string
+  /**
+   * Whether this wiki's game has the segment clock.
+   *
+   * Off means the chain renders as an order and nothing else. Segments are
+   * Dawnwalker's, and the cost half of this component asserts the mechanic
+   * exists even when it only says the figure is missing: a Control Resonant
+   * quest page printed "cost unpublished" against all nine of its steps and
+   * "No source publishes a cost for any of them" underneath. That is the same
+   * leak as the Segments column in the quests table and the Time cost row in
+   * the fact panel, both already gated on this feature, one component further
+   * down the page.
+   */
+  clock?: boolean
   /** Both fall back to the registry; a page passes one to say something else. */
   heading?: string
   emptyNote?: string
@@ -158,20 +172,22 @@ export function UnlockPath({
                 ) : (
                   <Link href={`/quests/${step.quest.slug}`}>{step.quest.title}</Link>
                 )}
-                <span className="unlockstep-cost">
-                  {step.quest.costKnown
-                    ? step.quest.timeMin === step.quest.timeMax
-                      ? formatSegments(step.quest.timeMin)
-                      : `${step.quest.timeMin}–${formatSegments(step.quest.timeMax)}`
-                    : ui.t('unlock.cost-unpublished')}
-                </span>
+                {clock ? (
+                  <span className="unlockstep-cost">
+                    {step.quest.costKnown
+                      ? step.quest.timeMin === step.quest.timeMax
+                        ? formatSegments(step.quest.timeMin)
+                        : `${step.quest.timeMin}–${formatSegments(step.quest.timeMax)}`
+                      : ui.t('unlock.cost-unpublished')}
+                  </span>
+                ) : null}
               </span>
             </li>
           )
         })}
       </ol>
 
-      {personal && !achieved ? (
+      {clock && personal && !achieved ? (
         <p className="note unlockpath-cost">
           {costLine}
           {affordable === false ? ui.t('unlock.unaffordable') : null}

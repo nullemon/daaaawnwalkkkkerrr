@@ -16,7 +16,7 @@ import { client, gameUrl, rel, relMany } from '@/lib/payload'
 import { copy, hasRichText } from '@/lib/copy'
 import { COMPANIES_BUILT_IN, COMPANY_ROLE_LABEL, getCompaniesSite } from '@/lib/companies-copy'
 import { clamp } from '@/lib/seo'
-import { COMPANIES_ORIGIN, hub, personUrl } from '@/lib/urls'
+import { COMPANIES_ORIGIN, externalSite, hub, personUrl } from '@/lib/urls'
 import { readOfficers } from '@/lib/officers'
 import type { Company, Game } from '@/payload-types'
 
@@ -168,7 +168,16 @@ export default async function CompanyPage({ params }: Props) {
   const parent = rel<Company>(company.parent)
   const subsidiaries = relMany<Company>(company.subsidiaries)
   const defunct = company.defunct?.trim() || null
-  const website = company.website?.trim() || null
+  /*
+    A URL a browser can follow, or nothing at all. `/com2us` stores the words
+    "Official website" in this field — the link's label, scraped instead of its
+    target — and that went straight into the `href`, which makes it relative:
+    the button resolved to `companies.<domain>/Official%20website` and answered
+    404. A styled call to action that goes nowhere is worse than an absent one,
+    because a reader cannot tell it is broken until they press it. The value
+    stays on the record, where somebody can fix it. See `externalSite`.
+  */
+  const website = externalSite(company.website)
 
   /*
     Only what the record actually has. Every one of these is dropped when the

@@ -6,7 +6,7 @@ import type { RailItem } from '@/components/SiteRail'
 import { getPublishedGames, getSiteSettings, gameUrl } from '@/lib/payload'
 import { copy } from '@/lib/copy'
 import { COMPANIES_BUILT_IN, getCompaniesSite } from '@/lib/companies-copy'
-import { hub } from '@/lib/urls'
+import { COMPANIES_ORIGIN, hub, personUrl } from '@/lib/urls'
 
 /**
  * The companies host.
@@ -27,12 +27,49 @@ export async function generateMetadata(): Promise<Metadata> {
   const network = settings.siteName ?? 'the network'
   const shellName = copy(site.shellName, COMPANIES_BUILT_IN.shellName, { network })
   return {
+    /*
+      This host's own origin, which is the whole reason a canonical is worth
+      printing.
+
+      Every page under here writes `alternates.canonical` as a path, and Next
+      resolves a relative canonical against the nearest `metadataBase`. Nothing
+      set one here, so all 321 profiles inherited the *hub's* — and told every
+      crawler that the canonical address of `companies.<domain>/capcom` is
+      `<domain>/capcom`, which is not a page: the apex reads an unreserved first
+      segment as a wiki slug and 308s it to `capcom.<domain>`, a host that does
+      not exist. The index was worse still, naming the network home page as its
+      own canonical, which is a request to be dropped from the index and folded
+      into a page about something else.
+
+      `[game]/layout.tsx` has always set this per wiki, which is why the eight
+      wikis were right and these two hosts were not. Built from
+      `COMPANIES_ORIGIN` so it cannot drift from `companyUrl`, which is what
+      every inbound link, every `@id` and the sitemap already use.
+    */
+    metadataBase: new URL(COMPANIES_ORIGIN),
     title: {
       default: `${copy(site.shellTagline, COMPANIES_BUILT_IN.shellTagline)} — ${network}`,
       template: `%s · ${shellName}`,
     },
     description: copy(site.shellDescription, COMPANIES_BUILT_IN.shellDescription, { network }),
     applicationName: shellName,
+    /*
+      The network's own icon set. The root layout deliberately declares none —
+      it wraps eight wikis and two network hosts and cannot tell which it is
+      rendering — and says the answer belongs to whichever layout knows. The
+      hub answers for itself and each wiki answers with its own key art; this
+      host and the people host answered with nothing, so 321 profiles served a
+      blank browser tab. These are the network's, because this host is the
+      network's rather than any one game's.
+    */
+    icons: {
+      icon: [
+        { url: '/icon.svg', type: 'image/svg+xml' },
+        { url: '/favicon-32.png', type: 'image/png', sizes: '32x32' },
+        { url: '/icon-512.png', type: 'image/png', sizes: '512x512' },
+      ],
+      apple: '/apple-touch-icon.png',
+    },
   }
 }
 
@@ -44,7 +81,23 @@ export default async function CompaniesLayout({ children }: { children: ReactNod
   ])
 
   const rail: RailItem[] = [
-    { label: 'All companies', href: '/', icon: 'person' },
+    /*
+      `crown`, not `person`. The people host already words the pair this way —
+      Companies is a crown there, People is a person — and the rail collapses
+      to icons at rest, so two rows sharing one glyph is not navigation. One
+      meaning per glyph across the network, which is what the second row below
+      needs to be readable at all.
+    */
+    { label: 'All companies', href: '/', icon: 'crown' },
+    /*
+      The people host is the sibling a reader on this one actually wants, and
+      the link went one way only: `people.<domain>` carries Companies in its
+      rail and its footer, and this host carried nothing back. The only route
+      here to 597 profiles was an officer name on the subset of pages that
+      have a "Who runs it" section — a whole site of the network reachable by
+      accident. Cross-origin, so a plain href rather than a route.
+    */
+    { label: 'People', href: personUrl('/'), icon: 'person' },
     { label: 'All wikis', href: hub('/wikis'), icon: 'book' },
   ]
 
@@ -60,6 +113,7 @@ export default async function CompaniesLayout({ children }: { children: ReactNod
       heading: 'The network',
       links: [
         { label: 'All wikis', href: hub('/wikis') },
+        { label: 'People', href: personUrl('/') },
         { label: 'Contributors', href: hub('/authors') },
       ],
     },

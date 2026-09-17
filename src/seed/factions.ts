@@ -297,6 +297,17 @@ const plural = (count: number, word: string, many = `${word}s`) =>
   `${count} ${count === 1 ? word : many}`
 
 /**
+ * The verb that goes with a count, for a sentence whose subject is that count.
+ *
+ * `plural` got the noun right and left the verb behind it, so 119 of the 177
+ * factions shipped "1 record on this wiki name it as an affiliation" and "1
+ * page on that wiki state it in an infobox" — in the lede, and so in the meta
+ * description as well. A count of one is the state nobody looks at, and a
+ * harvest of infobox mentions produces it more often than any other.
+ */
+const verb = (count: number, singular: string, many: string) => (count === 1 ? singular : many)
+
+/**
  * Join sentences while they fit.
  *
  * `summary` is capped at 320 characters and a slice through the middle of a
@@ -476,7 +487,7 @@ async function run(): Promise<void> {
       const summary = page
         ? fit([
             `${candidate.name}, an organisation in ${gameTitle}.`,
-            `${plural(count, 'record')} on this wiki name it as an affiliation.`,
+            `${plural(count, 'record')} on this wiki ${verb(count, 'names', 'name')} it as an affiliation.`,
             'Compiled from a community wiki and not yet checked against the game.',
           ])
         : fit([
@@ -495,7 +506,7 @@ async function run(): Promise<void> {
         }
       } else {
         body.push(
-          `No article for ${candidate.name} was harvested from ${harvest.host}. What is recorded here is narrower and it is worth being exact about: ${plural(count, 'page')} on that wiki state it in an infobox as an affiliation${examples.length > 0 ? `, among them ${examples.join(', ')}` : ''}.`,
+          `No article for ${candidate.name} was harvested from ${harvest.host}. What is recorded here is narrower and it is worth being exact about: ${plural(count, 'page')} on that wiki ${verb(count, 'states', 'state')} it in an infobox as an affiliation${examples.length > 0 ? `, among them ${examples.join(', ')}` : ''}.`,
         )
         body.push(
           'That is a compiled claim about those pages rather than a description of the organisation, which is why this record carries low confidence and why nothing here says what it does, when it formed or who leads it.',

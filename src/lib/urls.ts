@@ -76,3 +76,35 @@ export const PEOPLE_ORIGIN = (() => {
 
 export const personUrl = (path = '/'): string =>
   `${PEOPLE_ORIGIN}${path.startsWith('/') ? path : `/${path}`}`
+
+/**
+ * A value a record calls a website, as a link — or nothing.
+ *
+ * `website` is free text harvested from an infobox, and an infobox is not a
+ * validator. Three of the eight people who have one hold a bare domain
+ * ("olivierderiviere.com"), one holds two domains separated by a space, and
+ * `/com2us` holds the words **"Official website"** — the link's own label,
+ * scraped instead of its target. Every one of those was rendered straight into
+ * an `href`, which makes it *relative*: the "Official site" button at the top
+ * of a real company's profile resolved to
+ * `companies.<domain>/Official%20website` and answered 404, and so did the
+ * Website row on three living people's profiles. A styled control that goes
+ * nowhere is worse than no control, because a reader cannot tell it is broken
+ * until they press it.
+ *
+ * Only an absolute http(s) URL comes back. A bare domain is deliberately left
+ * out rather than repaired with a scheme: guessing `https://` is guessing, it
+ * does not rescue the two-domains-in-one-field case anyway, and the fix for
+ * those records belongs in the record. Call sites print the raw value as text
+ * where a reader is owed what the source said, and render no link at all.
+ */
+export const externalSite = (value?: string | null): string | null => {
+  const text = (value ?? '').trim()
+  if (!text) return null
+  try {
+    const url = new URL(text)
+    return url.protocol === 'http:' || url.protocol === 'https:' ? text : null
+  } catch {
+    return null
+  }
+}

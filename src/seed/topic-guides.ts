@@ -9,6 +9,7 @@ import config from '../payload.config'
 import { rich, type Block } from './lexical'
 import { slugify } from '../fields/shared'
 import { SECTION_PATH, type GameScopedCollection } from '../lib/tenancy'
+import { isNotAnEntity, isNotAPlace, type HarvestedEntity } from '../lib/harvest'
 
 /**
  * The third pass of guide writing.
@@ -69,9 +70,19 @@ const listOf = (values: string[]) =>
 const NOT_A_GROUPING_KEY =
   /^(gender|sex|developer|publisher|director|producer|composer|designer|writer|artist|platforms?|released?|engine|series|debut|voice ?actors?|language)$/i
 
-/** Infobox keys that identify rather than describe, so make poor comparisons. */
+/**
+ * Infobox keys that identify rather than describe, so make poor comparisons.
+ *
+ * `appearsin` is `appearances` with the space taken out, which is how the
+ * Phantom Blade wiki spells it — and because the list only knew the spelled-out
+ * form, it became both a compared field and a grouping, and published a page
+ * headed "Every enemy in Phantom Blade Zero with appearsin Phantom Blade Zero".
+ * A raw infobox key in an `<h1>`, over a grouping that says every enemy in the
+ * game appears in the game. `WEAK_GROUPING` in `prune-guides.ts` names it too,
+ * so the page already written can be removed.
+ */
 const NOT_COMPARABLE =
-  /^(name|title|image|caption|imagecaption|alt|wiki|url|id|appearances?|voice|actor|portrayed|quote|hidecat|width|height|px)$/i
+  /^(name|title|image|caption|imagecaption|alt|wiki|url|id|appearances?|appears ?in|voice|actor|portrayed|quote|hidecat|width|height|px)$/i
 
 /** A readable label for a wiki infobox key: "ammotype" -> "ammunition". */
 const PRETTY: Record<string, string> = {
@@ -552,8 +563,7 @@ async function run(): Promise<void> {
     const compared = new Set<string>()
 
     if (harvest?.entities?.length) {
-      type Entity = {
-        title: string
+      type Entity = HarvestedEntity & {
         collection: string
         facts?: Record<string, string>
       }
@@ -562,6 +572,20 @@ async function run(): Promise<void> {
       const byCollection = new Map<string, Entity[]>()
       for (const entity of entities) {
         if (!entity.facts || Object.keys(entity.facts).length === 0) continue
+        /*
+          The same guard the importer and `seed:prune-entities` use.
+
+          This pass reads the raw harvest rather than the database, so deleting
+          a bad record does nothing to it: `pnpm seed:prune-entities` took the
+          Silent Hill film, the pachislot machine and four other Silent Hill
+          games out of `regions`, and this file went on publishing "Every
+          region in Silent Hill Townfall, compared — 26 regions" listing every
+          one of them. A wiki with one region had a comparison page for
+          twenty-six. Reading the harvest is the right call; skipping the
+          filter that comes with it was not.
+        */
+        if (isNotAnEntity(entity, game.title)) continue
+        if (entity.collection === 'regions' && isNotAPlace(entity)) continue
         byCollection.set(entity.collection, [...(byCollection.get(entity.collection) ?? []), entity])
       }
 
@@ -648,14 +672,25 @@ async function run(): Promise<void> {
           return `${member.title}${parts.length ? ` - ${parts.join(' | ')}` : ' - not recorded'}`
         })
 
+        /*
+          Singular for the title, and the harvest's own key for the plural.
+
+          `plural()` defaults to noun + "s", which turned "enemy" back into
+          "enemys" — in the <h1>, the summary and so the meta description of
+          the comparison page on five of the seven harvested wikis. The
+          collection key is already the plural spelling and is what the title
+          and the search phrase below use, so there is no second list to keep
+          in step.
+        */
         const noun = collection.replace(/ies$/, 'y').replace(/s$/, '')
+        const nouns = collection
         await write(
           `${collection}-compared`,
           `Every ${noun} in ${name}, compared`,
           `${name} all ${collection}`,
-          `${plural(sorted.length, noun)} in ${game.title} side by side on ${listOf(shared.map(label))} - compiled from records the source wiki keeps one page apart.`,
+          `${plural(sorted.length, noun, nouns)} in ${game.title} side by side on ${listOf(shared.map(label))} - compiled from records the source wiki keeps one page apart.`,
           [
-            `${plural(sorted.length, noun)} are recorded for ${game.title}. Every one of them carries ${listOf(shared.map(label))}, so for once they can be read against each other rather than one page at a time.`,
+            `${plural(sorted.length, noun, nouns)} are recorded for ${game.title}. Every one of them carries ${listOf(shared.map(label))}, so for once they can be read against each other rather than one page at a time.`,
             { h: `All ${sorted.length}` },
             { ul: lines },
             { h: 'Where the figures come from' },
@@ -699,9 +734,9 @@ async function run(): Promise<void> {
             slug,
             `Every ${noun} in ${name} with ${label(groupKey)} ${value}`,
             `${name} ${value} ${collection}`,
-            `${plural(titles.length, noun)} in ${game.title} share ${label(groupKey)} ${value} - ${listOf(titles.slice(0, 3))} among them.`,
+            `${plural(titles.length, noun, nouns)} in ${game.title} share ${label(groupKey)} ${value} - ${listOf(titles.slice(0, 3))} among them.`,
             [
-              `${plural(titles.length, noun)} recorded for ${game.title} share the same ${label(groupKey)}: **${value}**.`,
+              `${plural(titles.length, noun, nouns)} recorded for ${game.title} share the same ${label(groupKey)}: **${value}**.`,
               { h: `The ${titles.length}` },
               { ul: titles },
               { h: 'What the grouping is' },

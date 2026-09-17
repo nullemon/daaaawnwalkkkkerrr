@@ -26,13 +26,29 @@ import config from '../payload.config'
  * prints every deletion. Run it after changing a generator's filters.
  */
 
-/** "Every Main series in X" - a franchise category, not a thing in the game. */
+/**
+ * "All Main series in X" - a franchise category, not a thing in the game.
+ *
+ * Both openings. The category roundup is titled "All <category> in <game>"
+ * now, because the category is the source wiki's own plural and "Every Bosses"
+ * is not a sentence - but every page written under the old "Every" spelling is
+ * still in the database, and a prune that could no longer name them would
+ * leave exactly the orphans this file exists to remove.
+ */
 const FRANCHISE_ROUNDUP =
-  /^Every (games?|main series|spin[- ]?offs?|staff|corporate|companies|developers?|publishers?|soundtracks?|films?|novels?|comics?|books?|manga|merchandise|music|media|voice actors?|trademarks?) in /i
+  /^(All|Every) (games?|main series|spin[- ]?offs?|staff|corporate|companies|developers?|publishers?|soundtracks?|films?|novels?|comics?|books?|manga|merchandise|music|media|voice actors?|trademarks?) in /i
 
-/** "Every enemy in X with gender Male" - a grouping nobody wanted. */
+/**
+ * "Every enemy in X with gender Male" - a grouping nobody wanted.
+ *
+ * `appearsin` joins the list with the page that named it: "Every enemy in
+ * Phantom Blade Zero with appearsin Phantom Blade Zero", a raw infobox key in
+ * the title over a grouping that says the game's enemies appear in the game.
+ * The generator refuses the key now; this is what reaches the page it already
+ * wrote.
+ */
 const WEAK_GROUPING =
-  / with (gender|sex|developer|publisher|director|producer|composer|designer|writer|artist|platforms?|released?|engine|series|debut|voice ?actors?|language) /i
+  / with (gender|sex|developer|publisher|director|producer|composer|designer|writer|artist|platforms?|released?|engine|series|debut|voice ?actors?|appears ?in|language) /i
 
 async function run(): Promise<void> {
   const payload = await getPayload({ config })

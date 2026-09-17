@@ -130,6 +130,21 @@ describe('organization', () => {
     // often missing elsewhere.
     const data = organization({ name: 'Gone', slug: 'gone', defunct: '2015' }) as Record<string, unknown>
     expect(data.dissolutionDate).toBe('2015')
+
+    // A full date, which is how half the sources write a closure. The
+    // bare-year test alone dropped every one of them, so a closed studio's
+    // graph node said only when it started.
+    const dated = organization({ name: 'Gone', slug: 'gone', defunct: 'June 7, 2012' }) as Record<string, unknown>
+    expect(dated.dissolutionDate).toBe('2012-06-07')
+
+    // And nothing invented from a value that is not a date. 989 Studios'
+    // infobox printed its closure twice with both years in brackets.
+    const messy = organization({
+      name: 'Gone',
+      slug: 'gone',
+      defunct: '2000 (2000) (original), 2005 (2005)',
+    }) as Record<string, unknown>
+    expect(messy.dissolutionDate).toBeUndefined()
   })
 
   it('does not invent a founding date from prose', () => {

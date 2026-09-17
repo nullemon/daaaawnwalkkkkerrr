@@ -44,37 +44,52 @@ const nameSome = (rows: Row[], limit = 4) =>
     .map((row) => row.title)
     .join(', ')
 
+/*
+  `nouns` is written out rather than derived.
+
+  `plural()` defaults to noun + "s", which turned "enemy" into "enemys" — in
+  the summary, and so in the meta description, of the enemy roundup on every
+  wiki that has one. Every other noun here happens to take a plain "s", which
+  is exactly why nobody noticed the one that does not: a rule that is right
+  five times out of six is the shape this repository keeps being caught by.
+*/
 const SECTION_COPY: Record<
   string,
-  { noun: string; heading: (game: string) => string; query: (game: string) => string }
+  { noun: string; nouns: string; heading: (game: string) => string; query: (game: string) => string }
 > = {
   characters: {
     noun: 'character',
+    nouns: 'characters',
     heading: (game) => `Every character in ${game}`,
     query: (game) => `${game} characters`,
   },
   enemies: {
     noun: 'enemy',
+    nouns: 'enemies',
     heading: (game) => `Every enemy and boss in ${game}`,
     query: (game) => `${game} bosses`,
   },
   items: {
     noun: 'item',
+    nouns: 'items',
     heading: (game) => `Every weapon and item in ${game}`,
     query: (game) => `${game} weapons`,
   },
   regions: {
     noun: 'location',
+    nouns: 'locations',
     heading: (game) => `Every location in ${game}`,
     query: (game) => `${game} locations`,
   },
   quests: {
     noun: 'chapter',
+    nouns: 'chapters',
     heading: (game) => `Every chapter and mission in ${game}`,
     query: (game) => `${game} chapters`,
   },
   achievements: {
     noun: 'achievement',
+    nouns: 'achievements',
     heading: (game) => `All achievements in ${game}`,
     query: (game) => `${game} achievements`,
   },
@@ -190,7 +205,7 @@ async function run(): Promise<void> {
       const path = SECTION_PATH[collection as keyof typeof SECTION_PATH]
 
       const blocks: Block[] = [
-        `This wiki catalogues ${plural(rows.length, copy.noun)} in ${name}. The full list is below, and each name links to what is recorded about it — where the figures came from, and what is still unknown.`,
+        `This wiki catalogues ${plural(rows.length, copy.noun, copy.nouns)} in ${name}. The full list is below, and each name links to what is recorded about it — where the figures came from, and what is still unknown.`,
         { h: `All ${rows.length}` },
         { ul: rows.map((row) => row.title) },
         { h: 'What this list is, and is not' },
@@ -202,7 +217,7 @@ async function run(): Promise<void> {
         title: copy.heading(name),
         slug: `all-${collection}`,
         targetQuery: copy.query(name),
-        summary: `All ${plural(rows.length, copy.noun)} recorded in ${name}, including ${nameSome(rows)}. Counted from the database, not claimed.`,
+        summary: `All ${plural(rows.length, copy.noun, copy.nouns)} recorded in ${name}, including ${nameSome(rows)}. Counted from the database, not claimed.`,
         body: rich(...blocks),
         author: bylineFor('completion'),
         sources,
