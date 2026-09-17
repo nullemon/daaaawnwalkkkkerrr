@@ -258,6 +258,11 @@ async function run(): Promise<void> {
     )
 
     let written = 0
+    /*
+      Every slug this pass wrote for this game, so the sweep below can tell a
+      page it still wants from one it has stopped writing.
+    */
+    const wrote = new Set<string>()
 
     const write = async (
       slug: string,
@@ -268,6 +273,7 @@ async function run(): Promise<void> {
       role: RegExp = /Launch|Performance|Achievements/,
       extraSources: typeof sources = [],
     ) => {
+      wrote.add(slug)
       const image = await pick(slug, `${game.title} - ${title}`)
       await upsert(payload, game.id, slug, {
         title,
@@ -951,7 +957,52 @@ async function run(): Promise<void> {
       }
     }
 
-    console.log(`  ${name.padEnd(24)} ${written} topic guides`)
+    /*
+      Delete the pages this pass has stopped writing.
+
+      A generator that tightens a filter stops *writing* a slug; it does not
+      remove the page the loose filter already wrote. `seed:prune` is the
+      answer to that everywhere else, and it cannot be here: it matches on
+      generated titles, and these titles are also the titles of the live
+      versions of the same pages on other wikis. Silent Hill's
+      `regions-compared` was still headed "Every region in Silent Hill
+      Townfall, compared" and saying "26 regions are recorded" — four other
+      Silent Hill games, the film and two pachislot machines — on a wiki whose
+      regions index holds one.
+
+      So the match is this pass's own title templates *scoped to this game and
+      this run*: a row whose title is one of the shapes below, on a game I have
+      just finished writing, at a slug I did not write, is a page I used to
+      write and no longer do.
+
+      That is narrower than sweeping by slug, which is what makes it safe to do
+      here. A hand-written page would have to be titled in one of these exact
+      shapes to be caught, and the pass already claims these slugs in the other
+      direction — it overwrites whatever sits there whenever the filter passes.
+    */
+    const MINE = [
+      /^Every .+ in .+, compared$/,
+      /^Every .+ in .+, and what is still unknown$/,
+      / with .+ .+$/,
+    ]
+    const existing = await payload.find({
+      collection: 'guides',
+      where: { game: { equals: game.id } },
+      limit: 2000,
+      depth: 0,
+    })
+    let swept = 0
+    for (const doc of existing.docs as unknown as { id: string | number; slug: string; title: string }[]) {
+      if (wrote.has(doc.slug)) continue
+      if (!MINE.some((shape) => shape.test(doc.title))) continue
+      await payload.delete({ collection: 'guides', id: doc.id })
+      swept += 1
+    }
+
+    console.log(
+      `  ${name.padEnd(24)} ${written} topic guides` +
+        (swept > 0 ? ` (${swept} no longer written, removed)` : ''),
+    )
   }
 
   console.log(`\n${total} guides written`)
