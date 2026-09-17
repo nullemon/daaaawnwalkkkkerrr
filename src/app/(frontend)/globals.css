@@ -1115,6 +1115,10 @@ th.num { text-align: right; }
   padding: 6px 10px;
   border-top: 1px solid var(--rule);
   background: var(--surface);
+  /* Same harvested-credit problem as `.gameprofile-art figcaption`, and this is
+     the narrowest of the three at 260px on a square shape - inside an
+     `overflow: hidden` wrapper, so a long token vanishes rather than wraps. */
+  overflow-wrap: anywhere;
 }
 /* Only shown where a page explicitly asks for a placeholder. */
 .entity-figure[data-empty='true'] {
@@ -1223,6 +1227,15 @@ th.num { text-align: right; }
 .gameprofile-art figcaption {
   padding: 6px 12px; font-family: var(--f-label); font-size: 10.5px; line-height: 1.45;
   color: var(--muted); border-top: 1px solid var(--rule); background: var(--surface);
+  /* An image credit is harvested text of no fixed shape, and this box is 316px
+     wide. Phantom Blade Zero's poster credit is 2,369 characters carrying
+     85-character tokens - Wikipedia's own `.mw-parser-output` stylesheet,
+     scraped off the file-description page - and it ran 34px out of the caption,
+     where `.gameprofile`'s `overflow: hidden` clipped it to nothing. Not even a
+     scrollbar: the text was simply gone, on the wiki home of one of the eight.
+     Wrapping it does not make that credit right, and is not meant to - it makes
+     it visible, which is the only way anybody fixes the harvester. */
+  overflow-wrap: anywhere;
 }
 
 /* One column, always. This box is 318px wide on a desktop and full width on a
@@ -2657,6 +2670,9 @@ h1, h2, h3 { text-wrap: balance; }
 .personprofile-art figcaption {
   padding: 6px 12px; font-family: var(--f-label); font-size: 10.5px; line-height: 1.45;
   color: var(--muted); border-top: 1px solid var(--rule); background: var(--surface);
+  /* Commons credits, in a 318px panel that clips. Same rule and same reason as
+     `.gameprofile-art figcaption`, which is where it was measured. */
+  overflow-wrap: anywhere;
 }
 
 /* Words, not a silhouette. A grey outline of a head reads as an image that
