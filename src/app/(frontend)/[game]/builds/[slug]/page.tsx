@@ -106,7 +106,7 @@ export default async function BuildPage({ params }: Props) {
           <section className="section">
             <div className="section-head">
               <h2>Perks</h2>
-              <Link href={planner} className="eyebrow">
+              <Link href={planner} className="cta">
                 Open in the planner
               </Link>
             </div>

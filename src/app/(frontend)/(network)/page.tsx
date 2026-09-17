@@ -300,7 +300,7 @@ export default async function HubHome() {
       <div className="page body-main">
         {/* ---- What people are asking: the differentiator ---- */}
         {asking.length > 0 ? (
-          <section className="section">
+          <section className="section section-card">
             <div className="section-head">
               <h2>{copy(settings.askingHeading, 'What people are asking')}</h2>
               <p className="note">
@@ -330,7 +330,7 @@ export default async function HubHome() {
         ) : null}
 
         {/* ---- The directory ---- */}
-        <section className="section">
+        <section className="section section-card">
           <div className="section-head">
             <h2>{copy(settings.directoryHeading, 'Every wiki')}</h2>
             <p className="note">
@@ -349,10 +349,13 @@ export default async function HubHome() {
 
         {/* ---- Latest, as a list rather than more cards ---- */}
         {latest.length > 0 ? (
-          <section className="section">
+          <section className="section section-card">
             <div className="section-head">
               <h2>{copy(settings.latestHeading, 'Newest writing')}</h2>
-              <Link href="/wikis" className="eyebrow">
+              {/* An action, not a label. `.eyebrow` is `--muted` and reads as
+                  a caption on the heading; this is the one thing in the row a
+                  reader can click. */}
+              <Link href="/wikis" className="cta">
                 All wikis
               </Link>
             </div>
@@ -374,7 +377,7 @@ export default async function HubHome() {
         ) : null}
 
         {/* ---- The rules, last ---- */}
-        <section className="section">
+        <section className="section section-card">
           <div className="section-head">
             <h2>{copy(settings.rulesHeading, 'How these are written')}</h2>
             <p className="note">

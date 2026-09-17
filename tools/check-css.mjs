@@ -64,3 +64,24 @@ for (const file of [...walk('src/components'), ...walk('src/app')]) {
 const orphans = [...used.entries()].filter(([cls]) => !defined.has(cls))
 console.log(orphans.length === 0 ? 'No orphaned classes.' : `${orphans.length} classes rendered with no CSS:\n`)
 for (const [cls, files] of orphans.sort()) console.log(`  .${cls}  ←  ${[...files].join(', ')}`)
+
+/*
+  Exit non-zero, which this never did.
+
+  For its whole life this script printed its findings and exited 0, so
+  `pnpm check` passed whatever it found and every report of "check:css clean"
+  was a report that the script had *run*. Nothing was gated on it. That is the
+  exact shape of the failures this repository keeps collecting — a green check
+  that was never checking — and it was sitting inside the tool written to catch
+  one of them, after `.page`, `.prose`, `.lede`, `.icon-btn` and `.run-badge`
+  were deleted and nothing noticed.
+
+  There is still no check in the other direction, and that is deliberate. A
+  rule with no class is dead weight rather than a broken page, and the naive
+  scan is worse than nothing: the class-like pattern matches inside comments,
+  so `page.tsx` in prose registers a class named `tsx` and a comment quoting
+  `.mw-parser-output` registers that. A reverse check has to strip comments
+  first, and until it does it would cry wolf — which the note at the top of
+  this file says is how a check stops being read.
+*/
+if (orphans.length > 0) process.exitCode = 1

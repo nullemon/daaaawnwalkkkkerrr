@@ -333,7 +333,7 @@ export default async function CompanyPage({ params }: Props) {
             ) : null}
 
             {links.length > 0 ? (
-              <section className="section">
+              <section className="section section-card">
                 <div className="section-head">
                   <h2>{copy(profile.gamesHeading, built.gamesHeading)}</h2>
                 </div>
@@ -361,7 +361,7 @@ export default async function CompanyPage({ params }: Props) {
               for this company" and "this company has released nothing" look
               identical as a missing section, and only the first one is true.
             */}
-            <section className="section">
+            <section className="section section-card">
               <div className="section-head">
                 {/*
                   The heading and the count both said the catalogue was
@@ -405,7 +405,7 @@ export default async function CompanyPage({ params }: Props) {
               list. The section is worth having only when something survived.
             */}
             {officerList.length > 0 ? (
-              <section className="section">
+              <section className="section section-card">
                 <div className="section-head">
                   <h2>{copy(profile.peopleHeading, built.peopleHeading)}</h2>
                 </div>
@@ -443,7 +443,7 @@ export default async function CompanyPage({ params }: Props) {
             ) : null}
 
             {parent || subsidiaries.length > 0 ? (
-              <section className="section">
+              <section className="section section-card">
                 <div className="section-head">
                   {/*
                     Parent and subsidiaries share one section, and the schema has

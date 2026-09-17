@@ -186,7 +186,7 @@ export default async function PersonPage({ params }: Props) {
             )}
 
             {gameLinks.length > 0 ? (
-              <section className="section">
+              <section className="section section-card">
                 <div className="section-head">
                   <h2>{copy(profile.gamesHeading, PEOPLE_BUILT_IN.profile.gamesHeading)}</h2>
                 </div>
@@ -209,7 +209,7 @@ export default async function PersonPage({ params }: Props) {
             ) : null}
 
             {characters.length > 0 ? (
-              <section className="section">
+              <section className="section section-card">
                 <div className="section-head">
                   <h2>
                     {copy(profile.charactersHeading, PEOPLE_BUILT_IN.profile.charactersHeading)}
@@ -237,7 +237,7 @@ export default async function PersonPage({ params }: Props) {
             ) : null}
 
             {workGroups.length > 0 ? (
-              <section className="section">
+              <section className="section section-card">
                 <div className="section-head">
                   <h2>{copy(profile.creditsHeading, PEOPLE_BUILT_IN.profile.creditsHeading)}</h2>
                 </div>
@@ -262,7 +262,7 @@ export default async function PersonPage({ params }: Props) {
             ) : null}
 
             {companies.length > 0 ? (
-              <section className="section">
+              <section className="section section-card">
                 <div className="section-head">
                   <h2>{copy(profile.companiesHeading, PEOPLE_BUILT_IN.profile.companiesHeading)}</h2>
                 </div>

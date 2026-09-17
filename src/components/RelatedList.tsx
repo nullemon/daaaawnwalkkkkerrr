@@ -54,13 +54,19 @@ export async function RelatedList({
           {icon ? <Icon name={icon} size={17} className="ic" /> : null}
           {heading}
         </h2>
-        <span className="eyebrow">
-          {items.length > 0 ? items.length : null}
+        {/*
+          Three separate jobs that were one `.eyebrow` between them: the count
+          is a micro-label, the link is an action, and the mid-dot between them
+          is punctuation. The dot used to be a string in this file — a
+          reader-visible character in a component, which is the thing
+          docs/COPY.md exists to keep out — and `.metarow` generates it now.
+        */}
+        <span className="metarow">
+          {items.length > 0 ? <span className="eyebrow">{items.length}</span> : null}
           {href ? (
-            <>
-              {items.length > 0 ? ' · ' : ''}
-              <Link href={href}>{ui.t('related.see-all')}</Link>
-            </>
+            <Link href={href} className="cta">
+              {ui.t('related.see-all')}
+            </Link>
           ) : null}
         </span>
       </div>

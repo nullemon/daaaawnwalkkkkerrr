@@ -136,7 +136,7 @@ export function Briefing({
             <section className="section">
               <div className="section-head">
                 <h2>{copy(brief.endingsHeading, 'The {endings} endings', tokens)}</h2>
-                <Link href="/endings" className="eyebrow">
+                <Link href="/endings" className="cta">
                   Full detail
                 </Link>
               </div>

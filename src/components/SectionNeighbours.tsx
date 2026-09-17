@@ -96,9 +96,22 @@ export async function SectionNeighbours({
 
       {neighbours.length > 0 ? (
         <>
+          {/*
+            The same label-then-action row `RelatedList` has, so it gets the
+            same three parts: a micro-label, a `.cta`, and a generated mid-dot
+            between them instead of one typed into this file.
+
+            `.metarow` is inline-flex, so it goes on a span inside the `<p>`
+            rather than on the `<p>` itself — the paragraph stays block-level
+            and keeps the margins `.neighbours-head` sets.
+          */}
           <p className="neighbours-head">
-            {fill(ui.t('neighbours.more'), { label })} ·{' '}
-            <Link href={base}>{fill(ui.t('neighbours.all'), { count: all.length })}</Link>
+            <span className="metarow">
+              <span>{fill(ui.t('neighbours.more'), { label })}</span>
+              <Link href={base} className="cta">
+                {fill(ui.t('neighbours.all'), { count: all.length })}
+              </Link>
+            </span>
           </p>
           <ul className="neighbours-list">
             {neighbours.map((record) => (

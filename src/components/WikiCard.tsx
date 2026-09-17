@@ -1,7 +1,32 @@
 import { Icon } from './Icon'
 import type { DirectoryEntry } from '@/lib/directory'
-import { editorialScore } from '@/lib/ratings'
+import { editorialScore, type EditorialScore } from '@/lib/ratings'
 import { releaseLine } from '@/lib/directory'
+
+/**
+ * The score, as a badge on a card's art.
+ *
+ * Kept beside its only caller rather than given a file: it is four elements
+ * and it exists because a number set as text in a row of chips does not read
+ * as a judgement, which is the one thing this number is.
+ *
+ * The outlook line carries the same word the inline form has always carried,
+ * and it is here for the same reason `src/fields/rating.ts` requires the
+ * field: an outlook is not a review. It is set apart by size and a hairline
+ * and never by being dimmed — the measurements are beside `.score-badge` in
+ * globals.css.
+ */
+function ScoreBadge({ verdict }: { verdict: EditorialScore }) {
+  return (
+    <span className="score-badge" title={verdict.summary ?? undefined}>
+      <span className="score-badge-figure">
+        {verdict.score.toFixed(1)}
+        <span className="score-badge-outof">/10</span>
+      </span>
+      {verdict.basis === 'outlook' ? <span className="score-badge-basis">outlook</span> : null}
+    </span>
+  )
+}
 
 /**
  * One wiki in the directory.
@@ -30,6 +55,15 @@ export function WikiCard({ entry }: { entry: DirectoryEntry }) {
       {hero?.url ? (
         <span className="wiki-card-art">
           <img src={hero.url} alt="" loading="lazy" />
+          {/*
+            The score, on the art, where a reader of any games site looks for
+            one. It sits inside the art rather than beside the title because
+            the art is the only part of this card with room for it — and it
+            has to be *inside*, because the badge is positioned against
+            `.wiki-card-art` and because that is the one place the mask on the
+            image cannot reach it.
+          */}
+          {verdict ? <ScoreBadge verdict={verdict} /> : null}
         </span>
       ) : null}
 
@@ -37,11 +71,18 @@ export function WikiCard({ entry }: { entry: DirectoryEntry }) {
         <h3>{game.shortTitle || game.title}</h3>
         {game.status === 'building' ? <span className="chip">In progress</span> : null}
         {/*
-          Our score, on the card. `editorialScore` returns nothing unless the
-          reasoning is stored with it, so a card can never show a bare number
-          the wiki behind it does not explain.
+          The same score for a wiki with no key art, in the inline form it has
+          always had. Not a duplicate — exactly one of the two renders, which
+          is why the condition names the art rather than the score.
+
+          All eight wikis carry art today, so this branch draws nothing on any
+          page that currently exists. It is here because creating the row *is*
+          creating the site: a wiki added in the admin has a score before it
+          has a screenshot, and a badge needs a picture to be pinned to. The
+          alternative was a badge floating over the card's own ground, which
+          reads as a sticker somebody forgot to remove.
         */}
-        {verdict ? (
+        {verdict && !hero?.url ? (
           <span className="card-score" title={verdict.summary ?? undefined}>
             {verdict.score.toFixed(1)}
             <span>/10</span>

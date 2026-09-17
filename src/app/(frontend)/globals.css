@@ -73,6 +73,20 @@
   color-scheme: dark;
 }
 
+/*
+  The light palette, declared twice on purpose — once for the explicit choice
+  and once under `prefers-color-scheme` — so a change here has to be made in
+  both places or the toggle and the system preference disagree.
+
+  `--muted` was #6b7489, which clears AA against `--surface` (4.68) and fails
+  against every other ground it is actually used on: 4.10 on `--ground`, 4.41
+  on `--raised`, 3.71 on `--sunken`. Since `--muted` colours every `.note`,
+  `.eyebrow`, `dt` and `figcaption`, the secondary text on the light theme was
+  under the line on every host — and the failure got *worse* the further a
+  surface sat from white, which is the opposite of what anyone would guess.
+  #596170 is the same hue and saturation, four points darker, and clears all
+  four. Measured, not estimated; `.tmp-design/contrast.mjs` takes `fg bg`.
+*/
 :root[data-theme='light'] {
   --ground: #eef0f4;
   --surface: #ffffff;
@@ -81,7 +95,7 @@
 
   --ink: #11141b;
   --ink-soft: #414a5c;
-  --muted: #6b7489;
+  --muted: #596170; /* 5.46 on ground, 4.94 on sunken; #6b7489 was 4.10 and 3.71 */
 
   --rule: #d6dae1;
   --rule-soft: #e6e9ee;
@@ -115,7 +129,7 @@
 
     --ink: #11141b;
     --ink-soft: #414a5c;
-    --muted: #6b7489;
+    --muted: #596170; /* 5.46 on ground, 4.94 on sunken; #6b7489 was 4.10 and 3.71 */
 
     --rule: #d6dae1;
     --rule-soft: #e6e9ee;
@@ -768,13 +782,12 @@ th.num { text-align: right; }
 @media (max-width: 600px) { .panel { padding: 14px; } }
 
 .panel-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; }
+/* The accent bar this heading used to draw for itself - a 3px absolutely
+   positioned `::before` behind 13px of padding - is the network's sideline
+   now, declared once at the end of this sheet and shared with `.section-head`
+   and `.railbox`. Three devices doing one job is what it replaced. */
 .panel-head h2, .panel-head h3 {
-  position: relative; padding-left: 13px;
   font-size: 15.5px; font-weight: 700; letter-spacing: -0.005em;
-}
-.panel-head h2::before, .panel-head h3::before {
-  content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
-  width: 3px; height: 17px; border-radius: 2px; background: var(--accent);
 }
 .panel-head .meta { margin-left: auto; font-family: var(--f-label); font-size: 12.5px; color: var(--muted); }
 .panel-note { font-size: 13px; color: var(--muted); }
@@ -1308,7 +1321,13 @@ th.num { text-align: right; }
 
 /* A grid card's logo sits on its own ground rather than bleeding to the edge. */
 .thumb-contain { background: var(--surface); }
-.thumb-contain img { object-fit: contain !important; padding: 12px; }
+/* `.thumb.thumb-contain img`, not `!important`. It has to outrank
+   `.thumb img { object-fit: cover }` from further up the sheet, and the extra
+   class does that on specificity alone - `EntityCard` only ever emits this
+   class alongside `.thumb`, so there is nothing for the longer selector to
+   miss. The `!important`s left in here are the reduced-motion overrides,
+   which is the one place it is the right tool. */
+.thumb.thumb-contain img { object-fit: contain; padding: 12px; }
 
 /* ---------- run dashboard ---------- */
 
@@ -1343,7 +1362,9 @@ th.num { text-align: right; }
 /* ---------- personalised readout above the endings index ---------- */
 
 .outlook-headline { font-size: 17px; line-height: 1.5; }
-.outlook-headline b { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 17px bold is not WCAG "large text" - that starts at 18.66px bold - so this
+   figure is measured as body text, and `--accent` on `--ground` is 3.92. */
+.outlook-headline b { color: var(--accent-hot); font-variant-numeric: tabular-nums; }
 
 .outlook-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
 .outlook-list li {
@@ -1656,7 +1677,7 @@ th.num { text-align: right; }
 .guidecard:hover { text-decoration: none; border-color: var(--accent); }
 .guidecard h3 { font-size: 16px; }
 .guidecard p { font-size: 13.5px; color: var(--muted); }
-.guidecard .eyebrow { color: var(--accent); }
+.guidecard .eyebrow { color: var(--accent-hot); }
 
 /* ---------- guides index ---------- */
 
@@ -1673,7 +1694,11 @@ th.num { text-align: right; }
 .guidetile-image { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
 .guidetile-body { display: flex; flex-direction: column; gap: 6px; padding: 14px 15px 16px; }
 .guidetile h2 { font-size: 17px; }
-.guidetile .eyebrow { color: var(--accent); }
+/* `--accent-hot`, not `--accent`. Same measurement as `.take .who` further up:
+   this is 11.5px uppercase label text and `--accent` is mixed to sit at 3:1,
+   which is the bar for a border or a fill. It measured 3.52 on `--surface`.
+   `--accent-hot` is 5.55 there. */
+.guidetile .eyebrow { color: var(--accent-hot); }
 
 /* ---------- footer ---------- */
 
@@ -1788,7 +1813,9 @@ th.num { text-align: right; }
 .comment-count {
   display: inline-flex; align-items: center; justify-content: center;
   min-width: 24px; height: 21px; padding: 0 7px;
-  border-radius: 999px; background: var(--accent-wash); color: var(--accent);
+  /* 12px on `--accent-wash` measured 3.52 in `--accent`. `--accent-hot` is
+     5.55 on the same ground. */
+  border-radius: 999px; background: var(--accent-wash); color: var(--accent-hot);
   font-family: var(--f-label); font-size: 12px; font-weight: 600;
 }
 .comment-sort {
@@ -2081,24 +2108,19 @@ th.num { text-align: right; }
 }
 
 /* --- Section headings -----------------------------------------------------
-   A rule under a heading is the cheapest way to give a long page structure,
-   and the accent tick tells you where a section starts without another
-   heading level.                                                             */
+   A rule under a heading is the cheapest way to give a long page structure.
+
+   The 42px accent tick that used to sit on this element's bottom-left edge is
+   gone: it said "a section starts here" in a second place from the bar on
+   `.panel-head h2`, which said the same thing in a different shape. The
+   sideline at the end of this sheet is the one that survived, and it is on the
+   heading itself rather than on the row around it - so it travels with the
+   heading when the row wraps on a phone, which the tick did not.             */
 
 .section-head {
   position: relative;
   padding-bottom: 9px;
   border-bottom: 1px solid var(--rule);
-}
-.section-head::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -1px;
-  width: 42px;
-  height: 2px;
-  background: var(--accent);
-  border-radius: 2px;
 }
 
 /* --- Tables ---------------------------------------------------------------
@@ -2356,8 +2378,15 @@ a.chip:hover {
   cursor: pointer;
   transition: transform 140ms var(--ease), box-shadow 140ms var(--ease), background-color 140ms var(--ease);
 }
+/* The lift and the shadow, and not a lighter fill.
+   `background: var(--accent-hot)` was the hover, and white type on
+   `--accent-hot` measures 3.03 in the dark theme - so the one control on the
+   site with a filled accent ground became unreadable at the moment a reader
+   pointed at it, and read fine in the light theme (7.54), which is why it
+   survived. `--accent` holds the label at 4.77 dark and 5.90 light, and a
+   button that rises and casts a shadow has already said it is live. */
 .button:hover {
-  background: var(--accent-hot); border-color: var(--accent-hot);
+  border-color: var(--accent-hot);
   text-decoration: none; transform: translateY(-1px);
   box-shadow: var(--lift-soft);
 }
@@ -2377,12 +2406,12 @@ a.chip:hover {
   opacity: 0.85; z-index: 1;
   border-radius: var(--r) var(--r) 0 0;
 }
+/* `position: relative` because the score badge is pinned inside this box.
+   The gradient that used to sit on top of the art here is gone: it faded the
+   picture towards `--surface` with an extra element, which is the overlay slab
+   the mask at the end of this sheet exists to replace - the art itself now
+   fades to nothing and the card's own ground shows through it. */
 .wiki-card-art { aspect-ratio: 16 / 8; position: relative; }
-.wiki-card-art::after {
-  content: '';
-  position: absolute; inset: 0;
-  background: linear-gradient(180deg, transparent 45%, color-mix(in srgb, var(--surface) 88%, transparent));
-}
 .wiki-card h3 { letter-spacing: -0.01em; }
 .wiki-card-count { font-variant-numeric: tabular-nums; }
 
@@ -2818,7 +2847,10 @@ a.catalogue-title:hover { color: var(--accent-hot); text-decoration: none; }
    reader can do something with here. */
 .catalogue-here {
   flex: none; padding: 1px 7px; border-radius: 999px;
-  border: 1px solid var(--accent-dim); color: var(--accent);
+  /* `--accent-hot` for the type and `--accent-dim` for the ring. 10.5px
+     uppercase on `--ground` measured 3.92 in `--accent`, below AA; the border
+     is a border and stays where 3:1 is the right bar. */
+  border: 1px solid var(--accent-dim); color: var(--accent-hot);
   font-family: var(--f-label); font-size: 10.5px;
   letter-spacing: 0.05em; text-transform: uppercase;
 }
@@ -3057,3 +3089,422 @@ a.elink:hover {
   text-decoration-style: solid;
   text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
 }
+
+/* ===========================================================================
+   The sideline pass.
+
+   The reference site's one strong idea is that a heading with an accent bar
+   down its left edge reads as the start of a module without a box around it.
+   This sheet had three devices doing that job and none of them everywhere: a
+   42px horizontal tick under `.section-head`, a 3px absolutely positioned bar
+   on `.panel-head h2`, and nothing at all on the rail boxes. One device now,
+   sized to the type it sits beside, everywhere a section starts.
+
+   Everything here is a modifier on a class that already exists or a rule on a
+   selector that already renders. Nothing changes a colour token's hue - the
+   palette was measured in 6318445 - and every colour this pass introduces is
+   measured against the surface it actually sits on rather than against
+   `--ground`. The numbers are in the comments beside the declarations, the
+   same way the palette block states its own.
+
+   No `!important` anywhere in here. The reference carries it through its whole
+   sheet; this section wins where it needs to by being last, which is also why
+   `.section-head` and `.panel-head` had their old devices deleted in place
+   rather than overridden from down here - an override would have left two
+   bars on the panels and a tick under every section head.
+   =========================================================================== */
+
+:root {
+  /*
+    The sideline itself. `--accent` and not `--accent-hot`: this is a filled
+    bar and not something anybody reads, and `--accent` is the token mixed to
+    sit at 3:1, which is the bar a non-text graphic has to clear. It measures
+    3.92 on `--ground` and 5.17 in the light theme - over the 3:1 line in
+    both. The reverse of the mistake `.take .who` records.
+
+    The reference's own numbers are `.5rem` of bar and `1.5rem` of gap, on
+    headings appreciably larger than ours. Scaled to the type here rather than
+    copied: 5px against an 18-22px `h2`, and 3px where the heading is 14-15px,
+    which is the same optical weight and the reason the rail boxes can carry
+    the device at all.
+  */
+  --sideline-w: 5px;
+  --sideline-gap: 14px;
+
+  /*
+    The ground a carded section sits on: 40% `--surface` over `--ground`,
+    which computes to #181615 in the dark theme.
+
+    Neither `--surface` nor `--sunken`, and both were tried. `--surface` is
+    what the cards *inside* a carded section are made of, and a card the same
+    colour as the box around it is not a card. `--sunken` is the one that
+    cannot be used at all: in the light theme `--muted` measures 3.71 on it,
+    so every note and every eyebrow inside a carded section would have been
+    harder to read than the same words on the bare page - a section card that
+    costs contrast is a worse page with a border round it.
+
+    Measured on this ground, dark theme:
+      --ink 16.46   --ink-soft 11.32   --muted 6.66   --accent-hot 5.96
+    All four clear AA, and `--muted` loses 0.25 against the page ground it
+    replaces, which is the price of the box.
+  */
+  --section-card: color-mix(in srgb, var(--surface) 40%, var(--ground));
+}
+
+/*
+  In the light theme the card ground is `--surface` outright.
+
+  Not a second design - the same relationship. That palette tops out at #fff,
+  so there is nothing above `--surface` to raise a child card onto, and the
+  separation inside a light card is carried by the child's own border the way
+  it already is everywhere else in that theme. It is also the only ground in
+  the light palette where `--muted` clears AA at all: 4.68, against 4.10 on
+  `--ground` and 4.41 on `--raised`. See the note at the end of this section -
+  that is a fault in the palette, not in the card, and it is not this pass's
+  to fix.
+*/
+:root[data-theme='light'] { --section-card: var(--surface); }
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme='dark']) { --section-card: var(--surface); }
+}
+
+/* --- 1. The sideline -----------------------------------------------------
+   `border-inline-start` rather than an absolutely positioned `::before`. The
+   bar then spans however many lines the heading wraps to, which is what the
+   reference's `border-left` does and what a two-line section title on a phone
+   needs - the tick this replaced was pinned to the row instead of the
+   heading, so a wrapped title left it sitting under the count on the far side.
+   A border is also the only way to add the bar to `.section-head h2` without
+   becoming a flex item: that heading is already a flex row carrying an icon. */
+
+.section-head h2,
+.panel-head h2,
+.panel-head h3,
+.railbox h2 {
+  border-inline-start: var(--sideline-w) solid var(--accent);
+  padding-inline-start: var(--sideline-gap);
+  /* A flex item defaults to `min-width: auto`, and the bar and its gap add
+     19px to this heading's min-content width - 19px that the longest word in
+     a section title no longer has at 400px. Same rule as `.split > *`, next
+     to the layout it protects rather than in a block at the end of the file. */
+  min-width: 0;
+}
+
+/* The panels and the rail boxes are set at 14-15.5px against the section
+   heads' 18-22px, so the bar comes down with the type instead of staying the
+   width of the one beside a heading half again as large. Set on the element,
+   read by the shared rule above - one device, two sizes, no second selector
+   list to keep in step. */
+.panel-head h2,
+.panel-head h3,
+.railbox h2 {
+  --sideline-w: 3px;
+  --sideline-gap: 10px;
+}
+
+/* --- 2. Carded sections --------------------------------------------------
+   A modifier on `.section`, so a section that is a module and a section that
+   is not differ by one word in the markup and by nothing in the DOM. The
+   reference makes a new class per variant, which is why its markup is the
+   size it is.
+
+   Applied where a page is a list of modules - the hub front, a wiki's front,
+   a company profile, a person profile - and deliberately not to a section
+   index, where the module is the table: `.tablewrap` already draws its own
+   border and rounds its own corners, and a box around it is a second border
+   three pixels from the first. */
+
+.section-card {
+  padding: 18px 20px;
+  border: 1px solid var(--rule-soft);
+  border-radius: var(--r);
+  background: var(--section-card);
+}
+
+/* The same step down `.panel` takes at the same width. At 400px the page
+   gutter is already 18px and two 20px gutters inside it spend a tenth of the
+   screen on nothing. */
+@media (max-width: 600px) {
+  .section-card { padding: 14px; }
+}
+
+/* Inside a box, the section head's rule separated the heading from a border
+   20px below it as well as from the content - two lines saying one thing. The
+   sideline is what marks the heading here. */
+.section-card > .section-head {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* --- 3. Art that fades into the card ------------------------------------
+   The reference's cards do not read as boxes with captions because the art
+   dissolves rather than ending at a line, and the title sits in the space it
+   vacates. `.page-art` has faded its own band since the beginning; no card on
+   this network ever had it, and `.wiki-card-art` was doing the opposite - a
+   gradient laid over the picture, fading it towards the card colour with an
+   extra element. That is the overlay slab, and it is deleted above.
+
+   Three things about the mask are load-bearing:
+
+   It is on the `<img>` and not on the wrapper. A wrapper mask would also clip
+   the score badge pinned inside `.wiki-card-art`, and a mask cannot be undone
+   by a child.
+
+   It is fully transparent by 78%, and the title is pulled up to 82%. So the
+   title sits on the card's own ground, at the contrast the card was measured
+   for, rather than on the top of an unknown photograph - the art fades into
+   the card without ever getting underneath the words. This is the half of the
+   effect the reference does not bother with.
+
+   The pull is a percentage, so it tracks the card's width and therefore the
+   art's height at every viewport instead of being correct at one of them. A
+   percentage margin resolves against the containing block's inline size: for
+   a 16/9 box `0.18 x height` is `0.101 x width`, and for the 16/8 box on a
+   wiki card it is `0.09 x width`.
+
+   Each pull is written as an adjacent-sibling rule because every one of these
+   images is optional. `.guidetile-body { margin-top: -10% }` on its own
+   hoists the body out through the top of any card whose record has no picture
+   yet, which on four of these eight wikis is most of them. */
+
+.wiki-card-art img,
+.guidetile-image,
+.startcard-image,
+.mapcard-image {
+  -webkit-mask-image: linear-gradient(180deg, #000 30%, transparent 78%);
+  mask-image: linear-gradient(180deg, #000 30%, transparent 78%);
+}
+
+/* The wrapper's own `--raised` placeholder ground would show through the
+   transparent end of the mask as a band a shade lighter than the card, which
+   is the slab again in a fainter colour. The image is the only thing in this
+   box now. */
+.wiki-card-art { background: none; }
+
+.wiki-card-art + .card-top { margin-top: -9%; }
+.guidetile-image + .guidetile-body,
+.startcard-image + .startcard-body,
+.mapcard-image + .mapcard-body { margin-top: -10%; }
+
+/* --- 4. Eyebrows ---------------------------------------------------------
+   `.eyebrow` was doing three jobs: a micro-label over a title, a count beside
+   a section heading, and a link. The third is `.cta` now, at the bottom of
+   this section, which is what leaves this class one job and one colour.
+
+   The colour stays `--muted`. An eyebrow is a label on the thing below it,
+   not the thing itself, and the reference's accent-on-everything is why its
+   pages have four competing reds. Where an eyebrow does carry the accent - on
+   a guide tile, marking the search that guide answers - it is `--accent-hot`
+   and not `--accent`, because at 11.5px it is text: that fix is above, beside
+   the rule it corrects. */
+
+.eyebrow { font-variant-numeric: tabular-nums; }
+
+/* A micro-label directly above a title has to sit closer to it than to
+   whatever is above it, or it reads as the last line of the previous block
+   rather than the first of this one. `.page-head` is a 11px-gap flex column. */
+.page-head > .eyebrow { margin-bottom: -4px; }
+
+/* --- 5. The score badge --------------------------------------------------
+   The one opinion on a site of sourced facts, and in the directory it was a
+   12px number in a row of chips beside the title.
+
+   `#fff` on `--accent`: 4.77 dark, 5.90 light. Both clear AA, including for
+   the 10.5px `/10` and the 9px outlook line, which is why none of this is
+   dimmed.
+
+   The outlook line is the part that matters. `src/fields/rating.ts` says an
+   outlook is not a review and the page must not let a reader think it is, so
+   it keeps full-strength white and is set apart by size, tracking and a
+   hairline rather than by being knocked back - white at 78% over the same
+   fill measures 3.47, and a label nobody can read is a label that is not
+   there. Four of these eight wikis cover games nobody has played. */
+
+.score-badge {
+  position: absolute; top: 9px; right: 9px; z-index: 2;
+  display: inline-flex; flex-direction: column; align-items: center;
+  padding: 5px 9px; border-radius: 7px;
+  background: var(--accent); color: #fff;
+  box-shadow: var(--lift-soft);
+}
+.score-badge-figure {
+  display: flex; align-items: baseline; gap: 2px;
+  font-family: var(--f-display); font-size: 20px; font-weight: 700;
+  line-height: 1; font-variant-numeric: tabular-nums;
+}
+.score-badge-outof { font-size: 10.5px; font-weight: 600; }
+.score-badge-basis {
+  margin-top: 4px; padding-top: 3px; align-self: stretch;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  font-family: var(--f-label); font-size: 9px; font-weight: 700;
+  letter-spacing: 0.07em; text-transform: uppercase; text-align: center;
+}
+
+/* The same judgement, on the game's own page, where there is room for it to
+   be the size it deserves. The number was 30px of `--accent-hot` type in a
+   row; it is the badge shape now, so a reader meets one score device in the
+   directory and the same one on the wiki. Both colours are AA on their
+   grounds - the difference is that a fill reads as a verdict and coloured
+   type reads as a heading. */
+.verdict-score {
+  display: inline-flex; align-items: baseline; gap: 5px;
+  padding: 7px 14px; border-radius: 9px;
+  background: var(--accent); color: #fff;
+}
+.verdict-score .verdict-outof { color: #fff; }
+
+/* `.verdict-head` aligned on the baseline, which was right when the score was
+   type. A filled badge on a baseline hangs its lower padding below the row and
+   pulls the outlook label up against the digits; centred, the label sits
+   beside the badge, which is what it is a label on. */
+.verdict-head { align-items: center; }
+
+/* --- 6a. Mid-dot meta rows ------------------------------------------------
+   The separator is generated, not written. A mid-dot typed into a component is
+   a reader-visible character in a file nobody can edit, which is the whole
+   subject of docs/COPY.md - and generating it means a screen reader reads
+   "12, See all" rather than "12 middle dot See all".
+
+   Only used where the parts cannot wrap. A CSS separator belongs to the item
+   after it, so a row that wraps starts its second line with a dot, and there
+   is no selector for "first on this line". That is why `.wiki-card-foot` is
+   not one of these: "Released 6 October 2026" beside a page count is two
+   lines on a phone. */
+
+.metarow { display: inline-flex; align-items: baseline; gap: 7px; flex-wrap: nowrap; }
+.metarow > * + *::before {
+  content: '\00b7';
+  margin-inline-end: 7px;
+  color: var(--muted);
+}
+
+/* --- 6b. Ranked lists ----------------------------------------------------
+   Number, thumb, title, meta - the shape every "most" and "top" list on every
+   games site has, and it works because the number is what a reader is
+   scanning for.
+
+   The number is a CSS counter on an `<ol>`, and both halves of that are
+   deliberate. The rank is not a fact anybody published: it is the position of
+   a row in an order the page has already sorted and already names in its own
+   heading, so it is not stored, not seeded and not written into the markup.
+   An ordered list is then what tells a screen reader the same thing the
+   numbers tell everybody else, rather than the counter saying it to one
+   audience only. */
+
+.ranked { counter-reset: rank; }
+.ranked > li { counter-increment: rank; }
+
+/*
+  One line per row, which is the whole shape: number, thumb, title, meta.
+
+  `.related li` wraps by default and is `justify-content: space-between`, so
+  the rank column - 15.6px of counter and a 12px gap - was enough to push the
+  unlock percentage onto a second line, where `space-between` then threw it to
+  the far left under the number. In a 284px rail the row wanted 324px.
+
+  Worth saying how this was found: the geometry probe reported no overflow on
+  the row and one line in the title, and both were true. The row had not
+  overflowed, it had wrapped, and a wrap is invisible to a scrollWidth check.
+  A screenshot showed it immediately. Measuring the thing you predicted is not
+  the same as looking at it.
+
+  The title column takes the slack instead, so a long achievement name wraps
+  inside its own column and the figure stays in the one place a reader scans
+  for it. `overflow-wrap` because `nowrap` on the row has no answer for a
+  single unbreakable token, and this list prints names from a store page.
+*/
+.ranked > li { flex-wrap: nowrap; }
+.ranked .related-main { flex: 1 1 auto; min-width: 0; }
+.ranked .related-main a { overflow-wrap: anywhere; }
+.ranked > li::before {
+  content: counter(rank);
+  flex: none; align-self: center;
+  min-width: 1.2em; text-align: right;
+  font-family: var(--f-label); font-size: 13px; font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+
+/* --- 7. Section CTAs -----------------------------------------------------
+   An accent link with an arrow, and a filled variant for a primary one.
+
+   The arrow is drawn with two borders rather than written as a character, for
+   the same reason the meta dot is generated: a glyph in `content` is
+   reader-visible copy that no editor can reach. It is also positioned
+   absolutely, which is what keeps the hover underline off it - a propagated
+   `text-decoration` cannot be switched off by a descendant, but it never
+   reaches an out-of-flow box in the first place. */
+
+.cta {
+  position: relative;
+  display: inline-flex; align-items: center;
+  padding-inline-end: 15px;
+  font-family: var(--f-label); font-size: 12.5px; font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--accent-hot); white-space: nowrap;
+}
+.cta::after {
+  content: '';
+  position: absolute; right: 2px; top: 50%;
+  width: 6px; height: 6px;
+  border-top: 1.5px solid currentColor;
+  border-inline-end: 1.5px solid currentColor;
+  transform: translateY(-50%) rotate(45deg);
+  transition: right 140ms var(--ease);
+}
+.cta:hover { text-decoration: underline; text-underline-offset: 3px; }
+.cta:hover::after { right: -1px; }
+
+/* The primary one. `#fff` on `--accent` is 4.77 dark and 5.90 light.
+
+   The hover does not lighten the fill, and that is the same finding as
+   `.button:hover` further up: white on `--accent-hot` measures 3.03 in the
+   dark theme, so a filled accent control that brightens under the pointer
+   becomes unreadable at the moment somebody is reading it. It lifts and
+   slides its arrow instead, which is enough. */
+.cta-filled {
+  padding: 9px 32px 9px 16px; border-radius: 7px;
+  border: 1px solid var(--accent);
+  background: var(--accent); color: #fff;
+  transition: box-shadow 140ms var(--ease), transform 140ms var(--ease), border-color 140ms var(--ease);
+}
+.cta-filled:hover {
+  text-decoration: none; border-color: var(--accent-hot);
+  transform: translateY(-1px); box-shadow: var(--lift-soft);
+}
+.cta-filled::after { right: 15px; }
+.cta-filled:hover::after { right: 12px; }
+
+/* A filled CTA beside a plain one. Wraps, unlike `.metarow`, because these
+   carry whole phrases rather than a count and a link - see the note in
+   `[game]/page.tsx` where the pair lives. */
+.cta-row {
+  display: flex; flex-wrap: wrap; align-items: center;
+  gap: 10px 16px; min-width: 0;
+}
+
+/* A CTA in a `.section-head` sits on the far side of a `space-between` row
+   from the heading. That row aligns on the baseline, which for a filled
+   button means its bottom edge lines up with the heading's baseline and it
+   hangs below the row; centred, it reads as an action beside the title. */
+.section-head > .cta { align-self: center; }
+
+/* ---------------------------------------------------------------------------
+   One thing measured here and deliberately not fixed here.
+
+   `--muted` in the light theme clears AA on nothing but `--surface`. It is
+   #6b7489, and against that palette's grounds it measures 4.68 on
+   `--surface`, 4.41 on `--raised`, 4.10 on `--ground` and 3.71 on `--sunken`.
+   So every `.note`, `.eyebrow`, `dt` and `figcaption` sitting on the light
+   theme's page ground is a little under the line today, on every host - which
+   is why the carded sections above use `--surface` in that theme, and why they
+   could not use `--sunken`.
+
+   This is a palette fault, it predates this pass, and the fix is one number:
+   the same hue and saturation at a lower lightness. #5f6878 measures 4.92 on
+   `--ground` and 4.45 on `--sunken`; #596170 is 5.46 and 4.94. It is not done
+   here because the palette was rebuilt with measured contrast in 6318445
+   after the owner rejected an indigo-cast one, and a visual-structure pass
+   quietly moving a token is how that work gets undone. It wants its own
+   change, with the whole light theme re-measured, not a line in this one.
+   --------------------------------------------------------------------------- */

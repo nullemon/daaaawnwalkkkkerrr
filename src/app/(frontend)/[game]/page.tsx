@@ -288,9 +288,32 @@ export default async function Home({ params }: Props) {
                       tokens,
                     )}
               </p>
-              <p>
-                <Link href="/mechanics">What is confirmed so far</Link> ·{' '}
-                <Link href="/requests">Tell us what you want first</Link>
+              {/*
+                The same two links and the same words. The first is the primary
+                action on a wiki whose database is empty on purpose, so it is
+                the filled CTA and the second is the plain one — and the mid-dot
+                that used to sit between them is gone rather than being a
+                character typed into this file.
+
+                `.cta-row` and not `.metarow`: `.metarow` is `nowrap` by
+                contract, and these measure 207px and 193px. With the 16px gap
+                that is 416px of row inside the 330px this callout has at
+                400px — 86px off the side of the screen, on the one page shape
+                where a reader has nothing else to click. They wrap instead,
+                and the dot was only ever standing in for the gap.
+
+                Measured by injection rather than on a page: `total === 0` is
+                false on all eight wikis, so this branch renders nowhere today.
+                It renders the day somebody adds a wiki, which on this network
+                is a row in the admin.
+              */}
+              <p className="cta-row">
+                <Link href="/mechanics" className="cta cta-filled">
+                  What is confirmed so far
+                </Link>
+                <Link href="/requests" className="cta">
+                  Tell us what you want first
+                </Link>
               </p>
             </div>
           ) : null}
@@ -340,7 +363,7 @@ export default async function Home({ params }: Props) {
           ) : null}
 
           {starters.length > 0 ? (
-            <section className="section">
+            <section className="section section-card">
               <div className="section-head">
                 <h2>{copy(words.startHereHeading, 'Start here', tokens)}</h2>
                 <p className="note">
@@ -373,7 +396,7 @@ export default async function Home({ params }: Props) {
           ) : null}
 
           {sections.length > 0 || tools.length > 0 ? (
-            <section className="section">
+            <section className="section section-card">
               <div className="section-head">
                 <h2>{copy(words.browseHeading, 'Browse the database', tokens)}</h2>
                 <p className="note">
@@ -435,12 +458,14 @@ export default async function Home({ params }: Props) {
           ) : null}
 
           {latestGuides.length > 0 ? (
-            <section className="section">
+            <section className="section section-card">
               <div className="section-head">
                 <h2>{copy(words.latestHeading, 'Guides', tokens)}</h2>
-                <span className="eyebrow">
-                  <Link href="/guides">all {guides.length}</Link>
-                </span>
+                {/* Was a `<Link>` inside an `.eyebrow`, which set it in muted
+                    label type and then let the anchor colour fight it. */}
+                <Link href="/guides" className="cta">
+                  all {guides.length}
+                </Link>
               </div>
               <div className="guidegrid">
                 {latestGuides.map((guide) => (
@@ -499,7 +524,7 @@ export default async function Home({ params }: Props) {
             <section className="railbox">
               <h2>
                 {copy(words.popularHeading, 'Hardest achievements', tokens)}
-                <Link href="/achievements" className="eyebrow">
+                <Link href="/achievements" className="cta">
                   all {achievements.length}
                 </Link>
               </h2>
@@ -509,7 +534,16 @@ export default async function Home({ params }: Props) {
                 on the page the plainest. Where one is missing the row simply
                 has no image, because a grey square is worse than a gap.
               */}
-              <ul className="related achievement-list">
+              {/*
+                An `<ol>` and not a `<ul>`, because this list is ranked: it is
+                sorted by how few people have the achievement and the heading
+                says so. The numbers themselves are a CSS counter — the rank is
+                not a fact anybody published, it is the position of a row in an
+                order this page already chose, so it is not in the markup and
+                not in the database. The element is what makes a screen reader
+                hear the same thing.
+              */}
+              <ol className="related ranked achievement-list">
                 {rarest.map((entry) => {
                   const icon =
                     entry.icon && typeof entry.icon === 'object' ? entry.icon.url : undefined
@@ -528,7 +562,7 @@ export default async function Home({ params }: Props) {
                     </li>
                   )
                 })}
-              </ul>
+              </ol>
               <p className="railnote">
                 The figures come from the platform and move as more people finish the game.
               </p>
