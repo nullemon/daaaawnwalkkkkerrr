@@ -98,6 +98,32 @@ async function run(): Promise<void> {
     })
 
     let mediaId = existing.docs[0]?.id
+    /*
+      A pass that can write a credit but never correct one is a pass that
+      cannot fix its own bad output.
+
+      This is the `seed:prune` problem in miniature: the upload is keyed on
+      filename, so once a poster exists every later run reuses the row and the
+      stored credit is whatever the parser produced the first time. When
+      `tools/fetch-posters.mjs` was storing 2,369 characters of Wikipedia's
+      stylesheet as Phantom Blade Zero's credit, fixing the parser and
+      re-running changed nothing — not even with `--force`, which re-linked the
+      same row and left the text alone.
+
+      Behind `--force` rather than automatic, because `media.credit` is an
+      editable field: an ordinary run must not overwrite a caption somebody
+      typed. Forcing it is a claim that the generated value is the right one,
+      which is the same claim `pnpm seed:copy --adopt` asks a person to make.
+    */
+    const storedCredit = (existing.docs[0] as { credit?: string } | undefined)?.credit
+    if (mediaId && FORCE && storedCredit !== credit) {
+      await payload.update({
+        collection: 'media',
+        id: mediaId,
+        data: { credit } as never,
+      })
+      console.log(`  ${game.slug.padEnd(34)} credit corrected (${storedCredit?.length ?? 0} → ${credit.length} chars)`)
+    }
     if (!mediaId) {
       try {
         const created = await payload.create({

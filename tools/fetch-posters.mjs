@@ -150,8 +150,32 @@ const licenceOf = async (file) => {
   const info = page?.imageinfo?.[0]
   if (!info) return null
   const meta = info.extmetadata ?? {}
+  /*
+    Tags out, and the *contents* of <style> and <script> with them.
+
+    A tag-only strip keeps whatever sits between the tags, and MediaWiki
+    renders `extmetadata.Credit` as a fragment that can carry its own
+    `<style>` block. Phantom Blade Zero's poster page does: the stored credit
+    was 2,369 characters, most of it Wikipedia's `.mw-parser-output`
+    stylesheet, printed under the cover art on that wiki's home page.
+
+    Nobody saw it for the same reason nobody sees anything on this project:
+    `.gameprofile` is `overflow: hidden`, so the caption was clipped to
+    nothing — no scrollbar, no ellipsis, no sign a field held junk. It only
+    became visible once the caption was made to wrap.
+
+    One of 1,911 credits was affected, so this is a latent parser fault rather
+    than a systemic harvest failure — which is exactly why it belongs here and
+    not in a hand-edit of the one record.
+  */
   const strip = (value) =>
-    typeof value === 'string' ? value.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim() : ''
+    typeof value === 'string'
+      ? value
+          .replace(/<(style|script)\b[^>]*>[\s\S]*?<\/\1>/gi, ' ')
+          .replace(/<[^>]*>/g, '')
+          .replace(/\s+/g, ' ')
+          .trim()
+      : ''
   return {
     file,
     url: info.thumburl ?? info.url,
