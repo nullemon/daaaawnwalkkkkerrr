@@ -224,7 +224,7 @@ const GAMES_INDUSTRY =
  * carry it.
  */
 const fetchLogo = async (
-  payload: Awaited<ReturnType<typeof getPayload>>,
+  payload: Payload,
   company: string,
   logo: { file?: string; free?: boolean; url?: string | null; licence?: string | null; artist?: string | null } | null | undefined,
 ): Promise<string | number | null> => {
@@ -324,7 +324,55 @@ const listSentence = (items: string[]): string =>
     ? (items[0] ?? '')
     : `${items.slice(0, -1).join(', ')} and ${items[items.length - 1]}`
 
+/**
+ * The sentence a company with a harvested article but no game of ours gets.
+ *
+ * Exported shape rather than an inline expression because two passes compose
+ * it: the main loop, from today's harvest, and the migration below, from the
+ * fields a previous harvest already stored on a record this one no longer
+ * names. One composer, so the two cannot disagree about what a company is.
+ */
+export const fromFacts = (
+  name: string,
+  facts: { industry?: string | null; founded?: string | null; headquarters?: string | null },
+): string => {
+  const industry = usable(facts.industry)
+  const founded = foundedValue(facts.founded)
+  const where = usable(facts.headquarters)
+
+  /*
+    What it is comes from the `industry` field rather than from the fact that
+    a games project harvested it. "Paramount Pictures is a games company
+    founded 1912" was live, with `Industry / Film` in the panel beside it; so
+    was the same sentence about a conglomerate, an advertising agency and an
+    investment manager.
+  */
+  const lead = !industry
+    ? `${name} is a company`
+    : GAMES_INDUSTRY.test(industry)
+      ? `${name} is a games company`
+      : `${name} is a company whose own article gives its industry as ${industry}`
+
+  const tail = [founded ? `founded ${founded}` : '', where ? `based in ${where}` : ''].filter(Boolean)
+  const opening = tail.length > 0 ? `${lead}, ${listSentence(tail)}.` : `${lead}.`
+  /*
+    A claim about this record rather than about the article: the field can be
+    empty because nobody wrote an industry or because nothing here could read
+    what was written, and only the first would justify "states no industry".
+  */
+  return industry ? opening : `${opening} Its industry is not recorded here.`
+}
+
 async function run(): Promise<void> {
+  /*
+    Imported here rather than at the top of the file so that
+    `companies.test.ts` can pin the refusal rules without booting Payload,
+    sharp and a database connection to do it — the same guard
+    `company-officers.ts` carries, for the same reason.
+  */
+  await import('dotenv/config')
+  const { getPayload } = await import('payload')
+  const { default: config } = await import('../payload.config')
   const payload = await getPayload({ config })
 
   const games = await payload.find({ collection: 'games', limit: 100, depth: 0, sort: 'title' })
@@ -466,32 +514,10 @@ async function run(): Promise<void> {
       summary = `${draft.name} ${verb} ${listSentence(draft.gameTitles)}, covered on this network.`
       confidence = 'high'
     } else if (facts) {
-      /*
-        A company with a harvested article but no game of ours. The sentence
-        is built from its own infobox and says nothing this network cannot
-        show a source for.
-
-        What it is comes from the `industry` field rather than from the fact
-        that it was harvested by a games project. "Paramount Pictures is a
-        games company founded 1912" was live, with `Industry / Film` in the
-        panel beside it; so was the same sentence about a conglomerate, an
-        advertising agency and an investment manager. Where the article states
-        no industry the sentence says so instead of choosing one — the company
-        is here because another company's infobox named it, and that is all
-        this record knows.
-      */
-      const industry = usable(facts.industry)
-      const founded = foundedValue(facts.founded)
-      const where = usable(facts.headquarters)
-
-      const lead = !industry
-        ? `${draft.name} is a company named in the sources compiled for this network; its own article states no industry`
-        : GAMES_INDUSTRY.test(industry)
-          ? `${draft.name} is a games company`
-          : `${draft.name} is a company whose own article gives its industry as ${industry}`
-
-      const tail = [founded ? `founded ${founded}` : '', where ? `based in ${where}` : ''].filter(Boolean)
-      summary = tail.length > 0 ? `${lead}, ${listSentence(tail)}.` : `${lead}.`
+      /* A company with a harvested article but no game of ours: the sentence
+         is built from its own infobox and says nothing this network cannot
+         show a source for. See `fromFacts`. */
+      summary = fromFacts(draft.name, facts)
       confidence = 'medium'
     } else {
       const where = draft.foundOn.length > 0 ? listSentence(draft.foundOn) : 'a game covered here'
@@ -563,6 +589,57 @@ async function run(): Promise<void> {
     idBySlug.set(company.slug, company.id)
   }
 
+  /*
+    --- 4b. Records this run did not write ---------------------------------
+
+    A company harvested by an earlier run and not named by today's - the
+    harvest is capped, and what falls inside the cap moves - is never touched
+    by the loop above. Which meant the fixes above reached three hundred and
+    two records and left seventeen sitting at exactly what was being
+    fixed: `role: ['developer']` from the old schema default on Bandai, on
+    Happinet, on a studio whose own summary says nothing is established about
+    it; "is a games company" on a toy maker; a founding date holding a place.
+
+    Their stored fields came from a real harvest, so the record is not wrong to
+    exist and is not re-researched here. Only the three claims this pass is
+    responsible for are re-decided, and the summary only where it is still the
+    sentence this pass wrote — an editor's is theirs.
+  */
+  const written = new Set([...drafts.values()].map((draft) => slugify(draft.name)))
+  let realigned = 0
+  for (const company of all.docs as unknown as {
+    id: string | number
+    slug: string
+    name: string
+    role?: string[] | null
+    summary?: string | null
+    industry?: string | null
+    founded?: string | null
+    headquarters?: string | null
+    revenue?: string | null
+  }[]) {
+    if (written.has(company.slug)) continue
+    const data: Record<string, unknown> = {}
+
+    if ((company.role ?? []).length > 0) data.role = []
+
+    const founded = foundedValue(company.founded)
+    if (company.founded && founded !== company.founded) data.founded = founded ?? null
+    const revenue = revenueValue(company.revenue)
+    if (company.revenue && revenue !== company.revenue) data.revenue = revenue ?? null
+
+    /* Ours only: the sentence this pass composes, still worded as it wrote it. */
+    if (new RegExp(`^${company.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')} is a games company\\b`).test(company.summary ?? '')) {
+      const recomposed = fromFacts(company.name, company)
+      if (recomposed !== company.summary) data.summary = recomposed
+    }
+
+    if (Object.keys(data).length === 0) continue
+    await payload.update({ collection: 'companies', id: company.id, data: data as never })
+    realigned += 1
+    console.log(`  migrated ${company.slug}: ${Object.keys(data).join(', ')}`)
+  }
+
   let linked = 0
   const ambiguous: string[] = []
   for (const draft of drafts.values()) {
@@ -615,6 +692,7 @@ async function run(): Promise<void> {
   console.log(`\nmigrated out of game collections: ${migrated.length}`)
   for (const row of migrated) console.log(`  ${row}`)
   console.log(`\ncompanies: ${created} created, ${updated} updated`)
+  console.log(`records the harvest no longer names, brought into line: ${realigned}`)
   console.log(`logos downloaded where the licence allowed it: ${logos}`)
   console.log(`corporate links written on ${linked} of them${harvestedAt ? ` (facts read ${harvestedAt})` : ''}`)
   /*
@@ -629,7 +707,17 @@ async function run(): Promise<void> {
   process.exit(0)
 }
 
-run().catch((error) => {
-  console.error(error)
-  process.exit(1)
-})
+/*
+  Only when this file is what was run.
+
+  Without the guard, importing it to test `foundedValue` would seed the
+  database as a side effect of the import.
+*/
+const invoked = process.argv[1] ? pathToFileURL(process.argv[1]).href : ''
+/* Case-insensitively, because Windows hands back the drive letter either way. */
+if (invoked.toLowerCase() === import.meta.url.toLowerCase()) {
+  run().catch((error) => {
+    console.error(error)
+    process.exit(1)
+  })
+}

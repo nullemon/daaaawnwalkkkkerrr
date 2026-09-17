@@ -123,7 +123,7 @@ export default async function RegionPage({ params }: Props) {
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Regions', href: '/regions' }, { label: doc.title }]}
         icon="map"
         title={doc.title}
-        lede={<Linked text={doc.summary} scope={scope} />}
+        lede={doc.summary ? <Linked text={doc.summary} scope={scope} /> : undefined}
         badges={<Confidence level={doc.confidence} />}
       />
       <div className="page body-main">

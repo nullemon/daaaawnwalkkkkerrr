@@ -152,7 +152,7 @@ export default async function GuidePage({ params }: Props) {
         eyebrow="Guide"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Guides', href: '/guides' }, { label: doc.title }]}
         title={doc.title}
-        lede={<Linked text={doc.summary} scope={scope} />}
+        lede={doc.summary ? <Linked text={doc.summary} scope={scope} /> : undefined}
         badges={<Confidence level={doc.confidence} />}
       />
       <div className="page body-main">

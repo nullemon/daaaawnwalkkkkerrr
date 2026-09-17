@@ -72,7 +72,7 @@ export default async function CourtPage({ params }: Props) {
         eyebrow="Court"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Court', href: '/court' }, { label: doc.title }]}
         title={doc.title}
-        lede={<Linked text={doc.summary} scope={scope} />}
+        lede={doc.summary ? <Linked text={doc.summary} scope={scope} /> : undefined}
         badges={<Confidence level={doc.confidence} />}
       />
       <div className="page body-main">

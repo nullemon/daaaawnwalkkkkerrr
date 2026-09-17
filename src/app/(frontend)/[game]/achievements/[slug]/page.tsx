@@ -117,7 +117,7 @@ export default async function AchievementPage({ params }: Props) {
         ]}
         icon="star"
         title={doc.title}
-        lede={doc.hidden && !doc.description ? undefined : <Linked text={doc.description} scope={scope} />}
+        lede={doc.description ? <Linked text={doc.description} scope={scope} /> : undefined}
         badges={
           <>
             {doc.rarity ? <Badge>{RARITY_LABEL[doc.rarity]}</Badge> : null}

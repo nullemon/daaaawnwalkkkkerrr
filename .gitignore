@@ -42,3 +42,4 @@ shot-*.png
 # pattern is cheaper than remembering.
 /.scratch-*
 /.bughunt-*
+/.tmp-*

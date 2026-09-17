@@ -364,6 +364,66 @@ const withoutGameName = (name) => {
  */
 const NOT_A_SUBJECT = /^(\d+(\s?[-–]\s?\d+)?(\s?(BBY|ABY|AD|BC))?|[IVXLC]+)$/i
 
+/*
+  The parentheticals the importer throws away, mirrored from
+  `WORK_DISAMBIGUATOR` in `src/lib/harvest.ts`. Kept in step by hand because
+  this file is plain ESM and that one is TypeScript; a test would be better and
+  there is nowhere for it to live yet.
+*/
+const NOT_KEPT =
+  /\((film|movie|tv series|television series|series|franchise|novel|book|comic|manga|soundtrack|album|song|pachislot|video game|upcoming video game|\d{4} video game)\)\s*$/i
+
+const bareTitle = (pageTitle) => pageTitle.replace(/\s*\([^)]*\)\s*$/, '').trim()
+
+/**
+ * Give a title its qualifier back where two kept articles are different things
+ * that would share one.
+ *
+ * Runs once over the finished harvest, because the decision needs every
+ * surviving entity and the fetch loop only ever sees one batch. Only the
+ * *kept* articles count: a name shared with something `isNotAnEntity` refuses
+ * is not a clash, and qualifying a title against a record that will never
+ * exist reads as pedantry to the one person who notices.
+ *
+ * And a qualifier naming *this game* is not a disambiguator between subjects —
+ * it is the franchise wiki carrying a game-specific article beside its general
+ * one. `Kyoto (Onimusha: Way of the Sword)` and `Kyoto` are one place, and the
+ * importer already keeps the game-specific one and drops the other. Requalify
+ * those and the dedupe stops matching them, leaving two pages about one place
+ * where there had been a rule to prevent exactly that.
+ */
+const disambiguate = (entities) => {
+  /*
+    A qualifier naming this game is not a disambiguator between subjects, so
+    the escape here is for the game's own title, which contains a colon and
+    may contain anything else a wiki chose to call it.
+  */
+  const escape = (phrase) => phrase.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+  const ownName = new RegExp(
+    '\\((' + [game.article, game.match].filter(Boolean).map(escape).join('|') + ')\\)\\s*$',
+    'i',
+  )
+  const bare = new Map()
+  for (const entity of entities) {
+    if (NOT_KEPT.test(entity.wikiTitle ?? '')) continue
+    const list = bare.get(entity.title) ?? []
+    list.push(entity)
+    bare.set(entity.title, list)
+  }
+  let requalified = 0
+  for (const [, list] of bare) {
+    if (list.length < 2) continue
+    if (list.some((entity) => ownName.test(entity.wikiTitle ?? ''))) continue
+    for (const entity of list) {
+      const full = (entity.wikiTitle ?? '').trim()
+      if (!full || full === entity.title) continue
+      entity.title = full
+      requalified += 1
+    }
+  }
+  return requalified
+}
+
 const classify = (title, categories) => {
   if (NOT_A_SUBJECT.test(title.trim())) return null
   if (BAD_TITLE.test(title)) return null
@@ -670,7 +730,24 @@ for (let index = 0; index < pending.length; index += 20) {
     const wikitext = page.revisions?.[0]?.slots?.main?.['*'] ?? ''
 
     entities.push({
-      title: page.title.replace(/\s*\([^)]*\)\s*$/, '').trim(),
+      /*
+        The parenthetical comes off, except where it is the only thing telling
+        two subjects apart.
+
+        A wiki disambiguates an article title when the bare name is taken, and
+        the bare name is what a reader calls the thing — "Kyoto", not "Kyoto
+        (Onimusha: Way of the Sword)". Stripping it is right almost always.
+
+        It is wrong when both articles survive the import. Wookieepedia has
+        `Naboo` the planet and `Naboo (people)` the species; both are real,
+        both are kept, and both arrived titled "Naboo" — two records about
+        different things, indistinguishable on the page and to anything
+        matching on a name. The four other clashes in this corpus are all
+        `(film)`, `(franchise)`, `(pachislot)` and the like, which
+        `isNotAnEntity` rejects, so nothing downstream ever saw this one shape
+        that gets through.
+      */
+      title: bareTitle(page.title),
       wikiTitle: page.title,
       collection,
       facts: parseInfobox(wikitext),

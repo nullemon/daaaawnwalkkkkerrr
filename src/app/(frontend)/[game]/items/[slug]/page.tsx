@@ -71,7 +71,7 @@ export default async function ItemPage({ params }: Props) {
         eyebrow="Item"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Items', href: '/items' }, { label: doc.title }]}
         title={doc.title}
-        lede={<Linked text={doc.summary} scope={scope} />}
+        lede={doc.summary ? <Linked text={doc.summary} scope={scope} /> : undefined}
         badges={
           <>
             <Badge>{doc.category}</Badge>

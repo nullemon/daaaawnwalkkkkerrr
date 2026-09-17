@@ -58,7 +58,7 @@ export default async function MechanicPage({ params }: Props) {
         eyebrow="Mechanic"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Mechanics', href: '/mechanics' }, { label: doc.title }]}
         title={doc.title}
-        lede={<Linked text={doc.summary} scope={scope} />}
+        lede={doc.summary ? <Linked text={doc.summary} scope={scope} /> : undefined}
         badges={<Confidence level={doc.confidence} />}
       />
       <div className="page body-main">

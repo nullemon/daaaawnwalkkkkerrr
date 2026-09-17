@@ -113,7 +113,7 @@ export default async function FactionPage({ params }: Props) {
         ]}
         icon="shield"
         title={doc.title}
-        lede={<Linked text={doc.summary} scope={scope} />}
+        lede={doc.summary ? <Linked text={doc.summary} scope={scope} /> : undefined}
         badges={<Confidence level={doc.confidence} />}
       />
       <div className="page body-main">

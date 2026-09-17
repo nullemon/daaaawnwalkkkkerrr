@@ -109,7 +109,7 @@ export default async function QuestPage({ params }: Props) {
         eyebrow="Quest"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Quests', href: '/quests' }, { label: quest.title }]}
         title={quest.title}
-        lede={<Linked text={quest.summary} scope={scope} />}
+        lede={quest.summary ? <Linked text={quest.summary} scope={scope} /> : undefined}
         badges={
           <>
             <PhaseBadge phase={quest.phase} />

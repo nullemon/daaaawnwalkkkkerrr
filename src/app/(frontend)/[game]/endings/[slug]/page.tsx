@@ -83,7 +83,7 @@ export default async function EndingPage({ params }: Props) {
         eyebrow="Ending"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Endings', href: '/endings' }, { label: ending.title }]}
         title={ending.title}
-        lede={<Linked text={ending.summary} scope={scope} />}
+        lede={ending.summary ? <Linked text={ending.summary} scope={scope} /> : undefined}
         badges={
           <>
             <Badge>

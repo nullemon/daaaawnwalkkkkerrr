@@ -96,6 +96,15 @@ export type LinkTarget = {
    * Absent means network-wide - a person or a company, which matches anywhere.
    */
   game?: string
+  /**
+   * How strongly a bare mention of this name means *this* record. Lower wins.
+   *
+   * Set only where one subject is deliberately filed in several collections and
+   * one of those filings is the subject itself - see `sameSubject` below, which
+   * is the only thing that reads it. Absent on everything else, and absent is
+   * not "last": a candidate with no facet makes the whole match refuse.
+   */
+  facet?: number
 }
 
 /** A target plus every spelling it answers to. A game has a title and a short title. */
@@ -138,6 +147,44 @@ export type Matcher = {
 export const MIN_SINGLE_WORD = 5
 
 /**
+ * One-word names under the minimum that link anyway. The appeal against it.
+ *
+ * A stop list with no allow list is a rule with no appeal, and the length rule
+ * was costing two names that matter more than everything it saved: **Coen**,
+ * the player character of the flagship wiki and the most-named record on it,
+ * and **COG**, which is how the Gears wiki writes its own faction.
+ *
+ * The bar is the one the capitalisation rule leaves open. Case-folding is safe
+ * because a capitalised name needs a capitalised mention, so the only real
+ * exposure for a short name is an **ordinary English word at the start of a
+ * sentence** - "Rat ate the grain", "Soul is what it costs", "Null on a field
+ * nobody filled". Every name below was checked against that and none of them is
+ * an English word at all.
+ *
+ * Deliberately still refused, and each for that reason: Paul, Duke, Lion, Rat,
+ * Soul, Null, Tee, Oha, Dug, Lea, Clog, Clev, NC, 2K, 8-4.
+ *
+ * This is an appeal against the *length* rule only. A name on this list still
+ * has to clear `ORDINARY_WORDS` and the bare-number rule, because those are
+ * about what the word is, not how long it is.
+ */
+export const SHORT_NAMES_ALLOWED = new Set<string>(
+  (
+    /*
+      Dawnwalker: the player character, and three of the valley's named cast.
+      Gears: the Coalition, as its own wiki abbreviates it.
+      Star Wars: species and worlds, none of them an English word.
+      Onimusha and the rest: given names from the harvested cast.
+      Network-wide: three companies whose names are theirs and nobody else's.
+    */
+    `coen cog anca ahti ifuu krex kuat pyke duro hutt jedi sith gioh volk mert
+     alin atod esme ezra leni milo remi sera theo vera kaia sara sega sony xbox`
+  )
+    .split(/\s+/)
+    .filter(Boolean),
+)
+
+/**
  * One-word names that are ordinary English and must never link.
  *
  * Read off the single-word titles actually in the database - there are about
@@ -150,8 +197,15 @@ export const MIN_SINGLE_WORD = 5
  * The bar is "a word a reader would write in a sentence without meaning the
  * record". Invented nouns stay out of it: squig, reaver, vrakhir, wookiee,
  * padawan and stormtrooper are linkable, because nobody writes them by
- * accident. Ordinary surnames that are also common nouns are in it - Baker is
- * a character on one wiki and a job on all of them.
+ * accident. Words that are also a record somewhere are in it anyway - there is
+ * a character called Forge and a company called Ancient, and "they forge a
+ * blade" and "an ancient circle" are sentences this site writes.
+ *
+ * `darth` is in it for a third reason worth naming: it is a title that always
+ * precedes a name. The Star Wars wiki has an article about the honorific, so
+ * "Darth Vader" - a name with no record of its own - linked its first word to a
+ * page about what the word means. The ranks above it are here for exactly the
+ * same shape.
  */
 export const ORDINARY_WORDS = new Set<string>(
   (
@@ -159,16 +213,16 @@ export const ORDINARY_WORDS = new Set<string>(
      no nor not of on or our she so than that the their them then there these they this to
      was we were what when where which who why will with you your
 
-     admiral baron bishop captain chief colonel commander corporal count deacon doctor duchess
-     duke emperor general judge king knight lady lieutenant lord major marshal officer president
-     priest prince princess professor queen sergeant senator
+     admiral baron bishop captain chief colonel commander corporal count darth deacon doctor
+     duchess duke emperor general judge king knight lady lieutenant lord major marshal officer
+     president priest prince princess professor queen sergeant senator
 
      animal bandit bear beast bird boy brother builder cat child creature daughter demon dog
      driver enemies enemy family father flayer friend ghost giant girl guard human humans hunter
      lion maker man mind monster mother people person pirate player rat reader rebel scout
      sister slave sniper soldier son spider spirit thief warrior wolf woman worker
 
-     area border camp cathedral cave centre center church city colonies colony desert door
+     area battlefield border camp cathedral cave centre center church city colonies colony desert door
      farm field fields forest frontier garden gate harbor harbour hideout home hospital house
      island lake library manor market mine moon mountain museum nebula north ocean palace place
      planet port prison region river road room sanctuary school sea south square star station
@@ -208,6 +262,30 @@ export const ORDINARY_WORDS = new Set<string>(
     .split(/\s+/)
     .filter(Boolean),
 )
+
+/**
+ * Company names that a wiki uses to mean hardware, not a corporation.
+ *
+ * `Xbox` and `Nintendo` are both company records on this network, and both are
+ * also what a wiki calls a machine. The Dawnwalker guide to perfect blocking
+ * says the input "is LB on Xbox, L1 on PlayStation and left mouse button on
+ * PC", and a Silent Hill comparison lists "platforms: Nintendo Wii, PlayStation
+ * 2" - linking either of those to a corporate profile is a category error, and
+ * it looks worse for being asymmetric, since PlayStation has no record and stays
+ * plain beside it.
+ *
+ * They are not refused outright, because "Xbox's own article names them as EVP
+ * & CEO" on an executive's profile is exactly the link this mechanism is for.
+ * `src/lib/link-index.ts` keeps these out of a wiki's index and leaves them in
+ * on the people and companies hosts, which is where the corporation is the
+ * subject. That split is the rule; this is only the list.
+ *
+ * The test for adding a name: does this corpus use the word to mean hardware
+ * more often than to mean the company? Only these two do today. `PlayStation
+ * Studios` and `PlayStation Productions` are not here - they are the companies'
+ * full names and no wiki writes them about a console.
+ */
+export const PLATFORM_NAMES = new Set(['xbox', 'nintendo'])
 
 /*
   Quote and dash characters folded to their plain form before punctuation is
@@ -278,6 +356,18 @@ export const tokenize = (text: string): Token[] => {
   return tokens
 }
 
+/**
+ * A name reduced to the key `buildMatcher` files it under.
+ *
+ * Exported so a caller comparing a name against a reviewed list compares the
+ * same thing the index does; two folds that drift apart is a list that silently
+ * stops matching.
+ */
+export const nameKey = (name: string): string =>
+  tokenize(name.normalize('NFC'))
+    .map((token) => token.folded)
+    .join(' ')
+
 /** The punctuation in a gap, folded and sorted, with whitespace dropped. */
 const gapSignature = (gap: string): string => {
   const chars = new Set<string>()
@@ -322,7 +412,7 @@ export const refuseName = (name: string, tokens: Token[]): string | null => {
   // Digits first: a company called 2015 is refused for being a year, which is
   // the reason somebody reading this list needs, not for being four characters.
   if (/^\d+$/.test(word)) return 'one word, and a bare number'
-  if (word.length < MIN_SINGLE_WORD)
+  if (word.length < MIN_SINGLE_WORD && !SHORT_NAMES_ALLOWED.has(word))
     return `one word, under ${MIN_SINGLE_WORD} characters`
   if (ORDINARY_WORDS.has(word)) return 'one word, and an ordinary English word'
   return null
@@ -349,7 +439,7 @@ export const buildMatcher = (targets: NamedTarget[]): Matcher => {
       const normalised = name.normalize('NFC')
       const tokens = tokenize(normalised)
 
-      const reason = refuseName(tokens)
+      const reason = refuseName(normalised, tokens)
       if (reason) {
         // One line per (name, reason), not per record: three companies called
         // the same ordinary word are one finding, not three.
@@ -381,6 +471,51 @@ export const buildMatcher = (targets: NamedTarget[]): Matcher => {
   }
 
   return { byKey, reach, refusals }
+}
+
+/**
+ * The one case where two candidates are not a conflict.
+ *
+ * Ambiguity normally refuses, and rule 6 in the header says why: two records
+ * whose names fold together are a question the data cannot answer. That rule
+ * was written for a *collision* - two unrelated things that happen to share a
+ * name, where picking one is a coin flip.
+ *
+ * Some of this network's records are not a collision. Ambrus is three rows on
+ * one wiki by design: `characters` (who he is), `enemies` (the fight against
+ * him) and `courts` (his court). They are three facets of one subject, and the
+ * asymmetry between them is readable rather than arbitrary - the boss is called
+ * Ambrus *because the fight is against him*, and the court is his. A bare
+ * "Ambrus" in prose means the man. That is a derivation, not a coin flip, and
+ * refusing it costs the flagship wiki its four most-named links.
+ *
+ * So: where every candidate carries a facet and exactly one of them ranks
+ * strictly highest, that one wins. Everything else still refuses, and that
+ * includes cases that look similar:
+ *
+ * - **Naboo**, a character and a region on the Star Wars wiki, is one subject
+ *   filed twice with one of the filings simply *wrong* - a planet in
+ *   `characters`. Precedence would confidently pick the error. It is a
+ *   `pnpm check:kind` finding, not a link to make.
+ * - **The Hiss**, an enemy and a faction on the Control wiki, genuinely is two
+ *   facets - but the ordering is not one that generalises. A faction whose foot
+ *   soldiers carry its name would want the opposite answer, and nothing in the
+ *   data says which shape this is.
+ * - **Under Watchful Eyes** and the other two quest/court-activity pairs are
+ *   one activity filed in both lists, with no derivation either way: neither
+ *   record is named *after* the other. The Ambrus test does not apply, so
+ *   neither does the rule.
+ *
+ * A candidate with no facet is not ranked last, it refuses the whole match.
+ * That is what keeps a person and a character who share a name apart, and it is
+ * what stops this quietly becoming a total order over every collection.
+ */
+const sameSubject = (candidates: LinkTarget[]): LinkTarget | null => {
+  if (candidates.some((target) => target.facet === undefined)) return null
+  const ranked = [...candidates].sort((a, b) => a.facet! - b.facet!)
+  // Strictly highest, not merely first: two records at the same rank is the
+  // ambiguity this function exists to leave alone.
+  return ranked[0]!.facet! < ranked[1]!.facet! ? ranked[0]! : null
 }
 
 /** A run of prose: plain when `target` is absent, a link when it is not. */
@@ -475,13 +610,16 @@ export const matchText = (text: string, matcher: Matcher, options: MatchOptions)
       /*
         Two records whose names fold together is a question the data cannot
         answer, and CLAUDE.md's rule is to record a conflict rather than
-        resolve it. The span is consumed rather than retried shorter, so an
-        ambiguous "The Hiss" cannot fall through and link a fragment of itself.
+        resolve it - unless they are facets of one subject, which `sameSubject`
+        is the only thing allowed to decide. Either way the span is consumed
+        rather than retried shorter, so an unresolved "The Hiss" cannot fall
+        through and link a fragment of itself.
       */
       consumed = span
-      if (scoped.length > 1) break
+      const resolved = scoped.length === 1 ? scoped[0]! : sameSubject(scoped)
+      if (!resolved) break
 
-      const target = scoped[0]!
+      const target = resolved
       const isSelf =
         target.key === options.self ||
         (target.kind === 'game' && options.game !== undefined && target.game === options.game)
@@ -509,4 +647,37 @@ export const matchText = (text: string, matcher: Matcher, options: MatchOptions)
 
   if (cut < source.length) segments.push({ text: source.slice(cut) })
   return segments
+}
+
+/*
+  Node types a match must never be made inside.
+
+  `link` and `autolink` because an anchor inside an anchor is invalid HTML and
+  the browser silently un-nests it, leaving a link whose destination depends on
+  where the reader clicked. `heading` because a heading labels the section under
+  it and a link in one competes with the section's own navigation. `code`
+  because the whole point of code is that it is quoted verbatim.
+
+  Here rather than beside the renderer so it can be tested without React, and
+  because which contexts refuse a link is a matching rule rather than a
+  rendering detail.
+*/
+export const NO_LINKS_INSIDE = new Set(['link', 'autolink', 'heading', 'code'])
+
+/** A serialised node, with the parent chain the JSX converter hands down. */
+export type NodeWithParent = { type?: string; parent?: NodeWithParent }
+
+/**
+ * Walk the ancestors, not just the immediate parent.
+ *
+ * A text node inside a bold span inside a link is two hops from the anchor, and
+ * a check that looked only at the parent would nest an anchor inside it — which
+ * does not throw, does not warn, and produces a link whose href depends on
+ * where in the word the reader clicked.
+ */
+export const insideProtectedNode = (node: NodeWithParent | undefined): boolean => {
+  for (let current = node; current; current = current.parent) {
+    if (current.type && NO_LINKS_INSIDE.has(current.type)) return true
+  }
+  return false
 }

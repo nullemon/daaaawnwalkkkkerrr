@@ -71,7 +71,7 @@ export default async function CourtActivityPage({ params }: Props) {
           { label: doc.title },
         ]}
         title={doc.title}
-        lede={<Linked text={doc.summary} scope={scope} />}
+        lede={doc.summary ? <Linked text={doc.summary} scope={scope} /> : undefined}
         badges={
           <>
             <PhaseBadge phase={doc.phase} />

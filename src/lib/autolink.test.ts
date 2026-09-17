@@ -3,10 +3,15 @@ import {
   buildMatcher,
   matchText,
   MIN_SINGLE_WORD,
+  nameKey,
   ORDINARY_WORDS,
+  PLATFORM_NAMES,
+  SHORT_NAMES_ALLOWED,
+  insideProtectedNode,
   refuseName,
   tokenize,
   type NamedTarget,
+  type NodeWithParent,
   type Segment,
 } from './autolink'
 
@@ -18,6 +23,9 @@ import {
  * only one direction, and each had a test proving the other. So every rule here
  * is pinned twice: the thing that must link, and the thing that must not.
  */
+
+/** `refuseName` takes the written name and its tokens; the tests only vary the name. */
+const refuseName2 = (name: string) => refuseName(name, tokenize(name))
 
 const person = (id: number, name: string): NamedTarget => ({
   key: `people:${id}`,
@@ -43,6 +51,7 @@ const record = (
   id: number,
   title: string,
   gameSlug: string,
+  facet?: number,
 ): NamedTarget => ({
   key: `${collection}:${id}`,
   kind: 'record',
@@ -51,7 +60,13 @@ const record = (
   href: `/${collection}/${id}`,
   external: false,
   game: gameSlug,
+  facet,
 })
+
+/* The live ranking, from `FACET_ORDER` in `src/lib/link-index.ts`. */
+const CHARACTER = 0
+const ENEMY = 1
+const COURT = 2
 
 /** What a caller renders: the text, with the linked runs marked. */
 const render = (segments: Segment[]): string =>
@@ -82,33 +97,65 @@ describe('tokenize', () => {
 
 describe('refuseName', () => {
   it('refuses a one-word name shorter than the minimum', () => {
-    expect(refuseName(tokenize('Sega'))).toMatch(/under 5 characters/)
-    expect(refuseName(tokenize('2K'))).toMatch(/under 5 characters/)
+    // Both are real company records. Neither is on the allow list below.
+    expect(refuseName2('Gust')).toMatch(/under 5 characters/)
+    expect(refuseName2('2K')).toMatch(/under 5 characters/)
   })
 
   it('refuses a one-word name that is a bare number', () => {
     // A company really is called 2015. Left alone it would link every year.
-    expect(refuseName(tokenize('2015'))).toMatch(/bare number/)
+    expect(refuseName2(('2015'))).toMatch(/bare number/)
   })
 
   it('refuses a one-word name that is an ordinary English word', () => {
-    expect(refuseName(tokenize('Ancient'))).toMatch(/ordinary English word/)
-    expect(refuseName(tokenize('Timeline'))).toMatch(/ordinary English word/)
-    expect(refuseName(tokenize('Books'))).toMatch(/ordinary English word/)
+    expect(refuseName2(('Ancient'))).toMatch(/ordinary English word/)
+    expect(refuseName2(('Timeline'))).toMatch(/ordinary English word/)
+    expect(refuseName2(('Books'))).toMatch(/ordinary English word/)
   })
 
   it('allows a one-word name that is nobody else in English', () => {
     // The Antar 4 direction: a filter that stops bad records must not take the
     // good ones with it. None of these is a word anybody writes by accident.
-    expect(refuseName(tokenize('Brencis'))).toBeNull()
-    expect(refuseName(tokenize('Tatooine'))).toBeNull()
-    expect(refuseName(tokenize('Wookiee'))).toBeNull()
-    expect(refuseName(tokenize('Konami'))).toBeNull()
+    expect(refuseName2(('Brencis'))).toBeNull()
+    expect(refuseName2(('Tatooine'))).toBeNull()
+    expect(refuseName2(('Wookiee'))).toBeNull()
+    expect(refuseName2(('Konami'))).toBeNull()
+  })
+
+  it('refuses a name whose first character the tokeniser would drop', () => {
+    // A company really is called `.Gears`, and folded it is the word "gears" —
+    // which is how "the Gears of War series" came to link to a studio.
+    expect(refuseName2('.Gears')).toMatch(/starts with punctuation/)
+    // The other end is not the same problem: this is a real name, spelled so.
+    expect(refuseName2('Capcom Co., Ltd.')).toBeNull()
+  })
+
+  it('lets a reviewed short name appeal the length rule', () => {
+    // Coen is the player character of the flagship wiki and four letters long;
+    // COG is how the Gears wiki writes its own faction.
+    expect(refuseName2('Coen')).toBeNull()
+    expect(refuseName2('COG')).toBeNull()
+  })
+
+  it('does not let the allow list overrule what a word is', () => {
+    // The appeal is against length only. Nothing on the allow list is an
+    // English word, and if one ever were, the stop list still wins.
+    for (const word of SHORT_NAMES_ALLOWED) expect(ORDINARY_WORDS.has(word)).toBe(false)
+    expect(refuseName2('Rat')).toMatch(/under 5 characters/)
+    expect(refuseName2('Soul')).toMatch(/under 5 characters/)
+  })
+
+  it('keeps the platform brands in the same fold the index uses', () => {
+    // These are compared against company names by `link-index.ts`, and a list
+    // folded differently from the index is a list that silently stops matching.
+    for (const word of PLATFORM_NAMES) expect(nameKey(word)).toBe(word)
+    expect(nameKey('Xbox')).toBe('xbox')
+    expect(nameKey('Capcom Co., Ltd.')).toBe('capcom co ltd')
   })
 
   it('allows a short word once it is part of a longer name', () => {
-    expect(refuseName(tokenize('Vale Sangora'))).toBeNull()
-    expect(refuseName(tokenize('Gears of War: E-Day'))).toBeNull()
+    expect(refuseName2(('Vale Sangora'))).toBeNull()
+    expect(refuseName2(('Gears of War: E-Day'))).toBeNull()
   })
 
   it('keeps invented nouns out of the stop list', () => {
@@ -220,14 +267,59 @@ describe('matchText', () => {
   })
 
   it('refuses an ambiguous name rather than choosing one', () => {
-    // Brencis is filed both as a character and as a bestiary entry on the same
-    // wiki. Which page a reader wanted is a question the data cannot answer.
+    // A quest and a court activity with one name, neither named after the
+    // other. Which page a reader wanted is a question the data cannot answer,
+    // and neither collection carries a facet, so nothing tries.
     const targets = [
-      record('characters', 1, 'Brencis', 'dawnwalker'),
-      record('enemies', 2, 'Brencis', 'dawnwalker'),
+      record('quests', 1, 'Under Watchful Eyes', 'dawnwalker'),
+      record('court-activities', 2, 'Under Watchful Eyes', 'dawnwalker'),
     ]
-    expect(run('the knyaz Brencis rules', targets, { game: 'dawnwalker' })).toBe(
-      'the knyaz Brencis rules',
+    expect(run('finish Under Watchful Eyes early', targets, { game: 'dawnwalker' })).toBe(
+      'finish Under Watchful Eyes early',
+    )
+  })
+
+  it('takes the subject over its facets where the ranking says so', () => {
+    // Ambrus is three rows by design: the man, the fight against him, and his
+    // court. A bare mention means the man.
+    const targets = [
+      record('characters', 1, 'Ambrus', 'dawnwalker', CHARACTER),
+      record('enemies', 2, 'Ambrus', 'dawnwalker', ENEMY),
+      record('courts', 3, 'Ambrus', 'dawnwalker', COURT),
+    ]
+    expect(run('Boyar of the north, Ambrus runs the blood tax', targets, { game: 'dawnwalker' })).toBe(
+      'Boyar of the north, [Ambrus] runs the blood tax',
+    )
+  })
+
+  it('refuses when a candidate carries no facet at all', () => {
+    // Naboo is a region the harvester also filed as a character. Ranking would
+    // confidently pick the mistake, so `regions` is not in the order and the
+    // whole match refuses rather than losing a comparison.
+    const targets = [
+      record('characters', 1, 'Naboo', 'zero-company', CHARACTER),
+      record('regions', 2, 'Naboo', 'zero-company'),
+    ]
+    expect(run('the fields of Naboo', targets, { game: 'zero-company' })).toBe('the fields of Naboo')
+  })
+
+  it('refuses when two candidates tie at the same rank', () => {
+    const targets = [
+      record('characters', 1, 'Vicho', 'dawnwalker', CHARACTER),
+      record('characters', 2, 'Vicho', 'dawnwalker', CHARACTER),
+    ]
+    expect(run('Vicho waits', targets, { game: 'dawnwalker' })).toBe('Vicho waits')
+  })
+
+  it('never ranks a person against a record', () => {
+    // A facet order is about one game's own filings. A person who shares a
+    // name with a character is two subjects, and no ranking applies.
+    const targets = [
+      person(1, 'Bakir'),
+      record('characters', 2, 'Bakir', 'dawnwalker', CHARACTER),
+    ]
+    expect(run('Bakir holds the southwest', targets, { game: 'dawnwalker' })).toBe(
+      'Bakir holds the southwest',
     )
   })
 
@@ -263,7 +355,32 @@ describe('matchText', () => {
   })
 
   it('reports what it refused, so the losses can be read', () => {
-    const { refusals } = buildMatcher([person(1, 'Sega'), person(2, 'Ancient')])
-    expect(refusals.map((entry) => entry.name).sort()).toEqual(['Ancient', 'Sega'])
+    const { refusals } = buildMatcher([person(1, 'Gust'), person(2, 'Ancient')])
+    expect(refusals.map((entry) => entry.name).sort()).toEqual(['Ancient', 'Gust'])
+  })
+})
+
+describe('insideProtectedNode', () => {
+  /** Outermost first: `chain('link', 'paragraph')` is a paragraph inside a link. */
+  const chain = (...types: string[]): NodeWithParent | undefined =>
+    types.reduce<NodeWithParent | undefined>((parent, type) => ({ type, parent }), undefined)
+
+  it('refuses a link inside a link, however deep', () => {
+    // A text node inside a bold span inside a link is two hops from the anchor,
+    // and an anchor nested in an anchor does not throw — the browser un-nests
+    // it and the destination becomes wherever the reader happened to click.
+    expect(insideProtectedNode(chain('link', 'paragraph'))).toBe(true)
+    expect(insideProtectedNode(chain('paragraph', 'autolink'))).toBe(true)
+  })
+
+  it('refuses a heading and a code block', () => {
+    expect(insideProtectedNode(chain('heading'))).toBe(true)
+    expect(insideProtectedNode(chain('code'))).toBe(true)
+  })
+
+  it('allows ordinary prose', () => {
+    expect(insideProtectedNode(chain('paragraph', 'root'))).toBe(false)
+    expect(insideProtectedNode(chain('listitem', 'list', 'root'))).toBe(false)
+    expect(insideProtectedNode(undefined)).toBe(false)
   })
 })

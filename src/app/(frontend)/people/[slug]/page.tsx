@@ -168,7 +168,7 @@ export default async function PersonPage({ params }: Props) {
         crumbs={[{ label: 'People', href: '/' }, { label: person.name }]}
         icon="person"
         title={person.name}
-        lede={<Linked text={person.summary} scope={scope} />}
+        lede={person.summary ? <Linked text={person.summary} scope={scope} /> : undefined}
         badges={<Confidence level={person.confidence} />}
       />
       <div className="page body-main">

@@ -273,8 +273,15 @@ export const couldNameAPerson = (fragment: string): boolean => {
     .trim()
   if (!residue) return false
   if (TEMPLATES.has(residue.toLowerCase())) return false
-  /* A name is capitalised in every language this harvest reads. */
-  if (!/\p{Lu}/u.test(residue)) return false
+  /*
+    A name is capitalised — or written in a script that has no capitals at all.
+    Testing only for an uppercase letter would refuse 宮本茂 and 김정주 while
+    accepting "CEO", which is the over-broad filter this repository has already
+    been bitten by twice: it was a rule against sequels that deleted Antar 4.
+  */
+  if (!/\p{Lu}/u.test(residue) && !/[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Hangul}]/u.test(residue)) {
+    return false
+  }
   const words = residue.split(/\s+/).filter(Boolean)
   return !words.every((word) => POST_WORDS.has(word.toLowerCase()))
 }

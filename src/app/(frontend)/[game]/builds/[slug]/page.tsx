@@ -69,7 +69,7 @@ export default async function BuildPage({ params }: Props) {
         eyebrow="Build"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Builds', href: '/builds' }, { label: doc.title }]}
         title={doc.title}
-        lede={<Linked text={doc.summary} scope={scope} />}
+        lede={doc.summary ? <Linked text={doc.summary} scope={scope} /> : undefined}
         badges={
           <>
             <Badge>{doc.playstyle}</Badge>

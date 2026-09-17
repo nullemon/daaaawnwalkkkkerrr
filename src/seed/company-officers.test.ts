@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import {
+  couldNameAPerson,
   looksLikeName,
   readKeyPerson,
   readOfficer,
@@ -169,5 +170,60 @@ describe('looksLikeName', () => {
     expect(looksLikeName('AWEMartin McDougall')).toBe(false)
     expect(looksLikeName('Martin McDougall')).toBe(true)
     expect(looksLikeName('Terry O’Quinn')).toBe(true)
+  })
+})
+
+/**
+ * What the company profile prints, which is a wider question than what this
+ * pass will publish a page about.
+ *
+ * `src/lib/officers.ts` kept every fragment on the stated grounds that "a name
+ * we cannot link is still a name the source stated" — while this file was
+ * dropping the same fragments and saying so in its own docstring. Two
+ * documented decisions, opposite, about one string; what reached readers was
+ * `ubl` under "Who runs it" on Cygames, `(chairman and CEO)` on Sega, and `CEO`
+ * and `lead developer` on AGEod. One rule now, and this is it.
+ */
+describe('couldNameAPerson', () => {
+  it('keeps a real name the splitter could not separate from its post', () => {
+    /* Bandai Namco Holdings. Unreadable here, still a person there. */
+    expect(couldNameAPerson('(chairman)Yuji Asako')).toBe(true)
+  })
+
+  it('keeps every fragment that reads as a name, linked or not', () => {
+    expect(couldNameAPerson('Philippe Thibaut')).toBe(true)
+    expect(couldNameAPerson('Markus Mäki (chairman and CEO)')).toBe(true)
+    expect(couldNameAPerson('Kenichiro Takaki (General Manager, console division)')).toBe(true)
+  })
+
+  it('refuses a MediaWiki template name, which is not a person at all', () => {
+    expect(couldNameAPerson('ubl')).toBe(false)
+    expect(couldNameAPerson('Unbulleted list')).toBe(false)
+  })
+
+  it('refuses a post with nobody holding it', () => {
+    /* Sega, where the name never made it into the value. */
+    expect(couldNameAPerson('(chairman and CEO)')).toBe(false)
+    expect(couldNameAPerson('(vice president and COO)')).toBe(false)
+  })
+
+  it('refuses a bare job title', () => {
+    /* AGEod writes "Philippe Thibaut, CEO": the second fragment is the job. */
+    expect(couldNameAPerson('CEO')).toBe(false)
+    expect(couldNameAPerson('lead developer')).toBe(false)
+    expect(couldNameAPerson('Chairman Emeritus')).toBe(false)
+  })
+})
+
+describe('couldNameAPerson, in scripts without capitals', () => {
+  /*
+    The other direction. A rule that asks only for an uppercase letter refuses
+    a name written in Han, kana or Hangul — and still accepts "CEO". Two
+    filters in this repository have already thrown away real records for being
+    shaped unusually; this one is not going to be the third.
+  */
+  it('keeps a name with no capital letters to have', () => {
+    expect(couldNameAPerson('宮本茂')).toBe(true)
+    expect(couldNameAPerson('김정주 (CEO)')).toBe(true)
   })
 })

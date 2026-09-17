@@ -66,7 +66,7 @@ export default async function EnemyPage({ params }: Props) {
         eyebrow={doc.isBoss ? 'Boss' : 'Enemy'}
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Enemies', href: '/enemies' }, { label: doc.title }]}
         title={doc.title}
-        lede={<Linked text={doc.summary} scope={scope} />}
+        lede={doc.summary ? <Linked text={doc.summary} scope={scope} /> : undefined}
         badges={
           <>
             {doc.isBoss ? <Badge>Boss</Badge> : null}

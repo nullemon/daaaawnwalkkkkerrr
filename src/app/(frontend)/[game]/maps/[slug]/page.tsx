@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { SectionNeighbours } from '@/components/SectionNeighbours'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
-import { Linked, LinkedRichText } from '@/components/Linked'
+import { Linked } from '@/components/Linked'
 import type { LinkScope } from '@/lib/link-index'
 import { Confidence } from '@/components/Badges'
 import { GameMap, type MapCategory, type MapMarker } from '@/components/GameMap'
@@ -95,7 +95,7 @@ export default async function MapPage({ params }: Props) {
         ]}
         icon="map"
         title={doc.title}
-        lede={doc.summary ?? undefined}
+        lede={doc.summary ? <Linked text={doc.summary} scope={scope} /> : undefined}
         badges={<Confidence level={doc.confidence} />}
       />
 

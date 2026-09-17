@@ -1,5 +1,11 @@
 import { cache } from 'react'
-import { buildMatcher, type Matcher, type NamedTarget } from './autolink'
+import {
+  buildMatcher,
+  nameKey,
+  PLATFORM_NAMES,
+  type Matcher,
+  type NamedTarget,
+} from './autolink'
 import { getNames, getPublishedGames, gameUrl } from './payload'
 import { SECTION_PATH, type GameScopedCollection } from './tenancy'
 import { companyUrl, personUrl } from './urls'
@@ -30,8 +36,12 @@ import { companyUrl, personUrl } from './urls'
  * **Achievements.** The titles are jokes and quotations by design ("Do not go
  * gentle"), which is the same problem one step worse.
  *
- * **Authors.** They already have a byline on every page they wrote, and the
- * contributor names are placeholders until the owner supplies six real ones.
+ * **Maps.** There are none, and the note in CLAUDE.md says why that is a
+ * finding rather than a gap.
+ *
+ * **Authors.** Not game-scoped, and they already carry a byline on every page
+ * they wrote; the six contributor names are placeholders until the owner
+ * supplies real ones, and linking a placeholder into prose spreads it.
  */
 
 /**
@@ -39,7 +49,7 @@ import { companyUrl, personUrl } from './urls'
  *
  * A subset of `GAME_SCOPED` on purpose. Everything here names a *thing in the
  * game* whose name a sentence would use to mean that thing; the three that are
- * missing name something else, and the note above says which and why.
+ * missing - guides, achievements, maps - do not, and the note above says why.
  */
 export const LINKABLE_SECTIONS: GameScopedCollection[] = [
   'characters',
@@ -111,6 +121,13 @@ const networkTargets = cache(async (host: LinkHost): Promise<NamedTarget[]> => {
   }
 
   for (const row of companies) {
+    /*
+      A wiki writes about platforms constantly - controls, system requirements,
+      editions - and two of these company names are what it calls a machine. On
+      a wiki they are left out entirely; on the hosts where a corporation is the
+      subject they stay in. See `PLATFORM_NAMES`.
+    */
+    if (host === 'wiki' && PLATFORM_NAMES.has(nameKey(row.name))) continue
     targets.push({
       key: `companies:${row.id}`,
       kind: 'company',
@@ -135,7 +152,11 @@ const networkTargets = cache(async (host: LinkHost): Promise<NamedTarget[]> => {
     targets.push({
       key: `games:${game.id}`,
       kind: 'game',
-      name: game.shortTitle || game.title,
+      /* The full title, even where the short one is what a sentence used: the
+         tooltip exists to say what the link goes to, and "A Plague Tale Legacy"
+         hovering over "Resonance: A Plague Tale Legacy" tells a reader less
+         than the text already did. */
+      name: game.title,
       names,
       // Always absolute: a wiki is its own host from everywhere, the hub
       // included.
@@ -147,6 +168,33 @@ const networkTargets = cache(async (host: LinkHost): Promise<NamedTarget[]> => {
 
   return targets
 })
+
+/**
+ * The collections that hold *facets of one subject*, strongest first.
+ *
+ * Read by `sameSubject` in `src/lib/autolink.ts`, and only by it. Three
+ * entries, not thirteen, and the shortness is the point: this is the list of
+ * places where the network deliberately files one subject more than once and
+ * the derivation between the filings can be read off the records.
+ *
+ * Ambrus is the case. He is `characters/ambrus-character` (who he is),
+ * `enemies/ambrus-boss` (the fight at the end of The Gilded Gauntlet) and
+ * `courts/ambrus` (his court). The boss is called Ambrus because the fight is
+ * against him and the court is his, so a bare "Ambrus" means the man. Brencis,
+ * Bakir and Xanthe are the same shape.
+ *
+ * A collection that is not here has no facet at all, which makes any match it
+ * shares refuse outright rather than lose a ranking. Adding a line is therefore
+ * a claim that a bare mention of a shared name means that collection's record
+ * and not the other's - which is exactly the claim that was wrong for Naboo, a
+ * planet the harvester filed in `characters`. Read the note on `sameSubject`
+ * before adding one.
+ */
+const FACET_ORDER: Partial<Record<GameScopedCollection, number>> = {
+  characters: 0,
+  enemies: 1,
+  courts: 2,
+}
 
 /** One wiki's own records, which match inside that wiki and nowhere else. */
 const wikiTargets = cache(async (game: string): Promise<NamedTarget[]> => {
@@ -169,6 +217,7 @@ const wikiTargets = cache(async (game: string): Promise<NamedTarget[]> => {
       href: `${SECTION_PATH[collection]}/${row.slug}`,
       external: false,
       game,
+      facet: FACET_ORDER[collection],
     })),
   )
 })

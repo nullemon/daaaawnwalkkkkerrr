@@ -1102,6 +1102,31 @@ const merge = (fromSteam, fromWikipedia) => {
 
 // --- the run ----------------------------------------------------------------
 
+/**
+ * Write the manifest, retrying, because Windows will refuse a file another
+ * process has open.
+ *
+ * A sweep of sixty companies died on its forty-eighth write with `UNKNOWN:
+ * unknown error, open …company-games.json` — a virus scanner or the dev
+ * server's file watcher holding the handle for a moment. The forty-seven
+ * already on disk survived, which is the point of writing after every company,
+ * but the fifteen still to read cost another half-hour of requests. The same
+ * lesson `tools/reset-db.mjs` carries: on this platform a file operation that
+ * fails once is usually a file operation that succeeds a second later.
+ */
+const save = async (manifest) => {
+  const body = `${JSON.stringify(manifest, null, 2)}\n`
+  for (let attempt = 0; ; attempt += 1) {
+    try {
+      fs.writeFileSync(OUT, body)
+      return
+    } catch (error) {
+      if (attempt >= 5) throw error
+      await sleep(500 * (attempt + 1))
+    }
+  }
+}
+
 const run = async () => {
   const source = JSON.parse(fs.readFileSync(IN, 'utf8'))
   const manifest = fs.existsSync(OUT)
@@ -1196,7 +1221,7 @@ const run = async () => {
       and because this merges into what is already on disk, a blocked run can
       never shrink the manifest.
     */
-    fs.writeFileSync(OUT, `${JSON.stringify(manifest, null, 2)}\n`)
+    await save(manifest)
 
     /*
       A line per company, while it runs. The first version printed only a
@@ -1215,7 +1240,7 @@ const run = async () => {
   }
 
   manifest.fetchedAt = today
-  fs.writeFileSync(OUT, `${JSON.stringify(manifest, null, 2)}\n`)
+  await save(manifest)
 
   const all = Object.values(manifest.companies)
   const withTitles = all.filter((company) => company.titles.length > 0)

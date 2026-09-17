@@ -6,6 +6,11 @@ import { getPayload } from 'payload'
 import config from '../payload.config'
 import { slugify } from '../fields/shared'
 import { rich, type Block } from './lexical'
+/* One rule for what a founding date is, not two. `seed:companies` owns the
+   field; this pass writes the sentence about it and has to refuse the same
+   values, or the panel reads "2005" while the paragraph above it reads
+   "founded on Grenoble (Meylan), France (2005)". */
+import { foundedValue } from './companies'
 import type { Company } from '../payload-types'
 
 /**
@@ -106,6 +111,26 @@ const key = (title: string): string => {
   return reduced || title.trim().toLowerCase()
 }
 
+/**
+ * A "title" that is really the Platform column.
+ *
+ * Every part of it names a platform, which no game is called: "Arcade, Amiga,
+ * Amstrad CPC, Atari ST", "Nintendo Switch, PlayStation 5, Windows". These are
+ * what the shifted parse wrote into the Title column of tables that put the
+ * platforms last, and they are the one artefact that can be told apart from a
+ * real row by looking at it.
+ */
+const PLATFORMS =
+  /playstation|xbox|windows|mac ?os|linux|nintendo|switch|wii|game ?boy|gamecube|ms-?dos|amiga|amstrad|atari|sega|dreamcast|saturn|genesis|mega drive|android|ios|arcade|browser|steam|psp|vita|3ds|\bnds\b|n64|snes|nes|neo geo|msx|\bzx\b|spectrum|commodore|bbc micro|lynx|jaguar|32x|3do|game gear|dsiware|n-gage|apple ii|sam coupé|hyperscan|\bpc\b|and /i
+
+const looksLikePlatforms = (title: string): boolean => {
+  const parts = title
+    .split(/[,/]/)
+    .map((part) => part.trim())
+    .filter(Boolean)
+  return parts.length > 0 && parts.every((part) => PLATFORMS.test(part))
+}
+
 const filled = (value: unknown): boolean =>
   typeof value === 'string' ? value.trim().length > 0 : value !== null && value !== undefined
 
@@ -122,6 +147,15 @@ const hasBody = (body: unknown): boolean => {
   return root.children.some((node) =>
     (node.children ?? []).some((child) => String(child?.text ?? '').trim().length > 0),
   )
+}
+
+/** The first line of text in a rich-text body, for asking who wrote it. */
+const firstLine = (body: unknown): string => {
+  const root = (body as { root?: { children?: { children?: { text?: string }[] }[] } } | null)?.root
+  const paragraph = root?.children?.find((node) =>
+    (node.children ?? []).some((child) => String(child?.text ?? '').trim().length > 0),
+  )
+  return (paragraph?.children ?? []).map((child) => String(child?.text ?? '')).join('').trim()
 }
 
 /** "A and B" / "A, B and C". */
@@ -225,30 +259,54 @@ const run = async (): Promise<void> => {
     const harvested = new Set(entry.titles.map((row) => key(row.title)))
 
     /*
-      A row the harvest no longer knows about, whose title is another company's
-      name, with nothing on it a person would have typed. All three, because
-      each one alone is too broad: the harvest drops rows for honest reasons
-      too, a studio can share a name with a game, and a row an editor filled in
-      is theirs. What is left is the shape the column shift produced — a
-      publisher's name, no year, no platforms, no price, no store link — and
-      nothing else has that shape.
+      Rows the shifted-column bug wrote, which the merge below would otherwise
+      keep for ever: it fills gaps and never deletes, so tightening the parser
+      does nothing to what the loose one already wrote.
 
-      Anything hand-corrected survives, which is the same bargain the merge
-      below makes: this pass owns what it wrote and nothing more.
+      Four conditions, and each one is doing work:
+
+        - the fresh harvest for this company does not list it, and there *is* a
+          fresh harvest to be absent from. A company we failed to read is not a
+          company whose catalogue is wrong.
+        - nothing on it a person fills — no price, no store link, no score, no
+          genre, no reviews, no wiki link.
+        - no year. A dated row is a release, and "Perfect World (2006)" is a
+          real game that happens to share its name with a company on this host.
+        - and then either nothing else at all, or a title that is another
+          company's name. Asobo Studio's THQ, Disney Interactive Studios,
+          Microsoft Studios and HIP Interactive are bare; Argonaut Games' "Xbox"
+          carries a platform reading "Global Star Software" and Blackbird
+          Interactive's "Focus Entertainment" one reading "Released via early
+          access in 2020." — the next column along again, so the field that was
+          supposed to show a human had been here was filled by the same bug.
     */
     const existing = stored.filter((row) => {
       const id = key(row.title ?? '')
-      if (harvested.has(id) || !companyNames.has(id)) return true
-      const touched =
-        filled(row.year) ||
-        filled(row.platforms) ||
+      if (harvested.has(id) || entry.titles.length === 0) return true
+      if (filled(row.year)) return true
+      const edited =
         filled(row.priceText) ||
         filled(row.storeUrl) ||
         filled(row.metacritic) ||
         filled(row.genre) ||
         filled(row.reviews) ||
         filled(row.coveredBy)
-      if (touched) return true
+      if (edited) return true
+
+      /*
+        Absence from a *capped* harvest proves nothing. Sixty titles is where a
+        catalogue stops being a catalogue, and a company with more than sixty
+        has rows on the record that today's sixty do not include — Blitz Games
+        Studios lost Glover, Chicken Run and Frogger 2 that way on the first
+        run of this prune, all three real games, none of them in the fresh
+        sixty. Where the harvest was capped, only a row that can be recognised
+        as the wrong column by looking at it goes.
+      */
+      const capped = (entry.found ?? 0) > entry.titles.length
+      const wrongColumn = companyNames.has(id) || looksLikePlatforms(row.title ?? '')
+      if (capped && !wrongColumn) return true
+      if (filled(row.platforms) && !wrongColumn) return true
+
       prunedRows.push(`${slug}: ${row.title}`)
       pruned += 1
       return false
@@ -340,7 +398,7 @@ const run = async (): Promise<void> => {
 
     // --- the body ----------------------------------------------------------
     const blocks: Block[] = []
-    const founded = company.founded ?? history.founded ?? null
+    const founded = foundedValue(company.founded ?? history.founded) ?? null
     const where = company.headquarters ?? history.headquarters ?? null
 
     const opening: string[] = []
@@ -350,8 +408,10 @@ const run = async (): Promise<void> => {
     const founders = history.founders ? listSentence(asList(history.founders)) : null
     if (founded) {
       // "founded in June 11, 1983" is what a single preposition produces, and
-      // an infobox states the founding date either way round.
-      const when = /^\s*\d{4}\s*$/.test(founded) ? `in ${founded}` : `on ${founded}`
+      // an infobox states the founding date either way round. A value that
+      // opens with the year takes "in" however much follows it: "founded on
+      // 2009 (as Tecmo Koei Holdings)" is the same missing preposition again.
+      const when = /^\s*(c\.|circa)?\s*\d{4}\b/.test(founded) ? `in ${founded}` : `on ${founded}`
       opening.push(
         founders
           ? `${company.name} was founded ${when} by ${founders}.`
@@ -403,7 +463,25 @@ const run = async (): Promise<void> => {
       )
     }
 
-    const writeBody = blocks.length > 0 && !hasBody(company.body)
+    /*
+      A body this pass wrote is a body this pass owns, and it opens with one of
+      the three sentences this pass composes — "<name> was founded…", "It is
+      based in…", "It has also traded as…".
+
+      Without this, correcting a fact fixes the panel and leaves the paragraph
+      above it stating the old one — AGEod's `founded` field became "2005"
+      while its first line went on reading "AGEod was founded on Grenoble
+      (Meylan), France (2005)". It is the trap `seed:prune` exists for, one
+      field further in: tightening a rule does nothing to what the loose rule
+      already wrote.
+
+      An editor's paragraph does not open that way by accident, and the check
+      is on the opening rather than the whole body so a run that adds a
+      sentence still recognises its own work.
+    */
+    const openings = [`${company.name} was founded`, 'It is based in', 'It has also traded as']
+    const bodyIsOurs = openings.some((opening) => firstLine(company.body).startsWith(opening))
+    const writeBody = blocks.length > 0 && (!hasBody(company.body) || bodyIsOurs)
     if (writeBody) bodies += 1
 
     await payload.update({

@@ -90,7 +90,7 @@ export default async function PerkPage({ params }: Props) {
         eyebrow={doc.isUltimate ? 'Ultimate perk' : 'Perk'}
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Perks', href: '/perks' }, { label: doc.title }]}
         title={doc.title}
-        lede={<Linked text={doc.summary} scope={scope} />}
+        lede={doc.summary ? <Linked text={doc.summary} scope={scope} /> : undefined}
         badges={
           <>
             {doc.isUltimate ? <Badge>Ultimate</Badge> : null}

@@ -131,8 +131,16 @@ const get = async (params, attempt = 0) => {
  * list templates give up their arguments, date and money ones give up the
  * figure, and anything unrecognised is dropped whole rather than half-deleted.
  */
+/*
+  `unbulleted indent list` and `collapsible list` are here because the run that
+  added the currency fix printed them as losses: Nintendo's key people and its
+  former names were dropped whole, so its profile had no "Who runs it" section
+  at all. A list template missing from this list is silent by construction —
+  the arguments vanish and the field simply looks empty — which is why the run
+  prints what it lost.
+*/
 const LIST_TEMPLATES =
-  /^(ubl|unbulleted list|plainlist|flatlist|hlist|nowrap|nobold|small|smaller|nowraplinks)$/i
+  /^(ubl|unbulleted list|unbulleted indent list|bulleted list|collapsible list|collapsed list|plainlist|plain list|flatlist|hlist|nowrap|nobold|small|smaller|nowraplinks)$/i
 /*
   Templates whose arguments are the fact, rather than decoration around it.
 
@@ -151,7 +159,7 @@ const LIST_TEMPLATES =
   came out as nothing but a year.
 */
 const KEEP_ARGS =
-  /^(start date and age|start date|end date|currency|us\$|usd|inr|jpy|eur|gbp|cny|rmb|krw|aud|cad|chf|sek|try|brl|rub|val|number|formatnum|url|circa|c\.|approx|increase|decrease|euro|pound sterling|yen|yuan|renminbi|won|rupee|dollar|aud\$|nz\$|hk\$|€|£|¥|₹|₩|\$|a\$|c\$|nt\$|r\$|₽|₺|kr|zl|zł)$/i
+  /^(start date and age|start date|end date|currency|us\$|usd|inr|jpy|eur|gbp|cny|rmb|krw|aud|cad|chf|sek|try|brl|rub|val|number|formatnum|url|circa|c\.|approx|increase|decrease|euro|pound sterling|yen|yuan|renminbi|won|rupee|dollar|aud\$|nz\$|hk\$|€|£|¥|₹|₩|\$|a\$|c\$|nt\$|r\$|₽|₺|kr|zl|zł|cn¥|nis|₪|₫|₱|฿|rp|₴)$/i
 
 /*
   What each money template *means*, because the meaning is in its name.
@@ -179,7 +187,7 @@ const CURRENCY = new Map(
     '€': '€', eur: '€', euro: '€',
     '£': '£', gbp: '£', 'pound sterling': '£',
     '¥': '¥', jpy: '¥', yen: '¥',
-    cny: 'CN¥', rmb: 'CN¥', renminbi: 'CN¥', yuan: 'CN¥',
+    cny: 'CN¥', rmb: 'CN¥', renminbi: 'CN¥', yuan: 'CN¥', 'cn¥': 'CN¥',
     '₩': '₩', krw: '₩', won: '₩',
     '₹': '₹', inr: '₹', rupee: '₹',
     '₽': '₽', rub: '₽',
@@ -238,8 +246,15 @@ const splitArgs = (body) => {
   let buffer = ''
   let depth = 0
   for (let index = 0; index < body.length; index += 1) {
-    if (body.startsWith('[[', index)) depth += 1
-    if (body.startsWith(']]', index)) depth -= 1
+    /* One delimiter, one count — the same rule as `topLevelParts`. */
+    const opening = body.startsWith('[[', index)
+    const closing = body.startsWith(']]', index)
+    if (opening || closing) {
+      depth += opening ? 1 : -1
+      buffer += body.slice(index, index + 2)
+      index += 1
+      continue
+    }
     const character = body[index]
     if (character === '|' && depth <= 0) {
       parts.push(buffer)
@@ -371,13 +386,31 @@ export const clean = (value) =>
     .trim()
 
 
+/**
+ * The infobox's own parameters, split on the pipes that belong to it.
+ *
+ * **A delimiter is two characters and must be counted once.** Testing
+ * `startsWith('}}')` at every position counts `}}}}` — one template closing
+ * inside another, which is how every infobox list ends — as *three* closings,
+ * so the nesting count runs away and the value is cut off mid-template. That
+ * is where "ubl" came from on the Cygames, EQT and Behaviour profiles: the
+ * `{{ubl|…}}` wrapping their key people lost its closing braces, so nothing
+ * recognised it as a template and its name was printed as the first person in
+ * the list. Skipping the second character is the whole fix.
+ */
 const topLevelParts = (body) => {
   const parts = []
   let buffer = ''
   let nesting = 0
   for (let index = 0; index < body.length; index += 1) {
-    if (body.startsWith('{{', index) || body.startsWith('[[', index)) nesting += 1
-    if (body.startsWith('}}', index) || body.startsWith(']]', index)) nesting -= 1
+    const opening = body.startsWith('{{', index) || body.startsWith('[[', index)
+    const closing = body.startsWith('}}', index) || body.startsWith(']]', index)
+    if (opening || closing) {
+      nesting += opening ? 1 : -1
+      buffer += body.slice(index, index + 2)
+      index += 1
+      continue
+    }
     const character = body[index]
     if (character === '|' && nesting <= 0) {
       parts.push(buffer)
@@ -388,22 +421,43 @@ const topLevelParts = (body) => {
   return parts
 }
 
-const companyInfobox = (wikitext) => {
+/**
+ * The company infobox and nothing after it.
+ *
+ * Shared, because reading "the infobox" two different ways is what put
+ * Gamasutra, IGN, Kotaku and the word "chairman" in a company's list of
+ * parents: `rawField` sliced from the infobox to the *end of the article* and
+ * then matched `| parent =` anywhere in it, so a company whose infobox has no
+ * parent field picked up a parameter out of a citation template three
+ * paragraphs down and swept up every wikilink in between.
+ */
+const infoboxBody = (wikitext) => {
   const start = wikitext.search(/\{\{\s*Infobox\s+(company|video game company)/i)
-  if (start === -1) return {}
+  if (start === -1) return null
   let nesting = 0
-  let end = start
+  let end = wikitext.length
   for (let index = start; index < wikitext.length; index += 1) {
-    if (wikitext.startsWith('{{', index)) nesting += 1
+    if (wikitext.startsWith('{{', index)) {
+      nesting += 1
+      /* Past the pair: `{{{{` is two openings, not three. See topLevelParts. */
+      index += 1
+      continue
+    }
     if (wikitext.startsWith('}}', index)) {
       nesting -= 1
       if (nesting === 0) {
         end = index
         break
       }
+      index += 1
     }
   }
-  const body = wikitext.slice(start + 2, end)
+  return wikitext.slice(start + 2, end)
+}
+
+const companyInfobox = (wikitext) => {
+  const body = infoboxBody(wikitext)
+  if (body === null) return {}
   const fields = {}
   for (const part of topLevelParts(body).slice(1)) {
     const eq = part.indexOf('=')
@@ -417,16 +471,31 @@ const companyInfobox = (wikitext) => {
 }
 
 /** Article titles linked from a field, before `clean` flattens them. */
-const linkedNames = (raw) =>
+export const linkedNames = (raw) =>
   [...String(raw ?? '').matchAll(/\[\[([^\]|#]+)/g)]
     .map((match) => match[1].trim())
     .filter((name) => name && !/^(File|Image|Category|Template):/i.test(name))
 
-const rawField = (wikitext, key) => {
-  const start = wikitext.search(/\{\{\s*Infobox\s+(company|video game company)/i)
-  if (start === -1) return ''
-  const body = wikitext.slice(start)
-  const match = body.match(new RegExp(`\\|\\s*${key}\\s*=([\\s\\S]*?)\\n\\s*\\|`, 'i'))
+/**
+ * One infobox parameter as it was written, links and all.
+ *
+ * `clean` flattens a wikilink to its display text, which is right for a
+ * sentence and useless for the corporate graph: the graph needs the article
+ * *titles* the field links to, so it reads the raw value.
+ *
+ * Bounded to the infobox. It used to search from the infobox to the end of the
+ * article, so a company with no `parent` field took whichever `| parent =`
+ * turned up later — in a citation, in a second infobox — along with every
+ * wikilink between the two. Forty companies had a "parent" list holding
+ * Gamasutra, IGN, Kotaku and the word "chairman", which is also the list this
+ * network decides ownership from.
+ */
+export const rawField = (wikitext, key) => {
+  const body = infoboxBody(wikitext)
+  if (body === null) return ''
+  /* The last parameter of an infobox ends at the closing braces, not at a
+     following pipe, so the body gets one appended to close it off. */
+  const match = `${body}\n|`.match(new RegExp(`\\|\\s*${key}\\s*=([\\s\\S]*?)\\n\\s*\\|`, 'i'))
   return match ? match[1] : ''
 }
 

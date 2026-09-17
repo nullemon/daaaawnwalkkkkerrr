@@ -90,7 +90,7 @@ export default async function SkillTreePage({ params }: Props) {
         eyebrow="Skill tree"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Skills', href: '/skills' }, { label: doc.title }]}
         title={doc.title}
-        lede={<Linked text={doc.summary} scope={scope} />}
+        lede={doc.summary ? <Linked text={doc.summary} scope={scope} /> : undefined}
         badges={
           <>
             <PhaseBadge phase={doc.phase} />

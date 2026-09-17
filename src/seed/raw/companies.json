@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-16",
+  "fetchedAt": "2026-09-17",
   "licence": "CC BY-SA 4.0",
   "ranking": {
     "title": "List of largest video game companies by revenue",
@@ -18,7 +18,7 @@
       "keyPeople": "Pony Ma (chairman, CEO), Martin Lau (executive director, president)",
       "employees": "115,849 (2025)",
       "employeesYear": null,
-      "revenue": "751.766 billion (2025)",
+      "revenue": "CN¥751.766 billion (2025)",
       "revenueYear": null,
       "website": "https://www.tencent.com/",
       "parents": [],
@@ -40,7 +40,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Tencent",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -52,7 +52,7 @@
       "country": "United States",
       "industry": "Video games",
       "type": "Subsidiary",
-      "keyPeople": "(president and CEO)",
+      "keyPeople": "Hideaki Nishino (president and CEO)",
       "employees": "12,100",
       "employeesYear": "2025",
       "revenue": "US$31.09 billion",
@@ -75,7 +75,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Sony_Interactive_Entertainment",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -99,7 +99,6 @@
       "subsidiaries": [
         "ZeniMax Media",
         "Activision Blizzard",
-        "Mojang Studios",
         "Xbox Game Studios"
       ],
       "products": "See",
@@ -113,7 +112,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Xbox_(division)",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -128,7 +127,7 @@
       "keyPeople": null,
       "employees": "8,666",
       "employeesYear": "2026",
-      "revenue": "2.31trillion",
+      "revenue": "¥2.31 trillion",
       "revenueYear": null,
       "website": "https://nintendo.com",
       "parents": [],
@@ -144,7 +143,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Nintendo",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -174,7 +173,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/NetEase",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -189,7 +188,7 @@
       "keyPeople": "Andrew Wilson (CEO and chairman), Cam Weber (co-president and CSO), David Tinson (co-president and COO)",
       "employees": "14,500",
       "employeesYear": "2025",
-      "revenue": "8.0 billion",
+      "revenue": "US$8.0 billion",
       "revenueYear": null,
       "website": "https://ea.com",
       "parents": [],
@@ -207,7 +206,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Electronic_Arts",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -222,7 +221,7 @@
       "keyPeople": "Strauss Zelnick, (chairman and CEO), Karl Slatoff (president), Lainie Goldstein (CFO)",
       "employees": "12,909",
       "employeesYear": "2026",
-      "revenue": "6.66 billion",
+      "revenue": "US$6.66 billion",
       "revenueYear": null,
       "website": "https://www.take2games.com/",
       "parents": [],
@@ -244,7 +243,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Take-Two_Interactive",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -259,7 +258,7 @@
       "keyPeople": "Gabe Newell (president), Scott Lynch (COO)",
       "employees": "336",
       "employeesYear": "2021",
-      "revenue": "5 billion",
+      "revenue": "US$5 billion",
       "revenueYear": null,
       "website": "https://www.valvesoftware.com/",
       "parents": [],
@@ -277,7 +276,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Valve_Corporation",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -308,7 +307,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Epic_Games",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -323,7 +322,7 @@
       "keyPeople": "David Baszucki (CEO)",
       "employees": "2,474",
       "employeesYear": "2024",
-      "revenue": "3.60 billion (2024)",
+      "revenue": "US$3.60 billion (2024)",
       "revenueYear": null,
       "website": null,
       "parents": [],
@@ -341,7 +340,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Roblox_Corporation",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -369,7 +368,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/MiHoYo",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -402,7 +401,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Bandai_Namco_Entertainment",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -438,7 +437,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Scopely",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -469,7 +468,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Nexon",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -481,10 +480,10 @@
       "country": "Japan",
       "industry": "Video games",
       "type": "Subsidiary",
-      "keyPeople": "(chairman and CEO), Shuji Utsumi (president and COO), (vice president and COO)",
+      "keyPeople": "Haruki Satomi (chairman and CEO), Shuji Utsumi (president and COO), Yukio Sugino (vice president and COO)",
       "employees": "2,922 (March 31, 2026)",
       "employeesYear": null,
-      "revenue": "247.7 billion",
+      "revenue": "¥247.7 billion",
       "revenueYear": null,
       "website": "https://sega.jp",
       "parents": [
@@ -515,7 +514,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Sega",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -543,7 +542,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Garena",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -574,7 +573,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Playtika",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -604,7 +603,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Aristocrat_Leisure",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -643,14 +642,14 @@
       },
       "url": "https://en.wikipedia.org/wiki/Krafton",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
       "wikipediaTitle": "Konami",
       "name": "Konami Group Corporation",
       "founded": "1969",
-      "founder": "Kagemasa Kōzuki",
+      "founder": null,
       "headquarters": "Ginza",
       "country": "Japan",
       "industry": "Video games, Entertainment",
@@ -676,7 +675,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Konami",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -707,7 +706,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Playrix",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -722,7 +721,7 @@
       "keyPeople": "Adam Foroughi (CEO)",
       "employees": "898 (2025)",
       "employeesYear": null,
-      "revenue": "5.48 billion (2025)",
+      "revenue": "US$5.48 billion (2025)",
       "revenueYear": null,
       "website": "https://www.applovin.com",
       "parents": [],
@@ -738,7 +737,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/AppLovin",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -773,7 +772,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Netmarble",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -801,7 +800,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/NC_(company)",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -816,7 +815,7 @@
       "keyPeople": "Yasuhiro Fukushima (honorary chairman), Takashi Kiryu (president), Yoshinori Kitase (director), Yu Miyake (director)",
       "employees": "4,290",
       "employeesYear": "2026/03",
-      "revenue": "365,3 billion",
+      "revenue": "¥365,3 billion",
       "revenueYear": null,
       "website": "https://hd.square-enix.com/eng/",
       "parents": [],
@@ -832,7 +831,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Square_Enix",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -856,7 +855,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/Moon_Active",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -871,7 +870,7 @@
       "keyPeople": "Yves Guillemot (chairman, CEO), Frédérick Duguet (CFO)",
       "employees": "16,590",
       "employeesYear": "2026",
-      "revenue": null,
+      "revenue": "€1.395 billion",
       "revenueYear": null,
       "website": "https://ubisoft.com",
       "parents": [],
@@ -886,7 +885,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Ubisoft",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -917,7 +916,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Embracer_Group",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -948,7 +947,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Cygames",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -979,7 +978,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Capcom",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -1005,7 +1004,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/NetDragon_Websoft",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -1038,7 +1037,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Wizards_of_the_Coast",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -1069,7 +1068,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Smilegate",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -1097,7 +1096,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Perfect_World_(company)",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -1112,7 +1111,7 @@
       "keyPeople": "Bertrand Bodson (CEO), Jon Hauck (COO), Robert Kingston (CFO)",
       "employees": "12,340",
       "employeesYear": "2023",
-      "revenue": null,
+      "revenue": "€780.445 million",
       "revenueYear": null,
       "website": "https://www.keywordsstudios.com/",
       "parents": [
@@ -1127,7 +1126,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Keywords_Studios",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -1158,7 +1157,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Voodoo_(company)",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -1194,7 +1193,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Kakao_Games",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -1222,7 +1221,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/FunPlus",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -1253,7 +1252,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Kingsoft",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -1268,7 +1267,7 @@
       "keyPeople": "Hisashi Koinuma (CEO & President), Yōichi Erikawa (Chairman), Keiko Erikawa (Chairman Emeretus)",
       "employees": "2,835 (March 2026)",
       "employeesYear": null,
-      "revenue": "billion (2023)",
+      "revenue": "¥84.5 billion (2023)",
       "revenueYear": null,
       "website": "https://www.koeitecmo.co.jp/e/",
       "parents": [],
@@ -1289,7 +1288,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Koei_Tecmo",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -1322,7 +1321,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Com2uS",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -1353,7 +1352,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Wemade_Entertainment",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -1381,7 +1380,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Larian_Studios",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -1396,7 +1395,7 @@
       "keyPeople": "Alexandre de Rochefort (CEO)",
       "employees": "2,366",
       "employeesYear": "2025",
-      "revenue": null,
+      "revenue": "€303 million",
       "revenueYear": null,
       "website": "https://www.gameloft.com",
       "parents": [
@@ -1415,7 +1414,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Gameloft",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "revenue-ranking"
     },
     {
@@ -1448,7 +1447,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Annapurna_Interactive",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "network-game"
     },
     {
@@ -1496,7 +1495,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Focus_Entertainment",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "network-game"
     },
     {
@@ -1511,7 +1510,7 @@
       "keyPeople": "Markus Mäki (chairman and CEO), Sam Lake (creative director)",
       "employees": "387",
       "employeesYear": "2026",
-      "revenue": "(2025)",
+      "revenue": "€59.5 million (2025)",
       "revenueYear": null,
       "website": "https://www.remedygames.com/",
       "parents": [],
@@ -1527,14 +1526,14 @@
       },
       "url": "https://en.wikipedia.org/wiki/Remedy_Entertainment",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "network-game"
     },
     {
       "wikipediaTitle": "Xbox Game Studios",
       "name": "Xbox Game Studios",
       "founded": "2000",
-      "founder": "<!-- or:",
+      "founder": null,
       "headquarters": "Redmond, Washington",
       "country": "US",
       "industry": "Video games",
@@ -1558,7 +1557,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Xbox_Game_Studios",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "network-game"
     },
     {
@@ -1588,7 +1587,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/The_Coalition_(company)",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "network-game"
     },
     {
@@ -1603,7 +1602,7 @@
       "keyPeople": "Sébastien Wloch, David Dedeine",
       "employees": "250",
       "employeesYear": "2022",
-      "revenue": "(2014)",
+      "revenue": "€7 million (2014)",
       "revenueYear": null,
       "website": "https://www.asobostudio.com/",
       "parents": [],
@@ -1619,7 +1618,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Asobo_Studio",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "network-game"
     },
     {
@@ -1649,7 +1648,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Universal_Music_Group",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -1664,7 +1663,7 @@
       "keyPeople": null,
       "employees": "5,966",
       "employeesYear": "December 2021",
-      "revenue": "31.24 billion (2021)",
+      "revenue": "CN¥31.24 billion (2021)",
       "revenueYear": null,
       "website": "https://www.tencentmusic.com",
       "parents": [
@@ -1679,14 +1678,14 @@
       },
       "url": "https://en.wikipedia.org/wiki/Tencent_Music_Entertainment",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
       "wikipediaTitle": "Tencent Pictures",
       "name": "Tencent Pictures",
       "founded": "2015",
-      "founder": "<!-- or:",
+      "founder": null,
       "headquarters": "Shanghai",
       "country": "China, Hong Kong",
       "industry": "Film",
@@ -1709,7 +1708,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Tencent_Pictures",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -1739,7 +1738,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Sony",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -1765,7 +1764,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/Audiokinetic",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -1793,7 +1792,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Bungie",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -1826,7 +1825,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/PlayStation_Productions",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -1856,7 +1855,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/PlayStation_Studios",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -1871,7 +1870,7 @@
       "keyPeople": "Satya Nadella (chairman and CEO), Brad Smith (vice chairman and president), Bill Gates (technical adviser), Amy Hood (CFO)",
       "employees": "223,000",
       "employeesYear": "2026",
-      "revenue": "331.8 billion",
+      "revenue": "US$331.8 billion",
       "revenueYear": null,
       "website": "https://www.microsoft.com/",
       "parents": [],
@@ -1892,7 +1891,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Microsoft",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -1929,7 +1928,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/ZeniMax_Media",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -1944,7 +1943,7 @@
       "keyPeople": null,
       "employees": "17,000",
       "employeesYear": "2023",
-      "revenue": "7.53 billion",
+      "revenue": "US$7.53 billion",
       "revenueYear": null,
       "website": null,
       "parents": [
@@ -1964,48 +1963,14 @@
       },
       "url": "https://en.wikipedia.org/wiki/Activision_Blizzard",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
-      "basis": "gaming-category"
-    },
-    {
-      "wikipediaTitle": "Mojang Studios",
-      "name": "Mojang AB",
-      "founded": "2009",
-      "founder": "Markus Persson",
-      "headquarters": "Stockholm",
-      "country": "Sweden",
-      "industry": "Video games",
-      "type": "Subsidiary",
-      "keyPeople": "Kayleen Walters (studio head)",
-      "employees": "≈600",
-      "employeesYear": "2021",
-      "revenue": null,
-      "revenueYear": null,
-      "website": null,
-      "parents": [
-        "Xbox Game Studios",
-        "Xbox (division)"
-      ],
-      "subsidiaries": [],
-      "products": "Minecraft series",
-      "logo": {
-        "file": "Mojang Studios Logo (2020, slim).svg",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "Bold",
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Mojang_Studios_Logo_%282020%2C_slim%29.svg/960px-Mojang_Studios_Logo_%282020%2C_slim%29.svg.png",
-        "reason": null
-      },
-      "url": "https://en.wikipedia.org/wiki/Mojang_Studios",
-      "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
       "wikipediaTitle": "EA Sports",
       "name": "EA Sports",
       "founded": "1991",
-      "founder": "<!-- or:",
+      "founder": null,
       "headquarters": "Redwood City, California",
       "country": "U.S.",
       "industry": "Video games",
@@ -2035,14 +2000,14 @@
       },
       "url": "https://en.wikipedia.org/wiki/EA_Sports",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
       "wikipediaTitle": "2K (company)",
       "name": "2K",
       "founded": "2005 in New York City, U.S.",
-      "founder": "<!-- or:",
+      "founder": null,
       "headquarters": "Novato, California",
       "country": "US",
       "industry": "Video games",
@@ -2068,7 +2033,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/2K_(company)",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -2098,7 +2063,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Ghost_Story_Games",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -2131,7 +2096,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Rockstar_Games",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -2161,7 +2126,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Zynga",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -2194,7 +2159,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Campo_Santo_(company)",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -2230,7 +2195,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Bandai_Namco_Holdings",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -2245,7 +2210,7 @@
       "keyPeople": "Daisuke Uchiyama, (president), Shigeru Yokoyama, Hajime Nakatani, (chairman)",
       "employees": "1,177",
       "employeesYear": "2025",
-      "revenue": "6.8 billion",
+      "revenue": "US$6.8 billion",
       "revenueYear": null,
       "website": "https://www.bandainamcostudios.com/en/",
       "parents": [
@@ -2265,7 +2230,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Bandai_Namco_Studios",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -2298,7 +2263,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/D3_Publisher",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -2334,7 +2299,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Savvy_Games_Group",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -2364,7 +2329,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Niantic%2C_Inc.",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -2394,7 +2359,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Tag_Games",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -2422,7 +2387,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Gulf_and_Western_Industries",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -2469,7 +2434,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Paramount_Pictures",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -2484,7 +2449,7 @@
       "keyPeople": null,
       "employees": "11,910",
       "employeesYear": "2017",
-      "revenue": null,
+      "revenue": "¥323.9 billion",
       "revenueYear": null,
       "website": "https://www.scsk.jp/",
       "parents": [
@@ -2504,7 +2469,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/SCSK",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -2514,7 +2479,7 @@
       "founder": null,
       "headquarters": "Sumitomo Fudosan Osaki Garden Tower, Nishi-Shinagawa",
       "country": "Japan",
-      "industry": "Mass media, Entertainment, <!--",
+      "industry": "Mass media, Entertainment",
       "type": "Public",
       "keyPeople": "Hajime Satomi, (chairman), Haruki Satomi, (president and Group CEO)",
       "employees": "8,147",
@@ -2535,7 +2500,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Sega_Sammy_Holdings",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -2570,7 +2535,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Atlus",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -2582,10 +2547,10 @@
       "country": "Japan",
       "industry": "Toys, Arcade games",
       "type": "Subsidiary",
-      "keyPeople": "(president, Representative Director), Taketo Oshima (Executive Vice President, Director of the Board), Naoko Miyazaki (Executive Vice President, Director of the Board)",
+      "keyPeople": "Yukio Sugino (president, Representative Director), Taketo Oshima (Executive Vice President, Director of the Board), Naoko Miyazaki (Executive Vice President, Director of the Board)",
       "employees": "859",
       "employeesYear": null,
-      "revenue": null,
+      "revenue": "¥100 million",
       "revenueYear": null,
       "website": "https://www.segafave.co.jp/",
       "parents": [
@@ -2603,7 +2568,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Sega_Fave",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -2639,7 +2604,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/TMS_Entertainment",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -2669,7 +2634,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Marza_Animation_Planet",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -2701,7 +2666,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Rovio_Entertainment",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -2731,7 +2696,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/RGG_Studio",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -2761,7 +2726,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Sonic_Team",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -2791,7 +2756,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Aristocrat_Leisure",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -2830,7 +2795,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Krafton",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -2869,7 +2834,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Krafton",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -2899,7 +2864,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Unknown_Worlds_Entertainment",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -2927,7 +2892,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Neon_Giant",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -2958,7 +2923,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Tango_Gameworks",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -2989,7 +2954,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Asatsu-DK",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -3037,7 +3002,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Konami_Cross_Media_NY",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -3070,7 +3035,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Kung_Fu_Factory",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -3103,14 +3068,14 @@
       },
       "url": "https://en.wikipedia.org/wiki/Jam_City_(company)",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
       "wikipediaTitle": "JumpStart Games",
       "name": "JumpStart Games, Inc.",
       "founded": "1991",
-      "founder": "<!-- or:",
+      "founder": null,
       "headquarters": "Torrance, California",
       "country": "United States",
       "industry": "Video games , Education",
@@ -3134,7 +3099,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/JumpStart_Games",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -3149,7 +3114,7 @@
       "keyPeople": "Richard Stoddart (chairman), Chris Cocks (CEO)",
       "employees": "~4,600",
       "employeesYear": "2025",
-      "revenue": "4.7 billion (2025)",
+      "revenue": "US$4.7 billion (2025)",
       "revenueYear": null,
       "website": "https://corporate.hasbro.com",
       "parents": [],
@@ -3170,7 +3135,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Hasbro",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -3185,7 +3150,7 @@
       "keyPeople": "ubl, Jean Salata (chairman), Per Franzen (CEO)",
       "employees": null,
       "employeesYear": null,
-      "revenue": "(2021)",
+      "revenue": "€1.6 billion (2021)",
       "revenueYear": null,
       "website": null,
       "parents": [],
@@ -3204,7 +3169,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/EQT_AB",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -3235,7 +3200,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Kakao",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -3268,7 +3233,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Kakao_Entertainment",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -3299,7 +3264,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Cheetah_Mobile",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -3314,7 +3279,7 @@
       "keyPeople": "Zou Tao (Chairman), Zhang Qingyuan (CEO)",
       "employees": "4,558 (2023)",
       "employeesYear": null,
-      "revenue": "4.56 billion (2023)",
+      "revenue": "CN¥4.56 billion (2023)",
       "revenueYear": null,
       "website": "https://www.wps.cn",
       "parents": [
@@ -3332,7 +3297,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Kingsoft_Office_Software",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -3418,7 +3383,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Omega_Force",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -3449,7 +3414,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Ruby_Party",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -3480,7 +3445,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Team_Ninja",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -3510,7 +3475,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Gust_(company)",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -3572,7 +3537,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/Com2uS_Holdings",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -3605,7 +3570,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Vivendi",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -3635,7 +3600,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Gameloft_Montreal",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -3665,7 +3630,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Gameloft_Barcelona",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -3695,7 +3660,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Gameloft_Brisbane",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -3725,7 +3690,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Annapurna_Pictures",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -3755,7 +3720,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Deck13",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -3785,7 +3750,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Dotemu",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -3815,7 +3780,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Dovetail_Games",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -3836,14 +3801,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "Montecristologo.png",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Monte_Cristo_(company)",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -3866,14 +3827,10 @@
       ],
       "subsidiaries": [],
       "products": "E.Y.E.: Divine Cybermancy, Space Hulk: Deathwing, Necromunda: Hired Gun",
-      "logo": {
-        "file": "Streum On Studio logo.png",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Streum_On_Studio",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "related-company"
     },
     {
@@ -3885,7 +3842,7 @@
       "country": "Vietnam",
       "industry": "Video games",
       "type": "Private",
-      "keyPeople": null,
+      "keyPeople": "Dong Nguyen",
       "employees": "5",
       "employeesYear": "2022",
       "revenue": null,
@@ -3894,14 +3851,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": "Flappy Bird, Swing Copters",
-      "logo": {
-        "file": "dotGears.svg",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/.Gears",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -3924,17 +3877,10 @@
       ],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "1-UP Studio Logo.svg",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "1-UP Studio",
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/1-UP_Studio_Logo.svg/960px-1-UP_Studio_Logo.svg.png",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/1-Up_Studio",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -3955,17 +3901,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "1C Company logo.svg",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "1C Company",
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/1C_Company_logo.svg/960px-1C_Company_logo.svg.png",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/1C_Company",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -4019,24 +3958,17 @@
       ],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "2K Australia Logo.svg",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "Take-Two Interactive",
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/2K_Australia_Logo.svg/960px-2K_Australia_Logo.svg.png",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/2K_Australia",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
       "wikipediaTitle": "2K China",
       "name": "2K Games (Shanghai) Co., Ltd.",
       "founded": "2006",
-      "founder": "<!-- or:",
+      "founder": null,
       "headquarters": "Shanghai",
       "country": "China",
       "industry": "Video games",
@@ -4063,17 +3995,10 @@
       ],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "2K China Logo.svg",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "Take-Two Interactive",
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/2K_China_Logo.svg/960px-2K_China_Logo.svg.png",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/2K_China",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -4096,17 +4021,10 @@
       ],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "2K Czech Logo.svg",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "Take-Two Interactive",
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/2K_Czech_Logo.svg/960px-2K_Czech_Logo.svg.png",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/2K_Czech",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -4148,21 +4066,17 @@
       ],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "Kush Games.png",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/2K_Los_Angeles",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
       "wikipediaTitle": "2K Marin",
       "name": "2K Marin, Inc.",
       "founded": "2007",
-      "founder": "<!-- or:",
+      "founder": null,
       "headquarters": "Novato, California",
       "country": "US",
       "industry": "Video games",
@@ -4211,17 +4125,10 @@
       ],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "2K Marin Logo.svg",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "Take-Two Interactive",
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/2K_Marin_Logo.svg/960px-2K_Marin_Logo.svg.png",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/2K_Marin",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -4244,14 +4151,10 @@
       ],
       "subsidiaries": [],
       "products": "List of 3D Realms games",
-      "logo": {
-        "file": "3D Realms.svg",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/3D_Realms",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -4360,17 +4263,10 @@
         "Limited Run Games"
       ],
       "products": "3DO, Army Men series, Battletanx series, High Heat Major League Baseball series, Might and Magic series",
-      "logo": {
-        "file": "3DO Company logo.png",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "Unknown authorUnknown author",
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/3DO_Company_logo.png/960px-3DO_Company_logo.png",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/The_3DO_Company",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -4394,17 +4290,10 @@
       ],
       "subsidiaries": [],
       "products": "Metro series",
-      "logo": {
-        "file": "4A Games Logo 2015.svg",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "4A Games",
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/4A_Games_Logo_2015.svg/960px-4A_Games_Logo_2015.svg.png",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/4A_Games",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -4425,14 +4314,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "4J Studios.svg",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/4J_Studios",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -4453,17 +4338,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": "Def Jam Rapstar, Dog Show Friends, Alli Skate",
-      "logo": {
-        "file": "4mm Games logo.png",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "4mm Games",
-        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/4mm_Games_logo.png",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/4mm_Games",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -4484,14 +4362,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": "Scribblenauts series, Drawn to Life series, Lock's Quest , Run Roo Run",
-      "logo": {
-        "file": "5th Cell logo.png",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/5th_Cell",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -4515,7 +4389,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/07th_Expansion",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -4546,7 +4420,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/7th_Level",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -4577,7 +4451,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/8-4",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -4601,7 +4475,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/10tons",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -4629,7 +4503,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/11_Bit_Studios",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -4660,7 +4534,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/17-Bit",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -4691,7 +4565,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/21st_Street_Games",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -4719,7 +4593,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/22cans",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -4749,7 +4623,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/31st_Union",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -4777,7 +4651,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/38_Studios",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -4810,7 +4684,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/704Games",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -4844,7 +4718,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/989_Studios",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -4868,7 +4742,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/1047_Games",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -4952,7 +4826,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/2015_(company)",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -4980,7 +4854,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/ABA_Games",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -5008,14 +4882,14 @@
       },
       "url": "https://en.wikipedia.org/wiki/Absurd_Ventures",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
       "wikipediaTitle": "Access Games",
       "name": "Access Games Inc.",
       "founded": "1996",
-      "founder": "<!-- or:",
+      "founder": null,
       "headquarters": "Chūō, Tokyo",
       "country": "Japan",
       "industry": "Information technology, Video games",
@@ -5039,7 +4913,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Access_Games",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -5125,7 +4999,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Access_Software",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -5158,7 +5032,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Accolade%2C_Inc.",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -5186,7 +5060,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/ACE_Team",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -5216,7 +5090,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Acornsoft",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -5250,7 +5124,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Acquire_(company)",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -5281,7 +5155,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Action_Button_Entertainment",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -5305,7 +5179,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/Action_Forms",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -5328,14 +5202,10 @@
       ],
       "subsidiaries": [],
       "products": "List of Activision video games",
-      "logo": {
-        "file": "frameless, class=skin-invert",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Activision",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -5359,7 +5229,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/Actual_Entertainment",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -5380,14 +5250,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": "Dispatch",
-      "logo": {
-        "file": "AdHoc Studio logo 2018.png",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/AdHoc_Studio",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -5408,17 +5274,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": "Arcade video games, Video games",
-      "logo": {
-        "file": "Alpha Denshi Corporation logo.png",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "ADK",
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Alpha_Denshi_Corporation_logo.png/960px-Alpha_Denshi_Corporation_logo.png",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/ADK_Corporation",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -5442,14 +5301,10 @@
       ],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "The Adventure Company logo.png",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/The_Adventure_Company",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -5473,7 +5328,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/Adventure_Soft",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -5494,17 +5349,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": "Desktops, Laptops, PC Designs, Gaming Monitor",
-      "logo": {
-        "file": "Aftershock logo.png",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "Ryan Merrett",
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Aftershock_logo.png/960px-Aftershock_logo.png",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Aftershock_PC",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -5525,17 +5373,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": "Valthirian Arc, Code Atma, Memories",
-      "logo": {
-        "file": "Agate Logo.png",
-        "free": true,
-        "licence": "CC BY-SA 4.0",
-        "artist": "Sanrok Studio",
-        "url": "https://upload.wikimedia.org/wikipedia/commons/6/67/Agate_Logo.png",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Agate_(game_company)",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -5556,14 +5397,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": "Birth of America, Ageod's American Civil War, Field of Glory series, (See complete products listing.)",
-      "logo": {
-        "file": "AGEod logo.png",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/AGEod",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -5584,17 +5421,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "Agetec Logo.png",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "Agetec",
-        "url": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Agetec_Logo.png",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Agetec",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -5615,14 +5445,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "Aggro Crab.jpg",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Aggro_Crab",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -5643,17 +5469,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "Aicom logo.png",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "Aicom",
-        "url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Aicom_logo.png",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Aicom",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -5674,17 +5493,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "Airship Syndicate logo.jpg",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "Airship Syndicate",
-        "url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Airship_Syndicate_logo.jpg",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Airship_Syndicate",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -5708,7 +5520,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/Airtight_Games",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -5732,7 +5544,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/Akabeisoft2",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -5753,14 +5565,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "Akella Games logo.jpg",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Akella",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -5781,14 +5589,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "Akupara Games Company Logo, Vertical, 2021.png",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Akupara_Games",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -5809,17 +5613,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "Logo Alawar New 2022.jpg",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "Slava Kostrikin",
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Logo_Alawar_New_2022.jpg/960px-Logo_Alawar_New_2022.jpg",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Alawar",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -5843,7 +5640,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/Alcachofa_Soft",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -5867,7 +5664,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/Alfa_System",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -5888,14 +5685,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": "Casual game",
-      "logo": {
-        "file": "Aliasworlds Logo PNG800.png",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Aliasworlds_Entertainment",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -5919,7 +5712,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/Alice_%26_Smith",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -5943,7 +5736,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/Allods_Team",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -5964,17 +5757,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "AlphaDream logo.svg",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "AlphaDream Corporation, Ltd.",
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/AlphaDream_logo.svg/960px-AlphaDream_logo.svg.png",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/AlphaDream",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -5995,14 +5781,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": "Flight Simulator Addons",
-      "logo": {
-        "file": "Alphasimlogo.png",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/AlphaSim",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -6026,7 +5808,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/Alvion",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -6047,14 +5829,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": "List",
-      "logo": {
-        "file": "Amanita Design Logo.png",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Amanita_Design",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -6077,17 +5855,10 @@
       ],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "Amazon Games logo.svg",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "Amazon Games",
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Amazon_Games_logo.svg/960px-Amazon_Games_logo.svg.png",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Amazon_Game_Studios",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -6108,14 +5879,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": "Pokémon games for Nintendo video game consoles",
-      "logo": {
-        "file": "Ambrella.PNG",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Ambrella",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -6136,14 +5903,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": "Shareware video games and utilities",
-      "logo": {
-        "file": "New Ambrosia Software Logo.png",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Ambrosia_Software",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -6167,7 +5930,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/American_Game_Cartridges",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -6191,7 +5954,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/AmnesiaGames",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -6224,7 +5987,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Amplitude_Studios",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -6252,7 +6015,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Ancient_(company)",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -6280,7 +6043,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Anino_Games",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -6304,7 +6067,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/Apex_Computer_Productions",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -6334,7 +6097,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/AQ_Interactive",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -6364,7 +6127,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Aquaplus",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -6388,7 +6151,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/Aquria",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -6403,7 +6166,7 @@
       "keyPeople": "Minoru Kidooka, (President and CEO), Daisuke Ishiwatari, (Chief Development Officer [2003 - 2022])",
       "employees": "223 (December 2024)",
       "employeesYear": null,
-      "revenue": null,
+      "revenue": "¥680 million",
       "revenueYear": null,
       "website": "https://arcsystemworks.com/",
       "parents": [],
@@ -6416,7 +6179,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Arc_System_Works",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -6444,7 +6207,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/The_Arcade_(company)",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -6465,21 +6228,17 @@
       "parents": [],
       "subsidiaries": [],
       "products": "AI War: Fleet Command, Tidalis, A Valley Without Wind 1&2, Shattered Haven, Skyward Collapse, Bionic Dues, The Last Federation, Stars Beyond Reach, Starward Rogue, In Case of Emergency, Release Raptor, AI War 2",
-      "logo": {
-        "file": "Arcen Games white logo.jpg",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Arcen_Games",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
       "wikipediaTitle": "Archetype Entertainment",
       "name": "Archetype Entertainment",
       "founded": "April 2019",
-      "founder": "<!-- or:",
+      "founder": null,
       "headquarters": "Austin, Texas",
       "country": "United States",
       "industry": "Video games",
@@ -6495,17 +6254,10 @@
       ],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "Archetype entertainment logo.png",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "Archetype Entertainment",
-        "url": "https://upload.wikimedia.org/wikipedia/commons/3/36/Archetype_entertainment_logo.png",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Archetype_Entertainment",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -6529,7 +6281,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/Archimage",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -6552,14 +6304,10 @@
       ],
       "subsidiaries": [],
       "products": "Guild Wars series",
-      "logo": {
-        "file": "ArenaNet logo.jpg",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/ArenaNet",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -6586,14 +6334,10 @@
         "Particle Systems"
       ],
       "products": null,
-      "logo": {
-        "file": "Argonaut software.png",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Argonaut_Games",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -6614,17 +6358,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": "Street Fighter EX series , Tetris: The Grand Master series",
-      "logo": {
-        "file": "Arika logo.svg",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "Arika",
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Arika_logo.svg/960px-Arika_logo.svg.png",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Arika",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -6647,17 +6384,10 @@
       ],
       "subsidiaries": [],
       "products": "Computer games",
-      "logo": {
-        "file": "Ariolasoft.jpg",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "Unknown authorUnknown author",
-        "url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Ariolasoft.jpg",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Ariolasoft",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -6680,14 +6410,10 @@
       ],
       "subsidiaries": [],
       "products": "Arx Fatalis, Dishonored series, Marvel's Blade",
-      "logo": {
-        "file": "frameless, class=skin-invert",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Arkane_Studios",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -6711,7 +6437,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/Arkedo_Studio",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -6734,17 +6460,10 @@
       ],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "Armature Studio logo.png",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "Armature Studio",
-        "url": "https://upload.wikimedia.org/wikipedia/commons/0/02/Armature_Studio_logo.png",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Armature_Studio",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -6765,14 +6484,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "Arrowhead Game Studios Logotype, Aug 2014.png",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Arrowhead_Game_Studios",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -6793,14 +6508,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": "Wibarm , Star Cruiser , Air Combat , Battle Zeque Den , Gran Turismo",
-      "logo": {
-        "file": "Arsys Software.png",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Arsys_Software",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -6821,14 +6532,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": "Doom (3DO)",
-      "logo": {
-        "file": "Art Data Interactive Logo.jpeg",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Art_Data_Interactive",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -6849,17 +6556,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": "A-Train series",
-      "logo": {
-        "file": "Artdink logo.svg",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "Artdink Corporation",
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Artdink_logo.svg/960px-Artdink_logo.svg.png",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Artdink",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -6880,14 +6580,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "Artech Studios logo.jpg",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Artech_Digital_Entertainment",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -6911,7 +6607,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/ArtePiazza",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -6935,7 +6631,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/Artificial_Studios",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -6994,17 +6690,10 @@
       ],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "Artoon Logo.svg",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "Artoon",
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Artoon_Logo.svg/960px-Artoon_Logo.svg.png",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Artoon",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -7025,17 +6714,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "Arzest Logo.png",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "ARZEST Corporation",
-        "url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Arzest_Logo.png",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Arzest",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -7059,7 +6741,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/Ascaron",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -7074,7 +6756,7 @@
       "keyPeople": "Kiyoshi Takano (president), Tatsuo Sato (chairman)",
       "employees": "197",
       "employeesYear": "2006",
-      "revenue": "433 million",
+      "revenue": "¥433 million",
       "revenueYear": null,
       "website": "https://web.archive.org/web/20080314034903/http://ascii.jp/",
       "parents": [
@@ -7083,17 +6765,10 @@
       ],
       "subsidiaries": [],
       "products": "Derby Stallion series, RPG Maker series, Monthly ASCII, MSX",
-      "logo": {
-        "file": "SVG ASCII logo.svg",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "ASCII Corporation",
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/SVG_ASCII_logo.svg/960px-SVG_ASCII_logo.svg.png",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/ASCII_Corporation",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -7162,7 +6837,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/Asphere_Innovations",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -7188,17 +6863,10 @@
         "Beamdog"
       ],
       "products": null,
-      "logo": {
-        "file": "Aspyr 2019 logo.svg",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "Aspyr Media",
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Aspyr_2019_logo.svg/960px-Aspyr_2019_logo.svg.png",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Aspyr",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -7219,14 +6887,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": "The Vanishing of Ethan Carter",
-      "logo": {
-        "file": "The astronauts company logo.png",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/The_Astronauts_(company)",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -7311,17 +6975,10 @@
         "Chapter 11, Title 11, United States Code"
       ],
       "products": "Gauntlet, Paperboy, Klax, Hard Drivin",
-      "logo": {
-        "file": "Atari Games Logo.svg",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "Atari",
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Atari_Games_Logo.svg/960px-Atari_Games_Logo.svg.png",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Atari_Games",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -7345,17 +7002,10 @@
       ],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "Atari Official 2012 Logo.svg",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "Atari, Inc.",
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Atari_Official_2012_Logo.svg/960px-Atari_Official_2012_Logo.svg.png",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Atari_Interactive",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -7376,17 +7026,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "Atari Official 2012 Logo horizontal.svg",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "Atari, Inc.",
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Atari_Official_2012_Logo_horizontal.svg/960px-Atari_Official_2012_Logo_horizontal.svg.png",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Atari_SA",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -7410,17 +7053,10 @@
       ],
       "subsidiaries": [],
       "products": "Pong, Atari 2600, Atari 8-bit computers, Atari 5200",
-      "logo": {
-        "file": "Atari logo alt.svg",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "George Opperman (1935-1985), per source",
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Atari_logo_alt.svg/960px-Atari_logo_alt.svg.png",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Atari%2C_Inc.",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -7444,17 +7080,10 @@
       ],
       "subsidiaries": [],
       "products": "Oddworld, Unreal, Driver, Neverwinter Nights, RollerCoaster Tycoon, Bubsy, Atari Recharged, Atari Flashback consoles (pre-2011 models), Atari 2600+",
-      "logo": {
-        "file": "Atari Official 2012 Logo horizontal.svg",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "Atari, Inc.",
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Atari_Official_2012_Logo_horizontal.svg/960px-Atari_Official_2012_Logo_horizontal.svg.png",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Atari%2C_Inc._(formerly_GT_Interactive)",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -7463,7 +7092,7 @@
       "founded": "February 29, 2000",
       "founder": "Takao Hayashi",
       "headquarters": "Nagoya",
-      "country": "Japan, <!--",
+      "country": "Japan",
       "industry": "Social Applications Provider, Internet Service, Social Gaming, Global Business",
       "type": "Public Company (kabushiki gaisha)",
       "keyPeople": "Takao Hayashi, President",
@@ -7482,17 +7111,10 @@
         "Increments Inc."
       ],
       "products": null,
-      "logo": {
-        "file": "ATEAM Logo.svg",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "Ateam Inc.",
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/ATEAM_Logo.svg/960px-ATEAM_Logo.svg.png",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Ateam_Inc.",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -7513,14 +7135,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "Atelier 801 logo.png",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Atelier_801",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -7544,7 +7162,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/Athena_(game_developer)",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -7567,14 +7185,10 @@
       ],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "Atod AB (logo).png",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Atod",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -7600,7 +7214,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/Atomic_Games",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -7621,14 +7235,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": "Realms of Arkania series",
-      "logo": {
-        "file": "Attic-software-logo.png",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Attic_Entertainment_Software",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -7652,7 +7262,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/AudioGaming",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -7673,14 +7283,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "Audiogenic-logo.png",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Audiogenic",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -7701,14 +7307,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "Auroch Digital Logo.png",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Auroch_Digital",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -7732,17 +7334,10 @@
       ],
       "subsidiaries": [],
       "products": "Tak and the Power of Juju, Toy Story 3, Disney Infinity, Hogwarts Legacy",
-      "logo": {
-        "file": "Avalanche.svg",
-        "free": true,
-        "licence": "CC BY-SA 4.0",
-        "artist": "Boodle2003",
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Avalanche.svg/960px-Avalanche.svg.png",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Avalanche_Software",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -7765,14 +7360,10 @@
       ],
       "subsidiaries": [],
       "products": "Just Cause series, theHunter series, Mad Max, Renegade Ops",
-      "logo": {
-        "file": "frameless, class=skin-invert",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Avalanche_Studios_Group",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -7798,7 +7389,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/Avantgarden",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -7822,7 +7413,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/Avatar_Reality",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -7843,14 +7434,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": "Darkfall, Darkfall Unholy Wars",
-      "logo": {
-        "file": "Aventurine new logo.jpg",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Aventurine_SA",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -7871,17 +7458,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "Awem edit (2).png",
-        "free": true,
-        "licence": "CC BY-SA 4.0",
-        "artist": "Awem Games",
-        "url": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Awem_edit_%282%29.png",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Awem",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -7905,17 +7485,10 @@
       ],
       "subsidiaries": [],
       "products": "Digimon series, Gundam series, Super Robot Wars series",
-      "logo": {
-        "file": "Bandai Namco logo (2022).svg",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "Bandai Namco Holdings Inc.",
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Bandai_Namco_logo_%282022%29.svg/960px-Bandai_Namco_logo_%282022%29.svg.png",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Bandai_Namco_Forge_Digitals",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -7939,14 +7512,14 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/B2B_Games",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
       "wikipediaTitle": "Backbone Entertainment",
       "name": "Backbone Entertainment",
       "founded": "2003",
-      "founder": "<!-- or:",
+      "founder": null,
       "headquarters": "Emeryville, California",
       "country": "US",
       "industry": "Video games",
@@ -7999,7 +7572,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/Backbone_Entertainment",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -8014,7 +7587,7 @@
       "keyPeople": "Takashi Nakada, (president and CEO)",
       "employees": null,
       "employeesYear": null,
-      "revenue": "3.020 billion (2008)",
+      "revenue": "¥3.020 billion (2008)",
       "revenueYear": null,
       "website": "https://web.archive.org/web/20080102154459/http://www.banpresto.co.jp/",
       "parents": [
@@ -8035,7 +7608,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Banpresto",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -8059,7 +7632,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/Barking_Lizards_Technologies",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -8083,7 +7656,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/Battlefront.com",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -8114,7 +7687,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Bauhaus_Entertainment",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -8147,7 +7720,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Beach_Bum_Ltd.",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -8171,7 +7744,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/Beachhead_Studio",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -8206,7 +7779,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Beam_Software",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -8239,7 +7812,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Beamdog",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -8263,7 +7836,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/Beatshapers",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -8296,7 +7869,7 @@
       },
       "url": "https://en.wikipedia.org/wiki/Beenox",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -8317,14 +7890,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "Current logo for Behaviour Interactive as of 2024.jpg",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Behaviour_Interactive",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -8349,17 +7918,10 @@
       ],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "Behaviour Santiago Logo.jpg",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "Behaviour Interactive",
-        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Behaviour_Santiago_Logo.jpg",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Behaviour_Santiago",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -8380,14 +7942,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": "Alien Hominid, Castle Crashers, BattleBlock Theater, Pit People , Alien Hominid Invasion , Behemoth",
-      "logo": {
-        "file": "The Behemoth logo.png",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/The_Behemoth",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -8411,14 +7969,10 @@
       ],
       "subsidiaries": [],
       "products": "Bubsy 3D, Syphon Filter, Days Gone",
-      "logo": {
-        "file": "BendStudio 2022.png",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Bend_Studio",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -8441,14 +7995,10 @@
       ],
       "subsidiaries": [],
       "products": "Accessible computing software, Screensaver software, Computer games",
-      "logo": {
-        "file": "Berkeley Systems logo.PNG",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Berkeley_Systems",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -8472,7 +8022,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/BetaDwarf",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -8495,14 +8045,10 @@
       ],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "frameless, class=skin-invert",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Bethesda_Game_Studios",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -8527,14 +8073,10 @@
         "Bethesda Game Studios"
       ],
       "products": "List of Bethesda Softworks video games",
-      "logo": {
-        "file": "frameless, class=skin-invert",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Bethesda_Softworks",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -8557,14 +8099,10 @@
       ],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "Bigant logo.png",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Big_Ant_Studios",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -8587,14 +8125,10 @@
       ],
       "subsidiaries": [],
       "products": "My Singing Monsters, My Singing Monsters: Dawn of Fire, Power Chord, Burn the Rope, Thumpies, \"My Singing Monsters Karaoke\", \"My Singing Monsters Playground\", \"My Singing Monsters Composer\"",
-      "logo": {
-        "file": "BigBlueBubble Logo2015.svg",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Big_Blue_Bubble",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -8618,7 +8152,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/Big_Finish_Games",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -8642,17 +8176,10 @@
       ],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "Big Fish Games logo.svg",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "Big Fish Games",
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Big_Fish_Games_logo.svg/960px-Big_Fish_Games_logo.svg.png",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Big_Fish_Games",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -8680,7 +8207,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/Big_Huge_Games",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -8704,7 +8231,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/Big_Red_Software",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -8730,7 +8257,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/Bigbig_Studios",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -8753,17 +8280,10 @@
       ],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "bigpoint logo.png",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "Bigpoint Games",
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Bigpoint_logo.png/960px-Bigpoint_logo.png",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Bigpoint",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -8784,14 +8304,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "Bigworld technology logo.jpg",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Riot_Sydney",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -8815,7 +8331,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/Birthday_(company)",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -8836,17 +8352,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "BitCorp.svg",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "Bit Corporation",
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/BitCorp.svg/960px-BitCorp.svg.png",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Bit_Corporation",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -8870,7 +8379,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/Bit_Managers",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -8891,14 +8400,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": "Xenon series, Speedball series, The Chaos Engine series",
-      "logo": {
-        "file": "Bitmap Brothers logo.png",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/The_Bitmap_Brothers",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -8922,7 +8427,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/Bits_Studios",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -8946,14 +8451,10 @@
       ],
       "subsidiaries": [],
       "products": "Formula One series, Geometry Wars series, Project Gotham Racing series, Blur",
-      "logo": {
-        "file": "Bizarre creations logo.png",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Bizarre_Creations",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -8976,14 +8477,10 @@
       ],
       "subsidiaries": [],
       "products": "Giana Sisters series",
-      "logo": {
-        "file": "Black Forest Games.svg",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Black_Forest_Games",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -9004,14 +8501,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "Black Hole Entertainment logo.png",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Black_Hole_Entertainment",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -9034,14 +8527,10 @@
       ],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "Black Isle logo, 1998.PNG",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Black_Isle_Studios",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -9062,14 +8551,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": "Video games, Mobile apps",
-      "logo": {
-        "file": "Black Ops Entertainmentl.jpg",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Black_Ops_Entertainment",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -9093,14 +8578,10 @@
       ],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "Black Rock Studio logo.png",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Black_Rock_Studio",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -9121,14 +8602,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": "They Hunger series, USS Darkstar, Soldier of Fortune (mod)",
-      "logo": {
-        "file": "Black Widow Games logo.png",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Black_Widow_Games",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -9149,17 +8626,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": "Homeworld series",
-      "logo": {
-        "file": "Blackbird Interactive.png",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "Blackbird Interactive",
-        "url": "https://upload.wikimedia.org/wikipedia/commons/0/06/Blackbird_Interactive.png",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Blackbird_Interactive",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -9183,7 +8653,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/Blendo_Games",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -9204,14 +8674,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "BlitzGamesStudios logo.svg",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Blitz_Games_Studios",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -9235,17 +8701,10 @@
       ],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "Blizzard Entertainment Logo 2015.svg",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "Blizzard Entertainment - Stu Rose",
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Blizzard_Entertainment_Logo_2015.svg/960px-Blizzard_Entertainment_Logo_2015.svg.png",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Blizzard_Albany",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -9290,17 +8749,10 @@
       ],
       "subsidiaries": [],
       "products": "Spellbreak, World of Warcraft",
-      "logo": {
-        "file": "Blizzard Entertainment Logo 2015.svg",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "Blizzard Entertainment - Stu Rose",
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Blizzard_Entertainment_Logo_2015.svg/960px-Blizzard_Entertainment_Logo_2015.svg.png",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Blizzard_Boston",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -9328,17 +8780,10 @@
         "Proletariat (company)"
       ],
       "products": "Diablo series, Hearthstone, Heroes of the Storm, Overwatch series, StarCraft series, Warcraft series",
-      "logo": {
-        "file": "Blizzard Entertainment Logo 2015.svg",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "Blizzard Entertainment - Stu Rose",
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Blizzard_Entertainment_Logo_2015.svg/960px-Blizzard_Entertainment_Logo_2015.svg.png",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Blizzard_Entertainment",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -9359,14 +8804,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": "Justice League Task Force, Diablo, Diablo II, Diablo II: Lord of Destruction",
-      "logo": {
-        "file": "Blizzardnorth.png",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Blizzard_North",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -9387,14 +8828,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": "See developed games",
-      "logo": {
-        "file": "Bloober Team.svg",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Bloober_Team",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -9415,14 +8852,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": "Zoo Tycoon series",
-      "logo": {
-        "file": "BlueFang.png",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Blue_Fang_Games",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -9443,14 +8876,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": "Video games",
-      "logo": {
-        "file": "Logo of Blue Planet Software.png",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Blue_Planet_Software",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -9473,17 +8902,10 @@
       ],
       "subsidiaries": [],
       "products": "de Blob series, Nicktoons series",
-      "logo": {
-        "file": "Blue Tongue Entertainment logo.svg",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "Blue Tongue Entertainment",
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Blue_Tongue_Entertainment_logo.svg/960px-Blue_Tongue_Entertainment_logo.svg.png",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Blue_Tongue_Entertainment",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -9507,7 +8929,7 @@
       "logo": null,
       "url": "https://en.wikipedia.org/wiki/Blue_Wizard_Digital",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -9530,14 +8952,10 @@
       ],
       "subsidiaries": [],
       "products": "Uncharted: The Nathan Drake Collection, Shadow of the Colossus, Demon's Souls",
-      "logo": {
-        "file": "frameless, class=skin-invert",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Bluepoint_Games",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -9560,14 +8978,10 @@
       ],
       "subsidiaries": [],
       "products": "Video games",
-      "logo": {
-        "file": "Company logo.",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/BlueSky_Software",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -9590,17 +9004,10 @@
       ],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "Blumhouse Games logo.webp",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "Blumhouse Productions",
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Blumhouse_Games_logo.webp/960px-Blumhouse_Games_logo.webp",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Blumhouse_Games",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -9621,14 +9028,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "Boffo logo.png",
-        "free": false,
-        "reason": "not on Commons — likely non-free on en.wikipedia"
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Boffo_Games",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -9649,17 +9052,10 @@
       "parents": [],
       "subsidiaries": [],
       "products": null,
-      "logo": {
-        "file": "Bohemia Interactive.svg",
-        "free": true,
-        "licence": "Public domain",
-        "artist": "Bohemia Interactive",
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Bohemia_Interactive.svg/960px-Bohemia_Interactive.svg.png",
-        "reason": null
-      },
+      "logo": null,
       "url": "https://en.wikipedia.org/wiki/Bohemia_Interactive",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     },
     {
@@ -9687,7 +9083,35 @@
       },
       "url": "https://en.wikipedia.org/wiki/Bonfire_Studios",
       "licence": "CC BY-SA 4.0",
-      "fetchedAt": "2026-09-16",
+      "fetchedAt": "2026-09-17",
+      "basis": "gaming-category"
+    },
+    {
+      "wikipediaTitle": "Boomzap Entertainment",
+      "name": "Boomzap Entertainment",
+      "founded": "Singapore and United States (2005)",
+      "founder": null,
+      "headquarters": null,
+      "country": null,
+      "industry": "Video games, Casual games",
+      "type": "Private",
+      "keyPeople": "Allan Simonsen, Christopher Natsuume",
+      "employees": "30 (October 2017)",
+      "employeesYear": null,
+      "revenue": null,
+      "revenueYear": null,
+      "website": null,
+      "parents": [],
+      "subsidiaries": [],
+      "products": null,
+      "logo": {
+        "file": "200px",
+        "free": false,
+        "reason": "not on Commons — likely non-free on en.wikipedia"
+      },
+      "url": "https://en.wikipedia.org/wiki/Boomzap_Entertainment",
+      "licence": "CC BY-SA 4.0",
+      "fetchedAt": "2026-09-17",
       "basis": "gaming-category"
     }
   ]

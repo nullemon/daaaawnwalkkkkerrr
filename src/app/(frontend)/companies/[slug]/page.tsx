@@ -231,7 +231,7 @@ export default async function CompanyPage({ params }: Props) {
         crumbs={[{ label: 'Companies', href: '/' }, { label: company.name }]}
         icon="person"
         title={company.name}
-        lede={<Linked text={company.summary} scope={scope} />}
+        lede={company.summary ? <Linked text={company.summary} scope={scope} /> : undefined}
         badges={
           <>
             <Confidence level={company.confidence} />

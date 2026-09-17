@@ -5,7 +5,13 @@ import {
   type JSXConverters,
 } from '@payloadcms/richtext-lexical/react'
 import type { SerializedEditorState } from '@payloadcms/richtext-lexical/lexical'
-import { matchText, type LinkTarget, type Matcher } from '@/lib/autolink'
+import {
+  insideProtectedNode,
+  matchText,
+  type LinkTarget,
+  type Matcher,
+  type NodeWithParent,
+} from '@/lib/autolink'
 import { getMatcher, type LinkScope } from '@/lib/link-index'
 
 /**
@@ -44,11 +50,7 @@ import { getMatcher, type LinkScope } from '@/lib/link-index'
  * Wikipedia's own guidance makes for relinking in a later section.
  */
 
-type Props = {
-  scope: LinkScope
-  /** Extra classes on the wrapper, for a call site that needs `.lede` or `.note`. */
-  className?: string
-}
+type Props = { scope: LinkScope }
 
 /** One matched run, as the element its host situation calls for. */
 const anchor = (target: LinkTarget, text: string, key: number): ReactNode =>
@@ -85,35 +87,21 @@ const toNodes = (
 export async function Linked({
   text,
   scope,
-  className,
 }: Props & { text?: string | null }): Promise<ReactNode> {
   if (!text || !text.trim()) return null
   const matcher = await getMatcher(scope.host, scope.game)
-  const nodes = toNodes(text, matcher, scope, new Set())
-  return className ? <span className={className}>{nodes}</span> : <>{nodes}</>
+  /* A fragment, with no element of its own: this renders inside whatever the
+     call site already had - a `.lede`, a `.note`, a table cell - and wrapping
+     it in a span of ours would change the layout of each of them differently. */
+  return <>{toNodes(text, matcher, scope, new Set())}</>
 }
 
 /*
-  Node types a match must never be made inside.
-
-  `link` and `autolink` because an anchor inside an anchor is invalid HTML and
-  the browser silently un-nests it, leaving a link whose destination depends on
-  where the reader clicked. `heading` because a heading is a label for the
-  section under it and a link in one competes with the section's own navigation.
-  `code` because the whole point of code is that it is quoted verbatim.
+  `IS_CODE` is a format bit on the text node itself rather than a node type, so
+  it is checked here as well as in `insideProtectedNode`. Lexical marks inline
+  code both ways depending on how it was typed.
 */
-const NO_LINKS_INSIDE = new Set(['link', 'autolink', 'heading', 'code'])
-
 const IS_CODE = 1 << 4
-
-type WithParent = { type?: string; parent?: WithParent }
-
-const insideProtectedNode = (node: WithParent | undefined): boolean => {
-  for (let current = node; current; current = current.parent) {
-    if (current.type && NO_LINKS_INSIDE.has(current.type)) return true
-  }
-  return false
-}
 
 /*
   The format bits, applied outside the links rather than inside them.
@@ -165,7 +153,7 @@ export async function LinkedRichText({
       const format = Number((node as { format?: unknown }).format ?? 0)
 
       let rendered: ReactNode =
-        format & IS_CODE || insideProtectedNode(parent as WithParent)
+        format & IS_CODE || insideProtectedNode(parent as NodeWithParent)
           ? value
           : toNodes(value, matcher, scope, seen)
 

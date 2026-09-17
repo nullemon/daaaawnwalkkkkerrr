@@ -107,7 +107,7 @@ export default async function CharacterPage({ params }: Props) {
         eyebrow="Character"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Characters', href: '/characters' }, { label: doc.title }]}
         title={doc.title}
-        lede={<Linked text={doc.summary} scope={scope} />}
+        lede={doc.summary ? <Linked text={doc.summary} scope={scope} /> : undefined}
         badges={
           <>
             {doc.romanceable ? <Badge>Romanceable</Badge> : null}
