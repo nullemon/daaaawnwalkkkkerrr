@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { isNotAnEntity } from './harvest'
+import { isNotAnEntity, isNotAPlace } from './harvest'
 
 const entity = (title: string, url = '') => ({ title, url })
 
@@ -148,5 +148,40 @@ describe('real people on a fiction wiki', () => {
 
   it('keeps an ordinary character with neither signal', () => {
     expect(isNotAnEntity({ title: 'Jesse Faden', categories: ['Characters'] })).toBe(false)
+  })
+})
+
+describe('events filed as places', () => {
+  /*
+    Five of Control's twenty harvested "regions" are events. Each rendered as
+    "<name>, a location in Control Resonant" and nothing was looking - it only
+    surfaced once regions gained a parent field and the Hiss invasion became a
+    place inside the Oldest House.
+  */
+  it('rejects a page the wiki files only under a kind of happening', () => {
+    expect(
+      isNotAPlace({
+        title: 'Hiss invasion',
+        categories: ['Altered World Events', 'Conflicts', 'Events', 'Hiss'],
+      }),
+    ).toBe(true)
+    expect(
+      isNotAPlace({ title: 'Altered World Event', categories: ['Altered World Events', 'Paranatural phenomena'] }),
+    ).toBe(true)
+  })
+
+  it('keeps a place where an event happened', () => {
+    // "Ordinary" is a town and "Ordinary AWE" is the event in it. One signal
+    // alone takes the town with it, which is the shape that deleted Antar 4.
+    expect(
+      isNotAPlace({ title: 'Ordinary', categories: ['AWE locations', 'Article stubs', 'Locations'] }),
+    ).toBe(false)
+    expect(isNotAPlace({ title: 'Ordinary AWE', categories: ['Altered World Events'] })).toBe(true)
+  })
+
+  it('keeps a place whose categories say nothing either way', () => {
+    expect(isNotAPlace({ title: 'Research Sector', categories: ['Needs attention'] })).toBe(false)
+    expect(isNotAPlace({ title: 'New York City', categories: [] })).toBe(false)
+    expect(isNotAPlace({ title: 'Nowhere' })).toBe(false)
   })
 })

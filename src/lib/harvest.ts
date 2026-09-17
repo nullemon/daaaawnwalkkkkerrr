@@ -192,6 +192,60 @@ const isNumberedSequel = (title: string, game: string): boolean => {
 }
 
 /**
+ * An event, filed as a place.
+ *
+ * A wiki about a game has pages for the things that *happened* in it as well
+ * as the places they happened in, and the category harvest cannot tell them
+ * apart: Control's location sweep brought back the Oldest House and New York
+ * City, and also the Hiss invasion, the Altered World Event, and the AWEs at
+ * Ordinary, Bright Falls and Kyiv. Five of its twenty "regions" are events,
+ * each rendering on the site as "<name>, a location in Control Resonant".
+ *
+ * It surfaced from a direction nobody was looking: once regions gained a
+ * `parent` field, `Hiss invasion` became a place inside the Oldest House, and
+ * a wrong edge is a great deal more visible than a wrong record.
+ *
+ * Both halves are required, and that is what keeps it from being a guess. The
+ * wiki's own category has to name a kind of happening, *and* no category may
+ * name a kind of place — because "Ordinary" carries `AWE locations` alongside
+ * `Locations` and is a town where an event occurred, while "Ordinary AWE" is
+ * the event. One signal alone would have taken the town with it, which is the
+ * shape of the rule that deleted Antar 4.
+ *
+ * This is deliberately not part of `isNotAnEntity`: an event is a real thing
+ * in the game and would belong in a collection this network does not have. It
+ * says the record is not a *place*, and what follows from that is the caller's
+ * decision.
+ */
+const HAPPENING_CATEGORY =
+  new RegExp(String.raw`^(.*\b)?(events?|conflicts?|battles?|wars?|incidents?|disasters?|phenomena|phenomenon|massacres?|invasions?)$`, 'i')
+const PLACE_CATEGORY =
+  new RegExp(String.raw`\b(locations?|places?|areas?|regions?|sectors?|dimensions?|thresholds?|realms?|planets?|worlds?|cities|towns?|buildings?|rooms?)\b`, 'i')
+
+export const isNotAPlace = (entity: HarvestedEntity): boolean => {
+  const categories = (entity.categories ?? []).map((name) => name.trim()).filter(Boolean)
+  if (categories.length === 0) return false
+
+  /*
+    Each category is asked what it is before it is asked anything else, and a
+    category that is a happening never gets asked whether it is a place.
+
+    The first version tested the whole list for a place word first, and
+    "Altered World Events" contains "World" — so every Control event looked
+    like a place and the rule caught nothing. A category name is a head noun
+    with modifiers in front of it, and `HAPPENING_CATEGORY` is anchored at the
+    end for exactly that reason: "Altered World **Events**" is a kind of event
+    however many place words precede it, and "AWE **locations**" is a kind of
+    place however clearly it names an event.
+  */
+  const happenings = categories.filter((name) => HAPPENING_CATEGORY.test(name))
+  if (happenings.length === 0) return false
+
+  const rest = categories.filter((name) => !HAPPENING_CATEGORY.test(name))
+  return !rest.some((name) => PLACE_CATEGORY.test(name))
+}
+
+/**
  * @param game the title of the game being harvested for, so a numbered name
  *   can be told apart from a numbered sequel to that game.
  */

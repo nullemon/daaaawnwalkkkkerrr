@@ -1,8 +1,11 @@
 import 'dotenv/config'
 import { getPayload } from 'payload'
 import config from '../payload.config'
+import fs from 'fs'
+import path from 'path'
+import { fileURLToPath } from 'url'
 import { GAME_SCOPED } from '../lib/tenancy'
-import { isNotAnEntity } from '../lib/harvest'
+import { isNotAnEntity, isNotAPlace } from '../lib/harvest'
 
 /**
  * Is each record the kind of thing it is filed as?
@@ -41,9 +44,42 @@ const LOOKS_LIKE_A_COMPANY =
 
 type Finding = { level: 'wrong' | 'review'; line: string }
 
+/*
+  The wiki's own categories and infobox, which the database does not keep.
+
+  Two of the rules here are about what a page *is* rather than what it is
+  called, and neither a title nor a source URL carries that. The raw harvest
+  still does, so the guards get what they were given at import time instead of
+  a thinner version of it - the same reason `prune-entities` re-reads it.
+*/
+const HERE = path.dirname(fileURLToPath(import.meta.url))
+const HARVEST = path.join(HERE, 'raw', 'wiki-entities')
+
+type RawEntity = { title?: string; categories?: string[]; facts?: Record<string, string> }
+
+const readHarvest = (): Map<string, RawEntity> => {
+  const index = new Map<string, RawEntity>()
+  if (!fs.existsSync(HARVEST)) return index
+  for (const file of fs.readdirSync(HARVEST)) {
+    if (!file.endsWith('.json')) continue
+    const slug = file.replace(/\.json$/, '')
+    try {
+      const parsed = JSON.parse(fs.readFileSync(path.join(HARVEST, file), 'utf8'))
+      for (const entity of parsed.entities ?? []) {
+        if (!entity?.title) continue
+        index.set(`${slug}|${String(entity.title).trim().toLowerCase()}`, entity)
+      }
+    } catch {
+      /* A harvest file that will not parse means fewer findings, never more. */
+    }
+  }
+  return index
+}
+
 async function run(): Promise<void> {
   const payload = await getPayload({ config })
   const findings: Finding[] = []
+  const harvest = readHarvest()
 
   const games = await payload.find({ collection: 'games', limit: 100, depth: 0 })
   const gameSlug = new Map<string | number, string>()
@@ -90,8 +126,26 @@ async function run(): Promise<void> {
 
       if (!url) continue
 
+      const slug = gameSlug.get(doc.game as string | number) ?? '?'
+      const raw = harvest.get(`${slug}|${title.toLowerCase()}`)
+      const candidate = {
+        title,
+        url,
+        categories: raw?.categories ?? null,
+        facts: raw?.facts ?? null,
+      }
+
+      // --- wrong: the record is a place, and the page is an event ---------
+      if (collection === 'regions' && isNotAPlace(candidate)) {
+        findings.push({
+          level: 'wrong',
+          line: `${where} "${title}" is an event, not a place — ${(raw?.categories ?? []).join(', ')}`,
+        })
+        continue
+      }
+
       // --- wrong: the wiki's own URL says what it is ----------------------
-      if (isNotAnEntity({ title, url }, gameTitle.get(doc.game as string | number) ?? '')) {
+      if (isNotAnEntity(candidate, gameTitle.get(doc.game as string | number) ?? '')) {
         findings.push({ level: 'wrong', line: `${where} "${title}" — ${url}` })
         continue
       }

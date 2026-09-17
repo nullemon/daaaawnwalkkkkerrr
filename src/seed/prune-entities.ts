@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url'
 import { getPayload } from 'payload'
 import config from '../payload.config'
 import { GAME_SCOPED } from '../lib/tenancy'
-import { isNotAnEntity } from '../lib/harvest'
+import { isNotAnEntity, isNotAPlace } from '../lib/harvest'
 
 /**
  * Delete harvested records that the entity importer would no longer write.
@@ -108,7 +108,21 @@ async function run(): Promise<void> {
         categories: raw?.categories ?? null,
         facts: raw?.facts ?? null,
       }
-      if (!isNotAnEntity(candidate, title)) continue
+      /*
+        An event filed as a place.
+
+        Deleted rather than kept, on the same reasoning as the Gears of War
+        film: it is a real thing in the game, it is not the kind of thing this
+        collection holds, and there is no collection that does hold it. The
+        research is not lost - `src/seed/raw/wiki-entities/` still has the page,
+        its categories and its infobox, so the day an events collection exists
+        these five come back from the harvest rather than from anybody's
+        memory. What is lost by keeping them is a page reading "Hiss invasion,
+        a location in Control Resonant", which is a false sentence on a public
+        page.
+      */
+      const notAPlace = collection === 'regions' && isNotAPlace(candidate)
+      if (!notAPlace && !isNotAnEntity(candidate, title)) continue
 
       kept.push(`  ${collection}/${String(doc.slug)} [${where}] ${url}`)
       await payload.delete({ collection, id: doc.id })
