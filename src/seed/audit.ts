@@ -130,6 +130,56 @@ async function run(): Promise<void> {
     }
   }
 
+  // --- The two network hosts -----------------------------------------------
+  /*
+    `companies.<domain>` and `people.<domain>` are sites in the same sense the
+    eight wikis are: their own shell, their own canonical origin, their own
+    sitemap, their own entry in Search Console. This checklist did not know
+    they existed — it walks the `games` collection, and neither of them is a
+    game — so 918 pages were exempt from every question it asks, including the
+    two it exists for: does this host resolve, and has anybody given it a
+    verification token.
+
+    They are listed here by hand rather than derived, because that is what they
+    are: `NETWORK_SUBDOMAINS` in `proxy.ts` is also a hand-written list, and it
+    is the thing that makes these labels unavailable to a wiki. A third network
+    host belongs in both places.
+  */
+  const NETWORK_HOSTS: { label: string; collection: 'companies' | 'people' }[] = [
+    { label: 'companies', collection: 'companies' },
+    { label: 'people', collection: 'people' },
+  ]
+  for (const host of NETWORK_HOSTS) {
+    const problem = hostLabelProblem(host.label)
+    if (problem) {
+      add('blocking', host.label, `host label "${host.label}" will not resolve — ${problem}`)
+    } else {
+      add('note', host.label, `serves on ${hostFor(host.label, root)}`)
+    }
+
+    const total = (await payload.count({ collection: host.collection })).totalDocs
+    if (total === 0) {
+      add('warn', host.label, 'host is reachable with nothing on it')
+    } else {
+      add('note', host.label, `${total} profiles`)
+    }
+
+    /*
+      The same warning each wiki gets, for the same reason: a subdomain is its
+      own Search Console property and the network's token does not cover it.
+      There is no per-host settings record to hang one on, so this can only
+      report the network's — which is exactly the gap worth printing.
+    */
+    if (!networkVerification) {
+      add(
+        'warn',
+        host.label,
+        'no Search Console token — this subdomain is its own property, and there is no per-host field to set one',
+      )
+    }
+    if (!hasNetworkAnalytics) add('note', host.label, 'no analytics configured')
+  }
+
   // --- Content quality across every wiki -----------------------------------
   for (const collection of GAME_SCOPED) {
     const all = await payload.find({ collection, limit: 2000, depth: 0, pagination: false })

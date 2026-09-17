@@ -72,6 +72,28 @@ export async function generateMetadata(): Promise<Metadata> {
       ],
       apple: '/apple-touch-icon.png',
     },
+    /*
+      The network's share card, and the same reasoning as the icons above.
+
+      A link to a profile on either of these hosts unfurled in Slack, Discord
+      or a search preview as a bare URL with no image and no site name, because
+      `openGraph` is not inherited from a parent that never set one — the root
+      layout declares none deliberately, since it cannot tell which of the ten
+      sites it is wrapping. Each wiki answers with its own key art; these two
+      hosts answered with nothing, on every one of their 597 profiles.
+
+      `/og.png` rather than per-record art on purpose. Most of these people have no photograph here at all and the card
+      would be a claim about which one, which is the rule `PageHeader` and
+      `ART_GAME` already state: a picture above a name reads as a picture *of*
+      that name. The network's own card claims nothing it cannot support.
+    */
+    openGraph: {
+      siteName: shellName,
+      type: 'website',
+      locale: 'en',
+      images: [{ url: '/og.png', width: 1200, height: 630, alt: shellName }],
+    },
+    twitter: { card: 'summary_large_image', images: ['/og.png'] },
   }
 }
 
