@@ -165,6 +165,22 @@ export const foundedValue = (value?: string | null): string | undefined => {
 }
 
 /**
+ * The year a company closed, out of whatever its `defunct` field says.
+ *
+ * One reader for the two sentences that state the closure - this file's lede
+ * and the body paragraph in `company-games.ts` - because they sit on the same
+ * page and a page that dates the same event twice must date it the same way.
+ * 989 Studios' field reads "2000 (2000) (original), 2005 (2005)"; both
+ * sentences take 2000 from it or neither does.
+ *
+ * `undefined` where no year survives. The field still means the company is
+ * gone; it is only the date that is missing, and a close this cannot date is
+ * written without one rather than with a guess.
+ */
+export const closureYear = (value?: string | null): string | undefined =>
+  usable(value)?.match(/\b(1[89]\d{2}|20\d{2})\b/)?.[1]
+
+/**
  * Any mark that says which money a figure is in.
  *
  * Kept in step with `CURRENCY_MARK` in `tools/fetch-companies.mjs`, which
@@ -334,11 +350,29 @@ const listSentence = (items: string[]): string =>
  */
 export const fromFacts = (
   name: string,
-  facts: { industry?: string | null; founded?: string | null; headquarters?: string | null },
+  facts: {
+    industry?: string | null
+    founded?: string | null
+    headquarters?: string | null
+    defunct?: string | null
+  },
 ): string => {
   const industry = usable(facts.industry)
   const founded = foundedValue(facts.founded)
   const where = usable(facts.headquarters)
+  /*
+    A closed company is spoken about in the past, and the closure is in this
+    sentence rather than only in the banner above it.
+
+    `/38-studios` read "38 Studios is a games company, founded 2006 ... and
+    based in Providence, Rhode Island" over a red closure banner and a body
+    saying "The company closed in 2012" - and because the summary is also the
+    `<meta description>`, the one place the closure was stated was the one
+    place a search result cannot reach. Seventy records were worded that way.
+    A sentence that survives on its own has to carry the fact on its own.
+  */
+  const gone = Boolean(usable(facts.defunct))
+  const closed = closureYear(facts.defunct)
 
   /*
     What it is comes from the `industry` field rather than from the fact that
@@ -347,20 +381,32 @@ export const fromFacts = (
     was the same sentence about a conglomerate, an advertising agency and an
     investment manager.
   */
+  const was = gone ? 'was' : 'is'
   const lead = !industry
-    ? `${name} is a company`
+    ? `${name} ${was} a company`
     : GAMES_INDUSTRY.test(industry)
-      ? `${name} is a games company`
-      : `${name} is a company whose own article gives its industry as ${industry}`
+      ? `${name} ${was} a games company`
+      : /* The article still gives it, whatever became of the company, so this
+           half stays in the present. */
+        `${name} ${was} a company whose own article gives its industry as ${industry}`
 
   const tail = [founded ? `founded ${founded}` : '', where ? `based in ${where}` : ''].filter(Boolean)
   const opening = tail.length > 0 ? `${lead}, ${listSentence(tail)}.` : `${lead}.`
+  /*
+    Dated where a year survives, undated where one does not - the same rule the
+    body composer in `company-games.ts` follows, and the same reason: "The
+    company closed in 8 May 2015" is a missing preposition, and a close nobody
+    can date is still a close.
+  */
+  const closure = closed ? `It closed in ${closed}.` : gone ? 'It is no longer operating.' : ''
   /*
     A claim about this record rather than about the article: the field can be
     empty because nobody wrote an industry or because nothing here could read
     what was written, and only the first would justify "states no industry".
   */
-  return industry ? opening : `${opening} Its industry is not recorded here.`
+  return [opening, closure, industry ? '' : 'Its industry is not recorded here.']
+    .filter(Boolean)
+    .join(' ')
 }
 
 async function run(): Promise<void> {
@@ -483,6 +529,23 @@ async function run(): Promise<void> {
     if (!slug) continue
 
     /*
+      Read before the sentence is composed, not after it is written.
+
+      `defunct` is not in this harvest - `seed:company-games` puts it there
+      from the company's own infobox - so the only place this pass can learn
+      that a company has closed is the record it is about to overwrite. Fetched
+      here rather than at the update below, which is where it used to happen
+      and which is why the lede could not know.
+    */
+    const existing = await payload.find({
+      collection: 'companies',
+      where: { slug: { equals: slug } },
+      limit: 1,
+      depth: 0,
+    })
+    const stored = existing.docs[0] as { id: string | number; defunct?: string | null } | undefined
+
+    /*
       Empty where nothing states one, which is most of them.
 
       The field defaulted to `['developer']`, so two hundred and ninety-four
@@ -517,7 +580,7 @@ async function run(): Promise<void> {
       /* A company with a harvested article but no game of ours: the sentence
          is built from its own infobox and says nothing this network cannot
          show a source for. See `fromFacts`. */
-      summary = fromFacts(draft.name, facts)
+      summary = fromFacts(draft.name, { ...facts, defunct: stored?.defunct })
       confidence = 'medium'
     } else {
       const where = draft.foundOn.length > 0 ? listSentence(draft.foundOn) : 'a game covered here'
@@ -560,15 +623,8 @@ async function run(): Promise<void> {
       ...(logoId ? { logo: logoId } : {}),
     }
 
-    const existing = await payload.find({
-      collection: 'companies',
-      where: { slug: { equals: slug } },
-      limit: 1,
-      depth: 0,
-    })
-
-    if (existing.docs[0]) {
-      await payload.update({ collection: 'companies', id: existing.docs[0].id, data: data as never })
+    if (stored) {
+      await payload.update({ collection: 'companies', id: stored.id, data: data as never })
       updated += 1
     } else {
       await payload.create({ collection: 'companies', data: data as never })
@@ -617,6 +673,9 @@ async function run(): Promise<void> {
     founded?: string | null
     headquarters?: string | null
     revenue?: string | null
+    /* So the recomposed sentence below can put a closed company in the past
+       tense, the same as the loop above. */
+    defunct?: string | null
   }[]) {
     if (written.has(company.slug)) continue
     const data: Record<string, unknown> = {}
@@ -628,8 +687,11 @@ async function run(): Promise<void> {
     const revenue = revenueValue(company.revenue)
     if (company.revenue && revenue !== company.revenue) data.revenue = revenue ?? null
 
-    /* Ours only: the sentence this pass composes, still worded as it wrote it. */
-    if (new RegExp(`^${company.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')} is a games company\\b`).test(company.summary ?? '')) {
+    /* Ours only: the sentence this pass composes, still worded as it wrote it.
+       "is" *or* "was", because this pass now writes both and a rule that only
+       recognises the present tense stops recognising its own work the moment a
+       company closes. */
+    if (new RegExp(`^${company.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')} (is|was) a games company\\b`).test(company.summary ?? '')) {
       const recomposed = fromFacts(company.name, company)
       if (recomposed !== company.summary) data.summary = recomposed
     }

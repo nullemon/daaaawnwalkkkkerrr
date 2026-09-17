@@ -28,7 +28,8 @@ import { isNotAnEntity, isNotAPlace } from '../lib/harvest'
  *   mechanical and exit non-zero.
  *
  *   **Worth a look.** A title that reads like a work or a studio but has
- *   nothing in the URL to confirm it. These are printed and never fail the
+ *   nothing in the URL to confirm it; or a company whose closure date its own
+ *   catalogue argues with. These are printed and never fail the
  *   run, because the pattern that produced this tier once flagged
  *   `b1-series-battle-droid` - a real enemy - for containing "series", and an
  *   earlier version of the delete rule removed Antar 4, a real moon, for
@@ -43,6 +44,19 @@ const LOOKS_LIKE_A_COMPANY =
   /\b(interactive|entertainment|studios?|software|productions?|publishing|technologies)\b\s*$/i
 
 type Finding = { level: 'wrong' | 'review'; line: string }
+
+/**
+ * A four-digit year out of a field that may be a date, a range or neither.
+ *
+ * `defunct` is whatever the infobox printed - "1 October 2010", "2000 (2000)
+ * (original), 2005 (2005)" - and a catalogue row's `year` is whatever the
+ * store or the table gave. Nothing is inferred from a field with no year in
+ * it: no year means no comparison, not a comparison against zero.
+ */
+const year = (value?: string | null): number | undefined => {
+  const found = String(value ?? '').match(/\b(1[89]\d{2}|20\d{2})\b/)?.[1]
+  return found ? Number(found) : undefined
+}
 
 /*
   The wiki's own categories and infobox, which the database does not keep.
@@ -184,6 +198,45 @@ async function run(): Promise<void> {
         line: `${collection} "${key.split('::')[1]}" appears ${slugs.length} times: ${slugs.join(', ')}`,
       })
     }
+  }
+
+  // --- review: a closure date the company's own catalogue argues with -------
+  /*
+    `/atlus` prints "No longer operating (1 October 2010)" over twenty-six
+    titles dated 2019 to 2027, with a live Official site button between them.
+    Twenty-two of the seventy defunct profiles read that way, and atari-inc has
+    sixty later titles running to 2026.
+
+    Both halves came from a source, and only a person can say which one is
+    about this company: a dead brand really does go on being re-released, and
+    Atlus's `defunct` is its *predecessor* entity's - the company kept trading
+    under a new parent. So this is worth-a-look and never a failure. Deciding
+    it mechanically would either delete real closure dates or strip real
+    catalogues, and the note at the top of this file is about exactly that.
+  */
+  try {
+    const companies = await payload.find({ collection: 'companies', limit: 1000, depth: 0 })
+    for (const company of companies.docs as unknown as {
+      slug: string
+      defunct?: string | null
+      titles?: { title?: string | null; year?: string | null }[] | null
+    }[]) {
+      const closed = year(company.defunct)
+      if (!closed) continue
+      const later = (company.titles ?? [])
+        .map((row) => year(row.year))
+        .filter((value): value is number => value !== undefined && value > closed)
+      if (later.length === 0) continue
+      const latest = Math.max(...later)
+      findings.push({
+        level: 'review',
+        line:
+          `companies/${company.slug} closed ${company.defunct} but lists ` +
+          `${later.length} of ${(company.titles ?? []).length} titles after ${closed}, latest ${latest}`,
+      })
+    }
+  } catch {
+    // The collection may not exist yet on an older database.
   }
 
   const wrong = findings.filter((f) => f.level === 'wrong')

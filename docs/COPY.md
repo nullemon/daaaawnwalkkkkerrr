@@ -58,10 +58,18 @@ An editable sentence never contains a number that a record could change.
   fixes in a minute; a silently missing number is a wrong sentence nobody
   notices.
 
-Where a token has to render as an element — `{rightsholders}` is two company
-names linked to their profiles on another host — `splitTokens()` returns the
-parts and the call site builds the nodes. **Nothing editable ever reaches the
-DOM as markup.** An admin-editable string rendered with
+Where a token has to render as an element — `{rightsholders}` on a wiki's about
+page is that game's developer and publisher, each an anchor onto the companies
+host — `splitTokens()` returns the parts and the call site builds the nodes.
+**Nothing editable ever reaches the DOM as markup.**
+
+The same token name means something else on `/terms`, and the difference is
+deliberate: there it is every developer and publisher the network covers, all
+fifteen of them, as one plain-text list. The affiliation disclaimer names them
+rather than gesturing at them, and fifteen anchors inside a legal sentence is a
+worse sentence. Two renderings of one token is a thing to know about, not a
+thing to tidy — this line said "two company names linked to their profiles"
+about both of them, which was true of one. An admin-editable string rendered with
 `dangerouslySetInnerHTML` is a stored-XSS hole waiting for the first editor
 account that should not have had one; the licence-attribution template has
 refused to be one since it was written, and that rule does not get an

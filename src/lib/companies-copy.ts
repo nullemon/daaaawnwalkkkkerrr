@@ -1,5 +1,4 @@
 import { cache } from 'react'
-import { client } from '@/lib/payload'
 import type { CompaniesSite } from '@/payload-types'
 
 /**
@@ -29,6 +28,14 @@ export type CompaniesSiteCopy = Partial<CompaniesSite>
  */
 export const getCompaniesSite = cache(async (): Promise<CompaniesSiteCopy> => {
   try {
+    /*
+      Imported here rather than at the top of the file so that
+      `companies-copy.test.ts` can pin `catalogueCap` — the rule that decides
+      whether this host may call a catalogue complete — without booting
+      Payload, sharp and a database connection to do it. The same guard
+      `src/seed/companies.ts` carries, for the same reason.
+    */
+    const { client } = await import('@/lib/payload')
     const payload = await client()
     return await payload.findGlobal({ slug: 'companies-site', depth: 0 })
   } catch {
@@ -72,6 +79,9 @@ export const COMPANIES_BUILT_IN = {
     'A studio turns up on more than one wiki, and a company page that exists once carries its whole body of work instead of being three thin copies that disagree the first time one is corrected. It is the same reason {authorsLink} live on the hub rather than on each wiki.',
   profile: {
     gamesHeading: 'Their games on this network',
+    /* True only of a catalogue that is not capped. The heading a capped one
+       gets is `CAPPED_CATALOGUE_HEADING` below, and the reason it is not a
+       field is written there. */
     catalogueHeading: 'Everything they are credited on',
     /*
       A price is a fact with a date on it, not a property of a game, and the
@@ -125,6 +135,52 @@ export const COMPANIES_BUILT_IN = {
   footerBlurb:
     'Who made the games this network covers. One page per company, with everything of theirs we cover and a source for each claim.',
 } as const
+
+/**
+ * How many titles a catalogue is showing, out of how many were found.
+ *
+ * `seed:company-games` writes "Showing 60 of 76 found." onto the end of
+ * `catalogueNote` whenever the harvest hit its cap, and the profile printed
+ * that note directly under a heading reading "Everything they are credited on"
+ * with an eyebrow reading 60. Twenty-nine profiles claimed a complete
+ * catalogue and then withdrew the claim one line below it - Capcom 60 of 76,
+ * Konami 60 of 95, Take-Two 60 of 116.
+ *
+ * So the heading reads the note rather than assuming. The count has to match
+ * the rows actually on the page: a note saying 60 over a table of 12 is a note
+ * about some earlier state of the record, and trusting it would swap one wrong
+ * heading for another.
+ *
+ * `null` for a catalogue that is not capped, and for a note an editor has
+ * rewritten - and that second case is not a gap. An editor who takes the
+ * sentence out has taken the contradiction out with it, and nothing on the
+ * page then claims one thing and withdraws it in the next line.
+ *
+ * Kept in step with the sentence in `src/seed/company-games.ts`, which is the
+ * only thing that writes it.
+ */
+export const catalogueCap = (
+  note: string | null | undefined,
+  shown: number,
+): { shown: number; found: number } | null => {
+  const match = /\bShowing (\d+) of (\d+) found\./.exec(note ?? '')
+  if (!match) return null
+  const said = Number(match[1])
+  const found = Number(match[2])
+  if (said !== shown || found <= shown) return null
+  return { shown, found }
+}
+
+/**
+ * The heading over a catalogue that is only part of one.
+ *
+ * Not a field, for the reason `src/components/LegalGap.tsx` is not one: it
+ * exists to withdraw a claim the page would otherwise make, and a correction
+ * the person being corrected can reword away is not a correction. The editable
+ * `catalogueHeading` still words every catalogue that is actually complete,
+ * which is the case an editor has something to say about.
+ */
+export const CAPPED_CATALOGUE_HEADING = 'Some of what they are credited on'
 
 /**
  * The one clause on the index that shipped emphasised.

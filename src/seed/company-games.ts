@@ -10,7 +10,7 @@ import { rich, type Block } from './lexical'
    field; this pass writes the sentence about it and has to refuse the same
    values, or the panel reads "2005" while the paragraph above it reads
    "founded on Grenoble (Meylan), France (2005)". */
-import { foundedValue } from './companies'
+import { closureYear, foundedValue, fromFacts } from './companies'
 import type { Company } from '../payload-types'
 
 /**
@@ -237,6 +237,9 @@ const run = async (): Promise<void> => {
   let titlesWritten = 0
   let covered = 0
   let bodies = 0
+  /* Ledes put into the past tense because this pass found a closure date the
+     one that composed them could not see. */
+  let ledes = 0
   const empty: string[] = []
 
   for (const [slug, entry] of Object.entries(manifest.companies)) {
@@ -395,6 +398,13 @@ const run = async (): Promise<void> => {
     if (entry.wikipedia?.article) {
       sources.push(`the games table on ${entry.wikipedia.article} at Wikipedia (CC BY-SA), read ${entry.readAt}`)
     }
+    /*
+      This sentence is read as well as printed. `catalogueCap` in
+      `src/lib/companies-copy.ts` parses it to decide whether the heading over
+      the table may say "Everything they are credited on" — reword it here and
+      twenty-nine profiles go back to claiming a complete catalogue over a
+      capped one. `src/lib/companies-copy.test.ts` pins the shape.
+    */
     const capped = entry.found > titles.length ? ` Showing ${titles.length} of ${entry.found} found.` : ''
     const note = sources.length > 0 ? `Compiled from ${listSentence(sources)}.${capped}` : null
     const noteIsOurs = !filled(company.catalogueNote) || company.catalogueNote?.startsWith('Compiled from ')
@@ -444,8 +454,9 @@ const run = async (): Promise<void> => {
     }
     // Only where a year survives. "The company closed in 8 May 2015" is the
     // same missing preposition again, and a close with no date is a claim
-    // this cannot date.
-    const closed = history.defunct?.match(/\b(1[89]\d{2}|20\d{2})\b/)?.[1]
+    // this cannot date. `closureYear` is the reader the lede uses too, so the
+    // two sentences on this page cannot date the same closure differently.
+    const closed = closureYear(history.defunct)
     if (closed) now.push(`The company closed in ${closed}.`)
     if (history.franchises) now.push(`It is known for ${history.franchises}.`)
     if (now.length > 0) blocks.push(now.join(' '))
@@ -487,6 +498,34 @@ const run = async (): Promise<void> => {
     const writeBody = blocks.length > 0 && (!hasBody(company.body) || bodyIsOurs)
     if (writeBody) bodies += 1
 
+    // --- the lede ----------------------------------------------------------
+    /*
+      This pass is where `defunct` arrives, and `seed:companies` - which wrote
+      the summary - runs before it. So on a rebuild from scratch the lede is
+      composed by a pass that cannot yet know the company has closed, and would
+      sit in the present tense over a closure banner until somebody happened to
+      run `seed:companies` a second time. That is the ordering bug, not a
+      tidy-up: 70 records and their meta descriptions were wrong this way.
+
+      Rewritten only where the stored sentence is exactly what `fromFacts`
+      composes from the same fields without a closure - which is the one thing
+      that can be said with certainty about who wrote it. An editor's sentence,
+      or the one a company with games of ours gets, never matches and is never
+      touched.
+    */
+    const ledeFacts = {
+      industry: company.industry,
+      founded: company.founded,
+      headquarters: company.headquarters,
+    }
+    const ledeIsOurs = Boolean(company.summary) && company.summary === fromFacts(company.name, ledeFacts)
+    const lede = fromFacts(company.name, {
+      ...ledeFacts,
+      defunct: company.defunct ?? history.defunct,
+    })
+    const writeLede = ledeIsOurs && lede !== company.summary
+    if (writeLede) ledes += 1
+
     await payload.update({
       collection: 'companies',
       id: company.id,
@@ -510,6 +549,7 @@ const run = async (): Promise<void> => {
         ...(titles.length > 0 || stored.length !== existing.length ? { titles } : {}),
         ...(note && noteIsOurs ? { catalogueNote: note } : {}),
         ...(writeBody ? { body: rich(...blocks) } : {}),
+        ...(writeLede ? { summary: lede } : {}),
       } as never,
     })
     updated += 1
@@ -527,6 +567,7 @@ const run = async (): Promise<void> => {
   }
   console.log(`rows linked to a wiki here: ${covered}`)
   console.log(`bodies composed:            ${bodies}`)
+  console.log(`ledes closed off:           ${ledes}`)
   if (empty.length > 0) {
     console.log('\nnothing found, and why:')
     for (const line of empty) console.log(`  ${line}`)

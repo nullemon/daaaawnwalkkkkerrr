@@ -54,8 +54,11 @@ export type Part = { text: string } | { token: string }
 /**
  * The same substitution, as parts, for the tokens that render as elements.
  *
- * `{rightsholders}` is two company names linked to their profiles on another
- * host; `{storeLink}` is an outbound anchor. Those cannot be a string, and the
+ * `{rightsholders}` on a wiki's about page is that game's developer and
+ * publisher, each linked to its profile on the companies host; `{storeLink}` is
+ * an outbound anchor. (The `/terms` token of the same name is a plain-text list
+ * of every rightsholder the network covers — same name, different rendering,
+ * and `docs/COPY.md` says why.) Those cannot be a string, and the
  * alternative — letting an editable string reach the DOM as markup — is the
  * stored-XSS hole the attribution template already refuses to be. See the note
  * on `attributionText` in `SiteSettings`.

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { currentOwners, foundedValue, revenueValue } from './companies'
+import { closureYear, currentOwners, foundedValue, fromFacts, revenueValue } from './companies'
 
 /**
  * The three refusals on a company profile, pinned in both directions.
@@ -107,5 +107,66 @@ describe('currentOwners', () => {
   it('leaves a single owner alone', () => {
     expect(currentOwners(['CyberAgent'])).toEqual(['CyberAgent'])
     expect(currentOwners([])).toEqual([])
+  })
+})
+
+/**
+ * The lede on a company that has closed.
+ *
+ * `/38-studios` read "38 Studios is a games company, founded 2006 ... and
+ * based in Providence, Rhode Island" over a red closure banner and a body
+ * saying the company closed in 2012. Seventy records were worded that way, and
+ * because the summary is also the `<meta description>` the closure was stated
+ * only where a search result cannot reach it.
+ *
+ * Both directions: a company still trading must not be put into the past by a
+ * `defunct` field that holds nothing readable.
+ */
+describe('fromFacts', () => {
+  const facts = {
+    industry: 'Video games',
+    founded: '2006',
+    headquarters: 'Providence, Rhode Island',
+  }
+
+  it('leaves a trading company in the present tense', () => {
+    expect(fromFacts('38 Studios', facts)).toBe(
+      '38 Studios is a games company, founded 2006 and based in Providence, Rhode Island.',
+    )
+  })
+
+  it('puts a closed company in the past and dates the closure', () => {
+    expect(fromFacts('38 Studios', { ...facts, defunct: 'June 7, 2012' })).toBe(
+      '38 Studios was a games company, founded 2006 and based in Providence, Rhode Island. It closed in 2012.',
+    )
+  })
+
+  /* A close this cannot date is still a close. The banner says so either way,
+     and the lede has to agree with the banner. */
+  it('says a company is gone even where no year survives', () => {
+    expect(fromFacts('Screen Burn', { industry: 'Video games', defunct: 'defunct' })).toBe(
+      'Screen Burn was a games company. It is no longer operating.',
+    )
+  })
+
+  /* `usable` refuses a value with nothing outside brackets, and a field that
+     reads "(2015)" must not be the thing that closes a company down. */
+  it('ignores a defunct field that carries no value', () => {
+    expect(fromFacts('Capcom', { ...facts, defunct: '(2015)' })).toBe(
+      'Capcom is a games company, founded 2006 and based in Providence, Rhode Island.',
+    )
+  })
+})
+
+describe('closureYear', () => {
+  it('reads the year out of a date however it is written', () => {
+    expect(closureYear('1 October 2010')).toBe('2010')
+    expect(closureYear('May 28, 2003')).toBe('2003')
+    expect(closureYear('2000 (2000) (original), 2005 (2005)')).toBe('2000')
+  })
+
+  it('has nothing to say about a field with no year in it', () => {
+    expect(closureYear('defunct')).toBeUndefined()
+    expect(closureYear(null)).toBeUndefined()
   })
 })

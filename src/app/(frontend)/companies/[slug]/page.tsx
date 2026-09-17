@@ -14,7 +14,13 @@ import { Attribution } from '@/components/Attribution'
 import { Sources } from '@/components/Sources'
 import { client, gameUrl, rel, relMany } from '@/lib/payload'
 import { copy, hasRichText } from '@/lib/copy'
-import { COMPANIES_BUILT_IN, COMPANY_ROLE_LABEL, getCompaniesSite } from '@/lib/companies-copy'
+import {
+  CAPPED_CATALOGUE_HEADING,
+  COMPANIES_BUILT_IN,
+  COMPANY_ROLE_LABEL,
+  catalogueCap,
+  getCompaniesSite,
+} from '@/lib/companies-copy'
 import { clamp } from '@/lib/seo'
 import { COMPANIES_ORIGIN, externalSite, hub, personUrl } from '@/lib/urls'
 import { readOfficers } from '@/lib/officers'
@@ -134,6 +140,12 @@ export default async function CompanyPage({ params }: Props) {
       }
     }),
   )
+
+  /*
+    Whether the table below is the whole catalogue or the first sixty of it.
+    Read from the record's own note, which is the only thing that knows.
+  */
+  const cap = catalogueCap(company.catalogueNote, rows.length)
 
   const logo =
     company.logo && typeof company.logo === 'object'
@@ -325,10 +337,19 @@ export default async function CompanyPage({ params }: Props) {
             */}
             <section className="section">
               <div className="section-head">
-                <h2>{copy(profile.catalogueHeading, built.catalogueHeading)}</h2>
+                {/*
+                  The heading and the count both said the catalogue was
+                  complete, and the record's own note one line below said
+                  "Showing 60 of 76 found." on twenty-nine of these profiles.
+                  Whichever of the two a reader believed, the page had told
+                  them the other. Both now read the note — see `catalogueCap`.
+                */}
+                <h2>{cap ? CAPPED_CATALOGUE_HEADING : copy(profile.catalogueHeading, built.catalogueHeading)}</h2>
                 {/* `.eyebrow` is what every other section head on the network puts a count
                     in; a class of its own here would be a second thing to keep in step. */}
-                {rows.length > 0 ? <span className="eyebrow">{rows.length}</span> : null}
+                {rows.length > 0 ? (
+                  <span className="eyebrow">{cap ? `${cap.shown} of ${cap.found}` : rows.length}</span>
+                ) : null}
               </div>
               {rows.length > 0 ? (
                 <>

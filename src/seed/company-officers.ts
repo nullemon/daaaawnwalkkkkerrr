@@ -367,6 +367,21 @@ const capitalise = (value: string): string => value.charAt(0).toUpperCase() + va
 /** "Capcom’s", but "Big Huge Games’" — a plural already ending in s takes the bare apostrophe. */
 const possessive = (name: string): string => (/s$/i.test(name) ? `${name}’` : `${name}’s`)
 
+/**
+ * The first line of text in a rich-text body, for asking what it already says.
+ *
+ * The same reader `company-games.ts` uses on the same question. Lexical's
+ * "empty" is a root holding one empty paragraph, so the paragraph this wants is
+ * the first one with text in it rather than the first one.
+ */
+const firstLine = (body: unknown): string => {
+  const root = (body as { root?: { children?: { children?: { text?: string }[] }[] } } | null)?.root
+  const paragraph = root?.children?.find((node) =>
+    (node.children ?? []).some((child) => String(child?.text ?? '').trim().length > 0),
+  )
+  return (paragraph?.children ?? []).map((child) => String(child?.text ?? '')).join('').trim()
+}
+
 // ---------------------------------------------------------------------------
 
 type CompanyRow = {
@@ -382,6 +397,9 @@ type PersonRow = {
   slug: string
   basis?: string | null
   summary?: string | null
+  /* Read, not written: the sameness test below asks what the stored body
+     already opens with. */
+  body?: unknown
   companies?: (string | number)[] | null
   sources?: { title?: string | null; url?: string | null; retrieved?: string | null }[] | null
 }
@@ -531,6 +549,29 @@ async function run(): Promise<void> {
     const posted = entry.posts.find((post) => post.role)
     const knownFor = posted ? `${capitalise(posted.role!)}, ${posted.company.name}` : ''
 
+    /*
+      The lede and the body are two different sentences, not one printed twice.
+
+      `summary` is what the profile prints as the lede under the `<h1>`, and
+      the body opens directly beneath it. Passing the identical string to both
+      put the same sentence on the page twice, adjacent, on 469 profiles - it
+      reads as a rendering fault, and nothing could have caught it but somebody
+      opening a page. Fixed here rather than in the renderer, which would be
+      hiding a record that really does hold the sentence twice.
+
+      The lede goes back into the body only where the 320-character field could
+      not hold the whole of it, because then the two are not the same sentence
+      and the short one is missing a post somebody holds.
+    */
+    const short = summary.slice(0, 320)
+    const blocks = [
+      ...(short === summary ? [] : [summary]),
+      'That is the whole of what this network knows about them. The name is here because a ' +
+        'sourced article about the company printed it, which is the only claim this page makes — ' +
+        'not that they were involved in any game covered here, and not that it is current: ' +
+        'people change job more often than an infobox is updated.',
+    ]
+
     const composed = {
       /*
         `developer` is the schema's "role not stated", which is the honest
@@ -540,14 +581,8 @@ async function run(): Promise<void> {
       knownFor,
       basis: 'company-officer',
       confidence: 'low',
-      summary: summary.slice(0, 320),
-      body: rich(
-        summary,
-        'That is the whole of what this network knows about them. The name is here because a ' +
-          'sourced article about the company printed it, which is the only claim this page makes — ' +
-          'not that they were involved in any game covered here, and not that it is current: ' +
-          'people change job more often than an infobox is updated.',
-      ),
+      summary: short,
+      body: rich(...blocks),
     }
 
     if (person) {
@@ -583,10 +618,21 @@ async function run(): Promise<void> {
       const owned = person.basis === 'company-officer'
       const data = owned ? { ...composed, companies: merged, sources } : { companies: merged, sources }
 
+      /*
+        The body is compared too, and that is not belt and braces.
+
+        This test decided a record needed no write from the summary alone, so
+        the pass that fixed the duplicated paragraph above would have reported
+        469 records "already linked" and rewritten none of them - a code fix
+        that changes nothing, with a green run to say so. A seeder's sameness
+        test has to cover every field it composes, or correcting one of them is
+        a no-op nobody notices.
+      */
       const same =
         merged.length === current.length &&
         sources.length === (person.sources ?? []).length &&
-        (!owned || person.summary === composed.summary)
+        (!owned ||
+          (person.summary === composed.summary && firstLine(person.body) === blocks[0]))
       if (same) {
         unchanged += 1
         continue

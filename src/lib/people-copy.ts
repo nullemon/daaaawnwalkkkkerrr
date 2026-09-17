@@ -53,11 +53,28 @@ export const getPeopleSite = cache(async (): Promise<PeopleSiteCopy> => {
 export const PEOPLE_BUILT_IN = {
   title: 'The people behind the games',
   eyebrow: 'Network',
+  /*
+    Three routes onto this host, and all three are named here.
+
+    These four fields - the meta description, the lede, the shell description
+    and the footer blurb - each said this host holds the people credited on
+    these games and the actors who play their characters. 470 of 597 profiles
+    are neither: they are names a studio's or publisher's own article printed,
+    and the group note halfway down the same page says outright that appearing
+    in a company's article is not a credit on anything this network covers. The
+    front page contradicted four of its own sections, and the meta description
+    carried the contradiction into search results.
+
+    So the wording names the third route rather than implying it away. A reader
+    who arrives expecting a credits index and finds a company officer has been
+    told something false about what they are reading, and this host's whole
+    argument is that it does not do that.
+  */
   metaDescription:
-    'Directors, designers, composers, writers, artists and actors credited on the games this network covers, with a source for every detail.',
+    'Directors, designers, composers, writers and actors credited on the games this network covers, and the people the studio and franchise-wiki articles it cites name alongside them, with a source for every detail.',
   emptyNote:
     'No profiles have been published yet. Names reach this host from the games’ own credits, from the actors named on character pages, and from company articles — never from anywhere else, which is why it fills up slowly.',
-  lede: '{count} people: everyone a cited source names as having worked on a game this network covers, or as playing a character in one. Every detail on a profile is what a source states — a field no source gives is left empty rather than filled in.',
+  lede: '{count} people, grouped by how each name reached the network: credited on a game this network covers, named as the actor for one of its characters, or printed in an article this network already cites — a studio’s own list of key people, or a franchise wiki. Being named by a company or a wiki is not a credit on anything covered here, and each group below says what its own source supports. Every detail on a profile is what a source states; a field no source gives is left empty rather than filled in.',
   groups: {
     creditedHeading: 'Credited on a game we cover',
     creditedNote:
@@ -94,10 +111,13 @@ export const PEOPLE_BUILT_IN = {
   },
   shellName: '{network} People',
   shellTagline: 'The people behind the games',
+  /* Same correction as the lede and the meta description above: these two say
+     what the host holds, on every page of it, and what it holds is mostly the
+     third route. */
   shellDescription:
-    'Directors, designers, composers and actors credited on the games {network} covers.',
+    'Directors, designers, composers and actors credited on the games {network} covers, and the people its studios’ own articles name.',
   footerBlurb:
-    'Who made the games this network covers, and who plays the characters in them. One page per person, with a source for every line.',
+    'Who made the games this network covers, who plays the characters in them, and who a studio’s own article names. One page per person, with a source for every line.',
 } as const
 
 /*
