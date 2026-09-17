@@ -118,10 +118,18 @@ export default async function AboutPage({ params }: Props) {
 
   const costed = quests.filter((quest) => quest.time?.known).length
 
+  /*
+    `hub()`, not a bare path. Contributor profiles exist once, at the apex, and
+    this page is on a wiki — so `/authors/<slug>` resolved to
+    `dawnwalker.<domain>/authors/<slug>` and 404'd. Thirty-six names on the
+    About page of all eight wikis, every one of them a dead link, on the page a
+    reader opens precisely to check who is behind the site. Same origin mistake
+    the guide page's Article markup had, in the visible half instead.
+  */
   const team: RelatedItem[] = authors.map((author) => ({
     id: author.id,
     title: author.name,
-    href: `/authors/${author.slug}`,
+    href: hub(`/authors/${author.slug}`),
     sub: author.role,
   }))
 

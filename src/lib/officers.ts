@@ -1,4 +1,5 @@
 import {
+  couldNameAPerson,
   personSlug,
   readKeyPerson,
   readOfficer,
@@ -21,10 +22,21 @@ import {
  * plain-text the rest — and the disagreement would be invisible, because an
  * unlinked name looks exactly like a person we have no page for.
  *
- * A fragment neither rule reads — "(chairman)Yuji Asako", an infobox template
- * that leaked into the value — comes back with no name and still gets printed.
- * A name we cannot link is still a name the source stated, and dropping it
- * would be this page quietly editing its own source.
+ * A fragment neither rule reads — "(chairman)Yuji Asako", where the splitter
+ * could not separate a real name from its post — comes back with no name and
+ * still gets printed. A name we cannot link is still a name the source stated,
+ * and dropping it would be this page quietly editing its own source.
+ *
+ * **That is as far as it goes, and it used to go further.** Printing every
+ * fragment put things that are not people under "Who runs it" on twenty-two
+ * profiles: `/cygames` listed `ubl`, which is a MediaWiki template's name;
+ * `/sega` listed `(chairman and CEO)`, a post with nobody in it; `/ageod`
+ * listed `CEO` and `lead developer`. `seed:company-officers` had always
+ * dropped those and said so in its own docstring, so the two files held
+ * opposite documented decisions about the same string. `couldNameAPerson` is
+ * the single rule now — imported, like the split rules, rather than restated
+ * here — and it keeps the mangled name while refusing the template and the
+ * bare job title.
  */
 export type OfficerEntry = {
   /** The fragment as the infobox wrote it. What renders when there is no name. */
@@ -64,15 +76,17 @@ export const readOfficers = (
     bySlug.set(slug, slug)
   }
 
-  return rejoinStrayCommas(splitOutsideBrackets(value)).map((fragment) => {
-    const officer = readOfficer(fragment)
-    const name = officer?.name ?? readKeyPerson(fragment)
-    if (!name) return { text: fragment, name: null, role: null, slug: null }
-    return {
-      text: fragment,
-      name,
-      role: officer?.role ?? null,
-      slug: byName.get(lower(name)) ?? bySlug.get(personSlug(name)) ?? null,
-    }
-  })
+  return rejoinStrayCommas(splitOutsideBrackets(value))
+    .filter(couldNameAPerson)
+    .map((fragment) => {
+      const officer = readOfficer(fragment)
+      const name = officer?.name ?? readKeyPerson(fragment)
+      if (!name) return { text: fragment, name: null, role: null, slug: null }
+      return {
+        text: fragment,
+        name,
+        role: officer?.role ?? null,
+        slug: byName.get(lower(name)) ?? bySlug.get(personSlug(name)) ?? null,
+      }
+    })
 }

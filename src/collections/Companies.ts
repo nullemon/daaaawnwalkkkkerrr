@@ -38,18 +38,32 @@ export const Companies: CollectionConfig = {
     { name: 'name', type: 'text', required: true, admin: { description: 'The company’s name as it writes it.' } },
     slugField(),
     {
+      /*
+        No default, and not required, because a role is a claim.
+
+        This shipped as `required: true, defaultValue: ['developer']`, and only
+        the fifteen companies a game record names ever overrode it — so two
+        hundred and ninety-four profiles were badged Developer by the schema
+        rather than by a source. Paramount Pictures, Vivendi and Activision
+        Blizzard all read `Role / Developer`, and the word went out in the fact
+        panel, on every index card and inside the `<title>` tag.
+
+        A default on a field like this is indistinguishable from evidence once
+        it is in the database: nothing downstream can tell the fifteen that
+        were stated from the two hundred and ninety-four that were assumed.
+        Empty is the honest value, and every render drops the row rather than
+        printing a placeholder.
+      */
       name: 'role',
       type: 'select',
       hasMany: true,
-      required: true,
-      defaultValue: ['developer'],
       options: [
         { label: 'Developer', value: 'developer' },
         { label: 'Publisher', value: 'publisher' },
       ],
       admin: {
         description:
-          'Both is normal — Capcom develops and publishes its own games. Drives how the company is described and which lists it appears in.',
+          'Only where a source states it — leave empty otherwise, because the badge reads as a fact. Both is normal: Capcom develops and publishes its own games.',
       },
     },
     {

@@ -84,6 +84,39 @@ export default async function AuthorPage({ params }: Props) {
       <div className="page body-main">
         <div className="split">
           <div className="stack">
+            {/*
+              The placeholder marker, and the only page that carries it.
+
+              `provisional` is scaffolding the owner asked for: 36 rows waiting
+              for real contributors. For a long time four separate comments
+              claimed "every page carrying this byline says so out loud" while
+              nothing rendered the flag anywhere, so 394 guides printed an
+              invented name with no qualification of any kind.
+
+              The fix is not a warning on 394 articles — that would bury the
+              guides under scaffolding and is not what a placeholder is for. It
+              is here, on the profile the byline links to, because this is
+              where somebody evaluating a byline comes to find out who wrote
+              the page. If they get here and the answer is "nobody yet", that
+              is the answer they need.
+
+              Hardcoded rather than editable, the same call `docs/COPY.md`
+              makes for `LegalGap`: this exists *because* the record it
+              describes is not trustworthy yet, and a warning the person being
+              warned can reword away is not a warning.
+            */}
+            {doc.provisional ? (
+              <div className="callout" data-tone="risk">
+                <p>
+                  <strong>This is a placeholder profile.</strong> The name, role and biography on
+                  this page are scaffolding for a contributor who has not been added yet. No claim
+                  is made that this is a real person, and nothing here should be read as a
+                  credential. Guides filed under this byline are compiled and checked to the same
+                  editorial rules as every other page on the network.
+                </p>
+              </div>
+            ) : null}
+
             {doc.bio ? <p className="lede">{doc.bio}</p> : null}
 
             {/*

@@ -3,7 +3,8 @@ import { SectionNeighbours } from '@/components/SectionNeighbours'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
 import { Confidence } from '@/components/Badges'
-import { RichText } from '@/components/RichText'
+import { Linked, LinkedRichText } from '@/components/Linked'
+import type { LinkScope } from '@/lib/link-index'
 import { Sources } from '@/components/Sources'
 import { Attribution } from '@/components/Attribution'
 import { CommentThread } from '@/components/CommentThread'
@@ -49,6 +50,15 @@ export default async function CourtPage({ params }: Props) {
     getBySlug('courts', slug, { game, depth: 1 }),
   ])
   if (!doc) notFound()
+
+  /*
+    Where this page is, for the inline linker.
+
+    `self` is the whole reason it is passed: composed prose names the record it
+    is about in its own first sentence, and a link from a page to itself reads
+    as a bug. See `src/components/Linked.tsx`.
+  */
+  const scope: LinkScope = { host: 'wiki', game, self: `courts:${doc.id}` }
   const activities = (await getAll('court-activities', { game, depth: 1 })).filter(
     (activity) => typeof activity.court === 'object' && activity.court?.slug === slug,
   )
@@ -62,7 +72,7 @@ export default async function CourtPage({ params }: Props) {
         eyebrow="Court"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Court', href: '/court' }, { label: doc.title }]}
         title={doc.title}
-        lede={doc.summary}
+        lede={<Linked text={doc.summary} scope={scope} />}
         badges={<Confidence level={doc.confidence} />}
       />
       <div className="page body-main">
@@ -77,7 +87,7 @@ export default async function CourtPage({ params }: Props) {
                     */}
             <EntityImage media={doc.image} shape="square" />
             <div className="prose">
-              <RichText data={doc.body} />
+              <LinkedRichText data={doc.body} scope={scope} />
             </div>
           </div>
           <div className="stack">

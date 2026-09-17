@@ -34,6 +34,28 @@ export async function generateMetadata(): Promise<Metadata> {
 const rel = (value: unknown): Game | null =>
   value && typeof value === 'object' ? (value as Game) : null
 
+/**
+ * The role badges, or nothing at all.
+ *
+ * `role` used to default to `['developer']`, so every card on this page said
+ * Developer whether a source did or not. With the default gone most companies
+ * have no role, and a `<></>` passed as `badges` is truthy — it renders an
+ * empty badge row under the summary, which is a gap where a fact used to be.
+ * Undefined is what the card takes to mean "no badges".
+ */
+const roleBadges = (company: Company, extra?: ReactNode): ReactNode | undefined => {
+  const roles = company.role ?? []
+  if (roles.length === 0 && !extra) return undefined
+  return (
+    <>
+      {roles.map((role) => (
+        <Badge key={role}>{COMPANY_ROLE_LABEL[role] ?? role}</Badge>
+      ))}
+      {extra}
+    </>
+  )
+}
+
 const logoOf = (company: Company): { url?: string | null; alt?: string | null } | null =>
   company.logo && typeof company.logo === 'object'
     ? (company.logo as { url?: string | null; alt?: string | null })
@@ -156,14 +178,10 @@ export default async function CompaniesIndex() {
                   summary={company.summary}
                   image={logoOf(company)}
                   thumbFit="contain"
-                  badges={
-                    <>
-                      {(company.role ?? []).map((role) => (
-                        <Badge key={role}>{COMPANY_ROLE_LABEL[role] ?? role}</Badge>
-                      ))}
-                      {games.length > 0 ? <Badge>{games.length} here</Badge> : null}
-                    </>
-                  }
+                  badges={roleBadges(
+                    company,
+                    games.length > 0 ? <Badge key="here">{games.length} here</Badge> : null,
+                  )}
                 />
               )
             })}
@@ -185,13 +203,7 @@ export default async function CompaniesIndex() {
                   summary={company.summary}
                   image={logoOf(company)}
                   thumbFit="contain"
-                  badges={
-                    <>
-                      {(company.role ?? []).map((role) => (
-                        <Badge key={role}>{COMPANY_ROLE_LABEL[role] ?? role}</Badge>
-                      ))}
-                    </>
-                  }
+                  badges={roleBadges(company)}
                 />
               ))}
             </div>
@@ -213,13 +225,7 @@ export default async function CompaniesIndex() {
                   summary={company.summary}
                   image={logoOf(company)}
                   thumbFit="contain"
-                  badges={
-                    <>
-                      {(company.role ?? []).map((role) => (
-                        <Badge key={role}>{COMPANY_ROLE_LABEL[role] ?? role}</Badge>
-                      ))}
-                    </>
-                  }
+                  badges={roleBadges(company)}
                 />
               ))}
             </div>

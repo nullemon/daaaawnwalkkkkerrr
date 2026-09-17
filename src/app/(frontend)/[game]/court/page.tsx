@@ -91,11 +91,17 @@ export default async function CourtIndex({ params }: Props) {
           heading="You do not need to clear everything"
           builtIn={(doc?.features ?? []).includes('run-checker')}
         >
+          {/* `courts.length`, not "three". The number is two lines above in
+              the grid this callout sits under, so a typed count is a sentence
+              that contradicts the page it is on the moment a fourth court is
+              added or one is corrected away — the same class of bug as a
+              section heading naming one game on eight wikis, only quieter,
+              because a wrong number reads exactly like a right one. */}
           <p>
             Reporting puts the duel threshold at roughly three quarters of a vassal&rsquo;s
-            activities, not all of them. Across all three courts that is the single biggest saving
-            available to a tight run. Treat the figure as unconfirmed — it is widely repeated but we
-            have not seen it stated by the developer.
+            activities, not all of them. Across all {courts.length} courts that is the single
+            biggest saving available to a tight run. Treat the figure as unconfirmed — it is widely
+            repeated but we have not seen it stated by the developer.
           </p>
         </Callout>
       </div>

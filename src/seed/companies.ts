@@ -1,10 +1,7 @@
-import 'dotenv/config'
 import fs from 'fs'
 import path from 'path'
-import { fileURLToPath } from 'url'
-import { getPayload } from 'payload'
-import type { CollectionSlug } from 'payload'
-import config from '../payload.config'
+import { fileURLToPath, pathToFileURL } from 'url'
+import type { CollectionSlug, Payload } from 'payload'
 import { slugify } from '../fields/shared'
 
 /**
@@ -125,6 +122,93 @@ const usable = (value?: string | null): string | undefined => {
   return outside.length > 0 ? text : undefined
 }
 
+const MONTH = '(January|February|March|April|May|June|July|August|September|October|November|December)'
+
+/**
+ * A founding date, or nothing.
+ *
+ * The infobox field is not always a date. Four of them open with a *place*,
+ * because the article wrote "[[Grenoble]] (Meylan), [[France]] (2005)" into
+ * the founding field — and the profile printed "AGEod is a games company
+ * founded Grenoble", with `Founded / Grenoble (Meylan), France (2005)` in the
+ * panel beside it. The sentence was composed by cutting the value at its first
+ * bracket, which on a value shaped like that cuts off everything except the
+ * place.
+ *
+ * So: a value that opens with a date is kept whole, because the rest of it is
+ * usually the useful part ("2009 (as Tecmo Koei Holdings)"). A value that does
+ * not is reduced to the year it carries, which is the only part of it that is
+ * a founding date. One that carries no year at all is refused — a blank row is
+ * honest and a place in a date field is not.
+ */
+export const foundedValue = (value?: string | null): string | undefined => {
+  const text = String(value ?? '')
+    /*
+      "September 1, 2006; 16 years ago" — the second half was true in 2022 and
+      is recomputed by the template on every page view *there*, while here it
+      is frozen on the day it was read. A relative age in stored text is a
+      figure that goes wrong by itself.
+    */
+    .replace(/[;,]?\s*\d+\s+years?\s+ago\b/i, '')
+    .trim()
+  if (!text) return undefined
+
+  const leadsWithDate = new RegExp(
+    `^\\s*(c\\.|circa|est\\.?)?\\s*(${MONTH},?\\s+(\\d{1,2},?\\s+)?)?(\\d{1,2}\\s+${MONTH}\\s+)?(1[5-9]\\d{2}|20\\d{2})\\b`,
+    'i',
+  ).test(text)
+  if (leadsWithDate) return text
+
+  /* Not a date. Whatever year it carries is the only part of it that is one. */
+  const year = text.match(/\b(1[5-9]\d{2}|20\d{2})\b/)?.[1]
+  return year ?? undefined
+}
+
+/**
+ * Any mark that says which money a figure is in.
+ *
+ * Kept in step with `CURRENCY_MARK` in `tools/fetch-companies.mjs`, which
+ * prints a currency-less revenue as a finding at the end of a harvest. This is
+ * the other half: the harvest can be wrong, and a figure that reaches this
+ * point without a unit does not reach the page.
+ */
+const CURRENCY_MARK =
+  /(US\$|A\$|C\$|NZ\$|HK\$|NT\$|R\$|CN¥|[$€£¥₹₩₽₺])|\b(USD|EUR|GBP|JPY|CNY|RMB|KRW|INR|AUD|CAD|CHF|SEK|NOK|DKK|PLN|RUB|TRY|BRL|TWD|HKD|SGD|NZD|dollars?|euros?|yen|yuan|renminbi|won|pounds?|rupees?|kronor|krona|z(ł|l)oty|reais)\b/i
+
+/**
+ * A revenue figure, or nothing.
+ *
+ * Twenty-four of fifty harvested revenues carried no currency, because the
+ * money template's *name* is the unit and the parser kept only its arguments:
+ * Sega's read "247.7 billion", which is yen, and which an English reader reads
+ * as dollars — wrong by a factor of about a hundred and fifty. One read
+ * "billion (2023)" with no number in it at all.
+ *
+ * The harvester puts the unit back now. This refuses whatever still arrives
+ * without one, because there is no way to tell from "8.0 billion" which
+ * currency was lost, and guessing is the fabricated figure this project exists
+ * to avoid. A missing row says nothing; a unitless one says something false.
+ */
+export const revenueValue = (value?: string | null): string | undefined => {
+  const text = usable(value)
+  if (!text) return undefined
+  if (!/\d/.test(text)) return undefined
+  return CURRENCY_MARK.test(text) ? text : undefined
+}
+
+/**
+ * Does this company's own article call it a games company?
+ *
+ * The profile said "X is a games company" for anything with a harvested
+ * article, which put "Paramount Pictures is a games company founded 1912" on
+ * the network with `Industry / Film` in the panel next to it. At least
+ * eighteen are not games companies — Tencent is a conglomerate, Microsoft is
+ * information technology, Asatsu-DK is an advertising agency, EQT AB is
+ * investment management. The field was there the whole time.
+ */
+const GAMES_INDUSTRY =
+  /\b(video ?games?|computer (and )?video games?|computer games?|browser games?|mobile gam(e|ing)|social gaming|interactive entertainment|video game (industry|develop(er|ment)|publish(er|ing)))\b/i
+
 /**
  * Download a company's logo, but only where its licence actually allows it.
  *
@@ -195,11 +279,44 @@ const fetchLogo = async (
   }
 }
 
+/**
+ * `null` where a harvested value was read and refused, `undefined` where there
+ * was nothing to read.
+ *
+ * Payload treats `undefined` as "leave this field alone", which is right for a
+ * field the harvest never carried — an editor may have typed one — and wrong
+ * for one this pass has just decided is not publishable. Without the
+ * difference, re-running the seeder would fix the sentence and leave
+ * `Founded / Grenoble (Meylan), France (2005)` sitting in the panel below it.
+ */
+const refused = (raw: string | null | undefined, kept: string | undefined): string | null | undefined =>
+  kept ?? (String(raw ?? '').trim() ? null : undefined)
+
 const splitHolders = (value?: string | null): string[] =>
   (value ?? '')
     .split(',')
     .map((part) => part.trim())
     .filter(Boolean)
+
+/**
+ * The owners a company's infobox still claims, out of everyone it lists.
+ *
+ * Wikipedia's `parent` field is a history, in order: Sega's names Gulf and
+ * Western, Paramount Pictures, SCSK and Sega Sammy Holdings, and only the last
+ * of those owns it. Where the article dates an entry — "Viacom (1952–2005)" —
+ * that entry's ownership has demonstrably ended and it is dropped, which is
+ * reading the source rather than guessing at it. A range with no end
+ * ("2014–present") is current and stays.
+ *
+ * What is left may still be more than one, and then the caller writes nothing.
+ * Taking the first was how "Sega is owned by Paramount Pictures" reached the
+ * network; taking the last would be the same coin flip with better odds.
+ */
+export const currentOwners = (names: string[]): string[] =>
+  names
+    .map((name) => name.trim())
+    .filter(Boolean)
+    .filter((name) => !/\(\s*(c\.|circa)?\s*\d{4}\s*[–-]\s*\d{4}\s*\)/.test(name))
 
 /** "A and B" / "A, B and C". */
 const listSentence = (items: string[]): string =>
@@ -317,7 +434,18 @@ async function run(): Promise<void> {
     const slug = slugify(draft.name)
     if (!slug) continue
 
-    const roles: Role[] = draft.roles.size > 0 ? [...draft.roles] : ['developer']
+    /*
+      Empty where nothing states one, which is most of them.
+
+      The field defaulted to `['developer']`, so two hundred and ninety-four
+      companies were badged Developer because that is what a schema default
+      does — not because a source said so. Paramount Pictures, Vivendi and
+      Activision Blizzard all read `Role / Developer`, and the word was in the
+      fact panel, on the index card and in the `<title>` tag. Only a game
+      record naming them as developer or publisher puts a role here now; the
+      renderers drop the row rather than printing a placeholder.
+    */
+    const roles: Role[] = [...draft.roles]
 
     /*
       Composed from what is actually known, the same rule the record pages
@@ -342,15 +470,28 @@ async function run(): Promise<void> {
         A company with a harvested article but no game of ours. The sentence
         is built from its own infobox and says nothing this network cannot
         show a source for.
+
+        What it is comes from the `industry` field rather than from the fact
+        that it was harvested by a games project. "Paramount Pictures is a
+        games company founded 1912" was live, with `Industry / Film` in the
+        panel beside it; so was the same sentence about a conglomerate, an
+        advertising agency and an investment manager. Where the article states
+        no industry the sentence says so instead of choosing one — the company
+        is here because another company's infobox named it, and that is all
+        this record knows.
       */
-      const founded = usable(facts.founded)
+      const industry = usable(facts.industry)
+      const founded = foundedValue(facts.founded)
       const where = usable(facts.headquarters)
-      summary = [
-        `${draft.name} is a games company`,
-        founded ? ` founded ${founded.replace(/\s*\(.*$/, '')}` : '',
-        where ? `, based in ${where}` : '',
-        '.',
-      ].join('')
+
+      const lead = !industry
+        ? `${draft.name} is a company named in the sources compiled for this network; its own article states no industry`
+        : GAMES_INDUSTRY.test(industry)
+          ? `${draft.name} is a games company`
+          : `${draft.name} is a company whose own article gives its industry as ${industry}`
+
+      const tail = [founded ? `founded ${founded}` : '', where ? `based in ${where}` : ''].filter(Boolean)
+      summary = tail.length > 0 ? `${lead}, ${listSentence(tail)}.` : `${lead}.`
       confidence = 'medium'
     } else {
       const where = draft.foundOn.length > 0 ? listSentence(draft.foundOn) : 'a game covered here'
@@ -382,12 +523,12 @@ async function run(): Promise<void> {
       sources: draft.sources.length > 0 ? sources : undefined,
       // Every one of these is dropped rather than shown when what survived
       // the wikitext is not actually a value. See `usable`.
-      founded: usable(facts?.founded),
+      founded: refused(facts?.founded, foundedValue(facts?.founded)),
       headquarters: usable(facts?.headquarters),
       industry: usable(facts?.industry),
       keyPeople: usable(facts?.keyPeople),
       employees: usable(facts?.employees),
-      revenue: usable(facts?.revenue),
+      revenue: refused(facts?.revenue, revenueValue(facts?.revenue)),
       website: usable(facts?.website),
       basis: facts?.basis ?? (draft.gameTitles.length > 0 ? 'network-game' : 'related-company'),
       ...(logoId ? { logo: logoId } : {}),
@@ -423,6 +564,7 @@ async function run(): Promise<void> {
   }
 
   let linked = 0
+  const ambiguous: string[] = []
   for (const draft of drafts.values()) {
     const facts = draft.facts
     if (!facts) continue
@@ -434,19 +576,40 @@ async function run(): Promise<void> {
         .map((name) => idBySlug.get(slugify(plainName(name))))
         .filter((value): value is string | number => value !== undefined)
 
-    const parentIds = resolve(facts.parents)
-    const subsidiaryIds = resolve(facts.subsidiaries).filter((value) => value !== id)
-    if (parentIds.length === 0 && subsidiaryIds.length === 0) continue
+    const owners = currentOwners(facts.parents)
+    /*
+      One owner or none. `parentIds[0]` took whichever name resolved first out
+      of a field that lists them in the order they held the company, and the
+      profile printed it in the present tense: Sega read "Owned by Paramount
+      Pictures", who sold it in 1984; Activision Blizzard read "Owned by
+      Vivendi"; Paramount Pictures itself read "Owned by Gulf and Western
+      Industries", dissolved in 1989.
 
+      Forty-three of three hundred name more than one, and where the article
+      dates them this drops the ones whose ownership has demonstrably ended —
+      reading the source rather than resolving it. Where more than one is still
+      standing, nothing is written and the company is printed below. Picking
+      the first was a coin flip; picking the last would be another one, and the
+      rule here is to record a conflict rather than resolve it.
+    */
+    const parentIds = owners.length === 1 ? resolve(owners) : []
+    if (owners.length > 1) ambiguous.push(`${draft.name} — ${owners.join(' / ')}`)
+    const subsidiaryIds = resolve(facts.subsidiaries).filter((value) => value !== id)
+
+    /*
+      `null` rather than omitted, so a run that now refuses an owner clears the
+      one a previous run asserted. Omitting the key leaves the wrong sentence
+      on the page and nothing anywhere saying it is still there.
+    */
     await payload.update({
       collection: 'companies',
       id,
       data: {
-        ...(parentIds[0] !== undefined ? { parent: parentIds[0] } : {}),
+        parent: parentIds[0] ?? null,
         ...(subsidiaryIds.length > 0 ? { subsidiaries: subsidiaryIds } : {}),
       } as never,
     })
-    linked += 1
+    if (parentIds.length > 0 || subsidiaryIds.length > 0) linked += 1
   }
 
   console.log(`\nmigrated out of game collections: ${migrated.length}`)
@@ -454,6 +617,15 @@ async function run(): Promise<void> {
   console.log(`\ncompanies: ${created} created, ${updated} updated`)
   console.log(`logos downloaded where the licence allowed it: ${logos}`)
   console.log(`corporate links written on ${linked} of them${harvestedAt ? ` (facts read ${harvestedAt})` : ''}`)
+  /*
+    The finding, not the failure. Each of these names more than one owner that
+    its own article does not date, so no page on this host says who owns them —
+    which is the honest answer until somebody reads the article and decides.
+  */
+  if (ambiguous.length > 0) {
+    console.log(`\n${ambiguous.length} name more than one current owner, so none is claimed:`)
+    for (const row of ambiguous) console.log(`  ${row}`)
+  }
   process.exit(0)
 }
 

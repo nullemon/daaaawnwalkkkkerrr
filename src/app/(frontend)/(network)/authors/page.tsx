@@ -46,7 +46,7 @@ export default async function AuthorsIndex() {
         title={copy(settings.authorsTitle, 'Contributors')}
         lede={copy(
           settings.authorsLede,
-          'Guides are signed; the database pages are not, because a compiled fact sheet has no author to claim. Where a byline is still a placeholder the page credits the editorial team instead of a name, and says so.',
+          'Guides are signed; the database pages are not, because a compiled fact sheet has no author to claim. A byline that is still a placeholder prints the name on the record and links to a profile that says plainly it is a placeholder — the flag comes off the day a real person is behind it.',
         )}
       />
       <div className="page body-main">

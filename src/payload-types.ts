@@ -2270,7 +2270,7 @@ export interface Author {
    */
   slug: string;
   /**
-   * Ticked means every page carrying this byline says so out loud. Untick it only when the name, biography and credentials below belong to a real person who agreed to them.
+   * Ticked puts a "this is a placeholder profile" notice on this contributor's own page. It does not change the byline printed on their guides. Untick it only when the name, biography and credentials below belong to a real person who agreed to them.
    */
   provisional?: boolean | null;
   /**
@@ -2457,9 +2457,9 @@ export interface Company {
    */
   slug: string;
   /**
-   * Both is normal — Capcom develops and publishes its own games. Drives how the company is described and which lists it appears in.
+   * Only where a source states it — leave empty otherwise, because the badge reads as a fact. Both is normal: Capcom develops and publishes its own games.
    */
-  role: ('developer' | 'publisher')[];
+  role?: ('developer' | 'publisher')[] | null;
   /**
    * Year, as a source states it. Leave empty rather than guessing.
    */

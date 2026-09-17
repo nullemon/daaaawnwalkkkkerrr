@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { isNotAnEntity, isNotAPlace } from './harvest'
+import { indefiniteArticle, isNotAnEntity, isNotAPlace } from './harvest'
 
 const entity = (title: string, url = '') => ({ title, url })
 
@@ -183,5 +183,47 @@ describe('events filed as places', () => {
     expect(isNotAPlace({ title: 'Research Sector', categories: ['Needs attention'] })).toBe(false)
     expect(isNotAPlace({ title: 'New York City', categories: [] })).toBe(false)
     expect(isNotAPlace({ title: 'Nowhere' })).toBe(false)
+  })
+})
+
+describe('the article in front of a harvested word', () => {
+  /*
+    These sentences are stored, not rendered — they go into `summary`, and from
+    there into the meta description, the search index and the JSON-LD. "a
+    engineer" and "a assassin" were live on real pages because the article was
+    a literal.
+  */
+  it('uses "an" before a vowel sound', () => {
+    for (const word of ['engineer', 'assassin', 'archer', 'officer', 'elite', 'item', 'axe']) {
+      expect(indefiniteArticle(word)).toBe('an')
+    }
+  })
+
+  it('uses "a" before a consonant sound', () => {
+    for (const word of ['knight', 'sword', 'ronin', 'boss', 'weapon']) {
+      expect(indefiniteArticle(word)).toBe('a')
+    }
+  })
+
+  it('goes by sound rather than by first letter', () => {
+    // The whole reason this is a reviewed list and not `/^[aeiou]/`.
+    expect(indefiniteArticle('unique weapon')).toBe('a')
+    expect(indefiniteArticle('unit')).toBe('a')
+    expect(indefiniteArticle('European noble')).toBe('a')
+    expect(indefiniteArticle('one-handed sword')).toBe('a')
+    expect(indefiniteArticle('hour-long ritual')).toBe('an')
+    expect(indefiniteArticle('heir')).toBe('an')
+  })
+
+  it('does not take "un-" for "uni-"', () => {
+    // "undead" and "unknown" are ordinary vowel sounds; only the "yoo" words
+    // are the exception, and an over-broad prefix would have taken both.
+    expect(indefiniteArticle('undead')).toBe('an')
+    expect(indefiniteArticle('unknown creature')).toBe('an')
+  })
+
+  it('falls back to "a" on something it cannot read', () => {
+    expect(indefiniteArticle('')).toBe('a')
+    expect(indefiniteArticle('   ')).toBe('a')
   })
 })

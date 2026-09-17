@@ -1,5 +1,5 @@
 import 'dotenv/config'
-import { isNotAnEntity } from '../lib/harvest'
+import { indefiniteArticle, isNotAnEntity } from '../lib/harvest'
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
@@ -177,20 +177,32 @@ const summaryFor = (entity: Entity, gameTitle: string): string => {
 
   const parts: string[] = []
 
+  /*
+    "an engineer", not "a engineer".
+
+    The article was hardcoded to "a" in front of a value read off somebody
+    else's infobox, so every vowel-initial occupation and type came out wrong —
+    "a engineer", "a assassin", "a elite". That is not a render bug: these
+    sentences are written into the `summary` column, so they are also in the
+    meta description, the search index and the JSON-LD, and a re-seed is the
+    only thing that repairs an existing row.
+  */
+  const an = (value: string) => `${indefiniteArticle(value)} ${value.toLowerCase()}`
+
   if (entity.collection === 'characters') {
     const occupation = get(/^(occupation|role|position)$/i)
     const faction = get(/^(faction|allegiance|affiliation|allegiances)$/i)
     parts.push(
-      `${entity.title} is ${occupation ? `a ${occupation.toLowerCase()}` : 'a character'} in ${gameTitle}.`,
+      `${entity.title} is ${occupation ? an(occupation) : 'a character'} in ${gameTitle}.`,
     )
     if (faction) parts.push(`Aligned with ${faction}.`)
   } else if (entity.collection === 'enemies') {
     const type = get(/^(type|class|species|category)$/i)
-    parts.push(`${entity.title}, ${type ? `a ${type.toLowerCase()}` : 'an enemy'} in ${gameTitle}.`)
+    parts.push(`${entity.title}, ${type ? an(type) : 'an enemy'} in ${gameTitle}.`)
   } else if (entity.collection === 'items') {
     const type = get(/^(type|weapon type|class|category)$/i)
     const maker = get(/^(manufacturer|maker|made by)$/i)
-    parts.push(`${entity.title}, ${type ? `a ${type.toLowerCase()}` : 'an item'} in ${gameTitle}.`)
+    parts.push(`${entity.title}, ${type ? an(type) : 'an item'} in ${gameTitle}.`)
     if (maker) parts.push(`Made by ${maker}.`)
   } else if (entity.collection === 'regions') {
     const region = get(/^(region|area|located|location)$/i)

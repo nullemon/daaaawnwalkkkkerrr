@@ -26,7 +26,15 @@ export async function PageHeader({
 }: {
   eyebrow?: string
   title: string
-  lede?: string | null
+  /*
+    A node, not a string.
+
+    The lede is composed prose and composed prose names records that have
+    pages, so a call site passes `<Linked>` here to get those names linked.
+    Widening rather than adding a second prop: every existing call passes a
+    string, and a string is a node.
+  */
+  lede?: ReactNode
   crumbs?: Crumb[]
   badges?: ReactNode
   icon?: IconName

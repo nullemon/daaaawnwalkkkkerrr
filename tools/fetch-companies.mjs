@@ -82,7 +82,30 @@ const get = async (params, attempt = 0) => {
       throw Object.assign(new Error(`HTTP ${response.status}`), { terminal: true })
     }
     if (!response.ok) throw new Error(`HTTP ${response.status}`)
-    return await response.json()
+    /*
+      The body, then the parse - because this API signals a rate limit with
+      `HTTP 200` and the plain-text line "You are making too many requests to
+      the API.". Read as JSON that is a parse error, which the catch below
+      turned into two quick retries and then `null`, which the caller reads as
+      "no article" and skips the company. A throttled sweep would have written
+      a harvest missing whichever companies it was refused, each one silently,
+      and the 90% shrink guard only notices if it happens to thirty of them.
+      A body that is not JSON is the endpoint refusing us, so it waits, and
+      then stops the run rather than writing a hole.
+    */
+    const body = await response.text()
+    try {
+      return JSON.parse(body)
+    } catch {
+      if (/too many requests|rate limit/i.test(body)) {
+        if (attempt < 4) {
+          await sleep(15000 * (attempt + 1))
+          return get(params, attempt + 1)
+        }
+        throw Object.assign(new Error('rate limited: the API is refusing us'), { terminal: true })
+      }
+      throw new Error(`unreadable body: ${body.slice(0, 60).replace(/\s+/g, ' ')}`)
+    }
   } catch (error) {
     if (error.terminal) throw error
     if (attempt < 2) {
@@ -128,7 +151,57 @@ const LIST_TEMPLATES =
   came out as nothing but a year.
 */
 const KEEP_ARGS =
-  /^(start date and age|start date|end date|currency|us\$|usd|inr|jpy|eur|gbp|cny|rmb|krw|aud|cad|chf|sek|try|brl|rub|val|number|formatnum|url|circa|c\.|approx|increase|decrease|euro|pound sterling|yen|yuan|renminbi|won|rupee|dollar|aud\$|nz\$|hk\$|€|£|¥|₹|₩|$|a\$|c\$|nt\$|r\$|₽|₺|kr|zl|zł)$/i
+  /^(start date and age|start date|end date|currency|us\$|usd|inr|jpy|eur|gbp|cny|rmb|krw|aud|cad|chf|sek|try|brl|rub|val|number|formatnum|url|circa|c\.|approx|increase|decrease|euro|pound sterling|yen|yuan|renminbi|won|rupee|dollar|aud\$|nz\$|hk\$|€|£|¥|₹|₩|\$|a\$|c\$|nt\$|r\$|₽|₺|kr|zl|zł)$/i
+
+/*
+  What each money template *means*, because the meaning is in its name.
+
+  Keeping only the arguments threw the currency away with the template: Sega's
+  `{{increase}} {{Yen}}247.7 billion` came out as "247.7 billion", which an
+  English reader reads as dollars and which is wrong by a factor of about a
+  hundred and fifty. Twenty-four of the fifty harvested revenues carried no
+  currency at all for this reason - a figure with no unit is not a smaller
+  fact than one with a unit, it is a different and wrong one.
+
+  So the symbol goes back in front of the figure. `{{Yen}}` takes no arguments
+  at all and is pure unit, which is the case that makes the point: without
+  this it resolved to nothing and left the number standing on its own.
+*/
+const CURRENCY = new Map(
+  Object.entries({
+    'us$': 'US$', usd: 'US$', $: 'US$', dollar: 'US$',
+    'a$': 'A$', aud: 'A$', 'aud$': 'A$',
+    'c$': 'C$', cad: 'C$',
+    'nz$': 'NZ$',
+    'hk$': 'HK$',
+    'nt$': 'NT$',
+    'r$': 'R$', brl: 'R$',
+    '€': '€', eur: '€', euro: '€',
+    '£': '£', gbp: '£', 'pound sterling': '£',
+    '¥': '¥', jpy: '¥', yen: '¥',
+    cny: 'CN¥', rmb: 'CN¥', renminbi: 'CN¥', yuan: 'CN¥',
+    '₩': '₩', krw: '₩', won: '₩',
+    '₹': '₹', inr: '₹', rupee: '₹',
+    '₽': '₽', rub: '₽',
+    '₺': '₺', try: '₺',
+    chf: 'CHF',
+    sek: 'kr', kr: 'kr',
+    zl: 'zł', 'zł': 'zł',
+  }),
+)
+
+/**
+ * Templates whose first argument is the fact and whose rest is apparatus.
+ *
+ * `{{ill|Haruki Satomi|ja|里見治紀}}` is a link to an article that does not
+ * exist in English yet. Unrecognised, it was dropped whole - which is how
+ * Sega's key people came out as "(chairman and CEO), Shuji Utsumi (president
+ * and COO), (vice president and COO)": two posts with the names gone, printed
+ * on the profile as though a source had stated a person called "(chairman and
+ * CEO)". The language code and the native spelling are not the fact; the name
+ * is.
+ */
+const FIRST_ARG = /^(ill|interlanguage link|ill-wd|link-interwiki|nihongo)$/i
 
 /**
  * Entities survive the wikitext because they are HTML, not wiki markup.
@@ -192,6 +265,7 @@ const resolveTemplates = (input) => {
         .filter((part) => !/^[a-z_]+\s*=/i.test(part))
 
       if (LIST_TEMPLATES.test(name)) return args.join(', ')
+      if (FIRST_ARG.test(name)) return args[0] ?? ''
       if (KEEP_ARGS.test(name)) {
         // {{start date and age|1983|6|11}} — the year is the fact.
         if (/^(start|end) date/i.test(name)) return args[0] ?? ''
@@ -200,7 +274,15 @@ const resolveTemplates = (input) => {
           otherwise render as "7 million link=yes", which is the kind of thing
           that reads as a typo on the page and as a parser bug nowhere.
         */
-        return args.filter((arg) => !/^[a-z_][a-z0-9_ -]*=/i.test(arg.trim())).join(' ')
+        const positional = args.filter((arg) => !/^[a-z_][a-z0-9_ -]*=/i.test(arg.trim()))
+        /*
+          The unit belongs to the template's name, so it is put back in front
+          of the figure rather than dropped with it. `{{Yen}}` carries no
+          arguments and nothing else: it is the unit, and without this line it
+          resolved to nothing at all.
+        */
+        const symbol = CURRENCY.get(name.toLowerCase())
+        return symbol ? `${symbol}${positional.join(' ')}` : positional.join(' ')
       }
       // Growth arrows, flag icons, citations and the rest carry nothing.
       return ' '
@@ -224,9 +306,27 @@ const resolveTemplates = (input) => {
 export const suspectValues = []
 const YEAR_ONLY = /^\(?\s*(c\.|circa)?\s*\d{4}(\s*[-–]\s*\d{2,4})?\s*\)?$/
 
+/**
+ * Any mark that says which money a figure is in.
+ *
+ * Shared with the seeder's own refusal, which is the backstop: this one makes
+ * a currency-less revenue a line of output, and the seeder drops it rather
+ * than printing a number whose unit nobody stated.
+ */
+export const CURRENCY_MARK =
+  /(US\$|A\$|C\$|NZ\$|HK\$|NT\$|R\$|CN¥|[$€£¥₹₩₽₺])|\b(USD|EUR|GBP|JPY|CNY|RMB|KRW|INR|AUD|CAD|CHF|SEK|NOK|DKK|PLN|RUB|TRY|BRL|TWD|HKD|SGD|NZD|dollars?|euros?|yen|yuan|renminbi|won|pounds?|rupees?|kronor|krona|z(ł|l)oty|reais)\b/i
+
 const note = (field, before, after) => {
   if (after === '' && before.trim() !== '') suspectValues.push({ field, before, after })
   else if (YEAR_ONLY.test(after) && !/^\d{4}$/.test(before.trim())) {
+    suspectValues.push({ field, before, after })
+  } else if (/^(revenue|net_income|operating_income|assets|equity)$/.test(field) && /\d/.test(after) && !CURRENCY_MARK.test(after)) {
+    /*
+      A figure with no unit. "247.7 billion" is not a smaller fact than
+      "¥247.7 billion", it is a different one, and the reader who supplies the
+      missing currency supplies dollars. Almost always a money template whose
+      name carried the unit and whose name this parser dropped.
+    */
     suspectValues.push({ field, before, after })
   }
   return after
@@ -237,7 +337,16 @@ export const clean = (value) =>
     resolveTemplates(
       String(value ?? '')
         .replace(/<ref[^>]*>[\s\S]*?<\/ref>/gi, '')
-        .replace(/<ref[^>]*\/>/gi, ''),
+        .replace(/<ref[^>]*\/>/gi, '')
+        /*
+          An editor's note is not a value. One company's industry read "Mass
+          media, Entertainment, <!--" because a comment opened inside the field
+          and closed outside it, so the field kept the opening marker and the
+          profile printed it. The unterminated form is matched on purpose: the
+          half that survives the infobox split is exactly the half that reaches
+          the page.
+        */
+        .replace(/<!--[\s\S]*?(-->|$)/g, ' '),
     ),
   )
     .replace(/\[\[[^\]|]*\|([^\]]*)\]\]/g, '$1')
@@ -254,6 +363,8 @@ export const clean = (value) =>
     // A surviving pipe is a list separator, not punctuation.
     .replace(/\s*\|\s*/g, ', ')
     .replace(/\s*,\s*,+/g, ', ')
+    /* `{{JPY|2.31trillion}}` is written without the space it renders with. */
+    .replace(/(\d)(trillion|billion|million|thousand)\b/gi, '$1 $2')
     .replace(/\(\s*\)/g, '')
     .replace(/\s{2,}/g, ' ')
     .replace(/^[,\s]+|[,\s]+$/g, '')

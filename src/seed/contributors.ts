@@ -11,13 +11,18 @@ import { slugify } from '../fields/shared'
  *
  *   pnpm seed:contributors
  *
- * Every one of these seeds with `provisional: true`, which is the whole point
- * of them. That flag keeps the profile out of the index, keeps the name out of
- * the Article structured data, and makes each byline credit the editorial team
- * rather than the person — so a roster of thirty-six is scaffolding for
- * whoever fills them in, not thirty-six claims about who wrote what. Replace
- * the details in the admin and untick the flag one at a time; that switch is
- * what publishes somebody as a real author.
+ * Every one of these seeds with `provisional: true`. That flag puts a
+ * placeholder notice on the contributor's own profile page and does nothing
+ * else — it does not hide the profile from search (`noindex` is that switch),
+ * does not change the Article structured data, and does not swap the byline
+ * for the editorial team. This comment asserted all three for as long as
+ * thirty-six placeholders carried 394 bylines with no page anywhere saying so;
+ * a behaviour that lives only in a comment is a behaviour the site does not
+ * have.
+ *
+ * So the profile is where the roster admits to being scaffolding. Replace the
+ * details in the admin and untick the flag one at a time; that switch is what
+ * publishes somebody as a real author.
  *
  * The roster lives in `raw/contributors.json` because `tools/make-avatars.mjs`
  * reads it too. It used to carry its own hardcoded copy of the names with a
@@ -45,10 +50,19 @@ const pick = (value: string, count: number): number => {
   return hash % count
 }
 
+/*
+  The bio a reader actually sees on the profile, so it has to describe what the
+  site does rather than what a comment once said it did. The previous wording
+  ended "until then the page credits the editorial team", which was printed on
+  36 live profiles and was not true of a single guide: the bylines print the
+  name. A placeholder saying the wrong thing about itself is worse than a
+  placeholder, because it reads as a deliberate disclosure.
+*/
 const bioFor = (name: string, role: string): string =>
   `${name} is a placeholder contributor covering ${role.toLowerCase()}. ` +
-  `The byline is held back until a real person's name, biography and credentials replace this one — ` +
-  `until then the page credits the editorial team.`
+  `The name, this biography and the role above are scaffolding for a real contributor who has ` +
+  `not been added yet, and nothing here is a claim about a person. Guides filed under the byline ` +
+  `are compiled and checked to the same editorial rules as every other page on the network.`
 
 async function run(): Promise<void> {
   const payload = await getPayload({ config })
@@ -128,7 +142,9 @@ async function run(): Promise<void> {
 
   console.log(`\ncontributors: ${created} created, ${updated} updated`)
   console.log(`guides given a byline: ${assigned}`)
-  console.log('All provisional — bylines credit the editorial team until each flag is unticked.')
+  console.log(
+    'All provisional — each profile page says so; the bylines print the name. Untick the flag once somebody real is behind it.',
+  )
   process.exit(0)
 }
 

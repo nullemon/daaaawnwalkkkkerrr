@@ -11,19 +11,29 @@ import { hub } from '@/lib/urls'
  * writing, and putting a name on it would claim authorship of the game's own
  * data. Guides are written, so guides are signed.
  *
- * ## Why a placeholder shows the team and not a name
+ * ## `provisional` does nothing here, and that is deliberate
  *
- * The six seeded authors are placeholders. They were already held out of the
- * Article structured data, on the grounds that claiming authorship to a
- * crawler is a stronger statement than printing a name — but they still
- * *printed* an invented person, which is the same claim made to the reader
- * instead of the machine.
+ * The contributor roster ships as placeholders with `provisional` ticked. This
+ * component does not read the flag: a byline prints the name on the record,
+ * placeholder or not.
  *
- * So a provisional author is shown as the editorial team that actually stands
- * behind the page. That is true, it is what organisational authorship is for,
- * and it costs nothing: the moment a real person with real credentials is in
- * the record and the flag comes off, their name appears here and in the
- * structured data together.
+ * That is a decision rather than an oversight, and it replaced an earlier one
+ * where the flag swapped the name for the editorial team, hid the profile from
+ * search and dropped the author out of the Article markup — three behaviours
+ * hanging off one editorial checkbox, so a real contributor stayed invisible
+ * until somebody remembered to untick it, and nobody remembers.
+ *
+ * The failure mode that leaves behind is a claim about a person who does not
+ * exist, printed on 394 guides. The answer is not to print a warning 394 times
+ * — the marker belongs where a reader who wants to know who wrote this
+ * actually goes, which is the profile the byline links to. `/authors/[slug]`
+ * carries it, unconditionally and in code rather than as editable copy, for
+ * the same reason `LegalGap` is in code: a warning the person being warned can
+ * edit away is not a warning. See `docs/COPY.md`.
+ *
+ * **Anything that claims this component reads `provisional` is stale.** Four
+ * separate comments did, for as long as 36 of 36 contributors were
+ * placeholders and not one page said so.
  *
  * No avatar placeholder either: a blank circle beside a name looks like a
  * broken image rather than a person.
@@ -38,21 +48,29 @@ export async function Byline({
   const settings = await getSiteSettings()
   const person = author && typeof author === 'object' ? (author as Author) : null
   /*
-    The person, whether or not the row is still a placeholder.
+    Three states, not two, and the middle one is the one that bites.
 
-    `provisional` used to swap the name for the editorial team here, hide the
-    profile from search and drop the author out of the Article markup — three
-    behaviours hanging off one editorial checkbox. On a site being filled in
-    that means a real contributor stays invisible until somebody remembers to
-    untick it, and nobody remembers. It marks a row as still-to-be-written and
-    nothing else now; hiding a profile has its own switch beside it.
+      person          the relationship resolved — print the name
+      author, no doc  an id came back unpopulated, i.e. the caller read at
+                      depth 0. There *is* an author; we just cannot name them,
+                      so crediting the team here would be a false statement
+                      about a page that is signed. Print the date alone.
+      no author       genuinely unsigned — this is what `bylineTeamFallback`
+                      is for.
+
+    The middle and last cases were collapsed into `const named = person`, which
+    made the team branch below unreachable and the Site settings field labelled
+    "Byline when nobody is named" inert: it saved, and changed nothing on any
+    page. A control that is present, reachable and useless is worse than no
+    control, because somebody will set it and believe it took.
   */
-  const named = person
-  const avatar = named?.avatar && typeof named.avatar === 'object' ? (named.avatar as Media) : null
+  const unsigned = !author
+  const avatar =
+    person?.avatar && typeof person.avatar === 'object' ? (person.avatar as Media) : null
   const checked = updated ? new Date(updated) : null
 
   /*
-    Who the page is credited to when no real person is.
+    Who the page is credited to when nobody is named.
 
     The editable line wins outright, including over `maintainer` — a field
     labelled "Byline when nobody is named" that quietly loses to another field
@@ -66,7 +84,7 @@ export async function Byline({
     { site: settings.siteName ?? 'editorial' },
   )
 
-  if (!person && !checked) return null
+  if (!author && !checked) return null
 
   const date = checked ? (
     <time className="byline-date" dateTime={checked.toISOString().slice(0, 10)}>
@@ -77,7 +95,7 @@ export async function Byline({
 
   return (
     <div className="byline">
-      {named ? (
+      {person ? (
         <>
           {avatar?.url ? (
             <img
@@ -92,13 +110,13 @@ export async function Byline({
           ) : null}
           <span className="byline-text">
             <span>
-              By <a href={hub(`/authors/${named.slug}`)}>{named.name}</a>
-              {named.role ? <span className="byline-role"> · {named.role}</span> : null}
+              By <a href={hub(`/authors/${person.slug}`)}>{person.name}</a>
+              {person.role ? <span className="byline-role"> · {person.role}</span> : null}
             </span>
             {date}
           </span>
         </>
-      ) : person ? (
+      ) : unsigned ? (
         <span className="byline-text">
           <span>
             Compiled and checked by {team}

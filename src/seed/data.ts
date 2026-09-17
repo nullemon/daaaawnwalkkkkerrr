@@ -774,32 +774,23 @@ export const endings = [
  * Placeholder contributor profiles.
  *
  * Bylines are load-bearing for a guide site — a reader deserves to know who is
- * answerable for a page — but an invented expert is worse than no byline at
- * all. These ship with  ticked, which makes every byline and
- * profile say so out loud, keeps the profile out of the index, and keeps the
- * name out of the Article markup. Replace them in the admin with people who
- * actually wrote the pages, then untick it. Same switch, same reasoning as
- * .
- *
- * The roles are split by what the site actually covers, so the replacements
- * have an obvious shape to fill rather than three interchangeable names.
- */
-/**
- * Placeholder contributor profiles.
- *
- * Bylines are load-bearing for a guide site — a reader deserves to know who is
  * answerable for a page, and search guidance asks the same question. But an
  * invented expert is worse than no byline: it is a claim about a person who
  * does not exist, made to both readers and crawlers.
  *
- * So these ship with `provisional` ticked, which makes every byline and profile
- * say so out loud, keeps the profile page out of the index, and keeps the name
- * out of the Article markup. Replace them in the admin with the people who
- * actually wrote the pages and untick it. Same switch and same reasoning as
- * `legalProvisional` above.
+ * So these ship with `provisional` ticked. **That flag marks the row and shows
+ * on one page: the contributor's own profile.** It does not change the byline
+ * on a guide, does not hide the profile from search — `noindex` is its own
+ * switch — and does not alter the Article structured data, all three of which
+ * this comment used to claim and none of which was ever true. Thirty-six
+ * placeholders carried 394 bylines with nothing anywhere saying so, precisely
+ * because the claim was written here instead of in a renderer.
  *
- * The three roles split by what the site actually covers, so the replacements
- * have an obvious shape to fill rather than three interchangeable names.
+ * Replace them in the admin with the people who actually wrote the pages and
+ * untick it; the profile notice goes with the flag.
+ *
+ * The roles split by what the site actually covers, so the replacements have an
+ * obvious shape to fill rather than interchangeable names.
  */
 export const authors = [
   {
@@ -831,10 +822,12 @@ export const authors = [
     one byline per seven games reads as one person pretending to be a staff,
     which is the opposite of what a byline is for.
 
-    All six are `provisional`, which keeps them out of Article structured data
-    and marks their profiles noindex until somebody real is behind the name.
-    The roles describe beats that genuinely exist across these six games
-    rather than titles invented to sound impressive.
+    All six are `provisional`, which puts a placeholder notice on each of their
+    profile pages and nothing else. It does not keep them out of the Article
+    structured data and does not mark the profiles noindex — this comment
+    claimed both for months and neither was ever wired to anything. The roles
+    describe beats that genuinely exist across these six games rather than
+    titles invented to sound impressive.
   */
   {
     name: 'Ines Valcourt',

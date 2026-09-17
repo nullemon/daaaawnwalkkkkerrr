@@ -162,6 +162,32 @@ const findAll = cache(
 )
 
 /**
+ * What a collection's display field is actually called, where it is not
+ * `title`.
+ *
+ * `sort: 'title'` was the flat default for every collection. Most of the
+ * thirteen game-scoped ones do have a `title`, so it worked — but `authors`
+ * has `name`, and sorting on a column that does not exist is not an error in
+ * Payload: it falls through to whatever order the adapter feels like, which is
+ * insertion order in practice. Three of the four `getAll('authors')` call
+ * sites got that, and the contributor list on a wiki's About page came out in
+ * seed order while the contributors index right beside it — the one call site
+ * that passed `sort: 'name'` by hand — came out alphabetical. Nothing errors,
+ * nothing logs, and the only symptom is two lists of the same people in two
+ * different orders.
+ *
+ * Keyed by slug rather than guessed from `useAsTitle`, which is admin
+ * presentation and not a promise about a sortable column.
+ */
+const SORT_FIELD: Partial<Record<CollectionSlug, string>> = {
+  authors: 'name',
+  companies: 'name',
+  people: 'name',
+  users: 'name',
+  media: 'filename',
+}
+
+/**
  * Fetch a whole collection. Sizes here are small enough to take in one page.
  *
  * Deliberately not itself wrapped in `cache`: the generic signature *is* the
@@ -175,9 +201,66 @@ export const getAll = async <C extends CollectionSlug>(
     collection,
     options.game,
     options.depth ?? 1,
-    options.sort ?? 'title',
+    options.sort ?? SORT_FIELD[collection] ?? 'title',
     options.limit ?? 1000,
   ) as Promise<DocOf<C>[]>
+
+/** A record reduced to what a name index needs: what it is called, and where it lives. */
+export type NameRow = { id: number | string; slug: string; name: string }
+
+const findNames = cache(
+  async (
+    collection: CollectionSlug,
+    game: string | undefined,
+    field: string,
+  ): Promise<NameRow[]> => {
+    assertScoped(collection, game)
+    const payload = await client()
+    const result = await payload.find({
+      collection,
+      depth: 0,
+      limit: 2000,
+      pagination: false,
+      /*
+        `select`, and it is the whole reason this is not `getAll`.
+
+        The autolink index wants the titles of thirteen collections on every one
+        of ~3,000 prerendered pages. `getAll` returns every column of every row,
+        rich text bodies and joined sub-tables included — which is exactly what
+        the navigation was doing to arrive at an integer, and what made SQLite
+        return SQLITE_BUSY and fail the build at around page six hundred. Three
+        columns is a different query.
+      */
+      select: { slug: true, [field]: true } as never,
+      ...(game ? { where: await scopeFor(game) } : {}),
+    })
+    return (result.docs as Record<string, unknown>[]).flatMap((doc) => {
+      const name = doc[field]
+      const slug = doc.slug
+      // A row with no name or no slug cannot be linked to or matched against.
+      // Dropped rather than rendered as an empty link with a broken href.
+      if (typeof name !== 'string' || typeof slug !== 'string') return []
+      return [{ id: doc.id as number | string, slug, name }]
+    })
+  },
+)
+
+/**
+ * Every record in a collection, as `{ id, slug, name }` and nothing else.
+ *
+ * Same scope guard as `getAll` — a game-scoped collection will not compile
+ * without a game — and the same reason for having it here: the filter lives in
+ * this file and nowhere else, so a lean read cannot be the one place somebody
+ * forgot it.
+ *
+ * `field` is the column the name is in, because `authors`, `companies` and
+ * `people` call it `name` while the thirteen game-scoped collections call it
+ * `title`.
+ */
+export const getNames = async <C extends CollectionSlug>(
+  collection: C,
+  options: { field?: 'name' | 'title' } & Scope<C>,
+): Promise<NameRow[]> => findNames(collection, options.game, options.field ?? 'title')
 
 const countIn = cache(
   async (collection: CollectionSlug, game: string | undefined): Promise<number> => {

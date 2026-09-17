@@ -168,7 +168,7 @@ async function run(): Promise<void> {
     add(
       'note',
       'authors',
-      `${provisional.length} of ${authors.totalDocs} are placeholders — their profiles and bylines are live and indexed; the flag only marks a row as still to be written`,
+      `${provisional.length} of ${authors.totalDocs} are placeholders — each profile page carries a placeholder notice; the bylines on their guides print the name as written, and the profiles stay indexed unless "noindex" is ticked separately`,
     )
   }
   const noAvatar = authors.docs.filter((doc) => !(doc as { avatar?: unknown }).avatar).length

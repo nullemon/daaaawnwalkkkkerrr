@@ -355,3 +355,37 @@ export const isNotAnEntity = (entity: HarvestedEntity, game = ''): boolean => {
   if (WORK_DISAMBIGUATOR.test(entity.wikiTitle ?? '')) return true
   return isNumberedSequel(entity.title, game)
 }
+
+/**
+ * Words that start with a vowel letter but a consonant sound, and the reverse.
+ *
+ * Kept as a short reviewed list rather than a cleverer rule, for the same
+ * reason `REVIEWED_NOT_ENTITIES` is a list: English spelling does not predict
+ * English sound, and a rule that tried to would be wrong on a different set of
+ * words with nothing to show which. These are the ones that actually turn up in
+ * an occupation or a creature type on a game wiki.
+ */
+const SOUNDS_CONSONANT =
+  /^(?:unit|uniq|unif|unic|univers|usab|usag|used|usef|user|usu|util|utop|euro|eulog|eupho|once|one\b|one-)/i
+const SOUNDS_VOWEL = /^(?:hour|honest|honou?r|heir)/i
+
+/**
+ * "a" or "an" for a word read off a wiki infobox.
+ *
+ * The summaries these compose are stored on the record, so a wrong article is
+ * not a render bug somebody fixes in a deploy — it is baked into the `summary`
+ * column of every row the pass wrote, in the meta description, and in the
+ * search index, and it takes a re-seed to repair. `a engineer` and `a assassin`
+ * shipped that way on live pages.
+ *
+ * A value that is empty or does not start with a letter gets "a", because the
+ * caller is about to print something odd either way and guessing "an" in front
+ * of it does not help.
+ */
+export const indefiniteArticle = (word: string): 'a' | 'an' => {
+  const first = word.trim()
+  if (!first) return 'a'
+  if (SOUNDS_VOWEL.test(first)) return 'an'
+  if (SOUNDS_CONSONANT.test(first)) return 'a'
+  return /^[aeiou]/i.test(first) ? 'an' : 'a'
+}

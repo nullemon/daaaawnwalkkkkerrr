@@ -10,10 +10,27 @@ import { slugField, publicRead } from '../fields/shared'
  * guidance exists to catch, and it misleads the reader besides.
  *
  * So this collection ships the same way the legal details do. Seeded authors
- * are placeholders with `provisional` ticked, which makes every byline and
- * profile carry a visible notice, and the switch is what an editor turns off
- * once a real person's name and biography are in the record. See
+ * are placeholders with `provisional` ticked, and the switch is what an editor
+ * turns off once a real person's name and biography are in the record. See
  * `docs/DATA.md` and the `legalProvisional` pattern it mirrors.
+ *
+ * **What the flag actually renders, and where.** One page: the contributor's
+ * own profile at `/authors/<slug>`, which prints a placeholder notice while it
+ * is ticked. It does not touch the byline on a guide, the Article structured
+ * data, or indexing — `noindex` below is the switch for that last one.
+ *
+ * That is narrower than it sounds and it is deliberate. The owner asked for a
+ * roster of placeholders as scaffolding; stamping a warning across all 394
+ * guide bylines would bury the guides under it. The profile is where a reader
+ * who wants to know who wrote a page goes, so the profile is where the answer
+ * "nobody yet" belongs.
+ *
+ * The failure mode worth naming is the one this comment was part of: for a
+ * long time four separate comments here, in `Byline.tsx` and in `src/seed`
+ * said the flag made "every byline and profile carry a visible notice" while
+ * nothing read it anywhere. A behaviour documented in a comment and
+ * implemented in no renderer is a behaviour the site does not have, and
+ * `pnpm check:launch` reporting it was the only thing telling the truth.
  */
 export const Authors: CollectionConfig = {
   slug: 'authors',
@@ -37,7 +54,7 @@ export const Authors: CollectionConfig = {
       admin: {
         position: 'sidebar',
         description:
-          'Ticked means every page carrying this byline says so out loud. Untick it only when the name, biography and credentials below belong to a real person who agreed to them.',
+          'Ticked puts a "this is a placeholder profile" notice on this contributor\'s own page. It does not change the byline printed on their guides. Untick it only when the name, biography and credentials below belong to a real person who agreed to them.',
       },
     },
     {

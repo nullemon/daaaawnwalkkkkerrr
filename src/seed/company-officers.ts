@@ -226,6 +226,59 @@ export const looksLikeName = (value: string): boolean => {
 */
 const TEMPLATES = new Set(['ubl', 'unbulleted list', 'plainlist', 'plain list', 'hlist', 'flatlist'])
 
+/*
+  Words that are a post rather than a person.
+
+  Only used to answer "could this fragment be somebody's name at all" — never
+  to read a name out of one. A fragment whose every word is on this list names
+  a job with nobody in it.
+*/
+const POST_WORDS = new Set([
+  'ceo', 'cfo', 'coo', 'cto', 'cio', 'cco', 'cmo', 'chief', 'officer', 'executive',
+  'president', 'vice', 'chairman', 'chairwoman', 'chairperson', 'chair', 'chairmen',
+  'director', 'managing', 'manager', 'management', 'general', 'head', 'lead',
+  'founder', 'founders', 'cofounder', 'co-founder', 'owner', 'partner', 'principal',
+  'developer', 'designer', 'producer', 'engineer', 'programmer', 'artist', 'writer',
+  'board', 'division', 'group', 'emeritus', 'emeretus', 'interim', 'acting', 'senior',
+  'and', 'of', 'the', '&', 'de', 'y',
+])
+
+/**
+ * Could this fragment name a person at all?
+ *
+ * The one rule two files have to agree on. `seed:company-officers` drops a
+ * fragment it cannot read into a record; `src/lib/officers.ts` prints every
+ * fragment on the profile, on the stated grounds that "a name we cannot link
+ * is still a name the source stated". Both decisions were written down and
+ * they contradicted: twenty-two profiles printed things that are not people,
+ * so `/cygames` listed `ubl`, `/sega` listed `(chairman and CEO)`, and
+ * `/ageod` listed `CEO` and `lead developer` under the heading "Who runs it".
+ *
+ * The reasoning holds for `(chairman)Yuji Asako` — a real name the splitter
+ * could not cleanly separate from its post, and dropping it would be this page
+ * editing its own source. It does not hold for `ubl`, which is a MediaWiki
+ * template's name, or for a bare job title, which names nobody.
+ *
+ * So the line is drawn at what is left when the brackets come off: a template
+ * name is not a person, a fragment with nothing outside its brackets is not a
+ * person, a fragment with no capital letter in it is not a name, and a
+ * fragment made only of post words is a job rather than whoever holds it.
+ * Everything else prints, name or not.
+ */
+export const couldNameAPerson = (fragment: string): boolean => {
+  const residue = fragment
+    .replace(/\([^()]*\)/g, ' ')
+    .replace(/\[[^\][]*\]/g, ' ')
+    .replace(/[.,;:]/g, ' ')
+    .trim()
+  if (!residue) return false
+  if (TEMPLATES.has(residue.toLowerCase())) return false
+  /* A name is capitalised in every language this harvest reads. */
+  if (!/\p{Lu}/u.test(residue)) return false
+  const words = residue.split(/\s+/).filter(Boolean)
+  return !words.every((word) => POST_WORDS.has(word.toLowerCase()))
+}
+
 export type Officer = { name: string; role: string }
 
 /**
@@ -412,7 +465,14 @@ async function run(): Promise<void> {
         : BRACKETS_ONLY.test(fragment)
           ? 'a post with nobody holding it'
           : 'not a name this pass will publish'
-      dropped.push(`${fragment}  — ${company.name}  (${why})`)
+      /*
+        Whether the profile still shows it, which is the other half of the
+        decision and used to be invisible from here. A fragment that could name
+        somebody is printed unlinked on the company page; one that could not is
+        gone from both.
+      */
+      const shown = couldNameAPerson(fragment) ? ', still printed unlinked on the profile' : ''
+      dropped.push(`${fragment}  — ${company.name}  (${why}${shown})`)
     }
   }
 

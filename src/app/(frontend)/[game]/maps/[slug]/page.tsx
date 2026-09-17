@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { SectionNeighbours } from '@/components/SectionNeighbours'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
+import { Linked, LinkedRichText } from '@/components/Linked'
+import type { LinkScope } from '@/lib/link-index'
 import { Confidence } from '@/components/Badges'
 import { GameMap, type MapCategory, type MapMarker } from '@/components/GameMap'
 import { Sources } from '@/components/Sources'
@@ -44,6 +46,15 @@ export default async function MapPage({ params }: Props) {
   const { game, slug } = await params
   const doc = await getBySlug('maps', slug, { game, depth: 1 })
   if (!doc) notFound()
+
+  /*
+    Where this page is, for the inline linker.
+
+    `self` is the whole reason it is passed: composed prose names the record it
+    is about in its own first sentence, and a link from a page to itself reads
+    as a bug. See `src/components/Linked.tsx`.
+  */
+  const scope: LinkScope = { host: 'wiki', game, self: `maps:${doc.id}` }
 
   const image = typeof doc.image === 'object' ? doc.image : null
   if (!image?.url) notFound()

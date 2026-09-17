@@ -58,7 +58,19 @@ const arg = (flag, fallback = null) => {
   return at > -1 ? process.argv[at + 1] : fallback
 }
 const LIMIT = Number(arg('--limit', '0')) || 0
-const ONLY = arg('--only')
+/*
+  One slug, or a comma-separated list of them.
+
+  A parse fix does not reach the companies already in the manifest - the
+  merge is by design a merge - so re-reading exactly the sixty-three whose
+  tables the old reader shifted is the repair, and re-reading all three
+  hundred to do it is forty minutes of requests Wikipedia did not need to
+  serve.
+*/
+const ONLY = (arg('--only') ?? '')
+  .split(',')
+  .map((slug) => slug.trim())
+  .filter(Boolean)
 const REFRESH = process.argv.includes('--refresh')
 
 /**
@@ -557,6 +569,71 @@ const DEVELOPER_COLUMN = /^(developers?|developed by)$/
 const PUBLISHER_COLUMN = /^(publishers?|published by)$/
 
 /**
+ * A table's cells, with the ones a rowspan carries down put back.
+ *
+ * This is the whole of the Asobo Studio bug. Its table is Year / Game /
+ * Publisher / Platform, and a year covering two releases is written once with
+ * `rowspan="2"` - so the second row of the pair arrives with three cells, not
+ * four. Read by position that shifts every column left by one: the *publisher*
+ * lands in the title column, and `/asobo-studio` grew rows for Ubisoft, THQ,
+ * Microsoft Studios, Disney Interactive Studios and HIP Interactive, each
+ * marked "Developed", while the real game on that row was thrown away. The
+ * count said 27 titles and 22 of them were titles.
+ *
+ * The tell was there in the data and nothing was reading it: every one of
+ * those rows had a null year and an empty platform list, because the year cell
+ * held a game's name and the platform cell did not exist. Four hundred and
+ * thirty-two rows across sixty-three companies carry that signature.
+ *
+ * `colspan` is handled for the same reason and one other: a cell spanning the
+ * whole width is a section divider - "2010s" - not a game, and a row whose
+ * only cell spans everything is refused by the caller.
+ */
+const gridOf = (rowsHtml, columns) => {
+  /** column index -> { text, rows left to carry } */
+  const carried = new Map()
+  return rowsHtml.map((rowHtml) => {
+    const own = [...rowHtml.matchAll(/<(th|td)([^>]*)>([\s\S]*?)<\/\1>/g)].map((match) => ({
+      attrs: match[2],
+      text: text(match[3]),
+    }))
+    const line = new Array(columns).fill(null)
+    /*
+      Whatever a previous row is still spanning holds its own column, and one
+      row of that span is spent here. `rows` counts the rows still to fill, so
+      a cell declared with rowspan="2" enters the map owing one.
+    */
+    for (const [at, cell] of [...carried]) {
+      if (at < columns) line[at] = cell.text
+      cell.rows -= 1
+      if (cell.rows <= 0) carried.delete(at)
+    }
+
+    let next = 0
+    let spanned = 1
+    for (let at = 0; at < columns && next < own.length; at += 1) {
+      if (line[at] !== null) continue
+      const cell = own[next]
+      next += 1
+      const rows = Number(cell.attrs.match(/rowspan\s*=\s*"?(\d+)/i)?.[1] ?? 1)
+      const cols = Math.min(Number(cell.attrs.match(/colspan\s*=\s*"?(\d+)/i)?.[1] ?? 1), columns - at)
+      if (cols > spanned) spanned = cols
+      for (let step = 0; step < cols; step += 1) line[at + step] = cell.text
+      if (rows > 1) carried.set(at, { text: cell.text, rows: rows - 1 })
+      at += cols - 1
+    }
+
+    return {
+      cells: line.map((cell) => cell ?? ''),
+      own: own.length,
+      /* Columns that actually received a cell, its own or carried from above. */
+      placed: line.filter((cell) => cell !== null).length,
+      spanned,
+    }
+  })
+}
+
+/**
  * One games table, or nothing.
  *
  * The headers are the whole guard. Capcom's article carries a wikitable in its
@@ -594,12 +671,29 @@ const parseTable = (tableHtml, company, baseRole) => {
   const shortName = shorten(company).toLowerCase()
 
   const out = []
-  for (const row of rows.slice(1)) {
-    // `th` and `td` in document order: a sortable table with plainrowheaders
-    // puts the first column in a `th`, so reading only `td`s shifts every
-    // column by one and files the year as the title.
-    const cells = [...row.matchAll(/<(th|td)[^>]*>([\s\S]*?)<\/\1>/g)].map((match) => text(match[2]))
-    if (cells.length < headerCells.length - 1) continue
+  /*
+    `th` and `td` in document order, with rowspans carried down: a sortable
+    table with plainrowheaders puts the first column in a `th`, so reading only
+    `td`s shifts every column by one and files the year as the title - and a
+    row under a spanned cell is short by exactly one cell, which shifts them
+    the other way. See `gridOf`.
+  */
+  for (const row of gridOf(rows.slice(1), headerCells.length)) {
+    const cells = row.cells
+    /*
+      Nothing of its own, or one cell stretched across the table. Both are
+      furniture rather than data: a decade heading inside the list, or a row
+      the carry has already filled from above with no new fact in it.
+    */
+    if (row.own === 0) continue
+    if (row.own === 1 && row.spanned > 1) continue
+    /*
+      The original guard, now counting columns filled rather than cells
+      written: a row under a rowspan is short in the markup and complete in the
+      table, and it was the guard's job to keep out the malformed ones, not
+      those.
+    */
+    if (row.placed < headerCells.length - 1) continue
 
     const title = (cells[titleAt] ?? '').replace(/\[\d+\]/g, '').trim()
     if (!title || title.length > 120) continue
@@ -1022,7 +1116,14 @@ const run = async () => {
   manifest.companies = manifest.companies ?? {}
 
   let entries = source.companies
-  if (ONLY) entries = entries.filter((entry) => slugify(plainName(entry.wikipediaTitle)) === ONLY)
+  if (ONLY.length > 0) {
+    entries = entries.filter((entry) => ONLY.includes(slugify(plainName(entry.wikipediaTitle))))
+    const found = new Set(entries.map((entry) => slugify(plainName(entry.wikipediaTitle))))
+    /* Named but not in companies.json — a typo in the list, said out loud
+       rather than quietly read as "nothing to do". */
+    const missing = ONLY.filter((slug) => !found.has(slug))
+    if (missing.length > 0) console.log(`not in companies.json: ${missing.join(', ')}`)
+  }
   if (LIMIT) entries = entries.slice(0, LIMIT)
 
   const counters = { rejected: [] }

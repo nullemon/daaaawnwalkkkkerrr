@@ -8,7 +8,9 @@ import { FactPanel } from '@/components/FactPanel'
 import { breadcrumbs, organization } from '@/lib/schema'
 import { JsonLd } from '@/components/JsonLd'
 import { Icon } from '@/components/Icon'
-import { RichText } from '@/components/RichText'
+import { Linked, LinkedRichText } from '@/components/Linked'
+import type { LinkScope } from '@/lib/link-index'
+import { Attribution } from '@/components/Attribution'
 import { Sources } from '@/components/Sources'
 import { client, gameUrl, rel, relMany } from '@/lib/payload'
 import { copy, hasRichText } from '@/lib/copy'
@@ -86,6 +88,15 @@ export default async function CompanyPage({ params }: Props) {
   const { slug } = await params
   const [company, site] = await Promise.all([find(slug), getCompaniesSite()])
   if (!company) notFound()
+
+  /*
+    Where this page is, for the inline linker.
+
+    `self` is the whole reason it is passed: composed prose names the record it
+    is about in its own first sentence, and a link from a page to itself reads
+    as a bug. See `src/components/Linked.tsx`.
+  */
+  const scope: LinkScope = { host: 'companies', self: `companies:${company.id}` }
   const profile = site.profile ?? {}
   const built = COMPANIES_BUILT_IN.profile
   /* Read once rather than inside the JSX, because it is tested for emptiness
@@ -168,8 +179,16 @@ export default async function CompanyPage({ params }: Props) {
     many people work there, because on a studio that no longer exists those rows
     are all in the past tense and this is the row that says so.
   */
+  const roles = (company.role ?? []).map((r) => COMPANY_ROLE_LABEL[r] ?? r)
   const facts = [
-    { label: 'Role', value: (company.role ?? []).map((r) => COMPANY_ROLE_LABEL[r] ?? r).join(', ') },
+    /*
+      Only where a source states one. The field used to default to
+      ['developer'], so this row printed "Developer" on two hundred and
+      ninety-four companies that nothing had ever called one — Paramount
+      Pictures among them. An empty role is a row that is not here, not a row
+      reading "Unknown".
+    */
+    ...(roles.length > 0 ? [{ label: 'Role', value: roles.join(', ') }] : []),
     ...(company.founded ? [{ label: 'Founded', value: company.founded }] : []),
     ...(company.founders ? [{ label: 'Founders', value: company.founders }] : []),
     ...(defunct ? [{ label: 'Closed', value: defunct }] : []),
@@ -212,7 +231,7 @@ export default async function CompanyPage({ params }: Props) {
         crumbs={[{ label: 'Companies', href: '/' }, { label: company.name }]}
         icon="person"
         title={company.name}
-        lede={company.summary}
+        lede={<Linked text={company.summary} scope={scope} />}
         badges={
           <>
             <Confidence level={company.confidence} />
@@ -262,7 +281,7 @@ export default async function CompanyPage({ params }: Props) {
                 renders as a blank measure-width gap above the catalogue. */}
             {hasRichText(company.body) ? (
               <div className="prose">
-                <RichText data={company.body} />
+                <LinkedRichText data={company.body} scope={scope} />
               </div>
             ) : null}
 
@@ -322,7 +341,14 @@ export default async function CompanyPage({ params }: Props) {
               )}
             </section>
 
-            {company.keyPeople ? (
+            {/*
+              The list, not the field. `keyPeople` can be a string that names
+              nobody — an infobox template that leaked into the value, or a post
+              with the name lost off the front — and rendering on the field
+              alone gave those companies a "Who runs it" heading above an empty
+              list. The section is worth having only when something survived.
+            */}
+            {officerList.length > 0 ? (
               <section className="section">
                 <div className="section-head">
                   <h2>{copy(profile.peopleHeading, built.peopleHeading)}</h2>
@@ -400,8 +426,27 @@ export default async function CompanyPage({ params }: Props) {
             ) : null}
 
             {/* The hub's contact page, not `/corrections`: that route is a
-                wiki's and 404s on this host. See the prop's note in Sources. */}
-            <Sources sources={company.sources} correctionsHref={hub('/contact')} />
+                wiki's and 404s on this host. See the prop's note in Sources.
+
+                `cite`, because the companies index promises every reader that
+                each figure here comes from the company's own article "with the
+                date it was read" — and with `showSources` off no profile
+                showed either. See the prop's note for why this is a scoped
+                exception rather than a way around the owner's switch. */}
+            <Sources sources={company.sources} correctionsHref={hub('/contact')} cite />
+            {/*
+              The licence line, on the same footing as every record page on the
+              network — twenty-odd `[game]` routes render it and these two hosts
+              did not, which is how a host built almost entirely out of
+              Wikipedia came to be the one place with no attribution component
+              on the page at all.
+
+              It renders nothing while the owner keeps `attributionStyle` at
+              "hidden", exactly as on a wiki. That is the point: the component
+              is the thing that must be present, so the switch governs all
+              1,900 pages instead of governing 1,700 and silently missing 890.
+            */}
+            <Attribution sources={company.sources} />
           </div>
 
           <div className="stack">

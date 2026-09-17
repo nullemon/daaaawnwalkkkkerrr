@@ -5,7 +5,8 @@ import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
 import { Badge, Confidence, PhaseBadge } from '@/components/Badges'
 import { Facts } from '@/components/Facts'
-import { RichText } from '@/components/RichText'
+import { Linked, LinkedRichText } from '@/components/Linked'
+import type { LinkScope } from '@/lib/link-index'
 import { Sources } from '@/components/Sources'
 import { Attribution } from '@/components/Attribution'
 import { CommentThread } from '@/components/CommentThread'
@@ -45,6 +46,15 @@ export default async function PerkPage({ params }: Props) {
   const { game, slug } = await params
   const doc = await getBySlug('perks', slug, { game, depth: 2 })
   if (!doc) notFound()
+
+  /*
+    Where this page is, for the inline linker.
+
+    `self` is the whole reason it is passed: composed prose names the record it
+    is about in its own first sentence, and a link from a page to itself reads
+    as a bug. See `src/components/Linked.tsx`.
+  */
+  const scope: LinkScope = { host: 'wiki', game, self: `perks:${doc.id}` }
   const tree = rel<SkillTree>(doc.tree)
 
   const siblings = tree
@@ -80,7 +90,7 @@ export default async function PerkPage({ params }: Props) {
         eyebrow={doc.isUltimate ? 'Ultimate perk' : 'Perk'}
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Perks', href: '/perks' }, { label: doc.title }]}
         title={doc.title}
-        lede={doc.summary}
+        lede={<Linked text={doc.summary} scope={scope} />}
         badges={
           <>
             {doc.isUltimate ? <Badge>Ultimate</Badge> : null}
@@ -115,7 +125,7 @@ export default async function PerkPage({ params }: Props) {
           ]}
         />
 
-        <RichText data={doc.body} />
+        <LinkedRichText data={doc.body} scope={scope} />
 
         {doc.isUltimate && rivalUltimates.length > 0 ? (
           <div className="callout" data-tone="risk">

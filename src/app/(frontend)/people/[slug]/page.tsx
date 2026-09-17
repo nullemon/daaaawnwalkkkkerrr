@@ -6,7 +6,9 @@ import { breadcrumbs, person as personSchema } from '@/lib/schema'
 import { PEOPLE_ORIGIN } from '@/lib/urls'
 import { Confidence } from '@/components/Badges'
 import { PersonProfile } from '@/components/PersonProfile'
-import { RichText } from '@/components/RichText'
+import { Linked, LinkedRichText } from '@/components/Linked'
+import type { LinkScope } from '@/lib/link-index'
+import { Attribution } from '@/components/Attribution'
 import { Sources } from '@/components/Sources'
 import { client, gameUrl } from '@/lib/payload'
 import { copy } from '@/lib/copy'
@@ -71,6 +73,15 @@ export default async function PersonPage({ params }: Props) {
   const { slug } = await params
   const [person, site] = await Promise.all([find(slug), getPeopleSite()])
   if (!person) notFound()
+
+  /*
+    Where this page is, for the inline linker.
+
+    `self` is the whole reason it is passed: composed prose names the record it
+    is about in its own first sentence, and a link from a page to itself reads
+    as a bug. See `src/components/Linked.tsx`.
+  */
+  const scope: LinkScope = { host: 'people', self: `people:${person.id}` }
   const profile = site.profile ?? {}
 
   const games = ((person.games ?? []) as unknown[]).map(asGame).filter(Boolean) as Game[]
@@ -157,7 +168,7 @@ export default async function PersonPage({ params }: Props) {
         crumbs={[{ label: 'People', href: '/' }, { label: person.name }]}
         icon="person"
         title={person.name}
-        lede={person.summary}
+        lede={<Linked text={person.summary} scope={scope} />}
         badges={<Confidence level={person.confidence} />}
       />
       <div className="page body-main">
@@ -165,7 +176,7 @@ export default async function PersonPage({ params }: Props) {
           <div className="stack">
             {person.body ? (
               <div className="prose">
-                <RichText data={person.body} />
+                <LinkedRichText data={person.body} scope={scope} />
               </div>
             ) : (
               /* "Nothing has been published about this person" and "somebody
@@ -271,8 +282,25 @@ export default async function PersonPage({ params }: Props) {
             ) : null}
 
             {/* The hub's contact page, not `/corrections`: that route is a
-                wiki's and 404s on this host. See the prop's note in Sources. */}
-            <Sources sources={person.sources} correctionsHref={hub('/contact')} />
+                wiki's and 404s on this host. See the prop's note in Sources.
+
+                `cite`, because this is a page about a living person. A profile
+                here can carry a date of birth and a birthplace, and with
+                `showSources` off it carried both with nothing visible saying
+                where either came from — an unsourced claim about a named human
+                being, which is the failure the whole record schema exists to
+                prevent. A release date can wait for a switch; this cannot. */}
+            <Sources sources={person.sources} correctionsHref={hub('/contact')} cite />
+            {/*
+              The licence line, on the same footing as every record page on the
+              network. Twenty-odd `[game]` routes render it and this host did
+              not — and this host is built almost entirely out of Wikipedia,
+              which is CC BY-SA and asks for attribution as a condition of
+              reuse. It renders nothing while the owner keeps
+              `attributionStyle` at "hidden", exactly as on a wiki; what
+              matters is that the switch now reaches these pages at all.
+            */}
+            <Attribution sources={person.sources} />
           </div>
 
           <div className="stack">

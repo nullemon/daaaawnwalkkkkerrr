@@ -2883,3 +2883,50 @@ a.catalogue-title:hover { color: var(--accent-hot); text-decoration: none; }
 /* Read-only: stars and numbers on one line, because there is nothing to do
    here and nothing that needs its own row. Wraps rather than overflows. */
 .rating-static { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 4px 11px; }
+
+/* --- Entity links ---------------------------------------------------------
+   A link from composed prose to the record it names — a person, a studio, a
+   game, or a thing in the game. It has to read as a different kind of link
+   from an ordinary one: an ordinary link in body copy is usually a citation or
+   a section, and these are "this is a page on this network about exactly that
+   thing".
+
+   A dotted underline that is always present, rather than the growing solid one
+   `.prose a` uses on hover. Persistent because the whole value is that a reader
+   can see which nouns are pages without hovering every word; dotted because a
+   paragraph of solid underlines is a rash.
+
+   `a.elink` and not `.elink`, so it outranks `.prose a` — which sets
+   `text-decoration: none` and would otherwise win on specificity and leave
+   these looking like every other link.
+
+   The underline colour is mixed from `currentColor` rather than named, so it
+   follows the accent in both themes. A colour that only works in one is the
+   bug the palette blocks at the top of this file exist to prevent.           */
+
+a.elink {
+  color: var(--accent-hot);
+  background-image: none;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 1px;
+  text-decoration-color: color-mix(in srgb, currentColor 55%, transparent);
+  text-underline-offset: 2.5px;
+  /* Keep a long title from breaking across a line at a hyphen it does not
+     have; "Gears of War: E-Day" reads as two things when it wraps. */
+  text-decoration-skip-ink: auto;
+  transition: text-decoration-color 160ms var(--ease), color 160ms var(--ease);
+}
+
+a.elink:hover {
+  color: var(--accent-hot);
+  text-decoration-style: solid;
+  text-decoration-color: currentColor;
+}
+
+/* In a lede the type is 17px and the dots get lost, so they go solid-thin
+   there instead of dotted. Same signal, legible at the size it is set in. */
+.lede a.elink {
+  text-decoration-style: solid;
+  text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
+}

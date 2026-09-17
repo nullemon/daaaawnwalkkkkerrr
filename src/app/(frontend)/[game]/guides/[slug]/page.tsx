@@ -4,7 +4,8 @@ import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
 import { Callout } from '@/components/Callout'
 import { Confidence } from '@/components/Badges'
-import { RichText } from '@/components/RichText'
+import { Linked, LinkedRichText } from '@/components/Linked'
+import type { LinkScope } from '@/lib/link-index'
 import { Sources } from '@/components/Sources'
 import { Attribution } from '@/components/Attribution'
 import { CommentThread } from '@/components/CommentThread'
@@ -56,6 +57,15 @@ export default async function GuidePage({ params }: Props) {
   ])
   if (!doc) notFound()
 
+  /*
+    Where this page is, for the inline linker.
+
+    `self` is the whole reason it is passed: composed prose names the record it
+    is about in its own first sentence, and a link from a page to itself reads
+    as a bug. See `src/components/Linked.tsx`.
+  */
+  const scope: LinkScope = { host: 'wiki', game, self: `guides:${doc.id}` }
+
   // Only entries whose upload actually resolved; a broken one renders nothing
   // rather than an empty frame.
   const bodyImages = (doc.bodyImages ?? [])
@@ -100,10 +110,20 @@ export default async function GuidePage({ params }: Props) {
     Article markup, so the byline and the date are readable by something other
     than a person squinting at the page.
 
-    A placeholder author is deliberately left out of it. Publishing an invented
-    name as a structured `author` is a claim to a machine as much as to a
-    reader, and the point of the provisional flag is that we do not make it
-    until somebody real is behind the page.
+    Every author goes in it, including a row still flagged `provisional`. This
+    comment used to say the opposite — "a placeholder author is deliberately
+    left out of it" — and nothing here has ever filtered on the flag, so the
+    thirty-six placeholders have been named as `@type: Person` in the markup of
+    394 guides the whole time.
+
+    Leaving it that way is the smaller of two wrongs, not a good state. The
+    alternative, dropping the author, silently removes a real contributor's
+    credit the moment somebody forgets to untick a box — the exact failure that
+    made `noindex` a separate switch from `provisional`. What the flag does
+    instead is mark the profile this `url` points at, so a crawler that
+    follows the author link lands on a page that says the name is a
+    placeholder. If a real name is wanted here and nowhere else, the fix is to
+    finish the roster, not to hide it.
   */
   const articleLd = {
     '@context': 'https://schema.org',
@@ -132,7 +152,7 @@ export default async function GuidePage({ params }: Props) {
         eyebrow="Guide"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Guides', href: '/guides' }, { label: doc.title }]}
         title={doc.title}
-        lede={doc.summary}
+        lede={<Linked text={doc.summary} scope={scope} />}
         badges={<Confidence level={doc.confidence} />}
       />
       <div className="page body-main">
@@ -141,7 +161,7 @@ export default async function GuidePage({ params }: Props) {
           <div className="stack">
             <EntityImage media={doc.image} shape="wide" />
             <div className="prose">
-              <RichText data={doc.body} />
+              <LinkedRichText data={doc.body} scope={scope} />
             </div>
 
             {bodyImages.length > 0 ? (

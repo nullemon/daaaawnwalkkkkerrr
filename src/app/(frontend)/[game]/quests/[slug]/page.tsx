@@ -5,7 +5,8 @@ import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
 import { Callout } from '@/components/Callout'
 import { Confidence, PhaseBadge } from '@/components/Badges'
-import { RichText } from '@/components/RichText'
+import { Linked, LinkedRichText } from '@/components/Linked'
+import type { LinkScope } from '@/lib/link-index'
 import { Sources } from '@/components/Sources'
 import { Attribution } from '@/components/Attribution'
 import { CommentThread } from '@/components/CommentThread'
@@ -20,6 +21,7 @@ import { gameName } from '@/lib/section-copy'
 import { gameSlugParams } from '@/lib/params'
 import type { Ending, Quest, Region } from '@/payload-types'
 import { clamp, questMeta } from '@/lib/seo'
+import { getUi } from '@/lib/ui'
 
 type Props = { params: Promise<{ game: string; slug: string }> }
 
@@ -42,11 +44,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function QuestPage({ params }: Props) {
   const { game, slug } = await params
-  const [wiki, quest] = await Promise.all([
+  const [wiki, quest, ui] = await Promise.all([
     getGame(game),
     getBySlug('quests', slug, { game, depth: 2 }),
+    getUi(),
   ])
   if (!quest) notFound()
+
+  /*
+    Where this page is, for the inline linker.
+
+    `self` is the whole reason it is passed: composed prose names the record it
+    is about in its own first sentence, and a link from a page to itself reads
+    as a bug. See `src/components/Linked.tsx`.
+  */
+  const scope: LinkScope = { host: 'wiki', game, self: `quests:${quest.id}` }
 
   const region = rel<Region>(quest.region)
   const graph = await getRunGraph(game)
@@ -97,7 +109,7 @@ export default async function QuestPage({ params }: Props) {
         eyebrow="Quest"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Quests', href: '/quests' }, { label: quest.title }]}
         title={quest.title}
-        lede={quest.summary}
+        lede={<Linked text={quest.summary} scope={scope} />}
         badges={
           <>
             <PhaseBadge phase={quest.phase} />
@@ -112,7 +124,7 @@ export default async function QuestPage({ params }: Props) {
           <div className="stack">
             <EntityImage media={quest.image} shape="wide" />
             <div className="prose">
-              <RichText data={quest.body} />
+              <LinkedRichText data={quest.body} scope={scope} />
             </div>
           </div>
           <div className="stack">
@@ -137,7 +149,15 @@ export default async function QuestPage({ params }: Props) {
                 },
                 {
                   label: 'Phase',
-                  value: quest.phase === 'either' ? 'Day or night' : `${quest.phase} only`,
+                  /*
+                    The registry, not a literal. `quest-phase.*` already exists
+                    and `RunChecker` reads it, so this line's hardcoded "Day or
+                    night" meant an editor who reworded the label in Interface
+                    text changed the run checker and not the quest page — two
+                    pages on the same wiki disagreeing about the same enum, with
+                    nothing erroring and no test failing.
+                  */
+                  value: ui.label('quest-phase', quest.phase),
                 },
                 {
                   // Linked, not printed. The region page lists this quest back,

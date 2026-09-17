@@ -133,3 +133,11 @@ nobody has read is writing content rather than seeding it.
 4. **`src/lib/credit.ts:33`**, the no-named-holder fallback — deliberately
    un-editable so nobody can replace an honest "we do not know whose this is"
    with a guess.
+5. **The placeholder-contributor notice** on `/authors/[slug]`, shown while an
+   author row has `provisional` ticked. Same reasoning as 1: it exists because
+   the record it sits on is scaffolding, and a disclosure the person being
+   disclosed about can reword away is not a disclosure. It is also the *only*
+   place the flag renders — the byline on a guide prints the name either way,
+   deliberately, and anything that says otherwise is stale. Thirty-six
+   placeholders carried 394 bylines with four comments claiming a notice that
+   no renderer had ever printed.

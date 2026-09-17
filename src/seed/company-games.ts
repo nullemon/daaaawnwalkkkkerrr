@@ -179,8 +179,26 @@ const run = async (): Promise<void> => {
     ours.set(key(game.title), game.id)
   }
 
+  /*
+    Every company on the host, by the same normalised key the catalogue uses.
+
+    This is the prune's whole guard. A publisher's name is not a game title,
+    and rows for Ubisoft, THQ, Microsoft Studios, Disney Interactive Studios
+    and HIP Interactive were sitting in Asobo Studio's catalogue marked
+    "Developed" - the Publisher column of a Wikipedia table read as the Title
+    column, because a `rowspan` on the Year cell made every row under it one
+    cell short. The harvester reads rowspans now; this removes what the old
+    reader already wrote, because the merge below fills gaps and never deletes.
+  */
+  const companies = await payload.find({ collection: 'companies', limit: 1000, depth: 0 })
+  const companyNames = new Set(
+    (companies.docs as unknown as { name: string }[]).map((company) => key(company.name)),
+  )
+
   let updated = 0
   let missing = 0
+  let pruned = 0
+  const prunedRows: string[] = []
   let withCatalogue = 0
   let titlesWritten = 0
   let covered = 0
@@ -203,7 +221,39 @@ const run = async (): Promise<void> => {
     const history = entry.history ?? {}
 
     // --- the catalogue -----------------------------------------------------
-    const existing = (company.titles ?? []) as Row[]
+    const stored = (company.titles ?? []) as Row[]
+    const harvested = new Set(entry.titles.map((row) => key(row.title)))
+
+    /*
+      A row the harvest no longer knows about, whose title is another company's
+      name, with nothing on it a person would have typed. All three, because
+      each one alone is too broad: the harvest drops rows for honest reasons
+      too, a studio can share a name with a game, and a row an editor filled in
+      is theirs. What is left is the shape the column shift produced — a
+      publisher's name, no year, no platforms, no price, no store link — and
+      nothing else has that shape.
+
+      Anything hand-corrected survives, which is the same bargain the merge
+      below makes: this pass owns what it wrote and nothing more.
+    */
+    const existing = stored.filter((row) => {
+      const id = key(row.title ?? '')
+      if (harvested.has(id) || !companyNames.has(id)) return true
+      const touched =
+        filled(row.year) ||
+        filled(row.platforms) ||
+        filled(row.priceText) ||
+        filled(row.storeUrl) ||
+        filled(row.metacritic) ||
+        filled(row.genre) ||
+        filled(row.reviews) ||
+        filled(row.coveredBy)
+      if (touched) return true
+      prunedRows.push(`${slug}: ${row.title}`)
+      pruned += 1
+      return false
+    })
+
     const byKey = new Map<string, Row>()
     for (const row of existing) byKey.set(key(row.title ?? ''), { ...row })
 
@@ -220,7 +270,7 @@ const run = async (): Promise<void> => {
       if (current) {
         // Only the gaps. An editor who corrected a price or a year keeps it.
         if (!filled(current.year) && harvested.year) current.year = harvested.year
-        if (!filled(current.role)) current.role = harvested.role ?? roleFallback ?? 'developer'
+        if (!filled(current.role)) current.role = harvested.role ?? roleFallback ?? null
         if (!filled(current.platforms) && harvested.platforms) current.platforms = harvested.platforms
         if (!filled(current.priceText) && harvested.priceText) current.priceText = harvested.priceText
         if (!filled(current.reviews) && harvested.reviews) current.reviews = harvested.reviews
@@ -235,7 +285,14 @@ const run = async (): Promise<void> => {
       byKey.set(id, {
         title: harvested.title,
         year: harvested.year ?? null,
-        role: harvested.role ?? roleFallback ?? 'developer',
+        /*
+          Null where nothing states one. `?? 'developer'` was the same
+          unsourced assertion the company's own `role` field used to make by
+          default — "Developed" printed against a row nobody said they
+          developed. The catalogue drops the credit line rather than filling
+          it.
+        */
+        role: harvested.role ?? roleFallback ?? null,
         priceText: harvested.priceText ?? null,
         isFree: harvested.isFree ?? false,
         metacritic: harvested.metacritic ?? null,
@@ -367,7 +424,9 @@ const run = async (): Promise<void> => {
                 return who ? (when ? `${who}, ${when}` : who) : history.acquired
               })(),
             }),
-        ...(titles.length > 0 ? { titles } : {}),
+        /* Also when the prune emptied it: skipping the write there would leave
+           the rows this pass has just decided are not titles. */
+        ...(titles.length > 0 || stored.length !== existing.length ? { titles } : {}),
         ...(note && noteIsOurs ? { catalogueNote: note } : {}),
         ...(writeBody ? { body: rich(...blocks) } : {}),
       } as never,
@@ -381,6 +440,10 @@ const run = async (): Promise<void> => {
   console.log(`  with a catalogue:         ${withCatalogue}`)
   console.log(`  with nothing found:       ${empty.length}`)
   console.log(`titles written:             ${titlesWritten}`)
+  if (pruned > 0) {
+    console.log(`rows removed as not titles: ${pruned}`)
+    for (const row of prunedRows) console.log(`  ${row}`)
+  }
   console.log(`rows linked to a wiki here: ${covered}`)
   console.log(`bodies composed:            ${bodies}`)
   if (empty.length > 0) {

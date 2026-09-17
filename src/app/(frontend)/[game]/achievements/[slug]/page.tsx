@@ -3,7 +3,8 @@ import { SectionNeighbours } from '@/components/SectionNeighbours'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
 import { Confidence, Badge } from '@/components/Badges'
-import { RichText } from '@/components/RichText'
+import { Linked, LinkedRichText } from '@/components/Linked'
+import type { LinkScope } from '@/lib/link-index'
 import { Sources } from '@/components/Sources'
 import { Attribution } from '@/components/Attribution'
 import { EntityImage } from '@/components/EntityImage'
@@ -72,6 +73,15 @@ export default async function AchievementPage({ params }: Props) {
   ])
   if (!doc) notFound()
 
+  /*
+    Where this page is, for the inline linker.
+
+    `self` is the whole reason it is passed: composed prose names the record it
+    is about in its own first sentence, and a link from a page to itself reads
+    as a bug. See `src/components/Linked.tsx`.
+  */
+  const scope: LinkScope = { host: 'wiki', game, self: `achievements:${doc.id}` }
+
   const name = gameDoc?.shortTitle || gameDoc?.title || 'this game'
   const percent = doc.globalPercent
 
@@ -107,7 +117,7 @@ export default async function AchievementPage({ params }: Props) {
         ]}
         icon="star"
         title={doc.title}
-        lede={doc.hidden && !doc.description ? undefined : doc.description}
+        lede={doc.hidden && !doc.description ? undefined : <Linked text={doc.description} scope={scope} />}
         badges={
           <>
             {doc.rarity ? <Badge>{RARITY_LABEL[doc.rarity]}</Badge> : null}
@@ -175,7 +185,7 @@ export default async function AchievementPage({ params }: Props) {
               </section>
             )}
 
-            {doc.body ? <RichText data={doc.body} /> : null}
+            {doc.body ? <LinkedRichText data={doc.body} scope={scope} /> : null}
 
             <RelatedList
               heading={doc.rarity ? `Others as ${RARITY_LABEL[doc.rarity].toLowerCase()}` : 'Others'}

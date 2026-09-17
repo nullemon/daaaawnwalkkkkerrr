@@ -3,7 +3,8 @@ import { notFound } from 'next/navigation'
 import { clamp } from '@/lib/seo'
 import { PageHeader } from '@/components/PageHeader'
 import { Confidence, Badge } from '@/components/Badges'
-import { RichText } from '@/components/RichText'
+import { Linked, LinkedRichText } from '@/components/Linked'
+import type { LinkScope } from '@/lib/link-index'
 import { Sources } from '@/components/Sources'
 import { Attribution } from '@/components/Attribution'
 import { CommentThread } from '@/components/CommentThread'
@@ -50,6 +51,15 @@ export default async function FactionPage({ params }: Props) {
   const { game, slug } = await params
   const [doc, ui] = await Promise.all([getBySlug('factions', slug, { game, depth: 1 }), getUi()])
   if (!doc) notFound()
+
+  /*
+    Where this page is, for the inline linker.
+
+    `self` is the whole reason it is passed: composed prose names the record it
+    is about in its own first sentence, and a link from a page to itself reads
+    as a bug. See `src/components/Linked.tsx`.
+  */
+  const scope: LinkScope = { host: 'wiki', game, self: `factions:${doc.id}` }
 
   /*
     Members, read backwards from the edge on each member rather than from a
@@ -103,7 +113,7 @@ export default async function FactionPage({ params }: Props) {
         ]}
         icon="shield"
         title={doc.title}
-        lede={doc.summary}
+        lede={<Linked text={doc.summary} scope={scope} />}
         badges={<Confidence level={doc.confidence} />}
       />
       <div className="page body-main">
@@ -111,7 +121,7 @@ export default async function FactionPage({ params }: Props) {
           <div className="stack">
             <EntityImage media={doc.image} shape="wide" />
             <div className="prose">
-              <RichText data={doc.body} />
+              <LinkedRichText data={doc.body} scope={scope} />
             </div>
           </div>
 

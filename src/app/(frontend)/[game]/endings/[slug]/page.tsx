@@ -6,7 +6,8 @@ import { PageHeader } from '@/components/PageHeader'
 import { Callout } from '@/components/Callout'
 import { Badge, Confidence } from '@/components/Badges'
 import { Facts } from '@/components/Facts'
-import { RichText } from '@/components/RichText'
+import { Linked, LinkedRichText } from '@/components/Linked'
+import type { LinkScope } from '@/lib/link-index'
 import { Sources } from '@/components/Sources'
 import { Attribution } from '@/components/Attribution'
 import { CommentThread } from '@/components/CommentThread'
@@ -55,6 +56,15 @@ export default async function EndingPage({ params }: Props) {
   ])
   if (!ending) notFound()
 
+  /*
+    Where this page is, for the inline linker.
+
+    `self` is the whole reason it is passed: composed prose names the record it
+    is about in its own first sentence, and a link from a page to itself reads
+    as a bug. See `src/components/Linked.tsx`.
+  */
+  const scope: LinkScope = { host: 'wiki', game, self: `endings:${ending.id}` }
+
   const ally = rel<Character>(ending.ally)
   const { quests, endings } = await getRunGraph(game)
   const node = endings.find((candidate) => candidate.slug === slug)
@@ -73,7 +83,7 @@ export default async function EndingPage({ params }: Props) {
         eyebrow="Ending"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Endings', href: '/endings' }, { label: ending.title }]}
         title={ending.title}
-        lede={ending.summary}
+        lede={<Linked text={ending.summary} scope={scope} />}
         badges={
           <>
             <Badge>
@@ -163,7 +173,7 @@ export default async function EndingPage({ params }: Props) {
           />
         ) : null}
 
-        <RichText data={ending.body} />
+        <LinkedRichText data={ending.body} scope={scope} />
 
         <Callout
           game={wiki}
