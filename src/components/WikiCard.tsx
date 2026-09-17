@@ -45,6 +45,13 @@ export function WikiCard({ entry }: { entry: DirectoryEntry }) {
           <span className="card-score" title={verdict.summary ?? undefined}>
             {verdict.score.toFixed(1)}
             <span>/10</span>
+            {/*
+              An outlook is marked here as it is on the game's own page. Four
+              of these wikis cover games nobody has played, and the directory
+              was printing "7.9/10" under a heading reading "Not out yet" with
+              nothing saying which kind of number it was.
+            */}
+            {verdict.basis === 'outlook' ? <span className="card-score-basis">outlook</span> : null}
           </span>
         ) : null}
       </span>

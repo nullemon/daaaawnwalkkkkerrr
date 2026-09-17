@@ -6,12 +6,14 @@ import { Logo } from '@/components/Logo'
 import { Icon } from '@/components/Icon'
 import { Briefing } from '@/components/home/Briefing'
 import { GameProfile } from '@/components/GameProfile'
-import { getAll, getGame } from '@/lib/payload'
+import { gameUrl, getAll, getGame } from '@/lib/payload'
 import { sectionsFor, toolsFor } from '@/lib/sections'
 import { releaseLine } from '@/lib/directory'
 import { homeCopy } from '@/lib/game-copy'
 import { copy } from '@/lib/copy'
 import { getUi } from '@/lib/ui'
+import { JsonLd } from '@/components/JsonLd'
+import { gameScores } from '@/lib/schema'
 import { StarRating } from '@/components/StarRating'
 import { editorialScore, cachedReaderScore } from '@/lib/ratings'
 
@@ -170,8 +172,22 @@ export default async function Home({ params }: Props) {
     { label: 'Pages here', value: (total + guides.length).toLocaleString('en-GB') },
   ]
 
+  /* The wiki's own origin, which is what the game entity is keyed on. */
+  const canonical = await gameUrl(game)
+  const scores = gameScores(canonical, {
+    rating: game.rating,
+    readers: readers.average !== null && readers.votes > 0
+      ? { average: readers.average, count: readers.votes }
+      : null,
+  })
+
   return (
     <>
+      {/*
+        The scores, on the one page that prints them. An outlook publishes no
+        `Review` at all — see `gameScores`.
+      */}
+      {scores ? <JsonLd data={scores} /> : null}
       {/* ---- Masthead: the game's own art, its logo, and the search ---- */}
       <header className="wiki-masthead">
         {heroSrc ? (

@@ -168,11 +168,6 @@ export const videoGame = (
     image?: string | null
     description?: string | null
     knownCompanies?: ReadonlySet<string>
-    /** This site's own score, with the reasoning that has to accompany it. */
-    rating?: { score?: number | null; rationale?: string | null; ratedOn?: string | null } | null
-    /** Reader votes, and only where there are some. */
-    readers?: { average: number; count: number } | null
-    publisherName?: string | null
   } = {},
 ): Json => {
   const known = options.knownCompanies ?? new Set<string>()
@@ -220,39 +215,6 @@ export const videoGame = (
         ? game.releaseDate.slice(0, 10)
         : undefined,
     sameAs,
-    /*
-      One signed opinion is a Review. The rationale is the review body and it
-      is required for the score to render on the page, so a `Review` here can
-      never be a bare number either.
-    */
-    review:
-      typeof options.rating?.score === 'number' && options.rating?.rationale
-        ? compact({
-            '@type': 'Review',
-            reviewRating: {
-              '@type': 'Rating',
-              ratingValue: options.rating.score,
-              bestRating: 10,
-              worstRating: 0,
-            },
-            author: { '@id': networkId() },
-            reviewBody: options.rating.rationale,
-            datePublished: options.rating.ratedOn
-              ? options.rating.ratedOn.slice(0, 10)
-              : undefined,
-          })
-        : undefined,
-    /* Only an average of people. One editorial score is not an aggregate. */
-    aggregateRating:
-      options.readers && options.readers.count > 0
-        ? {
-            '@type': 'AggregateRating',
-            ratingValue: Number(options.readers.average.toFixed(1)),
-            ratingCount: options.readers.count,
-            bestRating: 10,
-            worstRating: 1,
-          }
-        : undefined,
     isPartOf: { '@id': `${base}#website` },
   })
 }
@@ -463,3 +425,79 @@ export const itemList = (
       url: item.url,
     })),
   })
+
+/**
+ * The scores, as a second node about the same game.
+ *
+ * Separate from `videoGame()` for two reasons, both of them mistakes this made
+ * on the way here.
+ *
+ * **It is emitted on one page, not every page.** `videoGame()` is called from
+ * the wiki layout, because what it says — which game this site is about — is
+ * true of every page under it. A rating is not: a quest page carried a
+ * machine-readable score that nothing on that page stated, which is a claim
+ * made only to a crawler. This is called from the home page, where the verdict
+ * is actually printed.
+ *
+ * **An outlook is not a review and gets no `Review`.** `src/fields/rating.ts`
+ * says the page must not let a reader think an outlook is a review, and the
+ * visible half honours that with a label — while the JSON-LD was publishing
+ * `reviewRating: 7.9` for a game out in October whose own review body opens
+ * "An outlook". A machine cannot read the caveat, so the honest thing is to
+ * publish no review at all until somebody can say what the game is like.
+ *
+ * Two nodes sharing an `@id` describe one entity; a consumer merges them. That
+ * is the whole point of the id scheme.
+ */
+export const gameScores = (
+  base: string,
+  options: {
+    rating?: {
+      score?: number | null
+      rationale?: string | null
+      ratedOn?: string | null
+      basis?: string | null
+    } | null
+    readers?: { average: number; count: number } | null
+  },
+): Json | null => {
+  const rating = options.rating
+  const isReview =
+    typeof rating?.score === 'number' &&
+    Boolean(rating.rationale) &&
+    rating.basis !== 'outlook' &&
+    Boolean(rating.basis)
+
+  const readers = options.readers && options.readers.count > 0 ? options.readers : null
+  if (!isReview && !readers) return null
+
+  return compact({
+    '@context': 'https://schema.org',
+    '@type': 'VideoGame',
+    '@id': gameId(base),
+    review: isReview
+      ? compact({
+          '@type': 'Review',
+          reviewRating: {
+            '@type': 'Rating',
+            ratingValue: rating!.score,
+            bestRating: 10,
+            worstRating: 0,
+          },
+          author: { '@id': networkId() },
+          reviewBody: rating!.rationale,
+          datePublished: rating!.ratedOn ? rating!.ratedOn.slice(0, 10) : undefined,
+        })
+      : undefined,
+    /* Only an average of people. One editorial score is not an aggregate. */
+    aggregateRating: readers
+      ? {
+          '@type': 'AggregateRating',
+          ratingValue: Number(readers.average.toFixed(1)),
+          ratingCount: readers.count,
+          bestRating: 10,
+          worstRating: 1,
+        }
+      : undefined,
+  })
+}

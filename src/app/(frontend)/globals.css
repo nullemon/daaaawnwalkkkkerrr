@@ -2784,6 +2784,12 @@ a.catalogue-title:hover { color: var(--accent-hot); text-decoration: none; }
   color: var(--accent-hot);
 }
 .card-score span { font-size: 10px; color: var(--muted); font-weight: 500; }
+/* The outlook marker, which has to survive being small: a number on a card
+   with no basis beside it reads as a verdict on a game nobody has played. */
+.card-score-basis {
+  font-size: 9px; letter-spacing: 0.05em; text-transform: uppercase;
+  color: var(--muted); font-weight: 600;
+}
 
 /* --- Reader ratings -------------------------------------------------------
    Ten stars, and the two numbers kept apart. `lib/ratings.ts` argues the case

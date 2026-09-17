@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { breadcrumbs, isoDate, orgRef, organization, person, videoGame } from './schema'
+import { breadcrumbs, gameScores, isoDate, orgRef, organization, person, videoGame } from './schema'
 
 /*
   Structured data is the one thing on this site that nobody proofreads. It is
@@ -81,10 +81,21 @@ describe('videoGame', () => {
     expect(window.datePublished).toBeUndefined()
   })
 
-  it('never claims to sell the game or to have rated it', () => {
-    const data = videoGame(BASE, game) as Record<string, unknown>
+  it('never claims to sell the game, and never carries a score', () => {
+    /*
+      The score moved out of `videoGame` because this is emitted from the wiki
+      layout, so it was on every quest and item page — a machine-readable
+      rating that nothing on the page stated. This assertion used to call
+      `videoGame` with no options at all, which made the branch it was
+      checking unreachable and the test true by accident.
+    */
+    const data = videoGame(BASE, game, {
+      description: 'x',
+      knownCompanies: new Set(['rebel-wolves']),
+    }) as Record<string, unknown>
     expect(data.offers).toBeUndefined()
     expect(data.aggregateRating).toBeUndefined()
+    expect(data.review).toBeUndefined()
     // The store page is another page about the same game, which is what
     // sameAs means.
     expect(data.sameAs).toContain('https://store.steampowered.com/app/3751260/')
@@ -151,5 +162,45 @@ describe('breadcrumbs', () => {
     }
     expect(data.itemListElement[0]).toMatchObject({ position: 1, item: `${BASE}/` })
     expect(data.itemListElement[1].item).toBeUndefined()
+  })
+})
+
+describe('gameScores', () => {
+  const rationale = 'Long enough to be an argument.'
+
+  it('publishes a Review for a score somebody could have formed', () => {
+    const data = gameScores(BASE, {
+      rating: { score: 9.2, rationale, basis: 'published', ratedOn: '2026-09-17' },
+    }) as Record<string, Record<string, unknown>>
+    expect(data['@id']).toBe(`${BASE}#videogame`)
+    expect((data.review.reviewRating as Record<string, unknown>).ratingValue).toBe(9.2)
+    expect(data.review.reviewBody).toBe(rationale)
+  })
+
+  it('publishes no Review for an outlook', () => {
+    /*
+      `fields/rating.ts`: "An outlook is not a review and the page must not let
+      a reader think it is." The visible half labels it; a crawler cannot read
+      a label, so the honest thing is to publish nothing.
+    */
+    const data = gameScores(BASE, {
+      rating: { score: 7.9, rationale: 'An outlook — it is not out yet.', basis: 'outlook' },
+    })
+    expect(data).toBeNull()
+  })
+
+  it('publishes no Review without the reasoning', () => {
+    expect(gameScores(BASE, { rating: { score: 9, basis: 'played' } })).toBeNull()
+  })
+
+  it('aggregates only once readers have voted', () => {
+    expect(gameScores(BASE, { readers: { average: 8.4, count: 0 } })).toBeNull()
+    const voted = gameScores(BASE, { readers: { average: 8.44, count: 9 } }) as Record<
+      string,
+      Record<string, unknown>
+    >
+    expect(voted.aggregateRating.ratingValue).toBe(8.4)
+    expect(voted.aggregateRating.ratingCount).toBe(9)
+    expect(voted.review).toBeUndefined()
   })
 })

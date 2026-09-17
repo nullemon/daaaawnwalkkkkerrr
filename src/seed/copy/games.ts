@@ -1,3 +1,4 @@
+import { createHash } from 'crypto'
 import type { Payload } from 'payload'
 import type { Game } from '../../payload-types'
 import { GAME_SCOPED } from '../../lib/tenancy'
@@ -44,6 +45,28 @@ import { sectionCopy } from '../../lib/section-copy'
 */
 const COUNT = 424242
 const DETAIL = 434343
+
+/**
+ * What this pass last wrote into a row, so it can tell its own work from an
+ * editor's.
+ *
+ * Without it the pass has two indistinguishable states — "seeded and
+ * untouched" and "an editor typed exactly this" — and has to assume the second
+ * to be safe, which means a correction to `src/lib/section-copy.ts` never
+ * reaches a page again once a database has been seeded. That module is the one
+ * CLAUDE.md names as the fix for cross-wiki copy leakage; leaving it dead on
+ * every seeded install is the worst outcome available.
+ *
+ * The separator is printable on purpose. It was a NUL byte for about ten
+ * minutes, which `tools/no-control-characters.test.mjs` caught on its first run
+ * against this file — the guard written this morning for the four regexes that
+ * shipped with a backspace in them, doing its job on its author.
+ */
+const fingerprint = (row: { title?: string | null; description?: string | null; heading?: string | null; lede?: string | null }): string =>
+  createHash('sha1')
+    .update([row.title, row.description, row.heading, row.lede].map((v) => v ?? '').join(' || '))
+    .digest('hex')
+    .slice(0, 16)
 
 const tokenise = (text: string): string =>
   text.split(String(COUNT)).join('{count}').split(String(DETAIL)).join('{detail}')
@@ -137,6 +160,20 @@ const DAWNWALKER_GROUPS: NonNullable<Game['guideGroups']> = [
   },
 ]
 
+/*
+  A row written before the fingerprint existed carries no stamp, so the rule
+  above leaves it alone for ever — which would freeze every section on every
+  database seeded up to now, the exact problem the fingerprint was added to
+  solve.
+
+  `pnpm seed:copy --adopt` stamps those rows as this pass's own. It is opt-in
+  and it is a claim: "nobody has hand-edited these". True on a database that
+  has only ever been seeded, false the moment somebody has been in the admin,
+  and there is no way for the code to tell — which is why it is a flag a person
+  types rather than something that happens quietly on an ordinary run.
+*/
+const ADOPT = process.argv.includes('--adopt')
+
 const seed = async (payload: Payload): Promise<number> => {
   const games = await payload.find({ collection: 'games', limit: 100, depth: 0, sort: 'slug' })
   let filled = 0
@@ -157,19 +194,49 @@ const seed = async (payload: Payload): Promise<number> => {
         where: { game: { equals: game.id } },
       })
       if (count.totalDocs === 0) continue
-      if (rows.some((row) => row.section === section)) continue
-
       const built = sectionCopy(section, { ...game, sectionCopy: [] }, {
         total: COUNT,
         detail: DETAIL,
       })
-      rows.push({
+      const fresh = {
         section,
         title: tokenise(built.title),
         description: tokenise(built.description),
         heading: tokenise(built.heading),
         lede: tokenise(built.lede),
-      })
+      }
+      const stamp = fingerprint(fresh)
+
+      const existing = rows.findIndex((row) => row.section === section)
+      if (existing >= 0) {
+        const row = rows[existing]
+        /*
+          Refreshed only where the row is still exactly what this pass wrote.
+          An editor who has changed a word owns the row from then on, and a
+          row seeded before the fingerprint existed has no stamp and is left
+          alone — the conservative reading of "we cannot tell".
+        */
+        /*
+          `--adopt` re-stamps whatever it finds, not only an unstamped row.
+          A stamp from an older fingerprint algorithm looks exactly like an
+          editor's work — which is how this pass locked itself out of all
+          sixty-four rows the first time the separator changed.
+        */
+        if (ADOPT && row.seeded !== fingerprint(row)) {
+          rows[existing] = { ...row, seeded: fingerprint(row) }
+          touched = true
+          filled += 1
+          continue
+        }
+        if (!row.seeded || row.seeded !== fingerprint(row)) continue
+        if (row.seeded === stamp) continue
+        rows[existing] = { ...row, ...fresh, seeded: stamp }
+        filled += 4
+        touched = true
+        continue
+      }
+
+      rows.push({ ...fresh, seeded: stamp })
       filled += 4
       touched = true
     }

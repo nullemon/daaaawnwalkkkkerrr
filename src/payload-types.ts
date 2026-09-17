@@ -950,6 +950,7 @@ export interface Game {
          * The paragraph under the heading.
          */
         lede?: string | null;
+        seeded?: string | null;
         id?: string | null;
       }[]
     | null;
@@ -4044,6 +4045,7 @@ export interface GamesSelect<T extends boolean = true> {
         description?: T;
         heading?: T;
         lede?: T;
+        seeded?: T;
         id?: T;
       };
   callouts?:

@@ -149,6 +149,28 @@ export const gameCopyTabs = (): Field => ({
               label: 'Lede',
               admin: { description: 'The paragraph under the heading.' },
             },
+            {
+              /*
+                A fingerprint of what `pnpm seed:copy` last wrote into this row.
+
+                Seeding the built-in wording is what makes the admin usable —
+                an editor opens a real sentence rather than an empty box. It
+                also quietly kills the code the sentence came from: a stored
+                row beats the built-in, so correcting `section-copy.ts` stops
+                changing any page the moment a database has been seeded. A
+                wrong sentence found and fixed stays on the site.
+
+                So the seeder records what it wrote. If the row still matches,
+                nobody has edited it and a corrected built-in replaces it. If
+                it does not, an editor has been here and the row is never
+                touched. That is the difference `pnpm seed:copy` cannot
+                otherwise tell, and the reason `src/seed/copy/ui.ts` needs a
+                hand-maintained list of superseded wording while this does not.
+              */
+              name: 'seeded',
+              type: 'text',
+              admin: { hidden: true },
+            },
           ],
         },
         {

@@ -9,7 +9,6 @@ import { sectionsFor, toolsFor } from '@/lib/sections'
 import { fanProjectNote } from '@/lib/credit'
 import { JsonLd } from '@/components/JsonLd'
 import { networkOrganization, videoGame, webSite } from '@/lib/schema'
-import { cachedReaderScore } from '@/lib/ratings'
 import { clamp } from '@/lib/seo'
 import { hub } from '@/lib/urls'
 import { Analytics } from '@/components/Analytics'
@@ -186,16 +185,6 @@ export default async function GameLayout({
   })
   const knownCompanies = new Set<string>(companyRows.docs.map((row) => String(row.slug)))
 
-  /*
-    Reader votes, for the aggregate. Absent until somebody votes, which is why
-    it is `null` rather than `{ average: 0 }` — a game nobody has rated must
-    never render as 0 out of 10.
-  */
-  const readers = await cachedReaderScore(game.id)
-  const readerRating =
-    readers.average !== null && readers.votes > 0
-      ? { average: readers.average, count: readers.votes }
-      : null
 
   /*
     The way back to the network.
@@ -339,8 +328,6 @@ export default async function GameLayout({
           image: schemaImage,
           description: game.summary,
           knownCompanies: knownCompanies,
-          rating: game.rating,
-          readers: readerRating,
         })}
       />
       {/*
