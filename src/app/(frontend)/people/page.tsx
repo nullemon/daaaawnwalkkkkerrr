@@ -144,9 +144,17 @@ export default async function PeopleIndex() {
   const credited = people.filter((person) => person.basis === 'game-credit')
   const cast = people.filter((person) => person.basis === 'character-credit')
   const officers = people.filter((person) => person.basis === 'company-officer')
+  /*
+    Named by a source, credited on nothing here. The group exists so the
+    listing cannot be read as a credit — which is what filing them under
+    "credited on a game we cover" would have done.
+  */
+  const mentioned = people.filter((person) => person.basis === 'wiki-mention')
   const unfiled = people.filter(
     (person) =>
-      !['game-credit', 'character-credit', 'company-officer'].includes(String(person.basis)),
+      !['game-credit', 'character-credit', 'company-officer', 'wiki-mention'].includes(
+        String(person.basis),
+      ),
   )
 
   return (
@@ -187,6 +195,11 @@ export default async function PeopleIndex() {
           heading={copy(groups.officersHeading, PEOPLE_BUILT_IN.groups.officersHeading)}
           note={pick(groups.officersNote, PEOPLE_BUILT_IN.groups.officersNote)}
           people={officers}
+        />
+        <Group
+          heading={copy(groups.mentionedHeading, PEOPLE_BUILT_IN.groups.mentionedHeading)}
+          note={pick(groups.mentionedNote, PEOPLE_BUILT_IN.groups.mentionedNote)}
+          people={mentioned}
         />
         <Group heading={UNFILED_HEADING} note={UNFILED_NOTE} people={unfiled} />
 

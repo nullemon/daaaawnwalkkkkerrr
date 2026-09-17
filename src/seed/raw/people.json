@@ -1,0 +1,4380 @@
+{
+  "fetchedAt": "2026-09-17",
+  "source": "en.wikipedia.org/w/api.php (CC BY-SA 4.0)",
+  "complete": true,
+  "games": {
+    "control-resonant": {
+      "title": "Control Resonant",
+      "url": "https://en.wikipedia.org/wiki/Control_Resonant",
+      "released": null,
+      "developer": "Remedy Entertainment",
+      "publisher": "Remedy Entertainment"
+    },
+    "dawnwalker": {
+      "title": "The Blood of Dawnwalker",
+      "url": "https://en.wikipedia.org/wiki/The_Blood_of_Dawnwalker",
+      "released": "3 September 2026",
+      "developer": "Rebel Wolves",
+      "publisher": "Bandai Namco Entertainment"
+    },
+    "gears-of-war-e-day": {
+      "title": "Gears of War: E-Day",
+      "url": "https://en.wikipedia.org/wiki/Gears_of_War%3A_E-Day",
+      "released": "October 6, 2026",
+      "developer": "The Coalition, People Can Fly",
+      "publisher": "Xbox Game Studios"
+    },
+    "onimusha-way-of-the-sword": {
+      "title": "Onimusha: Way of the Sword",
+      "url": "https://en.wikipedia.org/wiki/Onimusha%3A_Way_of_the_Sword",
+      "released": "September 4, 2026",
+      "developer": "Capcom",
+      "publisher": "Capcom"
+    },
+    "phantom-blade-zero": {
+      "title": "Phantom Blade Zero",
+      "url": "https://en.wikipedia.org/wiki/Phantom_Blade_Zero",
+      "released": "29 October 2026",
+      "developer": "S-Game",
+      "publisher": "S-Game"
+    },
+    "resonance-a-plague-tale-legacy": {
+      "title": "Resonance: A Plague Tale Legacy",
+      "url": "https://en.wikipedia.org/wiki/Resonance%3A_A_Plague_Tale_Legacy",
+      "released": "27 August 2026",
+      "developer": "Asobo Studio",
+      "publisher": "Focus Entertainment"
+    },
+    "silent-hill-townfall": {
+      "title": "Silent Hill: Townfall",
+      "url": "https://en.wikipedia.org/wiki/Silent_Hill%3A_Townfall",
+      "released": "September 24, 2026",
+      "developer": "Screen Burn Interactive",
+      "publisher": null
+    },
+    "star-wars-zero-company": {
+      "title": "Star Wars Zero Company",
+      "url": "https://en.wikipedia.org/wiki/Star_Wars_Zero_Company",
+      "released": "August 27, 2026",
+      "developer": "Bit Reactor, Respawn Entertainment",
+      "publisher": "Electronic Arts"
+    }
+  },
+  "counts": {
+    "candidates": 128,
+    "resolved": 42,
+    "unresolved": 86,
+    "dropped": 6
+  },
+  "people": [
+    {
+      "name": "Mikael Kasurinen",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "control-resonant",
+          "gameTitle": "Control Resonant",
+          "role": "director",
+          "note": null,
+          "stated": "Mikael Kasurinen",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/Control_Resonant",
+          "sourceTitle": "Control Resonant — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Elmeri Raitanen",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "control-resonant",
+          "gameTitle": "Control Resonant",
+          "role": "artist",
+          "note": null,
+          "stated": "Elmeri Raitanen",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/Control_Resonant",
+          "sourceTitle": "Control Resonant — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Petri Alanko",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "control-resonant",
+          "gameTitle": "Control Resonant",
+          "role": "composer",
+          "note": null,
+          "stated": "Petri Alanko",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/Control_Resonant",
+          "sourceTitle": "Control Resonant — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Juha Vainio",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "control-resonant",
+          "gameTitle": "Control Resonant",
+          "role": "producer",
+          "note": null,
+          "stated": "Juha Vainio",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/Control_Resonant",
+          "sourceTitle": "Control Resonant — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": {
+        "title": "Juha Vainio",
+        "url": "https://en.wikipedia.org/wiki/Juha_Vainio",
+        "extract": "Juha Harri \"Junnu\" Vainio, also known as Juha \"Watt\" Vainio (10 May 1938 in Kotka, Finland – 29 October 1990, Gryon, Switzerland) was a Finnish lyricist, singer, composer and teacher. With the lyrics or music to over 2,400 songs to his name, Vainio is one of Finland's most prolific lyricists along with Sauvo Puhtila, Reino Helismaa and Vexi Salmi. Vainio enjoyed a short professional career as a teacher at Kymenranta Primary School.\nVainio began writing songs in the early 1960s and continued until his death. Apart from his home town Kotka, he lived for several years in Helsinki and Espoo. In his last years Vainio lived in Gryon, Switzerland, where he died of a heart attack in October 1990. He is buried in the family grave in Helsinki.\nHe was given the nickname \"Watt\" on account of his first solo single, the 1964 Paras rautalankayhtye (\"The Best Rautalanka Band\"). Never used by itself, the nickname was always part of \"Juha Watt Vainio\".",
+        "categories": [
+          "1938 births",
+          "1990 deaths",
+          "20th-century Finnish male singers",
+          "Finnish expatriates in Switzerland",
+          "Finnish male songwriters",
+          "People from Kotka"
+        ],
+        "facts": {
+          "background": "non_performing_personnel",
+          "birth_name": "Juha Harri Vainio",
+          "alias": "Junnu, Junnu Kaihomieli, Jorma Koski, Ilkka Lähde, Mirja Lähde, Kirsi Sunila, Heikki Ilmari",
+          "birth_date": "10 May 1938",
+          "death_date": "29 October 1990",
+          "origin": "Kotka, Finland",
+          "occupation": "lyricist, composer, singer",
+          "years_active": "1963–1990"
+        },
+        "sortName": "Vainio, Juha",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Sean Donnelly",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "control-resonant",
+          "gameTitle": "Control Resonant",
+          "role": "programmer",
+          "note": null,
+          "stated": "Sean Donnelly",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/Control_Resonant",
+          "sourceTitle": "Control Resonant — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": {
+        "title": "Sean Donnelly",
+        "url": "https://en.wikipedia.org/wiki/Sean_Donnelly",
+        "extract": "Sean Donnelly (born April 1, 1993) is an American track and field athlete specializing in the hammer throw. He won a bronze medal at the 2019 Pan American Games. In addition, he represented the Americas at the 2018 IAAF Continental Cup. He graduated from Mount Union University in 2014 and continued his education at the University of Minnesota.\nHis personal best in the event is 79.27 meters set in Tucson, Arizona in 2021.",
+        "categories": [
+          "1993 births",
+          "21st-century American sportsmen",
+          "American men hammer throwers",
+          "American track and field athletics biography stubs",
+          "Athletes (track and field) at the 2019 Pan American Games",
+          "Living people",
+          "Medalists at the 2019 Pan American Games",
+          "Minnesota Golden Gophers men's track and field athletes",
+          "Pan American Games bronze medalists for the United States in athletics (track and field)",
+          "People from Willoughby, Ohio",
+          "Sportspeople from Lake County, Ohio"
+        ],
+        "facts": {
+          "name": "Sean Donnelly",
+          "birth_date": "1 April 1993",
+          "birth_place": "Willoughby, Ohio, United States",
+          "sport": "Track and field",
+          "event": "Hammer throw",
+          "club": "Adidas",
+          "coach": "John Dagata",
+          "education": "University of Minnesota",
+          "college_team": "Minnesota Golden Gophers",
+          "medal_templates": "{{MedalCountry|"
+        },
+        "sortName": "Donnelly, Sean",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Konrad Tomaszkiewicz",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "dawnwalker",
+          "gameTitle": "The Blood of Dawnwalker",
+          "role": "director",
+          "note": null,
+          "stated": "Konrad Tomaszkiewicz",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/The_Blood_of_Dawnwalker",
+          "sourceTitle": "The Blood of Dawnwalker — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Daniel Sadowski",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "dawnwalker",
+          "gameTitle": "The Blood of Dawnwalker",
+          "role": "designer",
+          "note": null,
+          "stated": "Daniel Sadowski",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/The_Blood_of_Dawnwalker",
+          "sourceTitle": "The Blood of Dawnwalker — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Bartłomiej Gaweł",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "dawnwalker",
+          "gameTitle": "The Blood of Dawnwalker",
+          "role": "artist",
+          "note": null,
+          "stated": "Bartłomiej Gaweł",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/The_Blood_of_Dawnwalker",
+          "sourceTitle": "The Blood of Dawnwalker — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Jakub Szamałek",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "dawnwalker",
+          "gameTitle": "The Blood of Dawnwalker",
+          "role": "writer",
+          "note": null,
+          "stated": "Jakub Szamałek, Ariana Siarkiewicz",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/The_Blood_of_Dawnwalker",
+          "sourceTitle": "The Blood of Dawnwalker — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Ariana Siarkiewicz",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "dawnwalker",
+          "gameTitle": "The Blood of Dawnwalker",
+          "role": "writer",
+          "note": null,
+          "stated": "Jakub Szamałek, Ariana Siarkiewicz",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/The_Blood_of_Dawnwalker",
+          "sourceTitle": "The Blood of Dawnwalker — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Nikola Kołodziejczyk",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "dawnwalker",
+          "gameTitle": "The Blood of Dawnwalker",
+          "role": "composer",
+          "note": null,
+          "stated": "Nikola Kołodziejczyk, Piotr Musiał, Mikolai Stroinski, Karolina Matuszkiewicz, Adam Jędrysik",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/The_Blood_of_Dawnwalker",
+          "sourceTitle": "The Blood of Dawnwalker — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": {
+        "title": "Nikola Kołodziejczyk",
+        "url": "https://en.wikipedia.org/wiki/Nikola_Ko%C5%82odziejczyk",
+        "extract": "Nikola Kołodziejczyk (born 5 July 1986) is a Polish jazz pianist, composer, arranger and conductor.",
+        "categories": [
+          "1986 births",
+          "21st-century Polish male musicians",
+          "21st-century Polish pianists",
+          "21st-century conductors (music)",
+          "Living people",
+          "Musicians from Kraków",
+          "Polish conductors (music)",
+          "Polish jazz pianists",
+          "Polish male conductors (music)",
+          "Polish male jazz musicians"
+        ],
+        "facts": {
+          "name": "Nikola Kołodziejczyk",
+          "birth_date": "5 June 1986",
+          "origin": "Kraków, Poland",
+          "instrument": "piano",
+          "years_active": "2004–present",
+          "label": "For-tune (2014–2015), Nowa Brama Pro Musica (2015–present)",
+          "website": "nikolakolodziejczyk.com chordnation.pl"
+        },
+        "sortName": "Kolodziejczyk, Nikola",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Piotr Musiał",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "dawnwalker",
+          "gameTitle": "The Blood of Dawnwalker",
+          "role": "composer",
+          "note": null,
+          "stated": "Nikola Kołodziejczyk, Piotr Musiał, Mikolai Stroinski, Karolina Matuszkiewicz, Adam Jędrysik",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/The_Blood_of_Dawnwalker",
+          "sourceTitle": "The Blood of Dawnwalker — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Mikolai Stroinski",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "dawnwalker",
+          "gameTitle": "The Blood of Dawnwalker",
+          "role": "composer",
+          "note": null,
+          "stated": "Nikola Kołodziejczyk, Piotr Musiał, Mikolai Stroinski, Karolina Matuszkiewicz, Adam Jędrysik",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/The_Blood_of_Dawnwalker",
+          "sourceTitle": "The Blood of Dawnwalker — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": {
+        "title": "Mikolai Stroinski",
+        "url": "https://en.wikipedia.org/wiki/Mikolai_Stroinski",
+        "extract": "Mikolai Stroinski (or Mikołaj Stroiński, Polish pronunciation: [miˈkɔwaj strɔˈiɲskʲi]; born 3 June 1979) is a Polish film, television, and video game composer. He is best known for composing music for The Witcher 3: Wild Hunt, The Witcher 3: Blood and Wine, Thronebreaker: The Witcher Tales, The Vanishing of Ethan Carter, Age of Empires IV, Metamorphosis, Diablo Immortal, and Nobody Wants to Die. His work has received international recognition through awards from the Society of Composers & Lyricists, the Game Audio Network Guild, Digital Dragons,D.I.C.E and IGN the Canadian Game Awards, and other organizations.",
+        "categories": [
+          "1979 births",
+          "21st-century Polish composers",
+          "21st-century Polish male composers",
+          "American people of Polish descent",
+          "Animated film score composers",
+          "Berklee College of Music alumni",
+          "Living people",
+          "Male television composers",
+          "Musicians from Los Angeles",
+          "Musicians from Nairobi",
+          "Polish film score composers",
+          "Polish male film score composers",
+          "Polish record producers",
+          "Polish video game composers",
+          "Record producers from Los Angeles",
+          "Television composers"
+        ],
+        "facts": {
+          "name": "Mikolai Stroinski",
+          "birth_name": "Mikołaj Stroiński",
+          "birth_date": "3 June 1979",
+          "birth_place": "Nairobi, Kenya",
+          "origin": "Los Angeles, California, US",
+          "genre": "Film music|television music|video game music|soundtrack",
+          "occupation": "Composer, music producer",
+          "years_active": "2004–present"
+        },
+        "sortName": "Stroinski, Mikolai",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Karolina Matuszkiewicz",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "dawnwalker",
+          "gameTitle": "The Blood of Dawnwalker",
+          "role": "composer",
+          "note": null,
+          "stated": "Nikola Kołodziejczyk, Piotr Musiał, Mikolai Stroinski, Karolina Matuszkiewicz, Adam Jędrysik",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/The_Blood_of_Dawnwalker",
+          "sourceTitle": "The Blood of Dawnwalker — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Adam Jędrysik",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "dawnwalker",
+          "gameTitle": "The Blood of Dawnwalker",
+          "role": "composer",
+          "note": null,
+          "stated": "Nikola Kołodziejczyk, Piotr Musiał, Mikolai Stroinski, Karolina Matuszkiewicz, Adam Jędrysik",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/The_Blood_of_Dawnwalker",
+          "sourceTitle": "The Blood of Dawnwalker — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Matt Searcy",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "gears-of-war-e-day",
+          "gameTitle": "Gears of War: E-Day",
+          "role": "director",
+          "note": null,
+          "stated": "Matt Searcy",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/Gears_of_War%3A_E-Day",
+          "sourceTitle": "Gears of War: E-Day — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Aryan Hanbeck",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "gears-of-war-e-day",
+          "gameTitle": "Gears of War: E-Day",
+          "role": "artist",
+          "note": null,
+          "stated": "Aryan Hanbeck",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/Gears_of_War%3A_E-Day",
+          "sourceTitle": "Gears of War: E-Day — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Vee Nyarko",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "gears-of-war-e-day",
+          "gameTitle": "Gears of War: E-Day",
+          "role": "writer",
+          "note": null,
+          "stated": "Vee Nyarko",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/Gears_of_War%3A_E-Day",
+          "sourceTitle": "Gears of War: E-Day — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Adam Lastiwka",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "gears-of-war-e-day",
+          "gameTitle": "Gears of War: E-Day",
+          "role": "composer",
+          "note": null,
+          "stated": "Adam Lastiwka",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/Gears_of_War%3A_E-Day",
+          "sourceTitle": "Gears of War: E-Day — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Satoru Nihei",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "role": "director",
+          "note": null,
+          "stated": "Satoru Nihei",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/Onimusha%3A_Way_of_the_Sword",
+          "sourceTitle": "Onimusha: Way of the Sword — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Tatsuo Isoko",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "role": "designer",
+          "note": null,
+          "stated": "Tatsuo Isoko, Katsuhiro Eguchi",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/Onimusha%3A_Way_of_the_Sword",
+          "sourceTitle": "Onimusha: Way of the Sword — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Katsuhiro Eguchi",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "role": "designer",
+          "note": null,
+          "stated": "Tatsuo Isoko, Katsuhiro Eguchi",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/Onimusha%3A_Way_of_the_Sword",
+          "sourceTitle": "Onimusha: Way of the Sword — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Hiroyuki Nara",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "role": "artist",
+          "note": null,
+          "stated": "Hiroyuki Nara, Hiroshi Yugen",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/Onimusha%3A_Way_of_the_Sword",
+          "sourceTitle": "Onimusha: Way of the Sword — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Hiroshi Yugen",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "role": "artist",
+          "note": null,
+          "stated": "Hiroyuki Nara, Hiroshi Yugen",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/Onimusha%3A_Way_of_the_Sword",
+          "sourceTitle": "Onimusha: Way of the Sword — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Hiroshi Yamashita",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "role": "writer",
+          "note": null,
+          "stated": "Hiroshi Yamashita",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/Onimusha%3A_Way_of_the_Sword",
+          "sourceTitle": "Onimusha: Way of the Sword — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": {
+        "title": "Hiroshi Yamashita",
+        "url": "https://en.wikipedia.org/wiki/Hiroshi_Yamashita",
+        "extract": "Hiroshi Yamashita (born 1 January 1986) is a Japanese rugby union player. He was named in Japan's squad for the 2015 Rugby World Cup and Chiefs in Super Rugby from 2016.",
+        "categories": [
+          "1986 births",
+          "2015 Rugby World Cup players",
+          "21st-century Japanese sportsmen",
+          "Chiefs (Super Rugby) players",
+          "Japan international rugby union players",
+          "Japanese expatriate rugby union players",
+          "Japanese expatriate rugby union players in New Zealand",
+          "Japanese rugby union biography stubs",
+          "Japanese rugby union players",
+          "Kobelco Kobe Steelers players",
+          "Kyoto Sangyo University alumni",
+          "Living people",
+          "Rugby union players from Osaka Prefecture",
+          "Rugby union props",
+          "Sportspeople from Shijōnawate",
+          "Sunwolves players"
+        ],
+        "facts": {
+          "name": "Hiroshi Yamashita",
+          "birth_date": "1 June 1986",
+          "birth_place": "Shijōnawate, Osaka, Japan",
+          "school": "Miyakojima Technical High School",
+          "university": "Kyoto Sangyo University",
+          "ru_position": "Prop",
+          "years1": "2010−",
+          "clubs1": "Kobelco Steelers",
+          "apps1": "248",
+          "points1": "70",
+          "ru_clubupdate": "21 February 2021",
+          "superyears1": "2016",
+          "superyears2": "2019",
+          "superapps2": "12",
+          "super14update": "21 February 2021",
+          "repyears1": "2009–2018",
+          "repteam1": "Japan",
+          "repcaps1": "51",
+          "ru_ntupdate": "21 February 2021"
+        },
+        "sortName": "Yamashita, Hiroshi",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Marika Suzuki",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "role": "composer",
+          "note": null,
+          "stated": "Marika Suzuki, Nozomi Ohmoto, Kota Suzuki, Tomoki Kameyama",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/Onimusha%3A_Way_of_the_Sword",
+          "sourceTitle": "Onimusha: Way of the Sword — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Nozomi Ohmoto",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "role": "composer",
+          "note": null,
+          "stated": "Marika Suzuki, Nozomi Ohmoto, Kota Suzuki, Tomoki Kameyama",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/Onimusha%3A_Way_of_the_Sword",
+          "sourceTitle": "Onimusha: Way of the Sword — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Kota Suzuki",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "role": "composer",
+          "note": null,
+          "stated": "Marika Suzuki, Nozomi Ohmoto, Kota Suzuki, Tomoki Kameyama",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/Onimusha%3A_Way_of_the_Sword",
+          "sourceTitle": "Onimusha: Way of the Sword — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Tomoki Kameyama",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "role": "composer",
+          "note": null,
+          "stated": "Marika Suzuki, Nozomi Ohmoto, Kota Suzuki, Tomoki Kameyama",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/Onimusha%3A_Way_of_the_Sword",
+          "sourceTitle": "Onimusha: Way of the Sword — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Akihito Kadowaki",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "role": "producer",
+          "note": null,
+          "stated": "Akihito Kadowaki, Koichi Shibata, Kosuke Tanaka",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/Onimusha%3A_Way_of_the_Sword",
+          "sourceTitle": "Onimusha: Way of the Sword — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Koichi Shibata",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "role": "producer",
+          "note": null,
+          "stated": "Akihito Kadowaki, Koichi Shibata, Kosuke Tanaka",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/Onimusha%3A_Way_of_the_Sword",
+          "sourceTitle": "Onimusha: Way of the Sword — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Kosuke Tanaka",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "role": "producer",
+          "note": null,
+          "stated": "Akihito Kadowaki, Koichi Shibata, Kosuke Tanaka",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/Onimusha%3A_Way_of_the_Sword",
+          "sourceTitle": "Onimusha: Way of the Sword — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": {
+        "title": "Kosuke Tanaka",
+        "url": "https://en.wikipedia.org/wiki/Kosuke_Tanaka",
+        "extract": "Kosuke Tanaka (田中 広輔, Tanaka Kōsuke; born July 3, 1989) is a professional Japanese baseball player. He plays infielder for the Hiroshima Toyo Carp.",
+        "categories": [
+          "1989 births",
+          "2017 World Baseball Classic players",
+          "Baseball people from Kanagawa Prefecture",
+          "Hiroshima Toyo Carp players",
+          "Japanese baseball infielder stubs",
+          "Japanese baseball players",
+          "Living people",
+          "Nippon Professional Baseball second basemen",
+          "Nippon Professional Baseball shortstops",
+          "Nippon Professional Baseball third basemen",
+          "Sportspeople from Atsugi, Kanagawa",
+          "World Baseball Classic players of Japan"
+        ],
+        "facts": {
+          "name": "Kosuke Tanaka",
+          "position": "Infielder",
+          "bats": "Left",
+          "throws": "Right",
+          "birth_date": "3 July 1989",
+          "birth_place": "Atsugi, Kanagawa, Japan",
+          "debutleague": "NPB",
+          "debutdate": "March 29",
+          "debutyear": "2014",
+          "debutteam": "Hiroshima Toyo Carp",
+          "finaldate": "October 4",
+          "finalyear": "2025",
+          "finalteam": "Hiroshima Toyo Carp",
+          "finalleague": "NPB",
+          "statleague": "NPB",
+          "stat1label": "Batting average",
+          "stat1value": ".256",
+          "stat2label": "Hits",
+          "stat2value": "965",
+          "stat3label": "Home runs",
+          "stat3value": "69",
+          "stat4label": "Runs batted in",
+          "stat4value": "348",
+          "stat5label": "Stolen bases",
+          "stat5value": "131",
+          "teams": "Hiroshima Toyo Carp ( – )",
+          "awards": "2016 CLCS MVP, Central League Golden Glove Award ( ), Central League Best Nine Award ( ), Central League stolen base champion (2017), 3× NPB All-Star (2015, 2017, 2018)"
+        },
+        "sortName": "Tanaka, Kosuke",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Keita Konno",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "role": "programmer",
+          "note": null,
+          "stated": "Keita Konno",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/Onimusha%3A_Way_of_the_Sword",
+          "sourceTitle": "Onimusha: Way of the Sword — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Soulframe Liang",
+      "alsoKnownAs": [
+        "Soulframe"
+      ],
+      "credits": [
+        {
+          "game": "phantom-blade-zero",
+          "gameTitle": "Phantom Blade Zero",
+          "role": "director",
+          "note": null,
+          "stated": "Soulframe Liang or Soulframe.",
+          "uncertain": true,
+          "source": "https://en.wikipedia.org/wiki/Phantom_Blade_Zero",
+          "sourceTitle": "Phantom Blade Zero — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        },
+        {
+          "game": "phantom-blade-zero",
+          "gameTitle": "Phantom Blade Zero",
+          "role": "producer",
+          "note": null,
+          "stated": "Soulframe Liang",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/Phantom_Blade_Zero",
+          "sourceTitle": "Phantom Blade Zero — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Michael Chang",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "phantom-blade-zero",
+          "gameTitle": "Phantom Blade Zero",
+          "role": "artist",
+          "note": null,
+          "stated": "Michael Chang",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/Phantom_Blade_Zero",
+          "sourceTitle": "Phantom Blade Zero — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": {
+        "title": "Michael Chang",
+        "url": "https://en.wikipedia.org/wiki/Michael_Chang",
+        "extract": "Michael Te-pei Chang (born February 22, 1972) is an American former professional tennis player and coach. He was ranked world No. 2 by the Association of Tennis Professionals (ATP) in 1996. Chang is the youngest man in history to win a singles major, winning the 1989 French Open at 17 years and 109 days old.  He is the first tennis player of Asian descent, male or female, to win a Grand Slam singles title. He won a total of 34 ATP Tour-level singles titles, including seven Masters titles, and was a three-time major runner-up. \nChang was inducted into the International Tennis Hall of Fame in 2008. He coached Kei Nishikori from 2014 to 2025, and currently coaches Learner Tien.",
+        "categories": [
+          "1972 births",
+          "20th-century American sportsmen",
+          "American businesspeople in the real estate industry",
+          "American investors",
+          "American male tennis players",
+          "American memoirists",
+          "American people of Taiwanese descent",
+          "American tennis players of Asian descent",
+          "American writers of Taiwanese descent",
+          "Businesspeople from California",
+          "Businesspeople from Hudson County, New Jersey",
+          "French Open champions",
+          "Grand Slam (tennis) champions in men's singles",
+          "International Tennis Hall of Fame inductees",
+          "Living people",
+          "Olympic tennis players for the United States",
+          "Sportspeople from Encinitas, California",
+          "Sportspeople from Hoboken, New Jersey",
+          "Sportspeople from Saint Paul, Minnesota",
+          "Sportspeople from San Diego County, California",
+          "Sportspeople of Taiwanese descent",
+          "Tennis players at the 1992 Summer Olympics",
+          "Tennis players at the 2000 Summer Olympics",
+          "Tennis players from New Jersey",
+          "Tennis players from Orange County, California"
+        ],
+        "facts": {
+          "name": "Michael Chang",
+          "residence": "Orange County, California, US",
+          "birth_date": "22 February 1972",
+          "birth_place": "Hoboken, New Jersey, US",
+          "height": "5 ft 9 in",
+          "turnedpro": "1988",
+          "retired": "2003",
+          "plays": "Right-handed (two-handed backhand)",
+          "coach": "José Higueras (1989), Carl Chang (1992–2003)",
+          "careerprizemoney": "&nbsp;40th&nbsp;all-time&nbsp;leader&nbsp;in&nbsp;earnings",
+          "tennishofyear": "2008",
+          "tennishofid": "michael-chang",
+          "website": "mchang.com",
+          "singlesrecord": "662–312 (68%)",
+          "singlestitles": "34",
+          "highestsinglesranking": "No. 2 (September 9, 1996)",
+          "australianopenresult": "F (1996)",
+          "frenchopenresult": "W (1989)",
+          "wimbledonresult": "QF (1994)",
+          "usopenresult": "F (1996)",
+          "othertournaments": "yes",
+          "team": "yes",
+          "daviscupresult": "W (1990)",
+          "masterscupresult": "F (1995)",
+          "grandslamcupresult": "F (1991, 1992)",
+          "olympicsresult": "2R (1992)",
+          "doublesrecord": "11–33 (25%)",
+          "highestdoublesranking": "No. 199 (April 19, 1993)",
+          "updated": "July 5, 2014",
+          "coachplayers": "Spouse: Amber Liu, Student: Kei Nishikori (2014–2025), Learner Tien (2025–)"
+        },
+        "sortName": "Chang, Michael",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Caisheng Bo",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "phantom-blade-zero",
+          "gameTitle": "Phantom Blade Zero",
+          "role": "composer",
+          "note": null,
+          "stated": "Caisheng Bo",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/Phantom_Blade_Zero",
+          "sourceTitle": "Phantom Blade Zero — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "David Dedeine",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "resonance-a-plague-tale-legacy",
+          "gameTitle": "Resonance: A Plague Tale Legacy",
+          "role": "director",
+          "note": null,
+          "stated": "David Dedeine",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/Resonance%3A_A_Plague_Tale_Legacy",
+          "sourceTitle": "Resonance: A Plague Tale Legacy — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Olivier Ponsonnet",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "resonance-a-plague-tale-legacy",
+          "gameTitle": "Resonance: A Plague Tale Legacy",
+          "role": "artist",
+          "note": null,
+          "stated": "Olivier Ponsonnet",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/Resonance%3A_A_Plague_Tale_Legacy",
+          "sourceTitle": "Resonance: A Plague Tale Legacy — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Carol Ann Bañuls",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "resonance-a-plague-tale-legacy",
+          "gameTitle": "Resonance: A Plague Tale Legacy",
+          "role": "writer",
+          "note": null,
+          "stated": "Carol Ann Bañuls",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/Resonance%3A_A_Plague_Tale_Legacy",
+          "sourceTitle": "Resonance: A Plague Tale Legacy — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Olivier Deriviere",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "resonance-a-plague-tale-legacy",
+          "gameTitle": "Resonance: A Plague Tale Legacy",
+          "role": "composer",
+          "note": null,
+          "stated": "Olivier Deriviere",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/Resonance%3A_A_Plague_Tale_Legacy",
+          "sourceTitle": "Resonance: A Plague Tale Legacy — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": {
+        "title": "Olivier Deriviere",
+        "url": "https://en.wikipedia.org/wiki/Olivier_Deriviere",
+        "extract": "Olivier Derivière (born 26 December 1978) is a French video game composer, best known for his work on the Alone in the Dark, Obscure, Remember Me and Streets of Rage 4 soundtracks. His work on Remember Me won the 2013 IFMCA award for Best Original Score for a Video Game or Interactive Media.",
+        "categories": [
+          "1978 births",
+          "Berklee College of Music alumni",
+          "French composers",
+          "French male composers",
+          "French video game composers",
+          "Living people"
+        ],
+        "facts": {
+          "name": "Olivier Derivière",
+          "birth_date": "26 December 1978",
+          "birth_place": "France",
+          "genre": "Orchestral, electronic, industrial, video game music",
+          "occupation": "Composer",
+          "website": "olivierderiviere.com"
+        },
+        "sortName": "Deriviere, Olivier",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Jon McKellan",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "silent-hill-townfall",
+          "gameTitle": "Silent Hill: Townfall",
+          "role": "director",
+          "note": null,
+          "stated": "Jon McKellan",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/Silent_Hill%3A_Townfall",
+          "sourceTitle": "Silent Hill: Townfall — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        },
+        {
+          "game": "silent-hill-townfall",
+          "gameTitle": "Silent Hill: Townfall",
+          "role": "writer",
+          "note": null,
+          "stated": "Jon McKellan",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/Silent_Hill%3A_Townfall",
+          "sourceTitle": "Silent Hill: Townfall — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Graeme McKellan",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "silent-hill-townfall",
+          "gameTitle": "Silent Hill: Townfall",
+          "role": "designer",
+          "note": null,
+          "stated": "Graeme McKellan",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/Silent_Hill%3A_Townfall",
+          "sourceTitle": "Silent Hill: Townfall — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Paul Abbott",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "silent-hill-townfall",
+          "gameTitle": "Silent Hill: Townfall",
+          "role": "artist",
+          "note": null,
+          "stated": "Paul Abbott",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/Silent_Hill%3A_Townfall",
+          "sourceTitle": "Silent Hill: Townfall — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": {
+        "title": "Paul Abbott",
+        "url": "https://en.wikipedia.org/wiki/Paul_Abbott",
+        "extract": "Paul Abbott (born 22 February 1960) is an English screenwriter and producer.\nHe became one of the most successful television writers in Britain following his work on popular series such as Coronation Street (1987–89, 1991–93), Cracker (1995, 1996, 1999), and more widely known for creating some of the most acclaimed television dramas of the 1990s and 2000s, including Reckless (1997), Touching Evil (1997–1999), Clocking Off (2000–2003), State of Play (2003), Shameless (2005–2013), and No Offence (2015–18).",
+        "categories": [
+          "1960 births",
+          "Academics of the University of Salford",
+          "Alumni of Manchester Metropolitan University",
+          "Alumni of the Victoria University of Manchester",
+          "BAFTA winners (people)",
+          "British showrunners",
+          "British television show creators",
+          "Edgar Award winners",
+          "English male television writers",
+          "English male writers",
+          "English soap opera writers",
+          "English television producers",
+          "English television writers",
+          "Living people",
+          "Mass media people from Lancashire",
+          "People from Burnley",
+          "Writers from Lancashire"
+        ],
+        "facts": {
+          "birth_date": "22 February 1960",
+          "birth_place": "Burnley, England",
+          "years_active": "1982&ndash;present",
+          "occupation": "Screenwriter|producer"
+        },
+        "sortName": "Abbott, Paul",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Pilotpriest",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "silent-hill-townfall",
+          "gameTitle": "Silent Hill: Townfall",
+          "role": "composer",
+          "note": null,
+          "stated": "Pilotpriest",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/Silent_Hill%3A_Townfall",
+          "sourceTitle": "Silent Hill: Townfall — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": {
+        "title": "Anthony Scott Burns",
+        "url": "https://en.wikipedia.org/wiki/Anthony_Scott_Burns",
+        "extract": "Anthony Scott Burns (born 1977) is a Canadian filmmaker, visual effects artist and musician.\nBurns also releases music under the moniker Pilotpriest.",
+        "categories": [
+          "1977 births",
+          "Canadian electronic musicians",
+          "Film directors from Ontario",
+          "Living people",
+          "Musicians from Kitchener, Ontario"
+        ],
+        "facts": {
+          "name": "Anthony Scott Burns",
+          "birth_place": "Kitchener, Ontario, Canada",
+          "other_names": "Pilotpriest",
+          "occupation": "Filmmaker, visual effects artist, musician, composer",
+          "years_active": "1995–present"
+        },
+        "sortName": "Burns, Anthony Scott",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Greg Foertsch",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "star-wars-zero-company",
+          "gameTitle": "Star Wars Zero Company",
+          "role": "director",
+          "note": null,
+          "stated": "Greg Foertsch",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/Star_Wars_Zero_Company",
+          "sourceTitle": "Star Wars Zero Company — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "James Brawley",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "star-wars-zero-company",
+          "gameTitle": "Star Wars Zero Company",
+          "role": "designer",
+          "note": null,
+          "stated": "James Brawley, Grayson Scantlebury",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/Star_Wars_Zero_Company",
+          "sourceTitle": "Star Wars Zero Company — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Grayson Scantlebury",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "star-wars-zero-company",
+          "gameTitle": "Star Wars Zero Company",
+          "role": "designer",
+          "note": null,
+          "stated": "James Brawley, Grayson Scantlebury",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/Star_Wars_Zero_Company",
+          "sourceTitle": "Star Wars Zero Company — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Aaron Contreras",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "star-wars-zero-company",
+          "gameTitle": "Star Wars Zero Company",
+          "role": "writer",
+          "note": null,
+          "stated": "Aaron Contreras",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/Star_Wars_Zero_Company",
+          "sourceTitle": "Star Wars Zero Company — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Gordy Haab",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "star-wars-zero-company",
+          "gameTitle": "Star Wars Zero Company",
+          "role": "composer",
+          "note": null,
+          "stated": "Gordy Haab",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/Star_Wars_Zero_Company",
+          "sourceTitle": "Star Wars Zero Company — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": {
+        "title": "Gordy Haab",
+        "url": "https://en.wikipedia.org/wiki/Gordy_Haab",
+        "extract": "Gordy Haab (born 1976) is an American film, video game and television composer based in Los Angeles, California. His work has been featured in works associated with franchises including Star Wars Battlefront II, for which he won Video Game Score of the Year from the American Society of Composers, Authors and Publishers. Haab is also known for his work on Microsoft's Halo Wars 2, for which he was nominated for a 2017 HMMA award. His score for Electronic Arts' Star Wars: Battlefront, won three awards at the 2016 GDC G.A.N.G. Awards: Music of the Year, Best Interactive Score, and Best Instrumental Score. Haab was also nominated for a BAFTA Games Awards for his work on Star Wars: Battlefront.\nHis work has been covered by publications, including the HuffPost, which said, \"Star Wars Battlefront is sounding better and better every day...this new Star Wars music will light your saber.\" In 2015, Hardcore Gamer was among the first to link Haab to his inspiration by saying, \"Star Wars Battlefront features the best game score John Williams never wrote.\"  The Los Angeles Times has also recognized Haab's work, saying \"the B-side to John Williams' score,\" and Billboard quoted Steve Schnur, the president of music for EA, as saying, \"Gordy is one of the few composers in the world on Lucas' short list.\"",
+        "categories": [
+          "1976 births",
+          "American film score composers",
+          "American male film score composers",
+          "American male television composers",
+          "American television composers",
+          "American video game composers",
+          "Grammy Award winners",
+          "Living people",
+          "Musicians from Richmond, Virginia"
+        ],
+        "facts": {
+          "name": "Gordy Haab",
+          "birth_date": "10 March 1976",
+          "birth_place": "Richmond, Virginia, U.S.",
+          "genre": "Video game music|film score|classical",
+          "occupation": "Composer|conductor|orchestrator",
+          "website": "https://www.gordyhaabmusic.com/"
+        },
+        "sortName": "Haab, Gordy",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Caydence Funk",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "star-wars-zero-company",
+          "gameTitle": "Star Wars Zero Company",
+          "role": "producer",
+          "note": null,
+          "stated": "Caydence Funk",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/Star_Wars_Zero_Company",
+          "sourceTitle": "Star Wars Zero Company — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Ryan McFall",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "star-wars-zero-company",
+          "gameTitle": "Star Wars Zero Company",
+          "role": "programmer",
+          "note": null,
+          "stated": "Ryan McFall",
+          "uncertain": false,
+          "source": "https://en.wikipedia.org/wiki/Star_Wars_Zero_Company",
+          "sourceTitle": "Star Wars Zero Company — Wikipedia (CC BY-SA 4.0)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Courtney Hope",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "control-resonant",
+          "gameTitle": "Control Resonant",
+          "character": "Jesse Faden",
+          "collection": "characters",
+          "field": "actor",
+          "note": null,
+          "source": "https://control.fandom.com/wiki/Jesse_Faden",
+          "sourceTitle": "Jesse Faden — control.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": {
+        "title": "Courtney Hope",
+        "url": "https://en.wikipedia.org/wiki/Courtney_Hope",
+        "extract": "Courtney Hope (born August 15, 1989) is an American actress. She is known for playing Sally Spectra on daytime soap operas The Bold and the Beautiful (2017–2020) and The Young and the Restless (2020–present). She is a Daytime Emmy winner. Hope has also been a nominee for BAFTA Award for Performer in a Leading Role, D.I.C.E. Award for Outstanding Achievement in Character, and Daytime Emmy Award for Outstanding Supporting Actress in a Drama Series.\nShe is also known for portraying Beth Wilder and Jesse Faden in video games Quantum Break and Control, respectively.",
+        "categories": [
+          "1989 births",
+          "21st-century American actresses",
+          "Actresses from Dallas",
+          "American exercise instructors",
+          "American film actresses",
+          "American soap opera actresses",
+          "American television actresses",
+          "American video game actresses",
+          "American voice actresses",
+          "Daytime Emmy Award for Outstanding Supporting Actress in a Drama Series winners",
+          "Daytime Emmy Award winners",
+          "Living people"
+        ],
+        "facts": {
+          "name": "Courtney Hope",
+          "birth_date": "15 August 1989",
+          "birth_place": "Dallas, Texas, U.S.",
+          "occupation": "Actor",
+          "years_active": "2000–present",
+          "known_for": "The Bold and The Beautiful, The Young and the Restless, Control",
+          "awards": "Daytime Emmy Award"
+        },
+        "sortName": "Hope, Courtney",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "James McCaffrey",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "control-resonant",
+          "gameTitle": "Control Resonant",
+          "character": "Zachariah Trench",
+          "collection": "characters",
+          "field": "actor",
+          "note": null,
+          "source": "https://control.fandom.com/wiki/Zachariah_Trench",
+          "sourceTitle": "Zachariah Trench — control.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": {
+        "title": "James McCaffrey (actor)",
+        "url": "https://en.wikipedia.org/wiki/James_McCaffrey_(actor)",
+        "extract": "James Perry McCaffrey (March 27, 1958 – December 17, 2023) was an American actor. He starred as the lead character in the short lived series Swift Justice, which was cancelled after only a season. Additionally, he had roles such as Jimmy Keefe on Rescue Me (2004–2011), and Captain Arthur O'Byrne in New York Undercover (1994–1997). He also had main roles and recurring roles in a number of television series as well as appearing in feature films. In addition, he did voice acting, such as his voice role as Max Payne in the Max Payne video game series.",
+        "categories": [
+          "1958 births",
+          "2023 deaths",
+          "20th-century American male actors",
+          "21st-century American male actors",
+          "American male film actors",
+          "American male soap opera actors",
+          "American male television actors",
+          "American male video game actors",
+          "American male voice actors",
+          "Deaths from multiple myeloma in New York (state)",
+          "Male actors from Albany, New York",
+          "People from Larchmont, New York"
+        ],
+        "facts": {
+          "name": "James McCaffrey",
+          "birth_date": "27 March 1958",
+          "birth_place": "Albany, New York, U.S.",
+          "death_date": "17 December 2023",
+          "death_place": "Larchmont, New York, U.S.",
+          "occupation": "Actor|voice actor",
+          "years_active": "1987–2023",
+          "notable_works": "Rescue Me, Max Payne, Alan Wake, Control",
+          "spouse": "Rochelle Boström"
+        },
+        "sortName": "McCaffrey, James",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Antonia Bernath",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "control-resonant",
+          "gameTitle": "Control Resonant",
+          "character": "Emily Pope",
+          "collection": "characters",
+          "field": "actor",
+          "note": null,
+          "source": "https://control.fandom.com/wiki/Emily_Pope",
+          "sourceTitle": "Emily Pope — control.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": {
+        "title": "Antonia Bernath",
+        "url": "https://en.wikipedia.org/wiki/Antonia_Bernath",
+        "extract": "Antonia Geraldine Audrey Lee Bernath is an English actress, voiceover artist and singer. She began her career in the CBS series Elvis (2005) and the Bollywood film Kisna: The Warrior Poet (2005). She then starred in the films St Trinians (2007), Cuckoo (2009), and the ITV2 drama Trinity (2009). She had recurring roles in the ABC series The Astronaut Wives Club (2015) and the final series of Downton Abbey (2015). After a break, Bernath returned to television with the ITVX miniseries Nolly (2023).",
+        "categories": [
+          "1980s births",
+          "21st-century English actresses",
+          "21st-century English singers",
+          "Actors from the City of Westminster",
+          "Actresses from London",
+          "Actresses from Virginia",
+          "Actresses from Wiltshire",
+          "Actresses in Hindi cinema",
+          "Alumni of Bristol Old Vic Theatre School",
+          "Alumni of the University of Cambridge",
+          "British expatriate actresses in India",
+          "English film actresses",
+          "English people of American descent",
+          "English people of Norwegian descent",
+          "English people with attention deficit hyperactivity disorder",
+          "English stage actresses",
+          "English television actresses",
+          "English video game actresses",
+          "English women singers",
+          "Living people",
+          "People educated at Godolphin School",
+          "People from Westminster"
+        ],
+        "facts": {
+          "birth_name": "Antonia Geraldine Audrey Lee Bernath",
+          "birth_place": "Westminster, London, England",
+          "education": "Bristol Old Vic Theatre School",
+          "years_active": "2003–present"
+        },
+        "sortName": "Bernath, Antonia",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Matthew Porretta",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "control-resonant",
+          "gameTitle": "Control Resonant",
+          "character": "Casper Darling",
+          "collection": "characters",
+          "field": "actor",
+          "note": null,
+          "source": "https://control.fandom.com/wiki/Casper_Darling",
+          "sourceTitle": "Casper Darling — control.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        },
+        {
+          "game": "control-resonant",
+          "gameTitle": "Control Resonant",
+          "character": "Alan Wake",
+          "collection": "characters",
+          "field": "actor",
+          "note": "voice",
+          "source": "https://control.fandom.com/wiki/Alan_Wake_(character)",
+          "sourceTitle": "Alan Wake — control.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": {
+        "title": "Matthew Porretta",
+        "url": "https://en.wikipedia.org/wiki/Matthew_Porretta",
+        "extract": "Matthew Porretta is an American television, voice, and film actor known for his appearances in Wings, Beverly Hills, 90210, and Robin Hood: Men in Tights. He has also appeared on Broadway and in video games, where he is known for his voice role as the titular character in Remedy Entertainment's videogame's Alan Wake, its sequel Alan Wake 2, as Alan Wake in Quantum Break, and live action as Dr. Casper Darling in Control and Control Resonant.",
+        "categories": [
+          "20th-century American male actors",
+          "21st-century American male actors",
+          "American male film actors",
+          "American male television actors",
+          "American male video game actors",
+          "Living people",
+          "Male actors from Connecticut",
+          "People from Darien, Connecticut"
+        ],
+        "facts": {
+          "name": "Matthew Porretta",
+          "birth_place": "Darien, Connecticut, U.S.",
+          "occupation": "Actor",
+          "years_active": "1993–present"
+        },
+        "sortName": "Porretta, Matthew",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Sean Durrie",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "control-resonant",
+          "gameTitle": "Control Resonant",
+          "character": "Dylan Faden",
+          "collection": "characters",
+          "field": "actor",
+          "note": null,
+          "source": "https://control.fandom.com/wiki/Dylan_Faden",
+          "sourceTitle": "Dylan Faden — control.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Brig Bennett",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "control-resonant",
+          "gameTitle": "Control Resonant",
+          "character": "Helen Marshall",
+          "collection": "enemies",
+          "field": "actor",
+          "note": "likeness",
+          "source": "https://control.fandom.com/wiki/Helen_Marshall",
+          "sourceTitle": "Helen Marshall — control.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Jade Anouka",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "control-resonant",
+          "gameTitle": "Control Resonant",
+          "character": "Helen Marshall",
+          "collection": "enemies",
+          "field": "actor",
+          "note": "voice",
+          "source": "https://control.fandom.com/wiki/Helen_Marshall",
+          "sourceTitle": "Helen Marshall — control.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": {
+        "title": "Jade Anouka",
+        "url": "https://en.wikipedia.org/wiki/Jade_Anouka",
+        "extract": "Jade Anouka (born 12 June 1989) is an English actress. She is known for her various stage roles and for her appearances in His Dark Materials on BBC One and the ITV dramas Trauma and Cleaning Up.",
+        "categories": [
+          "1989 births",
+          "21st-century English actresses",
+          "21st-century English poets",
+          "21st-century English women poets",
+          "21st-century women poets",
+          "Actors from the London Borough of Bexley",
+          "Actresses from London",
+          "Alumni of the Guildford School of Acting",
+          "Black British LGBTQ people",
+          "Black British actresses",
+          "English Shakespearean actresses",
+          "English bisexual actresses",
+          "English film actresses",
+          "English people of Jamaican descent",
+          "English people of Trinidad and Tobago descent",
+          "English stage actresses",
+          "English television actresses",
+          "LGBTQ people from London",
+          "Living people",
+          "National Youth Theatre members",
+          "People from Bexleyheath",
+          "Royal Shakespeare Company members"
+        ],
+        "facts": {
+          "name": "Jade Anouka",
+          "birth_name": "Jade Anouka",
+          "birth_date": "12 June 1989",
+          "birth_place": "Slade Green, London, England",
+          "education": "Guildford School of Acting",
+          "occupation": "Actress|poet",
+          "years_active": "2007–present",
+          "website": "http://www.jadeanouka.com"
+        },
+        "sortName": "Anouka, Jade",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Derek Hagen",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "control-resonant",
+          "gameTitle": "Control Resonant",
+          "character": "Frederick Langston",
+          "collection": "characters",
+          "field": "actor",
+          "note": null,
+          "source": "https://control.fandom.com/wiki/Frederick_Langston",
+          "sourceTitle": "Frederick Langston — control.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "redirects to \"Derek Hagan\", which does not mention this name"
+    },
+    {
+      "name": "Martti Suosalo",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "control-resonant",
+          "gameTitle": "Control Resonant",
+          "character": "Ahti",
+          "collection": "characters",
+          "field": "actor",
+          "note": null,
+          "source": "https://control.fandom.com/wiki/Ahti",
+          "sourceTitle": "Ahti — control.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": {
+        "title": "Martti Suosalo",
+        "url": "https://en.wikipedia.org/wiki/Martti_Suosalo",
+        "extract": "Martti Juhani Suosalo (born 19 July 1962) is a Finnish actor and singer.\nSuosalo was born in Oulu, and began his career in 1986 with an appearance in a TV series. He began to work as a regular actor on Finnish television but also appeared in several films in the early 1990s such as the 1994 film Aapo alongside actors such as Taisto Reimaluoto, Ulla Koivuranta and Kai Lehtinen.\nSuosalo was admitted to the Helsinki Theatre Academy on his third attempt in 1983. At that time, from 1982 to 1985, Jouko Turkka was the rector of the Theatre Academy. Suosalo has estimated that he would never have been able to study at the school without Turkka. Suosalo graduated from the Theatre Academy in 1987.\nWhile most of his work has been in television, in 1999, Suosalo appeared in just about every major film produced in Finland that year, appearing on the big screen in films such as Rentun ruusu, Sibelius and Lapin kullan kimallus.\nIn 2006, Suosalo has appeared in the TV series Ilonen talo and in the movie Kalteva torni, which stars another Suosalo family member, his seven-year-old daughter Siiri Suosalo, in her first major movie role.\nSuosalo voiced the Finnish janitor Ahti in the 2019 video game Control by Remedy Entertainment, for which he won the British Academy Games Award for Performer in a Supporting Role. He reprises his role as Ahti for the 2023 video game Alan Wake II.\nAt the 2020 Vienna Independent Film Festival, Suosalo received the Best Actor award for his role in Laugh or Die (Suomen hauskin mies).",
+        "categories": [
+          "1962 births",
+          "20th-century Finnish male actors",
+          "20th-century Finnish male singers",
+          "21st-century Finnish male actors",
+          "21st-century Finnish male singers",
+          "Actors from Oulu",
+          "BAFTA winners (people)",
+          "Finnish actor stubs",
+          "Finnish male film actors",
+          "Finnish male stage actors",
+          "Finnish male television actors",
+          "Living people"
+        ],
+        "facts": {
+          "name": "Martti Suosalo",
+          "birth_name": "Martti Juhani Suosalo",
+          "birth_date": "19 July 1962",
+          "birth_place": "Oulu, Finland",
+          "occupation": "Actor, singer"
+        },
+        "sortName": "Suosalo, Martti",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Ronan Summers",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "control-resonant",
+          "gameTitle": "Control Resonant",
+          "character": "Simon Arish",
+          "collection": "characters",
+          "field": "actor",
+          "note": null,
+          "source": "https://control.fandom.com/wiki/Simon_Arish",
+          "sourceTitle": "Simon Arish — control.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Ilkka Villi",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "control-resonant",
+          "gameTitle": "Control Resonant",
+          "character": "Alan Wake",
+          "collection": "characters",
+          "field": "actor",
+          "note": "model",
+          "source": "https://control.fandom.com/wiki/Alan_Wake_(character)",
+          "sourceTitle": "Alan Wake — control.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": {
+        "title": "Ilkka Villi",
+        "url": "https://en.wikipedia.org/wiki/Ilkka_Villi",
+        "extract": "Ilkka Villi (born 4 August 1975) is a Finnish actor and writer, best known internationally for his work in the Alan Wake video games as well as the crime drama series Bordertown. He has played a variety of roles in theatre, television, and film.",
+        "categories": [
+          "1975 births",
+          "21st-century Finnish male actors",
+          "Finnish actor stubs",
+          "Finnish male film actors",
+          "Finnish male television actors",
+          "Finnish male video game actors",
+          "Living people",
+          "Male actors from Helsinki",
+          "Writers from Helsinki"
+        ],
+        "facts": {
+          "name": "Ilkka Villi",
+          "birth_date": "4 August 1975",
+          "years_active": "2004–present",
+          "birth_place": "Helsinki, Finland",
+          "occupation": "Actor|writer|radio journalist"
+        },
+        "sortName": "Villi, Ilkka",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Jonathan Hilden",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "control-resonant",
+          "gameTitle": "Control Resonant",
+          "character": "Theodore Ash, Jr.",
+          "collection": "characters",
+          "field": "actor",
+          "note": null,
+          "source": "https://control.fandom.com/wiki/Theodore_Ash%2C_Jr.",
+          "sourceTitle": "Theodore Ash, Jr. — control.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Charlotte Randle",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "control-resonant",
+          "gameTitle": "Control Resonant",
+          "character": "Raya Underhill",
+          "collection": "characters",
+          "field": "actor",
+          "note": null,
+          "source": "https://control.fandom.com/wiki/Raya_Underhill",
+          "sourceTitle": "Raya Underhill — control.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Alex Lanipekun",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "control-resonant",
+          "gameTitle": "Control Resonant",
+          "character": "Rupert Wells",
+          "collection": "characters",
+          "field": "actor",
+          "note": null,
+          "source": "https://control.fandom.com/wiki/Rupert_Wells",
+          "sourceTitle": "Rupert Wells — control.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": {
+        "title": "Alex Lanipekun",
+        "url": "https://en.wikipedia.org/wiki/Alex_Lanipekun",
+        "extract": "Alex Lanipekun (, born 7 April 1981) is an English actor. He trained at the Royal Academy of Dramatic Art but left early to join the cast of the BBC drama Spooks (2007–2008) as Ben Kaplan. He has since appeared in the BBC series Troy: Fall of a City (2018) and the Sky Atlantic series Riviera (2019), Domina (2021–2023), and The Rising (2022). He is also known for his theatre work.",
+        "categories": [
+          "1981 births",
+          "21st-century English male actors",
+          "Actors from the London Borough of Haringey",
+          "Actors from the London Borough of Lambeth",
+          "Alumni of the Royal Academy of Dramatic Art",
+          "Black British male actors",
+          "English male film actors",
+          "English male stage actors",
+          "English male television actors",
+          "English male voice actors",
+          "English people of Italian descent",
+          "English people of Nigerian descent",
+          "English people of Yoruba descent",
+          "Living people",
+          "Male actors from London",
+          "National Youth Theatre members",
+          "People educated at Christ's Hospital",
+          "People from Brixton",
+          "People from Finsbury Park",
+          "Yoruba male actors"
+        ],
+        "facts": {
+          "name": "Alex Lanipekun",
+          "birth_name": "Alexander Olaseni James Lanipekun",
+          "birth_date": "7 April 1981",
+          "birth_place": "London, England",
+          "years_active": "2001–present",
+          "occupation": "Actor/Writer"
+        },
+        "sortName": "Lanipekun, Alex",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Anthony Howell",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "character": "Shuten Doji",
+          "collection": "enemies",
+          "field": "Voice Actors",
+          "note": "English",
+          "source": "https://onimusha.fandom.com/wiki/Shuten_Doji",
+          "sourceTitle": "Shuten Doji — onimusha.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "ambiguous — 4 articles share this name"
+    },
+    {
+      "name": "Shinnosuke Hai",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "character": "Shuten Doji",
+          "collection": "enemies",
+          "field": "Voice Actors",
+          "note": "Japanese",
+          "source": "https://onimusha.fandom.com/wiki/Shuten_Doji",
+          "sourceTitle": "Shuten Doji — onimusha.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Gao Sihang",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "character": "Shuten Doji",
+          "collection": "enemies",
+          "field": "Voice Actors",
+          "note": "Mandarin Chinese",
+          "source": "https://onimusha.fandom.com/wiki/Shuten_Doji",
+          "sourceTitle": "Shuten Doji — onimusha.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Adam Longworth",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "character": "Rasho-gan",
+          "collection": "enemies",
+          "field": "Voice Actors",
+          "note": "English",
+          "source": "https://onimusha.fandom.com/wiki/Rasho-gan",
+          "sourceTitle": "Rasho-gan — onimusha.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Yasuhiro Mamiya",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "character": "Rasho-gan",
+          "collection": "enemies",
+          "field": "Voice Actors",
+          "note": "Japanese",
+          "source": "https://onimusha.fandom.com/wiki/Rasho-gan",
+          "sourceTitle": "Rasho-gan — onimusha.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Liu Beichen",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "character": "Rasho-gan",
+          "collection": "enemies",
+          "field": "Voice Actors",
+          "note": "Mandarin Chinese",
+          "source": "https://onimusha.fandom.com/wiki/Rasho-gan",
+          "sourceTitle": "Rasho-gan — onimusha.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Yoshimasa Hosoya",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "character": "Musashi Miyamoto",
+          "collection": "characters",
+          "field": "Voice Actors",
+          "note": "Japanese",
+          "source": "https://onimusha.fandom.com/wiki/Musashi_Miyamoto",
+          "sourceTitle": "Musashi Miyamoto — onimusha.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": {
+        "title": "Yoshimasa Hosoya",
+        "url": "https://en.wikipedia.org/wiki/Yoshimasa_Hosoya",
+        "extract": "Yoshimasa Hosoya (細谷 佳正, Hosoya Yoshimasa; born February 10, 1982) is a Japanese voice actor and narrator.",
+        "categories": [
+          "1982 births",
+          "21st-century Japanese male actors",
+          "21st-century Japanese male singers",
+          "Japanese male video game actors",
+          "Japanese male voice actors",
+          "Living people",
+          "Male voice actors from Hiroshima",
+          "Male voice actors from Hiroshima Prefecture",
+          "Mausu Promotion voice actors",
+          "People from Onomichi, Hiroshima",
+          "Seiyu Award winners"
+        ],
+        "facts": {
+          "name": "Yoshimasa Hosoya",
+          "native_name": "細谷 佳正",
+          "native_name_lang": "ja",
+          "birth_date": "10 February 1982",
+          "birth_place": "Onomichi, Hiroshima, Japan",
+          "occupation": "Voice actor, narrator",
+          "years_active": "2004–present",
+          "agent": "Mausu Promotion (2006&ndash;2014), Freelance (2014&ndash;present)",
+          "height": "176 cm",
+          "website": "http://yoshimasa-hosoya.info"
+        },
+        "sortName": "Hosoya, Yoshimasa",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Kenichiro Thomson",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "character": "Musashi Miyamoto",
+          "collection": "characters",
+          "field": "Voice Actors",
+          "note": "English",
+          "source": "https://onimusha.fandom.com/wiki/Musashi_Miyamoto",
+          "sourceTitle": "Musashi Miyamoto — onimusha.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Cao Zhen",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "character": "Musashi Miyamoto",
+          "collection": "characters",
+          "field": "Voice Actors",
+          "note": "Mandarin Chinese",
+          "source": "https://onimusha.fandom.com/wiki/Musashi_Miyamoto",
+          "sourceTitle": "Musashi Miyamoto — onimusha.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": {
+        "title": "Cao Zhen (table tennis)",
+        "url": "https://en.wikipedia.org/wiki/Cao_Zhen_(table_tennis)",
+        "extract": "Cao Zhen (Chinese: 曹臻; pinyin: Cáo Zhēn; born January 8, 1987, in Shandong) is a Chinese table tennis player.",
+        "categories": [
+          "1987 births",
+          "Chinese female table tennis players",
+          "Chinese table tennis biography stubs",
+          "Living people",
+          "Sportspeople from Binzhou",
+          "Table tennis players from Shandong",
+          "World Table Tennis Championships medalists"
+        ],
+        "facts": {
+          "name": "Cao Zhen",
+          "native_name": "曹臻",
+          "native_name_lang": "zh-hans-CN",
+          "full_name": "Cao Zhen",
+          "playing_style": "Right-handed, shakehand grip",
+          "highest_rank": "11 (January 2005)",
+          "birth_date": "8 January 1987",
+          "birth_place": "Shandong, China"
+        },
+        "sortName": "Cao, Zhen",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Toshiro Mifune",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "character": "Musashi Miyamoto",
+          "collection": "characters",
+          "field": "Face Models",
+          "note": null,
+          "source": "https://onimusha.fandom.com/wiki/Musashi_Miyamoto",
+          "sourceTitle": "Musashi Miyamoto — onimusha.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": {
+        "title": "Toshiro Mifune",
+        "url": "https://en.wikipedia.org/wiki/Toshiro_Mifune",
+        "extract": "Toshiro Mifune (三船 敏郎, Mifune Toshirō; 1 April 1920 – 24 December 1997) was a Japanese actor and producer. The recipient of numerous awards and accolades over a lengthy career, he is widely considered one of the greatest actors of all time. Noted for his commanding screen presence in the Japanese film industry, he typically played hypermasculine or heroic characters.\nAlthough he amassed more than 180 screen credits, Mifune is best known for his 16 collaborations with director Akira Kurosawa. These collaborations included Kurosawa's critically acclaimed jidaigeki films such as Rashomon (1950), for which Mifune won the San Marco Golden Lion at the Venice Film Festival, Seven Samurai (1954), Throne of Blood (1957), The Hidden Fortress (1958), and Yojimbo (1961), for which Mifune won the Volpi Cup for Best Actor at the Venice Film Festival and was recognised at the Blue Ribbon Awards as Best Actor. He also portrayed Miyamoto Musashi in Hiroshi Inagaki's Samurai Trilogy (1954–1956), Lord Toranaga in the NBC television miniseries Shōgun, and Admiral Isoroku Yamamoto in three different films.\nIn 1962, he established Mifune Productions, achieving success with large-scale works including The Sands of Kurobe (1968) and Samurai Banners (1969). He also starred in his directorial debut Legacy of the 500,000 (1963). Following his performance in the 1965 film Red Beard, which won him the Best Actor at the Venice Film Festival for a second time, Mifune turned to roles abroad. He starred in films such as Ánimas Trujano (1962), for which he won another Blue Ribbon Award for Best Actor, Grand Prix (1966), which was his Hollywood debut, Hell in the Pacific (1968), Red Sun (1971), Paper Tiger (1975), Midway (1976), and Steven Spielberg's 1941 (1979).\nMifune died of organ failure on 24 December 1997. In 1999, he was inducted into the Martial Arts History Museum Hall of Fame. He is the subject of the feature-length documentary, Mifune: The Last Samurai (2015), about his life and his films. In 2016, his name was inscribed on the Hollywood Walk of Fame.",
+        "categories": [
+          "1920 births",
+          "1997 deaths",
+          "20th-century Japanese male actors",
+          "Chinese expatriates in Japan",
+          "Deaths from multiple organ failure",
+          "Imperial Japanese Army personnel of World War II",
+          "Imperial Japanese Army soldiers",
+          "Japanese Christians",
+          "Japanese Methodists",
+          "Japanese expatriates in China",
+          "Japanese male film actors",
+          "Japanese male television actors",
+          "Japanese people from Manchukuo",
+          "Male actors from Dalian",
+          "Male actors from Qingdao",
+          "Recipients of the Medal with Purple Ribbon",
+          "Recipients of the Order of the Sacred Treasure, 3rd class",
+          "Volpi Cup for Best Actor winners"
+        ],
+        "facts": {
+          "name": "Toshiro Mifune",
+          "native_name": "三船 敏郎",
+          "native_name_lang": "ja",
+          "birth_date": "1 April 1920",
+          "birth_place": "Qingdao, Shandong, China",
+          "death_date": "24 December 1997",
+          "death_place": "Mitaka, Tokyo, Japan",
+          "resting_place": "Kawasaki, Kanagawa, Japan",
+          "occupation": "Actor, film producer, film director",
+          "years_active": "1947–1995",
+          "partner": "Mika Kitagawa",
+          "website": "mifuneproductions.co.jp"
+        },
+        "sortName": "Mifune, Toshiro",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Tashinga Bepete",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "character": "Ganryu Sasaki",
+          "collection": "enemies",
+          "field": "Voice Actors",
+          "note": "English",
+          "source": "https://onimusha.fandom.com/wiki/Ganryu_Sasaki",
+          "sourceTitle": "Ganryu Sasaki — onimusha.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": {
+        "title": "Tashinga Bepete",
+        "url": "https://en.wikipedia.org/wiki/Tashinga_Bepete",
+        "extract": "Tashinga Bepete (born 20 August 1999) is a Zimbabwean actor and singer. After graduating from the Mountview Academy of Theatre Arts, he began appearing on television shows including Doctors, Princess Mirror-Belle and Sex Education. In 2026, he joined the cast of the BBC school drama series Waterloo Road.",
+        "categories": [
+          "1999 births",
+          "21st-century Zimbabwean male actors",
+          "Alumni of the Mountview Academy of Theatre Arts",
+          "Living people",
+          "Zimbabwean male film actors",
+          "Zimbabwean male television actors",
+          "Zimbabwean male video game actors"
+        ],
+        "facts": {
+          "name": "Tashinga Bepete",
+          "birth_date": "20 August 1999",
+          "birth_place": "Harare, Zimbabwe",
+          "occupation": "Actor|singer",
+          "years_active": "2020–present",
+          "education": "Mountview Academy of Theatre Arts (BA Hons)"
+        },
+        "sortName": "Bepete, Tashinga",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Okamoto Nobuhiko",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "character": "Ganryu Sasaki",
+          "collection": "enemies",
+          "field": "Voice Actors",
+          "note": "Japanese",
+          "source": "https://onimusha.fandom.com/wiki/Ganryu_Sasaki",
+          "sourceTitle": "Ganryu Sasaki — onimusha.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Zhang Pei",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "character": "Ganryu Sasaki",
+          "collection": "enemies",
+          "field": "Voice Actors",
+          "note": "Mandarin Chinese",
+          "source": "https://onimusha.fandom.com/wiki/Ganryu_Sasaki",
+          "sourceTitle": "Ganryu Sasaki — onimusha.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Abe Jarman",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "character": "Daidara",
+          "collection": "enemies",
+          "field": "Voice Actors",
+          "note": "English",
+          "source": "https://onimusha.fandom.com/wiki/Daidara",
+          "sourceTitle": "Daidara — onimusha.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Miyake Kenta",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "character": "Daidara",
+          "collection": "enemies",
+          "field": "Voice Actors",
+          "note": "Japanese",
+          "source": "https://onimusha.fandom.com/wiki/Daidara",
+          "sourceTitle": "Daidara — onimusha.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": {
+        "title": "Kenta Miyake",
+        "url": "https://en.wikipedia.org/wiki/Kenta_Miyake",
+        "extract": "Kenta Miyake (三宅 健太, Miyake Kenta; born August 23, 1977) is a Japanese voice actor and narrator. He is affiliated with 81 Produce.",
+        "categories": [
+          "1977 births",
+          "20th-century Japanese male actors",
+          "21st-century Japanese male actors",
+          "81 Produce voice actors",
+          "Japanese male video game actors",
+          "Japanese male voice actors",
+          "Living people",
+          "Male voice actors from Okinawa Prefecture",
+          "Seiyu Award winners"
+        ],
+        "facts": {
+          "name": "Kenta Miyake",
+          "native_name": "三宅 健太",
+          "native_name_lang": "ja",
+          "birth_date": "23 August 1977",
+          "birth_place": "Okinawa Prefecture, Japan",
+          "other_names": "Miyaken, Shun Kazagiri",
+          "occupation": "Voice actor, narrator",
+          "years_active": "1999–present",
+          "agent": "81 Produce",
+          "disappeared_status": "Married",
+          "notable_works": "Fullmetal Alchemist: Brotherhood as Scar|My Hero Academia as All Might|JoJo's Bizarre Adventure as Muhammad Avdol and Steven Steel|Pokémon as Giovanni|Sonic the Hedgehog as Vector the Crocodile|Street Fighter as Zangief|Final Fantasy XV as Gladiolus Amicitia|Kirby and the Forgotten Land as Leongar"
+        },
+        "sortName": "Miyake, Kenta",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Su Xin",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "character": "Daidara",
+          "collection": "enemies",
+          "field": "Voice Actors",
+          "note": "Mandarin Chinese",
+          "source": "https://onimusha.fandom.com/wiki/Daidara",
+          "sourceTitle": "Daidara — onimusha.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Clare Corbett",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "character": "Dokyo",
+          "collection": "enemies",
+          "field": "Voice Actors",
+          "note": "English",
+          "source": "https://onimusha.fandom.com/wiki/Dokyo",
+          "sourceTitle": "Dokyo — onimusha.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": {
+        "title": "Clare Corbett",
+        "url": "https://en.wikipedia.org/wiki/Clare_Corbett",
+        "extract": "Clare Corbett is a British actress and a winner (2000) of a Carleton Hobbs Radio Award. She studied at the Welsh College of Music and Drama and has appeared in television programmes such as Casualty, Eastenders and Doctors, as well as a number of radio plays (including Absolute Power, Venus and Adonis and Dr. Zhivago), and video games, including the Dark Souls series.\nShe has narrated numerous audiobooks including Vanessa and Her Sister, Shopaholic to the Stars, and The Girl on the Train, which won the 2016 Audie Award for Audiobook of the Year.\nIn 2017, Corbett was nominated for \"Best Supporting Actor/Actress\" in the BBC Audio Drama Awards for her role as Franciska Lazar in the drama serial Keeping the Wolf Out.",
+        "categories": [
+          "21st-century British actresses",
+          "British film actresses",
+          "British television actor stubs",
+          "British television actresses",
+          "British video game actresses",
+          "British voice actor stubs",
+          "British voice actresses",
+          "Living people"
+        ],
+        "facts": {
+          "name": "Clare Corbett",
+          "occupation": "Actress",
+          "years_active": "2001–present"
+        },
+        "sortName": "Corbett, Clare",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Fushida Riho",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "character": "Dokyo",
+          "collection": "enemies",
+          "field": "Voice Actors",
+          "note": "Japanese",
+          "source": "https://onimusha.fandom.com/wiki/Dokyo",
+          "sourceTitle": "Dokyo — onimusha.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Xu Hui",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "character": "Dokyo",
+          "collection": "enemies",
+          "field": "Voice Actors",
+          "note": "Mandarin Chinese",
+          "source": "https://onimusha.fandom.com/wiki/Dokyo",
+          "sourceTitle": "Dokyo — onimusha.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": {
+        "title": "Xu Hui",
+        "url": "https://en.wikipedia.org/wiki/Xu_Hui",
+        "extract": "Xu Hui (Chinese: 徐惠; 627–650) was a female Chinese poet, \"the first of all women poets of the Tang, an individual scarcely even noted in traditional literary history... but the only one of the thirty-plus 'empresses and consorts'...given biographies in the official Tang histories to have any of her own writings quoted there.\"\nXu Hui was the child prodigy daughter of Xu Xiaode, from Changcheng in Huzhou (in modern Zhejiang province). She became a minor consort to the Tang dynasty's second emperor, Emperor Taizong of Tang. Although originally appointed as a fifth-rank court lady, a \"Talented Lady\" (cairen, 才人), she was later promoted to an imperial concubine status, as a \"Replete of Mien\" (Chongrong, 充容).\nXu Hui is one of China's outstanding early female poets, and is believed to have written around one thousand poems, but only five survive today, including the well-known \"Regret in Changmen Palace\" on the popular Tang dynasty topic of the neglected or abandoned lady. The poem refers to a specific historical incident when the Emperor Han Wudi's empress was \"sequestered in the Tall Gate (changmen) Palace and feared she would be replaced in the sovereign's affections by a newer favorite\". It reads, in partial English translation:\n\nTradition holds that on the Emperor Taizong's death, she became ill from grief, and died the following year. Taizong's successor Gaozong posthumously honored her with the title Xianfei (賢妃), and promoted her father on her account to be prefect of Guozhou. She was also given the privilege of satellite burial within Emperor Taizong's mausoleum, the Zhaoling.",
+        "categories": [
+          "627 births",
+          "650 deaths",
+          "7th-century Chinese poets",
+          "7th-century Chinese women writers",
+          "Chinese women poets",
+          "Emperor Taizong of Tang",
+          "Poets from Zhejiang",
+          "Tang dynasty imperial consorts",
+          "Tang dynasty poets",
+          "Writers from Huzhou"
+        ],
+        "facts": {
+          "name": "Xu Hui",
+          "birth_date": "627",
+          "death_date": "650",
+          "spouse": "Emperor Taizong of Tang",
+          "father": "Xu Xiaode"
+        },
+        "sortName": "Xu, Hui",
+        "person": true,
+        "why": "occupation category (Category:627 births)"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Yuriri Naka",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "character": "Shizuka Gozen",
+          "collection": "characters",
+          "field": "Voice Actors",
+          "note": "English",
+          "source": "https://onimusha.fandom.com/wiki/Shizuka_Gozen",
+          "sourceTitle": "Shizuka Gozen — onimusha.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Aya Endo",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "character": "Shizuka Gozen",
+          "collection": "characters",
+          "field": "Voice Actors",
+          "note": "Japanese",
+          "source": "https://onimusha.fandom.com/wiki/Shizuka_Gozen",
+          "sourceTitle": "Shizuka Gozen — onimusha.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": {
+        "title": "Aya Endō",
+        "url": "https://en.wikipedia.org/wiki/Aya_End%C5%8D",
+        "extract": "Aya Endō (遠藤 綾, Endō Aya; born February 17, 1980) is a Japanese voice actress and narrator from Yamagata Prefecture who is affiliated with Intention. After Yūko Mizutani's death, she took over many of her roles. Her hobby is swimming.",
+        "categories": [
+          "1980 births",
+          "21st-century Japanese actresses",
+          "21st-century Japanese women singers",
+          "Anime singers",
+          "Japanese video game actresses",
+          "Japanese women pop singers",
+          "Living people",
+          "Singers from Yamagata Prefecture",
+          "Voice actresses from Yamagata Prefecture"
+        ],
+        "facts": {
+          "name": "Aya Endō",
+          "native_name": "遠藤 綾",
+          "native_name_lang": "ja",
+          "birth_date": "17 February 1980",
+          "birth_place": "Yamagata Prefecture, Japan",
+          "disappeared_status": "Active",
+          "occupation": "Voice actress, narrator",
+          "years_active": "2001–present",
+          "agent": "Intention",
+          "notable_works": "Boruto: Naruto Next Generations as Sumire Kakei, Jujutsu Kaisen as Shoko Ieiri, Genshin Impact as Yelan, Hunter x Hunter as Komugi, Lucky Star as Miyuki Takara, Macross Frontier as Sheryl Nome, So, I Can't Play H! as Lisara Restal, Yo-kai Watch as Fumika Kodama, Accel World as Fuuko Kurasaki, Sekirei as Matsu, Mr. Osomatsu as Totoko, Path to Nowhere as Dreya, Zenless Zone Zero as Astra Yao, Honkai",
+          "height": "160 cm"
+        },
+        "sortName": "Endo, Aya",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Li Chanfei",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "character": "Shizuka Gozen",
+          "collection": "characters",
+          "field": "Voice Actors",
+          "note": "Mandarin Chinese",
+          "source": "https://onimusha.fandom.com/wiki/Shizuka_Gozen",
+          "sourceTitle": "Shizuka Gozen — onimusha.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Shogo Miyakita",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "character": "Takamura Ono",
+          "collection": "characters",
+          "field": "Voice Actors",
+          "note": "English",
+          "source": "https://onimusha.fandom.com/wiki/Takamura_Ono",
+          "sourceTitle": "Takamura Ono — onimusha.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Akihiko Ishizumi",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "character": "Takamura Ono",
+          "collection": "characters",
+          "field": "Voice Actors",
+          "note": "Japanese",
+          "source": "https://onimusha.fandom.com/wiki/Takamura_Ono",
+          "sourceTitle": "Takamura Ono — onimusha.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": {
+        "title": "Akihiko Ishizumi",
+        "url": "https://en.wikipedia.org/wiki/Akihiko_Ishizumi",
+        "extract": "Akihiko Ishizumi (石住 昭彦, Ishizumi Akihiko; October 25, 1961) is a Japanese stage actor and voice actor from Ehime Prefecture. He is attached to Engekishūdan En.\nHe is best known for his roles in The Powerpuff Girls (as the Mayor) and Hi Hi Puffy AmiYumi (as Kaz). He often voices middle-aged or elderly characters and has an extensive career in dubbing Western works.",
+        "categories": [
+          "1961 births",
+          "Japanese male voice actors",
+          "Living people",
+          "Male voice actors from Ehime Prefecture"
+        ],
+        "facts": {
+          "name": "Akihiko Ishizumi",
+          "native_name": "石住 昭彦",
+          "native_name_lang": "ja",
+          "birth_date": "25 October 1961",
+          "birth_place": "Ehime Prefecture, Japan",
+          "occupation": "Stage actor, voice actor",
+          "years_active": "1986–present"
+        },
+        "sortName": "Ishizumi, Akihiko",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Meng Xianglong",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "character": "Takamura Ono",
+          "collection": "characters",
+          "field": "Voice Actors",
+          "note": "Mandarin Chinese",
+          "source": "https://onimusha.fandom.com/wiki/Takamura_Ono",
+          "sourceTitle": "Takamura Ono — onimusha.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Leader Looi",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "character": "Okuni Izumo",
+          "collection": "characters",
+          "field": "Voice Actors",
+          "note": "English",
+          "source": "https://onimusha.fandom.com/wiki/Okuni_Izumo",
+          "sourceTitle": "Okuni Izumo — onimusha.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Chiharu",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "character": "Okuni Izumo",
+          "collection": "characters",
+          "field": "Voice Actors",
+          "note": "Japanese",
+          "source": "https://onimusha.fandom.com/wiki/Okuni_Izumo",
+          "sourceTitle": "Okuni Izumo — onimusha.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no category confirms a person"
+    },
+    {
+      "name": "Xie Ying",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "character": "Okuni Izumo",
+          "collection": "characters",
+          "field": "Voice Actors",
+          "note": "Mandarin Chinese",
+          "source": "https://onimusha.fandom.com/wiki/Okuni_Izumo",
+          "sourceTitle": "Okuni Izumo — onimusha.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Richard Reed",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "character": "Burai",
+          "collection": "enemies",
+          "field": "Voice Actors",
+          "note": "English",
+          "source": "https://onimusha.fandom.com/wiki/Burai",
+          "sourceTitle": "Burai — onimusha.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": {
+        "title": "Richard Reed",
+        "url": "https://en.wikipedia.org/wiki/Richard_Reed",
+        "extract": "Richard John Reed,  (born 13 February 1973) is a British businessman, entrepreneur and public speaker. He is the co-founder of Innocent Drinks (founded in 1999\n), an international company producing fresh fruit smoothies and vegetable pots sold in various outlets around the world, and of Jamjar Investments (founded 2012). He pioneered \"wackaging\" – quirky messages on packaging – of products such as smoothies.",
+        "categories": [
+          "1973 births",
+          "21st-century English businesspeople",
+          "Alumni of St John's College, Cambridge",
+          "Commanders of the Order of the British Empire",
+          "English company founders",
+          "Living people",
+          "People from Kirkheaton"
+        ],
+        "facts": {
+          "name": "Richard Reed",
+          "birth_date": "13 February 1973",
+          "birth_place": "Kirkheaton, West Yorkshire, England",
+          "education": "St. John's College, Cambridge",
+          "occupation": "Businessman",
+          "awards": "Commander of the Order of the British Empire (2016)",
+          "website": "innocentdrinks.co.uk, jamjarinvestments.com",
+          "known_for": "Co-founder of Innocent Drinks and Jamjar Investments"
+        },
+        "sortName": "Reed, Richard",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Saitou Jirou",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "character": "Burai",
+          "collection": "enemies",
+          "field": "Voice Actors",
+          "note": "Japanese",
+          "source": "https://onimusha.fandom.com/wiki/Burai",
+          "sourceTitle": "Burai — onimusha.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "disambiguation page"
+    },
+    {
+      "name": "Adam Stickler",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "character": "Ifuu",
+          "collection": "enemies",
+          "field": "Voice Actors",
+          "note": "English",
+          "source": "https://onimusha.fandom.com/wiki/Ifuu",
+          "sourceTitle": "Ifuu — onimusha.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Kanuka Mitsuaki",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "character": "Ifuu",
+          "collection": "enemies",
+          "field": "Voice Actors",
+          "note": "Japanese",
+          "source": "https://onimusha.fandom.com/wiki/Ifuu",
+          "sourceTitle": "Ifuu — onimusha.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Ami Okumura Jones",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "character": "Lady Murasaki",
+          "collection": "characters",
+          "field": "Voice Actors",
+          "note": "English",
+          "source": "https://onimusha.fandom.com/wiki/Lady_Murasaki",
+          "sourceTitle": "Lady Murasaki — onimusha.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Yuka Terasaki",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "character": "Lady Murasaki",
+          "collection": "characters",
+          "field": "Voice Actors",
+          "note": "Japanese",
+          "source": "https://onimusha.fandom.com/wiki/Lady_Murasaki",
+          "sourceTitle": "Lady Murasaki — onimusha.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": {
+        "title": "Yuka Terasaki",
+        "url": "https://en.wikipedia.org/wiki/Yuka_Terasaki",
+        "extract": "Yuka Terasaki (寺崎 裕香, Terasaki Yuka; born August 4, 1983) is a Japanese actress, voice actress and singer from Kumamoto Prefecture. She is affiliated with Ken Production.",
+        "categories": [
+          "1983 births",
+          "Japanese musical theatre actresses",
+          "Japanese video game actresses",
+          "Japanese women pop singers",
+          "Ken Production voice actors",
+          "Living people",
+          "Pokémon people",
+          "Voice actresses from Kumamoto Prefecture"
+        ],
+        "facts": {
+          "name": "Yuka Terasaki",
+          "native_name": "寺崎 裕香",
+          "native_name_lang": "ja",
+          "birth_date": "4 August 1983",
+          "birth_place": "Kumamoto, Kumamoto Prefecture, Japan",
+          "occupation": "Actress, voice actress, singer",
+          "years_active": "1992&ndash;present (as actress), 2004&ndash;present (as voice actress)",
+          "agent": "Kenproduction",
+          "height": "155 cm"
+        },
+        "sortName": "Terasaki, Yuka",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Zhang Anqi",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "onimusha-way-of-the-sword",
+          "gameTitle": "Onimusha: Way of the Sword",
+          "character": "Lady Murasaki",
+          "collection": "characters",
+          "field": "Voice Actors",
+          "note": "Mandarin Chinese",
+          "source": "https://onimusha.fandom.com/wiki/Lady_Murasaki",
+          "sourceTitle": "Lady Murasaki — onimusha.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Giorgia Sinicorni",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "resonance-a-plague-tale-legacy",
+          "gameTitle": "Resonance: A Plague Tale Legacy",
+          "character": "Béatrice de Rune",
+          "collection": "characters",
+          "field": "mo-capped by",
+          "note": null,
+          "source": "https://aplaguetale.fandom.com/wiki/B%C3%A9atrice_de_Rune",
+          "sourceTitle": "Béatrice de Rune — aplaguetale.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        },
+        {
+          "game": "resonance-a-plague-tale-legacy",
+          "gameTitle": "Resonance: A Plague Tale Legacy",
+          "character": "Émilie de Arles",
+          "collection": "characters",
+          "field": "mo-capped by",
+          "note": null,
+          "source": "https://aplaguetale.fandom.com/wiki/%C3%89milie_de_Arles",
+          "sourceTitle": "Émilie de Arles — aplaguetale.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Stéphane Cornicard",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "resonance-a-plague-tale-legacy",
+          "gameTitle": "Resonance: A Plague Tale Legacy",
+          "character": "Vitalis Bénévent",
+          "collection": "characters",
+          "field": "voiced by",
+          "note": null,
+          "source": "https://aplaguetale.fandom.com/wiki/Vitalis_B%C3%A9n%C3%A9vent",
+          "sourceTitle": "Vitalis Bénévent — aplaguetale.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": {
+        "title": "Stéphane Cornicard",
+        "url": "https://en.wikipedia.org/wiki/St%C3%A9phane_Cornicard",
+        "extract": "Stéphane Cornicard is a multilingual actor and director (French, English, German, Spanish and Italian), who trained in France with François David, French director and writer, at Colby College, U.S. and at Goldsmiths, University of London, UK.",
+        "categories": [
+          "Alumni of Goldsmiths, University of London",
+          "Colby College alumni",
+          "French male film actors",
+          "French male television actors",
+          "French male video game actors",
+          "French male voice actors",
+          "French screen actor stubs",
+          "French voice actor stubs",
+          "Living people",
+          "Male actors from Normandy"
+        ],
+        "facts": {
+          "name": "Stéphane Cornicard",
+          "occupation": "Actor, director",
+          "birth_place": "France"
+        },
+        "sortName": "Cornicard, Stephane",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Gabriel Mercier",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "resonance-a-plague-tale-legacy",
+          "gameTitle": "Resonance: A Plague Tale Legacy",
+          "character": "Rodric",
+          "collection": "characters",
+          "field": "mo-capped by",
+          "note": null,
+          "source": "https://aplaguetale.fandom.com/wiki/Rodric",
+          "sourceTitle": "Rodric — aplaguetale.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        },
+        {
+          "game": "resonance-a-plague-tale-legacy",
+          "gameTitle": "Resonance: A Plague Tale Legacy",
+          "character": "Arthur",
+          "collection": "characters",
+          "field": "mo-capped by",
+          "note": null,
+          "source": "https://aplaguetale.fandom.com/wiki/Arthur",
+          "sourceTitle": "Arthur — aplaguetale.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Anna Demetriou",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "resonance-a-plague-tale-legacy",
+          "gameTitle": "Resonance: A Plague Tale Legacy",
+          "character": "Sophia",
+          "collection": "characters",
+          "field": "portrayed by",
+          "note": null,
+          "source": "https://aplaguetale.fandom.com/wiki/Sophia",
+          "sourceTitle": "Sophia — aplaguetale.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": {
+        "title": "Anna Demetriou",
+        "url": "https://en.wikipedia.org/wiki/Anna_Demetriou",
+        "extract": "Anna Demetriou (born 13 July 1993) is a British actress.",
+        "categories": [
+          "1993 births",
+          "21st-century British LGBTQ people",
+          "21st-century British actresses",
+          "Actors from Cheshire West and Chester",
+          "Actresses from London",
+          "Alumni of the London Academy of Music and Dramatic Art",
+          "British LGBTQ actresses",
+          "British Twitch (service) streamers",
+          "British film actresses",
+          "British people of Greek Cypriot descent",
+          "British video game actresses",
+          "British voice actresses",
+          "Living people",
+          "People from Cheshire West and Chester"
+        ],
+        "facts": {
+          "name": "Anna Demetriou",
+          "birth_date": "13 July 1993",
+          "birth_place": "United Kingdom",
+          "occupation": "Actress|livestreamer",
+          "years_active": "2018–present"
+        },
+        "sortName": "Demetriou, Anna",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Tabitha Rubens",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "resonance-a-plague-tale-legacy",
+          "gameTitle": "Resonance: A Plague Tale Legacy",
+          "character": "Mélie",
+          "collection": "characters",
+          "field": "voiced by",
+          "note": null,
+          "source": "https://aplaguetale.fandom.com/wiki/M%C3%A9lie",
+          "sourceTitle": "Mélie — aplaguetale.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Mard Bruthenaux",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "resonance-a-plague-tale-legacy",
+          "gameTitle": "Resonance: A Plague Tale Legacy",
+          "character": "Mélie",
+          "collection": "characters",
+          "field": "mo-capped by",
+          "note": null,
+          "source": "https://aplaguetale.fandom.com/wiki/M%C3%A9lie",
+          "sourceTitle": "Mélie — aplaguetale.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Mark Healy",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "resonance-a-plague-tale-legacy",
+          "gameTitle": "Resonance: A Plague Tale Legacy",
+          "character": "Nicholas",
+          "collection": "characters",
+          "field": "voiced by",
+          "note": null,
+          "source": "https://aplaguetale.fandom.com/wiki/Nicholas",
+          "sourceTitle": "Nicholas — aplaguetale.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": {
+        "title": "Mark Healy (Gaelic footballer)",
+        "url": "https://en.wikipedia.org/wiki/Mark_Healy_(Gaelic_footballer)",
+        "extract": "Mark Healy (born 1960) is an Irish former Gaelic footballer who played as a full-back at senior level for the Cork county team.\nHealy joined the panel during the 1981 championship and was a regular member of the starting fifteen for four seasons until his retirement after the 1984 championship. During that time he won one Munster medal.\nAt club level Healy is an All-Ireland medalist with St Finbarr's In addition to this he also won two Munster medals and two county club championship medals.",
+        "categories": [
+          "1960 births",
+          "Cork Gaelic football biography stubs",
+          "Cork inter-county Gaelic footballers",
+          "Living people",
+          "St Finbarr's Gaelic footballers"
+        ],
+        "facts": {
+          "code": "Football",
+          "sport": "Gaelic football",
+          "name": "Mark Healy",
+          "irish": "Marc Ó hÉilí",
+          "county": "Cork",
+          "province": "Munster",
+          "club": "St Finbarr's",
+          "counties": "Cork",
+          "icposition": "Full-back",
+          "icyears": "1981-1984",
+          "icapps(points)": "9 (0-00)",
+          "icupdate": "14:57, 3 January 2013",
+          "birth_date": "1960",
+          "birth_place": "Cork, Ireland"
+        },
+        "sortName": "Healy, Mark",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Christophe Sardain",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "resonance-a-plague-tale-legacy",
+          "gameTitle": "Resonance: A Plague Tale Legacy",
+          "character": "Nicholas",
+          "collection": "characters",
+          "field": "mo-capped by",
+          "note": null,
+          "source": "https://aplaguetale.fandom.com/wiki/Nicholas",
+          "sourceTitle": "Nicholas — aplaguetale.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Alistair Petrie",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "resonance-a-plague-tale-legacy",
+          "gameTitle": "Resonance: A Plague Tale Legacy",
+          "character": "Victor de Arles",
+          "collection": "characters",
+          "field": "voiced by",
+          "note": null,
+          "source": "https://aplaguetale.fandom.com/wiki/Victor_de_Arles",
+          "sourceTitle": "Victor de Arles — aplaguetale.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": {
+        "title": "Alistair Petrie",
+        "url": "https://en.wikipedia.org/wiki/Alistair_Petrie",
+        "extract": "Alistair Petrie (born 30 September 1970) is a British actor. He has starred in The Bank Job (2008), Cloud Atlas (2012), Rush (2013) and Rogue One: A Star Wars Story (2016). Petrie has also starred in the Channel 4 television series Utopia, the BBC One television series The Night Manager, Sherlock, and Undercover, and as Mr. Groff in the Netflix original comedy-drama series Sex Education.",
+        "categories": [
+          "1970 births",
+          "20th-century English male actors",
+          "21st-century English male actors",
+          "Alumni of the London Academy of Music and Dramatic Art",
+          "English male film actors",
+          "English male television actors",
+          "English male voice actors",
+          "Living people",
+          "Male actors from North Yorkshire",
+          "People educated at Bradfield College",
+          "People from Catterick, North Yorkshire"
+        ],
+        "facts": {
+          "name": "Alistair Petrie",
+          "birth_date": "30 September 1970",
+          "birth_place": "Catterick, Yorkshire, England",
+          "education": "London Academy of Music and Dramatic Art (BA)",
+          "occupation": "Actor",
+          "years_active": "1993–present",
+          "spouse": "Lucy Scott"
+        },
+        "sortName": "Petrie, Alistair",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Joplin Siptain",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "resonance-a-plague-tale-legacy",
+          "gameTitle": "Resonance: A Plague Tale Legacy",
+          "character": "Milo",
+          "collection": "characters",
+          "field": "voiced by",
+          "note": null,
+          "source": "https://aplaguetale.fandom.com/wiki/Milo",
+          "sourceTitle": "Milo — aplaguetale.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Ellie Heydon",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "resonance-a-plague-tale-legacy",
+          "gameTitle": "Resonance: A Plague Tale Legacy",
+          "character": "Émilie de Arles",
+          "collection": "characters",
+          "field": "voiced by",
+          "note": null,
+          "source": "https://aplaguetale.fandom.com/wiki/%C3%89milie_de_Arles",
+          "sourceTitle": "Émilie de Arles — aplaguetale.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Anthony Byrne",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "resonance-a-plague-tale-legacy",
+          "gameTitle": "Resonance: A Plague Tale Legacy",
+          "character": "Vaudin",
+          "collection": "characters",
+          "field": "voiced by",
+          "note": null,
+          "source": "https://aplaguetale.fandom.com/wiki/Vaudin",
+          "sourceTitle": "Vaudin — aplaguetale.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "ambiguous — 2 articles share this name"
+    },
+    {
+      "name": "Edouard Chény",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "resonance-a-plague-tale-legacy",
+          "gameTitle": "Resonance: A Plague Tale Legacy",
+          "character": "Vaudin",
+          "collection": "characters",
+          "field": "mo-capped by",
+          "note": null,
+          "source": "https://aplaguetale.fandom.com/wiki/Vaudin",
+          "sourceTitle": "Vaudin — aplaguetale.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        },
+        {
+          "game": "resonance-a-plague-tale-legacy",
+          "gameTitle": "Resonance: A Plague Tale Legacy",
+          "character": "Perreux",
+          "collection": "characters",
+          "field": "mo-capped by",
+          "note": null,
+          "source": "https://aplaguetale.fandom.com/wiki/Perreux",
+          "sourceTitle": "Perreux — aplaguetale.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Ruben Crow",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "resonance-a-plague-tale-legacy",
+          "gameTitle": "Resonance: A Plague Tale Legacy",
+          "character": "Joseph",
+          "collection": "characters",
+          "field": "voiced by",
+          "note": null,
+          "source": "https://aplaguetale.fandom.com/wiki/Joseph",
+          "sourceTitle": "Joseph — aplaguetale.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Nicky Naudé",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "resonance-a-plague-tale-legacy",
+          "gameTitle": "Resonance: A Plague Tale Legacy",
+          "character": "Joseph",
+          "collection": "characters",
+          "field": "mo-capped by",
+          "note": null,
+          "source": "https://aplaguetale.fandom.com/wiki/Joseph",
+          "sourceTitle": "Joseph — aplaguetale.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Claire Morgan",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "resonance-a-plague-tale-legacy",
+          "gameTitle": "Resonance: A Plague Tale Legacy",
+          "character": "Tonin",
+          "collection": "characters",
+          "field": "voiced by",
+          "note": null,
+          "source": "https://aplaguetale.fandom.com/wiki/Tonin",
+          "sourceTitle": "Tonin — aplaguetale.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": {
+        "title": "Claire Morgan",
+        "url": "https://en.wikipedia.org/wiki/Claire_Morgan",
+        "extract": "Claire Morgan (born 17 August 1980 in Belfast, Northern Ireland) is an Irish artist. She lives and works in North East England.",
+        "categories": [
+          "1980 births",
+          "21st-century artists from Northern Ireland",
+          "21st-century women artists from Northern Ireland",
+          "Alumni of Northumbria University",
+          "Alumni of Ulster University",
+          "Artists from Belfast",
+          "Artists from London",
+          "British artists",
+          "British women sculptors",
+          "Living people"
+        ],
+        "facts": {
+          "name": "Claire Morgan",
+          "birth_date": "17 August 1980",
+          "birth_place": "Belfast, Northern Ireland",
+          "known_for": "Visual Artist",
+          "training": "University of Northumbria, University of Ulster"
+        },
+        "sortName": "Morgan, Claire",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Alex Martin",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "resonance-a-plague-tale-legacy",
+          "gameTitle": "Resonance: A Plague Tale Legacy",
+          "character": "Mathias",
+          "collection": "characters",
+          "field": "voiced by",
+          "note": null,
+          "source": "https://aplaguetale.fandom.com/wiki/Mathias",
+          "sourceTitle": "Mathias — aplaguetale.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        },
+        {
+          "game": "resonance-a-plague-tale-legacy",
+          "gameTitle": "Resonance: A Plague Tale Legacy",
+          "character": "Mathias",
+          "collection": "characters",
+          "field": "mo-capped by",
+          "note": null,
+          "source": "https://aplaguetale.fandom.com/wiki/Mathias",
+          "sourceTitle": "Mathias — aplaguetale.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "ambiguous — 3 articles share this name"
+    },
+    {
+      "name": "Nico Lennon",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "resonance-a-plague-tale-legacy",
+          "gameTitle": "Resonance: A Plague Tale Legacy",
+          "character": "Perreux",
+          "collection": "characters",
+          "field": "voiced by",
+          "note": null,
+          "source": "https://aplaguetale.fandom.com/wiki/Perreux",
+          "sourceTitle": "Perreux — aplaguetale.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Franck Besançon",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "silent-hill-townfall",
+          "gameTitle": "Silent Hill: Townfall",
+          "role": "developer",
+          "note": null,
+          "stated": "credited on Silent Hill: Townfall",
+          "uncertain": false,
+          "source": "https://silenthill.fandom.com/wiki/Franck_Besan%C3%A7on",
+          "sourceTitle": "Franck Besançon — silenthill.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [],
+      "profile": {
+        "title": "Franck Besançon",
+        "url": "https://silenthill.fandom.com/wiki/Franck_Besan%C3%A7on",
+        "wiki": "silenthill.fandom.com",
+        "game": "silent-hill-townfall",
+        "gameTitle": "Silent Hill: Townfall",
+        "profession": null,
+        "crewRole": null,
+        "hometown": null,
+        "born": null,
+        "birthPlace": null,
+        "nationality": null,
+        "activeSince": null,
+        "films": [],
+        "otherWorks": [],
+        "roles": [],
+        "onOurGame": true,
+        "sortName": "",
+        "retrieved": "2026-09-15"
+      },
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Jovan Adepo",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "silent-hill-townfall",
+          "gameTitle": "Silent Hill: Townfall",
+          "role": "actor",
+          "note": "Actor",
+          "stated": "Actor",
+          "uncertain": false,
+          "source": "https://silenthill.fandom.com/wiki/Jovan_Adepo",
+          "sourceTitle": "Jovan Adepo — silenthill.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [
+        {
+          "game": "silent-hill-townfall",
+          "gameTitle": "Silent Hill: Townfall",
+          "character": "Simon Ordell",
+          "collection": "characters",
+          "field": "actor",
+          "note": null,
+          "source": "https://silenthill.fandom.com/wiki/Simon_Ordell",
+          "sourceTitle": "Simon Ordell — silenthill.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": {
+        "title": "Jovan Adepo",
+        "url": "https://silenthill.fandom.com/wiki/Jovan_Adepo",
+        "wiki": "silenthill.fandom.com",
+        "game": "silent-hill-townfall",
+        "gameTitle": "Silent Hill: Townfall",
+        "profession": "Actor",
+        "crewRole": null,
+        "hometown": "Upper Heyford, Oxfordshire, England",
+        "born": null,
+        "birthPlace": null,
+        "nationality": null,
+        "activeSince": null,
+        "films": [],
+        "otherWorks": [
+          "The Leftovers",
+          "3 Body Problem",
+          "It: Welcome To Derry",
+          "The Odyssey"
+        ],
+        "roles": [
+          "actor"
+        ],
+        "onOurGame": true,
+        "sortName": "",
+        "retrieved": "2026-09-15"
+      },
+      "article": {
+        "title": "Jovan Adepo",
+        "url": "https://en.wikipedia.org/wiki/Jovan_Adepo",
+        "extract": "Jovan Adepo (born 6 September 1988) is a British-American actor. He made his feature film debut in the period drama Fences (2016), which was followed by roles in the psychological horror film Mother! (2017), the action horror film Overlord (2018), the period comedy-drama Babylon (2022), and the drama His Three Daughters (2023).\nAdepo also starred in the HBO supernatural drama series The Leftovers (2015–2017), the Facebook Watch drama series Sorry for Your Loss (2018–2019), the Amazon Prime Video action thriller series Jack Ryan (2019), the Netflix true crime miniseries When They See Us (2019), the HBO superhero miniseries Watchmen (2019), the CBS All Access fantasy miniseries The Stand (2020–2021), the Netflix science fiction series 3 Body Problem (2024) and the HBO horror series It: Welcome To Derry (2025). For his performance as Hooded Justice in Watchmen, he was nominated for the Primetime Emmy Award for Outstanding Supporting Actor in a Limited Series or Movie.",
+        "categories": [
+          "1988 births",
+          "21st-century African-American male actors",
+          "21st-century American male actors",
+          "21st-century British male actors",
+          "Actors from Cherwell District",
+          "American male film actors",
+          "American male television actors",
+          "Bowie State University alumni",
+          "British Christians",
+          "British male film actors",
+          "British male television actors",
+          "British people of Nigerian descent",
+          "Living people",
+          "Male actors from Oxfordshire",
+          "People from Waldorf, Maryland"
+        ],
+        "facts": {
+          "name": "Jovan Adepo",
+          "birth_date": "6 September 1988",
+          "birth_place": "Upper Heyford, Oxfordshire, England",
+          "education": "Bowie State University (BA)",
+          "occupation": "Actor",
+          "years_active": "2012–present"
+        },
+        "sortName": "Adepo, Jovan",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Hiroki Yasumoto",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "silent-hill-townfall",
+          "gameTitle": "Silent Hill: Townfall",
+          "character": "Simon Ordell",
+          "collection": "characters",
+          "field": "actor",
+          "note": "Japanese dub",
+          "source": "https://silenthill.fandom.com/wiki/Simon_Ordell",
+          "sourceTitle": "Simon Ordell — silenthill.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": {
+        "title": "Hiroki Yasumoto",
+        "url": "https://en.wikipedia.org/wiki/Hiroki_Yasumoto",
+        "extract": "Hiroki Yasumoto (安元 洋貴, Yasumoto Hiroki; born March 16, 1977) is a Japanese voice actor and narrator. He belongs to Sigma Seven. His representative works are Hozuki's Coolheadedness (Hozuki), Bleach (Yasutora Sado), Hetalia: Axis Powers (Germany), Super Soccer (narration), and Close-up Gendai (narration).",
+        "categories": [
+          "1977 births",
+          "21st-century Japanese male actors",
+          "Japanese male video game actors",
+          "Japanese male voice actors",
+          "Komazawa University alumni",
+          "Living people",
+          "Male voice actors from Yamaguchi Prefecture"
+        ],
+        "facts": {
+          "name": "Hiroki Yasumoto",
+          "native_name": "安元 洋貴",
+          "native_name_lang": "ja",
+          "birth_date": "16 March 1977",
+          "birth_place": "Yamaguchi Prefecture, Japan",
+          "education": "Komazawa University",
+          "occupation": "Voice actor, narrator",
+          "years_active": "2003–present",
+          "agent": "Sigma Seven",
+          "credits": "Bleach as Yasutora Sado, Fairy Tail as Elfman Strauss and Draculos Hyberion, Sword Art Online as Agil, Hetalia: Axis Powers as Germany, Yowamushi Pedal as Shingo Kinjou, Kyouran Kazoku Nikki as Midarezaki Teika, Street Fighter as Guile, Hozuki's Coolheadedness as Hōzuki, Black Butler as Agni"
+        },
+        "sortName": "Yasumoto, Hiroki",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Kezia Burrows",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "silent-hill-townfall",
+          "gameTitle": "Silent Hill: Townfall",
+          "role": "actor",
+          "note": "Actress",
+          "stated": "Actress",
+          "uncertain": false,
+          "source": "https://silenthill.fandom.com/wiki/Kezia_Burrows",
+          "sourceTitle": "Kezia Burrows — silenthill.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [
+        {
+          "game": "silent-hill-townfall",
+          "gameTitle": "Silent Hill: Townfall",
+          "character": "Zoe Ellis",
+          "collection": "characters",
+          "field": "actor",
+          "note": null,
+          "source": "https://silenthill.fandom.com/wiki/Zoe_Ellis",
+          "sourceTitle": "Zoe Ellis — silenthill.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": {
+        "title": "Kezia Burrows",
+        "url": "https://silenthill.fandom.com/wiki/Kezia_Burrows",
+        "wiki": "silenthill.fandom.com",
+        "game": "silent-hill-townfall",
+        "gameTitle": "Silent Hill: Townfall",
+        "profession": "Actress",
+        "crewRole": null,
+        "hometown": "Neath, Wales, United Kingdom",
+        "born": "May 11",
+        "birthPlace": null,
+        "nationality": null,
+        "activeSince": null,
+        "films": [],
+        "otherWorks": [
+          "Crash",
+          "Elden Ring",
+          "Observation"
+        ],
+        "roles": [
+          "actor"
+        ],
+        "onOurGame": true,
+        "sortName": "",
+        "retrieved": "2026-09-15"
+      },
+      "article": {
+        "title": "Kezia Burrows",
+        "url": "https://en.wikipedia.org/wiki/Kezia_Burrows",
+        "extract": "Kezia Burrows is a Welsh actress, known for playing Dr Cath Llewelyn in the BBC Wales medical drama Crash from 2009 to 2010.",
+        "categories": [
+          "21st-century Welsh actresses",
+          "Actors from Carmarthen",
+          "Actors from Neath",
+          "Actors from Porthcawl",
+          "Actresses from Bridgend County Borough",
+          "Actresses from Carmarthenshire",
+          "Alumni of the Royal Academy of Dramatic Art",
+          "Living people",
+          "Welsh film actresses",
+          "Welsh people stubs",
+          "Welsh stage actresses",
+          "Welsh television actresses",
+          "Welsh video game actresses",
+          "Welsh voice actresses"
+        ],
+        "facts": {},
+        "sortName": "Burrows, Kezia",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Yuko Kaida",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "silent-hill-townfall",
+          "gameTitle": "Silent Hill: Townfall",
+          "character": "Zoe Ellis",
+          "collection": "characters",
+          "field": "actor",
+          "note": "Japanese dub",
+          "source": "https://silenthill.fandom.com/wiki/Zoe_Ellis",
+          "sourceTitle": "Zoe Ellis — silenthill.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": {
+        "title": "Yūko Kaida",
+        "url": "https://en.wikipedia.org/wiki/Y%C5%ABko_Kaida",
+        "extract": "Yūko Kaida (甲斐田 裕子, Kaida Yūko; born January 14, 1980) is a Japanese actress and voice actress who is affiliated with Ken Production. Her most known roles include Shimei Ryomou in Ikki Tousen, Tsukuyo in Gintama, Chasca in Genshin Impact, Kyō Takamimori in Potemayo, Amane Ootori in Strawberry Panic!, Minako Tsukiyama in Maria-sama ga Miteru, Maeda Matsu in Sengoku Basara, and Isabella in The Promised Neverland.",
+        "categories": [
+          "1971 births",
+          "21st-century Japanese actresses",
+          "Japanese stage actresses",
+          "Japanese video game actresses",
+          "Ken Production voice actors",
+          "Living people",
+          "Voice actors from Kawasaki, Kanagawa",
+          "Voice actresses from Kanagawa Prefecture"
+        ],
+        "facts": {
+          "name": "Yūko Kaida",
+          "native_name": "甲斐田 裕子",
+          "native_name_lang": "ja",
+          "birth_date": "14 January 1980",
+          "birth_place": "Kawasaki, Kanagawa Prefecture, Japan",
+          "other_names": "Kaita-chin, Yuhko Kaida",
+          "occupation": "Actress, voice actress",
+          "years_active": "2000–present",
+          "agent": "Ken Production",
+          "spouse": "Tomoyuki Hirasawa",
+          "website": "http://yuhko-kaida.com/"
+        },
+        "sortName": "Kaida, Yuko",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Terry O'Quinn",
+      "alsoKnownAs": [
+        "Terrence Quinn"
+      ],
+      "credits": [
+        {
+          "game": "silent-hill-townfall",
+          "gameTitle": "Silent Hill: Townfall",
+          "role": "actor",
+          "note": "Actor",
+          "stated": "Actor",
+          "uncertain": false,
+          "source": "https://silenthill.fandom.com/wiki/Terry_O'Quinn",
+          "sourceTitle": "Terry O'Quinn — silenthill.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "characters": [
+        {
+          "game": "silent-hill-townfall",
+          "gameTitle": "Silent Hill: Townfall",
+          "character": "Richard",
+          "collection": "characters",
+          "field": "portrayed",
+          "note": "Actor",
+          "source": "https://silenthill.fandom.com/wiki/Terry_O'Quinn",
+          "sourceTitle": "Terry O'Quinn — silenthill.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        },
+        {
+          "game": "silent-hill-townfall",
+          "gameTitle": "Silent Hill: Townfall",
+          "character": "Richard",
+          "collection": "characters",
+          "field": "actor",
+          "note": null,
+          "source": "https://silenthill.fandom.com/wiki/Richard",
+          "sourceTitle": "Richard — silenthill.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": {
+        "title": "Terry O'Quinn",
+        "url": "https://silenthill.fandom.com/wiki/Terry_O'Quinn",
+        "wiki": "silenthill.fandom.com",
+        "game": "silent-hill-townfall",
+        "gameTitle": "Silent Hill: Townfall",
+        "profession": "Actor",
+        "crewRole": null,
+        "hometown": "Sault Ste. Marie, Michigan, U.S.",
+        "born": null,
+        "birthPlace": null,
+        "nationality": null,
+        "activeSince": null,
+        "films": [],
+        "otherWorks": [
+          "Lost",
+          "The Walking Dead: The Ones Who Live"
+        ],
+        "roles": [
+          "actor"
+        ],
+        "onOurGame": true,
+        "sortName": "",
+        "retrieved": "2026-09-15"
+      },
+      "article": {
+        "title": "Terry O'Quinn",
+        "url": "https://en.wikipedia.org/wiki/Terry_O%27Quinn",
+        "extract": "Terrance Quinn (born July 15, 1952), known professionally as Terry O'Quinn, is an American actor. He won a Primetime Emmy Award for his performance as John Locke on the TV series Lost (2004–2010). In film, he also played the title role in The Stepfather (1987) and Howard Hughes in The Rocketeer (1991) with roles in other films such as Heaven's Gate (1980), Silver Bullet (1985), Young Guns (1988), Blind Fury (1989), Tombstone (1993) and Primal Fear (1996).\nOther prominent television roles include Peter Watts in Millennium (1996–1999), FBI Asst. Director Kendall in Alias (2002–2004), Commander Joe White in Hawaii Five-0 (2011–2018), and Tom Tavner in Patriot (2015–2018).",
+        "categories": [
+          "1952 births",
+          "20th-century American male actors",
+          "21st-century American male actors",
+          "American male film actors",
+          "American male television actors",
+          "American people of Irish descent",
+          "Catholics from Maryland",
+          "Catholics from Michigan",
+          "Central Michigan University alumni",
+          "Living people",
+          "Male actors from Michigan",
+          "Outstanding Performance by a Supporting Actor in a Drama Series Primetime Emmy Award winners",
+          "People from Mount Pleasant, Michigan",
+          "People from Newberry, Michigan",
+          "People from Reistertown, Maryland",
+          "People from Sault Ste. Marie, Michigan",
+          "University of Iowa alumni"
+        ],
+        "facts": {
+          "birth_name": "Terrance Quinn",
+          "birth_date": "15 July 1952",
+          "birth_place": "Sault Ste. Marie, Michigan, U.S.",
+          "years_active": "1975–present",
+          "occupation": "Actor"
+        },
+        "sortName": "Oquinn, Terry",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Akio Otsuka",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "silent-hill-townfall",
+          "gameTitle": "Silent Hill: Townfall",
+          "character": "Richard",
+          "collection": "characters",
+          "field": "actor",
+          "note": "Japanese dub",
+          "source": "https://silenthill.fandom.com/wiki/Richard",
+          "sourceTitle": "Richard — silenthill.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-15"
+        }
+      ],
+      "profile": null,
+      "article": {
+        "title": "Akio Otsuka",
+        "url": "https://en.wikipedia.org/wiki/Akio_Otsuka",
+        "extract": "Akio Otsuka (大塚 明夫, Ōtsuka Akio; born November 24, 1959) is a Japanese actor, voice actor, and narrator from the Tokyo Metropolitan area. He is currently a freelancer, but had previously been attached to Mausu Promotion.\nThe warm, calm quality of his deep voice has landed him many roles in films, dubbing, animation, and video games. He is most known for the roles of second generation Jigen Daisuke in Lupin III, the titular protagonist in Black Jack, Solid Snake, Naked Snake, Solidus Snake, and Venom Snake in the Metal Gear series, Gamigami Devil in Popolocrois, Ryoma Hoshi in Danganronpa V3: Killing Harmony, Shunsui Kyouraku in Bleach, Lieutenant Garuru in Sgt. Frog, Gwendel von Voltaire in Kyo Kara Maoh!, Batou in Ghost in the Shell, Blackbeard in One Piece, Tadakatsu Honda in the Samurai Warriors and Warriors Orochi series, Sango and Jugo Yokomizo in Detective Conan, Bryan Hawk in Hajime no Ippo, Zen Shigaraki/All For One in My Hero Academia, Thorkell in Vinland Saga, Wamuu in JoJo's Bizarre Adventure, Anavel Gato in Mobile Suit Gundam 0083: Stardust Memory, and Xehanort in the Kingdom Hearts series.\nHe is also the official dub voice for many Western actors, including Steven Seagal, Nicolas Cage, Antonio Banderas, Dolph Lundgren, Samuel L. Jackson, Denzel Washington, and Dennis Quaid.\nMausu Promotion announced on January 7, 2017 that Otsuka had married someone outside of the voice acting industry.\nOn March 31, 2026, Mausu Promotion announced that Otsuka had left the agency to become an independent voice actor.",
+        "categories": [
+          "1959 births",
+          "20th-century Japanese male actors",
+          "21st-century Japanese male actors",
+          "Japanese male musical theatre actors",
+          "Japanese male video game actors",
+          "Living people",
+          "Male voice actors from Tokyo",
+          "Mausu Promotion voice actors",
+          "Seiyu Award winners"
+        ],
+        "facts": {
+          "name": "Akio Otsuka",
+          "native_name": "大塚 明夫",
+          "native_name_lang": "ja",
+          "birth_date": "24 November 1959",
+          "birth_place": "Tokyo, Japan",
+          "occupation": "Actor, voice actor, narrator",
+          "years_active": "1988–present",
+          "parents": "Chikao Ōtsuka (father)",
+          "agent": "Topone",
+          "website": "https://topone.inc/talent/%E5%A4%A7%E5%A1%9A-%E6%98%8E%E5%A4%AB/"
+        },
+        "sortName": "Otsuka, Akio",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Christophe Gans",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [],
+      "profile": {
+        "title": "Christophe Gans",
+        "url": "https://silenthill.fandom.com/wiki/Christophe_Gans",
+        "wiki": "silenthill.fandom.com",
+        "game": "silent-hill-townfall",
+        "gameTitle": "Silent Hill: Townfall",
+        "profession": null,
+        "crewRole": "Director Writer (uncredited)",
+        "hometown": null,
+        "born": null,
+        "birthPlace": null,
+        "nationality": null,
+        "activeSince": null,
+        "films": [
+          "Silent Hill",
+          "Return to Silent Hill"
+        ],
+        "otherWorks": [],
+        "roles": [
+          "director",
+          "writer"
+        ],
+        "onOurGame": false,
+        "sortName": "",
+        "retrieved": "2026-09-15"
+      },
+      "article": {
+        "title": "Christophe Gans",
+        "url": "https://en.wikipedia.org/wiki/Christophe_Gans",
+        "extract": "Christophe Gans (born 11 March 1960) is a French film director, producer, and screenwriter who specializes in horror and fantasy movies.",
+        "categories": [
+          "1960 births",
+          "Filmmakers from Provence-Alpes-Côte d'Azur",
+          "French fantasy film directors",
+          "French film directors",
+          "French horror film directors",
+          "French screenwriters",
+          "Institut des hautes études cinématographiques alumni",
+          "Living people",
+          "People from Antibes"
+        ],
+        "facts": {
+          "name": "Christophe Gans",
+          "birth_name": "Christophe Gans",
+          "birth_date": "11 March 1960",
+          "birth_place": "Antibes, France",
+          "occupation": "Film director, producer; screenwriter",
+          "years_active": "1981–present"
+        },
+        "sortName": "Gans, Christophe",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Will de Renzy-Martin",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "dawnwalker",
+          "gameTitle": "The Blood of Dawnwalker",
+          "role": "actor",
+          "note": "Actor",
+          "stated": "Actor",
+          "uncertain": false,
+          "source": "https://dawnwalker.fandom.com/wiki/Will_de_Renzy-Martin",
+          "sourceTitle": "Will de Renzy-Martin — dawnwalker.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-17"
+        }
+      ],
+      "characters": [
+        {
+          "game": "dawnwalker",
+          "gameTitle": "The Blood of Dawnwalker",
+          "character": "Coen",
+          "collection": "characters",
+          "field": "role",
+          "note": "Actor",
+          "source": "https://dawnwalker.fandom.com/wiki/Will_de_Renzy-Martin",
+          "sourceTitle": "Will de Renzy-Martin — dawnwalker.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-17"
+        }
+      ],
+      "profile": {
+        "title": "Will de Renzy-Martin",
+        "url": "https://dawnwalker.fandom.com/wiki/Will_de_Renzy-Martin",
+        "wiki": "dawnwalker.fandom.com",
+        "profession": "Actor",
+        "crewRole": null,
+        "born": null,
+        "birthPlace": null,
+        "nationality": null,
+        "activeSince": null,
+        "sortName": "de Renzy-Martin, Will",
+        "retrieved": "2026-09-17"
+      },
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Andrew James Spooner",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "dawnwalker",
+          "gameTitle": "The Blood of Dawnwalker",
+          "role": "actor",
+          "note": "Actor",
+          "stated": "Actor",
+          "uncertain": false,
+          "source": "https://dawnwalker.fandom.com/wiki/Andrew_James_Spooner",
+          "sourceTitle": "Andrew James Spooner — dawnwalker.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-17"
+        }
+      ],
+      "characters": [
+        {
+          "game": "dawnwalker",
+          "gameTitle": "The Blood of Dawnwalker",
+          "character": "Brencis",
+          "collection": "characters",
+          "field": "role",
+          "note": "Actor",
+          "source": "https://dawnwalker.fandom.com/wiki/Andrew_James_Spooner",
+          "sourceTitle": "Andrew James Spooner — dawnwalker.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-17"
+        }
+      ],
+      "profile": {
+        "title": "Andrew James Spooner",
+        "url": "https://dawnwalker.fandom.com/wiki/Andrew_James_Spooner",
+        "wiki": "dawnwalker.fandom.com",
+        "profession": "Actor",
+        "crewRole": null,
+        "born": null,
+        "birthPlace": null,
+        "nationality": null,
+        "activeSince": null,
+        "sortName": "Spooner, Andrew James",
+        "retrieved": "2026-09-17"
+      },
+      "article": null,
+      "unresolvedReason": "no article"
+    }
+  ],
+  "dropped": [
+    {
+      "fragment": "Alan WakeMark Blum",
+      "reason": "two names concatenated with no separator — cannot be split confidently",
+      "from": "Alan WakeMark Blum (voice)AWEMartin McDougall (voice)",
+      "game": "control-resonant",
+      "field": "actor",
+      "character": "Emil Hartman"
+    },
+    {
+      "fragment": "AWEMartin McDougall",
+      "reason": "two names concatenated with no separator — cannot be split confidently",
+      "from": "Alan WakeMark Blum (voice)AWEMartin McDougall (voice)",
+      "game": "control-resonant",
+      "field": "actor",
+      "character": "Emil Hartman"
+    },
+    {
+      "fragment": "Stéphanie Cassignard Robyn Wolf",
+      "reason": "four capitalised words with no separator — probably two names, and there is no way to tell where one ends",
+      "from": "Stéphanie Cassignard Robyn Wolf",
+      "game": "resonance-a-plague-tale-legacy",
+      "field": "mo-capped by",
+      "character": "Amicia de Rune"
+    },
+    {
+      "fragment": "Gabin Linot Chloé Louis",
+      "reason": "four capitalised words with no separator — probably two names, and there is no way to tell where one ends",
+      "from": "Gabin Linot Chloé Louis",
+      "game": "resonance-a-plague-tale-legacy",
+      "field": "mo-capped by",
+      "character": "Hugo de Rune"
+    },
+    {
+      "fragment": "Emile Sardin Tom Hudson",
+      "reason": "four capitalised words with no separator — probably two names, and there is no way to tell where one ends",
+      "from": "Emile Sardin Tom Hudson",
+      "game": "resonance-a-plague-tale-legacy",
+      "field": "mo-capped by",
+      "character": "Lucas"
+    },
+    {
+      "fragment": "Giorgia Sinicorni Anna Demetriou",
+      "reason": "four capitalised words with no separator — probably two names, and there is no way to tell where one ends",
+      "from": "Giorgia Sinicorni Anna Demetriou",
+      "game": "resonance-a-plague-tale-legacy",
+      "field": "mo-capped by",
+      "character": "Sophia"
+    }
+  ]
+}

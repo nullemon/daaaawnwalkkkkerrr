@@ -41,6 +41,7 @@
  */
 import fs from 'fs'
 import path from 'path'
+import { pathToFileURL } from 'url'
 
 const UA =
   'VellumWikiNetwork/1.0 (game wiki network; non-commercial; +https://github.com/) node-fetch'
@@ -109,8 +110,25 @@ const get = async (params, attempt = 0) => {
  */
 const LIST_TEMPLATES =
   /^(ubl|unbulleted list|plainlist|flatlist|hlist|nowrap|nobold|small|smaller|nowraplinks)$/i
+/*
+  Templates whose arguments are the fact, rather than decoration around it.
+
+  The currency list was written as ISO codes, which is how the money templates
+  on a *company* article are usually named - and is not how they are named on
+  a European one. Remedy's revenue is `{{Increase}} {{€|59.5 million}} (2025)`
+  and Asobo's is `{{Euro|7 million|link=yes}}`: neither `€` nor `Euro` was in
+  this list, so the template was dropped whole and what survived was the
+  parenthesised year. Six companies stored a revenue of literally "(2025)".
+
+  It is the same failure the innermost-first resolution was written to fix,
+  arriving through the other door: that one lost the inside of a template it
+  half-deleted, this one loses the inside of a template it does not recognise.
+  A name missing from this list is silent by construction, so the list holds
+  the symbol forms as well as the codes, and `clean()` now says when a value
+  came out as nothing but a year.
+*/
 const KEEP_ARGS =
-  /^(start date and age|start date|end date|currency|us\$|usd|inr|jpy|eur|gbp|cny|rmb|krw|aud|cad|chf|sek|try|brl|rub|val|number|formatnum|url|circa|c\.|approx|increase|decrease)$/i
+  /^(start date and age|start date|end date|currency|us\$|usd|inr|jpy|eur|gbp|cny|rmb|krw|aud|cad|chf|sek|try|brl|rub|val|number|formatnum|url|circa|c\.|approx|increase|decrease|euro|pound sterling|yen|yuan|renminbi|won|rupee|dollar|aud\$|nz\$|hk\$|€|£|¥|₹|₩|$|a\$|c\$|nt\$|r\$|₽|₺|kr|zl|zł)$/i
 
 /**
  * Entities survive the wikitext because they are HTML, not wiki markup.
@@ -177,7 +195,12 @@ const resolveTemplates = (input) => {
       if (KEEP_ARGS.test(name)) {
         // {{start date and age|1983|6|11}} — the year is the fact.
         if (/^(start|end) date/i.test(name)) return args[0] ?? ''
-        return args.join(' ')
+        /*
+          Positional arguments only. `{{Euro|7 million|link=yes}}` would
+          otherwise render as "7 million link=yes", which is the kind of thing
+          that reads as a typo on the page and as a parser bug nowhere.
+        */
+        return args.filter((arg) => !/^[a-z_][a-z0-9_ -]*=/i.test(arg.trim())).join(' ')
       }
       // Growth arrows, flag icons, citations and the rest carry nothing.
       return ' '
@@ -189,7 +212,27 @@ const resolveTemplates = (input) => {
   return text.replace(/\{\{|\}\}/g, ' ')
 }
 
-const clean = (value) =>
+/*
+  Values that survived the template pass as nothing but a date.
+
+  A dropped template is silent: the arguments vanish and whatever sat outside
+  the braces looks like a complete answer. `{{€|59.5 million}} (2025)` became
+  "(2025)" and was stored, ranked and rendered as a revenue figure. Collected
+  here and printed at the end of the run, so the next unrecognised template
+  shows up as a line of output rather than as six quietly wrong companies.
+*/
+export const suspectValues = []
+const YEAR_ONLY = /^\(?\s*(c\.|circa)?\s*\d{4}(\s*[-–]\s*\d{2,4})?\s*\)?$/
+
+const note = (field, before, after) => {
+  if (after === '' && before.trim() !== '') suspectValues.push({ field, before, after })
+  else if (YEAR_ONLY.test(after) && !/^\d{4}$/.test(before.trim())) {
+    suspectValues.push({ field, before, after })
+  }
+  return after
+}
+
+export const clean = (value) =>
   decodeEntities(
     resolveTemplates(
       String(value ?? '')
@@ -255,7 +298,8 @@ const companyInfobox = (wikitext) => {
     const eq = part.indexOf('=')
     if (eq === -1) continue
     const key = part.slice(0, eq).trim().toLowerCase()
-    const value = clean(part.slice(eq + 1))
+    const raw = part.slice(eq + 1)
+    const value = note(key, raw, clean(raw))
     if (key && value) fields[key] = value
   }
   return fields
@@ -586,9 +630,40 @@ const run = async () => {
     ) + '\n',
   )
   console.log(`wrote ${OUT}`)
+
+  /*
+    The values that came back as nothing, or as nothing but a year. Printed
+    rather than thrown: an unrecognised template is a gap in KEEP_ARGS, and the
+    run's other three hundred companies are still worth writing. But it must be
+    visible — six revenues reading "(2025)" sat in the database for weeks
+    because a dropped template leaves no trace of itself.
+  */
+  if (suspectValues.length > 0) {
+    console.log(`
+${suspectValues.length} value${suspectValues.length === 1 ? '' : 's'} lost to a template this parser does not know:`)
+    for (const row of suspectValues.slice(0, 20)) {
+      console.log(`  ${row.field.padEnd(18)} ${JSON.stringify(row.after)}  <-  ${row.before.trim().slice(0, 90)}`)
+    }
+    if (suspectValues.length > 20) console.log(`  ...and ${suspectValues.length - 20} more`)
+    console.log('Add the template name to KEEP_ARGS and re-run.')
+  }
 }
 
-run().catch((error) => {
-  console.error(error.message ?? error)
-  process.exit(1)
-})
+/*
+  Only when run, not when imported.
+
+  `clean` and its template resolver are the part of this file most worth
+  testing and the part hardest to reach: a bad revenue figure is invisible in
+  the output and shows up weeks later on a page. Guarding the entry point lets
+  `tools/fetch-companies.test.mjs` import the function without starting a
+  three-hundred-article harvest as a side effect.
+*/
+const invokedDirectly =
+  process.argv[1] && pathToFileURL(process.argv[1]).href === import.meta.url
+
+if (invokedDirectly) {
+  run().catch((error) => {
+    console.error(error.message ?? error)
+    process.exit(1)
+  })
+}

@@ -68,6 +68,9 @@ export const PEOPLE_BUILT_IN = {
     officersHeading: 'Named by a company',
     officersNote:
       'Named in a studio’s or publisher’s own article rather than on a game. Appearing in a company’s article is not a credit on anything this network covers, and these profiles say only where the name was found.',
+    mentionedHeading: 'Named on a franchise wiki',
+    mentionedNote:
+      'A community wiki for a series names these people, and none of them is credited on a game this network covers — the director of the films, on the wiki for the games. They are listed because a source named them, and each page says exactly what that source supports and nothing more.',
   },
   whyHeading: 'Why people have their own site',
   whyBody:

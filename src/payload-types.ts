@@ -2594,7 +2594,7 @@ export interface Person {
   /**
    * Why this person is on the network. Shown on the page — how a name was chosen is part of what a reader is owed, and it is also what stops this becoming a directory of everyone.
    */
-  basis?: ('game-credit' | 'character-credit' | 'company-officer') | null;
+  basis?: ('game-credit' | 'character-credit' | 'company-officer' | 'wiki-mention') | null;
   /**
    * Shown to readers as a badge. Be honest — it is the whole point of this site.
    */
@@ -4654,6 +4654,8 @@ export interface PeopleSite {
     castNote?: string | null;
     officersHeading?: string | null;
     officersNote?: string | null;
+    mentionedHeading?: string | null;
+    mentionedNote?: string | null;
   };
   /**
    * Shown in place of the groups while nothing has been published. An index that renders as a heading over white space reads as a page that broke.
@@ -4940,6 +4942,8 @@ export interface PeopleSiteSelect<T extends boolean = true> {
         castNote?: T;
         officersHeading?: T;
         officersNote?: T;
+        mentionedHeading?: T;
+        mentionedNote?: T;
       };
   emptyNote?: T;
   whyHeading?: T;

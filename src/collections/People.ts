@@ -248,6 +248,20 @@ export const People: CollectionConfig = {
         { label: 'Credited on a game we cover', value: 'game-credit' },
         { label: 'Named in a character’s infobox', value: 'character-credit' },
         { label: 'Named by a company’s article', value: 'company-officer' },
+        /*
+          The fourth case, added because a record turned up that none of the
+          first three described and filing it under the nearest one would have
+          been the claim itself.
+
+          Christophe Gans is all over silenthill.fandom.com, which is the wiki
+          this network compiles Silent Hill: Townfall from. He directed the
+          films. Nothing on that wiki credits him on Townfall, so
+          `game-credit` would be false and `character-credit` says he is an
+          actor. This is the same disclosure the companies host makes with
+          `related-company`: the name is here because a source named it, and
+          the page says what the source actually supports.
+        */
+        { label: 'Named on a franchise wiki, no credit on a game here', value: 'wiki-mention' },
       ],
       admin: {
         position: 'sidebar',

@@ -80,6 +80,18 @@ export const PeopleSite: GlobalConfig = {
                     { name: 'officersNote', type: 'textarea', label: 'Note' },
                   ],
                 },
+                {
+                  type: 'collapsible',
+                  label: 'Named on a franchise wiki',
+                  admin: {
+                    description:
+                      'People a source names without crediting them on any game this network covers — the director of the films, on the wiki for the games. The note is what stops the listing being read as a credit.',
+                  },
+                  fields: [
+                    { name: 'mentionedHeading', type: 'text', label: 'Heading' },
+                    { name: 'mentionedNote', type: 'textarea', label: 'Note' },
+                  ],
+                },
               ],
             },
             {
