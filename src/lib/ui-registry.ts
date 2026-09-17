@@ -51,6 +51,22 @@ export const UI_DEFAULTS: Record<string, string> = {
   'form.cancel': 'Cancel',
 
   /*
+    The way back to the network, in the rail of every host but the hub.
+
+    Ten hosts, one sentence: a wiki, the companies host and the people host are
+    each their own origin, so `/` on any of them is that site's own front page
+    and a reader who landed from a search had no route to the other nine except
+    by editing the address bar. `{network}` is the network's name from Site
+    settings rather than a word typed here — it is still the working title
+    "Vellum" and will not stay that, and eight wikis carrying a stale name in
+    their navigation is the kind of thing nobody notices for a year.
+
+    Not "Home": on a wiki that reads as *this* wiki's home, which is the row
+    directly above it.
+  */
+  'nav.network-home': '{network} home',
+
+  /*
     The two summary placeholders were written when there was one wiki, and name
     a Dawnwalker quest and a Dawnwalker feature to readers of all eight. Same
     failure as the hardcoded section copy: a sentence about the game, served on

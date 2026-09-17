@@ -48,11 +48,22 @@ export function SiteRail({
   siteName,
   items,
   brandHref = '/',
+  networkHome,
 }: {
   siteName: string
   items: RailItem[]
   /** Where the wordmark goes. A wiki's rail points at its own home, not the hub's. */
   brandHref?: string
+  /**
+   * The way out, to the network's own home — on every host except the hub.
+   *
+   * It is rendered here rather than appended to `items` by each layout so the
+   * three that need it cannot disagree about its wording, its glyph or its
+   * position, and so the hub opts out by passing nothing rather than by
+   * remembering not to add a link to itself. Last in the list on purpose: it
+   * reads as leaving rather than as one more section of this site.
+   */
+  networkHome?: { label: string; href: string } | null
 }) {
   const pathname = usePathname()
 
@@ -122,6 +133,30 @@ export function SiteRail({
             </li>
           )
         })}
+
+        {networkHome ? (
+          /*
+            Cross-origin, so a plain anchor: `next/link` would add a prefetch
+            that cannot work across hosts.
+
+            `external` is the glyph — the arrow leaving a box — and it is the
+            only rail entry on the network that uses it, which is what the rail
+            needs it to be. Collapsed to 64px the icon *is* the control, so a
+            glyph that already means something else (a crown is Companies, a
+            person is People, a house is this site's own home) would be a
+            second meaning on one mark rather than navigation. The label is
+            still carried as `title`, so the collapsed state answers a hover
+            and a screen reader reads the text either way.
+          */
+          <li className="navrail-leave">
+            <a href={networkHome.href} className="navrail-link" title={networkHome.label}>
+              <span className="navrail-icon">
+                <Icon name="external" size={19} />
+              </span>
+              <span className="navrail-label">{networkHome.label}</span>
+            </a>
+          </li>
+        ) : null}
       </ul>
 
       <div className="navrail-foot">

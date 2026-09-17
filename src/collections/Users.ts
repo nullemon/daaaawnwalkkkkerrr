@@ -1,5 +1,25 @@
-import type { CollectionConfig } from 'payload'
+import type { BasePayload, CollectionConfig } from 'payload'
 import { isEditor } from '../fields/shared'
+import { HUB_ORIGIN } from '../lib/urls'
+
+/**
+ * The network's own name, for the two sentences an editor reads in an inbox.
+ *
+ * Read from Site settings rather than written here, and falling back to
+ * nothing rather than to a name. A sentence about one game does not belong in
+ * shared code - this email is sent to editors of all ten hosts, and hardcoding
+ * "Dawnwalker Guide" here is the same bug as the Regions index headed "Vale
+ * Sangora", just delivered to an inbox instead of a page.
+ */
+const networkName = async (payload: BasePayload): Promise<string> => {
+  try {
+    const settings = await payload.findGlobal({ slug: 'site-settings', depth: 0 })
+    const name = settings.siteName
+    return typeof name === 'string' && name.trim() ? name.trim() : ''
+  } catch {
+    return ''
+  }
+}
 
 export const Users: CollectionConfig = {
   slug: 'users',
@@ -19,7 +39,39 @@ export const Users: CollectionConfig = {
     editor assigned to one wiki cannot write to another with theirs. Revoking
     is unticking a box on their record.
   */
-  auth: { useAPIKey: true },
+  auth: {
+    useAPIKey: true,
+    /*
+      The reset link, built against the hub rather than against whatever host
+      the request arrived on.
+
+      Payload builds this URL itself from `config.serverURL`, and when that is
+      unset - it is, deliberately, because the admin is served on all ten hosts
+      and a fixed serverURL would make its own API calls cross-origin - it
+      falls back to the Host header, checks it against the CORS/CSRF allowlist,
+      finds no allowlist, and returns an empty origin. The link in the email is
+      then the bare path `/admin/reset/<token>`, which is not a link at all in
+      a mail client. Nobody has seen that happen because there was no email
+      adapter to deliver it; attaching one would have made every editor's
+      password reset a dead link on the first day.
+
+      NEXT_PUBLIC_SITE_URL is the apex and the admin answers there, so this is
+      the one host the link is always right for.
+    */
+    forgotPassword: {
+      generateEmailSubject: () => 'Reset your password',
+      generateEmailHTML: async (args) => {
+        const url = `${HUB_ORIGIN}/admin/reset/${args?.token ?? ''}`
+        const name = args?.req?.payload ? await networkName(args.req.payload) : ''
+        const who = name ? `the ${name} admin` : 'the admin'
+        return [
+          `<p>Somebody asked to reset the password on your editor account for ${who}.</p>`,
+          `<p><a href="${url}">${url}</a></p>`,
+          '<p>The link is good for one hour. If this was not you, nothing has changed and you can ignore this message.</p>',
+        ].join('')
+      },
+    },
+  },
   access: {
     /**
      * Editor accounts are staff records and must not be visible to reader

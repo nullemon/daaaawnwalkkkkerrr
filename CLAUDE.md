@@ -57,6 +57,7 @@ pnpm seed:art     # attach game key art and achievement icons
 pnpm make:avatars # redraw contributor monograms
 pnpm seed:avatars # attach them
 pnpm assets:match <dir> [--apply]   # match extracted game files to records
+pnpm email:test <address>           # send one message through whatever is configured
 pnpm generate:types                 # after any collection change
 ```
 
@@ -337,6 +338,26 @@ that inherits the default would let any reader who signs up edit content.
   every harvested file before deciding which ones a pass reads - the harvest
   writes what the wiki had, not what the schema expected.
 
+- **`next/script` at `beforeInteractive` does not inline your code.** What it
+  emits into the document is `(self.__next_s=self.__next_s||[]).push([...])`,
+  a queue Next's own runtime drains *after* the bundle loads. The theme script
+  exists to stamp `data-theme` on `<html>` before the first paint, and it was
+  running after it, so a reader whose toggle disagreed with their system
+  preference got a flash of the wrong theme on every cold load of every page.
+  React's "Encountered a script tag while rendering React component" warning
+  was pointing straight at it for months and was read as noise, because the
+  comment above the call claimed `next/script` was the documented way to avoid
+  exactly that warning. Both halves were wrong: `next/script` is itself a
+  client component rendering a `<script>`, which is what the warning is about.
+
+  A **bare `<script dangerouslySetInnerHTML>` rendered by a server component**
+  is the form that works. React only warns when it *creates* a script element
+  during a client render; a server component's script is in the HTML and is
+  hydrated rather than created, so it runs synchronously during parse and says
+  nothing. Anything that must run before first paint goes in that form, and
+  the check is the served HTML - if your code is not literally in it, it is
+  not running when you think it is.
+
 - **Grid and flex children default to `min-width: auto`**, so a wide table
   inside an `overflow-x` container drags the page sideways on a phone. The
   shrink-fix was one block at the end of `globals.css`; the visual-layer
@@ -345,6 +366,25 @@ that inherits the default would let any reader who signs up edit content.
   `.checker > *` and `.planner > *` in their own sections. Keep it there and
   give any new grid or flex container its own - somebody looking for the block
   at the end of the file will not find it and should not re-add a second copy.
+
+- **An email adapter that boots clean and sends nothing.** Two of the defaults
+  in this area are the exact failure this project keeps meeting.
+  `nodemailerAdapter()` called with no transport quietly invents an
+  **ethereal.email** test account: mail "sends", the API returns success, and
+  every message lands in a throwaway inbox nobody opens. And its own `verify()`
+  step catches the error and `console.error`s it, so a relay that refuses the
+  credentials starts clean and fails on the first password reset a fortnight
+  later. `src/lib/email-adapter.ts` builds the transport itself and verifies it
+  itself, so neither path exists. `src/lib/email.ts` is the half with no I/O in
+  it, and it refuses to boot naming the variable at fault. The provider is
+  `EMAIL_PROVIDER`, the default is `console`, and `pnpm email:test <address>`
+  exits non-zero on `console` because printed is not delivered. `docs/EMAIL.md`.
+
+  Related, and still open: **`players` has no password reset.** Payload exposes
+  `POST /api/players/forgot-password` whether anything links to it or not, and
+  the link it composes points at `/admin/reset/<token>` — the editor admin,
+  which resolves tokens against `users`. It was harmless while nothing was
+  delivered. It is a real message with a dead link now.
 
 ## How a guide gets written
 

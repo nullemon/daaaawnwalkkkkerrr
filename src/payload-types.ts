@@ -4429,6 +4429,18 @@ export interface SiteSetting {
    */
   contactEmail?: string | null;
   /**
+   * What the network is called in an inbox, e.g. the network name. Blank uses EMAIL_FROM_NAME. Nothing about one game belongs here — this goes to readers of all of the wikis.
+   */
+  emailFromName?: string | null;
+  /**
+   * The address mail is sent from. It must be one your email provider has verified, which is rarely the same as the contact address above. Blank uses EMAIL_FROM_ADDRESS.
+   */
+  emailFromAddress?: string | null;
+  /**
+   * Where a reader’s reply goes. Usually the contact address above, because the sending address is often a no-reply. Blank uses EMAIL_REPLY_TO, and blank there sends no reply-to at all.
+   */
+  emailReplyTo?: string | null;
+  /**
    * Required by GDPR/UK GDPR if you have readers in the EU or UK. A registered office or service address is fine; do not publish a home address you do not want public.
    */
   postalAddress?: string | null;
@@ -4556,6 +4568,14 @@ export interface SiteSetting {
    * Off by default. The credit is still stored on every image. Note that harvested wiki images are CC BY-SA, a licence whose central condition is attribution — see the note on the hub home tab before leaving this off permanently.
    */
   showImageCredits?: boolean | null;
+  /**
+   * What somebody sees on their first visit. The toggle in the header overrides it for that reader from then on, in both directions, and their choice is remembered — this only decides where they start.
+   */
+  appearanceTheme?: ('dark' | 'light' | 'system') | null;
+  /**
+   * A hex colour. Leave blank for the red that shipped. This is the only saturated colour on the site — it marks everything interactive — so the hover, border and highlight shades are derived from whatever is set here and will not match the shipped red exactly. An accent without enough contrast to read is refused when you save, with the measurement.
+   */
+  appearanceAccent?: string | null;
   /**
    * Only used on the apex domain. Each wiki has its own, on its Game record.
    */
@@ -4914,6 +4934,9 @@ export interface SiteSettingsSelect<T extends boolean = true> {
   legalProvisional?: T;
   legalEntity?: T;
   contactEmail?: T;
+  emailFromName?: T;
+  emailFromAddress?: T;
+  emailReplyTo?: T;
   postalAddress?: T;
   jurisdiction?: T;
   primaryNav?:
@@ -4983,6 +5006,8 @@ export interface SiteSettingsSelect<T extends boolean = true> {
   attributionText?: T;
   showSources?: T;
   showImageCredits?: T;
+  appearanceTheme?: T;
+  appearanceAccent?: T;
   verification?:
     | T
     | {

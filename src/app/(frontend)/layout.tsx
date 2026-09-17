@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Barlow, Barlow_Semi_Condensed, Cinzel } from 'next/font/google'
-import Script from 'next/script'
-import { themeScript } from '@/components/ThemeToggle'
+import { themeBootScript } from '@/lib/appearance'
+import { getAppearance } from '@/lib/appearance-settings'
 import { RunProvider } from '@/components/RunProvider'
 import { AccountProvider } from '@/components/AccountProvider'
 import { UiStringsProvider } from '@/components/UiStrings'
@@ -103,27 +103,43 @@ const fontVars = `${cinzel.variable} ${barlow.variable} ${barlowCondensed.variab
  */
 export default async function FrontendLayout({ children }: { children: React.ReactNode }) {
   const ui = await getUiMaps()
+  const { defaultTheme, accent } = await getAppearance()
+  const boot = themeBootScript(defaultTheme)
 
   return (
     <html lang="en" className={fontVars} suppressHydrationWarning>
       <head>
         {/*
-          `next/script` rather than a bare <script>, which React warns about:
-          a script rendered by a component never executes on a client render,
-          only on the server-rendered document. That is actually fine for this
-          one - it needs to run once, before first paint - but the warning is
-          real and the documented form does the same job without it.
+          A bare <script>, rendered by this server component, and it has to be.
 
-          `beforeInteractive` keeps it inlined ahead of any Next module, and it
-          stays in <head> rather than at the top of <body>: it sets data-theme
-          from localStorage, so anything that runs after the first paint has
-          already let the wrong theme show.
+          It used to be `next/script` at `beforeInteractive`, with a comment
+          claiming that avoided React's "scripts inside React components are
+          never executed" warning. Both halves were wrong. next/script is
+          itself a client component rendering a <script> of its own, which is
+          what the warning was about - and what that script contained was not
+          this code. It was `(self.__next_s=self.__next_s||[]).push([...])`, a
+          queue Next's own runtime drains once the bundle has loaded, which is
+          after first paint. The one thing this script exists to do before
+          anything is drawn was happening after it, so a reader whose toggle
+          is set against their system preference got a flash of the other
+          theme on every cold load, on every page.
+
+          React only warns when it *creates* a script element during a client
+          render. A server component's script is in the HTML, hydrated rather
+          than created, so this form both runs before paint and says nothing.
+
+          suppressHydrationWarning on <html> above is what lets it: the
+          attribute this sets is on the element React is hydrating.
         */}
-        <Script
-          id="theme-before-paint"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{ __html: themeScript }}
-        />
+        <script id="theme-before-paint" dangerouslySetInnerHTML={{ __html: boot }} />
+        {/*
+          The accent override, when there is one. Empty string when there is
+          not, and then nothing is emitted at all - the shipped red is in
+          globals.css and a blank field must fall back to it rather than to
+          nothing. Generated from a validated hex; nothing an editor typed
+          reaches the document as anything but a colour.
+        */}
+        {accent ? <style dangerouslySetInnerHTML={{ __html: accent }} /> : null}
       </head>
       <body>
         <UiStringsProvider value={ui}>

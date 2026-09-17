@@ -17,6 +17,17 @@ export type ShellProps = {
   /** Where the brand mark links. The hub on the hub, the wiki home on a wiki. */
   brandHref?: string
   items: RailItem[]
+  /**
+   * The way back to the network's own home. Omitted on the hub, which is it.
+   *
+   * Built by each layout from `hub('/')` in `src/lib/urls.ts` rather than from
+   * a literal, because the network answers on `localhost:3000` in dev and on
+   * its real apex in production and a hardcoded host is right in exactly one
+   * of those. The label comes from the `nav.network-home` registry string, so
+   * the network's name is read from Site settings instead of typed into ten
+   * rails.
+   */
+  networkHome?: { label: string; href: string } | null
   footer: {
     blurb: string
     columns: FooterColumn[]
@@ -29,14 +40,26 @@ export type ShellProps = {
   children: React.ReactNode
 }
 
-export function Shell({ siteName, brandHref = '/', items, footer, children }: ShellProps) {
+export function Shell({
+  siteName,
+  brandHref = '/',
+  items,
+  networkHome,
+  footer,
+  children,
+}: ShellProps) {
   return (
     <>
       <a className="skip" href="#main">
         Skip to content
       </a>
       <div className="shell">
-        <SiteRail siteName={siteName} brandHref={brandHref} items={items} />
+        <SiteRail
+          siteName={siteName}
+          brandHref={brandHref}
+          items={items}
+          networkHome={networkHome}
+        />
         <div className="shell-main">
           <main id="main">{children}</main>
           <SiteFooter siteName={siteName} {...footer} />

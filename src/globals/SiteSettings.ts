@@ -1,6 +1,8 @@
 import type { GlobalConfig } from 'payload'
 import { isEditor } from '../fields/shared'
 import { analyticsFields, verificationFields } from '../fields/analytics'
+import { isProvisional } from '../lib/legal'
+import { accentRefusal, checkAccent } from '../lib/appearance'
 
 /**
  * Everything chrome-level that should be changeable without a deploy:
@@ -84,6 +86,66 @@ export const SiteSettings: GlobalConfig = {
               name: 'contactEmail',
               type: 'email',
               admin: { description: 'A working address people can actually reach you on.' },
+            },
+            /*
+              The sender on everything the site emails — password resets today,
+              anything added later.
+
+              It lives here rather than in the environment alone because it is
+              reader-visible copy: the name in an inbox is the first thing a
+              person sees, and docs/COPY.md's rule is that anything somebody
+              would want to reword is a field. EMAIL_FROM_ADDRESS is still
+              required for any real provider, and is the floor these override —
+              see docs/EMAIL.md. Left blank, the environment's value is used,
+              which is why nothing here is required.
+            */
+            {
+              name: 'emailFromName',
+              type: 'text',
+              label: 'Sender name on email',
+              admin: {
+                description:
+                  'What the network is called in an inbox, e.g. the network name. Blank uses EMAIL_FROM_NAME. Nothing about one game belongs here — this goes to readers of all of the wikis.',
+              },
+            },
+            {
+              name: 'emailFromAddress',
+              type: 'email',
+              label: 'Sender address on email',
+              admin: {
+                description:
+                  'The address mail is sent from. It must be one your email provider has verified, which is rarely the same as the contact address above. Blank uses EMAIL_FROM_ADDRESS.',
+              },
+              /*
+                Refused at the point of entry rather than at send time.
+
+                An address on example.com is syntactically valid, so every
+                provider accepts the API call and the message bounces somewhere
+                nobody is looking — the silent failure this whole area is built
+                against. `isProvisional` is the same check the privacy page
+                uses on the other stand-in values.
+              */
+              validate: (value: unknown) => {
+                if (!value || typeof value !== 'string' || !value.trim()) return true
+                return isProvisional(value)
+                  ? 'This looks like a stand-in. example.com is reserved for documentation and can never send or receive mail.'
+                  : true
+              },
+            },
+            {
+              name: 'emailReplyTo',
+              type: 'email',
+              label: 'Reply-to address on email',
+              admin: {
+                description:
+                  'Where a reader’s reply goes. Usually the contact address above, because the sending address is often a no-reply. Blank uses EMAIL_REPLY_TO, and blank there sends no reply-to at all.',
+              },
+              validate: (value: unknown) => {
+                if (!value || typeof value !== 'string' || !value.trim()) return true
+                return isProvisional(value)
+                  ? 'This looks like a stand-in. A reply-to nobody reads is worse than none.'
+                  : true
+              },
             },
             {
               name: 'postalAddress',
@@ -449,6 +511,83 @@ export const SiteSettings: GlobalConfig = {
               admin: {
                 description:
                   'Off by default. The credit is still stored on every image. Note that harvested wiki images are CC BY-SA, a licence whose central condition is attribution — see the note on the hub home tab before leaving this off permanently.',
+              },
+            },
+          ],
+        },
+        {
+          /*
+            Two settings, not a palette.
+
+            Handing an editor every colour token is how a site ends up
+            unreadable with nobody able to say which of thirty values did it.
+            These two are the ones somebody actually wants to change without a
+            deploy — which theme a first-time reader lands in, and the one
+            saturated colour on the page — and both fall back to what shipped
+            when blank.
+          */
+          label: 'Appearance',
+          description:
+            'How the site looks before a reader touches anything. Both settings are optional: left alone, the network renders the dark palette and the red accent that shipped.',
+          fields: [
+            {
+              name: 'appearanceTheme',
+              type: 'select',
+              label: 'Default theme',
+              defaultValue: 'dark',
+              options: [
+                { label: 'Dark (default)', value: 'dark' },
+                { label: 'Light', value: 'light' },
+                { label: 'Follow the reader’s system setting', value: 'system' },
+              ],
+              admin: {
+                description:
+                  'What somebody sees on their first visit. The toggle in the header overrides it for that reader from then on, in both directions, and their choice is remembered — this only decides where they start.',
+              },
+            },
+            {
+              name: 'appearanceAccent',
+              type: 'text',
+              label: 'Accent colour',
+              admin: {
+                placeholder: '#d13a44',
+                description:
+                  'A hex colour. Leave blank for the red that shipped. This is the only saturated colour on the site — it marks everything interactive — so the hover, border and highlight shades are derived from whatever is set here and will not match the shipped red exactly. An accent without enough contrast to read is refused when you save, with the measurement.',
+              },
+              /*
+                A refusal, not a warning, and the difference is the failure
+                mode. An unreadable legal value is a page somebody can still
+                read and disbelieve; an unreadable accent is a button with
+                invisible text on every page of eight sites, and nothing
+                downstream would report it. `LegalGap` warns because the value
+                it guards is a judgement call. This one is measurable, so it is
+                checked where it is typed.
+              */
+              validate: (value: unknown) => {
+                if (value === null || value === undefined || value === '') return true
+                if (typeof value !== 'string') return 'Use a hex colour such as #d13a44.'
+                return accentRefusal(value) ?? true
+              },
+              hooks: {
+                /*
+                  The measurement, printed once per save.
+
+                  A validator that only speaks when it refuses teaches nobody
+                  what the margin was. An accent that passes at 3.02 is one
+                  shade away from failing and the person choosing it should
+                  see that while they are choosing.
+                */
+                afterChange: [
+                  ({ value, req }) => {
+                    if (typeof value === 'string' && value && !accentRefusal(value)) {
+                      const measured = checkAccent(value)
+                        .map((c) => `${c.ratio.toFixed(2)}:1 ${c.label}`)
+                        .join(', ')
+                      req.payload.logger.info(`Accent ${value}: ${measured}`)
+                    }
+                    return value
+                  },
+                ],
               },
             },
           ],

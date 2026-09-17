@@ -7,6 +7,7 @@ import { getPublishedGames, getSiteSettings, gameUrl } from '@/lib/payload'
 import { copy } from '@/lib/copy'
 import { COMPANIES_BUILT_IN, getCompaniesSite } from '@/lib/companies-copy'
 import { COMPANIES_ORIGIN, hub, personUrl } from '@/lib/urls'
+import { networkHome } from '@/lib/network-home'
 
 /**
  * The companies host.
@@ -169,6 +170,7 @@ export default async function CompaniesLayout({ children }: { children: ReactNod
         network: settings.siteName ?? 'Network',
       })}
       items={rail}
+      networkHome={await networkHome()}
       footer={{
         blurb: copy(site.footerBlurb, COMPANIES_BUILT_IN.footerBlurb),
         columns,

@@ -8,34 +8,58 @@
 */
 
 :root {
-  /* dark is the base palette */
-  --ground: #070720;
-  --surface: #191937;
-  --raised: #25254b;
-  --sunken: #11112a;
+  /*
+    Dark is the base palette, and its neutrals are neutral.
 
-  --ink: #ffffff;
-  --ink-soft: #cddcfe;
-  --muted: #7b7ba8;
+    They were not: ground, surface, raised, sunken, rule and the two soft inks
+    were all saturated blue-violet (#070720 through #cddcfe). Under a red
+    accent that reads as a purple haze over the whole site — the accent is the
+    only saturated thing on the page, so every surface behind it fights it.
+    These are charcoals carrying about 4% saturation at hue 30: enough warmth
+    that the page is not a slab of pure grey, far too little to have a colour.
+    `.page-art` has used exactly this register for its own band all along.
 
-  --rule: #2d2d5e;
-  --rule-soft: #20204a;
+    The numbers below every text token are its WCAG contrast ratio against
+    ground / surface / raised. --muted is the one that always fails, and did:
+    #7b7ba8 measured 3.63 on the old --raised, so every secondary line on a
+    card was below AA. Anything changed here gets re-measured — a palette that
+    looks right and cannot be read is not finished.
+  */
+  --ground: #131211;
+  --surface: #1f1d1b;
+  --raised: #2b2926;
+  --sunken: #0c0b0a;
 
+  --ink: #f7f4f1;      /* 17.08 / 15.33 / 13.24 */
+  --ink-soft: #d2ccc5; /* 11.75 / 10.55 / 9.11  */
+  --muted: #a49c93;    /*  6.91 /  6.20 / 5.36  */
+
+  --rule: #3a3733;
+  --rule-soft: #2a2724;
+
+  /*
+    The accent is unchanged and stays the only saturated colour here. It is a
+    border, a fill and a marker, never body text — links are --accent-hot,
+    which clears AA on all three surfaces. --accent-wash was #2a1020, a
+    magenta: it is the accent's own hue now, so a highlighted row reads as a
+    red tint rather than a second colour nobody chose.
+  */
   --accent: #d13a44;
-  --accent-hot: #ff5b66;
-  --accent-dim: #6a1f25;
-  --accent-wash: #2a1020;
+  --accent-hot: #ff5b66; /* 6.18 / 5.55 / 4.79 */
+  --accent-dim: #7d2c31;
+  --accent-wash: #2e1716;
 
-  --legendary: #e3a33c;
-  --rare: #479df5;
-  --common: #8a93a6;
+  --legendary: #e3a33c; /* 8.53 / 7.66 / 6.61 */
+  --rare: #479df5;      /* 6.60 / 5.93 / 5.12 */
+  --common: #a8a29a;    /* 7.40 / 6.64 / 5.73 — grey because common is
+                           unremarkable, and now a grey rather than a blue */
 
-  --danger: #ef4a55;
-  --danger-wash: #2a1016;
-  --good: #3fbe79;
-  --good-wash: #0d2419;
-  --caution: #e3a33c;
-  --caution-wash: #251b0c;
+  --danger: #f4636c;    /* 6.10 / 5.48 / 4.73 — #ef4a55 sat at 4.37 on raised */
+  --danger-wash: #301514;
+  --good: #45c581;      /* 8.52 / 7.65 / 6.60 */
+  --good-wash: #10251b;
+  --caution: #e3a33c;   /* 8.53 / 7.66 / 6.61 */
+  --caution-wash: #2a1f0e;
 
   --shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset;
 
@@ -284,9 +308,32 @@ p { margin: 0; }
 .navrail-link[aria-current='page'] { background: var(--accent); color: #fff; }
 .navrail-icon { flex: none; width: 22px; display: flex; justify-content: center; }
 
-/* Labels only exist when there is room for them; the icon is the control. */
-.navrail-label { white-space: nowrap; opacity: 0; transition: opacity 0.12s ease; }
+/* Labels only exist when there is room for them; the icon is the control.
+
+   `min-width: 0` because a flex child defaults to `min-width: auto` and a
+   nowrap label then refuses to shrink below its own text: the wordmark "A
+   Plague Tale Legacy Wiki" measures 192px in the 168px the expanded rail has
+   for it, so it ran out through the rail and was chopped mid-letter against
+   the border with nothing to say it had been. Same rule as `.split > *` and
+   `.tablewrap`, next to the layout it protects.
+
+   It truncates rather than wrapping to two lines because every label here is
+   laid out even while it is transparent — at rest the rail is 64px wide, so a
+   wrapping label would stack four lines deep and prise every row of the rail
+   apart before a reader had hovered anything, and the row heights are what the
+   collapsed icon column is made of. The full name stays reachable: the brand
+   and every link already carry it as `title`, and it is the anchor's text
+   either way, so a screen reader never sees the ellipsis. */
+.navrail-label {
+  white-space: nowrap; opacity: 0; transition: opacity 0.12s ease;
+  min-width: 0; overflow: hidden; text-overflow: ellipsis;
+}
 .navrail:hover .navrail-label, .navrail:focus-within .navrail-label { opacity: 1; }
+
+/* The way out, to the network's home. A hairline above it so it reads as
+   leaving rather than as one more section of this site — the rail's own
+   sections stop here. */
+.navrail-leave { margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--rule); }
 
 .navrail-foot { margin-top: auto; display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
 
@@ -306,6 +353,13 @@ p { margin: 0; }
   .navrail-list { flex-direction: row; margin: 0; gap: 2px; }
   .navrail-link { height: 44px; width: 46px; justify-content: center; padding: 0; }
   .navrail-label { display: none; }
+  /* The list lies down, so the hairline that separated the way out from the
+     sections has to turn with it — a top border here would draw a line across
+     the bar rather than before the last item. */
+  .navrail-leave {
+    margin: 0 0 0 6px; padding: 0 0 0 6px;
+    border-top: 0; border-left: 1px solid var(--rule);
+  }
   .shell-main { padding-bottom: 56px; }
 }
 
@@ -325,8 +379,14 @@ p { margin: 0; }
   background: var(--sunken) center / cover no-repeat;
 }
 .hero::before {
+  /*
+    A literal near-black, not var(--ground): this scrim sits over a photograph
+    and the wordmark on it is white in both themes, so it has to stay dark in
+    both. It was rgba(7, 7, 32) — the old indigo ground, copied in by hand —
+    which is why the hero read purple no matter what the tokens said.
+  */
   content: ''; position: absolute; inset: 0; z-index: -1;
-  background: linear-gradient(180deg, rgba(7, 7, 32, 0.5) 0%, rgba(7, 7, 32, 0.7) 55%, var(--ground) 100%);
+  background: linear-gradient(180deg, rgba(8, 7, 6, 0.5) 0%, rgba(8, 7, 6, 0.7) 55%, var(--ground) 100%);
 }
 .hero-wordmark {
   display: flex; align-items: center; gap: 14px;
@@ -349,13 +409,20 @@ p { margin: 0; }
 .herosearch-field input {
   width: 100%; height: 58px; padding: 0 54px 0 22px;
   border: none; border-radius: var(--r);
-  background: #fff; color: #11112a;
+  /*
+    Literal, not tokens: this field is a white card in both themes, so its own
+    text has to be dark in both. The three values were #11112a, #7b7ba8 and
+    #5c5c8e — the old indigo sunken and muted, copied in — so the one white
+    element on the page was where the violet showed most. Placeholder measures
+    5.36 on white, which is the one of the three that carries any meaning.
+  */
+  background: #fff; color: #1b1a18;
   font: inherit; font-size: 16px; font-weight: 500;
   box-shadow: 0 10px 34px rgba(0, 0, 0, 0.38);
 }
-.herosearch-field input::placeholder { color: #7b7ba8; font-weight: 400; }
+.herosearch-field input::placeholder { color: #6f6a64; font-weight: 400; }
 .herosearch-field input:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
-.herosearch-icon { position: absolute; right: 19px; top: 50%; transform: translateY(-50%); color: #5c5c8e; pointer-events: none; }
+.herosearch-icon { position: absolute; right: 19px; top: 50%; transform: translateY(-50%); color: #8a847d; pointer-events: none; }
 
 .herosearch-menu {
   position: absolute; top: calc(100% + 9px); left: 0; right: 0; z-index: 40;
@@ -399,11 +466,11 @@ p { margin: 0; }
 }
 .tile::before {
   content: ''; position: absolute; inset: 0; z-index: -1;
-  background: linear-gradient(180deg, rgba(7, 7, 32, 0.15) 0%, rgba(7, 7, 32, 0.88) 78%);
+  background: linear-gradient(180deg, rgba(8, 7, 6, 0.15) 0%, rgba(8, 7, 6, 0.88) 78%);
   transition: background 0.15s ease;
 }
 .tile:hover { text-decoration: none; border-color: var(--accent); }
-.tile:hover::before { background: linear-gradient(180deg, rgba(7, 7, 32, 0.05) 0%, rgba(7, 7, 32, 0.8) 78%); }
+.tile:hover::before { background: linear-gradient(180deg, rgba(8, 7, 6, 0.05) 0%, rgba(8, 7, 6, 0.8) 78%); }
 .tile-name { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; }
 .tile-count { font-family: var(--f-label); font-size: 12.5px; color: var(--ink-soft); }
 .tile-icon { position: absolute; top: 13px; right: 13px; color: rgba(255, 255, 255, 0.5); }
@@ -644,7 +711,11 @@ th.num { text-align: right; }
 .rail-block h2 { font-size: 15px; font-family: var(--f-label); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--rule); padding-bottom: 6px; }
 
 .take { border-left: 2px solid var(--accent); padding: 2px 0 2px 15px; display: flex; flex-direction: column; gap: 7px; max-width: var(--measure); }
-.take .who { font-family: var(--f-label); font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+/* `--accent-hot`, not `--accent`. This is 11px uppercase label text, and
+   `--accent` is mixed to sit at 3:1 — the bar for a border or a fill, not
+   for something somebody has to read. It measured 3.52 on `--surface`,
+   below AA, and had done since before the palette was reneutralised. */
+.take .who { font-family: var(--f-label); font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-hot); }
 .take h3 { font-size: 16px; }
 .take p { font-size: 14.5px; color: var(--ink-soft); }
 
@@ -1391,7 +1462,7 @@ th.num { text-align: right; }
 }
 .wiki-masthead::before {
   content: ''; position: absolute; inset: 0; z-index: -1;
-  background: linear-gradient(180deg, rgba(7, 7, 32, 0.55) 0%, rgba(7, 7, 32, 0.9) 82%);
+  background: linear-gradient(180deg, rgba(8, 7, 6, 0.55) 0%, rgba(8, 7, 6, 0.9) 82%);
 }
 .wiki-masthead-inner {
   display: flex; flex-direction: column; align-items: flex-start; gap: 16px;

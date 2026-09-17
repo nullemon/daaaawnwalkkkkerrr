@@ -7,6 +7,7 @@ import { getPublishedGames, getSiteSettings, gameUrl } from '@/lib/payload'
 import { copy } from '@/lib/copy'
 import { PEOPLE_BUILT_IN, getPeopleSite } from '@/lib/people-copy'
 import { PEOPLE_ORIGIN, companyUrl, hub } from '@/lib/urls'
+import { networkHome } from '@/lib/network-home'
 
 /**
  * The people host.
@@ -155,6 +156,7 @@ export default async function PeopleLayout({ children }: { children: ReactNode }
         network: settings.siteName ?? 'Network',
       })}
       items={rail}
+      networkHome={await networkHome()}
       footer={{
         blurb: copy(site.footerBlurb, PEOPLE_BUILT_IN.footerBlurb),
         columns,

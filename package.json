@@ -70,16 +70,20 @@
     "seed:copy": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/copy.ts",
     "seed:ratings": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/ratings.ts",
     "fetch:posters": "cross-env NODE_OPTIONS=--no-deprecation node tools/fetch-posters.mjs",
-    "seed:posters": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/posters.ts"
+    "seed:posters": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/posters.ts",
+    "email:test": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/email-test.ts"
   },
   "dependencies": {
     "@payloadcms/db-sqlite": "3.89.0",
+    "@payloadcms/email-nodemailer": "3.89.0",
+    "@payloadcms/email-resend": "3.89.0",
     "@payloadcms/next": "3.89.0",
     "@payloadcms/richtext-lexical": "3.89.0",
     "@payloadcms/ui": "3.89.0",
     "cross-env": "10.1.0",
     "graphql": "^16.8.1",
     "next": "16.3.5",
+    "nodemailer": "9.1.1",
     "payload": "3.89.0",
     "react": "19.3.0",
     "react-dom": "19.3.0",
@@ -87,6 +91,7 @@
   },
   "devDependencies": {
     "@types/node": "24.12.3",
+    "@types/nodemailer": "^8.0.2",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
     "dotenv": "16.4.7",

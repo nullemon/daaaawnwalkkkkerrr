@@ -11,6 +11,7 @@ import { JsonLd } from '@/components/JsonLd'
 import { networkOrganization, videoGame, webSite } from '@/lib/schema'
 import { clamp } from '@/lib/seo'
 import { hub } from '@/lib/urls'
+import { networkHome } from '@/lib/network-home'
 import { Analytics } from '@/components/Analytics'
 import { resolveTags, verificationMetadata } from '@/lib/tags'
 
@@ -186,19 +187,6 @@ export default async function GameLayout({
   const knownCompanies = new Set<string>(companyRows.docs.map((row) => String(row.slug)))
 
 
-  /*
-    The way back to the network.
-
-    Every wiki is its own host, so `/` on a wiki is that wiki's front page and
-    there was no link anywhere in the chrome that reached the hub - a reader
-    who arrived on a Gears page from a search had no way to discover the other
-    seven except by editing the address bar. The footer carried "All wikis",
-    which is the sitemap rather than the navigation, and nobody scrolls to a
-    footer to go up a level.
-
-    It sits last so it reads as leaving rather than as one more section of this
-    wiki, and it is `external` because it points at a different host.
-  */
   const rail: RailItem[] = [
     { label: 'Home', href: '/', icon: 'home' },
     ...tools,
@@ -216,12 +204,6 @@ export default async function GameLayout({
       icon: item.icon ?? 'book',
       external: /^https?:\/\//i.test(item.href),
     })),
-    {
-      label: `All ${settings.siteName} wikis`,
-      href: hub('/'),
-      icon: 'external',
-      external: true,
-    },
   ]
 
   /*
@@ -294,6 +276,7 @@ export default async function GameLayout({
     <Shell
       siteName={`${name} Wiki`}
       items={rail}
+      networkHome={await networkHome()}
       footer={{
         blurb:
           game.summary ||

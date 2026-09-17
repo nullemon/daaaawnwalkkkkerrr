@@ -38,9 +38,21 @@ import { InterfaceStrings } from './globals/InterfaceStrings'
 import { CompaniesSite } from './globals/CompaniesSite'
 import { PeopleSite } from './globals/PeopleSite'
 import { scopedToGame } from './fields/shared'
+import { buildEmailAdapter } from './lib/email-adapter'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
+
+/*
+  Awaited here, before the config is built, on purpose.
+
+  Payload calls an email adapter synchronously at init, so anything that has to
+  be checked over the network - an SMTP relay answering, and its credentials
+  being accepted - has to happen first or not at all. Doing it here is what
+  makes a misconfigured provider refuse to boot rather than accept a password
+  reset and drop it. `docs/EMAIL.md` has the variables.
+*/
+const email = await buildEmailAdapter()
 
 export default buildConfig({
   admin: {
@@ -103,6 +115,13 @@ export default buildConfig({
   ],
   globals: [SiteSettings, LegalPages, InterfaceStrings, CompaniesSite, PeopleSite],
   editor: lexicalEditor(),
+  /*
+    Chosen by EMAIL_PROVIDER, never by editing this line. Default is `console`,
+    which prints and discards, so a fresh clone with no credentials still runs.
+    See `lib/email.ts` for what each provider needs and `pnpm email:test` for
+    whether it works.
+  */
+  email,
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: { outputFile: path.resolve(dirname, 'payload-types.ts') },
   /**
