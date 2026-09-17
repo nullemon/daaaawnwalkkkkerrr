@@ -118,3 +118,153 @@
 
 .net-dash-gap { color: var(--theme-warning-600, #a97400); font-size: 0.82rem; }
 .net-dash-ok { color: var(--theme-elevation-400); font-size: 0.82rem; }
+
+/* --- What is waiting for you -------------------------------------------- */
+/*
+  Three groups on the dashboard, one badge list in the sidebar, and nothing
+  in either that can be dismissed. Same reasoning as LegalGap on the public
+  site (docs/COPY.md): a warning the person being warned can delete is not a
+  warning, and a badge the owner can clear without fixing the thing is
+  decoration.
+*/
+
+.net-dash-failed {
+  margin: 0;
+  padding: 12px 14px;
+  border: 1px solid var(--theme-error-500, #a33);
+  border-radius: 4px;
+  background: var(--theme-error-50, var(--theme-elevation-50));
+  color: var(--theme-elevation-800);
+  max-width: 70ch;
+}
+.net-dash-failed code { font-family: var(--font-mono, monospace); }
+
+.net-dash-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.net-dash-actions li {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 10px 12px;
+  border: 1px solid var(--theme-elevation-150);
+  border-left-width: 3px;
+  border-radius: 4px;
+  background: var(--theme-elevation-50);
+  /* A grid/flex child defaults to min-width:auto, so a long finding sentence
+     would push this row wider than the panel instead of wrapping. */
+  min-width: 0;
+}
+
+/*
+  The tier decides the left edge and nothing else. Colouring a whole row by
+  severity makes eight rows shout at once, which is how a warning list stops
+  being read.
+*/
+.net-dash-actions li[data-level='blocking'] { border-left-color: var(--theme-error-500, #a33); }
+.net-dash-actions li[data-level='warn'] { border-left-color: var(--theme-warning-500, #b8860b); }
+.net-dash-actions li[data-level='note'] { border-left-color: var(--theme-elevation-300); }
+/* Blocked is deliberately the quietest thing on the page: it is the state of
+   the world, not a task, and it must not read as one. */
+.net-dash-actions--blocked li[data-level='blocked'] {
+  border-left-color: var(--theme-elevation-200);
+  background: transparent;
+}
+
+.net-dash-action-body {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.net-dash-action-detail { font-size: 0.88rem; color: var(--theme-elevation-800); }
+
+.net-dash-places {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  font-size: 0.78rem;
+}
+.net-dash-places a { color: var(--theme-elevation-650, var(--theme-elevation-600)); }
+.net-dash-places a:hover { color: var(--theme-elevation-1000); }
+
+/* No link, because there is nowhere in the admin to go. Saying so is the
+   point — a row that links to the wrong screen is worse than one that links
+   nowhere and admits it. */
+.net-dash-nowhere { color: var(--theme-elevation-450, var(--theme-elevation-400)); }
+
+/* --- The sidebar badges -------------------------------------------------- */
+
+.net-nav-badges {
+  margin: var(--base, 20px) 0 0;
+  padding: 12px 0 0;
+  border-top: 1px solid var(--theme-elevation-100);
+  min-width: 0;
+}
+
+.net-nav-badges-title {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--theme-elevation-500);
+  text-decoration: none;
+  margin-bottom: 6px;
+}
+.net-nav-badges-title:hover { color: var(--theme-elevation-800); }
+
+.net-nav-badges ul { margin: 0; padding: 0; list-style: none; }
+
+.net-nav-badges li a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 0;
+  color: var(--theme-elevation-700);
+  text-decoration: none;
+  font-size: 0.85rem;
+  min-width: 0;
+}
+.net-nav-badges li a:hover { color: var(--theme-elevation-1000); }
+
+/* The literal "(1)". Tabular figures so a column of them lines up, and a
+   fixed minimum so 1 and 343 sit on the same left edge. */
+.net-nav-badge {
+  flex: 0 0 auto;
+  min-width: 2.2em;
+  padding: 1px 6px;
+  border-radius: 10px;
+  background: var(--theme-warning-500, #b8860b);
+  color: var(--theme-base-0, #fff);
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+.net-nav-badges-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.net-nav-badges-more {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 0.76rem;
+  color: var(--theme-elevation-500);
+  text-decoration: none;
+}
+.net-nav-badges-more:hover { color: var(--theme-elevation-800); }
+
+/* A count that could not be read is not a count of zero, and the sidebar has
+   to be able to say so without a number. */
+.net-nav-badges--failed .net-nav-badges-failed {
+  margin: 0;
+  font-size: 0.76rem;
+  color: var(--theme-error-500, #a33);
+}

@@ -394,6 +394,36 @@ that inherits the default would let any reader who signs up edit content.
   which resolves tokens against `users`. It was harmless while nothing was
   delivered. It is a real message with a dead link now.
 
+- **Two implementations of one finding, and the reassuring one wins.** The
+  admin dashboard asked whether a wiki had a Search Console token in its own
+  words, from its own queries, while `pnpm check:launch` asked the same thing
+  from `src/seed/audit.ts`. Neither errors and both look right, so the day they
+  disagree the owner has no way to tell which is lying. Every check now lives
+  in `src/lib/audit.ts`; `src/seed/audit.ts` is the report and its tiers, the
+  admin renders the same findings as rows and sidebar badges, and
+  `src/lib/audit-source.ts` holds the two that read the repository instead of
+  the database so the admin never imports `fs`.
+
+  Each finding carries `actor`: `owner` for the things only the owner can
+  supply, `editorial` for work somebody with the sources can do, `blocked` for
+  what nobody has published — **a `blocked` finding is never shown as an
+  action, and never badged**, because a badge is a chore and 78 quests with no
+  published segment cost is the state of the world. `info` findings ("serves on
+  companies.example.com") are answers, not tasks, and appear in neither.
+
+  Two honesty rules came out of it. The content scan was
+  `find({ limit: 2000 })`, which stopped at two thousand rows and reported
+  "343 of 2000 images have no credit line" for a library of 2,254 — a
+  denominator wrong in the reassuring direction. It is `count()` now, over the
+  whole collection. And a badge is deduplicated by the field it points at: the
+  companies host and the people host both want a verification token and both
+  point at the one network field, which is one empty box, not two.
+
+  Payload 3.89 **cannot deep-link a tab** — the active tab is a user
+  preference, not a URL — so a row carries a `#field-…` anchor *and* the tab
+  named in words. Nothing about any of this is dismissable, for the reason
+  `docs/COPY.md` records about `LegalGap`.
+
 ## How a guide gets written
 
 Four passes, each grounded in a different source, each idempotent on

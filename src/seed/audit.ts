@@ -1,10 +1,8 @@
 import 'dotenv/config'
-import fs from 'fs'
-import path from 'path'
 import { getPayload } from 'payload'
 import config from '../payload.config'
-import { GAME_SCOPED } from '../lib/tenancy'
-import { hostFor, hostLabelProblem } from '../lib/host-label'
+import { auditNetwork, type Finding } from '../lib/audit'
+import { auditSource } from '../lib/audit-source'
 
 /**
  * Is this network actually ready to launch?
@@ -23,272 +21,36 @@ import { hostFor, hostLabelProblem } from '../lib/host-label'
  * deploy. Everything else is reported and left to judgement — a wiki for a
  * game that is not out has empty sections by design, and an audit that calls
  * that a failure is an audit people learn to ignore.
+ *
+ * ## Where the checks went
+ *
+ * `src/lib/audit.ts`, because the admin dashboard needs the same answers and
+ * was computing two of them itself, in its own words, from its own queries.
+ * Two implementations of "does this wiki have a Search Console token" is one
+ * implementation too many: the day they disagree, the owner cannot tell which
+ * is lying, and the reassuring one wins. This file is now the report — the
+ * tiers, the column widths and the exit code — and nothing else.
+ *
+ * `src/lib/audit-source.ts` holds the two checks that read the repository
+ * instead of the database, so the admin never imports `fs`.
+ *
+ * `auditBlockedGaps` is deliberately **not** printed here. Those gaps are
+ * blocked on sources nobody has published — CLAUDE.md's Outstanding section is
+ * the list — and a launch checklist that reports work nobody can do is a
+ * checklist people stop reading. The admin shows them under their own heading,
+ * labelled blocked.
  */
-
-type Finding = { level: 'blocking' | 'warn' | 'note'; area: string; detail: string }
-
-/** A whole `export const metadata: Metadata = { … }` object, braces included. */
-const METADATA_OBJECT = new RegExp(String.raw`export const metadata: Metadata = \{[\s\S]*?\n\}`)
-const TITLE_OR_DESCRIPTION = new RegExp(String.raw`\btitle:|\bdescription:`)
-
-const findings: Finding[] = []
-const add = (level: Finding['level'], area: string, detail: string) =>
-  findings.push({ level, area, detail })
 
 async function run(): Promise<void> {
   const payload = await getPayload({ config })
 
-  const settings = await payload.findGlobal({ slug: 'site-settings', depth: 0 })
-  const root = (process.env.NEXT_PUBLIC_SITE_URL || 'example.com')
-    .replace(/^https?:\/\//, '')
-    .replace(/\/.*$/, '')
-  const games = await payload.find({ collection: 'games', limit: 100, sort: 'title', depth: 1 })
-
-  // --- The network itself --------------------------------------------------
-  if (!process.env.NEXT_PUBLIC_SITE_URL) {
-    add('warn', 'network', 'NEXT_PUBLIC_SITE_URL is unset — fine locally, required in production')
-  }
-  if (settings.legalProvisional) {
-    add(
-      'blocking',
-      'network',
-      'Legal details are still stand-ins (Site settings → Legal & contact). Privacy, terms and contact render a warning until this is unticked.',
-    )
-  }
-  if (!settings.siteName || settings.siteName === 'Vellum') {
-    add('note', 'network', `Network is still called "${settings.siteName}" — a working name`)
-  }
-
-  const networkVerification = (settings.verification as { google?: string } | undefined)?.google
-  const networkAnalytics = settings.analytics as
-    | { ga4Id?: string; gtmId?: string; plausibleDomain?: string }
-    | undefined
-  const hasNetworkAnalytics = Boolean(
-    networkAnalytics?.ga4Id || networkAnalytics?.gtmId || networkAnalytics?.plausibleDomain,
-  )
-
-  // --- Per wiki ------------------------------------------------------------
-  for (const game of games.docs) {
-    const where = { game: { equals: game.id } }
-
-    /*
-      The host this wiki will answer on.
-
-      There is nothing to configure per wiki - the deployment serves
-      `*.<domain>` behind a wildcard certificate and `proxy.ts` maps the label
-      onto the path - so the only way this goes wrong is a label DNS will not
-      accept. That is now refused in the admin, but a record created before
-      the check existed, or written by a script, can still carry one.
-    */
-    const wikiHost = String((game as { subdomain?: string }).subdomain || game.slug)
-    const hostProblem = hostLabelProblem(wikiHost)
-    if (hostProblem) {
-      add('blocking', String(game.slug), `host label "${wikiHost}" will not resolve — ${hostProblem}`)
-    } else {
-      add('note', String(game.slug), `serves on ${hostFor(wikiHost, root)}`)
-    }
-
-    const counts = await Promise.all(
-      GAME_SCOPED.map(async (collection) => ({
-        collection,
-        n: (await payload.count({ collection, where })).totalDocs,
-      })),
-    )
-    const records = counts.reduce((sum, row) => sum + row.n, 0)
-    const label = `${game.slug}`
-
-    const theme = game.theme as { hero?: unknown; logo?: unknown; accent?: string } | undefined
-    if (!theme?.hero) add('warn', label, 'no hero art — the wiki home opens on a flat background')
-    if (!theme?.logo) add('warn', label, 'no capsule art — the hub rail falls back to a generic icon')
-    if (!theme?.accent) add('note', label, 'no accent colour set')
-
-    if (!game.summary) add('warn', label, 'no summary — used as the meta description and card blurb')
-    if (!game.tagline) add('note', label, 'no tagline')
-    if (!game.releaseDate) add('note', label, 'no release date')
-
-    if (game.status === 'live' || game.status === 'building') {
-      const own = game.verification as { google?: string } | undefined
-      if (!own?.google && !networkVerification) {
-        add('warn', label, 'no Search Console token — each subdomain is its own property')
-      }
-
-      const analytics = game.analytics as
-        | { ga4Id?: string; gtmId?: string; plausibleDomain?: string }
-        | undefined
-      if (
-        !analytics?.ga4Id &&
-        !analytics?.gtmId &&
-        !analytics?.plausibleDomain &&
-        !hasNetworkAnalytics
-      ) {
-        add('note', label, 'no analytics configured')
-      }
-    }
-
-    if (records === 0 && game.status !== 'planned') {
-      add('warn', label, 'live with no content at all')
-    }
-  }
-
-  // --- The two network hosts -----------------------------------------------
   /*
-    `companies.<domain>` and `people.<domain>` are sites in the same sense the
-    eight wikis are: their own shell, their own canonical origin, their own
-    sitemap, their own entry in Search Console. This checklist did not know
-    they existed — it walks the `games` collection, and neither of them is a
-    game — so 918 pages were exempt from every question it asks, including the
-    two it exists for: does this host resolve, and has anybody given it a
-    verification token.
-
-    They are listed here by hand rather than derived, because that is what they
-    are: `NETWORK_SUBDOMAINS` in `proxy.ts` is also a hand-written list, and it
-    is the thing that makes these labels unavailable to a wiki. A third network
-    host belongs in both places.
+    Database findings first, then source findings, which is the order the
+    report has always printed in: every source finding is blocking, and no
+    database finding between them is, so appending them cannot reorder a tier.
   */
-  const NETWORK_HOSTS: { label: string; collection: 'companies' | 'people' }[] = [
-    { label: 'companies', collection: 'companies' },
-    { label: 'people', collection: 'people' },
-  ]
-  for (const host of NETWORK_HOSTS) {
-    const problem = hostLabelProblem(host.label)
-    if (problem) {
-      add('blocking', host.label, `host label "${host.label}" will not resolve — ${problem}`)
-    } else {
-      add('note', host.label, `serves on ${hostFor(host.label, root)}`)
-    }
-
-    const total = (await payload.count({ collection: host.collection })).totalDocs
-    if (total === 0) {
-      add('warn', host.label, 'host is reachable with nothing on it')
-    } else {
-      add('note', host.label, `${total} profiles`)
-    }
-
-    /*
-      The same warning each wiki gets, for the same reason: a subdomain is its
-      own Search Console property and the network's token does not cover it.
-      There is no per-host settings record to hang one on, so this can only
-      report the network's — which is exactly the gap worth printing.
-    */
-    if (!networkVerification) {
-      add(
-        'warn',
-        host.label,
-        'no Search Console token — this subdomain is its own property, and there is no per-host field to set one',
-      )
-    }
-    if (!hasNetworkAnalytics) add('note', host.label, 'no analytics configured')
-  }
-
-  // --- Content quality across every wiki -----------------------------------
-  for (const collection of GAME_SCOPED) {
-    const all = await payload.find({ collection, limit: 2000, depth: 0, pagination: false })
-
-    const noSummary = all.docs.filter((doc) => !(doc as { summary?: string }).summary).length
-    if (noSummary > 0) {
-      add(
-        'warn',
-        collection,
-        `${noSummary} of ${all.totalDocs} have no summary — that is the meta description too`,
-      )
-    }
-
-    const noSources = all.docs.filter(
-      (doc) => !((doc as { sources?: unknown[] }).sources ?? []).length,
-    ).length
-    if (noSources > 0) {
-      add('note', collection, `${noSources} of ${all.totalDocs} carry no source citation`)
-    }
-  }
-
-  // --- Media ---------------------------------------------------------------
-  const media = await payload.find({ collection: 'media', limit: 2000, depth: 0, pagination: false })
-  const noAlt = media.docs.filter((doc) => !(doc as { alt?: string }).alt).length
-  if (noAlt > 0) add('blocking', 'media', `${noAlt} images have no alt text`)
-
-  const noCredit = media.docs.filter((doc) => !(doc as { credit?: string }).credit).length
-  if (noCredit > 0) {
-    add('note', 'media', `${noCredit} of ${media.totalDocs} images have no credit line`)
-  }
-
-  // --- Contributors --------------------------------------------------------
-  const authors = await payload.find({ collection: 'authors', limit: 100, depth: 0 })
-  const provisional = authors.docs.filter((doc) => (doc as { provisional?: boolean }).provisional)
-  if (provisional.length > 0) {
-    add(
-      'note',
-      'authors',
-      `${provisional.length} of ${authors.totalDocs} are placeholders — each profile page carries a placeholder notice; the bylines on their guides print the name as written, and the profiles stay indexed unless "noindex" is ticked separately`,
-    )
-  }
-  const noAvatar = authors.docs.filter((doc) => !(doc as { avatar?: unknown }).avatar).length
-  if (noAvatar > 0) add('warn', 'authors', `${noAvatar} have no avatar`)
-
-  // --- Copy that cannot vary per wiki --------------------------------------
-  /*
-    A `export const metadata` object under `[game]` is one title and one
-    description served by all eight wikis at once — eight pages competing for
-    the same search result, seven of them describing a game they are not about.
-    It is invisible: the page renders, the build is green, and the only symptom
-    is a ranking nobody was watching. Ten pages shipped like this.
-
-    A noindex page is exempt, because nothing is competing for anything.
-  */
-  const routes = path.resolve('src', 'app', '(frontend)')
-  const walk = (dir: string): string[] =>
-    fs.existsSync(dir)
-      ? fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
-          const full = path.join(dir, entry.name)
-          return entry.isDirectory() ? walk(full) : entry.name === 'page.tsx' ? [full] : []
-        })
-      : []
-
-  for (const file of walk(path.join(routes, '[game]'))) {
-    const source = fs.readFileSync(file, 'utf8')
-    const block = source.match(METADATA_OBJECT)
-    if (!block) continue
-    if (/index: false/.test(block[0])) continue
-    if (!TITLE_OR_DESCRIPTION.test(block[0])) continue
-    add(
-      'blocking',
-      'per-wiki copy',
-      `${path.relative(process.cwd(), file)} exports a static metadata title or description — every wiki serves the same one`,
-    )
-  }
-
-  /*
-    An override row pointing at a key nobody kept. It does nothing, looks
-    saved, and reads exactly like an edit that would not stick.
-  */
-  try {
-    const ui = await payload.findGlobal({ slug: 'ui-strings', depth: 0 })
-    const registry = await import('../lib/ui-registry')
-    const orphans = [
-      ...((ui?.strings ?? []) as { key?: string | null }[]).filter(
-        (row) => row?.key && !(row.key in registry.UI_DEFAULTS),
-      ),
-      ...((ui?.labels ?? []) as { key?: string | null }[]).filter(
-        (row) => row?.key && !(row.key in registry.LABEL_DEFAULTS),
-      ),
-    ].map((row) => row.key)
-    if (orphans.length > 0) {
-      add(
-        'warn',
-        'interface text',
-        `${orphans.length} override${orphans.length === 1 ? '' : 's'} point at keys that no longer exist: ${orphans.slice(0, 5).join(', ')}`,
-      )
-    }
-  } catch {
-    // The global has never been saved. Nothing to orphan.
-  }
-
-  // --- Shared static files -------------------------------------------------
-  const publicDir = path.resolve('public')
-  for (const file of ['icon.svg', 'favicon-32.png', 'icon-512.png', 'apple-touch-icon.png', 'og.png']) {
-    if (!fs.existsSync(path.join(publicDir, file))) {
-      add('blocking', 'static', `public/${file} is missing`)
-    }
-  }
+  const snapshot = await auditNetwork(payload)
+  const findings: Finding[] = [...snapshot.findings, ...auditSource()]
 
   // --- Report --------------------------------------------------------------
   const order: Finding['level'][] = ['blocking', 'warn', 'note']

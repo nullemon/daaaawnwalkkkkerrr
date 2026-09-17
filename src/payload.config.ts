@@ -69,6 +69,18 @@ export default buildConfig({
         wiki is thin. This replaces the top of the page with both.
       */
       beforeDashboard: ['@/components/admin/NetworkDashboard'],
+      /*
+        The count badge in the sidebar — what is waiting for you, and behind
+        which entry, on every admin screen rather than only the dashboard.
+
+        `afterNavLinks` and not a custom `Nav`: Payload renders its own nav
+        links and offers no slot between them, so the two ways to get a number
+        onto a link itself are owning Payload's whole nav component or
+        appending a span from the client after paint. The second fails silently
+        the day Payload changes its markup, which is the failure mode this
+        repository has a list of. See the note in NavBadges.tsx.
+      */
+      afterNavLinks: ['@/components/admin/NavBadges'],
     },
   },
   collections: [
