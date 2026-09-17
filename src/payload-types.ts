@@ -348,6 +348,10 @@ export interface Region {
    * Which vassal holds this region, if any.
    */
   court?: (number | null) | Court;
+  /**
+   * The larger place this one is part of, where a source states it. Leave empty rather than guessing at a hierarchy.
+   */
+  parent?: (number | null) | Region;
   dangerRating?: ('starting' | 'moderate' | 'dangerous' | 'late') | null;
   /**
    * Shown to readers as a badge. Be honest — it is the whole point of this site.
@@ -3226,6 +3230,7 @@ export interface RegionsSelect<T extends boolean = true> {
   slug?: T;
   image?: T;
   court?: T;
+  parent?: T;
   dangerRating?: T;
   confidence?: T;
   summary?: T;
