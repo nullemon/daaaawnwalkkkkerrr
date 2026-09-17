@@ -1,9 +1,19 @@
 /**
- * Structured data. Kept to the types Google actually uses for this kind of
- * site — the game entity, breadcrumbs, and step-by-step guides — rather than
- * every schema that technically validates.
+ * One `<script type="application/ld+json">`, and nothing else.
+ *
+ * The builders that produce what goes in it live in `src/lib/schema.ts`, so
+ * they can be unit-tested without React and so the `@id` scheme that joins the
+ * three hosts together is written down in one place. This file used to hold
+ * both, and the builders sat there with no callers for months — a `videoGame`
+ * with Dawnwalker's publisher hardcoded, waiting to tell search engines that
+ * Silent Hill was made by Rebel Wolves the moment anybody wired it up.
+ *
+ * The escape is not decoration. JSON is valid inside a `<script>` right up
+ * until the data contains `</script>`, at which point the browser ends the
+ * element early and renders the rest as markup. Company names and summaries
+ * here come from a CMS and from harvested wiki text, so that string is one
+ * editor away at all times.
  */
-
 export function JsonLd({ data }: { data: Record<string, unknown> }) {
   return (
     <script
@@ -12,63 +22,3 @@ export function JsonLd({ data }: { data: Record<string, unknown> }) {
     />
   )
 }
-
-/**
- * The game entity for a wiki.
- *
- * Every field was hardcoded to Dawnwalker's - down to a `datePublished` that
- * was not even Dawnwalker's - and the only reason that never reached a page is
- * that nothing calls this yet. Structured data is read by machines and not by
- * anybody proofreading, so wiring the old version up on eight wikis would have
- * told Google that Silent Hill: Townfall was authored by Rebel Wolves and
- * nobody would have noticed. It takes the game now, and omits what the record
- * does not have rather than filling it in.
- */
-export const videoGame = (
-  base: string,
-  game: {
-    title: string
-    /*
-      A plain list of strings on the Game record, not an array of objects.
-      This said `{ value }[]` for as long as it had no callers, which is the
-      quiet cost of dead code: the shape was wrong and the compiler had no
-      reason to say so.
-    */
-    platforms?: (string | null)[] | null
-    developer?: string | null
-    publisher?: string | null
-    releaseDate?: string | null
-    releaseDateConfirmed?: boolean | null
-  },
-) => {
-  const platforms = (game.platforms ?? []).filter((value): value is string => Boolean(value))
-
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'VideoGame',
-    name: game.title,
-    url: base,
-    ...(platforms.length > 0 ? { gamePlatform: platforms } : {}),
-    applicationCategory: 'Game',
-    ...(game.publisher
-      ? { publisher: { '@type': 'Organization', name: game.publisher } }
-      : {}),
-    ...(game.developer ? { author: { '@type': 'Organization', name: game.developer } } : {}),
-    // An announced window is not a publication date. Only a confirmed one is
-    // a fact worth handing to a search engine as structured data.
-    ...(game.releaseDate && game.releaseDateConfirmed
-      ? { datePublished: game.releaseDate.slice(0, 10) }
-      : {}),
-  }
-}
-
-export const breadcrumbs = (base: string, crumbs: { label: string; href?: string }[]) => ({
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: crumbs.map((crumb, index) => ({
-    '@type': 'ListItem',
-    position: index + 1,
-    name: crumb.label,
-    ...(crumb.href ? { item: `${base}${crumb.href}` } : {}),
-  })),
-})

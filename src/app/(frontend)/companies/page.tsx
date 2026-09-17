@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 import { PageHeader } from '@/components/PageHeader'
+import { JsonLd } from '@/components/JsonLd'
+import { itemList, webSite } from '@/lib/schema'
+import { COMPANIES_ORIGIN, companyUrl } from '@/lib/urls'
 import { EntityCard } from '@/components/EntityCard'
 import { Badge, Confidence } from '@/components/Badges'
 import { client } from '@/lib/payload'
@@ -109,6 +112,22 @@ export default async function CompaniesIndex() {
 
   return (
     <>
+      <JsonLd
+        data={webSite(COMPANIES_ORIGIN, {
+          name: copy(site.title, COMPANIES_BUILT_IN.title),
+          description: copy(site.metaDescription, COMPANIES_BUILT_IN.metaDescription),
+        })}
+      />
+      <JsonLd
+        data={itemList(
+          COMPANIES_ORIGIN,
+          companies.map((company) => ({
+            name: company.name,
+            url: companyUrl(`/${company.slug}`),
+          })),
+          { name: copy(site.title, COMPANIES_BUILT_IN.title) },
+        )}
+      />
       <PageHeader
         eyebrow={copy(site.eyebrow, COMPANIES_BUILT_IN.eyebrow)}
         crumbs={[{ label: 'Companies' }]}

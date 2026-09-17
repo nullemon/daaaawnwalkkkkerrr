@@ -3,6 +3,11 @@
  *
  *   node tools/harvest-game.mjs onimusha-way-of-the-sword
  *   node tools/harvest-game.mjs onimusha-way-of-the-sword --images
+ *   node tools/harvest-game.mjs star-wars-zero-company --resume
+ *
+ * `--resume` picks up a run that a rate limit killed, from the checkpoint under
+ * `assets/_wiki/_checkpoints/`. `--force` overrides the shrink guard, which
+ * refuses to write a harvest more than a tenth smaller than the one on disk.
  *
  * ## Why this replaced the first harvester
  *
@@ -32,6 +37,18 @@
  *
  * Writes `src/seed/raw/wiki-entities/<slug>.json`, and with `--images`
  * downloads each lead image into `assets/_wiki/<slug>/`.
+ *
+ * ## Every failure here is a quiet one
+ *
+ * Nothing in this file throws when a wiki gives less than it has. An unfollowed
+ * continuation token, a request cap, a 429, a renamed article — each returns a
+ * short list that classifies cleanly and writes a file that looks right. The
+ * Star Wars harvest sat at 89 records for weeks, every collection an
+ * alphabetical slice ending at C, because `prop=links` caps at 500 and nobody
+ * read `continue.plcontinue`. So: every sweep says how much it got, every cap
+ * that is reached is announced, and a harvest materially smaller than the one
+ * already on disk is refused rather than written. Counting rows is not
+ * checking that you asked for all of them.
  */
 import fs from 'fs'
 import path from 'path'
@@ -40,6 +57,10 @@ const UA =
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36'
 
 const WANT_IMAGES = process.argv.includes('--images')
+/** Pick up where a rate-limited run stopped rather than re-classifying from zero. */
+const WANT_RESUME = process.argv.includes('--resume')
+/** Write a harvest the shrink guard refused. Only correct when the wiki really did shrink. */
+const FORCE = process.argv.includes('--force')
 const slug = process.argv[2]
 
 /**
@@ -124,7 +145,7 @@ const GAMES = {
 }
 
 if (!slug || !GAMES[slug]) {
-  console.error('Usage: node tools/harvest-game.mjs <game-slug> [--images]')
+  console.error('Usage: node tools/harvest-game.mjs <game-slug> [--images] [--resume] [--force]')
   console.error(`Known: ${Object.keys(GAMES).join(', ')}`)
   process.exit(1)
 }
@@ -132,6 +153,24 @@ if (!slug || !GAMES[slug]) {
 const game = GAMES[slug]
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
+/**
+ * Set once Fandom starts rate limiting us. Nothing after it is a full answer,
+ * so the write guard says so instead of letting a short harvest look like a
+ * shrinking wiki. Same reasoning as the `blocked` flag in
+ * `tools/fetch-search-queries.mjs`.
+ */
+let rateLimited = false
+
+/*
+  Paced, and patient about a 429.
+
+  A 429 or a 503 is "come back later", not "there is nothing here", and the
+  only difference between the two at the call site is whether somebody wrote
+  the branch. The version before this one caught every error the same way and
+  gave up after two 1.5s retries, so a rate limit in the middle of the detail
+  pass showed up as `batch failed` on stderr and a harvest missing twenty
+  pages — with the file written anyway. See `tools/fetch-posters.mjs`.
+*/
 const api = async (params, attempt = 0) => {
   const query = new URLSearchParams({ format: 'json', ...params })
   try {
@@ -139,6 +178,14 @@ const api = async (params, attempt = 0) => {
       headers: { 'User-Agent': UA },
       redirect: 'follow',
     })
+    if (response.status === 429 || response.status === 503) {
+      rateLimited = true
+      if (attempt >= 4) throw new Error(`rate limited by ${game.host} after ${attempt} retries`)
+      const wait = 2000 * 2 ** attempt
+      console.log(`    rate limited (HTTP ${response.status}), waiting ${wait / 1000}s`)
+      await sleep(wait)
+      return api(params, attempt + 1)
+    }
     if (!response.ok) throw new Error(`HTTP ${response.status}`)
     return await response.json()
   } catch (error) {
@@ -150,17 +197,68 @@ const api = async (params, attempt = 0) => {
   }
 }
 
-/** Page a list endpoint until it stops continuing. */
-const paged = async (params, listKey, contKey, pluck, cap = 20) => {
+/**
+ * Page a list endpoint until it stops continuing.
+ *
+ * `cap` is a runaway stop, not an expected end. If it is ever reached the
+ * result is a prefix of the truth in the API's own sort order — alphabetical
+ * for every list here — which is the failure this whole file now guards
+ * against: a plausible file that stops mid-alphabet with no error. So a run
+ * that hits the cap says so, loudly, and records it.
+ */
+let truncated = []
+
+const paged = async (params, listKey, contKey, pluck, cap = 20, label = listKey) => {
+  const out = []
+  let cont
+  let requests = 0
+  for (let page = 0; page < cap; page += 1) {
+    const data = await api({ ...params, ...(cont ? { [contKey]: cont } : {}) })
+    requests += 1
+    for (const entry of data.query?.[listKey] ?? []) out.push(pluck(entry))
+    cont = data.continue?.[contKey]
+    if (!cont) return out
+    await sleep(300)
+  }
+  truncated.push(label)
+  console.log(
+    `  !! ${label}: stopped at the ${cap}-request cap with ${out.length} results and more to come.`,
+  )
+  console.log(`     This is an alphabetical prefix, not the whole list.`)
+  return out
+}
+
+/**
+ * Page a `prop=` query on a single page — `prop=links` and friends.
+ *
+ * ## The bug this function exists to kill
+ *
+ * The outlink query used to be one bare `api()` call with `pllimit: 500` and
+ * no continuation at all. `prop=links` caps at 500 and returns in alphabetical
+ * order, so on Wookieepedia — where the Zero Company article links to 2,705
+ * pages — the harvest saw A through "Chommell sector" and stopped. That wiki
+ * is the one configured `linkHarvest: 'intersect'`, which makes outlinks its
+ * *only* real candidate source, so every collection in
+ * `star-wars-zero-company.json` was an alphabetical slice ending at C: no
+ * Tatooine, no Coruscant, no Dantooine, while twenty-odd character infoboxes
+ * pointed at them. Nothing errored and the file looked fine.
+ *
+ * `data.continue.plcontinue` was there the whole time. Follow it.
+ */
+const pagedProp = async (params, propKey, contKey, pluck, cap = 20, label = propKey) => {
   const out = []
   let cont
   for (let page = 0; page < cap; page += 1) {
     const data = await api({ ...params, ...(cont ? { [contKey]: cont } : {}) })
-    for (const entry of data.query?.[listKey] ?? []) out.push(pluck(entry))
+    const target = Object.values(data.query?.pages ?? {})[0]
+    if (target?.missing !== undefined) return out
+    for (const entry of target?.[propKey] ?? []) out.push(pluck(entry))
     cont = data.continue?.[contKey]
-    if (!cont) break
+    if (!cont) return out
     await sleep(300)
   }
+  truncated.push(label)
+  console.log(`  !! ${label}: stopped at the ${cap}-request cap with ${out.length} results.`)
   return out
 }
 
@@ -211,7 +309,10 @@ const ROUTES = [
  * in the same category tree as the characters they play.
  */
 const NOT_AN_ENTITY =
-  /(disambiguation|lists?|index|stubs?|templates?|images?|gallery|files?|categor(y|ies)|needing|candidates|browse|wiki|real|actors?|voice|cast and crew|staff|developers?|publishers?|compan(y|ies)|composer|director|writer|films?|movies?|novels?|comics?|books?|manga|anime|soundtracks?|music|albums?|songs?|episode of|television|series overview|video games?|merchandise|trailers?)/i
+  new RegExp(
+    String.raw`\b(disambiguation|lists?|index|templates?|images?|gallery|files?|categor(y|ies)|needing|candidates|browse|wiki|real[- ]world|actors?|voice|cast and crew|staff|developers?|publishers?|(computer|video ?game|real[- ]world) compan(y|ies)|composer|director|writer|films?|movies?|novels?|comics?|books?|manga|anime|soundtracks?|music|albums?|songs?|episode of|television|series overview|video games?|merchandise|trailers?)\b`,
+    'i',
+  )
 
 /**
  * Categories that say nothing about what a page *is*.
@@ -222,11 +323,17 @@ const NOT_AN_ENTITY =
  * categories, so a classifier that reads the first match reads one of these.
  */
 const MAINTENANCE =
-  /^(articles?|canon|legends|pages?|wookieepedia|incomplete|conjectural|unidentified|all |. ?-class articles)/i
+  new RegExp(
+    String.raw`^(articles?\b|canon\b|legends\b|pages?\b|wookieepedia|incomplete|conjectural|unidentified|all |. ?-class articles)|\bstubs?$`,
+    'i',
+  )
 
 /** Titles that are never an entity, whatever their categories say. */
 const BAD_TITLE =
-  /^(list of|index of|category:|template:|file:|help:|forum:|user:|talk:|gallery|timeline|glossary|walkthrough|guide|achievements?|trophies)|\(disambiguation\)|\/(gallery|transcript|credits|quotes)$/i
+  new RegExp(
+    String.raw`^(list of|index of|category:|template:|file:|help:|forum:|user:|talk:|gallery|timeline|glossary|walkthrough|guide|achievements?|trophies)\b|\(disambiguation\)|\/(gallery|transcript|credits|quotes)$`,
+    'i',
+  )
 
 /**
  * Strip the game's own name out of a category before routing on it.
@@ -404,12 +511,21 @@ console.log(`\n${slug}  (${game.host})\n`)
 const candidates = new Set()
 
 // 1. Categories naming the game.
+/*
+  Enumerating every category on the wiki is exhaustive on the six single-series
+  wikis — the largest has 925 — and hopeless on Wookieepedia, which has tens of
+  thousands and would cost hundreds of requests to sweep for a category tree
+  that does not exist yet (nothing there names Zero Company at all, checked).
+  The cap stays where it is; what changed is that reaching it now says so,
+  instead of quietly handing back the categories that start with A.
+*/
 const allCats = await paged(
   { action: 'query', list: 'allcategories', aclimit: '500' },
   'allcategories',
   'accontinue',
   (entry) => entry['*'],
   40,
+  'category list',
 )
 const gameCats = allCats.filter((name) =>
   name.toLowerCase().includes(game.match.toLowerCase()),
@@ -420,11 +536,15 @@ for (const category of gameCats) {
     'categorymembers',
     'cmcontinue',
     (entry) => entry.title,
+    20,
+    `members of ${category}`,
   )
   for (const title of members) candidates.add(title)
   await sleep(250)
 }
-console.log(`  ${gameCats.length} categories naming the game -> ${candidates.size} pages`)
+console.log(
+  `  ${allCats.length} categories on the wiki, ${gameCats.length} naming the game -> ${candidates.size} pages`,
+)
 
 // 2 and 3. Links, where this wiki is one where a link implies relevance.
 const linkTitles = { back: [], out: [] }
@@ -435,22 +555,29 @@ const backlinks = await paged(
   'backlinks',
   'blcontinue',
   (entry) => entry.title,
+  20,
+  'backlinks',
 )
 linkTitles.back = backlinks
 console.log(`  ${backlinks.length} pages link to it`)
 
-// 3. Pages the game's article links to.
-const outlinksData = await api({
-  action: 'query',
-  prop: 'links',
-  titles: game.article,
-  plnamespace: '0',
-  pllimit: '500',
-})
-const outPage = Object.values(outlinksData.query?.pages ?? {})[0]
-const outlinks = (outPage?.links ?? []).map((link) => link.title)
+// 3. Pages the game's article links to. Paged — see `pagedProp`.
+const outlinks = await pagedProp(
+  { action: 'query', prop: 'links', titles: game.article, plnamespace: '0', pllimit: '500' },
+  'links',
+  'plcontinue',
+  (link) => link.title,
+  20,
+  'outlinks',
+)
 linkTitles.out = outlinks
 console.log(`  ${outlinks.length} pages it links to`)
+if (outlinks.length === 0) {
+  // An article title that does not exist returns no links and no error, which
+  // reads as "this wiki has no coverage". It is the mistake the Wookieepedia
+  // `article` comment above records; say it out loud rather than harvest zero.
+  console.log(`  !! no outlinks at all — is "${game.article}" the exact title on this wiki?`)
+}
   if (game.linkHarvest === 'intersect') {
     // Mutual links only.
     const back = new Set(linkTitles.back)
@@ -475,8 +602,40 @@ const titles = [...candidates]
 const entities = []
 let rejected = 0
 
-for (let index = 0; index < titles.length; index += 20) {
-  const batch = titles.slice(index, index + 20)
+/*
+  Checkpoint the detail pass.
+
+  Classifying a wiki this size is forty to a hundred requests, and the version
+  before this one held all of it in memory: a 429 on the last batch threw away
+  every batch before it. The checkpoint lives under `assets/`, which is
+  gitignored and is already where `--images` writes, so it is scratch and never
+  reaches `src/seed/raw/` — a stray file there would be read as an eighth game
+  by `src/seed/wiki-entities.ts`, which globs that directory for `*.json`.
+
+  Resuming is opt-in (`--resume`). A checkpoint written before a ROUTES change
+  holds the old classification, and silently reusing it would be exactly the
+  quiet wrong answer this file keeps being bitten by.
+*/
+const CHECKPOINT = path.resolve('assets/_wiki/_checkpoints', `${slug}.json`)
+let done = new Set()
+
+if (WANT_RESUME && fs.existsSync(CHECKPOINT)) {
+  const saved = JSON.parse(fs.readFileSync(CHECKPOINT, 'utf8'))
+  entities.push(...saved.entities)
+  rejected = saved.rejected ?? 0
+  done = new Set(saved.done ?? [])
+  console.log(`  resuming: ${done.size} pages already classified, ${entities.length} kept\n`)
+}
+
+const saveCheckpoint = () => {
+  fs.mkdirSync(path.dirname(CHECKPOINT), { recursive: true })
+  fs.writeFileSync(CHECKPOINT, `${JSON.stringify({ slug, rejected, done: [...done], entities })}\n`)
+}
+
+const pending = titles.filter((title) => !done.has(title))
+
+for (let index = 0; index < pending.length; index += 20) {
+  const batch = pending.slice(index, index + 20)
 
   let data
   try {
@@ -496,6 +655,7 @@ for (let index = 0; index < titles.length; index += 20) {
   }
 
   for (const page of Object.values(data.query?.pages ?? {})) {
+    done.add(page.title)
     if (page.missing !== undefined) continue
 
     const categories = (page.categories ?? []).map((entry) =>
@@ -521,40 +681,92 @@ for (let index = 0; index < titles.length; index += 20) {
   }
 
   process.stdout.write(
-    `\r  classified ${entities.length} of ${Math.min(index + 20, titles.length)}/${titles.length}   `,
+    `\r  classified ${entities.length} of ${Math.min(index + 20, pending.length)}/${pending.length}   `,
   )
+  // Every tenth batch, so a rate limit costs the run and not the work.
+  if (index % 200 === 0) saveCheckpoint()
   await sleep(400)
 }
 
+saveCheckpoint()
+
 console.log('')
 
-const byCollection = {}
-for (const entity of entities) {
-  byCollection[entity.collection] = (byCollection[entity.collection] ?? 0) + 1
+const tally = (list) => {
+  const counts = {}
+  for (const entity of list) counts[entity.collection] = (counts[entity.collection] ?? 0) + 1
+  return counts
 }
 
+const byCollection = tally(entities)
+
 const OUT_DIR = path.resolve('src/seed/raw/wiki-entities')
+const outFile = path.join(OUT_DIR, `${slug}.json`)
 fs.mkdirSync(OUT_DIR, { recursive: true })
-fs.writeFileSync(
-  path.join(OUT_DIR, `${slug}.json`),
-  `${JSON.stringify(
-    { slug, host: game.host, fetchedAt: new Date().toISOString().slice(0, 10), entities },
-    null,
-    2,
-  )}\n`,
-)
+
+const before = fs.existsSync(outFile)
+  ? JSON.parse(fs.readFileSync(outFile, 'utf8')).entities ?? []
+  : []
+
+const writeHarvest = () => {
+  fs.writeFileSync(
+    outFile,
+    `${JSON.stringify(
+      { slug, host: game.host, fetchedAt: new Date().toISOString().slice(0, 10), entities },
+      null,
+      2,
+    )}\n`,
+  )
+}
 
 const withFacts = entities.filter((entity) => Object.keys(entity.facts).length > 0).length
 const withImage = entities.filter((entity) => entity.image).length
 
 console.log(`\n  kept ${entities.length}, dropped ${rejected} that are not entities`)
 console.log(`  ${withFacts} with an infobox, ${withImage} with a lead image`)
-console.log(
-  `  ${Object.entries(byCollection)
-    .sort((a, b) => b[1] - a[1])
-    .map(([key, value]) => `${value} ${key}`)
-    .join(', ')}`,
-)
+
+// Per collection, against what is already on disk. A collection that moves
+// from one bucket to another is a reclassification and fine; one that empties
+// is the thing somebody needs to look at.
+const beforeCounts = tally(before)
+for (const key of [...new Set([...Object.keys(beforeCounts), ...Object.keys(byCollection)])].sort()) {
+  const was = beforeCounts[key] ?? 0
+  const now = byCollection[key] ?? 0
+  const delta = now - was
+  const mark = was > 0 && now < was / 2 ? ' !!' : ''
+  console.log(
+    `  ${String(now).padStart(5)}  ${key.padEnd(12)} was ${String(was).padStart(4)}  ${delta >= 0 ? '+' : ''}${delta}${mark}`,
+  )
+}
+
+/*
+  Never replace a harvest with a smaller one.
+
+  This is the guard from `tools/fetch-search-queries.mjs`, and it is here for
+  the same reason: every way this harvester fails, it fails by returning
+  *fewer* pages and no error. A rate limit part-way through the detail pass, a
+  renamed article that makes every link query answer nothing, a paging cap
+  reached silently — all three write a valid, plausible, permanent file, and
+  everything downstream just generates fewer pages with nothing in any log.
+
+  Ninety per cent is the floor. A wiki gains pages between harvests and loses
+  the odd one to a merge; a real re-harvest never loses a tenth of its records.
+
+  `--force` exists for the one case where it should be overridden — a wiki that
+  genuinely deleted its coverage — and the count is printed so that decision is
+  made against a number.
+*/
+if (before.length > 0 && entities.length < before.length * 0.9 && !FORCE) {
+  console.log(`\n  !! KEPT the existing file: this run found ${entities.length}, it already had ${before.length}.`)
+  if (rateLimited) console.log('     This run was rate limited (HTTP 429/503) part-way through.')
+  if (truncated.length) console.log(`     These sweeps hit their request cap: ${truncated.join(', ')}.`)
+  console.log('     Nothing was written. Re-run with --resume, or --force if the wiki really did shrink.')
+  process.exit(1)
+}
+
+writeHarvest()
+// The work is on disk now, so the checkpoint is no longer the only copy.
+fs.rmSync(CHECKPOINT, { force: true })
 
 // ---------------------------------------------------------------------------
 // Images
@@ -598,14 +810,7 @@ if (WANT_IMAGES) {
   }
 
   // Rewrite with the local paths recorded.
-  fs.writeFileSync(
-    path.join(OUT_DIR, `${slug}.json`),
-    `${JSON.stringify(
-      { slug, host: game.host, fetchedAt: new Date().toISOString().slice(0, 10), entities },
-      null,
-      2,
-    )}\n`,
-  )
+  writeHarvest()
 
   console.log(`\n  images: ${saved} downloaded, ${skipped} already present`)
 }

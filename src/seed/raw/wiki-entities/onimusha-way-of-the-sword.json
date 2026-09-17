@@ -1,7 +1,7 @@
 {
   "slug": "onimusha-way-of-the-sword",
   "host": "onimusha.fandom.com",
-  "fetchedAt": "2026-09-15",
+  "fetchedAt": "2026-09-17",
   "entities": [
     {
       "title": "Raizan",
@@ -361,23 +361,16 @@
       "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Daidara.png"
     },
     {
-      "title": "Panda Costume",
-      "wikiTitle": "Panda Costume",
-      "collection": "items",
-      "facts": {},
-      "categories": [
-        "Armor"
-      ],
-      "image": "https://static.wikia.nocookie.net/onimusha/images/d/d7/Baby_Panda_Bamboo.jpg/revision/latest?cb=20250628234506",
-      "url": "https://onimusha.fandom.com/wiki/Panda_Costume",
-      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Panda-Costume.jpg"
-    },
-    {
       "title": "Dokyo",
       "wikiTitle": "Dokyo",
       "collection": "enemies",
       "facts": {
         "Japanese Name": "道狂輝夜姫",
+        "Aliases": "The TransgressorKaguya ( True name )",
+        "Birthdate": "Unknown",
+        "Age": "Unknown",
+        "Allegiances": "Yoshitsune",
+        "Occupation": "Scientist",
         "Voice Actors": "Clare Corbett (English)Fushida Riho (Japanese)Xu Hui (Mandarin Chinese)"
       },
       "categories": [
@@ -458,20 +451,6 @@
       "image": "https://static.wikia.nocookie.net/onimusha/images/2/2e/Togemaru.png/revision/latest?cb=20250924170500",
       "url": "https://onimusha.fandom.com/wiki/Togemaru",
       "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Togemaru.png"
-    },
-    {
-      "title": "Dark Armor Demon",
-      "wikiTitle": "Dark Armor Demon",
-      "collection": "enemies",
-      "facts": {},
-      "categories": [
-        "Enemies",
-        "Genma",
-        "Onimusha: Warlords genma"
-      ],
-      "image": "https://static.wikia.nocookie.net/onimusha/images/e/e7/Empowered_Dark_Armor_Demon.jpg/revision/latest?cb=20260104200014",
-      "url": "https://onimusha.fandom.com/wiki/Dark_Armor_Demon",
-      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Dark-Armor-Demon.jpg"
     },
     {
       "title": "Burai",
@@ -560,6 +539,84 @@
       ],
       "image": null,
       "url": "https://onimusha.fandom.com/wiki/Seijuro_Yoshioka%2FWay_of_the_Sword"
+    },
+    {
+      "title": "Yorimasa",
+      "wikiTitle": "Yorimasa",
+      "collection": "characters",
+      "facts": {},
+      "categories": [
+        "Characters",
+        "Onimusha: Way of the Sword characters"
+      ],
+      "image": null,
+      "url": "https://onimusha.fandom.com/wiki/Yorimasa"
+    },
+    {
+      "title": "Gioh",
+      "wikiTitle": "Gioh",
+      "collection": "characters",
+      "facts": {
+        "Alignment": "Evil",
+        "Allegiances": "Ganryu Sasaki"
+      },
+      "categories": [
+        "Bosses",
+        "Characters",
+        "Onimusha: Way of the Sword characters"
+      ],
+      "image": null,
+      "url": "https://onimusha.fandom.com/wiki/Gioh"
+    },
+    {
+      "title": "Benkei",
+      "wikiTitle": "Benkei",
+      "collection": "characters",
+      "facts": {
+        "Full Name": "Saitō no Musashibō Benkei",
+        "Japanese Name": "弁慶西塔 武蔵坊 弁慶",
+        "Aliases": "Oniwakamaru (Childhood nickname)",
+        "Birthdate": "1155",
+        "Age": "34 (Died in 1189, resurrected in 1604)",
+        "Alignment": "Evil",
+        "Allegiances": "Yoshitsune",
+        "Faction(s)": "Genma",
+        "Occupation": "Sōhei (Warrior Monk)"
+      },
+      "categories": [
+        "Bosses",
+        "Characters",
+        "Onimusha: Way of the Sword characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/onimusha/images/3/35/Benkai_Cutscene.jpg/revision/latest?cb=20260915215629",
+      "url": "https://onimusha.fandom.com/wiki/Benkei",
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Benkei.jpg"
+    },
+    {
+      "title": "Panda Costume",
+      "wikiTitle": "Panda Costume",
+      "collection": "items",
+      "facts": {},
+      "categories": [
+        "Armor"
+      ],
+      "image": "https://static.wikia.nocookie.net/onimusha/images/d/d7/Baby_Panda_Bamboo.jpg/revision/latest?cb=20250628234506",
+      "url": "https://onimusha.fandom.com/wiki/Panda_Costume",
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Panda-Costume.jpg"
+    },
+    {
+      "title": "Dark Armor Demon",
+      "wikiTitle": "Dark Armor Demon",
+      "collection": "enemies",
+      "facts": {},
+      "categories": [
+        "Enemies",
+        "Genma",
+        "Onimusha: Warlords genma"
+      ],
+      "image": "https://static.wikia.nocookie.net/onimusha/images/e/e7/Empowered_Dark_Armor_Demon.jpg/revision/latest?cb=20260104200014",
+      "url": "https://onimusha.fandom.com/wiki/Dark_Armor_Demon",
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Dark-Armor-Demon.jpg"
     },
     {
       "title": "Oni Armament",

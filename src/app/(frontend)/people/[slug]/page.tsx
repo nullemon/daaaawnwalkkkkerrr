@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
+import { JsonLd } from '@/components/JsonLd'
+import { breadcrumbs, person as personSchema } from '@/lib/schema'
+import { PEOPLE_ORIGIN } from '@/lib/urls'
 import { Confidence } from '@/components/Badges'
 import { PersonProfile } from '@/components/PersonProfile'
 import { RichText } from '@/components/RichText'
@@ -117,8 +120,38 @@ export default async function PersonPage({ params }: Props) {
     items: works.filter((work) => (work.kind ?? 'game') === kind),
   })).filter((group) => group.items.length > 0)
 
+  const photo =
+    person.photo && typeof person.photo === 'object'
+      ? (person.photo as { url?: string | null })
+      : null
+
   return (
     <>
+      {/*
+        The person, with an `@id` the company profiles point at through
+        `employee` and the games through `subjectOf`. Note what is *not* here:
+        `birthDate` only when `born` already holds a full date, because our
+        sources write "c. 1970" and turning that into 1 January invents a day
+        and a month about a living person.
+      */}
+      <JsonLd
+        data={personSchema(
+          { ...person, slug: String(person.slug) },
+          {
+            image: photo?.url
+              ? photo.url.startsWith('http')
+                ? photo.url
+                : `${PEOPLE_ORIGIN}${photo.url}`
+              : null,
+            sources: (person.sources ?? []).map((source) => source?.url),
+            companies: companies.map((company) => ({ slug: String(company.slug) })),
+            games: gameLinks.map((entry) => ({ url: entry.href })),
+          },
+        )}
+      />
+      <JsonLd
+        data={breadcrumbs(PEOPLE_ORIGIN, [{ label: 'People', href: '/' }, { label: person.name }])}
+      />
       <PageHeader
         eyebrow="Person"
         crumbs={[{ label: 'People', href: '/' }, { label: person.name }]}

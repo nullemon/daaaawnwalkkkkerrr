@@ -8,6 +8,9 @@ import { directory, releaseLine } from '@/lib/directory'
 import { whatPeopleAreAsking } from '@/lib/asking'
 import { getAllAcrossGames, getSiteSettings, gameUrl } from '@/lib/payload'
 import { copy } from '@/lib/copy'
+import { JsonLd } from '@/components/JsonLd'
+import { itemList, networkOrganization, webSite } from '@/lib/schema'
+import { HUB_ORIGIN } from '@/lib/urls'
 
 export async function generateMetadata(): Promise<Metadata> {
   const [settings, wikis] = await Promise.all([getSiteSettings(), directory()])
@@ -171,6 +174,38 @@ export default async function HubHome() {
 
   return (
     <>
+      {/*
+        The root of the whole graph.
+
+        `networkOrganization` is the one entity every host's `WebSite` points at
+        through `publisher`, so the eight wikis, the companies host and the
+        people host are readable as one publication rather than ten unrelated
+        sites that happen to share a domain.
+      */}
+      <JsonLd
+        data={networkOrganization({
+          name: settings.siteName,
+          legalEntity: settings.legalEntity,
+          email: settings.contactEmail,
+        })}
+      />
+      <JsonLd
+        data={webSite(HUB_ORIGIN, {
+          name: settings.siteName,
+          description: settings.heroSubheading || settings.description,
+          searchPath: '/search',
+        })}
+      />
+      <JsonLd
+        data={itemList(
+          HUB_ORIGIN,
+          wikis.map((entry) => ({
+            name: entry.game.shortTitle || entry.game.title,
+            url: entry.url,
+          })),
+          { name: copy(settings.directoryHeading, 'Every wiki') },
+        )}
+      />
       {/* ---- Hero: art, name, search, figures ---- */}
       <header className="hub-hero">
         {heroArt?.url ? (

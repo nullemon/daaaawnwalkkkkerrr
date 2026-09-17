@@ -51,6 +51,27 @@ const WORK_DISAMBIGUATOR =
  */
 export const REVIEWED_NOT_ENTITIES = new Set(
   [
+  /*
+    Studios and one cancelled project, filed as places and people by the
+    category sweep. Each has - or should have - a record on the companies host,
+    which is where a studio belongs; `check:kind` reports them mechanically
+    because it can compare against that host, and they are listed here so the
+    importer refuses them in the first place rather than writing them and
+    waiting to be told.
+
+    Not a rule on "Entertainment" or "Games" in a title: that is the shape that
+    deleted Antar 4, and "Grand Army of the Republic companies" is a military
+    unit in a game called Zero Company.
+  */
+  'Electronic Arts',
+  'Lucasfilm Games',
+  'Respawn Entertainment',
+  'Bit Reactor',
+  'The Coalition',
+  'Remedy Entertainment',
+  'Star Wars video games',
+  'Untitled Electronic Arts first-person shooter game',
+
   'Beneath the Surface: An Inside Look at Gears of War 2',
   'Books',
   'Comic Series',

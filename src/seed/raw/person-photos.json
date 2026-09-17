@@ -1,0 +1,385 @@
+{
+  "fetchedAt": "2026-09-17",
+  "source": "en.wikipedia.org/w/api.php — imageinfo, extmetadata",
+  "complete": true,
+  "people": [
+    {
+      "name": "Juha Vainio",
+      "article": "https://en.wikipedia.org/wiki/Juha_Vainio",
+      "photo": true,
+      "file": "File:Juha-Vainio-1968.jpg",
+      "licence": "Public domain",
+      "licenceCode": "pd",
+      "licenceUrl": "",
+      "artist": "Matti Tapola / Lehtikuva",
+      "filePage": "https://commons.wikimedia.org/wiki/File:Juha-Vainio-1968.jpg",
+      "image": "juha-vainio.jpg"
+    },
+    {
+      "name": "Hiroshi Yamashita",
+      "article": "https://en.wikipedia.org/wiki/Hiroshi_Yamashita",
+      "photo": true,
+      "file": "File:Hiroshi_Yamashita_2018b.jpg",
+      "licence": "CC BY-SA 4.0",
+      "licenceCode": "cc-by-sa-4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "江戸村のとくぞう",
+      "filePage": "https://commons.wikimedia.org/wiki/File:Hiroshi_Yamashita_2018b.jpg",
+      "image": "hiroshi-yamashita.jpg"
+    },
+    {
+      "name": "Kosuke Tanaka",
+      "article": "https://en.wikipedia.org/wiki/Kosuke_Tanaka",
+      "photo": true,
+      "file": "File:20140906_Kousuke_Tanaka,_infielder_of_the_Hiroshima_Toyo_Carp,_at_Yokohama_Stadium.JPG",
+      "licence": "CC BY-SA 4.0",
+      "licenceCode": "cc-by-sa-4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "ぽこ太郎",
+      "filePage": "https://commons.wikimedia.org/wiki/File:20140906_Kousuke_Tanaka,_infielder_of_the_Hiroshima_Toyo_Carp,_at_Yokohama_Stadium.JPG",
+      "image": "kosuke-tanaka.jpg"
+    },
+    {
+      "name": "Michael Chang",
+      "article": "https://en.wikipedia.org/wiki/Michael_Chang",
+      "photo": true,
+      "file": "File:Michael_Chang.jpg",
+      "licence": "CC BY 2.0",
+      "licenceCode": "cc-by-2.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+      "artist": "James Phelps from USA",
+      "filePage": "https://commons.wikimedia.org/wiki/File:Michael_Chang.jpg",
+      "image": "michael-chang.jpg"
+    },
+    {
+      "name": "Olivier Deriviere",
+      "article": "https://en.wikipedia.org/wiki/Olivier_Deriviere",
+      "photo": true,
+      "file": "File:Olivier_Derivière_GDC_2025.jpg",
+      "licence": "CC BY-SA 4.0",
+      "licenceCode": "cc-by-sa-4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "Alecto Chardon",
+      "filePage": "https://commons.wikimedia.org/wiki/File:Olivier_Derivi%C3%A8re_GDC_2025.jpg",
+      "image": "olivier-deriviere.jpg"
+    },
+    {
+      "name": "Paul Abbott",
+      "article": "https://en.wikipedia.org/wiki/Paul_Abbott",
+      "photo": true,
+      "file": "File:Paul_Abbott_cropped.jpg",
+      "licence": "CC BY 2.0",
+      "licenceCode": "cc-by-2.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+      "artist": "Paul_Abbott.jpg: University of Salford Press Office derivative work: Off2riorob (talk)",
+      "filePage": "https://commons.wikimedia.org/wiki/File:Paul_Abbott_cropped.jpg",
+      "image": "paul-abbott.jpg"
+    },
+    {
+      "name": "Antonia Bernath",
+      "article": "https://en.wikipedia.org/wiki/Antonia_Bernath",
+      "photo": true,
+      "file": "File:Antonia_Bernath_CUCKOO.jpg",
+      "licence": "Public domain",
+      "licenceCode": "pd",
+      "licenceUrl": "",
+      "artist": "Kerry Brown/Cuckoo Films Ltd",
+      "filePage": "https://commons.wikimedia.org/wiki/File:Antonia_Bernath_CUCKOO.jpg",
+      "image": "antonia-bernath.jpg"
+    },
+    {
+      "name": "Jade Anouka",
+      "article": "https://en.wikipedia.org/wiki/Jade_Anouka",
+      "photo": true,
+      "file": "File:Jade_Anouka_The_Movie_Blog_2024.png",
+      "licence": "CC BY 3.0",
+      "licenceCode": "cc-by-3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
+      "artist": "The Movie Blog",
+      "filePage": "https://commons.wikimedia.org/wiki/File:Jade_Anouka_The_Movie_Blog_2024.png",
+      "image": "jade-anouka.png"
+    },
+    {
+      "name": "Martti Suosalo",
+      "article": "https://en.wikipedia.org/wiki/Martti_Suosalo",
+      "photo": true,
+      "file": "File:Martti_Suosalo.jpg",
+      "licence": "CC BY-SA 3.0",
+      "licenceCode": "cc-by-sa-3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "artist": "Soppakanuuna",
+      "filePage": "https://commons.wikimedia.org/wiki/File:Martti_Suosalo.jpg",
+      "image": "martti-suosalo.jpg"
+    },
+    {
+      "name": "Ilkka Villi",
+      "article": "https://en.wikipedia.org/wiki/Ilkka_Villi",
+      "photo": true,
+      "file": "File:Ilkka_Villi.jpg",
+      "licence": "CC BY 2.0",
+      "licenceCode": "cc-by-2.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+      "artist": "Suvi Korhonen from Helsinki, Finland",
+      "filePage": "https://commons.wikimedia.org/wiki/File:Ilkka_Villi.jpg",
+      "image": "ilkka-villi.jpg"
+    },
+    {
+      "name": "Yoshimasa Hosoya",
+      "article": "https://en.wikipedia.org/wiki/Yoshimasa_Hosoya",
+      "photo": true,
+      "file": "File:Hosokawa_Yoshimasa_from_\"Komada_-A_Whisky_Family-\"_at_Red_Carpet_of_the_Tokyo_International_Film_Festival_2023_(53348308018).jpg",
+      "licence": "CC BY 2.0",
+      "licenceCode": "cc-by-2.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+      "artist": "Dick Thomas Johnson from Tokyo, Japan",
+      "filePage": "https://commons.wikimedia.org/wiki/File:Hosokawa_Yoshimasa_from_%22Komada_-A_Whisky_Family-%22_at_Red_Carpet_of_the_Tokyo_International_Film_Festival_2023_(53348308018).jpg",
+      "image": "yoshimasa-hosoya.jpg"
+    },
+    {
+      "name": "Cao Zhen",
+      "article": "https://en.wikipedia.org/wiki/Cao_Zhen_(table_tennis)",
+      "photo": true,
+      "file": "File:曹臻_范瑛_刘诗雯_在2012年世界乒乓球团体锦标赛赛前.jpg",
+      "licence": "CC BY-SA 2.0",
+      "licenceCode": "cc-by-sa-2.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "artist": "Vinqui",
+      "filePage": "https://commons.wikimedia.org/wiki/File:%E6%9B%B9%E8%87%BB_%E8%8C%83%E7%91%9B_%E5%88%98%E8%AF%97%E9%9B%AF_%E5%9C%A82012%E5%B9%B4%E4%B8%96%E7%95%8C%E4%B9%92%E4%B9%93%E7%90%83%E5%9B%A2%E4%BD%93%E9%94%A6%E6%A0%87%E8%B5%9B%E8%B5%9B%E5%89%8D.jpg",
+      "image": "cao-zhen.jpg"
+    },
+    {
+      "name": "Toshiro Mifune",
+      "article": "https://en.wikipedia.org/wiki/Toshiro_Mifune",
+      "photo": true,
+      "file": "File:Toshiro_Mifune_1954_Scan10003_160913.jpg",
+      "licence": "Public domain",
+      "licenceCode": "pd",
+      "licenceUrl": "",
+      "artist": "映画世界社 (Eiga Sekai Publications, Inc.)",
+      "filePage": "https://commons.wikimedia.org/wiki/File:Toshiro_Mifune_1954_Scan10003_160913.jpg",
+      "image": "toshiro-mifune.jpg"
+    },
+    {
+      "name": "Yuka Terasaki",
+      "article": "https://en.wikipedia.org/wiki/Yuka_Terasaki",
+      "photo": true,
+      "file": "File:ガンダムトライエイジ_プレイムービー特別版_PART3_(寺崎裕香).jpg",
+      "licence": "CC BY 3.0",
+      "licenceCode": "cc-by-3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
+      "artist": "バンダイ公式チャンネル (Bandai official channel)",
+      "filePage": "https://commons.wikimedia.org/wiki/File:%E3%82%AC%E3%83%B3%E3%83%80%E3%83%A0%E3%83%88%E3%83%A9%E3%82%A4%E3%82%A8%E3%82%A4%E3%82%B8_%E3%83%97%E3%83%AC%E3%82%A4%E3%83%A0%E3%83%BC%E3%83%93%E3%83%BC%E7%89%B9%E5%88%A5%E7%89%88_PART3_(%E5%AF%BA%E5%B4%8E%E8%A3%95%E9%A6%99).jpg",
+      "image": "yuka-terasaki.jpg"
+    },
+    {
+      "name": "Jovan Adepo",
+      "article": "https://en.wikipedia.org/wiki/Jovan_Adepo",
+      "photo": true,
+      "file": "File:Jovan_Adepo_FENCES_Interview.jpg",
+      "licence": "CC BY 3.0",
+      "licenceCode": "cc-by-3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
+      "artist": "AMFM STUDIOS LLC",
+      "filePage": "https://commons.wikimedia.org/wiki/File:Jovan_Adepo_FENCES_Interview.jpg",
+      "image": "jovan-adepo.jpg"
+    },
+    {
+      "name": "Terry O'Quinn",
+      "article": "https://en.wikipedia.org/wiki/Terry_O%27Quinn",
+      "photo": true,
+      "file": "File:Terry_O'Quinn_(2).jpg",
+      "licence": "CC BY 2.0",
+      "licenceCode": "cc-by-2.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+      "artist": "THMS.nl",
+      "filePage": "https://commons.wikimedia.org/wiki/File:Terry_O%27Quinn_(2).jpg",
+      "image": "terry-oquinn.jpg"
+    },
+    {
+      "name": "Akio Otsuka",
+      "article": "https://en.wikipedia.org/wiki/Akio_Otsuka",
+      "photo": true,
+      "file": "File:Akio_Otsuka_2018.jpg",
+      "licence": "CC BY 2.0",
+      "licenceCode": "cc-by-2.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+      "artist": "KniBaron from Bangkok, Thailand",
+      "filePage": "https://commons.wikimedia.org/wiki/File:Akio_Otsuka_2018.jpg",
+      "image": "akio-otsuka.jpg"
+    },
+    {
+      "name": "Christophe Gans",
+      "article": "https://en.wikipedia.org/wiki/Christophe_Gans",
+      "photo": true,
+      "file": "File:Christophe_Gans_2010.JPG",
+      "licence": "CC BY-SA 3.0",
+      "licenceCode": "cc-by-sa-3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "artist": "Olivier Strecker",
+      "filePage": "https://commons.wikimedia.org/wiki/File:Christophe_Gans_2010.JPG",
+      "image": "christophe-gans.jpg"
+    },
+    {
+      "name": "Alistair Petrie",
+      "article": "https://en.wikipedia.org/wiki/Alistair_Petrie",
+      "photo": true,
+      "file": "File:Stuttgart_2025_-_ComicCon_-_Alistair_Petrie_-_by-RaBoe_002.jpg",
+      "licence": "CC BY-SA 3.0 de",
+      "licenceCode": "cc-by-sa-3.0-de",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+      "artist": "Raboe001",
+      "filePage": "https://commons.wikimedia.org/wiki/File:Stuttgart_2025_-_ComicCon_-_Alistair_Petrie_-_by-RaBoe_002.jpg",
+      "image": "alistair-petrie.jpg"
+    },
+    {
+      "name": "Sean Donnelly",
+      "article": "https://en.wikipedia.org/wiki/Sean_Donnelly",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "Nikola Kołodziejczyk",
+      "article": "https://en.wikipedia.org/wiki/Nikola_Ko%C5%82odziejczyk",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "Mikolai Stroinski",
+      "article": "https://en.wikipedia.org/wiki/Mikolai_Stroinski",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "Pilotpriest",
+      "article": "https://en.wikipedia.org/wiki/Anthony_Scott_Burns",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "Gordy Haab",
+      "article": "https://en.wikipedia.org/wiki/Gordy_Haab",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "Courtney Hope",
+      "article": "https://en.wikipedia.org/wiki/Courtney_Hope",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "James McCaffrey",
+      "article": "https://en.wikipedia.org/wiki/James_McCaffrey_(actor)",
+      "photo": false,
+      "file": "File:James_McCaffrey_(actor).jpg",
+      "licence": "Fair use",
+      "licenceCode": "",
+      "licenceUrl": "//en.wikipedia.org/wiki/File:James_McCaffrey_(actor).jpg",
+      "artist": "20th Television",
+      "filePage": "https://en.wikipedia.org/wiki/File:James_McCaffrey_(actor).jpg",
+      "reason": "non-free: uploaded locally to en.wikipedia (Fair use)"
+    },
+    {
+      "name": "Matthew Porretta",
+      "article": "https://en.wikipedia.org/wiki/Matthew_Porretta",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "Alex Lanipekun",
+      "article": "https://en.wikipedia.org/wiki/Alex_Lanipekun",
+      "photo": false,
+      "file": "File:Saul_Being_Human.png",
+      "licence": "Not stated",
+      "licenceCode": "",
+      "licenceUrl": "",
+      "artist": "",
+      "filePage": "https://commons.wikimedia.org/wiki/File:Saul_Being_Human.png",
+      "reason": "licence not on the free list: Not stated (no machine-readable code)"
+    },
+    {
+      "name": "Tashinga Bepete",
+      "article": "https://en.wikipedia.org/wiki/Tashinga_Bepete",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "Miyake Kenta",
+      "article": "https://en.wikipedia.org/wiki/Kenta_Miyake",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "Clare Corbett",
+      "article": "https://en.wikipedia.org/wiki/Clare_Corbett",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "Xu Hui",
+      "article": "https://en.wikipedia.org/wiki/Xu_Hui",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "Aya Endo",
+      "article": "https://en.wikipedia.org/wiki/Aya_End%C5%8D",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "Akihiko Ishizumi",
+      "article": "https://en.wikipedia.org/wiki/Akihiko_Ishizumi",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "Richard Reed",
+      "article": "https://en.wikipedia.org/wiki/Richard_Reed",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "Stéphane Cornicard",
+      "article": "https://en.wikipedia.org/wiki/St%C3%A9phane_Cornicard",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "Anna Demetriou",
+      "article": "https://en.wikipedia.org/wiki/Anna_Demetriou",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "Mark Healy",
+      "article": "https://en.wikipedia.org/wiki/Mark_Healy_(Gaelic_footballer)",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "Claire Morgan",
+      "article": "https://en.wikipedia.org/wiki/Claire_Morgan",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "Hiroki Yasumoto",
+      "article": "https://en.wikipedia.org/wiki/Hiroki_Yasumoto",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "Kezia Burrows",
+      "article": "https://en.wikipedia.org/wiki/Kezia_Burrows",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "Yuko Kaida",
+      "article": "https://en.wikipedia.org/wiki/Y%C5%ABko_Kaida",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    }
+  ]
+}

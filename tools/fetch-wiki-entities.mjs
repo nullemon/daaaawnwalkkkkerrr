@@ -4,6 +4,14 @@
  *
  *   node tools/fetch-wiki-entities.mjs [game-slug]
  *
+ * ## Superseded by `tools/harvest-game.mjs`
+ *
+ * That one reads three candidate sources to this one's two and takes lead
+ * images, and it is what `pnpm harvest:all` and `pnpm refresh` run. It writes
+ * the same seven files, so running this one overwrites its work with less.
+ * `pnpm fetch:entities` still points here; the write guard at the bottom is
+ * what stops that costing anything.
+ *
  * ## What is taken, and what is deliberately not
  *
  * Taken: the page title, the structured `{{Infobox}}` parameters, the
@@ -202,7 +210,10 @@ const cleanValue = (value) =>
  * naive "first template with parameters" would pick one of them.
  */
 const NOT_AN_INFOBOX =
-  /^(games?|tabs?|quote|stub|cleanup|gearsify|spoilers?|about|main|for|see ?also|reflist|nav|navbox|expand|disambig|redirect|update|citation|cite|ref|delete|merge|move|notice|era|eras|title|top|toc)/i
+  new RegExp(
+    String.raw`^(games?|tabs?|quote|stub|cleanup|gearsify|spoilers?|about|main|for|see ?also|reflist|nav|navbox|expand|disambig|redirect|update|citation|cite|ref|delete|merge|move|notice|era|eras|title|top|toc)\b`,
+    'i',
+  )
 
 /**
  * Pull `key = value` pairs out of a page's infobox.
@@ -296,6 +307,40 @@ const parseInfobox = (wikitext) => {
 const OUT_DIR = path.resolve('src/seed/raw/wiki-entities')
 fs.mkdirSync(OUT_DIR, { recursive: true })
 
+/**
+ * Write a harvest, unless it would lose records.
+ *
+ * ## Why this file needs the guard more than any other
+ *
+ * `tools/harvest-game.mjs` replaced this harvester and writes the same seven
+ * files. It reads three candidate sources where this one reads two, and it
+ * downloads lead images, so its files are several times larger — Star Wars is
+ * 550 records here against the handful this file's empty `categories` map
+ * would produce. Nothing stops somebody running `pnpm fetch:entities`, which
+ * still points here: it would overwrite all seven with the weaker harvest,
+ * drop every `imageFile`, and report success. The pages would still render.
+ *
+ * So the floor from `tools/fetch-search-queries.mjs` applies here too. Ninety
+ * per cent: a wiki gains pages between harvests and loses the odd one to a
+ * merge, and a real re-harvest never loses a tenth of its records.
+ */
+const writeHarvest = (slug, payload, entities) => {
+  const outFile = path.join(OUT_DIR, `${slug}.json`)
+  const previous = fs.existsSync(outFile)
+    ? (JSON.parse(fs.readFileSync(outFile, 'utf8')).entities ?? []).length
+    : 0
+
+  if (previous > 0 && entities.length < previous * 0.9) {
+    console.log(`  !! KEPT the existing file: this run found ${entities.length}, it already had ${previous}.`)
+    console.log('     `tools/harvest-game.mjs` writes these files now and reads more than this one does.')
+    console.log('     Nothing was written.')
+    return false
+  }
+
+  fs.writeFileSync(outFile, `${JSON.stringify(payload, null, 2)}\n`)
+  return true
+}
+
 for (const [slug, config] of Object.entries(GAMES)) {
   if (only && only !== slug) continue
   process.stdout.write(`\n${slug}  (${config.host})\n`)
@@ -335,9 +380,10 @@ for (const [slug, config] of Object.entries(GAMES)) {
 
   if (wanted.size === 0) {
     console.log('  nothing game-specific on this wiki yet')
-    fs.writeFileSync(
-      path.join(OUT_DIR, `${slug}.json`),
-      `${JSON.stringify({ slug, host: config.host, fetchedAt: new Date().toISOString().slice(0, 10), entities: [] }, null, 2)}\n`,
+    writeHarvest(
+      slug,
+      { slug, host: config.host, fetchedAt: new Date().toISOString().slice(0, 10), entities: [] },
+      [],
     )
     continue
   }
@@ -388,19 +434,15 @@ for (const [slug, config] of Object.entries(GAMES)) {
     byCollection[entity.collection] = (byCollection[entity.collection] ?? 0) + 1
   }
 
-  fs.writeFileSync(
-    path.join(OUT_DIR, `${slug}.json`),
-    `${JSON.stringify(
-      {
-        slug,
-        host: config.host,
-        fetchedAt: new Date().toISOString().slice(0, 10),
-        entities,
-      },
-      null,
-      2,
-    )}\n`,
-  )
+  if (
+    !writeHarvest(
+      slug,
+      { slug, host: config.host, fetchedAt: new Date().toISOString().slice(0, 10), entities },
+      entities,
+    )
+  ) {
+    continue
+  }
 
   const withFacts = entities.filter((entity) => Object.keys(entity.facts).length > 0).length
   console.log(

@@ -3,10 +3,12 @@ import type { Metadata } from 'next'
 import { Shell } from '@/components/Shell'
 import type { RailItem } from '@/components/SiteRail'
 import type { FooterColumn } from '@/components/SiteFooter'
-import { getGame, getPublishedGames, getSiteSettings, gameUrl } from '@/lib/payload'
+import { client, getGame, getPublishedGames, getSiteSettings, gameUrl } from '@/lib/payload'
+import { slugify } from '@/fields/shared'
 import { sectionsFor, toolsFor } from '@/lib/sections'
 import { fanProjectNote } from '@/lib/credit'
-import { JsonLd, videoGame } from '@/components/JsonLd'
+import { JsonLd } from '@/components/JsonLd'
+import { networkOrganization, videoGame, webSite } from '@/lib/schema'
 import { clamp } from '@/lib/seo'
 import { hub } from '@/lib/urls'
 import { Analytics } from '@/components/Analytics'
@@ -145,6 +147,45 @@ export default async function GameLayout({
   const name = game.shortTitle || game.title
 
   /*
+    The picture and the company profiles the structured data points at.
+
+    `knownCompanies` is the set of slugs the companies host actually has a page
+    for, so a developer named on the record resolves to that page's `@id` and
+    the graph joins across hosts. A name with no profile degrades to a plain
+    Organization rather than to an `@id` that 404s — a dangling reference is
+    worse than an unlinked one, because a consumer will follow it.
+  */
+  const poster =
+    game.profile?.poster && typeof game.profile.poster === 'object'
+      ? (game.profile.poster as { url?: string | null })
+      : null
+  const hero =
+    game.theme?.hero && typeof game.theme.hero === 'object'
+      ? (game.theme.hero as { url?: string | null })
+      : null
+  const rawImage = poster?.url ?? hero?.url ?? null
+  const schemaImage = rawImage
+    ? rawImage.startsWith('http')
+      ? rawImage
+      : `${canonical}${rawImage}`
+    : null
+
+  const payload = await client()
+  const companyRows = await payload.find({
+    collection: 'companies',
+    where: {
+      or: [game.developer, game.publisher]
+        .flatMap((value) => (value ?? '').split(','))
+        .map((value) => value.trim())
+        .filter(Boolean)
+        .map((value) => ({ slug: { equals: slugify(value) } })),
+    },
+    limit: 20,
+    depth: 0,
+  })
+  const knownCompanies = new Set<string>(companyRows.docs.map((row) => String(row.slug)))
+
+  /*
     The way back to the network.
 
     Every wiki is its own host, so `/` on a wiki is that wiki's front page and
@@ -281,7 +322,34 @@ export default async function GameLayout({
         says - which game this site is about, and who made it - is true of
         every page under it.
       */}
-      <JsonLd data={videoGame(canonical, game)} />
+      <JsonLd
+        data={videoGame(canonical, game, {
+          image: schemaImage,
+          description: game.summary,
+          knownCompanies: knownCompanies,
+        })}
+      />
+      {/*
+        The site and its publisher, which is what the game entity hangs off.
+
+        Without a `WebSite` there is no root to the graph: a `VideoGame` on its
+        own says what this page is about and nothing about what this site is,
+        so a consumer has no way to tell eight wikis apart from eight pages.
+      */}
+      <JsonLd
+        data={webSite(canonical, {
+          name: `${game.shortTitle || game.title} Wiki`,
+          description: game.summary,
+          searchPath: '/search',
+        })}
+      />
+      <JsonLd
+        data={networkOrganization({
+          name: settings.siteName,
+          legalEntity: settings.legalEntity,
+          email: settings.contactEmail,
+        })}
+      />
       <Analytics tags={tags} />
     </Shell>
   )

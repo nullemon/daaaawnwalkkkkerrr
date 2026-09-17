@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 import { PageHeader } from '@/components/PageHeader'
+import { JsonLd } from '@/components/JsonLd'
+import { itemList, webSite } from '@/lib/schema'
+import { PEOPLE_ORIGIN, personUrl } from '@/lib/urls'
 import { EntityCard } from '@/components/EntityCard'
 import { Badge } from '@/components/Badges'
 import { client } from '@/lib/payload'
@@ -159,6 +162,19 @@ export default async function PeopleIndex() {
 
   return (
     <>
+      <JsonLd
+        data={webSite(PEOPLE_ORIGIN, {
+          name: copy(site.title, PEOPLE_BUILT_IN.title),
+          description: copy(site.metaDescription, PEOPLE_BUILT_IN.metaDescription),
+        })}
+      />
+      <JsonLd
+        data={itemList(
+          PEOPLE_ORIGIN,
+          people.map((entry) => ({ name: entry.name, url: personUrl(`/${entry.slug}`) })),
+          { name: copy(site.title, PEOPLE_BUILT_IN.title) },
+        )}
+      />
       <PageHeader
         eyebrow={copy(site.eyebrow, PEOPLE_BUILT_IN.eyebrow)}
         crumbs={[{ label: 'People' }]}

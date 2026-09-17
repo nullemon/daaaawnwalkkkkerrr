@@ -5,6 +5,8 @@ import { PageHeader } from '@/components/PageHeader'
 import { Badge, Confidence } from '@/components/Badges'
 import { CompanyTitles, type CatalogueRow } from '@/components/CompanyTitles'
 import { FactPanel } from '@/components/FactPanel'
+import { breadcrumbs, organization } from '@/lib/schema'
+import { JsonLd } from '@/components/JsonLd'
 import { Icon } from '@/components/Icon'
 import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
@@ -12,6 +14,7 @@ import { client, gameUrl, rel, relMany } from '@/lib/payload'
 import { copy, hasRichText } from '@/lib/copy'
 import { COMPANIES_BUILT_IN, COMPANY_ROLE_LABEL, getCompaniesSite } from '@/lib/companies-copy'
 import { clamp } from '@/lib/seo'
+import { COMPANIES_ORIGIN } from '@/lib/urls'
 import type { Company, Game } from '@/payload-types'
 
 type Props = { params: Promise<{ slug: string }> }
@@ -121,6 +124,23 @@ export default async function CompanyPage({ params }: Props) {
     company.logo && typeof company.logo === 'object'
       ? (company.logo as { url?: string | null })
       : null
+  /*
+    The people this network has a profile for who are named as officers here.
+    Read from the person side because that is where the relationship lives —
+    one person holds posts at two companies and a string copied onto each
+    company drifts the first time one is corrected.
+  */
+  const officers = (
+    await (await client()).find({
+      collection: 'people',
+      where: { companies: { contains: company.id } },
+      limit: 50,
+      depth: 0,
+    })
+  ).docs
+
+  const absolute = (url: string) => (url.startsWith('http') ? url : `${COMPANIES_ORIGIN}${url}`)
+
   const parent = rel<Company>(company.parent)
   const subsidiaries = relMany<Company>(company.subsidiaries)
   const defunct = company.defunct?.trim() || null
@@ -154,6 +174,26 @@ export default async function CompanyPage({ params }: Props) {
 
   return (
     <>
+      {/*
+        The organisation, with an `@id` every game record on the network points
+        at. Without it a wiki saying "Capcom" and this page about Capcom are two
+        unrelated strings that happen to match.
+      */}
+      <JsonLd
+        data={organization(company, {
+          image: logo?.url ? absolute(logo.url) : null,
+          sources: (company.sources ?? []).map((source) => source?.url),
+          parent: parent ? { slug: String(parent.slug) } : null,
+          subsidiaries: subsidiaries.map((child) => ({ slug: String(child.slug) })),
+          people: officers.map((officer) => ({ slug: String(officer.slug) })),
+        })}
+      />
+      <JsonLd
+        data={breadcrumbs(COMPANIES_ORIGIN, [
+          { label: 'Companies', href: '/' },
+          { label: company.name },
+        ])}
+      />
       <PageHeader
         eyebrow="Company"
         crumbs={[{ label: 'Companies', href: '/' }, { label: company.name }]}
