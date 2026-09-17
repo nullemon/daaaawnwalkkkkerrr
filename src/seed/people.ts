@@ -780,11 +780,18 @@ async function run(): Promise<void> {
       )
     }
 
-    if (article) {
-      body.push(
-        `This profile is compiled from the English Wikipedia article on ${article.title} and from the credit that named them. Nothing here is inferred.`,
-      )
-    } else if (person.article) {
+    /*
+      No sentence where an article was used. It restated what the Sources list
+      below already says, in prose, on every profile that has a source — and
+      the owner is writing the provenance wording themselves. The citations are
+      untouched; it is only the sentence that went.
+
+      The two branches that remain are not that sentence. Each states something
+      no citation can: that a plausible article was found and refused, or that
+      none exists. Those are findings, and a page that drops them looks like
+      nobody looked.
+    */
+    if (!article && person.article) {
       /*
         The honest version of "we found something and did not trust it". A
         reader who knows the field can settle it in a second, and hiding the
@@ -793,7 +800,7 @@ async function run(): Promise<void> {
       body.push(
         `An English Wikipedia article exists under this name, but nothing in it connects that person to this credit, so none of it is used here. This page carries the credit that named them and nothing else.`,
       )
-    } else {
+    } else if (!article) {
       body.push(
         `No English Wikipedia article was found under this name when the network was compiled, so this page carries the credit that named them and nothing else.${person.unresolvedReason ? ` The lookup reported: ${person.unresolvedReason}.` : ''}`,
       )

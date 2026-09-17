@@ -1208,6 +1208,12 @@ th.num { text-align: right; }
 }
 .company-tree a:hover { border-color: var(--accent); text-decoration: none; }
 
+/* Key people: one name per line, because each carries a post beside it and a
+   pill row would put the name and its role on two different lines. */
+.officer-list { margin: 8px 0 0; padding: 0; list-style: none; }
+.officer-list li { margin: 0 0 5px; }
+.officer-list li:last-child { margin-bottom: 0; }
+
 /* A grid card's logo sits on its own ground rather than bleeding to the edge. */
 .thumb-contain { background: var(--surface); }
 .thumb-contain img { object-fit: contain !important; padding: 12px; }
@@ -2739,3 +2745,135 @@ a.catalogue-title:hover { color: var(--accent-hot); text-decoration: none; }
 /* The host, not the URL. `https://www.remedygames.com/` is a string a browser
    needs and nobody reads; the whole thing is still in the href. */
 .company-site-url { font-size: 14px; font-weight: 500; overflow-wrap: anywhere; min-width: 0; }
+
+/* ---------- our rating ----------
+   The one opinion on this site, so it is styled to read as a judgement rather
+   than as another row of sourced data. The basis sits under the number in
+   every place the number appears: "8.9 / 10, outlook - not out yet" is a
+   different claim from "8.9 / 10" and the page must not let them look alike. */
+
+.gameprofile-score { display: inline-flex; flex-direction: column; align-items: flex-end; gap: 1px; }
+.gameprofile-score strong { font-size: 17px; line-height: 1; color: var(--accent-hot); }
+.gameprofile-outof { font-size: 11px; color: var(--muted); }
+.gameprofile-basis {
+  font-family: var(--f-label); font-size: 9.5px; letter-spacing: 0.04em;
+  text-transform: uppercase; color: var(--muted); text-align: right;
+}
+
+.verdict {
+  display: flex; flex-direction: column; gap: 12px;
+  border: 1px solid var(--rule); border-left: 3px solid var(--accent);
+  border-radius: var(--r); background: var(--surface); padding: 16px 18px;
+  min-width: 0;
+}
+.verdict-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; }
+.verdict-score { font-size: 30px; line-height: 1; font-weight: 600; color: var(--accent-hot); }
+.verdict-outof { font-size: 14px; color: var(--muted); }
+.verdict-basis {
+  font-family: var(--f-label); font-size: 11px; letter-spacing: 0.05em;
+  text-transform: uppercase; color: var(--muted);
+}
+.verdict-summary { margin: 0; font-size: 15.5px; line-height: 1.5; font-weight: 500; }
+.verdict-body { margin: 0; font-size: 14px; line-height: 1.6; color: var(--ink-soft); max-width: var(--measure); }
+.verdict-note { margin: 0; font-size: 11.5px; color: var(--muted); }
+
+/* On a card, where there is room for the number and nothing else. */
+.card-score {
+  display: inline-flex; align-items: baseline; gap: 3px;
+  font-family: var(--f-label); font-size: 12px; font-weight: 600;
+  color: var(--accent-hot);
+}
+.card-score span { font-size: 10px; color: var(--muted); font-weight: 500; }
+
+/* --- Reader ratings -------------------------------------------------------
+   Ten stars, and the two numbers kept apart. `lib/ratings.ts` argues the case
+   for not blending the reader average with this site's own score; the visual
+   half of that argument is that they never share a row of stars.
+
+   Brass, because brass is what this site uses for anything a reader can act
+   on, and a star row is the most actionable thing on the page. The rarity
+   scale is not borrowed here: a score is not a rarity. ----------------------- */
+
+.rating {
+  display: flex; flex-direction: column; align-items: flex-start;
+  gap: 5px; min-width: 0;
+}
+
+/* The row itself is the positioning context for the clipped overlay below. */
+.rating-stars {
+  position: relative; display: inline-flex; align-items: center;
+  line-height: 0; max-width: 100%;
+}
+
+/* Never let a ten-star row force the page sideways on a phone. Grid and flex
+   children default to min-width:auto, which is the same trap the shrink-fix at
+   the end of this file exists for. */
+.rating-star { flex: none; min-width: 0; color: inherit; }
+
+/* --- The read-only form: one fractional row ------------------------------ */
+
+.rating-layer { display: inline-flex; align-items: center; gap: 2px; color: var(--muted); }
+
+/* Clipped to the average as a percentage, so 7.4 and 6.6 do not round to the
+   same picture. The outline row underneath is what shows through. */
+.rating-layer-on {
+  position: absolute; inset-block: 0; inset-inline-start: 0;
+  width: var(--fill, 0%); overflow: hidden; color: var(--legendary);
+}
+
+/* --- The interactive form: ten buttons ----------------------------------- */
+
+.rating-input { gap: 2px; }
+
+.rating-button {
+  appearance: none; background: none; border: 0; padding: 2px;
+  margin: 0; cursor: pointer; color: var(--muted); border-radius: 4px;
+  transition: color 120ms var(--ease), transform 120ms var(--ease);
+}
+.rating-button[data-on='true'] { color: var(--legendary); }
+.rating-button:hover { transform: translateY(-1px); }
+.rating-button:disabled { cursor: progress; }
+
+/* A roving tabindex means exactly one star is a tab stop, so its focus ring is
+   the only signpost a keyboard user gets. It has to be loud. */
+.rating-button:focus-visible {
+  outline: 2px solid var(--accent); outline-offset: 2px; color: var(--legendary);
+}
+
+/* --- The numbers --------------------------------------------------------- */
+
+.rating-summary {
+  margin: 0; display: flex; flex-wrap: wrap; align-items: baseline;
+  gap: 3px 9px; font-size: 13px; color: var(--muted); min-width: 0;
+}
+.rating-average { font-size: 17px; font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums; }
+.rating-outof { font-size: 12.5px; }
+.rating-votes { font-variant-numeric: tabular-nums; }
+
+/* "No reader scores yet" is a sentence, not a nought. Four of these eight
+   wikis cover games nobody has played, and "0 / 10" on one of them would read
+   as a verdict this site never published. */
+.rating-empty { font-style: italic; }
+
+.rating-mine {
+  display: inline-flex; align-items: baseline; gap: 4px;
+  padding: 1px 8px; border-radius: 999px;
+  border: 1px solid var(--accent-dim); background: var(--accent-wash);
+  color: var(--ink-soft);
+  font-family: var(--f-label); font-size: 11px;
+  letter-spacing: 0.04em; text-transform: uppercase;
+}
+.rating-mine b { color: var(--ink); font-variant-numeric: tabular-nums; }
+
+.rating-note { margin: 0; font-size: 12.5px; }
+/* A rollback that says nothing reads as a click that missed the button. */
+.rating-failed { color: var(--danger); }
+
+@media (max-width: 520px) {
+  .rating-star { width: 18px; height: 18px; }
+  .rating-button { padding: 1px; }
+}
+
+/* Read-only: stars and numbers on one line, because there is nothing to do
+   here and nothing that needs its own row. Wraps rather than overflows. */
+.rating-static { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 4px 11px; }

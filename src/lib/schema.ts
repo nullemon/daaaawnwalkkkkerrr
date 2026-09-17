@@ -21,10 +21,16 @@ import { slugify } from '../fields/shared'
  *
  * ## What is deliberately not emitted
  *
- * **`aggregateRating`.** The Metacritic score on a game record is Metacritic's
- * rating, not ours. Emitting it as this page's `aggregateRating` tells a
- * consumer that this site collected those reviews, which is false, and is the
- * kind of false claim that is invisible because nobody proofreads JSON-LD.
+ * **Metacritic as `aggregateRating`.** That score is Metacritic's rating, not
+ * ours. Emitting it as this page's `aggregateRating` says this site collected
+ * those reviews, which is false and is invisible because nobody proofreads
+ * JSON-LD.
+ *
+ * This site's *own* score is a different matter and is emitted — as a `Review`,
+ * which is what one signed opinion is. `aggregateRating` means an average of
+ * many, so it appears only once readers have actually voted and it carries the
+ * count; a single editorial score published as an aggregate of one is the same
+ * overstatement in a smaller hat.
  *
  * **`offers`.** A price is on the game record and it is real, but `offers` on
  * a page that does not sell the thing claims this site is a seller. The store
@@ -158,7 +164,16 @@ export type GameForSchema = {
 export const videoGame = (
   base: string,
   game: GameForSchema,
-  options: { image?: string | null; description?: string | null; knownCompanies?: ReadonlySet<string> } = {},
+  options: {
+    image?: string | null
+    description?: string | null
+    knownCompanies?: ReadonlySet<string>
+    /** This site's own score, with the reasoning that has to accompany it. */
+    rating?: { score?: number | null; rationale?: string | null; ratedOn?: string | null } | null
+    /** Reader votes, and only where there are some. */
+    readers?: { average: number; count: number } | null
+    publisherName?: string | null
+  } = {},
 ): Json => {
   const known = options.knownCompanies ?? new Set<string>()
   const platforms = (game.platforms ?? []).filter((value): value is string => Boolean(value))
@@ -205,6 +220,39 @@ export const videoGame = (
         ? game.releaseDate.slice(0, 10)
         : undefined,
     sameAs,
+    /*
+      One signed opinion is a Review. The rationale is the review body and it
+      is required for the score to render on the page, so a `Review` here can
+      never be a bare number either.
+    */
+    review:
+      typeof options.rating?.score === 'number' && options.rating?.rationale
+        ? compact({
+            '@type': 'Review',
+            reviewRating: {
+              '@type': 'Rating',
+              ratingValue: options.rating.score,
+              bestRating: 10,
+              worstRating: 0,
+            },
+            author: { '@id': networkId() },
+            reviewBody: options.rating.rationale,
+            datePublished: options.rating.ratedOn
+              ? options.rating.ratedOn.slice(0, 10)
+              : undefined,
+          })
+        : undefined,
+    /* Only an average of people. One editorial score is not an aggregate. */
+    aggregateRating:
+      options.readers && options.readers.count > 0
+        ? {
+            '@type': 'AggregateRating',
+            ratingValue: Number(options.readers.average.toFixed(1)),
+            ratingCount: options.readers.count,
+            bestRating: 10,
+            worstRating: 1,
+          }
+        : undefined,
     isPartOf: { '@id': `${base}#website` },
   })
 }

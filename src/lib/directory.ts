@@ -20,8 +20,16 @@ export type DirectoryEntry = {
   game: Game
   url: string
   pages: number
-  /** Sections with at least one record, longest first. Shown as a summary. */
-  highlights: { label: string; count: number }[]
+  /**
+   * Sections with at least one record, longest first. Shown as a summary.
+   *
+   * `kind` is the singular that goes with `label`. The filter above admits a
+   * count of 1 - Silent Hill: Townfall holds exactly one enemy - and the chip
+   * printed the plural label against it, so the network directory read "1
+   * enemies". `SECTIONS` has carried the singular all along; this just brings
+   * it along so the card does not have to guess at one.
+   */
+  highlights: { label: string; kind: string; count: number }[]
 }
 
 export const directory = async (): Promise<DirectoryEntry[]> => {
@@ -32,6 +40,7 @@ export const directory = async (): Promise<DirectoryEntry[]> => {
       const counts = await Promise.all(
         SECTIONS.map(async (section) => ({
           label: section.label,
+          kind: section.kind,
           count: await countRecords(section.collection, { game: game.slug }),
         })),
       )

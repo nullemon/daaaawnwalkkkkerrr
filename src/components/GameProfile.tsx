@@ -3,6 +3,7 @@ import { companyUrl, personUrl } from '@/lib/urls'
 import { slugify } from '@/fields/shared'
 import { getUi } from '@/lib/ui'
 import { fill } from '@/lib/copy'
+import { editorialScore } from '@/lib/ratings'
 import { client } from '@/lib/payload'
 
 /**
@@ -125,9 +126,30 @@ export async function GameProfile({ game }: { game: Game }) {
   const developers = (game.developer ?? '').split(',').map((v) => v.trim()).filter(Boolean)
   const publishers = (game.publisher ?? '').split(',').map((v) => v.trim()).filter(Boolean)
   const modes = (profile.modes ?? []) as string[]
+  const verdict = editorialScore(game)
 
   /* Only rows that have something to say. */
   const rows: Row[] = [
+    /*
+      Our score, at the top of the panel, because it is the one line on this
+      page that is an opinion and burying it among the facts is how a reader
+      comes to mistake it for one. `editorialScore` returns null unless both
+      the number and the reasoning are there.
+    */
+    verdict
+      ? {
+          label: ui.t('profile.our-rating'),
+          value: (
+            <span className="gameprofile-score">
+              <strong>{verdict.score.toFixed(1)}</strong>
+              <span className="gameprofile-outof">/ 10</span>
+              {verdict.basis ? (
+                <span className="gameprofile-basis">{ui.label('rating-basis', verdict.basis)}</span>
+              ) : null}
+            </span>
+          ),
+        }
+      : null,
     developers.length ? { label: ui.t('profile.developer'), value: join(developers) } : null,
     publishers.length ? { label: ui.t('profile.publisher'), value: join(publishers) } : null,
     profile.series ? { label: ui.t('profile.series'), value: profile.series } : null,

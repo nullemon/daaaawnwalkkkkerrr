@@ -149,8 +149,19 @@ export const UI_DEFAULTS: Record<string, string> = {
   'account.error-signed-out': 'Not signed in.',
 
   'search.label': 'Search the database',
-  'search.placeholder': 'A quest, an item, a perk, a character…',
-  'search.hero-placeholder': 'Search quests, items, perks, characters…',
+  /*
+    Both of these named a perk. Perks are Dawnwalker's — `REHOME` in the entity
+    seeder folds them into mechanics everywhere else — and these two strings are
+    network-wide defaults: `search.hero-placeholder` is read by `HeroSearch`,
+    which is on every wiki's home page. So seven wikis invited a reader to
+    search for a kind of thing their game does not have, in the box that is the
+    first control on the page. Same failure as the hardcoded section copy, in a
+    string rather than in JSX. Corrected here and in `SUPERSEDED` in
+    `src/seed/copy/ui.ts`, because the seeded row is what the site is actually
+    serving and a registry edit alone would change nothing.
+  */
+  'search.placeholder': 'A quest, an item, a character…',
+  'search.hero-placeholder': 'Search quests, items, characters…',
   'search.failed': 'The search index could not be loaded. Try the section pages instead.',
   'search.loading': 'Loading the index…',
   'search.prompt': '{count} records indexed. Type at least two characters.',
@@ -204,6 +215,20 @@ export const UI_DEFAULTS: Record<string, string> = {
   */
   'profile.title': '{game}',
   'profile.title-dated': '{game} (video game, {year})',
+  'profile.our-rating': 'Our rating',
+
+  /*
+    The reader widget. Its component ships the same defaults as props so it
+    works outside a provider — in a test, or in the admin preview — but these
+    are the copies an editor can change.
+  */
+  'rating.prompt': 'Rate this game out of 10',
+  'rating.yours': 'Your rating',
+  'rating.none': 'No reader scores yet',
+  'rating.one': 'reader',
+  'rating.many': 'readers',
+  'rating.failed': 'That vote did not save. Try again?',
+  'rating.saving': 'Saving…',
   'profile.developer': 'Developer',
   'profile.publisher': 'Publisher',
   'profile.released': 'Released',
@@ -249,6 +274,17 @@ export const UI_DEFAULTS: Record<string, string> = {
   'run.filter-label': 'Filter quests',
   'run.filter-placeholder': 'Start typing a quest name',
   'run.cost-unconfirmed': 'cost unconfirmed',
+  /*
+    "Night Terrors · night only · 1 segments" — the one costed-at-one quest in
+    the database, in the run checker's own quest list. `planner.segment-one` /
+    `planner.segment-many` two hundred lines down is the same words with the
+    pair already written; this one never got it.
+
+    `run.segments` keeps its key and becomes the many form rather than being
+    renamed, because renaming it would orphan any override an editor has
+    written against it and `check:launch` would then report the key as gone.
+  */
+  'run.segment-one': '{count} segment',
   'run.segments': '{count} segments',
   'run.no-quest-match': 'No quest matches that.',
   'run.next-heading': 'What you can start right now',
@@ -321,6 +357,10 @@ export const UI_DEFAULTS: Record<string, string> = {
   'outlook.failure-state': 'Failure state',
   'outlook.failure-title': 'Reached by running out of days, not by choosing it',
   'outlook.some-uncosted': ', some uncosted',
+  /* Same missing pair as `run.segment-one`; see the note there. The line
+     before this one already picks `run.quests-left-one` correctly, so the
+     sentence read "1 quest left · 1 segments" — half of it right. */
+  'outlook.segment-one': ' · {count} segment',
   'outlook.segments': ' · {count} segments',
   'outlook.based-on': 'Based on the run in your browser.',
   'outlook.dashboard-link': 'Open the dashboard',
@@ -351,8 +391,15 @@ export const UI_DEFAULTS: Record<string, string> = {
   'unlock.cost-unpublished': 'cost unpublished',
   'unlock.nothing-to-pay': 'Nothing left to pay for.',
   'unlock.left': '{span} left.',
+  /*
+    "there are 1 of them" — the "1 quest stand between" failure again, this
+    time inside the `.one` key that exists to prevent it. `UnlockPath` picks
+    the branch correctly; only the wording in the branch was wrong. Reachable
+    on any chain whose last outstanding step is uncosted, which with 78 of 93
+    Dawnwalker quests uncosted is routine rather than a corner.
+  */
   'unlock.no-total-one':
-    'No source publishes a cost for any of the {count} remaining step, so there is no total to give — only that there are {count} of them.',
+    'No source publishes a cost for the one remaining step, so there is no total to give.',
   'unlock.no-total-many':
     'No source publishes a cost for any of the {count} remaining steps, so there is no total to give — only that there are {count} of them.',
   'unlock.floor-one':
@@ -444,6 +491,11 @@ export const LABEL_DEFAULTS: Record<string, string> = {
     those regions print a bare "late" in their fact panel while the index
     beside them says "Late run".
   */
+  /* What a score is based on. Printed beside every number this site publishes. */
+  'rating-basis.played': 'from playing it',
+  'rating-basis.published': 'from published material',
+  'rating-basis.outlook': 'outlook — not out yet',
+
   'danger.starting': 'Starting area',
   'danger.moderate': 'Moderate',
   'danger.dangerous': 'Dangerous',
@@ -465,6 +517,19 @@ export const LABEL_DEFAULTS: Record<string, string> = {
   'achievement-rarity.rare': 'Rare',
   'achievement-rarity.very-rare': 'Very rare',
   'achievement-rarity.ultra-rare': 'Ultra rare',
+
+  /*
+    What kind of organisation a faction is. Set only where the wiki's own
+    article says, so most factions carry no value at all and the badge is
+    simply absent — the raw stored word is never printed, which is the bug the
+    `danger.late` note at the top of this list records.
+  */
+  'faction-kind.military': 'Military',
+  'faction-kind.government': 'Government',
+  'faction-kind.corporation': 'Corporation',
+  'faction-kind.cult': 'Cult or religious order',
+  'faction-kind.criminal': 'Criminal',
+  'faction-kind.other': 'Other',
 
   'confidence.high': 'high',
   'confidence.medium': 'medium',
@@ -573,6 +638,7 @@ export const LABEL_DEFAULTS: Record<string, string> = {
   'section.mechanics': 'Mechanics',
   'section.guides': 'Guides',
   'section.maps': 'Maps',
+  'section.factions': 'Factions',
 
   /* Singular, for one record: the type label beside a search result. */
   'kind.quests': 'Quest',
@@ -590,6 +656,7 @@ export const LABEL_DEFAULTS: Record<string, string> = {
   'kind.mechanics': 'Mechanic',
   'kind.guides': 'Guide',
   'kind.maps': 'Map',
+  'kind.factions': 'Faction',
 }
 
 /**

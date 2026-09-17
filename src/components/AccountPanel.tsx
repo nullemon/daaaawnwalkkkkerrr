@@ -10,7 +10,20 @@ import { fill } from '@/lib/copy'
 
 type Mode = 'signin' | 'register'
 
-export function AccountPanel() {
+/**
+ * `checkerHref` is the run checker's address from wherever this panel is.
+ *
+ * On a wiki that is `/tools/run-checker` and a root-relative link is right.
+ * On the hub it is not: the hub is its own origin, and `proxy.ts` reads an
+ * unreserved first path segment as a wiki slug - so the button here sent a
+ * signed-in reader to `http://tools.<domain>/run-checker`, a 308 to a
+ * subdomain that does not exist. Every other hub-to-wiki link on the site
+ * already crosses the origin explicitly; this one was written as though the
+ * two hosts were one. A caller that has no run checker to point at passes
+ * null and the button does not render, which is the honest answer on a
+ * network where seven of eight wikis have no such tool.
+ */
+export function AccountPanel({ checkerHref = '/tools/run-checker' }: { checkerHref?: string | null }) {
   const ui = useUi()
   const account = useAccount()
   const run = useRun()
@@ -60,9 +73,20 @@ export function AccountPanel() {
           {run.syncing ? ui.t('account.syncing') : ui.t('account.saved')}
         </p>
         <div className="field-row">
-          <Link className="button" href="/tools/run-checker">
-            {ui.t('account.open-checker')}
-          </Link>
+          {/* A plain <a> when it crosses an origin: there is no client-side
+              navigation to be had between hosts and `Link` would only add a
+              prefetch that cannot work. Same rule as `hub()` in urls.ts. */}
+          {checkerHref ? (
+            checkerHref.startsWith('/') ? (
+              <Link className="button" href={checkerHref}>
+                {ui.t('account.open-checker')}
+              </Link>
+            ) : (
+              <a className="button" href={checkerHref}>
+                {ui.t('account.open-checker')}
+              </a>
+            )
+          ) : null}
           <button type="button" className="linkish" onClick={() => void account.logout()}>
             {ui.t('account.sign-out')}
           </button>

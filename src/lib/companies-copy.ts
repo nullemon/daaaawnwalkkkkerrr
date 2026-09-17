@@ -101,8 +101,9 @@ export const COMPANIES_BUILT_IN = {
       'No longer operating ({defunct}). Everything on this page is a record of what the company did, not what it does.',
     siteLabel: 'Official site',
     peopleHeading: 'Who runs it',
-    sourcingNote:
-      'Named executives as its own article stated them on the date in the sources below.',
+    /* Blank for the same reason as the people host's — see the note there.
+       The date each figure was read is still on the page, in the citation. */
+    sourcingNote: '',
     /*
       One section carries the parent and the subsidiaries together, and the
       schema has a heading for each, so the profile uses whichever of the two

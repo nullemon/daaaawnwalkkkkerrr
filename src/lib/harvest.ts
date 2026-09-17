@@ -72,6 +72,78 @@ export const REVIEWED_NOT_ENTITIES = new Set(
   'Star Wars video games',
   'Untitled Electronic Arts first-person shooter game',
 
+  /*
+    Organisations, moved to `factions`.
+
+    Each of these has a real article on its own wiki and arrived here filed as
+    a character, an enemy, a system or a quest - the Federal Bureau of Control
+    as a *character*, the InterGalactic Banking Clan as a *mechanic*, Project
+    War-Mantle as a *quest*. `pnpm seed:factions` writes each of them as the
+    organisation it is, from that same page, and leaving the entity copy in
+    place means two pages about one thing competing with each other in search:
+    the same cannibalisation the section-index titles caused when eight wikis
+    shared one `<title>`.
+
+    The faction record is the destination, so it keeps the source URL and the
+    infobox; this list only stops the *entity* copy being written again, and
+    `pnpm seed:prune-entities` removes the ones already there. Same
+    relationship the studios above have with the companies host.
+
+    All thirty-five were read one at a time before being listed, and the check
+    was whether the wiki's own page says "body" rather than whether the name
+    sounds like one: an organisation category, or governance in its own
+    infobox - a head of state, a commander, a founding, a headquarters.
+
+    **The Hiss is deliberately not here.** It is named as an affiliation on
+    Control character infoboxes and it has a faction record for that reason,
+    but its own page carries no organisation category and no governance at all
+    - it is categorised Enemies, and it is the thing you fight for the length
+    of the game. Deleting the enemy page for a game's principal enemy because
+    something cited it as an allegiance is the Antar 4 failure, and it was the
+    one page out of thirty-six where the check earned its keep.
+
+    Locust Horde is here and is the close call in the other direction: its
+    categories are Creatures throughout, but it also carries Government and
+    Organizations and its infobox is a government one - head of state,
+    commander, capital, constitution, dissolved. The polity is what the page
+    is about; the creatures have their own pages.
+  */
+  'Federal Bureau of Control',
+  'Coalition of Ordered Governments',
+  'Coalition of Ordered Governments Army',
+  'Coalition of Ordered Governments Air Corps',
+  'Locust Horde',
+  'Union of Independent Republics',
+  'The Order',
+  '100th Clone Company',
+  'Clone Underground',
+  'Confederacy of Independent Systems',
+  'Executive Separatist Council',
+  'Galactic Empire',
+  'Galactic Republic',
+  'Galactic Senate',
+  'Hutt Clan',
+  'Imperial Ruling Council',
+  'Imperial Security Bureau',
+  'Infinite Coil',
+  'Inquisitorius',
+  'InterGalactic Banking Clan',
+  "Ivor's platoon",
+  'Jedi High Council',
+  'Jedi Order',
+  'Project War-Mantle',
+  'Pyke Syndicate',
+  'Republic Futures Program',
+  'Republic Intelligence',
+  'Republic Military',
+  'Separatist Intelligence',
+  'Sith',
+  'Stillwatch Battalion',
+  'Tarran Assembly',
+  'Techno Union',
+  'Trade Federation',
+  'Zero Company',
+
   'Beneath the Surface: An Inside Look at Gears of War 2',
   'Books',
   'Comic Series',

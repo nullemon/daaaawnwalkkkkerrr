@@ -80,8 +80,15 @@ export const PEOPLE_BUILT_IN = {
     creditsHeading: 'Other credits',
     charactersHeading: 'Characters played',
     companiesHeading: 'Companies',
-    sourcingNote:
-      'Every detail on this page is what a cited source states. Nothing is inferred — not a nationality from a name, not a date from a photograph — and a field no source gives is left empty rather than guessed at.',
+    /*
+      Deliberately blank, by the owner's decision: the standing sourcing
+      sentence came off the profiles and they are writing the provenance
+      wording themselves. The key stays so the field keeps its box in the
+      admin and the profile keeps rendering whatever gets typed into it — a
+      field that is blank is editable, a field that is deleted is not. The
+      citations are untouched; it is only this sentence that went.
+    */
+    sourcingNote: '',
     noPhotoNote:
       'No freely licensed photograph of this person has been found. Saying so is better than a silhouette, which reads as an image that failed to load.',
   },

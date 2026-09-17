@@ -67,19 +67,26 @@ type Entry = {
 type Manifest = { fetchedAt: string; complete: boolean; people: Entry[] }
 
 /**
- * Attribution, in the form the licence asks for: who took it, under what, and
- * where the file page is so anybody can check both.
+ * Attribution, in the form the licence asks for: who took it and under what.
  *
  * Deliberately not `mediaCredit` from `src/lib/credit.ts`. That one ends
  * "Used for identification and commentary", which is the fair-dealing claim
  * the cover art makes — the opposite of what is true here. These are licensed,
  * and saying otherwise would understate the rights this network actually has
  * while overstating the ones it is claiming.
+ *
+ * **No file-page URL in the rendered line**, by the owner's decision: a raw
+ * Commons URL under a portrait is a line of percent-encoding nobody reads.
+ * The photographer and the licence stay, because those two are the licence's
+ * actual condition and dropping either would put the image outside the terms
+ * it arrived under. `filePage` stays in `raw/person-photos.json` — that file
+ * is the record of what was checked and why the image was believed to be
+ * free, and it is the only copy of that.
  */
 const photoCredit = (entry: Entry): string => {
   const licence = entry.licence && entry.licence !== 'Not stated' ? entry.licence : 'licence not stated'
   const who = entry.artist ? `Photograph of ${entry.name} by ${entry.artist}` : `Photograph of ${entry.name}`
-  return [`${who}. ${licence}.`, entry.filePage ? `Via ${entry.filePage}` : null].filter(Boolean).join(' ')
+  return `${who}. ${licence}.`
 }
 
 async function run(): Promise<void> {

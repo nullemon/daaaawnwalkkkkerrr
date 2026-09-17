@@ -182,7 +182,7 @@ export function RunChecker({
                   <span className="sub">
                     {ui.label('quest-phase', quest.phase)}
                     {quest.costKnown
-                      ? ` · ${fill(ui.t('run.segments'), { count: quest.timeMax })}`
+                      ? ` · ${fill(ui.t(quest.timeMax === 1 ? 'run.segment-one' : 'run.segments'), { count: quest.timeMax })}`
                       : ` · ${ui.t('run.cost-unconfirmed')}`}
                   </span>
                 </span>
@@ -211,7 +211,7 @@ export function RunChecker({
                       ? ui.t('run.either-phase')
                       : ui.label('quest-phase', quest.phase)}
                     {quest.costKnown
-                      ? ` · ${fill(ui.t('run.segments'), { count: quest.timeMax })}`
+                      ? ` · ${fill(ui.t(quest.timeMax === 1 ? 'run.segment-one' : 'run.segments'), { count: quest.timeMax })}`
                       : ''}
                   </span>
                 </li>

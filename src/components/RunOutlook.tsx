@@ -115,7 +115,15 @@ export function RunOutlook({
                 )}
                 {result.unknownCostCount > 0
                   ? ui.t('outlook.some-uncosted')
-                  : fill(ui.t('outlook.segments'), { count: result.maxCost })}
+                  : fill(
+                      ui.t(
+                        // "1 quest left · 1 segments" — the half of this
+                        // sentence above picks its singular and this half did
+                        // not, so they disagreed inside one line.
+                        result.maxCost === 1 ? 'outlook.segment-one' : 'outlook.segments',
+                      ),
+                      { count: result.maxCost },
+                    )}
               </span>
             ) : null}
           </li>

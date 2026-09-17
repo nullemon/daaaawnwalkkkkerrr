@@ -55,6 +55,23 @@ const SUPERSEDED: Record<string, string> = {
   */
   'unlock.stand-between-one':
     '{count} quest stand between the start of a run and this one. They have to happen in this order.',
+
+  /*
+    Both search placeholders named a perk, which only Dawnwalker has. They are
+    network-wide, and `search.hero-placeholder` sits in the first control on
+    every wiki's home page, so seven of the eight invited a reader to search
+    for a kind of thing their game does not contain.
+  */
+  'search.placeholder': 'A quest, an item, a perk, a character…',
+  'search.hero-placeholder': 'Search quests, items, perks, characters…',
+
+  /*
+    "there are 1 of them" — the plural-on-a-singular-count failure, inside the
+    `.one` key written to prevent it. `UnlockPath` picks the branch correctly;
+    the wording in the branch was wrong.
+  */
+  'unlock.no-total-one':
+    'No source publishes a cost for any of the {count} remaining step, so there is no total to give — only that there are {count} of them.',
 }
 
 /** The array row Payload generates for both tables. */

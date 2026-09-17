@@ -14,7 +14,8 @@ import { client, gameUrl, rel, relMany } from '@/lib/payload'
 import { copy, hasRichText } from '@/lib/copy'
 import { COMPANIES_BUILT_IN, COMPANY_ROLE_LABEL, getCompaniesSite } from '@/lib/companies-copy'
 import { clamp } from '@/lib/seo'
-import { COMPANIES_ORIGIN } from '@/lib/urls'
+import { COMPANIES_ORIGIN, personUrl } from '@/lib/urls'
+import { readOfficers } from '@/lib/officers'
 import type { Company, Game } from '@/payload-types'
 
 type Props = { params: Promise<{ slug: string }> }
@@ -87,6 +88,9 @@ export default async function CompanyPage({ params }: Props) {
   if (!company) notFound()
   const profile = site.profile ?? {}
   const built = COMPANIES_BUILT_IN.profile
+  /* Read once rather than inside the JSX, because it is tested for emptiness
+     before it is printed — the built-in is deliberately blank now. */
+  const sourcingNote = copy(profile.sourcingNote, built.sourcingNote)
 
   const games = relMany<Game>(company.games)
   const links = await Promise.all(
@@ -138,6 +142,15 @@ export default async function CompanyPage({ params }: Props) {
       depth: 0,
     })
   ).docs
+
+  /*
+    `keyPeople` read back against those records, so each name can link to the
+    page this network already has for them. Order and role text come from the
+    infobox string rather than from the relationship: the relationship is a
+    set, and "Megan Ellison (founder), Nathan Gary (president)" is a source
+    that states both who and in what post.
+  */
+  const officerList = readOfficers(company.keyPeople, officers as { name?: string; slug?: string }[])
 
   const absolute = (url: string) => (url.startsWith('http') ? url : `${COMPANIES_ORIGIN}${url}`)
 
@@ -314,13 +327,36 @@ export default async function CompanyPage({ params }: Props) {
                 <div className="section-head">
                   <h2>{copy(profile.peopleHeading, built.peopleHeading)}</h2>
                 </div>
-                <p>{company.keyPeople}</p>
                 {/*
-                  People change job far more often than this page is rebuilt,
-                  so the date the figure was read is part of the figure. The
-                  citation below carries it.
+                  One entry per name the infobox printed, linked where this
+                  network has a record for them. A plain `<a>`, not
+                  `next/link`: `people.<domain>` is a sibling origin, so there
+                  is no client-side navigation to be had and a prefetch would
+                  only fail quietly.
                 */}
-                <p className="note">{copy(profile.sourcingNote, built.sourcingNote)}</p>
+                <ul className="officer-list">
+                  {officerList.map((entry, index) => (
+                    <li key={`${entry.text}-${index}`}>
+                      {entry.slug ? (
+                        <a href={personUrl(`/${entry.slug}`)}>{entry.name}</a>
+                      ) : (
+                        /* No record for them, or a fragment the split rules
+                           refuse on purpose. It still prints: a name we cannot
+                           link is still a name the source stated. */
+                        entry.name ?? entry.text
+                      )}
+                      {entry.role ? <span className="note"> — {entry.role}</span> : null}
+                    </li>
+                  ))}
+                </ul>
+                {/*
+                  Blank by default and kept wired anyway. The owner is writing
+                  the provenance wording themselves; deleting the call site
+                  would leave a box in the admin that changes nothing on the
+                  page, which is the control that reads as present and does not
+                  work.
+                */}
+                {sourcingNote ? <p className="note">{sourcingNote}</p> : null}
               </section>
             ) : null}
 

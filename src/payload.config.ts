@@ -20,10 +20,12 @@ import { CourtActivities } from './collections/CourtActivities'
 import { Endings } from './collections/Endings'
 import { Achievements } from './collections/Achievements'
 import { Maps } from './collections/Maps'
+import { Factions } from './collections/Factions'
 import { Mechanics } from './collections/Mechanics'
 import { Authors } from './collections/Authors'
 import { Companies } from './collections/Companies'
 import { People } from './collections/People'
+import { Ratings } from './collections/Ratings'
 import { Guides } from './collections/Guides'
 import { Corrections } from './collections/Corrections'
 import { Requests } from './collections/Requests'
@@ -80,14 +82,16 @@ export default buildConfig({
     // Editorial
     scopedToGame(Mechanics),
     scopedToGame(Guides),
-    // Appended last, and it stays last — see the note in lib/tenancy.ts about
-    // what inserting a game-scoped collection anywhere else does to the
-    // compound index names.
+    // Appended, in GAME_SCOPED's order, and a new one goes after these rather
+    // than among them — see the note in lib/tenancy.ts about what inserting a
+    // game-scoped collection anywhere else does to the compound index names.
     scopedToGame(Maps),
+    scopedToGame(Factions),
     Authors,
     // Network-wide
     Companies,
     People,
+    Ratings,
     Games,
     // Moderation and admin
     Comments,

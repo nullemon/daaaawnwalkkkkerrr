@@ -189,7 +189,22 @@ const GENERIC: Record<string, Builder> = {
     title: 'Characters',
     description: `Every character catalogued for ${name}, with their role and what is known about them.`,
     heading: 'Characters',
-    lede: `${total} catalogued. ${detail} have official portraits; the rest are waiting on art a source actually names.`,
+    /*
+      "the rest are waiting on art a source actually names" was unconditional,
+      so Silent Hill: Townfall - 5 characters, 5 portraits - promised a rest
+      that does not exist. A sentence about records the wiki does not hold is
+      the same class of false claim as a figure nobody published, and it is
+      the state nobody looks at: a section small enough to be complete.
+
+      `${detail} have` also had no singular, which lands the first time a wiki
+      has exactly one portrait.
+    */
+    lede:
+      detail < total
+        ? `${total} catalogued. ${
+            detail === 1 ? '1 has an official portrait' : `${detail} have official portraits`
+          }; the rest are waiting on art a source actually names.`
+        : `${total} catalogued, every one with an official portrait.`,
   }),
   enemies: (name, { total }) => ({
     title: 'Enemies and bosses',
@@ -291,6 +306,14 @@ const GENERIC: Record<string, Builder> = {
           ]
             .filter(Boolean)
             .join(' '),
+  }),
+  factions: (name, { total, detail = 0 }) => ({
+    title: 'Factions and organisations',
+    description: `The armies, governments and organisations catalogued for ${name}, and who belongs to each.`,
+    heading: 'Factions',
+    lede: detail
+      ? `${plural(total, 'organisation')} catalogued for ${name}, ${detail} of them with their own sourced article. The rest are compiled from the infoboxes that name them.`
+      : `${plural(total, 'organisation')} catalogued for ${name}, compiled from the infoboxes that name them.`,
   }),
   maps: (name, { total }) => ({
     title: `${name} maps`,

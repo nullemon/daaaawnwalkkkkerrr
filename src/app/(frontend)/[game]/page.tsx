@@ -11,6 +11,9 @@ import { sectionsFor, toolsFor } from '@/lib/sections'
 import { releaseLine } from '@/lib/directory'
 import { homeCopy } from '@/lib/game-copy'
 import { copy } from '@/lib/copy'
+import { getUi } from '@/lib/ui'
+import { StarRating } from '@/components/StarRating'
+import { editorialScore, cachedReaderScore } from '@/lib/ratings'
 
 type Props = { params: Promise<{ game: string }> }
 
@@ -65,6 +68,11 @@ export default async function Home({ params }: Props) {
 
   const tools = toolsFor(game)
   const name = game.shortTitle || game.title
+
+  /* Our score and the readers', side by side rather than merged into one. */
+  const verdict = editorialScore(game)
+  const readers = await cachedReaderScore(game.id)
+  const ui = await getUi()
 
   const [guides, achievements, courts, endings] = await Promise.all([
     getAll('guides', { game: slug, depth: 1, sort: '-updatedAt' }),
@@ -269,6 +277,50 @@ export default async function Home({ params }: Props) {
                 <Link href="/requests">Tell us what you want first</Link>
               </p>
             </div>
+          ) : null}
+
+          {/*
+            Our verdict, above everything else in the column.
+
+            The one opinion on a site of sourced facts, so it is signed, dated,
+            says what it is based on, and prints the reasoning. `editorialScore`
+            returns nothing unless the rationale is there — a number with no
+            argument behind it is what every other site publishes and is the
+            thing a reader cannot answer back to.
+          */}
+          {verdict ? (
+            <section className="verdict" aria-labelledby="verdict-head">
+              <div className="verdict-head">
+                <h2 id="verdict-head" className="verdict-score">
+                  {verdict.score.toFixed(1)}
+                  <span className="verdict-outof"> / 10</span>
+                </h2>
+                {verdict.basis ? (
+                  <span className="verdict-basis">{ui.label('rating-basis', verdict.basis)}</span>
+                ) : null}
+              </div>
+              {verdict.summary ? <p className="verdict-summary">{verdict.summary}</p> : null}
+              <p className="verdict-body">{verdict.rationale}</p>
+              {/* The reader half. Live on mount here, because on this page the
+                  score is the point rather than a number in a list. */}
+              <StarRating game={game.id} readers={readers} refresh />
+              {verdict.ratedOn ? (
+                <p className="verdict-note">
+                  {/*
+                    Dated, because a game changes after launch and a score with
+                    no date is a claim about a moving target.
+                  */}
+                  Rated{' '}
+                  {new Date(verdict.ratedOn).toLocaleDateString('en-GB', {
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric',
+                    timeZone: 'UTC',
+                  })}
+                  .
+                </p>
+              ) : null}
+            </section>
           ) : null}
 
           {starters.length > 0 ? (

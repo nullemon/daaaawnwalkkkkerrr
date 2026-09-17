@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { PageHeader } from '@/components/PageHeader'
 import { RunChecker } from '@/components/RunChecker'
 import { getRunGraph } from '@/lib/runData'
-import { getGame } from '@/lib/payload'
+import { countRecords, getGame } from '@/lib/payload'
 import { requireFeature } from '@/lib/features'
 import { toolCopy } from '@/lib/game-copy'
 import { copy, pick, splitTokens } from '@/lib/copy'
@@ -18,9 +18,16 @@ type Props = { params: Promise<{ game: string }> }
 */
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { game: slug } = await params
-  const doc = await getGame(slug)
+  const [doc, endings] = await Promise.all([getGame(slug), countRecords('endings', { game: slug })])
   const words = toolCopy(doc)
-  const tokens = { game: gameName(doc) }
+  /*
+    `{endings}`, not "seven". `run/page.tsx` has the post-mortem for this exact
+    sentence one directory over - a count typed into prose is wrong the day
+    somebody adds an eighth ending - and this copy of it was left hardcoded,
+    in the meta description, which is the half that gets indexed. `countIn` is
+    cached, so the extra read costs nothing the page was not already paying.
+  */
+  const tokens = { game: gameName(doc), endings }
 
   return {
     title: copy(
@@ -30,7 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ),
     description: copy(
       words.runCheckerDescription,
-      'Enter your current day and the quests you have finished. Find out which of the seven endings are still reachable, which are out of time, and which you have.',
+      'Enter your current day and the quests you have finished. Find out which of the {endings} endings are still reachable, which are out of time, and which you have.',
       tokens,
     ),
     alternates: { canonical: '/tools/run-checker' },

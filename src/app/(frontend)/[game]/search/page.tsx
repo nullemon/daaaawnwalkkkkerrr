@@ -4,7 +4,14 @@ import { SearchBox } from '@/components/SearchBox'
 
 export const metadata: Metadata = {
   title: 'Search',
-  description: 'Search every quest, item, perk, character and guide on the site.',
+  /*
+    "perk" is gone. Perks are Dawnwalker's — `REHOME` in the entity seeder
+    folds them into mechanics for every other wiki — and this is a static
+    module-level `metadata` under `[game]`, so the same byte-identical sentence
+    was served on all eight. Quests, items and characters are seeded on every
+    wiki, so they stay.
+  */
+  description: 'Search every quest, item, character and guide on this wiki.',
   alternates: { canonical: '/search' },
   robots: { index: false, follow: true },
 }

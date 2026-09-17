@@ -16,12 +16,20 @@ export const metadata: Metadata = {
 export default function RequestsPage() {
   return (
     <>
+      {/*
+        The lede opened "This site is built around one question — what can you
+        still reach from where you are", which is the run planner's premise and
+        Dawnwalker's alone. This route lives under `[game]`, so all eight wikis
+        said it; `about/page.tsx` makes the same claim correctly, behind
+        `hasRunPlanner`. The clause is deleted rather than gated — the rest of
+        the sentence needs no game.
+      */}
       <PageHeader
         eyebrow="Help us"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Request a feature' }]}
         icon="spark"
         title="What should this site do next?"
-        lede="This site is built around one question — what can you still reach from where you are. If there is something else you keep wanting it to answer, tell us and it goes on the list."
+        lede="If there is something you keep wanting this site to answer and it does not, tell us and it goes on the list."
       />
       <div className="page body-main">
         <div className="split">

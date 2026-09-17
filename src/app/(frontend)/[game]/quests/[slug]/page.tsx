@@ -79,6 +79,17 @@ export default async function QuestPage({ params }: Props) {
   const excludes = relMany<Quest>(quest.excludes)
   const endings = relMany<Ending>(quest.affectsEndings)
   const known = quest.time?.known
+  /*
+    Segments are Dawnwalker's clock. The Callout further down this page was
+    gated on `run-checker` and the fact row above it was not, so every quest
+    page on the other seven wikis printed "Time cost — nobody has published
+    one" — which asserts the mechanic exists and only the figure is missing.
+    Seeded quests on those wikis all carry `time.known: false`, so the absent
+    branch was the only one they ever took: the claim was on every page, every
+    time. Same leak as the heading that used to say "Vale Sangora", one
+    component to the left.
+  */
+  const hasClock = (wiki?.features ?? []).includes('run-checker')
 
   return (
     <>
@@ -109,12 +120,20 @@ export default async function QuestPage({ params }: Props) {
               facts={[
                 {
                   label: 'Time cost',
-                  value: known
-                    ? `${quest.time?.min === quest.time?.max ? quest.time?.max : `${quest.time?.min}–${quest.time?.max}`} segments`
-                    : undefined,
+                  value:
+                    hasClock && known
+                      ? quest.time?.min === quest.time?.max
+                        ? // "1 segment", not "1 segments" — Night Terrors costs
+                          // one, and the meta description for this very page
+                          // already gets it right via `plural` in seo.ts, so
+                          // the body and its own search snippet disagreed.
+                          `${quest.time?.max} segment${quest.time?.max === 1 ? '' : 's'}`
+                        : `${quest.time?.min}–${quest.time?.max} segments`
+                      : undefined,
                   // "Not confirmed" rather than 0: an unpublished cost is not a
                   // free quest, and the run checker treats it as a floor too.
-                  absent: 'nobody has published one',
+                  // Only on a wiki that has the clock — see `hasClock` above.
+                  absent: hasClock ? 'nobody has published one' : undefined,
                 },
                 {
                   label: 'Phase',

@@ -37,6 +37,10 @@ export async function PersonProfile({ person }: { person: Person }) {
   const site = await getPeopleSite()
   const profile = site.profile ?? {}
 
+  /* Read here rather than in the JSX: it is tested for emptiness before it is
+     printed, because the built-in is deliberately blank. */
+  const sourcingNote = copy(profile.sourcingNote, PEOPLE_BUILT_IN.profile.sourcingNote)
+
   const photo = person.photo && typeof person.photo === 'object' ? (person.photo as Media) : null
   const roles = (person.roles ?? []).map((role) => PERSON_ROLE_LABEL[role] ?? role)
 
@@ -117,16 +121,16 @@ export async function PersonProfile({ person }: { person: Person }) {
       ) : null}
 
       {/*
-        On every profile, with no condition on it. It is the load-bearing
-        sentence of this host: these are pages about living people, and the
-        reader has to be able to tell "a source states this" from "somebody here
-        worked it out". A note that appears only on the pages that happen to
-        have facts is a note that is missing from exactly the pages where the
-        reader most needs it.
+        Blank by default now, by the owner's decision: the standing sourcing
+        sentence came off the profiles and they are writing the provenance
+        wording themselves. The call site stays wired so the admin box still
+        reaches the page — deleting it would leave a field that changes
+        nothing, which is worse than an empty one. Where it renders at all it
+        renders on every profile with no condition on the facts, because a
+        note that appears only on the pages that happen to have facts is
+        missing from exactly the pages where a reader most needs it.
       */}
-      <p className="personprofile-note">
-        {copy(profile.sourcingNote, PEOPLE_BUILT_IN.profile.sourcingNote)}
-      </p>
+      {sourcingNote ? <p className="personprofile-note">{sourcingNote}</p> : null}
     </aside>
   )
 }

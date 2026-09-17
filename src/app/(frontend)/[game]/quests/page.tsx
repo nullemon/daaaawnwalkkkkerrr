@@ -42,6 +42,8 @@ export default async function QuestIndex({ params }: Props) {
   ])
   const confirmed = quests.filter((quest) => quest.time?.known).length
   const copy = sectionCopy('quests', game, { total: quests.length, detail: confirmed })
+  /** The 480-segment clock belongs to the game that has it switched on. */
+  const hasClock = (game?.features ?? []).includes('run-checker')
 
   // Flattened for the table, which runs in the browser and so can only be
   // handed primitives. `phase` drives the badge, `phaseLabel` the filter.
@@ -91,7 +93,13 @@ export default async function QuestIndex({ params }: Props) {
             { key: 'kind', label: 'Kind' },
             { key: 'region', label: 'Region', type: 'link' },
             { key: 'phase', label: 'Phase', type: 'phase', sortable: false },
-            { key: 'segments', label: 'Segments', type: 'num' },
+            /*
+              The comment below gated the Callout and left the column it is
+              explaining. So the other seven wikis got a column headed with
+              Dawnwalker's clock unit, empty down every row, and no explanation
+              beside it — the apology was hidden and the claim was not.
+            */
+            ...(hasClock ? [{ key: 'segments', label: 'Segments', type: 'num' as const }] : []),
           ]}
         />
         {/*
@@ -103,7 +111,7 @@ export default async function QuestIndex({ params }: Props) {
           game={game}
           where="quests-index"
           heading="Why so many costs are unknown"
-          builtIn={game?.slug === 'dawnwalker'}
+          builtIn={hasClock}
         >
           <p>
             Published segment costs for individual quests disagree between sites, and we have no

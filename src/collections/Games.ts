@@ -4,6 +4,7 @@ import { APEX_ONLY, NETWORK_SUBDOMAINS } from '../proxy'
 import { hostLabelProblem } from '../lib/host-label'
 import { gameProfileGroup } from '../fields/gameProfile'
 import { gameCopyTabs } from '../fields/gameCopy'
+import { ratingGroup } from '../fields/rating'
 import { analyticsFields, verificationFields } from '../fields/analytics'
 
 /**
@@ -191,6 +192,7 @@ export const Games: CollectionConfig = {
       },
     },
     gameProfileGroup(),
+    ratingGroup(),
     {
       name: 'features',
       type: 'select',

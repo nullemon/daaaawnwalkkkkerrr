@@ -83,9 +83,11 @@ export interface Config {
     mechanics: Mechanic;
     guides: Guide;
     maps: Map;
+    factions: Faction;
     authors: Author;
     companies: Company;
     people: Person;
+    ratings: Rating;
     games: Game;
     comments: Comment;
     corrections: Correction;
@@ -115,9 +117,11 @@ export interface Config {
     mechanics: MechanicsSelect<false> | MechanicsSelect<true>;
     guides: GuidesSelect<false> | GuidesSelect<true>;
     maps: MapsSelect<false> | MapsSelect<true>;
+    factions: FactionsSelect<false> | FactionsSelect<true>;
     authors: AuthorsSelect<false> | AuthorsSelect<true>;
     companies: CompaniesSelect<false> | CompaniesSelect<true>;
     people: PeopleSelect<false> | PeopleSelect<true>;
+    ratings: RatingsSelect<false> | RatingsSelect<true>;
     games: GamesSelect<false> | GamesSelect<true>;
     comments: CommentsSelect<false> | CommentsSelect<true>;
     corrections: CorrectionsSelect<false> | CorrectionsSelect<true>;
@@ -582,6 +586,10 @@ export interface Enemy {
   image?: (number | null) | Media;
   isBoss?: boolean | null;
   region?: (number | null) | Region;
+  /**
+   * The organisations it belongs to, as its sources name them.
+   */
+  faction?: (number | Faction)[] | null;
   weaknesses?:
     | {
         value: string;
@@ -589,6 +597,88 @@ export interface Enemy {
       }[]
     | null;
   phase?: ('day' | 'night' | 'either') | null;
+  /**
+   * Shown to readers as a badge. Be honest — it is the whole point of this site.
+   */
+  confidence: 'high' | 'medium' | 'low';
+  /**
+   * One or two sentences. Used on cards, in search results and as the page lede.
+   */
+  summary: string;
+  /**
+   * The main article. Original prose only — never paste from another site.
+   */
+  body?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  /**
+   * Cite every figure. Two independent sources before marking confidence high.
+   */
+  sources?:
+    | {
+        title: string;
+        url: string;
+        retrieved?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Leave blank to derive from the title and summary.
+   */
+  seo?: {
+    /**
+     * Under ~60 characters. Overrides the <title> tag.
+     */
+    title?: string | null;
+    /**
+     * Under ~155 characters. Overrides the meta description.
+     */
+    description?: string | null;
+    /**
+     * Hide this page from search engines.
+     */
+    noindex?: boolean | null;
+  };
+  /**
+   * Which wiki this belongs to. Moving a record between games changes its URL.
+   */
+  game: number | Game;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Armies, governments, corporations, cults and criminal outfits. Members are listed on the member, not here.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "factions".
+ */
+export interface Faction {
+  id: number;
+  title: string;
+  /**
+   * URL segment. Auto-filled from the title. Changing it breaks existing links.
+   */
+  slug: string;
+  /**
+   * Optional. An emblem or piece of art for this record. Until one is set, the site falls back to its own icon, so a missing image never leaves a hole.
+   */
+  image?: (number | null) | Media;
+  /**
+   * Only where a source supports it. Leave empty rather than inferring a kind from the name.
+   */
+  kind?: ('military' | 'government' | 'corporation' | 'cult' | 'criminal' | 'other') | null;
   /**
    * Shown to readers as a badge. Be honest — it is the whole point of this site.
    */
@@ -787,6 +877,31 @@ export interface Game {
     poster?: (number | null) | Media;
   };
   /**
+   * The only opinion on this site. It renders only when the score and the reasoning are both filled in — a number with no argument behind it is what everybody else publishes.
+   */
+  rating?: {
+    /**
+     * One decimal place. Leave empty for no rating at all.
+     */
+    score?: number | null;
+    /**
+     * Printed beside the score. An outlook is not a review and the page must not let a reader think it is.
+     */
+    basis?: ('played' | 'published' | 'outlook') | null;
+    /**
+     * A game changes after launch; a score with no date is a claim about a moving target.
+     */
+    ratedOn?: string | null;
+    /**
+     * Shown under the stars and in the directory card. One sentence, not a slogan.
+     */
+    summary?: string | null;
+    /**
+     * Required for the rating to appear anywhere. Say what it does well, what it does badly, and what would move the number — this is the part a reader can disagree with, which is the only thing that makes a score worth publishing.
+     */
+    rationale?: string | null;
+  };
+  /**
    * Bespoke tools this game switches on. Most games have none — a tool nobody built for this game should not appear in its navigation.
    */
   features?: ('run-checker' | 'build-planner' | 'completion-tracker' | 'comments')[] | null;
@@ -817,7 +932,8 @@ export interface Game {
           | 'builds'
           | 'mechanics'
           | 'guides'
-          | 'maps';
+          | 'maps'
+          | 'factions';
         /**
          * The <title>, before the layout appends the wiki name. This is what a search result shows, so make it different from every other wiki’s.
          */
@@ -1311,6 +1427,10 @@ export interface Character {
    */
   region?: (number | null) | Region;
   /**
+   * The organisations they belong to, as their sources name them.
+   */
+  faction?: (number | Faction)[] | null;
+  /**
    * Their questline, in order. Drives ally-gated endings.
    */
   questline?: (number | Quest)[] | null;
@@ -1392,6 +1512,10 @@ export interface Item {
   category: 'weapon' | 'armour' | 'ring' | 'manual' | 'recipe' | 'consumable' | 'ingredient' | 'quest';
   rarity?: ('legendary' | 'rare' | 'common') | null;
   region?: (number | null) | Region;
+  /**
+   * The organisations that field it, as its sources name them.
+   */
+  faction?: (number | Faction)[] | null;
   /**
    * How it is obtained. Explains an empty region rather than leaving the index blank.
    */
@@ -2657,6 +2781,26 @@ export interface Person {
   createdAt: string;
 }
 /**
+ * Reader scores, one per person per game. Nothing here is written by hand — delete a row to remove a vote.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ratings".
+ */
+export interface Rating {
+  id: number;
+  game: number | Game;
+  /**
+   * Whole stars, 1 to 10.
+   */
+  score: number;
+  /**
+   * A salted hash of the reader’s IP and their cookie. The address itself is never stored, so this table holds no personal data.
+   */
+  voter: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * Nothing here is public until you approve it. Sorted worst-first by spam score — work the top of the list.
  *
  * This interface was referenced by `Config`'s JSON-Schema
@@ -2958,6 +3102,10 @@ export interface PayloadLockedDocument {
         value: number | Map;
       } | null)
     | ({
+        relationTo: 'factions';
+        value: number | Faction;
+      } | null)
+    | ({
         relationTo: 'authors';
         value: number | Author;
       } | null)
@@ -2968,6 +3116,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'people';
         value: number | Person;
+      } | null)
+    | ({
+        relationTo: 'ratings';
+        value: number | Rating;
       } | null)
     | ({
         relationTo: 'games';
@@ -3297,6 +3449,7 @@ export interface CharactersSelect<T extends boolean = true> {
   role?: T;
   romanceable?: T;
   region?: T;
+  faction?: T;
   questline?: T;
   portrait?: T;
   confidence?: T;
@@ -3331,6 +3484,7 @@ export interface EnemiesSelect<T extends boolean = true> {
   image?: T;
   isBoss?: T;
   region?: T;
+  faction?: T;
   weaknesses?:
     | T
     | {
@@ -3437,6 +3591,7 @@ export interface ItemsSelect<T extends boolean = true> {
   category?: T;
   rarity?: T;
   region?: T;
+  faction?: T;
   acquisition?: T;
   howToGet?: T;
   stats?:
@@ -3640,6 +3795,37 @@ export interface MapsSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "factions_select".
+ */
+export interface FactionsSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  image?: T;
+  kind?: T;
+  confidence?: T;
+  summary?: T;
+  body?: T;
+  sources?:
+    | T
+    | {
+        title?: T;
+        url?: T;
+        retrieved?: T;
+        id?: T;
+      };
+  seo?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        noindex?: T;
+      };
+  game?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "authors_select".
  */
 export interface AuthorsSelect<T extends boolean = true> {
@@ -3778,6 +3964,17 @@ export interface PeopleSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ratings_select".
+ */
+export interface RatingsSelect<T extends boolean = true> {
+  game?: T;
+  score?: T;
+  voter?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "games_select".
  */
 export interface GamesSelect<T extends boolean = true> {
@@ -3827,6 +4024,15 @@ export interface GamesSelect<T extends boolean = true> {
         teamSize?: T;
         commercialNote?: T;
         poster?: T;
+      };
+  rating?:
+    | T
+    | {
+        score?: T;
+        basis?: T;
+        ratedOn?: T;
+        summary?: T;
+        rationale?: T;
       };
   features?: T;
   relatedGames?: T;

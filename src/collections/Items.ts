@@ -39,6 +39,17 @@ export const Items: CollectionConfig = {
     },
     { name: 'region', type: 'relationship', relationTo: 'regions' },
     {
+      // Whose equipment it is. Harvested weapon infoboxes state this more
+      // often than they state where the thing is found, and they routinely
+      // name several — a rifle fielded by the COG and by its Army is one
+      // rifle with two users. See the note on `faction` in Characters.ts.
+      name: 'faction',
+      type: 'relationship',
+      relationTo: 'factions',
+      hasMany: true,
+      admin: { description: 'The organisations that field it, as its sources name them.' },
+    },
+    {
       /*
         Why an item has no region, so the index can say something true instead
         of a dash. Most items genuinely have no single region: a herb that grows

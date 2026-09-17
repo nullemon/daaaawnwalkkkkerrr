@@ -88,6 +88,19 @@ async function run(): Promise<void> {
     // those and matches on their generated titles.
     if (collection === 'guides') continue
 
+    /*
+      Nor factions, and this one is load-bearing rather than tidy.
+
+      `REVIEWED_NOT_ENTITIES` now lists thirty-five organisations *because*
+      they belong in `factions` — the Galactic Republic, the Federal Bureau of
+      Control, the Locust Horde. Walking this collection with that list would
+      delete the destination along with the entity copy it is redirecting, and
+      the run would report it as a successful prune. `pnpm seed:factions`
+      writes these with its own filters, the same way `seed:prune` owns the
+      generated guides.
+    */
+    if (collection === 'factions') continue
+
     const docs = await payload.find({ collection, limit: 10000, depth: 0 })
     for (const doc of docs.docs as unknown as {
       id: string | number

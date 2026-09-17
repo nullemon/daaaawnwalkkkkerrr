@@ -72,6 +72,8 @@ export default async function RegionPage({ params }: Props) {
 
   const costed = quests.filter((quest) => quest.time?.known)
   const knownSegments = costed.reduce((total, quest) => total + (quest.time?.max ?? 0), 0)
+  /** The 480-segment clock belongs to the game that has it switched on. */
+  const hasClock = (wiki?.features ?? []).includes('run-checker')
 
   const questItems: RelatedItem[] = quests.map((quest) => ({
     id: quest.id,
@@ -147,12 +149,24 @@ export default async function RegionPage({ params }: Props) {
                     so the label has to say how many of them there were or the
                     number reads as the price of clearing the whole region.
                   */
+                  /*
+                    And only on a wiki that has the clock. The Callout twenty
+                    lines down was gated for exactly this reason and this row
+                    was not, so every region page on the other seven wikis
+                    printed "Segment cost — none of the 4 are costed" — an
+                    apology for a missing figure in a mechanic those games do
+                    not have. Quest→region edges are written for all seven, so
+                    it was live, not hypothetical.
+                  */
                   label: 'Segment cost',
                   value:
-                    costed.length > 0
+                    hasClock && costed.length > 0
                       ? `${knownSegments}+ (${costed.length} of ${quests.length} costed)`
                       : undefined,
-                  absent: quests.length > 0 ? `none of the ${quests.length} are costed` : undefined,
+                  absent:
+                    hasClock && quests.length > 0
+                      ? `none of the ${quests.length} are costed`
+                      : undefined,
                 },
                 { label: 'Court activities', value: court.length || undefined },
                 { label: 'Legendaries', value: items.filter((i) => i.rarity === 'legendary').length || undefined },

@@ -38,6 +38,9 @@ export const GAME_SCOPED = [
     change that costs nothing.
   */
   'maps',
+  // And `factions` after `maps`, for exactly the reason above. It is the
+  // newest game-scoped collection, so it goes last; the next one goes after it.
+  'factions',
 ] as const
 
 export type GameScopedCollection = (typeof GAME_SCOPED)[number]
@@ -89,4 +92,5 @@ export const SECTION_PATH: Record<GameScopedCollection, string> = {
   mechanics: '/mechanics',
   guides: '/guides',
   maps: '/maps',
+  factions: '/factions',
 }

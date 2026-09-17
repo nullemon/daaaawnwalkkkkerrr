@@ -107,6 +107,18 @@ async function run(): Promise<void> {
   for (const collection of GAME_SCOPED) {
     if (collection === 'guides') continue
 
+    /*
+      Nor factions, and for the same reason `seed:prune-entities` skips them.
+
+      `REVIEWED_NOT_ENTITIES` lists thirty-five organisations *because* they
+      belong here — the Galactic Republic, the Locust Horde, the Federal
+      Bureau of Control. Asking that list about this collection reports every
+      one of them as a record of the wrong kind, which is the exact inverse of
+      the truth: they are the only records on the site that are filed right.
+      Left in, it printed "35 wrong" and failed the run on a clean database.
+    */
+    if (collection === 'factions') continue
+
     const docs = await payload.find({ collection, limit: 10000, depth: 0 })
     const byTitle = new Map<string, string[]>()
 

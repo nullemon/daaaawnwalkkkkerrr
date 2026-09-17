@@ -189,11 +189,26 @@ export default async function HubHome() {
           email: settings.contactEmail,
         })}
       />
+      {/*
+        No `searchPath` here, unlike a wiki's.
+
+        `webSite` turns one into a `SearchAction` whose `urlTemplate` is
+        `<host>/search?q={term}` - the sitelinks search box. A wiki has a
+        `/search` page and that template resolves. The hub does not: `search`
+        is reserved in `APEX_ONLY` so it is never read as a game slug, but no
+        route was ever written behind it, and the apex answers /search with a
+        404. The hub's search is `HubSearch` on this page, which is client
+        state with no query parameter to point at.
+
+        So this was a machine-readable promise to every crawler that reads it,
+        redeemable at a URL that does not exist - and nothing on the page looks
+        wrong, because JSON-LD is invisible. Claim it again when there is a
+        page to claim.
+      */}
       <JsonLd
         data={webSite(HUB_ORIGIN, {
           name: settings.siteName,
           description: settings.heroSubheading || settings.description,
-          searchPath: '/search',
         })}
       />
       <JsonLd

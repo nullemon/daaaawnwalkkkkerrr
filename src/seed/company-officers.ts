@@ -288,7 +288,10 @@ const FOLD: Record<string, string> = {
   ı: 'i',
 }
 
-const personSlug = (name: string): string =>
+/* Exported because `src/lib/officers.ts` links the same names back on the
+   company profile, and a second fold there would disagree with this one on
+   exactly the records the fold exists for. */
+export const personSlug = (name: string): string =>
   slugify(
     name
       .normalize('NFD')

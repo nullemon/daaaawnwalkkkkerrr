@@ -44,6 +44,7 @@ export const SECTIONS: Section[] = [
   { label: 'The Court', href: SECTION_PATH['courts'], icon: 'crown', collection: 'courts', kind: 'Court', priority: 0.7 },
   { label: 'Characters', href: SECTION_PATH['characters'], icon: 'person', collection: 'characters', kind: 'Character', priority: 0.6 },
   { label: 'Enemies', href: SECTION_PATH['enemies'], icon: 'skull', collection: 'enemies', kind: 'Enemy', priority: 0.6 },
+  { label: 'Factions', href: SECTION_PATH['factions'], icon: 'shield', collection: 'factions', kind: 'Faction', priority: 0.6 },
   { label: 'Skill trees', href: SECTION_PATH['skill-trees'], icon: 'spark', collection: 'skill-trees', kind: 'Skill tree', priority: 0.6 },
   { label: 'Perks', href: SECTION_PATH['perks'], icon: 'star', collection: 'perks', kind: 'Perk', priority: 0.7 },
   { label: 'Items', href: SECTION_PATH['items'], icon: 'sword', collection: 'items', kind: 'Item', priority: 0.6 },
