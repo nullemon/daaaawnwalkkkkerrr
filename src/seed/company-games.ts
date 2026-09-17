@@ -263,27 +263,36 @@ const run = async (): Promise<void> => {
       keep for ever: it fills gaps and never deletes, so tightening the parser
       does nothing to what the loose one already wrote.
 
-      Four conditions, and each one is doing work:
+      Two things have to be true of every row this removes, and then one of
+      three shapes:
 
         - the fresh harvest for this company does not list it, and there *is* a
-          fresh harvest to be absent from. A company we failed to read is not a
-          company whose catalogue is wrong.
-        - nothing on it a person fills — no price, no store link, no score, no
-          genre, no reviews, no wiki link.
-        - no year. A dated row is a release, and "Perfect World (2006)" is a
-          real game that happens to share its name with a company on this host.
-        - and then either nothing else at all, or a title that is another
-          company's name. Asobo Studio's THQ, Disney Interactive Studios,
-          Microsoft Studios and HIP Interactive are bare; Argonaut Games' "Xbox"
-          carries a platform reading "Global Star Software" and Blackbird
-          Interactive's "Focus Entertainment" one reading "Released via early
-          access in 2020." — the next column along again, so the field that was
-          supposed to show a human had been here was filled by the same bug.
+          fresh harvest for it to be absent from. A company we failed to read is
+          not a company whose catalogue is wrong.
+        - nothing on it that a person fills: no price, no store link, no score,
+          no genre, no reviews, no wiki link. Those are an editor's work and
+          this pass does not own them.
+
+      Then the row is one of:
+
+        - a title that is nothing but platform names — "PlayStation 4, Xbox
+          One", "Arcade, Amiga, Amstrad CPC". No game is called that, whatever
+          year sits next to it.
+        - another company on this host, with no year. Asobo Studio's THQ,
+          Disney Interactive Studios and HIP Interactive; Argonaut Games'
+          "Xbox", whose platform column reads "Global Star Software". The year
+          is what keeps "Perfect World (2006)", a real game that shares its name
+          with a company here.
+        - nothing but a title: no year, no platforms — and only where the
+          harvest was not capped. Sixty titles is where a catalogue stops being
+          a catalogue, so a company with more than sixty has rows on the record
+          that today's sixty do not include; an earlier run of this prune took
+          Glover, Chicken Run and Frogger 2 off Blitz Games Studios that way.
     */
     const existing = stored.filter((row) => {
       const id = key(row.title ?? '')
       if (harvested.has(id) || entry.titles.length === 0) return true
-      if (filled(row.year)) return true
+
       const edited =
         filled(row.priceText) ||
         filled(row.storeUrl) ||
@@ -293,19 +302,13 @@ const run = async (): Promise<void> => {
         filled(row.coveredBy)
       if (edited) return true
 
-      /*
-        Absence from a *capped* harvest proves nothing. Sixty titles is where a
-        catalogue stops being a catalogue, and a company with more than sixty
-        has rows on the record that today's sixty do not include — Blitz Games
-        Studios lost Glover, Chicken Run and Frogger 2 that way on the first
-        run of this prune, all three real games, none of them in the fresh
-        sixty. Where the harvest was capped, only a row that can be recognised
-        as the wrong column by looking at it goes.
-      */
       const capped = (entry.found ?? 0) > entry.titles.length
-      const wrongColumn = companyNames.has(id) || looksLikePlatforms(row.title ?? '')
-      if (capped && !wrongColumn) return true
-      if (filled(row.platforms) && !wrongColumn) return true
+      const bare = !filled(row.year) && !filled(row.platforms)
+      const wrong =
+        looksLikePlatforms(row.title ?? '') ||
+        (companyNames.has(id) && !filled(row.year)) ||
+        (bare && !capped)
+      if (!wrong) return true
 
       prunedRows.push(`${slug}: ${row.title}`)
       pruned += 1

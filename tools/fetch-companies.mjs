@@ -1,7 +1,7 @@
 /**
  * Company facts for the companies host, from Wikipedia.
  *
- *   node tools/fetch-companies.mjs [--limit 100]
+ *   node tools/fetch-companies.mjs [--limit 300]
  *
  * ## Where the list comes from
  *
@@ -52,7 +52,16 @@ const LICENCE = 'CC BY-SA 4.0'
 const RANKING_ARTICLE = 'List of largest video game companies by revenue'
 
 const limitArg = process.argv.indexOf('--limit')
-const LIMIT = limitArg > -1 ? Number(process.argv[limitArg + 1]) : 100
+/*
+  300, because that is what the committed harvest holds.
+
+  It defaulted to 100 while `src/seed/raw/companies.json` had three hundred
+  rows, so a plain `pnpm fetch:companies` produced a third of the file and was
+  then refused by the shrink guard — correctly, and confusingly: the command in
+  the docs could not be run as written, and the only way to find that out was to
+  run it and read the refusal.
+*/
+const LIMIT = limitArg > -1 ? Number(process.argv[limitArg + 1]) : 300
 
 /** Games this network covers, so their makers are always included. */
 const NETWORK_HOLDERS = [
