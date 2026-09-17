@@ -19,7 +19,7 @@ import {
   getPeopleSite,
 } from '@/lib/people-copy'
 import { clamp } from '@/lib/seo'
-import { companyUrl } from '@/lib/urls'
+import { companyUrl, hub } from '@/lib/urls'
 import type { Character, Company, Game, Person } from '@/payload-types'
 
 type Props = { params: Promise<{ slug: string }> }
@@ -270,7 +270,9 @@ export default async function PersonPage({ params }: Props) {
               </section>
             ) : null}
 
-            <Sources sources={person.sources} />
+            {/* The hub's contact page, not `/corrections`: that route is a
+                wiki's and 404s on this host. See the prop's note in Sources. */}
+            <Sources sources={person.sources} correctionsHref={hub('/contact')} />
           </div>
 
           <div className="stack">

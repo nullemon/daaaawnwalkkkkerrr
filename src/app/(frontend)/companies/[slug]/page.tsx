@@ -14,7 +14,7 @@ import { client, gameUrl, rel, relMany } from '@/lib/payload'
 import { copy, hasRichText } from '@/lib/copy'
 import { COMPANIES_BUILT_IN, COMPANY_ROLE_LABEL, getCompaniesSite } from '@/lib/companies-copy'
 import { clamp } from '@/lib/seo'
-import { COMPANIES_ORIGIN, personUrl } from '@/lib/urls'
+import { COMPANIES_ORIGIN, hub, personUrl } from '@/lib/urls'
 import { readOfficers } from '@/lib/officers'
 import type { Company, Game } from '@/payload-types'
 
@@ -399,7 +399,9 @@ export default async function CompanyPage({ params }: Props) {
               </section>
             ) : null}
 
-            <Sources sources={company.sources} />
+            {/* The hub's contact page, not `/corrections`: that route is a
+                wiki's and 404s on this host. See the prop's note in Sources. */}
+            <Sources sources={company.sources} correctionsHref={hub('/contact')} />
           </div>
 
           <div className="stack">

@@ -111,8 +111,17 @@ export default async function GuidePage({ params }: Props) {
     headline: doc.seo?.title || doc.title,
     description: clamp(doc.seo?.description || doc.summary || ''),
     ...(doc.updated ? { dateModified: new Date(doc.updated).toISOString() } : {}),
+    /*
+      `hub()`, not a bare path. A relative `url` in JSON-LD resolves against
+      the page it is on, and this page is on a wiki: `/authors/<slug>` became
+      `dawnwalker.<domain>/authors/<slug>`, which 404s, because contributor
+      profiles exist once at the apex. The visible byline a hundred lines down
+      already crosses the origin with `hub()` for that exact reason; the
+      machine-readable copy of the same link did not, and a broken URL in
+      structured data is the kind that nobody sees.
+    */
     ...(person
-      ? { author: { '@type': 'Person', name: person.name, url: `/authors/${person.slug}` } }
+      ? { author: { '@type': 'Person', name: person.name, url: hub(`/authors/${person.slug}`) } }
       : {}),
   }
 

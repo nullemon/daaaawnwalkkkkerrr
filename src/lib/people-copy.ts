@@ -125,7 +125,18 @@ export const PERSON_ROLE_LABEL: Record<string, string> = {
   composer: 'Composer',
   producer: 'Producer',
   programmer: 'Programmer',
-  developer: 'Developer',
+  /*
+    The schema's own label for this value is "Developer (role not stated)"
+    (`collections/People.ts:91`), and it is worded that way on purpose:
+    `seed:company-officers` picks `developer` precisely when the article names
+    somebody among a company's key people and states no post. This map dropped
+    the qualifier, so 165 profiles printed the bare word - a job title no
+    source gave them - in the roles panel, on their directory badge and in the
+    page title, while the body of the same page said "with no post stated".
+    This map's own docstring says it exists so a role cannot be worded two ways
+    on two pages; the admin and the page were the two pages.
+  */
+  developer: 'Developer (role not stated)',
   actor: 'Actor',
   'voice-actor': 'Voice actor',
   'motion-capture': 'Motion capture',

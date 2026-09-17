@@ -74,7 +74,23 @@ export default async function CourtIndex({ params }: Props) {
             />
           ))}
         </div>
-        <Callout game={doc} where="courts-index" heading="You do not need to clear everything">
+        {/*
+          `builtIn` was missing, and it defaults to true - so this was one of
+          exactly two Callouts in the whole `[game]` tree with no gate on it,
+          and the body is Dawnwalker's duel arithmetic. Nothing reaches it
+          today because the page 404s on an empty collection and only
+          Dawnwalker has courts, but `section-copy.ts` ships a generic
+          `courts` builder for other games, so the architecture expects a
+          second wiki to have them - and the day one does, it inherits three
+          quarters of a vassal's activities as fact. Same gate as
+          `court/[slug]`, which has it.
+        */}
+        <Callout
+          game={doc}
+          where="courts-index"
+          heading="You do not need to clear everything"
+          builtIn={(doc?.features ?? []).includes('run-checker')}
+        >
           <p>
             Reporting puts the duel threshold at roughly three quarters of a vassal&rsquo;s
             activities, not all of them. Across all three courts that is the single biggest saving

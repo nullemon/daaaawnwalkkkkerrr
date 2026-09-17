@@ -20,12 +20,12 @@ type Source = { title?: string | null; url?: string | null; retrieved?: string |
 const CAVEAT =
   'Facts compiled from public sources and not verified against the game. Spotted an error? {corrections} — corrections go straight to our review queue.'
 
-function caveat(template: string) {
+function caveat(template: string, correctionsHref: string) {
   return splitTokens(template).map((part, index) => {
     if ('text' in part) return <span key={index}>{part.text}</span>
     if (part.token === 'corrections')
       return (
-        <a key={index} href="/corrections">
+        <a key={index} href={correctionsHref}>
           Tell us
         </a>
       )
@@ -46,7 +46,24 @@ function caveat(template: string) {
  * record without one, whichever way the switch is set. Hiding the list does not
  * make the site less sourced; it makes the page shorter.
  */
-export async function Sources({ sources }: { sources?: Source[] | null }) {
+export async function Sources({
+  sources,
+  /*
+    Where "Tell us" goes from the host this is rendered on.
+
+    `/corrections` is a `[game]` route and exists on a wiki. It does not exist
+    on `companies.` or `people.`, where the proxy maps the path onto that
+    host's own first segment - so `/corrections` fell into `[slug]`, found no
+    record and 404'd, on all 890 profiles. The caveat always renders, so this
+    was a promise of a review queue and a dead link under it on every page of
+    two hosts. A caller that is not on a wiki passes the address that does
+    exist for it.
+  */
+  correctionsHref = '/corrections',
+}: {
+  sources?: Source[] | null
+  correctionsHref?: string
+}) {
   const settings = await getSiteSettings()
   const show = Boolean(settings.showSources) && Boolean(sources?.length)
 
@@ -69,7 +86,7 @@ export async function Sources({ sources }: { sources?: Source[] | null }) {
           </ul>
         </>
       ) : null}
-      <p className="note">{caveat(pick(settings.sourcesCaveat, CAVEAT))}</p>
+      <p className="note">{caveat(pick(settings.sourcesCaveat, CAVEAT), correctionsHref)}</p>
     </section>
   )
 }

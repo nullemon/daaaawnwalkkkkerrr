@@ -62,6 +62,32 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return wikiSitemap(label)
 }
 
+/**
+ * Two things a record can say that keep it out of every sitemap on this site.
+ *
+ * `seo.noindex` is the editor's "hide this page from search engines" checkbox.
+ * It reached the page's `<meta robots>` on all eighteen detail routes and
+ * reached no sitemap but the apex's, so a ticked record was served `noindex`
+ * *and* listed for crawling - the site telling a crawler to come and then not
+ * to look, which is the same contradiction the comment on the author loop
+ * below says is the reason that filter exists. Nothing is ticked today; this
+ * is the guard for the first time somebody does.
+ *
+ * `_status` is the one that has already cost this project a day. `guides` is
+ * the only collection with drafts, Payload defaults a created document to
+ * `draft`, and a draft is a complete row that 404s - 335 of them shipped
+ * counted, verified and broken. `publish-guides.ts` states in its own header
+ * that "the page 404s, the sitemap omits it". The sitemap did not omit it:
+ * nothing here has ever read `_status`. `pnpm verify` catches drafts now, but
+ * a sitemap full of 404s is a crawl error against the whole host and is worth
+ * a guard of its own rather than one check somebody has to remember to run.
+ */
+const hiddenFromSitemap = (record: unknown): boolean => {
+  const doc = record as { seo?: { noindex?: boolean | null } | null; _status?: string | null }
+  if (doc?.seo?.noindex) return true
+  return Boolean(doc?._status) && doc._status !== 'published'
+}
+
 /** Every company profile, on the companies host. */
 async function companiesSitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date()
@@ -69,12 +95,14 @@ async function companiesSitemap(): Promise<MetadataRoute.Sitemap> {
   const companies = await payload.find({ collection: 'companies', limit: 1000, depth: 0 })
   return [
     { url: companyUrl('/'), lastModified: now, changeFrequency: 'weekly', priority: 1 },
-    ...companies.docs.map((company) => ({
-      url: companyUrl(`/${company.slug}`),
-      lastModified: company.updatedAt ? new Date(company.updatedAt) : now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.5,
-    })),
+    ...companies.docs
+      .filter((company) => !hiddenFromSitemap(company))
+      .map((company) => ({
+        url: companyUrl(`/${company.slug}`),
+        lastModified: company.updatedAt ? new Date(company.updatedAt) : now,
+        changeFrequency: 'monthly' as const,
+        priority: 0.5,
+      })),
   ]
 }
 
@@ -85,12 +113,14 @@ async function peopleSitemap(): Promise<MetadataRoute.Sitemap> {
   const people = await payload.find({ collection: 'people', limit: 2000, depth: 0 })
   return [
     { url: personUrl('/'), lastModified: now, changeFrequency: 'weekly', priority: 1 },
-    ...people.docs.map((person) => ({
-      url: personUrl(`/${person.slug}`),
-      lastModified: person.updatedAt ? new Date(person.updatedAt) : now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.5,
-    })),
+    ...people.docs
+      .filter((person) => !hiddenFromSitemap(person))
+      .map((person) => ({
+        url: personUrl(`/${person.slug}`),
+        lastModified: person.updatedAt ? new Date(person.updatedAt) : now,
+        changeFrequency: 'monthly' as const,
+        priority: 0.5,
+      })),
   ]
 }
 
@@ -159,7 +189,8 @@ async function wikiSitemap(slug: string): Promise<MetadataRoute.Sitemap> {
   ]
 
   for (const section of SECTIONS) {
-    const docs = await getAll(section.collection, { game: slug, depth: 0 })
+    const all = await getAll(section.collection, { game: slug, depth: 0 })
+    const docs = all.filter((record) => !hiddenFromSitemap(record))
     if (docs.length === 0) continue
 
     // The index only earns a place once it has something on it.

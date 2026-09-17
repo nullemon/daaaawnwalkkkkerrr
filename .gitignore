@@ -37,3 +37,8 @@ assets/**
 # will otherwise commit several megabytes of them.
 s-*.png
 shot-*.png
+
+# Scratch scripts written while investigating. One got committed once; a
+# pattern is cheaper than remembering.
+/.scratch-*
+/.bughunt-*

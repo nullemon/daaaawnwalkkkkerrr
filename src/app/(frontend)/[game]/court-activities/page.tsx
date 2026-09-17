@@ -106,11 +106,18 @@ export default async function CourtActivitiesIndex({ params }: Props) {
           ]}
         />
 
+        {/*
+          The other ungated Callout. Its body is the same duel threshold, and
+          it ends in a hardcoded link to `/guides/are-court-activities-worth-it`
+          - a Dawnwalker guide slug that 404s on any wiki that does not hold
+          that guide. Gated like every other one in this tree.
+        */}
         <Callout
           game={doc}
           where="court-activities-index"
           heading={`You need about ${needed} of ${total}`}
           tokens={{ needed, total, optional: total - needed }}
+          builtIn={(doc?.features ?? []).includes('run-checker')}
         >
           <p>
             The duel unlocks at roughly three quarters of a vassal&rsquo;s activities, so around{' '}
