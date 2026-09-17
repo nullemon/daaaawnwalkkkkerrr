@@ -3,6 +3,7 @@ import { SectionNeighbours } from '@/components/SectionNeighbours'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
+import { EntityImage } from '@/components/EntityImage'
 import { Confidence, PhaseBadge } from '@/components/Badges'
 import { Facts } from '@/components/Facts'
 import { RichText } from '@/components/RichText'
@@ -69,6 +70,8 @@ export default async function CourtActivityPage({ params }: Props) {
         }
       />
       <div className="page body-main">
+        {/* Generated emblem, not art from the game. See `make-emblems.mjs`. */}
+        <EntityImage media={doc.image} shape="square" />
         <Facts
           items={[
             {

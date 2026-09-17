@@ -132,6 +132,164 @@ export const Companies: CollectionConfig = {
       admin: { description: 'Companies this one owns, as its own article names them.' },
     },
     {
+      /*
+        How it started, in fields rather than in a paragraph.
+
+        "How they started and how it is going" is the question a company page
+        exists to answer, and the honest way to answer it is from things a
+        source states outright: who founded it and when, what it used to be
+        called, who owns it now, what it is known for. Composing a narrative
+        from those is safe. Reading a company's history section and
+        paraphrasing it is not, and would also be pasting somebody else's
+        prose, which this project does not do anywhere.
+      */
+      type: 'collapsible',
+      label: 'History',
+      fields: [
+        {
+          type: 'row',
+          fields: [
+            {
+              name: 'founders',
+              type: 'text',
+              admin: { width: '50%', description: 'As the article names them.' },
+            },
+            {
+              name: 'formerNames',
+              type: 'text',
+              admin: { width: '50%', description: 'What it was called before, where a source says.' },
+            },
+          ],
+        },
+        {
+          type: 'row',
+          fields: [
+            {
+              name: 'acquired',
+              type: 'text',
+              admin: {
+                width: '50%',
+                description: 'Who bought it and when, e.g. "Tencent, 2024". The parent relationship is the link; this is the event.',
+              },
+            },
+            {
+              name: 'defunct',
+              type: 'text',
+              admin: {
+                width: '50%',
+                description:
+                  'The year it closed, if it has. A studio that no longer exists is the single most useful thing this page can say about it, and the one most often missing elsewhere.',
+              },
+            },
+          ],
+        },
+        {
+          name: 'franchises',
+          type: 'text',
+          label: 'Known for',
+          admin: {
+            description: 'The series a source names as theirs, comma separated.',
+          },
+        },
+      ],
+    },
+    {
+      /*
+        Everything they have made, not only what this network covers.
+
+        A studio page that lists the one game we happen to have a wiki for is
+        a worse page than the studio's own site, and the reason to have this
+        host at all is that a body of work is the context a single game does
+        not carry. These are stored rather than related because they are not
+        records on this network and are not going to become records: the owner
+        was explicit that a title here is information on the company's page,
+        not a new wiki.
+
+        Price is what a storefront says today in US dollars, which is a fact
+        with a date on it rather than a property of the game — hence
+        `catalogueNote`, which says when the catalogue was read.
+      */
+      name: 'titles',
+      type: 'array',
+      label: 'Catalogue',
+      labels: { singular: 'Title', plural: 'Titles' },
+      admin: {
+        description:
+          'Everything the company is credited on. Filled by `pnpm fetch:company-games` and `pnpm seed:company-games`; anything typed here by hand survives a re-run.',
+        initCollapsed: true,
+      },
+      fields: [
+        {
+          type: 'row',
+          fields: [
+            { name: 'title', type: 'text', required: true, admin: { width: '55%' } },
+            { name: 'year', type: 'text', admin: { width: '20%' } },
+            {
+              name: 'role',
+              type: 'select',
+              defaultValue: 'developer',
+              options: [
+                { label: 'Developed', value: 'developer' },
+                { label: 'Published', value: 'publisher' },
+                { label: 'Both', value: 'both' },
+              ],
+              admin: { width: '25%' },
+            },
+          ],
+        },
+        {
+          type: 'row',
+          fields: [
+            {
+              name: 'priceText',
+              type: 'text',
+              label: 'Price',
+              admin: { width: '25%', description: 'As the store shows it, in USD.' },
+            },
+            { name: 'isFree', type: 'checkbox', label: 'Free', admin: { width: '15%' } },
+            {
+              name: 'metacritic',
+              type: 'number',
+              admin: { width: '20%' },
+            },
+            {
+              name: 'reviews',
+              type: 'text',
+              label: 'Store reviews',
+              admin: { width: '40%', description: 'e.g. "Very Positive (12,481)".' },
+            },
+          ],
+        },
+        { name: 'genre', type: 'text' },
+        { name: 'platforms', type: 'text', admin: { description: 'Comma separated, as the source lists them.' } },
+        {
+          type: 'row',
+          fields: [
+            { name: 'storeUrl', type: 'text', label: 'Store page', admin: { width: '50%' } },
+            {
+              name: 'coveredBy',
+              type: 'relationship',
+              relationTo: 'games',
+              label: 'Wiki on this network',
+              admin: {
+                width: '50%',
+                description:
+                  'Set where this title is one of ours, so the row links into the wiki instead of out to a shop.',
+              },
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'catalogueNote',
+      type: 'text',
+      admin: {
+        description:
+          'Where the catalogue came from and when it was read. A price is true on a date, and a page that shows one without saying when is claiming more than it knows.',
+      },
+    },
+    {
       name: 'basis',
       type: 'select',
       defaultValue: 'related-company',

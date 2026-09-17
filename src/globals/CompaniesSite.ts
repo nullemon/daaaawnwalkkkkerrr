@@ -133,6 +133,72 @@ export const CompaniesSite: GlobalConfig = {
                   ],
                 },
                 {
+                  /*
+                    The catalogue is the reason this host is worth opening — a
+                    studio page listing only the one game we happen to have a
+                    wiki for is a worse page than the studio's own site — so its
+                    wording gets a group rather than a row lost among the rest.
+                  */
+                  type: 'collapsible',
+                  label: 'The catalogue',
+                  fields: [
+                    {
+                      type: 'row',
+                      fields: [
+                        { name: 'catalogueHeading', type: 'text', label: 'Heading', admin: { width: '60%' } },
+                        {
+                          name: 'catalogueCovered',
+                          type: 'text',
+                          label: 'Badge on a title we cover',
+                          admin: {
+                            width: '40%',
+                            description: 'Marks the rows that link into one of this network’s wikis instead of out to a shop.',
+                          },
+                        },
+                      ],
+                    },
+                    {
+                      name: 'cataloguePriceNote',
+                      type: 'textarea',
+                      label: 'Note under the list',
+                      admin: {
+                        description:
+                          'The standing half of the price sentence. Which storefront was read and on what date belongs on the company record’s own catalogue note; this is the part that is true of all three hundred of them. A price is a fact with a date on it, so keep the distinction however it is reworded.',
+                      },
+                    },
+                    {
+                      name: 'catalogueEmpty',
+                      type: 'textarea',
+                      label: 'When there is no catalogue',
+                      admin: {
+                        description:
+                          'Shown on every profile nobody has harvested a catalogue for, which is most of them. It has to say the gap is ours — an empty list and "this company has released nothing" look identical on the page, and only the first is true.',
+                      },
+                    },
+                  ],
+                },
+                {
+                  type: 'row',
+                  fields: [
+                    {
+                      name: 'defunctNote',
+                      type: 'textarea',
+                      label: 'Closed-company banner',
+                      admin: {
+                        width: '50%',
+                        description:
+                          'Token: {defunct}, the year as the record states it. Shown in red at the top of the profile, above everything else, because the rest of the page is in the past tense once it applies.',
+                      },
+                    },
+                    {
+                      name: 'siteLabel',
+                      type: 'text',
+                      label: 'Official-site link label',
+                      admin: { width: '50%', description: 'The words beside the company’s own web address.' },
+                    },
+                  ],
+                },
+                {
                   type: 'row',
                   fields: [
                     { name: 'parentHeading', type: 'text', label: 'Parent', admin: { width: '50%' } },

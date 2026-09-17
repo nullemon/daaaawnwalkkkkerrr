@@ -13,7 +13,8 @@ import { FactPanel } from '@/components/FactPanel'
 import { RelatedList, type RelatedItem } from '@/components/RelatedList'
 import { roleLabel } from '@/lib/characters'
 import { getUi } from '@/lib/ui'
-import { getAll, getBySlug, getGame, relMany } from '@/lib/payload'
+import { client, getAll, getBySlug, getGame, relMany } from '@/lib/payload'
+import { personUrl } from '@/lib/urls'
 import { gameName } from '@/lib/section-copy'
 import { gameSlugParams } from '@/lib/params'
 import type { Character, Quest, Region } from '@/payload-types'
@@ -53,6 +54,18 @@ export default async function CharacterPage({ params }: Props) {
   const questline = relMany<Quest>(doc.questline)
 
   const region = doc.region && typeof doc.region === 'object' ? (doc.region as Region) : null
+
+  /* Actors whose own record names this character. `people` is network-wide, so
+     this is a direct query rather than one of the game-scoped helpers. */
+  const payload = await client()
+  const cast = (
+    await payload.find({
+      collection: 'people',
+      where: { characters: { contains: doc.id } },
+      limit: 20,
+      depth: 0,
+    })
+  ).docs
 
   /*
     Which endings this person's chain is the gate for.
@@ -111,6 +124,26 @@ export default async function CharacterPage({ params }: Props) {
                 {
                   label: 'Home region',
                   value: region ? <Link href={`/regions/${region.slug}`}>{region.title}</Link> : undefined,
+                },
+                {
+                  /*
+                    Who plays them, read backwards off the people host.
+
+                    `Characters` has no actor field and should not grow one:
+                    the fact lives on a person, one person plays several
+                    characters, and a string copied onto each character is the
+                    shape that drifts the first time one of them is corrected.
+                    So the edge is stored on the person and read from this side.
+                  */
+                  label: cast.length === 1 ? 'Played by' : 'Cast',
+                  value: cast.length
+                    ? cast.map((person, index) => (
+                        <span key={person.slug}>
+                          {index > 0 ? ', ' : ''}
+                          <a href={personUrl(`/${person.slug}`)}>{person.name}</a>
+                        </span>
+                      ))
+                    : undefined,
                 },
                 { label: 'Questline', value: questline.length ? `${questline.length} quests` : undefined },
                 { label: 'Night-locked', value: nightOnly || undefined },

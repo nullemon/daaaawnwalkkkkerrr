@@ -1,8 +1,9 @@
 import type { Game, Media } from '@/payload-types'
-import { companyUrl } from '@/lib/urls'
+import { companyUrl, personUrl } from '@/lib/urls'
 import { slugify } from '@/fields/shared'
 import { getUi } from '@/lib/ui'
 import { fill } from '@/lib/copy'
+import { client } from '@/lib/payload'
 
 /**
  * The factsheet on a wiki's front page.
@@ -26,6 +27,52 @@ type Row = { label: string; value: React.ReactNode }
 
 export async function GameProfile({ game }: { game: Game }) {
   const ui = await getUi()
+
+  /*
+    Which of the names on this panel have a profile on the people host.
+
+    Linked from a lookup rather than from `slugify(name)`, because a slug is
+    not always the slugification of the name — `slugField` deduplicates, so the
+    second Yuki Sato is `yuki-sato-2` — and a row of credits where one in ten
+    links to a 404 is worse than a row that links to none. A name with no
+    profile stays plain text, which is also the honest rendering: we have a
+    credit for them and nothing else.
+
+    One query, depth 0, and it is only the people already related to this game,
+    so it is a handful of rows rather than the whole directory.
+  */
+  const payload = await client()
+  const credited = await payload.find({
+    collection: 'people',
+    where: { games: { contains: game.id } },
+    limit: 200,
+    depth: 0,
+  })
+  const profiles = new Map(
+    credited.docs.map((person) => [person.name.trim().toLowerCase(), person.slug]),
+  )
+
+  /*
+    A credit field holds "Jakub Szamałek, Ariana Siarkiewicz" as one string,
+    which is how the source writes it. Split for linking, and print the
+    original separator back so the row reads as it did.
+  */
+  const people = (value: string | null | undefined) => {
+    const names = (value ?? '')
+      .split(',')
+      .map((name) => name.trim())
+      .filter(Boolean)
+    if (names.length === 0) return null
+    return names.map((name, index) => {
+      const slug = profiles.get(name.toLowerCase())
+      return (
+        <span key={name}>
+          {index > 0 ? ', ' : ''}
+          {slug ? <a href={personUrl(`/${slug}`)}>{name}</a> : name}
+        </span>
+      )
+    })
+  }
   const profile = game.profile ?? {}
   const poster =
     profile.poster && typeof profile.poster === 'object' ? (profile.poster as Media) : null
@@ -41,6 +88,20 @@ export async function GameProfile({ game }: { game: Game }) {
   */
   const art = poster ?? hero
   const portrait = Boolean(poster)
+
+  /*
+    The year, in UTC, for the same reason the release row is formatted in UTC:
+    a release is a calendar date, and a date parsed into the reader's zone
+    prints the year before for anybody west of the meridian on 1 January.
+
+    Only for a date that is confirmed. "(video game, 2027)" beside a window
+    somebody has already moved twice reads as a fact, and an unconfirmed date
+    is the one thing on this panel that is most likely to change.
+  */
+  const year =
+    game.releaseDate && game.releaseDateConfirmed !== false
+      ? String(new Date(game.releaseDate).getUTCFullYear())
+      : ''
 
   const holders = [game.developer, game.publisher]
     .flatMap((value) => (value ?? '').split(','))
@@ -115,11 +176,11 @@ export async function GameProfile({ game }: { game: Game }) {
         }
       : null,
     profile.engine ? { label: ui.t('profile.engine'), value: profile.engine } : null,
-    profile.director ? { label: ui.t('profile.director'), value: profile.director } : null,
-    profile.designer ? { label: ui.t('profile.designer'), value: profile.designer } : null,
-    profile.artist ? { label: ui.t('profile.artist'), value: profile.artist } : null,
-    profile.writer ? { label: ui.t('profile.writer'), value: profile.writer } : null,
-    profile.composer ? { label: ui.t('profile.composer'), value: profile.composer } : null,
+    profile.director ? { label: ui.t('profile.director'), value: people(profile.director) } : null,
+    profile.designer ? { label: ui.t('profile.designer'), value: people(profile.designer) } : null,
+    profile.artist ? { label: ui.t('profile.artist'), value: people(profile.artist) } : null,
+    profile.writer ? { label: ui.t('profile.writer'), value: people(profile.writer) } : null,
+    profile.composer ? { label: ui.t('profile.composer'), value: people(profile.composer) } : null,
     profile.metacritic ? { label: ui.t('profile.metacritic'), value: profile.metacritic } : null,
     profile.budget ? { label: ui.t('profile.budget'), value: profile.budget } : null,
     profile.marketingSpend
@@ -135,7 +196,10 @@ export async function GameProfile({ game }: { game: Game }) {
   return (
     <aside className="gameprofile" aria-labelledby="gameprofile-head">
       <h2 className="gameprofile-title" id="gameprofile-head">
-        {fill(ui.t('profile.at-a-glance'), { game: game.shortTitle || game.title })}
+        {fill(ui.t(year ? 'profile.title-dated' : 'profile.title'), {
+          game: game.shortTitle || game.title,
+          year,
+        })}
       </h2>
 
       {art?.url ? (

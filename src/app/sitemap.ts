@@ -1,8 +1,9 @@
 import type { MetadataRoute } from 'next'
 import { headers } from 'next/headers'
-import { getAll, getGame, gameUrl, siteUrl } from '@/lib/payload'
+import { client, getAll, getGame, gameUrl, siteUrl } from '@/lib/payload'
 import { SECTIONS, toolsFor } from '@/lib/sections'
-import { subdomainOf } from '@/proxy'
+import { NETWORK_SUBDOMAINS, subdomainOf } from '@/proxy'
+import { companyUrl, personUrl } from '@/lib/urls'
 
 /**
  * The sitemap, answered per host.
@@ -32,7 +33,65 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const host = (await headers()).get('host') ?? new URL(network).host
   const label = subdomainOf(host, new URL(network).host)
 
-  return label ? await wikiSitemap(label) : await hubSitemap(network)
+  /*
+    Not every subdomain is a wiki.
+
+    `subdomainOf` returns a label and this handed every one of them to
+    `wikiSitemap`, which asks `getGame(label)` and gets null for `companies` —
+    so it returned `[]`, and `companies.<domain>/sitemap.xml` has been a valid,
+    well-formed, completely empty sitemap since the host shipped. Three hundred
+    and twenty company profiles, none of them listed anywhere a crawler reads.
+    Nothing errored: an empty sitemap is not a malformed one, and the only way
+    to notice was to open the URL.
+
+    The `people` host would have launched with exactly the same hole, which is
+    why it is worth branching on the list the router already keeps rather than
+    on the two names.
+  */
+  if (!label) return hubSitemap(network)
+  if (label === 'companies') return companiesSitemap()
+  if (label === 'people') return peopleSitemap()
+  if (NETWORK_SUBDOMAINS.has(label)) {
+    /*
+      A network host somebody added to the router and not to this file. Better
+      to serve the host's front page alone than to serve nothing at all and
+      look like a site with no pages.
+    */
+    return [{ url: `https://${host}`, lastModified: new Date(), changeFrequency: 'weekly', priority: 1 }]
+  }
+  return wikiSitemap(label)
+}
+
+/** Every company profile, on the companies host. */
+async function companiesSitemap(): Promise<MetadataRoute.Sitemap> {
+  const now = new Date()
+  const payload = await client()
+  const companies = await payload.find({ collection: 'companies', limit: 1000, depth: 0 })
+  return [
+    { url: companyUrl('/'), lastModified: now, changeFrequency: 'weekly', priority: 1 },
+    ...companies.docs.map((company) => ({
+      url: companyUrl(`/${company.slug}`),
+      lastModified: company.updatedAt ? new Date(company.updatedAt) : now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.5,
+    })),
+  ]
+}
+
+/** Every person profile, on the people host. */
+async function peopleSitemap(): Promise<MetadataRoute.Sitemap> {
+  const now = new Date()
+  const payload = await client()
+  const people = await payload.find({ collection: 'people', limit: 2000, depth: 0 })
+  return [
+    { url: personUrl('/'), lastModified: now, changeFrequency: 'weekly', priority: 1 },
+    ...people.docs.map((person) => ({
+      url: personUrl(`/${person.slug}`),
+      lastModified: person.updatedAt ? new Date(person.updatedAt) : now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.5,
+    })),
+  ]
 }
 
 /** The apex: the directory, the contributor profiles, and the legal pages. */

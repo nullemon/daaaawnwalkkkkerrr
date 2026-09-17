@@ -114,6 +114,41 @@ export type HarvestedEntity = {
   title: string
   url?: string | null
   wikiTitle?: string | null
+  /** The wiki's own categories, where the harvest captured them. */
+  categories?: string[] | null
+  /** The infobox, where the harvest captured it. */
+  facts?: Record<string, string> | null
+}
+
+/**
+ * A page about somebody real, on a wiki about a fiction.
+ *
+ * Fandom wikis file their cast and crew in the same namespace as the
+ * characters those people play, and the category harvest cannot tell them
+ * apart: "Silent Hill Townfall People" contains both. So three actors were
+ * live as *characters* on this network — Jovan Adepo, Kezia Burrows and Terry
+ * O'Quinn, each with a composed summary describing them as a character in the
+ * game, each with a real source URL, because the page they came from is real.
+ * The same shape as the Gears of War film arriving as a region: the research
+ * was sound and the *kind* of thing was wrong.
+ *
+ * Two signals, and both have to be decisive on their own, because a filter
+ * written to catch bad records throws away good ones just as quietly — the
+ * lesson Antar 4 taught this file. `The Real World` is what these wikis
+ * themselves call the category for people who exist; and an infobox that gives
+ * an occupation of actor *and* names who they portrayed is describing the
+ * performer, not the part.
+ */
+const REAL_WORLD_CATEGORY = /^(the )?real[- ]world$/i
+const PERFORMER_OCCUPATION = /^(actor|actress|voice actor|voice actress)$/i
+
+const isARealPerson = (entity: HarvestedEntity): boolean => {
+  if ((entity.categories ?? []).some((name) => REAL_WORLD_CATEGORY.test(name.trim()))) return true
+
+  const facts = entity.facts ?? {}
+  const occupation = facts.occupation ?? facts.Occupation ?? ''
+  const portrayed = facts.portrayed ?? facts['portrayed by'] ?? ''
+  return PERFORMER_OCCUPATION.test(occupation.trim()) && portrayed.trim() !== ''
 }
 
 /** Letters only, lowercased, so "Gears of War: E-Day" meets "Gears of War 3". */
@@ -168,6 +203,7 @@ export const isNotAnEntity = (entity: HarvestedEntity, game = ''): boolean => {
     // A malformed escape is not a reason to let the record through unchecked.
   }
   if (REVIEWED_NOT_ENTITIES.has(entity.title.trim().toLowerCase())) return true
+  if (isARealPerson(entity)) return true
   if (WORK_DISAMBIGUATOR.test(url)) return true
   if (WORK_DISAMBIGUATOR.test(entity.wikiTitle ?? '')) return true
   return isNumberedSequel(entity.title, game)

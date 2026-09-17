@@ -5,7 +5,12 @@ import { EntityCard } from '@/components/EntityCard'
 import { Badge, Confidence } from '@/components/Badges'
 import { client } from '@/lib/payload'
 import { copy, pick, splitTokens } from '@/lib/copy'
-import { COMPANIES_BUILT_IN, EMPHASISED_CLAUSE, getCompaniesSite } from '@/lib/companies-copy'
+import {
+  COMPANIES_BUILT_IN,
+  COMPANY_ROLE_LABEL,
+  EMPHASISED_CLAUSE,
+  getCompaniesSite,
+} from '@/lib/companies-copy'
 import { hub } from '@/lib/urls'
 import type { Company, Game } from '@/payload-types'
 
@@ -21,13 +26,6 @@ export async function generateMetadata(): Promise<Metadata> {
     description: copy(site.metaDescription, COMPANIES_BUILT_IN.metaDescription),
     alternates: { canonical: '/' },
   }
-}
-
-// Duplicated in `companies/[slug]/page.tsx`; both belong in the central label
-// registry (`src/lib/ui-registry.ts`) so a role is worded once for the network.
-const ROLE_LABEL: Record<string, string> = {
-  developer: 'Developer',
-  publisher: 'Publisher',
 }
 
 const rel = (value: unknown): Game | null =>
@@ -142,7 +140,7 @@ export default async function CompaniesIndex() {
                   badges={
                     <>
                       {(company.role ?? []).map((role) => (
-                        <Badge key={role}>{ROLE_LABEL[role] ?? role}</Badge>
+                        <Badge key={role}>{COMPANY_ROLE_LABEL[role] ?? role}</Badge>
                       ))}
                       {games.length > 0 ? <Badge>{games.length} here</Badge> : null}
                     </>
@@ -171,7 +169,7 @@ export default async function CompaniesIndex() {
                   badges={
                     <>
                       {(company.role ?? []).map((role) => (
-                        <Badge key={role}>{ROLE_LABEL[role] ?? role}</Badge>
+                        <Badge key={role}>{COMPANY_ROLE_LABEL[role] ?? role}</Badge>
                       ))}
                     </>
                   }
@@ -199,7 +197,7 @@ export default async function CompaniesIndex() {
                   badges={
                     <>
                       {(company.role ?? []).map((role) => (
-                        <Badge key={role}>{ROLE_LABEL[role] ?? role}</Badge>
+                        <Badge key={role}>{COMPANY_ROLE_LABEL[role] ?? role}</Badge>
                       ))}
                     </>
                   }

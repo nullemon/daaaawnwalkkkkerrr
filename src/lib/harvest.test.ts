@@ -107,3 +107,46 @@ describe('the hand-reviewed list', () => {
     expect(isNotAnEntity(entity('Silent Hill, Maine'), 'Silent Hill: Townfall')).toBe(false)
   })
 })
+
+describe('real people on a fiction wiki', () => {
+  /*
+    Three actors were live as characters on the Silent Hill wiki, each with a
+    composed summary calling them a character in the game. `pnpm verify`
+    passed, the build was green and the pages rendered — the research was
+    sound and only the kind of thing was wrong, which is the same failure the
+    Gears of War film taught this file.
+  */
+  it('rejects a page the wiki files under its own real-world category', () => {
+    expect(
+      isNotAnEntity({
+        title: 'Terry O’Quinn',
+        categories: ['Actors', 'Staff', 'The Real World'],
+      }),
+    ).toBe(true)
+  })
+
+  it('rejects a performer whose infobox names who they portrayed', () => {
+    expect(
+      isNotAnEntity({
+        title: 'Kezia Burrows',
+        facts: { occupation: 'Actress', portrayed: 'Zoe Ellis' },
+      }),
+    ).toBe(true)
+  })
+
+  it('keeps a character who happens to be an actor in the fiction', () => {
+    // An in-world performer is still a character. The occupation alone must
+    // not be enough, or a wiki's own theatre troupe disappears.
+    expect(
+      isNotAnEntity({
+        title: 'Priscilla the Player',
+        categories: ['Characters'],
+        facts: { occupation: 'Actress' },
+      }),
+    ).toBe(false)
+  })
+
+  it('keeps an ordinary character with neither signal', () => {
+    expect(isNotAnEntity({ title: 'Jesse Faden', categories: ['Characters'] })).toBe(false)
+  })
+})

@@ -1,0 +1,415 @@
+{
+  "slug": "dawnwalker",
+  "appId": 3751260,
+  "storeUrl": "https://store.steampowered.com/app/3751260/",
+  "fetchedAt": "2026-09-17",
+  "title": "The Blood of Dawnwalker",
+  "developers": [
+    "Rebel Wolves"
+  ],
+  "publishers": [
+    "Bandai Namco Entertainment"
+  ],
+  "releaseDate": "Sep 2, 2026",
+  "comingSoon": false,
+  "shortDescription": "The Blood of Dawnwalker is an open-world dark fantasy action RPG set in 14th-century Europe. You play as Coen, human by day and vampire by night, fighting to save your family in a story shaped by your actions and the secrets you uncover.",
+  "aboutText": "14th-century Europe. Bloody conflicts sweep the lands, and the Black Death comes for the survivors. It's a moment of weakness - and that's all they needed. Vampires seize their opportunity to walk out of the shadows and claim what they've been denied for centuries: freedom, and the power that comes with it. Other creatures of the night follow their lead. Legends turn into reality, and history as we know it will never be the same.\nYou play as Coen, a young man turned into a Dawnwalker, forever treading the line between the world of day and the realm of night. Fight for your humanity or embrace the cursed powers to save your family. Whatever your choice, the question stands: is your soul worth the lives of those you love?\n\nExperience and shape the plot the way you want. Embark on the quest to save your family, or swear revenge on your sire and destroy everyone standing in your way. Discover ancient secrets lurking in the valley. Rush in head first or risk taking time to prepare. Go alone or search for friends and forge unlikely alliances.\n\nExperience two different gameplay loops, offering distinct abilities to choose from, mysteries to uncover, and varying ways to achieve your goals. Experiment with different approaches and discover how the world reacts to your actions.\n\nEvery action - and inaction - shapes the world around you. Your family’s days are numbered, and every time you take on a quest, time moves forward, compelling you closer to the end. Choose carefully whom to help and whom to leave behind. You will not have time for everyone. The world waits for no one. And neither does the villain.\n\nDefy gravity, become a brutal force of nature, and use your supernatural skills as a vampire. Or raise your sword, and employ powerful magic to take on opponents as a human. Experiment and adapt as your form changes during the day and night; each has its strengths and weaknesses.\n\nVenture through the hand-crafted open world and discover all it has to offer. Roam through the lush forests, the vast plains, the treacherous swamps, the steep mountaintops, and the medieval settlements. Explore forgotten ruins, find remnants of an ancient civilization, and uncover truths that should probably remain hidden.\n\n \n\nExperience the beginning of a brand-new saga built with love for the role-playing genre. Immerse yourself in a visually stunning world powered by the next-gen Unreal Engine 5.",
+  "genres": [
+    "Action",
+    "Adventure",
+    "RPG"
+  ],
+  "categories": [
+    "Single-player",
+    "Steam Achievements",
+    "Full controller support",
+    "Steam Trading Cards",
+    "Custom Volume Controls",
+    "Adjustable Difficulty",
+    "Gamepad Recommended",
+    "DualSense Controller Support",
+    "DualSense Controller Support",
+    "Save Anytime",
+    "Steam Input API Support",
+    "Steam Cloud",
+    "Family Sharing"
+  ],
+  "languages": "English",
+  "contentDescriptors": "This Game may contain content not appropriate for all ages, or may not be appropriate for viewing at work: Some Nudity or Sexual Content, Frequent Violence or Gore, General Mature Content",
+  "platforms": [
+    "windows"
+  ],
+  "requirements": {
+    "minimum": [
+      {
+        "label": "OS",
+        "value": "Windows 10, DirectX12"
+      },
+      {
+        "label": "Processor",
+        "value": "Intel Core i5-11400F / AMD Ryzen 7 2700X"
+      },
+      {
+        "label": "Memory",
+        "value": "16 GB RAM"
+      },
+      {
+        "label": "Graphics",
+        "value": "NVIDIA GTX 1060 / Radeon RX 580"
+      },
+      {
+        "label": "DirectX",
+        "value": "Version 12"
+      },
+      {
+        "label": "Storage",
+        "value": "60 GB available space"
+      },
+      {
+        "label": "Additional Notes",
+        "value": "VRAM: 6GB // Storage on SSD"
+      }
+    ],
+    "recommended": [
+      {
+        "label": "OS",
+        "value": "Windows 10, DirectX12"
+      },
+      {
+        "label": "Processor",
+        "value": "Intel Core i7-11700K / AMD Ryzen 7 5700X"
+      },
+      {
+        "label": "Memory",
+        "value": "16 GB RAM"
+      },
+      {
+        "label": "Graphics",
+        "value": "NVIDIA RTX 4060 / Radeon RX 7600 XT / Intel Arc B580"
+      },
+      {
+        "label": "DirectX",
+        "value": "Version 12"
+      },
+      {
+        "label": "Storage",
+        "value": "60 GB available space"
+      },
+      {
+        "label": "Additional Notes",
+        "value": "VRAM: 8GB // Storage on SSD"
+      }
+    ]
+  },
+  "editions": [
+    {
+      "title": "The Blood of Dawnwalker",
+      "priceText": "$69.99"
+    },
+    {
+      "title": "The Blood of Dawnwalker - Eclipse Edition",
+      "priceText": "$79.99"
+    }
+  ],
+  "dlc": [
+    4417550
+  ],
+  "metacritic": null,
+  "achievements": [
+    {
+      "title": "Dead Man Talkin'",
+      "description": "Speak with a dead person using the Compel Soul Witchcraft Ability.",
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/b2a60f029ab42631728a0a380e3c8e38c9507710.jpg",
+      "globalPercent": 82.9
+    },
+    {
+      "title": "Balanced Diet",
+      "description": "Quench your thirst by drinking 10 animals, humans, or monsters.",
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/23ff6e4ceb9486d213401eae6431ccb256d17a54.jpg",
+      "globalPercent": 82.9
+    },
+    {
+      "title": "A Dawnwalker is Born",
+      "description": null,
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/28b4da217b5190e565e00afe57ea7297d16c1074.jpg",
+      "globalPercent": 81.4
+    },
+    {
+      "title": "Untouchable",
+      "description": "Perform 5 Perfect Blocks in a row.",
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/6b904cacc6b5501d1a32ed6fb5bd20b5bed6b411.jpg",
+      "globalPercent": 77.4
+    },
+    {
+      "title": "Shadow Roamer",
+      "description": "Travel 1000 metres using Vampiric Abilities.",
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/2b70663fd876c457edd17d97e001e202f25cce63.jpg",
+      "globalPercent": 68.4
+    },
+    {
+      "title": "Antique Aficionado",
+      "description": null,
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/5f900988b6d6dc25cec40b2076348bee352c8dcf.jpg",
+      "globalPercent": 66.4
+    },
+    {
+      "title": "Big-City Living",
+      "description": "Visit the City of Svartrau.",
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/99686c96cf0b0f97b497b109bf2e670e5ed6458b.jpg",
+      "globalPercent": 58.6
+    },
+    {
+      "title": "Absolutely Insatiable",
+      "description": "Have 3 Passive Abilities equipped at the same time.",
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/f74297d3505d6737ea43c8a34b44eee2f357f49f.jpg",
+      "globalPercent": 57.3
+    },
+    {
+      "title": "Realmwalker",
+      "description": null,
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/cd5ee7ba9d20130b7e557868f79e2717b097d3b4.jpg",
+      "globalPercent": 49.2
+    },
+    {
+      "title": "The Right Fist of the Knyaz",
+      "description": null,
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/40863b1d7d3d60ea18d0493d6eefcc11c2265adc.jpg",
+      "globalPercent": 46.5
+    },
+    {
+      "title": "Miser",
+      "description": "Accumulate 5000 denarii. What are you planning to buy, mate?",
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/ec1d6f14ec4cd06e69fe0eedec6f2130620f24e1.jpg",
+      "globalPercent": 44.7
+    },
+    {
+      "title": "Feral Hunger",
+      "description": null,
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/e1197908a05aa8e1ad63c8eb95c773d8e0bf86c6.jpg",
+      "globalPercent": 41.8
+    },
+    {
+      "title": "Sins of the Past",
+      "description": null,
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/a9db495de0a28b4d13478262cc5f9e968adaf0ac.jpg",
+      "globalPercent": 39.3
+    },
+    {
+      "title": "The Dark Mistress",
+      "description": null,
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/0c730b9eb3d97ab739d119f33aedf344bb987611.jpg",
+      "globalPercent": 32.6
+    },
+    {
+      "title": "The Outcast",
+      "description": null,
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/5dd1b89303ea7ce9689fe20391bf795591ac5489.jpg",
+      "globalPercent": 32.4
+    },
+    {
+      "title": "Arbiter's Blade",
+      "description": "Restore St Mihai's sword to its former glory.",
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/d891d520c58f57c425a980d8a05bdffd15243605.jpg",
+      "globalPercent": 31.4
+    },
+    {
+      "title": "Mastery",
+      "description": "Level up one Swordmastery, Witchcraft, or Vampiric Ability to its full potential.",
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/eef7a9dea9110e6822fc651b4acd4c4f68cd7714.jpg",
+      "globalPercent": 27.8
+    },
+    {
+      "title": "The Mad Khan",
+      "description": null,
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/5e6c9526bb755fdd755da56b88ea291ef37b2082.jpg",
+      "globalPercent": 26.4
+    },
+    {
+      "title": "The Blood of Dawnwalker",
+      "description": "Finish the story.",
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/1eaff5dc80f21a64e1ca16c96155d2d58838d963.jpg",
+      "globalPercent": 24.6
+    },
+    {
+      "title": "In the Nick of Time",
+      "description": null,
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/a808b2f4c7597ae99a7b49ad5e2d4bd461bf9055.jpg",
+      "globalPercent": 21.7
+    },
+    {
+      "title": "Smuggler",
+      "description": "Earn 1000 denarii selling silver.",
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/07d66fca7bdd227d6b4e2f459d9f29911f39c36b.jpg",
+      "globalPercent": 21.4
+    },
+    {
+      "title": "Misery Loves Company",
+      "description": null,
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/44fbe6c709f999f85968d05c356b12e2bcb5b31b.jpg",
+      "globalPercent": 21.1
+    },
+    {
+      "title": "Throne of Thorns",
+      "description": "Reach peak Infamy in Vale Sangora.",
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/7b813ebfd9e9ee1ed2ba818b0b2ec09072b15ced.jpg",
+      "globalPercent": 20.4
+    },
+    {
+      "title": "Tour Guide Training",
+      "description": "Visit all of Vale Sangora's villages.",
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/505b0372f9a1c36b584d360f2f3769c8e8ab6f6a.jpg",
+      "globalPercent": 19.5
+    },
+    {
+      "title": "Make It Rain",
+      "description": "Cause an enemy to explode using an Active Ability.",
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/dea4d10023968edf38e447a023897ff092406935.jpg",
+      "globalPercent": 16.5
+    },
+    {
+      "title": "Arbiter's Regalia",
+      "description": "Gather all the parts of the Arbiter's set of armour and unlock their full potential.",
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/3d1012329af0bd77e7aed35d764d63292d2e975e.jpg",
+      "globalPercent": 16.5
+    },
+    {
+      "title": "Master of Arms",
+      "description": "Unlock an Ultimate Perk in the Swordmastery tree.",
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/da42018a4820730ad6cdc424a099e51647f2a88c.jpg",
+      "globalPercent": 16.5
+    },
+    {
+      "title": "Creature of the Night",
+      "description": "Unlock an Ultimate Perk in the Vampirism tree.",
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/0c37f8aca810103e84b382c77403922fb6a93650.jpg",
+      "globalPercent": 14.8
+    },
+    {
+      "title": "The Patricide",
+      "description": null,
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/dc226f70dca5a7ae4797eb754c6fe68e7215e6ce.jpg",
+      "globalPercent": 13.2
+    },
+    {
+      "title": "The Unquenchable Thirst",
+      "description": null,
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/f3891b97d75130d914b96f25415e050cba756408.jpg",
+      "globalPercent": 12.6
+    },
+    {
+      "title": "Delivery Delay",
+      "description": "Destroy 8 vrakhiri transports.",
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/334de19c423135d69a5ddb3f2c5ce37c80ec6b0e.jpg",
+      "globalPercent": 11.6
+    },
+    {
+      "title": "Gear of the Gods",
+      "description": null,
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/00cbe013ba7e3c3774e7b4925bcfab1f0144e527.jpg",
+      "globalPercent": 11.3
+    },
+    {
+      "title": "Bird's-Eye View",
+      "description": "Climb all the towers and scout the surrounding areas.",
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/64fc66483d6e7dc51d4d0b9ff09b780660cb5dc8.jpg",
+      "globalPercent": 11.3
+    },
+    {
+      "title": "The Folk Hero",
+      "description": null,
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/b842816bf4ebd606d7876b615a1816dce74cc167.jpg",
+      "globalPercent": 11.1
+    },
+    {
+      "title": "A Hero They Deserve",
+      "description": null,
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/9c06cfe7dfb2acfe2273fa9c6e46bfd306ce9886.jpg",
+      "globalPercent": 8.3
+    },
+    {
+      "title": "The Tsarina's Favourite Human",
+      "description": null,
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/37679c5e661c0f9a961577cf8ee855ed7c1b6d85.jpg",
+      "globalPercent": 7.7
+    },
+    {
+      "title": "Capture the Flag",
+      "description": "Tear down all of Brencis's flags.",
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/cfd12be517dd39a5c89937e35d574ee9c5b684ca.jpg",
+      "globalPercent": 6.7
+    },
+    {
+      "title": "The Manumit",
+      "description": null,
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/1ba20130b290c6461e2d87a8e4ab43d1eef7b0dc.jpg",
+      "globalPercent": 6.5
+    },
+    {
+      "title": "Better Safe than Sorry",
+      "description": null,
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/5a28218ba262425616f8b5f76b4b1db99290aea1.jpg",
+      "globalPercent": 6.5
+    },
+    {
+      "title": "The Turncoat",
+      "description": null,
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/1f96c362ecacf9bf658d608092f735f86812f92d.jpg",
+      "globalPercent": 5.3
+    },
+    {
+      "title": "The Knyazmaker",
+      "description": null,
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/1a5d30d4b0400c0ce206db7cb98f237bf1b394a6.jpg",
+      "globalPercent": 5
+    },
+    {
+      "title": "Glass Ceiling",
+      "description": "Reach Level 50.",
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/1d89c9fbb1a443c3c545c76f8a7dbc8789575a40.jpg",
+      "globalPercent": 4.5
+    },
+    {
+      "title": "Arch Warlock",
+      "description": "Unlock an Ultimate Perk in the Witchcraft tree.",
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/33cbe16076b1867376b2d82c325b5d6690a7ec0b.jpg",
+      "globalPercent": 3.6
+    },
+    {
+      "title": "Selfish",
+      "description": null,
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/1dc2aa3818e0eda5ea430db16ba029cdb17be72e.jpg",
+      "globalPercent": 2.4
+    },
+    {
+      "title": "Together Forever",
+      "description": null,
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/e03a3e887ba20ab629048141ca1d06598ac4037e.jpg",
+      "globalPercent": 2.2
+    },
+    {
+      "title": "Uphill Battle",
+      "description": "Complete the entire game by saving people of Laslea on Duelist Difficulty preset.",
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3751260/d4e67b884f837f7f54e9abf1d89b3cd8e82fd4b5.jpg",
+      "globalPercent": 1.7
+    }
+  ],
+  "art": {
+    "header": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3751260/a7062f3b59d491c2678e3fd7ce2672858e480641/header.jpg?t=1789144593",
+    "capsule": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3751260/512cea7b8d6470681fc081ab933290bf14a8f956/capsule_231x87.jpg?t=1789144593",
+    "background": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3751260/368eb8bf6d11fe397375aa2fd1dce57d8c596a8b/page_bg_raw.jpg?t=1789144593",
+    "screenshots": [
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3751260/1af5d14d9b6a36c14eae3bebf56c0e0f63235633/ss_1af5d14d9b6a36c14eae3bebf56c0e0f63235633.1920x1080.jpg?t=1789144593",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3751260/8b1df8a547116394a9c1b7225c11904c09dc9a37/ss_8b1df8a547116394a9c1b7225c11904c09dc9a37.1920x1080.jpg?t=1789144593",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3751260/b91c26c945ec2453f7dbb1f6a3f8992edcccc484/ss_b91c26c945ec2453f7dbb1f6a3f8992edcccc484.1920x1080.jpg?t=1789144593",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3751260/2aeb99f7ea9968e69ea460e4c994a1ff280fb32d/ss_2aeb99f7ea9968e69ea460e4c994a1ff280fb32d.1920x1080.jpg?t=1789144593",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3751260/533e61e6ba42cfebbd3b6d3926ecbbc4edd285dc/ss_533e61e6ba42cfebbd3b6d3926ecbbc4edd285dc.1920x1080.jpg?t=1789144593",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3751260/5c76f48ae1487a08118132512ea932afb238cebf/ss_5c76f48ae1487a08118132512ea932afb238cebf.1920x1080.jpg?t=1789144593",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3751260/c1759e2e30858ddedef1a3cbd08c179e85a329ea/ss_c1759e2e30858ddedef1a3cbd08c179e85a329ea.1920x1080.jpg?t=1789144593",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3751260/2fe9d22ce8483f1ca06b37ffa061a8428447f55c/ss_2fe9d22ce8483f1ca06b37ffa061a8428447f55c.1920x1080.jpg?t=1789144593",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3751260/0c8e019519af64118b204928fa5e30cf8bdc0305/ss_0c8e019519af64118b204928fa5e30cf8bdc0305.1920x1080.jpg?t=1789144593",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3751260/5c052d1f86776566470516588912b2323da7aeb1/ss_5c052d1f86776566470516588912b2323da7aeb1.1920x1080.jpg?t=1789144593",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3751260/6e5bc8a098290a8cbd2156bbd0209bc4592624d4/ss_6e5bc8a098290a8cbd2156bbd0209bc4592624d4.1920x1080.jpg?t=1789144593",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3751260/593eddd88a461156d2d7debae80e7620924d8eba/ss_593eddd88a461156d2d7debae80e7620924d8eba.1920x1080.jpg?t=1789144593"
+    ]
+  }
+}

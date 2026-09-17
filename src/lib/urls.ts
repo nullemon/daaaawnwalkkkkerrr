@@ -50,3 +50,29 @@ export const COMPANIES_ORIGIN = (() => {
 
 export const companyUrl = (path = '/'): string =>
   `${COMPANIES_ORIGIN}${path.startsWith('/') ? path : `/${path}`}`
+
+/**
+ * An absolute URL on the people host.
+ *
+ * `people.<network domain>` carries one page per director, designer, composer
+ * and actor. Same shape as the companies host and for the same reason: a
+ * composer scored two of these games and an actor is in three, so the page is
+ * worth more as one record than as three copies that disagree the first time
+ * one is corrected. It is a sibling of the wikis rather than a section of the
+ * hub, so a link to it from anywhere crosses an origin and wants a plain `<a>`.
+ *
+ * Built from the network domain rather than hardcoded, so a deployment that
+ * changes domain does not leave every credit pointing at the old one.
+ */
+export const PEOPLE_ORIGIN = (() => {
+  try {
+    const url = new URL(HUB_ORIGIN)
+    url.host = `people.${url.host}`
+    return url.origin
+  } catch {
+    return HUB_ORIGIN
+  }
+})()
+
+export const personUrl = (path = '/'): string =>
+  `${PEOPLE_ORIGIN}${path.startsWith('/') ? path : `/${path}`}`

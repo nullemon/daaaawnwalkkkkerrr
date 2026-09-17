@@ -3,27 +3,25 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
 import { Badge, Confidence } from '@/components/Badges'
+import { CompanyTitles, type CatalogueRow } from '@/components/CompanyTitles'
 import { FactPanel } from '@/components/FactPanel'
+import { Icon } from '@/components/Icon'
 import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
-import { client, gameUrl } from '@/lib/payload'
-import { copy } from '@/lib/copy'
-import { COMPANIES_BUILT_IN, getCompaniesSite } from '@/lib/companies-copy'
+import { client, gameUrl, rel, relMany } from '@/lib/payload'
+import { copy, hasRichText } from '@/lib/copy'
+import { COMPANIES_BUILT_IN, COMPANY_ROLE_LABEL, getCompaniesSite } from '@/lib/companies-copy'
 import { clamp } from '@/lib/seo'
 import type { Company, Game } from '@/payload-types'
 
 type Props = { params: Promise<{ slug: string }> }
 
-// Duplicated in `companies/page.tsx`; both belong in the central label registry
-// (`src/lib/ui-registry.ts`) so a role is worded once for the network.
-const ROLE_LABEL: Record<string, string> = {
-  developer: 'Developer',
-  publisher: 'Publisher',
-}
-
-const rel = (value: unknown): Game | null =>
-  value && typeof value === 'object' ? (value as Game) : null
-
+/**
+ * Depth 1 populates `logo`, `parent`, `subsidiaries`, `games` — and `coveredBy`
+ * inside each catalogue row, which is what turns that row into a link into one
+ * of this network's wikis. Depth counts relationship hops, not nesting, so the
+ * array does not cost an extra level.
+ */
 const find = async (slug: string): Promise<Company | null> => {
   const payload = await client()
   const { docs } = await payload.find({
@@ -37,7 +35,13 @@ const find = async (slug: string): Promise<Company | null> => {
 
 export async function generateStaticParams() {
   const payload = await client()
-  const { docs } = await payload.find({ collection: 'companies', limit: 500, depth: 0 })
+  /*
+    A thousand, not five hundred. The harvester follows the corporate graph one
+    edge at a time and the count only goes up; a limit that the collection grows
+    past does not error, it silently stops prerendering the companies past it —
+    rows in the database, entries in the sitemap, 404 for a reader.
+  */
+  const { docs } = await payload.find({ collection: 'companies', limit: 1000, depth: 0 })
   return docs.map((company) => ({ slug: String(company.slug) }))
 }
 
@@ -46,11 +50,31 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const company = await find(slug)
   if (!company) return {}
 
-  const roles = (company.role ?? []).map((role) => ROLE_LABEL[role] ?? role).join(' and ')
+  const roles = (company.role ?? []).map((role) => COMPANY_ROLE_LABEL[role] ?? role).join(' and ')
   return {
     title: company.seo?.title || `${company.name} — ${roles.toLowerCase() || 'company'}`,
     description: company.seo?.description || clamp(company.summary ?? ''),
     alternates: { canonical: `/${company.slug}` },
+    // The checkbox exists on every content collection and did nothing here: a
+    // profile marked noindex was still indexable, with nothing on the page or
+    // in any log to say so.
+    robots: company.seo?.noindex ? { index: false, follow: true } : undefined,
+  }
+}
+
+/**
+ * A website as a reader would say it out loud.
+ *
+ * `https://www.remedygames.com/` is a string a browser needs and nobody reads.
+ * The whole URL stays in the `href`; the label is the host. An unparseable
+ * value falls back to itself rather than disappearing — an editor's typo should
+ * be visible on the page, not swallowed by a `try`.
+ */
+const siteLabel = (url: string): string => {
+  try {
+    return new URL(url).host.replace(/^www\./, '')
+  } catch {
+    return url.replace(/^https?:\/\//, '').replace(/\/$/, '')
   }
 }
 
@@ -59,33 +83,72 @@ export default async function CompanyPage({ params }: Props) {
   const [company, site] = await Promise.all([find(slug), getCompaniesSite()])
   if (!company) notFound()
   const profile = site.profile ?? {}
+  const built = COMPANIES_BUILT_IN.profile
 
-  const games = (company.games ?? []).map(rel).filter(Boolean) as Game[]
+  const games = relMany<Game>(company.games)
   const links = await Promise.all(
     games.map(async (game) => ({ game, href: await gameUrl(game) })),
+  )
+
+  /*
+    The catalogue, with every row's destination resolved here rather than in the
+    component: a covered title links into its wiki, which is a different origin
+    whose host only `gameUrl` knows, and that is an async read the renderer
+    should not be doing per row.
+  */
+  const rows: CatalogueRow[] = await Promise.all(
+    (company.titles ?? []).map(async (entry, index) => {
+      const covered = rel<Game>(entry.coveredBy)
+      const store = (entry.storeUrl ?? '').trim()
+      return {
+        key: entry.id ?? `${entry.title}-${index}`,
+        title: entry.title,
+        year: entry.year,
+        role: entry.role,
+        priceText: entry.priceText,
+        isFree: entry.isFree,
+        metacritic: entry.metacritic,
+        reviews: entry.reviews,
+        genre: entry.genre,
+        platforms: entry.platforms,
+        href: covered ? await gameUrl(covered) : store || null,
+        internal: Boolean(covered),
+      }
+    }),
   )
 
   const logo =
     company.logo && typeof company.logo === 'object'
       ? (company.logo as { url?: string | null })
       : null
-  const parent = company.parent && typeof company.parent === 'object' ? (company.parent as Company) : null
-  const subsidiaries = ((company.subsidiaries ?? []) as unknown[])
-    .filter((value): value is Company => Boolean(value) && typeof value === 'object')
+  const parent = rel<Company>(company.parent)
+  const subsidiaries = relMany<Company>(company.subsidiaries)
+  const defunct = company.defunct?.trim() || null
+  const website = company.website?.trim() || null
 
   /*
     Only what the record actually has. Every one of these is dropped when the
     company's own article does not state it, rather than printed as "unknown"
     — the same rule the game records follow.
+
+    "Closed" sits third, above everything about where the company is and how
+    many people work there, because on a studio that no longer exists those rows
+    are all in the past tense and this is the row that says so.
   */
   const facts = [
-    { label: 'Role', value: (company.role ?? []).map((r) => ROLE_LABEL[r] ?? r).join(', ') },
+    { label: 'Role', value: (company.role ?? []).map((r) => COMPANY_ROLE_LABEL[r] ?? r).join(', ') },
     ...(company.founded ? [{ label: 'Founded', value: company.founded }] : []),
+    ...(company.founders ? [{ label: 'Founders', value: company.founders }] : []),
+    ...(defunct ? [{ label: 'Closed', value: defunct }] : []),
+    ...(company.formerNames ? [{ label: 'Formerly', value: company.formerNames }] : []),
+    ...(company.acquired ? [{ label: 'Acquired', value: company.acquired }] : []),
     ...(company.headquarters ? [{ label: 'Headquarters', value: company.headquarters }] : []),
     ...(company.country ? [{ label: 'Country', value: company.country }] : []),
     ...(company.employees ? [{ label: 'Employees', value: company.employees }] : []),
     ...(company.revenue ? [{ label: 'Revenue', value: company.revenue }] : []),
     ...(company.industry ? [{ label: 'Industry', value: company.industry }] : []),
+    ...(company.franchises ? [{ label: 'Known for', value: company.franchises }] : []),
+    ...(rows.length > 0 ? [{ label: 'Titles listed', value: rows.length }] : []),
     ...(games.length > 0 ? [{ label: 'Games covered here', value: games.length }] : []),
   ]
 
@@ -97,18 +160,54 @@ export default async function CompanyPage({ params }: Props) {
         icon="person"
         title={company.name}
         lede={company.summary}
-        badges={<Confidence level={company.confidence} />}
+        badges={
+          <>
+            <Confidence level={company.confidence} />
+            {/* The field holds a year, so the badge supplies the word. Beside a
+                company's name a bare "2015" could be anything. */}
+            {defunct ? <Badge>Closed {defunct}</Badge> : null}
+          </>
+        }
       />
       <div className="page body-main">
         <div className="split">
           <div className="stack">
+            {/*
+              A closed studio, said first and said in red. It is the single most
+              useful thing a page like this carries and the thing most often
+              missing elsewhere, and a reader who takes the present tense of the
+              paragraph below at face value has been misled by this page rather
+              than by a source.
+            */}
+            {defunct ? (
+              <div className="callout" data-tone="risk">
+                <p>{copy(profile.defunctNote, built.defunctNote, { defunct })}</p>
+              </div>
+            ) : null}
+
             {logo?.url ? (
               <figure className="company-logo">
                 <img src={logo.url} alt={`${company.name} logo`} loading="lazy" />
               </figure>
             ) : null}
 
-            {company.body ? (
+            {/* Where it is now, in one click. Buried at the bottom of a fact
+                panel this was the least findable thing on a page whose subject
+                publishes it on every page of its own site. */}
+            {website ? (
+              <a className="company-site" href={website} rel="nofollow noopener noreferrer" target="_blank">
+                <span className="company-site-label">
+                  {copy(profile.siteLabel, built.siteLabel)}
+                </span>
+                <span className="company-site-url">{siteLabel(website)}</span>
+                <Icon className="ic" name="external" size={14} />
+              </a>
+            ) : null}
+
+            {/* `hasRichText`, not truthiness: a field somebody clicked into and
+                left comes back as a root holding one empty paragraph, which
+                renders as a blank measure-width gap above the catalogue. */}
+            {hasRichText(company.body) ? (
               <div className="prose">
                 <RichText data={company.body} />
               </div>
@@ -117,7 +216,7 @@ export default async function CompanyPage({ params }: Props) {
             {links.length > 0 ? (
               <section className="section">
                 <div className="section-head">
-                  <h2>{copy(profile.gamesHeading, COMPANIES_BUILT_IN.profile.gamesHeading)}</h2>
+                  <h2>{copy(profile.gamesHeading, built.gamesHeading)}</h2>
                 </div>
                 <div className="grid">
                   {links.map(({ game, href }) => (
@@ -137,10 +236,43 @@ export default async function CompanyPage({ params }: Props) {
               </section>
             ) : null}
 
+            {/*
+              The catalogue, which is the reason this host exists. The section
+              renders even when it is empty: "nobody has read a store listing
+              for this company" and "this company has released nothing" look
+              identical as a missing section, and only the first one is true.
+            */}
+            <section className="section">
+              <div className="section-head">
+                <h2>{copy(profile.catalogueHeading, built.catalogueHeading)}</h2>
+                {/* `.eyebrow` is what every other section head on the network puts a count
+                    in; a class of its own here would be a second thing to keep in step. */}
+                {rows.length > 0 ? <span className="eyebrow">{rows.length}</span> : null}
+              </div>
+              {rows.length > 0 ? (
+                <>
+                  <CompanyTitles
+                    rows={rows}
+                    coveredLabel={copy(profile.catalogueCovered, built.catalogueCovered)}
+                  />
+                  {/* The record's own note carries the storefront and the date
+                      it was read; the editable one carries what is true of
+                      every catalogue on the host. A price without a date is a
+                      claim this site cannot stand behind. */}
+                  {company.catalogueNote ? <p className="note">{company.catalogueNote}</p> : null}
+                  <p className="note">
+                    {copy(profile.cataloguePriceNote, built.cataloguePriceNote)}
+                  </p>
+                </>
+              ) : (
+                <p className="note">{copy(profile.catalogueEmpty, built.catalogueEmpty)}</p>
+              )}
+            </section>
+
             {company.keyPeople ? (
               <section className="section">
                 <div className="section-head">
-                  <h2>{copy(profile.peopleHeading, COMPANIES_BUILT_IN.profile.peopleHeading)}</h2>
+                  <h2>{copy(profile.peopleHeading, built.peopleHeading)}</h2>
                 </div>
                 <p>{company.keyPeople}</p>
                 {/*
@@ -148,9 +280,7 @@ export default async function CompanyPage({ params }: Props) {
                   so the date the figure was read is part of the figure. The
                   citation below carries it.
                 */}
-                <p className="note">
-                  {copy(profile.sourcingNote, COMPANIES_BUILT_IN.profile.sourcingNote)}
-                </p>
+                <p className="note">{copy(profile.sourcingNote, built.sourcingNote)}</p>
               </section>
             ) : null}
 
@@ -168,11 +298,8 @@ export default async function CompanyPage({ params }: Props) {
                   */}
                   <h2>
                     {parent
-                      ? copy(profile.parentHeading, COMPANIES_BUILT_IN.profile.parentHeading)
-                      : copy(
-                          profile.subsidiariesHeading,
-                          COMPANIES_BUILT_IN.profile.subsidiariesHeading,
-                        )}
+                      ? copy(profile.parentHeading, built.parentHeading)
+                      : copy(profile.subsidiariesHeading, built.subsidiariesHeading)}
                   </h2>
                 </div>
                 {parent ? (
@@ -192,18 +319,8 @@ export default async function CompanyPage({ params }: Props) {
                     </ul>
                   </>
                 ) : null}
-                <p className="note">
-                  {copy(profile.structureNote, COMPANIES_BUILT_IN.profile.structureNote)}
-                </p>
+                <p className="note">{copy(profile.structureNote, built.structureNote)}</p>
               </section>
-            ) : null}
-
-            {company.website ? (
-              <p className="note">
-                <a href={company.website} rel="nofollow noopener noreferrer" target="_blank">
-                  {company.name}’s own site
-                </a>
-              </p>
             ) : null}
 
             <Sources sources={company.sources} />
@@ -211,14 +328,15 @@ export default async function CompanyPage({ params }: Props) {
 
           <div className="stack">
             <FactPanel title={company.name} facts={facts} />
-            {games.length > 0 || company.basis !== 'related-company' || company.founded ? null : (
+            {games.length > 0 ||
+            rows.length > 0 ||
+            company.basis !== 'related-company' ||
+            company.founded ? null : (
               <section className="panel">
                 <div className="panel-head">
-                  <h2>{copy(profile.knownHeading, COMPANIES_BUILT_IN.profile.knownHeading)}</h2>
+                  <h2>{copy(profile.knownHeading, built.knownHeading)}</h2>
                 </div>
-                <p className="note">
-                  {copy(profile.knownNote, COMPANIES_BUILT_IN.profile.knownNote)}
-                </p>
+                <p className="note">{copy(profile.knownNote, built.knownNote)}</p>
               </section>
             )}
           </div>

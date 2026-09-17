@@ -85,6 +85,7 @@ export interface Config {
     maps: Map;
     authors: Author;
     companies: Company;
+    people: Person;
     games: Game;
     comments: Comment;
     corrections: Correction;
@@ -116,6 +117,7 @@ export interface Config {
     maps: MapsSelect<false> | MapsSelect<true>;
     authors: AuthorsSelect<false> | AuthorsSelect<true>;
     companies: CompaniesSelect<false> | CompaniesSelect<true>;
+    people: PeopleSelect<false> | PeopleSelect<true>;
     games: GamesSelect<false> | GamesSelect<true>;
     comments: CommentsSelect<false> | CommentsSelect<true>;
     corrections: CorrectionsSelect<false> | CorrectionsSelect<true>;
@@ -137,12 +139,14 @@ export interface Config {
     'legal-pages': LegalPage;
     'ui-strings': UiString;
     'companies-site': CompaniesSite;
+    'people-site': PeopleSite;
   };
   globalsSelect: {
     'site-settings': SiteSettingsSelect<false> | SiteSettingsSelect<true>;
     'legal-pages': LegalPagesSelect<false> | LegalPagesSelect<true>;
     'ui-strings': UiStringsSelect<false> | UiStringsSelect<true>;
     'companies-site': CompaniesSiteSelect<false> | CompaniesSiteSelect<true>;
+    'people-site': PeopleSiteSelect<false> | PeopleSiteSelect<true>;
   };
   locale: null;
   widgets: {
@@ -2368,6 +2372,61 @@ export interface Company {
    */
   subsidiaries?: (number | Company)[] | null;
   /**
+   * As the article names them.
+   */
+  founders?: string | null;
+  /**
+   * What it was called before, where a source says.
+   */
+  formerNames?: string | null;
+  /**
+   * Who bought it and when, e.g. "Tencent, 2024". The parent relationship is the link; this is the event.
+   */
+  acquired?: string | null;
+  /**
+   * The year it closed, if it has. A studio that no longer exists is the single most useful thing this page can say about it, and the one most often missing elsewhere.
+   */
+  defunct?: string | null;
+  /**
+   * The series a source names as theirs, comma separated.
+   */
+  franchises?: string | null;
+  /**
+   * Everything the company is credited on. Filled by `pnpm fetch:company-games` and `pnpm seed:company-games`; anything typed here by hand survives a re-run.
+   */
+  titles?:
+    | {
+        title: string;
+        year?: string | null;
+        role?: ('developer' | 'publisher' | 'both') | null;
+        /**
+         * As the store shows it, in USD.
+         */
+        priceText?: string | null;
+        isFree?: boolean | null;
+        metacritic?: number | null;
+        /**
+         * e.g. "Very Positive (12,481)".
+         */
+        reviews?: string | null;
+        genre?: string | null;
+        /**
+         * Comma separated, as the source lists them.
+         */
+        platforms?: string | null;
+        storeUrl?: string | null;
+        /**
+         * Set where this title is one of ours, so the row links into the wiki instead of out to a shop.
+         */
+        coveredBy?: (number | null) | Game;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Where the catalogue came from and when it was read. A price is true on a date, and a page that shows one without saying when is claiming more than it knows.
+   */
+  catalogueNote?: string | null;
+  /**
    * Why this company is on the network. Shown on the page, because how a name was chosen is part of what a reader is owed.
    */
   basis?: ('revenue-ranking' | 'network-game' | 'gaming-category' | 'related-company') | null;
@@ -2379,6 +2438,163 @@ export interface Company {
    * Games of theirs that this network covers. Derived from each game’s developer and publisher fields.
    */
   games?: (number | Game)[] | null;
+  /**
+   * Shown to readers as a badge. Be honest — it is the whole point of this site.
+   */
+  confidence: 'high' | 'medium' | 'low';
+  /**
+   * One or two sentences. Used on cards, in search results and as the page lede.
+   */
+  summary: string;
+  /**
+   * The main article. Original prose only — never paste from another site.
+   */
+  body?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  /**
+   * Cite every figure. Two independent sources before marking confidence high.
+   */
+  sources?:
+    | {
+        title: string;
+        url: string;
+        retrieved?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Leave blank to derive from the title and summary.
+   */
+  seo?: {
+    /**
+     * Under ~60 characters. Overrides the <title> tag.
+     */
+    title?: string | null;
+    /**
+     * Under ~155 characters. Overrides the meta description.
+     */
+    description?: string | null;
+    /**
+     * Hide this page from search engines.
+     */
+    noindex?: boolean | null;
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Directors, designers, composers and actors, shared across every wiki. One page per person, listing everything of theirs the network covers.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "people".
+ */
+export interface Person {
+  id: number;
+  /**
+   * As the person writes it, with the diacritics they use.
+   */
+  name: string;
+  /**
+   * URL segment. Auto-filled from the title. Changing it breaks existing links.
+   */
+  slug: string;
+  /**
+   * How the name files in a list, e.g. "Gaweł, Bartłomiej". Left blank, the directory sorts on the full name as written.
+   */
+  sortName?: string | null;
+  /**
+   * What a source says they did on something this network covers — not their whole career. Several is normal.
+   */
+  roles: (
+    | 'director'
+    | 'designer'
+    | 'artist'
+    | 'writer'
+    | 'composer'
+    | 'producer'
+    | 'programmer'
+    | 'developer'
+    | 'actor'
+    | 'voice-actor'
+    | 'motion-capture'
+    | 'executive'
+  )[];
+  /**
+   * The one line under the name in a list, e.g. "Composer, A Plague Tale". Kept short on purpose.
+   */
+  knownFor?: string | null;
+  /**
+   * As the source writes it — "12 March 1978", "c. 1970", "1980s". Text, not a date: a date picker cannot hold a source that is not sure, and turning "c. 1970" into 1 January 1970 invents precision about a living person.
+   */
+  born?: string | null;
+  /**
+   * Only where a source states it.
+   */
+  birthPlace?: string | null;
+  /**
+   * Only where a source states it. Never inferred from a name, a language or a studio’s address.
+   */
+  nationality?: string | null;
+  /**
+   * e.g. "2004" or "2004–present".
+   */
+  activeSince?: string | null;
+  /**
+   * Stage name, romanisation, or the other spelling a source uses.
+   */
+  alsoKnownAs?: string | null;
+  /**
+   * Their own site. Linked with rel="nofollow", like every outbound link here.
+   */
+  website?: string | null;
+  /**
+   * What a source lists them on, inside this network or outside it. Year and role exactly as stated; leave either blank rather than guessing.
+   */
+  works?:
+    | {
+        title: string;
+        year?: string | null;
+        kind?: ('game' | 'film' | 'tv' | 'album' | 'other') | null;
+        /**
+         * e.g. "Composer", "Voice of Jesse Faden".
+         */
+        role?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Games of this network they worked on. Derived by `pnpm seed:people` from each game’s own infobox fields, so the game record stays the source of truth and this is the reverse index.
+   */
+  games?: (number | Game)[] | null;
+  /**
+   * Characters they play, where a character’s own infobox names them. This is what makes an actor’s page a route back into the wikis.
+   */
+  characters?: (number | Character)[] | null;
+  /**
+   * Companies whose own article names them.
+   */
+  companies?: (number | Company)[] | null;
+  /**
+   * Only a freely licensed photograph, credited. A press shot of somebody’s face is not the same kind of image as box art and is not used here on the same argument.
+   */
+  photo?: (number | null) | Media;
+  /**
+   * Why this person is on the network. Shown on the page — how a name was chosen is part of what a reader is owed, and it is also what stops this becoming a directory of everyone.
+   */
+  basis?: ('game-credit' | 'character-credit' | 'company-officer') | null;
   /**
    * Shown to readers as a badge. Be honest — it is the whole point of this site.
    */
@@ -2744,6 +2960,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'companies';
         value: number | Company;
+      } | null)
+    | ({
+        relationTo: 'people';
+        value: number | Person;
       } | null)
     | ({
         relationTo: 'games';
@@ -3454,9 +3674,82 @@ export interface CompaniesSelect<T extends boolean = true> {
   industry?: T;
   parent?: T;
   subsidiaries?: T;
+  founders?: T;
+  formerNames?: T;
+  acquired?: T;
+  defunct?: T;
+  franchises?: T;
+  titles?:
+    | T
+    | {
+        title?: T;
+        year?: T;
+        role?: T;
+        priceText?: T;
+        isFree?: T;
+        metacritic?: T;
+        reviews?: T;
+        genre?: T;
+        platforms?: T;
+        storeUrl?: T;
+        coveredBy?: T;
+        id?: T;
+      };
+  catalogueNote?: T;
   basis?: T;
   logo?: T;
   games?: T;
+  confidence?: T;
+  summary?: T;
+  body?: T;
+  sources?:
+    | T
+    | {
+        title?: T;
+        url?: T;
+        retrieved?: T;
+        id?: T;
+      };
+  seo?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        noindex?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "people_select".
+ */
+export interface PeopleSelect<T extends boolean = true> {
+  name?: T;
+  slug?: T;
+  sortName?: T;
+  roles?: T;
+  knownFor?: T;
+  born?: T;
+  birthPlace?: T;
+  nationality?: T;
+  activeSince?: T;
+  alsoKnownAs?: T;
+  website?: T;
+  works?:
+    | T
+    | {
+        title?: T;
+        year?: T;
+        kind?: T;
+        role?: T;
+        id?: T;
+      };
+  games?: T;
+  characters?: T;
+  companies?: T;
+  photo?: T;
+  basis?: T;
   confidence?: T;
   summary?: T;
   body?: T;
@@ -4285,6 +4578,27 @@ export interface CompaniesSite {
   profile?: {
     gamesHeading?: string | null;
     subsidiariesHeading?: string | null;
+    catalogueHeading?: string | null;
+    /**
+     * Marks the rows that link into one of this network’s wikis instead of out to a shop.
+     */
+    catalogueCovered?: string | null;
+    /**
+     * The standing half of the price sentence. Which storefront was read and on what date belongs on the company record’s own catalogue note; this is the part that is true of all three hundred of them. A price is a fact with a date on it, so keep the distinction however it is reworded.
+     */
+    cataloguePriceNote?: string | null;
+    /**
+     * Shown on every profile nobody has harvested a catalogue for, which is most of them. It has to say the gap is ours — an empty list and "this company has released nothing" look identical on the page, and only the first is true.
+     */
+    catalogueEmpty?: string | null;
+    /**
+     * Token: {defunct}, the year as the record states it. Shown in red at the top of the profile, above everything else, because the rest of the page is in the past tense once it applies.
+     */
+    defunctNote?: string | null;
+    /**
+     * The words beside the company’s own web address.
+     */
+    siteLabel?: string | null;
     parentHeading?: string | null;
     peopleHeading?: string | null;
     /**
@@ -4312,6 +4626,62 @@ export interface CompaniesSite {
         id?: string | null;
       }[]
     | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * The people.<domain> host: its front page, its shell and the headings on a profile. The profiles themselves are in the People collection.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "people-site".
+ */
+export interface PeopleSite {
+  id: number;
+  title?: string | null;
+  eyebrow?: string | null;
+  metaDescription?: string | null;
+  /**
+   * Token: {count}, the number of profiles.
+   */
+  lede?: string | null;
+  /**
+   * The directory groups people by how their name reached this network, which is the same disclosure the companies host makes. A group with nobody in it is not rendered.
+   */
+  groups?: {
+    creditedHeading?: string | null;
+    creditedNote?: string | null;
+    castHeading?: string | null;
+    castNote?: string | null;
+    officersHeading?: string | null;
+    officersNote?: string | null;
+  };
+  /**
+   * Shown in place of the groups while nothing has been published. An index that renders as a heading over white space reads as a page that broke.
+   */
+  emptyNote?: string | null;
+  whyHeading?: string | null;
+  /**
+   * Token: {companiesLink}, a link to the companies host.
+   */
+  whyBody?: string | null;
+  profile?: {
+    gamesHeading?: string | null;
+    creditsHeading?: string | null;
+    charactersHeading?: string | null;
+    companiesHeading?: string | null;
+    /**
+     * The line under a profile saying every detail is what a cited source states and nothing is inferred. These are pages about living people; it is the most load-bearing sentence on the host.
+     */
+    sourcingNote?: string | null;
+    /**
+     * Shown in place of a portrait. Most of these people have no freely licensed photograph, and saying so is better than a grey silhouette that reads as a missing file.
+     */
+    noPhotoNote?: string | null;
+  };
+  shellName?: string | null;
+  shellTagline?: string | null;
+  footerBlurb?: string | null;
+  shellDescription?: string | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -4524,6 +4894,12 @@ export interface CompaniesSiteSelect<T extends boolean = true> {
     | {
         gamesHeading?: T;
         subsidiariesHeading?: T;
+        catalogueHeading?: T;
+        catalogueCovered?: T;
+        cataloguePriceNote?: T;
+        catalogueEmpty?: T;
+        defunctNote?: T;
+        siteLabel?: T;
         parentHeading?: T;
         peopleHeading?: T;
         sourcingNote?: T;
@@ -4542,6 +4918,46 @@ export interface CompaniesSiteSelect<T extends boolean = true> {
         href?: T;
         id?: T;
       };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "people-site_select".
+ */
+export interface PeopleSiteSelect<T extends boolean = true> {
+  title?: T;
+  eyebrow?: T;
+  metaDescription?: T;
+  lede?: T;
+  groups?:
+    | T
+    | {
+        creditedHeading?: T;
+        creditedNote?: T;
+        castHeading?: T;
+        castNote?: T;
+        officersHeading?: T;
+        officersNote?: T;
+      };
+  emptyNote?: T;
+  whyHeading?: T;
+  whyBody?: T;
+  profile?:
+    | T
+    | {
+        gamesHeading?: T;
+        creditsHeading?: T;
+        charactersHeading?: T;
+        companiesHeading?: T;
+        sourcingNote?: T;
+        noPhotoNote?: T;
+      };
+  shellName?: T;
+  shellTagline?: T;
+  footerBlurb?: T;
+  shellDescription?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

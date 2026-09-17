@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
 import { sectionArt } from '@/lib/art'
 import { EntityCard } from '@/components/EntityCard'
+import { asThumb } from '@/lib/media'
 import { Badge, PhaseBadge } from '@/components/Badges'
 import { getAll, getGame } from '@/lib/payload'
 import { sectionCopy } from '@/lib/section-copy'
@@ -29,7 +30,7 @@ export default async function SkillsIndex({ params }: Props) {
   const { game } = await params
   const [doc, trees, perks] = await Promise.all([
     getGame(game),
-    getAll('skill-trees', { game, depth: 0 }),
+    getAll('skill-trees', { game, depth: 1 }),
     getAll('perks', { game, depth: 1 }),
   ])
 
@@ -59,6 +60,7 @@ export default async function SkillsIndex({ params }: Props) {
               headingLevel={2}
               key={tree.id}
               href={`/skills/${tree.slug}`}
+              image={asThumb(tree.image)}
               title={tree.title}
               summary={tree.summary}
               badges={

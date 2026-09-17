@@ -5,6 +5,7 @@ import { PageHeader } from '@/components/PageHeader'
 import { sectionArt } from '@/lib/art'
 import { Badge } from '@/components/Badges'
 import { DataTable, type Row } from '@/components/DataTable'
+import { asThumb } from '@/lib/media'
 import { Callout } from '@/components/Callout'
 import { getAll, getGame } from '@/lib/payload'
 import { sectionCopy } from '@/lib/section-copy'
@@ -49,7 +50,13 @@ export default async function PerksIndex({ params }: Props) {
     const tree = typeof perk.tree === 'object' ? (perk.tree as SkillTree) : null
     return {
       id: perk.id,
+      /*
+        The emblem where the record has one, the icon set where it does not.
+        `avatar` wins over `icon` in DataTable, and both are declared so a perk
+        that never got an emblem still has a mark rather than an empty cell.
+      */
       icon: perk.isUltimate ? 'star' : 'spark',
+      avatar: asThumb(perk.image)?.url ?? '',
       title: perk.title,
       titleHref: `/perks/${perk.slug}`,
       tree: tree?.title ?? '',

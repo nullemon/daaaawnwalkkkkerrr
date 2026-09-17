@@ -9,6 +9,7 @@ import { RichText } from '@/components/RichText'
 import { Sources } from '@/components/Sources'
 import { Attribution } from '@/components/Attribution'
 import { CommentThread } from '@/components/CommentThread'
+import { EntityImage } from '@/components/EntityImage'
 import { FactPanel } from '@/components/FactPanel'
 import { RelatedList, type RelatedItem } from '@/components/RelatedList'
 import { Callout } from '@/components/Callout'
@@ -96,6 +97,13 @@ export default async function SkillTreePage({ params }: Props) {
             </div>
           </div>
           <div className="stack">
+            {/*
+              The tree's emblem. Square, because it is a generated sigil rather
+              than art from the game — see `tools/make-emblems.mjs`. Nothing
+              rendered this at all, so a third of the emblem set was attached,
+              correct, and on no page anybody could reach.
+            */}
+            <EntityImage media={doc.image} shape="square" />
             <FactPanel
               facts={[
                 { label: 'Perks', value: perks.length || undefined },

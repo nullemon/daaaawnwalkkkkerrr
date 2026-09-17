@@ -72,6 +72,34 @@ export const COMPANIES_BUILT_IN = {
     'A studio turns up on more than one wiki, and a company page that exists once carries its whole body of work instead of being three thin copies that disagree the first time one is corrected. It is the same reason {authorsLink} live on the hub rather than on each wiki.',
   profile: {
     gamesHeading: 'Their games on this network',
+    catalogueHeading: 'Everything they are credited on',
+    /*
+      A price is a fact with a date on it, not a property of a game, and the
+      date itself lives on the record — `catalogueNote` says which storefront
+      was read and when. This is the standing half of that sentence: the part
+      that is true of every catalogue on the host and would otherwise be
+      retyped into three hundred records, drifting on every one of them.
+    */
+    cataloguePriceNote:
+      'Price, score and store rating are what a storefront showed on the day the catalogue was read, not properties of the game. Where a title has a wiki on this network the row links to it; everything else links out to the shop.',
+    /*
+      "We have not read a store listing for this company" and "this company has
+      released nothing" look identical as an empty list, and only the first is
+      true. Most of the profiles on this host have no catalogue yet, so this
+      sentence is the one most often read.
+    */
+    catalogueEmpty:
+      'No catalogue has been compiled for this company yet. That means nobody has read a store listing for it, not that it has published nothing — the gap is ours.',
+    catalogueCovered: 'Covered here',
+    /*
+      Token: {defunct}, the year as the record states it. A studio that has
+      closed is the single most useful thing a page like this can say and the
+      thing most often missing elsewhere, so it is a banner at the top of the
+      profile rather than the eleventh row of a panel nobody scrolls to.
+    */
+    defunctNote:
+      'No longer operating ({defunct}). Everything on this page is a record of what the company did, not what it does.',
+    siteLabel: 'Official site',
     peopleHeading: 'Who runs it',
     sourcingNote:
       'Named executives as its own article stated them on the date in the sources below.',
@@ -108,3 +136,40 @@ export const COMPANIES_BUILT_IN = {
  * rather than bold landing on the wrong half of a new sentence.
  */
 export const EMPHASISED_CLAUSE = 'Popularity is not a measurable quantity'
+
+/**
+ * What a company's own `role` enum is called, and what a catalogue row's is.
+ *
+ * These belong in `src/lib/ui-registry.ts` with every other enum label, and
+ * they are not there for a reason worth writing down: the registry's `role.*`
+ * group was populated for *characters* — protagonist, ally, vassal, antagonist,
+ * merchant, minor — and it has no `developer` or `publisher` in it. Moving these
+ * onto `ui.label('role', …)` would not error and would not show a missing key:
+ * `fromMaps.label` tidies an unknown value and returns it, so every company
+ * badge on the host would quietly become a lower-case "developer", and the
+ * `<title>` tag with it. Sharing the group would also put two studios' roles in
+ * the middle of a wiki editor's list of character roles, which is a worse
+ * screen than the one that exists.
+ *
+ * So they live here, next to the rest of this host's wording, and there is one
+ * copy for the network rather than one per page. `companies/page.tsx` still has
+ * a third — deliberately out of scope for the change that wrote this note.
+ */
+export const COMPANY_ROLE_LABEL: Record<string, string> = {
+  developer: 'Developer',
+  publisher: 'Publisher',
+}
+
+/**
+ * The same enum in the past tense, because a catalogue row is a credit.
+ *
+ * "Developer — Alan Wake 2" reads as a job title; "Developed" reads as what
+ * they did to it, which is the question a body of work answers. `both` is its
+ * own value rather than two badges: a studio that funded and made its own game
+ * did one thing, not two.
+ */
+export const CATALOGUE_ROLE_LABEL: Record<string, string> = {
+  developer: 'Developed',
+  publisher: 'Published',
+  both: 'Developed and published',
+}

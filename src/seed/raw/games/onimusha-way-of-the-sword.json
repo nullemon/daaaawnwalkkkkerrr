@@ -2,7 +2,7 @@
   "slug": "onimusha-way-of-the-sword",
   "appId": 2638890,
   "storeUrl": "https://store.steampowered.com/app/2638890/",
-  "fetchedAt": "2026-09-15",
+  "fetchedAt": "2026-09-17",
   "title": "Onimusha: Way of the Sword",
   "developers": [
     "CAPCOM Co., Ltd."
@@ -133,313 +133,313 @@
       "title": "Onimusha Showdown",
       "description": null,
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/0a1386e0b924db19aa90b5667dcec01a36511d48.jpg",
-      "globalPercent": 90
+      "globalPercent": 90.1
     },
     {
       "title": "Get This Thing Off Me",
       "description": "Absorb 30 or more souls at once.",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/6df5400daef82f23e33ff79dd4774dfa430fb0fd.jpg",
-      "globalPercent": 88
+      "globalPercent": 88.4
     },
     {
       "title": "Get Stuffed",
       "description": null,
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/8c069f7d49c87359ff339bd1639b3bffbd1b3b17.jpg",
-      "globalPercent": 87.5
+      "globalPercent": 87.7
     },
     {
       "title": "Looking Sharp",
       "description": "Enhance a piece of equipment for the first time.",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/49b532c6cb039b436e4d8312dbf59ce9f541a1b1.jpg",
-      "globalPercent": 83.9
+      "globalPercent": 84.4
     },
     {
       "title": "Twisted Fates",
       "description": null,
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/0bb432e0fe01420705c0b62b990ebc81b2de6d52.jpg",
-      "globalPercent": 80
+      "globalPercent": 80.6
     },
     {
       "title": "Berserker",
       "description": "Defeat 3 enemies with continuous Break Issen attacks.",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/ef77c7a658ff6d24fc283c3edb3d47387c7c8d6c.jpg",
-      "globalPercent": 75.3
+      "globalPercent": 76.1
     },
     {
       "title": "Howling Wind",
       "description": null,
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/1c74c74eb87072960e920ddd01ff35632bb9f278.jpg",
-      "globalPercent": 71.6
+      "globalPercent": 72.7
     },
     {
       "title": "Life-Saver",
       "description": "Complete your first Chance Encounter.",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/5da6e7f797d74b5a6dc76b12dd8567e50bba1440.jpg",
-      "globalPercent": 68.4
+      "globalPercent": 69.3
     },
     {
       "title": "Dokyo's Fixation",
       "description": null,
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/1d668f532ef695887e0bfadbaf58f87715a78419.jpg",
-      "globalPercent": 65.3
+      "globalPercent": 66.8
     },
     {
       "title": "Second Helping",
       "description": null,
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/5d84bd5003707f311217e1267f42385d32294aa5.jpg",
-      "globalPercent": 64
+      "globalPercent": 64.7
     },
     {
       "title": "No Dog Left Behind",
       "description": "Rescue your first Lion Dog.",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/1927c3e10ba1b1a993d536a0d7aec02285c51ca6.jpg",
-      "globalPercent": 62.8
+      "globalPercent": 64.3
     },
     {
       "title": "Mystery Solved",
       "description": "Complete your first Mystery of Kyoto.",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/adec2b7f17e16940868620b4bbab7119f815ea6d.jpg",
-      "globalPercent": 62.4
+      "globalPercent": 64
     },
     {
       "title": "Winning Is What Matters",
       "description": "Carry out 50 attacks with environmental objects.",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/81711add65e211cf276e55dfaad4dad222afd8b0.jpg",
-      "globalPercent": 61.4
+      "globalPercent": 62.9
     },
     {
       "title": "A Real Charmer",
       "description": "Enhance a charm to the maximum level.",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/6c6ff3c31b2c07034e34e0870f673176f46fbdbb.jpg",
-      "globalPercent": 60.6
+      "globalPercent": 61.9
     },
     {
       "title": "Benkei: Out, but Not Down",
       "description": null,
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/4abce1a0c0e75e052935abbd25b4d2df00a5d8cb.jpg",
-      "globalPercent": 57.9
+      "globalPercent": 59.9
     },
     {
       "title": "Helm Splitter",
       "description": "Break 100 shields or pieces of enemy armor.",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/20c9367ad2855b1442179c3e6692d0c20ff0c342.jpg",
-      "globalPercent": 53.8
-    },
-    {
-      "title": "Serves You Right",
-      "description": "Defeat the Byakue at Kiyomizu-dera Temple.",
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/1bf022afa8baf2313ca444b5ef31d4bdc848dc19.jpg",
-      "globalPercent": 53.7
+      "globalPercent": 55.9
     },
     {
       "title": "Crashing Lightning",
       "description": null,
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/d298e0106196dfeb266ec1faa0a3395ef29b4371.jpg",
-      "globalPercent": 53.4
+      "globalPercent": 55.7
+    },
+    {
+      "title": "Serves You Right",
+      "description": "Defeat the Byakue at Kiyomizu-dera Temple.",
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/1bf022afa8baf2313ca444b5ef31d4bdc848dc19.jpg",
+      "globalPercent": 55.4
     },
     {
       "title": "Burning Blade",
       "description": "Defeat 50 foes while in the Blazing State.",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/2e2985f716db9a7f1b0ead66a9f6a442847aeb79.jpg",
-      "globalPercent": 52.4
+      "globalPercent": 54.4
     },
     {
       "title": "Untouchable",
       "description": "Perform 50 Grab Reversals.",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/14606936c5579714468be0ee0c8b3f2f53c97545.jpg",
-      "globalPercent": 51.6
+      "globalPercent": 53.6
     },
     {
       "title": "Coming Through!",
       "description": "Break an enemy's guard 50 times.",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/67119a3a28ca3e38ef1d3bcac8eb0faf7ada5005.jpg",
-      "globalPercent": 51
+      "globalPercent": 53
     },
     {
       "title": "Selfish Selflessness",
       "description": "Rescue a merchant that's being attacked by Genma.",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/5a8ca195af887717d70689537b1c406ddf23d489.jpg",
-      "globalPercent": 49.5
+      "globalPercent": 50.9
     },
     {
       "title": "Wide Awake",
       "description": null,
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/71d69d1ba53faeb3291fc508617fcfb510878953.jpg",
-      "globalPercent": 43.3
+      "globalPercent": 46.1
     },
     {
       "title": "Brutalist",
       "description": "Land 50 Issen attacks.",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/fe85b6d7273801eb03db2f67e757d8ecf958e0bd.jpg",
-      "globalPercent": 42.2
+      "globalPercent": 44
     },
     {
       "title": "Health Is Wealth",
       "description": "Enhance a Hozuki Pouch to the maximum level.",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/9ae1441ba82697896b3d955a3fbaf2917dfb63cc.jpg",
-      "globalPercent": 40.5
+      "globalPercent": 42.5
     },
     {
       "title": "The Perfect Storm",
       "description": null,
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/6da6e51f95a3b364e8ebfb4afcca338e61a6f759.jpg",
-      "globalPercent": 39.4
+      "globalPercent": 42.3
     },
     {
       "title": "Deadeye",
       "description": "Score 100 headshots with your bow.",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/e29956f1e7f657ce2fa11d5a9e2c2c2859e47079.jpg",
-      "globalPercent": 36.1
+      "globalPercent": 38.3
     },
     {
       "title": "We Done Here?",
       "description": null,
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/f08bf1689ea5078269987d69586d650f3ccaa99c.jpg",
-      "globalPercent": 35.1
-    },
-    {
-      "title": "Stop Motion",
-      "description": "Perform 50 Reflex Combos.",
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/63390e2a1a162962b245af54f9cd5aaa9937449c.jpg",
-      "globalPercent": 34.5
+      "globalPercent": 38.1
     },
     {
       "title": "End This Madness",
       "description": null,
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/9da27ddaf8ae8a989c344e5c4dcb1154ad1cafa7.jpg",
-      "globalPercent": 34.3
+      "globalPercent": 37.4
+    },
+    {
+      "title": "Stop Motion",
+      "description": "Perform 50 Reflex Combos.",
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/63390e2a1a162962b245af54f9cd5aaa9937449c.jpg",
+      "globalPercent": 36.8
     },
     {
       "title": "Silent Violence",
       "description": "Assassinate 20 enemies.",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/c8480c93e85bfe64849a989f4cefd479e2d2e953.jpg",
-      "globalPercent": 33.4
+      "globalPercent": 35.3
     },
     {
       "title": "Pinch Hitter",
       "description": "Deflect 50 projectiles.",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/99bd56c18d80d6d9eec0ad3c613589b1c39eb335.jpg",
-      "globalPercent": 33
-    },
-    {
-      "title": "Demystified",
-      "description": "Complete all Mysteries of Kyoto.",
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/2f4a06092f14d69eef0098e5c32ca9ec75450a65.jpg",
-      "globalPercent": 31.7
+      "globalPercent": 34.6
     },
     {
       "title": "Baited by Benkei",
       "description": null,
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/9fc7faf06213a568ef577a70407002e867c6385d.jpg",
-      "globalPercent": 31.1
+      "globalPercent": 34.2
+    },
+    {
+      "title": "Demystified",
+      "description": "Complete all Mysteries of Kyoto.",
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/2f4a06092f14d69eef0098e5c32ca9ec75450a65.jpg",
+      "globalPercent": 34
     },
     {
       "title": "Truly, Thank You",
       "description": null,
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/f71add604052c9f630261437a8f4a8f7b00f0415.jpg",
-      "globalPercent": 28.7
+      "globalPercent": 31.8
     },
     {
       "title": "Oni Armory",
       "description": "Acquire all Oni Armaments.",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/930c4de023aad861d1fa13d0e2ed9cc3d25096cd.jpg",
-      "globalPercent": 28.5
+      "globalPercent": 30.9
     },
     {
       "title": "No Job Too Small",
       "description": "Complete all Chance Encounters.",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/016f9608c6da9b679405a7c5181b1c48ccdff7fd.jpg",
-      "globalPercent": 23.2
+      "globalPercent": 25.4
     },
     {
       "title": "For the Love of Dog",
       "description": "Rescue all the Lion Dogs.",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/d636d85597ce87f0e0fb6146864a1034589d900c.jpg",
-      "globalPercent": 23.2
+      "globalPercent": 25.2
     },
     {
       "title": "The Winding Way of the Sword",
       "description": "Learn and upgrade all basic or special skills.",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/3593fe083af78812059d1ea4f8887858cc602e41.jpg",
-      "globalPercent": 18
+      "globalPercent": 19.7
     },
     {
       "title": "Wielder of Oni Armaments",
       "description": "Defeat 100 enemies with Oni Armaments.",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/220616bf22a322050dd9cf919d18444d3b7966b3.jpg",
-      "globalPercent": 17.9
+      "globalPercent": 19.4
     },
     {
       "title": "Dressed to Kill",
       "description": "Enhance all equipment to the maximum level.",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/f89a08344faa1685d267988fffede89d64355ef1.jpg",
-      "globalPercent": 14.3
+      "globalPercent": 15.6
     },
     {
       "title": "Well-Rounded",
       "description": "Learn and upgrade all basic and special skills.",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/10c15c122e9297e808e86c3cdedbb6f3231f1b11.jpg",
-      "globalPercent": 12
-    },
-    {
-      "title": "Flow State",
-      "description": "Defeat 50 enemies with Chain Issen attacks.",
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/4a6ebf84f675ff76a4cf471c272ed53fdffb5f56.jpg",
-      "globalPercent": 11.2
+      "globalPercent": 13.3
     },
     {
       "title": "Oni's Oni",
       "description": "Defeat 50 enemies in the Oni Awakened state.",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/fa52094e0b1d952941a867913a4476e1c56033d4.jpg",
-      "globalPercent": 10.8
+      "globalPercent": 12.1
+    },
+    {
+      "title": "Flow State",
+      "description": "Defeat 50 enemies with Chain Issen attacks.",
+      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/4a6ebf84f675ff76a4cf471c272ed53fdffb5f56.jpg",
+      "globalPercent": 12.1
     },
     {
       "title": "Citizen Savior",
       "description": "Rescue 30 townspeople from marauding Genma.",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/9e5dc00c2dc51dea5e52af6b29fb69ddade31c7e.jpg",
-      "globalPercent": 10.7
+      "globalPercent": 12
     },
     {
       "title": "Medical Marvel",
       "description": "Enhance all Hozuki Pouches to the maximum level.",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/fcc74fdc14cbdee6059c81d54700ee5ee92c3f1a.jpg",
-      "globalPercent": 9.5
+      "globalPercent": 10.5
     },
     {
       "title": "Genma Griller",
       "description": "Set three enemies ablaze at once.",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/8af46186c3ee594a46f24ef124a751799375d9ff.jpg",
-      "globalPercent": 7.7
+      "globalPercent": 8.5
     },
     {
       "title": "Charmed Life",
       "description": "Enhance all charms to the maximum level.",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/cebe7e8cc5aaf60714acdd9294ce1f20fcf0fda4.jpg",
-      "globalPercent": 6.7
+      "globalPercent": 7.6
     },
     {
       "title": "Genma-ologist",
       "description": "Collect all the Genma notes.",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/25f63a85698de1df3be42db873daf84559d926ea.jpg",
-      "globalPercent": 6.4
+      "globalPercent": 7.2
     },
     {
       "title": "True Onimusha",
       "description": null,
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/7ae3a099522ebfc472356dc64b3dbf2c89658e11.jpg",
-      "globalPercent": 4.1
+      "globalPercent": 5
     },
     {
       "title": "Glutton for Punishment",
       "description": null,
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/67f49b523bb485ad230d63a2d90affbde9114372.jpg",
-      "globalPercent": 3.6
+      "globalPercent": 4.4
     },
     {
       "title": "Peerless",
       "description": "Unlock all achievements.",
       "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2638890/4575d270deb285877c6b7b0728ee19af67c113b2.jpg",
-      "globalPercent": 2.5
+      "globalPercent": 3.1
     }
   ],
   "art": {

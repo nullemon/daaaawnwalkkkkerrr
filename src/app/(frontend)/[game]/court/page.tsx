@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
 import { sectionArt } from '@/lib/art'
 import { EntityCard } from '@/components/EntityCard'
+import { asThumb } from '@/lib/media'
 import { Badge, Confidence } from '@/components/Badges'
 import { Callout } from '@/components/Callout'
 import { getAll, getGame } from '@/lib/payload'
@@ -31,7 +32,7 @@ export default async function CourtIndex({ params }: Props) {
   const { game } = await params
   const [doc, courts] = await Promise.all([
     getGame(game),
-    getAll('courts', { game, depth: 0 }),
+    getAll('courts', { game, depth: 1 }),
   ])
 
   /*
@@ -61,6 +62,7 @@ export default async function CourtIndex({ params }: Props) {
               headingLevel={2}
               key={court.id}
               href={`/court/${court.slug}`}
+              image={asThumb(court.image)}
               title={court.title}
               summary={court.summary}
               badges={

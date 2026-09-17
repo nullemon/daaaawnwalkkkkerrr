@@ -5,6 +5,7 @@ import { PageHeader } from '@/components/PageHeader'
 import { sectionArt } from '@/lib/art'
 import { Badge, Confidence } from '@/components/Badges'
 import { EntityCard } from '@/components/EntityCard'
+import { asThumb } from '@/lib/media'
 import { RunOutlook } from '@/components/RunOutlook'
 import { Callout } from '@/components/Callout'
 import { getAll, getGame } from '@/lib/payload'
@@ -46,7 +47,7 @@ export default async function EndingsIndex({ params }: Props) {
   const { game } = await params
   const [doc, endings] = await Promise.all([
     getGame(game),
-    getAll('endings', { game, sort: 'title', depth: 0 }),
+    getAll('endings', { game, sort: 'title', depth: 1 }),
   ])
   const copy = sectionCopy('endings', doc, { total: endings.length })
 
@@ -96,6 +97,7 @@ export default async function EndingsIndex({ params }: Props) {
                   <EntityCard
                     key={ending.id}
                     href={`/endings/${ending.slug}`}
+                    image={asThumb(ending.image)}
                     title={ending.title}
                     summary={ending.summary}
                     badges={

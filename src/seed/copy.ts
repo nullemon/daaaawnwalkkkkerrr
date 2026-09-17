@@ -6,6 +6,7 @@ import seedGamePageCopy from './copy/game-pages'
 import seedHubCopy from './copy/hub'
 import seedLegalCopy from './copy/legal'
 import seedCompaniesCopy from './copy/companies'
+import seedPeopleCopy from './copy/people'
 import seedUiCopy from './copy/ui'
 
 /**
@@ -39,6 +40,7 @@ async function run(): Promise<void> {
     ['hub', seedHubCopy],
     ['legal pages', seedLegalCopy],
     ['companies site', seedCompaniesCopy],
+    ['people site', seedPeopleCopy],
     ['interface text', seedUiCopy],
   ]
 

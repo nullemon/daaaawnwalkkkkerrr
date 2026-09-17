@@ -23,6 +23,7 @@ import { Maps } from './collections/Maps'
 import { Mechanics } from './collections/Mechanics'
 import { Authors } from './collections/Authors'
 import { Companies } from './collections/Companies'
+import { People } from './collections/People'
 import { Guides } from './collections/Guides'
 import { Corrections } from './collections/Corrections'
 import { Requests } from './collections/Requests'
@@ -33,6 +34,7 @@ import { SiteSettings } from './globals/SiteSettings'
 import { LegalPages } from './globals/LegalPages'
 import { InterfaceStrings } from './globals/InterfaceStrings'
 import { CompaniesSite } from './globals/CompaniesSite'
+import { PeopleSite } from './globals/PeopleSite'
 import { scopedToGame } from './fields/shared'
 
 const filename = fileURLToPath(import.meta.url)
@@ -85,6 +87,7 @@ export default buildConfig({
     Authors,
     // Network-wide
     Companies,
+    People,
     Games,
     // Moderation and admin
     Comments,
@@ -94,7 +97,7 @@ export default buildConfig({
     Players,
     Users,
   ],
-  globals: [SiteSettings, LegalPages, InterfaceStrings, CompaniesSite],
+  globals: [SiteSettings, LegalPages, InterfaceStrings, CompaniesSite, PeopleSite],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: { outputFile: path.resolve(dirname, 'payload-types.ts') },

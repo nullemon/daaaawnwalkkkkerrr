@@ -37,12 +37,21 @@ const UA =
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36'
 
 /**
- * The six wikis opened alongside Dawnwalker, with the Steam app id each was
- * verified against. The id is the load-bearing part — a title search returns
- * demos, soundtracks and playtests, and picking the wrong one silently
- * attributes another product's facts to this game.
+ * Every wiki, with the Steam app id it was verified against. The id is the
+ * load-bearing part — a title search returns demos, soundtracks and playtests,
+ * and picking the wrong one silently attributes another product's facts to
+ * this game.
+ *
+ * Dawnwalker was not on this list for most of the project's life, and the
+ * reason is worth keeping: it had no store listing to read. It shipped on
+ * 3 September 2026 and the listing went up with it, which is the case
+ * CLAUDE.md describes as the plan rather than an afterthought — the week a
+ * game launches, the pipeline that was empty starts answering. Its achievement
+ * list with per-achievement global unlock rates is the part that could not
+ * exist before release at all.
  */
 const GAMES = [
+  { slug: 'dawnwalker', appId: 3751260 },
   { slug: 'onimusha-way-of-the-sword', appId: 2638890 },
   { slug: 'phantom-blade-zero', appId: 4115450 },
   { slug: 'control-resonant', appId: 3669870 },

@@ -87,7 +87,7 @@ const INDEXNOW_KEY = /^[a-f0-9]{8,128}\.txt$/i
  * against this as well as against APEX_ONLY, so no wiki can ever be created
  * that would shadow it.
  */
-export const NETWORK_SUBDOMAINS = new Set(['companies'])
+export const NETWORK_SUBDOMAINS = new Set(['companies', 'people'])
 
 export const APEX_ONLY = new Set([
   ...PASS_THROUGH,

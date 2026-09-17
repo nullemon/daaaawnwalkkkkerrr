@@ -195,7 +195,15 @@ export const UI_DEFAULTS: Record<string, string> = {
   'facts.region-unrecorded': 'unrecorded',
   'facts.region-everywhere': 'not tied to one region',
 
-  'profile.at-a-glance': '{game} at a glance',
+  /*
+    The infobox heading. "Dawnwalker at a glance" said what the box was and
+    nothing about what the game is; a reader arriving from a search result
+    wants the second. Two keys rather than one with an optional token, because
+    `fill` leaves an unfilled token visible on purpose and "Dawnwalker (video
+    game, {year})" is worse than no year at all.
+  */
+  'profile.title': '{game}',
+  'profile.title-dated': '{game} (video game, {year})',
   'profile.developer': 'Developer',
   'profile.publisher': 'Publisher',
   'profile.released': 'Released',

@@ -68,7 +68,14 @@ export default async function CourtPage({ params }: Props) {
       <div className="page body-main">
         <div className="split">
           <div className="stack">
-            <EntityImage media={doc.image} shape="wide" />
+            {/*
+                      Square, because what hangs here is a generated emblem rather than key
+                      art. `wide` is 640px, so a square image rendered in it becomes the
+                      largest thing on the page — and the one image on this site that
+                      depicts nothing is the last one that should dominate. A record that
+                      ever gets real wide art wants this changed back with it.
+                    */}
+            <EntityImage media={doc.image} shape="square" />
             <div className="prose">
               <RichText data={doc.body} />
             </div>
