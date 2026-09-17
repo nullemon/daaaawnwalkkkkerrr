@@ -78,7 +78,7 @@ export default async function EnemyPage({ params }: Props) {
       <div className="page body-main">
         <div className="split">
           <div className="stack">
-            <EntityImage media={doc.image} shape="wide" />
+            <EntityImage media={doc.image} shape="wide" priority />
             {doc.weaknesses?.length ? (
               <div className="callout">
                 <h2>Weak to</h2>

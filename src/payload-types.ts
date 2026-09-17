@@ -4627,6 +4627,10 @@ export interface SiteSetting {
     headHtml?: string | null;
   };
   /**
+   * IndexNow tells Bing, Yandex, Seznam, Naver and Yep that a page changed instead of waiting to be crawled. Google does not participate. The key is public, not secret: it is proved by being served at https://<host>/<key>.txt, which this site does for whatever is set here, on every host. Any 8–128 characters of a–z, A–Z, 0–9 and hyphens will do — 32 random hex characters is the usual shape, and Bing Webmaster Tools will generate one for you. Leave blank to keep using the key that ships with the site.
+   */
+  indexnowKey?: string | null;
+  /**
    * Leave off until there is traffic and an approved ad account.
    */
   adsEnabled?: boolean | null;
@@ -5026,6 +5030,7 @@ export interface SiteSettingsSelect<T extends boolean = true> {
         clarityId?: T;
         headHtml?: T;
       };
+  indexnowKey?: T;
   adsEnabled?: T;
   adClientId?: T;
   updatedAt?: T;

@@ -112,17 +112,62 @@ own property and submit `https://<host>/sitemap.xml`. Eight properties, because
 Google treats a subdomain as a separate site — which is the cost of the
 subdomain decision, accepted knowingly. See `docs/NETWORK.md`.
 
-The IndexNow key is already generated and committed at `public/<key>.txt`. It
-is published by design, not a secret; the file being reachable is the whole of
-the proof that the key is yours.
+### The key
 
-It is served by every host because there is one deployment — **but only since
-`proxy.ts` learned to leave it alone**. Nothing exempted it before, so a wiki
-host rewrote `/<key>.txt` into `/<game>/<key>.txt` and 404ed, and the apex
-redirected it to `<key>.txt.<domain>` because an unreserved first segment is
-read as a game slug. Every submission would have failed verification. The
-proxy matches the key by shape now (8–128 hex characters and `.txt`), so
-rotating it is dropping a new file in `public/` and deleting the old one.
+A key is already generated and committed at `public/<key>.txt`, so this works
+with no setup. The key is **published by design, not a secret**: the file being
+reachable is the whole of the proof that the key is yours.
+
+To use your own instead: **Site settings → SEO & analytics → IndexNow key.**
+Any 8–128 characters of `a–z A–Z 0–9 -`; 32 random hex characters is the usual
+shape, and Bing Webmaster Tools will generate one. A malformed key is refused
+in the form rather than accepted and rejected later — IndexNow answers a bad
+submission with HTTP 422 and a body that says only that verification failed,
+which does not distinguish a malformed key from an unreachable file.
+
+**Blank means "use the key that shipped"**, never "serve nothing" — the same
+rule every editable field follows, see `docs/COPY.md`. The full order is
+settings, then `INDEXNOW_KEY` in the environment, then the committed file, and
+`resolveIndexNowKey` in `src/lib/indexnow.ts` is the one place that decides it.
+
+Rotating is typing a new key and saving. There is nothing to deploy, because
+`/<key>.txt` is not a file lookup: `proxy.ts` matches the *shape*
+`<8–128 chars>.txt` on any host and rewrites it to
+`src/app/api/indexnow/[key]/route.ts`, which serves whichever key is live as
+`text/plain` and **404s for every other**, including the one that was live
+before a rotation. A route that echoed back any key it was asked for would
+confirm a key anybody guessed, which would let a third party submit URLs on
+this network's behalf by pointing `keyLocation` at us.
+
+That exemption is also the bug it was written for. Nothing exempted the key
+file before, so a wiki host rewrote `/<key>.txt` into `/<game>/<key>.txt` and
+404ed, and the apex redirected it to `<key>.txt.<domain>` because an
+unreserved first segment is read as a game slug. Every submission the tool had
+ever made would have failed verification.
+
+`pnpm indexnow` now **asks every host for the key file before it sends
+anything**, and sends nothing if any of the ten does not answer with the key.
+That is the difference between a sentence naming the host and a 422 naming
+nothing.
+
+### Nothing triggers this automatically, and that is deliberate
+
+There is no hook on save, no call at the end of a build. A content change
+reaches IndexNow when somebody runs `pnpm indexnow -- --send` after the deploy
+that published it.
+
+The reason is that IndexNow is priced in trust rather than in requests:
+re-submitting URLs that have not changed is the documented way to get a key
+throttled or ignored, and a save hook here would submit the whole sitemap —
+1,900-odd URLs across ten hosts — for a typo fix, because nothing in this
+codebase tracks which pages a record change actually affects. Every public page
+is prerendered, so a saved record is not even live until the next build; a hook
+firing on save would be announcing a page that still shows the old text.
+
+A per-URL trigger would be worth building, and it needs a thing that does not
+exist yet: a record of which prerendered pages a given record appears on. Until
+then, manual-after-deploy is the honest mechanism, and the dry run is the
+default so it cannot happen by accident.
 
 ---
 

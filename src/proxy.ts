@@ -1,4 +1,5 @@
 import { NextResponse, type NextRequest } from 'next/server'
+import { KEY_FILE_PATTERN } from './lib/indexnow'
 
 /**
  * Host-to-path routing for the network.
@@ -71,26 +72,6 @@ const PASS_THROUGH = new Set([
 ])
 
 /**
- * The IndexNow key file, which has to answer on every host.
- *
- * IndexNow verifies ownership by fetching `<host>/<key>.txt` and checking it
- * contains the key. The submission is rejected if it 404s — and it did, on
- * every host: the file sat in `public/` and nothing exempted it, so a wiki
- * host rewrote it into `/<game>/<key>.txt` and the apex *redirected* it to
- * `<key>.txt.<domain>` because an unreserved first segment is read as a game
- * slug. `tools/indexnow.mjs` states in its own docstring that the key "is
- * served by every subdomain already". It never was, and every submission the
- * tool has ever made would have failed verification.
- *
- * Matched by shape rather than by name so rotating the key is dropping a new
- * file into `public/` and deleting the old one. An IndexNow key is 8 to 128
- * hexadecimal characters; no game slug can collide, because `slugField`
- * strips the dot and `hostLabelProblem` refuses an all-hex-and-digits label
- * of that length on its own merits.
- */
-const INDEXNOW_KEY = /^[a-f0-9]{8,128}\.txt$/i
-
-/**
  * First path segments that belong to the hub and must never be read as a game
  * slug. The Games collection refuses these as slugs, so the two lists agreeing
  * is enforced rather than hoped for — see RESERVED_SLUGS in
@@ -160,7 +141,41 @@ export function proxy(request: NextRequest) {
   const label = subdomainOf(host, root)
   const first = url.pathname.split('/')[1] ?? ''
 
-  if (PASS_THROUGH.has(first) || INDEXNOW_KEY.test(first)) return NextResponse.next()
+  if (PASS_THROUGH.has(first)) return NextResponse.next()
+
+  /*
+    The IndexNow key file, which has to answer on every host.
+
+    IndexNow verifies ownership by fetching `<host>/<key>.txt` and checking it
+    contains the key. The submission is rejected if it 404s — and it did, on
+    every host: the file sat in `public/` and nothing exempted it, so a wiki
+    host rewrote it into `/<game>/<key>.txt` and the apex *redirected* it to
+    `<key>.txt.<domain>` because an unreserved first segment is read as a game
+    slug. `tools/indexnow.mjs` states in its own docstring that the key "is
+    served by every subdomain already". It never was, and every submission the
+    tool has ever made would have failed verification.
+
+    Matched by shape rather than by name, which is what lets the owner rotate
+    the key from the admin: there is no filename here to keep in sync with a
+    settings field. The `.txt` is what makes shape-matching safe — no game slug
+    can contain a dot, because `slugField` strips it — so a key file can never
+    be read as a wiki and a wiki can never shadow a key file.
+
+    Rewritten rather than passed through, because the key may now be a settings
+    value with no file behind it. The route answers for whichever key is live
+    and 404s for every other, including the committed one after a rotation;
+    passing through would serve only keys that exist in `public/`, which is the
+    scheme this replaced.
+
+    `/<key>.txt` and nothing deeper. `first` is only the first segment, so
+    without the whole-path check `/<key>.txt/anything` would rewrite to the
+    same route and be answered 200 for a URL no engine ever asked for.
+  */
+  if (KEY_FILE_PATTERN.test(first) && url.pathname === `/${first}`) {
+    const rewritten = url.clone()
+    rewritten.pathname = `/api/indexnow/${first.slice(0, -4)}`
+    return NextResponse.rewrite(rewritten)
+  }
 
   // --- On a wiki's host: hide the game prefix ------------------------------
   if (label) {

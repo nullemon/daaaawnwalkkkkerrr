@@ -201,7 +201,7 @@ export default async function AchievementPage({ params }: Props) {
           </div>
 
           <div className="stack">
-            <EntityImage media={doc.icon} shape="square" />
+            <EntityImage media={doc.icon} shape="square" priority />
             <div className="callout">
               <h2>About these figures</h2>
               <p>

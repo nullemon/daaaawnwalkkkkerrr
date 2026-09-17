@@ -81,7 +81,7 @@ export default async function CourtActivityPage({ params }: Props) {
       />
       <div className="page body-main">
         {/* Generated emblem, not art from the game. See `make-emblems.mjs`. */}
-        <EntityImage media={doc.image} shape="square" />
+        <EntityImage media={doc.image} shape="square" priority />
         <Facts
           items={[
             {

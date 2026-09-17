@@ -149,7 +149,7 @@ export default async function CompanyPage({ params }: Props) {
 
   const logo =
     company.logo && typeof company.logo === 'object'
-      ? (company.logo as { url?: string | null })
+      ? (company.logo as { url?: string | null; width?: number | null; height?: number | null })
       : null
   /*
     The people this network has a profile for who are named as officers here.
@@ -278,9 +278,35 @@ export default async function CompanyPage({ params }: Props) {
               </div>
             ) : null}
 
+            {/*
+              Not lazy, and that is the whole point of the attributes here.
+
+              This is the first and usually the only picture on the profile,
+              directly under the header, so it is the largest thing painted
+              above the fold on all 105 companies that have a logo — the LCP
+              element by definition. `loading="lazy"` defers an image until
+              layout has run and the browser knows where it landed, which is
+              precisely the delay LCP measures, and the browser will not
+              second-guess the attribute for something this high in the
+              document. `PersonProfile` already had this right for the
+              photograph in the same slot; this was the odd one out.
+
+              Width and height come from the upload so the box is reserved
+              before the bytes arrive. The CSS sets `width: auto; height: auto`
+              with a 96px cap, so these change nothing about the rendered size
+              and only supply the ratio — which is what stops the paragraph
+              below it jumping when the logo loads.
+            */}
             {logo?.url ? (
               <figure className="company-logo">
-                <img src={logo.url} alt={`${company.name} logo`} loading="lazy" />
+                <img
+                  src={logo.url}
+                  alt={`${company.name} logo`}
+                  width={logo.width ?? undefined}
+                  height={logo.height ?? undefined}
+                  fetchPriority="high"
+                  decoding="async"
+                />
               </figure>
             ) : null}
 

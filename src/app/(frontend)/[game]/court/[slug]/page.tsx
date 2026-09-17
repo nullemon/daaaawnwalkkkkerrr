@@ -85,7 +85,7 @@ export default async function CourtPage({ params }: Props) {
                       depicts nothing is the last one that should dominate. A record that
                       ever gets real wide art wants this changed back with it.
                     */}
-            <EntityImage media={doc.image} shape="square" />
+            <EntityImage media={doc.image} shape="square" priority />
             <div className="prose">
               <LinkedRichText data={doc.body} scope={scope} />
             </div>

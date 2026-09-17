@@ -102,7 +102,7 @@ export default async function EndingPage({ params }: Props) {
                   depicts nothing is the last one that should dominate. A record that
                   ever gets real wide art wants this changed back with it.
                 */}
-        <EntityImage media={ending.image} shape="square" />
+        <EntityImage media={ending.image} shape="square" priority />
 
         {ending.howToGet ? (
           <div className="callout">

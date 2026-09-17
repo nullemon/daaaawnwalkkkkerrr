@@ -74,7 +74,7 @@ export default async function MechanicPage({ params }: Props) {
           page anywhere. Above the key facts, because the facts table is what
           a reader came for and a picture under it would be a footer.
         */}
-        <EntityImage media={doc.image} shape="wide" />
+        <EntityImage media={doc.image} shape="wide" priority />
         {doc.keyFacts?.length ? (
           <div className="tablewrap">
             <table>

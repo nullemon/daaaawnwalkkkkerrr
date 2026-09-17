@@ -209,6 +209,14 @@ p { margin: 0; }
   flex-direction: column;
   gap: 0.85em;
   color: var(--ink-soft);
+  /* Harvested infobox values reach these bodies verbatim, and sixteen of them
+     are a bare URL: the 141-character GameStop link on Clone jetpack trooper
+     ran 89px out of its own <li> and dragged 71px of horizontal scroll onto
+     the whole page at 400px. An unbroken token has nowhere to go on a phone,
+     and nothing errors - the page renders, the URL is simply cut off past the
+     edge. `anywhere` rather than `break-word` so the break also lowers the
+     min-content width, which is what a flex or grid ancestor sizes on. */
+  overflow-wrap: anywhere;
 }
 .prose .prose, .prose .payload-richtext { max-width: none; }
 
@@ -1570,8 +1578,14 @@ th.num { text-align: right; }
   height: 44px;
   border-radius: 8px;
   object-fit: cover;
-  border: 1px solid var(--line);
-  background: var(--sunk);
+  /* `--rule` and `--sunken`. These read `--line` and `--sunk`, which this
+     stylesheet has never defined - and a property whose value references an
+     undefined custom property is invalid at computed-value time, so both
+     declarations were dropped in silence. The icon had no border and no ground
+     behind it, which is visible on an achievement icon with transparency and
+     on nothing else. Same trap as the font variables on <body>. */
+  border: 1px solid var(--rule);
+  background: var(--sunken);
 }
 
 .related-meta { flex: none; font-size: 13px; color: var(--muted); }
@@ -1851,6 +1865,9 @@ th.num { text-align: right; }
 --------------------------------------------------------------------------- */
 
 .masthead {
+  /* Same undeclared `--bg` as `.hub-hero`; this block's own background is
+     `--raised`, so that is what its scrim has to fade to. */
+  --bg: var(--raised);
   position: relative;
   isolation: isolate;
   overflow: hidden;
@@ -2105,10 +2122,17 @@ a.chip:hover {
 .page-head {
   position: relative;
 }
+/* Bleeds left, never right. `inset: -18px -24px 0` put 24px of pseudo-element
+   past the right edge of `.page`, whose gutter is only 18px - so below a
+   ~1352px viewport every page on every host had 6px of horizontal document
+   scroll, on a band that is transparent there and shows nothing. It rendered,
+   nothing errored, and the only symptom was a page that rubber-bands sideways
+   on a phone. The gradient is anchored at 0% 0% and is gone by 62%, so the
+   right bleed was never drawing anything. */
 .page-head::before {
   content: '';
   position: absolute;
-  inset: -18px -24px 0;
+  inset: -18px 0 0 -24px;
   z-index: -1;
   background: radial-gradient(
     120% 90% at 0% 0%,
@@ -2359,7 +2383,15 @@ a.chip:hover {
    Fact panels and tables are the reason somebody is on a record page. They
    were the same visual weight as the prose around them.                      */
 
-.factpanel, .tablewrap {
+/* `.tablewrap` is deliberately not in here. It was, and the `overflow: hidden`
+   shorthand cancelled its own `overflow-x: auto` from further up the sheet -
+   so the tables that carry `min-width: 560px` precisely so they can scroll
+   sideways were clipped instead, with no way to reach the cut-off columns. At
+   400px the characters index lost 198px of table: the whole Summary column and
+   half of Romance, gone, on a page that still rendered, still passed every
+   check and did not even scroll the document. `.tablewrap` already rounds its
+   own corners, and `overflow-x: auto` clips them on its own. */
+.factpanel {
   border-radius: var(--r);
   overflow: hidden;
 }
@@ -2417,6 +2449,14 @@ h1, h2, h3 { text-wrap: balance; }
   art, which is the only thing that needed it.
 */
 .hub-hero {
+  /* The scrims below are written against `--bg`, which nothing declared - so
+     both gradients were invalid at computed-value time and `::before` painted
+     nothing at all. The wordmark, the headline and the lede sat straight on
+     key art at 40% opacity in `--ink`, which is near-black in the light theme:
+     exactly the unreadable headline the note above says two scrims exist to
+     prevent. It is the page's own ground here, which is what "so the page
+     below joins" means, and it follows the theme. */
+  --bg: var(--ground);
   position: relative; isolation: isolate; z-index: 3;
   padding-block: clamp(40px, 8vw, 88px);
   border-bottom: 1px solid var(--rule);

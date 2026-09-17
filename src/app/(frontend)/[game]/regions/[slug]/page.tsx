@@ -129,7 +129,7 @@ export default async function RegionPage({ params }: Props) {
       <div className="page body-main">
         <div className="split">
           <div className="stack">
-            <EntityImage media={doc.image} shape="wide" />
+            <EntityImage media={doc.image} shape="wide" priority />
             <div className="prose">
               <LinkedRichText data={doc.body} scope={scope} />
             </div>

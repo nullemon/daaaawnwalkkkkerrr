@@ -161,7 +161,7 @@ export default async function AuthorPage({ params }: Props) {
           <div className="stack">
             {/* No fallback icon: an empty frame reads as a missing image rather
                 than as a person who has not supplied a photograph. */}
-            <EntityImage media={doc.avatar} shape="square" />
+            <EntityImage media={doc.avatar} shape="square" priority />
           </div>
         </div>
 

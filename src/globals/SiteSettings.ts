@@ -3,6 +3,7 @@ import { isEditor } from '../fields/shared'
 import { analyticsFields, verificationFields } from '../fields/analytics'
 import { isProvisional } from '../lib/legal'
 import { accentRefusal, checkAccent } from '../lib/appearance'
+import { indexNowKeyRefusal } from '../lib/indexnow'
 
 /**
  * Everything chrome-level that should be changeable without a deploy:
@@ -596,7 +597,47 @@ export const SiteSettings: GlobalConfig = {
           label: 'SEO & analytics',
           description:
             'Network-wide defaults. Each wiki is its own site to a search engine, so each has its own copy of these on its Game record — set those, and use this tab for the apex domain.',
-          fields: [verificationFields('network'), analyticsFields('network')],
+          fields: [
+            verificationFields('network'),
+            analyticsFields('network'),
+            /*
+              IndexNow is the one setting on this tab that is genuinely
+              network-wide rather than a default.
+
+              Everything else here is per-origin because a search engine treats
+              each subdomain as its own site. The IndexNow key is not: one key
+              file is served by all ten hosts because there is one deployment,
+              and the protocol is happy for the same key to cover every host it
+              can be fetched from. A per-wiki field would be ten copies of one
+              value and ten chances for one of them to be wrong.
+            */
+            {
+              name: 'indexnowKey',
+              type: 'text',
+              label: 'IndexNow key',
+              admin: {
+                placeholder: 'e.g. b13095133f25dbe79f5e68795c352c58',
+                description:
+                  'IndexNow tells Bing, Yandex, Seznam, Naver and Yep that a page changed instead of waiting to be crawled. Google does not participate. The key is public, not secret: it is proved by being served at https://<host>/<key>.txt, which this site does for whatever is set here, on every host. Any 8–128 characters of a–z, A–Z, 0–9 and hyphens will do — 32 random hex characters is the usual shape, and Bing Webmaster Tools will generate one for you. Leave blank to keep using the key that ships with the site.',
+              },
+              /*
+                Refused here rather than at submit time, for the same reason
+                the sender address above is.
+
+                A key the engines reject comes back as HTTP 422 with a body
+                that says verification failed and not which half failed — the
+                key or the file — and there is nothing on the site to look at
+                either way, because a malformed key produces a path that
+                matches nothing and 404s like any other wrong URL. The shape is
+                knowable here, so it is checked here.
+              */
+              validate: (value: unknown) => {
+                if (value === null || value === undefined || value === '') return true
+                if (typeof value !== 'string') return 'An IndexNow key is a string of 8–128 characters.'
+                return indexNowKeyRefusal(value) ?? true
+              },
+            },
+          ],
         },
         {
           label: 'Monetisation',

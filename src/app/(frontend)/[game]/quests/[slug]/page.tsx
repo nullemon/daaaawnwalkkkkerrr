@@ -122,7 +122,7 @@ export default async function QuestPage({ params }: Props) {
 
         <div className="split">
           <div className="stack">
-            <EntityImage media={quest.image} shape="wide" />
+            <EntityImage media={quest.image} shape="wide" priority />
             <div className="prose">
               <LinkedRichText data={quest.body} scope={scope} />
             </div>

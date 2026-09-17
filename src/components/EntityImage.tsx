@@ -25,10 +25,32 @@ export async function EntityImage({
   media,
   fallbackIcon,
   shape = 'wide',
+  priority = false,
 }: {
   media?: unknown
   fallbackIcon?: IconName
   shape?: 'wide' | 'portrait' | 'square'
+  /**
+   * This is the record's own picture, at the top of its own page.
+   *
+   * Every one of the fifteen detail routes passes it, and that is the whole
+   * reason it exists: the picture sits about two thousand characters into the
+   * document, above the fold, and on the 1,575 records that have one it is the
+   * largest thing painted - the LCP element by definition. `loading="lazy"`
+   * defers an image until layout has run and the browser knows where it
+   * landed, which is exactly the delay LCP measures, and the browser does not
+   * second-guess the attribute for something this high in the document. So
+   * every record page on the network was deferring the one image it is
+   * measured on, and nothing about that was visible: the page renders, the
+   * picture arrives, no check has an opinion.
+   *
+   * Opt-in rather than the default, because the fix has to survive this
+   * component being dropped into a list. Eager on an index that renders thirty
+   * of these would race the header art and be worse than the bug. Same
+   * attributes as `PersonProfile` and the companies logo, which are the same
+   * slot on the two hosts that are not wikis.
+   */
+  priority?: boolean
 }) {
   const image = media && typeof media === 'object' ? (media as MediaLike) : null
   const settings = await getSiteSettings()
@@ -50,7 +72,7 @@ export async function EntityImage({
         alt={image.alt ?? ''}
         width={image.width ?? undefined}
         height={image.height ?? undefined}
-        loading="lazy"
+        {...(priority ? { fetchPriority: 'high' as const } : { loading: 'lazy' as const })}
         decoding="async"
       />
       {showCredit && image.credit ? <figcaption>{image.credit}</figcaption> : null}

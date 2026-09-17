@@ -101,7 +101,7 @@ export default async function PerkPage({ params }: Props) {
         }
       />
       <div className="page body-main">
-        <EntityImage media={doc.image} shape="square" />
+        <EntityImage media={doc.image} shape="square" priority />
 
         {doc.effect ? (
           <div className="callout">

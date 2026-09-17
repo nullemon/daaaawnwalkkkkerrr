@@ -29,6 +29,19 @@ export type Section = {
   kind: string
   /** Sitemap priority. Higher for the pages a reader actually arrives on. */
   priority: number
+  /**
+   * The upload field whose picture the detail route renders — and therefore
+   * the only one the sitemap may claim as that page's image.
+   *
+   * It is not `image` everywhere: `achievements` calls it `icon` and
+   * `characters` calls it `portrait`, which is exactly why this is a field on
+   * the list rather than a string built from the collection slug. An
+   * `<image:image>` naming a picture the page does not carry is the invented
+   * fact this project exists to avoid, wearing a file no reader ever opens —
+   * so `sitemap-images.test.ts` reads each `[slug]/page.tsx` and fails if the
+   * name here is not the one that route actually passes to `EntityImage`.
+   */
+  imageField: string
 }
 
 /**
@@ -36,22 +49,22 @@ export type Section = {
  * alphabetically: what to do, then where, then who, then what to build.
  */
 export const SECTIONS: Section[] = [
-  { label: 'Quests', href: SECTION_PATH['quests'], icon: 'scroll', collection: 'quests', kind: 'Quest', priority: 0.8 },
-  { label: 'Court Activities', href: SECTION_PATH['court-activities'], icon: 'crown', collection: 'court-activities', kind: 'Court activity', priority: 0.7 },
-  { label: 'Endings', href: SECTION_PATH['endings'], icon: 'book', collection: 'endings', kind: 'Ending', priority: 0.9 },
-  { label: 'Achievements', href: SECTION_PATH['achievements'], icon: 'star', collection: 'achievements', kind: 'Achievement', priority: 0.7 },
-  { label: 'Regions', href: SECTION_PATH['regions'], icon: 'map', collection: 'regions', kind: 'Region', priority: 0.6 },
-  { label: 'The Court', href: SECTION_PATH['courts'], icon: 'crown', collection: 'courts', kind: 'Court', priority: 0.7 },
-  { label: 'Characters', href: SECTION_PATH['characters'], icon: 'person', collection: 'characters', kind: 'Character', priority: 0.6 },
-  { label: 'Enemies', href: SECTION_PATH['enemies'], icon: 'skull', collection: 'enemies', kind: 'Enemy', priority: 0.6 },
-  { label: 'Factions', href: SECTION_PATH['factions'], icon: 'shield', collection: 'factions', kind: 'Faction', priority: 0.6 },
-  { label: 'Skill trees', href: SECTION_PATH['skill-trees'], icon: 'spark', collection: 'skill-trees', kind: 'Skill tree', priority: 0.6 },
-  { label: 'Perks', href: SECTION_PATH['perks'], icon: 'star', collection: 'perks', kind: 'Perk', priority: 0.7 },
-  { label: 'Items', href: SECTION_PATH['items'], icon: 'sword', collection: 'items', kind: 'Item', priority: 0.6 },
-  { label: 'Builds', href: SECTION_PATH['builds'], icon: 'shield', collection: 'builds', kind: 'Build', priority: 0.8 },
-  { label: 'Mechanics', href: SECTION_PATH['mechanics'], icon: 'spark', collection: 'mechanics', kind: 'Mechanic', priority: 0.8 },
-  { label: 'Guides', href: SECTION_PATH['guides'], icon: 'book', collection: 'guides', kind: 'Guide', priority: 0.7 },
-  { label: 'Maps', href: SECTION_PATH['maps'], icon: 'map', collection: 'maps', kind: 'Map', priority: 0.8 },
+  { label: 'Quests', href: SECTION_PATH['quests'], icon: 'scroll', collection: 'quests', kind: 'Quest', priority: 0.8, imageField: 'image' },
+  { label: 'Court Activities', href: SECTION_PATH['court-activities'], icon: 'crown', collection: 'court-activities', kind: 'Court activity', priority: 0.7, imageField: 'image' },
+  { label: 'Endings', href: SECTION_PATH['endings'], icon: 'book', collection: 'endings', kind: 'Ending', priority: 0.9, imageField: 'image' },
+  { label: 'Achievements', href: SECTION_PATH['achievements'], icon: 'star', collection: 'achievements', kind: 'Achievement', priority: 0.7, imageField: 'icon' },
+  { label: 'Regions', href: SECTION_PATH['regions'], icon: 'map', collection: 'regions', kind: 'Region', priority: 0.6, imageField: 'image' },
+  { label: 'The Court', href: SECTION_PATH['courts'], icon: 'crown', collection: 'courts', kind: 'Court', priority: 0.7, imageField: 'image' },
+  { label: 'Characters', href: SECTION_PATH['characters'], icon: 'person', collection: 'characters', kind: 'Character', priority: 0.6, imageField: 'portrait' },
+  { label: 'Enemies', href: SECTION_PATH['enemies'], icon: 'skull', collection: 'enemies', kind: 'Enemy', priority: 0.6, imageField: 'image' },
+  { label: 'Factions', href: SECTION_PATH['factions'], icon: 'shield', collection: 'factions', kind: 'Faction', priority: 0.6, imageField: 'image' },
+  { label: 'Skill trees', href: SECTION_PATH['skill-trees'], icon: 'spark', collection: 'skill-trees', kind: 'Skill tree', priority: 0.6, imageField: 'image' },
+  { label: 'Perks', href: SECTION_PATH['perks'], icon: 'star', collection: 'perks', kind: 'Perk', priority: 0.7, imageField: 'image' },
+  { label: 'Items', href: SECTION_PATH['items'], icon: 'sword', collection: 'items', kind: 'Item', priority: 0.6, imageField: 'image' },
+  { label: 'Builds', href: SECTION_PATH['builds'], icon: 'shield', collection: 'builds', kind: 'Build', priority: 0.8, imageField: 'image' },
+  { label: 'Mechanics', href: SECTION_PATH['mechanics'], icon: 'spark', collection: 'mechanics', kind: 'Mechanic', priority: 0.8, imageField: 'image' },
+  { label: 'Guides', href: SECTION_PATH['guides'], icon: 'book', collection: 'guides', kind: 'Guide', priority: 0.7, imageField: 'image' },
+  { label: 'Maps', href: SECTION_PATH['maps'], icon: 'map', collection: 'maps', kind: 'Map', priority: 0.8, imageField: 'image' },
 ]
 
 /** Tools are switched on per game rather than derived, since they are code. */

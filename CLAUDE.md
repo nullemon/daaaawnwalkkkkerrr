@@ -44,6 +44,7 @@ pnpm verify       # every content record belongs to a game (see below)
 pnpm remote <cmd> # content operations against a RUNNING site over its API
 pnpm refresh      # re-read every store page and wiki, reseed, rebuild icons
 pnpm check:launch # the launch checklist — NOT `pnpm audit`, that is pnpm's own
+pnpm indexnow     # dry run; `-- --send` submits. Bing/Yandex/Seznam/Naver/Yep, not Google
 pnpm fetch:games  # just the store pages
 pnpm fetch:entities  # just the community wikis
 pnpm seed:games   # store-page facts -> mechanics pages and achievements
@@ -163,6 +164,13 @@ that inherits the default would let any reader who signs up edit content.
   this started as gave a stack trace that said nothing about the cause. The
   work is in `tools/reset-db.mjs`, which retries, clears a read-only attribute,
   and names the likely culprit when it still fails.
+- **`process.exit()` after a `fetch` aborts node on Windows.** A keep-alive
+  socket that is still closing when the process exits trips a libuv assertion —
+  `!(handle->flags & UV_HANDLE_CLOSING)`, exit code 127 — and the C stack trace
+  lands *after* the message the script just printed, so a refusal reads as a
+  crash and the sentence explaining it scrolls away. Every request in
+  `tools/indexnow.mjs` carries `Connection: close` for this reason and no
+  other. Any script that fetches and then exits non-zero needs the same.
 - **Two generated files show up as uncommitted work.** `src/payload-types.ts`
   is rewritten by Payload on a schema change and sometimes just on `pnpm dev`;
   `next-env.d.ts` points at `.next/dev/types/` after `next dev` and
@@ -650,6 +658,14 @@ argument.
   supply: a Search Console token per subdomain (each is its own property), an
   analytics ID per wiki, six real contributors in place of six placeholder
   authors, and the network's own name — it is still "Vellum", a working title.
+  The **IndexNow key** is not one of these, and is worth knowing about because
+  it looks like one: it is Site settings → SEO & analytics → IndexNow key,
+  blank falls back to the key committed in `public/`, and `/<key>.txt` is
+  answered from the database on all ten hosts rather than being a file —
+  `src/lib/indexnow.ts`, the route at `src/app/api/indexnow/[key]/`, and the
+  shape match in `proxy.ts`. Nothing submits automatically, on purpose;
+  `docs/DEPLOY.md` section 6 says what an automatic trigger would cost and what
+  it is waiting on.
 
 <!-- BEGIN:nextjs-agent-rules -->
 

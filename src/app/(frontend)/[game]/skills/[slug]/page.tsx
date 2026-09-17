@@ -113,7 +113,7 @@ export default async function SkillTreePage({ params }: Props) {
               rendered this at all, so a third of the emblem set was attached,
               correct, and on no page anybody could reach.
             */}
-            <EntityImage media={doc.image} shape="square" />
+            <EntityImage media={doc.image} shape="square" priority />
             <FactPanel
               facts={[
                 { label: 'Perks', value: perks.length || undefined },

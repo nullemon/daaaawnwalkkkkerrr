@@ -126,7 +126,7 @@ export default async function CharacterPage({ params }: Props) {
             {/* The portrait belongs beside the facts, not across the full
                 width — these are 810x1080 and a full-bleed one pushes every
                 word of the article below the fold. */}
-            <EntityImage media={doc.portrait} shape="portrait" />
+            <EntityImage media={doc.portrait} shape="portrait" priority />
             <FactPanel
               facts={[
                 { label: 'Role', value: roleLabel(doc.role, ui) },

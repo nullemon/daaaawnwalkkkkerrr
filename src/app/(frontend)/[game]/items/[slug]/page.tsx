@@ -88,7 +88,7 @@ export default async function ItemPage({ params }: Props) {
             </div>
           </div>
           <div className="stack">
-            <EntityImage media={doc.image} shape="square" />
+            <EntityImage media={doc.image} shape="square" priority />
             <FactPanel
               facts={[
                 { label: 'Type', value: doc.category },

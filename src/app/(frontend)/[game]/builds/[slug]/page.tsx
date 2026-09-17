@@ -86,7 +86,7 @@ export default async function BuildPage({ params }: Props) {
                   depicts nothing is the last one that should dominate. A record that
                   ever gets real wide art wants this changed back with it.
                 */}
-        <EntityImage media={doc.image} shape="square" />
+        <EntityImage media={doc.image} shape="square" priority />
 
         <Facts
           items={[

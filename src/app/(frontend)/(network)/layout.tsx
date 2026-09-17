@@ -5,6 +5,7 @@ import type { FooterColumn } from '@/components/SiteFooter'
 import { getPublishedGames, getSiteSettings, gameUrl } from '@/lib/payload'
 import { Analytics } from '@/components/Analytics'
 import { resolveTags, verificationMetadata } from '@/lib/tags'
+import { analyticsOrigins } from '@/lib/analytics-origins'
 import { companyUrl, personUrl } from '@/lib/urls'
 
 /**
@@ -172,6 +173,23 @@ export default async function NetworkLayout({ children }: { children: React.Reac
       }}
     >
       {children}
+      {/*
+        DNS for the analytics host, and only when one is configured.
+
+        These scripts load `afterInteractive`, so the connection is opened well
+        after first paint — resolving the name early is free and a `preconnect`
+        would not be. Nothing is emitted where no analytics ID is set, which is
+        every host on the network today: a hint for an origin the page never
+        contacts spends a lookup and buys nothing. `analyticsOrigins` derives
+        the list from the same fields `<Analytics>` renders from, so the two
+        cannot disagree.
+
+        A bare <link> in a server component: React hoists it into <head>, and
+        Next's Metadata API has no field for a resource hint.
+      */}
+      {analyticsOrigins(tags.analytics).map((origin) => (
+        <link key={origin} rel="dns-prefetch" href={origin} />
+      ))}
       <Analytics tags={tags} />
     </Shell>
   )
