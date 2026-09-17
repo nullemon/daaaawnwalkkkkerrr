@@ -314,6 +314,29 @@ that inherits the default would let any reader who signs up edit content.
   digit - so the fifty-six titles it could not decide are a reviewed list in
   `src/lib/harvest.ts` rather than a cleverer regex.
 
+- **A dropped template is silent, and takes its arguments with it.** The
+  company harvester resolves `{{...}}` innermost-first and keeps the arguments
+  of the ones on a list. A template *not* on that list is dropped whole, which
+  leaves whatever sat outside the braces looking like a complete answer:
+  `{{€|59.5 million}} (2025)` became "(2025)", and six companies stored that
+  as their revenue. The list held currencies as ISO codes, which is how these
+  templates are named on American company articles and not on European ones.
+  Nothing errors, and the value is wrong rather than missing, so no emptiness
+  check finds it. `tools/fetch-companies.mjs` now collects every value that
+  resolves to nothing or to nothing but a year and prints it with the wikitext
+  that produced it; add the template name to `KEEP_ARGS` and re-run. The
+  resolver is importable and unit-tested because of this - `vitest` reaches
+  `tools/**/*.test.mjs`.
+
+- **The answer to a question about one collection often lives in another.**
+  Onimusha's wiki had no cast, until somebody looked in `enemies`: its bosses
+  are filed there, and each carries a full English, Japanese and Mandarin voice
+  credit. Twenty-one credits sat in a collection nobody was reading, because
+  the field was called `Voice Actors` rather than `actor` and the reader was
+  pointed at `characters`. Survey the keys that are actually present across
+  every harvested file before deciding which ones a pass reads - the harvest
+  writes what the wiki had, not what the schema expected.
+
 - **Grid and flex children default to `min-width: auto`**, so a wide table
   inside an `overflow-x` container drags the page sideways on a phone. The
   shrink-fix was one block at the end of `globals.css`; the visual-layer
@@ -510,11 +533,30 @@ three Remedy titles, so a person filed under a game is a thin page per game
 that disagrees the first time one is corrected.
 
 **A name is here because a sourced page named it in a credited role.** The
-three routes are the games' own Wikipedia infoboxes, the `actor` / `voiced by`
-/ `portrayed by` facts the community-wiki harvester already reads off character
-infoboxes, and the executives named on company articles. `basis` records which
-one, and is shown on the page - the same disclosure the companies host makes,
-and the thing that stops this becoming a directory of everyone.
+routes are the games' own Wikipedia infoboxes; the `actor`, `voiced by`,
+`portrayed by`, `Voice Actors`, `mo-capped by` and `Face Models` facts on
+character *and enemy* infoboxes; and the executives named on company articles.
+`basis` records which one, and is shown on the page - the same disclosure the
+companies host makes, and the thing that stops this becoming a directory of
+everyone.
+
+There is a fourth `basis`, `wiki-mention`, for somebody a franchise wiki names
+without crediting them on a game this network covers. Christophe Gans directed
+the Silent Hill films and is all over the wiki Townfall is compiled from;
+filing him as a game credit would be false and filing him as a character credit
+would call him an actor. The condition is read off the wiki's own categories
+rather than off the composed prose, so the sentence a reader sees and the group
+the directory files them under cannot drift apart.
+
+**Splitting a name is the operation to be most careful with.** Community wikis
+concatenate without separators - `"Ilkka Villi (model)Matthew Porretta (voice)"`
+splits on the bracket boundary, but `"Alan WakeMark Blum (voice)"` is a game
+title welded to a first name and stays dropped. A fragment of four capitalised
+words is only one person when the source supplies a particle or a suffix
+holding it together; without that rule, "Stéphanie Cassignard Robyn Wolf" would
+have been published as a human being. Dropped fragments are *listed*, which is
+the only reason a character-range bug that silently rejected every Polish name
+was ever found.
 
 **These are pages about living people, and that changes the standard.** A
 release date is a fact about a product; a date of birth is not. So `born` is
