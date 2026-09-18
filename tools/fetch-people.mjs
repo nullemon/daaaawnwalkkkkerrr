@@ -79,6 +79,8 @@
 import fs from 'fs'
 import path from 'path'
 
+import { harvestText } from '../src/lib/text-encoding-table.mjs'
+
 const REFERENCE = path.resolve('src/seed/raw/reference')
 const ENTITIES = path.resolve('src/seed/raw/wiki-entities')
 const OUT = path.resolve('src/seed/raw/people.json')
@@ -384,68 +386,85 @@ const splitNames = (raw) => {
  * the only fact on a person's infobox that lives entirely inside a template,
  * so the generic "strip every template" pass below would silently turn a
  * sourced date of birth into an empty field.
+ *
+ * ## The last line is the one that was missing
+ *
+ * Everything here strips *wikitext*. A Wikipedia infobox also carries HTML
+ * entities and invisible characters, and this file decoded neither. These are
+ * pages about living people, which is where it costs most: `1992&ndash;present`
+ * reached a reader as those eight literal characters, and a zero-width joiner
+ * inside a name is invisible and fatal to every match that would have linked
+ * the person to the games they are credited on.
+ *
+ * `harvestText` is the whole repair, from the one table in
+ * `src/lib/text-encoding-table.mjs` — shared rather than copied, because a
+ * second copy of a repair table drifts and a drifted one writes faults in
+ * rather than out. It runs last, so it sees what the markup passes left and
+ * cannot re-form an entity out of a stripped brace.
  */
 const clean = (value) =>
-  String(value ?? '')
-    .replace(/<ref[^>]*>[\s\S]*?<\/ref>/gi, '')
-    .replace(/<ref[^>]*\/>/gi, '')
-    .replace(
-      /\{\{\s*(?:birth date and age|birth date|bda|birth-date and age|death date and age|death date)\s*\|([^}]*)\}\}/gi,
-      (_, inner) => {
-        const numbers = inner
-          .split('|')
-          .map((part) => part.trim())
-          .filter((part) => /^\d+$/.test(part))
-        if (numbers.length < 3) return numbers[0] ?? ' '
-        const [year, month, day] = numbers
-        const MONTHS = [
-          'January',
-          'February',
-          'March',
-          'April',
-          'May',
-          'June',
-          'July',
-          'August',
-          'September',
-          'October',
-          'November',
-          'December',
-        ]
-        return `${Number(day)} ${MONTHS[Number(month) - 1] ?? month} ${year}`
-      },
-    )
-    .replace(/\{\{\s*(?:circa|c\.)\s*\|?\s*([^}|]*)\}\}/gi, 'c. $1')
-    .replace(/\{\{\s*(?:URL|official website)\s*\|([^}|]*)[^}]*\}\}/gi, '$1')
-    .replace(/\{\{\s*(?:nowrap|nobold|small|flatlist|plainlist|hlist|ubl|unbulleted list)\s*\|/gi, '')
-    .replace(/\{\{[^{}]*\}\}/g, ' ')
-    .replace(/\{\{[\s\S]*?\}\}/g, ' ')
-    .replace(/\[\[[^\]|]*\|([^\]]*)\]\]/g, '$1')
-    .replace(/\[\[([^\]]*)\]\]/g, '$1')
-    .replace(/\[https?:\/\/\S+\s+([^\]]*)\]/g, '$1')
-    /*
-      Whatever brace survived the two passes above.
+  harvestText(
+    String(value ?? '')
+      .replace(/<ref[^>]*>[\s\S]*?<\/ref>/gi, '')
+      .replace(/<ref[^>]*\/>/gi, '')
+      .replace(
+        /\{\{\s*(?:birth date and age|birth date|bda|birth-date and age|death date and age|death date)\s*\|([^}]*)\}\}/gi,
+        (_, inner) => {
+          const numbers = inner
+            .split('|')
+            .map((part) => part.trim())
+            .filter((part) => /^\d+$/.test(part))
+          if (numbers.length < 3) return numbers[0] ?? ' '
+          const [year, month, day] = numbers
+          const MONTHS = [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December',
+          ]
+          return `${Number(day)} ${MONTHS[Number(month) - 1] ?? month} ${year}`
+        },
+      )
+      .replace(/\{\{\s*(?:circa|c\.)\s*\|?\s*([^}|]*)\}\}/gi, 'c. $1')
+      .replace(/\{\{\s*(?:URL|official website)\s*\|([^}|]*)[^}]*\}\}/gi, '$1')
+      .replace(/\{\{\s*(?:nowrap|nobold|small|flatlist|plainlist|hlist|ubl|unbulleted list)\s*\|/gi, '')
+      .replace(/\{\{[^{}]*\}\}/g, ' ')
+      .replace(/\{\{[\s\S]*?\}\}/g, ' ')
+      .replace(/\[\[[^\]|]*\|([^\]]*)\]\]/g, '$1')
+      .replace(/\[\[([^\]]*)\]\]/g, '$1')
+      .replace(/\[https?:\/\/\S+\s+([^\]]*)\]/g, '$1')
+      /*
+        Whatever brace survived the two passes above.
 
-      A nested template with an unbalanced close leaves a bare "}}" in the
-      value, and it looks like text from there on: one reached a person's
-      occupation as "actress, voice actress, }}" and would have been
-      published as a sentence. Nothing downstream can tell that apart from a
-      fact.
-    */
-    .replace(/[{}]+/g, ' ')
-    .replace(/'''?/g, '')
-    .replace(/<br\s*\/?>/gi, ', ')
-    .replace(/<\/?li>/gi, ', ')
-    .replace(/<[^>]*>/g, '')
-    .replace(/^[\s*|]+/gm, '')
-    .split('\n')
-    .map((line) => line.trim())
-    .filter(Boolean)
-    .join(', ')
-    .replace(/\s*,\s*,+/g, ', ')
-    .replace(/\s{2,}/g, ' ')
-    .replace(/^[,\s]+|[,\s]+$/g, '')
-    .trim()
+        A nested template with an unbalanced close leaves a bare "}}" in the
+        value, and it looks like text from there on: one reached a person's
+        occupation as "actress, voice actress, }}" and would have been
+        published as a sentence. Nothing downstream can tell that apart from a
+        fact.
+      */
+      .replace(/[{}]+/g, ' ')
+      .replace(/'''?/g, '')
+      .replace(/<br\s*\/?>/gi, ', ')
+      .replace(/<\/?li>/gi, ', ')
+      .replace(/<[^>]*>/g, '')
+      .replace(/^[\s*|]+/gm, '')
+      .split('\n')
+      .map((line) => line.trim())
+      .filter(Boolean)
+      .join(', ')
+      .replace(/\s*,\s*,+/g, ', ')
+      .replace(/\s{2,}/g, ' ')
+      .replace(/^[,\s]+|[,\s]+$/g, '')
+      .trim(),
+  )
 
 /** Split a template body on its own pipes, ignoring nested ones. */
 const topLevelParts = (body) => {

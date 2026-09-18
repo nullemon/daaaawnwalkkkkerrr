@@ -2,8 +2,11 @@ import fs from 'fs'
 import path from 'path'
 import { describe, expect, it } from 'vitest'
 import {
+  ENTITY_NAMES,
+  NAMED,
   decodeEntities,
   encodingFaults,
+  harvestText,
   identifierFaults,
   repairText,
   stripInvisible,
@@ -137,6 +140,56 @@ describe('repairText', () => {
     // The byte behind U+FFFD is gone. Anything put in its place would be this
     // site deciding how a name is spelled.
     expect(repairText(`Ba${ch(0xfffd)}kir`)).toBe(`Ba${ch(0xfffd)}kir`)
+  })
+})
+
+describe('harvestText', () => {
+  /*
+    What the harvesters apply, and the one way it differs from `repairText`.
+
+    A harvest captures values that half a dozen later passes parse and compare:
+    `{{US$|8.0&nbsp;billion}}` has to reach `revenueValue` as text whose space
+    is a space, or the currency check passes and nothing downstream matches.
+    `pnpm seed:normalise` leaves a non-breaking space alone on purpose, because
+    by then it is somebody's typography in a sentence.
+  */
+  it('decodes, strips the invisible, and un-sticks a non-breaking space', () => {
+    expect(harvestText('US$8.0&nbsp;billion')).toBe('US$8.0 billion')
+    expect(harvestText('1992&ndash;present')).toBe(`1992${ch(0x2013)}present`)
+    expect(harvestText(SONY_YEARS)).toBe(`1946${ch(0x2013)}1957`)
+  })
+
+  it('leaves text that is already sound exactly as it is', () => {
+    // A filter written to stop bad values is still a filter.
+    for (const good of ['Stéphanie Cassignard', '大神 / Ōkami', 'Q&A; see below']) {
+      expect(harvestText(good)).toBe(good)
+    }
+  })
+})
+
+/**
+ * The detector and the decoder read one table, and this is what says so.
+ *
+ * They are two exports of two files — `ENTITY_NAMES` drives the "an entity was
+ * never decoded" rule, `NAMED` drives the repair — and the failure when they
+ * disagree is silent in both directions. A name the detector knows and the
+ * decoder does not is a fault `pnpm verify` reports for ever and
+ * `pnpm seed:normalise` cannot repair. A name the decoder knows and the
+ * detector does not is a fault nothing reports at all.
+ *
+ * This is the guard that makes "one table" a fact rather than a comment.
+ */
+describe('the one table', () => {
+  it('has the same names in the detector and in the repair', () => {
+    expect([...ENTITY_NAMES].sort()).toEqual(Object.keys(NAMED).sort())
+  })
+
+  it('maps every one of them to a character the repair is allowed to write', () => {
+    for (const name of ENTITY_NAMES) {
+      const decoded = decodeEntities(`&${name};`)
+      expect(decoded, name).not.toBe(`&${name};`)
+      expect(decoded.length, name).toBe(1)
+    }
   })
 })
 

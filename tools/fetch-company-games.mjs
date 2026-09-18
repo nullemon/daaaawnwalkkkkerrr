@@ -47,6 +47,8 @@
 import fs from 'fs'
 import path from 'path'
 
+import { harvestText } from '../src/lib/text-encoding-table.mjs'
+
 const IN = path.resolve('src/seed/raw/companies.json')
 const OUT = path.resolve('src/seed/raw/company-games.json')
 
@@ -284,15 +286,20 @@ const cell = (block, pattern) => {
   return found ? found[1] : null
 }
 
-const entities = (value) =>
-  String(value ?? '')
-    .replace(/&nbsp;|&#160;/gi, ' ')
-    .replace(/&lt;/gi, '<')
-    .replace(/&gt;/gi, '>')
-    .replace(/&quot;/gi, '"')
-    .replace(/&#0?39;|&apos;/gi, "'")
-    .replace(/&#(\d+);/g, (_, code) => String.fromCodePoint(Number(code)))
-    .replace(/&amp;/gi, '&')
+/**
+ * A storefront's HTML entities, decoded from the one table.
+ *
+ * This was its own eight-line list, and Steam writes more than eight: a title
+ * with a curly apostrophe arrives as `&rsquo;`, an ellipsis as `&hellip;`, and
+ * neither was here — so `Krush Kill &rsquo;N Destroy` would have been stored,
+ * indexed and rendered with the entity in the middle of it, because React
+ * escapes what it renders.
+ *
+ * One table, in `src/lib/text-encoding-table.mjs`, shared with the detector in
+ * `src/lib/text-encoding.ts`. A second copy drifts, and a drifted repair table
+ * writes faults in rather than out.
+ */
+const entities = harvestText
 
 /**
  * The belt to `category1=998`'s braces.

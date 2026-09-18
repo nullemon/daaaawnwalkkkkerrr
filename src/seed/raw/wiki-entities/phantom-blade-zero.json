@@ -1,20 +1,8 @@
 {
   "slug": "phantom-blade-zero",
   "host": "phantomblade.fandom.com",
-  "fetchedAt": "2026-09-17",
+  "fetchedAt": "2026-09-18",
   "entities": [
-    {
-      "title": "Phantom Blade Wiki",
-      "wikiTitle": "Phantom Blade Wiki",
-      "collection": "items",
-      "facts": {},
-      "categories": [
-        "Phantom Blade Wiki"
-      ],
-      "image": "https://static.wikia.nocookie.net/phantom-blade/images/e/e6/Site-logo.png/revision/latest?cb=20230911202339",
-      "url": "https://phantomblade.fandom.com/wiki/Phantom_Blade_Wiki",
-      "imageFile": "assets/_wiki/phantom-blade-zero/Phantom-Blade-Wiki.png"
-    },
     {
       "title": "Soul",
       "wikiTitle": "Soul",
@@ -43,8 +31,7 @@
         "Protagonists"
       ],
       "image": "https://static.wikia.nocookie.net/phantom-blade/images/8/82/Soul-1.png/revision/latest?cb=20230911031854",
-      "url": "https://phantomblade.fandom.com/wiki/Soul",
-      "imageFile": "assets/_wiki/phantom-blade-zero/Soul.png"
+      "url": "https://phantomblade.fandom.com/wiki/Soul"
     },
     {
       "title": "The Order",
@@ -57,8 +44,7 @@
         "Stubs"
       ],
       "image": "https://static.wikia.nocookie.net/phantom-blade/images/5/59/The_Order.png/revision/latest?cb=20230919044735",
-      "url": "https://phantomblade.fandom.com/wiki/The_Order",
-      "imageFile": "assets/_wiki/phantom-blade-zero/The-Order.png"
+      "url": "https://phantomblade.fandom.com/wiki/The_Order"
     },
     {
       "title": "Mu Tianmiao",

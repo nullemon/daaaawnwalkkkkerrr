@@ -31,6 +31,8 @@
 import fs from 'fs'
 import path from 'path'
 
+import { harvestText } from '../src/lib/text-encoding-table.mjs'
+
 const WANT_ART = process.argv.includes('--art')
 
 const UA =
@@ -72,19 +74,29 @@ const getJson = async (url) => {
   return response.json()
 }
 
-/** Store descriptions are HTML. We keep the text only — the prose is ours. */
+/**
+ * Store descriptions are HTML. We keep the text only — the prose is ours.
+ *
+ * The entity decoding was six `replace` calls here, which is five names short
+ * of what a Steam listing writes: `&rsquo;`, `&hellip;`, `&ndash;`, `&mdash;`,
+ * `&trade;` and `&reg;` are all over storefront copy and none of them was
+ * handled. So it comes from the one table in
+ * `src/lib/text-encoding-table.mjs`, which is the same table the detector in
+ * `src/lib/text-encoding.ts` reports against — a second copy drifts, and a
+ * drifted repair table writes faults in rather than out.
+ *
+ * After the tags, not before: decoding first would turn `&lt;b&gt;` into a tag
+ * the next pass strips, which silently deletes whatever the source had put
+ * between angle brackets on purpose.
+ */
 const stripHtml = (value) =>
-  String(value ?? '')
-    .replace(/<br\s*\/?>/gi, '\n')
-    .replace(/<\/(p|li|h[1-6])>/gi, '\n')
-    .replace(/<li>/gi, '• ')
-    .replace(/<[^>]*>/g, '')
-    .replace(/&nbsp;/g, ' ')
-    .replace(/&amp;/g, '&')
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
+  harvestText(
+    String(value ?? '')
+      .replace(/<br\s*\/?>/gi, '\n')
+      .replace(/<\/(p|li|h[1-6])>/gi, '\n')
+      .replace(/<li>/gi, '• ')
+      .replace(/<[^>]*>/g, ''),
+  )
     .replace(/\n{3,}/g, '\n\n')
     .replace(/[ \t]{2,}/g, ' ')
     .trim()

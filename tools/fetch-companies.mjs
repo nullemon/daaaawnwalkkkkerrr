@@ -43,6 +43,8 @@ import fs from 'fs'
 import path from 'path'
 import { pathToFileURL } from 'url'
 
+import { harvestText } from '../src/lib/text-encoding-table.mjs'
+
 const UA =
   'VellumWikiNetwork/1.0 (game wiki network; non-commercial; +https://github.com/) node-fetch'
 
@@ -227,20 +229,26 @@ const FIRST_ARG = /^(ill|interlanguage link|ill-wd|link-interwiki|nihongo)$/i
  * five revenue figures, which is the kind of thing a reader notices and an
  * author never does, because it only appears once the templates around it
  * have been stripped.
+ *
+ * ## This used to be its own table, and that was the fault
+ *
+ * Six harvesters, six answers: three decoded nothing at all and three decoded
+ * three different subsets of the same list. Every encoding fault found in the
+ * database came from one of the three with no table, and the three that had
+ * one were each one name away from the same bug — this one had never heard of
+ * `&hellip;`, `&rsquo;` or `&eacute;`, all of which a company infobox
+ * produces.
+ *
+ * So there is one table, in `src/lib/text-encoding-table.mjs`, and the same
+ * one that `src/lib/text-encoding.ts` detects against. A second copy drifts,
+ * and a drifted repair table writes faults in rather than out — which is worse
+ * than having none, because a check that agrees with the repair reports
+ * nothing. `harvestText` keeps this file's one deliberate behaviour: a
+ * non-breaking space becomes an ordinary space, because `revenueValue` and
+ * `foundedValue` parse what lands here. `tools/fetch-companies.test.mjs` pins
+ * it.
  */
-const decodeEntities = (value) =>
-  value
-    .replace(/&nbsp;|&#160;|&#xa0;/gi, ' ')
-    .replace(/&ndash;|&#8211;/gi, '–')
-    .replace(/&mdash;|&#8212;/gi, '—')
-    .replace(/&quot;|&#34;/gi, '"')
-    .replace(/&apos;|&#39;/gi, "'")
-    .replace(/&lt;/gi, '<')
-    .replace(/&gt;/gi, '>')
-    .replace(/&#(\d+);/g, (_, code) => String.fromCodePoint(Number(code)))
-    .replace(/&#x([0-9a-f]+);/gi, (_, code) => String.fromCodePoint(parseInt(code, 16)))
-    /* Last, so an escaped ampersand cannot re-form another entity. */
-    .replace(/&amp;/gi, '&')
+const decodeEntities = harvestText
 
 /**
  * Split a template body on its own pipes, leaving a piped link intact.

@@ -53,6 +53,8 @@
 import fs from 'fs'
 import path from 'path'
 
+import { harvestText } from '../src/lib/text-encoding-table.mjs'
+
 const UA =
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36'
 
@@ -470,30 +472,50 @@ const classify = (title, categories) => {
 // Wikitext
 // ---------------------------------------------------------------------------
 
+/**
+ * Strip wiki markup from a single infobox value.
+ *
+ * ## The last line is the one that was missing
+ *
+ * Everything here strips *wikitext*. An infobox value also carries HTML
+ * entities and invisible characters, and this file decoded neither — which
+ * matters more here than anywhere, because this is the harvester `pnpm refresh`
+ * actually runs: `harvest:all` spawns one of these per wiki. A `&ndash;`
+ * reaches a reader as its own eight characters, because React escapes what it
+ * renders, and a zero-width joiner is invisible on the page and fatal to every
+ * match, sort and slug. Nothing errors and the record imports.
+ *
+ * `harvestText` is the whole repair, from the one table in
+ * `src/lib/text-encoding-table.mjs` — shared rather than copied, because a
+ * second copy of a repair table drifts and a drifted one writes faults in
+ * rather than out.
+ */
 const cleanValue = (value) =>
-  String(value ?? '')
-    .replace(/<ref[^>]*>[\s\S]*?<\/ref>/gi, '')
-    .replace(/<ref[^>]*\/>/gi, '')
-    .replace(/\[\[[^\]|]*\|([^\]]*)\]\]/g, '$1')
-    .replace(/\[\[([^\]]*)\]\]/g, '$1')
-    .replace(/\[https?:\/\/\S+\s+([^\]]*)\]/g, '$1')
-    .replace(/\[https?:\/\/\S+\]/g, '')
-    .replace(/\{\{[^}]*\}\}/g, '')
-    .replace(/'''?/g, '')
-    .replace(/<[^>]*>/g, '')
-    /*
-      Leading bullets, allowing for the whitespace that follows `=` in
-      wikitext. Anchoring on `^\*` alone missed every value written as
-      `| magazine = *8 Shells`, because the line starts with a space — which
-      left a stray asterisk visible on the rendered page.
-    */
-    .replace(/^[ \t]*\*+[ \t]*/gm, '')
-    .split('\n')
-    .map((line) => line.trim())
-    .filter(Boolean)
-    .join(', ')
-    .replace(/\s{2,}/g, ' ')
-    .trim()
+  harvestText(
+    String(value ?? '')
+      .replace(/<ref[^>]*>[\s\S]*?<\/ref>/gi, '')
+      .replace(/<ref[^>]*\/>/gi, '')
+      .replace(/\[\[[^\]|]*\|([^\]]*)\]\]/g, '$1')
+      .replace(/\[\[([^\]]*)\]\]/g, '$1')
+      .replace(/\[https?:\/\/\S+\s+([^\]]*)\]/g, '$1')
+      .replace(/\[https?:\/\/\S+\]/g, '')
+      .replace(/\{\{[^}]*\}\}/g, '')
+      .replace(/'''?/g, '')
+      .replace(/<[^>]*>/g, '')
+      /*
+        Leading bullets, allowing for the whitespace that follows `=` in
+        wikitext. Anchoring on `^\*` alone missed every value written as
+        `| magazine = *8 Shells`, because the line starts with a space — which
+        left a stray asterisk visible on the rendered page.
+      */
+      .replace(/^[ \t]*\*+[ \t]*/gm, '')
+      .split('\n')
+      .map((line) => line.trim())
+      .filter(Boolean)
+      .join(', ')
+      .replace(/\s{2,}/g, ' ')
+      .trim(),
+  )
 
 const NOT_AN_INFOBOX =
   /^(games?|tabs?|quote|stub|cleanup|gearsify|spoilers?|about|main|for|see ?also|reflist|nav|navbox|expand|disambig|redirect|update|citation|cite|ref|delete|merge|move|notice|era|eras|title|top|toc|scroll|clear|br)/i

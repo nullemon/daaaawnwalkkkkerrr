@@ -41,6 +41,8 @@
 import fs from 'fs'
 import path from 'path'
 
+import { harvestText } from '../src/lib/text-encoding-table.mjs'
+
 const UA =
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36'
 
@@ -182,25 +184,43 @@ const disambiguatedTitles = async (host, tag) => {
  *
  * These are short values — "Ronin", "1583", "[[Kyoto]]" — not prose. Links
  * become their display text, templates and refs are dropped.
+ *
+ * ## The last line is the one that was missing
+ *
+ * Everything here strips *wikitext*. An infobox value also carries HTML
+ * entities and invisible characters, and this file decoded neither: a
+ * `&ndash;` reaches a reader as its own eight characters, because React
+ * escapes what it renders, and a zero-width joiner is invisible on the page
+ * and fatal to every match, sort and slug. Nothing errors, the record imports,
+ * `pnpm verify` used to pass, and the only symptom is a wrong-looking name.
+ *
+ * `harvestText` is the whole repair, from the one table in
+ * `src/lib/text-encoding-table.mjs`. It is shared rather than copied because
+ * three of the six harvesters here had their own smaller table and three had
+ * none at all — and a second copy of a repair table drifts, at which point it
+ * writes faults in rather than out. `pnpm verify` and
+ * `src/lib/text-encoding.test.ts` are the backstops; this is the cause.
  */
 const cleanValue = (value) =>
-  String(value ?? '')
-    .replace(/<ref[^>]*>[\s\S]*?<\/ref>/gi, '')
-    .replace(/<ref[^>]*\/>/gi, '')
-    .replace(/\[\[[^\]|]*\|([^\]]*)\]\]/g, '$1')
-    .replace(/\[\[([^\]]*)\]\]/g, '$1')
-    .replace(/\[https?:\/\/\S+\s+([^\]]*)\]/g, '$1')
-    .replace(/\[https?:\/\/\S+\]/g, '')
-    .replace(/\{\{[^}]*\}\}/g, '')
-    .replace(/'''?/g, '')
-    .replace(/<[^>]*>/g, '')
-    .replace(/^\*\s*/gm, '')
-    .split('\n')
-    .map((line) => line.trim())
-    .filter(Boolean)
-    .join(', ')
-    .replace(/\s{2,}/g, ' ')
-    .trim()
+  harvestText(
+    String(value ?? '')
+      .replace(/<ref[^>]*>[\s\S]*?<\/ref>/gi, '')
+      .replace(/<ref[^>]*\/>/gi, '')
+      .replace(/\[\[[^\]|]*\|([^\]]*)\]\]/g, '$1')
+      .replace(/\[\[([^\]]*)\]\]/g, '$1')
+      .replace(/\[https?:\/\/\S+\s+([^\]]*)\]/g, '$1')
+      .replace(/\[https?:\/\/\S+\]/g, '')
+      .replace(/\{\{[^}]*\}\}/g, '')
+      .replace(/'''?/g, '')
+      .replace(/<[^>]*>/g, '')
+      .replace(/^\*\s*/gm, '')
+      .split('\n')
+      .map((line) => line.trim())
+      .filter(Boolean)
+      .join(', ')
+      .replace(/\s{2,}/g, ' ')
+      .trim(),
+  )
 
 /**
  * Templates that are page furniture rather than an infobox.
