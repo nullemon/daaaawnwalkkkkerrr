@@ -34,7 +34,7 @@ prefix; `src/proxy.ts` maps host to the internal `/[game]/…` route. See
 pnpm install      # NOT npm — see gotchas
 pnpm dev          # http://dawnwalker.localhost:3000 — see 'Local dev' below
 pnpm build        # prerenders ~1,930 pages across eight wikis
-pnpm test         # unit tests (175)
+pnpm test         # unit tests (679)
 pnpm seed         # hand-written seed content, idempotent on slug
 pnpm ingest       # ingest researched JSON from src/seed/raw/
 pnpm db:reset     # delete the database and rebuild it from seed + raw

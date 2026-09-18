@@ -96,10 +96,46 @@ const merge = (existing: Row[] | null | undefined, defaults: Record<string, stri
   return { rows: [...rows, ...added], written: added.length + corrected }
 }
 
+/**
+ * Drop override rows for keys the registry no longer has.
+ *
+ * `merge` adds a row for every default and nothing ever removed one, so
+ * retiring a key left its override behind for ever. Two were sitting there:
+ * `profile.at-a-glance`, retired in 074f145, and `profile.metacritic`, retired
+ * when third-party scores were taken off the network.
+ *
+ * They are not merely untidy. `overridesOnly` keeps a row whose text differs
+ * from the registry default, and retiring a key *deletes* the default — so the
+ * row stops matching, starts counting as an editor's override, and is
+ * serialised into the `UiStringsProvider` props inline in the HTML of every
+ * page on the network. A string nothing renders, shipped on 3,227 pages.
+ *
+ * **Strings only.** `labels` is deliberately open: `ui.label()` supports an
+ * enum value the registry does not list, because "the values are data, and a
+ * wiki can invent one at any time". An editor's label for such a value has no
+ * default by design, and pruning it would silently stop shipping it — which is
+ * what the existing test `keeps a row for a key the registry does not have` is
+ * there to prevent. Same shape as `pnpm seed:prune`: a pass that stops writing
+ * something should take what it wrote with it, but only where it owns the key
+ * space.
+ */
+const retired = <T extends { key?: string | null }>(
+  rows: T[],
+  defaults: Record<string, string>,
+): { rows: T[]; dropped: number } => {
+  const kept = rows.filter((row) => typeof row.key === 'string' && row.key in defaults)
+  return { rows: kept, dropped: rows.length - kept.length }
+}
+
 const seed = async (payload: Payload): Promise<number> => {
   const global = await payload.findGlobal({ slug: 'ui-strings', depth: 0 })
 
-  const strings = merge(global?.strings, UI_DEFAULTS)
+  const merged = merge(global?.strings, UI_DEFAULTS)
+  const pruned = retired(merged.rows, UI_DEFAULTS)
+  const strings = { rows: pruned.rows, written: merged.written + pruned.dropped }
+  if (pruned.dropped > 0) {
+    console.log(`  ui strings        ${pruned.dropped} override(s) for retired keys removed`)
+  }
   const labels = merge(global?.labels, LABEL_DEFAULTS)
 
   const written = strings.written + labels.written

@@ -13,6 +13,7 @@ code does. Nothing here can be broken by not filling it in.
 | What | Where | Admin |
 |---|---|---|
 | A record's own words — a quest's summary, a guide's body | the record | the collection |
+| A guide's subtitle, publication date and fact-check statement | the guide | Guides → *the guide* → Provenance |
 | A wiki's section headings, ledes, callouts, guide groups | `sectionCopy`, `callouts`, `guideGroups` on the Game | Games → *the wiki* → Section copy |
 | A wiki's home page, about page, briefing, tool pages | `homeCopy`, `aboutPage`, `briefing`, `toolCopy` on the Game | Games → *the wiki* → those tabs |
 | The hub's own pages, and the notes printed on every page | Site settings | Admin → Site settings |
@@ -123,6 +124,28 @@ Two things are deliberately not seeded. **Callouts**, because a seeded row
 because their built-in bodies carry inline links a plain-text field cannot.
 **Guide groups other than Dawnwalker's**, because inventing groups for a wiki
 nobody has read is writing content rather than seeding it.
+
+## The fact-check statement is blank on purpose
+
+`guides.review` — a statement, an optional reviewer and an optional date — is
+empty on every guide, and nothing renders until somebody fills it in. There is
+no site-wide default sentence and there must not be one: a line reading "fact
+checked" printed by default would be a claim about work nobody has done, on
+410 pages, which is the fabricated fact this whole project exists to avoid.
+
+The publication date is the same shape from the other direction. It is seeded
+with a value spread across thirty days so the network does not present four
+hundred articles as published in the same second, and `pnpm check:launch`
+counts every guide still carrying a seeded one. There is **no flag to untick** —
+the seeded value is derived from the slug, so "still seeded" is answered by
+recomputing it, and the count clears itself the moment somebody edits a date.
+This repository has thirty-six placeholder contributors proving that nobody
+remembers to untick a box.
+
+Neither `createdAt` nor `updatedAt` is publishable. Every generator upserts
+every guide on every run, so `updatedAt` is the date of the last reseed — and
+`createdAt` is worse, because the database is reproducible from seed by design,
+which makes it the date of the last `pnpm db:reset`.
 
 ## What stays in code, and why
 
