@@ -47,7 +47,21 @@ export const games: SeedGame[] = [
     // Deliberately no release date. Nothing in this repository sources one,
     // and the directory would rather print nothing than a date we guessed.
     platforms: ['PC'],
-    features: ['run-checker', 'build-planner', 'comments'],
+    /*
+      `completion-tracker` was missing here and nowhere else it was earned.
+      The flag's own label reads "needs a published achievement list", and this
+      wiki has 46 — the largest list on the network after Star Wars and
+      Onimusha, both of which carry the flag. So `/tools/completion` 404'd on
+      the one wiki this project is built around, and nothing looked broken:
+      the rail is derived from these flags, so it correctly declined to link a
+      page it had been told did not exist. A feature switched off by omission
+      leaves no trace of the decision it never was.
+
+      Set here rather than in the admin because the database is reproducible
+      from seed by design — a click in the CMS would be undone by the next
+      `pnpm db:reset`, which is exactly what is about to be run.
+    */
+    features: ['run-checker', 'build-planner', 'comments', 'completion-tracker'],
     theme: { accent: '#c02630' },
   },
   {
