@@ -37,7 +37,7 @@ import { KEY_FILE_PATTERN } from './lib/indexnow'
  * cannot be written at all: `sitemap` is a Next metadata convention and it
  * claims any route folder of that name.
  */
-const PASS_THROUGH = new Set([
+export const PASS_THROUGH = new Set([
   '_next',
   'api',
   'admin',
@@ -69,6 +69,31 @@ const PASS_THROUGH = new Set([
   'icon-512.png',
   'apple-touch-icon.png',
   'og.png',
+  /*
+    The section band photographs, in `public/art/`.
+
+    Same omission as the icon set above and found the same way — by asking for
+    the file over HTTP instead of looking for it on disk — but this one was
+    live on every section page of the wiki this project is built around.
+    `src/lib/art-credits.json` addresses all fourteen bands as `/art/<name>.webp`
+    and `sectionArt` hands that to a CSS `background-image`, so on
+    `dawnwalker.<domain>` the rewrite looked for `/dawnwalker/art/quests.webp`
+    and answered 404 to every one of them.
+
+    **A missing CSS background is the quietest failure on the web.** There is
+    no broken-image glyph, no layout shift, no entry in any log we keep: the
+    band renders at its full height with its gradient and its credit line
+    intact, and the photograph the credit is crediting simply is not there.
+    Every check passed, because every check that touches these files asks
+    whether they are on disk — and all fifteen always were.
+
+    `logo.svg` goes with them. Nothing in the app references it today, which is
+    exactly why it would have stayed broken: it is the wordmark for a press
+    kit or an email template, and the first person to link it would have been
+    the one to find out.
+  */
+  'art',
+  'logo.svg',
 ])
 
 /**

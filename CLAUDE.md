@@ -425,6 +425,26 @@ that inherits the default would let any reader who signs up edit content.
   named in words. Nothing about any of this is dismissable, for the reason
   `docs/COPY.md` records about `LegalGap`.
 
+- **A file in `public/` is not a file the site will serve.** `proxy.ts` rewrites
+  `/<anything>` onto a game prefix on a wiki host and redirects it to a
+  subdomain on the apex, so a static asset is only reachable if its first path
+  segment is in `PASS_THROUGH`. Three omissions so far, each invisible in its
+  own way: three of the four declared favicons 308'd to a host that does not
+  exist (a browser silently falls back to the next icon); the IndexNow key file
+  404'd on every host, which is the one thing that makes IndexNow refuse a
+  submission; and `public/art/` — all fourteen section band photographs —
+  404'd on every wiki host, where `sectionArt` hands the path to a CSS
+  `background-image`. **A missing CSS background is the quietest failure on the
+  web**: no broken-image glyph, no layout shift, nothing in any log, and the
+  band still renders at full height with its gradient and its credit line
+  intact, crediting a photograph that is not there.
+
+  All of them passed every check, because the checks ask whether the file is on
+  disk and it always was. `src/proxy.test.ts` asks the routing table instead —
+  every entry at the root of `public/` must be exempt — so a new asset fails on
+  the commit that adds it rather than on the day somebody looks. It needs no
+  server, which is why it is a unit test and not a `check:launch` fetch.
+
 - **A scrim is not a brightness control, and the one that was too dark was the
   file.** The hub hero had already had its scrims measured and retuned, and the
   homepage still read as black. The picture in it has a greyscale mean of 11.5
