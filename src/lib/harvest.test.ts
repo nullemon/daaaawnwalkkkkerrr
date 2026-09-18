@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { indefiniteArticle, isNotAnEntity, isNotAPlace } from './harvest'
+import { indefiniteArticle, isAnEvent, isNotAnEntity, isNotAPlace } from './harvest'
 
 const entity = (title: string, url = '') => ({ title, url })
 
@@ -225,5 +225,161 @@ describe('the article in front of a harvested word', () => {
   it('falls back to "a" on something it cannot read', () => {
     expect(indefiniteArticle('')).toBe('a')
     expect(indefiniteArticle('   ')).toBe('a')
+  })
+})
+
+/**
+ * An event, told apart from the creature that fought in it.
+ *
+ * Both directions are pinned, because a filter written to stop bad records is
+ * still a filter and this repository has twice shipped one that was
+ * over-broad. The first attempt at this rule read the wiki's categories, and
+ * "Creatures in Gears of **War**" is a creature category ending in an event
+ * word — it matched every drone, boomer and wretch on the bestiary it was
+ * written to protect.
+ *
+ * So the evidence is the wiki's own conflict template, and the cases below are
+ * the real infoboxes: `Emergence Day` and `Second Battle of Jannermont` were
+ * live in `enemies`, `Bombing of the Jedi Temple hangar` in `characters`, and
+ * `Drone`, `Brumak` and `Quake` are records that are filed correctly and must
+ * survive.
+ */
+describe('isAnEvent', () => {
+  it('finds the three that were live in the wrong collection', () => {
+    // Gears of War: E-Day, `enemies/emergence-day` — the autolinker pointed
+    // every mention of the phrase at a page about a day you fight.
+    expect(
+      isAnEvent({
+        title: 'Emergence Day',
+        facts: {
+          next: 'Emergence in Jannermont',
+          conflict: 'Locust War',
+          date: 'Bounty 0 A.E.',
+          place: 'Every major city on Sera',
+          result: 'Major Locust Strategic Victory',
+          side1: 'COG UIR',
+          side2: 'Locust Horde',
+          commanders1: 'Council of Sovereigns',
+        },
+      }),
+    ).toBe(true)
+
+    expect(
+      isAnEvent({
+        title: 'Second Battle of Jannermont',
+        facts: { conflict: 'Locust War', side1: 'COG', side2: 'Locust Horde', casual1: 'None' },
+      }),
+    ).toBe(true)
+
+    // Star Wars Zero Company, `characters`. The thinnest genuine event in the
+    // whole harvest: two fields, which is why two is the threshold.
+    expect(
+      isAnEvent({
+        title: 'Bombing of the Jedi Temple hangar',
+        facts: {
+          date: '19 BBY',
+          place: 'Jedi Temple, Coruscant',
+          outcome: '6 Jedi killed',
+          participants: 'Jackar Bowmani, Letta Turmond',
+        },
+      }),
+    ).toBe(true)
+  })
+
+  it('leaves a creature alone, however many wars its categories name', () => {
+    /*
+      The other direction, and the one that matters. Every Gears creature sits
+      in "Creatures in Gears of War" and carries a `date`, a `place` or a
+      `weapons` field; none of them carries a conflict template.
+    */
+    expect(
+      isAnEvent({
+        title: 'Drone',
+        categories: ['Creatures in Gears of War', 'Locust Horde', 'Locust Soldier'],
+        facts: { affiliation: 'Locust Horde', weapons: 'Hammerburst', species: 'Locust' },
+      }),
+    ).toBe(false)
+
+    // Imulsion is the close call: the wiki gives it a creature infobox with a
+    // birth and a death on it, which is dates without a conflict.
+    expect(
+      isAnEvent({
+        title: 'Imulsion',
+        facts: {
+          homeland: 'Hollow, Sera',
+          species: 'Parasitic Fungi',
+          birth: 'Prehistory',
+          death: 'Bloom 17 A.E.',
+          weapons: 'Limitless reproduction',
+        },
+      }),
+    ).toBe(false)
+
+    // A clone trooper, whose infobox names an army and a war and is a person.
+    expect(
+      isAnEvent({
+        title: 'Quake',
+        categories: ['Clone troopers', 'Canon articles'],
+        facts: {
+          homeworld: 'Kamino',
+          species: 'Human',
+          donor: 'Jango Fett',
+          affiliation: 'Galactic Republic, Grand Army of the Republic',
+        },
+      }),
+    ).toBe(false)
+  })
+
+  it('needs two fields, so one loose key is not enough', () => {
+    /*
+      `outcome` and `participants` are the only two of the set loose enough to
+      turn up on something that is not a battle. One of them says nothing.
+    */
+    expect(isAnEvent({ title: 'Something', facts: { outcome: 'Victory' } })).toBe(false)
+    expect(isAnEvent({ title: 'Something', facts: { participants: 'Two people' } })).toBe(false)
+  })
+
+  it('says nothing about a record with no harvested infobox', () => {
+    // A hand-written record, or one whose harvest file is missing. No infobox
+    // is no evidence, not evidence of absence.
+    expect(isAnEvent({ title: 'Xanthe' })).toBe(false)
+    expect(isAnEvent({ title: 'Xanthe', facts: {} })).toBe(false)
+    expect(isAnEvent({ title: 'Xanthe', facts: null })).toBe(false)
+  })
+})
+
+describe('the abstractions on the reviewed list', () => {
+  /*
+    Read one at a time against the wiki's own categories, and listed rather
+    than matched because nothing in a title separates an abstraction from a
+    creature. Each was rendering as a character or an enemy.
+  */
+  it('rejects the ones that were live', () => {
+    for (const title of [
+      'Order 66',
+      'Meditation',
+      'Darth',
+      'Dark Lord of the Sith',
+      'Thrashball',
+      'Costumes',
+    ]) {
+      expect(isNotAnEntity({ title }), title).toBe(true)
+    }
+  })
+
+  it('still keeps the records next to them on the same wikis', () => {
+    // The other direction. Every one of these is a real thing in its game and
+    // shares a wiki, a category or a word with something on the list above.
+    for (const title of [
+      'Darth Sidious',
+      'Sith Lord',
+      'Padawan',
+      'Thrashball Field',
+      'Costume Guard',
+      'Order of the Silver Rose',
+      'Meditation Chamber',
+    ]) {
+      expect(isNotAnEntity({ title }), title).toBe(false)
+    }
   })
 })

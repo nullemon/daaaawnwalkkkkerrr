@@ -10,7 +10,13 @@ import { rich, type Block } from './lexical'
    field; this pass writes the sentence about it and has to refuse the same
    values, or the panel reads "2005" while the paragraph above it reads
    "founded on Grenoble (Meylan), France (2005)". */
-import { closureYear, foundedValue, fromFacts } from './companies'
+import {
+  DEFUNCT_NOT_THIS_COMPANY,
+  closureText,
+  closureYear,
+  foundedValue,
+  fromFacts,
+} from './companies'
 import type { Company } from '../payload-types'
 
 /**
@@ -247,6 +253,10 @@ const run = async (): Promise<void> => {
   /* Ledes put into the past tense because this pass found a closure date the
      one that composed them could not see. */
   let ledes = 0
+  /* Closure dates cleared because the infobox that stated them describes a
+     predecessor. Printed, because an unset field is the one change here that
+     nothing else on the page announces. */
+  const unsetDefunct: string[] = []
   const empty: string[] = []
 
   for (const [slug, entry] of Object.entries(manifest.companies)) {
@@ -263,6 +273,28 @@ const run = async (): Promise<void> => {
     }
 
     const history = entry.history ?? {}
+
+    /*
+      What this company's closure date is, decided once.
+
+      Three sentences on the profile state it — the lede, the body paragraph
+      and the banner — and a page that dates the same event three times must
+      date it the same way. `refused` is the reviewed judgement that the
+      harvested value is about a *different* corporate entity, in which case
+      none of the three may say anything: the lede stays in the present tense,
+      the paragraph loses its closing sentence, and the banner never renders.
+
+      Before this, `seed:companies` composed the lede from a value that had not
+      arrived yet and this pass corrected it; the refusal has to be visible to
+      both or `/atlus` reads "Atlus was a games company" over no banner at all,
+      which is the wrong half of the fix.
+    */
+    const refused = Boolean(DEFUNCT_NOT_THIS_COMPANY[slugify(slug)])
+    const tidied = closureText(company.defunct)
+    const defunct = refused ? null : (tidied ?? closureText(history.defunct) ?? null)
+    if (refused && filled(company.defunct)) {
+      unsetDefunct.push(`${slug}: ${company.defunct} — ${DEFUNCT_NOT_THIS_COMPANY[slugify(slug)]}`)
+    }
 
     // --- the catalogue -----------------------------------------------------
     const stored = (company.titles ?? []) as Row[]
@@ -460,7 +492,7 @@ const run = async (): Promise<void> => {
     // same missing preposition again, and a close with no date is a claim
     // this cannot date. `closureYear` is the reader the lede uses too, so the
     // two sentences on this page cannot date the same closure differently.
-    const closed = closureYear(history.defunct)
+    const closed = closureYear(defunct)
     if (closed) now.push(`The company closed in ${closed}.`)
     if (history.franchises) now.push(`It is known for ${history.franchises}.`)
     if (now.length > 0) blocks.push(now.join(' '))
@@ -512,20 +544,30 @@ const run = async (): Promise<void> => {
       tidy-up: 70 records and their meta descriptions were wrong this way.
 
       Rewritten only where the stored sentence is exactly what `fromFacts`
-      composes from the same fields without a closure - which is the one thing
-      that can be said with certainty about who wrote it. An editor's sentence,
-      or the one a company with games of ours gets, never matches and is never
-      touched.
+      composes from the same fields - which is the one thing that can be said
+      with certainty about who wrote it. An editor's sentence, or the one a
+      company with games of ours gets, never matches and is never touched.
+
+      Both forms count as ours, and that second one is the half a correction
+      needs. The sentence has to be recognisable in the *direction it is
+      already wrong in*: `/atlus` read "Atlus was a games company" because a
+      previous run believed the 2010 date, and asking only whether it matches
+      the open form says "an editor wrote that" and leaves it. The banner would
+      have gone and the past tense - which is also the meta description, the
+      one place a search result reads - would have stayed.
     */
     const ledeFacts = {
       industry: company.industry,
       founded: company.founded,
       headquarters: company.headquarters,
     }
-    const ledeIsOurs = Boolean(company.summary) && company.summary === fromFacts(company.name, ledeFacts)
+    const ledeIsOurs =
+      Boolean(company.summary) &&
+      (company.summary === fromFacts(company.name, ledeFacts) ||
+        company.summary === fromFacts(company.name, { ...ledeFacts, defunct: company.defunct }))
     const lede = fromFacts(company.name, {
       ...ledeFacts,
-      defunct: company.defunct ?? history.defunct,
+      defunct,
     })
     const writeLede = ledeIsOurs && lede !== company.summary
     if (writeLede) ledes += 1
@@ -538,7 +580,34 @@ const run = async (): Promise<void> => {
         // runs first and owns `founded`, `headquarters` and the corporate graph.
         ...(filled(company.founders) || !history.founders ? {} : { founders: history.founders }),
         ...(filled(company.formerNames) || !history.formerNames ? {} : { formerNames: history.formerNames }),
-        ...(filled(company.defunct) || !history.defunct ? {} : { defunct: history.defunct }),
+        /*
+          `defunct` is the one field here that can be wrong rather than
+          missing, so it is the one field this pass will also *unset*.
+
+          `DEFUNCT_NOT_THIS_COMPANY` in `./companies` lists the two whose own
+          infobox contradicts the closure date it states — Atlus renamed twice
+          and owned "to present" three years after its stated closure, Argonaut
+          with the source's own "(original incarnation)" beside a relaunch
+          headquarters. Refusing them at the write is not enough on its own:
+          this pass fills the field wherever it is empty, so a row corrected by
+          hand comes back wrong on the next `pnpm db:reset`. Clearing it here
+          is the half that makes the correction survive a rebuild.
+        */
+        ...(refused
+          ? filled(company.defunct)
+            ? { defunct: null }
+            : {}
+          : filled(company.defunct)
+            /* A stored value keeps its wording and loses only the date
+               template's duplicate of its own year — `2000 (2000)` was
+               rendering inside a red banner. `closureText` cannot change what
+               the field says; see its note. */
+            ? tidied && tidied !== company.defunct
+              ? { defunct: tidied }
+              : {}
+            : defunct
+              ? { defunct }
+              : {}),
         ...(filled(company.franchises) || !history.franchises ? {} : { franchises: history.franchises }),
         ...(filled(company.acquired) || !history.acquired
           ? {}
@@ -572,6 +641,11 @@ const run = async (): Promise<void> => {
   console.log(`rows linked to a wiki here: ${covered}`)
   console.log(`bodies composed:            ${bodies}`)
   console.log(`ledes closed off:           ${ledes}`)
+  if (unsetDefunct.length > 0) {
+    console.log(`
+closure dates cleared as not this company's (${unsetDefunct.length}):`)
+    for (const line of unsetDefunct) console.log(`  ${line}`)
+  }
   if (empty.length > 0) {
     console.log('\nnothing found, and why:')
     for (const line of empty) console.log(`  ${line}`)

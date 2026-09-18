@@ -1,5 +1,13 @@
 import { describe, expect, it } from 'vitest'
-import { closureYear, currentOwners, foundedValue, fromFacts, revenueValue } from './companies'
+import {
+  DEFUNCT_NOT_THIS_COMPANY,
+  closureText,
+  closureYear,
+  currentOwners,
+  foundedValue,
+  fromFacts,
+  revenueValue,
+} from './companies'
 
 /**
  * The three refusals on a company profile, pinned in both directions.
@@ -168,5 +176,75 @@ describe('closureYear', () => {
   it('has nothing to say about a field with no year in it', () => {
     expect(closureYear('defunct')).toBeUndefined()
     expect(closureYear(null)).toBeUndefined()
+  })
+})
+
+/**
+ * The date template's duplicate of its own year, removed and nothing else.
+ *
+ * 989 Studios' `defunct` field read `2000 (2000) (original), 2005 (2005)` -
+ * Wikipedia's `{{Start date}}` family prints the date and then prints it again
+ * machine-readably - and the profile rendered a red banner saying "No longer
+ * operating (2000 (2000) (original), 2005 (2005))".
+ *
+ * Both directions matter here as much as anywhere. This must not become a
+ * general bracket-stripper: the source's own "(original)" is the only thing on
+ * that page saying which of the two dates is which, and a repair that removed
+ * it would delete the evidence that the field needs a person.
+ */
+describe('closureText', () => {
+  it('drops a parenthesis that only repeats the year before it', () => {
+    expect(closureText('2000 (2000) (original), 2005 (2005)')).toBe('2000 (original), 2005')
+    expect(closureText('1992 (1992)')).toBe('1992')
+  })
+
+  it('leaves every other parenthesis exactly where the source put it', () => {
+    expect(closureText('2004 (original incarnation)')).toBe('2004 (original incarnation)')
+    expect(closureText('2010 (as Atlus Co., Ltd.)')).toBe('2010 (as Atlus Co., Ltd.)')
+    // Not a repeat of the year before it, so not the template's duplicate.
+    expect(closureText('2000 (2005)')).toBe('2000 (2005)')
+  })
+
+  it('passes an ordinary date through untouched', () => {
+    expect(closureText('1 October 2010')).toBe('1 October 2010')
+    expect(closureText('June 26, 1992')).toBe('June 26, 1992')
+  })
+
+  it('has nothing to return for an empty field', () => {
+    expect(closureText('')).toBeUndefined()
+    expect(closureText(null)).toBeUndefined()
+  })
+})
+
+/**
+ * The two closure dates the infobox that states them contradicts.
+ *
+ * Reviewed rather than matched, because a rule cannot tell a dead brand that
+ * is still published on from a `defunct` field describing a predecessor - and
+ * both were in the same twenty-two-line `check:kind` finding. The evidence is
+ * quoted on each entry; what matters here is that the list stays short and
+ * that a slug on it is a slug `seed:company-games` will clear rather than
+ * fill.
+ */
+describe('DEFUNCT_NOT_THIS_COMPANY', () => {
+  it('names the two that were decided, and gives a reason for each', () => {
+    expect(Object.keys(DEFUNCT_NOT_THIS_COMPANY).sort()).toEqual(['argonaut-games', 'atlus'])
+    for (const [slug, reason] of Object.entries(DEFUNCT_NOT_THIS_COMPANY)) {
+      expect(reason.length, slug).toBeGreaterThan(20)
+    }
+  })
+
+  it('does not list a brand that is merely still being published on', () => {
+    /*
+      The other direction, and the one this list would be dangerous without.
+      Atari, Inc. really did close in 1992 and its sixty Steam rows really are
+      its own back catalogue re-listed; Beam Software closed in 2010 and every
+      one of its fifteen rows is a 1980s game that reached Steam after 2019.
+      Clearing those dates would delete the single most useful fact each of
+      those pages carries.
+    */
+    for (const slug of ['atari-inc', 'beam-software', 'the-3do-company', '989-studios']) {
+      expect(DEFUNCT_NOT_THIS_COMPANY[slug], slug).toBeUndefined()
+    }
   })
 })

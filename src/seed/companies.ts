@@ -178,7 +178,74 @@ export const foundedValue = (value?: string | null): string | undefined => {
  * written without one rather than with a guess.
  */
 export const closureYear = (value?: string | null): string | undefined =>
-  usable(value)?.match(/\b(1[89]\d{2}|20\d{2})\b/)?.[1]
+  usable(closureText(value))?.match(/\b(1[89]\d{2}|20\d{2})\b/)?.[1]
+
+/**
+ * A `defunct` value the infobox says is not about this company.
+ *
+ * Reviewed one at a time, with the words that decided it, because two facts
+ * that each came from a source can still contradict each other and only a
+ * person can say which one is about the entity the page presents. What is *not*
+ * evidence is the catalogue: sixteen of the twenty-two profiles `check:kind`
+ * reported were reported for a comparison that never held — see the note on
+ * the catalogue rule there.
+ *
+ * Both of these are the same shape, and the evidence is inside the one
+ * infobox that states the closure:
+ *
+ *   atlus            `defunct` is 1 October 2010, and the same box gives
+ *                    `formerNames` "Sega Dream Corporation (2013), Index
+ *                    Corporation (2013–2014)" and `parent` "… Sega
+ *                    (2013–present)". A company cannot be renamed twice and
+ *                    owned "to present" three years after it ceased to exist.
+ *                    The date is the predecessor entity's.
+ *
+ *   argonaut-games   `defunct` is 1 October 2004, and the same box says
+ *                    `fate` "Liquidated (original incarnation)" and gives
+ *                    `headquarters` as "Edgware, London, UK (original), Frisco,
+ *                    TX, USA (relaunch)". The source itself scopes the date to
+ *                    an incarnation and then names the one that followed it.
+ *
+ * Cleared rather than corrected, because nothing here states a closure date
+ * for the company as its page presents it, and there is no date to put in its
+ * place that a source gives. A gap is fine; a wrong figure is not — it was
+ * rendering as a red "No longer operating" banner over a catalogue running to
+ * 2027, which is this site telling a reader something false in its loudest
+ * voice.
+ *
+ * Refused here rather than fixed in the database, because
+ * `seed:company-games` fills `defunct` wherever the field is empty: a row
+ * corrected by hand comes back wrong on the next `pnpm db:reset`. Same
+ * relationship `seed:prune` has with the guide generators.
+ */
+export const DEFUNCT_NOT_THIS_COMPANY: Record<string, string> = {
+  atlus: 'renamed in 2013 and owned by Sega "to present" — the 2010 date is the predecessor entity',
+  'argonaut-games':
+    'the infobox scopes it itself: "Liquidated (original incarnation)", with a relaunch headquarters beside it',
+}
+
+/**
+ * The closure value with the date template's own duplicate removed.
+ *
+ * 989 Studios' field reads `2000 (2000) (original), 2005 (2005)` — Wikipedia's
+ * `{{Start date}}` family prints the date and then prints it again in a
+ * machine-readable span, and the harvester's "N years ago" strip did not cover
+ * this shape of it. What reached the profile was a red banner reading "No
+ * longer operating (2000 (2000) (original), 2005 (2005))".
+ *
+ * Only an exact repeat of the year immediately before it is dropped, so this
+ * cannot change what the field says: `2000 (2000)` becomes `2000`, and
+ * `2000 (original)` is left completely alone. It does **not** decide which of
+ * the two dates 989 Studios' field carries is the one about the company as the
+ * page presents it — the source labels the first "(original)" and settles
+ * nothing else, so that stays a `check:kind` finding for somebody to read.
+ */
+export const closureText = (value?: string | null): string | undefined => {
+  const text = String(value ?? '').trim()
+  if (!text) return undefined
+  const tidied = text.replace(/\b(1[89]\d{2}|20\d{2})\s*\(\1\)/g, '$1').replace(/\s{2,}/g, ' ').trim()
+  return tidied || undefined
+}
 
 /**
  * Any mark that says which money a figure is in.

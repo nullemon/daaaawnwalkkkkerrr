@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url'
 import { getPayload } from 'payload'
 import config from '../payload.config'
 import { GAME_SCOPED } from '../lib/tenancy'
-import { isNotAnEntity, isNotAPlace } from '../lib/harvest'
+import { isAnEvent, isNotAnEntity, isNotAPlace } from '../lib/harvest'
 
 /**
  * Delete harvested records that the entity importer would no longer write.
@@ -135,7 +135,26 @@ async function run(): Promise<void> {
         page.
       */
       const notAPlace = collection === 'regions' && isNotAPlace(candidate)
-      if (!notAPlace && !isNotAnEntity(candidate, title)) continue
+      /*
+        An event filed as an enemy or a character, on the same reasoning.
+
+        `Emergence Day` was in `enemies`, so the autolinker turned every
+        mention of the phrase into a link to a page describing the day the
+        Locust invaded as something you fight. `Second Battle of Jannermont`
+        was beside it and `Bombing of the Jedi Temple hangar` was in
+        `characters`. The research is not lost — the page, its categories and
+        its infobox are still in `src/seed/raw/wiki-entities/`, so the day an
+        events collection exists these come back from the harvest rather than
+        from anybody's memory.
+
+        Only these two collections. 26 of the events `isAnEvent` finds are in
+        `quests`, where a battle is the mission the game makes of it and the
+        filing is correct; walking those with this rule would delete a quarter
+        of the Star Wars wiki's quests and report it as a successful prune.
+      */
+      const notACombatant =
+        (collection === 'enemies' || collection === 'characters') && isAnEvent(candidate)
+      if (!notAPlace && !notACombatant && !isNotAnEntity(candidate, title)) continue
 
       kept.push(`  ${collection}/${String(doc.slug)} [${where}] ${url}`)
       await payload.delete({ collection, id: doc.id })
