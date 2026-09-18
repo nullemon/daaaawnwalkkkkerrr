@@ -144,6 +144,45 @@ export const REVIEWED_NOT_ENTITIES = new Set(
   'Trade Federation',
   'Zero Company',
 
+  /*
+    Abstractions, filed as characters and enemies by the category sweep.
+
+    None of these is a person, a creature or a thing that can be fought, and
+    each was rendering as one: "Order 66, a character in Star Wars Zero
+    Company", "Thrashball, a character in Gears of War: E-Day". Every one had a
+    real source URL, because the page it came from is real - it is only the
+    *kind* of thing that is wrong, which is the whole Gears-of-War-film shape
+    one collection along.
+
+    They are here rather than in a rule because there is nothing in a title or
+    a URL that separates an abstraction from a creature, and the two attempts
+    at a rule on this repository's record both went the wrong way: one flagged
+    `b1-series-battle-droid` for containing "series", one deleted Antar 4 for
+    ending in a digit. Each was read one at a time, and what was read was the
+    wiki's own categories, quoted here so the next person can check the
+    judgement rather than trust it:
+
+      Order 66              Commands; Contingency Orders for the Grand Army of
+                            the Republic; Galactic Republic codes. A military
+                            order, and the event of its execution.
+      Meditation            Jedi ceremonies. A practice.
+      Darth                 Sith ranks. A title somebody holds.
+      Dark Lord of the Sith Sith ranks. The same.
+      Thrashball            Sports; Human Culture. A sport.
+      Costumes              An index of cosmetic outfits across five Onimusha
+                            games. Its only categories are the game names.
+
+    The events are deliberately *not* here: `isAnEvent` below reads the wiki's
+    own conflict infobox and decides them mechanically, which is better than a
+    list because it catches the next one without anybody opening a URL.
+  */
+  'Order 66',
+  'Meditation',
+  'Darth',
+  'Dark Lord of the Sith',
+  'Thrashball',
+  'Costumes',
+
   'Beneath the Surface: An Inside Look at Gears of War 2',
   'Books',
   'Comic Series',
@@ -200,6 +239,59 @@ export const REVIEWED_NOT_ENTITIES = new Set(
   'Timeline',
   'Timeline of Events',
   'Phantom Blade Wiki',
+
+  /*
+    Twenty-five living people the category sweep filed as characters, and one
+    as a *place*: `/regions/gordy-haab` on the Star Wars wiki read "Gordy Haab,
+    a location in Zero Company" — a composer, described to a reader as a
+    location.
+
+    `isARealPerson` below is supposed to catch these and under-catches for two
+    one-line reasons. Its category test is anchored on `^(the )?real[- ]world$`
+    and Wookieepedia's category is "Real-world people"; its infobox test wants
+    an actor occupation *and* a `portrayed` field, and Remedy's cast infoboxes
+    give `occupation: Actor` with no `portrayed` at all. Widening either is a
+    one-character change that would take twenty-five records with it, and
+    "Cast" is what one wiki calls its actors and could be what another calls
+    its dramatis personae — the shape that deleted Antar 4.
+
+    So the rule stays as it is and these are listed, which is what this list is
+    for. Each was read against its own categories first; every one carries
+    "Real-world people", a "voice actors" category, "Actors who have portrayed
+    <character>", or an explicit `occupation: Actor`/`Actress`. None is a
+    judgement call, which is exactly why they can be named rather than matched.
+
+    Where they belong is the people host, and three of them are already there
+    with profiles — Courtney Hope, James McCaffrey and Matthew Porretta each
+    existed twice, once as themselves and once as a fictional character of the
+    game they acted in. `check:kind` keeps printing anything this list has not
+    reached, so the next leak is visible rather than silent.
+  */
+  'Gordy Haab',
+  'Aaron Contreras',
+  'Alex Damon',
+  'Alexander Freed',
+  'Courtney Hope',
+  'Darren Bailey',
+  'David Acord',
+  'D.C. Douglas',
+  'Dee Bradley Baker',
+  'Elizabeth Grullón',
+  'Erica Luttrell',
+  'Hunter Smith',
+  'James McCaffrey',
+  'Jason Spisak',
+  'JB Blanc',
+  'Jonathan Freeman',
+  'Judy Alice Lee',
+  'Lane Compton',
+  'Leo Howard',
+  'Martin Keßler',
+  'Matt Lanter',
+  'Matthew Porretta',
+  'Nicole Rainteau',
+  'Rekha Sharma',
+  'Vic Michaelis',
   ].map((title) => title.toLowerCase()),
 )
 
@@ -337,6 +429,54 @@ export const isNotAPlace = (entity: HarvestedEntity): boolean => {
   const rest = categories.filter((name) => !HAPPENING_CATEGORY.test(name))
   return !rest.some((name) => PLACE_CATEGORY.test(name))
 }
+
+/**
+ * An event, filed as an enemy.
+ *
+ * "Emergence Day" was in `enemies` on the Gears of War wiki, so the autolinker
+ * — correctly, given where the record was — turned every mention of the phrase
+ * into a link to `/enemies/emergence-day`, a page describing the day the
+ * Locust invaded as a thing you fight. `Second Battle of Jannermont` was there
+ * too, and `Bombing of the Jedi Temple hangar` was in `characters` on the Star
+ * Wars wiki. Each had a real source URL, each rendered perfectly, and
+ * `pnpm verify` and the build were green: the research was sound and only the
+ * kind of thing was wrong. The Gears film in `regions`, one collection along.
+ *
+ * ## Why this reads the infobox and not the categories
+ *
+ * `isNotAPlace` above asks the wiki's categories, and that works for a place
+ * because a place category and an event category are different words. It does
+ * not transfer: `HAPPENING_CATEGORY` is anchored on its head noun, and
+ * "Creatures in Gears of **War**" is a creature category ending in an event
+ * word. Every Gears drone, boomer and wretch matches it. A rule built on that
+ * would have deleted the bestiary of the wiki it was written for, which is the
+ * Antar 4 failure at scale.
+ *
+ * What is decisive instead is the *conflict template*. A wiki that has a page
+ * about a battle fills in a box with `conflict`, `side1`, `side2`,
+ * `commanders1`, `forces1`, `casual1` — the wiki's own structured claim about
+ * what kind of page it is, not a guess about its name. Across all 1,027
+ * harvested entities on the seven wikis this matches 33 pages and every one of
+ * them is an event: 26 already in `quests`, 4 already caught in `regions`, and
+ * exactly the 3 above. No creature and no person carries one field of it.
+ *
+ * Two fields are required rather than one. `outcome` and `participants` are
+ * the only two loose enough to turn up elsewhere some day, and needing a pair
+ * costs nothing on the real corpus — the thinnest genuine event here has two.
+ *
+ * ## It does not say "delete"
+ *
+ * The same rule `isNotAPlace` follows, and for a stronger reason: 26 of the 33
+ * are in `quests`, where a battle is the mission the game makes of it and the
+ * filing is right. This says the page is an event. Whether that makes the
+ * record wrong depends on which collection is asking, and that is the caller's
+ * decision — `enemies` and `characters` are the two where it cannot be right.
+ */
+const CONFLICT_FIELDS =
+  /^(conflict|side[_]?[123ab]|commanders?[123]|forces[123]|casual[123]|unit[123]|ppl[12]|keyparties|participants|outcome|event_date|event_location)$/i
+
+export const isAnEvent = (entity: HarvestedEntity): boolean =>
+  Object.keys(entity.facts ?? {}).filter((key) => CONFLICT_FIELDS.test(key.trim())).length >= 2
 
 /**
  * @param game the title of the game being harvested for, so a numbered name
