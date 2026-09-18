@@ -164,6 +164,47 @@ export const UI_DEFAULTS: Record<string, string> = {
   'account.error-network': 'Could not reach the server. Try again in a moment.',
   'account.error-signed-out': 'Not signed in.',
 
+  /*
+    Forgotten passwords, for *reader* accounts.
+
+    Two auth collections, two flows: an editor resets at `/admin/reset`, a
+    reader at `/account/reset` on the hub, and a token from one is refused by
+    the other. Payload has always exposed `POST /api/players/forgot-password`
+    whether anything linked to it or not, and until there was a page to point
+    at, the message it composed pointed at the editor admin — a reader
+    following it was told their token was invalid on a page they cannot sign
+    into.
+
+    'account.forgot-sent-body' says the same thing whether or not the address
+    has an account, and that is not vagueness: an answer that differed would
+    turn the form into a way of asking whether a given person reads this site.
+  */
+  'account.forgot-start': 'Forgotten your password?',
+  'account.forgot-heading': 'Reset your password',
+  'account.forgot-note':
+    'Give the address you signed up with and we will email a link that sets a new one. The link is good for an hour.',
+  'account.forgot-submit': 'Email me a link',
+  'account.forgot-sent-title': 'Check your email',
+  'account.forgot-sent-body':
+    'If that address has an account here, a link is on its way and is good for an hour. Nothing is sent to an address without one, and we do not say which it was — that would tell anyone who asked who reads this site.',
+  'account.forgot-back': 'Back to sign in',
+  'account.reset-heading': 'Set a new password',
+  'account.reset-note':
+    'Choose a new password. You will be signed in on this device once it is saved, and any other device stays signed in as it was.',
+  'account.new-password-label': 'New password',
+  'account.repeat-password-label': 'Repeat it',
+  'account.reset-submit': 'Save it and sign me in',
+  'account.reset-mismatch': 'Those two are not the same.',
+  'account.reset-done-title': 'Password changed',
+  'account.reset-done-body': 'You are signed in here. Your saved run will sync as usual.',
+  'account.reset-open': 'Go to your account',
+  'account.reset-missing-title': 'This page needs a link from an email',
+  'account.reset-missing-body':
+    'The address you followed carries no reset token, so there is nothing here to set. Ask for a fresh link — they expire an hour after they are sent, and each one works once.',
+  'account.error-forgot': 'Could not send that. Try again in a moment.',
+  'account.error-reset':
+    'That link did not work. Reset links expire an hour after they are sent, and each one can only be used once.',
+
   'search.label': 'Search the database',
   /*
     Both of these named a perk. Perks are Dawnwalker's — `REHOME` in the entity

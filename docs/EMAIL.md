@@ -205,11 +205,20 @@ dig it out of a database column is why nobody ever tests the flow.
 
 ## What the site actually sends
 
-Today, one thing: **password reset for editor accounts** (`users`), triggered
-from the admin's "Forgot password" link. That is it. There is no newsletter, no
-contact-form relay, no moderation notification.
+Three things.
 
-Two consequences worth knowing before you attach a real provider.
+1. **Password reset for editor accounts** (`users`), from the admin's "Forgot
+   password" link.
+2. **Password reset for reader accounts** (`players`), from "Forgotten your
+   password?" in `AccountPanel`. A different collection, a different token and
+   a different page — see below, because mixing them up was the bug here.
+3. **A notification when a reader files a correction or a request**, one
+   message per report, to the address in Site settings → Legal & contact →
+   *Where reader reports are sent*.
+
+There is no newsletter and no contact-form relay.
+
+Three consequences worth knowing before you attach a real provider.
 
 ### The reset link is built here, not by Payload
 
@@ -232,24 +241,75 @@ shared code is on every page of all of them; an inbox is no different. The
 network's name comes from Site settings, and if it cannot be read the sentence
 drops the name rather than inventing one.
 
-### Reader accounts cannot reset a password, and that is a gap
+### Two auth collections, two reset flows, and they must not cross
 
-`players` — the optional reader accounts — has no forgot-password flow.
-`AccountPanel` offers sign in and register and nothing else. Payload still
-exposes `POST /api/players/forgot-password` whether anything links to it or
-not, and if it is reached the message it composes points at
-`/admin/reset/<token>`: the *editor* admin, whose reset view resolves tokens
-against `users`. A reader following it would be told the token was invalid, on
-a page they cannot sign into.
+`users` are editors and reset at `/admin/reset/<token>`, which resolves the
+token against `users`. `players` are readers with an optional account and reset
+at **`/account/reset`** on the hub, which posts to
+`/api/players/reset-password`. A token from one collection is refused by the
+other, so there is no way for either message to land in the wrong flow.
 
-This was harmless while nothing was delivered. With a provider attached it is a
-real message with a dead link. Finishing it needs an `/account/reset` page and
-a template on the collection; until somebody builds both, the note in
-`src/collections/Players.ts` says so rather than half-building it.
+That is what was wrong here. Payload exposes
+`POST /api/players/forgot-password` whether anything links to it or not, and
+with no template on the collection the link it composed pointed at
+`/admin/reset/<token>` — so the one reader who found the endpoint by hand was
+told their token was invalid, on a page they cannot sign into. It was harmless
+only because there was no adapter to deliver it.
 
-Also missing, and listed here so nobody assumes otherwise: the corrections and
-requests queues send no notification. `pnpm check:launch` and the admin
-dashboard are how they get seen.
+Three things about the reader page are worth knowing before anybody moves it:
+
+- **It is on the hub alone.** `account` is in `APEX_ONLY` in `proxy.ts`, not
+  `PASS_THROUGH`, so on a wiki's host `/account/reset` is rewritten to
+  `/<game>/account/reset` and 404s. The email therefore links absolutely
+  against `NEXT_PUBLIC_SITE_URL`, exactly as the editors' does, and for the
+  extra reason `Users.ts` gives: with `serverURL` unset, the URL Payload would
+  compose is a bare path, which is not a link at all in a mail client.
+- **The token rides in the fragment**, `#token=…`. A fragment never reaches a
+  server, so it stays out of the access log, out of any Referer, and out of
+  `Beacon`, which posts `window.location.search` to `/api/hit` on every page
+  view. The page also accepts `?token=` because a mail gateway that rewrites
+  links can drop a fragment, and a reader in that position would otherwise be
+  stuck — every fresh link would lose it the same way.
+- **The page is still static.** The token is read in the browser, so the HTML
+  is the same bytes for everybody. A `[token]` path segment would have been the
+  obvious shape and is wrong twice: it cannot be prerendered, and `Beacon` would
+  file the token as a page path in the analytics table.
+
+The forgot-password form answers the same way whether or not the address has an
+account. That is not vagueness: a form that said "no such account" is a way of
+asking whether a named person reads this site.
+
+### Corrections and requests notify as they arrive
+
+`/contact` and the report link at the foot of every page promise that a
+correction "goes straight to our review queue". It did, and nobody was told:
+the record was written, the reader was thanked, and the only way it got seen
+was somebody opening the admin.
+
+Both queues now email on `create` — corrections and requests, one message per
+report. `src/lib/email-notify.ts` is the whole of it, and the decisions are
+written there:
+
+- **Who.** Site settings → Legal & contact → *Where reader reports are sent*,
+  falling back to the sender address. Blank means the shipped behaviour and
+  never means nobody is told, which is `docs/COPY.md`'s rule about an empty
+  field and matters more on a notification than on a heading.
+- **One per report, not a digest.** Right at this volume, and a digest would
+  need a scheduler this deployment does not have. The note in the module says
+  when to change it and where.
+- **Failure cannot cost a report.** `notifyOfReport` catches everything and
+  warns with the collection and id. An `afterChange` that threw because a relay
+  was down would answer the reader's form with an error on a report that was
+  already stored, and they would file it again.
+- **Plain text, no HTML body.** Every value came from a stranger typing into a
+  public form, and a mail client is a DOM like any other. The one value that
+  reaches a header — the summary, in the subject — is flattened first, because
+  a carriage return inside a header is where somebody else's headers begin.
+
+`requests` is notified as well as `corrections`, which was a decision rather
+than a copy-paste: "Something is broken" is one of the kinds a reader can pick,
+and a broken page reported into a queue nobody is told about stays broken.
+`src/collections/Requests.ts` records the argument.
 
 ---
 
@@ -312,8 +372,13 @@ addresses that are obviously stand-ins.
 | `src/lib/email.test.ts` | Pins both directions: a bad configuration is refused, a valid one is not |
 | `src/lib/email-adapter.ts` | The provider adapters and the Site settings overlay |
 | `src/seed/email-test.ts` | `pnpm email:test` |
-| `src/collections/Users.ts` | The reset email and its URL |
-| `src/globals/SiteSettings.ts` | The three admin-editable sender fields |
+| `src/lib/email-copy.ts` | The network's name for an inbox, and the header flattening. No I/O |
+| `src/lib/email-notify.ts` | The corrections/requests notification, and why it is one per report |
+| `src/collections/Users.ts` | The editors' reset email and its URL |
+| `src/collections/Players.ts` | The readers' reset email and its URL |
+| `src/components/PasswordReset.tsx` | Both reader-facing forms |
+| `src/app/(frontend)/(network)/account/reset/page.tsx` | The page the reader's link lands on |
+| `src/globals/SiteSettings.ts` | The three sender fields and the reports address |
 
 The split is the same one `src/lib/reachability.ts` uses and for the same
 reason: the half that makes decisions has no I/O in it, so it can be tested

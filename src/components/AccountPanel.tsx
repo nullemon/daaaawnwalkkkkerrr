@@ -3,12 +3,25 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import { useAccount } from './AccountProvider'
+import { ForgotPasswordForm } from './PasswordReset'
 import { useRun } from './RunProvider'
 import { useUi } from './UiStrings'
 import { hub } from '@/lib/urls'
 import { fill } from '@/lib/copy'
 
-type Mode = 'signin' | 'register'
+/**
+ * `forgot` is the third mode, and its absence was the whole bug.
+ *
+ * Payload exposes `POST /api/players/forgot-password` whether or not anything
+ * links to it, so the endpoint has always been there while this panel offered
+ * sign in and register and no way to reach it. With no template on the
+ * collection the message it composed pointed at `/admin/reset/<token>` - the
+ * editor admin, which resolves tokens against `users` - so the one reader who
+ * found it by hand was told their token was invalid on a page they cannot sign
+ * into. The entry point and the page it lands on are the same change; either
+ * one alone is still a dead end.
+ */
+type Mode = 'signin' | 'register' | 'forgot'
 
 /**
  * `checkerHref` is the run checker's address from wherever this panel is.
@@ -132,55 +145,88 @@ export function AccountPanel({ checkerHref = '/tools/run-checker' }: { checkerHr
   return (
     <div className="checker-panel">
       <div className="panel-head">
-        <h2>{mode === 'signin' ? ui.t('account.sign-in') : ui.t('account.register')}</h2>
-        <button
-          type="button"
-          className="linkish"
-          onClick={() => {
-            setMode(mode === 'signin' ? 'register' : 'signin')
-            setError('')
-          }}
-        >
-          {mode === 'signin' ? ui.t('account.need-account') : ui.t('account.have-account')}
-        </button>
+        <h2>
+          {mode === 'forgot'
+            ? ui.t('account.forgot-heading')
+            : mode === 'signin'
+              ? ui.t('account.sign-in')
+              : ui.t('account.register')}
+        </h2>
+        {/* No toggle while resetting: that form carries its own way back, and
+            two controls offering it is two things to keep in step. */}
+        {mode === 'forgot' ? null : (
+          <button
+            type="button"
+            className="linkish"
+            onClick={() => {
+              setMode(mode === 'signin' ? 'register' : 'signin')
+              setError('')
+            }}
+          >
+            {mode === 'signin' ? ui.t('account.need-account') : ui.t('account.have-account')}
+          </button>
+        )}
       </div>
 
-      <p className="note">{ui.t('account.optional-note')}</p>
+      {mode === 'forgot' ? null : <p className="note">{ui.t('account.optional-note')}</p>}
 
-      <form onSubmit={onSubmit} className="stack-sm">
-        <div className="field">
-          <label htmlFor="account-email">{ui.t('account.email-label')}</label>
-          <input id="account-email" name="email" type="email" required autoComplete="email" />
-        </div>
-        <div className="field">
-          <label htmlFor="account-password">{ui.t('account.password-label')}</label>
-          <input
-            id="account-password"
-            name="password"
-            type="password"
-            required
-            minLength={8}
-            autoComplete={mode === 'signin' ? 'current-password' : 'new-password'}
-          />
-          {mode === 'register' ? (
-            <span className="note">{ui.t('account.password-hint')}</span>
+      {mode === 'forgot' ? (
+        <ForgotPasswordForm
+          onBack={() => {
+            setMode('signin')
+            setError('')
+          }}
+        />
+      ) : (
+        <form onSubmit={onSubmit} className="stack-sm">
+          <div className="field">
+            <label htmlFor="account-email">{ui.t('account.email-label')}</label>
+            <input id="account-email" name="email" type="email" required autoComplete="email" />
+          </div>
+          <div className="field">
+            <label htmlFor="account-password">{ui.t('account.password-label')}</label>
+            <input
+              id="account-password"
+              name="password"
+              type="password"
+              required
+              minLength={8}
+              autoComplete={mode === 'signin' ? 'current-password' : 'new-password'}
+            />
+            {mode === 'register' ? (
+              <span className="note">{ui.t('account.password-hint')}</span>
+            ) : null}
+          </div>
+          <div className="field-row">
+            <button type="submit" className="button" disabled={account.busy}>
+              {account.busy
+                ? ui.t('account.working')
+                : mode === 'signin'
+                  ? ui.t('account.sign-in')
+                  : ui.t('account.create')}
+            </button>
+            {/* Only when signing in. On the register form it would read as an
+                offer to recover an account that does not exist yet. */}
+            {mode === 'signin' ? (
+              <button
+                type="button"
+                className="linkish"
+                onClick={() => {
+                  setMode('forgot')
+                  setError('')
+                }}
+              >
+                {ui.t('account.forgot-start')}
+              </button>
+            ) : null}
+          </div>
+          {error ? (
+            <p className="note" role="alert" style={{ color: 'var(--risk)' }}>
+              {error}
+            </p>
           ) : null}
-        </div>
-        <div>
-          <button type="submit" className="button" disabled={account.busy}>
-            {account.busy
-              ? ui.t('account.working')
-              : mode === 'signin'
-                ? ui.t('account.sign-in')
-                : ui.t('account.create')}
-          </button>
-        </div>
-        {error ? (
-          <p className="note" role="alert" style={{ color: 'var(--risk)' }}>
-            {error}
-          </p>
-        ) : null}
-      </form>
+        </form>
+      )}
 
       <p className="note">
         {ui.t('account.privacy-note')}{' '}

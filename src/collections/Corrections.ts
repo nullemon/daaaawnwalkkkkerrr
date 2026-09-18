@@ -1,5 +1,6 @@
 import type { CollectionConfig } from 'payload'
 import { isEditor } from '../fields/shared'
+import { notifyOfReport } from '../lib/email-notify'
 
 /**
  * Reader-submitted corrections. Anyone may file one; only signed-in editors can
@@ -22,6 +23,44 @@ export const Corrections: CollectionConfig = {
     read: isEditor,
     update: isEditor,
     delete: isEditor,
+  },
+  hooks: {
+    /*
+      The site invites corrections on every page and promises they "go straight
+      to our review queue". For as long as this collection has existed the
+      record was written, the reader was thanked, and nobody was told — the
+      queue was only ever seen by somebody opening the admin.
+
+      `create` only. An `afterChange` with no operation guard also fires when
+      an editor changes the status, which would mail a notification every time
+      somebody triaged one — the exact noise that gets a notification filtered
+      away, and it would arrive addressed to the person who caused it.
+
+      Awaited, and deliberately. Fire-and-forget would return the reader's
+      confirmation a few hundred milliseconds sooner and risks the send being
+      cut off when the process is frozen after the response goes out, which
+      loses the email for the same "nothing errored" reason everything else in
+      this file is written against. `notifyOfReport` never throws, so this
+      cannot fail the write: the report is the valuable thing and the email is
+      a courtesy.
+    */
+    afterChange: [
+      async ({ doc, operation, req }) => {
+        if (operation !== 'create') return
+        await notifyOfReport(req.payload, {
+          collection: 'corrections',
+          kind: 'correction',
+          id: doc.id,
+          /* Summary first: it becomes the subject line. */
+          fields: [
+            ['Summary', doc.summary],
+            ['Detail', doc.detail],
+            ['Page', doc.pageUrl],
+            ['Source offered', doc.sourceUrl],
+          ],
+        })
+      },
+    ],
   },
   fields: [
     {

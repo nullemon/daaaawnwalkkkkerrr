@@ -1,5 +1,6 @@
 import type { CollectionConfig } from 'payload'
 import { isEditor } from '../fields/shared'
+import { notifyOfReport } from '../lib/email-notify'
 
 /**
  * Reader-submitted feature requests: what people want the site to do that it
@@ -27,6 +28,51 @@ export const Requests: CollectionConfig = {
     read: isEditor,
     update: isEditor,
     delete: isEditor,
+  },
+  /*
+    Notified exactly like Corrections, and that was a decision rather than a
+    copy-paste.
+
+    The argument for leaving it out is that a feature request is not urgent and
+    the site promises nothing about one, where `/contact` promises a correction
+    goes "straight to our review queue". The argument that wins is the `kind`
+    list below: **"Something is broken" is one of the options a reader can
+    pick**, and a broken page reported into a queue nobody is told about stays
+    broken for exactly as long as it takes somebody to open the admin. Sorting
+    the urgent ones out of an unread queue is not possible; sorting them out of
+    an inbox is.
+
+    It also costs the operator nothing to run: both collections resolve the
+    same recipient from the same field, so there is no second thing to
+    configure and no second thing to forget.
+
+    Volume is the reason this stays one message per report rather than becoming
+    a digest for both — see the note at the top of `lib/email-notify.ts`, which
+    is also where to change it.
+  */
+  hooks: {
+    afterChange: [
+      async ({ doc, operation, req }) => {
+        if (operation !== 'create') return
+        await notifyOfReport(req.payload, {
+          collection: 'requests',
+          kind: 'request',
+          id: doc.id,
+          /*
+            The reader's address is included because replying about this
+            request is the only thing they gave it for, and it is said so on
+            the field. It goes to the operator's own inbox and nowhere else.
+          */
+          fields: [
+            ['Summary', doc.summary],
+            ['Kind', doc.kind],
+            ['Detail', doc.detail],
+            ['Page', doc.pageUrl],
+            ['Reply to', doc.email],
+          ],
+        })
+      },
+    ],
   },
   fields: [
     {

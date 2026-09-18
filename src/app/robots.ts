@@ -44,8 +44,14 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
       thumb, because the same pattern hides real pages on most sites. No
       route under `(frontend)` reads `searchParams` — `DataTable`'s filters,
       its sort and `SearchBox` all live in React state and never touch the
-      address bar, there is no paginated index anywhere, and nothing is
-      served at two URLs one of which carries a token.
+      address bar, there is no paginated index anywhere, and no *crawlable*
+      page is served at two URLs one of which carries a token.
+
+      The one page that reads a token from its URL is `/account/reset`, and it
+      is covered twice over: `/account` above disallows the whole branch, and
+      the page sends `noindex, nofollow` of its own. The token normally rides
+      in the fragment, which no crawler and no server ever sees — the query
+      form exists only for a mail gateway that strips fragments.
 
       What does use one is the build planner's share link,
       `/tools/build-planner?perks=a,b,c`. That is forty perks' worth of

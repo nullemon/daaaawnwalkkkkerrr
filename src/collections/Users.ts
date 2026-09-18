@@ -1,25 +1,21 @@
-import type { BasePayload, CollectionConfig } from 'payload'
+import type { CollectionConfig } from 'payload'
 import { isEditor } from '../fields/shared'
 import { HUB_ORIGIN } from '../lib/urls'
+/*
+  The network's own name, for the two sentences an editor reads in an inbox.
 
-/**
- * The network's own name, for the two sentences an editor reads in an inbox.
- *
- * Read from Site settings rather than written here, and falling back to
- * nothing rather than to a name. A sentence about one game does not belong in
- * shared code - this email is sent to editors of all ten hosts, and hardcoding
- * "Dawnwalker Guide" here is the same bug as the Regions index headed "Vale
- * Sangora", just delivered to an inbox instead of a page.
- */
-const networkName = async (payload: BasePayload): Promise<string> => {
-  try {
-    const settings = await payload.findGlobal({ slug: 'site-settings', depth: 0 })
-    const name = settings.siteName
-    return typeof name === 'string' && name.trim() ? name.trim() : ''
-  } catch {
-    return ''
-  }
-}
+  Read from Site settings rather than written here, and falling back to nothing
+  rather than to a name. A sentence about one game does not belong in shared
+  code - this email is sent to editors of all ten hosts, and hardcoding
+  "Dawnwalker Guide" here is the same bug as the Regions index headed "Vale
+  Sangora", just delivered to an inbox instead of a page.
+
+  It moved to `lib/email-copy.ts` when `players` grew a reset email of its own.
+  Two collections composing the same sentence out of two private copies of this
+  helper is how the editors' mail and the readers' mail come to disagree about
+  what the network is called, and nothing would have compared them.
+*/
+import { networkName } from '../lib/email-copy'
 
 export const Users: CollectionConfig = {
   slug: 'users',
