@@ -15,6 +15,7 @@ import { networkHome } from '@/lib/network-home'
 import { Analytics } from '@/components/Analytics'
 import { resolveTags, verificationMetadata } from '@/lib/tags'
 import { analyticsOrigins } from '@/lib/analytics-origins'
+import { hostCard } from '@/lib/social'
 
 /**
  * One game's wiki.
@@ -108,20 +109,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ],
       apple: `/wiki-assets/${slug}/apple-touch-icon.png`,
     },
-    openGraph: {
+    ...hostCard({
       siteName: `${name} Wiki`,
-      type: 'website',
-      locale: 'en',
-      images: [
-        {
-          url: `/wiki-assets/${slug}/og.jpg`,
-          width: 1200,
-          height: 630,
-          alt: `${game.title}${game.publisher ? ` — ${game.publisher}` : ''}`,
-        },
-      ],
-    },
-    twitter: { card: 'summary_large_image', images: [`/wiki-assets/${slug}/og.jpg`] },
+      image: {
+        url: `/wiki-assets/${slug}/og.jpg`,
+        width: 1200,
+        height: 630,
+        alt: `${game.title}${game.publisher ? ` — ${game.publisher}` : ''}`,
+      },
+    }),
     alternates: {
       canonical: '/',
       types: {

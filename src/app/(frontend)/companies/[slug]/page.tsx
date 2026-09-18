@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, ResolvingMetadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
@@ -25,6 +25,7 @@ import { clamp } from '@/lib/seo'
 import { COMPANIES_ORIGIN, externalSite, hub, personUrl } from '@/lib/urls'
 import { readOfficers } from '@/lib/officers'
 import type { Company, Game } from '@/payload-types'
+import { socialMeta } from '@/lib/social'
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -57,7 +58,13 @@ export async function generateStaticParams() {
   return docs.map((company) => ({ slug: String(company.slug) }))
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(
+  { params }: Props,
+  // `parentMeta`, not `parent`: on this host `parent` already means the parent
+  // company, a hundred and sixty lines below. Two meanings for one word in one
+  // file is how a reader ends up reading the wrong one.
+  parentMeta: ResolvingMetadata,
+): Promise<Metadata> {
   const { slug } = await params
   const company = await find(slug)
   if (!company) return {}
@@ -67,6 +74,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: company.seo?.title || `${company.name} — ${roles.toLowerCase() || 'company'}`,
     description: company.seo?.description || clamp(company.summary ?? ''),
     alternates: { canonical: `/${company.slug}` },
+    ...(await socialMeta(parentMeta, { path: `/${company.slug}` })),
     // The checkbox exists on every content collection and did nothing here: a
     // profile marked noindex was still indexable, with nothing on the page or
     // in any log to say so.
@@ -131,7 +139,6 @@ export default async function CompanyPage({ params }: Props) {
         role: entry.role,
         priceText: entry.priceText,
         isFree: entry.isFree,
-        metacritic: entry.metacritic,
         reviews: entry.reviews,
         genre: entry.genre,
         platforms: entry.platforms,

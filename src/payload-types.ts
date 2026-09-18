@@ -88,6 +88,8 @@ export interface Config {
     companies: Company;
     people: Person;
     ratings: Rating;
+    'analytics-events': AnalyticsEvent;
+    'analytics-daily': AnalyticsDaily;
     games: Game;
     comments: Comment;
     corrections: Correction;
@@ -122,6 +124,8 @@ export interface Config {
     companies: CompaniesSelect<false> | CompaniesSelect<true>;
     people: PeopleSelect<false> | PeopleSelect<true>;
     ratings: RatingsSelect<false> | RatingsSelect<true>;
+    'analytics-events': AnalyticsEventsSelect<false> | AnalyticsEventsSelect<true>;
+    'analytics-daily': AnalyticsDailySelect<false> | AnalyticsDailySelect<true>;
     games: GamesSelect<false> | GamesSelect<true>;
     comments: CommentsSelect<false> | CommentsSelect<true>;
     corrections: CorrectionsSelect<false> | CorrectionsSelect<true>;
@@ -1280,7 +1284,7 @@ export interface Game {
     facebookDomain?: string | null;
   };
   /**
-   * Nothing loads unless a value is set here, so an unconfigured site ships no third-party script at all — which is both faster and one fewer cookie banner to justify.
+   * Every field below is a third-party tool, and none of them loads unless a value is set — so an unconfigured site ships no external script at all. The network’s own measurement is the switch at the top and is not one of these.
    */
   analytics?: {
     /**
@@ -2156,6 +2160,10 @@ export interface Guide {
   id: number;
   title: string;
   /**
+   * A short line under the headline — the angle, not a summary. Blank prints nothing; it is not filled in from the summary.
+   */
+  subtitle?: string | null;
+  /**
    * URL segment. Auto-filled from the title. Changing it breaks existing links.
    */
   slug: string;
@@ -2163,37 +2171,6 @@ export interface Guide {
    * The search this page is written to answer. One page, one query.
    */
   targetQuery?: string | null;
-  /**
-   * Who is answerable for this page. Shown as a byline with a link to their profile.
-   */
-  author?: (number | null) | Author;
-  /**
-   * Shown as "last checked". A guide to a live game goes stale, and saying when it was last looked at is more use than hiding it.
-   */
-  updated?: string | null;
-  /**
-   * Lead image. Shown at the top of the article, on the guides index and on the home page cards, and used as the social preview.
-   */
-  image?: (number | null) | Media;
-  /**
-   * Shown together partway down the page, under a heading of your choosing.
-   */
-  bodyImages?:
-    | {
-        image: number | Media;
-        /**
-         * Printed under the picture.
-         */
-        caption?: string | null;
-        id?: string | null;
-      }[]
-    | null;
-  /**
-   * Heading above the in-article images.
-   */
-  bodyImagesHeading?: string | null;
-  relatedQuests?: (number | Quest)[] | null;
-  relatedEndings?: (number | Ending)[] | null;
   /**
    * Shown to readers as a badge. Be honest — it is the whole point of this site.
    */
@@ -2221,6 +2198,56 @@ export interface Guide {
     [k: string]: unknown;
   } | null;
   /**
+   * Lead image. Shown at the top of the article, on the guides index and on the home page cards, and used as the social preview. Blank falls back to the section icon.
+   */
+  image?: (number | null) | Media;
+  /**
+   * Shown together partway down the page, under a heading of your choosing. Leave empty for an article with no picture row.
+   */
+  bodyImages?:
+    | {
+        image: number | Media;
+        /**
+         * Printed under the picture.
+         */
+        caption?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Heading above the in-article images.
+   */
+  bodyImagesHeading?: string | null;
+  /**
+   * Who is answerable for this page. Shown as a byline under the title and again at the foot, linked to their profile. Blank prints the fallback byline from Site settings instead.
+   */
+  author?: (number | null) | Author;
+  /**
+   * The day this article went up. Shown to readers and given to search engines. Blank shows no publication date at all — the row timestamps are not used as a stand-in, because they move on every rebuild and would claim a date nobody published on.
+   */
+  published?: string | null;
+  /**
+   * Shown as "last checked". Set it when somebody actually re-read the sources. A guide to a live game goes stale, and saying when it was last looked at is more use than hiding it. Blank shows nothing rather than repeating the publication date.
+   */
+  updated?: string | null;
+  /**
+   * Filled in after a real fact check, never before. Everything here is blank by default and renders nothing while it stays blank — there is no default sentence, because a site-wide "fact checked" would be a claim about work nobody has done.
+   */
+  review?: {
+    /**
+     * One or two sentences saying what was checked and against what. Blank hides the whole fact-check block.
+     */
+    statement?: string | null;
+    /**
+     * Who did the check, if it was somebody other than the author. Blank prints no reviewer line.
+     */
+    reviewer?: (number | null) | Author;
+    /**
+     * The day the check was done. Blank prints no date beside the statement.
+     */
+    checkedOn?: string | null;
+  };
+  /**
    * Cite every figure. Two independent sources before marking confidence high.
    */
   sources?:
@@ -2231,6 +2258,8 @@ export interface Guide {
         id?: string | null;
       }[]
     | null;
+  relatedQuests?: (number | Quest)[] | null;
+  relatedEndings?: (number | Ending)[] | null;
   /**
    * Leave blank to derive from the title and summary.
    */
@@ -2802,6 +2831,79 @@ export interface Rating {
   createdAt: string;
 }
 /**
+ * One row per page view, kept for 62 days and then summarised into Analytics rollups. Nothing here is written or edited by hand — the readable view is Analytics in the sidebar.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "analytics-events".
+ */
+export interface AnalyticsEvent {
+  id: number;
+  /**
+   * The subdomain label, or “hub” on the apex.
+   */
+  site: string;
+  /**
+   * The exact Host header.
+   */
+  host: string;
+  path: string;
+  section: string;
+  channel: 'direct' | 'search' | 'ai' | 'social' | 'referral' | 'internal' | 'campaign';
+  /**
+   * The referring host, or the campaign tag. Host only — the path a referrer sends is usually stripped by the browser and is more than this needs even when it is not.
+   */
+  source: string;
+  campaign?: string | null;
+  /**
+   * Read from the user-agent, which is a claim rather than a measurement.
+   */
+  device: 'desktop' | 'mobile' | 'tablet' | 'unknown';
+  browser: string;
+  os: string;
+  /**
+   * Two letters from the hosting platform’s own header, or “unknown”. There is no geo database here, so in development it is always unknown — which is the absence of an answer, not zero.
+   */
+  country: string;
+  /**
+   * A salted hash of the address, the user-agent and the UTC date. The address is never stored and the key changes every day, so this table cannot be turned back into a list of addresses and cannot follow one person across two days.
+   */
+  visitor: string;
+  /**
+   * Which rule in lib/analytics/agent.ts decided this was not a reader. Empty for a reader. Excluded rows are kept rather than dropped so the filter can be audited and the excluded fraction reported.
+   */
+  botRule?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Daily totals, one row per dimension value. Written by pnpm analytics:roll and never by hand. These outlive the raw rows and are what the long windows read.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "analytics-daily".
+ */
+export interface AnalyticsDaily {
+  id: number;
+  /**
+   * YYYY-MM-DD, UTC. Every window in this system is UTC.
+   */
+  day: string;
+  /**
+   * Which breakdown this row belongs to: total, site, host, path, section, channel, source, campaign, device, browser, os, country, or bot.
+   */
+  dim: string;
+  /**
+   * The value within that breakdown. The empty string on a “total” row.
+   */
+  value: string;
+  views: number;
+  /**
+   * Distinct visitor keys on that day. Exact for the day; summing several days counts a returning reader once per day, so a multi-day figure is a ceiling.
+   */
+  readers: number;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * Nothing here is public until you approve it. Sorted worst-first by spam score — work the top of the list.
  *
  * This interface was referenced by `Config`'s JSON-Schema
@@ -3121,6 +3223,14 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'ratings';
         value: number | Rating;
+      } | null)
+    | ({
+        relationTo: 'analytics-events';
+        value: number | AnalyticsEvent;
+      } | null)
+    | ({
+        relationTo: 'analytics-daily';
+        value: number | AnalyticsDaily;
       } | null)
     | ({
         relationTo: 'games';
@@ -3706,10 +3816,12 @@ export interface MechanicsSelect<T extends boolean = true> {
  */
 export interface GuidesSelect<T extends boolean = true> {
   title?: T;
+  subtitle?: T;
   slug?: T;
   targetQuery?: T;
-  author?: T;
-  updated?: T;
+  confidence?: T;
+  summary?: T;
+  body?: T;
   image?: T;
   bodyImages?:
     | T
@@ -3719,11 +3831,16 @@ export interface GuidesSelect<T extends boolean = true> {
         id?: T;
       };
   bodyImagesHeading?: T;
-  relatedQuests?: T;
-  relatedEndings?: T;
-  confidence?: T;
-  summary?: T;
-  body?: T;
+  author?: T;
+  published?: T;
+  updated?: T;
+  review?:
+    | T
+    | {
+        statement?: T;
+        reviewer?: T;
+        checkedOn?: T;
+      };
   sources?:
     | T
     | {
@@ -3732,6 +3849,8 @@ export interface GuidesSelect<T extends boolean = true> {
         retrieved?: T;
         id?: T;
       };
+  relatedQuests?: T;
+  relatedEndings?: T;
   seo?:
     | T
     | {
@@ -3971,6 +4090,40 @@ export interface RatingsSelect<T extends boolean = true> {
   game?: T;
   score?: T;
   voter?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "analytics-events_select".
+ */
+export interface AnalyticsEventsSelect<T extends boolean = true> {
+  site?: T;
+  host?: T;
+  path?: T;
+  section?: T;
+  channel?: T;
+  source?: T;
+  campaign?: T;
+  device?: T;
+  browser?: T;
+  os?: T;
+  country?: T;
+  visitor?: T;
+  botRule?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "analytics-daily_select".
+ */
+export interface AnalyticsDailySelect<T extends boolean = true> {
+  day?: T;
+  dim?: T;
+  value?: T;
+  views?: T;
+  readers?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -4602,9 +4755,13 @@ export interface SiteSetting {
     facebookDomain?: string | null;
   };
   /**
-   * Nothing loads unless a value is set here, so an unconfigured site ships no third-party script at all — which is both faster and one fewer cookie banner to justify.
+   * Every field below is a third-party tool, and none of them loads unless a value is set — so an unconfigured site ships no external script at all. The network’s own measurement is the switch at the top and is not one of these.
    */
   analytics?: {
+    /**
+     * This network’s own measurement: a small script posts the page, the referrer and the browser’s user-agent to /api/hit, which stores a page view. No third-party service, no cookie, no advertising identifier, and the reader’s address is hashed with a salt and a rotating date and never stored. Read it under Analytics in the sidebar. Turning this off stops the script being sent at all — and the privacy policy describes what this collects, so if you turn it off, say so there too.
+     */
+    firstParty?: boolean | null;
     /**
      * Measurement ID, beginning G-. Used by every wiki unless that wiki sets its own.
      */
@@ -5024,6 +5181,7 @@ export interface SiteSettingsSelect<T extends boolean = true> {
   analytics?:
     | T
     | {
+        firstParty?: T;
         ga4Id?: T;
         gtmId?: T;
         plausibleDomain?: T;

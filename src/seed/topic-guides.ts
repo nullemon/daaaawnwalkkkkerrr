@@ -801,23 +801,59 @@ async function run(): Promise<void> {
         `${section.collection}-known`,
         `Every ${section.noun} in ${name}, and what is still unknown`,
         `${name} ${section.plural}`,
-        `${plural(rows.length, section.noun, section.plural)} are recorded for ${game.title}. ${described} carry a written description and ${illustrated} carry an image - this page says which, rather than implying the list is finished.`,
+        /*
+          The lede says what the page is. The completeness figures do not
+          belong in it.
+
+          This sentence used to open "16 enemies are recorded for The Blood of
+          Dawnwalker. 16 carry a written description and 5 carry an image" -
+          under the headline, and as the meta description in every search
+          result. It is a completeness disclosure, not a lede: it apologised
+          for the page before the reader had seen a single row of it, and it
+          restated, in prose, the exact three figures the list at the foot
+          already gives as data. The same numbers twice is not twice the
+          honesty.
+
+          The disclosure itself stays - it is the only thing on this page no
+          other wiki publishes, and dropping it to make the opening read
+          better would be implying a list is finished when it is not. It moves
+          to the foot as `How complete this list is`, where a reader who has
+          just read the list is asking exactly that question.
+        */
+        `${plural(rows.length, section.noun, section.plural)} are recorded for ${game.title}, listed here in full. How much of that list is actually filled in - descriptions, pictures, entries that are still only a name - is set out at the foot of the page.`,
         [
-          `${plural(rows.length, section.noun, section.plural)} are recorded for ${game.title}. This page is the list plus the thing a list normally hides: how much of it is actually filled in.`,
+          `${plural(rows.length, section.noun, section.plural)} are recorded for ${game.title}. This page is the list, and then the thing a list normally hides: how much of it is filled in.`,
           { h: `All ${rows.length}` },
           { ul: titles },
-          { h: 'How complete this is' },
+          { h: 'Where the full records are' },
+          `Each of these has its own page under ${SECTION_PATH[section.collection]}, with its sources and its confidence rating.`,
+          { h: 'How complete this list is' },
           {
             ul: [
               `${described} of ${rows.length} carry a written description`,
               `${illustrated} of ${rows.length} carry an image`,
-              `${rows.length - described} are recorded by name only, because no source has said more`,
+              /*
+                Omitted at nought rather than printed as "0 are recorded by
+                name only". A zero row reads as a finding when it is the
+                absence of one, and the line above already states the figure
+                it is the remainder of.
+              */
+              ...(rows.length - described > 0
+                ? [`${rows.length - described} are recorded by name only, because no source has said more`]
+                : []),
             ],
           },
-          { h: 'Why a name-only entry is still here' },
-          'Because knowing a thing exists is itself information, and because the alternative - leaving it out until somebody can write a paragraph - makes the list look finished when it is not. An entry with nothing under it is an admission, and admissions are the point of this site.',
-          { h: 'Where the full records are' },
-          `Each of these has its own page under ${SECTION_PATH[section.collection]}, with its sources and its confidence rating.`,
+          /*
+            And the explanation only where there is something to explain. On a
+            section where every entry is written up, a heading asking why
+            name-only entries are kept is a question the page has not raised.
+          */
+          ...(rows.length - described > 0
+            ? [
+                { h3: 'Why a name-only entry is still here' },
+                'Because knowing a thing exists is itself information, and because the alternative - leaving it out until somebody can write a paragraph - makes the list look finished when it is not. An entry with nothing under it is an admission, and admissions are the point of this site.',
+              ]
+            : []),
         ],
         /Achievements|Launch/,
         wikiSource,

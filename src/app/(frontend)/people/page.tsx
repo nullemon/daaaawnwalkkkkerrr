@@ -1,6 +1,8 @@
-import type { Metadata } from 'next'
+import type { Metadata, ResolvingMetadata } from 'next'
 import type { ReactNode } from 'react'
 import { PageHeader } from '@/components/PageHeader'
+import { Linked } from '@/components/Linked'
+import type { LinkScope } from '@/lib/link-index'
 import { JsonLd } from '@/components/JsonLd'
 import { itemList, webSite } from '@/lib/schema'
 import { PEOPLE_ORIGIN, personUrl } from '@/lib/urls'
@@ -17,6 +19,17 @@ import {
 } from '@/lib/people-copy'
 import { companyUrl } from '@/lib/urls'
 import type { Media, Person } from '@/payload-types'
+import { socialMeta } from '@/lib/social'
+
+/*
+  Where this page is, for the inline linker.
+
+  No `game`, because this host is not a wiki: the index holds the people,
+  companies and games every host can link to and none of the game-scoped
+  records. No `self` either — a directory is not a record, so there is
+  nothing on it for a name to link back to.
+*/
+const LEDE_SCOPE: LinkScope = { host: 'people' }
 
 /**
  * Metadata reads the global, so it cannot be a module-level constant: the title
@@ -24,12 +37,16 @@ import type { Media, Person } from '@/payload-types'
  * metadata` is evaluated once at import with no way to await a read, and
  * `pnpm check:launch` fails the build on one.
  */
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata(
+  _props: unknown,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
   const site = await getPeopleSite()
   return {
     title: { absolute: copy(site.title, PEOPLE_BUILT_IN.title) },
     description: copy(site.metaDescription, PEOPLE_BUILT_IN.metaDescription),
     alternates: { canonical: '/' },
+    ...(await socialMeta(parent, { path: '/' })),
   }
 }
 
@@ -182,7 +199,7 @@ export default async function PeopleIndex() {
         title={copy(site.title, PEOPLE_BUILT_IN.title)}
         /* The count is filled at render time: a typed-in total is a sentence
            that goes wrong the week the harvester reads another cast list. */
-        lede={copy(site.lede, PEOPLE_BUILT_IN.lede, { count: people.length })}
+        lede={<Linked text={copy(site.lede, PEOPLE_BUILT_IN.lede, { count: people.length })} scope={LEDE_SCOPE} />}
       />
       <div className="page body-main">
         {people.length === 0 ? (

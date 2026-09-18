@@ -26,6 +26,8 @@ import { Authors } from './collections/Authors'
 import { Companies } from './collections/Companies'
 import { People } from './collections/People'
 import { Ratings } from './collections/Ratings'
+import { AnalyticsEvents } from './collections/AnalyticsEvents'
+import { AnalyticsDaily } from './collections/AnalyticsDaily'
 import { Guides } from './collections/Guides'
 import { Corrections } from './collections/Corrections'
 import { Requests } from './collections/Requests'
@@ -80,7 +82,28 @@ export default buildConfig({
         the day Payload changes its markup, which is the failure mode this
         repository has a list of. See the note in NavBadges.tsx.
       */
-      afterNavLinks: ['@/components/admin/NavBadges'],
+      afterNavLinks: ['@/components/admin/NavBadges', '@/components/admin/AnalyticsNavLink'],
+      /*
+        The analytics screen, as a root view at /admin/analytics.
+
+        A custom view is the right shape here and a collection list view is
+        not. `analytics-events` is one row per page view; the question the
+        owner arrives with is never "show me row 4,182", it is "how many
+        people, from where, over what period" - which is eleven aggregates and
+        a window picker, none of which a list view can be.
+
+        A root view rather than a panel on the dashboard because
+        NetworkDashboard already answers a different question, and stacking
+        "did anybody read it" under "what is waiting for you" would bury both.
+        See the note in AnalyticsView.tsx.
+      */
+      views: {
+        analytics: {
+          Component: '@/components/admin/AnalyticsView',
+          path: '/analytics',
+          meta: { title: 'Analytics' },
+        },
+      },
     },
   },
   collections: [
@@ -116,6 +139,16 @@ export default buildConfig({
     Companies,
     People,
     Ratings,
+    /*
+      Not game-scoped, and deliberately not in GAME_SCOPED in lib/tenancy.ts —
+      see the note in AnalyticsEvents.ts. They go after the network-wide
+      collections and before the moderation ones purely so the sidebar reads in
+      a sensible order; nothing about their position affects an index name,
+      because neither goes through scopedToGame() and neither therefore has a
+      positionally-named compound index to renumber.
+    */
+    AnalyticsEvents,
+    AnalyticsDaily,
     Games,
     // Moderation and admin
     Comments,

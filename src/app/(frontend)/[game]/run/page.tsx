@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, ResolvingMetadata } from 'next'
 import { PageHeader } from '@/components/PageHeader'
 import { sectionArt } from '@/lib/art'
 import { RunDashboard } from '@/components/RunDashboard'
@@ -9,10 +9,14 @@ import { requireFeature } from '@/lib/features'
 import { toolCopy } from '@/lib/game-copy'
 import { copy } from '@/lib/copy'
 import { gameName } from '@/lib/section-copy'
+import { socialMeta } from '@/lib/social'
 
 type Props = { params: Promise<{ game: string }> }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
   const { game: slug } = await params
   const doc = await getGame(slug)
   const words = toolCopy(doc)
@@ -26,6 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       tokens,
     ),
     alternates: { canonical: '/run' },
+    ...(await socialMeta(parent, { path: '/run' })),
   }
 }
 

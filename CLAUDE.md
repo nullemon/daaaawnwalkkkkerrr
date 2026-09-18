@@ -59,6 +59,7 @@ pnpm make:avatars # redraw contributor monograms
 pnpm seed:avatars # attach them
 pnpm assets:match <dir> [--apply]   # match extracted game files to records
 pnpm email:test <address>           # send one message through whatever is configured
+pnpm analytics:roll                 # summarise a day of page views, drop raw past 62 days
 pnpm generate:types                 # after any collection change
 ```
 
@@ -472,6 +473,56 @@ has it; if you write a third matcher, it needs it too.
 twelve-article community wiki does not reach forty guides, and padding it is
 the one thing that would cost this network its argument. `pnpm seed:topics`
 prints a per-wiki count; the gap is the finding, not the failure.
+
+## Analytics
+
+First-party, in the admin at `/admin/analytics`, and the whole design is forced
+by one fact: **every public page is prerendered, so there is no request to
+count.** Collection is therefore a client beacon - `src/components/Beacon.tsx`
+posting to `src/app/api/hit/route.ts`, which is the only place a request is
+ever seen. `/api` is in `PASS_THROUGH` in `proxy.ts`, so that route answers on
+all ten hosts, and the Host header is the only thing that knows which site a
+reader was on: `proxy.ts` has already hidden the game prefix from their URL.
+
+The consequences are stated on the screen rather than discovered later. A
+reader with JavaScript off is not counted; a crawler that does not execute the
+page never reaches the endpoint, so the excluded fraction is a **floor** on
+crawler traffic and not a measure of it.
+
+**No address is stored, and no user-agent string.** `visitor` is a salted hash
+of the address, the agent and the UTC date - the `Ratings` pattern, with the
+date added. That rotation is a privacy decision and turns out to be the
+performance one too: a key belongs to exactly one day, so the distinct readers
+of a week are exactly the sum of seven daily counts, and the daily rollups can
+answer a long window with **the same number** the raw rows would give. It also
+means a multi-day reader count is a ceiling, which every figure on the screen
+says.
+
+Measured, not assumed. At 300,000 page views over 62 days a 30-day window costs
+13.7s read row by row and 7ms read from rollups, because a `GROUP BY` on any
+column outside the index fetches every row and thirteen breakdowns fetch them
+thirteen times. So: sub-day windows and any filtered window read raw rows;
+everything else reads rollups. A filter on a window past the 62-day retention
+**cannot** be honoured, and the screen says so rather than returning the
+unfiltered figure.
+
+- **Country comes from the platform's header** (`x-vercel-ip-country`,
+  `cf-ipcountry`). There is no geo database here and none is being added, so in
+  development every row is `unknown` - rendered as a row with a count, never as
+  a blank. Unknown is not zero.
+- **Device is a claim**, read off the user-agent, and the card says so.
+- **Direct means "the browser sent no referrer"**, not "came from nowhere".
+- **The bot rules are a list with reasons** in `src/lib/analytics/agent.ts`, the
+  matching rule is stored on the row, excluded rows are kept, and the screen
+  prints the fraction and the rules. The naive rule - "the agent contains bot" -
+  is the Antar 4 mistake: `CUBOT_NOTE_20` is a phone. The tests pin both
+  directions.
+- **Not game-scoped, and it must never be added to `GAME_SCOPED`.** It is not
+  content, `pnpm verify` has no business in it, and the dimension wanted is the
+  host - three of the ten sites are not games.
+- The privacy policy describes all of this. `pnpm seed:copy` corrects the
+  sections that stopped being true, and only while they still carry the
+  sentence this repo shipped - an edited section is printed and left alone.
 
 ## Maps
 

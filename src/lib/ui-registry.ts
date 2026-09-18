@@ -267,7 +267,6 @@ export const UI_DEFAULTS: Record<string, string> = {
   'profile.artist': 'Artist',
   'profile.writer': 'Writer',
   'profile.composer': 'Composer',
-  'profile.metacritic': 'Metacritic',
   'profile.budget': 'Budget',
   'profile.marketing': 'Marketing spend',
   'profile.team-size': 'Team size',

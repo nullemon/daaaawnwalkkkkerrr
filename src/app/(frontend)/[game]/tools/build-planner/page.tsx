@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, ResolvingMetadata } from 'next'
 import Link from 'next/link'
 import { Suspense } from 'react'
 import { PageHeader } from '@/components/PageHeader'
@@ -9,6 +9,7 @@ import { requireFeature } from '@/lib/features'
 import { toolCopy } from '@/lib/game-copy'
 import { copy } from '@/lib/copy'
 import { gameName } from '@/lib/section-copy'
+import { socialMeta } from '@/lib/social'
 
 type Props = { params: Promise<{ game: string }> }
 
@@ -19,7 +20,10 @@ type Props = { params: Promise<{ game: string }> }
   string and no test covers meta text, so it sat there. The clause it was
   missing is the shareable link, which the planner has always produced.
 */
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
   const { game: slug } = await params
   const doc = await getGame(slug)
   const words = toolCopy(doc)
@@ -33,6 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       tokens,
     ),
     alternates: { canonical: '/tools/build-planner' },
+    ...(await socialMeta(parent, { path: '/tools/build-planner' })),
   }
 }
 

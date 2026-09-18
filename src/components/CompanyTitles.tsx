@@ -22,6 +22,12 @@ import { CATALOGUE_ROLE_LABEL } from '@/lib/companies-copy'
  * is a claim this page has any business making — the same rule `FactPanel`
  * follows, for the same reason.
  *
+ * No review score, from here or anywhere else. This network publishes its own
+ * rating per game and that is the only one a reader should meet; a borrowed
+ * number in a column of sixty rows reads as this site's verdict on sixty
+ * games, which is a claim nobody here made. A catalogue row shows what the
+ * thing is and what it costs.
+ *
  * The component itself renders only the list. Its heading, the note that dates
  * the prices and the sentence shown when there is nothing here at all are
  * editable copy and belong to the page.
@@ -34,7 +40,6 @@ export type CatalogueRow = {
   role?: string | null
   priceText?: string | null
   isFree?: boolean | null
-  metacritic?: number | null
   reviews?: string | null
   genre?: string | null
   platforms?: string | null
@@ -101,7 +106,6 @@ export async function CompanyTitles({
           factsheet, so the two hosts cannot disagree about it.
         */
         const price = row.isFree ? ui.t('profile.free') : row.priceText?.trim() || null
-        const score = typeof row.metacritic === 'number' ? row.metacritic : null
         const reviews = row.reviews?.trim() || null
 
         return (
@@ -142,18 +146,12 @@ export async function CompanyTitles({
               {meta.length > 0 ? <p className="catalogue-meta">{meta.join(' · ')}</p> : null}
             </div>
 
-            {price || score !== null || reviews ? (
+            {price || reviews ? (
               <div className="catalogue-stats">
                 {price ? (
                   <p className="catalogue-stat">
                     <span className="catalogue-stat-label">{ui.t('profile.price')}</span>
                     <b>{price}</b>
-                  </p>
-                ) : null}
-                {score !== null ? (
-                  <p className="catalogue-stat">
-                    <span className="catalogue-stat-label">{ui.t('profile.metacritic')}</span>
-                    <b>{score}</b>
                   </p>
                 ) : null}
                 {/* Unlabelled on purpose: "Very Positive (12,481)" says what it

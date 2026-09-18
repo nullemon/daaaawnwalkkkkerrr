@@ -38,6 +38,42 @@ const CONTROL = new RegExp(
     ']',
 )
 
+/**
+ * The characters that are not controls and are just as invisible.
+ *
+ * Same failure, one step along, and it has now happened here: a module written
+ * to describe zero-width characters had its escapes interpreted on the way to
+ * disk and shipped the characters themselves — in a file whose whole job is to
+ * find them in somebody else's data. A zero-width joiner in a string literal
+ * is a string that will never match, and a replacement character in source is
+ * a byte that was lost before the file was saved.
+ *
+ * The repair is the same one this file's header names: build them from
+ * `String.fromCharCode`, so there is no escape left to interpret.
+ */
+const INVISIBLE = new RegExp(
+  '[' +
+    [0x200b, 0x200c, 0x200d, 0x2060, 0xfeff, 0x00ad, 0xfffd]
+      .map((code) => String.fromCharCode(code))
+      .join('') +
+    ']',
+)
+
+/**
+ * The one place they belong, and why the exemption is a list rather than a
+ * rule.
+ *
+ * `src/lib/moderation.ts` strips the invisible characters comment spam hides
+ * links inside, so it has to be able to name them; its test has to be able to
+ * write one. Everything else that "needs" one is a mistake, so the exemption
+ * is two file names an author has to add themselves rather than a pattern a
+ * third file can drift into.
+ */
+const MAY_NAME_INVISIBLES = new Set([
+  path.join('src', 'lib', 'moderation.ts'),
+  path.join('src', 'lib', 'moderation.test.ts'),
+])
+
 const walk = (dir) =>
   fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
     if (SKIP.has(entry.name)) return []
@@ -58,6 +94,25 @@ describe('source files', () => {
           if (match) {
             const code = match[0].codePointAt(0).toString(16).padStart(2, '0')
             bad.push(`${file}:${index + 1} contains U+00${code.toUpperCase()}`)
+          }
+        })
+      }
+    }
+    expect(bad).toEqual([])
+  })
+
+  it('contain no zero-width or replacement characters', () => {
+    const bad = []
+    for (const root of ROOTS) {
+      if (!fs.existsSync(root)) continue
+      for (const file of walk(root)) {
+        if (MAY_NAME_INVISIBLES.has(file)) continue
+        const lines = fs.readFileSync(file, 'utf8').split('\n')
+        lines.forEach((line, index) => {
+          const match = INVISIBLE.exec(line)
+          if (match) {
+            const code = match[0].codePointAt(0).toString(16).toUpperCase().padStart(4, '0')
+            bad.push(`${file}:${index + 1} contains U+${code}`)
           }
         })
       }

@@ -18,6 +18,7 @@ export type HeaderArt = { src: string; credit?: string; tall?: boolean }
 export async function PageHeader({
   eyebrow,
   title,
+  subtitle,
   lede,
   crumbs = [],
   badges,
@@ -26,6 +27,19 @@ export async function PageHeader({
 }: {
   eyebrow?: string
   title: string
+  /*
+    A deck, under the headline and above the lede.
+
+    Optional everywhere and set by exactly one route today — a guide, from its
+    own `subtitle` field. It is a prop rather than something composed here for
+    the reason CLAUDE.md gives about sentences in components: a line written
+    into a shared header is served on every page of all eight wikis, which is
+    how the Gears of War Regions index came to be headed "Vale Sangora".
+
+    Blank prints nothing. It is deliberately not filled in from the lede: the
+    same sentence twice under a headline is not a subtitle, it is an echo.
+  */
+  subtitle?: string | null
   /*
     A node, not a string.
 
@@ -67,6 +81,7 @@ export async function PageHeader({
           ) : null}
           <h1>{title}</h1>
         </div>
+        {subtitle ? <p className="page-subtitle">{subtitle}</p> : null}
         {lede ? <p className="lede">{lede}</p> : null}
         <div className="meta-row">{badges}</div>
       </div>

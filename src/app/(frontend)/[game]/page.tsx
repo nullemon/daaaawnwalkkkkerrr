@@ -1,10 +1,12 @@
-import type { Metadata } from 'next'
+import type { Metadata, ResolvingMetadata } from 'next'
 import Link from 'next/link'
 import { ART_GAME, sectionArt, tileArt } from '@/lib/art'
 import { HeroSearch } from '@/components/HeroSearch'
 import { Logo } from '@/components/Logo'
 import { Icon } from '@/components/Icon'
 import { Briefing } from '@/components/home/Briefing'
+import { Linked } from '@/components/Linked'
+import type { LinkScope } from '@/lib/link-index'
 import { GameProfile } from '@/components/GameProfile'
 import { gameUrl, getAll, getGame } from '@/lib/payload'
 import { sectionsFor, toolsFor } from '@/lib/sections'
@@ -16,11 +18,29 @@ import { JsonLd } from '@/components/JsonLd'
 import { gameScores } from '@/lib/schema'
 import { StarRating } from '@/components/StarRating'
 import { editorialScore, cachedReaderScore } from '@/lib/ratings'
+import { socialMeta } from '@/lib/social'
 
 type Props = { params: Promise<{ game: string }> }
 
-export const metadata: Metadata = {
-  alternates: { canonical: '/' },
+/*
+  A function rather than a module-level object, and only so it can reach the
+  parent's card.
+
+  The wiki home is the page of this network most likely to be pasted into a
+  Discord or a subreddit, and it was the one page with no `og:url` — a static
+  `metadata` export cannot take the `parent` argument `socialMeta` reads the
+  host's card from. Everything it says about the site itself still comes from
+  `[game]/layout.tsx`, which is the segment that knows which of the eight
+  wikis this is; nothing about the game is written here.
+*/
+export async function generateMetadata(
+  _props: unknown,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
+  return {
+    alternates: { canonical: '/' },
+    ...(await socialMeta(parent, { path: '/' })),
+  }
 }
 
 /**
@@ -70,6 +90,15 @@ export default async function Home({ params }: Props) {
 
   const tools = toolsFor(game)
   const name = game.shortTitle || game.title
+
+  /*
+    Where this page is, for the inline linker.
+
+    No `self`: the home page is not a record, and the wiki's own game is
+    already treated as self by `matchText` — which is what stops the masthead
+    lede linking the game's name to the page it is printed on.
+  */
+  const scope: LinkScope = { host: 'wiki', game: slug }
 
   /* Our score and the readers', side by side rather than merged into one. */
   const verdict = editorialScore(game)
@@ -223,8 +252,15 @@ export default async function Home({ params }: Props) {
             </h1>
           )}
 
+          {/* The wiki's own sentence about its game, with the studios,
+              publishers and records it names turned into links. It is prose
+              an editor writes, so it is linked for the same reason a record's
+              lede is. */}
           <p className="wiki-masthead-lede">
-            {game.summary || `A guide and database for ${game.title}.`}
+            <Linked
+              text={game.summary || `A guide and database for ${game.title}.`}
+              scope={scope}
+            />
           </p>
 
           <HeroSearch />
@@ -338,8 +374,18 @@ export default async function Home({ params }: Props) {
                   <span className="verdict-basis">{ui.label('rating-basis', verdict.basis)}</span>
                 ) : null}
               </div>
-              {verdict.summary ? <p className="verdict-summary">{verdict.summary}</p> : null}
-              <p className="verdict-body">{verdict.rationale}</p>
+              {/* The one opinion on a site of sourced facts, and the longest
+                  hand-written prose on this page. Two blocks, so each may link
+                  a name once — the summary is a line and the rationale is a
+                  paragraph, and they are set apart on the page. */}
+              {verdict.summary ? (
+                <p className="verdict-summary">
+                  <Linked text={verdict.summary} scope={scope} />
+                </p>
+              ) : null}
+              <p className="verdict-body">
+                <Linked text={verdict.rationale} scope={scope} />
+              </p>
               {/* The reader half. Live on mount here, because on this page the
                   score is the point rather than a number in a list. */}
               <StarRating game={game.id} readers={readers} refresh />

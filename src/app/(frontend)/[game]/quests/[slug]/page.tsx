@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, ResolvingMetadata } from 'next'
 import { SectionNeighbours } from '@/components/SectionNeighbours'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -22,12 +22,16 @@ import { gameSlugParams } from '@/lib/params'
 import type { Ending, Quest, Region } from '@/payload-types'
 import { clamp, questMeta } from '@/lib/seo'
 import { getUi } from '@/lib/ui'
+import { recordImage, socialMeta } from '@/lib/social'
 
 type Props = { params: Promise<{ game: string; slug: string }> }
 
 export const generateStaticParams = () => gameSlugParams('quests')
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
   const { game, slug } = await params
   // Depth 1: the composed description names the region, so it has to resolve.
   const quest = await getBySlug('quests', slug, { game, depth: 1 })
@@ -38,6 +42,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: quest.seo?.title || meta.title,
     description: clamp(quest.seo?.description || meta.description || ''),
     alternates: { canonical: `/quests/${quest.slug}` },
+    ...(await socialMeta(parent, {
+      path: `/quests/${quest.slug}`,
+      image: recordImage('quests', quest.image),
+    })),
     robots: quest.seo?.noindex ? { index: false, follow: true } : undefined,
   }
 }

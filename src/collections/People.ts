@@ -75,11 +75,24 @@ export const People: CollectionConfig = {
       },
     },
     {
+      /*
+        No default. `['developer']` was one, and the admin's own label for that
+        value is "role not stated" - so a person created by hand and saved
+        without touching this field was filed, silently, as somebody a source
+        said made a game. That is the invented fact this project exists to
+        avoid, arriving through a form control nobody looked at.
+
+        `required` stays, so the admin refuses the save instead of guessing:
+        the field is a deliberate choice or the record does not exist.
+        "Developer (role not stated)" is still there to be picked, which is the
+        honest answer when a source named somebody without saying what they
+        did - and `src/seed/people.ts` picks it explicitly, for exactly that
+        case. A seeder choosing it is a decision; a form choosing it is not.
+      */
       name: 'roles',
       type: 'select',
       hasMany: true,
       required: true,
-      defaultValue: ['developer'],
       options: [
         { label: 'Director', value: 'director' },
         { label: 'Designer', value: 'designer' },

@@ -1,6 +1,7 @@
 import type { Payload, Where } from 'payload'
 import { GAME_SCOPED } from './tenancy'
 import { hostFor, hostLabelProblem } from './host-label'
+import { isSeededPublishedAt } from './guide-dates'
 
 /**
  * Everything this network knows is unfinished, computed once.
@@ -296,6 +297,7 @@ const AUTHORS: FindingTarget['entity'] = {
   label: 'Contributors',
 }
 const MEDIA: FindingTarget['entity'] = { kind: 'collection', slug: 'media', label: 'Media' }
+const GUIDES: FindingTarget['entity'] = { kind: 'collection', slug: 'guides', label: 'Guides' }
 const UI_STRINGS: FindingTarget['entity'] = {
   kind: 'global',
   slug: 'ui-strings',
@@ -412,6 +414,22 @@ export async function auditNetwork(payload: Payload): Promise<AuditSnapshot> {
   const hasNetworkAnalytics = Boolean(
     networkAnalytics?.ga4Id || networkAnalytics?.gtmId || networkAnalytics?.plausibleDomain,
   )
+  /*
+    The network's own page-view counting, which is not one of the fields above
+    and is not a third-party service at all.
+
+    It matters here because of what this pass used to say. "No analytics
+    configured" was true when the only analytics on offer was somebody else's
+    script; it reads as "nobody is counting anything" now that /admin/analytics
+    exists and is on, and an owner reading that would either go and sign up for
+    a service they do not need or conclude the numbers they are looking at are
+    not real. Neither is a good outcome for a line of text.
+
+    `!== false` because a global nobody has saved hands back `undefined` for a
+    checkbox, and the default is on.
+  */
+  const countingOurselves =
+    (settings.analytics as { firstParty?: boolean } | undefined)?.firstParty !== false
 
   // --- Per wiki ------------------------------------------------------------
   const wikis: WikiRow[] = []
@@ -559,9 +577,11 @@ export async function auditNetwork(payload: Payload): Promise<AuditSnapshot> {
       ) {
         add({
           level: 'note',
-          actor: 'owner',
+          actor: countingOurselves ? 'info' : 'owner',
           area: label,
-          detail: 'no analytics configured',
+          detail: countingOurselves
+            ? 'no third-party analytics ID — this wiki is counted by the network’s own page-view measurement, under Analytics in the sidebar, so this is only worth setting if you want Google’s numbers as well'
+            : 'nothing is counting page views on this wiki — the network’s own measurement is switched off and no third-party ID is set',
           count: 1,
           target: gameTarget('analytics.ga4Id', 'Analytics'),
         })
@@ -668,9 +688,11 @@ export async function auditNetwork(payload: Payload): Promise<AuditSnapshot> {
     if (!hasNetworkAnalytics) {
       add({
         level: 'note',
-        actor: 'owner',
+        actor: countingOurselves ? 'info' : 'owner',
         area: host.label,
-        detail: 'no analytics configured',
+        detail: countingOurselves
+          ? 'no third-party analytics ID — this host is counted by the network’s own page-view measurement, under Analytics in the sidebar'
+          : 'nothing is counting page views on this host — the network’s own measurement is switched off and no third-party ID is set',
         count: 1,
         target: {
           entity: SETTINGS,
@@ -780,6 +802,58 @@ export async function auditNetwork(payload: Payload): Promise<AuditSnapshot> {
       detail: `${noAvatar} have no avatar`,
       count: noAvatar,
       target: { entity: AUTHORS, href: listHref('authors', [[{ avatar: { exists: false } }]]) },
+    })
+  }
+
+  // --- Guides --------------------------------------------------------------
+  /*
+    Publication dates that are still the seeder's, not the owner's.
+
+    The owner asked for guide dates spread across thirty days rather than all
+    landing on one afternoon, and said he would correct them by hand as he
+    goes. That makes them scaffolding of exactly the same kind as the
+    placeholder contributors two blocks up, and it belongs on the same list:
+    a stand-in that looks finished is the thing this whole report exists to
+    find, and this one looks more finished than most, because a plausible date
+    under a headline is indistinguishable from a real one.
+
+    There is no flag to read. The seeded value is derived from the slug, so
+    "still seeded" is answered by recomputing it — which means the finding
+    clears itself the moment somebody edits a date, with no checkbox anybody
+    has to remember to untick. This repository already has thirty-six rows
+    proving that nobody does. See `src/lib/guide-dates.ts`.
+
+    `select`, because this runs on every admin dashboard load and a default
+    read would drag four hundred Lexical bodies over to compare two columns —
+    the shape of query that made `next build` abort with SQLITE_BUSY.
+  */
+  queries += 1
+  const datedGuides = await payload.find({
+    collection: 'guides',
+    where: { published: { exists: true } },
+    limit: 2000,
+    depth: 0,
+    pagination: false,
+    select: { slug: true, published: true } as never,
+  })
+  const seededDates = datedGuides.docs.filter((guide) =>
+    isSeededPublishedAt(
+      (guide as { slug?: string }).slug ?? '',
+      (guide as { published?: string | null }).published,
+    ),
+  ).length
+  if (seededDates > 0) {
+    add({
+      level: 'note',
+      actor: 'owner',
+      area: 'guides',
+      detail: `${seededDates} of ${datedGuides.docs.length} dated guides still carry the seeded publication date — spread across 30 days as scaffolding, and counted here until each one is set to the day it actually went up`,
+      count: seededDates,
+      target: {
+        entity: GUIDES,
+        href: listHref('guides'),
+        where: 'each guide, Provenance tab — the "Published" field; editing it clears that guide from this count',
+      },
     })
   }
 

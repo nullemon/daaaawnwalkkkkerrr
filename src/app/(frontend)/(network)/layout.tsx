@@ -7,6 +7,7 @@ import { Analytics } from '@/components/Analytics'
 import { resolveTags, verificationMetadata } from '@/lib/tags'
 import { analyticsOrigins } from '@/lib/analytics-origins'
 import { companyUrl, personUrl } from '@/lib/urls'
+import { hostCard } from '@/lib/social'
 
 /**
  * The hub's identity and its own verification tokens.
@@ -31,13 +32,25 @@ export async function generateMetadata(): Promise<Metadata> {
       ],
       apple: '/apple-touch-icon.png',
     },
-    openGraph: {
+    /*
+      The hub's card, through the one builder every host uses.
+
+      It was written out by hand here and in three other layouts, which is how
+      `locale: 'en'` came to be on all ten hosts — Open Graph wants
+      `language_TERRITORY` and rejects a bare language — and how the Twitter
+      half came to name `/og.png` as a bare string while the Open Graph half
+      carried its dimensions and alt text. One builder, one shape, one place to
+      correct. See `hostCard`.
+    */
+    ...hostCard({
       siteName: settings.siteName,
-      type: 'website',
-      locale: 'en',
-      images: [{ url: '/og.png', width: 1200, height: 630, alt: settings.tagline ?? settings.siteName }],
-    },
-    twitter: { card: 'summary_large_image', images: ['/og.png'] },
+      image: {
+        url: '/og.png',
+        width: 1200,
+        height: 630,
+        alt: settings.tagline ?? settings.siteName,
+      },
+    }),
     verification: verificationMetadata(await resolveTags()),
   }
 }

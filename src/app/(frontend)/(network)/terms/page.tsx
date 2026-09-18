@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, ResolvingMetadata } from 'next'
 import { Fragment } from 'react'
 import Link from 'next/link'
 import { PageHeader } from '@/components/PageHeader'
@@ -8,6 +8,7 @@ import { getLegalCopy, legalBody, legalSections, legalTokens } from '@/lib/legal
 import { isProvisional } from '@/lib/legal'
 import { getPublishedGames, getSiteSettings } from '@/lib/payload'
 import { listSentence, rightsholders } from '@/lib/credit'
+import { socialMeta } from '@/lib/social'
 
 /**
  * The wording this page shipped with, which is also what `pnpm seed:copy`
@@ -20,12 +21,16 @@ const DESCRIPTION = 'The rules for using this site, and the limits of what it pr
 const LEDE =
   'A fan network describing games made by other people. Here is what that does and does not promise.'
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata(
+  _props: unknown,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
   const stored = await getLegalCopy('terms')
   return {
     title: copy(stored.title, TITLE),
     description: copy(stored.metaDescription, DESCRIPTION),
     alternates: { canonical: '/terms' },
+    ...(await socialMeta(parent, { path: '/terms' })),
   }
 }
 

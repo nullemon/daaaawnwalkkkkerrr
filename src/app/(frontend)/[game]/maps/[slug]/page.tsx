@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, ResolvingMetadata } from 'next'
 import { SectionNeighbours } from '@/components/SectionNeighbours'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
@@ -12,14 +12,18 @@ import { CommentThread } from '@/components/CommentThread'
 import { getBySlug } from '@/lib/payload'
 import { gameSlugParams } from '@/lib/params'
 import { SECTION_PATH, type GameScopedCollection } from '@/lib/tenancy'
+import { recordImage, socialMeta } from '@/lib/social'
 
 type Props = { params: Promise<{ game: string; slug: string }> }
 
 export const generateStaticParams = () => gameSlugParams('maps')
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
   const { game, slug } = await params
-  const doc = await getBySlug('maps', slug, { game, depth: 0 })
+  const doc = await getBySlug('maps', slug, { game, depth: 1 })
   if (!doc) return {}
   return {
     title: doc.seo?.title || doc.title,
@@ -28,6 +32,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       doc.summary ||
       `An interactive map of ${doc.title}, with each marked location linking to what is recorded about it.`,
     alternates: { canonical: `/maps/${doc.slug}` },
+    ...(await socialMeta(parent, {
+      path: `/maps/${doc.slug}`,
+      image: recordImage('maps', doc.image),
+    })),
     // The admin's "Hide this page from search engines" box, honoured.
     robots: doc.seo?.noindex ? { index: false, follow: true } : undefined,
   }

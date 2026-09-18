@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, ResolvingMetadata } from 'next'
 import Link from 'next/link'
 import { PageHeader } from '@/components/PageHeader'
 import { RunChecker } from '@/components/RunChecker'
@@ -8,6 +8,7 @@ import { requireFeature } from '@/lib/features'
 import { toolCopy } from '@/lib/game-copy'
 import { copy, pick, splitTokens } from '@/lib/copy'
 import { gameName } from '@/lib/section-copy'
+import { socialMeta } from '@/lib/social'
 
 type Props = { params: Promise<{ game: string }> }
 
@@ -16,7 +17,10 @@ type Props = { params: Promise<{ game: string }> }
   description are now this wiki's to write and a static export cannot read the
   record. The built-ins below are exactly what the eight wikis served before.
 */
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
   const { game: slug } = await params
   const [doc, endings] = await Promise.all([getGame(slug), countRecords('endings', { game: slug })])
   const words = toolCopy(doc)
@@ -41,6 +45,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       tokens,
     ),
     alternates: { canonical: '/tools/run-checker' },
+    ...(await socialMeta(parent, { path: '/tools/run-checker' })),
   }
 }
 

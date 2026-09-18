@@ -81,9 +81,38 @@ export const analyticsFields = (scope: 'network' | 'game'): Field => ({
   label: 'Analytics',
   admin: {
     description:
-      'Nothing loads unless a value is set here, so an unconfigured site ships no third-party script at all — which is both faster and one fewer cookie banner to justify.',
+      'Every field below is a third-party tool, and none of them loads unless a value is set — so an unconfigured site ships no external script at all. The network’s own measurement is the switch at the top and is not one of these.',
   },
   fields: [
+    /*
+      The network's own analytics, which is not a third-party tool and does not
+      belong in the list below it.
+
+      It is one switch rather than one per wiki, because the thing being
+      switched is a single API route that all ten hosts post to. A per-wiki
+      version would be ten copies of one decision and ten chances for one of
+      them to disagree with what the privacy policy says — and the privacy
+      policy is one document for the whole network.
+
+      Only on the network settings for the same reason. A Game record carrying
+      this field would imply a wiki can opt out of something the policy
+      describes network-wide, which is not true and would be worse than not
+      offering it.
+    */
+    ...(scope === 'network'
+      ? [
+          {
+            name: 'firstParty',
+            type: 'checkbox' as const,
+            label: 'Measure page views on this network',
+            defaultValue: true,
+            admin: {
+              description:
+                'This network’s own measurement: a small script posts the page, the referrer and the browser’s user-agent to /api/hit, which stores a page view. No third-party service, no cookie, no advertising identifier, and the reader’s address is hashed with a salt and a rotating date and never stored. Read it under Analytics in the sidebar. Turning this off stops the script being sent at all — and the privacy policy describes what this collects, so if you turn it off, say so there too.',
+            },
+          },
+        ]
+      : []),
     {
       name: 'ga4Id',
       type: 'text',

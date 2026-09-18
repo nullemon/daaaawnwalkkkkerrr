@@ -103,7 +103,7 @@ const PAGES: Record<'privacy' | 'terms' | 'contact', PageCopy> = {
       ),
       section(
         'If you just read the site',
-        'We collect nothing about you personally. No account, no tracking cookie, no profile.',
+        'You do not need an account, we do not ask for your name, and there is no tracking cookie, no advertising identifier and no profile. What we do record is that a page was opened, which is described under “Page views, which we count ourselves” below.',
         'Your run — which day you are on and which quests you have ticked — is stored by your own browser using local storage. It stays on your device and is never sent to us unless you sign in. Clearing your browser data deletes it, and we cannot recover it because we never had it.',
       ),
       section(
@@ -124,11 +124,30 @@ const PAGES: Record<'privacy' | 'terms' | 'contact', PageCopy> = {
       ),
       section(
         'Cookies',
-        'Signed out, the site sets no cookies. Signing in sets one authentication cookie so you stay signed in; it is strictly necessary for that and nothing else. Your theme choice and your run use local storage rather than cookies, which means they are never transmitted with requests.',
+        'Signed out, the site sets no cookies. Signing in sets one authentication cookie so you stay signed in; it is strictly necessary for that and nothing else. Your theme choice and your run use local storage rather than cookies, which means they are never transmitted with requests. The page-view counting described next uses no cookie either.',
       ),
       section(
-        'Analytics and advertising',
-        'Both are switched off by default and load nothing while off. If they are ever switched on, this page will name the provider before it happens. Advertising, in particular, usually involves third-party cookies and a different company’s privacy policy, so we will say exactly whose.',
+        'Page views, which we count ourselves',
+        'We count page views on our own servers. No third-party analytics company is involved and nothing is sent anywhere else. When a page has finished loading, a small script tells our own server which page it was. For each page view we store:',
+        {
+          ul: [
+            'The **page address** — the path only. The query string is removed before anything is written, so a search you typed into this site is never stored.',
+            'Which of our sites it was, and the **hostname** you reached it on.',
+            'The **hostname of the page that linked you to us**, if your browser sent one — the host only, never the full link. Most browsers send only the host, and many sites send nothing at all.',
+            'The `utm_source`, `utm_medium` and `utm_campaign` tags, if the link you followed carried them.',
+            'The **device type, browser family and operating system family** — desktop or mobile, Chrome or Safari, Windows or Android. These are read from the user-agent your browser sends and are stored as those three words, not as the string itself.',
+            'A **two-letter country code**, where our hosting provider works one out from your connection and tells us. Where it does not, the country is recorded as “unknown” rather than guessed.',
+            'A **reader code**: your IP address, your user-agent string and today’s date, put through a one-way hash together with a secret key.',
+          ],
+        },
+        'We do not store your IP address, your user-agent string, your name, or anything from the query string of the page you were reading. The reader code cannot be turned back into an address, and because the date is part of it, it changes at midnight UTC every day — so it cannot be used to follow one person from one day to the next. Its only purpose is to tell one reader opening six pages apart from six readers opening one.',
+        'Individual page views are deleted after 62 days. Before they are deleted they are added into daily totals — how many views each page, country, device and referring site had on each day — and those totals are kept indefinitely. The totals contain no reader code and nothing that refers to a person.',
+        'If your browser sends the Global Privacy Control or Do Not Track signal, the script does not send anything and your visit is not recorded at all.',
+        'If you are in the UK or EU, our legal basis is legitimate interest: knowing which pages of this site are read, and which are not, is how the site gets written. The balance rests on what is above — no address is stored, no cookie is set, the code that stands for a reader expires daily, and none of it is used for advertising or shared with anyone.',
+      ),
+      section(
+        'Third-party analytics, and advertising',
+        'We run neither. There is no Google Analytics, no Tag Manager, no Plausible and no Clarity on any page of this network, and no advertising of any kind. The settings for those tools exist and are empty, and while they are empty nothing from any of those companies is loaded. If one is ever switched on, this page will name the provider before it happens — advertising in particular usually involves third-party cookies and another company’s privacy policy, so we would say exactly whose. Our own page-view counting is the section above, and it is not one of these.',
       ),
       section(
         'Server logs',
@@ -138,12 +157,14 @@ const PAGES: Record<'privacy' | 'terms' | 'contact', PageCopy> = {
         ul: [
           'Account and run data: until you delete the account.',
           'Corrections: until reviewed, then kept as a record of the change.',
+          'Individual page views: 62 days, then deleted.',
+          'Daily page-view totals, which name no reader and hold no code for one: indefinitely.',
           'Server logs: as long as the hosting provider retains them, typically weeks.',
         ],
       }),
       section(
         'Your rights',
-        'If you are in the UK or EU, the UK GDPR and GDPR give you the right to access your data, correct it, delete it, take a copy elsewhere, and object to processing. Similar rights exist under California law and elsewhere. Since the only personal data we hold is an email address and a list of ticked quests, these requests are simple — write to {email} and we will action it.',
+        'If you are in the UK or EU, the UK GDPR and GDPR give you the right to access your data, correct it, delete it, take a copy elsewhere, and object to processing. Similar rights exist under California law and elsewhere. The only data we hold that is tied to a person is an account: an email address and a list of ticked quests. Write to {email} and we will action it. Page-view records are a separate matter and the honest answer is that we cannot find yours — they hold no address and no name, and the code that stands for a reader is a one-way hash that expires daily, so there is nothing we could match you to. If you would rather not be counted at all, the Global Privacy Control setting in your browser stops it.',
         'You can delete your account and everything attached to it yourself from your [account page](/account).',
         'Our legal basis for holding account data is performance of a contract — you asked us to save your run. For server logs it is legitimate interest in operating the site securely.',
       ),
@@ -267,6 +288,151 @@ const seed = async (payload: Payload): Promise<number> => {
 
   await payload.updateGlobal({ slug: 'legal-pages', data: next as never })
   return filled
+}
+
+/* -------------------------------------------------------------------------- */
+/* Correcting a stored section that has stopped being true                    */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * `seed` above never overwrites, and that is right almost always. This is the
+ * case where it is not.
+ *
+ * When this network started counting its own page views, four sections of the
+ * privacy policy stopped describing the site. Two of them became **false**:
+ * "We collect nothing about you personally" and "Analytics and advertising are
+ * both switched off by default". A privacy policy that is out of date is a
+ * document making a statement about data handling that is not what happens,
+ * which is the exact failure class this repository keeps finding - nothing
+ * errors, the page looks finished, and the wrong version is the reassuring one.
+ *
+ * So this corrects them, and it is careful about which ones it touches:
+ *
+ *   - A section is replaced **only while it still contains the sentence this
+ *     repository shipped**. That sentence is the evidence that nobody has
+ *     redrafted it. If it has been changed, the section is left exactly as it
+ *     is and printed instead, because an editor's own wording on a legal page
+ *     is not something a seed pass gets to overwrite.
+ *   - The new section describing what is collected is inserted only when no
+ *     section of that name exists, so running this twice adds nothing.
+ *
+ * Whatever it cannot do, it says. And whatever it does, it says too: the
+ * operator has to read the result, because this pass can keep a policy
+ * accurate about mechanism and cannot make a legal judgement about it.
+ */
+
+type StoredSection = { heading?: string; body?: unknown; id?: string }
+
+/** Every string in a Lexical document, joined. Enough to look for a sentence in. */
+const plainText = (node: unknown): string => {
+  if (!node || typeof node !== 'object') return ''
+  const record = node as { text?: unknown; children?: unknown; root?: unknown }
+  const parts: string[] = []
+  if (typeof record.text === 'string') parts.push(record.text)
+  if (record.root) parts.push(plainText(record.root))
+  if (Array.isArray(record.children)) for (const child of record.children) parts.push(plainText(child))
+  return parts.join(' ')
+}
+
+/**
+ * The sentence that proves a section is still the one this repository wrote,
+ * and the heading its replacement carries.
+ *
+ * Matched on a sentence rather than on the whole body because the whole body
+ * is several paragraphs of rich text and an exact comparison would fail on a
+ * typo fix, leaving a false statement in place for the sake of a comma.
+ */
+const CORRECTIONS: { heading: string; stillSays: string; becomes: string }[] = [
+  {
+    heading: 'If you just read the site',
+    stillSays: 'We collect nothing about you personally',
+    becomes: 'If you just read the site',
+  },
+  {
+    heading: 'Analytics and advertising',
+    stillSays: 'Both are switched off by default',
+    becomes: 'Third-party analytics, and advertising',
+  },
+  {
+    heading: 'Cookies',
+    stillSays: 'they are never transmitted with requests.',
+    becomes: 'Cookies',
+  },
+  {
+    heading: 'How long we keep things',
+    stillSays: 'Server logs: as long as the hosting provider retains them',
+    becomes: 'How long we keep things',
+  },
+  {
+    heading: 'Your rights',
+    stillSays: 'the only personal data we hold is an email address',
+    becomes: 'Your rights',
+  },
+]
+
+/** The section that has to exist, and where it belongs when it does not. */
+const NEW_SECTION = 'Page views, which we count ourselves'
+const AFTER = 'Cookies'
+
+export const correctPrivacy = async (payload: Payload): Promise<void> => {
+  const current = (await payload.findGlobal({ slug: 'legal-pages', depth: 0 })) as unknown as {
+    privacy?: { sections?: StoredSection[] }
+  }
+  const stored = current?.privacy?.sections
+  // Nothing written means the page is rendering the built-in wording, which is
+  // already the corrected one. `seed` above fills these in if they are empty.
+  if (!Array.isArray(stored) || stored.length === 0) return
+
+  const shipped = new Map(PAGES.privacy.sections.map((s) => [s.heading, s]))
+  const next = stored.map((section) => ({ ...section }))
+  const corrected: string[] = []
+  const edited: string[] = []
+
+  for (const rule of CORRECTIONS) {
+    const index = next.findIndex((section) => section.heading === rule.heading)
+    if (index === -1) continue
+    const replacement = shipped.get(rule.becomes)
+    if (!replacement) continue
+
+    if (plainText(next[index].body).includes(rule.stillSays)) {
+      next[index] = { ...next[index], heading: replacement.heading, body: replacement.body }
+      corrected.push(rule.heading)
+    } else {
+      edited.push(rule.heading)
+    }
+  }
+
+  let inserted = false
+  if (!next.some((section) => section.heading === NEW_SECTION)) {
+    const addition = shipped.get(NEW_SECTION)
+    if (addition) {
+      const at = next.findIndex((section) => section.heading === AFTER)
+      next.splice(at === -1 ? next.length : at + 1, 0, { ...addition })
+      inserted = true
+    }
+  }
+
+  if (corrected.length === 0 && !inserted && edited.length === 0) return
+
+  if (corrected.length > 0 || inserted) {
+    await payload.updateGlobal({
+      slug: 'legal-pages',
+      data: { privacy: { ...current.privacy, sections: next } } as never,
+    })
+  }
+
+  if (inserted) console.log(`  privacy: added the section "${NEW_SECTION}"`)
+  for (const heading of corrected) console.log(`  privacy: rewrote "${heading}"`)
+  for (const heading of edited) {
+    console.log(
+      `  privacy: LEFT ALONE "${heading}" - it has been edited since it shipped, so nothing here touched it. Check by hand that it still describes what the site does.`,
+    )
+  }
+  console.log(
+    '\n  The privacy policy now describes the page-view counting this network does.\n' +
+      '  It was written to be factual about mechanism, not to be legal advice.\n' +
+      '  READ /privacy AND CHECK IT before relying on it.\n',
+  )
 }
 
 export default seed

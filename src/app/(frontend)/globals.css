@@ -255,6 +255,34 @@ p { margin: 0; }
   color: var(--muted);
 }
 .lede { font-size: 17px; line-height: 1.5; color: var(--ink-soft); max-width: 64ch; }
+
+/* The deck under a headline: a guide's `subtitle` field, and nothing else
+   today. One line between the h1 and the lede, in the display face so it
+   reads as part of the headline rather than as a second lede — two 17px
+   `--ink-soft` paragraphs stacked look like somebody pasted the summary in
+   twice. `.page-head` is an 11px-gap flex column, so this carries no margin.
+
+   `--muted` rather than `--ink-soft`, and measured rather than assumed,
+   because the token moved in 14bf61a and 20px at weight 500 is *not* WCAG
+   large text — large is 18.66px bold or 24px regular, so the bar here is 4.5
+   and not 3. It clears on every ground in both themes: dark 6.91 / 6.20 /
+   5.36 / 7.26 and light 5.46 / 6.23 / 5.87 / 4.94 on ground, surface, raised
+   and sunken. On `.page-art` the band redefines `--muted` to #b5ad9e for its
+   own scrim, which this inherits along with the `.eyebrow` and `.note` that
+   are already there.                                                        */
+.page-subtitle {
+  margin: 0;
+  max-width: 58ch;
+  font-family: var(--f-display);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.005em;
+  color: var(--muted);
+  text-wrap: pretty;
+}
+@media (max-width: 600px) { .page-subtitle { font-size: 17.5px; } }
+
 .note { font-size: 13.5px; color: var(--muted); max-width: 62ch; }
 .mono { font-variant-numeric: tabular-nums; }
 
@@ -299,36 +327,90 @@ p { margin: 0; }
   The list scrolls; the brand and the footer stay put. `overflow: hidden` has to
   go with it, because a clipped column cannot scroll, and the horizontal axis is
   pinned separately so the hover-expand does not produce a sideways scrollbar.
+
+  ---
+
+  The four measurements below are the rail, and every one of them was wrong by
+  a few pixels in the same direction, which is what "uneven" turned out to
+  mean. They are tokens now because they are *one* arithmetic: the row is the
+  rail minus its rule and its padding, and the icon column is centred in the
+  row. Written as three separate literals they drifted, and nothing could say
+  they had.
+
+  `--rail-icon` is odd on purpose. The glyphs are 19px, the game marks 19px,
+  and an odd box is the only one that centres an odd child on whole pixels —
+  a 22px box put every stroke on a half pixel and a bitmap mark through a
+  resample. The row is 43px (64 − 1 rule − 2×10 padding), so the icon column
+  lands at x=21..42 and its centre at 31.5, which is the centre of the rail's
+  own painted surface. The remaining half pixel is the rule on the right edge
+  and there is nowhere to put it.
 */
 .navrail {
+  --rail-w: 64px;
+  --rail-pad: 10px;
+  /* The row: everything inside the padding, with the rule discounted. */
+  --rail-row: calc(var(--rail-w) - 1px - var(--rail-pad) * 2);
+  --rail-icon: 21px;
+  --rail-gutter: calc((var(--rail-row) - var(--rail-icon)) / 2);
+
   position: fixed; inset: 0 auto 0 0; z-index: 60;
-  width: 64px;
-  display: flex; flex-direction: column; gap: 4px;
-  padding: 10px 10px 14px;
+  width: var(--rail-w);
+  display: flex; flex-direction: column; gap: 8px;
+  padding: var(--rail-pad) var(--rail-pad) 14px;
   background: var(--surface); border-right: 1px solid var(--rule);
   transition: width 0.15s ease;
   overflow-x: hidden; overflow-y: auto;
+  /*
+    No scrollbar until there is room for one.
+
+    Eighteen sections overflow a laptop viewport, so the rail is a live
+    scroller almost always — and a `thin` scrollbar is 10px of a 64px rail,
+    taken out of the content box, which moved every icon another five pixels
+    off centre and did it only on the machines where the list is long. The
+    rail expands on hover, and that is where the scrollbar belongs: at 236px
+    it costs 4% and the icon column is anchored to the left edge, so nothing
+    moves when it appears. The wheel and the keyboard scroll either way.
+  */
+  scrollbar-width: none;
+}
+.navrail:hover, .navrail:focus-within {
+  width: 236px; box-shadow: 6px 0 28px rgba(0, 0, 0, 0.45);
   scrollbar-width: thin;
 }
-.navrail:hover, .navrail:focus-within { width: 236px; box-shadow: 6px 0 28px rgba(0, 0, 0, 0.45); }
 
-.navrail-brand { display: flex; align-items: center; gap: 12px; height: 44px; padding-inline: 7px; color: var(--ink); }
+/* `flex: none` because the rail is a flex column that overflows: without it
+   the brand is the one item with slack and gets shrunk to whatever is left —
+   44px became 40.125px the moment the list grew past the viewport, which put
+   every row below it on a fractional y and blurred the whole column. Its
+   height is a row's height now, so the brand, the sections and the footer
+   control are one rhythm rather than three. */
+.navrail-brand {
+  flex: none;
+  display: flex; align-items: center; gap: 12px;
+  height: 42px; padding-inline: var(--rail-gutter); color: var(--ink);
+}
 .navrail-brand:hover { text-decoration: none; }
-.navrail-brand-mark { flex: none; display: flex; color: var(--accent); }
+/* The same column as every other row, so the mark sits over the icons rather
+   than beside them. */
+.navrail-brand-mark {
+  flex: none; width: var(--rail-icon);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent);
+}
 .navrail-brand-name {
   font-family: var(--f-display); font-weight: 700; font-size: 15px;
   letter-spacing: 0.05em; text-transform: uppercase;
 }
 
-.navrail-list { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-direction: column; gap: 3px; }
+.navrail-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 3px; }
 .navrail-link {
   display: flex; align-items: center; gap: 12px;
-  height: 42px; padding-inline: 7px; border-radius: var(--r);
+  height: 42px; padding-inline: var(--rail-gutter); border-radius: var(--r);
   color: var(--muted); font-size: 14.5px; font-weight: 600;
 }
 .navrail-link:hover { background: var(--ground); color: var(--ink); text-decoration: none; }
 .navrail-link[aria-current='page'] { background: var(--accent); color: #fff; }
-.navrail-icon { flex: none; width: 22px; display: flex; justify-content: center; }
+.navrail-icon { flex: none; width: var(--rail-icon); display: flex; align-items: center; justify-content: center; }
 
 /* Labels only exist when there is room for them; the icon is the control.
 
@@ -358,6 +440,13 @@ p { margin: 0; }
 .navrail-leave { margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--rule); }
 
 .navrail-foot { margin-top: auto; display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+/* The foot is the bottom of the same column, so its control is a row: the row
+   width, a row's height, and its glyph on the icon column's centre. It was a
+   35×31 box left-aligned in a 43px row, which is the one thing in the rail a
+   reader sees at the same time as the list and the only one that did not line
+   up with it. A fixed width rather than `stretch` so it does not become a
+   215px button when the rail expands. */
+.navrail-foot .icon-btn { width: var(--rail-row); height: 42px; padding: 0; }
 
 @media (min-width: 861px) { .shell-main { margin-left: 64px; } }
 
@@ -370,10 +459,12 @@ p { margin: 0; }
     padding: 0 6px; border-right: 0; border-top: 1px solid var(--rule);
     overflow-x: auto; overflow-y: hidden;
   }
-  .navrail:hover, .navrail:focus-within { width: 100%; box-shadow: none; }
+  .navrail:hover, .navrail:focus-within { width: 100%; box-shadow: none; scrollbar-width: none; }
   .navrail-brand, .navrail-foot { display: none; }
   .navrail-list { flex-direction: row; margin: 0; gap: 2px; }
-  .navrail-link { height: 44px; width: 46px; justify-content: center; padding: 0; }
+  /* Odd, for the same reason `--rail-icon` is: a 21px icon box centres on
+     whole pixels in 45 and on half pixels in 46. */
+  .navrail-link { height: 44px; width: 45px; justify-content: center; padding: 0; }
   .navrail-label { display: none; }
   /* The list lies down, so the hairline that separated the way out from the
      sections has to turn with it — a top border here would draw a line across
@@ -1993,11 +2084,16 @@ th.num { text-align: right; }
 
   The art it replaces was 24px with a 1px border inside a 22px slot, next to
   19px glyphs — four pixels taller than every other row, and misaligned on the
-  left. This is 20px, borderless, and optically the same weight as an icon, so
-  the column reads as one set instead of two.
+  left. Borderless, and optically the same weight as an icon, so the column
+  reads as one set instead of two.
+
+  19px rather than the 20 it first landed at: that is the glyphs' own box, so
+  the photographic marks and the drawn ones take exactly the same footprint in
+  the 21px icon column and both centre on whole pixels. 20 in 21 put the art
+  through a half-pixel resample, which at this size is a smudge.
 */
 .navrail-mark {
-  width: 20px; height: 20px; border-radius: 5px;
+  width: 19px; height: 19px; border-radius: 5px;
   display: flex; align-items: center; justify-content: center;
   font-family: var(--f-label);
   font-size: 9.5px; font-weight: 700; letter-spacing: 0.02em;
@@ -2507,17 +2603,68 @@ h1, h2, h3 { text-wrap: balance; }
   position: absolute; inset: 0; width: 100%; height: 100%;
   /* Its own clip, since the hero can no longer do it without eating the
      search results. `cover` already fills the box exactly; this is a belt. */
-  object-fit: cover; overflow: hidden; z-index: -2; opacity: 0.4;
-  filter: saturate(0.85) contrast(1.04);
+  object-fit: cover; overflow: hidden; z-index: -2;
+  /*
+    0.4 was chosen while the scrims below were computing to `none`, so it was
+    the only thing standing between the headline and raw key art. Declaring
+    `--bg` turned both scrims on and left this doing the same job twice: the
+    picture reached the reader at about half of one level in 255 — measured,
+    not guessed — which is a photograph nobody can see. It is the scrims'
+    job now, and they do it where the type is rather than everywhere.
+  */
+  opacity: 0.92;
+  /* Slightly desaturated so the accent stays the only saturated thing on the
+     page, and nothing else: a contrast lift here would be re-grading somebody
+     else's key art. */
+  filter: saturate(0.9);
 }
-/* Two scrims: one so the page below joins, one so type stays readable over a
-   bright crop. A single flat overlay leaves the headline unreadable on about
-   half the key art this network will ever carry. */
+/*
+  Two scrims, and they do different jobs — a single flat overlay leaves the
+  headline unreadable on about half the key art this network will ever carry,
+  and hides the other half.
+
+  The first covers the column the type is in and lets go either side of it.
+  **The copy is centred, not left-aligned**: `.hub-hero-inner` narrows `.page`
+  to 760px and inherits its `margin-inline: auto`, so at 1440 the words run
+  from 326px to 1086px of a 1376px band with about 290px spare at each end.
+  The first attempt here wiped left-to-right on that assumption and put the
+  wordmark's own letters on raw key art at 1.27:1 — measured, and the only
+  reason it was caught. So the release is symmetric, and its width is
+  `(100% - 820px) / 2`, clamped at zero: it is exactly the space the column
+  does not use, which is ~290px at 1440, ~110px at 1100 and nothing at all on
+  a phone, where the words are the whole band and the scrim closes over it.
+
+  Where it holds, it holds hard, and the binding constraint is not the
+  headline. It is `.hub-stats dt` at 11.5px in `--muted`, which needs its
+  backdrop below 0.039 relative luminance to clear 4.5:1 — and the brightest
+  pixel any of the eight key arts puts under the type measures 0.995 (A Plague
+  Tale's white sky). That is a 96% scrim. The 4% the picture keeps there is
+  not visible and is not meant to be: the picture lives in the release.
+
+  The second joins the page at the bottom edge and adds a little under the
+  figures. It stops short of `--bg`, so the art is still there where the band
+  meets the rule.
+
+  Both are written against `--bg`, which `.hub-hero` declares — it was used
+  here and declared nowhere for five commits, and an undeclared custom
+  property makes the whole gradient invalid at computed-value time rather than
+  erroring. Do not use a token here that the block does not define.
+*/
 .hub-hero::before {
   content: ''; position: absolute; inset: 0; z-index: -1;
+  /* The part of the band the 760px column and its gutters do not occupy,
+     halved, and never negative. */
+  --hub-open: max(0px, calc((100% - 820px) / 2));
   background:
-    linear-gradient(180deg, color-mix(in srgb, var(--bg) 52%, transparent), var(--bg) 96%),
-    linear-gradient(100deg, var(--bg) 6%, color-mix(in srgb, var(--bg) 58%, transparent) 56%, transparent);
+    linear-gradient(180deg,
+      transparent 54%,
+      color-mix(in srgb, var(--bg) 26%, transparent) 82%,
+      color-mix(in srgb, var(--bg) 68%, transparent) 100%),
+    linear-gradient(90deg,
+      transparent 0,
+      color-mix(in srgb, var(--bg) 96%, transparent) var(--hub-open),
+      color-mix(in srgb, var(--bg) 96%, transparent) calc(100% - var(--hub-open)),
+      transparent 100%);
 }
 
 .hub-hero-inner { display: flex; flex-direction: column; gap: 14px; max-width: 760px; }

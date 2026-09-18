@@ -73,8 +73,11 @@ export function SiteRail({
   return (
     <nav className="navrail" aria-label="Primary">
       <Link href={brandHref} className="navrail-brand" title={siteName}>
+        {/* 21px is the rail's icon column exactly (`--rail-icon`), so the
+            brand mark sits on the same centre line as every glyph below it
+            rather than half a pixel off it. */}
         <span className="navrail-brand-mark">
-          <Logo size={22} />
+          <Logo size={21} />
         </span>
         <span className="navrail-label navrail-brand-name">{siteName}</span>
       </Link>

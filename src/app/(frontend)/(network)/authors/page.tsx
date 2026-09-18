@@ -1,15 +1,20 @@
-import type { Metadata } from 'next'
+import type { Metadata, ResolvingMetadata } from 'next'
 import { PageHeader } from '@/components/PageHeader'
 import { EntityCard } from '@/components/EntityCard'
 import { getAll, getAllAcrossGames, getSiteSettings } from '@/lib/payload'
 import { copy } from '@/lib/copy'
+import { socialMeta } from '@/lib/social'
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata(
+  _props: unknown,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
   const settings = await getSiteSettings()
   return {
     title: 'Contributors',
     description: `Who writes for ${settings.siteName}, and what each of them has written.`,
     alternates: { canonical: '/authors' },
+    ...(await socialMeta(parent, { path: '/authors' })),
   }
 }
 

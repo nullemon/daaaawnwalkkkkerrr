@@ -1,11 +1,15 @@
-import type { Metadata } from 'next'
+import type { Metadata, ResolvingMetadata } from 'next'
 import { PageHeader } from '@/components/PageHeader'
 import { WikiCard } from '@/components/WikiCard'
 import { directory } from '@/lib/directory'
 import { getSiteSettings } from '@/lib/payload'
 import { copy } from '@/lib/copy'
+import { socialMeta } from '@/lib/social'
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata(
+  _props: unknown,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
   const settings = await getSiteSettings()
   const wikis = await directory()
   const names = wikis.slice(0, 4).map((wiki) => wiki.game.shortTitle || wiki.game.title)
@@ -16,6 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: 'All wikis',
     description: `Every game wiki on the network${names.length ? `, including ${names.join(', ')}` : ''}. Page counts are read from the database, not claimed.`,
     alternates: { canonical: '/wikis' },
+    ...(await socialMeta(parent, { path: '/wikis' })),
   }
 }
 

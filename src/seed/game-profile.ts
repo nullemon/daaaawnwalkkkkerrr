@@ -17,6 +17,11 @@ import config from '../payload.config'
  * a forum is the exact thing this project refuses everywhere else. They are
  * editable in the admin for whoever finds a real one.
  *
+ * No third party's review score. The store listing carries one and this pass
+ * deliberately does not read it: the only rating this network publishes is its
+ * own, from `pnpm seed:ratings`, and a borrowed number sitting in the same
+ * factsheet turns a signed opinion into an aggregate of somebody else's work.
+ *
  * Idempotent: it writes the same values from the same files every run, so it
  * belongs in `db:reset` alongside the other passes.
  */
@@ -90,8 +95,6 @@ async function run(): Promise<void> {
     const solo = modes.includes('single-player')
     const onlineRequired = online && solo ? 'multiplayer' : online ? 'yes' : solo ? 'no' : 'unknown'
 
-    const metacritic = (store?.metacritic as { score?: number } | null)?.score
-
     /*
       The release date, where the game record has none.
 
@@ -159,7 +162,6 @@ async function run(): Promise<void> {
       artist: wiki.artist || undefined,
       writer: wiki.writer || undefined,
       genre: wiki.genre || undefined,
-      metacritic: typeof metacritic === 'number' ? metacritic : undefined,
     }
 
     await payload.update({

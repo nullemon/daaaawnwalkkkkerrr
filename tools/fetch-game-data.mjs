@@ -232,7 +232,13 @@ for (const { slug, appId } of GAMES) {
     ),
 
     dlc: app.dlc ?? [],
-    metacritic: app.metacritic?.score ?? null,
+    /*
+      `app.metacritic` is deliberately not captured. This network publishes its
+      own rating per game and that is the only score a reader should meet, so a
+      third party's number is not harvested at all rather than harvested and
+      then hidden — a field sitting in the raw JSON is one somebody wires back
+      into a page a year from now without knowing why it was there.
+    */
     achievements,
 
     art: {

@@ -415,15 +415,20 @@ const steamCatalogue = async (candidates, role, counters) => {
 }
 
 /**
- * Genre, platforms and Metacritic, for the six companies that made a game we
- * cover.
+ * Genre and platforms, for the six companies that made a game we cover.
  *
  * `appdetails` answers one app per call and allows roughly two hundred calls
  * in five minutes, so three hundred companies' worth of titles is hours and
  * the search page above is the whole catalogue in one request. What it does
- * not carry is genre or a Metacritic score - so this runs only where the
- * profile is one a reader arrives at from a wiki, which is the handful with
- * `basis: network-game`, and only over the titles already kept.
+ * not carry is genre - so this runs only where the profile is one a reader
+ * arrives at from a wiki, which is the handful with `basis: network-game`, and
+ * only over the titles already kept.
+ *
+ * `detail.data.metacritic` is on every one of these responses and is
+ * deliberately not read. The only rating this network publishes is its own,
+ * per game, signed; a third party's score down a studio's catalogue reads as
+ * ours. Not harvesting it is the point - a column sitting in the raw JSON is
+ * one somebody wires back into a page later without knowing why it was there.
  */
 const ENRICH_LIMIT = 40
 
@@ -441,7 +446,6 @@ const enrich = async (titles) => {
     if (!detail?.success || !detail.data) continue
     const genres = (detail.data.genres ?? []).map((genre) => genre.description).filter(Boolean)
     if (genres.length > 0) entry.genre = genres.join(', ')
-    if (typeof detail.data.metacritic?.score === 'number') entry.metacritic = detail.data.metacritic.score
     const platforms = Object.entries(detail.data.platforms ?? {})
       .filter(([, supported]) => supported)
       .map(([name]) => ({ windows: 'Windows', mac: 'macOS', linux: 'Linux' })[name] ?? name)

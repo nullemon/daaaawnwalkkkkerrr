@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, ResolvingMetadata } from 'next'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
 import { JsonLd } from '@/components/JsonLd'
@@ -23,6 +23,7 @@ import {
 import { clamp } from '@/lib/seo'
 import { companyUrl, hub } from '@/lib/urls'
 import type { Character, Company, Game, Person } from '@/payload-types'
+import { socialMeta } from '@/lib/social'
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -55,7 +56,10 @@ export async function generateStaticParams() {
   return docs.map((person) => ({ slug: String(person.slug) }))
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
   const { slug } = await params
   const person = await find(slug)
   if (!person) return {}
@@ -65,6 +69,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: person.seo?.title || clamp(`${person.name} — ${roles.toLowerCase() || 'credits'}`, 60),
     description: person.seo?.description || clamp(person.summary ?? ''),
     alternates: { canonical: `/${person.slug}` },
+    ...(await socialMeta(parent, { path: `/${person.slug}` })),
     robots: person.seo?.noindex ? { index: false, follow: true } : undefined,
   }
 }

@@ -1,7 +1,9 @@
-import type { Metadata } from 'next'
+import type { Metadata, ResolvingMetadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { PageHeader } from '@/components/PageHeader'
+import { Linked } from '@/components/Linked'
+import type { LinkScope } from '@/lib/link-index'
 import { sectionArt } from '@/lib/art'
 import { Badge, Confidence } from '@/components/Badges'
 import { EntityCard } from '@/components/EntityCard'
@@ -12,6 +14,7 @@ import { getAll, getGame } from '@/lib/payload'
 import { sectionCopy } from '@/lib/section-copy'
 import { getRunGraph } from '@/lib/runData'
 import { getUi } from '@/lib/ui'
+import { socialMeta } from '@/lib/social'
 
 type Props = { params: Promise<{ game: string }> }
 
@@ -24,7 +27,10 @@ type Props = { params: Promise<{ game: string }> }
   describing a game they are not about. A static export cannot read the game
   it is rendering for; that is the whole bug.
 */
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
   const { game: slug } = await params
   const [game, endings] = await Promise.all([
     getGame(slug),
@@ -35,6 +41,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: copy.title,
     description: copy.description,
     alternates: { canonical: '/endings' },
+    ...(await socialMeta(parent, { path: '/endings' })),
   }
 }
 
@@ -67,6 +74,16 @@ export default async function EndingsIndex({ params }: Props) {
   // above the list cannot drift from either of them.
   const graph = await getRunGraph(game)
 
+  /*
+    Where this page is, for the inline linker.
+
+    No `self`: an index is about a section rather than about one record, so
+    there is nothing on it to link to itself. The wiki's own game is still
+    treated as self by `matchText`, which is what keeps a lede naming the game
+    from linking to the home page the reader is already inside.
+  */
+  const scope: LinkScope = { host: 'wiki', game }
+
   return (
     <>
       <PageHeader
@@ -75,7 +92,7 @@ export default async function EndingsIndex({ params }: Props) {
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Endings' }]}
         icon="crown"
         title={copy.heading}
-        lede={copy.lede}
+        lede={copy.lede ? <Linked text={copy.lede} scope={scope} /> : undefined}
       />
       <div className="page body-main">
         <RunOutlook quests={graph.quests} endings={graph.endings} />

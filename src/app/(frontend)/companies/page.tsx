@@ -1,6 +1,8 @@
-import type { Metadata } from 'next'
+import type { Metadata, ResolvingMetadata } from 'next'
 import type { ReactNode } from 'react'
 import { PageHeader } from '@/components/PageHeader'
+import { Linked } from '@/components/Linked'
+import type { LinkScope } from '@/lib/link-index'
 import { JsonLd } from '@/components/JsonLd'
 import { itemList, webSite } from '@/lib/schema'
 import { COMPANIES_ORIGIN, companyUrl } from '@/lib/urls'
@@ -16,18 +18,33 @@ import {
 } from '@/lib/companies-copy'
 import { hub } from '@/lib/urls'
 import type { Company, Game } from '@/payload-types'
+import { socialMeta } from '@/lib/social'
+
+/*
+  Where this page is, for the inline linker.
+
+  No `game`, because this host is not a wiki: the index holds the people,
+  companies and games every host can link to and none of the game-scoped
+  records. No `self` either — a directory is not a record, so there is
+  nothing on it for a name to link back to.
+*/
+const LEDE_SCOPE: LinkScope = { host: 'companies' }
 
 /**
  * Metadata reads the global, so it cannot be a module-level constant: the title
  * and the description on this page are editable like everything else, and a
  * `const metadata` is evaluated once at import with no way to await a read.
  */
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata(
+  _props: unknown,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
   const site = await getCompaniesSite()
   return {
     title: { absolute: copy(site.title, COMPANIES_BUILT_IN.title) },
     description: copy(site.metaDescription, COMPANIES_BUILT_IN.metaDescription),
     alternates: { canonical: '/' },
+    ...(await socialMeta(parent, { path: '/' })),
   }
 }
 
@@ -157,7 +174,7 @@ export default async function CompaniesIndex() {
         title={copy(site.title, COMPANIES_BUILT_IN.title)}
         /* The count is filled at render time: a typed-in total is a sentence
            that goes wrong the week somebody harvests another parent company. */
-        lede={copy(site.lede, COMPANIES_BUILT_IN.lede, { count: companies.length })}
+        lede={<Linked text={copy(site.lede, COMPANIES_BUILT_IN.lede, { count: companies.length })} scope={LEDE_SCOPE} />}
       />
       <div className="page body-main">
         <section className="section">

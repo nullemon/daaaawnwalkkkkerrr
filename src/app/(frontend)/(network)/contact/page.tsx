@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, ResolvingMetadata } from 'next'
 import { Fragment } from 'react'
 import Link from 'next/link'
 import { PageHeader } from '@/components/PageHeader'
@@ -8,6 +8,7 @@ import { copy } from '@/lib/copy'
 import { getLegalCopy, legalBody, legalSections, legalTokens } from '@/lib/legal-copy'
 import { isProvisional } from '@/lib/legal'
 import { getSiteSettings } from '@/lib/payload'
+import { socialMeta } from '@/lib/social'
 
 /**
  * The wording this page shipped with, which is also what `pnpm seed:copy`
@@ -19,12 +20,16 @@ const TITLE = 'Contact'
 const DESCRIPTION = 'How to reach the person who runs this site.'
 const LEDE = 'One person reads everything that arrives here.'
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata(
+  _props: unknown,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
   const stored = await getLegalCopy('contact')
   return {
     title: copy(stored.title, TITLE),
     description: copy(stored.metaDescription, DESCRIPTION),
     alternates: { canonical: '/contact' },
+    ...(await socialMeta(parent, { path: '/contact' })),
   }
 }
 

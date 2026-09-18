@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, ResolvingMetadata } from 'next'
 import Link from 'next/link'
 import { Icon, type IconName } from '@/components/Icon'
 import { Logo } from '@/components/Logo'
@@ -11,8 +11,12 @@ import { copy } from '@/lib/copy'
 import { JsonLd } from '@/components/JsonLd'
 import { itemList, networkOrganization, webSite } from '@/lib/schema'
 import { HUB_ORIGIN } from '@/lib/urls'
+import { socialMeta } from '@/lib/social'
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata(
+  _props: unknown,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
   const [settings, wikis] = await Promise.all([getSiteSettings(), directory()])
   const total = wikis.reduce((sum, wiki) => sum + wiki.pages, 0)
 
@@ -32,6 +36,7 @@ export async function generateMetadata(): Promise<Metadata> {
         { wikis: wikis.length, pages: total },
       ),
     alternates: { canonical: '/' },
+    ...(await socialMeta(parent, { path: '/' })),
   }
 }
 

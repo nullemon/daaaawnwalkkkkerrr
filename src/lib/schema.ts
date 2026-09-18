@@ -21,10 +21,12 @@ import { slugify } from '../fields/shared'
  *
  * ## What is deliberately not emitted
  *
- * **Metacritic as `aggregateRating`.** That score is Metacritic's rating, not
- * ours. Emitting it as this page's `aggregateRating` says this site collected
- * those reviews, which is false and is invisible because nobody proofreads
- * JSON-LD.
+ * **Any third party's score, in any form.** The network no longer holds one:
+ * it is not harvested, not stored and not shown. It was never emitted here
+ * either, and the reason it was refused is the reason it is gone everywhere
+ * else — a borrowed score in this page's `aggregateRating` says this site
+ * collected those reviews, which is false and is invisible because nobody
+ * proofreads JSON-LD.
  *
  * This site's *own* score is a different matter and is emitted — as a `Review`,
  * which is what one signed opinion is. `aggregateRating` means an average of

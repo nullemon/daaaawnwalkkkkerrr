@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, ResolvingMetadata } from 'next'
 import { SectionNeighbours } from '@/components/SectionNeighbours'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
@@ -18,12 +18,16 @@ import { gameName } from '@/lib/section-copy'
 import { gameSlugParams } from '@/lib/params'
 import type { Court } from '@/payload-types'
 import { clamp, courtMeta } from '@/lib/seo'
+import { recordImage, socialMeta } from '@/lib/social'
 
 type Props = { params: Promise<{ game: string; slug: string }> }
 
 export const generateStaticParams = () => gameSlugParams('courts')
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
   const { game, slug } = await params
   const doc = await getBySlug('courts', slug, { game, depth: 1 })
   if (!doc) return {}
@@ -33,6 +37,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: doc.seo?.title || meta.title,
     description: clamp(doc.seo?.description || meta.description || ''),
     alternates: { canonical: `/court/${doc.slug}` },
+    ...(await socialMeta(parent, {
+      path: `/court/${doc.slug}`,
+      image: recordImage('courts', doc.image),
+    })),
     /*
       The admin's own "Hide this page from search engines" box.
       `seoGroup()` puts it on every content collection and only the

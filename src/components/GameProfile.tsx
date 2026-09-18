@@ -22,6 +22,15 @@ import { client } from '@/lib/payload'
  *
  * Developer and publisher link to their profiles on the companies host, which
  * is the whole reason that host exists.
+ *
+ * ## No third party's score
+ *
+ * The only rating on this panel is this network's own, from `editorialScore`,
+ * signed and with its reasoning on the page. A borrowed number printed in the
+ * same list of rows is read as one of ours, and it makes the score below it
+ * look like an average of somebody else's reviews rather than an opinion this
+ * site is willing to defend. There used to be a Metacritic row here; it is
+ * gone, and nothing replaces it.
  */
 
 type Row = { label: string; value: React.ReactNode }
@@ -203,7 +212,6 @@ export async function GameProfile({ game }: { game: Game }) {
     profile.artist ? { label: ui.t('profile.artist'), value: people(profile.artist) } : null,
     profile.writer ? { label: ui.t('profile.writer'), value: people(profile.writer) } : null,
     profile.composer ? { label: ui.t('profile.composer'), value: people(profile.composer) } : null,
-    profile.metacritic ? { label: ui.t('profile.metacritic'), value: profile.metacritic } : null,
     profile.budget ? { label: ui.t('profile.budget'), value: profile.budget } : null,
     profile.marketingSpend
       ? { label: ui.t('profile.marketing'), value: profile.marketingSpend }

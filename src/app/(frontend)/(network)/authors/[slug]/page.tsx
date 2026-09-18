@@ -1,10 +1,11 @@
-import type { Metadata } from 'next'
+import type { Metadata, ResolvingMetadata } from 'next'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
 import { EntityImage } from '@/components/EntityImage'
 import { RelatedList, type RelatedItem } from '@/components/RelatedList'
 import { getAll, getAllAcrossGames, getBySlug, gameUrl, relMany } from '@/lib/payload'
 import type { Game } from '@/payload-types'
+import { socialMeta } from '@/lib/social'
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -13,7 +14,10 @@ export async function generateStaticParams() {
   return docs.map((doc) => ({ slug: doc.slug }))
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
   const { slug } = await params
   const doc = await getBySlug('authors', slug, { depth: 0 })
   if (!doc) return {}
@@ -21,6 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${doc.name} — guides and articles`,
     description: doc.bio ?? `Guides and articles written by ${doc.name}.`,
     alternates: { canonical: `/authors/${doc.slug}` },
+    ...(await socialMeta(parent, { path: `/authors/${doc.slug}` })),
     // A placeholder profile is not something we want indexed as a real person.
     /*
       Indexable, including while provisional.

@@ -1,15 +1,21 @@
-import type { Metadata } from 'next'
+import type { Metadata, ResolvingMetadata } from 'next'
 import Link from 'next/link'
 import { PageHeader } from '@/components/PageHeader'
+import { Linked } from '@/components/Linked'
+import type { LinkScope } from '@/lib/link-index'
 import { sectionArt } from '@/lib/art'
 import { getAll, getGame } from '@/lib/payload'
 import { sectionCopy } from '@/lib/section-copy'
 import { guideGroups, guideMatches } from '@/lib/game-copy'
 import type { Guide, Media } from '@/payload-types'
+import { socialMeta } from '@/lib/social'
 
 type Props = { params: Promise<{ game: string }> }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
   const { game: slug } = await params
   const [game, guides] = await Promise.all([
     getGame(slug),
@@ -20,6 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: copy.title,
     description: copy.description,
     alternates: { canonical: '/guides' },
+    ...(await socialMeta(parent, { path: '/guides' })),
   }
 }
 
@@ -196,6 +203,16 @@ export default async function GuidesIndex({ params }: Props) {
   // "Everything else" only means something when there is something else.
   const grouped = sections.some((section) => section.guides.length > 0)
 
+  /*
+    Where this page is, for the inline linker.
+
+    No `self`: an index is about a section rather than about one record, so
+    there is nothing on it to link to itself. The wiki's own game is still
+    treated as self by `matchText`, which is what keeps a lede naming the game
+    from linking to the home page the reader is already inside.
+  */
+  const scope: LinkScope = { host: 'wiki', game }
+
   return (
     <>
       <PageHeader
@@ -204,7 +221,7 @@ export default async function GuidesIndex({ params }: Props) {
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Guides' }]}
         icon="book"
         title={copy.heading}
-        lede={copy.lede}
+        lede={copy.lede ? <Linked text={copy.lede} scope={scope} /> : undefined}
       />
       <div className="page body-main">
         {sections.map((section) =>

@@ -2,6 +2,8 @@ import Link from 'next/link'
 import { Icon } from '@/components/Icon'
 import { SEGMENTS_PER_PHASE, TOTAL_DAYS, TOTAL_SEGMENTS } from '@/lib/segments'
 import { briefingCopy } from '@/lib/game-copy'
+import { Linked } from '@/components/Linked'
+import type { LinkScope } from '@/lib/link-index'
 import { copy } from '@/lib/copy'
 import type { Court, Ending, Game } from '@/payload-types'
 
@@ -37,7 +39,7 @@ const GATE_SHORT: Record<string, string> = {
   clock: 'The clock',
 }
 
-export function Briefing({
+export async function Briefing({
   game,
   courts,
   endings,
@@ -48,6 +50,16 @@ export function Briefing({
 }) {
   const brief = briefingCopy(game)
   if (!brief.enabled) return null
+
+  /*
+    Where this is, for the inline linker.
+
+    The takes are the longest editorial prose on a wiki's front page and they
+    name the courts, allies and endings they are arguing about — which all have
+    pages one click away and were printing as plain text. No `self`: the home
+    page is not a record.
+  */
+  const scope: LinkScope = { host: 'wiki', game: game.slug }
 
   const name = game.shortTitle || game.title
   const hasClock = (game.features ?? []).includes('run-checker')
@@ -115,18 +127,31 @@ export function Briefing({
                 <span className="eyebrow">{copy(brief.eyebrow, 'Our read', tokens)}</span>
               </div>
               <p className="note">
-                {copy(
-                  brief.lede,
-                  'Opinions, not facts. The reasoning is shown so you can disagree with it.',
-                  tokens,
-                )}
+                <Linked
+                  text={copy(
+                    brief.lede,
+                    'Opinions, not facts. The reasoning is shown so you can disagree with it.',
+                    tokens,
+                  )}
+                  scope={scope}
+                />
               </p>
 
               {takes.map((take) => (
                 <div className="take" key={take.id ?? take.claim}>
                   <span className="who">{copy(take.who, take.who, tokens)}</span>
                   <h3>{copy(take.claim, take.claim, tokens)}</h3>
-                  {take.reasoning ? <p>{copy(take.reasoning, take.reasoning, tokens)}</p> : null}
+                  {/*
+                    The reasoning, not the claim. The claim is the `<h3>` above
+                    it, and `NO_LINKS_INSIDE` keeps links out of headings for
+                    the reason it names: a heading labels the block under it,
+                    and a link inside one competes with the block's own.
+                  */}
+                  {take.reasoning ? (
+                    <p>
+                      <Linked text={copy(take.reasoning, take.reasoning, tokens)} scope={scope} />
+                    </p>
+                  ) : null}
                 </div>
               ))}
             </section>
@@ -141,11 +166,14 @@ export function Briefing({
                 </Link>
               </div>
               <p className="note">
-                {copy(
-                  brief.endingsNote,
-                  'Most are decided at the finale and cannot be lost early. The rest are gated on chains you finish long before you get there.',
-                  tokens,
-                )}
+                <Linked
+                  text={copy(
+                    brief.endingsNote,
+                    'Most are decided at the finale and cannot be lost early. The rest are gated on chains you finish long before you get there.',
+                    tokens,
+                  )}
+                  scope={scope}
+                />
               </p>
               <div className="tablewrap">
                 <table>

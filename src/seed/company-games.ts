@@ -36,6 +36,14 @@ import type { Company } from '../payload-types'
  * that cannot be told from "never seen before" without a marker field, and is
  * the cheaper mistake of the two.
  *
+ * ## No review score on a catalogue row
+ *
+ * The harvest used to carry a Metacritic score and this pass used to write it.
+ * It does not any more: the only rating this network publishes is its own, per
+ * game, with the reasoning beside it, and a borrowed number down sixty rows of
+ * a studio's catalogue reads as this site rating sixty games it has never
+ * said a word about.
+ *
  * ## The prose
  *
  * Composed from the captured fields and from nothing else. Wikipedia's own
@@ -58,7 +66,6 @@ type Harvested = {
   isFree?: boolean | null
   reviews?: string | null
   genre?: string | null
-  metacritic?: number | null
   storeUrl?: string | null
   appid?: string | null
   source: 'steam' | 'wikipedia' | 'both'
@@ -272,9 +279,9 @@ const run = async (): Promise<void> => {
         - the fresh harvest for this company does not list it, and there *is* a
           fresh harvest for it to be absent from. A company we failed to read is
           not a company whose catalogue is wrong.
-        - nothing on it that a person fills: no price, no store link, no score,
-          no genre, no reviews, no wiki link. Those are an editor's work and
-          this pass does not own them.
+        - nothing on it that a person fills: no price, no store link, no
+          genre, no reviews, no wiki link. Those are an editor's work and this
+          pass does not own them.
 
       Then the row is one of:
 
@@ -299,7 +306,6 @@ const run = async (): Promise<void> => {
       const edited =
         filled(row.priceText) ||
         filled(row.storeUrl) ||
-        filled(row.metacritic) ||
         filled(row.genre) ||
         filled(row.reviews) ||
         filled(row.coveredBy)
@@ -339,7 +345,6 @@ const run = async (): Promise<void> => {
         if (!filled(current.priceText) && harvested.priceText) current.priceText = harvested.priceText
         if (!filled(current.reviews) && harvested.reviews) current.reviews = harvested.reviews
         if (!filled(current.genre) && harvested.genre) current.genre = harvested.genre
-        if (!filled(current.metacritic) && harvested.metacritic) current.metacritic = harvested.metacritic
         if (!filled(current.storeUrl) && harvested.storeUrl) current.storeUrl = harvested.storeUrl
         if (!filled(current.coveredBy) && coveredBy) current.coveredBy = coveredBy as never
         if (harvested.isFree && !current.isFree) current.isFree = true
@@ -359,7 +364,6 @@ const run = async (): Promise<void> => {
         role: harvested.role ?? roleFallback ?? null,
         priceText: harvested.priceText ?? null,
         isFree: harvested.isFree ?? false,
-        metacritic: harvested.metacritic ?? null,
         reviews: harvested.reviews ?? null,
         genre: harvested.genre ?? null,
         platforms: harvested.platforms ?? null,

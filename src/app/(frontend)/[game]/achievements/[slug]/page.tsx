@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, ResolvingMetadata } from 'next'
 import { SectionNeighbours } from '@/components/SectionNeighbours'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
@@ -13,6 +13,7 @@ import { RelatedList, type RelatedItem } from '@/components/RelatedList'
 import { CommentThread } from '@/components/CommentThread'
 import { getAll, getBySlug, getGame } from '@/lib/payload'
 import { gameSlugParams } from '@/lib/params'
+import { recordImage, socialMeta } from '@/lib/social'
 
 type Props = { params: Promise<{ game: string; slug: string }> }
 
@@ -34,10 +35,13 @@ const oneIn = (percent: number): string => {
   return `about one player in ${ratio.toLocaleString('en-GB')}`
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
   const { game, slug } = await params
   const [doc, gameDoc] = await Promise.all([
-    getBySlug('achievements', slug, { game, depth: 0 }),
+    getBySlug('achievements', slug, { game, depth: 1 }),
     getGame(game),
   ])
   if (!doc) return {}
@@ -60,6 +64,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         .join(' ')
         .slice(0, 155),
     alternates: { canonical: `/achievements/${doc.slug}` },
+    ...(await socialMeta(parent, {
+      path: `/achievements/${doc.slug}`,
+      image: recordImage('achievements', doc.icon),
+    })),
     // The admin's "Hide this page from search engines" box, honoured.
     robots: doc.seo?.noindex ? { index: false, follow: true } : undefined,
   }

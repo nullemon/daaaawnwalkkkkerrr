@@ -42,6 +42,47 @@ import { companyUrl, personUrl } from './urls'
  * **Authors.** Not game-scoped, and they already carry a byline on every page
  * they wrote; the six contributor names are placeholders until the owner
  * supplies real ones, and linking a placeholder into prose spreads it.
+ *
+ * ## Which surfaces render through `Linked`, and which deliberately do not
+ *
+ * The index above says *what* may be linked. This says *where*, because a
+ * coverage gap here looks exactly like a page with nothing to link: no error,
+ * no failing test, an `elink` count of zero either way. The list is here so the
+ * next person counts links on a page and knows which answer zero is.
+ *
+ * Linked: every record lede and body on the eighteen detail routes, a guide's
+ * summary and body, a company and a person profile, the section index ledes,
+ * the wiki home's masthead lede and its signed verdict, the briefing's takes,
+ * the About page's editable rich text, and the two network hosts' index ledes.
+ *
+ * Not linked, and each for a reason that is not "nobody got to it yet":
+ *
+ * - **Every card blurb.** `EntityCard`, `WikiCard`, the guide tiles, the hub's
+ *   feed, the games grid on a company or a person profile. All of them render
+ *   their summary *inside* the card's own anchor, and an anchor inside an
+ *   anchor is invalid HTML the browser silently un-nests — a link whose
+ *   destination depends on where in the word the reader clicked. This is the
+ *   same failure `NO_LINKS_INSIDE` refuses in rich text, arriving through the
+ *   layout instead of the document.
+ * - **`DataTable` cells.** A client component that filters and sorts on the
+ *   plain string, and a summary column is the densest text on the site; a row
+ *   in which every noun is a link is the unreadable paragraph, tabulated.
+ * - **`RelatedList` subs and every other one-line index label.** Short, dense,
+ *   and already sitting beside the link they belong to.
+ * - **`Callout` bodies.** A bordered box whose whole job is one call to action,
+ *   and which carries its own `linkHref`. A second link in it competes with the
+ *   first.
+ * - **The footer blurb.** It is `game.summary` again, on all ~1,900 pages of a
+ *   wiki. Chrome, not prose.
+ * - **Legal, contact and the placeholder-contributor notice.** Each exists to
+ *   say one thing plainly, and `LegalGap` exists to mark a value nobody has
+ *   confirmed — a link inside either changes what it says.
+ * - **Source citation titles.** A citation is a claim about where a fact came
+ *   from; pointing one of its words at a page of ours is the opposite claim.
+ * - **Interface strings.** `getUi`, the search placeholders, the form ledes on
+ *   `/corrections` and `/requests`.
+ * - **The hub's own copy**, and the two hosts' method notes. They describe how
+ *   this network is written rather than naming anything in it.
  */
 
 /**

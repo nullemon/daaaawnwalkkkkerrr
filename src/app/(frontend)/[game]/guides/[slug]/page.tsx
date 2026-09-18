@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, ResolvingMetadata } from 'next'
 import { SectionNeighbours } from '@/components/SectionNeighbours'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
@@ -10,6 +10,7 @@ import { Sources } from '@/components/Sources'
 import { Attribution } from '@/components/Attribution'
 import { CommentThread } from '@/components/CommentThread'
 import { Byline } from '@/components/Byline'
+import { ArticleMeta } from '@/components/ArticleMeta'
 import { EntityImage } from '@/components/EntityImage'
 import { RelatedList, type RelatedItem } from '@/components/RelatedList'
 import Link from 'next/link'
@@ -21,22 +22,42 @@ import { JsonLd } from '@/components/JsonLd'
 import { clamp, guideKeywords } from '@/lib/seo'
 import type { Author, Ending, Guide, Media, Quest } from '@/payload-types'
 import { hub } from '@/lib/urls'
+import { recordImage, socialMeta } from '@/lib/social'
 
 type Props = { params: Promise<{ game: string; slug: string }> }
 
 export const generateStaticParams = () => gameSlugParams('guides')
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
   const { game, slug } = await params
   const doc = await getBySlug('guides', slug, { game, depth: 1 })
   if (!doc) return {}
-  // Each article has its own lead image, so each gets its own social card
-  // instead of every share showing the same site-wide og.png.
-  const image = doc.image && typeof doc.image === 'object' ? doc.image.url : undefined
   return {
     title: doc.seo?.title || doc.title,
     description: clamp(doc.seo?.description || doc.summary || ''),
     alternates: { canonical: `/guides/${doc.slug}` },
+    /*
+      Each article shares its own lead image, which is what this route has
+      always meant to do — it just used to do it by writing `openGraph` out
+      by hand, and Next replaces a parent's `openGraph` rather than merging
+      into it. So 408 guides lost `og:site_name`, `og:type`, `og:locale` and
+      the image's dimensions and alt text, the two guides with no lead image
+      served *no* Open Graph tags at all, and `twitter:image` stayed inherited
+      — one page offering Facebook the article's picture and X the wiki's key
+      art. `socialMeta` restates the whole card and writes one image to both.
+
+      `article`, not `website`: this page carries a byline, a modified date
+      and `Article` JSON-LD, and og:type is the half of that a share preview
+      reads. Records are `website` because they have no author and no date.
+    */
+    ...(await socialMeta(parent, {
+      path: `/guides/${doc.slug}`,
+      image: recordImage('guides', doc.image),
+      type: 'article',
+    })),
     /*
       The admin's own "Hide this page from search engines" box.
       `seoGroup()` puts it on every content collection and only the
@@ -45,7 +66,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     */
     robots: doc.seo?.noindex ? { index: false, follow: true } : undefined,
     keywords: guideKeywords(doc, gameName(await getGame(game))),
-    openGraph: image ? { images: [{ url: image }] } : undefined,
   }
 }
 
@@ -95,9 +115,18 @@ export default async function GuidePage({ params }: Props) {
     })),
   ]
 
-  // Six others, this one excluded. Newest first, so a guide written today is
-  // linked from every guide written before it.
-  const more: RelatedItem[] = (await getAll('guides', { game, depth: 0, sort: '-updatedAt' }))
+  /*
+    Six others, this one excluded. Newest first, so a guide written today is
+    linked from every guide written before it.
+
+    Sorted on `published` rather than on `updatedAt`. "Newest first" was
+    sorting on the row's last database write, and every generator upserts
+    every guide on every run — so after a `pnpm db:reset` all four hundred
+    share a timestamp to the second and the order is whatever the writes
+    happened to land in. The dates the page itself shows are the ones this
+    ought to agree with.
+  */
+  const more: RelatedItem[] = (await getAll('guides', { game, depth: 0, sort: '-published' }))
     .filter((other) => other.slug !== slug)
     .slice(0, 6)
     .map((other) => ({ id: other.id, title: other.title, href: `/guides/${other.slug}` }))
@@ -152,11 +181,12 @@ export default async function GuidePage({ params }: Props) {
         eyebrow="Guide"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Guides', href: '/guides' }, { label: doc.title }]}
         title={doc.title}
+        subtitle={doc.subtitle}
         lede={doc.summary ? <Linked text={doc.summary} scope={scope} /> : undefined}
         badges={<Confidence level={doc.confidence} />}
       />
       <div className="page body-main">
-        <Byline author={doc.author} updated={doc.updated} />
+        <Byline author={doc.author} published={doc.published} updated={doc.updated} />
         <div className="split">
           <div className="stack">
             <EntityImage media={doc.image} shape="wide" priority />
@@ -186,9 +216,33 @@ export default async function GuidePage({ params }: Props) {
               </section>
             ) : null}
 
-            <Sources sources={doc.sources} />
+            {/*
+              Provenance, as one block at the foot rather than four things
+              scattered down the page.
 
-            <Attribution sources={doc.sources} />
+              The citations used to sit here on their own under a caveat with
+              no heading — the footnote nobody reads — while the only other
+              thing a reader could use to place the article was a name at the
+              top. Dates, byline, fact-check statement and sources now read as
+              one answer to "who says so, and when".
+
+              `Sources` is passed through unchanged, so Site settings → Content
+              still decides whether the citation list prints. **It is off
+              today**, which means every guide on the network shows the caveat
+              and no citations; that is the owner's switch and not this route's
+              to override. See the note in `src/components/Sources.tsx` about
+              the two hosts that do carry a named exception, and why this is
+              not a third one.
+            */}
+            <ArticleMeta
+              published={doc.published}
+              updated={doc.updated}
+              author={doc.author}
+              review={doc.review}
+            >
+              <Sources sources={doc.sources} />
+              <Attribution sources={doc.sources} />
+            </ArticleMeta>
 
             <SectionNeighbours
           collection="guides"

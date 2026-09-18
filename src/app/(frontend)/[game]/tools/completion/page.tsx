@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, ResolvingMetadata } from 'next'
 import Link from 'next/link'
 import { PageHeader } from '@/components/PageHeader'
 import { CompletionTracker, type TrackedAchievement } from '@/components/CompletionTracker'
@@ -6,10 +6,14 @@ import { getAll, getGame } from '@/lib/payload'
 import { requireFeature } from '@/lib/features'
 import { toolCopy } from '@/lib/game-copy'
 import { copy } from '@/lib/copy'
+import { socialMeta } from '@/lib/social'
 
 type Props = { params: Promise<{ game: string }> }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
   const { game: slug } = await params
   const [doc, achievements] = await Promise.all([
     getGame(slug),
@@ -28,6 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       tokens,
     ),
     alternates: { canonical: '/tools/completion' },
+    ...(await socialMeta(parent, { path: '/tools/completion' })),
   }
 }
 

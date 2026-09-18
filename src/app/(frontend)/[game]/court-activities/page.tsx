@@ -1,18 +1,24 @@
-import type { Metadata } from 'next'
+import type { Metadata, ResolvingMetadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { PageHeader } from '@/components/PageHeader'
+import { Linked } from '@/components/Linked'
+import type { LinkScope } from '@/lib/link-index'
 import { sectionArt } from '@/lib/art'
 import { DataTable, type Row } from '@/components/DataTable'
 import { Callout } from '@/components/Callout'
 import { getAll, getGame } from '@/lib/payload'
 import { sectionCopy } from '@/lib/section-copy'
 import type { Court, Region } from '@/payload-types'
+import { socialMeta } from '@/lib/social'
 
 type Props = { params: Promise<{ game: string }> }
 
 /** A function rather than a static object — see the note in `endings/page.tsx`. */
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
   const { game: slug } = await params
   const [game, activities] = await Promise.all([
     getGame(slug),
@@ -23,6 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: copy.title,
     description: copy.description,
     alternates: { canonical: '/court-activities' },
+    ...(await socialMeta(parent, { path: '/court-activities' })),
   }
 }
 
@@ -77,6 +84,16 @@ export default async function CourtActivitiesIndex({ params }: Props) {
     }
   })
 
+  /*
+    Where this page is, for the inline linker.
+
+    No `self`: an index is about a section rather than about one record, so
+    there is nothing on it to link to itself. The wiki's own game is still
+    treated as self by `matchText`, which is what keeps a lede naming the game
+    from linking to the home page the reader is already inside.
+  */
+  const scope: LinkScope = { host: 'wiki', game }
+
   return (
     <>
       <PageHeader
@@ -85,7 +102,7 @@ export default async function CourtActivitiesIndex({ params }: Props) {
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Court', href: '/court' }, { label: 'Activities' }]}
         icon="crown"
         title={copy.heading}
-        lede={copy.lede}
+        lede={copy.lede ? <Linked text={copy.lede} scope={scope} /> : undefined}
       />
       <div className="page body-main">
         <DataTable

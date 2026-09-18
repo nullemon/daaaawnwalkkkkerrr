@@ -5,6 +5,7 @@ import { getAppearance } from '@/lib/appearance-settings'
 import { RunProvider } from '@/components/RunProvider'
 import { AccountProvider } from '@/components/AccountProvider'
 import { UiStringsProvider } from '@/components/UiStrings'
+import { Beacon } from '@/components/Beacon'
 import { getSiteSettings, siteUrl } from '@/lib/payload'
 import { getUiMaps } from '@/lib/ui'
 import './globals.css'
@@ -106,6 +107,28 @@ export default async function FrontendLayout({ children }: { children: React.Rea
   const { defaultTheme, accent } = await getAppearance()
   const boot = themeBootScript(defaultTheme)
 
+  /*
+    The page-view beacon, and whether it is sent at all.
+
+    This is the one layout above the hub, all eight wikis, the companies host
+    and the people host, so mounting it here is what makes the measurement
+    cover the network rather than whichever routes somebody remembered. It
+    renders nothing — see `components/Beacon.tsx` for why a static site has to
+    be counted from the browser.
+
+    The switch is Site settings → SEO & analytics → Measure page views. Off
+    means the component is not rendered and no request is made, rather than a
+    request that is made and discarded: "loads nothing while off" is a sentence
+    the privacy policy is entitled to rely on.
+
+    `!== false` rather than `=== true`, because a global nobody has ever saved
+    hands back `undefined` for a checkbox and a fresh install must measure
+    rather than silently not.
+  */
+  const settings = await getSiteSettings()
+  const measuring =
+    (settings.analytics as { firstParty?: boolean } | undefined)?.firstParty !== false
+
   return (
     <html lang="en" className={fontVars} suppressHydrationWarning>
       <head>
@@ -145,6 +168,7 @@ export default async function FrontendLayout({ children }: { children: React.Rea
         <UiStringsProvider value={ui}>
           <AccountProvider>
             <RunProvider>{children}</RunProvider>
+            {measuring ? <Beacon /> : null}
           </AccountProvider>
         </UiStringsProvider>
       </body>

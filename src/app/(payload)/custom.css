@@ -268,3 +268,301 @@
   font-size: 0.76rem;
   color: var(--theme-error-500, #a33);
 }
+
+/* ---------------------------------------------------------------------------
+   The analytics view, at /admin/analytics.
+
+   Same rule as everything above: Payload's own CSS variables, no second set of
+   tokens, so this follows the admin theme and its dark mode without anything
+   to keep in sync. No charting dependency either - a proportion is one number
+   wide, so a bar is a span with a percentage on it.
+--------------------------------------------------------------------------- */
+
+.net-an {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--base, 20px) * 0.9);
+  padding: var(--base, 20px);
+  max-width: 1400px;
+  /* Grid and flex children default to min-width:auto, so a wide table inside
+     one of the panels below would otherwise drag this whole column sideways.
+     The same fix, for the same reason, as the public stylesheet's containers. */
+  min-width: 0;
+}
+
+.net-an-title { margin: 0; font-size: 1.5rem; color: var(--theme-elevation-1000); }
+
+.net-an-lede {
+  margin: 0;
+  max-width: 78ch;
+  color: var(--theme-elevation-650);
+  line-height: 1.55;
+}
+
+.net-an-failed {
+  margin: 0;
+  padding: 14px 16px;
+  border: 1px solid var(--theme-error-250, #c88);
+  border-radius: 4px;
+  background: var(--theme-error-50, #fdf3f3);
+  color: var(--theme-error-600, #a33);
+}
+
+/* --- The window picker and the filter chips ----------------------------- */
+
+.net-an-windows {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.net-an-windows a {
+  padding: 6px 12px;
+  border: 1px solid var(--theme-elevation-150);
+  border-radius: 999px;
+  background: var(--theme-elevation-50);
+  color: var(--theme-elevation-700);
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+.net-an-windows a:hover { border-color: var(--theme-elevation-400); }
+.net-an-windows a[data-active] {
+  background: var(--theme-elevation-800);
+  border-color: var(--theme-elevation-800);
+  color: var(--theme-base-0, #fff);
+}
+
+.net-an-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.net-an-filters-label { font-size: 0.8rem; color: var(--theme-elevation-500); }
+
+.net-an-chip {
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--theme-elevation-300);
+  background: var(--theme-elevation-100);
+  color: var(--theme-elevation-800);
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+.net-an-chip:hover { border-color: var(--theme-error-400, #c66); }
+
+.net-an-clear { font-size: 0.8rem; color: var(--theme-elevation-500); }
+
+.net-an-hint { margin: 0; font-size: 0.82rem; color: var(--theme-elevation-500); }
+
+/* --- Totals -------------------------------------------------------------- */
+
+.net-an-totals {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+@media (min-width: 760px) {
+  .net-an-totals { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+.net-an-totals > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 14px 16px;
+  border: 1px solid var(--theme-elevation-150);
+  border-radius: 4px;
+  background: var(--theme-elevation-50);
+  min-width: 0;
+}
+
+.net-an-big {
+  font-size: 1.9rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--theme-elevation-1000);
+  line-height: 1.1;
+}
+.net-an-label { font-size: 0.85rem; color: var(--theme-elevation-700); }
+/*
+  The caveat, and it is deliberately not small print. A figure whose
+  qualification is unreadable is a figure presented without one.
+*/
+.net-an-sub {
+  font-size: 0.75rem;
+  color: var(--theme-elevation-500);
+  line-height: 1.4;
+}
+
+/* --- Panels -------------------------------------------------------------- */
+
+.net-an-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+@media (min-width: 900px) {
+  .net-an-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+.net-an-panel {
+  padding: 14px 16px;
+  border: 1px solid var(--theme-elevation-150);
+  border-radius: 4px;
+  background: var(--theme-elevation-50);
+  min-width: 0;
+}
+.net-an-panel h2 {
+  margin: 0 0 4px;
+  font-size: 0.95rem;
+  color: var(--theme-elevation-900);
+}
+.net-an-panel--wide { grid-column: 1 / -1; }
+
+.net-an-note {
+  margin: 0 0 10px;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--theme-elevation-550);
+}
+.net-an-note--warn {
+  padding: 10px 12px;
+  border-left: 3px solid var(--theme-warning-500, #b8860b);
+  background: var(--theme-elevation-100);
+  color: var(--theme-elevation-700);
+}
+
+.net-an-empty { margin: 0; font-size: 0.82rem; color: var(--theme-elevation-500); }
+
+/* --- Tables and bars ----------------------------------------------------- */
+
+.net-an-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  table-layout: fixed;
+}
+.net-an-table th {
+  text-align: left;
+  font-weight: 600;
+  color: var(--theme-elevation-600);
+  border-bottom: 1px solid var(--theme-elevation-150);
+  padding: 4px 6px;
+}
+.net-an-table td {
+  padding: 5px 6px;
+  border-bottom: 1px solid var(--theme-elevation-100);
+  color: var(--theme-elevation-800);
+  /* Long paths and referrer hosts are the point of the column, so they wrap
+     rather than being clipped into something that looks like another page. */
+  overflow-wrap: anywhere;
+}
+.net-an-num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  width: 5.5em;
+}
+.net-an-dim { color: var(--theme-elevation-500); }
+.net-an-why { font-size: 0.76rem; color: var(--theme-elevation-550); width: 55%; }
+
+.net-an-value { color: var(--theme-elevation-900); text-decoration: none; }
+.net-an-value:hover { text-decoration: underline; }
+
+.net-an-track {
+  display: block;
+  height: 4px;
+  margin-top: 3px;
+  border-radius: 2px;
+  background: var(--theme-elevation-100);
+  overflow: hidden;
+}
+.net-an-track--inline { margin-top: 4px; }
+
+.net-an-bar {
+  display: block;
+  height: 100%;
+  background: var(--theme-success-500, #3b7);
+  border-radius: 2px;
+}
+
+/* --- The time series ----------------------------------------------------- */
+
+.net-an-series {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  /* A 12-month window is twelve rows; a 7-day window bucketed by hour is 168.
+     Scrolling the list beats collapsing the buckets, because a bucket that has
+     been merged away is a number nobody can check. */
+  max-height: 420px;
+  overflow-y: auto;
+}
+.net-an-series li {
+  display: grid;
+  grid-template-columns: 9.5em minmax(0, 1fr) 5em 5em;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  min-width: 0;
+}
+.net-an-series-key {
+  color: var(--theme-elevation-550);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.net-an-series-num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--theme-elevation-800);
+}
+
+.net-an-legend {
+  margin: 8px 0 0;
+  font-size: 0.75rem;
+  color: var(--theme-elevation-500);
+  line-height: 1.5;
+}
+
+.net-an-legend-list {
+  margin: 8px 0 0;
+  padding-left: 1.1em;
+  font-size: 0.76rem;
+  line-height: 1.55;
+  color: var(--theme-elevation-550);
+}
+/* A rule that actually fired in this window reads darker than one that did
+   not, so the list is scannable without a second column of counts. */
+.net-an-legend-list li[data-seen] { color: var(--theme-elevation-800); }
+
+.net-an-details { margin-top: 10px; font-size: 0.8rem; }
+.net-an-details summary { cursor: pointer; color: var(--theme-elevation-600); }
+
+.net-an-cost {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.55;
+  color: var(--theme-elevation-500);
+}
+
+/* --- The sidebar link ---------------------------------------------------- */
+
+.net-nav-extra {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--theme-elevation-100);
+}
+.net-nav-extra-link {
+  color: var(--theme-elevation-800);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.net-nav-extra-link:hover { color: var(--theme-elevation-1000); }
+.net-nav-extra-note { font-size: 0.72rem; color: var(--theme-elevation-500); line-height: 1.4; }

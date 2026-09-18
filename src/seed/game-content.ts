@@ -104,7 +104,6 @@ type RawGame = {
   }
   editions: { title: string; priceText: string | null }[]
   dlc: number[]
-  metacritic: number | null
   achievements: {
     title: string
     description: string | null
@@ -177,7 +176,13 @@ const mechanicsFor = (game: RawGame) => {
       { label: 'Developer', value: studio },
       ...(publisher && publisher !== studio ? [{ label: 'Publisher', value: publisher }] : []),
       ...(game.genres.length ? [{ label: 'Genre', value: list(game.genres) }] : []),
-      ...(game.metacritic ? [{ label: 'Metacritic', value: String(game.metacritic) }] : []),
+      /*
+        No third party's review score here. This used to carry a Metacritic
+        row, which put somebody else's number in a fact table on a page of
+        ours — and it was the quietest of the three places it appeared,
+        because it is generated prose rather than a component anybody reads.
+        The only rating this network publishes is its own.
+      */
     ],
   })
 

@@ -8,6 +8,7 @@ import { copy } from '@/lib/copy'
 import { PEOPLE_BUILT_IN, getPeopleSite } from '@/lib/people-copy'
 import { PEOPLE_ORIGIN, companyUrl, hub } from '@/lib/urls'
 import { networkHome } from '@/lib/network-home'
+import { hostCard } from '@/lib/social'
 
 /**
  * The people host.
@@ -88,13 +89,10 @@ export async function generateMetadata(): Promise<Metadata> {
       `ART_GAME` already state: a picture above a name reads as a picture *of*
       that name. The network's own card claims nothing it cannot support.
     */
-    openGraph: {
+    ...hostCard({
       siteName: shellName,
-      type: 'website',
-      locale: 'en',
-      images: [{ url: '/og.png', width: 1200, height: 630, alt: shellName }],
-    },
-    twitter: { card: 'summary_large_image', images: ['/og.png'] },
+      image: { url: '/og.png', width: 1200, height: 630, alt: shellName },
+    }),
   }
 }
 

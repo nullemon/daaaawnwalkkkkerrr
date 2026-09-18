@@ -1,6 +1,8 @@
-import type { Metadata } from 'next'
+import type { Metadata, ResolvingMetadata } from 'next'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
+import { Linked } from '@/components/Linked'
+import type { LinkScope } from '@/lib/link-index'
 import { sectionArt } from '@/lib/art'
 import { EntityCard } from '@/components/EntityCard'
 import { asThumb } from '@/lib/media'
@@ -9,11 +11,15 @@ import { Callout } from '@/components/Callout'
 import { getAll, getGame } from '@/lib/payload'
 import { sectionCopy } from '@/lib/section-copy'
 import type { Court } from '@/payload-types'
+import { socialMeta } from '@/lib/social'
 
 type Props = { params: Promise<{ game: string }> }
 
 /** A function rather than a static object — see the note in `endings/page.tsx`. */
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
   const { game: slug } = await params
   const [game, courts] = await Promise.all([
     getGame(slug),
@@ -25,6 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: copy.title,
     description: copy.description,
     alternates: { canonical: '/court' },
+    ...(await socialMeta(parent, { path: '/court' })),
   }
 }
 
@@ -45,6 +52,16 @@ export default async function CourtIndex({ params }: Props) {
   const total = courts.reduce((sum, court) => sum + (court.activityCount ?? 0), 0)
   const copy = sectionCopy('courts', doc, { total: courts.length, detail: total })
 
+  /*
+    Where this page is, for the inline linker.
+
+    No `self`: an index is about a section rather than about one record, so
+    there is nothing on it to link to itself. The wiki's own game is still
+    treated as self by `matchText`, which is what keeps a lede naming the game
+    from linking to the home page the reader is already inside.
+  */
+  const scope: LinkScope = { host: 'wiki', game }
+
   return (
     <>
       <PageHeader
@@ -53,7 +70,7 @@ export default async function CourtIndex({ params }: Props) {
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Court' }]}
         icon="crown"
         title={copy.heading}
-        lede={copy.lede}
+        lede={copy.lede ? <Linked text={copy.lede} scope={scope} /> : undefined}
       />
       <div className="page body-main">
         <div className="grid">

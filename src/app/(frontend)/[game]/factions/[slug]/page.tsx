@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, ResolvingMetadata } from 'next'
 import { notFound } from 'next/navigation'
 import { clamp } from '@/lib/seo'
 import { PageHeader } from '@/components/PageHeader'
@@ -16,19 +16,27 @@ import { getAll, getBySlug } from '@/lib/payload'
 import { gameSlugParams } from '@/lib/params'
 import { getUi } from '@/lib/ui'
 import type { Faction } from '@/payload-types'
+import { recordImage, socialMeta } from '@/lib/social'
 
 type Props = { params: Promise<{ game: string; slug: string }> }
 
 export const generateStaticParams = () => gameSlugParams('factions')
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
   const { game, slug } = await params
-  const doc = await getBySlug('factions', slug, { game, depth: 0 })
+  const doc = await getBySlug('factions', slug, { game, depth: 1 })
   if (!doc) return {}
   return {
     title: doc.seo?.title || `${doc.title} — members, and what is recorded`,
     description: clamp(doc.seo?.description || doc.summary || ''),
     alternates: { canonical: `/factions/${doc.slug}` },
+    ...(await socialMeta(parent, {
+      path: `/factions/${doc.slug}`,
+      image: recordImage('factions', doc.image),
+    })),
     robots: doc.seo?.noindex ? { index: false, follow: true } : undefined,
   }
 }

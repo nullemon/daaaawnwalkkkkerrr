@@ -40,9 +40,20 @@ import { hub } from '@/lib/urls'
  */
 export async function Byline({
   author,
+  published,
   updated,
 }: {
   author?: Author | number | string | null
+  /*
+    The day the article went up, from the guide's own `published` field.
+
+    Never `createdAt`. The database is reproducible from seed by design, so
+    `createdAt` is the date of the last `pnpm db:reset` — publishing it would
+    date every guide on the network to whenever somebody last rebuilt. Same
+    trap on the other side: `updatedAt` moves when a seeder rewrites a row, so
+    it cannot stand in for `updated` either. See `src/lib/guide-dates.ts`.
+  */
+  published?: string | null
   updated?: string | null
 }) {
   const settings = await getSiteSettings()
@@ -68,6 +79,7 @@ export async function Byline({
   const avatar =
     person?.avatar && typeof person.avatar === 'object' ? (person.avatar as Media) : null
   const checked = updated ? new Date(updated) : null
+  const first = published ? new Date(published) : null
 
   /*
     Who the page is credited to when nobody is named.
@@ -84,14 +96,32 @@ export async function Byline({
     { site: settings.siteName ?? 'editorial' },
   )
 
-  if (!author && !checked) return null
+  if (!author && !checked && !first) return null
 
-  const date = checked ? (
-    <time className="byline-date" dateTime={checked.toISOString().slice(0, 10)}>
-      Last checked{' '}
-      {checked.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}
-    </time>
-  ) : null
+  const written = (value: Date) =>
+    value.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
+
+  /*
+    Both dates, each only if it exists.
+
+    `updated` is not filled in from `published`. A guide that has never been
+    re-checked should say nothing about being re-checked — repeating the
+    publication date under the words "last checked" is a claim that somebody
+    went back to the sources, which is exactly the fabricated editorial history
+    this site cannot afford.
+  */
+  const date =
+    first || checked ? (
+      <span className="byline-date">
+        {first ? (
+          <time dateTime={first.toISOString().slice(0, 10)}>Published {written(first)}</time>
+        ) : null}
+        {first && checked ? ' · ' : null}
+        {checked ? (
+          <time dateTime={checked.toISOString().slice(0, 10)}>Last checked {written(checked)}</time>
+        ) : null}
+      </span>
+    ) : null
 
   return (
     <div className="byline">

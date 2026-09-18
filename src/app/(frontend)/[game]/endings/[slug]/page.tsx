@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, ResolvingMetadata } from 'next'
 import { SectionNeighbours } from '@/components/SectionNeighbours'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -23,12 +23,16 @@ import { checkEnding, indexQuests } from '@/lib/reachability'
 import { clockAt, formatSegments } from '@/lib/segments'
 import type { Character, Ending } from '@/payload-types'
 import { clamp, endingMeta } from '@/lib/seo'
+import { recordImage, socialMeta } from '@/lib/social'
 
 type Props = { params: Promise<{ game: string; slug: string }> }
 
 export const generateStaticParams = () => gameSlugParams('endings')
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
   const { game, slug } = await params
   const ending = await getBySlug('endings', slug, { game, depth: 1 })
   if (!ending) return {}
@@ -38,6 +42,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: ending.seo?.title || meta.title,
     description: clamp(ending.seo?.description || meta.description || ''),
     alternates: { canonical: `/endings/${ending.slug}` },
+    ...(await socialMeta(parent, {
+      path: `/endings/${ending.slug}`,
+      image: recordImage('endings', ending.image),
+    })),
     /*
       The admin's own "Hide this page from search engines" box.
       `seoGroup()` puts it on every content collection and only the

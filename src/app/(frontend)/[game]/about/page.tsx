@@ -1,9 +1,10 @@
-import type { Metadata } from 'next'
+import type { Metadata, ResolvingMetadata } from 'next'
 import Link from 'next/link'
 import { PageHeader } from '@/components/PageHeader'
 import { FactPanel } from '@/components/FactPanel'
 import { RelatedList, type RelatedItem } from '@/components/RelatedList'
-import { RichText } from '@/components/RichText'
+import { Linked, LinkedRichText } from '@/components/Linked'
+import type { LinkScope } from '@/lib/link-index'
 import { LegalField } from '@/components/LegalGap'
 import { getAll, getGame, getSiteSettings } from '@/lib/payload'
 import { gameName } from '@/lib/section-copy'
@@ -13,6 +14,7 @@ import { clamp } from '@/lib/seo'
 import { companyUrl } from '@/lib/urls'
 import { slugify } from '@/fields/shared'
 import { hub } from '@/lib/urls'
+import { socialMeta } from '@/lib/social'
 
 type Props = { params: Promise<{ game: string }> }
 
@@ -36,7 +38,10 @@ type Props = { params: Promise<{ game: string }> }
  * store URL and who the rightsholders are, so there is nothing in it for an
  * editor to write that the record does not already answer.
  */
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
   const { game: slug } = await params
   const doc = await getGame(slug)
   const name = doc?.shortTitle || doc?.title || 'this wiki'
@@ -61,6 +66,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ),
     ),
     alternates: { canonical: '/about' },
+    ...(await socialMeta(parent, { path: '/about' })),
   }
 }
 
@@ -86,6 +92,21 @@ export default async function AboutPage({ params }: Props) {
   const [settings, doc] = await Promise.all([getSiteSettings(), getGame(game)])
   const name = gameName(doc)
   const about = aboutCopy(doc)
+
+  /*
+    Where this page is, for the inline linker.
+
+    Every section below `purpose` is a rich text field an editor owns, and this
+    is the longest prose on a wiki — the page a reader opens to decide whether
+    to trust the rest. A studio named in it has a profile one hop away on the
+    companies host, and it was printing as plain text.
+
+    No `self`: the About page is not a record. The built-in fallbacks stay as
+    JSX and are not matched at all; they are network copy carrying their own
+    deliberate links, and running the matcher over them is not possible without
+    turning them into strings, which is the thing docs/COPY.md refuses.
+  */
+  const scope: LinkScope = { host: 'wiki', game }
 
   /*
     The run planner is Dawnwalker's, not every wiki's. This page used to open
@@ -199,13 +220,18 @@ export default async function AboutPage({ params }: Props) {
         crumbs={[{ label: 'Home', href: '/' }, { label: 'About' }]}
         icon="book"
         title={copy(about.title, 'About the {game} Wiki', tokens)}
-        lede={copy(
-          about.lede,
-          hasRunPlanner
-            ? 'A run planner and database for {title}, built around the one constraint the game never lets you forget: you have 480 segments and you cannot have them back.'
-            : 'A database for {game}, compiled from public sources, with every record carrying its citations and a rating for how far we trust it.',
-          tokens,
-        )}
+        lede={
+          <Linked
+            text={copy(
+              about.lede,
+              hasRunPlanner
+                ? 'A run planner and database for {title}, built around the one constraint the game never lets you forget: you have 480 segments and you cannot have them back.'
+                : 'A database for {game}, compiled from public sources, with every record carrying its citations and a rating for how far we trust it.',
+              tokens,
+            )}
+            scope={scope}
+          />
+        }
       />
       <div className="page body-main">
         <div className="split">
@@ -213,7 +239,7 @@ export default async function AboutPage({ params }: Props) {
             <div className="prose">
               <h2>{copy(about.purposeHeading, 'What this site is for', tokens)}</h2>
               {hasRichText(about.purpose) ? (
-                <RichText data={about.purpose} />
+                <LinkedRichText data={about.purpose} scope={scope} />
               ) : hasRunPlanner ? (
                 <>
                   <p>
@@ -244,7 +270,7 @@ export default async function AboutPage({ params }: Props) {
               <h2>{copy(about.runsItHeading, 'Who runs it', tokens)}</h2>
               <p>{publisherLine}</p>
               {hasRichText(about.independence) ? (
-                <RichText data={about.independence} />
+                <LinkedRichText data={about.independence} scope={scope} />
               ) : (
                 <p>
                   Editorial decisions are made by the contributors listed here, not by the
@@ -289,7 +315,7 @@ export default async function AboutPage({ params }: Props) {
 
               <h2>{copy(about.sourcingHeading, 'Where the facts come from', tokens)}</h2>
               {hasRichText(about.sourcing) ? (
-                <RichText data={about.sourcing} />
+                <LinkedRichText data={about.sourcing} scope={scope} />
               ) : (
                 <>
                   <p>
@@ -309,7 +335,7 @@ export default async function AboutPage({ params }: Props) {
 
               <h2>{copy(about.confidenceHeading, 'What the confidence ratings mean', tokens)}</h2>
               {hasRichText(about.confidence) ? (
-                <RichText data={about.confidence} />
+                <LinkedRichText data={about.confidence} scope={scope} />
               ) : (
                 <>
                   <ul>
@@ -343,7 +369,7 @@ export default async function AboutPage({ params }: Props) {
                 {copy(about.limitsHeading, 'What we deliberately do not claim to know', tokens)}
               </h2>
               {hasRichText(about.limits) ? (
-                <RichText data={about.limits} />
+                <LinkedRichText data={about.limits} scope={scope} />
               ) : (
                 <>
                   {hasRunPlanner ? (
@@ -373,7 +399,7 @@ export default async function AboutPage({ params }: Props) {
 
               <h2>{copy(about.correctionsHeading, 'Corrections', tokens)}</h2>
               {hasRichText(about.corrections) ? (
-                <RichText data={about.corrections} />
+                <LinkedRichText data={about.corrections} scope={scope} />
               ) : (
                 <p>
                   If you have the game in front of you and can confirm or contradict something here,{' '}
@@ -387,7 +413,7 @@ export default async function AboutPage({ params }: Props) {
               {(about.extraSections ?? []).map((section) => (
                 <div key={section.id ?? section.heading}>
                   <h2>{section.heading}</h2>
-                  {hasRichText(section.body) ? <RichText data={section.body} /> : null}
+                  {hasRichText(section.body) ? <LinkedRichText data={section.body} scope={scope} /> : null}
                 </div>
               ))}
             </div>

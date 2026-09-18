@@ -4,7 +4,7 @@ import config from '../payload.config'
 import seedGameCopy from './copy/games'
 import seedGamePageCopy from './copy/game-pages'
 import seedHubCopy from './copy/hub'
-import seedLegalCopy from './copy/legal'
+import seedLegalCopy, { correctPrivacy } from './copy/legal'
 import seedCompaniesCopy from './copy/companies'
 import seedPeopleCopy from './copy/people'
 import seedUiCopy from './copy/ui'
@@ -53,6 +53,22 @@ async function run(): Promise<void> {
 
   console.log(`\n${total} fields now hold the wording they were showing anyway.`)
   console.log('Nothing that was already filled in was touched.')
+
+  /*
+    The one exception to "does not overwrite", and it is narrow on purpose.
+
+    When this network started counting its own page views, two sections of the
+    stored privacy policy became false statements about what the site does -
+    "we collect nothing about you personally" and "analytics is switched off".
+    A stale legal page is not a stale sentence; it is a document describing
+    data handling that is not the data handling.
+
+    So this corrects those sections, and only while they still carry the
+    sentence this repository shipped, which is the evidence nobody has
+    redrafted them. An edited section is printed and left alone. See the note
+    on `correctPrivacy` in `copy/legal.ts`.
+  */
+  await correctPrivacy(payload)
   process.exit(0)
 }
 

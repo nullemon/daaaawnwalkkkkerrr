@@ -171,6 +171,36 @@ default so it cannot happen by accident.
 
 ---
 
+## Analytics: the one scheduled job on this deployment
+
+`/admin/analytics` counts page views itself. Nothing external is involved and
+there is nothing to sign up for - the switch is Site settings -> SEO & analytics
+-> "Measure page views on this network", and it is on.
+
+One thing wants a scheduler:
+
+```
+pnpm analytics:roll
+```
+
+It summarises each UTC day into `analytics-daily` and deletes individual page
+views older than 62 days. Run it once a day, any time; it is idempotent and a
+missed run is caught up by the next one.
+
+**It is not a hard requirement, and that is deliberate.** `/api/hit` runs the
+same pass after a response, at most once an hour per process, and the analytics
+view re-summarises today whenever somebody opens it. A deployment with no cron
+keeps working. What a real scheduler buys is a site that is quiet for a week
+still having its history rolled up before the retention boundary reaches it.
+
+The screen says when the summaries were last written, and names any day that
+has page views on disk and no summary - so a scheduler that has stopped is
+visible on the page rather than being something you find out about in two
+months.
+
+Nothing here needs a second database, a queue, or a key. The rows are in the
+same libSQL database as the content.
+
 ## Where the data comes from, and what is off limits
 
 Worth knowing before adding a ninth wiki, because the question comes up every

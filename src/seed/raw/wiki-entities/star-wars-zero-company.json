@@ -66,7 +66,7 @@
       "facts": {
         "designation": "Sentient",
         "class": "Reptile",
-        "height": "c. 0.78&ndash;0.79 meters",
+        "height": "c. 0.78–0.79 meters",
         "skincolor": "Beige",
         "distinctions": "Short stature, scaly skin, large mouth with tiny teeth",
         "origin": "Aleen",
@@ -1050,7 +1050,7 @@
         "conflict": "Clone Wars",
         "date": "22 BBY",
         "place": "Christophsis",
-        "result": "Galactic Republic strategic and psychological victory, Full retreat of Separatist blockade, Republic High Command uses campaign as an example of Jedi&ndash;clone cooperation, Separatist occupation ended",
+        "result": "Galactic Republic strategic and psychological victory, Full retreat of Separatist blockade, Republic High Command uses campaign as an example of Jedi–clone cooperation, Separatist occupation ended",
         "side1": "Galactic Republic",
         "side2": "Confederacy of Independent Systems, Retail Caucus, Sith",
         "commanders1": "Senator Bail Prestor Organa, Jedi General Yoda, Jedi General Anakin Skywalker, Fleet Admiral Wullf Yularen, Clone Marshal Commander Cody, Clone Commander Blackout, Clone Captain Rex",
@@ -3431,7 +3431,7 @@
         "type": "Yacht, Solar sailer, Transport",
         "modifier": "Dooku",
         "sysmods": "Solar-energy collecting sail",
-        "length": "16.7&ndash;16.76",
+        "length": "16.7–16.76",
         "width": "112.5 meters",
         "max accel": "1,000G, 30G",
         "mglt": "110 MGLT",
@@ -5178,7 +5178,7 @@
         "currency": "Republic Datary",
         "religious": "Jedi Order",
         "holiday": "Republic Day",
-        "established": "c.25,000 BBY &mdash;c. 20,000 BBY",
+        "established": "c.25,000 BBY —c. 20,000 BBY",
         "reorganized": "19 BBY, into the Galactic Empire",
         "dissolved": "19 BBY",
         "restored": "1032 BBY,, 4 ABY, as the New Republic"
@@ -10696,7 +10696,7 @@
         "channel": "@entertainmentweekly",
         "link": "Wikipedia:Entertainment Weekly",
         "video": "nYRcBE17jks",
-        "text": "Ewan McGregor on Obi-Wan Kenobi's Ever Changing Hair Styles &#124; Entertainment Weekly"
+        "text": "Ewan McGregor on Obi-Wan Kenobi's Ever Changing Hair Styles | Entertainment Weekly"
       },
       "categories": [
         "Apparel of the Jedi",
@@ -12794,7 +12794,7 @@
       "facts": {
         "subdomain": "jasonfry",
         "url": "p/about-that-new-star-wars-galaxy-map",
-        "text": "About That New Star Wars Galaxy Map&hellip;",
+        "text": "About That New Star Wars Galaxy Map…",
         "username": "jasonfry",
         "date": "2025-06-24"
       },

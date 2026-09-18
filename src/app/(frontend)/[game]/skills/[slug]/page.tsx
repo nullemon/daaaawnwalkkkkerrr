@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, ResolvingMetadata } from 'next'
 import { clamp } from '@/lib/seo'
 import { SectionNeighbours } from '@/components/SectionNeighbours'
 import Link from 'next/link'
@@ -16,19 +16,27 @@ import { RelatedList, type RelatedItem } from '@/components/RelatedList'
 import { Callout } from '@/components/Callout'
 import { getAll, getBySlug, getGame } from '@/lib/payload'
 import { gameSlugParams } from '@/lib/params'
+import { recordImage, socialMeta } from '@/lib/social'
 
 type Props = { params: Promise<{ game: string; slug: string }> }
 
 export const generateStaticParams = () => gameSlugParams('skill-trees')
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
   const { game, slug } = await params
-  const doc = await getBySlug('skill-trees', slug, { game, depth: 0 })
+  const doc = await getBySlug('skill-trees', slug, { game, depth: 1 })
   if (!doc) return {}
   return {
     title: doc.seo?.title || `${doc.title} — skills, perks and when to use them`,
     description: clamp(doc.seo?.description || doc.summary || ''),
     alternates: { canonical: `/skills/${doc.slug}` },
+    ...(await socialMeta(parent, {
+      path: `/skills/${doc.slug}`,
+      image: recordImage('skill-trees', doc.image),
+    })),
     /*
       The admin's own "Hide this page from search engines" box.
       `seoGroup()` puts it on every content collection and only the
