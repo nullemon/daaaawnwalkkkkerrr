@@ -12,9 +12,10 @@ import { CommentThread } from '@/components/CommentThread'
 import { Byline } from '@/components/Byline'
 import { ArticleMeta } from '@/components/ArticleMeta'
 import { EntityImage } from '@/components/EntityImage'
+import { ImageCredit } from '@/components/ImageCredit'
 import { RelatedList, type RelatedItem } from '@/components/RelatedList'
 import Link from 'next/link'
-import { getAll, getBySlug, getGame, relMany } from '@/lib/payload'
+import { getAll, getBySlug, getGame, getSiteSettings, relMany } from '@/lib/payload'
 import { rightsCredit } from '@/lib/credit'
 import { gameName } from '@/lib/section-copy'
 import { gameSlugParams } from '@/lib/params'
@@ -134,6 +135,7 @@ export default async function GuidePage({ params }: Props) {
   // Whose game the pictures are from, read off this game's own record rather
   // than assumed to be Dawnwalker's. See `rightsCredit`.
   const credit = rightsCredit(wiki)
+  const creditsInPicture = Boolean((await getSiteSettings()).showImageCredits)
 
   /*
     Article markup, so the byline and the date are readable by something other
@@ -202,17 +204,40 @@ export default async function GuidePage({ params }: Props) {
                 <div className="figurerow">
                   {bodyImages.map((entry) => (
                     <figure key={entry.id}>
-                      <img
-                        src={entry.media.sizes?.card?.url ?? entry.media.url ?? ''}
-                        alt={entry.caption ?? entry.media.alt ?? ''}
-                        loading="lazy"
-                      />
+                      {/*
+                        A wrapper, because the credit goes *in* the picture
+                        and the caption goes under it. A `<figcaption>` has to
+                        be a direct child of its `<figure>`, and this figure
+                        already has one for the editor's caption — so the
+                        credit is a `<p>` positioned against this box, which
+                        is the picture's own bounds rather than the figure's.
+                      */}
+                      <span className="figureshot">
+                        <img
+                          src={entry.media.sizes?.card?.url ?? entry.media.url ?? ''}
+                          alt={entry.caption ?? entry.media.alt ?? ''}
+                          loading="lazy"
+                        />
+                        <ImageCredit credit={entry.media.credit} slot="narrow" as="p" />
+                      </span>
                       {entry.caption ? <figcaption>{entry.caption}</figcaption> : null}
                     </figure>
                   ))}
                 </div>
-                {/* One credit for the row rather than one per picture. */}
-                {credit ? <p className="note">{credit}</p> : null}
+                {/*
+                  One rightsholder line for the row — but only while the
+                  pictures are not each carrying their own.
+
+                  With image credits on, every frame above already names the
+                  developer and the publisher inside itself, and this printed
+                  the same sentence a fourth time under a row of three. With
+                  them off it is the only credit on the row, and it is not the
+                  optional CC attribution: it is the fair-dealing line that
+                  stands behind using somebody's screenshot at all. So it
+                  follows the switch in the opposite direction rather than
+                  being deleted.
+                */}
+                {credit && !creditsInPicture ? <p className="note">{credit}</p> : null}
               </section>
             ) : null}
 

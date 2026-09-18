@@ -92,6 +92,143 @@ export const mediaCredit = (title: string, publisher?: string | null): string =>
   return `${title} © ${stopped} Used for identification and commentary.`
 }
 
+/* -------------------------------------------------------------------------
+   What kind of thing a stored credit is crediting
+   ------------------------------------------------------------------------- */
+
+/**
+ * The five families of credit actually stored in `media.credit`.
+ *
+ * Read off the 2,254 rows rather than invented, because the mark printed
+ * beside a credit is itself a claim and the wrong one is a false statement in
+ * two characters:
+ *
+ * - `rights` — key art, cover art and screenshots. 1,400-odd rows shaped
+ *   `<title> © <holder>. Used for identification and commentary.` (or the same
+ *   with the word `copyright`). All rights reserved, used under a fair-dealing
+ *   argument a credit supports. **`©` belongs here and only here.**
+ * - `photograph` — `Photograph of <person> by <photographer>. <licence>.` A
+ *   real photograph by a named person, from Commons, under CC or public
+ *   domain. This is the one a camera belongs on: somebody pressed a shutter.
+ * - `licence` — a company logo, `<name> logo (Public domain) — <author>` or
+ *   `(CC BY-SA 4.0)`. Not a photograph, so no camera; and a little over half
+ *   of the 105 are **public domain**, where printing `©` would assert a
+ *   copyright the file explicitly does not carry.
+ * - `generated` — an emblem this site drew from the record slug. Ours,
+ *   photographed by nobody, and the credit says so. Neither mark applies.
+ * - `plain` — anything that says none of the above. No mark rather than a
+ *   guess, on the Antar 4 principle: a rule written to mark the right files
+ *   is still a rule, and an over-confident one mislabels the rest silently.
+ *
+ * Kept here, beside the seeders' own formatters, so the writer and the reader
+ * of these strings cannot drift apart.
+ */
+export type CreditBasis = 'rights' | 'photograph' | 'licence' | 'generated' | 'plain' | 'none'
+
+/** A free licence named in the credit: `CC BY-SA 4.0`, `CC0`, `Public domain`. */
+const FREE_LICENCE = /\bCC[0\s-]|\bCC BY\b|\bpublic domain\b/i
+
+export const creditBasis = (credit?: string | null): CreditBasis => {
+  const text = credit?.trim()
+  if (!text) return 'none'
+
+  /*
+    Ours first, because "Generated placeholder — replace with a photograph"
+    contains the word photograph and would otherwise be filed as one. The same
+    trap as `CUBOT_NOTE_20`: the discriminating word appears in a sentence
+    that is about its absence.
+  */
+  if (/\bgenerated (?:by this site|placeholder)\b/i.test(text)) return 'generated'
+
+  /*
+    Anchored on `photograph of|by`, never on the bare word. `by` as well as
+    `of` because a caption can lead with either and both name a photographer.
+  */
+  if (/\bphotograph(?:s|ed)?\s+(?:of|by)\b/i.test(text)) return 'photograph'
+
+  /*
+    Before `rights`, not after. `TMS Entertainment logo (Public domain) — ©
+    2013 TMS ENTERTAINMENT CO., LTD.` carries a `©` inside the author field
+    Commons gave us while the file itself is public domain, and reading the
+    glyph first would mark a public-domain logo as all-rights-reserved.
+  */
+  if (FREE_LICENCE.test(text)) return 'licence'
+
+  if (/©|\bcopyright\b|\ball rights reserved\b/i.test(text)) return 'rights'
+
+  return 'plain'
+}
+
+/**
+ * The mark printed beside a credit — one per basis, and `null` is a valid
+ * answer.
+ *
+ * `copyright` is the `©` character rather than an icon: it is the mark the
+ * law and the credit line itself already use, and no drawing of it is as
+ * legible at 13px. Everything else is from our own icon set.
+ */
+export type CreditMark = 'camera' | 'copyright' | 'licence' | 'generated' | null
+
+export const creditMark = (basis: CreditBasis): CreditMark => {
+  switch (basis) {
+    case 'photograph':
+      return 'camera'
+    case 'rights':
+      return 'copyright'
+    case 'licence':
+      return 'licence'
+    case 'generated':
+      return 'generated'
+    default:
+      return null
+  }
+}
+
+/**
+ * Inside the picture, or under it.
+ *
+ * The credit belongs inside the photograph — that is the whole point of the
+ * overlay — but an overlay is a box the size of its text sitting on top of the
+ * thing a reader came to look at, and these strings have no agreed length.
+ * One live credit is 269 characters (Phantom Blade Zero's cover, carrying two
+ * archive notices), and the emblem credit is 131 on 103 records.
+ *
+ * **The one thing it must never do is hide any of it.** Three figcaptions
+ * clipped an over-long credit to nothing inside `overflow: hidden` until
+ * `4206c56`, which is how 2,369 characters of Wikipedia's stylesheet sat in a
+ * field for months with the page looking perfect. A clamp, a fade-out or a
+ * scroller inside the overlay would be that bug again in a new place.
+ *
+ * So the degradation is *placement*, not truncation: past the budget for its
+ * slot the credit stops being an overlay and prints under the picture, in the
+ * solid-surface caption that has always been able to hold any length. Nothing
+ * is shortened and nothing is hidden in either branch.
+ *
+ * The budgets are three lines of `.imgcredit` at each slot's own width, which
+ * is as much of a picture as a credit may cover:
+ *
+ * - `narrow` — the 260–318px panels: a square record figure, `GameProfile`,
+ *   `PersonProfile`, a company logo. ~40 characters a line.
+ * - `wide` — a 640px record figure or a guide's lead image. ~65 a line.
+ * - `band` — the full-bleed header bands (the hub hero, a wiki masthead, a
+ *   section header). Always an overlay: the band is the picture and spans the
+ *   page, so there is no "under it" to fall back to and no width at which the
+ *   credit crowds anything.
+ */
+export type CreditSlot = 'narrow' | 'wide' | 'band'
+
+export const CREDIT_BUDGET: Record<CreditSlot, number> = {
+  narrow: 120,
+  wide: 195,
+  band: Infinity,
+}
+
+export const creditPlacement = (
+  credit: string | null | undefined,
+  slot: CreditSlot = 'wide',
+): 'overlay' | 'below' =>
+  (credit?.trim().length ?? 0) <= CREDIT_BUDGET[slot] ? 'overlay' : 'below'
+
 /**
  * Every developer and publisher the network covers, named once each.
  *

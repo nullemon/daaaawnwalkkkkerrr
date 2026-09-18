@@ -1,5 +1,5 @@
 import { Icon, type IconName } from './Icon'
-import { getSiteSettings } from '@/lib/payload'
+import { ImageCredit } from './ImageCredit'
 
 type MediaLike = {
   url?: string | null
@@ -16,10 +16,10 @@ type MediaLike = {
  * hundred pages would be worse than the icon the page already carries.
  *
  * The credit is stored on every image and printed only when Site settings →
- * Content says to, the same arrangement the source list has. It is off by
- * default by the owner's decision; the reason to turn it on is recorded on
- * that field, because the harvested images are CC BY-SA and attribution is
- * that licence's condition rather than its courtesy.
+ * Content says to, the same arrangement the source list has. That decision
+ * now lives in `ImageCredit` rather than being re-read here — it was read in
+ * two components and ignored in three others, so one page could credit its
+ * cover art and not the photograph beside it.
  */
 export async function EntityImage({
   media,
@@ -53,8 +53,6 @@ export async function EntityImage({
   priority?: boolean
 }) {
   const image = media && typeof media === 'object' ? (media as MediaLike) : null
-  const settings = await getSiteSettings()
-  const showCredit = Boolean(settings.showImageCredits)
 
   if (!image?.url) {
     if (!fallbackIcon) return null
@@ -75,7 +73,11 @@ export async function EntityImage({
         {...(priority ? { fetchPriority: 'high' as const } : { loading: 'lazy' as const })}
         decoding="async"
       />
-      {showCredit && image.credit ? <figcaption>{image.credit}</figcaption> : null}
+      {/* `wide` is 640px and holds about 65 characters a line; the other two
+          shapes are 300 and 260, which is the `narrow` budget. Past it the
+          credit prints under the picture rather than being cut short — see
+          `creditPlacement`. */}
+      <ImageCredit credit={image.credit} slot={shape === 'wide' ? 'wide' : 'narrow'} />
     </figure>
   )
 }

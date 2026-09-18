@@ -8,6 +8,7 @@ import { Briefing } from '@/components/home/Briefing'
 import { Linked } from '@/components/Linked'
 import type { LinkScope } from '@/lib/link-index'
 import { GameProfile } from '@/components/GameProfile'
+import { ImageCredit } from '@/components/ImageCredit'
 import { gameUrl, getAll, getGame } from '@/lib/payload'
 import { sectionsFor, toolsFor } from '@/lib/sections'
 import { releaseLine } from '@/lib/directory'
@@ -286,6 +287,17 @@ export default async function Home({ params }: Props) {
             </p>
           ) : null}
         </div>
+
+        {/*
+          The credit, in the picture it is crediting.
+
+          It used to sit in the right-hand rail under the "What is in this
+          wiki" counts, two thirds of the way down the page and nowhere near
+          the art it named — a rightsholder line filed as a statistic. It is
+          `band`, so it prints in the masthead's own bottom gutter and wraps
+          rather than falling back to anything.
+        */}
+        <ImageCredit credit={heroCredit} slot="band" as="p" />
       </header>
 
       <div className="page wikihome">
@@ -563,7 +575,6 @@ export default async function Home({ params }: Props) {
                 </div>
               ))}
             </dl>
-            {heroCredit ? <p className="railnote">{heroCredit}</p> : null}
           </section>
 
           {rarest.length > 0 ? (

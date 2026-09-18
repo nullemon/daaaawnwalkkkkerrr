@@ -4594,6 +4594,10 @@ export interface SiteSetting {
    */
   emailReplyTo?: string | null;
   /**
+   * Corrections and feature requests are emailed here as they arrive, one message each — there is no digest. Blank sends them to the sender address above, so leaving it empty never means nobody is told.
+   */
+  reportsEmail?: string | null;
+  /**
    * Required by GDPR/UK GDPR if you have readers in the EU or UK. A registered office or service address is fine; do not publish a home address you do not want public.
    */
   postalAddress?: string | null;
@@ -4669,6 +4673,10 @@ export interface SiteSetting {
    * Token: {maintainer}, from the Identity tab.
    */
   maintainerLine?: string | null;
+  /**
+   * Whose key art sits behind the search on the hub. Leave blank and the hub uses the largest wiki, which is a page count choosing the network’s first impression rather than anybody choosing it. Pick a game whose art is legible under type — the picture is the whole width of the band and the headline sits on top of it.
+   */
+  heroWiki?: (number | null) | Game;
   heroHeading?: string | null;
   heroSubheading?: string | null;
   /**
@@ -5098,6 +5106,7 @@ export interface SiteSettingsSelect<T extends boolean = true> {
   emailFromName?: T;
   emailFromAddress?: T;
   emailReplyTo?: T;
+  reportsEmail?: T;
   postalAddress?: T;
   jurisdiction?: T;
   primaryNav?:
@@ -5140,6 +5149,7 @@ export interface SiteSettingsSelect<T extends boolean = true> {
   attributionFullExtra?: T;
   bylineTeamFallback?: T;
   maintainerLine?: T;
+  heroWiki?: T;
   heroHeading?: T;
   heroSubheading?: T;
   searchPlaceholder?: T;

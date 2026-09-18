@@ -61,6 +61,26 @@ export const siteSettings = {
   */
   attributionStyle: 'hidden',
   /*
+    Image credits on, which is the owner's decision and the opposite of the
+    line above.
+
+    The two settings look alike and answer different questions. The licence
+    line is a paragraph of prose at the foot of a page, and the owner has it
+    hidden in favour of a credits page. This one is the mark and the
+    rightsholder *inside each picture* - "© Rebel Wolves / Bandai Namco
+    Entertainment" on the art it belongs to - which is the attribution the
+    CC BY-SA files actually ask for and the fair-dealing claim the non-free
+    covers are used under. The owner's wording: "if its off then cc by sa wont
+    show and if its on then it will show all".
+
+    Seeded for the reason the note above gives, and it matters more here: the
+    field's `defaultValue` is `false`, so a `pnpm db:reset` - which is the
+    plan for launch day - would silently take every credit back off the site
+    and nothing would look broken. A picture with no credit is not an error
+    state; it is just a picture.
+  */
+  showImageCredits: true,
+  /*
    * Every section that has an index, in the order a reader wants them: the two
    * tools first, then the database.
    *

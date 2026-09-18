@@ -425,6 +425,61 @@ that inherits the default would let any reader who signs up edit content.
   named in words. Nothing about any of this is dismissable, for the reason
   `docs/COPY.md` records about `LegalGap`.
 
+- **A scrim is not a brightness control, and the one that was too dark was the
+  file.** The hub hero had already had its scrims measured and retuned, and the
+  homepage still read as black. The picture in it has a greyscale mean of 11.5
+  of 255 — `wikis[0]`, and `directory()` sorts by page count, so the one
+  photograph a first-time reader of the network sees was chosen by which wiki
+  had the most rows. It is `heroWiki` on Site settings now; blank still means
+  `wikis[0]`, so a blank record renders the site the code does.
+
+  The other half is the one worth remembering. **The scrim's strength is set by
+  the text on it, not by the picture.** The band took the page's theme tokens,
+  so the smallest type on it — 11.5px in `--muted` — needed its backdrop below
+  0.039 luminance, which over a white sky is a 96% wash and a photograph nobody
+  can see. `.page-art` has always done the opposite and says why: the band is a
+  photograph in either theme, so the type on it stays light in either theme. A
+  light register raised the allowed backdrop to 0.096 and the scrim fell to 62%
+  as arithmetic rather than taste. Under the type the picture went from 1.25 to
+  41.67 (mean |delta| per channel) with nothing below 4.5:1.
+
+  Redefine the tokens the way `.page-art` does and you delete the search box:
+  `HubSearch` paints `var(--ink)` on `var(--surface)`, which is white in the
+  light theme. The light register is `--hero-*`, read only by the five copy
+  elements, for that reason.
+
+- **A mark beside a credit is a claim, and two characters is enough to make a
+  false one.** Image credits are on now and print inside the picture, with a
+  camera or a `©` — and `©` on a public-domain logo asserts a copyright the
+  file does not carry, which is roughly half of the 105 logos harvested from
+  Commons. The mark comes from `creditBasis` in `src/lib/credit.ts`, which
+  reads the stored string, is tested against the real values, and returns *no
+  mark* for anything it cannot place. One credit says "replace with a
+  photograph" and is not one; one public-domain logo carries a `©` inside the
+  author field Commons gave us. Both are pinned.
+
+  **The overlay must never hide a word of it.** Past a length budget for its
+  slot the credit stops being an overlay and prints under the picture, whole —
+  Phantom Blade Zero's 269-character one rendered in five lines. A clamp, a
+  fade or a scroller inside the overlay is `4206c56` in a new place, and that
+  one hid 2,369 characters of Wikipedia's stylesheet for months behind a page
+  that looked perfect.
+
+  **And making the credits visible is what found the next one.** MediaWiki's
+  `extmetadata.Credit` is the file page's *source* field — where the uploader
+  found the file — and `Artist` is the author. `src/seed/posters.ts` had
+  `Credit` second in its rightsholder chain, so the two cover arts with no
+  `Artist` published their provenance as a copyright: "© May be found at the
+  following website: Steam. Direct link to the media. Archived from the
+  original on 12 August 2026…". The other six only escaped because they have
+  an `Artist`; queued behind them were "Epic Games Store", "Eurogamer" and a
+  bare xbox.com URL. A `©` over a sentence about a storefront is not a wrong
+  name, which is what makes it worse than one — it asserts a copyright on
+  behalf of nobody, in the line whose whole job is to say who owns the
+  picture. The chain is `Artist → publisher → developer` now, and correcting a
+  stored credit needs `pnpm seed:posters --force`, because the upload is keyed
+  on filename and an ordinary run reuses the row.
+
 ## How a guide gets written
 
 Four passes, each grounded in a different source, each idempotent on

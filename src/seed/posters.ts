@@ -81,13 +81,32 @@ async function run(): Promise<void> {
 
     const filename = `poster-${game.slug}.${entry.ext}`
     /*
-      Whoever the file page credits, then the publisher, then the developer.
-      The file page is the better source of the two — it is what the uploader
-      had to name to justify the upload — and falling through to the game
-      record rather than to nothing is what keeps a credit from reading "© its
-      publisher" on a game whose publisher we know.
+      The file page's author, then the publisher, then the developer.
+
+      `entry.credit` used to sit second in this chain and does not belong in it
+      at all. MediaWiki's `extmetadata.Credit` is the file page's **source**
+      field — where the uploader found the file — and `Artist` is the author.
+      Two of the eight manifests have no `Artist`, so both published their
+      provenance line as a rightsholder: Phantom Blade Zero's cover art was
+      credited "© May be found at the following website: Steam. Direct link to
+      the media. Archived from the original on 12 August 2026…" and Silent
+      Hill: Townfall's "© May be found at the following website: PlayStation
+      Store". The other six only escaped because they happen to have an
+      `Artist`; the values waiting behind them were "Epic Games Store",
+      "Eurogamer", "EEA Gaming" and a bare xbox.com URL.
+
+      A © over a sentence about a storefront is not a wrong name, which is what
+      makes it worse than one: it asserts a copyright on behalf of nobody, in
+      the one line on the page whose whole job is to say who owns the picture.
+      The publisher is the right fallback for cover art under a fair-dealing
+      identification claim, and it comes from the game record, which is sourced
+      from the store page.
+
+      Provenance is not lost — `entry.credit`, `entry.source` and
+      `entry.article` all stay in the manifest, which is where a reader who
+      wants to check the upload goes.
     */
-    const holder = entry.artist || entry.credit || game.publisher || game.developer || null
+    const holder = entry.artist || game.publisher || game.developer || null
     const credit = mediaCredit(`${game.title} cover art`, holder)
 
     const existing = await payload.find({

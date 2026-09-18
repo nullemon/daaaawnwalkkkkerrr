@@ -5,6 +5,7 @@ import { getUi } from '@/lib/ui'
 import { fill } from '@/lib/copy'
 import { editorialScore } from '@/lib/ratings'
 import { client } from '@/lib/payload'
+import { ImageCredit } from './ImageCredit'
 
 /**
  * The factsheet on a wiki's front page.
@@ -246,7 +247,15 @@ export async function GameProfile({ game }: { game: Game }) {
             fetchPriority="high"
             decoding="async"
           />
-          {art.credit ? <figcaption>{art.credit}</figcaption> : null}
+          {/*
+            Through `ImageCredit`, which is what made this the odd one out:
+            `showImageCredits` was honoured by the record figure and by the
+            header band and ignored here, so turning the setting off left the
+            factsheet on all eight wiki homes crediting its cover art anyway.
+            `narrow` because this panel is 318px wide — the box the
+            2,369-character credit vanished inside in `4206c56`.
+          */}
+          <ImageCredit credit={art.credit} slot="narrow" />
         </figure>
       ) : null}
 

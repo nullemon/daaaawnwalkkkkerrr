@@ -14,7 +14,7 @@ export type IconName =
   | 'scroll' | 'skull' | 'crown' | 'map' | 'person' | 'star'
   | 'sun' | 'moon' | 'hourglass' | 'check' | 'lock' | 'warn'
   | 'search' | 'chevron' | 'external' | 'claw' | 'shield' | 'blood' | 'spark'
-  | 'home'
+  | 'home' | 'camera' | 'licence'
 
 const PATHS: Record<IconName, React.ReactNode> = {
   home: <><path d="M3.8 10.4 12 3.6l8.2 6.8v8.4a1.6 1.6 0 0 1-1.6 1.6H5.4a1.6 1.6 0 0 1-1.6-1.6v-8.4Z" /><path d="M9.6 20.4v-6.8h4.8v6.8" /></>,
@@ -44,6 +44,13 @@ const PATHS: Record<IconName, React.ReactNode> = {
   shield: <><path d="M12 3.2 4.8 5.8v5.6c0 4.4 2.9 8 7.2 9.4 4.3-1.4 7.2-5 7.2-9.4V5.8L12 3.2Z" /></>,
   blood: <><path d="M12 3.2s6 6.6 6 10.4a6 6 0 0 1-12 0c0-3.8 6-10.4 6-10.4Z" /><path d="M9.4 13.8a2.6 2.6 0 0 0 2.6 2.6" /></>,
   spark: <><path d="M12 2.8v4M12 17.2v4M4.6 12h4M15.4 12h4" /><path d="m6.8 6.8 2.8 2.8M14.4 14.4l2.8 2.8M17.2 6.8l-2.8 2.8M9.6 14.4l-2.8 2.8" /></>,
+  /* A photograph was taken by somebody. Only ever printed beside a credit
+     whose basis is `photograph` — see `creditBasis`. */
+  camera: <><path d="M2.6 10.2A1.8 1.8 0 0 1 4.4 8.4h2.2l1.5-2.4h7.8l1.5 2.4h2.2a1.8 1.8 0 0 1 1.8 1.8v7.2a1.8 1.8 0 0 1-1.8 1.8H4.4a1.8 1.8 0 0 1-1.8-1.8v-7.2Z" /><circle cx="12" cy="13.6" r="3.3" /></>,
+  /* A seal, for a file that arrived with a licence of its own — CC or public
+     domain. Deliberately not a `©`: about half of these are public domain,
+     where the copyright glyph would be a false claim. */
+  licence: <><circle cx="12" cy="9.4" r="5.6" /><path d="m8.2 14 -1.3 6.8 5.1-2.5 5.1 2.5-1.3-6.8" /><path d="m10 9.4 1.5 1.6 2.6-3" /></>,
 }
 
 interface IconProps extends Omit<SVGProps<SVGSVGElement>, 'name'> {

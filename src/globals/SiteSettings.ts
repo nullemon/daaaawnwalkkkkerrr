@@ -148,6 +148,34 @@ export const SiteSettings: GlobalConfig = {
                   : true
               },
             },
+            /*
+              Where reader reports land.
+
+              There was no such setting, which is why there was no
+              notification: the site invited corrections on every page, wrote
+              them to the queue, thanked the reader, and told nobody. It is
+              beside the sender fields rather than on its own tab because it is
+              an operator detail like the rest of them, and it is optional for
+              the reason docs/COPY.md gives — blank means the shipped behaviour
+              (the sender address), never "nobody is told". A notification
+              switch whose blank state means off is indistinguishable from the
+              bug it was added to fix.
+            */
+            {
+              name: 'reportsEmail',
+              type: 'email',
+              label: 'Where reader reports are sent',
+              admin: {
+                description:
+                  'Corrections and feature requests are emailed here as they arrive, one message each — there is no digest. Blank sends them to the sender address above, so leaving it empty never means nobody is told.',
+              },
+              validate: (value: unknown) => {
+                if (!value || typeof value !== 'string' || !value.trim()) return true
+                return isProvisional(value)
+                  ? 'This looks like a stand-in. Reports sent to example.com go where nobody is looking, which is the state this field exists to end.'
+                  : true
+              },
+            },
             {
               name: 'postalAddress',
               type: 'textarea',
@@ -319,6 +347,38 @@ export const SiteSettings: GlobalConfig = {
           description:
             'The apex domain only. Each wiki takes its own heading and lede from its Game record, so nothing here appears on a wiki.',
           fields: [
+            {
+              /*
+                Which wiki's key art fronts the whole network.
+
+                It was `wikis[0]`, and `directory()` sorts biggest wiki first
+                — so the one photograph a first-time reader sees was decided
+                by a page count. The wiki with the most records turned out to
+                be the one whose key art has a greyscale mean of 11.5 out of
+                255, measured with `sharp` across all eight: near-black, and
+                the reason the hub "seems so dark" survived a scrim retune
+                that had already measured clean. No amount of CSS recovers
+                detail a file does not have, and a brightness filter on
+                somebody else's key art is inventing an exposure they did not
+                shoot.
+
+                Optional, and blank keeps the sort order, per `docs/COPY.md`:
+                a blank record renders the site the code does. What it stops
+                being is an accident — whatever is here, somebody chose it.
+
+                `depth: 0` on `getSiteSettings`, so this arrives as an id and
+                the hub matches it against the directory rather than reading a
+                populated object.
+              */
+              name: 'heroWiki',
+              type: 'relationship',
+              relationTo: 'games',
+              label: 'Featured wiki (hero picture)',
+              admin: {
+                description:
+                  'Whose key art sits behind the search on the hub. Leave blank and the hub uses the largest wiki, which is a page count choosing the network’s first impression rather than anybody choosing it. Pick a game whose art is legible under type — the picture is the whole width of the band and the headline sits on top of it.',
+              },
+            },
             { name: 'heroHeading', type: 'text' },
             { name: 'heroSubheading', type: 'textarea' },
             {

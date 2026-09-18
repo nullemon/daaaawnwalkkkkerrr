@@ -11,14 +11,17 @@ import { Icon } from '@/components/Icon'
 import { Linked, LinkedRichText } from '@/components/Linked'
 import type { LinkScope } from '@/lib/link-index'
 import { Attribution } from '@/components/Attribution'
+import { ImageCredit } from '@/components/ImageCredit'
 import { Sources } from '@/components/Sources'
 import { client, gameUrl, rel, relMany } from '@/lib/payload'
 import { copy, hasRichText } from '@/lib/copy'
 import {
   CAPPED_CATALOGUE_HEADING,
+  CATALOGUE_AFTER_CLOSURE,
   COMPANIES_BUILT_IN,
   COMPANY_ROLE_LABEL,
   catalogueCap,
+  catalogueOutlivesClosure,
   getCompaniesSite,
 } from '@/lib/companies-copy'
 import { clamp } from '@/lib/seo'
@@ -154,9 +157,24 @@ export default async function CompanyPage({ params }: Props) {
   */
   const cap = catalogueCap(company.catalogueNote, rows.length)
 
+  /*
+    Whether the closure banner is about to sit directly above dates that
+    postdate it. `/atari-inc` reads "No longer operating (June 26, 1992)" over
+    sixty titles dated 2012 to 2026 — two sourced facts stacked with nothing
+    between them, so whichever one a reader believes the page has told them the
+    other. See `CATALOGUE_AFTER_CLOSURE` for what the sentence says and why it
+    is not an editable field.
+  */
+  const outlived = catalogueOutlivesClosure(company.defunct, rows)
+
   const logo =
     company.logo && typeof company.logo === 'object'
-      ? (company.logo as { url?: string | null; width?: number | null; height?: number | null })
+      ? (company.logo as {
+          url?: string | null
+          width?: number | null
+          height?: number | null
+          credit?: string | null
+        })
       : null
   /*
     The people this network has a profile for who are named as officers here.
@@ -282,6 +300,11 @@ export default async function CompanyPage({ params }: Props) {
             {defunct ? (
               <div className="callout" data-tone="risk">
                 <p>{copy(profile.defunctNote, built.defunctNote, { defunct })}</p>
+                {/* The qualification goes with the claim rather than down by
+                    the table, because the banner is where the claim is made
+                    and a reader who scrolls past it has already been told
+                    something the catalogue then contradicts. */}
+                {outlived ? <p>{CATALOGUE_AFTER_CLOSURE}</p> : null}
               </div>
             ) : null}
 
@@ -314,6 +337,18 @@ export default async function CompanyPage({ params }: Props) {
                   fetchPriority="high"
                   decoding="async"
                 />
+                {/*
+                  105 of these carry a licence the harvester read off Commons
+                  — `Capcom logo (Public domain) — Nessa los` — and the
+                  licence is only honoured while the credit travels with the
+                  file. It was stored and printed nowhere.
+
+                  `ground="panel"`, not the photographic scrim: a logo
+                  arrives as a transparent PNG centred on `--surface`, and a
+                  near-black bar across a light panel is protecting the text
+                  from a photograph that is not there.
+                */}
+                <ImageCredit credit={logo.credit} slot="narrow" ground="panel" />
               </figure>
             ) : null}
 

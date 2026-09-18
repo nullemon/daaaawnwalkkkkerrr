@@ -272,6 +272,46 @@ and breaks the moment they rotate a URL. Upload them here.
 **Credit everything.** Every media record has a `credit` field and the bulk
 importer fills it with the publisher attribution by default. Leave it in.
 
+### Where the credit is printed, and what the mark beside it means
+
+Site settings -> Content -> **Show credits under images** decides, for every
+picture on the network at once. It is **on**, by the owner's decision, taken
+with the CC BY-SA consequence in front of him: several hundred of these images
+come from wikis whose media is CC BY-SA, and the BY in that licence is a
+condition of use rather than a courtesy.
+
+One component renders all of them - `src/components/ImageCredit.tsx` - and the
+setting is read there and nowhere else. It used to be read in two components
+and ignored in three others, so one page could credit its cover art and not the
+photograph beside it, with nothing saying which was intended.
+
+The credit sits **inside the picture**, as an overlay at its foot, with a mark
+chosen from what the credit actually is. `creditBasis` in `src/lib/credit.ts`
+reads the stored string, and it is unit-tested against the real values because
+the mark is itself a claim:
+
+| basis | what it is | mark |
+| --- | --- | --- |
+| `rights` | key art, cover art, a screenshot: all rights reserved, used under a fair-dealing argument | `©` |
+| `photograph` | `Photograph of <person> by <photographer>. <licence>.` from Commons | a camera |
+| `licence` | a company logo carrying its own CC or public-domain licence | a seal |
+| `generated` | an emblem this site drew from the record slug | a spark |
+| `plain` | anything the rule could not place | nothing |
+
+A camera on a company logo would say a photographer took it. A `©` on a
+public-domain file would assert a copyright the file does not carry, and about
+half the 105 logos are public domain. So no mark is a valid answer, and it is
+the answer for anything the rule cannot place - the Antar 4 principle applied
+to a classifier.
+
+**An over-long credit is never shortened.** `creditPlacement` compares its
+length against the width of the slot; past the budget the credit stops being an
+overlay and prints under the picture instead, whole. One live credit is 269
+characters and renders in five lines under Phantom Blade Zero's poster. A clamp,
+a fade or a scroller inside the overlay would be `4206c56` happening again in a
+new place - three figcaptions clipped a 2,369-character credit to nothing inside
+`overflow: hidden`, and the page looked perfect for months.
+
 ## The legal position, briefly
 
 Game screenshots and art belong to Bandai Namco Entertainment and Rebel

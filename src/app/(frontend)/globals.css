@@ -643,18 +643,22 @@ p { margin: 0; }
 .page-art > * { position: relative; }
 .page-art .page-head { border-bottom: 0; padding-bottom: 4px; }
 .page-art[data-tall='true'] .page-head { padding-block: 92px 4px; }
+/* Room for the credit, which is pinned to the bottom of the band and would
+   otherwise print across the confidence badges. Only when there is one:
+   `.art-credit` used to be a static element and took its own height, so an
+   uncredited band has no strip to reserve for. */
+.page-art:has(.imgcredit[data-slot='band']) .page-head { padding-bottom: 40px; }
 
-.art-credit {
-  max-width: var(--page);
-  margin: 0 auto;
-  padding: 0 18px 9px;
-  font-family: var(--f-label);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.46);
-}
+/*
+  `.art-credit` was here, and it is gone rather than orphaned.
+
+  It was the band's own credit line, `rgba(255, 255, 255, 0.46)` uppercase on
+  whatever the photograph happened to be - which over a bright crop is a
+  credit nobody can read, and it was the only image credit on the network with
+  no mark on it and no scrim of its own. `PageHeader` renders `.imgcredit`
+  with `slot="band"` now, so the band, the hub hero and a wiki masthead all
+  credit their art the same way and all three were measured together.
+*/
 
 .breadcrumbs {
   display: flex; flex-wrap: wrap; gap: 5px; list-style: none; margin: 0; padding: 0;
@@ -1207,23 +1211,156 @@ th.num { text-align: right; }
   overflow: hidden;
   background: var(--sunken);
   max-width: 100%;
+  /* The credit is an overlay inside the picture now, so this is its
+     containing block. `overflow: hidden` above keeps it inside the radius. */
+  position: relative;
 }
 .entity-figure[data-shape='wide'] { max-width: 640px; }
 .entity-figure[data-shape='portrait'] { max-width: 300px; }
 .entity-figure[data-shape='square'] { max-width: 260px; }
 .entity-figure img { width: 100%; height: auto; display: block; }
-.entity-figure figcaption {
+/* ---------- the credit on a picture --------------------------------------
+
+  One element for every image credit on the network - record figures, guide
+  pictures, the factsheet's cover art, a person's photograph, a company logo,
+  and the three full-bleed header bands. It used to be five figcaptions and a
+  `<p>`, styled separately, three of which clipped an over-long credit to
+  nothing.
+
+  ## Where it sits
+
+  Inside the picture, by the owner's decision: "move the credits inside photo
+  ... with proper Camera icon and (c) copyright symbol". `data-place` is
+  `overlay` or `below`, and **`below` is not a fallback for something that
+  failed - it is the answer for a credit too long to sit on a picture without
+  covering it.** `creditPlacement` decides on length against the slot's width;
+  the whole argument is in the note on that function. Nothing is ever
+  shortened, clamped, faded or scrolled, because that is `4206c56` in a new
+  place: a credit that renders as three dots is a credit nobody will ever
+  notice is 2,369 characters of somebody else's stylesheet.
+
+  ## Why the overlay needs a flat scrim and not a gradient
+
+  Measured, not assumed. A soft bottom gradient is the obvious treatment and
+  it fails: the first line of text sits where the gradient is still nearly
+  transparent, and over the brightest pixel any of these pictures carries
+  (A Plague Tale's white sky, 0.995 relative luminance) `#f4f1ea` on a 0.15
+  scrim measures **1.21:1**. The required scrim over that pixel is 0.588 for
+  4.5:1, so the fade is 16px of pure decoration above the text box and every
+  pixel a letter actually touches is at 0.82 or more. At 0.82 the same text
+  measures **10.4:1**, and the mark beside it 6.6:1.
+
+  That is why the padding-top is bigger than it looks: it is the height of the
+  fade. Do not reduce one without the other.
+
+  ## Two grounds
+
+  `photo` carries that scrim. `panel` is the company logo, which is a
+  transparent PNG centred on `--surface` with 22px of padding round it - there
+  is no photograph under it for a scrim to be protecting the text from, and a
+  near-black bar across a light panel in the light theme is just a black bar.
+  It takes `--muted` on `--sunken`, a pair measured at 5.36 dark / 4.94 light
+  in the palette notes, and grows the panel rather than sitting on the mark.
+*/
+
+.imgcredit {
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  min-width: 0;
   font-family: var(--f-label);
-  font-size: 11px;
-  color: var(--muted);
-  padding: 6px 10px;
-  border-top: 1px solid var(--rule);
-  background: var(--surface);
-  /* Same harvested-credit problem as `.gameprofile-art figcaption`, and this is
-     the narrowest of the three at 260px on a square shape - inside an
-     `overflow: hidden` wrapper, so a long token vanishes rather than wraps. */
+  font-size: 10.5px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.015em;
+}
+.imgcredit-mark {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  /* A baseline-aligned flex row hangs a 14px box below the first line's
+     baseline; this lifts the glyph back onto it. */
+  transform: translateY(2px);
+}
+/* The `©` is a character, not a drawing of one: it is the mark the credit
+   line itself uses and nothing we could draw is as legible at this size. */
+.imgcredit[data-basis='rights'] .imgcredit-mark {
+  font-size: 13.5px;
+  line-height: 1;
+  transform: translateY(1px);
+}
+.imgcredit-text {
+  min-width: 0;
+  /* The `4206c56` rule, carried into the overlay. A harvested credit has no
+     agreed shape and carries 85-character tokens; one has to wrap rather than
+     run out of the box and disappear. */
   overflow-wrap: anywhere;
 }
+
+/* --- on a photograph, over the picture --- */
+.imgcredit[data-place='overlay'][data-ground='photo'] {
+  position: absolute;
+  inset: auto 0 0 0;
+  z-index: 2;
+  /* 20px, because the first 16 are the fade. See the note above. */
+  padding: 20px 11px 9px;
+  color: #f4f1ea;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 7, 6, 0) 0,
+    rgba(8, 7, 6, 0.82) 16px,
+    rgba(8, 7, 6, 0.9) 100%
+  );
+}
+/* Opaque rather than `rgba(255,255,255,0.74)`: a translucent colour measures
+   as white against any backdrop, so the probe would report a contrast this
+   mark does not have. 6.6:1 on the worst pixel. */
+.imgcredit[data-place='overlay'][data-ground='photo'] .imgcredit-mark { color: #c9c2b3; }
+
+/* --- under the picture, for a credit too long to sit on it --- */
+.imgcredit[data-place='below'] {
+  padding: 7px 11px;
+  border-top: 1px solid var(--rule);
+  background: var(--surface);
+  color: var(--muted);
+}
+
+/* --- a full-bleed header band ---
+   The scrim spans the band; the words line up with the page gutter above
+   them, which is what `.art-credit` did with `max-width` and `margin: auto`.
+   Done as padding instead so the gradient is not a centred rectangle with two
+   hard edges in the middle of a photograph. */
+.imgcredit[data-place][data-ground][data-slot='band'] {
+  /* Four attribute selectors, and it needs all four: the overlay rule above
+     is three and sets `padding` as a shorthand, so a two-selector band rule
+     loses and the credit sits 11px from the band edge instead of lining up
+     with the copy. */
+  padding-inline: max(18px, calc((100% - var(--page)) / 2 + 18px));
+  padding-block: 22px 10px;
+}
+
+/* --- a logo on a panel --- */
+.imgcredit[data-ground='panel'] {
+  /* A strip at the foot of the panel, bled out to its edges, taking a row of
+     its own so the panel grows for a three-line credit instead of the credit
+     sitting across the bottom of the mark. */
+  flex: 1 0 100%;
+  margin: 14px -26px -22px;
+  padding: 7px 12px 8px;
+  border-top: 1px solid var(--rule);
+  background: var(--sunken);
+  color: var(--muted);
+}
+
+/* The wrapper that makes a guide picture the credit's containing block. The
+   figure itself cannot be: it holds the editor's caption under the picture,
+   and an overlay pinned to the figure would sit over that instead. */
+.figureshot { position: relative; display: block; min-width: 0; }
+
 /* Only shown where a page explicitly asks for a placeholder. */
 .entity-figure[data-empty='true'] {
   aspect-ratio: 16 / 9;
@@ -1320,7 +1457,12 @@ th.num { text-align: right; }
   border-bottom: 1px solid var(--rule);
   background: var(--sunken);
 }
-.gameprofile-art { margin: 0; border-bottom: 1px solid var(--rule); background: var(--sunken); }
+/* `position: relative` and `overflow: hidden`: the credit is an overlay
+   inside the picture now, and `.gameprofile` rounds its own corners. */
+.gameprofile-art {
+  margin: 0; border-bottom: 1px solid var(--rule); background: var(--sunken);
+  position: relative; overflow: hidden;
+}
 .gameprofile-art img { width: 100%; height: auto; display: block; }
 /* Cover art is shown whole - a box shot cropped to fit is a box shot with its
    title cut off. A hero image is a fallback and a wide one, so it is cropped
@@ -1328,19 +1470,13 @@ th.num { text-align: right; }
 .gameprofile-art[data-portrait='false'] img {
   aspect-ratio: 16 / 9; object-fit: cover;
 }
-.gameprofile-art figcaption {
-  padding: 6px 12px; font-family: var(--f-label); font-size: 10.5px; line-height: 1.45;
-  color: var(--muted); border-top: 1px solid var(--rule); background: var(--surface);
-  /* An image credit is harvested text of no fixed shape, and this box is 316px
-     wide. Phantom Blade Zero's poster credit is 2,369 characters carrying
-     85-character tokens - Wikipedia's own `.mw-parser-output` stylesheet,
-     scraped off the file-description page - and it ran 34px out of the caption,
-     where `.gameprofile`'s `overflow: hidden` clipped it to nothing. Not even a
-     scrollbar: the text was simply gone, on the wiki home of one of the eight.
-     Wrapping it does not make that credit right, and is not meant to - it makes
-     it visible, which is the only way anybody fixes the harvester. */
-  overflow-wrap: anywhere;
-}
+/* The credit itself is `.imgcredit`, shared with every other picture on the
+   network. What used to be here was the second of the three figcaptions that
+   clipped an over-long credit to nothing: Phantom Blade Zero's poster credit
+   was 2,369 characters of Wikipedia's own `.mw-parser-output` stylesheet and
+   ran 34px out of a 316px box, where `.gameprofile`'s `overflow: hidden`
+   deleted it from the page with nothing to show it had. The wrap rule and the
+   reason it exists moved with it - see `.imgcredit-text`. */
 
 /* One column, always. This box is 318px wide on a desktop and full width on a
    phone, and two columns of three words is not a table. */
@@ -1376,9 +1512,17 @@ th.num { text-align: right; }
   display: flex;
   align-items: center;
   justify-content: center;
+  /* Wraps, so the licence strip can take a row of its own at the foot of the
+     panel and the panel grows to hold it. 105 of these arrive from Commons
+     with a licence the file is only usable under while the credit travels
+     with it, and it was stored and printed nowhere. */
+  flex-wrap: wrap;
   padding: 22px 26px;
   border: 1px solid var(--rule);
   border-radius: var(--r);
+  /* The strip bleeds to the panel edges with negative margins; this keeps it
+     inside the radius. Nothing in here needs to escape the box. */
+  overflow: hidden;
   background: var(--surface);
   max-width: 340px;
 }
@@ -1600,6 +1744,11 @@ th.num { text-align: right; }
 .wiki-masthead-inner {
   display: flex; flex-direction: column; align-items: flex-start; gap: 16px;
   padding-block: 56px 44px;
+}
+/* The hero credit moved out of the right-hand rail and into the picture it
+   credits; this is the room it needs at the foot of the band. */
+.wiki-masthead:has(.imgcredit[data-slot='band']) .wiki-masthead-inner {
+  padding-bottom: 66px;
 }
 .wiki-logo { max-width: min(420px, 78%); height: auto; }
 .wiki-masthead-lede {
@@ -1826,11 +1975,15 @@ th.num { text-align: right; }
    wide — one row handles both by letting the items wrap and the wide ones take
    the full width. */
 .figurerow { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; }
-.figurerow figure { margin: 0; display: flex; flex-direction: column; gap: 7px; }
-.figurerow img {
-  width: 100%; border-radius: var(--r); border: 1px solid var(--rule);
-  background: var(--sunken); object-fit: contain;
+.figurerow figure { margin: 0; display: flex; flex-direction: column; gap: 7px; min-width: 0; }
+/* The frame moved from the `<img>` to the wrapper around it, because the
+   credit overlay is pinned to the wrapper and has to be clipped by the same
+   radius the picture has. */
+.figurerow .figureshot {
+  border-radius: var(--r); border: 1px solid var(--rule);
+  background: var(--sunken); overflow: hidden;
 }
+.figurerow img { width: 100%; display: block; object-fit: contain; }
 .figurerow figcaption { font-size: 13px; color: var(--muted); }
 
 /* ---------------------------------------------------------------------------
@@ -2586,18 +2739,71 @@ h1, h2, h3 { text-wrap: balance; }
   because nothing connects the two but a habit. Clipping now belongs to the
   art, which is the only thing that needed it.
 */
+/*
+  ## Why this band is dark in both themes, and what that bought
+
+  The scrim over the type column was 96%. That figure was correct for what it
+  was solving: the copy took the page's own theme tokens, so in the dark theme
+  the band had to be almost black for `--ink` to read on it and in the light
+  theme almost white for `--ink` to read on *that* — and either way the
+  binding element was `.hub-stats dt`, 11.5px in `--muted`, which needs its
+  backdrop below 0.039 relative luminance. Against the brightest pixel any of
+  the eight key arts puts under the type (A Plague Tale's white sky, 0.995)
+  that is a 96% wash. The photograph reached the reader at 4%, which is the
+  owner's complaint: "the photo behind search and all seems so dark".
+
+  The lever is not the scrim and it is not a filter — a brightness filter on
+  somebody else's key art invents an exposure they did not shoot, and no
+  filter recovers detail a file has never had. It is the *text*. `.page-art`
+  has done this since the beginning and says why in its own note: the band is
+  a photograph in either theme, so the type on it stays light in either theme.
+  A light register raises the luminance the backdrop is allowed to reach by
+  more than an order of magnitude, and the scrim falls out of the arithmetic
+  rather than being tuned by eye.
+
+  Measured for `--hero-muted` (#d3ccbc, luminance 0.607) at 4.5:1: the
+  backdrop may reach 0.096, which over a white pixel is a **62% scrim** where
+  96% was needed. The picture keeps 38% under the type instead of 4%.
+
+  ## Why new custom properties instead of redefining the tokens
+
+  `.page-art` redefines `--ink`, `--ink-soft` and `--muted` locally, and that
+  is safe because nothing inside it has a surface of its own. This band
+  contains `HubSearch`, whose input, dropdown and hits are `var(--ink)` on
+  `var(--surface)` — a white panel in the light theme. Redefining `--ink` here
+  would put #f6f3ec text and a #d3ccbc placeholder on white and delete the
+  search box on every light-theme visit, with nothing erroring. So the light
+  register is `--hero-*`, read only by the five copy elements below, and the
+  search keeps the theme it is actually painted in.
+*/
 .hub-hero {
-  /* The scrims below are written against `--bg`, which nothing declared - so
-     both gradients were invalid at computed-value time and `::before` painted
-     nothing at all. The wordmark, the headline and the lede sat straight on
-     key art at 40% opacity in `--ink`, which is near-black in the light theme:
-     exactly the unreadable headline the note above says two scrims exist to
-     prevent. It is the page's own ground here, which is what "so the page
-     below joins" means, and it follows the theme. */
-  --bg: var(--ground);
+  /*
+    The light register, and the fixed ground under it.
+
+    `--bg` is gone: both gradients are literal `rgba(8, 7, 6, …)` now, the
+    same near-black `.page-art` uses. It was a token that only this block
+    declared, which is the shape the gotcha in CLAUDE.md warns about from both
+    ends — used before it was declared for five commits, and then declared
+    only so the gradients would compute.
+  */
+  --hero-ink: #f6f3ec;
+  --hero-ink-soft: #e4ded2;
+  --hero-muted: #d3ccbc;
+
   position: relative; isolation: isolate; z-index: 3;
   padding-block: clamp(40px, 8vw, 88px);
   border-bottom: 1px solid var(--rule);
+  /* A fixed dark ground rather than `var(--ground)`, for the same reason
+     `.page-art` sets one: the type on this band is light in both themes, so
+     if the art ever fails to load the fallback has to stay dark or the hub
+     opens light-on-light. */
+  background-color: #14120f;
+  color: var(--hero-ink);
+}
+/* Room for the credit strip, which is absolutely positioned and would
+   otherwise sit across the three figures at the narrow end of the clamp. */
+.hub-hero:has(.imgcredit[data-slot='band']) {
+  padding-bottom: calc(clamp(40px, 8vw, 88px) + 24px);
 }
 .hub-hero-art {
   position: absolute; inset: 0; width: 100%; height: 100%;
@@ -2605,18 +2811,18 @@ h1, h2, h3 { text-wrap: balance; }
      search results. `cover` already fills the box exactly; this is a belt. */
   object-fit: cover; overflow: hidden; z-index: -2;
   /*
-    0.4 was chosen while the scrims below were computing to `none`, so it was
-    the only thing standing between the headline and raw key art. Declaring
-    `--bg` turned both scrims on and left this doing the same job twice: the
-    picture reached the reader at about half of one level in 255 — measured,
-    not guessed — which is a photograph nobody can see. It is the scrims'
-    job now, and they do it where the type is rather than everywhere.
+    Fully opaque. 0.4 was chosen while the scrims below were computing to
+    `none`, so it was the only thing standing between the headline and raw key
+    art; then the scrims turned on and it was doing the same job twice, and
+    the picture reached the reader at about half of one level in 255. The
+    scrim is the only thing dimming this now, and it does it where the type is
+    rather than everywhere.
   */
-  opacity: 0.92;
+  opacity: 1;
   /* Slightly desaturated so the accent stays the only saturated thing on the
      page, and nothing else: a contrast lift here would be re-grading somebody
      else's key art. */
-  filter: saturate(0.9);
+  filter: saturate(0.92);
 }
 /*
   Two scrims, and they do different jobs — a single flat overlay leaves the
@@ -2635,20 +2841,25 @@ h1, h2, h3 { text-wrap: balance; }
   a phone, where the words are the whole band and the scrim closes over it.
 
   Where it holds, it holds hard, and the binding constraint is not the
-  headline. It is `.hub-stats dt` at 11.5px in `--muted`, which needs its
-  backdrop below 0.039 relative luminance to clear 4.5:1 — and the brightest
-  pixel any of the eight key arts puts under the type measures 0.995 (A Plague
-  Tale's white sky). That is a 96% scrim. The 4% the picture keeps there is
-  not visible and is not meant to be: the picture lives in the release.
+  headline. It is `.hub-stats dt` at 11.5px, the smallest type on the band —
+  which is why the register above it matters so much. In `--muted` it needed
+  its backdrop below 0.039 relative luminance; in `--hero-muted` it may reach
+  0.096, and against the brightest pixel any of the eight key arts puts under
+  the type (0.995, A Plague Tale's white sky) that is the difference between a
+  96% scrim and a 62% one.
 
-  The second joins the page at the bottom edge and adds a little under the
-  figures. It stops short of `--bg`, so the art is still there where the band
-  meets the rule.
+  The second is vertical and does two jobs. It adds under the figures, which
+  is where the small type is and where the horizontal alone is thinnest
+  against a bright crop — the two multiply, so 62% and 22% make 70% there
+  without either being 70% on its own. And it darkens the top and bottom
+  edges, which is what stops a full-bleed photograph looking cut out of the
+  page.
 
-  Both are written against `--bg`, which `.hub-hero` declares — it was used
-  here and declared nowhere for five commits, and an undeclared custom
-  property makes the whole gradient invalid at computed-value time rather than
-  erroring. Do not use a token here that the block does not define.
+  Both are literal `rgba(8, 7, 6, …)` rather than a token. `--bg` was declared
+  by this block and read by nothing else, after five commits of being read
+  here and declared nowhere — an undeclared custom property makes the whole
+  gradient invalid at computed-value time rather than erroring, which is how
+  the scrims painted nothing for five commits and nobody saw an error.
 */
 .hub-hero::before {
   content: ''; position: absolute; inset: 0; z-index: -1;
@@ -2657,22 +2868,26 @@ h1, h2, h3 { text-wrap: balance; }
   --hub-open: max(0px, calc((100% - 820px) / 2));
   background:
     linear-gradient(180deg,
-      transparent 54%,
-      color-mix(in srgb, var(--bg) 26%, transparent) 82%,
-      color-mix(in srgb, var(--bg) 68%, transparent) 100%),
+      rgba(8, 7, 6, 0.3) 0%,
+      rgba(8, 7, 6, 0.1) 34%,
+      rgba(8, 7, 6, 0.22) 72%,
+      rgba(8, 7, 6, 0.58) 100%),
     linear-gradient(90deg,
       transparent 0,
-      color-mix(in srgb, var(--bg) 96%, transparent) var(--hub-open),
-      color-mix(in srgb, var(--bg) 96%, transparent) calc(100% - var(--hub-open)),
+      rgba(8, 7, 6, 0.62) var(--hub-open),
+      rgba(8, 7, 6, 0.62) calc(100% - var(--hub-open)),
       transparent 100%);
 }
 
 .hub-hero-inner { display: flex; flex-direction: column; gap: 14px; max-width: 760px; }
 
+/* The five copy elements, and the only readers of the `--hero-*` register.
+   Light in both themes, because the thing behind them is a photograph in both
+   themes — the rule `.page-art` states in its own note. */
 .hub-wordmark {
   display: flex; align-items: center; gap: 9px;
   font-family: var(--f-display); font-size: 16px; font-weight: 700;
-  letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink);
+  letter-spacing: 0.06em; text-transform: uppercase; color: var(--hero-ink);
 }
 .hub-wordmark .glyph { color: var(--accent); display: flex; }
 
@@ -2700,7 +2915,7 @@ h1, h2, h3 { text-wrap: balance; }
 .hub-lede {
   font-size: 16.5px;
   line-height: 1.55;
-  color: var(--ink-soft);
+  color: var(--hero-ink-soft);
   max-width: 54ch;
   text-wrap: pretty;
   margin: 0;
@@ -2708,10 +2923,12 @@ h1, h2, h3 { text-wrap: balance; }
 
 .hub-stats { display: flex; flex-wrap: wrap; gap: 10px 36px; margin: 4px 0 0; }
 .hub-stats div { display: flex; flex-direction: column-reverse; gap: 1px; }
-.hub-stats dt { font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+/* The smallest type on the band, and therefore the one the scrim is sized
+   for. Do not darken `--hero-muted` without re-running the measurement. */
+.hub-stats dt { font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--hero-muted); }
 .hub-stats dd {
   margin: 0; font-family: var(--f-display); font-weight: 700; line-height: 1;
-  font-size: clamp(26px, 3.4vw, 34px); font-variant-numeric: tabular-nums; color: var(--ink);
+  font-size: clamp(26px, 3.4vw, 34px); font-variant-numeric: tabular-nums; color: var(--hero-ink);
 }
 
 /* --- Network search ------------------------------------------------------- */
@@ -2838,18 +3055,16 @@ h1, h2, h3 { text-wrap: balance; }
   background: var(--sunken);
 }
 
-.personprofile-art { margin: 0; border-bottom: 1px solid var(--rule); background: var(--sunken); }
+.personprofile-art {
+  margin: 0; border-bottom: 1px solid var(--rule); background: var(--sunken);
+  /* The containing block for the credit overlay. These are the images whose
+     basis really is `photograph`, so these are the ones with the camera. */
+  position: relative; overflow: hidden;
+}
 /* Shown whole, never cropped to a band. A photograph of a face cropped to
    16:9 by a stylesheet cuts the face off, and the crop is not ours to choose:
    these arrive from Commons framed the way somebody else framed them. */
 .personprofile-art img { width: 100%; height: auto; display: block; }
-.personprofile-art figcaption {
-  padding: 6px 12px; font-family: var(--f-label); font-size: 10.5px; line-height: 1.45;
-  color: var(--muted); border-top: 1px solid var(--rule); background: var(--surface);
-  /* Commons credits, in a 318px panel that clips. Same rule and same reason as
-     `.gameprofile-art figcaption`, which is where it was measured. */
-  overflow-wrap: anywhere;
-}
 
 /* Words, not a silhouette. A grey outline of a head reads as an image that
    failed to load, which is a different claim from "no photograph exists that

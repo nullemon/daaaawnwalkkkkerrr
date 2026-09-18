@@ -2,6 +2,7 @@ import type { ReactNode } from 'react'
 import type { Media, Person } from '@/payload-types'
 import { copy } from '@/lib/copy'
 import { externalSite } from '@/lib/urls'
+import { ImageCredit } from './ImageCredit'
 import {
   PEOPLE_BUILT_IN,
   PERSON_ROLE_LABEL,
@@ -110,10 +111,17 @@ export async function PersonProfile({ person }: { person: Person }) {
             fetchPriority="high"
             decoding="async"
           />
-          {/* A freely licensed photograph is only freely licensed while the
-              credit travels with it, which is the same condition the logos on
-              the companies host are published under. */}
-          {photo.credit ? <figcaption>{photo.credit}</figcaption> : null}
+          {/*
+            A freely licensed photograph is only freely licensed while the
+            credit travels with it, which is the same condition the logos on
+            the companies host are published under.
+
+            These are the one slot on the network whose basis really is
+            `photograph` — `Photograph of <person> by <photographer>. CC BY
+            2.0.` — so they are the images that get the camera. `narrow`: the
+            panel is 318px.
+          */}
+          <ImageCredit credit={photo.credit} slot="narrow" />
         </figure>
       ) : (
         <p className="personprofile-nophoto">

@@ -273,7 +273,25 @@ async function seed(): Promise<void> {
   }
   console.log(`  ${guides.length} guides`)
 
-  await payload.updateGlobal({ slug: 'site-settings', data: siteSettings as never })
+  /*
+    `heroWiki` is resolved here rather than written into `siteSettings`,
+    because it is a relationship and the seed data file holds no ids.
+
+    Leaving it blank is not neutral. The hub falls back to `wikis[0]`, and
+    `directory()` sorts by page count descending - so the picture behind the
+    search on the network's front page is decided by whichever wiki happens to
+    have harvested the most rows. That put Zero Company's very dark key art
+    there, which is what the owner was looking at when he said "the photo
+    behind search and all seems so dark". The primary game is a choice; a sort
+    order is not one.
+
+    An editor can pick any wiki from the dropdown, and clearing it restores the
+    old behaviour exactly.
+  */
+  await payload.updateGlobal({
+    slug: 'site-settings',
+    data: { ...siteSettings, heroWiki: primaryGameId } as never,
+  })
   console.log('  site settings')
 
   // The login is the one thing people come back to this output for, so print

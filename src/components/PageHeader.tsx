@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import type { ReactNode } from 'react'
 import { Icon, type IconName } from './Icon'
-import { getSiteSettings } from '@/lib/payload'
+import { ImageCredit } from './ImageCredit'
 
 export type Crumb = { label: string; href?: string }
 
@@ -54,11 +54,6 @@ export async function PageHeader({
   icon?: IconName
   art?: HeaderArt
 }) {
-  // Same switch as the credit under a record's own image, so the page does not
-  // credit one picture and not the other. See `EntityImage`.
-  const settings = await getSiteSettings()
-  const showCredit = Boolean(settings.showImageCredits)
-
   const head = (
     <div className="page">
       <div className="page-head">
@@ -97,7 +92,16 @@ export async function PageHeader({
       data-tall={art.tall ? 'true' : undefined}
     >
       {head}
-      {showCredit && art.credit ? <p className="art-credit">{art.credit}</p> : null}
+      {/*
+        A `p`, not a `figcaption`: the band's art is a CSS background because
+        it is decoration and says so to a screen reader by having nothing to
+        read, so there is no `<figure>` here for a caption to belong to.
+
+        `band` rather than a width budget. The band is the picture and it
+        spans the page, so an over-long credit has somewhere to wrap to and
+        never needs the under-the-picture fallback.
+      */}
+      <ImageCredit credit={art.credit} slot="band" as="p" />
     </div>
   )
 }

@@ -4,6 +4,7 @@ import { Icon, type IconName } from '@/components/Icon'
 import { Logo } from '@/components/Logo'
 import { WikiCard } from '@/components/WikiCard'
 import { HubSearch, type HubTarget } from '@/components/HubSearch'
+import { ImageCredit } from '@/components/ImageCredit'
 import { directory, releaseLine } from '@/lib/directory'
 import { whatPeopleAreAsking } from '@/lib/asking'
 import { getAllAcrossGames, getSiteSettings, gameUrl } from '@/lib/payload'
@@ -137,7 +138,24 @@ export default async function HubHome() {
     (wiki) => wiki.game.releaseDate && new Date(wiki.game.releaseDate).getTime() > Date.now(),
   ).length
 
-  const featured = wikis[0]
+  /*
+    Whose key art fronts the network.
+
+    `wikis[0]` was the whole of this, and `directory()` sorts biggest wiki
+    first — so the one photograph a first-time reader sees was picked by a
+    page count. The largest wiki is Zero Company, whose hero file has a
+    greyscale mean of 11.5 of 255 (measured across all eight with `sharp`;
+    Dawnwalker's is 116.3). That is the "homepage seems so dark" complaint,
+    and it is not in the stylesheet: no scrim recovers detail the file has
+    never had, and a brightness filter on somebody else's key art invents an
+    exposure they did not shoot.
+
+    So it is a field. Blank still means `wikis[0]`, per `docs/COPY.md` — a
+    blank record renders the site the code does — and an id that no longer
+    matches a published wiki falls back the same way rather than dropping the
+    art, because a game can be unpublished long after somebody chose it here.
+  */
+  const featured = wikis.find((entry) => entry.game.id === settings.heroWiki) ?? wikis[0]
   const heroArt =
     featured && typeof featured.game.theme?.hero === 'object' ? featured.game.theme.hero : null
 
@@ -287,6 +305,17 @@ export default async function HubHome() {
             </div>
           </dl>
         </div>
+
+        {/*
+          The credit for the picture, on the picture.
+
+          This band has carried one publisher's key art at full bleed since
+          the hub was written and credited nobody — the one page on the
+          network with a photograph and no line saying whose it is, while
+          every record page had one. The credit is stored on the media record
+          and was simply never rendered here.
+        */}
+        <ImageCredit credit={heroArt?.credit} slot="band" as="p" />
       </header>
 
       {/* ---- The wiki switcher: every wiki, one row, always reachable ---- */}
