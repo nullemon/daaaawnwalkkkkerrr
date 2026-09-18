@@ -1,8 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="6" fill="#131211"/>
-  <g fill="none" stroke="#c8a24a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M10 7h12M10 25h12"/>
-    <path d="M12 7v2.2c0 1.7.7 3.3 1.9 4.5L16 16l-2.1 2.3A6.4 6.4 0 0 0 12 22.8V25M20 7v2.2c0 1.7-.7 3.3-1.9 4.5L16 16l2.1 2.3a6.4 6.4 0 0 1 1.9 4.5V25"/>
-  </g>
-  <path d="M12.6 9.4h6.8c-.3 1.4-1 2.7-2 3.6L16 14.2l-1.4-1.2c-1-.9-1.7-2.2-2-3.6Z" fill="#c8a24a"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="A ruled leaf of vellum">
+  <rect width="64" height="64" rx="12" fill="#131211"/>
+  <path d="M12 8H40L52 20V56H12ZM20 24H24V52H20ZM28 28H44V32H28ZM28 36H44V40H28ZM28 44H36V48H28Z" fill="#f7f4f1" fill-rule="evenodd"/>
+  <path d="M20 24H24V52H20Z" fill="#d13a44"/>
 </svg>

@@ -111,7 +111,13 @@ for (const band of BANDS) {
   The social card's backdrop, cut to the exact 1200×630 the card is shot at.
   A landscape rather than the key art: the key art carries the game's own logo
   lockup, and docs/ASSETS.md says to keep official logos out of this site's
-  furniture. tools/make-og.mjs embeds this behind the card.
+  furniture.
+
+  Nothing embeds it behind the network share card any more. That card had a
+  Dawnwalker screenshot on it and was served by the hub, the companies host and
+  the people host — three sites that are not about one game — so `og.png` is
+  drawn geometry now (`tools/make-brand.mjs`). `og-bg.webp` is still the source
+  for the Dawnwalker *wiki's* own card, which `tools/make-wiki-icons.mjs` cuts.
 */
 const ogFrom = BANDS.find((band) => band.name === 'hero').file
 await sharp(fs.readFileSync(path.join(LIB, ogFrom)))

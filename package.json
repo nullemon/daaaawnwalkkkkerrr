@@ -32,6 +32,7 @@
     "seed:avatars": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/avatars.ts",
     "make:avatars": "node tools/make-avatars.mjs",
     "make:emblems": "node tools/make-emblems.mjs",
+    "make:brand": "node tools/make-brand.mjs",
     "seed:emblems": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/emblems.ts",
     "fetch:entities": "node tools/fetch-wiki-entities.mjs",
     "seed:entities": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx src/seed/wiki-entities.ts",
