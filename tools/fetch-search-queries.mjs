@@ -53,6 +53,22 @@ const GAMES = {
   'phantom-blade-zero': ['phantom blade zero', 'phantom blade 0'],
   'silent-hill-townfall': ['silent hill townfall', 'townfall'],
   'star-wars-zero-company': ['star wars zero company', 'zero company'],
+
+  /*
+    The second wave. Spoken names, not marketing ones — nobody types
+    "Grand Theft Auto VI" into a search box, and the Roman numeral would miss
+    almost the whole demand curve for the biggest game on this list.
+
+    Two seeds each where a game is genuinely called two things, one where it
+    is not. `subnautica 2` and `deadlock` are already what people say.
+  */
+  'resident-evil-requiem': ['resident evil requiem', 're requiem'],
+  'subnautica-2': ['subnautica 2'],
+  'forza-horizon-6': ['forza horizon 6', 'forza 6'],
+  'nba-2k27': ['nba 2k27', '2k27'],
+  'deadlock': ['deadlock valve', 'valve deadlock'],
+  'gta-6': ['gta 6', 'grand theft auto 6'],
+  'fire-emblem-fortunes-weave': ['fire emblem fortunes weave', 'fire emblem fortune'],
 }
 
 /**
@@ -196,6 +212,33 @@ for (const [slug, terms] of Object.entries(GAMES)) {
   const previous = fs.existsSync(outFile)
     ? JSON.parse(fs.readFileSync(outFile, 'utf8')).queries.length
     : 0
+
+  /*
+    An empty harvest is never written, for a new game or an old one.
+
+    The shrink guard below compares against what is already on disk, which is
+    exactly the right check for a game that has been harvested before and
+    exactly no check at all for one that has not: `previous` is 0, `0 < 0 * 0.9`
+    is false, and an empty file is written and believed.
+
+    That is what happened the day NBA 2K27, Deadlock and Fire Emblem were
+    added — Google had already started answering 403 after several thousand
+    requests, so all three got a file saying, in effect, that nobody searches
+    for them. Downstream nothing errors: `seed:topics` reads the file, finds no
+    queries, and writes no demand pages, and the wiki simply looks like one
+    nobody is looking for. The 403 is a rate limit on us, not a fact about the
+    world, and this is the difference between the two.
+
+    Absent is the honest state and the generators already handle it —
+    `seed:topics` checks `fs.existsSync` before reading. So: no file rather
+    than an empty one.
+  */
+  if (queries.length === 0) {
+    console.log('  !! NOTHING WRITTEN: this run found no queries at all.')
+    if (blocked) console.log('     The endpoint refused us (HTTP 403/429) — a rate limit on us.')
+    console.log('     An empty file would read as "nobody searches for this". Try again tomorrow.')
+    continue
+  }
 
   if (previous > 0 && queries.length < previous * 0.9) {
     console.log(

@@ -6,13 +6,12 @@ import { RelatedList, type RelatedItem } from '@/components/RelatedList'
 import { Linked, LinkedRichText } from '@/components/Linked'
 import type { LinkScope } from '@/lib/link-index'
 import { LegalField } from '@/components/LegalGap'
-import { getAll, getGame, getSiteSettings } from '@/lib/payload'
+import { getAll, getGame, getSiteSettings, resolveRightsholders } from '@/lib/payload'
 import { gameName } from '@/lib/section-copy'
 import { aboutCopy } from '@/lib/game-copy'
 import { copy, hasRichText, pick, splitTokens } from '@/lib/copy'
 import { clamp } from '@/lib/seo'
 import { companyUrl } from '@/lib/urls'
-import { slugify } from '@/fields/shared'
 import { hub } from '@/lib/urls'
 import { socialMeta } from '@/lib/social'
 
@@ -61,7 +60,7 @@ export async function generateMetadata(
     description: clamp(
       copy(
         about.metaDescription,
-        'Who runs the {game} wiki, where its facts come from, what the confidence ratings mean, and what we deliberately do not claim to know.',
+        'Who runs the {game} wiki, where its facts come from, what we do when sources disagree, and what we deliberately do not claim to know.',
         tokens,
       ),
     ),
@@ -116,10 +115,23 @@ export default async function AboutPage({ params }: Props) {
     the game's own record now.
   */
   const hasRunPlanner = (doc?.features ?? []).includes('run-checker')
-  const holders = [doc?.developer, doc?.publisher]
-    .map((holder) => holder?.trim())
-    .filter((holder): holder is string => Boolean(holder))
-  const rightsholders = holders.filter((h, i) => holders.indexOf(h) === i)
+  /*
+    The companies named on the game's own record, split and checked.
+
+    This took each field whole and slugified it, so "Konami, Annapurna
+    Interactive" — two companies, which is what the Silent Hill store page
+    says — linked `companies.<domain>/konami-annapurna-interactive` from every
+    page that rendered the block below, and 404'd. `GameProfile` split the same
+    string on the comma and got two correct links: two implementations of one
+    rule, and the wrong one was wrong in silence.
+
+    `resolveRightsholders` is the one implementation. It splits without
+    breaking `Atari, Inc.`, and it says which names have a profile, because the
+    other half of the rule is that a name with no profile is not a link.
+  */
+  const rightsholders = await resolveRightsholders(doc?.developer, doc?.publisher)
+  /** The subset with a page to link to. See the sentence that uses it. */
+  const profiled = rightsholders.filter((holder) => holder.exists)
 
   /*
     Counted at build time rather than written into the copy. An about page that
@@ -194,14 +206,20 @@ export default async function AboutPage({ params }: Props) {
         return (
           <span key={index}>
             {rightsholders.map((holder, position) => (
-              <span key={holder}>
+              <span key={holder.slug}>
                 {position > 0 ? ' or ' : ''}
                 {/*
                   Across an origin to the companies host, so a plain anchor
-                  rather than next/link. Each of these has a profile listing
-                  everything of theirs we cover.
+                  rather than next/link — and only where a profile is actually
+                  there. A studio this network has not written up, such as
+                  Screen Burn, has to be named here because the disclaimer is
+                  about them; it does not have to be a link to nothing.
                 */}
-                <a href={companyUrl(`/${slugify(holder)}`)}>{holder}</a>
+                {holder.exists ? (
+                  <a href={companyUrl(`/${holder.slug}`)}>{holder.name}</a>
+                ) : (
+                  holder.name
+                )}
               </span>
             ))}
           </span>
@@ -297,15 +315,22 @@ export default async function AboutPage({ params }: Props) {
                     not been announced on a storefront.
                   </>
                 )}
-                {rightsholders.length > 0 ? (
+                {/*
+                  This sentence says a maker "has a profile on this network",
+                  so it counts the ones that do rather than the ones named.
+                  Silent Hill: Townfall names three companies and two of them
+                  are written up; the third would have been a promise the link
+                  beside it could not keep.
+                */}
+                {profiled.length > 0 ? (
                   <>
                     {' '}
-                    Its {rightsholders.length === 1 ? 'maker has' : 'makers have'} a profile on this
+                    Its {profiled.length === 1 ? 'maker has' : 'makers have'} a profile on this
                     network:{' '}
-                    {rightsholders.map((holder, index) => (
-                      <span key={holder}>
+                    {profiled.map((holder, index) => (
+                      <span key={holder.slug}>
                         {index > 0 ? ', ' : ''}
-                        <a href={companyUrl(`/${slugify(holder)}`)}>{holder}</a>
+                        <a href={companyUrl(`/${holder.slug}`)}>{holder.name}</a>
                       </span>
                     ))}
                     .
@@ -327,32 +352,30 @@ export default async function AboutPage({ params }: Props) {
                   </p>
                   <p>
                     We do not have privileged access to the game. Nothing here has been verified
-                    against a running copy, which is exactly why every record carries a confidence
-                    rating rather than presenting everything with the same certainty.
+                    against a running copy, which is exactly why a claim we cannot source is left
+                    out rather than smoothed over, and why the citations are on the page rather
+                    than in a footnote nobody reads.
                   </p>
                 </>
               )}
 
-              <h2>{copy(about.confidenceHeading, 'What the confidence ratings mean', tokens)}</h2>
+              {/*
+                This was a glossary of the confidence badge: High, Medium, Low,
+                and what each one meant. The badge is editorial now —
+                `Confidence` renders it for a signed-in editor and for nobody
+                else — so glossing three words a reader will never meet again
+                read as a promise that the pages are annotated, which they are
+                not. What survived is the half that was always about the
+                reader's own page and is still visible on it.
+              */}
+              <h2>{copy(about.confidenceHeading, 'Where sources disagree', tokens)}</h2>
               {hasRichText(about.confidence) ? (
                 <LinkedRichText data={about.confidence} scope={scope} />
               ) : (
                 <>
-                  <ul>
-                    <li>
-                      <strong>High</strong> — agreed by multiple independent sources.
-                    </li>
-                    <li>
-                      <strong>Medium</strong> — one good source, or sources that disagree on detail.
-                    </li>
-                    <li>
-                      <strong>Low</strong> — contested, inferred, or not confirmed anywhere we
-                      trust.
-                    </li>
-                  </ul>
                   <p>
-                    These are not decoration. Published counts for a game vary widely depending on
-                    who is counting and what they count
+                    Published counts for a game vary widely depending on who is counting and what
+                    they count
                     {hasRunPlanner ? (
                       <>
                         , and at least one ally questline is described with a different length and a
@@ -361,6 +384,13 @@ export default async function AboutPage({ params }: Props) {
                     ) : null}
                     . Where sources conflict we record the conflict on the page rather than pick a
                     winner.
+                  </p>
+                  <p>
+                    Behind that, every record is rated for how far we trust it, and that rating
+                    decides what gets rewritten next. It is a working note for the people editing
+                    this wiki rather than something printed beside a fact, because a hedge next to
+                    a sentence does not help you decide whether to believe it — the sources
+                    underneath do, and they are on every page.
                   </p>
                 </>
               )}

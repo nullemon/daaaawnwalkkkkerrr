@@ -1,6 +1,6 @@
 {
   "slug": "control-resonant",
-  "fetchedAt": "2026-09-15",
+  "fetchedAt": "2026-09-19",
   "terms": [
     "control resonant",
     "control 2"
@@ -8,15 +8,15 @@
   "queries": [
     {
       "query": "is there a control 2",
-      "weight": 114
+      "weight": 115
     },
     {
       "query": "what is resonant peak in control system",
-      "weight": 105
+      "weight": 106
     },
     {
       "query": "control 2 release date",
-      "weight": 104
+      "weight": 105
     },
     {
       "query": "control resonant will it be on pc",
@@ -64,7 +64,7 @@
     },
     {
       "query": "how to fit dual controls",
-      "weight": 14
+      "weight": 13
     },
     {
       "query": "control resonant can i run it",
@@ -215,6 +215,10 @@
       "weight": 8
     },
     {
+      "query": "control resonant where to buy",
+      "weight": 8
+    },
+    {
       "query": "control when to do dlc",
       "weight": 8
     },
@@ -231,11 +235,7 @@
       "weight": 8
     },
     {
-      "query": "control resonant time to beat",
-      "weight": 7
-    },
-    {
-      "query": "control resonant where to buy",
+      "query": "control resonant price",
       "weight": 7
     },
     {
@@ -272,10 +272,6 @@
     },
     {
       "query": "control 2 concept art",
-      "weight": 6
-    },
-    {
-      "query": "control 2 drugs list",
       "weight": 6
     },
     {
@@ -515,10 +511,6 @@
       "weight": 6
     },
     {
-      "query": "control resonant price",
-      "weight": 6
-    },
-    {
       "query": "control resonant ps5",
       "weight": 6
     },
@@ -559,10 +551,6 @@
       "weight": 6
     },
     {
-      "query": "control resonant steam",
-      "weight": 6
-    },
-    {
       "query": "control resonant steelbook",
       "weight": 6
     },
@@ -572,6 +560,10 @@
     },
     {
       "query": "control resonant system requirements",
+      "weight": 6
+    },
+    {
+      "query": "control resonant time to beat",
       "weight": 6
     },
     {
@@ -607,7 +599,7 @@
       "weight": 6
     },
     {
-      "query": "control resonant xbox series x",
+      "query": "control resonant zoe de vera",
       "weight": 6
     },
     {
@@ -683,11 +675,19 @@
       "weight": 6
     },
     {
+      "query": "control 2 drugs list",
+      "weight": 5
+    },
+    {
       "query": "control 2 release",
       "weight": 5
     },
     {
-      "query": "control resonant zoe de vera",
+      "query": "control resonant steam",
+      "weight": 5
+    },
+    {
+      "query": "control resonant xbox series x",
       "weight": 5
     },
     {
@@ -1103,6 +1103,10 @@
       "weight": 4
     },
     {
+      "query": "control pro 2 nikon",
+      "weight": 4
+    },
+    {
       "query": "control resonance character creation",
       "weight": 4
     },
@@ -1199,10 +1203,6 @@
       "weight": 4
     },
     {
-      "query": "control resonant collectors",
-      "weight": 4
-    },
-    {
       "query": "control resonant combat",
       "weight": 4
     },
@@ -1212,6 +1212,10 @@
     },
     {
       "query": "control resonant coming to pc",
+      "weight": 4
+    },
+    {
+      "query": "control resonant coming to steam",
       "weight": 4
     },
     {
@@ -1244,10 +1248,6 @@
     },
     {
       "query": "control resonant cuando sale",
-      "weight": 4
-    },
-    {
-      "query": "control resonant date",
       "weight": 4
     },
     {
@@ -1284,6 +1284,10 @@
     },
     {
       "query": "control resonant download size",
+      "weight": 4
+    },
+    {
+      "query": "control resonant dylan faden",
       "weight": 4
     },
     {
@@ -1659,6 +1663,10 @@
       "weight": 4
     },
     {
+      "query": "control resonant pc system requirements",
+      "weight": 4
+    },
+    {
       "query": "control resonant petri alanko",
       "weight": 4
     },
@@ -1756,6 +1764,10 @@
     },
     {
       "query": "control resonant steam price",
+      "weight": 4
+    },
+    {
+      "query": "control resonant steelbook best buy",
       "weight": 4
     },
     {
@@ -1951,15 +1963,7 @@
       "weight": 4
     },
     {
-      "query": "control resonant xbox pre order",
-      "weight": 4
-    },
-    {
       "query": "control resonant xbox steelbook",
-      "weight": 4
-    },
-    {
-      "query": "control resonant xbox store",
       "weight": 4
     },
     {
@@ -2063,15 +2067,7 @@
       "weight": 4
     },
     {
-      "query": "controller elite 2 xbox",
-      "weight": 4
-    },
-    {
       "query": "controller elves 2",
-      "weight": 4
-    },
-    {
-      "query": "controller for 2",
       "weight": 4
     },
     {
@@ -2096,6 +2092,10 @@
     },
     {
       "query": "controller nintendo 2",
+      "weight": 4
+    },
+    {
+      "query": "controller nintendo 2 pro",
       "weight": 4
     },
     {
@@ -2124,10 +2124,6 @@
     },
     {
       "query": "controller series 2 elite",
-      "weight": 4
-    },
-    {
-      "query": "controller series 2 xbox",
       "weight": 4
     },
     {
@@ -2224,10 +2220,6 @@
     },
     {
       "query": "elite controller 2 worth it",
-      "weight": 4
-    },
-    {
-      "query": "elite controller 2 xbox",
       "weight": 4
     },
     {
@@ -2439,10 +2431,6 @@
       "weight": 4
     },
     {
-      "query": "steam controller 2 xbox compatible",
-      "weight": 4
-    },
-    {
       "query": "steam controller 2 xinput",
       "weight": 4
     },
@@ -2479,11 +2467,15 @@
       "weight": 4
     },
     {
-      "query": "control pro 2 nikon",
+      "query": "control destiny 2 emblem",
       "weight": 3
     },
     {
-      "query": "control resonant coming to steam",
+      "query": "control resonant collectors",
+      "weight": 3
+    },
+    {
+      "query": "control resonant concept art",
       "weight": 3
     },
     {
@@ -2491,15 +2483,59 @@
       "weight": 3
     },
     {
-      "query": "control resonant pc system requirements",
+      "query": "control resonant sinkhole music",
       "weight": 3
     },
     {
-      "query": "control resonant steelbook best buy",
+      "query": "control resonant sinkhole song",
       "weight": 3
     },
     {
-      "query": "controller nintendo 2 pro",
+      "query": "control resonant trailer song name",
+      "weight": 3
+    },
+    {
+      "query": "control resonant xbox pre order",
+      "weight": 3
+    },
+    {
+      "query": "control resonant xbox store",
+      "weight": 3
+    },
+    {
+      "query": "controller elite 2 xbox",
+      "weight": 3
+    },
+    {
+      "query": "controller for 2",
+      "weight": 3
+    },
+    {
+      "query": "controller series 2 xbox",
+      "weight": 3
+    },
+    {
+      "query": "elite controller 2 xbox",
+      "weight": 3
+    },
+    {
+      "query": "pro controller 2 for pc",
+      "weight": 3
+    },
+    {
+      "query": "star control 2 tips",
+      "weight": 3
+    },
+    {
+      "query": "steam controller 2 features",
+      "weight": 3
+    },
+    {
+      "query": "steam controller 2 for sale",
+      "weight": 3
+    },
+    {
+      "query": "steam controller 2 xbox compatible",
       "weight": 3
     },
     {
@@ -2795,6 +2831,10 @@
       "weight": 2
     },
     {
+      "query": "aqua control 2 custom print",
+      "weight": 2
+    },
+    {
       "query": "aqua control 2 good",
       "weight": 2
     },
@@ -3008,6 +3048,10 @@
     },
     {
       "query": "camera control 2 nikon",
+      "weight": 2
+    },
+    {
+      "query": "camera control pro 2 nikon",
       "weight": 2
     },
     {
@@ -3855,10 +3899,6 @@
       "weight": 2
     },
     {
-      "query": "control destiny 2 emblem",
-      "weight": 2
-    },
-    {
       "query": "control diabetes 2",
       "weight": 2
     },
@@ -4131,6 +4171,10 @@
       "weight": 2
     },
     {
+      "query": "control resonant age rating",
+      "weight": 2
+    },
+    {
       "query": "control resonant ai",
       "weight": 2
     },
@@ -4315,10 +4359,6 @@
       "weight": 2
     },
     {
-      "query": "control resonant concept art",
-      "weight": 2
-    },
-    {
       "query": "control resonant config",
       "weight": 2
     },
@@ -4380,6 +4420,10 @@
     },
     {
       "query": "control resonant datablitz",
+      "weight": 2
+    },
+    {
+      "query": "control resonant date",
       "weight": 2
     },
     {
@@ -4500,10 +4544,6 @@
     },
     {
       "query": "control resonant dylan",
-      "weight": 2
-    },
-    {
-      "query": "control resonant dylan faden",
       "weight": 2
     },
     {
@@ -5123,10 +5163,6 @@
       "weight": 2
     },
     {
-      "query": "control resonant music trailer",
-      "weight": 2
-    },
-    {
       "query": "control resonant musica",
       "weight": 2
     },
@@ -5260,6 +5296,10 @@
     },
     {
       "query": "control resonant pc physical",
+      "weight": 2
+    },
+    {
+      "query": "control resonant pc release",
       "weight": 2
     },
     {
@@ -5464,10 +5504,6 @@
     },
     {
       "query": "control resonant prices",
-      "weight": 2
-    },
-    {
-      "query": "control resonant ps5 buy",
       "weight": 2
     },
     {
@@ -5699,14 +5735,6 @@
       "weight": 2
     },
     {
-      "query": "control resonant sinkhole music",
-      "weight": 2
-    },
-    {
-      "query": "control resonant sinkhole song",
-      "weight": 2
-    },
-    {
       "query": "control resonant sinopse",
       "weight": 2
     },
@@ -5715,15 +5743,15 @@
       "weight": 2
     },
     {
+      "query": "control resonant site",
+      "weight": 2
+    },
+    {
       "query": "control resonant song language",
       "weight": 2
     },
     {
       "query": "control resonant song lyrics",
-      "weight": 2
-    },
-    {
-      "query": "control resonant song trailer",
       "weight": 2
     },
     {
@@ -5739,11 +5767,11 @@
       "weight": 2
     },
     {
-      "query": "control resonant soundtrack",
+      "query": "control resonant specs",
       "weight": 2
     },
     {
-      "query": "control resonant specs",
+      "query": "control resonant starter resource bundle",
       "weight": 2
     },
     {
@@ -5919,14 +5947,6 @@
       "weight": 2
     },
     {
-      "query": "control resonant trailer song name",
-      "weight": 2
-    },
-    {
-      "query": "control resonant trailer soundtrack",
-      "weight": 2
-    },
-    {
       "query": "control resonant trailer theme",
       "weight": 2
     },
@@ -5963,6 +5983,10 @@
       "weight": 2
     },
     {
+      "query": "control resonant uk pre order",
+      "weight": 2
+    },
+    {
       "query": "control resonant universe",
       "weight": 2
     },
@@ -5972,6 +5996,10 @@
     },
     {
       "query": "control resonant unreal engine 5",
+      "weight": 2
+    },
+    {
+      "query": "control resonant untapped artifact",
       "weight": 2
     },
     {
@@ -6204,6 +6232,10 @@
     },
     {
       "query": "control switch 2 from pc",
+      "weight": 2
+    },
+    {
+      "query": "control switch 2 game",
       "weight": 2
     },
     {
@@ -6467,10 +6499,6 @@
       "weight": 2
     },
     {
-      "query": "controller fpv 2 dji",
-      "weight": 2
-    },
-    {
       "query": "controller gen 2",
       "weight": 2
     },
@@ -6680,10 +6708,6 @@
     },
     {
       "query": "controls fnaf 2",
-      "weight": 2
-    },
-    {
-      "query": "controls fnaf 2 pc",
       "weight": 2
     },
     {
@@ -6955,10 +6979,6 @@
       "weight": 2
     },
     {
-      "query": "elite controller 2 rubber coming off",
-      "weight": 2
-    },
-    {
       "query": "elite controller 2 rubber replacement",
       "weight": 2
     },
@@ -6968,10 +6988,6 @@
     },
     {
       "query": "elite controller 2 weight",
-      "weight": 2
-    },
-    {
-      "query": "elite controller 2 xbox series x",
       "weight": 2
     },
     {
@@ -7599,10 +7615,6 @@
       "weight": 2
     },
     {
-      "query": "oculus controller 2 right",
-      "weight": 2
-    },
-    {
       "query": "oil control 2 in 1",
       "weight": 2
     },
@@ -7739,10 +7751,6 @@
       "weight": 2
     },
     {
-      "query": "pro controller 2 for pc",
-      "weight": 2
-    },
-    {
       "query": "pro controller 2 for switch 1",
       "weight": 2
     },
@@ -7836,10 +7844,6 @@
     },
     {
       "query": "pro controller 2 worth it reddit",
-      "weight": 2
-    },
-    {
-      "query": "pro controller 2 xbox",
       "weight": 2
     },
     {
@@ -8012,10 +8016,6 @@
     },
     {
       "query": "road control 2 les schwab",
-      "weight": 2
-    },
-    {
-      "query": "road control 2 tires",
       "weight": 2
     },
     {
@@ -8391,10 +8391,6 @@
       "weight": 2
     },
     {
-      "query": "star control 2 tips",
-      "weight": 2
-    },
-    {
       "query": "star control 2 ultron",
       "weight": 2
     },
@@ -8523,11 +8519,19 @@
       "weight": 2
     },
     {
+      "query": "steam controller 2 carrying case",
+      "weight": 2
+    },
+    {
       "query": "steam controller 2 case",
       "weight": 2
     },
     {
       "query": "steam controller 2 clear",
+      "weight": 2
+    },
+    {
+      "query": "steam controller 2 custom buttons",
       "weight": 2
     },
     {
@@ -8579,10 +8583,6 @@
       "weight": 2
     },
     {
-      "query": "steam controller 2 features",
-      "weight": 2
-    },
-    {
       "query": "steam controller 2 feel",
       "weight": 2
     },
@@ -8604,10 +8604,6 @@
     },
     {
       "query": "steam controller 2 for ps5",
-      "weight": 2
-    },
-    {
-      "query": "steam controller 2 for sale",
       "weight": 2
     },
     {
@@ -9095,10 +9091,6 @@
       "weight": 2
     },
     {
-      "query": "taking birth control 2 hours late",
-      "weight": 2
-    },
-    {
       "query": "temperature control 2 circuit",
       "weight": 2
     },
@@ -9371,6 +9363,10 @@
       "weight": 2
     },
     {
+      "query": "will control resonant get dlc",
+      "weight": 2
+    },
+    {
       "query": "will control resonant have a physical release",
       "weight": 2
     },
@@ -9443,18 +9439,6 @@
       "weight": 2
     },
     {
-      "query": "xenyx control 2",
-      "weight": 2
-    },
-    {
-      "query": "xenyx control 2 behringer",
-      "weight": 2
-    },
-    {
-      "query": "xenyx control 2 usb behringer",
-      "weight": 2
-    },
-    {
       "query": "xenyx control 2 usb driver",
       "weight": 2
     },
@@ -9475,10 +9459,6 @@
       "weight": 2
     },
     {
-      "query": "xraypad control 2",
-      "weight": 2
-    },
-    {
       "query": "zap pest control 2 llc",
       "weight": 2
     },
@@ -9487,23 +9467,7 @@
       "weight": 2
     },
     {
-      "query": "aqua control 2 custom print",
-      "weight": 1
-    },
-    {
-      "query": "camera control pro 2 nikon",
-      "weight": 1
-    },
-    {
-      "query": "control ii release date",
-      "weight": 1
-    },
-    {
-      "query": "control nice 2 botones",
-      "weight": 1
-    },
-    {
-      "query": "control resonant age rating",
+      "query": "can you use two controllers on xbox",
       "weight": 1
     },
     {
@@ -9511,87 +9475,87 @@
       "weight": 1
     },
     {
-      "query": "control resonant pc or ps5",
+      "query": "control resonant music trailer",
       "weight": 1
     },
     {
-      "query": "control resonant pc physical copy",
+      "query": "control resonant song trailer",
       "weight": 1
     },
     {
-      "query": "control resonant pc release",
+      "query": "control resonant soundtrack",
       "weight": 1
     },
     {
-      "query": "control resonant site",
+      "query": "control resonant theme song",
       "weight": 1
     },
     {
-      "query": "control resonant starter resource bundle",
+      "query": "control resonant trailer soundtrack",
       "weight": 1
     },
     {
-      "query": "control resonant steelbook edition australia",
+      "query": "control resonant xbox one",
       "weight": 1
     },
     {
-      "query": "control resonant third person",
+      "query": "control resonant xbox price",
       "weight": 1
     },
     {
-      "query": "control resonant uk pre order",
+      "query": "control resonant xbox series x steelbook",
       "weight": 1
     },
     {
-      "query": "control resonant untapped artifact",
+      "query": "controller fpv 2 dji",
       "weight": 1
     },
     {
-      "query": "control switch 2 game",
+      "query": "controller switch 2 xbox",
       "weight": 1
     },
     {
-      "query": "control switch 2 nintendo 64",
+      "query": "controls fnaf 2 pc",
       "weight": 1
     },
     {
-      "query": "controller switch 2 pc",
+      "query": "controls injustice 2 xbox",
       "weight": 1
     },
     {
-      "query": "elite controller 2 currys",
+      "query": "elite controller 2 rubber coming off",
       "weight": 1
     },
     {
-      "query": "resonance control unit",
+      "query": "elite controller 2 xbox series x",
       "weight": 1
     },
     {
-      "query": "resonance control unit drawing",
+      "query": "how to play xbox with two controllers",
       "weight": 1
     },
     {
-      "query": "resonant controller simulink",
+      "query": "oculus controller 2 right",
       "weight": 1
     },
     {
-      "query": "roll control 2 nice",
+      "query": "pro controller 2 rumble not working",
       "weight": 1
     },
     {
-      "query": "steam controller 2 cad files",
+      "query": "pro controller 2 xbox",
       "weight": 1
     },
     {
-      "query": "steam controller 2 carrying case",
+      "query": "road control 2 tires",
       "weight": 1
     },
     {
-      "query": "steam controller 2 custom buttons",
+      "query": "star control ii guide",
       "weight": 1
     },
     {
-      "query": "steam controller 2 custom sounds",
+      "query": "steam controller 2 lizard mode",
       "weight": 1
     },
     {
@@ -9603,11 +9567,31 @@
       "weight": 1
     },
     {
-      "query": "will control resonant get a physical release",
+      "query": "taking birth control 2 hours late",
       "weight": 1
     },
     {
-      "query": "will control resonant get dlc",
+      "query": "xenyx control 2",
+      "weight": 1
+    },
+    {
+      "query": "xenyx control 2 behringer",
+      "weight": 1
+    },
+    {
+      "query": "xenyx control 2 driver",
+      "weight": 1
+    },
+    {
+      "query": "xenyx control 2 manual",
+      "weight": 1
+    },
+    {
+      "query": "xenyx control 2 usb behringer",
+      "weight": 1
+    },
+    {
+      "query": "xraypad control 2",
       "weight": 1
     }
   ]

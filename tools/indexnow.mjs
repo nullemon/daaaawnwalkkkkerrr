@@ -52,9 +52,19 @@
  * a mismatch is a sentence naming the host rather than a rejection naming
  * nothing. Nothing is sent if any host fails.
  *
- * Re-run it after a deploy that adds or changes pages. Nothing triggers this
- * automatically, deliberately: submitting unchanged URLs repeatedly is not
- * useful and is the documented way to get a key throttled.
+ * ## What this does that the publish ping does not
+ *
+ * The site now announces a page of its own accord when a record is published —
+ * one URL, on its own host, and only when the page already answers 200. That
+ * is `src/lib/indexnow-publish.ts`, and it deliberately refuses anything that
+ * looks like a script: a bulk batch is dropped whole rather than submitted,
+ * because IndexNow is priced in trust rather than in requests.
+ *
+ * This tool is the other half of that bargain and is still the one to run
+ * after a deploy: it submits **everything in every sitemap**, on purpose, with
+ * somebody watching, and prints what it is doing first. Everything the ping
+ * refused — a bulk publish, a page that was not built yet, an hour that hit
+ * the ceiling — is submitted here.
  */
 import fs from 'fs'
 import path from 'path'

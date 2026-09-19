@@ -46,8 +46,11 @@ async function run(): Promise<void> {
 
   /*
     Database findings first, then source findings, which is the order the
-    report has always printed in: every source finding is blocking, and no
-    database finding between them is, so appending them cannot reorder a tier.
+    report has always printed in. The tiers below sort the two together, so a
+    source finding lands at the end of whichever tier it belongs to rather
+    than after everything — which is right: a host that serves no verification
+    tag is worth reading next to the wikis that have no token, not three
+    sections below them.
   */
   const snapshot = await auditNetwork(payload)
   const findings: Finding[] = [...snapshot.findings, ...auditSource()]

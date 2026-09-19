@@ -9,6 +9,7 @@ import config from '../payload.config'
 import { rich, type Block } from './lexical'
 import { slugify } from '../fields/shared'
 import { SECTION_PATH, type GameScopedCollection } from '../lib/tenancy'
+import { gameWords as wordsInName, terms } from '../lib/terms'
 import { isNotAnEntity, isNotAPlace, type HarvestedEntity } from '../lib/harvest'
 
 /**
@@ -826,7 +827,7 @@ async function run(): Promise<void> {
           { h: `All ${rows.length}` },
           { ul: titles },
           { h: 'Where the full records are' },
-          `Each of these has its own page under ${SECTION_PATH[section.collection]}, with its sources and its confidence rating.`,
+          `Each of these has its own page under ${SECTION_PATH[section.collection]}, with the sources it was built from.`,
           { h: 'How complete this list is' },
           {
             ul: [
@@ -878,24 +879,17 @@ async function run(): Promise<void> {
     if (fs.existsSync(queryFile)) {
       const harvestQ = JSON.parse(fs.readFileSync(queryFile, 'utf8')) as {
         terms: string[]
+        /* The day the completions were read. Every harvest writes it; the
+           citation below prints it as the retrieval date. */
+        fetchedAt?: string
         queries: { query: string; weight: number }[]
       }
 
-      const STOP = new Set([
-        'the', 'a', 'an', 'is', 'it', 'to', 'of', 'in', 'on', 'for', 'and', 'or',
-        'how', 'what', 'when', 'where', 'why', 'does', 'do', 'can', 'you', 'i',
-        'be', 'are', 'was', 'will', 'there', 'much', 'many', 'long', 'get', 'game',
-      ])
-      const words = (value: string) =>
-        value
-          .toLowerCase()
-          .replace(/[^a-z0-9\s]/g, ' ')
-          .split(/\s+/)
-          .filter((word) => word.length > 2 && !STOP.has(word))
-
       /* The game's own name carries every comparison, so it is discounted on
-         both sides - the same correction the hub's matcher needs. */
-      const gameWords = new Set(harvestQ.terms.flatMap((term) => words(term)))
+         both sides. This was a second copy of the word list and the tokeniser;
+         both now come from `lib/terms.ts`, which the hub's matcher and the
+         "More guides" rail also read. */
+      const gameWords = wordsInName(harvestQ.terms)
 
       const mine = (
         await payload.find({
@@ -909,7 +903,7 @@ async function run(): Promise<void> {
 
       const indexed = mine.map((guide) => ({
         title: guide.title,
-        terms: new Set([...words(guide.title), ...words(guide.targetQuery ?? '')]),
+        terms: new Set([...terms(guide.title), ...terms(guide.targetQuery ?? '')]),
       }))
 
       const answered: string[] = []
@@ -917,7 +911,7 @@ async function run(): Promise<void> {
       const seenShape = new Set<string>()
 
       for (const entry of harvestQ.queries.slice(0, 400)) {
-        const asked = words(entry.query).filter((word) => !gameWords.has(word))
+        const asked = terms(entry.query).filter((word) => !gameWords.has(word))
         if (asked.length < 2) continue
 
         // One row per distinct question shape, so the list is not forty
@@ -945,6 +939,41 @@ async function run(): Promise<void> {
         }
       }
 
+      /*
+        The demand pages cite the harvest, because the harvest is what they are
+        made of.
+
+        Every other page from this pass compiles the store listing, so `sources`
+        above — the store page, plus Wikipedia where there is an article — is
+        the right citation for it. These two are not: they are built from
+        `src/seed/raw/queries/<slug>.json`, a record of what search autocomplete
+        returned for this game's name on a stated day, and the store listing has
+        nothing to do with them.
+
+        Nobody noticed because the store citation was there anyway and looked
+        plausible. GTA 6 is what made it visible: it has no Steam listing at
+        all, so `sources` came out empty and its two demand pages were the only
+        pages of 610 on this network carrying no citation. The fix is not to
+        find them a store page — it is to cite the thing they were actually
+        built from, which every wiki should have been doing.
+
+        The URL is the search a reader can run to check it. Autocomplete has no
+        permanent address, and a citation nobody can follow is decoration; a
+        search for the game's name is the closest thing to "here is where this
+        came from, look for yourself".
+      */
+      const demandSources = harvestQ
+        ? [
+            {
+              title: `Search autocomplete for ${harvestQ.terms.join(', ')}`,
+              url: `https://www.google.com/search?q=${encodeURIComponent(harvestQ.terms[0] ?? name)}`,
+              /* Always present in practice;  rather than a spread so the
+                 shape matches the store citations exactly. */
+              retrieved: harvestQ.fetchedAt ?? null,
+            },
+          ]
+        : []
+
       if (answered.length >= 5) {
         await write(
           'most-searched',
@@ -961,6 +990,7 @@ async function run(): Promise<void> {
             'Not a ranking by volume - autocomplete gives order, not numbers, and a page claiming search volumes it cannot measure would be inventing them. Treat the order as rough.',
           ],
           /Launch/,
+          demandSources,
         )
       }
 
@@ -989,6 +1019,7 @@ async function run(): Promise<void> {
             'This list is regenerated from fresh search data, and a question leaves it as soon as a page here answers it. If you know a published source that settles one, the correction form on this wiki is the fastest way to get it written.',
           ],
           /Launch/,
+          demandSources,
         )
       }
     }

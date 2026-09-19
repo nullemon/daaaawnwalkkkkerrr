@@ -97,6 +97,9 @@ export interface Config {
     media: Media;
     players: Player;
     users: User;
+    'remote-devices': RemoteDevice;
+    'remote-sessions': RemoteSession;
+    'remote-log': RemoteLog;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -133,6 +136,9 @@ export interface Config {
     media: MediaSelect<false> | MediaSelect<true>;
     players: PlayersSelect<false> | PlayersSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
+    'remote-devices': RemoteDevicesSelect<false> | RemoteDevicesSelect<true>;
+    'remote-sessions': RemoteSessionsSelect<false> | RemoteSessionsSelect<true>;
+    'remote-log': RemoteLogSelect<false> | RemoteLogSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -148,6 +154,7 @@ export interface Config {
     'ui-strings': UiString;
     'companies-site': CompaniesSite;
     'people-site': PeopleSite;
+    'remote-access': RemoteAccess;
   };
   globalsSelect: {
     'site-settings': SiteSettingsSelect<false> | SiteSettingsSelect<true>;
@@ -155,6 +162,7 @@ export interface Config {
     'ui-strings': UiStringsSelect<false> | UiStringsSelect<true>;
     'companies-site': CompaniesSiteSelect<false> | CompaniesSiteSelect<true>;
     'people-site': PeopleSiteSelect<false> | PeopleSiteSelect<true>;
+    'remote-access': RemoteAccessSelect<false> | RemoteAccessSelect<true>;
   };
   locale: null;
   widgets: {
@@ -275,7 +283,7 @@ export interface Quest {
    */
   infamy?: number | null;
   /**
-   * Shown to readers as a badge. Be honest — it is the whole point of this site.
+   * Editorial only — readers do not see this; signed-in editors do. Be honest: a Low here is a job, and nothing else on the site records that it is one.
    */
   confidence: 'high' | 'medium' | 'low';
   /**
@@ -362,7 +370,7 @@ export interface Region {
   parent?: (number | null) | Region;
   dangerRating?: ('starting' | 'moderate' | 'dangerous' | 'late') | null;
   /**
-   * Shown to readers as a badge. Be honest — it is the whole point of this site.
+   * Editorial only — readers do not see this; signed-in editors do. Be honest: a Low here is a job, and nothing else on the site records that it is one.
    */
   confidence: 'high' | 'medium' | 'low';
   /**
@@ -513,7 +521,7 @@ export interface Court {
    */
   bossEnemy?: (number | null) | Enemy;
   /**
-   * Shown to readers as a badge. Be honest — it is the whole point of this site.
+   * Editorial only — readers do not see this; signed-in editors do. Be honest: a Low here is a job, and nothing else on the site records that it is one.
    */
   confidence: 'high' | 'medium' | 'low';
   /**
@@ -602,7 +610,7 @@ export interface Enemy {
     | null;
   phase?: ('day' | 'night' | 'either') | null;
   /**
-   * Shown to readers as a badge. Be honest — it is the whole point of this site.
+   * Editorial only — readers do not see this; signed-in editors do. Be honest: a Low here is a job, and nothing else on the site records that it is one.
    */
   confidence: 'high' | 'medium' | 'low';
   /**
@@ -684,7 +692,7 @@ export interface Faction {
    */
   kind?: ('military' | 'government' | 'corporation' | 'cult' | 'criminal' | 'other') | null;
   /**
-   * Shown to readers as a badge. Be honest — it is the whole point of this site.
+   * Editorial only — readers do not see this; signed-in editors do. Be honest: a Low here is a job, and nothing else on the site records that it is one.
    */
   confidence: 'high' | 'medium' | 'low';
   /**
@@ -889,9 +897,9 @@ export interface Game {
      */
     score?: number | null;
     /**
-     * Printed beside the score. An outlook is not a review and the page must not let a reader think it is.
+     * Printed beside the score. There is no option here for a game that is not out: it shows no score at all, whatever is filled in.
      */
-    basis?: ('played' | 'published' | 'outlook') | null;
+    basis?: ('played' | 'published') | null;
     /**
      * A game changes after launch; a score with no date is a claim about a moving target.
      */
@@ -1038,6 +1046,7 @@ export interface Game {
     statsHeading?: string | null;
     trustHeading?: string | null;
     trustBody?: string | null;
+    relatedHeading?: string | null;
   };
   aboutPage?: {
     /**
@@ -1115,7 +1124,7 @@ export interface Game {
       [k: string]: unknown;
     } | null;
     /**
-     * The three-level list and the note under it.
+     * What this wiki does when two sources do not agree.
      */
     confidence?: {
       root: {
@@ -1354,7 +1363,7 @@ export interface Ending {
    */
   outcome?: string | null;
   /**
-   * Shown to readers as a badge. Be honest — it is the whole point of this site.
+   * Editorial only — readers do not see this; signed-in editors do. Be honest: a Low here is a job, and nothing else on the site records that it is one.
    */
   confidence: 'high' | 'medium' | 'low';
   /**
@@ -1441,7 +1450,7 @@ export interface Character {
   questline?: (number | Quest)[] | null;
   portrait?: (number | null) | Media;
   /**
-   * Shown to readers as a badge. Be honest — it is the whole point of this site.
+   * Editorial only — readers do not see this; signed-in editors do. Be honest: a Low here is a job, and nothing else on the site records that it is one.
    */
   confidence: 'high' | 'medium' | 'low';
   /**
@@ -1541,7 +1550,7 @@ export interface Item {
     | null;
   image?: (number | null) | Media;
   /**
-   * Shown to readers as a badge. Be honest — it is the whole point of this site.
+   * Editorial only — readers do not see this; signed-in editors do. Be honest: a Low here is a job, and nothing else on the site records that it is one.
    */
   confidence: 'high' | 'medium' | 'low';
   /**
@@ -1633,7 +1642,7 @@ export interface CourtActivity {
   angerValue?: number | null;
   howToStart?: string | null;
   /**
-   * Shown to readers as a badge. Be honest — it is the whole point of this site.
+   * Editorial only — readers do not see this; signed-in editors do. Be honest: a Low here is a job, and nothing else on the site records that it is one.
    */
   confidence: 'high' | 'medium' | 'low';
   /**
@@ -1735,7 +1744,7 @@ export interface Achievement {
    */
   howTo?: string | null;
   /**
-   * Shown to readers as a badge. Be honest — it is the whole point of this site.
+   * Editorial only — readers do not see this; signed-in editors do. Be honest: a Low here is a job, and nothing else on the site records that it is one.
    */
   confidence: 'high' | 'medium' | 'low';
   /**
@@ -1819,7 +1828,7 @@ export interface SkillTree {
    */
   gatedByCorruption?: boolean | null;
   /**
-   * Shown to readers as a badge. Be honest — it is the whole point of this site.
+   * Editorial only — readers do not see this; signed-in editors do. Be honest: a Low here is a job, and nothing else on the site records that it is one.
    */
   confidence: 'high' | 'medium' | 'low';
   /**
@@ -1914,7 +1923,7 @@ export interface Perk {
    */
   effect?: string | null;
   /**
-   * Shown to readers as a badge. Be honest — it is the whole point of this site.
+   * Editorial only — readers do not see this; signed-in editors do. Be honest: a Low here is a job, and nothing else on the site records that it is one.
    */
   confidence: 'high' | 'medium' | 'low';
   /**
@@ -2001,7 +2010,7 @@ export interface Build {
    */
   segmentCost?: number | null;
   /**
-   * Shown to readers as a badge. Be honest — it is the whole point of this site.
+   * Editorial only — readers do not see this; signed-in editors do. Be honest: a Low here is a job, and nothing else on the site records that it is one.
    */
   confidence: 'high' | 'medium' | 'low';
   /**
@@ -2092,7 +2101,7 @@ export interface Mechanic {
       }[]
     | null;
   /**
-   * Shown to readers as a badge. Be honest — it is the whole point of this site.
+   * Editorial only — readers do not see this; signed-in editors do. Be honest: a Low here is a job, and nothing else on the site records that it is one.
    */
   confidence: 'high' | 'medium' | 'low';
   /**
@@ -2172,13 +2181,25 @@ export interface Guide {
    */
   targetQuery?: string | null;
   /**
-   * Shown to readers as a badge. Be honest — it is the whole point of this site.
+   * Editorial only — readers do not see this; signed-in editors do. Be honest: a Low here is a job, and nothing else on the site records that it is one.
    */
   confidence: 'high' | 'medium' | 'low';
   /**
    * One or two sentences. Used on cards, in search results and as the page lede.
    */
   summary: string;
+  /**
+   * Shown as a short list near the top, above the article. Written by hand or left empty — nothing fills this in for you, and empty prints nothing at all. Three or four points is the useful size; more than that is the article.
+   */
+  takeaways?:
+    | {
+        /**
+         * One sentence. Records named here are linked automatically, the same way the summary is.
+         */
+        point: string;
+        id?: string | null;
+      }[]
+    | null;
   /**
    * The main article. Original prose only — never paste from another site.
    */
@@ -2202,7 +2223,7 @@ export interface Guide {
    */
   image?: (number | null) | Media;
   /**
-   * Shown together partway down the page, under a heading of your choosing. Leave empty for an article with no picture row.
+   * Placed one at a time at the breaks between the article’s sections, in this order. Leave empty for an article with no pictures in the body.
    */
   bodyImages?:
     | {
@@ -2215,19 +2236,15 @@ export interface Guide {
       }[]
     | null;
   /**
-   * Heading above the in-article images.
-   */
-  bodyImagesHeading?: string | null;
-  /**
    * Who is answerable for this page. Shown as a byline under the title and again at the foot, linked to their profile. Blank prints the fallback byline from Site settings instead.
    */
   author?: (number | null) | Author;
   /**
-   * The day this article went up. Shown to readers and given to search engines. Blank shows no publication date at all — the row timestamps are not used as a stand-in, because they move on every rebuild and would claim a date nobody published on.
+   * The day this article went up, if you know it. Yours to fill in — nothing seeds this, and blank shows no publication date at all rather than a stand-in. The row timestamps move on every rebuild, and a derived date would claim a day nobody published on.
    */
   published?: string | null;
   /**
-   * Shown as "last checked". Set it when somebody actually re-read the sources. A guide to a live game goes stale, and saying when it was last looked at is more use than hiding it. Blank shows nothing rather than repeating the publication date.
+   * Shown as "last checked". Set it when somebody actually re-read the sources; it overrides what is shown by default. Left blank, the page shows the most recent retrieval date on the citations below — the day the harvest this guide compiles was read — which is the honest answer for a page nobody has revisited.
    */
   updated?: string | null;
   /**
@@ -2286,7 +2303,7 @@ export interface Guide {
   _status?: ('draft' | 'published') | null;
 }
 /**
- * Bylines for guides. Replace the seeded placeholders with real people before launch and untick "provisional" on each.
+ * Bylines for guides. Replace the seeded rows with real people before launch and untick "provisional" on each — the flag is for this list and the launch checklist, and prints nothing on the site.
  *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "authors".
@@ -2299,7 +2316,7 @@ export interface Author {
    */
   slug: string;
   /**
-   * Ticked puts a "this is a placeholder profile" notice on this contributor's own page. It does not change the byline printed on their guides. Untick it only when the name, biography and credentials below belong to a real person who agreed to them.
+   * An editorial marker, not a reader-facing one: by the owner's decision it renders nothing on any public page and does not change the byline printed on the guides. It sorts this list and is what the launch checklist counts. Untick it when the name, biography and credentials below belong to a real person who agreed to them.
    */
   provisional?: boolean | null;
   /**
@@ -2431,7 +2448,7 @@ export interface Map {
       }[]
     | null;
   /**
-   * Shown to readers as a badge. Be honest — it is the whole point of this site.
+   * Editorial only — readers do not see this; signed-in editors do. Be honest: a Low here is a job, and nothing else on the site records that it is one.
    */
   confidence: 'high' | 'medium' | 'low';
   /**
@@ -2597,7 +2614,7 @@ export interface Company {
    */
   games?: (number | Game)[] | null;
   /**
-   * Shown to readers as a badge. Be honest — it is the whole point of this site.
+   * Editorial only — readers do not see this; signed-in editors do. Be honest: a Low here is a job, and nothing else on the site records that it is one.
    */
   confidence: 'high' | 'medium' | 'low';
   /**
@@ -2742,6 +2759,10 @@ export interface Person {
    */
   characters?: (number | Character)[] | null;
   /**
+   * Bosses and creatures they perform, where the record’s own infobox names them. Filed separately from characters only because this network files the record that way — a boss is still a part somebody played.
+   */
+  enemies?: (number | Enemy)[] | null;
+  /**
    * Companies whose own article names them.
    */
   companies?: (number | Company)[] | null;
@@ -2754,7 +2775,7 @@ export interface Person {
    */
   basis?: ('game-credit' | 'character-credit' | 'company-officer' | 'wiki-mention') | null;
   /**
-   * Shown to readers as a badge. Be honest — it is the whole point of this site.
+   * Editorial only — readers do not see this; signed-in editors do. Be honest: a Low here is a job, and nothing else on the site records that it is one.
    */
   confidence: 'high' | 'medium' | 'low';
   /**
@@ -3121,6 +3142,169 @@ export interface User {
   collection: 'users';
 }
 /**
+ * Machines allowed to ask for a remote session. A device registers itself the first time it connects and is refused until you enable it here. Unticking Enabled closes every session it holds, on its next request.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "remote-devices".
+ */
+export interface RemoteDevice {
+  id: number;
+  /**
+   * What this machine is, in your words. The CLI suggests the hostname; rename it to something you will recognise in six months.
+   */
+  label: string;
+  /**
+   * Off until you turn it on, including for a device that just registered itself. Turning it off revokes every open session this device holds.
+   */
+  enabled?: boolean | null;
+  /**
+   * The device’s Ed25519 public key, base64 SPKI. Written by the pairing route from a signature it verified — editing it by hand would mean trusting a key nobody signed with.
+   */
+  publicKey: string;
+  /**
+   * The same key, in a form you can read out. The CLI prints this too; the two being identical is how you know the row you are enabling is the machine you are sitting at.
+   */
+  fingerprint: string;
+  /**
+   * The address this device registered from. Kept because an unexpected one is the signal.
+   */
+  firstSeenIp?: string | null;
+  lastSeenIp?: string | null;
+  lastSeenAt?: string | null;
+  /**
+   * Yours. Why this device exists, or why you turned it off.
+   */
+  notes?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Every pairing request and every session. The screen you want is Remote control in the sidebar — this list is the history behind it.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "remote-sessions".
+ */
+export interface RemoteSession {
+  id: number;
+  /**
+   * The sixteen characters the terminal printed. Compared by eye, never accepted as a credential — the token that authorises requests is minted by the server and stored here only as a hash.
+   */
+  code: string;
+  status: 'pending' | 'approved' | 'open' | 'denied' | 'locked' | 'expired' | 'revoked' | 'closed';
+  device: number | RemoteDevice;
+  /**
+   * What the terminal asked to be allowed to do.
+   */
+  requestedCapabilities?: ('read' | 'create' | 'update' | 'publish' | 'delete')[] | null;
+  /**
+   * What the approver ticked on the approval screen. Their half of the pair, kept so the row says what was offered as well as what was used.
+   */
+  approvedCapabilities?: ('read' | 'create' | 'update' | 'publish' | 'delete')[] | null;
+  /**
+   * What was granted: the intersection of the two lines above, fixed when the terminal collected its token. Ticking a box the terminal did not ask for does not widen a session.
+   */
+  capabilities?: ('read' | 'create' | 'update' | 'publish' | 'delete')[] | null;
+  /**
+   * HMAC of the session token, keyed on PAYLOAD_SECRET. The token itself is never stored, so rotating that secret ends every live session.
+   */
+  tokenHash?: string | null;
+  /**
+   * Every operation this session performs runs as this account, with access control on. A remote session is never more powerful than the editor who approved it.
+   */
+  approvedBy?: (number | null) | User;
+  approvedAt?: string | null;
+  /**
+   * When this stops being approvable.
+   */
+  pairingExpiresAt?: string | null;
+  expiresAt?: string | null;
+  lastUsedAt?: string | null;
+  /**
+   * Milliseconds of quiet before the session closes itself, fixed at approval.
+   */
+  idleMs?: number | null;
+  /**
+   * Wrong codes typed into the confirm box. Five locks the session permanently.
+   */
+  codeAttempts?: number | null;
+  /**
+   * Where the pairing request came from.
+   */
+  ip?: string | null;
+  /**
+   * What the CLI said it was. A claim, like any user-agent.
+   */
+  agent?: string | null;
+  /**
+   * Operations that changed something. The detail is in the Remote log.
+   */
+  writes?: number | null;
+  /**
+   * Operations that changed nothing. Counted rather than logged row by row — a log nobody can read through is not an audit trail.
+   */
+  reads?: number | null;
+  /**
+   * Why it is no longer open, in the words the CLI was given.
+   */
+  endedReason?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Every change a remote session made. Written by the server, read-only everywhere, and not deletable — the trail is the reason the feature is safe to have.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "remote-log".
+ */
+export interface RemoteLog {
+  id: number;
+  session?: (number | null) | RemoteSession;
+  device?: (number | null) | RemoteDevice;
+  /**
+   * The editor whose account the session ran as — the one who approved it.
+   */
+  actor?: (number | null) | User;
+  op: string;
+  targetCollection: string;
+  docId?: string | null;
+  slug?: string | null;
+  /**
+   * The wiki, as a label rather than a relationship — not every operation has one.
+   */
+  game?: string | null;
+  /**
+   * One line, as the log list shows it.
+   */
+  summary: string;
+  /**
+   * The fields the operation set, and short scalar values. Not the whole document — that is in the collection, with its versions.
+   */
+  changed?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
+  /**
+   * The capabilities this session held when it made this request — what it was allowed to do, beside what it did.
+   */
+  granted?: string | null;
+  ip?: string | null;
+  /**
+   * Refusals are logged too. An attempt to write something a session was not allowed to write is the entry somebody will most want to find.
+   */
+  outcome: 'ok' | 'refused' | 'failed';
+  /**
+   * Why, when it was not applied.
+   */
+  detail?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
@@ -3259,6 +3443,18 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'users';
         value: number | User;
+      } | null)
+    | ({
+        relationTo: 'remote-devices';
+        value: number | RemoteDevice;
+      } | null)
+    | ({
+        relationTo: 'remote-sessions';
+        value: number | RemoteSession;
+      } | null)
+    | ({
+        relationTo: 'remote-log';
+        value: number | RemoteLog;
       } | null);
   globalSlug?: string | null;
   user:
@@ -3821,6 +4017,12 @@ export interface GuidesSelect<T extends boolean = true> {
   targetQuery?: T;
   confidence?: T;
   summary?: T;
+  takeaways?:
+    | T
+    | {
+        point?: T;
+        id?: T;
+      };
   body?: T;
   image?: T;
   bodyImages?:
@@ -3830,7 +4032,6 @@ export interface GuidesSelect<T extends boolean = true> {
         caption?: T;
         id?: T;
       };
-  bodyImagesHeading?: T;
   author?: T;
   published?: T;
   updated?: T;
@@ -4058,6 +4259,7 @@ export interface PeopleSelect<T extends boolean = true> {
       };
   games?: T;
   characters?: T;
+  enemies?: T;
   companies?: T;
   photo?: T;
   basis?: T;
@@ -4240,6 +4442,7 @@ export interface GamesSelect<T extends boolean = true> {
         statsHeading?: T;
         trustHeading?: T;
         trustBody?: T;
+        relatedHeading?: T;
       };
   aboutPage?:
     | T
@@ -4507,6 +4710,71 @@ export interface UsersSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "remote-devices_select".
+ */
+export interface RemoteDevicesSelect<T extends boolean = true> {
+  label?: T;
+  enabled?: T;
+  publicKey?: T;
+  fingerprint?: T;
+  firstSeenIp?: T;
+  lastSeenIp?: T;
+  lastSeenAt?: T;
+  notes?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "remote-sessions_select".
+ */
+export interface RemoteSessionsSelect<T extends boolean = true> {
+  code?: T;
+  status?: T;
+  device?: T;
+  requestedCapabilities?: T;
+  approvedCapabilities?: T;
+  capabilities?: T;
+  tokenHash?: T;
+  approvedBy?: T;
+  approvedAt?: T;
+  pairingExpiresAt?: T;
+  expiresAt?: T;
+  lastUsedAt?: T;
+  idleMs?: T;
+  codeAttempts?: T;
+  ip?: T;
+  agent?: T;
+  writes?: T;
+  reads?: T;
+  endedReason?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "remote-log_select".
+ */
+export interface RemoteLogSelect<T extends boolean = true> {
+  session?: T;
+  device?: T;
+  actor?: T;
+  op?: T;
+  targetCollection?: T;
+  docId?: T;
+  slug?: T;
+  game?: T;
+  summary?: T;
+  changed?: T;
+  granted?: T;
+  ip?: T;
+  outcome?: T;
+  detail?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv_select".
  */
 export interface PayloadKvSelect<T extends boolean = true> {
@@ -4551,7 +4819,22 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
  */
 export interface SiteSetting {
   id: number;
+  /**
+   * The network’s name, everywhere. Nothing hardcodes it: the rail, the footer, every <title>, the share cards, the legal pages and the reset emails all read this field, so renaming the network is this one box. The drawn mark beside it is a ruled sheet rather than an initial for the same reason — it survives the rename.
+   */
   siteName: string;
+  /**
+   * Optional. Replaces the drawn mark beside the site name in the rail, the footer and the home pages. Leave empty to keep the drawn one. SVG or a transparent PNG at about 3x the height you want; it is rendered at 17–36px depending on where it sits.
+   */
+  logoImage?: (number | null) | Media;
+  /**
+   * Optional, and only read when a logo image is set above. A picture cannot be recoloured by the theme the way the drawn mark can, so a dark-ink logo vanishes on the dark rail. Leave empty if the one above works on both.
+   */
+  logoImageDark?: (number | null) | Media;
+  /**
+   * What a screen reader says in place of the picture. Left blank it falls back to the site name, which is right for a wordmark and wrong for a logo that says something the name does not.
+   */
+  logoAlt?: string | null;
   tagline: string;
   /**
    * Default meta description for pages that do not set their own.
@@ -4620,7 +4903,7 @@ export interface SiteSetting {
    */
   footerNote?: string | null;
   /**
-   * Leave empty to keep the built-in columns. Links are relative to whichever host the footer is on unless they start with http.
+   * Added to the built-in columns, not in place of them: a heading that matches one of them adds links to it, a new heading becomes a new column, and nothing here can remove a built-in link — several pages have no other inbound link on the site. Links are relative to whichever host the footer is on unless they start with http. Leave empty to change nothing.
    */
   footerColumns?:
     | {
@@ -4686,6 +4969,10 @@ export interface SiteSetting {
   statWikisLabel?: string | null;
   statPagesLabel?: string | null;
   statUpcomingLabel?: string | null;
+  statGuidesLabel?: string | null;
+  statStudiosLabel?: string | null;
+  statPeopleLabel?: string | null;
+  statVerifiedLabel?: string | null;
   askingHeading?: string | null;
   askingNote?: string | null;
   directoryHeading?: string | null;
@@ -4730,7 +5017,11 @@ export interface SiteSetting {
    */
   showImageCredits?: boolean | null;
   /**
-   * What somebody sees on their first visit. The toggle in the header overrides it for that reader from then on, in both directions, and their choice is remembered — this only decides where they start.
+   * Whether the sun/moon button appears at the foot of the rail at all. Left on “Readers may switch”, it does, and each reader’s choice is remembered on their own device. Set to dark only or light only, every page of every site in the network renders in that theme, the button is not drawn, and a reader who had previously chosen the other one is moved to this one on their next visit. Their old choice is kept rather than erased: lift the lock and they get it back.
+   */
+  appearanceLock?: ('free' | 'dark' | 'light') | null;
+  /**
+   * What somebody sees on their first visit. The toggle at the foot of the rail overrides it for that reader from then on, in both directions, and their choice is remembered — this only decides where they start.
    */
   appearanceTheme?: ('dark' | 'light' | 'system') | null;
   /**
@@ -4949,6 +5240,31 @@ export interface UiString {
  */
 export interface CompaniesSite {
   id: number;
+  /**
+   * This host is its own property to a search engine, so it needs its own token. Search Console will not accept the network’s.
+   */
+  verification?: {
+    /**
+     * The content value from the HTML tag method — the long string, not the whole tag. Leave empty to use the network-wide value from Site settings.
+     */
+    google?: string | null;
+    /**
+     * The msvalidate.01 content value. Leave empty to use the network-wide value from Site settings.
+     */
+    bing?: string | null;
+    /**
+     * Leave empty to use the network-wide value from Site settings.
+     */
+    yandex?: string | null;
+    /**
+     * Leave empty to use the network-wide value from Site settings.
+     */
+    pinterest?: string | null;
+    /**
+     * Leave empty to use the network-wide value from Site settings.
+     */
+    facebookDomain?: string | null;
+  };
   title?: string | null;
   eyebrow?: string | null;
   metaDescription?: string | null;
@@ -5039,6 +5355,31 @@ export interface CompaniesSite {
  */
 export interface PeopleSite {
   id: number;
+  /**
+   * This host is its own property to a search engine, so it needs its own token. Search Console will not accept the network’s.
+   */
+  verification?: {
+    /**
+     * The content value from the HTML tag method — the long string, not the whole tag. Leave empty to use the network-wide value from Site settings.
+     */
+    google?: string | null;
+    /**
+     * The msvalidate.01 content value. Leave empty to use the network-wide value from Site settings.
+     */
+    bing?: string | null;
+    /**
+     * Leave empty to use the network-wide value from Site settings.
+     */
+    yandex?: string | null;
+    /**
+     * Leave empty to use the network-wide value from Site settings.
+     */
+    pinterest?: string | null;
+    /**
+     * Leave empty to use the network-wide value from Site settings.
+     */
+    facebookDomain?: string | null;
+  };
   title?: string | null;
   eyebrow?: string | null;
   metaDescription?: string | null;
@@ -5090,11 +5431,45 @@ export interface PeopleSite {
   createdAt?: string | null;
 }
 /**
+ * Whether a terminal may write to this site, and within what limits. Off unless both this box and REMOTE_CONTROL_SECRET are set. The screen for approving a session is Remote control in the sidebar; docs/REMOTE.md is the design.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "remote-access".
+ */
+export interface RemoteAccess {
+  id: number;
+  /**
+   * Off by default. With this off, a terminal asking for a session is refused with a sentence saying so. With it on and REMOTE_CONTROL_SECRET unset on the deployment, the routes still answer 404 — both keys are needed.
+   */
+  enabled?: boolean | null;
+  /**
+   * How long an approved session lives, whatever it is doing. Blank means 60 minutes; the ceiling is 720 and cannot be raised from here. Blank is the default, not zero.
+   */
+  sessionMinutes?: number | null;
+  /**
+   * How long a session may sit doing nothing before it closes itself. Blank means 15 minutes.
+   */
+  idleMinutes?: number | null;
+  /**
+   * Collection slugs, one per entry — guides, quests, characters. Leave empty for "everything a session is not forbidden": accounts, devices, sessions and the remote log are refused whatever is typed here, and that is not a setting. Same shape as an editor’s Games list, where empty means unrestricted.
+   */
+  collections?: string[] | null;
+  /**
+   * Why remote control is on, or why you turned it off. Nothing reads this; it is here because the next person to open this screen will want to know.
+   */
+  note?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "site-settings_select".
  */
 export interface SiteSettingsSelect<T extends boolean = true> {
   siteName?: T;
+  logoImage?: T;
+  logoImageDark?: T;
+  logoAlt?: T;
   tagline?: T;
   description?: T;
   maintainer?: T;
@@ -5156,6 +5531,10 @@ export interface SiteSettingsSelect<T extends boolean = true> {
   statWikisLabel?: T;
   statPagesLabel?: T;
   statUpcomingLabel?: T;
+  statGuidesLabel?: T;
+  statStudiosLabel?: T;
+  statPeopleLabel?: T;
+  statVerifiedLabel?: T;
   askingHeading?: T;
   askingNote?: T;
   directoryHeading?: T;
@@ -5177,6 +5556,7 @@ export interface SiteSettingsSelect<T extends boolean = true> {
   attributionText?: T;
   showSources?: T;
   showImageCredits?: T;
+  appearanceLock?: T;
   appearanceTheme?: T;
   appearanceAccent?: T;
   verification?:
@@ -5284,6 +5664,15 @@ export interface UiStringsSelect<T extends boolean = true> {
  * via the `definition` "companies-site_select".
  */
 export interface CompaniesSiteSelect<T extends boolean = true> {
+  verification?:
+    | T
+    | {
+        google?: T;
+        bing?: T;
+        yandex?: T;
+        pinterest?: T;
+        facebookDomain?: T;
+      };
   title?: T;
   eyebrow?: T;
   metaDescription?: T;
@@ -5340,6 +5729,15 @@ export interface CompaniesSiteSelect<T extends boolean = true> {
  * via the `definition` "people-site_select".
  */
 export interface PeopleSiteSelect<T extends boolean = true> {
+  verification?:
+    | T
+    | {
+        google?: T;
+        bing?: T;
+        yandex?: T;
+        pinterest?: T;
+        facebookDomain?: T;
+      };
   title?: T;
   eyebrow?: T;
   metaDescription?: T;
@@ -5373,6 +5771,20 @@ export interface PeopleSiteSelect<T extends boolean = true> {
   shellTagline?: T;
   footerBlurb?: T;
   shellDescription?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "remote-access_select".
+ */
+export interface RemoteAccessSelect<T extends boolean = true> {
+  enabled?: T;
+  sessionMinutes?: T;
+  idleMinutes?: T;
+  collections?: T;
+  note?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

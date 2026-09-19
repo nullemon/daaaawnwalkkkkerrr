@@ -41,6 +41,12 @@ import {
  * rewrites a row, and `createdAt` is the date of the last `pnpm db:reset`
  * rather than of publication. Both would state something false on every guide
  * on the network, which is the one thing this site cannot afford to do.
+ *
+ * Nor is either field below seeded. `published` is written by an editor and by
+ * nobody else, and a generated guide has none — there was no day on which it
+ * was published, and a derived one would look exactly like a fact. Where
+ * `updated` is blank the page falls back to the newest `retrieved` on this
+ * guide's own citations, which is the day somebody really did read the source.
  */
 
 /**
@@ -65,7 +71,7 @@ const provenanceFields = (): Field[] => [
     admin: {
       date: { pickerAppearance: 'dayOnly' },
       description:
-        'The day this article went up. Shown to readers and given to search engines. Blank shows no publication date at all — the row timestamps are not used as a stand-in, because they move on every rebuild and would claim a date nobody published on.',
+        'The day this article went up, if you know it. Yours to fill in — nothing seeds this, and blank shows no publication date at all rather than a stand-in. The row timestamps move on every rebuild, and a derived date would claim a day nobody published on.',
     },
   },
   {
@@ -74,7 +80,7 @@ const provenanceFields = (): Field[] => [
     admin: {
       date: { pickerAppearance: 'dayOnly' },
       description:
-        'Shown as "last checked". Set it when somebody actually re-read the sources. A guide to a live game goes stale, and saying when it was last looked at is more use than hiding it. Blank shows nothing rather than repeating the publication date.',
+        'Shown as "last checked". Set it when somebody actually re-read the sources; it overrides what is shown by default. Left blank, the page shows the most recent retrieval date on the citations below — the day the harvest this guide compiles was read — which is the honest answer for a page nobody has revisited.',
     },
   },
   {
@@ -183,6 +189,47 @@ export const Guides: CollectionConfig = {
           fields: [
             summaryField(),
             {
+              /*
+                The three or four things a reader would take away if they read
+                nothing else, in their own words.
+
+                Blank on every guide until somebody writes one, and a blank one
+                prints nothing — no empty box, no heading with a rule under it.
+                That is the same rule the fact-check block follows two tabs
+                along, and for the same reason.
+
+                **Nothing generates this.** Not the first sentence of each
+                section, not the summary re-flowed as bullets, not a model. A
+                derived summary of compiled prose is a fresh claim nobody
+                checked, printed in the one place on the page designed to be
+                read *instead of* the article — which is the worst possible
+                place for one. If a guide has no takeaways, the honest state is
+                that it has no takeaways.
+              */
+              name: 'takeaways',
+              type: 'array',
+              label: 'Key takeaways',
+              maxRows: 6,
+              labels: { singular: 'Takeaway', plural: 'Takeaways' },
+              admin: {
+                description:
+                  'Shown as a short list near the top, above the article. Written by hand or left empty — nothing fills this in for you, and empty prints nothing at all. Three or four points is the useful size; more than that is the article.',
+                initCollapsed: false,
+              },
+              fields: [
+                {
+                  name: 'point',
+                  type: 'textarea',
+                  required: true,
+                  maxLength: 240,
+                  admin: {
+                    description:
+                      'One sentence. Records named here are linked automatically, the same way the summary is.',
+                  },
+                },
+              ],
+            },
+            {
               name: 'body',
               type: 'richText',
               admin: {
@@ -214,22 +261,29 @@ export const Guides: CollectionConfig = {
               label: 'Images inside the article',
               admin: {
                 description:
-                  'Shown together partway down the page, under a heading of your choosing. Leave empty for an article with no picture row.',
+                  'Placed one at a time at the breaks between the article’s sections, in this order. Leave empty for an article with no pictures in the body.',
               },
               fields: [
                 { name: 'image', type: 'upload', relationTo: 'media', required: true },
                 { name: 'caption', type: 'text', admin: { description: 'Printed under the picture.' } },
               ],
             },
-            {
-              name: 'bodyImagesHeading',
-              type: 'text',
-              defaultValue: 'What you are looking for',
-              admin: {
-                condition: (_, siblingData) => Boolean(siblingData?.bodyImages?.length),
-                description: 'Heading above the in-article images.',
-              },
-            },
+            /*
+              `bodyImagesHeading` was here, and is gone.
+
+              It headed a `<section>` that held every body image in one grid
+              beneath the finished article. That block is gone too: the
+              pictures are placed at the breaks between the article's own
+              sections now, where there is no heading to write because each
+              one sits inside the prose rather than after it.
+
+              Removed rather than left in place. A field nothing reads is the
+              failure this project has already found three times —
+              `bossEnemy`, `relatedGames`, and a `lastVerified` whose admin
+              description said "Shown on the home page" while it appeared on
+              no page at all. The symptom is only ever visible to the editor
+              who fills one in, and what they see is nothing happening.
+            */
           ],
         },
         // -------------------------------------------------------------------

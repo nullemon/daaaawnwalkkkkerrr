@@ -7,6 +7,7 @@ import type {
   Where,
 } from 'payload'
 import { SECTION_PATH, type GameScopedCollection } from '../lib/tenancy'
+import { announceApiKeyRefusal, apiKeyRefused } from '../lib/remote/api-key'
 
 /** Turn any string into a URL-safe slug. */
 export const slugify = (value: string): string =>
@@ -45,9 +46,23 @@ export const slugField = (options: { validate?: TextFieldSingleValidation } = {}
 })
 
 /**
- * How much we trust this entry. Every figure on this site comes from third-party
- * sources that contradict each other, so confidence is surfaced to readers
- * rather than hidden.
+ * How much we trust this entry.
+ *
+ * Every figure on this site comes from third-party sources that contradict
+ * each other, so each record says how far we stand behind it.
+ *
+ * **It is an editorial field, not a reader-facing one.** It was printed as a
+ * badge on every record page until the owner decided a reader has no use for
+ * one: a badge reading "Low" beside a fact is a hedge, and the reader's real
+ * question - where did this come from - is answered by the citations
+ * underneath, which are shown to everybody. `Confidence` in
+ * `src/components/Badges.tsx` renders it only for a signed-in editor, so it is
+ * a working queue for the people who can act on it and nothing at all for
+ * anyone else.
+ *
+ * What it still governs is unchanged, and that is the point: a `low` record is
+ * one somebody has to go and source, and hiding the badge must not become
+ * hiding the problem.
  */
 export const confidenceField = (): Field => ({
   name: 'confidence',
@@ -61,7 +76,8 @@ export const confidenceField = (): Field => ({
   ],
   admin: {
     position: 'sidebar',
-    description: 'Shown to readers as a badge. Be honest — it is the whole point of this site.',
+    description:
+      'Editorial only — readers do not see this; signed-in editors do. Be honest: a Low here is a job, and nothing else on the site records that it is one.',
   },
 })
 
@@ -73,7 +89,20 @@ export const sourcesField = (): Field => ({
   admin: { description: 'Cite every figure. Two independent sources before marking confidence high.' },
   fields: [
     { name: 'title', type: 'text', required: true },
-    { name: 'url', type: 'text', required: true },
+    {
+      name: 'url',
+      type: 'text',
+      required: true,
+      /*
+        Relative is allowed and is the right answer for a page citing its own
+        site — `/` on a wiki's own host resolves wherever the site is deployed.
+        What is refused is an absolute loopback URL. See `LOOPBACK` above.
+      */
+      validate: (value: unknown) =>
+        typeof value === 'string' && LOOPBACK.test(value.trim())
+          ? 'A source URL cannot point at localhost — it would be published as a dead link. Use a relative path for a page on this site, or the real public URL.'
+          : true,
+    },
     {
       name: 'retrieved',
       type: 'date',
@@ -81,6 +110,26 @@ export const sourcesField = (): Field => ({
     },
   ],
 })
+
+/**
+ * A citation that only works on the machine it was written on.
+ *
+ * `seed:cite` builds its URL from `gameUrl`, which reads
+ * `NEXT_PUBLIC_SITE_URL` — so a pass run in development writes
+ * `http://dawnwalker.localhost:3000/` into the database, and it stays there
+ * through the deploy. One guide was published with exactly that as its only
+ * source. It is the trap `[game]/layout.tsx` names about the footer: storing
+ * an absolute local URL survives the deploy that stops it being true.
+ *
+ * Nothing about it errors. The page renders, the link is blue, the launch
+ * checklist counts the guide as cited, and the only way to notice is to click
+ * it from another machine.
+ *
+ * A validate rather than a check somebody runs, because it has to catch the
+ * seeders, the remote API and the admin alike, and there is no legitimate
+ * public citation of a loopback address.
+ */
+const LOOPBACK = /^https?:\/\/(localhost|127\.0\.0\.1|\[::1\]|[^/]*\.localhost)(:|\/|$)/i
 
 /** Per-page search metadata. Falls back to title/summary when left empty. */
 export const seoGroup = (): Field => ({
@@ -133,9 +182,36 @@ export const commonContentFields = (): Field[] => [
  * user". Once a second auth collection exists, that default silently grants
  * every signed-up reader the ability to create and edit content, so every
  * content collection has to state its write rules explicitly.
+ *
+ * ## The second thing it states, and why it is here
+ *
+ * On a deployment that has remote control (`REMOTE_CONTROL_SECRET` set), a
+ * request authenticated with a Payload **API key** is not an editor.
+ *
+ * That is deliberate and it is a refusal rather than a warning. An API key is
+ * unscoped, unexpiring and unlogged, so while one works there is a way around
+ * every per-session capability the owner ticks — "create pages, no deletions"
+ * means nothing if the same `.env` holds a key that deletes anything, and the
+ * Remote log cannot answer "what else touched this" about a credential it
+ * never sees. `src/lib/remote/api-key.ts` has the whole argument.
+ *
+ * It lives in this function because this function is the one place every
+ * content collection routes its write access through. A second implementation
+ * per collection is the failure this project keeps a list of, and a rule that
+ * is stated in twenty places is a rule that is missing from the twenty-first.
  */
-export const isEditor = ({ req }: { req: { user?: { collection?: string } | null } }): boolean =>
-  req.user?.collection === 'users'
+export const isEditor = ({
+  req,
+}: {
+  req: { user?: { collection?: string; _strategy?: string | null } | null }
+}): boolean => {
+  if (req.user?.collection !== 'users') return false
+  if (apiKeyRefused(req.user)) {
+    announceApiKeyRefusal('an API key was used against this site')
+    return false
+  }
+  return true
+}
 
 /** Published content is world-readable; writing it is editors only. */
 export const publicRead: CollectionConfig['access'] = {
@@ -176,8 +252,17 @@ const assignedGames = (user: unknown): (number | string)[] | null => {
  * editor, and a `Where` for an editor assigned to particular games — which
  * Payload applies as a filter, so a restricted editor cannot reach another
  * game's records by guessing an id, and does not see them in a list either.
+ *
+ * It carries the same API-key refusal `isEditor` does, and has to: this is the
+ * function the thirteen game-scoped content collections write through, so a
+ * rule stated only on the other one would be a rule that covers the
+ * collections nobody edits and misses every page on the site.
  */
 export const isEditorForGame = ({ req }: { req: { user?: unknown } }): boolean | Where => {
+  if (apiKeyRefused(req.user as { collection?: string; _strategy?: string | null })) {
+    announceApiKeyRefusal('an API key was used against this site')
+    return false
+  }
   const games = assignedGames(req.user)
   if (games === null) return true
   if (games.length === 0) return false

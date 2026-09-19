@@ -3,6 +3,7 @@ import path from 'path'
 import { fileURLToPath, pathToFileURL } from 'url'
 import type { CollectionSlug, Payload } from 'payload'
 import { slugify } from '../fields/shared'
+import { withoutLegalSuffix } from '../lib/rightsholders'
 
 /**
  * Studio and publisher profiles for `companies.<network domain>`.
@@ -306,6 +307,32 @@ const GAMES_INDUSTRY =
  * written into the credit, which is what CC BY-SA asks for on the ones that
  * carry it.
  */
+/**
+ * The credit line on a company's logo.
+ *
+ * **The company, not the uploader.** Commons records an `Artist` for a logo
+ * file and it is usually whoever drew the SVG or pushed the button, not whoever
+ * owns the mark — the same field that once made `src/seed/posters.ts` publish
+ * "Steam" and "Eurogamer" as the copyright holders of two cover arts. A logo's
+ * owner is the company it belongs to, in every case, with no lookup required.
+ *
+ * The word is **trademark**, deliberately, and it is not interchangeable with
+ * copyright. Around half of these files are public domain — a logo made of
+ * type and flat shapes falls below the threshold of originality, which is why
+ * this network may host them at all — and printing `©` over one would assert a
+ * copyright the file does not carry. The trademark is a separate right, it is
+ * held by the company whatever the copyright status, and saying so is true of
+ * a public-domain wordmark and a non-free one alike.
+ *
+ * The licence still prints, because it is the thing that says why this file is
+ * here. `creditBasis` reads it before it looks for a `©`, so a public-domain
+ * logo is filed as licensed rather than as all-rights-reserved.
+ */
+const logoCredit = (company: string, licence?: string | null): string =>
+  [`${company} logo`, `— a trademark of ${company}`, licence ? `(${licence})` : '']
+    .filter(Boolean)
+    .join(' ')
+
 const fetchLogo = async (
   payload: Payload,
   company: string,
@@ -322,7 +349,26 @@ const fetchLogo = async (
     limit: 1,
     depth: 0,
   })
-  if (existing.docs[0]) return existing.docs[0].id
+  if (existing.docs[0]) {
+    /*
+      Reused, but re-credited. These rows were written with the Commons
+      uploader's name in them, and a change to the wording would otherwise
+      reach a fresh database and no existing one — the split that
+      `correctConfidenceCopy` had to close for copy and `attachImage` for alt
+      text. Only the credit is touched; the file is not re-fetched.
+    */
+    const row = existing.docs[0] as { id: string | number; credit?: string | null }
+    const wanted = logoCredit(company, logo.licence)
+    if (row.credit !== wanted) {
+      await payload.update({
+        collection: 'media',
+        id: row.id,
+        data: { credit: wanted } as never,
+        depth: 0,
+      })
+    }
+    return row.id
+  }
 
   try {
     const response = await fetch(logo.url, {
@@ -342,13 +388,7 @@ const fetchLogo = async (
               ? 'image/webp'
               : 'image/jpeg'
 
-    const credit = [
-      `${company} logo`,
-      logo.licence ? `(${logo.licence})` : '',
-      logo.artist ? `— ${logo.artist}` : '',
-    ]
-      .filter(Boolean)
-      .join(' ')
+    const credit = logoCredit(company, logo.licence)
 
     const created = await payload.create({
       collection: 'media',
@@ -491,15 +531,71 @@ async function run(): Promise<void> {
   const games = await payload.find({ collection: 'games', limit: 100, depth: 0, sort: 'title' })
   const drafts = new Map<string, Draft>()
 
+  /*
+    One company is one draft however its name was written down.
+
+    A store page says "Valve" and Wikipedia titles the article "Valve
+    Corporation". Treated as two names those are two drafts, two slugs and two
+    profiles — one carrying the games, the other carrying the logo — which is
+    why eleven of the twenty-three studios behind these games looked as though
+    no logo existed for them.
+
+    **The test is not "same once both are stripped".** That was the first rule
+    here and it merged `Atari, Inc.` into `Atari SA`, which are two genuinely
+    different companies that happen to share a stem — the Antar 4 mistake in a
+    new place, and this time it would have put one company's games and logo on
+    the other's page rather than deleting a moon.
+
+    So one name has to be *exactly* the other plus a legal suffix: strip one
+    and it must equal the other as written. "Valve Corporation" stripped is
+    "Valve", which is a name we hold, so they are one. "Atari, Inc." stripped
+    is "Atari", which is not "Atari SA", and "Atari SA" stripped is "Atari",
+    which is not "Atari, Inc." — so they stay two.
+
+    The first spelling seen wins the display name, and the games are read
+    first, so a profile is titled the way the game that names it does.
+  */
+  const aliased: string[] = []
+  /** Stripped name -> the draft holding it, for the alias test only. */
+  const byStem = new Map<string, Draft>()
+
   const draftFor = (name: string): Draft => {
-    const key = name.toLowerCase()
-    let draft = drafts.get(key)
-    if (!draft) {
-      draft = { name, roles: new Set(), games: [], gameTitles: [], sources: [], foundOn: [] }
-      drafts.set(key, draft)
+    const exact = name.toLowerCase()
+    const held = drafts.get(exact)
+    if (held) return held
+
+    const stem = withoutLegalSuffix(name).toLowerCase()
+    const candidate = byStem.get(stem)
+    if (candidate) {
+      const candidateName = candidate.name.toLowerCase()
+      const candidateStem = withoutLegalSuffix(candidate.name).toLowerCase()
+      if (stem === candidateName || exact === candidateStem) {
+        drafts.set(exact, candidate)
+        aliased.push(`${name} -> ${candidate.name}`)
+        return candidate
+      }
     }
+
+    const draft: Draft = {
+      name,
+      roles: new Set(),
+      games: [],
+      gameTitles: [],
+      sources: [],
+      foundOn: [],
+    }
+    drafts.set(exact, draft)
+    if (!byStem.has(stem)) byStem.set(stem, draft)
     return draft
   }
+
+  /*
+    An aliased name puts the *same* draft object under a second key, so the map
+    can yield one company twice. Every pass over the drafts below goes through
+    this instead — writing a merged company twice would create the duplicate
+    profile the merge exists to prevent.
+  */
+  const uniqueDrafts = (): Draft[] => [...new Set(drafts.values())]
 
   // --- 1. Whoever the games say made them --------------------------------
   for (const game of games.docs as unknown as {
@@ -562,6 +658,30 @@ async function run(): Promise<void> {
     figure on it comes from that company's own article with the date read.
   */
   const RAW = path.resolve(path.dirname(fileURLToPath(import.meta.url)), 'raw', 'companies.json')
+  /*
+    The second source: logos found by searching Commons directly, for the
+    companies whose Wikipedia infobox names a non-free file or names none.
+
+    Wikidata was tried first and is not it — `P154` produced zero correctly
+    attributed logos for the eight studios that most needed one, and the single
+    claim that existed carried an end-time qualifier because the company had
+    been renamed. `tools/fetch-company-logos.mjs` carries that finding in full.
+
+    Kept as its own manifest rather than merged into the harvest: one file is a
+    record of what Wikipedia said and the other of what Commons said, and a
+    pass that blurred them would make the provenance of a logo unanswerable.
+  */
+  const COMMONS_LOGOS = path.resolve(
+    path.dirname(fileURLToPath(import.meta.url)),
+    'raw',
+    'company-logos.json',
+  )
+  const commonsLogos: Record<
+    string,
+    { file: string; url: string; licence: string; artist?: string }
+  > = fs.existsSync(COMMONS_LOGOS)
+    ? (JSON.parse(fs.readFileSync(COMMONS_LOGOS, 'utf8')).logos ?? {})
+    : {}
   let harvestedAt = ''
   if (fs.existsSync(RAW)) {
     const file = JSON.parse(fs.readFileSync(RAW, 'utf8')) as {
@@ -591,7 +711,7 @@ async function run(): Promise<void> {
   let updated = 0
   let logos = 0
 
-  for (const draft of drafts.values()) {
+  for (const draft of uniqueDrafts()) {
     const slug = slugify(draft.name)
     if (!slug) continue
 
@@ -666,7 +786,24 @@ async function run(): Promise<void> {
             },
           ]
 
-    const logoId = await fetchLogo(payload, draft.name, facts?.logo)
+    /*
+      The infobox's logo first, then Commons. The order is deliberate: a file
+      the company's own article uses is better evidence that it is the current
+      mark than a search hit is, and the search only ever runs for a company
+      the first source could not serve.
+    */
+    const fromCommons = commonsLogos[slug]
+    const logoId =
+      (await fetchLogo(payload, draft.name, facts?.logo)) ??
+      (fromCommons
+        ? await fetchLogo(payload, draft.name, {
+            file: fromCommons.file,
+            free: true,
+            url: fromCommons.url,
+            licence: fromCommons.licence,
+            artist: fromCommons.artist ?? null,
+          })
+        : null)
     if (logoId) logos += 1
 
     const data = {
@@ -728,7 +865,7 @@ async function run(): Promise<void> {
     responsible for are re-decided, and the summary only where it is still the
     sentence this pass wrote — an editor's is theirs.
   */
-  const written = new Set([...drafts.values()].map((draft) => slugify(draft.name)))
+  const written = new Set(uniqueDrafts().map((draft) => slugify(draft.name)))
   let realigned = 0
   for (const company of all.docs as unknown as {
     id: string | number
@@ -771,7 +908,7 @@ async function run(): Promise<void> {
 
   let linked = 0
   const ambiguous: string[] = []
-  for (const draft of drafts.values()) {
+  for (const draft of uniqueDrafts()) {
     const facts = draft.facts
     if (!facts) continue
     const id = idBySlug.get(slugify(draft.name))
@@ -823,6 +960,18 @@ async function run(): Promise<void> {
   console.log(`\ncompanies: ${created} created, ${updated} updated`)
   console.log(`records the harvest no longer names, brought into line: ${realigned}`)
   console.log(`logos downloaded where the licence allowed it: ${logos}`)
+  if (aliased.length > 0) {
+    /*
+      Printed rather than silent. A merge is the right answer and it is also
+      the operation most able to be wrong in a way nothing else would catch —
+      two studios folded into one would put one company's games on another's
+      page, with both profiles still rendering perfectly.
+    */
+    console.log(`
+${aliased.length} name${aliased.length === 1 ? '' : 's'} merged as the same company:`)
+    for (const row of aliased) console.log(`  ${row}`)
+    console.log('  Read these: only a legal suffix may differ. Anything else is two companies.')
+  }
   console.log(`corporate links written on ${linked} of them${harvestedAt ? ` (facts read ${harvestedAt})` : ''}`)
   /*
     The finding, not the failure. Each of these names more than one owner that

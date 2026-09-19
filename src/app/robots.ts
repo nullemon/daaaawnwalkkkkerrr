@@ -32,7 +32,23 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
   const isWiki = subdomainOf(host, new URL(network).host) !== null
 
   const notContent = [
-    '/admin',
+    /*
+      The admin's path is deliberately **not** here.
+
+      It used to be, back when it was `/admin` — a path every scanner already
+      knows, so naming it cost nothing and stated the obvious. It is not `/admin`
+      any more (`lib/admin-path.ts` says why), and a robots.txt is a public file
+      that anybody can read: listing the new path would publish it to exactly
+      the audience the move is about, in the one file guaranteed to be fetched.
+      "Disallow" is not an access control and never was.
+
+      Nothing is lost by leaving it out. Payload serves the admin with
+      `<meta name="robots" content="noindex, nofollow">` on every screen, which
+      is the instruction that actually keeps it out of an index — and unlike a
+      Disallow, it works on a crawler that arrived without reading robots.txt.
+
+      Checked rather than assumed: `curl` the login page and the tag is there.
+    */
     '/api/',
     '/corrections',
     '/requests',

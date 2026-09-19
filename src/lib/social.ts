@@ -1,4 +1,6 @@
 import type { Metadata, ResolvingMetadata } from 'next'
+import { CARD_SIZE } from './brand'
+import type { OgCardCollection } from './og-card'
 import { GENERATED_ART, shownImage } from './sitemap-images'
 
 /**
@@ -195,5 +197,55 @@ export const socialMeta = async (
       images,
     },
     twitter: { card: 'summary_large_image', images },
+  }
+}
+
+/**
+ * The drawn card for one page: its own picture with its own headline on it.
+ *
+ * ## What this replaces, and why it is not `recordImage`
+ *
+ * `recordImage` above hands a share preview the record's *photograph* — a
+ * 1920×1080 screenshot with nothing on it. That is honest and it is what 408
+ * guides shared until now, but it is also indistinguishable from every other
+ * screenshot of that game: a reader scrolling Discord sees a picture and a
+ * line of grey title text underneath, and the picture tells them nothing about
+ * which of this wiki's four hundred pages the link goes to. The card puts the
+ * page's own headline, the network's mark and the accent rule on it, so the
+ * preview is about the page rather than about the game.
+ *
+ * ## Why this is a URL and not a file
+ *
+ * It resolves to `/api/og/<collection>/<slug>`, which draws the card on
+ * request. Everything else this network publishes is prerendered, and the
+ * reason that rule does not reach here is that **an `og:image` is never on a
+ * reader's path**: it is fetched once, by an unfurler, and cached by it. The
+ * route's reasoning is written out in its own docstring.
+ *
+ * `/api` is in `PASS_THROUGH` in `proxy.ts`, so this answers on every host
+ * without being rewritten onto a game prefix — and Next resolves the relative
+ * URL against the wiki's own `metadataBase`, so the card is fetched from the
+ * host that serves the page and the Host header tells the route which wiki is
+ * asking.
+ *
+ * ## `alt`
+ *
+ * The page's own title, and this is the one place on this network where
+ * writing the alt text is not inventing anything: we drew the picture, and the
+ * title is literally the largest thing printed on it. `recordImage` passes a
+ * photograph's stored alt through and never composes one, because nobody here
+ * can say what a screenshot shows.
+ */
+export const cardImage = (
+  collection: OgCardCollection,
+  doc: { slug?: string | null; title?: string | null },
+): SocialImage | null => {
+  const slug = doc.slug?.trim()
+  if (!slug) return null
+  return {
+    url: `/api/og/${collection}/${encodeURIComponent(slug)}`,
+    width: CARD_SIZE.width,
+    height: CARD_SIZE.height,
+    alt: doc.title?.trim() || undefined,
   }
 }

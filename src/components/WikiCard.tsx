@@ -1,6 +1,6 @@
 import { Icon } from './Icon'
 import type { DirectoryEntry } from '@/lib/directory'
-import { editorialScore, type EditorialScore } from '@/lib/ratings'
+import { editorialScore, type EditorialScore } from '@/lib/verdict'
 import { releaseLine } from '@/lib/directory'
 
 /**
@@ -10,11 +10,14 @@ import { releaseLine } from '@/lib/directory'
  * and it exists because a number set as text in a row of chips does not read
  * as a judgement, which is the one thing this number is.
  *
- * The outlook line carries the same word the inline form has always carried,
- * and it is here for the same reason `src/fields/rating.ts` requires the
- * field: an outlook is not a review. It is set apart by size and a hairline
- * and never by being dimmed — the measurements are beside `.score-badge` in
- * globals.css.
+ * There is no longer a line under the figure saying what it is based on, and
+ * the reason is the interesting half. It used to read "outlook" on the four
+ * wikis for games that are not out — an honest label on a number that should
+ * not have been on a card at all, because a reader scanning eight tiles reads
+ * the figure and a screenshot of one carries the figure alone. `editorialScore`
+ * now returns nothing at all before a game ships, so a card either shows a
+ * score somebody stands behind or shows none. The measurements for what is
+ * left are beside `.score-badge` in globals.css.
  */
 function ScoreBadge({ verdict }: { verdict: EditorialScore }) {
   return (
@@ -23,7 +26,6 @@ function ScoreBadge({ verdict }: { verdict: EditorialScore }) {
         {verdict.score.toFixed(1)}
         <span className="score-badge-outof">/10</span>
       </span>
-      {verdict.basis === 'outlook' ? <span className="score-badge-basis">outlook</span> : null}
     </span>
   )
 }
@@ -86,13 +88,6 @@ export function WikiCard({ entry }: { entry: DirectoryEntry }) {
           <span className="card-score" title={verdict.summary ?? undefined}>
             {verdict.score.toFixed(1)}
             <span>/10</span>
-            {/*
-              An outlook is marked here as it is on the game's own page. Four
-              of these wikis cover games nobody has played, and the directory
-              was printing "7.9/10" under a heading reading "Not out yet" with
-              nothing saying which kind of number it was.
-            */}
-            {verdict.basis === 'outlook' ? <span className="card-score-basis">outlook</span> : null}
           </span>
         ) : null}
       </span>

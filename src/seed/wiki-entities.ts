@@ -7,6 +7,7 @@ import { getPayload } from 'payload'
 import type { CollectionSlug, Payload } from 'payload'
 
 import config from '../payload.config'
+import { mediaCredit } from '../lib/credit'
 import { rich, type Block } from './lexical'
 import { slugify } from '../fields/shared'
 
@@ -360,6 +361,16 @@ async function run(): Promise<void> {
     }
     const game = found.docs[0]
     const gameTitle = (game.shortTitle as string) || (game.title as string)
+    /*
+      The rightsholder line every picture from this harvest carries. Built
+      once per wiki from the game's own record, and from the full title rather
+      than the short one, because a copyright line naming "Dawnwalker" credits
+      something that is not the name of the work.
+    */
+    const imageCredit = mediaCredit(
+      (game.title as string) || gameTitle,
+      (game.publisher as string | null) || (game.developer as string | null),
+    )
 
     console.log(game.title)
 
@@ -441,17 +452,23 @@ async function run(): Promise<void> {
           `${harvest.slug}-${slug}${path.extname(entity.imageFile) || '.png'}`,
           `${entity.title} in ${gameTitle}`,
           /*
-            No "Image via <wiki>" here, by the owner's decision. The record's
-            `sources` still carry the page the image came from, so the
-            provenance is kept in the data and simply not printed.
+            Credited to the studio, which is whose picture it actually is.
 
-            Worth knowing if this is ever revisited: these wikis are CC BY-SA,
-            and attribution is that licence's condition rather than a
-            courtesy, so an image with no credit anywhere on the site sits
-            outside the terms it arrived under. A credits page naming the
-            wikis is the usual way to satisfy that without a line per image.
+            This passed an empty string, on the reasoning that the owner did
+            not want "Image via <wiki>" printed on every picture. That was the
+            right answer to the wrong question. The wiki is where the file was
+            *found*, and the record's `sources` already say so; the wiki is not
+            the rightsholder. A screenshot of a game belongs to the people who
+            made the game, and naming them is both the accurate credit and the
+            one a fair-dealing argument rests on.
+
+            343 pictures were published with no credit line of any kind — 336
+            of them Star Wars — which is the one state this site cannot defend.
+            `mediaCredit` is the same builder `seed:art` and `seed:posters`
+            use, so these read identically to the 1,400 already credited and
+            `creditBasis` places them in the same family.
           */
-          '',
+          imageCredit,
         )
       }
 
@@ -497,8 +514,75 @@ async function run(): Promise<void> {
     )
   }
 
+  const recredited = await creditBlankEntityImages(payload)
+  if (recredited > 0) {
+    console.log(`${recredited} pictures gained the rightsholder line they were published without`)
+  }
+
   console.log(`\n${total} records from community wikis`)
   process.exit(0)
+}
+
+/**
+ * Pictures already in the library with no credit line at all.
+ *
+ * The loop above credits what it uploads, and credits nothing it does not:
+ * `uploadImage` reuses an existing row keyed on filename, so a re-run never
+ * touches a picture that is already there. That is the same trap
+ * `seed:posters --force` exists for and the one `seed:avatars` carries its own
+ * correction block for, and it is why this is a pass rather than a fix to the
+ * upload call alone.
+ *
+ * It walks the records rather than the media table, because a media row does
+ * not know which game it belongs to — the record holding it does. Every
+ * game-scoped collection with an image field, one query each, and only rows
+ * whose credit is genuinely empty: a picture somebody has credited by hand is
+ * not this pass's to rewrite.
+ */
+const creditBlankEntityImages = async (payload: Payload): Promise<number> => {
+  const games = await payload.find({ collection: 'games', depth: 0, limit: 0, pagination: false })
+  const creditFor = new Map<number | string, string>()
+  for (const game of games.docs as unknown as {
+    id: number | string
+    title: string
+    publisher?: string | null
+    developer?: string | null
+  }[]) {
+    creditFor.set(game.id, mediaCredit(game.title, game.publisher || game.developer))
+  }
+
+  let fixed = 0
+  for (const [collection, field] of Object.entries(IMAGE_FIELD)) {
+    const rows = await payload.find({
+      collection: collection as CollectionSlug,
+      depth: 1,
+      limit: 0,
+      pagination: false,
+    })
+
+    for (const row of rows.docs as unknown as Record<string, unknown>[]) {
+      const media = row[field]
+      if (!media || typeof media !== 'object') continue
+      const picture = media as { id: number | string; credit?: string | null }
+      if (String(picture.credit ?? '').trim() !== '') continue
+
+      /* `game` is a relationship; at depth 1 it arrives as the document. */
+      const game = row.game
+      const gameId =
+        game && typeof game === 'object' ? (game as { id: number | string }).id : (game as number)
+      const credit = creditFor.get(gameId)
+      if (!credit) continue
+
+      await payload.update({
+        collection: 'media',
+        id: picture.id,
+        data: { credit } as never,
+        depth: 0,
+      })
+      fixed += 1
+    }
+  }
+  return fixed
 }
 
 run().catch((error) => {

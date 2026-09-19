@@ -237,6 +237,39 @@ export const People: CollectionConfig = {
           'Characters they play, where a character’s own infobox names them. This is what makes an actor’s page a route back into the wikis.',
       },
     },
+    /*
+      Parts filed under `enemies` rather than `characters`.
+
+      Not a duplicate of the field above, and not a candidate for merging into
+      it. A boss is a character somebody performs and a record this network
+      files as an enemy, and those are two different statements: the collection
+      is about what the thing is in the game, the credit is about who played
+      it. Onimusha's entire cast is here — twenty-one voice credits on its
+      bosses, which is why that wiki looked like it had no actors at all — and
+      Control files Helen Marshall the same way.
+
+      Before this, `seed/people.ts` had a comment saying those credits "keep
+      the line in the credits list and the sentence in the prose; the
+      relationship stays empty rather than pointing at an id in another
+      collection, which would render perfectly and link to the wrong thing".
+      That was the right call while there was nowhere correct to point. This is
+      the somewhere.
+
+      A separate field rather than making `characters` polymorphic: every
+      existing query reads `characters: { contains: id }`, and a polymorphic
+      relationship changes the stored shape and the query shape at once, on a
+      field that already has 54 live edges.
+    */
+    {
+      name: 'enemies',
+      type: 'relationship',
+      relationTo: 'enemies',
+      hasMany: true,
+      admin: {
+        description:
+          'Bosses and creatures they perform, where the record’s own infobox names them. Filed separately from characters only because this network files the record that way — a boss is still a part somebody played.',
+      },
+    },
     {
       name: 'companies',
       type: 'relationship',

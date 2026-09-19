@@ -1,7 +1,8 @@
 import Link from 'next/link'
-import { Logo } from './Logo'
+import { SiteLogo } from './SiteLogo'
 import { copy } from '@/lib/copy'
 import { getSiteSettings } from '@/lib/payload'
+import { mergeFooterColumns, type FooterColumn } from '@/lib/footer-columns'
 
 /**
  * The footer, as a site map rather than a row of links.
@@ -12,10 +13,13 @@ import { getSiteSettings } from '@/lib/payload'
  * content is grouped rather than in one long list.
  */
 
-export type FooterColumn = {
-  heading: string
-  links: { label: string; href: string }[]
-}
+/*
+  Re-exported rather than declared, so the four layouts that build a site map
+  and this component that renders one are naming the same type. The merge rule
+  lives with the type in `lib/footer-columns.ts` because it is a decision with
+  a reason, and a server component is not a place a decision can be tested.
+*/
+export type { FooterColumn }
 
 /**
  * A footer link may point at another host — a wiki's footer links the hub's
@@ -60,26 +64,21 @@ export async function SiteFooter({
   const settings = await getSiteSettings()
 
   /*
-    One edit, three hosts.
+    One edit, ten hosts, and exactly one place that resolves it.
 
-    The columns are resolved here rather than in each layout because there are
-    three layouts — hub, wiki, companies — and each had its own hardcoded
-    list, which is how the hub came to link to a page the wikis do not have.
-    The list passed in stays the fallback for whichever host this is, so an
-    empty field changes nothing anywhere.
+    The columns are merged here rather than in each layout because there are
+    four layouts — hub, wiki, companies, people — and each had its own
+    hardcoded list, which is how the hub came to link to a page the wikis do
+    not have. `[game]/layout.tsx` also resolved this field a second time and
+    then handed the result in as `columns`, so the same decision was made
+    twice with two different comments arguing for two different answers. It
+    passes its built-in map now and this is the only resolution.
 
-    A column with no links is dropped: an empty heading over nothing reads as a
-    broken site. If that leaves nothing at all — a half-filled record, headings
-    typed and links not yet — the built-in map is used rather than serving a
-    footer with no way out of it.
+    Why an editor's column is added to the built-in map rather than replacing
+    it — nine pages whose only inbound link is here — is in
+    `lib/footer-columns.ts`, with the rest of the rule.
   */
-  const edited = (settings.footerColumns ?? [])
-    .map((column) => ({
-      heading: column.heading,
-      links: (column.links ?? []).map((link) => ({ label: link.label, href: link.href })),
-    }))
-    .filter((column) => column.links.length > 0)
-  const shown = edited.length > 0 ? edited : columns
+  const shown = mergeFooterColumns(columns, settings.footerColumns)
 
   return (
     <footer className="site-footer">
@@ -87,7 +86,7 @@ export async function SiteFooter({
         <div className="site-footer-brand">
           <p className="wordmark-sm">
             <span className="glyph">
-              <Logo size={17} />
+              <SiteLogo size={17} alt={siteName} />
             </span>
             {siteName}
           </p>

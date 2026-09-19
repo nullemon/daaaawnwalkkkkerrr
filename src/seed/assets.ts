@@ -40,6 +40,7 @@ const FOLDERS: Record<string, { collection: CollectionSlug; field: string }> = {
   courts: { collection: 'courts', field: 'image' },
   'court-activities': { collection: 'court-activities', field: 'image' },
   skills: { collection: 'skill-trees', field: 'image' },
+  factions: { collection: 'factions', field: 'image' },
   guides: { collection: 'guides', field: 'image' },
 }
 

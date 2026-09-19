@@ -228,7 +228,7 @@ does not set one: the admin answers on all ten hosts (the hub, eight wikis,
 API calls cross-origin on nine of them. With it unset, Payload falls back to
 the Host header, checks it against the CORS/CSRF allowlist, finds no allowlist
 configured, and returns an empty origin — so the link in the email would have
-been the bare path `/admin/reset/<token>`, which is not a link at all in a mail
+been the bare path `/admin1621/reset/<token>`, which is not a link at all in a mail
 client.
 
 Nobody had ever seen that, because there was no adapter to deliver it. So
@@ -243,7 +243,7 @@ drops the name rather than inventing one.
 
 ### Two auth collections, two reset flows, and they must not cross
 
-`users` are editors and reset at `/admin/reset/<token>`, which resolves the
+`users` are editors and reset at `/admin1621/reset/<token>`, which resolves the
 token against `users`. `players` are readers with an optional account and reset
 at **`/account/reset`** on the hub, which posts to
 `/api/players/reset-password`. A token from one collection is refused by the
@@ -252,7 +252,7 @@ other, so there is no way for either message to land in the wrong flow.
 That is what was wrong here. Payload exposes
 `POST /api/players/forgot-password` whether anything links to it or not, and
 with no template on the collection the link it composed pointed at
-`/admin/reset/<token>` — so the one reader who found the endpoint by hand was
+`/admin1621/reset/<token>` — so the one reader who found the endpoint by hand was
 told their token was invalid, on a page they cannot sign into. It was harmless
 only because there was no adapter to deliver it.
 

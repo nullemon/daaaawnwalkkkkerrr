@@ -1,4 +1,5 @@
 import type { Metadata, ResolvingMetadata } from 'next'
+import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { PageHeader } from '@/components/PageHeader'
 import { Linked } from '@/components/Linked'
@@ -33,7 +34,24 @@ export default async function MapsIndex({ params }: Props) {
     getGame(slug),
     getAll('maps', { game: slug, sort: 'order', depth: 1 }),
   ])
-  const name = game?.shortTitle || game?.title || 'this game'
+  /*
+    A section with no records is not this game's section.
+
+    The rail, the footer and the sitemap all derive from `sectionsFor`, which
+    returns only the sections a wiki has at least one record in — so an empty
+    index here is reachable only by typing the URL or arriving from a search
+    result, and what it serves is a heading over nothing. A 404 is the honest
+    answer, and it lifts by itself the moment the first record arrives.
+
+    This one held a written explanation of why the network has no maps, on
+    eight URLs nothing linked to. The explanation is worth making and this was
+    not the place: `docs/ASSETS.md` and the CLAUDE.md Maps section carry it,
+    where the people it is addressed to will actually read it.
+
+    `GUARDS_EMPTY_INDEX` in `lib/audit.ts` is pinned against this line by
+    `audit.test.ts`, so the two cannot drift.
+  */
+  if (maps.length === 0) notFound()
   const copy = sectionCopy('maps', game, { total: maps.length })
 
   /*
@@ -56,51 +74,31 @@ export default async function MapsIndex({ params }: Props) {
         lede={copy.lede ? <Linked text={copy.lede} scope={scope} /> : undefined}
       />
       <div className="page body-main">
-        {maps.length === 0 ? (
-          <div className="callout">
-            <h2>No map has been published for {name} yet</h2>
-            <p>
-              A map here is a real one — a base image somebody published, and pins whose positions
-              come from somebody who actually found the thing. Neither exists for this game yet,
-              and both arrive together: you cannot mark where an item is until somebody has played
-              far enough to find it.
-            </p>
-            <p>
-              A map drawn from a trailer, with pins placed where they look about right, is worse
-              than no map at all, because a reader will walk to them.
-            </p>
-            <p>
-              <Link href="/requests">Tell us which map you want first</Link> ·{' '}
-              <Link href="/corrections">Know a location? Send it</Link>
-            </p>
-          </div>
-        ) : (
-          <div className="grid">
-            {maps.map((map) => {
-              const image = typeof map.image === 'object' ? map.image : null
-              return (
-                <Link key={map.id} href={`/maps/${map.slug}`} className="mapcard">
-                  {image?.url ? (
-                    <img
-                      className="mapcard-image"
-                      src={image.sizes?.card?.url ?? image.url}
-                      alt=""
-                      loading="lazy"
-                    />
-                  ) : null}
-                  <span className="mapcard-body">
-                    <h3>{map.title}</h3>
-                    {map.summary ? <span className="note">{map.summary}</span> : null}
-                    <span className="eyebrow">
-                      {(map.markers?.length ?? 0).toLocaleString('en-GB')}{' '}
-                      {map.markers?.length === 1 ? 'marker' : 'markers'}
-                    </span>
+        <div className="grid">
+          {maps.map((map) => {
+            const image = typeof map.image === 'object' ? map.image : null
+            return (
+              <Link key={map.id} href={`/maps/${map.slug}`} className="mapcard">
+                {image?.url ? (
+                  <img
+                    className="mapcard-image"
+                    src={image.sizes?.card?.url ?? image.url}
+                    alt=""
+                    loading="lazy"
+                  />
+                ) : null}
+                <span className="mapcard-body">
+                  <h3>{map.title}</h3>
+                  {map.summary ? <span className="note">{map.summary}</span> : null}
+                  <span className="eyebrow">
+                    {(map.markers?.length ?? 0).toLocaleString('en-GB')}{' '}
+                    {map.markers?.length === 1 ? 'marker' : 'markers'}
                   </span>
-                </Link>
-              )
-            })}
-          </div>
-        )}
+                </span>
+              </Link>
+            )
+          })}
+        </div>
       </div>
     </>
   )

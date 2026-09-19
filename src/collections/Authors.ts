@@ -14,23 +14,25 @@ import { slugField, publicRead } from '../fields/shared'
  * turns off once a real person's name and biography are in the record. See
  * `docs/DATA.md` and the `legalProvisional` pattern it mirrors.
  *
- * **What the flag actually renders, and where.** One page: the contributor's
- * own profile at `/authors/<slug>`, which prints a placeholder notice while it
- * is ticked. It does not touch the byline on a guide, the Article structured
- * data, or indexing — `noindex` below is the switch for that last one.
+ * **What the flag renders: nothing, anywhere.** That is the owner's decision,
+ * made after it briefly printed a notice on the contributor's own profile. It
+ * does not touch the byline on a guide, the Article structured data, or
+ * indexing either — `noindex` below is the switch for that last one.
  *
- * That is narrower than it sounds and it is deliberate. The owner asked for a
- * roster of placeholders as scaffolding; stamping a warning across all 394
- * guide bylines would bury the guides under it. The profile is where a reader
- * who wants to know who wrote a page goes, so the profile is where the answer
- * "nobody yet" belongs.
+ * What it is *for* is the admin: it sorts this list, it is what
+ * `pnpm check:launch` counts, and unticking it is how a row is recorded as
+ * having become a real person. That makes the count matter more rather than
+ * less — nothing on the public side distinguishes a seeded name from a real
+ * one, so this column is the only place the difference is visible at all.
  *
  * The failure mode worth naming is the one this comment was part of: for a
  * long time four separate comments here, in `Byline.tsx` and in `src/seed`
  * said the flag made "every byline and profile carry a visible notice" while
  * nothing read it anywhere. A behaviour documented in a comment and
  * implemented in no renderer is a behaviour the site does not have, and
- * `pnpm check:launch` reporting it was the only thing telling the truth.
+ * `pnpm check:launch` reporting it was the only thing telling the truth. This
+ * paragraph describes what the code does; if it ever disagrees with the
+ * renderers again, the renderers are right.
  */
 export const Authors: CollectionConfig = {
   slug: 'authors',
@@ -40,7 +42,7 @@ export const Authors: CollectionConfig = {
     defaultColumns: ['name', 'role', 'covers', 'provisional', 'updatedAt'],
     listSearchableFields: ['name', 'role', 'bio'],
     description:
-      'Bylines for guides. Replace the seeded placeholders with real people before launch and untick "provisional" on each.',
+      'Bylines for guides. Replace the seeded rows with real people before launch and untick "provisional" on each — the flag is for this list and the launch checklist, and prints nothing on the site.',
   },
   access: publicRead,
   fields: [
@@ -54,7 +56,7 @@ export const Authors: CollectionConfig = {
       admin: {
         position: 'sidebar',
         description:
-          'Ticked puts a "this is a placeholder profile" notice on this contributor\'s own page. It does not change the byline printed on their guides. Untick it only when the name, biography and credentials below belong to a real person who agreed to them.',
+          'An editorial marker, not a reader-facing one: by the owner\'s decision it renders nothing on any public page and does not change the byline printed on the guides. It sorts this list and is what the launch checklist counts. Untick it when the name, biography and credentials below belong to a real person who agreed to them.',
       },
     },
     {

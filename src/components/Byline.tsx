@@ -1,6 +1,7 @@
 import type { Author, Media } from '@/payload-types'
 import { getSiteSettings } from '@/lib/payload'
 import { copy } from '@/lib/copy'
+import { leadSentences } from '@/lib/seo'
 import { hub } from '@/lib/urls'
 
 /**
@@ -37,13 +38,55 @@ import { hub } from '@/lib/urls'
  *
  * No avatar placeholder either: a blank circle beside a name looks like a
  * broken image rather than a person.
+ *
+ * ## The portrait is opt-in, and the article does not ask for it
+ *
+ * `avatar` defaults to off. On the masthead of a guide a 34px monogram sits
+ * directly beside a 40px headline and competes with it for the same glance,
+ * and the owner asked for it gone; a contributor profile or a card-sized
+ * credit is a different slot and is welcome to pass `avatar`.
+ *
+ * It is a prop rather than a deletion because the picture is real data that a
+ * caller may legitimately want, and because a caller that does ask has to read
+ * the author at **depth 2** — the upload hangs off the author relationship, so
+ * at depth 1 it arrives as a number and this renders nothing at all, silently.
  */
 export async function Byline({
   author,
   published,
   updated,
+  bio = false,
+  avatar: withAvatar = false,
+  checkedBasis,
+  children,
 }: {
   author?: Author | number | string | null
+  /**
+   * Print the author's portrait beside the credit.
+   *
+   * Off by default. Requires the caller to have read the author at depth 2 —
+   * see the note above.
+   */
+  avatar?: boolean
+  /**
+   * Print the author's own one-line bio under the credit.
+   *
+   * Opt-in, and the guide route is the only caller that asks. A byline in a
+   * table row or beside a card wants a name and a date; the top of an article
+   * is the one place a reader is deciding whether to believe a person, which
+   * is where a line about who they are earns its space. Blank bio prints
+   * nothing, like everything else here.
+   */
+  bio?: boolean
+  /**
+   * Anything that belongs on the far side of the same row — the share links,
+   * a reading estimate.
+   *
+   * A prop rather than a wrapper in the route, because the row has to collapse
+   * as one thing on a phone and two siblings in a flex container cannot agree
+   * on that between them.
+   */
+  children?: React.ReactNode
   /*
     The day the article went up, from the guide's own `published` field.
 
@@ -55,6 +98,22 @@ export async function Byline({
   */
   published?: string | null
   updated?: string | null
+  /**
+   * Where `updated` came from — `guideDates`' `basis`, passed straight through.
+   *
+   * It changes one word, and the word is the whole point. For a guide with no
+   * editorial `updated` field the date is the newest day one of the page's own
+   * citations was read, which is a real fact about the sources and *not* a
+   * review anybody performed. "Last checked" over that date claims an
+   * editorial pass that did not happen, in the line a reader uses to decide
+   * how stale the page is — the same class of overstatement as a default
+   * fact-check sentence, which `ArticleMeta` refuses for the same reason.
+   *
+   * `sources` prints "Sources last read" instead. Anything else keeps "Last
+   * checked", because an editor who typed a date into the Provenance tab did
+   * check it.
+   */
+  checkedBasis?: 'editorial' | 'sources' | 'none'
 }) {
   const settings = await getSiteSettings()
   const person = author && typeof author === 'object' ? (author as Author) : null
@@ -96,7 +155,7 @@ export async function Byline({
     { site: settings.siteName ?? 'editorial' },
   )
 
-  if (!author && !checked && !first) return null
+  if (!author && !checked && !first && !children) return null
 
   const written = (value: Date) =>
     value.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
@@ -118,7 +177,9 @@ export async function Byline({
         ) : null}
         {first && checked ? ' · ' : null}
         {checked ? (
-          <time dateTime={checked.toISOString().slice(0, 10)}>Last checked {written(checked)}</time>
+          <time dateTime={checked.toISOString().slice(0, 10)}>
+            {checkedBasis === 'sources' ? 'Sources last read' : 'Last checked'} {written(checked)}
+          </time>
         ) : null}
       </span>
     ) : null
@@ -127,7 +188,7 @@ export async function Byline({
     <div className="byline">
       {person ? (
         <>
-          {avatar?.url ? (
+          {withAvatar && avatar?.url ? (
             <img
               className="byline-avatar"
               src={avatar.url}
@@ -144,6 +205,31 @@ export async function Byline({
               {person.role ? <span className="byline-role"> · {person.role}</span> : null}
             </span>
             {date}
+            {/*
+              An excerpt, not the whole bio.
+
+              `bio` allows 600 characters and the seeded roster uses most of
+              them, which at the top of an article is five lines of somebody
+              else's CV between the headline and the first sentence.
+
+              `leadSentences` rather than `clamp`, because this slot wants a
+              whole sentence and `clamp` wants a full budget: clamp stops at a
+              sentence end only past 60% of its limit, so a bio whose opening
+              sentence is short printed that sentence, most of the next one,
+              and `as every…`. Every one of the thirty-six seeded bios has
+              exactly that shape.
+
+              It is a server-side cut either way, never a CSS line-clamp. A
+              clamp *hides* text: it is still in the document, still read out
+              by a screen reader, and invisible to anyone looking at the page.
+              That is `4206c56` in a new place.
+
+              Nothing is lost either way: the name directly above links to the
+              profile that carries the bio in full.
+            */}
+            {bio && person.bio ? (
+              <span className="byline-bio">{leadSentences(person.bio, 200)}</span>
+            ) : null}
           </span>
         </>
       ) : unsigned ? (
@@ -157,6 +243,7 @@ export async function Byline({
       ) : (
         <span className="byline-text">{date}</span>
       )}
+      {children ? <span className="byline-aside">{children}</span> : null}
     </div>
   )
 }

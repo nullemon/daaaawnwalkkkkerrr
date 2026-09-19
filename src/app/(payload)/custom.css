@@ -566,3 +566,473 @@
 }
 .net-nav-extra-link:hover { color: var(--theme-elevation-1000); }
 .net-nav-extra-note { font-size: 0.72rem; color: var(--theme-elevation-500); line-height: 1.4; }
+
+/* The pending count beside the Remote control link. Not a badge on Payload's
+   own nav markup — see the note in AnalyticsNavLink.tsx about why these live in
+   a block underneath rather than spliced into a component we do not own. */
+.net-nav-extra-badge {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--theme-error-500, #c0392b);
+  color: #fff;
+  font-size: 0.7rem;
+  line-height: 1.5;
+}
+
+/* --- Remote control (/admin/remote) -------------------------------------- */
+
+.net-rc { max-width: 1000px; padding: 24px; }
+/* Grid and flex children default to min-width: auto, so the tables below would
+   drag this page sideways inside their own scrollers. The rule sits next to the
+   layout it protects rather than in a block at the end of the file — the same
+   arrangement globals.css settled on. */
+.net-rc > * { min-width: 0; }
+
+.net-rc-title { margin: 0 0 6px; font-size: 1.5rem; }
+.net-rc-lede {
+  margin: 0 0 20px;
+  max-width: 68ch;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--theme-elevation-600);
+}
+
+.net-rc-section {
+  margin: 0 0 26px;
+  padding-top: 18px;
+  border-top: 1px solid var(--theme-elevation-100);
+}
+.net-rc-heading { margin: 0 0 10px; font-size: 1rem; }
+
+.net-rc-note {
+  margin: 10px 0 0;
+  max-width: 72ch;
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: var(--theme-elevation-500);
+}
+.net-rc-ok { margin: 0; font-size: 0.85rem; color: var(--theme-success-600, #1f7a3d); }
+.net-rc-done {
+  margin: 0 0 16px;
+  padding: 10px 12px;
+  border-radius: 4px;
+  background: var(--theme-elevation-50);
+  font-size: 0.85rem;
+}
+.net-rc-bad {
+  margin: 0 0 12px;
+  padding: 10px 12px;
+  border-radius: 4px;
+  background: var(--theme-elevation-50);
+  border-left: 3px solid var(--theme-error-500, #c0392b);
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
+
+.net-rc-switches { margin: 0; padding: 0; list-style: none; }
+.net-rc-switches li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--theme-elevation-50);
+  font-size: 0.85rem;
+}
+.net-rc-switches li strong { min-width: 16rem; }
+.net-rc-switches li span { color: var(--theme-elevation-600); }
+.net-rc-switches li[data-on='true'] strong { color: var(--theme-success-600, #1f7a3d); }
+
+.net-rc-blockers { margin: 0; padding-left: 1.1em; font-size: 0.85rem; line-height: 1.7; }
+.net-rc-area {
+  display: inline-block;
+  min-width: 9rem;
+  color: var(--theme-elevation-500);
+  font-family: var(--font-mono, monospace);
+  font-size: 0.78rem;
+}
+
+/* --- One pending session -------------------------------------------------- */
+
+.net-rc-pending {
+  margin: 0 0 18px;
+  padding: 16px;
+  border: 1px solid var(--theme-elevation-150);
+  border-radius: 6px;
+}
+
+/* The code is the point of the screen, so it is the largest thing on it.
+   Letter-spacing because it is read a character at a time against another
+   screen, not as a word. */
+.net-rc-code {
+  margin: 0;
+  font-family: var(--font-mono, monospace);
+  font-size: clamp(1.4rem, 5vw, 2rem);
+  letter-spacing: 0.12em;
+  word-break: break-all;
+}
+.net-rc-compare {
+  margin: 4px 0 14px;
+  max-width: 60ch;
+  font-size: 0.8rem;
+  line-height: 1.55;
+  color: var(--theme-elevation-600);
+}
+
+.net-rc-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 10px 18px;
+  margin: 0 0 14px;
+}
+.net-rc-facts > * { min-width: 0; }
+.net-rc-facts dt {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--theme-elevation-500);
+}
+.net-rc-facts dd { margin: 2px 0 0; font-size: 0.85rem; word-break: break-word; }
+
+.net-rc-mono { font-family: var(--font-mono, monospace); font-size: 0.78rem; }
+
+.net-rc-form { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; }
+.net-rc-form > * { min-width: 0; }
+.net-rc-form label { display: flex; flex-direction: column; gap: 4px; }
+.net-rc-form label span { font-size: 0.72rem; color: var(--theme-elevation-600); }
+.net-rc-form input,
+.net-rc-form select {
+  padding: 7px 9px;
+  border: 1px solid var(--theme-elevation-200);
+  border-radius: 4px;
+  background: var(--theme-input-bg, var(--theme-elevation-0));
+  color: inherit;
+  font: inherit;
+  font-size: 0.85rem;
+}
+.net-rc-form input[type='text'] { font-family: var(--font-mono, monospace); letter-spacing: 0.05em; }
+
+/*
+  The capability boxes: what this one session may do.
+
+  A fieldset rather than a row of inputs, because the boxes are one decision
+  with one question over them, and a screen reader that reads five unrelated
+  checkboxes is a screen reader describing a permission set as five unrelated
+  checkboxes. They are laid out down the page rather than across it: this is
+  the one control on the network that decides what a live site will accept
+  from a terminal, and a row of five ticks read left to right at a glance is
+  how the wrong one stays ticked.
+*/
+.net-rc-caps {
+  flex-basis: 100%;
+  min-width: 0;
+  margin: 4px 0 0;
+  padding: 10px 12px;
+  border: 1px solid var(--theme-elevation-150);
+  border-radius: 4px;
+}
+.net-rc-caps legend {
+  padding: 0 6px;
+  font-size: 0.72rem;
+  color: var(--theme-elevation-600);
+}
+.net-rc-cap {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  padding: 3px 0;
+}
+.net-rc-cap input[type='checkbox'] {
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  padding: 0;
+  accent-color: var(--theme-success-500, #1f7a3d);
+}
+.net-rc-cap span { font-size: 0.85rem; color: inherit; }
+.net-rc-caps .net-rc-note { margin: 8px 0 0; }
+
+.net-rc-buttons { display: flex; gap: 8px; }
+.net-rc-approve,
+.net-rc-deny {
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.net-rc-approve { background: var(--theme-success-500, #1f7a3d); color: #fff; }
+.net-rc-deny {
+  background: transparent;
+  border-color: var(--theme-elevation-200);
+  color: var(--theme-elevation-700);
+}
+
+/* --- Tables --------------------------------------------------------------- */
+
+.net-rc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  display: block;
+  /* The one place a horizontal scroller is allowed: a table gets its own
+     rather than letting the page scroll sideways on a phone. */
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.net-rc-table th,
+.net-rc-table td {
+  padding: 7px 12px 7px 0;
+  text-align: left;
+  border-bottom: 1px solid var(--theme-elevation-50);
+  vertical-align: top;
+}
+.net-rc-table th {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--theme-elevation-500);
+}
+.net-rc-table tr[data-off='true'] td { color: var(--theme-elevation-450); }
+.net-rc-table tr[data-outcome='refused'] td,
+.net-rc-table tr[data-outcome='failed'] td { color: var(--theme-error-600, #a5341f); }
+.net-rc-detail { color: var(--theme-elevation-500); }
+
+.net-rc-refusal {
+  margin: 0;
+  padding: 14px;
+  border-radius: 6px;
+  background: var(--theme-elevation-50);
+  font-size: 0.75rem;
+  line-height: 1.6;
+  overflow-x: auto;
+}
+
+/* ---------------------------------------------------------------------------
+   The login screen, the nav search box and the search view.
+
+   Payload's own variables throughout — `--theme-elevation-*`, `--theme-text`,
+   `--base` — so all three follow the admin's light and dark themes without a
+   second palette to keep in step. The one colour named outright is the
+   network accent on the login mark, which is the brand and not a theme.
+--------------------------------------------------------------------------- */
+
+/* --- login ---------------------------------------------------------------- */
+
+.net-login-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: calc(var(--base, 20px) * 0.75);
+  text-align: center;
+}
+.net-login-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+  color: var(--theme-elevation-900);
+}
+.net-login-tag {
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  color: var(--theme-elevation-600);
+  max-width: 34ch;
+}
+
+.net-login-notice {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: calc(var(--base, 20px) * 0.9);
+}
+.net-login-lead {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  color: var(--theme-elevation-800);
+}
+.net-login-small {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--theme-elevation-600);
+}
+.net-login-small code,
+.net-login-warn code {
+  font-size: 0.95em;
+  padding: 1px 4px;
+  border-radius: 3px;
+  background: var(--theme-elevation-100);
+  color: var(--theme-elevation-800);
+}
+/* The one message on this screen somebody has to act on, so it is the one
+   thing on it that is not grey. */
+.net-login-warn {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  padding: 10px 12px;
+  border-radius: 4px;
+  border: 1px solid var(--theme-warning-250, var(--theme-elevation-200));
+  background: var(--theme-warning-50, var(--theme-elevation-50));
+  color: var(--theme-elevation-800);
+}
+
+/* --- the sidebar search box ----------------------------------------------- */
+
+.net-navsearch {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: calc(var(--base, 20px) * 0.75);
+}
+.net-navsearch-label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--theme-elevation-500);
+}
+.net-navsearch-input {
+  width: 100%;
+  min-width: 0;
+  padding: 7px 9px;
+  font: inherit;
+  font-size: 0.8125rem;
+  color: var(--theme-elevation-900);
+  background: var(--theme-elevation-50);
+  border: 1px solid var(--theme-elevation-150);
+  border-radius: 4px;
+}
+.net-navsearch-input:focus-visible {
+  outline: 2px solid var(--theme-success-500, #3d8bfd);
+  outline-offset: 1px;
+}
+
+/* --- the search view ------------------------------------------------------ */
+
+.net-search {
+  display: flex;
+  flex-direction: column;
+  gap: var(--base, 20px);
+  min-width: 0;
+}
+.net-search-title {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--theme-elevation-900);
+}
+.net-search-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-width: 0;
+}
+.net-search-input {
+  flex: 1 1 320px;
+  min-width: 0;
+  padding: 10px 12px;
+  font: inherit;
+  font-size: 0.9375rem;
+  color: var(--theme-elevation-900);
+  background: var(--theme-elevation-50);
+  border: 1px solid var(--theme-elevation-150);
+  border-radius: 4px;
+}
+.net-search-go {
+  flex: none;
+  padding: 10px 18px;
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  color: var(--theme-base-0, #fff);
+  background: var(--theme-elevation-800);
+  border: 1px solid var(--theme-elevation-800);
+  border-radius: 4px;
+}
+.net-search-note {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--theme-elevation-600);
+  max-width: 78ch;
+}
+
+/* Columns that reflow rather than a fixed grid: the number of collections
+   with a match is different on every search, and three groups stretched
+   across a wide screen reads as a layout error. */
+.net-search-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--base, 20px);
+  min-width: 0;
+}
+.net-search-group {
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid var(--theme-elevation-100);
+  border-radius: 5px;
+  background: var(--theme-elevation-50);
+}
+.net-search-group-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 0 0 8px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--theme-elevation-600);
+}
+.net-search-count {
+  flex: none;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  color: var(--theme-elevation-500);
+}
+.net-search-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.net-search-list li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  min-width: 0;
+}
+.net-search-list a {
+  min-width: 0;
+  font-size: 0.875rem;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+  color: var(--theme-elevation-900);
+}
+/* Which wiki a record belongs to. "Kyoto" is on three of these wikis and the
+   row is useless without it — the reason `SearchTarget.scoped` exists. */
+.net-search-where {
+  flex: none;
+  font-size: 0.6875rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--theme-elevation-500);
+}
+.net-search-more {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.75rem;
+  color: var(--theme-elevation-600);
+}

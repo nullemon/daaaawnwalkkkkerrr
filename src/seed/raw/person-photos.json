@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-17",
+  "fetchedAt": "2026-09-19",
   "source": "en.wikipedia.org/w/api.php — imageinfo, extmetadata",
   "complete": true,
   "people": [
@@ -378,6 +378,348 @@
     {
       "name": "Yuko Kaida",
       "article": "https://en.wikipedia.org/wiki/Y%C5%ABko_Kaida",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "Masahiro Higuchi",
+      "article": "https://en.wikipedia.org/wiki/Masahiro_Higuchi",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "Ben Prunty",
+      "article": "https://en.wikipedia.org/wiki/Ben_Prunty",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "Aya Suzaki",
+      "article": "https://en.wikipedia.org/wiki/Aya_Suzaki",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "Shunsuke Todo",
+      "article": "https://en.wikipedia.org/wiki/Shunsuke_Todo",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "Mayuko Kazama",
+      "article": "https://en.wikipedia.org/wiki/Mayuko_Kazama",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "Tomoya Ito",
+      "article": "https://en.wikipedia.org/wiki/Tomoya_Ito",
+      "photo": true,
+      "file": "File:2012_Paralympics_Men's_200m_T52_Victory_Ceremony.jpg",
+      "licence": "CC BY 2.0",
+      "licenceCode": "cc-by-2.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+      "artist": "David Jones from Isle of Wight, United Kingdom",
+      "filePage": "https://commons.wikimedia.org/wiki/File:2012_Paralympics_Men%27s_200m_T52_Victory_Ceremony.jpg",
+      "image": "tomoya-ito.jpg"
+    },
+    {
+      "name": "Chikahiro Kobayashi",
+      "article": "https://en.wikipedia.org/wiki/Chikahiro_Kobayashi",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "Jonathan Fernandez",
+      "article": "https://en.wikipedia.org/wiki/Jonathan_Fernandez",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "Sara Fletcher",
+      "article": "https://en.wikipedia.org/wiki/Sara_Fletcher",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "Eden Riegel",
+      "article": "https://en.wikipedia.org/wiki/Eden_Riegel",
+      "photo": true,
+      "file": "File:Eden_Riegel_Animate!_Columbus_062026-13.jpg",
+      "licence": "CC BY-SA 4.0",
+      "licenceCode": "cc-by-sa-4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "John Manard",
+      "filePage": "https://commons.wikimedia.org/wiki/File:Eden_Riegel_Animate!_Columbus_062026-13.jpg",
+      "image": "eden-riegel.jpg"
+    },
+    {
+      "name": "Michael Donovan",
+      "article": "https://en.wikipedia.org/wiki/Michael_Donovan",
+      "photo": false,
+      "file": "File:Michael_Donovan.jpg",
+      "licence": "Fair use",
+      "licenceCode": "",
+      "licenceUrl": "",
+      "artist": "Ian James Corlett",
+      "filePage": "https://en.wikipedia.org/wiki/File:Michael_Donovan.jpg",
+      "reason": "non-free: uploaded locally to en.wikipedia (Fair use)"
+    },
+    {
+      "name": "Katsuhiko Sasaki",
+      "article": "https://en.wikipedia.org/wiki/Katsuhiko_Sasaki",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "Richard Epcar",
+      "article": "https://en.wikipedia.org/wiki/Richard_Epcar",
+      "photo": true,
+      "file": "File:Richard_Epcar_Headshot.jpg",
+      "licence": "CC BY-SA 4.0",
+      "licenceCode": "cc-by-sa-4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "Richard Epcar",
+      "filePage": "https://commons.wikimedia.org/wiki/File:Richard_Epcar_Headshot.jpg",
+      "image": "richard-epcar.jpg"
+    },
+    {
+      "name": "Lynn Harris",
+      "article": "https://en.wikipedia.org/wiki/Lynn_Harris",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "Erin Cahill",
+      "article": "https://en.wikipedia.org/wiki/Erin_Cahill",
+      "photo": true,
+      "file": "File:Erin_Cahill_at_San_Diego_Comic_Con_2025.jpg",
+      "licence": "CC BY 4.0",
+      "licenceCode": "cc-by-4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
+      "artist": "Kevin Paul",
+      "filePage": "https://commons.wikimedia.org/wiki/File:Erin_Cahill_at_San_Diego_Comic_Con_2025.jpg",
+      "image": "erin-cahill.jpg"
+    },
+    {
+      "name": "Rin Asuka",
+      "article": "https://en.wikipedia.org/wiki/Rin_Asuka",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "Diego Matamoros",
+      "article": "https://en.wikipedia.org/wiki/Diego_Matamoros",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "Jane Perry",
+      "article": "https://en.wikipedia.org/wiki/Jane_Perry_(actress)",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "Barry Gjerde",
+      "article": "https://en.wikipedia.org/wiki/Barry_Gjerde",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "Michael McConnohie",
+      "article": "https://en.wikipedia.org/wiki/Michael_McConnohie",
+      "photo": true,
+      "file": "File:Michael_McConnohie_@_Retro_Con,_Oaks,_PA_9-12-15_(21360298516).jpg",
+      "licence": "CC BY 2.0",
+      "licenceCode": "cc-by-2.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+      "artist": "Rob DiCaterino from Clifton, NJ, USA",
+      "filePage": "https://commons.wikimedia.org/wiki/File:Michael_McConnohie_@_Retro_Con,_Oaks,_PA_9-12-15_(21360298516).jpg",
+      "image": "michael-mcconnohie.jpg"
+    },
+    {
+      "name": "Rod Wilson",
+      "article": "https://en.wikipedia.org/wiki/Rod_Wilson",
+      "photo": true,
+      "file": "File:Rod_Wilson.jpg",
+      "licence": "CC BY 2.0",
+      "licenceCode": "cc-by-2.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+      "artist": "Gamecock Central",
+      "filePage": "https://commons.wikimedia.org/wiki/File:Rod_Wilson.jpg",
+      "image": "rod-wilson.jpg"
+    },
+    {
+      "name": "Lex Lang",
+      "article": "https://en.wikipedia.org/wiki/Lex_Lang",
+      "photo": true,
+      "file": "File:Lex_Lang_at_Animate!_Raleigh_2026_(55152371700).jpg",
+      "licence": "CC BY-SA 4.0",
+      "licenceCode": "cc-by-sa-4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "John Manard",
+      "filePage": "https://commons.wikimedia.org/wiki/File:Lex_Lang_at_Animate!_Raleigh_2026_(55152371700).jpg",
+      "image": "lex-lang.jpg"
+    },
+    {
+      "name": "Farahnaz Nikray",
+      "article": "https://en.wikipedia.org/wiki/Farahnaz_Nikray",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "Antony Byrne",
+      "article": "https://en.wikipedia.org/wiki/Antony_Byrne",
+      "photo": true,
+      "file": "File:Antony_Byrne.jpg",
+      "licence": "CC BY-SA 4.0",
+      "licenceCode": "cc-by-sa-4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "Stephanie Tobin",
+      "filePage": "https://commons.wikimedia.org/wiki/File:Antony_Byrne.jpg",
+      "image": "antony-byrne.jpg"
+    },
+    {
+      "name": "Hiroshi Ito",
+      "article": "https://en.wikipedia.org/wiki/Hiroshi_Ito",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "Jean-Benoît Blanc",
+      "article": "https://en.wikipedia.org/wiki/JB_Blanc",
+      "photo": true,
+      "file": "File:JB_Blanc_San_Diego_Comic_Con_2013.jpg",
+      "licence": "CC BY-SA 2.0",
+      "licenceCode": "cc-by-sa-2.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "artist": "Ronald Woan",
+      "filePage": "https://commons.wikimedia.org/wiki/File:JB_Blanc_San_Diego_Comic_Con_2013.jpg",
+      "image": "jean-benoit-blanc.jpg"
+    },
+    {
+      "name": "Michelle Ruff",
+      "article": "https://en.wikipedia.org/wiki/Michelle_Ruff",
+      "photo": true,
+      "file": "File:Michelle_Ruff.jpg",
+      "licence": "CC BY 3.0",
+      "licenceCode": "cc-by-3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
+      "artist": "Princess Serenity2",
+      "filePage": "https://commons.wikimedia.org/wiki/File:Michelle_Ruff.jpg",
+      "image": "michelle-ruff.jpg"
+    },
+    {
+      "name": "Mana Hirata",
+      "article": "https://en.wikipedia.org/wiki/Mana_Hirata",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "Michelle Lukes",
+      "article": "https://en.wikipedia.org/wiki/Michelle_Lukes",
+      "photo": true,
+      "file": "File:Michelle_Lukes_Award_Ceremony.jpg",
+      "licence": "CC BY-SA 4.0",
+      "licenceCode": "cc-by-sa-4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "Pandaheed",
+      "filePage": "https://commons.wikimedia.org/wiki/File:Michelle_Lukes_Award_Ceremony.jpg",
+      "image": "michelle-lukes.jpg"
+    },
+    {
+      "name": "Sayaka Kinoshita",
+      "article": "https://en.wikipedia.org/wiki/Sayaka_Kinoshita",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "Marcella Silvestri",
+      "article": "https://en.wikipedia.org/wiki/Marcella_Silvestri",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "David Blanco",
+      "article": "https://en.wikipedia.org/wiki/David_Blanco",
+      "photo": true,
+      "file": "File:David_Blanco.Ciclistas_galegos.jpg",
+      "licence": "CC BY-SA 2.5 es",
+      "licenceCode": "cc-by-sa-2.5-es",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.5/es/deed.en",
+      "artist": "gl:Usuario:Birnarem",
+      "filePage": "https://commons.wikimedia.org/wiki/File:David_Blanco.Ciclistas_galegos.jpg",
+      "image": "david-blanco.jpg"
+    },
+    {
+      "name": "Alexander Matrosov",
+      "article": "https://en.wikipedia.org/wiki/Alexander_Matrosov",
+      "photo": true,
+      "file": "File:Alexander_Matveyevich_Matrosov.jpg",
+      "licence": "Public domain",
+      "licenceCode": "pd",
+      "licenceUrl": "",
+      "artist": "Unknown authorUnknown author",
+      "filePage": "https://commons.wikimedia.org/wiki/File:Alexander_Matveyevich_Matrosov.jpg",
+      "image": "alexander-matrosov.jpg"
+    },
+    {
+      "name": "Neil Newbon",
+      "article": "https://en.wikipedia.org/wiki/Neil_Newbon",
+      "photo": true,
+      "file": "File:Neil_Newbon_by_Gage_Skidmore.jpg",
+      "licence": "CC BY-SA 3.0",
+      "licenceCode": "cc-by-sa-3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "artist": "Gage Skidmore",
+      "filePage": "https://commons.wikimedia.org/wiki/File:Neil_Newbon_by_Gage_Skidmore.jpg",
+      "image": "neil-newbon.jpg"
+    },
+    {
+      "name": "James Clyde",
+      "article": "https://en.wikipedia.org/wiki/James_Clyde_(actor)",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "Lily Gao",
+      "article": "https://en.wikipedia.org/wiki/Lily_Gao",
+      "photo": true,
+      "file": "File:Lily_Gao_RE_Database.jpg",
+      "licence": "CC BY 3.0",
+      "licenceCode": "cc-by-3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
+      "artist": "Moni | RE Database",
+      "filePage": "https://commons.wikimedia.org/wiki/File:Lily_Gao_RE_Database.jpg",
+      "image": "lily-gao.jpg"
+    },
+    {
+      "name": "Johnny Yong Bosch",
+      "article": "https://en.wikipedia.org/wiki/Johnny_Yong_Bosch",
+      "photo": true,
+      "file": "File:Johnny_Yong_Bosch_GalaxyCon_Raleigh_July,_24,_2026_585.jpg",
+      "licence": "CC BY-SA 4.0",
+      "licenceCode": "cc-by-sa-4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "John Manard",
+      "filePage": "https://commons.wikimedia.org/wiki/File:Johnny_Yong_Bosch_GalaxyCon_Raleigh_July,_24,_2026_585.jpg",
+      "image": "johnny-yong-bosch.jpg"
+    },
+    {
+      "name": "Shigeo Kiyama",
+      "article": "https://en.wikipedia.org/wiki/Shigeo_Kiyama",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "Lorelei King",
+      "article": "https://en.wikipedia.org/wiki/Lorelei_King",
+      "photo": false,
+      "reason": "the article carries no lead image"
+    },
+    {
+      "name": "Lorelei King",
+      "article": "https://en.wikipedia.org/wiki/Lorelei_King",
       "photo": false,
       "reason": "the article carries no lead image"
     }

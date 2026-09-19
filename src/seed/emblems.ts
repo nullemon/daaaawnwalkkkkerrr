@@ -55,13 +55,33 @@ const FORCE = process.argv.includes('--force')
  * `src/seed/assets.ts` already maps onto the collection, and two spellings for
  * one collection is how a folder ends up skipped with a warning nobody reads.
  */
-const TARGETS: { collection: CollectionSlug; folder: string; field: string }[] = [
+const TARGETS: {
+  collection: CollectionSlug
+  folder: string
+  field: string
+  /**
+   * Draw for every wiki, not just Dawnwalker's records.
+   *
+   * The first six collections here exist only on Dawnwalker, so this pass has
+   * always filtered on that one game — and `factions`, the seventh, is on
+   * seven wikis and none of them is Dawnwalker. Without this it queried
+   * Dawnwalker's factions, found none, and printed "factions 0 of 0", which
+   * reads exactly like a collection that is already finished.
+   */
+  allGames?: true
+}[] = [
   { collection: 'perks', folder: 'perks', field: 'image' },
   { collection: 'endings', folder: 'endings', field: 'image' },
   { collection: 'builds', folder: 'builds', field: 'image' },
   { collection: 'courts', folder: 'courts', field: 'image' },
   { collection: 'court-activities', folder: 'court-activities', field: 'image' },
   { collection: 'skill-trees', folder: 'skills', field: 'image' },
+  /* The seventh, and the first that is not Dawnwalker-only: 198 factions
+     across seven wikis. A faction here is derived from the `affiliation`
+     field on characters and enemies rather than harvested from an article,
+     so there has never been an image to find for one. See the note in
+     `tools/make-emblems.mjs`. */
+  { collection: 'factions', folder: 'factions', field: 'image', allGames: true },
 ]
 
 /** Every emblem's filename starts with this, which is what makes an emblem
@@ -245,8 +265,15 @@ async function run(): Promise<void> {
 
     const records = await payload.find({
       collection: target.collection,
-      where: { game: { equals: gameId } },
-      limit: 500,
+      ...(target.allGames ? {} : { where: { game: { equals: gameId } } }),
+      /*
+        No pagination here, so the limit is the ceiling: at 500 this silently
+        stopped listing the surplus, which is the `LISTING_LIMIT` failure
+        `src/lib/audit.ts` records. `factions` is 198 today and is the kind
+        that grows with every harvest.
+      */
+      limit: 0,
+      pagination: false,
       depth: 0,
     })
 

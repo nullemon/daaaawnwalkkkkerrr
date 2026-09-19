@@ -5,6 +5,8 @@ import { SECTIONS, toolsFor } from '@/lib/sections'
 import { NETWORK_SUBDOMAINS, subdomainOf } from '@/proxy'
 import { COMPANIES_ORIGIN, PEOPLE_ORIGIN, companyUrl, personUrl } from '@/lib/urls'
 import { GENERATED_ART, imagesFor, type SitemapMedia } from '@/lib/sitemap-images'
+import { guideLastModified, sourcesLastRead } from '@/lib/guide-dates'
+import { demoDatesOn, lastmodFor } from '@/lib/sitemap-dates'
 
 /**
  * The sitemap, answered per host.
@@ -34,11 +36,38 @@ import { GENERATED_ART, imagesFor, type SitemapMedia } from '@/lib/sitemap-image
  * `<loc>`, `<lastmod>`, `<priority>` and, where the page has one, an
  * `<image:image>`. Three of those need a word of explanation.
  *
- * **`lastmod` is the one engines actually use**, and it is a record's own
- * `updatedAt` rather than the time the file was generated. An index page has
- * no `updatedAt` of its own, so it carries the request time — which is honest
- * for a page composed from records that change, and is the only place a
- * generated timestamp appears.
+ * **`lastmod` is the one engines actually use**, and it is a record's own date
+ * rather than the time the file was generated. For a guide that is
+ * `guideLastModified` — the day this page's own citations were read, off a
+ * committed harvest file — and where there is no such date the element is
+ * omitted rather than filled in, because Google stops trusting a `lastmod`
+ * that is obviously synthetic and a row timestamp on four hundred pages is
+ * exactly that. See `src/lib/guide-dates.ts`.
+ *
+ * **Every other record answers the same way**, and the sentence that used to
+ * sit here is worth keeping as a warning: "every other collection carries its
+ * `updatedAt`, which has the same weakness and, so far, no better answer."
+ * There was a better answer, in the column the guides were already reading.
+ * `src/seed/import.ts` refuses a record with no source, and every source
+ * carries the day it was read — all 2,000 game-scoped records here have one,
+ * spread over four real days, and so do 318 of 321 companies and all 597
+ * people. So 1,590 record pages were declaring a date that was the same on
+ * every one of them and different after every rebuild, which is the exact
+ * synthetic `lastmod` the guide rule exists to avoid, on four times as many
+ * pages as the rule covered.
+ *
+ * A record with no dated citation carries no `lastmod` at all. "Unknown" is a
+ * legal answer in a sitemap and a true one.
+ *
+ * **An index page takes the newest date of the records on it.** It used to
+ * take the request time, on the argument that a page composed from records
+ * that change has no date of its own — which is half right and produced the
+ * same defect one level up: sixteen index pages per wiki, all stamped with the
+ * minute the file was generated, moving on every fetch. The records are
+ * already in hand when the index entry is written, so the honest date is free.
+ * The three or four pages that genuinely have no underlying record — the hub
+ * home, the legal pages — are the only generated timestamps left, and they are
+ * the only ones the argument was ever true for.
  *
  * **`changefreq` is gone.** Google states outright that it ignores it, Bing
  * has said the same, and Yandex treats it as a weak hint — so the most it
@@ -65,10 +94,32 @@ import { GENERATED_ART, imagesFor, type SitemapMedia } from '@/lib/sitemap-image
  * on one host — `generateSitemaps` is the answer then, and the note above
  * about the route-folder name is the thing to re-read first.
  */
+/**
+ * Demo mode, applied in exactly one place.
+ *
+ * Every entry in this file already computes the honest answer — a record's own
+ * citation date, or nothing where it has none. This is the only thing that
+ * ever overrides one, and it overrides all of them or none, which is the whole
+ * reason it is a pass over the finished array rather than an argument threaded
+ * through fifteen call sites. A spread that reached most entries and missed
+ * three would be worse than either state: a sitemap where three pages are
+ * visibly the odd ones out.
+ *
+ * `src/lib/sitemap-dates.ts` says what it does and what it costs.
+ */
+const applyDemoDates = (entries: MetadataRoute.Sitemap, now: Date): MetadataRoute.Sitemap => {
+  if (!demoDatesOn()) return entries
+  return entries.map((entry) => {
+    const lastModified = lastmodFor(entry.url, entry.lastModified, now)
+    return lastModified ? { ...entry, lastModified } : entry
+  })
+}
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const network = await siteUrl()
   const host = (await headers()).get('host') ?? new URL(network).host
   const label = subdomainOf(host, new URL(network).host)
+  const now = new Date()
 
   /*
     Not every subdomain is a wiki.
@@ -85,18 +136,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     why it is worth branching on the list the router already keeps rather than
     on the two names.
   */
-  if (!label) return hubSitemap(network)
-  if (label === 'companies') return companiesSitemap()
-  if (label === 'people') return peopleSitemap()
+  if (!label) return applyDemoDates(await hubSitemap(network), now)
+  if (label === 'companies') return applyDemoDates(await companiesSitemap(), now)
+  if (label === 'people') return applyDemoDates(await peopleSitemap(), now)
   if (NETWORK_SUBDOMAINS.has(label)) {
     /*
       A network host somebody added to the router and not to this file. Better
       to serve the host's front page alone than to serve nothing at all and
       look like a site with no pages.
     */
-    return [{ url: `https://${host}`, lastModified: new Date(), priority: 1 }]
+    return applyDemoDates([{ url: `https://${host}`, lastModified: now, priority: 1 }], now)
   }
-  return wikiSitemap(label)
+  return applyDemoDates(await wikiSitemap(label), now)
 }
 
 /**
@@ -200,7 +251,18 @@ async function companiesSitemap(): Promise<MetadataRoute.Sitemap> {
       const id = uploadId(company.logo)
       return {
         url: companyUrl(`/${company.slug}`),
-        lastModified: company.updatedAt ? new Date(company.updatedAt) : now,
+        /*
+          The day this profile's own sources were read, the same as every
+          record on a wiki. 318 of the 321 carry one; the three that do not
+          carry no `lastmod` rather than the time this file was generated.
+        */
+        ...(sourcesLastRead(company.sources as Parameters<typeof sourcesLastRead>[0])
+          ? {
+              lastModified: new Date(
+                sourcesLastRead(company.sources as Parameters<typeof sourcesLastRead>[0]) as string,
+              ),
+            }
+          : {}),
         priority: 0.5,
         images: id === null ? undefined : imagesFor(COMPANIES_ORIGIN, media.get(id)),
       }
@@ -230,7 +292,14 @@ async function peopleSitemap(): Promise<MetadataRoute.Sitemap> {
       const id = uploadId(person.photo)
       return {
         url: personUrl(`/${person.slug}`),
-        lastModified: person.updatedAt ? new Date(person.updatedAt) : now,
+        // As above. All 597 carry a dated citation.
+        ...(sourcesLastRead(person.sources as Parameters<typeof sourcesLastRead>[0])
+          ? {
+              lastModified: new Date(
+                sourcesLastRead(person.sources as Parameters<typeof sourcesLastRead>[0]) as string,
+              ),
+            }
+          : {}),
         priority: 0.5,
         images: id === null ? undefined : imagesFor(PEOPLE_ORIGIN, media.get(id), 'card'),
       }
@@ -269,6 +338,15 @@ async function hubSitemap(base: string): Promise<MetadataRoute.Sitemap> {
     if (author.noindex) continue
     entries.push({
       url: `${base}/authors/${author.slug}`,
+      /*
+        The one collection that keeps its row timestamp, and it is not an
+        oversight. A contributor profile is not compiled from anything — all
+        36 carry no sources at all, so there is no retrieval date to read —
+        and `updatedAt` is the right answer the moment a real person edits
+        their own bio. It is synthetic today only because `seed:contributors`
+        rewrites the whole roster on every run, which stops being true when
+        the placeholders are replaced. Worth re-reading then, not before.
+      */
       lastModified: author.updatedAt ? new Date(author.updatedAt) : now,
       priority: 0.4,
     })
@@ -333,7 +411,10 @@ async function wikiSitemap(slug: string): Promise<MetadataRoute.Sitemap> {
     by a string, so they are handled as records rather than as sixteen
     different document types.
   */
-  type Listed = { slug: string; updatedAt?: string | null } & Record<string, unknown>
+  type Listed = { slug: string; sources?: { retrieved?: string | null }[] | null } & Record<
+    string,
+    unknown
+  >
   const walked: { section: (typeof SECTIONS)[number]; docs: Listed[]; art: boolean }[] = []
   const mediaIds = new Set<number>()
 
@@ -361,18 +442,67 @@ async function wikiSitemap(slug: string): Promise<MetadataRoute.Sitemap> {
   const media = await resolveMedia(mediaIds)
 
   for (const { section, docs, art } of walked) {
-    // The index only earns a place once it has something on it.
+    /*
+      The index only earns a place once it has something on it — which is now
+      also what the route itself says, since all sixteen `notFound()` on an
+      empty collection.
+
+      Its date is the newest of the records listed on it rather than the
+      request time. An index has no date of its own, which was the argument for
+      stamping it `now`; what an index *is* is the set of records under it, so
+      the day the newest of them was last read is the day the page last said
+      something different. The rows are already in hand.
+    */
+    const newest = docs
+      .map((record) => sourcesLastRead(record.sources as Parameters<typeof sourcesLastRead>[0]))
+      .filter((day): day is string => Boolean(day))
+      .sort()
+      .pop()
+
     entries.push({
       url: `${base}${section.href}`,
-      lastModified: now,
+      ...(newest ? { lastModified: new Date(newest) } : {}),
       priority: Math.min(section.priority + 0.1, 1),
     })
 
     for (const record of docs) {
       const id = art ? uploadId(record[section.imageField]) : null
+      /*
+        `lastmod` for a guide is the guide's own date, not the row's.
+
+        `updatedAt` is the same value on all 410 guides — the afternoon
+        somebody last ran the seed — because every generator upserts every
+        guide on every run. Four hundred articles across eight hosts all
+        declaring the same modification date, and a different one after each
+        rebuild, is the textbook synthetic `lastmod`: Google's stated position
+        is that it stops trusting the field when it obviously is not real, and
+        this field is the only one in a sitemap it reads at all.
+
+        `guideLastModified` answers from the guide's own citations instead —
+        the day the harvest it compiles was actually read, out of a committed
+        file rather than off the clock. Where a guide has no honest date,
+        `<lastmod>` is omitted: "unknown" is a legal answer in a sitemap and a
+        true one, and it is the same "unknown is not zero" this repository
+        applies to a segment cost.
+
+        Every other collection answers from the same place, and for four
+        times as many pages. `import.ts` refuses a record with no source and
+        every source carries the day it was read, so a quest, a character or a
+        region has exactly the honest date a guide has — it was simply never
+        asked. `updatedAt` on 1,590 record pages was one value, identical
+        across all of them and replaced on every rebuild.
+
+        A guide still goes through `guideDates`, because it has two fields an
+        editor can type into that outrank its citations. Nothing else has
+        those, so nothing else needs the rest of that logic.
+      */
+      const lastmod =
+        section.collection === 'guides'
+          ? guideLastModified(record as Parameters<typeof guideLastModified>[0])
+          : sourcesLastRead(record.sources as Parameters<typeof sourcesLastRead>[0])
       entries.push({
         url: `${base}${section.href}/${record.slug}`,
-        lastModified: record.updatedAt ? new Date(record.updatedAt) : now,
+        ...(lastmod ? { lastModified: new Date(lastmod) } : {}),
         priority: section.priority,
         /*
           Every one of these routes renders the stored original rather than a

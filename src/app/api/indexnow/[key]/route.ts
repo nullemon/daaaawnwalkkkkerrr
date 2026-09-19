@@ -1,7 +1,6 @@
-import fs from 'node:fs'
-import path from 'node:path'
 import { getSiteSettings } from '@/lib/payload'
-import { KEY_PATTERN, resolveIndexNowKey, type ResolvedKey } from '@/lib/indexnow'
+import { resolveIndexNowKey, type ResolvedKey } from '@/lib/indexnow'
+import { shippedIndexNowKey } from '@/lib/indexnow-shipped'
 
 /**
  * The IndexNow key file, answered from the database on every host.
@@ -45,40 +44,6 @@ import { KEY_PATTERN, resolveIndexNowKey, type ResolvedKey } from '@/lib/indexno
 export const dynamic = 'force-dynamic'
 
 /**
- * The key that shipped in the repository, or null.
- *
- * Found by shape rather than by name — a file whose stem matches its own
- * contents — so rotating the committed key stays what `docs/DEPLOY.md` says it
- * is: drop a new file into `public/` and delete the old one, with nothing in
- * the code to edit. `tools/indexnow.mjs` looks for it exactly this way.
- *
- * Read once per process rather than per request. This cannot change without a
- * deploy, and a deploy is a new process.
- */
-let shippedKeyCache: string | null | undefined
-const shippedKey = (): string | null => {
-  if (shippedKeyCache !== undefined) return shippedKeyCache
-  shippedKeyCache = null
-  try {
-    const dir = path.join(process.cwd(), 'public')
-    for (const name of fs.readdirSync(dir)) {
-      if (!name.endsWith('.txt')) continue
-      const stem = name.slice(0, -4)
-      if (!KEY_PATTERN.test(stem)) continue
-      if (fs.readFileSync(path.join(dir, name), 'utf8').trim() === stem) {
-        shippedKeyCache = stem
-        break
-      }
-    }
-  } catch {
-    /* No public directory, or it is unreadable. A settings key still works,
-       and a missing fallback is a 404 on the key file rather than a 500 on a
-       route every host serves. */
-  }
-  return shippedKeyCache
-}
-
-/**
  * The key this deployment is serving, resolved the same way `tools/indexnow.mjs`
  * resolves the key it submits. The two agreeing is the whole point — see
  * `lib/indexnow.ts`.
@@ -97,7 +62,7 @@ const activeKey = async (): Promise<ResolvedKey> => {
   return resolveIndexNowKey({
     settings: stored,
     env: process.env.INDEXNOW_KEY ?? null,
-    shipped: shippedKey(),
+    shipped: shippedIndexNowKey(),
   })
 }
 

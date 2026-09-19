@@ -23,12 +23,24 @@ import type { Field } from 'payload'
  * one and is meant for the case nothing else covers.
  */
 
-const helpFor = (scope: 'network' | 'game') =>
-  scope === 'game'
-    ? 'Leave empty to use the network-wide value from Site settings.'
-    : 'Used by every wiki unless that wiki sets its own.'
+const helpFor = (scope: Scope) =>
+  scope === 'network'
+    ? 'Used by every wiki unless that wiki sets its own.'
+    : 'Leave empty to use the network-wide value from Site settings.'
 
-export const verificationFields = (scope: 'network' | 'game'): Field => ({
+/**
+ * Which kind of property these tokens belong to.
+ *
+ * `host` is `companies.<domain>` and `people.<domain>`. They were the two
+ * sites on this network with nowhere to put a token: their layouts read the
+ * network's, which Search Console will not accept, because a property is a
+ * host. The field existed for the hub and for each wiki and for neither of
+ * these — `pnpm check:launch` reported it in those words, per host, and the
+ * only fix available was to build the field.
+ */
+type Scope = 'network' | 'game' | 'host'
+
+export const verificationFields = (scope: Scope): Field => ({
   name: 'verification',
   type: 'group',
   label: 'Search engine verification',
@@ -36,7 +48,9 @@ export const verificationFields = (scope: 'network' | 'game'): Field => ({
     description:
       scope === 'game'
         ? 'This wiki is its own site to a search engine, so it needs its own verification token. Search Console will not accept the network’s.'
-        : 'Only used on the apex domain. Each wiki has its own, on its Game record.',
+        : scope === 'host'
+          ? 'This host is its own property to a search engine, so it needs its own token. Search Console will not accept the network’s.'
+          : 'Only used on the apex domain. Each wiki has its own, on its Game record.',
   },
   fields: [
     {

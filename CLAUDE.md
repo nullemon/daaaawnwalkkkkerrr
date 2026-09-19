@@ -4,10 +4,22 @@ A network of game wikis sharing one admin, one account system and one set of
 editorial rules. Next.js 16 + Payload CMS 3 on libSQL. Every public page
 prerenders to static HTML; `/admin` is a full CMS.
 
-Eight wikis today, 1,929 prerendered pages. *The Blood of Dawnwalker* is the
-first and still the largest — 440 of the 1,375 records — and its 480-segment
-run planner is the model for what each wiki is meant to have: one tool nobody
-else has.
+Eight wikis today. `pnpm build` prerenders 3,194 pages from 2,000 game-scoped
+records plus 321 company and 597 person profiles; the wikis run from 42 records
+(Phantom Blade Zero) to 749 (Zero Company). *The Blood of Dawnwalker* was the
+first and is second-largest at 512, and its 480-segment run planner is the
+model for what a wiki here can have: one tool nobody else has.
+
+Those figures move with every harvest. `pnpm verify` prints the record counts
+and `pnpm build` prints the page count; neither is worth trusting from memory,
+and an earlier version of this paragraph said 1,929 pages and 1,375 records for
+long enough that both were wrong by a third.
+
+**A tool per wiki, where the data supports one, and nowhere else.** Four have
+one today — Dawnwalker's run checker and build planner, and the completion
+tracker on the three released wikis whose achievements carry a global unlock
+rate. The four pre-release wikis have none, and that is the finding rather than
+the gap: see Outstanding.
 
 The other seven are built from two sourced pipelines and nothing else:
 
@@ -33,8 +45,8 @@ prefix; `src/proxy.ts` maps host to the internal `/[game]/…` route. See
 ```bash
 pnpm install      # NOT npm — see gotchas
 pnpm dev          # http://dawnwalker.localhost:3000 — see 'Local dev' below
-pnpm build        # prerenders ~1,930 pages across eight wikis
-pnpm test         # unit tests (679)
+pnpm build        # prerenders every page; prints the count (3,194 today)
+pnpm test         # unit tests (998)
 pnpm seed         # hand-written seed content, idempotent on slug
 pnpm ingest       # ingest researched JSON from src/seed/raw/
 pnpm db:reset     # delete the database and rebuild it from seed + raw
@@ -45,6 +57,7 @@ pnpm remote <cmd> # content operations against a RUNNING site over its API
 pnpm refresh      # re-read every store page and wiki, reseed, rebuild icons
 pnpm check:launch # the launch checklist — NOT `pnpm audit`, that is pnpm's own
 pnpm indexnow     # dry run; `-- --send` submits. Bing/Yandex/Seznam/Naver/Yep, not Google
+pnpm seo:search-console  # every Search Console property, in order, with its sitemap
 pnpm fetch:games  # just the store pages
 pnpm fetch:entities  # just the community wikis
 pnpm seed:games   # store-page facts -> mechanics pages and achievements
@@ -244,6 +257,65 @@ that inherits the default would let any reader who signs up edit content.
   Keep that guard: it is the only thing standing between a rate limit and
   silent data loss.
 
+- **"No such article" and "Wikipedia would not answer" were the same value,
+  and the harvester wrote the second one down as the first.** Every failure in
+  `tools/fetch-reference-facts.mjs` returned `null` — a 429, a 403, a dropped
+  socket — and the loop could not tell those from a page that genuinely does
+  not exist, so it printed "no article" and wrote `wikipedia: null` over a
+  complete harvest. A rate-limited run took Dawnwalker's 753 bytes of infobox
+  facts down to 77 and Onimusha's 836 to 92, then exited 0 with a tidy summary.
+  Nothing downstream errored either: `tools/fetch-posters.mjs` reads the
+  article URL out of those files, so the only visible symptom was five games
+  reported as having "no Wikipedia article recorded" — including the one the
+  owner had just asked for a cover of. The files were recovered from git.
+
+  The same failure as the autocomplete one above, arriving through a second
+  door, and the fix is the same shape: a refusal now throws, a refusal stops
+  the sweep and exits non-zero, and no record is written if it holds fewer
+  facts than the one already on disk. **A refusal is a fact about the network
+  and must never be written down as a fact about the game.** Any harvester
+  added here needs both halves — the file on disk is usually the only copy.
+
+- **A flag that was not passed leaves no trace, and four wikis had no
+  pictures because of one.** `tools/harvest-game.mjs` downloads each entity's
+  lead image only with `--images`. Fire Emblem, Resident Evil Requiem, Forza
+  Horizon 6 and Subnautica 2 were swept without it, so their harvests recorded
+  365 image URLs and fetched none of them — and every pass downstream behaved
+  correctly on that data, because `seed:entities` attaches a picture only where
+  `imageFile` names a file. 365 records rendered a fallback icon, on four
+  wikis, and nothing anywhere said why. The harvest file looks complete: the
+  entities are all there, with their facts, their categories and the URL of the
+  picture nobody fetched.
+
+  `pnpm fetch:entity-images` downloads what a harvest already names, without
+  re-sweeping the wiki, and `tools/lib/fandom-image.mjs` is the one copy of the
+  download shared with the harvester. It also fixes the bug found while moving
+  it: `imageFile` was recorded **before** the request, so a refusal left the
+  harvest naming a file that was never written.
+
+- **`push: true` asks a question when you remove a field, and `next dev` has
+  nobody to answer it.** Deleting `bodyImagesHeading` from `Guides` made
+  drizzle print "You're about to delete body_images_heading column in guides
+  table with 597 items" into the dev log and wait. Every request hung, nothing
+  errored, and the line reads like information rather than a prompt — the
+  server had already printed `Ready in 419ms`. Adding a field never does this,
+  which is why it is a surprise the first time.
+
+  `pnpm db:reset` is the documented answer and the right one before a
+  production build. `node tools/drop-column.mjs <table> <column>` is the one
+  for the middle of a session: it drops the column and its `_v` mirror so push
+  has nothing to ask about, and it refuses any column a collection still
+  declares — dropping one of those makes push recreate it empty on the next
+  boot, which blanks the field for every record.
+
+- **A check that names the places it looks is always one group behind the
+  schema.** `pnpm check:art` walked each record's top-level image fields and
+  then `theme` by name, so when cover art landed at `profile.poster` it was
+  simply outside the audit — fourteen pictures, on the collection the whole
+  check is about. The count not moving when four covers were attached was the
+  only sign, and only if you were watching the number. It walks every nested
+  group now rather than a list somebody has to remember to extend.
+
 - **A draft is a complete record that 404s, and every check agrees it is
   there.** `guides` is the one collection with `versions: { drafts: true }`,
   and Payload defaults a document it *creates* to `_status: 'draft'`. The
@@ -389,11 +461,15 @@ that inherits the default would let any reader who signs up edit content.
   `EMAIL_PROVIDER`, the default is `console`, and `pnpm email:test <address>`
   exits non-zero on `console` because printed is not delivered. `docs/EMAIL.md`.
 
-  Related, and still open: **`players` has no password reset.** Payload exposes
+  Related, and **closed**: `players` had no password reset. Payload exposes
   `POST /api/players/forgot-password` whether anything links to it or not, and
-  the link it composes points at `/admin/reset/<token>` — the editor admin,
-  which resolves tokens against `users`. It was harmless while nothing was
-  delivered. It is a real message with a dead link now.
+  the link it composed pointed at `/admin/reset/<token>` — the editor admin,
+  which resolves tokens against `users`, so a reader was told their token was
+  invalid on a page they cannot sign into. `Players.ts` now carries its own
+  template pointing at `/account/reset` on the **hub**, absolute (there is no
+  `serverURL` here on purpose) and with the token in the **fragment** so it
+  never reaches a server log, a Referer or `Beacon`. `PasswordReset.tsx` is
+  both forms; `AccountPanel` links them.
 
 - **Two implementations of one finding, and the reassuring one wins.** The
   admin dashboard asked whether a wiki had a Search Console token in its own
@@ -424,6 +500,167 @@ that inherits the default would let any reader who signs up edit content.
   preference, not a URL — so a row carries a `#field-…` anchor *and* the tab
   named in words. Nothing about any of this is dismissable, for the reason
   `docs/COPY.md` records about `LegalGap`.
+
+  **A page nothing links to is the same failure as an empty sitemap.** The
+  navigation on this network is derived, not authored — the rail, the footer
+  and the sitemap all come from `sectionsFor`, which returns only the sections a
+  wiki has records in — so an *empty* index is in none of them and is reachable
+  only by typing the URL. Seven of the sixteen section routes answer 404 in that
+  state; the other nine answer 200, which is nineteen live pages that nothing on
+  the network links to, `/maps` on all eight wikis among them. `auditNetwork`
+  reports them from counts it was already taking, and `GUARDS_EMPTY_INDEX` in
+  `src/lib/audit.ts` records which routes guard themselves — restated from the
+  route files because they cannot be imported, and pinned against them by
+  `audit.test.ts` so the two cannot drift. `LISTING_LIMIT` beside it is the
+  other door into the same failure: every index reads its collection in one
+  query with a fixed limit and no pagination, so a collection that grows past it
+  does not paginate, it just stops listing the surplus — the shape that put 199
+  company profiles on no page a reader could reach. Nothing is over a limit
+  today, which is exactly when to write the guard.
+
+- **A value a select no longer offers refuses every write to its document.**
+  `outlook` was removed from `fields/rating.ts` — the owner's call, after the
+  hub served Control Resonant at 8.9/10 three weeks before launch — and the
+  four rows already carrying it stayed exactly where they were, because a pass
+  that upserts and never deletes leaves its old output behind and so does a
+  schema change. Nothing rendered, because `isReleased` refuses a score for a
+  game that is not out, so the site looked perfect. What broke was *writing*:
+  Payload validates the whole document, so `pnpm seed` died on "The following
+  field is invalid: Our rating > Based on" at the first of the four and took
+  the rest of `db:reset` with it, and an editor changing anything at all on
+  Phantom Blade Zero got the same refusal about a field they had not touched.
+  Only on an existing database — a fresh one creates those rows from
+  `seed/games.ts`, which carries no rating, which is exactly why it survived.
+
+  `clearWithdrawnVerdicts` in `src/seed/rating-basis.ts` is the repair, and the
+  shape of it is the part worth keeping: **it removes the whole verdict, not
+  the dead field.** Clearing `basis` alone fixes the write and breaks the
+  decision, because `outlook` is load-bearing twice — it is the value the
+  select refuses *and* the marker `verdict.ts` reads to stop a pre-release
+  score being promoted into a review on launch day. A repair that blanks it
+  rebuilds the exact failure the option was removed to prevent. Its own module,
+  not a function in `seed/ratings.ts`, because that file calls `run()` at the
+  top level and importing it would run the whole pass as a side effect.
+
+- **An empty section index is not that wiki's section, and all sixteen say so
+  now.** Seven `notFound()`d on an empty collection; the other nine answered
+  200 with a heading over nothing, on a URL the rail, the footer and the
+  sitemap had all left out — nineteen live pages nothing linked to, `/maps` on
+  all eight wikis among them. The link graph here is *derived*, not authored:
+  `sectionsFor` returns only the sections a wiki has records in, so a 200 on an
+  empty one cannot be linked to by construction. `GUARDS_EMPTY_INDEX` in
+  `src/lib/audit.ts` is all sixteen and is pinned against the route files by
+  `audit.test.ts`; it is kept rather than deleted as a constant that is now
+  every member, because what it catches next is the *seventeenth* collection.
+
+- **An editable list that replaces a derived one can orphan pages, and the
+  footer is where.** `settings.footerColumns` replaced the built-in site map
+  outright the moment one column was filled — on all ten hosts, from one field
+  on the network global. Two failures, neither of which errors: `/about`,
+  `/corrections` and `/requests` have no other inbound link on a wiki host, so
+  one admin save took nine pages off the site; and the columns are per host
+  while the field is not, so an editor writing the hub's map served it as the
+  section list of all eight wikis — the `footerNote` defect again. It is a
+  merge now (`src/lib/footer-columns.ts`): a matching heading gains links, a
+  new heading becomes a new column, and **nothing there can remove a built-in
+  link**, which is the deliberate half. `companies/layout.tsx` had been stating
+  that rule for its own column the whole time, while `[game]/layout.tsx`
+  resolved the same field a second time with a comment arguing the opposite.
+
+- **One tokeniser, because a matcher missing the game-name discount answers
+  confidently.** There were two copies of the stop-word list and the word
+  splitter — `lib/asking.ts` and `seed/topic-guides.ts` — and a line in this
+  file asking whoever wrote a third to remember the discount. A note is the
+  weakest guard there is. `src/lib/terms.ts` is the one copy, the third matcher
+  (the "More guides" rail) is built on it, and the two rules it holds are
+  pinned by tests: the game's own name never carries a comparison, and
+  `singular` folds a trailing `s` **only after a consonant** — the first
+  version turned `this` into `thi`, and a transform that is wrong in the
+  direction of merging two things is exactly as silent as a filter that is
+  wrong in the direction of deleting one.
+
+- **A link to an index that 404s, and the fix that created it.** Making all
+  sixteen section indexes `notFound()` on an empty collection was right and
+  immediately broke three wikis: `RelatedList` printed "No quest in the
+  database is filed under this region yet" and offered a "see all" link beside
+  it, pointing at a `/quests` that no longer existed. Every region page on
+  Onimusha, Silent Hill and Resonance. The guard is `items.length === 0`, and
+  it is exact rather than approximate: the items are drawn from the collection
+  the href points at, so a list with something in it *proves* the index
+  renders. The wiki home had the same shape waiting — its "this wiki is just
+  starting" branch renders only when `total === 0`, and its primary call to
+  action linked `/mechanics`, which in that exact state is guaranteed to 404.
+
+  **A link crawl is the only thing that finds these.** `node` cannot resolve
+  `*.localhost` on Windows, so a crawler has to send the Host header itself —
+  and `fetch` silently drops `Host` (undici treats it as forbidden), which
+  hands back the apex on all ten hosts and reports a clean run. `node:http`
+  passes it through. Both mistakes look like a passing audit.
+
+- **Two spellings of one rule, and the third and fourth copies.** `developer`
+  and `publisher` are free text off a store page, and "Konami, Annapurna
+  Interactive" is two companies. `GameProfile` split on the comma;
+  `[game]/about` did not and linked
+  `companies.<domain>/konami-annapurna-interactive`, a 404, from every page
+  that rendered the block; `lib/schema.ts` split on the comma again for the
+  JSON-LD. Three answers to one question, and the naive comma is wrong too —
+  `Atari, Inc.` is a real profile on the companies host, and splitting it gives
+  an Organization named "Inc." in the structured data.
+
+  `src/lib/rightsholders.ts` is the one answer, and it carries the second half
+  of the rule as well: **a name that does not resolve to a profile is not a
+  link.** `resolveRightsholders` in `lib/payload.ts` checks the far end, so a
+  studio this network has not written up is named in the disclaimer — which it
+  has to be — without being a link to nothing.
+
+- **A control that is present, reachable and inert.** Three more, found by
+  listing every field name declared in `collections/`, `globals/` and
+  `fields/` and grepping for a read anywhere else: `bossEnemy` on Courts ("the
+  duel at the end of this court"), `relatedGames` on Games ("how a new wiki
+  gets its first traffic"), and `lastVerified` on Site settings, whose admin
+  description read **"Shown on the home page"** while appearing on no page at
+  all. All three were empty, which is exactly why nobody noticed: the failure
+  only shows to somebody who fills one in, and what they see is nothing
+  happening. All three render now, and all three render nothing while empty.
+
+  The same scan clears five others — `spamScore`, `submittedBy`,
+  `moderatorNote`, `editorNote` and `placeMarkers` are admin-only or a `ui`
+  field, which is what they are meant to be. Worth re-running after a
+  collection change; the whole check is one pass over the source.
+
+- **A URL built at seed time is a URL frozen at seed time.** `seed:cite`
+  stored `await gameUrl(game)` as a compilation guide's only citation.
+  `gameUrl` reads `NEXT_PUBLIC_SITE_URL`, so a pass run on a developer's
+  machine published `http://dawnwalker.localhost:3000/` into the database, and
+  the deploy carried it. Nothing errors: the page renders, the link is blue,
+  and `check:launch` counts the guide as cited. It is the trap
+  `[game]/layout.tsx` already names about footer hrefs, arriving through the
+  data instead of the code.
+
+  The page and the records it compiles are on the same host by definition, so
+  the citation is `/` — correct wherever the site is deployed. And
+  `sourcesField` in `src/fields/shared.ts` now **refuses an absolute loopback
+  URL on every write**, from a seeder, the remote API or the admin alike,
+  because there is no such thing as a legitimate public citation of
+  `localhost`. A relative path is allowed and is the right answer for a page
+  citing its own site.
+
+- **A 404 page that renders on the client is worse than the default one.**
+  Next 16 serves `not-found.tsx` as a **client-rendered shell**: the response
+  is 404, the browser shows the page, and the served `<body>` is empty — so a
+  crawler and a reader with JavaScript off get a blank page. Two attempts made
+  it worse, each by shipping the page they were written to replace: reading
+  `headers()` threw, because `/_not-found` is prerendered and a static render
+  has no request (`<html id="__next_error__">` is the tell); dropping that but
+  staying `async` for one database read produced the empty body.
+
+  **So the custom 404 is not shipped, and the built-in one is what serves.**
+  The lesson is the check, not the fix: *strip the `<script>` tags and read
+  what is left.* A page that renders only in the RSC payload looks perfect in a
+  browser and is not there at all for half of what this site is built for.
+  `global-not-found.tsx` behind `experimental.globalNotFound` is the documented
+  route for an app with two root layouts, which this is; it is experimental and
+  was not worth enabling on the way to a launch.
 
 - **A file in `public/` is not a file the site will serve.** `proxy.ts` rewrites
   `/<anything>` onto a game prefix on a wiki host and redirects it to a
@@ -649,6 +886,65 @@ rendered as React children, never `dangerouslySetInnerHTML` - an
 admin-editable string that reaches the DOM as markup is a stored-XSS hole
 waiting for the first editor account that should not have had one.
 
+## The admin
+
+It is **not** at `/admin`. `src/lib/admin-path.ts` holds the path and says why:
+moving it is not a security control and is not claimed as one — every route
+under it is access-checked and a path is not a password — but the default path
+is what every commodity scanner tries first on every domain it can reach, and
+off it that traffic never reaches a login form.
+
+**Changing it is two edits that have to match**: the constant and the route
+folder under `src/app/(payload)/`. Payload mounts at `routes.admin` and Next
+serves whatever folder is on disk; disagree and the admin 404s with nothing
+anywhere explaining it. `src/proxy.test.ts` pins the pair, plus the
+`PASS_THROUGH` entry and the fact that there is exactly one admin folder. It is
+not an environment variable because a route folder name is fixed at build time,
+so `.env` could move the router and leave the pages behind.
+
+Everything that has to follow the path goes through `adminUrl()` — the
+findings in `lib/audit.ts`, every link in `components/admin/`, the reset email
+in `Users.ts`, and the `Disallow:` in `robots.ts`. A moved admin still named in
+robots.txt has published its own new address.
+
+- **Search is one box across 23 collections** (`SearchView`, listed in
+  `lib/admin-search.ts`). Payload searches one collection at a time, which is
+  right when you know the answer is a quest and wrong for the question people
+  actually arrive with — picking the collection first is the hard half. The
+  list is written out rather than derived, so it cannot quietly start
+  searching `analytics-events`. A GET form, not a typeahead: the query lands
+  in the URL, and twenty-three queries per keystroke against SQLite is not a
+  feature. Each group is capped and **says when it was cut**.
+- **The login screen** carries the network's own mark, its name from Site
+  settings, and one warning that matters: with no mail provider configured,
+  Payload's "forgot password" accepts an address and delivers nothing. The
+  screen says so, because the alternative is a locked-out owner waiting for a
+  message that was never sent.
+- **A root view is not in Payload's nav.** It exists at a URL and nothing
+  links to it, so each one needs a nav entry — `beforeNavLinks` for search,
+  `afterNavLinks` for analytics and remote.
+- `AdminViewServerProps` **declares a `user` that Payload does not pass** to a
+  root view. Read `initPageResult.req.user`; the typed version compiles and
+  renders "sign in" to somebody who is signed in.
+
+## The site's name and its mark
+
+`settings.siteName` is the name everywhere — nothing hardcodes it, which
+`pnpm check:launch` relies on when it reports that the network is still called
+"Vellum". The mark beside it is a ruled sheet rather than an initial for the
+same reason: it survives the rename.
+
+An uploaded logo replaces the drawn mark in the rail, the footer and the two
+home pages (`SiteLogo`). **Two slots, light and dark**, because a raster cannot
+take `currentColor` the way the drawn `<path>` does, and a dark-ink logo on the
+dark rail is invisible — silently, to everybody except whoever uploaded it in
+the theme they happened to be using. Both pictures are in the document and CSS
+chooses; the theme is stamped on `<html>` before first paint precisely so
+nothing flickers, and a logo swapped by JavaScript would put the flicker back.
+
+It does **not** replace the favicon or the share card. Those are rasterised by
+`pnpm make:brand` from the same geometry and are a separate job.
+
 ## Adding a wiki
 
 Creating the row **is** creating the site. There is no DNS record and no
@@ -808,20 +1104,45 @@ argument.
   generated emblem per record - abstract, deterministic from the slug, and
   credited as generated by this site so it cannot be mistaken for artwork from
   the game. `pnpm make:emblems` draws them, `pnpm seed:emblems` attaches them.
+- **A tool for the four pre-release wikis.** Control Resonant, Gears of War:
+  E-Day, Phantom Blade Zero and Silent Hill: Townfall have `comments` and
+  nothing else, because the two things a tool could be built on are not there.
+  Achievements with a global unlock rate arrive when a game ships, which is
+  what `completion-tracker` needs and what the other three released wikis got.
+
+  The obvious remaining candidate is a **"will it run" requirements
+  comparator**, and it cannot be built honestly: every one of the eight
+  publishes a minimum and a recommended spec, but telling a reader whether
+  their GTX 1650 clears a listed GTX 1060 needs a GPU performance ranking, and
+  nobody publishes one this project may use. The only ordering actually sourced
+  here is the one each publisher states inside its own listing — minimum below
+  recommended, for that game. A comparator built on anything else would be this
+  network inventing the figure its whole argument rests on not inventing.
+
+  So: no tool, rather than a tool that guesses. `pnpm refresh` the week each
+  launches is what changes this, and it changes it by itself — the achievement
+  list arrives, `completion-tracker` goes on the Game record, and the rail
+  derives the rest.
+
 - **Perk time costs** — 0 of 40. `timeCostSegments` deliberately has no default,
   so these read as unknown rather than free.
 - **Owner-supplied settings** that `pnpm check:launch` reports and no source can
   supply: a Search Console token per subdomain (each is its own property), an
-  analytics ID per wiki, six real contributors in place of six placeholder
+  analytics ID per wiki, real contributors in place of the 36 placeholder
   authors, and the network's own name — it is still "Vellum", a working title.
   The **IndexNow key** is not one of these, and is worth knowing about because
   it looks like one: it is Site settings → SEO & analytics → IndexNow key,
   blank falls back to the key committed in `public/`, and `/<key>.txt` is
   answered from the database on all ten hosts rather than being a file —
   `src/lib/indexnow.ts`, the route at `src/app/api/indexnow/[key]/`, and the
-  shape match in `proxy.ts`. Nothing submits automatically, on purpose;
-  `docs/DEPLOY.md` section 6 says what an automatic trigger would cost and what
-  it is waiting on.
+  shape match in `proxy.ts`. **Publishing a page now announces it** — one URL,
+  its own page on its own host, never the sitemap — behind six guards, of which
+  the one worth knowing is that the discriminator is `NEXT_RUNTIME`: the `next`
+  binary sets it and `tsx` does not, so every seed pass and every step of
+  `pnpm db:reset` is silent by construction rather than by a flag somebody has
+  to remember. `INDEXNOW_PING=off` returns to manual-only, and
+  `docs/DEPLOY.md` section 6 states both of the old objections and what each
+  guard does about them.
 
 <!-- BEGIN:nextjs-agent-rules -->
 

@@ -2,14 +2,15 @@ import type { Metadata, ResolvingMetadata } from 'next'
 import Link from 'next/link'
 import { ART_GAME, sectionArt, tileArt } from '@/lib/art'
 import { HeroSearch } from '@/components/HeroSearch'
-import { Logo } from '@/components/Logo'
+import { SiteLogo } from '@/components/SiteLogo'
 import { Icon } from '@/components/Icon'
 import { Briefing } from '@/components/home/Briefing'
 import { Linked } from '@/components/Linked'
 import type { LinkScope } from '@/lib/link-index'
+import type { Game } from '@/payload-types'
 import { GameProfile } from '@/components/GameProfile'
 import { ImageCredit } from '@/components/ImageCredit'
-import { gameUrl, getAll, getGame } from '@/lib/payload'
+import { gameUrl, getAll, getGame, relMany } from '@/lib/payload'
 import { sectionsFor, toolsFor } from '@/lib/sections'
 import { releaseLine } from '@/lib/directory'
 import { homeCopy } from '@/lib/game-copy'
@@ -18,7 +19,8 @@ import { getUi } from '@/lib/ui'
 import { JsonLd } from '@/components/JsonLd'
 import { gameScores } from '@/lib/schema'
 import { StarRating } from '@/components/StarRating'
-import { editorialScore, cachedReaderScore } from '@/lib/ratings'
+import { cachedReaderScore } from '@/lib/ratings'
+import { editorialScore } from '@/lib/verdict'
 import { socialMeta } from '@/lib/social'
 
 type Props = { params: Promise<{ game: string }> }
@@ -116,6 +118,24 @@ export default async function Home({ params }: Props) {
   const total = sections.reduce((sum, section) => sum + section.count, 0)
 
   /*
+    The sibling wikis this one points at, resolved to their own hosts.
+
+    Only games that are actually published: `relatedGames` is a relationship
+    and a row can be set to `planned`, which `getPublishedGames` leaves out and
+    which has no site to link to. A link to a wiki that does not serve is the
+    thing this block exists to avoid being.
+  */
+  const related = (
+    await Promise.all(
+      relMany<Game>(game.relatedGames).map(async (other) =>
+        other.status === 'planned'
+          ? null
+          : { slug: other.slug, name: other.shortTitle || other.title, href: await gameUrl(other) },
+      ),
+    )
+  ).filter((entry): entry is { slug: string; name: string; href: string } => entry !== null)
+
+  /*
     The game's own key art.
 
     The decorative band set in `lib/art.ts` is only a fallback for the wiki it
@@ -204,8 +224,17 @@ export default async function Home({ params }: Props) {
 
   /* The wiki's own origin, which is what the game entity is keyed on. */
   const canonical = await gameUrl(game)
+  /*
+    `verdict`, not `game.rating`. The visible score and the machine-readable
+    one are now the same object rather than two derivations of one field —
+    which is the defect this repository has met before: two implementations of
+    one finding, and the reassuring one wins. The release gate lives in
+    `editorialScore`; reading the raw field here would have walked straight
+    past it and published `reviewRating: 8.9` for a game that is not out to
+    every crawler, on the one page that prints no score at all.
+  */
   const scores = gameScores(canonical, {
-    rating: game.rating,
+    rating: verdict,
     readers: readers.average !== null && readers.votes > 0
       ? { average: readers.average, count: readers.votes }
       : null,
@@ -214,8 +243,9 @@ export default async function Home({ params }: Props) {
   return (
     <>
       {/*
-        The scores, on the one page that prints them. An outlook publishes no
-        `Review` at all — see `gameScores`.
+        The scores, on the one page that prints them. A game that is not out
+        publishes no `Review` at all — `verdict` is null, so there is nothing
+        for `gameScores` to build one from.
       */}
       {scores ? <JsonLd data={scores} /> : null}
       {/* ---- Masthead: the game's own art, its logo, and the search ---- */}
@@ -247,7 +277,7 @@ export default async function Home({ params }: Props) {
           ) : (
             <h1 className="hero-wordmark">
               <span className="glyph">
-                <Logo size={36} />
+                <SiteLogo size={36} />
               </span>
               {name}
             </h1>
@@ -354,13 +384,23 @@ export default async function Home({ params }: Props) {
                 false on all eight wikis, so this branch renders nowhere today.
                 It renders the day somebody adds a wiki, which on this network
                 is a row in the admin.
+
+                Which is also how it came to offer a link to `/mechanics`, and
+                why that link is gone. `total === 0` is the sum of every
+                section's count, so in the one state this branch renders in
+                there are no records in any collection — and all sixteen
+                section indexes answer 404 on an empty collection. The primary
+                action on a brand-new wiki was a guaranteed 404, in the one
+                place a reader has nothing else to click. `/requests` and
+                `/about` are per-wiki pages that exist from the moment the row
+                does, which is what this state needs.
               */}
               <p className="cta-row">
-                <Link href="/mechanics" className="cta cta-filled">
-                  What is confirmed so far
-                </Link>
-                <Link href="/requests" className="cta">
+                <Link href="/requests" className="cta cta-filled">
                   Tell us what you want first
+                </Link>
+                <Link href="/about" className="cta">
+                  How this wiki is built
                 </Link>
               </p>
             </div>
@@ -644,7 +684,7 @@ export default async function Home({ params }: Props) {
             <p className="railnote">
               {copy(
                 words.trustBody,
-                'Every figure here comes from a source and carries a confidence rating. Where nobody has published something, the page says so rather than guessing — a blank is honest, and a plausible-looking number that turns out to be invented costs you a playthrough.',
+                'Every figure here is cited to the source it came from, with the date we read it. Where nobody has published something, the page says so rather than guessing — a blank is honest, and a plausible-looking number that turns out to be invented costs you a playthrough.',
                 tokens,
               )}
             </p>
@@ -654,6 +694,38 @@ export default async function Home({ params }: Props) {
               <Link href="/corrections">Something wrong? Tell us</Link>
             </p>
           </section>
+
+          {/*
+            Sideways links to the other wikis on this network.
+
+            `relatedGames` is a field on `Games` whose own description reads
+            "Sideways links between wikis — the same series, or the obvious 'if
+            you liked this'. How a new wiki gets its first traffic." Nothing
+            read it, so the one thing it was for could not happen: an editor
+            could fill it in on all eight and no page would change.
+
+            Plain anchors rather than `next/link`. Each of these is a different
+            origin — every wiki is its own host — so there is no client-side
+            navigation to be had and a prefetch that cannot resolve is all the
+            router would add. `SiteFooter` states the same rule for the same
+            reason.
+
+            Empty on all eight games today, so this renders nowhere until
+            somebody fills it in, which is the state the field has been in.
+          */}
+          {related.length > 0 ? (
+            <section className="railbox">
+              <h2>{copy(words.relatedHeading, 'Other wikis on this network', tokens)}</h2>
+              <p className="railnote">
+                {related.map((entry) => (
+                  <span key={entry.slug}>
+                    <a href={entry.href}>{entry.name}</a>
+                    <br />
+                  </span>
+                ))}
+              </p>
+            </section>
+          ) : null}
         </aside>
       </div>
     </>

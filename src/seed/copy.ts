@@ -2,9 +2,9 @@ import 'dotenv/config'
 import { getPayload } from 'payload'
 import config from '../payload.config'
 import seedGameCopy from './copy/games'
-import seedGamePageCopy from './copy/game-pages'
-import seedHubCopy from './copy/hub'
-import seedLegalCopy, { correctPrivacy } from './copy/legal'
+import seedGamePageCopy, { correctConfidenceCopy } from './copy/game-pages'
+import seedHubCopy, { correctHubCopy } from './copy/hub'
+import seedLegalCopy, { correctDeadLegalLinks, correctPrivacy, correctTermsAccuracy } from './copy/legal'
 import seedCompaniesCopy from './copy/companies'
 import seedPeopleCopy from './copy/people'
 import seedUiCopy from './copy/ui'
@@ -69,6 +69,19 @@ async function run(): Promise<void> {
     on `correctPrivacy` in `copy/legal.ts`.
   */
   await correctPrivacy(payload)
+  await correctDeadLegalLinks(payload)
+  await correctHubCopy(payload)
+
+  /*
+    The same narrow exception, for the same reason, on a different subject.
+    The confidence rating was printed beside every record until the owner
+    decided it is an editorial field; five copy fields per wiki, the hub's meta
+    description and the Accuracy section of the terms page all described a
+    badge a reader is no longer shown. A disclaimer that says "every page shows
+    a confidence rating" when no page does is not a stale sentence either.
+  */
+  await correctTermsAccuracy(payload)
+  await correctConfidenceCopy(payload)
   process.exit(0)
 }
 

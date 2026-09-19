@@ -53,6 +53,7 @@
 import { resolveEmailSettings, resolveSender } from './email'
 import { networkName, oneLine, siteSettings } from './email-copy'
 import { HUB_ORIGIN } from './urls'
+import { adminUrl } from './admin-path'
 
 type Notifier = {
   sendEmail: (message: { to: string; subject: string; text: string }) => Promise<unknown>
@@ -135,7 +136,7 @@ export const reportBody = (report: Report, network: string, recipient: string): 
     ...lines,
     '',
     'Triage it here:',
-    `${HUB_ORIGIN}/admin/collections/${report.collection}/${report.id}`,
+    `${HUB_ORIGIN}${adminUrl(`/collections/${report.collection}/${report.id}`)}`,
     '',
     /*
       Why this arrived, in the message itself. Somebody inheriting this site

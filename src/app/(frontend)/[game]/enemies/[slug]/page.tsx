@@ -12,12 +12,13 @@ import { CommentThread } from '@/components/CommentThread'
 import { FactPanel } from '@/components/FactPanel'
 import { EntityImage } from '@/components/EntityImage'
 import { getUi } from '@/lib/ui'
-import { getBySlug, getGame, rel } from '@/lib/payload'
+import { client, getBySlug, getGame, rel } from '@/lib/payload'
 import { gameName } from '@/lib/section-copy'
 import { gameSlugParams } from '@/lib/params'
 import type { Enemy, Region } from '@/payload-types'
 import { clamp, enemyMeta } from '@/lib/seo'
 import { recordImage, socialMeta } from '@/lib/social'
+import { personUrl } from '@/lib/urls'
 
 type Props = { params: Promise<{ game: string; slug: string }> }
 
@@ -65,6 +66,18 @@ export default async function EnemyPage({ params }: Props) {
     is about in its own first sentence, and a link from a page to itself reads
     as a bug. See `src/components/Linked.tsx`.
   */
+  /* Performers whose own record names this enemy. `people` is network-wide,
+     so this is a direct query rather than a game-scoped helper. */
+  const payload = await client()
+  const cast = (
+    await payload.find({
+      collection: 'people',
+      where: { enemies: { contains: doc.id } },
+      limit: 20,
+      depth: 0,
+    })
+  ).docs as unknown as { slug: string; name: string }[]
+
   const scope: LinkScope = { host: 'wiki', game, self: `enemies:${doc.id}` }
   const region = rel<Region>(doc.region)
 
@@ -101,6 +114,31 @@ export default async function EnemyPage({ params }: Props) {
             <FactPanel
               facts={[
                 { label: 'Rank', value: doc.isBoss ? 'Boss' : 'Regular enemy' },
+                {
+                  /*
+                    Who performs it, read backwards off the people host — the
+                    same arrangement the character page uses and for the same
+                    reason: the fact lives on a person, one person plays
+                    several parts, and a string copied onto each record is the
+                    shape that drifts the first time one is corrected.
+
+                    This page had no cast row at all, which is how a wiki whose
+                    every boss carries a full English, Japanese and Mandarin
+                    voice credit came to look as though it had no actors.
+                    Twenty-one of them sat in `enemies` — a collection nobody
+                    was reading for this — and `People` had no field that could
+                    point at one until now.
+                  */
+                  label: cast.length === 1 ? 'Played by' : 'Cast',
+                  value: cast.length
+                    ? cast.map((person, index) => (
+                        <span key={person.slug}>
+                          {index > 0 ? ', ' : ''}
+                          <a href={personUrl(`/${person.slug}`)}>{person.name}</a>
+                        </span>
+                      ))
+                    : undefined,
+                },
                 {
                   label: 'Met during',
                   value: doc.phase === 'either' ? 'Day or night' : doc.phase ? `${doc.phase} only` : undefined,

@@ -15,6 +15,7 @@ export type IconName =
   | 'sun' | 'moon' | 'hourglass' | 'check' | 'lock' | 'warn'
   | 'search' | 'chevron' | 'external' | 'claw' | 'shield' | 'blood' | 'spark'
   | 'home' | 'camera' | 'licence'
+  | 'list' | 'link' | 'share'
 
 const PATHS: Record<IconName, React.ReactNode> = {
   home: <><path d="M3.8 10.4 12 3.6l8.2 6.8v8.4a1.6 1.6 0 0 1-1.6 1.6H5.4a1.6 1.6 0 0 1-1.6-1.6v-8.4Z" /><path d="M9.6 20.4v-6.8h4.8v6.8" /></>,
@@ -51,6 +52,17 @@ const PATHS: Record<IconName, React.ReactNode> = {
      domain. Deliberately not a `©`: about half of these are public domain,
      where the copyright glyph would be a false claim. */
   licence: <><circle cx="12" cy="9.4" r="5.6" /><path d="m8.2 14 -1.3 6.8 5.1-2.5 5.1 2.5-1.3-6.8" /><path d="m10 9.4 1.5 1.6 2.6-3" /></>,
+  /* An article's own sections, for the contents block at the top of a guide.
+     Indented on purpose: a flat list of four rules would read as a menu. */
+  list: <><path d="M4.6 6.4h14.8M4.6 12h14.8M4.6 17.6h9.4" /></>,
+  /* A chain link, for "copy this page's address". */
+  link: <><path d="M10.2 13.8a3.8 3.8 0 0 0 5.6.3l2.6-2.6a3.8 3.8 0 0 0-5.4-5.4l-1.5 1.5" /><path d="M13.8 10.2a3.8 3.8 0 0 0-5.6-.3l-2.6 2.6a3.8 3.8 0 0 0 5.4 5.4l1.5-1.5" /></>,
+  /* Three points and the lines between them — the generic share mark, drawn in
+     this set's own stroke rather than borrowed from any service's branding.
+     No service logo appears anywhere on this site: a brand mark is somebody
+     else's trademark and half of them are filled shapes that would not belong
+     beside these. The share row names each service in words instead. */
+  share: <><circle cx="17.4" cy="5.8" r="2.6" /><circle cx="6.6" cy="12" r="2.6" /><circle cx="17.4" cy="18.2" r="2.6" /><path d="m8.9 10.7 6.2-3.6M8.9 13.3l6.2 3.6" /></>,
 }
 
 interface IconProps extends Omit<SVGProps<SVGSVGElement>, 'name'> {

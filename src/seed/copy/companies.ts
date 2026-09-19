@@ -32,6 +32,18 @@ const missing = (
 ): Record<string, string> => {
   const patch: Record<string, string> = {}
   for (const [key, text] of Object.entries(builtIn)) {
+    /*
+      A built-in that is itself blank has nothing to write. `sourcingNote`
+      ships as an empty string on purpose - the page prints it only when
+      somebody has written one - so without this the pass wrote `''` over
+      nothing, counted it as a field filled, and reported it again on the next
+      run and every run after. Two of the fields in "2 fields now hold the
+      wording they were showing anyway" held no wording at all, which is the
+      one thing a report like that must not say. `coveredNote` avoids it by
+      being left out of the map entirely; this makes the two cases behave the
+      same whichever way somebody writes the next one.
+    */
+    if (blank(text)) continue
     if (blank(stored?.[key])) patch[key] = text
   }
   return patch

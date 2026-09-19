@@ -31,11 +31,15 @@ import { hub } from '@/lib/urls'
  *
  * ## Dates
  *
- * `published` and `updated` are fields an editor sets, never the row's
- * `createdAt`/`updatedAt`. See `src/lib/guide-dates.ts`: `updatedAt` moves
- * when a seeder rewrites a row and `createdAt` is the date of the last
- * `pnpm db:reset`, so publishing either would date every guide on the network
- * to this afternoon.
+ * Never the row's `createdAt`/`updatedAt`. See `src/lib/guide-dates.ts`:
+ * `updatedAt` moves when a seeder rewrites a row and `createdAt` is the date
+ * of the last `pnpm db:reset`, so publishing either would date every guide on
+ * the network to this afternoon.
+ *
+ * What the caller passes instead comes from `guideDates`: `published` is an
+ * editor's field and nothing else writes it, and `updated` is either an
+ * editor's or the newest day one of the page's own citations was read.
+ * `checkedBasis` says which, and the row's label follows it — see the prop.
  *
  * ## Strings
  *
@@ -74,12 +78,27 @@ export type Review = {
 export function ArticleMeta({
   published,
   updated,
+  checkedBasis,
   author,
   review,
   children,
 }: {
   published?: string | null
   updated?: string | null
+  /**
+   * Where `updated` came from — `guideDates`' `basis`.
+   *
+   * A generated guide has no editorial `updated` field, so its date is the
+   * newest day one of its own citations was read. That is a fact, and it is
+   * the fact a reader of a compiled reference page wants; it is not a review.
+   * Labelling it "Last checked" would claim an editorial pass nobody made, in
+   * the panel whose whole job is to say what did happen — the same thing this
+   * component refuses a default fact-check sentence for.
+   *
+   * "Sources last read" is the row's label in that case, and it sits directly
+   * above the citation list it is talking about.
+   */
+  checkedBasis?: 'editorial' | 'sources' | 'none'
   author?: Author | number | string | null
   review?: Review | null
   /** The citation list and the licence line, so provenance is one block. */
@@ -96,7 +115,14 @@ export function ArticleMeta({
   */
   const rows: { label: string; value: ReactNode }[] = [
     ...(published ? [{ label: 'Published', value: <Day value={published} /> }] : []),
-    ...(updated ? [{ label: 'Last checked', value: <Day value={updated} /> }] : []),
+    ...(updated
+      ? [
+          {
+            label: checkedBasis === 'sources' ? 'Sources last read' : 'Last checked',
+            value: <Day value={updated} />,
+          },
+        ]
+      : []),
     ...(person
       ? [
           {

@@ -1,4 +1,5 @@
 import type { Metadata, ResolvingMetadata } from 'next'
+import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { PageHeader } from '@/components/PageHeader'
 import { Linked } from '@/components/Linked'
@@ -41,6 +42,19 @@ export default async function ItemsIndex({ params }: Props) {
     getAll('items', { game: slug, depth: 1 }),
     getUi(),
   ])
+  /*
+    A section with no records is not this game's section.
+
+    The rail, the footer and the sitemap all derive from `sectionsFor`, which
+    returns only the sections a wiki has at least one record in — so an empty
+    index here is reachable only by typing the URL or arriving from a search
+    result, and what it serves is a heading over nothing. A 404 is the honest
+    answer, and it lifts by itself the moment the first record arrives.
+
+    `GUARDS_EMPTY_INDEX` in `lib/audit.ts` is pinned against this line by
+    `audit.test.ts`, so the two cannot drift.
+  */
+  if (items.length === 0) notFound()
   const copy = sectionCopy('items', game, { total: items.length })
 
   const rows: Row[] = items.map((item) => {

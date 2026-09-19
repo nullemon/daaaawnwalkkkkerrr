@@ -1,5 +1,6 @@
 import { NextResponse, type NextRequest } from 'next/server'
 import { KEY_FILE_PATTERN } from './lib/indexnow'
+import { ADMIN_SEGMENT } from './lib/admin-path'
 
 /**
  * Host-to-path routing for the network.
@@ -40,7 +41,7 @@ import { KEY_FILE_PATTERN } from './lib/indexnow'
 export const PASS_THROUGH = new Set([
   '_next',
   'api',
-  'admin',
+  ADMIN_SEGMENT,
   'robots.txt',
   'sitemap.xml',
   // Per-wiki favicons and share cards, in public/wiki-assets/<slug>/. They are
@@ -94,6 +95,23 @@ export const PASS_THROUGH = new Set([
   */
   'art',
   'logo.svg',
+  /*
+    The share card's typefaces, in `public/fonts/`.
+
+    Written by `pnpm make:og-fonts` and read off disk by the drawn share-card
+    route, which is the only thing that needs them — satori is handed font
+    bytes or it throws, and `next/font/google` self-hosts the site's own copies
+    as woff2 under hashed names, which satori cannot read and a route cannot
+    name.
+
+    They are here because they are in `public/`, and `src/proxy.test.ts` walks
+    every entry at the root of that directory and fails on any that is not
+    exempt. That test is the reason this line is on the same commit as the
+    files rather than added the day somebody noticed — the other three
+    omissions were all found months later, one of them by asking IndexNow why
+    it kept refusing a submission.
+  */
+  'fonts',
 ])
 
 /**

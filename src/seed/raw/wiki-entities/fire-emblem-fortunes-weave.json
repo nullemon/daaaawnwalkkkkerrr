@@ -1,0 +1,2962 @@
+{
+  "slug": "fire-emblem-fortunes-weave",
+  "host": "fireemblem.fandom.com",
+  "fetchedAt": "2026-09-19",
+  "entities": [
+    {
+      "title": "Anna",
+      "wikiTitle": "Anna",
+      "collection": "characters",
+      "facts": {
+        "alias": "Secret Seller (Awakening)Commander Anna (Heroes)Lady Anna (Engage)",
+        "gender": "Female",
+        "race": "HumanBeorc (FE9 & FE10 only)",
+        "birthday": "June 11 (FE13)June 10 (FE14)June 9 (FE16)June 8 (FE17)",
+        "fod_birth": "9th of the Garland Moon; Imperial Year 1154",
+        "age": "25-26 (FE16, Pre-Timeskip)31-32 (FE16, Post-Timeskip)11 (FE17)",
+        "height": "5'6\" (168 cm) (FE16)4'8\" (FE17)",
+        "relatives": "Anna (Various Sisters, Cousins, and extended family)Jake (Lover) (FE1, FE4, FE7, FE11, FE12)Ernest (Ancestor) (FE16)",
+        "nationality": "Archanea (FE1, FE3, FE10, FE11)Leonster (FE5)Lycia (FE7)Ylisse (FE13, Playable)Outrealm (FE13, NPC)Astral Realm (FE14)Fódlan (FE16)Elusia (FE17)Japan (TMS♯)Askr (FEH)Aytolis (FEW)",
+        "home": "Wintertide Village (FE17)",
+        "residence": "Garreg Mach Monastery (FE16)Askr (FEH)",
+        "faction(s)": "(FE16) (FE18)Order of Heroes (FEH)",
+        "occupation(s)": "MerchantDeputy Priestess (FE18)Commander of the Order of Heroes (FEH)",
+        "game": "Non-PlayableFire Emblem: Shadow Dragon and the Blade of LightFire Emblem: Mystery of the EmblemFire Emblem: Genealogy of the Holy WarFire Emblem: Thracia 776Fire Emblem: The Binding BladeFire Emblem: The Blazing BladeFir",
+        "firstseen": "Chapter 11: Knorda Market (Shadow Dragon and the Blade of Light)Chapter 7: Passing the Desert (Genealogy of the Holy War)Chapter 16x: The Port of Badon (The Blazing Blade)Opening (New Mystery of the Emblem)Paralogue 2: T",
+        "firstjoined": "Paralogue 4: Anna the Merchant (Awakening)Preface (Heroes)Chapter 3: Mutiny in the Mist (Three Houses)",
+        "firstfought": "Xenologue 25: Apotheosis (Awakening)Xenologue 10: Anna on the Run (Fates)",
+        "class": "Trickster/Merchant (Awakening)Outlaw (Fates)Trickster (Warriors)Myrmidon/Thief (Three Houses)Axe Fighter (Engage)",
+        "voiceby": "Awakening, Fates, Three Houses, Three Hopes, Heroes (Askr & Ylisse Anna), & Warriors:Engage, Fortune's Weave, Heroes (Elyos Anna):"
+      },
+      "categories": [
+        "Bond Ring",
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Fire Emblem: Genealogy of the Holy War Characters",
+        "Fire Emblem: New Mystery of the Emblem Characters",
+        "Fire Emblem: Shadow Dragon Characters",
+        "Fire Emblem: Shadow Dragon and the Blade of Light Characters",
+        "Fire Emblem: The Blazing Blade Characters",
+        "Fire Emblem: Three Houses Characters",
+        "Fire Emblem 0 (Cipher) Characters",
+        "Fire Emblem Awakening Characters",
+        "Fire Emblem Engage Characters",
+        "Fire Emblem Fates Characters",
+        "Fire Emblem Heroes Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/3/3f/Anna_FE13_Artwork.png/revision/latest?cb=20160719200512",
+      "url": "https://fireemblem.fandom.com/wiki/Anna",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Anna.png"
+    },
+    {
+      "title": "Cai",
+      "wikiTitle": "Cai",
+      "collection": "characters",
+      "facts": {
+        "game": "fe18",
+        "Bloodmark": "30px|Diadem of the Apostle",
+        "Abilities": "Brio",
+        "Item": "Wooden Spear",
+        "Magic": "-",
+        "Combat Arts": "-",
+        "Level": "1",
+        "HP": "27",
+        "Str": "10",
+        "Mag": "7",
+        "Dex": "8",
+        "Spd": "8",
+        "Lck": "6",
+        "Def": "6",
+        "Res": "5",
+        "Chrm": "5"
+      },
+      "categories": [
+        "Fire Emblem: Fortune's Weave Characters",
+        "Fire Emblem Heroes Characters",
+        "Main Characters",
+        "Male Characters",
+        "Nabateans",
+        "Playable Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/1/1c/Artwork_Cai.png/revision/latest?cb=20260805215555",
+      "url": "https://fireemblem.fandom.com/wiki/Cai",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Cai.png"
+    },
+    {
+      "title": "Alexandra",
+      "wikiTitle": "Alexandra",
+      "collection": "characters",
+      "facts": {
+        "fullname": "Alexandra Tamsanqa",
+        "alias": "Silver Maiden",
+        "gender": "Female",
+        "race": "Human",
+        "relatives": "Unnamed uncle",
+        "nationality": "Dagdan Empire",
+        "home": "Tellus",
+        "faction(s)": "Jurah's Temple",
+        "game": "Fire Emblem: Fortune's Weave"
+      },
+      "categories": [
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Playable Characters",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/d/df/AlexandraFE18Portrait.png/revision/latest?cb=20260914114936",
+      "url": "https://fireemblem.fandom.com/wiki/Alexandra",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Alexandra.png"
+    },
+    {
+      "title": "Bonaventure",
+      "wikiTitle": "Bonaventure",
+      "collection": "characters",
+      "facts": {
+        "game": "fe18",
+        "Bloodmark": "-",
+        "Item": "-",
+        "Magic": "Wind",
+        "Combat Arts": "-",
+        "Level": "1",
+        "HP": "25",
+        "Str": "7",
+        "Mag": "10",
+        "Dex": "8",
+        "Spd": "7",
+        "Lck": "5",
+        "Def": "6",
+        "Res": "8",
+        "Chrm": "7"
+      },
+      "categories": [
+        "Fire Emblem: Fortune's Weave Characters",
+        "Male Characters",
+        "Playable Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/e/e5/BonaventureFE18Portrait.png/revision/latest?cb=20260721174423",
+      "url": "https://fireemblem.fandom.com/wiki/Bonaventure",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Bonaventure.png"
+    },
+    {
+      "title": "Buccar",
+      "wikiTitle": "Buccar",
+      "collection": "characters",
+      "facts": {
+        "game": "fe18",
+        "Bloodmark": "-",
+        "Abilities": "Guardian's Duty",
+        "Item": "Shielding Axe",
+        "Magic": "-",
+        "Combat Arts": "-",
+        "Level": "1",
+        "HP": "29",
+        "Str": "12",
+        "Mag": "4",
+        "Dex": "6",
+        "Spd": "5",
+        "Lck": "6",
+        "Def": "8",
+        "Res": "3",
+        "Chrm": "6"
+      },
+      "categories": [
+        "Fire Emblem: Fortune's Weave Characters",
+        "Male Characters",
+        "Playable Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/7/7e/BuccarFE18Portrait.png/revision/latest?cb=20260722171017",
+      "url": "https://fireemblem.fandom.com/wiki/Buccar",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Buccar.png"
+    },
+    {
+      "title": "Benditz",
+      "wikiTitle": "Benditz",
+      "collection": "characters",
+      "facts": {
+        "gender": "Male",
+        "race": "Human",
+        "occupation(s)": "Centurion (Formerly)Mercenary",
+        "game": "Fire Emblem: Fortune's Weave",
+        "class": "Charioteer",
+        "voiceby": "Max Lindsey",
+        "jpn_voiceby": "Hironori Kondō"
+      },
+      "categories": [
+        "Fire Emblem: Fortune's Weave Characters",
+        "Male Characters",
+        "Playable Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/3/33/BenditzFE18Portrait.png/revision/latest?cb=20260902034028",
+      "url": "https://fireemblem.fandom.com/wiki/Benditz",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Benditz.png"
+    },
+    {
+      "title": "Anatolia",
+      "wikiTitle": "Anatolia",
+      "collection": "characters",
+      "facts": {
+        "alias": "Mysterious Bride",
+        "gender": "Female",
+        "race": "Mediator",
+        "nationality": "Kunlun",
+        "game": "Fire Emblem: Fortune's Weave",
+        "firstseen": "Lion Obelisk Chapter 3: The Grand Megalith",
+        "firstfought": "Lion Obelisk Chapter 3: The Grand Megalith"
+      },
+      "categories": [
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Playable Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/f/fc/Artwork_Anatolia.png/revision/latest?cb=20260824154503",
+      "url": "https://fireemblem.fandom.com/wiki/Anatolia",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Anatolia.png"
+    },
+    {
+      "title": "Castor",
+      "wikiTitle": "Castor (Fortune's Weave)",
+      "collection": "characters",
+      "facts": {
+        "alias": "Windstorm",
+        "gender": "Male",
+        "race": "Human",
+        "relatives": "Aurora (Wife)Cai (Son)Solel (Father-in-law)Yu Phas (Mother-in-law)",
+        "nationality": "Dagdan Empire",
+        "residence": "Ribeira",
+        "occupation(s)": "Temple Vulkan (Formerly)",
+        "game": "Fire Emblem: Fortune's Weave",
+        "voiceby": "Marcus Rothenberg"
+      },
+      "categories": [
+        "Allies",
+        "Enemies",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Male Characters",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/d/d4/CastorFE18Portrait.png/revision/latest?cb=20260804185124",
+      "url": "https://fireemblem.fandom.com/wiki/Castor_(Fortune's_Weave)",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Castor-Fortune-s-Weave-.png"
+    },
+    {
+      "title": "Bertrand",
+      "wikiTitle": "Bertrand",
+      "collection": "characters",
+      "facts": {
+        "alias": "White-Maned Demon",
+        "gender": "Male",
+        "race": "Human",
+        "nationality": "Arago",
+        "game": "Fire Emblem: Fortune's Weave",
+        "firstfought": "Lion Obelisk Chapter 11: Twisted Love",
+        "class": "Warrior",
+        "voiceby": "Christian Young"
+      },
+      "categories": [
+        "Fire Emblem: Fortune's Weave Characters",
+        "Male Characters",
+        "Playable Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/4/49/Artwork_Bertrand.png/revision/latest?cb=20260824184509",
+      "url": "https://fireemblem.fandom.com/wiki/Bertrand",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Bertrand.png"
+    },
+    {
+      "title": "Balor",
+      "wikiTitle": "Balor",
+      "collection": "characters",
+      "facts": {
+        "alias": "Demon GodThe King BelowFounder BalorDarkest Dark",
+        "gender": "Male",
+        "race": "Child of the Goddess",
+        "relatives": "Lyrah (Oldest Daughter)Yu Phas (Younger Daughter)Mahna (Younger Daughter)Eishet (Youngest Daughter)Aurora(Granddaughter)Cai (Great Grandson)Solel (Son-in-law)Castor (Grandson-in-law)",
+        "game": "Fire Emblem: Fortune's Weave"
+      },
+      "categories": [
+        "Deities",
+        "Enemies",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Major Antagonists",
+        "Male Characters",
+        "Nabateans",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/a/ab/Lyrah_with_her_reborned_father_Balor_at_the_gates_of_the_underworld_1.png/revision/latest?cb=20260918114817",
+      "url": "https://fireemblem.fandom.com/wiki/Balor",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Balor.png"
+    },
+    {
+      "title": "Aurora",
+      "wikiTitle": "Aurora (Fortune's Weave)",
+      "collection": "characters",
+      "facts": {
+        "alias": "Navigator's ClarionLaura",
+        "gender": "Female",
+        "race": "Child of the Goddess (Ice Dragon)",
+        "fod_birth": "Dagdan Year 553",
+        "age": "896",
+        "relatives": "Sothis (Paternal Great-Grandmother)Dagda (Paternal Grandfather)Balor (Maternal Grandfather)Solel (Father)Yu Phas (Mother)Kalla (Paternal Aunt)Lyrah (Maternal Aunt)Mahna (Maternal Aunt)Eishet (Maternal Aunt)Castor (Husban",
+        "residence": "Aurora's Temple",
+        "faction(s)": "Dagdan Pantheon",
+        "occupation(s)": "Dagdan Goddess",
+        "game": "Fire Emblem: Fortune's Weave",
+        "voiceby": "Jamie Sara Lewis",
+        "jpn_voiceby": "Konomi Tamura"
+      },
+      "categories": [
+        "Deities",
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Nabateans"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/1/10/Artwork_Aurora.png/revision/latest?cb=20260819073701",
+      "url": "https://fireemblem.fandom.com/wiki/Aurora_(Fortune's_Weave)",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Aurora-Fortune-s-Weave-.png"
+    },
+    {
+      "title": "Catania",
+      "wikiTitle": "Catania",
+      "collection": "characters",
+      "facts": {
+        "alias": "Noble Knight",
+        "gender": "Female",
+        "race": "Human",
+        "birthday": "4/16",
+        "age": "25-26",
+        "height": "166 cm or 5’3.5”",
+        "nationality": "Cydonian",
+        "home": "Kassite",
+        "occupation(s)": "Mercenary",
+        "game": "Fire Emblem: Fortune's Weave",
+        "class": "Commoner"
+      },
+      "categories": [
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Playable Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/2/2c/CataniaFE18Portrait.png/revision/latest?cb=20260901150848",
+      "url": "https://fireemblem.fandom.com/wiki/Catania",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Catania.png"
+    },
+    {
+      "title": "Aswan",
+      "wikiTitle": "Aswan",
+      "collection": "characters",
+      "facts": {
+        "fullname": "Aswan Hasdrubal Aragon",
+        "gender": "Female",
+        "race": "Human",
+        "relatives": "Arago (Ancestor)Gilchris (Husband)",
+        "nationality": "Arago",
+        "occupation(s)": "Queen of Arago",
+        "game": "Fire Emblem: Fortune's Weave",
+        "voiceby": "AmaLee"
+      },
+      "categories": [
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Playable Characters",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/f/fc/AswanFE18Portrait.png/revision/latest?cb=20260917190211",
+      "url": "https://fireemblem.fandom.com/wiki/Aswan",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Aswan.png"
+    },
+    {
+      "title": "Centurio",
+      "wikiTitle": "Centurio",
+      "collection": "characters",
+      "facts": {
+        "alias": "Corundum",
+        "gender": "Male",
+        "race": "Human",
+        "nationality": "Dagdan Empire",
+        "occupation(s)": "Temple Vulkan",
+        "game": "Fire Emblem: Fortune's Weave",
+        "voiceby": "Justice Washington",
+        "jpn_voiceby": "Kōji Takeda"
+      },
+      "categories": [
+        "Fire Emblem: Fortune's Weave Characters",
+        "Male Characters",
+        "Playable Characters",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/7/7d/CenturioFE18Portrait.png/revision/latest?cb=20260819141630",
+      "url": "https://fireemblem.fandom.com/wiki/Centurio",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Centurio.png"
+    },
+    {
+      "title": "Credna",
+      "wikiTitle": "Credna",
+      "collection": "characters",
+      "facts": {
+        "jpn_name": ", Crel",
+        "gender": "Male",
+        "race": "Child of the Goddess (Bloom Dragon)",
+        "relatives": "Sothis (Grandmother)Dagda (Father)Jurah (Mother)Smyrnos (Older Half-Brother)Solel (Brother)Kalla (Sister)Orchel (Creation)",
+        "faction(s)": "Dagdan Pantheon",
+        "occupation(s)": "Dagdan God",
+        "game": "Fire Emblem: Fortune's Weave"
+      },
+      "categories": [
+        "Deities",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Male Characters",
+        "Nabateans"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/2/27/CrednaFE18Portrait.png/revision/latest?cb=20260918092135",
+      "url": "https://fireemblem.fandom.com/wiki/Credna",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Credna.png"
+    },
+    {
+      "title": "Cetus",
+      "wikiTitle": "Cetus",
+      "collection": "characters",
+      "facts": {
+        "alias": "CetusSea Tyrant",
+        "gender": "Female",
+        "race": "HumanDemonic Beast",
+        "relatives": "Sinza (Possible Descendant)Esmeralda (Possible Descendant)",
+        "nationality": "Southern Fódlan",
+        "residence": "Lir Sea",
+        "faction(s)": "Ten Elites",
+        "occupation(s)": "Dragon Hunter",
+        "game": "Fire Emblem: Fortune's Weave"
+      },
+      "categories": [
+        "Enemies",
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Major Antagonists",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/d/d4/CetusFE18Portrait.png/revision/latest?cb=20260917060257",
+      "url": "https://fireemblem.fandom.com/wiki/Cetus",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Cetus.png"
+    },
+    {
+      "title": "Aguirre",
+      "wikiTitle": "Aguirre",
+      "collection": "characters",
+      "facts": {
+        "alias": "Hawk-Killer",
+        "gender": "Female",
+        "race": "Human",
+        "game": "Fire Emblem: Fortune's Weave"
+      },
+      "categories": [
+        "Enemies",
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/1/1e/AguirreFE18Portrait.png/revision/latest?cb=20260911045222",
+      "url": "https://fireemblem.fandom.com/wiki/Aguirre",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Aguirre.png"
+    },
+    {
+      "title": "Bjor",
+      "wikiTitle": "Bjor",
+      "collection": "characters",
+      "facts": {
+        "fullname": "Bjor Flein",
+        "alias": "Bjor the Magnificent (self-proclaimed)Bjor the Recruiter",
+        "gender": "Male",
+        "race": "Human",
+        "game": "Fire Emblem: Fortune's Weave"
+      },
+      "categories": [
+        "Enemies",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Male Characters",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/0/01/BjorFE18Portrait.png/revision/latest?cb=20260813174018",
+      "url": "https://fireemblem.fandom.com/wiki/Bjor",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Bjor.png"
+    },
+    {
+      "title": "Balboa",
+      "wikiTitle": "Balboa",
+      "collection": "characters",
+      "facts": {
+        "fullname": "Balboa Beauclerc",
+        "gender": "Female",
+        "race": "Human",
+        "occupation(s)": "GeneralViceroy of Cydonia",
+        "game": "Fire Emblem: Fortune's Weave"
+      },
+      "categories": [
+        "Enemies",
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/d/d3/BalboaFE18Portrait.png/revision/latest?cb=20260813174019",
+      "url": "https://fireemblem.fandom.com/wiki/Balboa",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Balboa.png"
+    },
+    {
+      "title": "Gaitz",
+      "wikiTitle": "Gaitz",
+      "collection": "characters",
+      "facts": {
+        "gender": "Male",
+        "race": "Human",
+        "game": "Fire Emblem: Fortune's Weave",
+        "jpn_voiceby": "Ryōkan Koyanagi"
+      },
+      "categories": [
+        "Fire Emblem: Fortune's Weave Characters",
+        "Male Characters",
+        "Playable Characters",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/3/34/GaitzFE18Portrait.png/revision/latest?cb=20260825060240",
+      "url": "https://fireemblem.fandom.com/wiki/Gaitz",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Gaitz.png"
+    },
+    {
+      "title": "Dietrich",
+      "wikiTitle": "Dietrich",
+      "collection": "characters",
+      "facts": {
+        "fullname": "Dietrich Gregor Lamine",
+        "alias": "Ravishing ShadowSweetie (Esmeralda)",
+        "jpn_alias": "(Esmeralda)",
+        "gender": "Male",
+        "race": "Human",
+        "birthday": "September 10",
+        "fod_birth": "Dagdan Year 1426",
+        "age": "22-23",
+        "height": "192cm (6'3\")",
+        "relatives": "Lamine (Great-grandmother)Elfrida (Younger Sister)Mercedes (Distant Relative)Jeritza (Distant Relative)",
+        "nationality": "Adrestian Empire",
+        "game": "Fire Emblem: Fortune's WeaveFire Emblem Heroes",
+        "firstseen": "Prologue Chapter 2: The Ruined Land",
+        "firstjoined": "Lion Obelisk Chapter 1: A Stranger Comes to Dagda",
+        "firstfought": "Prologue Chapter 2: The Ruined Land",
+        "class": "Commoner"
+      },
+      "categories": [
+        "Fire Emblem: Fortune's Weave Characters",
+        "Fire Emblem Heroes Characters",
+        "Main Characters",
+        "Male Characters",
+        "Playable Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/5/5c/Artwork_Dietrich.png/revision/latest?cb=20260805215642",
+      "url": "https://fireemblem.fandom.com/wiki/Dietrich",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Dietrich.png"
+    },
+    {
+      "title": "Eshmel",
+      "wikiTitle": "Eshmel",
+      "collection": "characters",
+      "facts": {
+        "game": "fe18",
+        "Bloodmark": "30px|Diadem of the Auger",
+        "Abilities": "-",
+        "Item": "The NamelessVulnerary",
+        "Magic": "-",
+        "Combat Arts": "Tempest Spear",
+        "Level": "40",
+        "HP": "53",
+        "Str": "35",
+        "Mag": "24",
+        "Dex": "38",
+        "Spd": "27",
+        "Lck": "23",
+        "Def": "27",
+        "Res": "24",
+        "Chrm": "29"
+      },
+      "categories": [
+        "Avatars",
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Main Characters",
+        "Male Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/4/44/M_Eshmel_Artwork.png/revision/latest?cb=20260805084229",
+      "url": "https://fireemblem.fandom.com/wiki/Eshmel",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Eshmel.png"
+    },
+    {
+      "title": "Fabio",
+      "wikiTitle": "Fabio",
+      "collection": "characters",
+      "facts": {
+        "game": "fe18",
+        "Bloodmark": "-",
+        "Abilities": "-",
+        "Item": "-",
+        "Magic": "-",
+        "Combat Arts": "-",
+        "Level": "1",
+        "HP": "25",
+        "Str": "6",
+        "Mag": "10",
+        "Dex": "6",
+        "Spd": "7",
+        "Lck": "6",
+        "Def": "4",
+        "Res": "8",
+        "Chrm": "5"
+      },
+      "categories": [
+        "Fire Emblem: Fortune's Weave Characters",
+        "Male Characters",
+        "Playable Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/7/74/FabioFE18Portrait.png/revision/latest?cb=20260720174318",
+      "url": "https://fireemblem.fandom.com/wiki/Fabio",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Fabio.png"
+    },
+    {
+      "title": "Esmeralda",
+      "wikiTitle": "Esmeralda",
+      "collection": "characters",
+      "facts": {
+        "game": "fe18",
+        "Bloodmark": "30px|Mystery Diadem",
+        "Abilities": "-",
+        "Item": "-",
+        "Magic": "-",
+        "Combat Arts": "-",
+        "Level": "1",
+        "HP": "28",
+        "Str": "12",
+        "Mag": "4",
+        "Dex": "5",
+        "Spd": "6",
+        "Lck": "7",
+        "Def": "7",
+        "Res": "3",
+        "Chrm": "6"
+      },
+      "categories": [
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Playable Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/3/39/EsmeraldaFE18Portrait.png/revision/latest?cb=20260724163645",
+      "url": "https://fireemblem.fandom.com/wiki/Esmeralda",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Esmeralda.png"
+    },
+    {
+      "title": "Dyan",
+      "wikiTitle": "Dyan",
+      "collection": "characters",
+      "facts": {
+        "fullname": "Dyan Sergio Savangren",
+        "gender": "Male",
+        "race": "Human",
+        "relatives": "Sergio (Father)Theodora (Older Sister)",
+        "nationality": "Saramis",
+        "occupation(s)": "Prince of Saramis",
+        "game": "Fire Emblem: Fortune's Weave",
+        "voiceby": "Chris Okawa"
+      },
+      "categories": [
+        "Enemies",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Male Characters",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/2/27/DyanFE18Portrait.png/revision/latest?cb=20260708071543",
+      "url": "https://fireemblem.fandom.com/wiki/Dyan",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Dyan.png"
+    },
+    {
+      "title": "Creek",
+      "wikiTitle": "Creek",
+      "collection": "characters",
+      "facts": {
+        "alias": "Twin Jewel of AragoCreek the GreenPantere",
+        "gender": "Male",
+        "race": "Human",
+        "nationality": "Arago",
+        "occupation(s)": "Aragonian Knight",
+        "game": "Fire Emblem: Fortune's Weave",
+        "voiceby": "Willow Engel",
+        "jpn_voiceby": "Toshiki Iwasawa"
+      },
+      "categories": [
+        "Fire Emblem: Fortune's Weave Characters",
+        "Male Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/1/17/CreekFE18Portrait.png/revision/latest?cb=20260804035756",
+      "url": "https://fireemblem.fandom.com/wiki/Creek",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Creek.png"
+    },
+    {
+      "title": "Diego",
+      "wikiTitle": "Diego",
+      "collection": "characters",
+      "facts": {
+        "gender": "Male",
+        "race": "Human",
+        "nationality": "Har Hali",
+        "game": "Fire Emblem: Fortune's Weave",
+        "voiceby": "Nazeeh Tarsha",
+        "jpn_voiceby": "Kengo Takanashi"
+      },
+      "categories": [
+        "Fire Emblem: Fortune's Weave Characters",
+        "Male Characters",
+        "Playable Characters",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/6/66/DiegoFE18Portrait.png/revision/latest?cb=20260826064832",
+      "url": "https://fireemblem.fandom.com/wiki/Diego",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Diego.png"
+    },
+    {
+      "title": "Fortuna",
+      "wikiTitle": "Fortuna",
+      "collection": "characters",
+      "facts": {
+        "alias": "Goddess of FateGod of CausalityVoice upon the Peak",
+        "gender": "Female",
+        "race": "Child of the Goddess (Kalpa Dragon)",
+        "residence": "Fortuna's Temple",
+        "occupation(s)": "Dagdan Goddess",
+        "faction(s)": "Dagdan Pantheon",
+        "game": "Fire Emblem: Fortune's Weave",
+        "firstseen": "Prologue Chapter 1: The White Bird"
+      },
+      "categories": [
+        "Deities",
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Nabateans"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/3/3a/Fortuna_Artwork.png/revision/latest?cb=20260913085255",
+      "url": "https://fireemblem.fandom.com/wiki/Fortuna",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Fortuna.png"
+    },
+    {
+      "title": "Dante",
+      "wikiTitle": "Dante",
+      "collection": "characters",
+      "facts": {
+        "gender": "Female",
+        "race": "Human",
+        "birthday": "August 22",
+        "occupation(s)": "Playwright",
+        "game": "Fire Emblem: Fortune's Weave",
+        "voiceby": "Alaina Wis",
+        "jpn_voiceby": "Sumi Tomomi Jiena"
+      },
+      "categories": [
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Playable Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/a/ab/DanteFE18Portrait.png/revision/latest?cb=20260827181046",
+      "url": "https://fireemblem.fandom.com/wiki/Dante",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Dante.png"
+    },
+    {
+      "title": "Goliath",
+      "wikiTitle": "Goliath",
+      "collection": "characters",
+      "facts": {
+        "alias": "The Butcher",
+        "gender": "Male",
+        "race": "Human",
+        "height": "250cm (8'2\")",
+        "faction(s)": "Goliath Bandits",
+        "game": "Fire Emblem: Fortune's Weave",
+        "voiceby": "Damon Alums",
+        "jpn_voiceby": "Ryunosuke Watanuki"
+      },
+      "categories": [
+        "Fire Emblem: Fortune's Weave Characters",
+        "Male Characters",
+        "Playable Characters",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/5/56/GoliathFE18Portrait.png/revision/latest?cb=20260908213335",
+      "url": "https://fireemblem.fandom.com/wiki/Goliath",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Goliath.png"
+    },
+    {
+      "title": "Guzran",
+      "wikiTitle": "Guzran",
+      "collection": "characters",
+      "facts": {
+        "alias": "Unkillable Guzran",
+        "gender": "Male",
+        "race": "Human",
+        "birthday": "September 17",
+        "fod_birth": "Dagdan Year 1412",
+        "age": "36-37",
+        "height": "188cm (6'2\")",
+        "relatives": "Unnamed Older Brother",
+        "occupation(s)": "Mercenary",
+        "game": "Fire Emblem: Fortune's Weave",
+        "class": "Gladiator",
+        "voiceby": "Matthew David Rudd",
+        "jpn_voiceby": "Hayato Kaneko"
+      },
+      "categories": [
+        "Fire Emblem: Fortune's Weave Characters",
+        "Male Characters",
+        "Playable Characters",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/9/9c/GuzranFE18Portrait.png/revision/latest?cb=20260831030938",
+      "url": "https://fireemblem.fandom.com/wiki/Guzran",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Guzran.png"
+    },
+    {
+      "title": "Dagda",
+      "wikiTitle": "Dagda (character)",
+      "collection": "characters",
+      "facts": {
+        "alias": "Dagda the GreatThe SkyblotterDivine EmperorBrimestone Lord",
+        "gender": "Male",
+        "race": "Child of the Goddess (Bloom Dragon)",
+        "relatives": "Sothis (Mother)Seiros (Younger Sister)Solel (Son)Mars (Son)Kalla (Daughter)Credna (Son)Smyrnos (Son)Lind (Grandson)Aurora (Granddaughter)Cai (Great Grandson)",
+        "nationality": "Nabatea",
+        "residence": "Dagsion",
+        "occupation(s)": "Emperor of the Dagdan Empire",
+        "game": "Fire Emblem: Fortune's Weave"
+      },
+      "categories": [
+        "Deities",
+        "Enemies",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Major Antagonists",
+        "Male Characters",
+        "Nabateans",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/a/a9/DagdaFE18Portrait.png/revision/latest?cb=20260918093226",
+      "url": "https://fireemblem.fandom.com/wiki/Dagda_(character)",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Dagda-character-.png"
+    },
+    {
+      "title": "Fianna",
+      "wikiTitle": "Fianna",
+      "collection": "characters",
+      "facts": {
+        "gender": "Female",
+        "race": "Human",
+        "occupation(s)": "Priestess",
+        "game": "Fire Emblem: Fortune's Weave",
+        "voiceby": "Nerida Bronwen",
+        "jpn_voiceby": "Aya Suzaki"
+      },
+      "categories": [
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Playable Characters",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/f/ff/FiannaFE18Portrait.png/revision/latest?cb=20260909202753",
+      "url": "https://fireemblem.fandom.com/wiki/Fianna",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Fianna.png"
+    },
+    {
+      "title": "Halvin",
+      "wikiTitle": "Halvin",
+      "collection": "characters",
+      "facts": {
+        "gender": "Female",
+        "race": "Human",
+        "occupation(s)": "Traveling Performer",
+        "game": "Fire Emblem: Fortune's Weave",
+        "firstseen": "Lion Obelisk Chapter 3: The Grand Megalith",
+        "firstfought": "Lion Obelisk Chapter 3: The Grand Megalith"
+      },
+      "categories": [
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Playable Characters",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/6/65/HalvinFE18Portrait.png/revision/latest?cb=20260911174336",
+      "url": "https://fireemblem.fandom.com/wiki/Halvin"
+    },
+    {
+      "title": "Dadao",
+      "wikiTitle": "Dadao",
+      "collection": "characters",
+      "facts": {
+        "jpn_name": ", Daito",
+        "alias": "Dadao the Relentless",
+        "gender": "Male",
+        "race": "Human",
+        "game": "Fire Emblem: Fortune's Weave",
+        "firstseen": "Lion Obelisk Chapter 3: The Grand Megalith",
+        "firstfought": "Lion Obelisk Chapter 3: The Grand Megalith",
+        "voiceby": "Y. Chang"
+      },
+      "categories": [
+        "Fire Emblem: Fortune's Weave Characters",
+        "Male Characters",
+        "Playable Characters",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/f/f4/DadaoFE18Portrait.png/revision/latest?cb=20260911043825",
+      "url": "https://fireemblem.fandom.com/wiki/Dadao",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Dadao.png"
+    },
+    {
+      "title": "Gaia",
+      "wikiTitle": "Gaia",
+      "collection": "characters",
+      "facts": {
+        "race": "Child of the Goddess",
+        "faction(s)": "Dagdan Pantheon",
+        "occupation(s)": "Dagdan God",
+        "game": "Fire Emblem: Fortune's Weave"
+      },
+      "categories": [
+        "Deities",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Nabateans"
+      ],
+      "image": null,
+      "url": "https://fireemblem.fandom.com/wiki/Gaia"
+    },
+    {
+      "title": "Elfrida",
+      "wikiTitle": "Elfrida",
+      "collection": "characters",
+      "facts": {
+        "fullname": "Elfrida Lamine",
+        "gender": "Female",
+        "race": "Human",
+        "relatives": "Lamine (Great-grandmother)Dietrich (Older Brother)Mercedes (Distant Relative)Jeritza (Distant Relative)",
+        "nationality": "Adrestian Empire",
+        "game": "Fire Emblem: Fortune's Weave"
+      },
+      "categories": [
+        "Background Characters",
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Stubs"
+      ],
+      "image": null,
+      "url": "https://fireemblem.fandom.com/wiki/Elfrida"
+    },
+    {
+      "title": "Hannibal",
+      "wikiTitle": "Hannibal (Fortune's Weave)",
+      "collection": "characters",
+      "facts": {
+        "gender": "Male",
+        "game": "Fire Emblem: Fortune's Weave",
+        "class": "Elephant Rider"
+      },
+      "categories": [
+        "Enemies",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Major Antagonists",
+        "Male Characters",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/2/29/HannibalFE18Portrait.png/revision/latest?cb=20260814060841",
+      "url": "https://fireemblem.fandom.com/wiki/Hannibal_(Fortune's_Weave)",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Hannibal-Fortune-s-Weave-.png"
+    },
+    {
+      "title": "Drake",
+      "wikiTitle": "Drake",
+      "collection": "characters",
+      "facts": {
+        "gender": "Male",
+        "occupation(s)": "Pirate",
+        "game": "Fire Emblem: Fortune's Weave"
+      },
+      "categories": [
+        "Enemies",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Male Characters",
+        "Stubs"
+      ],
+      "image": null,
+      "url": "https://fireemblem.fandom.com/wiki/Drake"
+    },
+    {
+      "title": "Lamine",
+      "wikiTitle": "Lamine",
+      "collection": "characters",
+      "facts": {
+        "game": "fe16",
+        "Crest": "30px|Major Crest of Lamine",
+        "Abilities": "20px10 Elites20pxBlack Magic Uses x220pxDark Magic Uses x220pxWhite Magic Uses x220pxCursed Power20pxGeneral20pxBlack Magic Range +120pxReason Lv 520pxHit +20",
+        "Item": "20pxDark Rafail Gem",
+        "Magic": "20pxAbraxas20pxBolting",
+        "Combat Arts": "-",
+        "Level": "44",
+        "HP": "47",
+        "Str": "12",
+        "Mag": "32",
+        "Dex": "23",
+        "Spd": "22",
+        "Lck": "12",
+        "Def": "13",
+        "Res": "34",
+        "Chrm": "24"
+      },
+      "categories": [
+        "Background Characters",
+        "Enemies",
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Fire Emblem: Three Houses Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/a/a6/Gremory_portrait.png/revision/latest?cb=20220612045813",
+      "url": "https://fireemblem.fandom.com/wiki/Lamine",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Lamine.png"
+    },
+    {
+      "title": "Leda",
+      "wikiTitle": "Leda (Fortune's Weave)",
+      "collection": "characters",
+      "facts": {
+        "weapon 1": "Iron Bow * - * - * -",
+        "weapon 2": "Steel Bow * - * - * -",
+        "weapon 3": "Silver Bow * - * - * -",
+        "weapon 4": "Enchanting Bow * - * 5 * -",
+        "assist 1": "Play * - * - * -",
+        "assist 2": "Improviso * Play * - * 5",
+        "special 1": "Glowing Ember * - * - * -",
+        "special 2": "Ignis * Glowing Ember * - * -",
+        "special 3": "Waning Shot * Ignis * - * 5",
+        "passive A 1": "Shield Session 1 * - * - * -",
+        "passive A 2": "Shield Session 2 * Shield Session 1 * - * -",
+        "passive A 3": "Shield Session 3 * Shield Session 2 * - * -",
+        "passive A 4": "Rhythm Session * Shield Session 3 * - * 5",
+        "passive B 1": "Spd Cantrip 1 * - * - * -",
+        "passive B 2": "Spd Cantrip 2 * Spd Cantrip 1 * - * -",
+        "passive B 3": "Spd Cantrip 3 * Spd Cantrip 2 * - * -",
+        "passive B 4": "Spd/Def Allure * Spd Cantrip 3 * - * 5",
+        "passive C 1": "Time's Pulse 1 * - * - * -",
+        "passive C 2": "Time's Pulse 2 * Time's Pulse 1 * - * -",
+        "passive C 3": "Time's Pulse 3 * Time's Pulse 2 * - * -",
+        "passive C 4": "Twofold Pulse * Time's Pulse 3 * - * 5"
+      },
+      "categories": [
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Fire Emblem Heroes Characters",
+        "Main Characters",
+        "Playable Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/b/b0/Artwork_Leda.png/revision/latest?cb=20260805215820",
+      "url": "https://fireemblem.fandom.com/wiki/Leda_(Fortune's_Weave)",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Leda-Fortune-s-Weave-.png"
+    },
+    {
+      "title": "Lysander",
+      "wikiTitle": "Lysander",
+      "collection": "characters",
+      "facts": {
+        "game": "fe18",
+        "Bloodmark": "-",
+        "Abilities": "Racing Attack",
+        "Item": "-",
+        "Magic": "-",
+        "Combat Arts": "-",
+        "Level": "5",
+        "HP": "28",
+        "Str": "9",
+        "Mag": "6",
+        "Dex": "9",
+        "Spd": "11",
+        "Lck": "9",
+        "Def": "8",
+        "Res": "6",
+        "Chrm": "7"
+      },
+      "categories": [
+        "Fire Emblem: Fortune's Weave Characters",
+        "Male Characters",
+        "Playable Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/d/db/LysanderFE18Portrait.png/revision/latest?cb=20260803004446",
+      "url": "https://fireemblem.fandom.com/wiki/Lysander",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Lysander.png"
+    },
+    {
+      "title": "Lechner",
+      "wikiTitle": "Lechner",
+      "collection": "characters",
+      "facts": {
+        "fullname": "Lechner Milloy",
+        "alias": "Mad Dog",
+        "gender": "Male",
+        "game": "Fire Emblem: Fortune's Weave",
+        "class": "Rogue"
+      },
+      "categories": [
+        "Enemies",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Major Antagonists",
+        "Male Characters",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/5/5f/LechnerFE18Portrait.png/revision/latest?cb=20260823052815",
+      "url": "https://fireemblem.fandom.com/wiki/Lechner",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Lechner.png"
+    },
+    {
+      "title": "Lilian",
+      "wikiTitle": "Lilian",
+      "collection": "characters",
+      "facts": {
+        "game": "fe18",
+        "Bloodmark": "-",
+        "Abilities": "Safety First",
+        "Item": "-",
+        "Magic": "-",
+        "Combat Arts": "-",
+        "Level": "5",
+        "HP": "25",
+        "Str": "8",
+        "Mag": "6",
+        "Dex": "11",
+        "Spd": "10",
+        "Lck": "7",
+        "Def": "6",
+        "Res": "5",
+        "Chrm": "6"
+      },
+      "categories": [
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Playable Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/b/b9/LilianFE18Portrait.png/revision/latest?cb=20260803004243",
+      "url": "https://fireemblem.fandom.com/wiki/Lilian",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Lilian.png"
+    },
+    {
+      "title": "Io",
+      "wikiTitle": "Io",
+      "collection": "characters",
+      "facts": {
+        "alias": "Man of Ideals",
+        "gender": "Male",
+        "race": "Human",
+        "birthday": "March 21",
+        "fod_birth": "Dagdan Year 1430",
+        "age": "18-19",
+        "height": "174cm (5'9\")",
+        "relatives": "Unnamed Father",
+        "nationality": "Arago",
+        "residence": "Dagsion",
+        "occupation(s)": "Aragonian Knight (Formerly)Mercenary",
+        "game": "Fire Emblem: Fortune's Weave",
+        "jpn_voiceby": "Hideyuki Kobayashi"
+      },
+      "categories": [
+        "Fire Emblem: Fortune's Weave Characters",
+        "Male Characters",
+        "Playable Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/1/10/IoFE18Portrait.png/revision/latest?cb=20260901033755",
+      "url": "https://fireemblem.fandom.com/wiki/Io",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Io.png"
+    },
+    {
+      "title": "Hong Hua",
+      "wikiTitle": "Hong Hua",
+      "collection": "characters",
+      "facts": {
+        "gender": "Female",
+        "race": "Mediator",
+        "birthday": "April 13",
+        "fod_birth": "Dagdan Year 523",
+        "age": "930",
+        "height": "160 cm (5'3\")",
+        "relatives": "Unnamed Husband (Deceased)Unnamed Son",
+        "nationality": "Kunlun",
+        "residence": "Nuwa",
+        "game": "Fire Emblem: Fortune's Weave",
+        "firstseen": "Prologue Chapter 1: The White Bird",
+        "firstjoined": "Prologue Chapter 1: The White Bird",
+        "firstfought": "Fox Obelisk Chapter 7: Opposed Agendas",
+        "class": "Ovate",
+        "voiceby": "Jennifer Sun Bell",
+        "jpn_voiceby": "Airi Ōtsu"
+      },
+      "categories": [
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Playable Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/b/ba/HongHuaFE18Portrait.png/revision/latest?cb=20260810210418",
+      "url": "https://fireemblem.fandom.com/wiki/Hong_Hua",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Hong-Hua.png"
+    },
+    {
+      "title": "Jester",
+      "wikiTitle": "Jester",
+      "collection": "characters",
+      "facts": {
+        "alias": "JesterJester of Hell",
+        "gender": "Male",
+        "race": "Human",
+        "occupation(s)": "Gladiator",
+        "game": "Fire Emblem: Fortune's Weave",
+        "voiceby": "Kieran Regan"
+      },
+      "categories": [
+        "Fire Emblem: Fortune's Weave Characters",
+        "Male Characters",
+        "Playable Characters",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/4/4a/JesterFE18Portrait.png/revision/latest?cb=20260908232029",
+      "url": "https://fireemblem.fandom.com/wiki/Jester",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Jester.png"
+    },
+    {
+      "title": "Kiroc",
+      "wikiTitle": "Kiroc",
+      "collection": "characters",
+      "facts": {
+        "alias": "The Rukh",
+        "gender": "Male",
+        "race": "Human",
+        "birthday": "March 31",
+        "fod_birth": "Dagdan Year 1400",
+        "age": "48-49",
+        "height": "190cm (6'3\")",
+        "occupation(s)": "Pirate (Formerly)",
+        "game": "Fire Emblem: Fortune's Weave",
+        "voiceby": "Jalen Askins",
+        "jpn_voiceby": "Shunsuke Todo"
+      },
+      "categories": [
+        "Fire Emblem: Fortune's Weave Characters",
+        "Male Characters",
+        "Playable Characters",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/7/70/KirocFE18Portrait.png/revision/latest?cb=20260914195521",
+      "url": "https://fireemblem.fandom.com/wiki/Kiroc",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Kiroc.png"
+    },
+    {
+      "title": "Iliana",
+      "wikiTitle": "Iliana",
+      "collection": "characters",
+      "facts": {
+        "fullname": "Eishet",
+        "jpn_fullname": ", Iliana Kokibinus",
+        "alias": "Yu PhasIliana XiminusLady of Lilies",
+        "gender": "Female",
+        "race": "Child of the Goddess",
+        "relatives": "Balor (Father)Lyrah (Oldest Sister)Yu Phas (Older Sister)Solel (Brother in law)Mahna (Older Sister)Aurora (Niece)Cai (Great Nephew)",
+        "home": "Dagsion",
+        "game": "Fire Emblem: Fortune's Weave"
+      },
+      "categories": [
+        "Enemies",
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Major Antagonists",
+        "Nabateans"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/e/e3/Artwork_Iliana.png/revision/latest?cb=20260818160605",
+      "url": "https://fireemblem.fandom.com/wiki/Iliana",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Iliana.png"
+    },
+    {
+      "title": "Kalla",
+      "wikiTitle": "Kalla",
+      "collection": "characters",
+      "facts": {
+        "alias": "Patron-Huntress",
+        "gender": "Female",
+        "race": "Child of the Goddess (Crusher Dragon)",
+        "relatives": "Sothis (Grandmother)Dagda (Father)Seiros (Aunt)Solel (Older Brother)Mars (Brother)Smyrnos (Brother)Credna (Brother)Cohen (Son)Leda (Descendant)Aurora (Niece)Cai (Great-Nephew)",
+        "residence": "Kalla's Temple",
+        "faction(s)": "Dagdan Pantheon",
+        "occupation(s)": "Dagdan Goddess",
+        "game": "Fire Emblem: Fortune's Weave",
+        "voiceby": "Amelia Tyler"
+      },
+      "categories": [
+        "Deities",
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Nabateans"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/6/68/KallaFE18Portrait.png/revision/latest?cb=20260820160445",
+      "url": "https://fireemblem.fandom.com/wiki/Kalla",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Kalla.png"
+    },
+    {
+      "title": "Jurah",
+      "wikiTitle": "Jurah",
+      "collection": "characters",
+      "facts": {
+        "gender": "Female",
+        "race": "Child of the Goddess (Shield Dragon)",
+        "relatives": "Credna (Son)",
+        "faction(s)": "Dagdan Pantheon",
+        "occupation(s)": "Dagdan Goddess",
+        "game": "Fire Emblem: Fortune's Weave"
+      },
+      "categories": [
+        "Deities",
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Nabateans"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/f/f9/JurahFE18Portrait.png/revision/latest?cb=20260813164824",
+      "url": "https://fireemblem.fandom.com/wiki/Jurah",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Jurah.png"
+    },
+    {
+      "title": "Loretta",
+      "wikiTitle": "Loretta",
+      "collection": "characters",
+      "facts": {
+        "gender": "Female",
+        "race": "Human",
+        "faction(s)": "Credna's Temple",
+        "game": "Fire Emblem: Fortune's Weave"
+      },
+      "categories": [
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Playable Characters",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/7/78/LorettaFE18Portrait.png/revision/latest?cb=20260910170239",
+      "url": "https://fireemblem.fandom.com/wiki/Loretta",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Loretta.png"
+    },
+    {
+      "title": "Majide",
+      "wikiTitle": "Majide",
+      "collection": "characters",
+      "facts": {
+        "gender": "Male",
+        "race": "Human",
+        "game": "Fire Emblem: Fortune's Weave",
+        "firstseen": "Lion Obelisk Chapter 4: Brute Force",
+        "firstfought": "Lion Obelisk Chapter 4: Brute Force",
+        "class": "Gladiator",
+        "jpn_voiceby": "Yūki Onodera"
+      },
+      "categories": [
+        "Fire Emblem: Fortune's Weave Characters",
+        "Male Characters",
+        "Playable Characters",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/4/43/MajideFE18Portrait.png/revision/latest?cb=20260907053832",
+      "url": "https://fireemblem.fandom.com/wiki/Majide",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Majide.png"
+    },
+    {
+      "title": "Maria",
+      "wikiTitle": "Maria (Fortune's Weave)",
+      "collection": "characters",
+      "facts": {
+        "fullname": "Mahna",
+        "alias": "Martila",
+        "gender": "Female",
+        "race": "Child of the Goddess",
+        "relatives": "Balor (Father)Lyrah (Oldest Sister)Yu Phas (Older Sister)Solel (Brother in law)Eishet (Younger Sister)Cohen (Lover)Talimun (Son)Unnamed ChildAurora (Niece)Cai (Great Nephew)",
+        "residence": "Arago",
+        "faction(s)": "(Temporarily)",
+        "occupation(s)": "BardChancellor of Arago",
+        "game": "Fire Emblem: Fortune's Weave",
+        "firstfought": "Lion Obelisk Chapter 4: Brute Force",
+        "class": "Rogue",
+        "voiceby": "Nadia Marshall",
+        "jpn_voiceby": "Mayuko Kazama"
+      },
+      "categories": [
+        "Allies",
+        "Enemies",
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Major Antagonists",
+        "Nabateans"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/2/2d/Artwork_Maria.png/revision/latest?cb=20260916195825",
+      "url": "https://fireemblem.fandom.com/wiki/Maria_(Fortune's_Weave)",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Maria-Fortune-s-Weave-.png"
+    },
+    {
+      "title": "Jasmine",
+      "wikiTitle": "Jasmine (Fortune's Weave)",
+      "collection": "characters",
+      "facts": {
+        "gender": "Female",
+        "race": "Human",
+        "relatives": "Unnamed husband (deceased)",
+        "residence": "Palma",
+        "occupation(s)": "Mercenary leader",
+        "game": "Fire Emblem: Fortune's Weave",
+        "voiceby": "Heather Gonzalez",
+        "jpn_voiceby": "Aiko Ōkubo"
+      },
+      "categories": [
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Playable Characters",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/0/05/JasmineFE18Portrait.png/revision/latest?cb=20260914033949",
+      "url": "https://fireemblem.fandom.com/wiki/Jasmine_(Fortune's_Weave)",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Jasmine-Fortune-s-Weave-.png"
+    },
+    {
+      "title": "Ludia",
+      "wikiTitle": "Ludia",
+      "collection": "characters",
+      "facts": {
+        "alias": "Lulu",
+        "gender": "Female",
+        "race": "Human",
+        "game": "Fire Emblem: Fortune's Weave",
+        "voiceby": "Kana Shimanuki"
+      },
+      "categories": [
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Playable Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/a/a3/LudiaFE18Portrait.png/revision/latest?cb=20260909041652",
+      "url": "https://fireemblem.fandom.com/wiki/Ludia",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Ludia.png"
+    },
+    {
+      "title": "Long",
+      "wikiTitle": "Long",
+      "collection": "characters",
+      "facts": {
+        "gender": "Male",
+        "race": "Mediator",
+        "game": "Fire Emblem: Fortune's Weave"
+      },
+      "categories": [
+        "Fire Emblem: Fortune's Weave Characters",
+        "Male Characters",
+        "Playable Characters",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/6/6a/LongFE18Portrait.png/revision/latest?cb=20260817163825",
+      "url": "https://fireemblem.fandom.com/wiki/Long",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Long.png"
+    },
+    {
+      "title": "Inyoni",
+      "wikiTitle": "Inyoni",
+      "collection": "characters",
+      "facts": {
+        "alias": "Inyoni of the Demon Bow",
+        "gender": "Female",
+        "race": "Human",
+        "home": "Bragança",
+        "game": "Fire Emblem: Fortune's Weave",
+        "firstfought": "Fox Obelisk Chapter 7: Opposed Agendas",
+        "voiceby": "Ashely Biski",
+        "jpn_voiceby": "Natsuki Miwa"
+      },
+      "categories": [
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Playable Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/d/d4/InyoniFE18Portrait.png/revision/latest?cb=20260915063911",
+      "url": "https://fireemblem.fandom.com/wiki/Inyoni",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Inyoni.png"
+    },
+    {
+      "title": "Lind",
+      "wikiTitle": "Lind",
+      "collection": "characters",
+      "facts": {
+        "alias": "Lord of Impalement",
+        "gender": "Male",
+        "relatives": "Dagda (Grandfather)",
+        "firstseen": "Prologue Chapter 2: The Ruined Land",
+        "firstfought": "Prologue Chapter 2: The Ruined Land",
+        "voiceby": "Marcus Rothenberg"
+      },
+      "categories": [
+        "Enemies",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Male Characters",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/6/6e/LindFE18Portrait.png/revision/latest?cb=20260918095237",
+      "url": "https://fireemblem.fandom.com/wiki/Lind",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Lind.png"
+    },
+    {
+      "title": "Seteth",
+      "wikiTitle": "Seteth",
+      "collection": "characters",
+      "facts": {
+        "fullname": "Cichol",
+        "alias": "Hammer of Judgement",
+        "jpn_alias": "(Hammering One)",
+        "gender": "Male",
+        "race": "Child of the Goddess (Earth Dragon)",
+        "birthday": "December 27",
+        "fod_birth": "27th of the Ethereal Moon",
+        "age": "1000+",
+        "relatives": "Sothis (Ancestor)Cethleann (Daughter)Unnamed Wife (Deceased)Macuil (Brother)Indech (Brother)Seiros (Relative)Dagda (Relative)Solel (Relative)Kalla (Relative)Smyrnos (Relative)Credna (Relative)Mars (Relative)Jurah (Relati",
+        "nationality": "Nabatea",
+        "home": "Zanado",
+        "residence": "Garreg Mach MonasteryEnbarr (Formerly)",
+        "faction(s)": "Four Saints",
+        "occupation(s)": "Aid to the Archbishop of the Church of SeirosInstructor at the Officers Academy",
+        "game": "Fire Emblem: Three HousesFire Emblem HeroesFire Emblem Warriors: Three HopesFire Emblem: Fortune's Weave",
+        "firstseen": "Chapter 1: Three Houses",
+        "firstjoined": "Chapter 12: To War (Azure Moon)Chapter 12: To War (Verdant Wind)Chapter 12: To War (Silver Snow)",
+        "firstfought": "Chapter 12: Outset of a Power Struggle",
+        "class": "Wyvern Rider (FE16)",
+        "voiceby": "Mark P. Whitten"
+      },
+      "categories": [
+        "Fire Emblem: Fortune's Weave Characters",
+        "Fire Emblem: Three Houses Characters",
+        "Fire Emblem 0 (Cipher) Characters",
+        "Fire Emblem Heroes Characters",
+        "Fire Emblem Warriors: Three Hopes Characters",
+        "Male Characters",
+        "Nabateans",
+        "Playable Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/2/2e/3H_Seteth_Artwork.png/revision/latest?cb=20210526001321",
+      "url": "https://fireemblem.fandom.com/wiki/Seteth",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Seteth.png"
+    },
+    {
+      "title": "Ninae",
+      "wikiTitle": "Ninae",
+      "collection": "characters",
+      "facts": {
+        "alias": "Ninae of the Black Lace",
+        "gender": "Female",
+        "faction(s)": "Credna Temple",
+        "occupation(s)": "Temple VulkanChief Celestial General",
+        "game": "Fire Emblem: Fortune's Weave"
+      },
+      "categories": [
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Playable Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/c/c4/NinaeFE18Portrait.png/revision/latest?cb=20260828045158",
+      "url": "https://fireemblem.fandom.com/wiki/Ninae",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Ninae.png"
+    },
+    {
+      "title": "Sirocco",
+      "wikiTitle": "Sirocco",
+      "collection": "characters",
+      "facts": {
+        "game": "fe18",
+        "Bloodmark": "-",
+        "Abilities": "-",
+        "Item": "-",
+        "Magic": "-",
+        "Combat Arts": "-",
+        "Level": "1",
+        "HP": "26",
+        "Str": "8",
+        "Mag": "8",
+        "Dex": "8",
+        "Spd": "9",
+        "Lck": "8",
+        "Def": "6",
+        "Res": "7",
+        "Chrm": "8"
+      },
+      "categories": [
+        "Fire Emblem: Fortune's Weave Characters",
+        "Male Characters",
+        "Playable Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/9/95/SiroccoFE18Portrait.png/revision/latest?cb=20260916075701",
+      "url": "https://fireemblem.fandom.com/wiki/Sirocco",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Sirocco.png"
+    },
+    {
+      "title": "Peter",
+      "wikiTitle": "Peter",
+      "collection": "characters",
+      "facts": {
+        "game": "fe18",
+        "Bloodmark": "-",
+        "Abilities": "-",
+        "Item": "-",
+        "Magic": "-",
+        "Combat Arts": "-",
+        "Level": "1",
+        "HP": "25",
+        "Str": "9",
+        "Mag": "3",
+        "Dex": "10",
+        "Spd": "6",
+        "Lck": "5",
+        "Def": "5",
+        "Res": "4",
+        "Chrm": "4"
+      },
+      "categories": [
+        "Fire Emblem: Fortune's Weave Characters",
+        "Male Characters",
+        "Playable Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/e/ea/PeterFE18Portrait.png/revision/latest?cb=20260723160355",
+      "url": "https://fireemblem.fandom.com/wiki/Peter",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Peter.png"
+    },
+    {
+      "title": "Mikaela",
+      "wikiTitle": "Mikaela",
+      "collection": "characters",
+      "facts": {
+        "game": "fe18",
+        "Bloodmark": "-",
+        "Abilities": "Veteran's MettleRedblade's Will",
+        "Item": "-",
+        "Magic": "-",
+        "Combat Arts": "-",
+        "Level": "5",
+        "HP": "29",
+        "Str": "13",
+        "Mag": "4",
+        "Dex": "8",
+        "Spd": "7",
+        "Lck": "7",
+        "Def": "7",
+        "Res": "5",
+        "Chrm": "9"
+      },
+      "categories": [
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Playable Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/7/76/MikaelaFE18Portrait.png/revision/latest?cb=20260803005152",
+      "url": "https://fireemblem.fandom.com/wiki/Mikaela",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Mikaela.png"
+    },
+    {
+      "title": "Nuzzuo",
+      "wikiTitle": "Nuzzuo",
+      "collection": "characters",
+      "facts": {
+        "gender": "Male",
+        "race": "Human",
+        "nationality": "Har Hali",
+        "occupation(s)": "Acting Chieftain of the Har Hali Tribe",
+        "game": "Fire Emblem: Fortune's Weave",
+        "firstfought": "Fox Obelisk Chapter 6: To the Land of Cybele",
+        "voiceby": "George Peter",
+        "jpn_voiceby": "Yū Akiba"
+      },
+      "categories": [
+        "Fire Emblem: Fortune's Weave Characters",
+        "Male Characters",
+        "Playable Characters",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/0/08/NuzzuoFE18Portrait.png/revision/latest?cb=20260904171819",
+      "url": "https://fireemblem.fandom.com/wiki/Nuzzuo",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Nuzzuo.png"
+    },
+    {
+      "title": "Sinza",
+      "wikiTitle": "Sinza",
+      "collection": "characters",
+      "facts": {
+        "gender": "Male",
+        "race": "Human",
+        "relatives": "Blaiddyd (Possible Ancestor)Hedda (Possible Ancestor)Karina (Wife)Esmeralda (Daughter)",
+        "home": "Fina",
+        "occupation(s)": "Fisherman",
+        "game": "Fire Emblem: Fortune's Weave"
+      },
+      "categories": [
+        "Background Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Male Characters",
+        "Stubs"
+      ],
+      "image": null,
+      "url": "https://fireemblem.fandom.com/wiki/Sinza"
+    },
+    {
+      "title": "Mu",
+      "wikiTitle": "Mu",
+      "collection": "characters",
+      "facts": {
+        "game": "fe18",
+        "Bloodmark": "-",
+        "Abilities": "-",
+        "Item": "-",
+        "Magic": "-",
+        "Combat Arts": "-",
+        "Level": "1",
+        "HP": "23",
+        "Str": "7",
+        "Mag": "3",
+        "Dex": "8",
+        "Spd": "7",
+        "Lck": "4",
+        "Def": "5",
+        "Res": "5",
+        "Chrm": "4"
+      },
+      "categories": [
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Playable Characters",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/a/a0/MuFE18Portrait.png/revision/latest?cb=20260803004208",
+      "url": "https://fireemblem.fandom.com/wiki/Mu",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Mu.png"
+    },
+    {
+      "title": "Olympia",
+      "wikiTitle": "Olympia",
+      "collection": "characters",
+      "facts": {
+        "alias": "Rose of CaelusBlue Rose of Caelus",
+        "gender": "Female",
+        "race": "Human",
+        "birthday": "April 11",
+        "fod_birth": "Dagdan Year 1427",
+        "age": "21-22",
+        "height": "160cm (5'3\")",
+        "relatives": "Unnamed Older Sister",
+        "nationality": "Dagdan Empire",
+        "home": "Caelus",
+        "residence": "Dagsion",
+        "faction(s)": "Kalla's Temple",
+        "occupation(s)": "Kalla's Temple Priestess",
+        "game": "Fire Emblem: Fortune's Weave",
+        "class": "Priest",
+        "voiceby": "Madeline Dorroh"
+      },
+      "categories": [
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Playable Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/3/3d/OlympiaFE18Portrait.png/revision/latest?cb=20260803003903",
+      "url": "https://fireemblem.fandom.com/wiki/Olympia",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Olympia.png"
+    },
+    {
+      "title": "Nathan",
+      "wikiTitle": "Nathan",
+      "collection": "characters",
+      "facts": {
+        "alias": "Twin Jewel of AragoNathan the RedThe Catoblepas",
+        "gender": "Male",
+        "race": "Human",
+        "nationality": "Arago",
+        "occupation(s)": "Aragonian Knight",
+        "game": "Fire Emblem: Fortune's Weave",
+        "voiceby": "Matt Silver",
+        "jpn_voiceby": "Makoto Kaneko"
+      },
+      "categories": [
+        "Fire Emblem: Fortune's Weave Characters",
+        "Male Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/4/47/NathanFE18Portrait.png/revision/latest?cb=20260803041403",
+      "url": "https://fireemblem.fandom.com/wiki/Nathan",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Nathan.png"
+    },
+    {
+      "title": "Orchel",
+      "wikiTitle": "Orchel",
+      "collection": "characters",
+      "facts": {
+        "gender": "Female",
+        "race": "Nabatean Vessel",
+        "relatives": "Credna (Creator)Yu Phas (Previous Life)",
+        "residence": "Dagsion",
+        "faction(s)": "Credna's Temple",
+        "occupation(s)": "Credna's Temple Priestess",
+        "game": "Fire Emblem: Fortune's Weave"
+      },
+      "categories": [
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Nabateans",
+        "Playable Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/c/c1/Artwork_Orchel.png/revision/latest?cb=20260824135659",
+      "url": "https://fireemblem.fandom.com/wiki/Orchel",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Orchel.png"
+    },
+    {
+      "title": "Noctula",
+      "wikiTitle": "Noctula",
+      "collection": "characters",
+      "facts": {
+        "gender": "Female",
+        "race": "Human",
+        "residence": "Dagsion",
+        "game": "Fire Emblem: Fortune's Weave",
+        "voiceby": "Cassie Ewulu"
+      },
+      "categories": [
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Playable Characters",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/f/f0/NoctulaFE18Portrait.png/revision/latest?cb=20260903032439",
+      "url": "https://fireemblem.fandom.com/wiki/Noctula",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Noctula.png"
+    },
+    {
+      "title": "Nezha",
+      "wikiTitle": "Nezha",
+      "collection": "characters",
+      "facts": {
+        "gender": "Male",
+        "race": "Human",
+        "game": "Fire Emblem: Fortune's Weave",
+        "firstseen": "Lion Obelisk Chapter 3: The Grand Megalith",
+        "firstfought": "Lion Obelisk Chapter 3: The Grand Megalith",
+        "jpn_voiceby": "Shota Hayama"
+      },
+      "categories": [
+        "Fire Emblem: Fortune's Weave Characters",
+        "Male Characters",
+        "Playable Characters",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/d/db/NezhaFE18Portrait.png/revision/latest?cb=20260828143820",
+      "url": "https://fireemblem.fandom.com/wiki/Nezha",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Nezha.png"
+    },
+    {
+      "title": "Nydine",
+      "wikiTitle": "Nydine",
+      "collection": "characters",
+      "facts": {
+        "gender": "Female",
+        "race": "Human",
+        "nationality": "Saramis",
+        "residence": "Dagsion",
+        "occupation(s)": "Saraminian Soldier (Formerly)Mercenary",
+        "game": "Fire Emblem: Fortune's Weave",
+        "voiceby": "Anjali Kunapneni",
+        "jpn_voiceby": "Saeko Miura"
+      },
+      "categories": [
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Playable Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/a/ad/NydineFE18Portrait.png/revision/latest?cb=20260831171828",
+      "url": "https://fireemblem.fandom.com/wiki/Nydine",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Nydine.png"
+    },
+    {
+      "title": "Peppe",
+      "wikiTitle": "Peppe",
+      "collection": "characters",
+      "facts": {
+        "gender": "Male",
+        "race": "Human",
+        "relatives": "Petra (Descendant)",
+        "nationality": "Brigid",
+        "occupation(s)": "King of Brigid",
+        "game": "Fire Emblem: Fortune's Weave",
+        "class": "Noble",
+        "voiceby": "Phil Sterman",
+        "jpn_voiceby": "Tomoya Ito"
+      },
+      "categories": [
+        "Fire Emblem: Fortune's Weave Characters",
+        "Male Characters",
+        "Playable Characters",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/2/29/PeppeFE18Portrait.png/revision/latest?cb=20260915213942",
+      "url": "https://fireemblem.fandom.com/wiki/Peppe",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Peppe.png"
+    },
+    {
+      "title": "Mars",
+      "wikiTitle": "Mars",
+      "collection": "characters",
+      "facts": {
+        "alias": "Bringer of War",
+        "gender": "Male",
+        "race": "Child of the Goddess (Flame Dragon)",
+        "relatives": "Sothis (Grandmother)Dagda (Father)Seiros (Aunt)Solel (Older Brother)Kalla (Sister)Breza (Son)Aurora (Niece)Cai (Grand-Nephew)",
+        "residence": "Mars's Temple",
+        "faction(s)": "Dagdan Pantheon",
+        "occupation(s)": "Dagdan God of War",
+        "game": "Fire Emblem: Fortune's Weave",
+        "firstfought": "Lion Obelisk Chapter 5: The Essence of a WarriorLion Obelisk Chapter 12: Mars, Bringer of War (True)",
+        "voiceby": "Joshua David King",
+        "jpn_voiceby": "Ryoma Masuda"
+      },
+      "categories": [
+        "Deities",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Male Characters",
+        "Nabateans"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/1/10/MarsFE18Portrait.png/revision/latest?cb=20260820042824",
+      "url": "https://fireemblem.fandom.com/wiki/Mars",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Mars.png"
+    },
+    {
+      "title": "Sergio",
+      "wikiTitle": "Sergio",
+      "collection": "characters",
+      "facts": {
+        "gender": "Male",
+        "race": "Human",
+        "relatives": "Theodora (Daughter)Dyan (Son)",
+        "nationality": "Saramis",
+        "occupation(s)": "King of Saramis",
+        "game": "Fire Emblem: Fortune's Weave"
+      },
+      "categories": [
+        "Background Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Male Characters",
+        "Stubs"
+      ],
+      "image": null,
+      "url": "https://fireemblem.fandom.com/wiki/Sergio"
+    },
+    {
+      "title": "Sha Lan",
+      "wikiTitle": "Sha Lan",
+      "collection": "characters",
+      "facts": {
+        "gender": "Female",
+        "race": "Human",
+        "birthday": "January 20",
+        "age": "20",
+        "height": "180cm (5'11\")",
+        "relatives": "Rui Ji (Sister)",
+        "nationality": "Kunlun",
+        "game": "Fire Emblem: Fortune's Weave",
+        "voiceby": "Courtney Lin"
+      },
+      "categories": [
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Playable Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/6/63/ShaLanFE18Portrait.png/revision/latest?cb=20260826134147",
+      "url": "https://fireemblem.fandom.com/wiki/Sha_Lan",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Sha-Lan.png"
+    },
+    {
+      "title": "Simon",
+      "wikiTitle": "Simon (Fortune's Weave)",
+      "collection": "characters",
+      "facts": {
+        "alias": "Sky-Drum Simon",
+        "gender": "Male",
+        "race": "Human",
+        "faction(s)": "Vandahl Trading Company",
+        "occupation(s)": "MercenaryEmployee of Vandahl Trading",
+        "game": "Fire Emblem: Fortune's Weave",
+        "voiceby": "David Cherry",
+        "jpn_voiceby": "Chikahiro Kobayashi"
+      },
+      "categories": [
+        "Fire Emblem: Fortune's Weave Characters",
+        "Male Characters",
+        "Playable Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/0/06/SimonFE18Portrait.png/revision/latest?cb=20260827181201",
+      "url": "https://fireemblem.fandom.com/wiki/Simon_(Fortune's_Weave)",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Simon-Fortune-s-Weave-.png"
+    },
+    {
+      "title": "Raksha",
+      "wikiTitle": "Raksha",
+      "collection": "characters",
+      "facts": {
+        "fullname": "Lyrah",
+        "alias": "Magistra RakshaLyrah the Beckoner",
+        "gender": "Female",
+        "race": "Child of the Goddess (Thorn Dragon)",
+        "age": "1000+",
+        "relatives": "Balor (Father) Yu Phas (Younger Sister)Solel (Brother in law)Mahna (Younger Sister)Eishet (Youngest Sister)Aurora (Niece)Cai (Great Nephew)",
+        "nationality": "Nabatea",
+        "home": "Zanado",
+        "game": "Fire Emblem: Fortune's Weave",
+        "firstseen": "Fox Obelisk Chapter 1: Uproar in Ribeira",
+        "voiceby": "Heather Gonzalez",
+        "jpn_voiceby": "Aiko Ōkubo"
+      },
+      "categories": [
+        "Enemies",
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Major Antagonists",
+        "Nabateans",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/7/7b/RakshaFE18Portrait.png/revision/latest?cb=20260914120630",
+      "url": "https://fireemblem.fandom.com/wiki/Raksha",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Raksha.png"
+    },
+    {
+      "title": "Sothis",
+      "wikiTitle": "Sothis",
+      "collection": "characters",
+      "facts": {
+        "weapon 1": "Fire Breath * - * - * -",
+        "weapon 2": "Fire Breath+ * - * - * -",
+        "weapon 3": "Flametongue * - * - * -",
+        "weapon 4": "Sublime Surge * - * 5 * -",
+        "special 1": "Daylight * - * 4 * 3",
+        "special 2": "Noontime * Daylight * - * 4",
+        "special 3": "Sirius * - * 5 * -",
+        "special 4": "Sirius+ * - * 5 * -",
+        "passive A 1": "Atk/Spd Solo 1 * - * - * -",
+        "passive A 2": "Atk/Spd Solo 2 * Atk/Spd Solo 1 * - * -",
+        "passive A 3": "Atk/Spd Solo 3 * Atk/Spd Solo 2 * - * 5",
+        "passive B 1": "Wrath 1 * - * - * -",
+        "passive B 2": "Wrath 2 * Wrath 1 * - * -",
+        "passive B 3": "Wrath 3 * Wrath 2 * - * 5",
+        "passive C 1": "Time's Pulse 1 * - * - * -",
+        "passive C 2": "Time's Pulse 2 * Time's Pulse 1 * - * -",
+        "passive C 3": "Time's Pulse 3 * Time's Pulse 2 * - * 5",
+        "passive C 4": "Null C-Disrupt 1 * - * - * -",
+        "passive C 5": "Null C-Disrupt 2 * Null C-Disrupt 1 * - * -",
+        "passive C 6": "Null C-Disrupt 3 * Null C-Disrupt 2 * - * 5"
+      },
+      "categories": [
+        "Allies",
+        "Bonus Characters",
+        "Deities",
+        "Enemies",
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Fire Emblem: Three Houses Characters",
+        "Fire Emblem 0 (Cipher) Characters",
+        "Fire Emblem Heroes Characters",
+        "Fire Emblem Warriors: Three Hopes Characters",
+        "Major Antagonists",
+        "Mythic Heroes",
+        "Nabateans",
+        "Playable Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/a/ab/Artwork_Sothis.png/revision/latest?cb=20201220090938",
+      "url": "https://fireemblem.fandom.com/wiki/Sothis",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Sothis.png"
+    },
+    {
+      "title": "Theodora",
+      "wikiTitle": "Theodora (Fortune's Weave)",
+      "collection": "characters",
+      "facts": {
+        "weapon 1": "Iron Lance * - * - * -",
+        "weapon 2": "Steel Lance * - * - * -",
+        "weapon 3": "Silver Lance * - * - * -",
+        "weapon 4": "Mahadu's Spear * - * 5 * -",
+        "special 1": "Glowing Ember * - * - * -",
+        "special 2": "Ignis * Glowing Ember * - * -",
+        "special 3": "Royal Resolve * Ignis * - * 5",
+        "passive A 1": "Rise Above 1 * - * - * -",
+        "passive A 2": "Rise Above 2 * Rise Above 1 * - * -",
+        "passive A 3": "Rise Above 3 * Rise Above 2 * - * -",
+        "passive A 4": "Rise Above 4 * Rise Above 3 * - * 5",
+        "passive B 1": "Guard 1 * - * - * -",
+        "passive B 2": "Guard 2 * Guard 1 * - * -",
+        "passive B 3": "Guard 3 * Guard 2 * - * -",
+        "passive B 4": "Vivace * Guard 3 * - * 5",
+        "passive C 1": "Atk Def Oath 1 * - * - * -",
+        "passive C 2": "Atk Def Oath 2 * Atk Def Oath 1 * - * -",
+        "passive C 3": "Atk Def Oath 3 * Atk Def Oath 2 * - * -",
+        "passive C 4": "A/D Tenet Hone * Atk Def Oath 3 * - * 5",
+        "passive X 1": "Go No Sen Echo * - * - * -"
+      },
+      "categories": [
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Fire Emblem Heroes Characters",
+        "Main Characters",
+        "Playable Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/7/7e/Artwork_Theodora.png/revision/latest?cb=20260805215725",
+      "url": "https://fireemblem.fandom.com/wiki/Theodora_(Fortune's_Weave)",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Theodora-Fortune-s-Weave-.png"
+    },
+    {
+      "title": "Ursula",
+      "wikiTitle": "Ursula (Fortune's Weave)",
+      "collection": "characters",
+      "facts": {
+        "gender": "Female",
+        "race": "Human",
+        "age": "79",
+        "occupation(s)": "Manager of the Vandahl Trading Company",
+        "game": "Fire Emblem: Fortune's Weave",
+        "voiceby": "Amelia Tyler"
+      },
+      "categories": [
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Playable Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/7/73/UrsulaFE18Portrait.png/revision/latest?cb=20260825181130",
+      "url": "https://fireemblem.fandom.com/wiki/Ursula_(Fortune's_Weave)",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Ursula-Fortune-s-Weave-.png"
+    },
+    {
+      "title": "Ultand",
+      "wikiTitle": "Ultand",
+      "collection": "characters",
+      "facts": {
+        "fullname": "Ultand Serowain",
+        "gender": "Female",
+        "race": "Human",
+        "birthday": "April 28",
+        "fod_birth": "Dagdan Year 1426",
+        "age": "23",
+        "height": "170cm (5'7\")",
+        "relatives": "Serowain (Parent)",
+        "nationality": "Dagdan Empire",
+        "home": "Callisto",
+        "residence": "Dagsion",
+        "faction(s)": "Aurora's Temple",
+        "occupation(s)": "Aurora's Temple Priestess",
+        "game": "Fire Emblem: Fortune's Weave",
+        "firstseen": "Fox Obelisk Chapter 3: Partings and Hopes",
+        "firstjoined": "Fox Obelisk Chapter 6: To the Land of Cybele",
+        "voiceby": "Rachel Rial"
+      },
+      "categories": [
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Playable Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/9/9f/UltandFE18Portrait.png/revision/latest?cb=20260803005307",
+      "url": "https://fireemblem.fandom.com/wiki/Ultand",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Ultand.png"
+    },
+    {
+      "title": "Tialla",
+      "wikiTitle": "Tialla",
+      "collection": "characters",
+      "facts": {
+        "game": "fe18",
+        "Bloodmark": "-",
+        "Abilities": "-",
+        "Item": "-",
+        "Magic": "HealWind",
+        "Combat Arts": "-",
+        "Level": "1",
+        "HP": "24",
+        "Str": "5",
+        "Mag": "8",
+        "Dex": "6",
+        "Spd": "6",
+        "Lck": "7",
+        "Def": "4",
+        "Res": "6",
+        "Chrm": "5"
+      },
+      "categories": [
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Playable Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/c/c7/TiallaFE18Portrait.png/revision/latest?cb=20260720174030",
+      "url": "https://fireemblem.fandom.com/wiki/Tialla",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Tialla.png"
+    },
+    {
+      "title": "Tobias",
+      "wikiTitle": "Tobias",
+      "collection": "characters",
+      "facts": {
+        "game": "fe18",
+        "Bloodmark": "-",
+        "Abilities": "-",
+        "Item": "-",
+        "Magic": "-",
+        "Combat Arts": "-",
+        "Level": "1",
+        "HP": "28",
+        "Str": "14",
+        "Mag": "4",
+        "Dex": "5",
+        "Spd": "5",
+        "Lck": "6",
+        "Def": "8",
+        "Res": "3",
+        "Chrm": "5"
+      },
+      "categories": [
+        "Fire Emblem: Fortune's Weave Characters",
+        "Male Characters",
+        "Playable Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/0/0b/TobiasFE18Portrait.png/revision/latest?cb=20260725180146",
+      "url": "https://fireemblem.fandom.com/wiki/Tobias",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Tobias.png"
+    },
+    {
+      "title": "Solel",
+      "wikiTitle": "Solel",
+      "collection": "characters",
+      "facts": {
+        "alias": "Divine SovereignThe Sunbearer",
+        "gender": "Male",
+        "race": "Child of the Goddess",
+        "relatives": "Sothis (Grandmother)Dagda (Father)Seiros (Aunt)Mars (Younger Brother)Kalla (Younger Sister)Smyrnos (Brother)Credna (Brother)Yu Phas (Wife)Aurora (Daughter)Cai (Grandson)Castor (Son-in-law)",
+        "home": "Dagsion",
+        "occupation(s)": "Ruler of the Dagdan Empire",
+        "game": "Fire Emblem: Fortune's Weave",
+        "jpn_voiceby": "Kazutaka Ishii"
+      },
+      "categories": [
+        "Deities",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Male Characters",
+        "Nabateans",
+        "Playable Characters",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/6/68/Artwork_Solel.png/revision/latest?cb=20260818082845",
+      "url": "https://fireemblem.fandom.com/wiki/Solel"
+    },
+    {
+      "title": "Talimun",
+      "wikiTitle": "Talimun",
+      "collection": "characters",
+      "facts": {
+        "fullname": "Talimun Vandahl",
+        "alias": "The Swashbuckling King",
+        "gender": "Male",
+        "race": "Human",
+        "relatives": "Vandahl (father)",
+        "faction(s)": "Vandahl Merchant Company",
+        "occupation(s)": "Leader of the Vandahl Merchants",
+        "game": "Fire Emblem: Fortune's Weave",
+        "voiceby": "Mauricio Ortiz-Segura"
+      },
+      "categories": [
+        "Fire Emblem: Fortune's Weave Characters",
+        "Male Characters",
+        "Playable Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/7/79/Artwork_Talimun.png/revision/latest?cb=20260824172017",
+      "url": "https://fireemblem.fandom.com/wiki/Talimun",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Talimun.png"
+    },
+    {
+      "title": "Yang Jie",
+      "wikiTitle": "Yang Jie",
+      "collection": "characters",
+      "facts": {
+        "game": "fe18",
+        "Bloodmark": "-",
+        "Abilities": "Monkly Affairs",
+        "Item": "Wooden Axe",
+        "Magic": "Wind",
+        "Combat Arts": "-",
+        "Level": "5",
+        "HP": "?",
+        "Str": "?",
+        "Mag": "?",
+        "Dex": "?",
+        "Spd": "?",
+        "Lck": "?",
+        "Def": "?",
+        "Res": "?",
+        "Chrm": "?"
+      },
+      "categories": [
+        "Fire Emblem: Fortune's Weave Characters",
+        "Male Characters",
+        "Playable Characters",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/0/03/YangJieFE18Portrait.png/revision/latest?cb=20260903141958",
+      "url": "https://fireemblem.fandom.com/wiki/Yang_Jie",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Yang-Jie.png"
+    },
+    {
+      "title": "Sofia",
+      "wikiTitle": "Sofia",
+      "collection": "characters",
+      "facts": {
+        "gender": "Female",
+        "race": "Human",
+        "relatives": "Unnamed father",
+        "occupation(s)": "Solel's Temple Priestess",
+        "game": "Fire Emblem: Fortune's Weave",
+        "class": "Commoner",
+        "voiceby": "Frankie Kevich",
+        "jpn_voiceby": "Arisa Kiyoto"
+      },
+      "categories": [
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Playable Characters",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/a/a5/SofiaFE18Portrait.png/revision/latest?cb=20260904054646",
+      "url": "https://fireemblem.fandom.com/wiki/Sofia",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Sofia.png"
+    },
+    {
+      "title": "Smyrnos",
+      "wikiTitle": "Smyrnos",
+      "collection": "characters",
+      "facts": {
+        "gender": "Male",
+        "race": "Child of the Goddess (Wind Dragon)",
+        "relatives": "Sothis (Grandmother)Dagda (Father)Seiros (Aunt)Solel (Brother)Kalla (Sister)Credna (Younger Half-Brother)",
+        "faction(s)": "Dagdan Pantheon",
+        "occupation(s)": "Dagdan God",
+        "game": "Fire Emblem: Fortune's Weave",
+        "voiceby": "A.J. Beckles"
+      },
+      "categories": [
+        "Deities",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Male Characters",
+        "Nabateans"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/2/2b/SmyrnosFE18Portrait.png/revision/latest?cb=20260813170649",
+      "url": "https://fireemblem.fandom.com/wiki/Smyrnos",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Smyrnos.png"
+    },
+    {
+      "title": "Yu Phas",
+      "wikiTitle": "Yu Phas",
+      "collection": "characters",
+      "facts": {
+        "alias": "Keeper of Death and Night",
+        "gender": "Female",
+        "race": "Child of the Goddess",
+        "relatives": "Balor (Father)Dagda (Father in Law)Solel (Husband)Lyrah (Older Sister)Mahna (Younger Sister)Eishet (Youngest Sister)Aurora (Daughter)Cai (Grandson)Orchel (Reincarnation)",
+        "game": "Fire Emblem: Fortune's Weave"
+      },
+      "categories": [
+        "Background Characters",
+        "Deities",
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Nabateans"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/f/f7/Yu_Phas_Tapestry.png/revision/latest?cb=20260805091115",
+      "url": "https://fireemblem.fandom.com/wiki/Yu_Phas",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Yu-Phas.png"
+    },
+    {
+      "title": "Troy",
+      "wikiTitle": "Troy",
+      "collection": "characters",
+      "facts": {
+        "game": "fe18",
+        "Bloodmark": "-",
+        "Item": "ZerberusSilver Gauntlets",
+        "Magic": "-",
+        "Combat Arts": "Compressed LaserMighty Fist",
+        "Level": "45",
+        "HP": "57",
+        "Str": "-",
+        "Mag": "-",
+        "Dex": "-",
+        "Spd": "-",
+        "Lck": "-",
+        "Def": "-",
+        "Res": "-",
+        "Chrm": "-"
+      },
+      "categories": [
+        "Female Characters",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Playable Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/7/75/TroyFE18Portrait.png/revision/latest?cb=20260812033730",
+      "url": "https://fireemblem.fandom.com/wiki/Troy",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Troy.png"
+    },
+    {
+      "title": "Zarcone",
+      "wikiTitle": "Zarcone",
+      "collection": "characters",
+      "facts": {
+        "gender": "Male",
+        "race": "Human",
+        "birthday": "March 29",
+        "fod_birth": "Dagdan Year 1420",
+        "age": "29",
+        "height": "175 cm",
+        "game": "Fire Emblem: Fortune's Weave",
+        "voiceby": "Jonathan Fernandez",
+        "jpn_voiceby": "Akihiro Mine"
+      },
+      "categories": [
+        "Fire Emblem: Fortune's Weave Characters",
+        "Male Characters",
+        "Playable Characters",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/1/1d/ZarconeFE18Portrait.png/revision/latest?cb=20260908162837",
+      "url": "https://fireemblem.fandom.com/wiki/Zarcone",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Zarcone.png"
+    },
+    {
+      "title": "Zenon",
+      "wikiTitle": "Zenon",
+      "collection": "characters",
+      "facts": {
+        "gender": "Male",
+        "age": "1000+",
+        "residence": "Nuwa",
+        "occupation(s)": "Captain of the Nuwa",
+        "game": "Fire Emblem: Fortune's Weave",
+        "firstseen": "Prologue: The White Bird",
+        "firstfought": "Lion Obelisk Chapter 9: The Legend of the White Egg"
+      },
+      "categories": [
+        "Allies",
+        "Fire Emblem: Fortune's Weave Characters",
+        "Male Characters"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/c/c1/ZenonFE18Portrait.png/revision/latest?cb=20260918043033",
+      "url": "https://fireemblem.fandom.com/wiki/Zenon",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Zenon.png"
+    },
+    {
+      "title": "Yanjin",
+      "wikiTitle": "Yanjin",
+      "collection": "characters",
+      "facts": {
+        "gender": "Male",
+        "race": "Human",
+        "nationality": "Agartha",
+        "residence": "Dagsion",
+        "game": "Fire Emblem: Fortune's Weave",
+        "firstseen": "Lion Obelisk Chapter 4: Brute Force"
+      },
+      "categories": [
+        "Fire Emblem: Fortune's Weave Characters",
+        "Male Characters",
+        "Pages using duplicate arguments in template calls",
+        "Stubs"
+      ],
+      "image": "https://static.wikia.nocookie.net/fireemblem/images/7/7f/YanjinFE18Portrait.png/revision/latest?cb=20260917062947",
+      "url": "https://fireemblem.fandom.com/wiki/Yanjin",
+      "imageFile": "assets/_wiki/fire-emblem-fortunes-weave/Yanjin.png"
+    },
+    {
+      "title": "A Stranger Comes to Dagda",
+      "wikiTitle": "A Stranger Comes to Dagda",
+      "collection": "quests",
+      "facts": {
+        "game": "Fire Emblem: Fortune's Weave",
+        "objective": "Rout the Enemy",
+        "number of allowed units": "Dietrich & Fabio",
+        "units gained": "DietrichFabio",
+        "pre": "The Ruined Land",
+        "next": "Sacrifice and Strife"
+      },
+      "categories": [
+        "Fortune's Weave Chapters"
+      ],
+      "image": null,
+      "url": "https://fireemblem.fandom.com/wiki/A_Stranger_Comes_to_Dagda"
+    },
+    {
+      "title": "Sacrifice and Strife",
+      "wikiTitle": "Sacrifice and Strife",
+      "collection": "quests",
+      "facts": {
+        "game": "Fire Emblem: Fortune's Weave",
+        "objective": "Rout the Enemy",
+        "number of allowed units": "Dietrich, Fabio, Esmeralda",
+        "units gained": "Esmeralda",
+        "boss name": "Redears",
+        "pre": "A Stranger Comes to Dagda",
+        "next": "The Grand Megalith"
+      },
+      "categories": [
+        "Fortune's Weave Chapters"
+      ],
+      "image": null,
+      "url": "https://fireemblem.fandom.com/wiki/Sacrifice_and_Strife"
+    },
+    {
+      "title": "The Grand Megalith",
+      "wikiTitle": "The Grand Megalith",
+      "collection": "quests",
+      "facts": {
+        "game": "Fire Emblem: Fortune's Weave",
+        "objective": "Rout the EnemyDefeat the Boss",
+        "number of allowed units": "Dietrich, Fabio, Esmeralda",
+        "boss name": "Anatolia",
+        "pre": "Sacrifice and Strife",
+        "next": "Brute Force"
+      },
+      "categories": [
+        "Fortune's Weave Chapters"
+      ],
+      "image": null,
+      "url": "https://fireemblem.fandom.com/wiki/The_Grand_Megalith"
+    },
+    {
+      "title": "Mars, Bringer of War",
+      "wikiTitle": "Mars, Bringer of War",
+      "collection": "quests",
+      "facts": {
+        "game": "Fire Emblem: Fortune's Weave",
+        "objective": "Defeat the Boss",
+        "number of allowed units": "Dietrich + 8",
+        "boss name": "Mars",
+        "pre": "Twisted Love",
+        "next": "The Battle of Klytius Plains (Part II)"
+      },
+      "categories": [
+        "Fortune's Weave Chapters"
+      ],
+      "image": null,
+      "url": "https://fireemblem.fandom.com/wiki/Mars%2C_Bringer_of_War"
+    },
+    {
+      "title": "The Mediator of Nuwa",
+      "wikiTitle": "The Mediator of Nuwa",
+      "collection": "quests",
+      "facts": {
+        "game": "Fire Emblem: Fortune's Weave",
+        "objective": "Defeat the Boss",
+        "number of allowed units": "6",
+        "boss name": "Anatolia",
+        "pre": "The Legend of the White Egg",
+        "next": "Twisted Love"
+      },
+      "categories": [
+        "Fortune's Weave Chapters"
+      ],
+      "image": null,
+      "url": "https://fireemblem.fandom.com/wiki/The_Mediator_of_Nuwa"
+    },
+    {
+      "title": "The Legend of the White Egg",
+      "wikiTitle": "The Legend of the White Egg",
+      "collection": "quests",
+      "facts": {
+        "game": "Fire Emblem: Fortune's Weave",
+        "objective": "Defeat the Boss",
+        "number of allowed units": "Dietrich + 6",
+        "boss name": "Zenon",
+        "pre": "Cetus, the Sea Tyrant",
+        "next": "The Mediator of Nuwa"
+      },
+      "categories": [
+        "Fortune's Weave Chapters"
+      ],
+      "image": null,
+      "url": "https://fireemblem.fandom.com/wiki/The_Legend_of_the_White_Egg"
+    },
+    {
+      "title": "Gazing at the Rose Moon",
+      "wikiTitle": "Gazing at the Rose Moon",
+      "collection": "quests",
+      "facts": {
+        "game": "Fire Emblem: Fortune's Weave",
+        "objective": "Defeat the Bosses",
+        "number of allowed units": "Dietrich, Orchel, Diego, Talimun, Ursula + 5",
+        "boss name": "Nathan & Creek",
+        "pre": "Instinct and Reason",
+        "next": "Cetus, the Sea Tyrant"
+      },
+      "categories": [
+        "Fortune's Weave Chapters"
+      ],
+      "image": null,
+      "url": "https://fireemblem.fandom.com/wiki/Gazing_at_the_Rose_Moon"
+    },
+    {
+      "title": "Cetus, the Sea Tyrant",
+      "wikiTitle": "Cetus, the Sea Tyrant",
+      "collection": "quests",
+      "facts": {
+        "game": "Fire Emblem: Fortune's Weave",
+        "objective": "Defeat the Boss",
+        "number of allowed units": "Dietrich + 6",
+        "boss name": "Cetus",
+        "pre": "Gazing at the Rose Moon",
+        "next": "The Legend of the White Egg"
+      },
+      "categories": [
+        "Fortune's Weave Chapters"
+      ],
+      "image": null,
+      "url": "https://fireemblem.fandom.com/wiki/Cetus%2C_the_Sea_Tyrant"
+    },
+    {
+      "title": "Instinct and Reason",
+      "wikiTitle": "Instinct and Reason",
+      "collection": "quests",
+      "facts": {
+        "game": "Fire Emblem: Fortune's Weave",
+        "objective": "Defeat the Boss",
+        "number of allowed units": "Dietrich, Theodora, Bonaventure, Leda, Buccar + 5",
+        "boss name": "Alexandra",
+        "pre": "The Essence of a Warrior",
+        "next": "Gazing at the Rose Moon"
+      },
+      "categories": [
+        "Fortune's Weave Chapters"
+      ],
+      "image": null,
+      "url": "https://fireemblem.fandom.com/wiki/Instinct_and_Reason"
+    },
+    {
+      "title": "The Essence of a Warrior",
+      "wikiTitle": "The Essence of a Warrior",
+      "collection": "quests",
+      "facts": {
+        "game": "Fire Emblem: Fortune's Weave",
+        "objective": "Use all of the leversDefeat the Boss",
+        "number of allowed units": "Dietrich + 4",
+        "boss name": "Hannibal",
+        "pre": "Brute Force",
+        "next": "Instinct and Reason"
+      },
+      "categories": [
+        "Fortune's Weave Chapters"
+      ],
+      "image": null,
+      "url": "https://fireemblem.fandom.com/wiki/The_Essence_of_a_Warrior"
+    },
+    {
+      "title": "Brute Force",
+      "wikiTitle": "Brute Force (Chapter)",
+      "collection": "quests",
+      "facts": {
+        "game": "Fire Emblem: Fortune's Weave",
+        "objective": "Defeat the Boss",
+        "number of allowed units": "Dietrich, Cai, Tialla, Anatolia, Sha Lan + 4",
+        "units gained": "Yang Jie (recruitment tutorial)",
+        "boss name": "Benditz",
+        "pre": "The Grand Megalith",
+        "next": "The Essence of a Warrior"
+      },
+      "categories": [
+        "Fortune's Weave Chapters"
+      ],
+      "image": null,
+      "url": "https://fireemblem.fandom.com/wiki/Brute_Force_(Chapter)"
+    },
+    {
+      "title": "Festival of the Strong",
+      "wikiTitle": "Festival of the Strong",
+      "collection": "quests",
+      "facts": {
+        "game": "Fire Emblem: Fortune's Weave",
+        "objective": "Defeat the Boss",
+        "number of allowed units": "Cai, Theodora, Orchel, Bonaventure, Diego + 2",
+        "boss name": "Zarcone",
+        "pre": "Partings and Hopes",
+        "next": "Cai's Battle"
+      },
+      "categories": [
+        "Fortune's Weave Chapters"
+      ],
+      "image": null,
+      "url": "https://fireemblem.fandom.com/wiki/Festival_of_the_Strong"
+    },
+    {
+      "title": "Partings and Hopes",
+      "wikiTitle": "Partings and Hopes",
+      "collection": "quests",
+      "facts": {
+        "game": "Fire Emblem: Fortune's Weave",
+        "objective": "Defeat the Boss",
+        "number of allowed units": "Cai, Ultand + 3",
+        "units gained": "Guzran",
+        "boss name": "Goliath",
+        "pre": "Road to the Capital",
+        "next": "Festival of the Strong"
+      },
+      "categories": [
+        "Fortune's Weave Chapters"
+      ],
+      "image": null,
+      "url": "https://fireemblem.fandom.com/wiki/Partings_and_Hopes"
+    },
+    {
+      "title": "Opposed Agendas",
+      "wikiTitle": "Opposed Agendas",
+      "collection": "quests",
+      "facts": {
+        "game": "Fire Emblem: Fortune's Weave",
+        "objective": "Defeat the Boss",
+        "number of allowed units": "Cai, Leda, Talimun, Buccar, Ursula + 6",
+        "boss name": "Inyoni",
+        "pre": "To the Land of Cybele",
+        "next": "Unyielding Feelings"
+      },
+      "categories": [
+        "Fortune's Weave Chapters"
+      ],
+      "image": null,
+      "url": "https://fireemblem.fandom.com/wiki/Opposed_Agendas"
+    },
+    {
+      "title": "Cai's Battle",
+      "wikiTitle": "Cai's Battle",
+      "collection": "quests",
+      "facts": {
+        "game": "Fire Emblem: Fortune's Weave",
+        "objective": "Defeat the Boss",
+        "number of allowed units": "Cai, Dietrich, Anatolia, Fabio, Sha Lan + 4",
+        "boss name": "Benditz",
+        "pre": "Festival of the Strong",
+        "next": "To the Land of Cybele"
+      },
+      "categories": [
+        "Fortune's Weave Chapters"
+      ],
+      "image": null,
+      "url": "https://fireemblem.fandom.com/wiki/Cai's_Battle"
+    },
+    {
+      "title": "The Battle of Klytius Plains",
+      "wikiTitle": "The Battle of Klytius Plains",
+      "collection": "quests",
+      "facts": {
+        "game": "Fire Emblem: Fortune's Weave",
+        "pre": "Just One Wish (Fox Obelisk)Mars, Bringer of War (Lion Obelisk)The War of Zanbar (Wolf Obelisk)Revenge's End (Eagle Obelisk)",
+        "next": "True Strength"
+      },
+      "categories": [
+        "Fortune's Weave Chapters"
+      ],
+      "image": null,
+      "url": "https://fireemblem.fandom.com/wiki/The_Battle_of_Klytius_Plains"
+    },
+    {
+      "title": "Revenge's End",
+      "wikiTitle": "Revenge's End",
+      "collection": "quests",
+      "facts": {
+        "game": "Fire Emblem: Fortune's Weave",
+        "objective": "Defeat the Boss",
+        "number of allowed units": "Leda + 9",
+        "boss name": "Bertrand",
+        "pre": "Banquet of the Risen Dead",
+        "next": "The Battle of Klytius Plains (Part II)"
+      },
+      "categories": [
+        "Fortune's Weave Chapters"
+      ],
+      "image": null,
+      "url": "https://fireemblem.fandom.com/wiki/Revenge's_End"
+    },
+    {
+      "title": "Just One Wish",
+      "wikiTitle": "Just One Wish",
+      "collection": "quests",
+      "facts": {
+        "game": "Fire Emblem: Fortune's Weave",
+        "objective": "Defeat the Bosses",
+        "number of allowed units": "Cai + 8",
+        "boss name": "BertrandCastor",
+        "pre": "Dagda's Cauldron",
+        "next": "The Battle of Klytius Plains (Part II)"
+      },
+      "categories": [
+        "Fortune's Weave Chapters"
+      ],
+      "image": null,
+      "url": "https://fireemblem.fandom.com/wiki/Just_One_Wish"
+    },
+    {
+      "title": "Road to the Capital",
+      "wikiTitle": "Road to the Capital",
+      "collection": "quests",
+      "facts": {
+        "game": "Fire Emblem: Fortune's Weave",
+        "objective": "DefendRout the Enemy",
+        "number of allowed units": "Cai, Tialla, Peter, Castor",
+        "boss name": "Nero",
+        "pre": "Uproar in Ribeira",
+        "next": "Partings and Hopes"
+      },
+      "categories": [
+        "Fortune's Weave Chapters"
+      ],
+      "image": null,
+      "url": "https://fireemblem.fandom.com/wiki/Road_to_the_Capital"
+    },
+    {
+      "title": "The White Bird",
+      "wikiTitle": "The White Bird",
+      "collection": "quests",
+      "facts": {
+        "game": "Fire Emblem: Fortune's Weave",
+        "objective": "Rout the Enemy",
+        "number of allowed units": "2",
+        "units gained": "EshmelHong Hua",
+        "next": "The Ruined Land"
+      },
+      "categories": [
+        "Fortune's Weave Chapters"
+      ],
+      "image": null,
+      "url": "https://fireemblem.fandom.com/wiki/The_White_Bird"
+    },
+    {
+      "title": "The Ruined Land",
+      "wikiTitle": "The Ruined Land",
+      "collection": "quests",
+      "facts": {
+        "game": "Fire Emblem: Fortune's Weave",
+        "objective": "Defeat the Boss",
+        "number of allowed units": "3",
+        "units gained": "Troy",
+        "boss name": "Lind",
+        "pre": "The White Bird",
+        "next": "Uproar in Ribeira (Fox Obelisk)A Stranger Comes to Dagda (Lion Obelisk)Theodora, the Iron Bastion (Wolf Obelisk)The Vengeful Dancer (Eagle Obelisk)The Liberation of Dagsion (Part III)"
+      },
+      "categories": [
+        "Fortune's Weave Chapters"
+      ],
+      "image": null,
+      "url": "https://fireemblem.fandom.com/wiki/The_Ruined_Land"
+    },
+    {
+      "title": "Twisted Love",
+      "wikiTitle": "Twisted Love",
+      "collection": "quests",
+      "facts": {
+        "game": "Fire Emblem: Fortune's Weave",
+        "objective": "Defeat the Boss",
+        "number of allowed units": "Dietrich + 7",
+        "boss name": "Bertrand",
+        "pre": "The Mediator of Nuwa",
+        "next": "Mars, Bringer of War"
+      },
+      "categories": [
+        "Fortune's Weave Chapters"
+      ],
+      "image": null,
+      "url": "https://fireemblem.fandom.com/wiki/Twisted_Love"
+    },
+    {
+      "title": "Uproar in Ribeira",
+      "wikiTitle": "Uproar in Ribeira",
+      "collection": "quests",
+      "facts": {
+        "game": "Fire Emblem: Fortune's Weave",
+        "objective": "Seize the Red Jewel then Defeat the Boss",
+        "number of allowed units": "Cai, Tialla, & Peter",
+        "units gained": "CaiTiallaPeter",
+        "boss name": "Nero",
+        "pre": "The Ruined Land",
+        "next": "Road to the Capital"
+      },
+      "categories": [
+        "Fortune's Weave Chapters"
+      ],
+      "image": null,
+      "url": "https://fireemblem.fandom.com/wiki/Uproar_in_Ribeira"
+    },
+    {
+      "title": "To the Land of Cybele",
+      "wikiTitle": "To the Land of Cybele",
+      "collection": "quests",
+      "facts": {
+        "game": "Fire Emblem: Fortune's Weave",
+        "objective": "Defeat the Boss",
+        "number of allowed units": "Cai, Centurio + 4",
+        "boss name": "Nuzzuo",
+        "pre": "Cai's Battle",
+        "next": "Opposed Agendas"
+      },
+      "categories": [
+        "Fortune's Weave Chapters"
+      ],
+      "image": null,
+      "url": "https://fireemblem.fandom.com/wiki/To_the_Land_of_Cybele"
+    },
+    {
+      "title": "Unyielding Feelings",
+      "wikiTitle": "Unyielding Feelings",
+      "collection": "quests",
+      "facts": {
+        "game": "Fire Emblem: Fortune's Weave",
+        "objective": "Defeat the Boss",
+        "number of allowed units": "Cai + 5",
+        "boss name": "Leda",
+        "pre": "Opposed Agendas",
+        "next": "Mystery at Aurora's Temple"
+      },
+      "categories": [
+        "Fortune's Weave Chapters"
+      ],
+      "image": null,
+      "url": "https://fireemblem.fandom.com/wiki/Unyielding_Feelings"
+    },
+    {
+      "title": "Theodora, the Iron Bastion",
+      "wikiTitle": "Theodora, the Iron Bastion",
+      "collection": "quests",
+      "facts": {
+        "game": "Fire Emblem: Fortune's Weave",
+        "objective": "Rout the Enemy",
+        "number of allowed units": "Theodora, Bonaventure, Tobias",
+        "units gained": "TheodoraBonaventureTobias",
+        "pre": "The Ruined Land",
+        "next": "Dyan's Uprising"
+      },
+      "categories": [
+        "Fortune's Weave Chapters"
+      ],
+      "image": null,
+      "url": "https://fireemblem.fandom.com/wiki/Theodora%2C_the_Iron_Bastion"
+    },
+    {
+      "title": "The Vengeful Dancer",
+      "wikiTitle": "The Vengeful Dancer",
+      "collection": "quests",
+      "facts": {
+        "game": "Fire Emblem: Fortune's Weave",
+        "objective": "Rout the Enemy",
+        "number of allowed units": "Leda, Buccar, Sirocco, & Mu",
+        "units gained": "Leda, Buccar, Sirocco, Mu",
+        "boss name": "Bjor",
+        "pre": "The Ruined Land",
+        "next": "Battle at Coris Mine"
+      },
+      "categories": [
+        "Fortune's Weave Chapters"
+      ],
+      "image": null,
+      "url": "https://fireemblem.fandom.com/wiki/The_Vengeful_Dancer"
+    }
+  ]
+}

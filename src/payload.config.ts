@@ -34,13 +34,19 @@ import { Requests } from './collections/Requests'
 import { Comments } from './collections/Comments'
 import { Players } from './collections/Players'
 import { Games } from './collections/Games'
+import { RemoteDevices } from './collections/RemoteDevices'
+import { RemoteSessions } from './collections/RemoteSessions'
+import { RemoteLog } from './collections/RemoteLog'
 import { SiteSettings } from './globals/SiteSettings'
 import { LegalPages } from './globals/LegalPages'
 import { InterfaceStrings } from './globals/InterfaceStrings'
 import { CompaniesSite } from './globals/CompaniesSite'
 import { PeopleSite } from './globals/PeopleSite'
+import { RemoteAccess } from './globals/RemoteAccess'
 import { scopedToGame } from './fields/shared'
+import { withPublishPing } from './lib/indexnow-publish'
 import { buildEmailAdapter } from './lib/email-adapter'
+import { ADMIN_PATH } from './lib/admin-path'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -57,6 +63,13 @@ const dirname = path.dirname(filename)
 const email = await buildEmailAdapter()
 
 export default buildConfig({
+  /*
+    The admin is not at `/admin`. `src/lib/admin-path.ts` says why, and says
+    that this value and the route folder under `src/app/(payload)/` have to
+    match or the admin 404s with nothing explaining it. `proxy.test.ts` pins
+    the pair.
+  */
+  routes: { admin: ADMIN_PATH },
   admin: {
     user: Users.slug,
     importMap: { baseDir: path.resolve(dirname) },
@@ -82,7 +95,41 @@ export default buildConfig({
         the day Payload changes its markup, which is the failure mode this
         repository has a list of. See the note in NavBadges.tsx.
       */
-      afterNavLinks: ['@/components/admin/NavBadges', '@/components/admin/AnalyticsNavLink'],
+      /*
+        The search box, above the collection links rather than below them.
+
+        Payload searches one collection at a time, which is the wrong shape for
+        the question somebody actually arrives with — "where is the Anca page"
+        — because answering it means picking the collection first. See
+        `SearchView`.
+      */
+      beforeNavLinks: ['@/components/admin/SearchNavLink'],
+      /*
+        The network's own mark on the login screen and in the nav, in place of
+        Payload's wordmark. Both are drawn from `lib/brand.ts`, the same source
+        as the favicon and the share card, and the name beside the login one is
+        read from Site settings — so renaming the network renames this too.
+      */
+      graphics: {
+        Logo: '@/components/admin/AdminLogo',
+        Icon: '@/components/admin/AdminIcon',
+      },
+      /*
+        What this admin is, and how to get back into it, on the one screen
+        somebody sees when they cannot. See `LoginNotice`.
+      */
+      beforeLogin: ['@/components/admin/LoginNotice'],
+      afterNavLinks: [
+        '@/components/admin/NavBadges',
+        '@/components/admin/AnalyticsNavLink',
+        /*
+          Renders nothing at all unless REMOTE_CONTROL_SECRET is set on the
+          deployment, so an install that never opted in has no nav entry
+          advertising a feature whose every route answers 404. See the note in
+          RemoteNavLink.tsx.
+        */
+        '@/components/admin/RemoteNavLink',
+      ],
       /*
         The analytics screen, as a root view at /admin/analytics.
 
@@ -98,15 +145,55 @@ export default buildConfig({
         See the note in AnalyticsView.tsx.
       */
       views: {
+        /*
+          One box across every collection. A root view rather than a panel,
+          because it needs the whole width for grouped results and because a
+          search that lives on the dashboard is a search you have to go home
+          to use.
+        */
+        search: {
+          Component: '@/components/admin/SearchView',
+          path: '/search',
+          meta: { title: 'Search' },
+        },
         analytics: {
           Component: '@/components/admin/AnalyticsView',
           path: '/analytics',
           meta: { title: 'Analytics' },
         },
+        /*
+          Approving a terminal to write to the live site. A root view for the
+          same reason analytics is one: the question is "is anything waiting
+          for me to approve, and what has a session changed", which is a
+          screen, not a list of rows in one collection. `docs/REMOTE.md` is the
+          design and the threat model.
+        */
+        remote: {
+          Component: '@/components/admin/RemoteView',
+          path: '/remote',
+          meta: { title: 'Remote control' },
+        },
       },
     },
   },
-  collections: [
+  /*
+    `withPublishPing` adds one `afterChange` hook to every collection that has
+    a public page, announcing that page to IndexNow when it is published. It
+    wraps the list rather than being written into sixteen collection files,
+    because "a published page is announced" is one rule and a rule stated in
+    sixteen places is a rule missing from the seventeenth — the list it uses is
+    `SECTION_PATH`, so a new section gets the behaviour by existing.
+
+    It changes nothing about the order of this array, and order is the thing
+    that matters here: see the note further down about positionally-named
+    compound indexes.
+
+    Nothing is submitted from a seed run, from localhost, or in bulk. The
+    guards, and why each one is a refusal rather than a delay, are in
+    `src/lib/indexnow-ping.ts`; `docs/DEPLOY.md` section 6 is the operator's
+    version.
+  */
+  collections: withPublishPing([
     // Every collection below scopedToGame() belongs to one game and is filtered
     // by it on every public read. The list must match GAME_SCOPED in
     // lib/tenancy.ts — see the note there about what happens when it does not.
@@ -157,8 +244,22 @@ export default buildConfig({
     Media,
     Players,
     Users,
-  ],
-  globals: [SiteSettings, LegalPages, InterfaceStrings, CompaniesSite, PeopleSite],
+    /*
+      Remote control, appended and staying appended.
+
+      None of the three goes through `scopedToGame()`, so none has a
+      positionally-named compound index to renumber and their position is
+      cosmetic — but the rule in lib/tenancy.ts is "a new collection goes at the
+      end", and a list where some additions go at the end and some do not is a
+      list nobody can follow. They are deliberately **not** in GAME_SCOPED: a
+      laptop, a session and an audit row do not belong to a wiki, and `pnpm
+      verify` has no business in any of them.
+    */
+    RemoteDevices,
+    RemoteSessions,
+    RemoteLog,
+  ]),
+  globals: [SiteSettings, LegalPages, InterfaceStrings, CompaniesSite, PeopleSite, RemoteAccess],
   editor: lexicalEditor(),
   /*
     Chosen by EMAIL_PROVIDER, never by editing this line. Default is `console`,

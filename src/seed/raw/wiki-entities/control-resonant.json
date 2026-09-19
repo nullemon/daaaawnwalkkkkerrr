@@ -1,7 +1,7 @@
 {
   "slug": "control-resonant",
   "host": "control.fandom.com",
-  "fetchedAt": "2026-09-17",
+  "fetchedAt": "2026-09-19",
   "entities": [
     {
       "title": "Jesse Faden",
@@ -1215,22 +1215,6 @@
       "image": "https://static.wikia.nocookie.net/control6745/images/b/b4/Speech_Analysis.png/revision/latest?cb=20220915180841",
       "url": "https://control.fandom.com/wiki/Speech_Analysis",
       "imageFile": "assets/_wiki/control-resonant/Speech-Analysis.png"
-    },
-    {
-      "title": "Timeline of Events",
-      "wikiTitle": "Timeline of Events",
-      "collection": "items",
-      "facts": {
-        "type": "Research & Records / Hiss Research",
-        "compiled_by": "Emily Pope, Research Specialist",
-        "by_order_of": "Director Jesse Faden"
-      },
-      "categories": [
-        "Collectibles / Research & Records / Hiss Research"
-      ],
-      "image": "https://static.wikia.nocookie.net/control6745/images/d/da/Timeline_of_Events.png/revision/latest?cb=20220915181344",
-      "url": "https://control.fandom.com/wiki/Timeline_of_Events",
-      "imageFile": "assets/_wiki/control-resonant/Timeline-of-Events.png"
     },
     {
       "title": "Variance in Alterations",

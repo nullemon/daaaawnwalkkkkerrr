@@ -1,11 +1,10 @@
 import 'dotenv/config'
 import { mediaCredit } from '../lib/credit'
-import fs from 'fs'
 import path from 'path'
 import { getPayload } from 'payload'
-import type { Payload } from 'payload'
 
 import config from '../payload.config'
+import { attachImage, pick, shotsFor, withoutGameName } from './game-art-pool'
 
 /**
  * Give every guide a picture.
@@ -36,69 +35,13 @@ import config from '../payload.config'
  * rather than a thing, which is why it can carry one.
  */
 
-const GAME_ART = path.resolve('assets/_games')
-const LIBRARY = path.resolve('assets/_library/screenshots')
-
-/** Stable, well-spread index for a slug. */
-const pick = (name: string, count: number) => {
-  let hash = 0
-  for (const char of name) hash = (hash * 31 + char.charCodeAt(0)) >>> 0
-  return hash % count
-}
-
-const shotsFor = (slug: string): string[] => {
-  const dir = path.join(GAME_ART, slug)
-  if (fs.existsSync(dir)) {
-    const shots = fs
-      .readdirSync(dir)
-      .filter((name) => /^screenshot-\d+\.(jpg|jpeg|png)$/i.test(name))
-      .sort()
-      .map((name) => path.join(dir, name))
-    if (shots.length > 0) return shots
-  }
-
-  // Dawnwalker: no store listing here, but its own press library is in the repo.
-  if (fs.existsSync(LIBRARY)) {
-    return fs
-      .readdirSync(LIBRARY)
-      .filter((name) => /\.(jpg|jpeg|png)$/i.test(name))
-      .sort()
-      .map((name) => path.join(LIBRARY, name))
-  }
-  return []
-}
-
-const attach = async (
-  payload: Payload,
-  file: string,
-  filename: string,
-  alt: string,
-  credit: string,
-): Promise<number | string | null> => {
-  const existing = await payload.find({
-    collection: 'media',
-    where: { filename: { equals: filename } },
-    limit: 1,
-    depth: 0,
-  })
-  if (existing.docs.length > 0) return existing.docs[0].id
-
-  try {
-    const created = await payload.create({
-      collection: 'media',
-      data: { alt, credit } as never,
-      file: {
-        data: fs.readFileSync(file),
-        mimetype: file.toLowerCase().endsWith('.png') ? 'image/png' : 'image/jpeg',
-        name: filename,
-        size: fs.statSync(file).size,
-      },
-    })
-    return created.id
-  } catch {
-    return null
-  }
-}
+/*
+  Where the pictures come from, and the rule that keeps a game's art its own,
+  is `./game-art-pool`. It moved there when `seed:guide-body-images` needed the
+  same pool: the thing that would have been copied is the rule that once put
+  one studio's screenshots on another studio's wiki under a third party's
+  copyright line, and a rule with two copies has two places to be relaxed.
+*/
 
 async function run(): Promise<void> {
   const payload = await getPayload({ config })
@@ -110,13 +53,24 @@ async function run(): Promise<void> {
     pagination: false,
   })
 
-  const missing = guides.docs.filter((guide) => !(guide as { image?: unknown }).image)
+  /*
+    `--redo` revisits guides that already have a lead image, so a change to how
+    the alt text is written reaches the rows already seeded. Without it this
+    pass can only fill a blank, and the wording would be right on a fresh
+    database and stale on every existing one. `attachImage` reuses the upload
+    and corrects only the alt — never the credit, which an editor may have
+    fixed by hand.
+  */
+  const redo = process.argv.includes('--redo')
+  const missing = redo
+    ? guides.docs
+    : guides.docs.filter((guide) => !(guide as { image?: unknown }).image)
   if (missing.length === 0) {
     console.log('Every guide has an image.')
     process.exit(0)
   }
 
-  console.log(`${missing.length} guides with no image\n`)
+  console.log(`${missing.length} guides ${redo ? 'to revisit' : 'with no image'}\n`)
 
   const shotCache = new Map<string, string[]>()
   const perGame = new Map<string, number>()
@@ -137,11 +91,11 @@ async function run(): Promise<void> {
     const source = shots[pick(String(guide.slug), shots.length)]
     const filename = `${slug}-guide-${guide.slug}${path.extname(source)}`.slice(0, 90)
 
-    const image = await attach(
+    const image = await attachImage(
       payload,
       source,
       filename,
-      `${game?.title ?? slug} — ${guide.title}`,
+      `${game?.title ?? slug} — ${withoutGameName(String(guide.title), String(game?.title ?? ''))}`,
       // Name them. The record has the publisher, and "copyright its
       // publisher" is a credit that credits nobody.
       mediaCredit(game?.title ?? slug, game?.publisher),

@@ -1,0 +1,19 @@
+{
+  "slug": "subnautica-2",
+  "fetchedAt": "2026-09-19",
+  "wikipedia": {
+    "title": "Subnautica 2",
+    "url": "https://en.wikipedia.org/wiki/Subnautica_2",
+    "licence": "CC BY-SA 4.0",
+    "facts": {
+      "developer": "Unknown Worlds Entertainment",
+      "publisher": "Unknown Worlds Entertainment, Krafton",
+      "composer": "Ben Prunty",
+      "engine": "Unreal Engine 5",
+      "series": "Subnautica",
+      "released": "May 14, 2026 (early access)",
+      "genre": "Action-adventure, survival",
+      "modes": "Single-player, multiplayer"
+    }
+  }
+}

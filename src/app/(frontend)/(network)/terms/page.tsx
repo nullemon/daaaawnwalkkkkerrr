@@ -98,14 +98,23 @@ export default async function TermsPage() {
             <p>
               Read this part properly, because it is the one that matters. The information here is
               compiled from public sources and has not been verified against the game itself. It will
-              contain errors. Every page shows a confidence rating and its sources so you can judge for
-              yourself, and the run checker deliberately reports its totals as a floor rather than a
-              figure.
+              contain errors. Every page shows the sources it was built from, with the date we read
+              them, so you can judge for yourself, and the run checker deliberately reports its totals
+              as a floor rather than a figure.
             </p>
             <p>
               Use it as a guide, not an authority. We make no warranty that anything here is correct,
               complete or current. If it is wrong, please{' '}
-              <Link href="/corrections">tell us</Link>.
+              {/*
+                `/contact`, not `/corrections`. This page is served on the apex
+                and `/corrections` is a per-wiki route: `proxy.ts` reads an
+                unreserved first segment as a wiki slug, so `<domain>/corrections`
+                308s to `corrections.<domain>`, a host that does not exist. A
+                dead link in the one sentence of this section that asks the
+                reader to do something. See `correctDeadLegalLinks`, which
+                repairs the stored copy that said the same.
+              */}
+              <Link href="/contact">tell us</Link>.
             </p>
 
             <h2>Your account</h2>

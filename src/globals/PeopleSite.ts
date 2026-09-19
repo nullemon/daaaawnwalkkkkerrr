@@ -1,4 +1,5 @@
 import type { GlobalConfig } from 'payload'
+import { verificationFields } from '../fields/analytics'
 import { isEditor } from '../fields/shared'
 
 /**
@@ -26,6 +27,12 @@ export const PeopleSite: GlobalConfig = {
     {
       type: 'tabs',
       tabs: [
+        {
+          label: 'Search engines',
+          description:
+            'This host is its own property in Search Console and Bing Webmaster Tools — a property is a hostname, so the network’s token does not verify it. Paste this host’s own token here.',
+          fields: [verificationFields('host')],
+        },
         {
           label: 'Front page',
           fields: [

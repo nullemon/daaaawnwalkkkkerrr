@@ -16,7 +16,7 @@ import { Callout } from '@/components/Callout'
 import { getAll, getBySlug, getGame } from '@/lib/payload'
 import { gameName } from '@/lib/section-copy'
 import { gameSlugParams } from '@/lib/params'
-import type { Court } from '@/payload-types'
+import type { Court, Enemy } from '@/payload-types'
 import { clamp, courtMeta } from '@/lib/seo'
 import { recordImage, socialMeta } from '@/lib/social'
 
@@ -67,6 +67,9 @@ export default async function CourtPage({ params }: Props) {
     as a bug. See `src/components/Linked.tsx`.
   */
   const scope: LinkScope = { host: 'wiki', game, self: `courts:${doc.id}` }
+  /* Resolved at depth 1 by `getBySlug` above; an unpopulated id is not a link. */
+  const boss = doc.bossEnemy && typeof doc.bossEnemy === 'object' ? (doc.bossEnemy as Enemy) : null
+
   const activities = (await getAll('court-activities', { game, depth: 1 })).filter(
     (activity) => typeof activity.court === 'object' && activity.court?.slug === slug,
   )
@@ -111,6 +114,25 @@ export default async function CourtPage({ params }: Props) {
                   value: needed ? `${needed} of ${doc.activityCount}` : undefined,
                 },
                 { label: 'Documented here', value: activities.length || undefined },
+                /*
+                  The duel at the end of the court.
+
+                  `bossEnemy` has been a field on `Courts` with that exact
+                  description, editable, and read by nothing — so filling it in
+                  changed no page on the site. It is the `seo.noindex` shape: a
+                  control that is present, reachable and inert. The callout
+                  directly below has been talking about "the duel" the whole
+                  time without ever naming it.
+
+                  A row rather than a section, and `FactPanel` drops a row with
+                  no value, so a court with no duel recorded still renders
+                  exactly as it does today. All three are empty right now,
+                  which is why nobody noticed.
+                */
+                {
+                  label: 'The duel',
+                  value: boss ? <Link href={`/enemies/${boss.slug}`}>{boss.title}</Link> : undefined,
+                },
               ]}
             />
             <Callout

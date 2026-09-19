@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import { getAllAcrossGames, gameUrl } from './payload'
+import { gameWords as wordsInName, terms as tokens } from './terms'
 
 /**
  * What people are searching for right now, and where this network answers it.
@@ -29,19 +30,13 @@ export type Asking = {
 
 const QUERY_DIR = path.resolve('src/seed/raw/queries')
 
-/** Words that carry no signal when matching a query to an article. */
-const STOP = new Set([
-  'the', 'a', 'an', 'is', 'it', 'to', 'of', 'in', 'on', 'for', 'and', 'or',
-  'how', 'what', 'when', 'where', 'why', 'does', 'do', 'can', 'you', 'i',
-  'be', 'are', 'was', 'will', 'there', 'much', 'many', 'long', 'get', 'game',
-])
-
-const tokens = (value: string) =>
-  value
-    .toLowerCase()
-    .replace(/[^a-z0-9\s]/g, ' ')
-    .split(/\s+/)
-    .filter((word) => word.length > 2 && !STOP.has(word))
+/*
+  The word list and the tokeniser were declared here and again in
+  `seed/topic-guides.ts`, with a line in CLAUDE.md asking whoever wrote a third
+  matcher to remember the game-name discount. They are `lib/terms.ts` now, for
+  the reason recorded there: a matcher missing the discount does not error, it
+  answers the wrong question confidently.
+*/
 
 /**
  * The most-searched questions across the network, with their answers.
@@ -85,7 +80,7 @@ export const whatPeopleAreAsking = async (limit = 12): Promise<Asking[]> => {
       not answer. Matching has to happen on the *question* words — beat, map,
       endings, multiplayer — and on nothing else.
     */
-    const gameWords = new Set(harvest.terms.flatMap((term) => tokens(term)))
+    const gameWords = wordsInName(harvest.terms)
 
     const candidates = indexed.filter((entry) => entry.gameSlug === harvest.slug)
     if (candidates.length === 0) continue

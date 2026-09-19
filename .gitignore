@@ -24,6 +24,12 @@ public/media/
 .DS_Store
 *.pem
 .vercel
+
+# The remote-control device key and the token of whatever session is open.
+# Both are credentials for a live site; the key is generated per machine and is
+# meant to stay on it, and a committed one would be a device nobody can revoke
+# because nobody knows who has it. `tools/remote.mjs` writes both.
+/.remote/
 .idea/
 .vscode/
 

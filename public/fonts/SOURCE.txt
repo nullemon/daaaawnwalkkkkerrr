@@ -1,0 +1,15 @@
+Typefaces for the drawn share card (src/app/api/og/…).
+Written by tools/make-og-fonts.mjs on 2026-09-18.
+
+Stylesheet: https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Barlow+Semi+Condensed:wght@400;600
+
+barlow-600.woff  Barlow 600  https://fonts.gstatic.com/s/barlow/v13/7cHqv4kjgoGqM7E30-8c4w.woff
+barlow-semi-condensed-600.woff  Barlow Semi Condensed 600  https://fonts.gstatic.com/s/barlowsemicondensed/v16/wlpigxjLBV1hqnzfr-F8sEYMB0Yybp0mudRfp66PAw.woff
+barlow-semi-condensed-400.woff  Barlow Semi Condensed 400  https://fonts.gstatic.com/s/barlowsemicondensed/v16/wlpvgxjLBV1hqnzfr-F8sEYMB0Yybp0mudRnfA.woff
+
+Barlow is published through Google Fonts. Its licence is stated at
+https://fonts.google.com/specimen/Barlow/license — read it there rather
+than trusting this file, which only records where the bytes came from.
+
+These are served as well as read: `fonts` is in PASS_THROUGH in
+src/proxy.ts because every entry at the root of public/ has to be.

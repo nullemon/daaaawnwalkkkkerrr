@@ -202,8 +202,61 @@ export const badgeSvg = ({
  * `public/logo.svg` is the same artwork rather than an export of it that
  * somebody forgets to redo.
  */
-export const glyphSvg = () =>
+export const glyphSvg = (fill = 'currentColor') =>
   `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${glyphBox()}" role="img" aria-label="A ruled leaf of vellum">
-  <path d="${markPath()}" fill="currentColor" fill-rule="evenodd"/>
+  <path d="${markPath()}" fill="${fill}" fill-rule="evenodd"/>
 </svg>
 `
+
+/**
+ * The glyph as a data URI, inked in one colour.
+ *
+ * The drawn share card — `src/app/api/og/[collection]/[slug]/route.tsx` — is
+ * rendered by satori, which lays out a subset of CSS over an element tree and
+ * has no cascade behind it: there is no `currentColor` to inherit and no
+ * stylesheet to inherit it from. An `<img>` with the mark already inked is the
+ * form that works there.
+ *
+ * `encodeURIComponent` rather than base64 because this module is imported by
+ * `Logo.tsx` and therefore reachable from a client bundle, where `Buffer` does
+ * not exist. It is also the smaller of the two for a document that is almost
+ * all ASCII.
+ *
+ * The colour is an argument with no default on purpose. A default would be a
+ * second opinion about the brand colour living one function away from
+ * `ACCENT`, and the caller that matters reads the owner's `appearanceAccent`
+ * from Site settings rather than either.
+ */
+export const glyphDataUri = (fill: string) =>
+  `data:image/svg+xml;utf8,${encodeURIComponent(glyphSvg(fill))}`
+
+/**
+ * The size every share card on this network is drawn at.
+ *
+ * 1200×630 is Open Graph's own recommendation rather than a decision of ours,
+ * which is why it is stated once and passed to both the `ImageResponse` that
+ * draws a card and the `og:image:width`/`height` that declares one. Those two
+ * disagreeing is a card that unfurls letterboxed on one client and cropped on
+ * another, with nothing to say why.
+ */
+export const CARD_SIZE = { width: 1200, height: 630 } as const
+
+/**
+ * Where the card's ruled margin stands, and where the type starts behind it.
+ *
+ * The same sheet of vellum the mark is drawn on, at card scale: a rule down
+ * the left, type set to the right of it. Two cards are drawn from these — the
+ * network's own `public/og.png`, by Chrome in `tools/make-brand.mjs`, and a
+ * guide's, by satori in `app/api/og` — and the whole point of the pair is that
+ * they read as one family. They each carried their own copy of these three
+ * numbers, which is the shape the wordmark was in before `glyphSvg` existed:
+ * two drawings of one thing, and no way to change it once.
+ */
+export const CARD_LAYOUT = {
+  /** The accent rule, measured from the left edge. */
+  ruleX: 150,
+  /** Where a line of type begins, clear of the rule. */
+  bodyLeft: 208,
+  /** And where it has to stop. */
+  bodyRight: 76,
+} as const

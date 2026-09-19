@@ -6,8 +6,37 @@ import {
   contrast,
   isDefaultTheme,
   isHexColour,
+  isThemeLock,
+  lockedTheme,
+  THEME_STORAGE_KEY,
   themeBootScript,
+  type ThemeLock,
 } from './appearance'
+
+/**
+ * Executes the boot script the way a browser would and reports what it put on
+ * `<html>`, or undefined when it set nothing.
+ *
+ * Shared by the locked and unlocked cases so both are measured by the same
+ * instrument: reading the emitted string is a test of the string, and the
+ * thing that has to be true is what the script *does*.
+ */
+const run = (
+  stored: string | null,
+  fallback: 'dark' | 'light' | 'system',
+  lock: ThemeLock | null | undefined = 'free',
+): string | undefined => {
+  const attributes = new Map<string, string>()
+  const documentElement = {
+    setAttribute: (name: string, value: string) => attributes.set(name, value),
+  }
+  const fn = new Function('document', 'localStorage', themeBootScript(fallback, lock)) as (
+    d: unknown,
+    s: unknown,
+  ) => void
+  fn({ documentElement }, { getItem: () => stored })
+  return attributes.get('data-theme')
+}
 
 describe('contrast', () => {
   it('measures the two ends of the scale', () => {
@@ -120,6 +149,34 @@ describe('accentRefusal', () => {
     expect(checkAccent('#d13a44')).toHaveLength(3)
     expect(checkAccent('#d13a44').every((c) => c.passes)).toBe(true)
   })
+
+  /*
+    The check is not relaxed under a theme lock, and this is the pin.
+
+    The argument for relaxing it is real — a dark-locked site never shows the
+    light ground — and it is still the wrong call, because the accent is stored
+    once and re-read forever while the lock is one select box away from being
+    lifted. An accent accepted against the dark ground alone becomes illegal
+    the day somebody unlocks the site, and nothing would re-check it: the
+    refusal lives in a field validator, which only runs when that field is
+    saved. It is also not purely a theme token — `brand.ts` paints it on PLATE
+    for the favicon and the share card in either theme.
+
+    See the docstring on `checkAccent` for the third reason.
+  */
+  it('measures both grounds whatever the site is locked to', () => {
+    // Arity, not behaviour: there is no lock to pass, and adding one is the
+    // change this test exists to route through the docstring above.
+    expect(checkAccent).toHaveLength(1)
+    expect(accentRefusal).toHaveLength(1)
+    expect(checkAccent('#d13a44').map((c) => c.label)).toEqual([
+      'on the dark page',
+      'on the light page',
+      'white button text on it',
+    ])
+    // The one that only matters on a ground a dark-locked site never shows.
+    expect(accentRefusal('#f2f4f8')).toContain('on the light page')
+  })
 })
 
 describe('accentStyles', () => {
@@ -182,27 +239,96 @@ describe('themeBootScript', () => {
   })
 
   it('runs as written', () => {
-    const attributes = new Map<string, string>()
-    const documentElement = {
-      setAttribute: (name: string, value: string) => attributes.set(name, value),
-    }
-    const run = (stored: string | null, fallback: 'dark' | 'light' | 'system') => {
-      attributes.clear()
-      const fn = new Function(
-        'document',
-        'localStorage',
-        themeBootScript(fallback),
-      ) as (d: unknown, s: unknown) => void
-      fn({ documentElement }, { getItem: () => stored })
-      return attributes.get('data-theme')
-    }
-
     expect(run('light', 'dark')).toBe('light')
     expect(run(null, 'dark')).toBe('dark')
     expect(run(null, 'light')).toBe('light')
     expect(run(null, 'system')).toBeUndefined()
     // Junk in storage is not a theme, so the network default decides.
     expect(run('sepia', 'dark')).toBe('dark')
+  })
+})
+
+/*
+  The boot script under a theme lock.
+
+  Every one of these is "a reader chose X months ago and the owner has since
+  decided otherwise". The failure this guards is not a crash — it is one reader
+  seeing a light page on a site that is dark everywhere else, with nothing
+  anywhere saying why, which is the shape of bug this repo keeps finding.
+*/
+describe('themeBootScript under a lock', () => {
+  it('ignores a stored light on a dark-locked site', () => {
+    expect(run('light', 'light', 'dark')).toBe('dark')
+    expect(run('light', 'system', 'dark')).toBe('dark')
+  })
+
+  it('ignores a stored dark on a light-locked site', () => {
+    expect(run('dark', 'dark', 'light')).toBe('light')
+    expect(run('dark', 'system', 'light')).toBe('light')
+  })
+
+  it('stamps the attribute whatever else is true', () => {
+    // Always present is what makes the lock work with no CSS change: every
+    // prefers-colour-scheme block in globals.css guards itself with
+    // `:not([data-theme=…])`, so an attribute that is always there is an
+    // attribute the system preference can never beat. `color-scheme` rides
+    // along, because it is declared inside those same palette blocks.
+    for (const stored of [null, 'dark', 'light', 'sepia']) {
+      for (const fallback of ['dark', 'light', 'system'] as const) {
+        expect(run(stored, fallback, 'dark')).toBe('dark')
+        expect(run(stored, fallback, 'light')).toBe('light')
+      }
+    }
+  })
+
+  it('never reads storage at all when locked', () => {
+    // Not "reads it and overrules it". A lock is a site-wide decision, not a
+    // reason to touch somebody's stored preference — lift the lock and their
+    // choice comes back, so nothing here clears it either.
+    const script = themeBootScript('dark', 'light')
+    expect(script).not.toContain('localStorage')
+    expect(script).not.toContain(THEME_STORAGE_KEY)
+  })
+
+  it('still reads storage when readers may switch', () => {
+    for (const lock of ['free', null, undefined] as const) {
+      expect(themeBootScript('dark', lock)).toContain('localStorage')
+    }
+    // Both directions: unlocked honours storage, then the default, then nothing.
+    expect(run('light', 'dark', 'free')).toBe('light')
+    expect(run(null, 'light', 'free')).toBe('light')
+    expect(run(null, 'system', 'free')).toBeUndefined()
+  })
+
+  it('treats a null or unknown lock as "readers may switch"', () => {
+    /*
+      The column is nullable and every settings row written before the field
+      existed reads back null. A null read as "locked" — which is what any
+      `!== 'free'` comparison gives — would pin the whole network to a theme
+      nobody chose, on the first boot after a deploy, with no change in the
+      admin to explain it.
+    */
+    for (const lock of [null, undefined, '', 'sepia', 'system', 0, true] as unknown[]) {
+      expect(run('light', 'dark', lock as never)).toBe('light')
+    }
+  })
+})
+
+describe('isThemeLock and lockedTheme', () => {
+  it('takes the three and nothing else', () => {
+    expect(['free', 'dark', 'light'].every(isThemeLock)).toBe(true)
+    for (const value of ['system', 'none', '', null, undefined, 0]) {
+      expect(isThemeLock(value)).toBe(false)
+    }
+  })
+
+  it('answers with a theme only for the two that are one', () => {
+    expect(lockedTheme('dark')).toBe('dark')
+    expect(lockedTheme('light')).toBe('light')
+    // 'free' is not a theme, and neither is anything that is not a lock.
+    for (const value of ['free', 'system', null, undefined, '', 42]) {
+      expect(lockedTheme(value)).toBeNull()
+    }
   })
 })
 

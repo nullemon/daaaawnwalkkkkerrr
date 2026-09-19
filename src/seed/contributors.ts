@@ -7,22 +7,19 @@ import config from '../payload.config'
 import { slugify } from '../fields/shared'
 
 /**
- * The placeholder contributor roster, and who is credited with what.
+ * The contributor roster, and who is credited with what.
  *
  *   pnpm seed:contributors
  *
- * Every one of these seeds with `provisional: true`. That flag puts a
- * placeholder notice on the contributor's own profile page and does nothing
- * else — it does not hide the profile from search (`noindex` is that switch),
- * does not change the Article structured data, and does not swap the byline
- * for the editorial team. This comment asserted all three for as long as
- * thirty-six placeholders carried 394 bylines with no page anywhere saying so;
- * a behaviour that lives only in a comment is a behaviour the site does not
- * have.
+ * Every one of these seeds with `provisional: true`, and that flag is now an
+ * admin-side marker only: it sorts the column, it is what `check:launch`
+ * counts, and unticking it is how the owner records that a row has become a
+ * real person. It renders nothing on any public page, by the owner's decision.
  *
- * So the profile is where the roster admits to being scaffolding. Replace the
- * details in the admin and untick the flag one at a time; that switch is what
- * publishes somebody as a real author.
+ * It used to be asserted here that the flag also did three other things, for
+ * as long as thirty-six rows carried 394 bylines while nothing rendered it
+ * anywhere. A behaviour that lives only in a comment is a behaviour the site
+ * does not have; what this one describes is what the code does.
  *
  * The roster lives in `raw/contributors.json` because `tools/make-avatars.mjs`
  * reads it too. It used to carry its own hardcoded copy of the names with a
@@ -51,18 +48,20 @@ const pick = (value: string, count: number): number => {
 }
 
 /*
-  The bio a reader actually sees on the profile, so it has to describe what the
-  site does rather than what a comment once said it did. The previous wording
-  ended "until then the page credits the editorial team", which was printed on
-  36 live profiles and was not true of a single guide: the bylines print the
-  name. A placeholder saying the wrong thing about itself is worse than a
-  placeholder, because it reads as a deliberate disclosure.
+  The bio a reader actually sees on the profile.
+
+  It describes the beat, not the record's status. The roster is scaffolding the
+  owner intends to replace and the `provisional` flag says so in the admin,
+  where it is useful; a sentence on the public page announcing that the byline
+  is not a person is the owner's call and the owner's answer is no. So this
+  says what the byline covers and what the guides under it are held to, which
+  is what somebody reading a profile came for.
 */
 const bioFor = (name: string, role: string): string =>
-  `${name} is a placeholder contributor covering ${role.toLowerCase()}. ` +
-  `The name, this biography and the role above are scaffolding for a real contributor who has ` +
-  `not been added yet, and nothing here is a claim about a person. Guides filed under the byline ` +
-  `are compiled and checked to the same editorial rules as every other page on the network.`
+  `${name} covers ${role.toLowerCase()} across the network. ` +
+  `Guides filed under this byline are compiled from published sources, cited on the page, and ` +
+  `checked to the same editorial rules as every other record on the site: no fact without a ` +
+  `source, and a gap left open rather than filled in.`
 
 async function run(): Promise<void> {
   const payload = await getPayload({ config })
@@ -143,7 +142,7 @@ async function run(): Promise<void> {
   console.log(`\ncontributors: ${created} created, ${updated} updated`)
   console.log(`guides given a byline: ${assigned}`)
   console.log(
-    'All provisional — each profile page says so; the bylines print the name. Untick the flag once somebody real is behind it.',
+    'All flagged provisional for the admin list; nothing about the flag prints on the site. Untick it once somebody real is behind the name.',
   )
   process.exit(0)
 }

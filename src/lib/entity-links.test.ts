@@ -11,6 +11,8 @@ import {
   splitFactValue,
   wouldCycle,
 } from './entity-links'
+import fs from 'node:fs'
+import path from 'node:path'
 
 /*
   A small game, built from real values in src/seed/raw/wiki-entities/. Both
@@ -260,18 +262,74 @@ describe('isEmptyEdge', () => {
 })
 
 describe('EDGE_RULES', () => {
+  /**
+   * Every relationship field a collection actually declares, read from its
+   * source.
+   *
+   * This was a hand-copied object literal listing what each collection had,
+   * which is the shape this repository has a name for: two statements of one
+   * fact, and the day they disagree nothing errors. They disagreed. All three
+   * of `characters`, `enemies` and `items` have carried a `faction`
+   * relationship the whole time and the copy here never mentioned it, so a
+   * rule reading `affiliation` — the commonest fact on two of these wikis,
+   * 229 values on Wookieepedia alone — failed this check as if the field did
+   * not exist.
+   *
+   * Parsed rather than imported: a collection config pulls in the Payload
+   * config, and a unit test that boots Payload to read a field name is a test
+   * nobody runs. Same arrangement as `audit.test.ts` and the section routes.
+   */
+  const relationshipFields = (collection: string): string[] => {
+    const file = path.resolve(__dirname, '..', 'collections', COLLECTION_FILE[collection])
+    const source = fs.readFileSync(file, 'utf8')
+    const names: string[] = []
+    /*
+      `name: 'x'` followed by `type: 'relationship'` within the same field
+      object. Matched across a few lines because the two are usually separated
+      by a comment explaining the edge, and every one of these fields has one.
+    */
+    /*
+      No intervening `name:`, or the match spans two fields and pairs one
+      field's name with the next field's type — which is how `romanceable`,
+      a checkbox three fields earlier, first came back as a relationship.
+    */
+    const pattern =
+      /name:\s*'([a-zA-Z][\w]*)',(?:(?!name:)[\s\S]){0,400}?type:\s*'relationship'/g
+    for (const match of source.matchAll(pattern)) {
+      names.push(match[1])
+    }
+    return names
+  }
+
+  const COLLECTION_FILE: Record<string, string> = {
+    characters: 'Characters.ts',
+    enemies: 'Enemies.ts',
+    items: 'Items.ts',
+    regions: 'Regions.ts',
+    quests: 'Quests.ts',
+  }
+
+  it('finds relationship fields at all, so the check below cannot pass by not running', () => {
+    // A parser that matched nothing would make every assertion pass silently -
+    // the failure `seed:topics` and `seed:cite` shipped with.
+    for (const collection of Object.keys(COLLECTION_FILE)) {
+      expect(relationshipFields(collection).length).toBeGreaterThan(0)
+    }
+    expect(relationshipFields('characters')).toContain('faction')
+  })
+
   it('names only fields that exist on the collections in src/collections', () => {
     // Payload drops an unknown key on update silently, so a rule naming a field
     // that is not there produces a clean run and no edges.
-    const schema: Record<string, string[]> = {
-      characters: ['region', 'questline'],
-      enemies: ['region'],
-      items: ['region'],
-      regions: ['court', 'parent'],
-      quests: ['region', 'prereqs', 'unlocks', 'excludes'],
-    }
     for (const rule of EDGE_RULES) {
-      expect(schema[rule.from]).toContain(rule.field)
+      expect(relationshipFields(rule.from)).toContain(rule.field)
+    }
+  })
+
+  it('points every rule at a collection this network actually scopes by game', () => {
+    // An edge to a collection that is not game-scoped would join two wikis.
+    for (const rule of EDGE_RULES) {
+      expect(Object.keys(COLLECTION_FILE)).toContain(rule.from)
     }
   })
 

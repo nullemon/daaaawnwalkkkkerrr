@@ -4,6 +4,7 @@ import {
   buildMeta,
   characterMeta,
   clamp,
+  leadSentences,
   courtMeta,
   endingMeta,
   enemyMeta,
@@ -30,6 +31,59 @@ describe('clamp', () => {
 
   it('never returns more than the limit', () => {
     expect(clamp('word '.repeat(200)).length).toBeLessThanOrEqual(155)
+  })
+})
+
+/*
+ * The real bio of a seeded contributor. Its shape is the whole reason
+ * `leadSentences` exists: a 62-character opening sentence followed by a
+ * 190-character one, which `clamp` cuts in the middle of.
+ */
+const BIO =
+  'Mei Chen covers localisation and languages across the network. ' +
+  'Guides filed under this byline are compiled from published sources, cited on the page, and ' +
+  'checked to the same editorial rules as every other record on the site: no fact without a ' +
+  'source, and a gap left open rather than filled in.'
+
+describe('leadSentences', () => {
+  it('takes the whole opening sentence rather than a fragment of the next', () => {
+    expect(leadSentences(BIO, 200)).toBe(
+      'Mei Chen covers localisation and languages across the network.',
+    )
+  })
+
+  it('is what clamp would not do, which is the point', () => {
+    expect(clamp(BIO, 200).endsWith('…')).toBe(true)
+  })
+
+  it('leaves a bio that fits entirely alone, with no ellipsis', () => {
+    expect(leadSentences('Two words. Three words.', 200)).toBe('Two words. Three words.')
+  })
+
+  it('takes every sentence that fits, not only the first', () => {
+    const text = `${'a'.repeat(40)}. ${'b'.repeat(40)}. ${'c'.repeat(200)}`
+    const result = leadSentences(text, 120)
+    expect(result).toBe(`${'a'.repeat(40)}. ${'b'.repeat(40)}.`)
+  })
+
+  it('falls back to clamp when no sentence ends inside the budget', () => {
+    const text = `${'word '.repeat(80)}end.`
+    const result = leadSentences(text, 100)
+    expect(result.endsWith('…')).toBe(true)
+    expect(result.length).toBeLessThanOrEqual(100)
+  })
+
+  it('does not read a decimal or an abbreviation as a sentence end', () => {
+    // `St.` is a stop, a space and a capital letter — the exact shape being
+    // matched — and returning it would print `St.` as the whole blurb.
+    const text = `St. Petersburg weighs 1.5 kg ${'x'.repeat(300)}`
+    expect(leadSentences(text, 60)).not.toBe('St.')
+    expect(leadSentences(text, 60).endsWith('…')).toBe(true)
+
+    // The real sentence end is still taken when it fits.
+    expect(leadSentences(`St. Petersburg is a city. ${'x'.repeat(300)}`, 200)).toBe(
+      'St. Petersburg is a city.',
+    )
   })
 })
 

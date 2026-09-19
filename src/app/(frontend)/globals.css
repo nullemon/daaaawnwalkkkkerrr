@@ -53,6 +53,13 @@
   --rare: #479df5;      /* 6.60 / 5.93 / 5.12 */
   --common: #a8a29a;    /* 7.40 / 6.64 / 5.73 — grey because common is
                            unremarkable, and now a grey rather than a blue */
+  /* The palette entry the faction emblems are cut from. `KINDS` in
+     tools/make-emblems.mjs names a token for every silhouette it draws, so a
+     palette change has one place to land rather than seven hard-coded hues in
+     a build script — and factions were the seventh kind, with the other six
+     colours already taken. Violet because it is the one family no other
+     emblem, chip or badge on this site uses. */
+  --epic: #a878e8;      /* 6.42 / 5.77 / 4.98 */
 
   --danger: #f4636c;    /* 6.10 / 5.48 / 4.73 — #ef4a55 sat at 4.37 on raised */
   --danger-wash: #301514;
@@ -88,17 +95,36 @@
   four. Measured, not estimated; `.tmp-design/contrast.mjs` takes `fg bg`.
 */
 :root[data-theme='light'] {
-  --ground: #eef0f4;
+  /*
+    Warm, because the dark theme is.
+
+    The dark palette is built on a warm near-black — #131211, #1f1d1b, #2b2926
+    — under a warm off-white ink, and the accent is a warm red. The light
+    palette was a cool blue-grey: #eef0f4 ground, #11141b ink, #596170 muted.
+    Both were legible and they did not look like the same publication; putting
+    the two side by side, the light one reads as a different product with the
+    same layout.
+
+    So the neutrals are rotated onto the dark theme's own hue and the ratios
+    re-measured rather than assumed — `node tools/contrast.mjs` prints every
+    text-on-ground pair in both themes, which is what the hand-written ratio in
+    the old `--muted` comment was trying to be before it went stale.
+
+    `--surface` stays pure white. Every card on the home page sits on
+    `--ground`, and a warm card on a warm ground needs the card to be the
+    brighter of the two or the grid stops reading as cards at all.
+  */
+  --ground: #f3f0ea;
   --surface: #ffffff;
-  --raised: #f7f8fa;
-  --sunken: #e2e5ea;
+  --raised: #faf7f2;
+  --sunken: #e7e1d7;
 
-  --ink: #11141b;
-  --ink-soft: #414a5c;
-  --muted: #596170; /* 5.46 on ground, 4.94 on sunken; #6b7489 was 4.10 and 3.71 */
+  --ink: #171410;
+  --ink-soft: #453f37;
+  --muted: #665e53;
 
-  --rule: #d6dae1;
-  --rule-soft: #e6e9ee;
+  --rule: #ddd6ca;
+  --rule-soft: #ebe6dd;
 
   --accent: #c02630;
   --accent-hot: #a41d27;
@@ -107,11 +133,12 @@
 
   --legendary: #9a6a12;
   --rare: #1e63b8;
-  --common: #6b7489;
+  --common: #7a7166; /* warm, like every other neutral in this theme */
+  --epic: #6d3fb0;
 
   --danger: #c02630;
   --danger-wash: #fdeced;
-  --good: #1d7a4a;
+  --good: #15603a;
   --good-wash: #e6f4ec;
   --caution: #9a6a12;
   --caution-wash: #fbf0d9;
@@ -122,17 +149,17 @@
 
 @media (prefers-color-scheme: light) {
   :root:not([data-theme='dark']):not([data-theme='light']) {
-    --ground: #eef0f4;
+    --ground: #f3f0ea;
     --surface: #ffffff;
-    --raised: #f7f8fa;
-    --sunken: #e2e5ea;
+    --raised: #faf7f2;
+    --sunken: #e7e1d7;
 
-    --ink: #11141b;
-    --ink-soft: #414a5c;
-    --muted: #596170; /* 5.46 on ground, 4.94 on sunken; #6b7489 was 4.10 and 3.71 */
+    --ink: #171410;
+    --ink-soft: #453f37;
+    --muted: #665e53; /* 5.46 on ground, 4.94 on sunken; #6b7489 was 4.10 and 3.71 */
 
-    --rule: #d6dae1;
-    --rule-soft: #e6e9ee;
+    --rule: #ddd6ca;
+    --rule-soft: #ebe6dd;
 
     --accent: #c02630;
     --accent-hot: #a41d27;
@@ -141,11 +168,12 @@
 
     --legendary: #9a6a12;
     --rare: #1e63b8;
-    --common: #6b7489;
+    --common: #7a7166; /* warm, like every other neutral in this theme */
+    --epic: #6d3fb0;
 
     --danger: #c02630;
     --danger-wash: #fdeced;
-    --good: #1d7a4a;
+    --good: #15603a;
     --good-wash: #e6f4ec;
     --caution: #9a6a12;
     --caution-wash: #fbf0d9;
@@ -837,6 +865,673 @@ th.num { text-align: right; }
 .take p { font-size: 14.5px; color: var(--ink-soft); }
 
 .masthead { display: flex; flex-wrap: wrap; gap: 4px 14px; font-family: var(--f-label); font-size: 12px; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 12px; }
+
+
+/* ---------------------------------------------------------------------------
+   The article page: a measure, and a rail beside it.
+
+   Only `[game]/guides/[slug]` uses this. Fifteen other detail routes share
+   `.split` (1.4fr / 1fr), which on a 1340px page is a 540px sidebar next to a
+   760px article — two columns competing rather than a body and a margin, and
+   the reason the owner said "the sidebar is too big".
+
+   ## The arithmetic
+
+   Fextralife's article grid is `auto minmax(500px, 875px) 310px auto`: a fluid
+   gutter, a measure, a narrow rail, another gutter. The shape is right and the
+   numbers are theirs — an 875px body is about 120 characters a line, which is
+   wide because a third of it is usually an advert.
+
+   Ours is the same shape sized off the tokens that already exist. The body
+   column is `--measure` (70ch, the line length the prose is set to) plus 10ch
+   of slack, so a heading, a table or a picture has somewhere to go without the
+   paragraphs stretching past their measure. The rail is 300px — inside the
+   280-320 the brief asked for, and near enough Fextralife's 310 that the
+   proportion reads the same. The whole grid is then centred inside `.page`
+   rather than stretched to it, which is why the page reads as composed at
+   1340px instead of as two columns pulled apart.
+
+   ## What the rail is and is not
+
+   It is subordinate by construction: uppercase label headings at 12px instead
+   of the body's 18-22px h2, hairlines in `--rule-soft`, no card fills, and one
+   accented block (the tool callout) that is meant to be the loudest thing in
+   it. Nothing in here is a second copy of something in the body — the dates
+   and the byline live in `ArticleMeta` at the foot of the article and nowhere
+   else.
+
+   It sticks on a wide screen and stacks after the article on a narrow one.
+   Because it stacks *after*, the contents list is not in it: on a phone this
+   column sits below the body it would be indexing.
+--------------------------------------------------------------------------- */
+
+.article {
+  /* Local rather than on `:root`. These are the article's own proportions and
+     nothing else reads them, so they belong next to the layout they serve —
+     the same reason `min-width: 0` is on each container in this file rather
+     than in one block at the end of it. */
+  --article-rail: 300px;
+  --article-gap: 38px;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--article-rail);
+  /*
+    Three areas, and the headline is one of them. That is the fix.
+
+    The route used to render `PageHeader` — its own `.page`, capped at
+    `--page` (1340px) and centred — and then this grid, capped at about 978px
+    and centred inside the same column. Two centred boxes of different widths:
+    the `<h1>` began roughly 180px to the left of the first sentence under it,
+    the lede stopped at a different right edge from the prose, and the hairline
+    under the header was the width of neither. Both halves measured correctly
+    on their own, which is why nothing caught it.
+
+    One grid owns all three now, so there is exactly one left edge on the page
+    and exactly one right edge for the text to stop at.
+  */
+  grid-template-areas:
+    'head head'
+    'body rail';
+  column-gap: var(--article-gap);
+  row-gap: 26px;
+  align-items: start;
+  max-width: calc(var(--measure) + 10ch + var(--article-rail) + var(--article-gap));
+  margin-inline: auto;
+  padding-block: 26px 0;
+}
+/* Grid children default to `min-width: auto`, so one wide table inside the
+   body would widen the whole column and push the rail off the screen. */
+.article > * { min-width: 0; }
+
+.article-body { grid-area: body; display: flex; flex-direction: column; gap: 26px; min-width: 0; }
+
+/* --- article typography ---------------------------------------------------
+
+   The body of a guide reads at a different size from the rest of the site, and
+   only here. 15px/1.55 is right for a fact panel, a rail and a table of
+   achievements — which is most of this network — and it is small for eight
+   hundred words of prose. Every publication this was measured against for the
+   article page (CBR, Otakukart) sets its body between 17 and 18px with a line
+   height near 1.7, and the difference at a paragraph's length is not subtle.
+
+   Scoped to `.article-body` rather than raised on `body`, because raising the
+   base would re-flow all 4,337 pages to fix one of them, and the record pages
+   are dense on purpose.
+
+   The gap does the paragraph spacing: `.prose` is a flex column, so a margin
+   on `p` would collapse against it and fight. Headings get their extra air
+   from `margin-top` on top of that gap, which is what separates a section from
+   the paragraph above it — at the shipped 0.6em a new h2 sat closer to the
+   text it followed than to the text it introduced.                          */
+
+.article-body .prose,
+.article-body .payload-richtext {
+  font-size: 17px;
+  line-height: 1.7;
+  gap: 1.05em;
+}
+.article-body .prose h2,
+.article-body .payload-richtext h2 {
+  font-size: clamp(21px, 2.2vw, 26px);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  margin-top: 1.15em;
+}
+.article-body .prose h3,
+.article-body .payload-richtext h3 {
+  font-size: 19px;
+  line-height: 1.3;
+  margin-top: 0.9em;
+}
+/* A list in an article is prose, not a data column: it gets the same rhythm as
+   the paragraphs around it rather than the tighter one a rail list wants. */
+.article-body .prose ul,
+.article-body .payload-richtext ul {
+  gap: 0.5em;
+  padding-left: 1.25em;
+}
+
+.article-rail { grid-area: rail; display: flex; flex-direction: column; gap: 24px; min-width: 0; }
+
+/* --- the masthead --------------------------------------------------------
+
+   Breadcrumbs, kind and confidence, headline, deck, lede, then the byline
+   under a hairline of its own. Fextralife's order exactly, which is the order
+   somebody skim-reading a search result checks things in: where am I, what is
+   this, is it about my question, who says so.
+
+   It spans both columns rather than sitting in the body column, so the
+   headline gets the full width of the composition while still starting at the
+   same left edge as the first paragraph. The rail begins level with the body,
+   under it.                                                                 */
+
+.article-head {
+  grid-area: head;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  min-width: 0;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* The same gradient `.page-head` carries, for the same reason and with the
+   same left-only bleed: an `inset` with a right bleed put 24px of
+   pseudo-element past an 18px gutter and gave every page on every host 6px of
+   horizontal document scroll. Left overflow does not scroll in LTR, so that
+   side is safe. */
+.article-head::before {
+  content: '';
+  position: absolute;
+  inset: -20px 0 0 -24px;
+  z-index: -1;
+  background: radial-gradient(
+    120% 90% at 0% 0%,
+    color-mix(in srgb, var(--accent) 7%, transparent),
+    transparent 62%
+  );
+  pointer-events: none;
+}
+
+/* What kind of page this is and how far it can be trusted, on one line above
+   the headline. `PageHeader` puts its badges *under* the lede, which on an
+   article separates the confidence rating from the thing it rates by four
+   lines of prose. */
+.article-kicker { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; min-width: 0; }
+
+/*
+  The headline, and it is the one piece of type on this page allowed to be
+  loud.
+
+  Larger and tighter than the site's `h1`, because a record page's title is a
+  label on a fact sheet and an article's title is the article's whole pitch —
+  it is what arrives in a search result and it is what a reader checks against
+  their question. `26ch` at this size holds an 83-character title, the longest
+  on the network, in three lines rather than one 940px ribbon; at the mobile
+  end of the clamp the measure never binds and the column does the wrapping.
+*/
+.article-title {
+  font-size: clamp(28px, 3.6vw, 44px);
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  max-width: 26ch;
+}
+
+/* The byline is separated from the lede rather than run on from it: above the
+   rule is what the page says, below it is who is saying it. */
+.article-head > .byline {
+  margin-top: 4px;
+  padding-top: 14px;
+  border-top: 1px solid var(--rule-soft);
+}
+
+/* --- the lead picture ----------------------------------------------------
+
+   The width of the article, not 640px.
+
+   It was `EntityImage shape="wide"`, which is a record-page shape sized for a
+   figure sitting beside a fact panel. In a 940px article column that is a
+   picture with 300px of nothing to the right of it. An article's lead image is
+   the width of the article, and this is the one page on the site where the
+   photograph is the invitation rather than an illustration of a claim — see
+   the header of `src/seed/guide-images.ts` for why a guide may carry one at
+   all when a record may not.
+
+   `aspect-ratio` and `object-fit`, not a padding-bottom percentage box: the
+   height is reserved before the file arrives either way, and this does it in
+   one declaration a person can read.                                        */
+
+.article-lead {
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+  border: 1px solid var(--rule);
+  border-radius: var(--r);
+  background: var(--sunken);
+}
+.article-lead img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; }
+
+/* --- a picture between two sections of an article -------------------------
+
+   `.article-figure` is one of the figures `LinkedRichText` places at the
+   breaks between an article's h2s. It used to be a cell in `.figurerow`, a
+   grid of thumbnails stacked under the whole body — which is a gallery, and a
+   reader reaches a gallery after they have finished reading.
+
+   Full column width, like the lead, because that is what a picture in a
+   magazine does and a 190px thumbnail floating in a 940px column was half of
+   what "the article part looks bad" was about.
+
+   `object-fit: contain` and no forced ratio, unlike `.article-lead`. The lead
+   is a 16:9 press screenshot every time and cropping it is safe; these come
+   from the wiki pool as well, where a character portrait is a tall crop and
+   `cover` would take the top of somebody's head off. A `max-height` keeps a
+   portrait from running a whole screen tall.
+
+   `min-width: 0` for the reason the rest of this file gives: a flex or grid
+   child defaults to `min-width: auto` and a wide image drags the page
+   sideways on a phone.                                                      */
+
+.article-figure {
+  margin: 26px 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.article-figure .figureshot {
+  border: 1px solid var(--rule);
+  border-radius: var(--r);
+  overflow: hidden;
+  background: var(--sunken);
+}
+.article-figure img {
+  width: 100%;
+  max-height: 560px;
+  object-fit: contain;
+  display: block;
+}
+.article-figure figcaption {
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--muted);
+  padding-left: 2px;
+  border-left: 2px solid var(--rule);
+  padding-left: 9px;
+}
+
+/* --- the rail's own guide list -------------------------------------------
+
+   The rest of the series, each with the picture it already has. `RelatedList`
+   renders a title and an optional line of text, which is right for the twelve
+   record routes that use it and is why this rail read as a column of blue
+   words — while `.guidetile` on the guides index has shown the same guides
+   with their pictures all along.
+
+   Flex rather than a two-column grid, so the two guides on the network with no
+   picture close up instead of leaving a 96px hole.                          */
+
+.railguides { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; min-width: 0; }
+.railguide {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+  padding: 9px 0;
+  color: var(--ink-soft);
+  border-bottom: 1px solid var(--rule-soft);
+}
+.railguides li:last-child .railguide { border-bottom: 0; }
+.railguide:hover { text-decoration: none; color: var(--accent-hot); }
+.railguide-shot {
+  flex: none;
+  width: 96px;
+  height: 54px;
+  object-fit: cover;
+  border-radius: 5px;
+  border: 1px solid var(--rule);
+  background: var(--sunken);
+}
+.railguide-title { min-width: 0; font-size: 13px; line-height: 1.35; overflow-wrap: anywhere; }
+
+@media (min-width: 1041px) {
+  /*
+    Sticky, with a ceiling and its own scroll.
+
+    A sticky element taller than the viewport pins at `top` and then hides its
+    own bottom: the page scrolls past it and the last block in it can never be
+    reached. The ceiling plus `overflow-y` is the honest fix — the rail can be
+    six guides and a callout, and a reader can still get to the end of it.
+    `dvh` rather than `vh` so the mobile browser chrome collapsing does not
+    leave a gap.
+  */
+  .article-rail {
+    position: sticky;
+    top: 16px;
+    align-self: start;
+    max-height: calc(100dvh - 32px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+  }
+}
+
+@media (max-width: 1040px) {
+  .article {
+    grid-template-columns: minmax(0, 1fr);
+    /* The areas are restated, not just the columns: a two-name row in
+       `grid-template-areas` against a one-column track list is an invalid
+       declaration, and an invalid declaration is dropped in silence — the grid
+       would fall back to auto-placement and the rail would land back beside a
+       320px body with nothing anywhere saying why. */
+    grid-template-areas:
+      'head'
+      'body'
+      'rail';
+    column-gap: 0;
+    row-gap: 30px;
+    max-width: calc(var(--measure) + 10ch);
+  }
+}
+
+@media (max-width: 600px) {
+  .article { padding-block: 18px 0; row-gap: 24px; }
+  .article-head { gap: 9px; padding-bottom: 15px; }
+  /* 96px of thumbnail beside a 13px title is a third of a 328px column. The
+     picture stays — it is the reason this list was rebuilt — at the size a
+     phone can spare. */
+  .railguide-shot { width: 76px; height: 43px; }
+  /*
+    `margin-left: auto` puts the reading estimate and the share links on the
+    far side of the byline, which is what it is for on a wide row. Once the row
+    wraps, that same rule ranges a full-width second line hard right — four
+    share pills stacked against the right edge under a left-aligned name, with
+    the gap growing as the line gets shorter. It is only an alignment while
+    there is something to align against.
+  */
+  .byline-aside { margin-left: 0; flex: 1 1 100%; }
+}
+
+/* --- the rail's own register: quieter than the body, in every theme ------- */
+
+.article-rail .section { gap: 9px; }
+.article-rail .section-head { padding-bottom: 7px; border-bottom-color: var(--rule-soft); }
+/*
+  `--f-label` uppercase at 12px rather than the body's h2.
+
+  Measured, not guessed: `--muted` is the token this file records as clearing
+  4.5 against ground, surface, raised and sunken in both themes (6.91 / 6.20 /
+  5.36 dark, 5.46 / 6.23 / 5.87 light), which is the bar this size of text has
+  to clear whatever the weight.
+*/
+.article-rail .section-head h2 {
+  font-family: var(--f-label);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.article-rail .related li { padding: 8px 0; }
+.article-rail .related-main a { font-size: 13.5px; }
+.article-rail .callout { font-size: 13px; }
+
+/* --- the row under the headline ------------------------------------------ */
+
+/*
+  Byline, reading estimate and share links as one row.
+
+  Fextralife splits these into an author block and a separate strip of actions
+  with a rule between them. One row is one rule instead of two and reads as a
+  single answer to "what is this and who stands behind it".
+
+  It sits in `.article-head` now rather than at the top of `.article-body`, and
+  the rule that used to close it went with the move: the masthead already ends
+  in a hairline, and two hairlines 15px apart is a boxed-in row rather than a
+  divided one. `.article-head > .byline` above carries the one it keeps.
+*/
+/* The avatar aligns to the name rather than to the middle of a three-line
+   block, once there is a bio under it. The article does not ask for a
+   portrait any more; this stays for the callers that will. */
+.byline:has(.byline-bio) { align-items: flex-start; }
+.byline-bio { margin-top: 4px; font-size: 13px; line-height: 1.5; color: var(--muted); max-width: 58ch; }
+.byline-aside { margin-left: auto; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; min-width: 0; }
+.byline-read {
+  font-family: var(--f-label);
+  font-size: 12.5px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+/* --- key takeaways -------------------------------------------------------- */
+
+/*
+  Written by a person or absent. `Takeaways` renders nothing for an empty
+  field, so there is no empty-state to style here and there should not be one.
+
+  The left accent bar is the same device `.take` and `.callout` use: it marks
+  the block as editorial without giving it a second fill to compete with the
+  card stock the rest of the page is made of.
+*/
+.takeaways {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+  /* The same right edge as the prose. Everything textual in the body column
+     lines up at `--measure`; only the pictures, the tables and the figure row
+     are allowed the extra slack the column carries. */
+  max-width: var(--measure);
+  padding: 16px 18px;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--r);
+}
+.takeaways-head {
+  font-family: var(--f-label);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--accent-hot);
+}
+.takeaways-list {
+  margin: 0;
+  padding-left: 1.15em;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.takeaways-list li::marker { color: var(--accent-dim); }
+
+/* --- contents ------------------------------------------------------------- */
+
+/*
+  Jump links to the article's own sections, at the top of the body column.
+
+  Not in the rail, and not duplicated into both: the rail stacks under the
+  article on a phone, and rendering the list twice to fix that is two DOM
+  copies of one list and two `<nav>` landmarks for a screen reader to read out.
+
+  A bordered box with no fill, on purpose. It sits directly above the prose and
+  a filled card there would read as the start of the article.
+*/
+.contents {
+  border: 1px solid var(--rule);
+  border-radius: var(--r);
+  padding: 13px 16px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  min-width: 0;
+  max-width: var(--measure);
+}
+.contents-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--f-label);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.contents-head .ic { color: var(--muted); flex: none; }
+.contents-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  /* Two columns where there is room for them, one where there is not. A
+     twelve-section guide is otherwise a column of links taller than the
+     opening of the article it indexes. */
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 2px 20px;
+  /* The numbering is generated rather than written, the same arrangement
+     `.metarow` documents for its mid-dot: a digit typed into a component is
+     reader-visible copy in a file no editor can reach. A counter is structure,
+     and it renumbers itself when a section is added. */
+  counter-reset: contents;
+}
+.contents-list > * { min-width: 0; }
+.contents-list li { font-size: 13.5px; line-height: 1.45; }
+.contents-list li[data-level='2'] { counter-increment: contents; }
+.contents-list li[data-level='3'] { padding-left: 14px; }
+.contents-list a {
+  color: var(--ink-soft);
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  padding-block: 3px;
+  min-width: 0;
+}
+/* Only the top level is numbered. A sub-heading under "3." is part of section
+   three, and giving it a number of its own would claim an order the article
+   does not have. */
+.contents-list li[data-level='2'] > a::before {
+  content: counter(contents);
+  flex: none;
+  min-width: 1.4em;
+  font-family: var(--f-label);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  /* `--muted` is the token measured in this file as clearing 4.5 on ground,
+     surface, raised and sunken in both themes. The contents box has no fill,
+     so the ground here is `--ground`: 6.91 dark, 5.46 light. */
+  color: var(--muted);
+}
+.contents-list a:hover { color: var(--accent-hot); }
+.contents-list a:hover::before { color: var(--accent-hot); }
+
+/* An anchored heading needs somewhere to land: flush against the top of the
+   viewport it reads as cut off. */
+.anchored { scroll-margin-top: 20px; }
+
+/* --- the body's own type scale -------------------------------------------- */
+
+/*
+  One scale, and more air than a record page.
+
+  `.prose` is shared with fifteen record pages where the body is two or three
+  compiled paragraphs; a guide is two thousand words and wants the line height
+  for it. Scoped to `.article-body` rather than changed globally for that
+  reason.
+
+  The hairline above each h2 is the one piece of Fextralife's section rhythm
+  worth taking: it makes a long article scannable at a glance without a second
+  colour or a second card. `:first-child` is exempt, for the guide that opens
+  on a heading.
+*/
+.article-body .prose,
+.article-body .payload-richtext { font-size: 15.5px; line-height: 1.68; }
+/*
+  A section heading in a two-thousand-word article is a landmark rather than a
+  label, so it is a step larger than the site's `h2` and carries a hairline
+  above it. That hairline is the one piece of Fextralife's section rhythm worth
+  taking — it makes a long page scannable at a glance without a second colour
+  or a second card — and the size is what stops a 22px heading and a 15.5px
+  paragraph reading as the same thing from arm's length.
+*/
+.article-body .payload-richtext > h2 {
+  margin-top: 1.25em;
+  padding-top: 0.55em;
+  border-top: 1px solid var(--rule-soft);
+  font-size: clamp(20px, 2.5vw, 26px);
+  letter-spacing: -0.018em;
+}
+.article-body .payload-richtext > h3 { font-size: 17px; }
+.article-body .payload-richtext > h2:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+.article-body .payload-richtext > h3 { margin-top: 0.95em; }
+
+/* --- share ---------------------------------------------------------------- */
+
+/*
+  Plain anchors to each service's own share endpoint, plus copy-link. No
+  third-party script and no pixel — see `src/components/ShareRow.tsx` for why
+  that is a rule on this network rather than a preference.
+
+  The names are words rather than brand marks. A logo is somebody else's
+  trademark and half of them are filled shapes that would not sit beside this
+  site's 1.7-stroke icon set.
+*/
+.sharerow { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; min-width: 0; }
+.sharerow-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--f-label);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.sharerow-label .ic { flex: none; }
+.sharerow-links { display: flex; flex-wrap: wrap; gap: 6px; min-width: 0; }
+
+.sharelink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 11px;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink-soft);
+  font-size: 12.5px;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+.sharelink:hover { border-color: var(--accent-dim); color: var(--accent-hot); text-decoration: none; }
+.sharelink .ic { flex: none; }
+
+/*
+  The confirmation, and the refusal.
+
+  Always in the document as a live region so a screen reader hears the outcome
+  rather than nothing; empty until something has happened, and an empty one
+  takes no space. Green for a copy that worked, `--caution` for one that did
+  not — both tokens are declared in all three palette blocks already, so the
+  light theme says the same thing in its own colours.
+*/
+.sharerow-said { flex: 1 1 100%; font-size: 12.5px; color: var(--muted); }
+.sharerow-said:empty { display: none; }
+.sharerow-said[data-state='copied'] { color: var(--good); }
+.sharerow-said[data-state='failed'] { color: var(--caution); }
+
+/* --- the row that closes the article -------------------------------------- */
+
+/*
+  Fextralife's `.w-sharing-bottom` in shape: hairlines above and below, actions
+  spread across. Not in content — theirs carries a like count, a follow button
+  and an advert.
+*/
+.article-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  padding-block: 15px;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  min-width: 0;
+}
+.article-foot .sharerow[data-tone='foot'] { flex: 1 1 auto; }
+.article-foot-links { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; }
+.article-foot-links a { color: var(--muted); }
+.article-foot-links a:hover { color: var(--accent-hot); }
 
 /* ---------- hero clock ---------- */
 
@@ -1728,7 +2423,8 @@ th.num { text-align: right; }
 .wiki-masthead {
   /* No `overflow: hidden`: this contains the wiki's search, and clipping the
      masthead clips its results. The art below is inset to this box and does
-     not overflow it. Same reasoning as `.hub-hero`. */
+     not overflow it. The hub's own hero band used to make the same trade and
+     is gone — the home page no longer sets type on a photograph at all. */
   position: relative; isolation: isolate; z-index: 2;
   background: var(--sunken);
   border-bottom: 1px solid var(--rule);
@@ -1971,21 +2667,6 @@ th.num { text-align: right; }
 .cell-avatar { width: 40px; height: 40px; border-radius: var(--r); }
 .datatable td { vertical-align: middle; }
 
-/* Pictures inside an article. Item icons are small and square; region art is
-   wide — one row handles both by letting the items wrap and the wide ones take
-   the full width. */
-.figurerow { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; }
-.figurerow figure { margin: 0; display: flex; flex-direction: column; gap: 7px; min-width: 0; }
-/* The frame moved from the `<img>` to the wrapper around it, because the
-   credit overlay is pinned to the wrapper and has to be clipped by the same
-   radius the picture has. */
-.figurerow .figureshot {
-  border-radius: var(--r); border: 1px solid var(--rule);
-  background: var(--sunken); overflow: hidden;
-}
-.figurerow img { width: 100%; display: block; object-fit: contain; }
-.figurerow figcaption { font-size: 13px; color: var(--muted); }
-
 /* ---------------------------------------------------------------------------
    The network: wiki directory cards and the small chip label.
 
@@ -2149,8 +2830,9 @@ th.num { text-align: right; }
 --------------------------------------------------------------------------- */
 
 .masthead {
-  /* Same undeclared `--bg` as `.hub-hero`; this block's own background is
-     `--raised`, so that is what its scrim has to fade to. */
+  /* This block's own background is `--raised`, so that is what its scrim has
+     to fade to. `--bg` is declared here and read only here; the hub band that
+     shared the pattern has been removed. */
   --bg: var(--raised);
   position: relative;
   isolation: isolate;
@@ -2776,161 +3458,6 @@ h1, h2, h3 { text-wrap: balance; }
   register is `--hero-*`, read only by the five copy elements below, and the
   search keeps the theme it is actually painted in.
 */
-.hub-hero {
-  /*
-    The light register, and the fixed ground under it.
-
-    `--bg` is gone: both gradients are literal `rgba(8, 7, 6, …)` now, the
-    same near-black `.page-art` uses. It was a token that only this block
-    declared, which is the shape the gotcha in CLAUDE.md warns about from both
-    ends — used before it was declared for five commits, and then declared
-    only so the gradients would compute.
-  */
-  --hero-ink: #f6f3ec;
-  --hero-ink-soft: #e4ded2;
-  --hero-muted: #d3ccbc;
-
-  position: relative; isolation: isolate; z-index: 3;
-  padding-block: clamp(40px, 8vw, 88px);
-  border-bottom: 1px solid var(--rule);
-  /* A fixed dark ground rather than `var(--ground)`, for the same reason
-     `.page-art` sets one: the type on this band is light in both themes, so
-     if the art ever fails to load the fallback has to stay dark or the hub
-     opens light-on-light. */
-  background-color: #14120f;
-  color: var(--hero-ink);
-}
-/* Room for the credit strip, which is absolutely positioned and would
-   otherwise sit across the three figures at the narrow end of the clamp. */
-.hub-hero:has(.imgcredit[data-slot='band']) {
-  padding-bottom: calc(clamp(40px, 8vw, 88px) + 24px);
-}
-.hub-hero-art {
-  position: absolute; inset: 0; width: 100%; height: 100%;
-  /* Its own clip, since the hero can no longer do it without eating the
-     search results. `cover` already fills the box exactly; this is a belt. */
-  object-fit: cover; overflow: hidden; z-index: -2;
-  /*
-    Fully opaque. 0.4 was chosen while the scrims below were computing to
-    `none`, so it was the only thing standing between the headline and raw key
-    art; then the scrims turned on and it was doing the same job twice, and
-    the picture reached the reader at about half of one level in 255. The
-    scrim is the only thing dimming this now, and it does it where the type is
-    rather than everywhere.
-  */
-  opacity: 1;
-  /* Slightly desaturated so the accent stays the only saturated thing on the
-     page, and nothing else: a contrast lift here would be re-grading somebody
-     else's key art. */
-  filter: saturate(0.92);
-}
-/*
-  Two scrims, and they do different jobs — a single flat overlay leaves the
-  headline unreadable on about half the key art this network will ever carry,
-  and hides the other half.
-
-  The first covers the column the type is in and lets go either side of it.
-  **The copy is centred, not left-aligned**: `.hub-hero-inner` narrows `.page`
-  to 760px and inherits its `margin-inline: auto`, so at 1440 the words run
-  from 326px to 1086px of a 1376px band with about 290px spare at each end.
-  The first attempt here wiped left-to-right on that assumption and put the
-  wordmark's own letters on raw key art at 1.27:1 — measured, and the only
-  reason it was caught. So the release is symmetric, and its width is
-  `(100% - 820px) / 2`, clamped at zero: it is exactly the space the column
-  does not use, which is ~290px at 1440, ~110px at 1100 and nothing at all on
-  a phone, where the words are the whole band and the scrim closes over it.
-
-  Where it holds, it holds hard, and the binding constraint is not the
-  headline. It is `.hub-stats dt` at 11.5px, the smallest type on the band —
-  which is why the register above it matters so much. In `--muted` it needed
-  its backdrop below 0.039 relative luminance; in `--hero-muted` it may reach
-  0.096, and against the brightest pixel any of the eight key arts puts under
-  the type (0.995, A Plague Tale's white sky) that is the difference between a
-  96% scrim and a 62% one.
-
-  The second is vertical and does two jobs. It adds under the figures, which
-  is where the small type is and where the horizontal alone is thinnest
-  against a bright crop — the two multiply, so 62% and 22% make 70% there
-  without either being 70% on its own. And it darkens the top and bottom
-  edges, which is what stops a full-bleed photograph looking cut out of the
-  page.
-
-  Both are literal `rgba(8, 7, 6, …)` rather than a token. `--bg` was declared
-  by this block and read by nothing else, after five commits of being read
-  here and declared nowhere — an undeclared custom property makes the whole
-  gradient invalid at computed-value time rather than erroring, which is how
-  the scrims painted nothing for five commits and nobody saw an error.
-*/
-.hub-hero::before {
-  content: ''; position: absolute; inset: 0; z-index: -1;
-  /* The part of the band the 760px column and its gutters do not occupy,
-     halved, and never negative. */
-  --hub-open: max(0px, calc((100% - 820px) / 2));
-  background:
-    linear-gradient(180deg,
-      rgba(8, 7, 6, 0.3) 0%,
-      rgba(8, 7, 6, 0.1) 34%,
-      rgba(8, 7, 6, 0.22) 72%,
-      rgba(8, 7, 6, 0.58) 100%),
-    linear-gradient(90deg,
-      transparent 0,
-      rgba(8, 7, 6, 0.62) var(--hub-open),
-      rgba(8, 7, 6, 0.62) calc(100% - var(--hub-open)),
-      transparent 100%);
-}
-
-.hub-hero-inner { display: flex; flex-direction: column; gap: 14px; max-width: 760px; }
-
-/* The five copy elements, and the only readers of the `--hero-*` register.
-   Light in both themes, because the thing behind them is a photograph in both
-   themes — the rule `.page-art` states in its own note. */
-.hub-wordmark {
-  display: flex; align-items: center; gap: 9px;
-  font-family: var(--f-display); font-size: 16px; font-weight: 700;
-  letter-spacing: 0.06em; text-transform: uppercase; color: var(--hero-ink);
-}
-.hub-wordmark .glyph { color: var(--accent); display: flex; }
-
-/*
-  The headline was capped at `max-width: 17ch`, which at fifty pixels of
-  display type forced it into three or four very short lines with a badly
-  ragged right edge — the "uneven" look. A measure that tight is for a pull
-  quote, not a heading.
-
-  Widened to something a headline can actually sit on, and `text-wrap:
-  balance` does the rest: it evens the lines out rather than filling each one
-  until it overflows, which is precisely the ragged-last-word problem. The
-  lede gets `pretty`, which is the cheaper version of the same idea and mainly
-  stops a one-word final line.
-*/
-.hub-title {
-  font-family: var(--f-display);
-  font-size: clamp(28px, 5vw, 50px);
-  line-height: 1.08;
-  letter-spacing: -0.02em;
-  margin: 0;
-  max-width: 24ch;
-  text-wrap: balance;
-}
-.hub-lede {
-  font-size: 16.5px;
-  line-height: 1.55;
-  color: var(--hero-ink-soft);
-  max-width: 54ch;
-  text-wrap: pretty;
-  margin: 0;
-}
-
-.hub-stats { display: flex; flex-wrap: wrap; gap: 10px 36px; margin: 4px 0 0; }
-.hub-stats div { display: flex; flex-direction: column-reverse; gap: 1px; }
-/* The smallest type on the band, and therefore the one the scrim is sized
-   for. Do not darken `--hero-muted` without re-running the measurement. */
-.hub-stats dt { font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--hero-muted); }
-.hub-stats dd {
-  margin: 0; font-family: var(--f-display); font-weight: 700; line-height: 1;
-  font-size: clamp(26px, 3.4vw, 34px); font-variant-numeric: tabular-nums; color: var(--hero-ink);
-}
-
 /* --- Network search ------------------------------------------------------- */
 
 .hubsearch { position: relative; width: 100%; max-width: 560px; z-index: 5; }
@@ -2965,72 +3492,6 @@ h1, h2, h3 { text-wrap: balance; }
 .hubsearch-text { display: flex; flex-direction: column; gap: 1px; min-width: 0; flex: 1 1 auto; }
 .hubsearch-text strong { font-size: 14px; font-weight: 600; }
 .hubsearch-text .note { font-size: 12px; }
-
-/* --- The wiki switcher ---------------------------------------------------- */
-
-.hub-strip {
-  border-bottom: 1px solid var(--rule);
-  background: color-mix(in srgb, var(--raised) 55%, transparent);
-  overflow-x: auto; scrollbar-width: thin;
-}
-.hub-strip-inner { display: flex; gap: 6px; padding-block: 9px; }
-
-.hub-chip {
-  display: flex; align-items: center; gap: 8px; flex: none;
-  padding: 6px 12px 6px 7px; border-radius: 999px;
-  border: 1px solid transparent; color: var(--ink-soft);
-  white-space: nowrap;
-  transition: all 140ms var(--ease);
-}
-.hub-chip:hover { background: var(--surface); border-color: var(--rule); color: var(--ink); text-decoration: none; }
-.hub-chip img { width: 22px; height: 22px; border-radius: 5px; object-fit: cover; }
-.hub-chip-name { font-size: 13.5px; font-weight: 500; }
-.hub-chip-count { font-size: 11.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
-
-/* --- What people are asking ---------------------------------------------- */
-
-.asking { display: grid; gap: 7px; grid-template-columns: 1fr; margin: 0; padding: 0; list-style: none; }
-@media (min-width: 760px) { .asking { grid-template-columns: repeat(2, 1fr); } }
-
-.asking a {
-  display: flex; flex-direction: column; gap: 5px;
-  padding: 11px 14px; border-radius: var(--r);
-  border: 1px solid var(--rule); background: var(--surface);
-  color: var(--ink);
-  transition: border-color 140ms var(--ease), transform 140ms var(--ease), box-shadow 140ms var(--ease);
-}
-.asking a:hover {
-  text-decoration: none; border-color: var(--accent-dim);
-  transform: translateY(-1px); box-shadow: var(--lift-soft);
-}
-/* The query is set in the voice it was typed in — lower case, no full stop. */
-.asking-q {
-  display: flex; align-items: center; gap: 7px;
-  font-size: 14px; color: var(--ink);
-}
-.asking-q .ic { color: var(--muted); flex: none; }
-.asking-a {
-  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
-  font-size: 12.5px; color: var(--accent-hot); padding-left: 21px;
-}
-
-/* --- The feed ------------------------------------------------------------- */
-
-.feed { display: flex; flex-direction: column; gap: 4px; margin: 0; padding: 0; list-style: none; }
-.feed a {
-  display: flex; align-items: center; gap: 11px;
-  padding: 10px 12px; border-radius: var(--r);
-  border: 1px solid transparent; color: var(--ink);
-  transition: background-color 130ms var(--ease), border-color 130ms var(--ease);
-}
-.feed a:hover { background: var(--surface); border-color: var(--rule); text-decoration: none; }
-.feed-icon { width: 30px; height: 30px; border-radius: 6px; object-fit: cover; flex: none; border: 1px solid var(--rule); }
-.feed-text { display: flex; flex-direction: column; gap: 1px; min-width: 0; flex: 1 1 auto; }
-.feed-text strong { font-size: 14.5px; font-weight: 600; }
-.feed-text .note {
-  font-size: 12.5px;
-  display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;
-}
 
 /* --- The people host ------------------------------------------------------
    The profile infobox is the game factsheet's shape, deliberately: same
@@ -3305,12 +3766,10 @@ a.catalogue-title:hover { color: var(--accent-hot); text-decoration: none; }
   color: var(--accent-hot);
 }
 .card-score span { font-size: 10px; color: var(--muted); font-weight: 500; }
-/* The outlook marker, which has to survive being small: a number on a card
-   with no basis beside it reads as a verdict on a game nobody has played. */
-.card-score-basis {
-  font-size: 9px; letter-spacing: 0.05em; text-transform: uppercase;
-  color: var(--muted); font-weight: 600;
-}
+/* There was an outlook marker under this number, in nine-pixel caps. It is
+   gone with the option that produced it: a game that is not out now shows no
+   score at all, so a figure on a card is always a verdict somebody stands
+   behind and has nothing left to qualify. See `src/lib/verdict.ts`. */
 
 /* --- Reader ratings -------------------------------------------------------
    Ten stars, and the two numbers kept apart. `lib/ratings.ts` argues the case
@@ -3695,12 +4154,8 @@ a.elink:hover {
   line-height: 1; font-variant-numeric: tabular-nums;
 }
 .score-badge-outof { font-size: 10.5px; font-weight: 600; }
-.score-badge-basis {
-  margin-top: 4px; padding-top: 3px; align-self: stretch;
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
-  font-family: var(--f-label); font-size: 9px; font-weight: 700;
-  letter-spacing: 0.07em; text-transform: uppercase; text-align: center;
-}
+/* The hairline and the word under the figure are gone for the same reason as
+   `.card-score-basis` above. The badge is two elements now. */
 
 /* The same judgement, on the game's own page, where there is room for it to
    be the size it deserves. The number was 30px of `--accent-hot` type in a
@@ -3845,6 +4300,69 @@ a.elink:hover {
   gap: 10px 16px; min-width: 0;
 }
 
+/* --- an uploaded logo, in place of the drawn mark ------------------------
+
+   Site settings → Identity → Logo image. Blank keeps the drawn glyph, which
+   is what the favicon and the share card are cut from; this is only for a
+   network that has a mark of its own.
+
+   Both pictures are in the document and CSS chooses, rather than JavaScript
+   swapping one for the other. The theme is stamped on <html> before first
+   paint precisely so nothing flickers, and a logo that arrived a frame later
+   would put the flicker back on every page.
+
+   The three-way palette rule applies here as everywhere: bare `:root` is the
+   dark theme, `[data-theme='light']` is the explicit light one, and the media
+   query covers a reader who has chosen neither.                            */
+
+.sitelogo { display: inline-flex; align-items: center; flex: none; }
+.sitelogo img { display: block; width: auto; max-width: 180px; height: 100%; }
+
+/* Dark is the default theme, so the dark picture is the one shown when there
+   is one. Everything below is the light theme putting it back. */
+.sitelogo-light { display: none; }
+.sitelogo-dark { display: block; }
+/* Only one picture uploaded: it is used in both themes, which is the right
+   answer for a mark that works on both and the reason the second slot is
+   optional. */
+.sitelogo:not(:has(.sitelogo-dark)) .sitelogo-light { display: block; }
+
+:root[data-theme='light'] .sitelogo-light { display: block; }
+:root[data-theme='light'] .sitelogo-dark { display: none; }
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme='dark']):not([data-theme='light']) .sitelogo-light { display: block; }
+  :root:not([data-theme='dark']):not([data-theme='light']) .sitelogo-dark { display: none; }
+}
+
+/* --- a game, with its cover -----------------------------------------------
+
+   The card a studio's page and a person's page use to list their work. Both
+   listed a bare title and a paragraph, so a studio with eleven games was
+   eleven identical grey rectangles.
+
+   The poster is 3:4 because that is what a cover is, and `object-fit: cover`
+   because the harvested files are not all exactly that. A game with no cover
+   renders no art block at all rather than a placeholder - `GameCard` decides,
+   and the card below simply has one fewer child.                            */
+
+.gamecard { display: flex; gap: 12px; align-items: flex-start; min-width: 0; }
+.gamecard-art {
+  position: relative;
+  flex: none;
+  width: 64px;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: 4px;
+  border: 1px solid var(--rule);
+  background: var(--sunken);
+}
+.gamecard-art img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.gamecard-body { min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+/* Lighter than the title it follows: the year qualifies the name, it is not
+   part of it. */
+.gamecard-year { font-weight: 400; color: var(--muted); font-variant-numeric: tabular-nums; }
+
 /* A CTA in a `.section-head` sits on the far side of a `space-between` row
    from the heading. That row aligns on the baseline, which for a filled
    button means its bottom edge lines up with the heading's baseline and it
@@ -3870,3 +4388,386 @@ a.elink:hover {
    quietly moving a token is how that work gets undone. It wants its own
    change, with the whole light theme re-measured, not a line in this one.
    --------------------------------------------------------------------------- */
+
+
+/* ===========================================================================
+   THE HUB HOME PAGE
+
+   A game and an article at equal weight, the figures as a band, then guides
+   beside questions and studios beside people, with every wiki as box art
+   underneath.
+
+   ## Nothing here puts type on a photograph
+
+   The hub used to open on one wiki's key art at full bleed with the promise
+   set over it, and it read as black. That was measured, not guessed: the
+   photograph has a greyscale mean of 11.5 of 255, and the scrim needed to keep
+   11.5px type legible over a white sky is a 96% wash — a picture nobody can
+   see. Every image here has an edge instead, so no scrim has to be tuned and a
+   dark screenshot costs only its own darkness.
+
+   ## The rows are even by construction
+
+   There is deliberately **no `align-items`** on `.home-grid`, so it is the
+   default `stretch`. The line was `align-items: start`, which sizes every cell
+   to its own content and leaves the short ones with a gap beneath them up to
+   the row's height — it reads as a fault in each card and is a property of the
+   container. The next person to tidy this will be tempted to put it back.
+
+   Removing it is necessary and not sufficient, so: every cell is a flex
+   column, whatever belongs on the floor of a card is put there with
+   `margin-top: auto`, and every picture carries a fixed `aspect-ratio`. Two
+   tiles whose art is 16:9 and 3:4 cannot line up whatever the text does.
+
+   The arithmetic matters too. Seven cells at two columns each in a
+   four-column grid is three and a half rows, and the half is a card beside a
+   hole; the figures band takes all four, which makes it 2+2 / 4 / 2+2 / 2+2.
+
+   Nothing is clamped to keep it tidy. A short card gets space.
+   =========================================================================== */
+
+/* --- the head ------------------------------------------------------------- */
+
+.hv-mast {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0;
+  font-family: var(--f-display);
+  font-size: 19px;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+}
+.hv-mast .glyph { color: var(--accent); display: flex; }
+
+/* The wordmark, on its own line above the promise. It was inside the hero
+   band and needed the hero's light register to survive a photograph behind
+   it; with no photograph behind anything it takes the page's own ink. */
+.home-mast { padding-block: 22px 0; min-width: 0; }
+.home-wordmark {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0;
+  font-family: var(--f-display);
+  font-size: 21px;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+}
+.home-wordmark .glyph { color: var(--accent); display: flex; }
+
+.home-head { display: flex; flex-direction: column; gap: 13px; padding-block: 30px 20px; min-width: 0; }
+.home-lede { margin: 0; font-size: 16.5px; line-height: 1.5; color: var(--muted); max-width: 62ch; }
+.home-title {
+  margin: 0;
+  font-size: clamp(25px, 3.1vw, 37px);
+  line-height: 1.07;
+  letter-spacing: -0.024em;
+  max-width: 22ch;
+}
+.home-search { max-width: 560px; width: 100%; min-width: 0; }
+
+/* --- the grid and the cell ------------------------------------------------ */
+
+/*
+  No `align-items` here at all, so it is the default `stretch`. That is the
+  whole fix, and it is written as an absence — which is exactly why it is worth
+  a comment, because the next person to "tidy" this will be tempted to add the
+  line back.
+*/
+.home-grid { display: grid; grid-template-columns: 1fr; gap: 13px; min-width: 0; }
+
+.home-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  min-width: 0;
+  padding: 15px 16px;
+  border: 1px solid var(--rule);
+  border-radius: var(--r);
+  background: var(--surface);
+}
+.home-cellhead { display: flex; align-items: baseline; gap: 10px; margin: 0; }
+/* The body takes the slack a stretched row hands the card. */
+/* `> *` stretches too, or the row inside it is only as tall as its own
+   content and has no excess to distribute. */
+.home-cellbody { display: flex; flex-direction: column; gap: 9px; min-height: 0; flex: 1 1 auto; }
+.home-cellbody > * { flex: 1 1 auto; }
+.home-more {
+  margin-left: auto;
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: none;
+  letter-spacing: 0;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+a.home-more:hover { color: var(--accent-hot); text-decoration: none; }
+
+/* --- the lead tile -------------------------------------------------------- */
+
+.home-lead { padding: 0; overflow: hidden; gap: 0; color: var(--ink-soft); }
+.home-lead:hover { border-color: var(--accent-dim); text-decoration: none; }
+.home-lead-art { position: relative; display: block; flex: none; }
+.home-lead-art img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; }
+.home-lead-cinema img { aspect-ratio: 21 / 9; }
+.home-lead-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 15px 16px 16px;
+  min-width: 0;
+  /* Takes the height a stretched row gives the card, so the foot below can be
+     pushed to the floor of it rather than sitting under the last sentence. */
+  flex: 1 1 auto;
+}
+.home-lead-body strong { font-family: var(--f-display); font-size: 22px; line-height: 1.14; color: var(--ink); }
+.home-lead-foot {
+  margin-top: auto;
+  padding-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  font-size: 12.5px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.home-lead-foot .chip { align-self: flex-start; }
+
+/* --- figures -------------------------------------------------------------- */
+
+.home-fig { display: flex; flex-wrap: wrap; gap: 10px 30px; margin: 0; }
+.home-fig div { display: flex; flex-direction: column-reverse; gap: 1px; min-width: 0; }
+.home-fig dt {
+  font-family: var(--f-label);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+.home-fig dd {
+  margin: 0;
+  font-family: var(--f-display);
+  font-size: 26px;
+  line-height: 1;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+/* As a card the figures centre in whatever height the row gives them; as a
+   band they sit on one line and spread. */
+.home-figures { justify-content: center; }
+.home-figband .home-fig { justify-content: space-between; width: 100%; }
+
+/* --- lists ---------------------------------------------------------------- */
+
+.home-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; min-width: 0; }
+.home-list a {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--rule-soft);
+  color: var(--ink-soft);
+  font-size: 13.5px;
+  line-height: 1.35;
+  min-width: 0;
+}
+.home-list li:last-child a { border-bottom: 0; padding-bottom: 0; }
+.home-list a:hover { color: var(--ink); text-decoration: none; }
+.home-list .ic { color: var(--muted); flex: none; }
+
+/* --- guides --------------------------------------------------------------- */
+
+.home-guidelist { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.home-guide { display: flex; gap: 11px; color: var(--ink-soft); min-width: 0; }
+.home-guide:hover { text-decoration: none; }
+.home-guide-art {
+  flex: none;
+  width: 76px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  background: var(--sunken);
+}
+.home-guide-art img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; }
+.home-guide:hover .home-guide-art { border-color: var(--accent-dim); }
+.home-guide-body { display: flex; flex-direction: column; gap: 3px; min-width: 0; justify-content: center; }
+.home-guide-body strong { font-size: 13.8px; line-height: 1.3; color: var(--ink); font-weight: 600; }
+.home-guide-wiki { font-size: 11.5px; color: var(--muted); }
+
+/* --- studios -------------------------------------------------------------- */
+
+/*
+  `space-between`, so wrapped rows of chips fill the card rather than stacking
+  at the top of it.
+
+  Studios and people share a grid row, so both cards are as tall as the taller
+  one — and twelve chips wrapping to four short rows left an obvious hole under
+  them while the people beside them ran the full height. `space-between`
+  distributes only *excess* space, so a card whose content already fills it is
+  untouched and one with room to spare spreads evenly instead of leaving a gap.
+  It self-corrects whichever of the two is shorter on the day, which a fixed
+  count never would.
+*/
+.home-corow { display: flex; flex-wrap: wrap; gap: 7px; align-content: space-between; min-width: 0; }
+.home-co {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 11px 6px 7px;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--raised);
+  color: var(--ink-soft);
+  font-size: 12.5px;
+  min-width: 0;
+  max-width: 100%;
+}
+.home-co:hover { border-color: var(--accent-dim); color: var(--ink); text-decoration: none; }
+/*
+  The mark, painted according to what it actually is.
+
+  A logo from Commons is a trademark drawn as flat shapes, and about a third of
+  the ones here are black on transparency — invisible on this surface. The
+  first fix was a white disc behind every one, which is a row of white circles
+  across a dark page, applied to logos that never needed one.
+
+  `tools/logo-ink.mjs` reads the pixels of each file instead and records the
+  mean lightness and saturation of everything not transparent, and
+  `data-ink` carries the answer:
+
+    dark   — a black wordmark, inverted to a white one. That is the same
+             trademark in its own dark-background lockup, and it is a
+             reversible transform of the shape rather than a recolour of it.
+    light  — already legible. Nothing at all is done to it.
+    colour — **never inverted.** Inverting Capcom's blue gives orange, which
+             is not Capcom's mark. A plate is honest about being a background;
+             a recoloured trademark is not. So these, and only these, get one.
+
+  No disc. A rounded square reads as a container rather than as a badge, and it
+  wastes less of a wordmark's width than a circle does.
+*/
+.home-co-mark {
+  flex: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.home-co-mark img { width: 22px; height: 22px; object-fit: contain; display: block; }
+
+.home-co-mark[data-ink='dark'] img { filter: invert(1); }
+.home-co-mark[data-ink='colour'] {
+  /* Not pure white: a flat #fff chip is the brightest thing on the page and
+     pulls the eye off the name beside it. */
+  background: #f2efe9;
+}
+
+/*
+  In the light theme the ground is already light, so a dark mark needs no
+  inversion and a coloured one needs no plate. Both rules are switched off
+  rather than overridden, so the light theme shows every logo exactly as its
+  file draws it.
+*/
+:root[data-theme='light'] .home-co-mark[data-ink='dark'] img { filter: none; }
+:root[data-theme='light'] .home-co-mark[data-ink='colour'] { background: transparent; }
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme='dark']):not([data-theme='light']) .home-co-mark[data-ink='dark'] img {
+    filter: none;
+  }
+  :root:not([data-theme='dark']):not([data-theme='light']) .home-co-mark[data-ink='colour'] {
+    background: transparent;
+  }
+}
+.home-co-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+
+/* --- people --------------------------------------------------------------- */
+
+/* The same, one axis along: a column of faces spreads into whatever height the
+   row gives it rather than leaving the bottom of the card empty. */
+.home-facerow {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  justify-content: space-between;
+  min-width: 0;
+}
+.home-person { display: flex; align-items: center; gap: 10px; color: var(--ink-soft); min-width: 0; }
+.home-person:hover { text-decoration: none; color: var(--ink); }
+.home-person-face {
+  flex: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--raised);
+  border: 1px solid var(--rule);
+}
+.home-person-face img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.home-person-body { display: flex; flex-direction: column; min-width: 0; }
+.home-person-body strong { font-size: 13.5px; font-weight: 600; color: var(--ink); }
+.home-person-body .note {
+  font-size: 11.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* --- the wiki directory under every variant -------------------------------- */
+
+.home-dir { display: flex; flex-direction: column; gap: 12px; padding-block: 28px 0; min-width: 0; }
+.home-postergrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.home-poster { display: flex; flex-direction: column; gap: 7px; min-width: 0; color: var(--ink-soft); }
+.home-poster:hover { text-decoration: none; }
+.home-poster-art {
+  position: relative;
+  display: block;
+  border: 1px solid var(--rule);
+  border-radius: var(--r);
+  overflow: hidden;
+  background: var(--sunken);
+  aspect-ratio: 3 / 4;
+}
+.home-poster-art img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.home-poster:hover .home-poster-art { border-color: var(--accent-dim); }
+.home-poster-score {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: rgba(8, 7, 6, 0.82);
+  color: #f6f3ec;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+.home-poster-name { font-family: var(--f-display); font-size: 15.5px; color: var(--ink); line-height: 1.2; }
+.home-poster-meta { font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+/* --- the six arrangements -------------------------------------------------- */
+
+@media (min-width: 620px) {
+  .home-postergrid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 900px) {
+  .home-grid { grid-template-columns: repeat(4, 1fr); }
+  .home-postergrid { grid-template-columns: repeat(5, 1fr); }
+
+  /*
+    1 — every row is two cells of equal width, except the figures, which are a
+    band across all four.
+
+    The arithmetic is the point and it is worth doing out loud: seven cells at
+    two columns each in a four-column grid is three and a half rows, and the
+    half is a cell sitting alone beside a hole. Giving the band its full four
+    makes it 2+2 / 4 / 2+2 / 2+2 — four whole rows. Every layout below is
+    checked the same way.
+  */
+  .home-grid > * { grid-column: span 2; }
+  .home-grid .home-figband { grid-column: span 4; }
+
+}

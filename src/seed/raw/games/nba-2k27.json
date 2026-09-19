@@ -1,0 +1,437 @@
+{
+  "slug": "nba-2k27",
+  "appId": 4356430,
+  "storeUrl": "https://store.steampowered.com/app/4356430/",
+  "fetchedAt": "2026-09-19",
+  "title": "NBA 2K27",
+  "developers": [
+    "Visual Concepts"
+  ],
+  "publishers": [
+    "2K"
+  ],
+  "releaseDate": "Sep 3, 2026",
+  "comingSoon": false,
+  "shortDescription": "The hustle doesn’t stop and the run never ends in NBA 2K27. Chase greatness around the clock in MyCAREER, MyTEAM, and MyNBA, and make your hoop dreams a reality.",
+  "aboutText": "The hustle doesn’t stop and the run never ends in NBA 2K27. Chase greatness around the clock in MyCAREER*, MyTEAM, and MyNBA, and make your hoop dreams a reality.\n\nTHE CITY\nPut The City on your back and lead the next generation of MyPLAYERs, representing every hooper, fueled by basketball. Let your passion power your unique style on and off the court, team up with friends at the all-new Crew HQ, and dominate the courts at The REC, Park, and beyond. \n\nMyCAREER\nFor the first time in MyCAREER, play through NBA history and compete against legends from five iconic eras, and experience a legacy-defining story in the Modern Era. Create a MyPLAYER that transcends playstyles and rewrite the record book on your way to the Hall of Fame.\n\nPOWERED BY ProPLAY®\nMaster your skills with new gameplay animations directly translated from real NBA action. Use an array of ProPLAY® features to cook defenders with ankle-breaking crossovers, show off your range with enhanced shooting mechanics, and become a matchup nightmare every time you step on the court.\n\nMyTEAM\nCollect your favorite NBA and WNBA stars with ease and build a fantasy squad for the ages. Grow your collection and assemble endless lineup combinations. Take control of your MyTEAM and put it to the test in single-player and multiplayer modes, with challenges inspired by NBA performances.\n\n*Internet connection and NBA 2K Account required to redeem and use bonus content. Terms apply.\nPlay Now, MyNBA, and The W are available offline. All other game modes and features require Internet connection, may require online account registration and may not be available to all users at all times.",
+  "genres": [
+    "Sports"
+  ],
+  "categories": [
+    "Single-player",
+    "Multi-player",
+    "PvP",
+    "Online PvP",
+    "Shared/Split Screen PvP",
+    "Co-op",
+    "Online Co-op",
+    "Shared/Split Screen Co-op",
+    "Shared/Split Screen",
+    "Steam Achievements",
+    "In-App Purchases",
+    "Gamepad Recommended",
+    "DualShock Controller Support",
+    "DualShock Controller Support",
+    "DualSense Controller Support",
+    "DualSense Controller Support",
+    "Partial Controller Support",
+    "Steam Cloud",
+    "Remote Play Together",
+    "Family Sharing"
+  ],
+  "languages": "English",
+  "contentDescriptors": null,
+  "platforms": [
+    "windows"
+  ],
+  "requirements": {
+    "minimum": [
+      {
+        "label": "OS",
+        "value": "Windows 10 64-Bit (latest update)"
+      },
+      {
+        "label": "Processor",
+        "value": "Intel® Core™ i5-9400 or AMD Ryzen™ 5 1400"
+      },
+      {
+        "label": "Memory",
+        "value": "8 GB RAM"
+      },
+      {
+        "label": "Graphics",
+        "value": "NVIDIA® GeForce® GTX 1060 5 GB or AMD Radeon™ RX 5500 XT 4 GB or Intel® Arc™ A580"
+      },
+      {
+        "label": "DirectX",
+        "value": "Version 12"
+      },
+      {
+        "label": "Network",
+        "value": "Broadband Internet connection"
+      },
+      {
+        "label": "Storage",
+        "value": "110 GB available space"
+      },
+      {
+        "label": "Additional Notes",
+        "value": "SSD Required. Dual-analog Gamepad recommended. Initial installation requires one-time internet connection for Steam authentication; software installations required (included with the game) include DirectX and Visual C++ Redistributable 2019. In order to play NBA 2K27 on PC, you need a processor capable of supporting AVX2 and a graphics card capable of supporting DirectX feature level 12.0."
+      }
+    ],
+    "recommended": [
+      {
+        "label": "OS",
+        "value": "Windows 11 64-Bit (latest update)"
+      },
+      {
+        "label": "Processor",
+        "value": "Intel® Core™ i5-10600 or AMD Ryzen™ 5 3600X"
+      },
+      {
+        "label": "Memory",
+        "value": "16 GB RAM"
+      },
+      {
+        "label": "Graphics",
+        "value": "NVIDIA® GeForce® RTX 2070 8 GB or AMD Radeon™ RX 5700 8 GB or Intel® Arc™ A770"
+      },
+      {
+        "label": "DirectX",
+        "value": "Version 12"
+      },
+      {
+        "label": "Network",
+        "value": "Broadband Internet connection"
+      },
+      {
+        "label": "Storage",
+        "value": "110 GB available space"
+      },
+      {
+        "label": "Additional Notes",
+        "value": "SSD Required. Dual-analog Gamepad recommended. Initial installation requires one-time internet connection for Steam authentication; software installations required (included with the game) include DirectX and Visual C++ Redistributable 2019. In order to play NBA 2K27 on PC, you need a processor capable of supporting AVX2 and a graphics card capable of supporting DirectX feature level 12.0."
+      }
+    ]
+  },
+  "editions": [
+    {
+      "title": "NBA 2K27 Standard Edition",
+      "priceText": "$69.99"
+    },
+    {
+      "title": "NBA 2K27 Deluxe Edition",
+      "priceText": "$99.99"
+    }
+  ],
+  "dlc": [
+    4357570,
+    4357560,
+    4357580,
+    4357590
+  ],
+  "achievements": [
+    {
+      "title": "Wonder Twins",
+      "description": "Activate a Running Mates skill. (MyCAREER)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/95a7565edaf3505a5f6ee36625797d35e6114c30.jpg",
+      "globalPercent": 47.4
+    },
+    {
+      "title": "Winter is Coming",
+      "description": "Win the G League Winter Showcase. (MyCAREER)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/2c9ca394cbd724a80d8529f598d07c6625e1ebf5.jpg",
+      "globalPercent": 45
+    },
+    {
+      "title": "G League Greatness",
+      "description": "Win the G League Championship. (MyCAREER)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/3c18300ef380476fecba431a02c84510b9bb1006.jpg",
+      "globalPercent": 36.5
+    },
+    {
+      "title": "It Takes Two",
+      "description": "Win a game in Street Kings using two Teammate Bonus Teammates. (MyCAREER)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/937add25f1a460b406a7a00ae0d9bcebf0e7ecb8.jpg",
+      "globalPercent": 30.9
+    },
+    {
+      "title": "Keep Your Distance",
+      "description": "Make 10 three-point shots in any one game. (Quick Play)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/75f6316d22fc0380ba1430e480e4fdb42c06a589.jpg",
+      "globalPercent": 25.4
+    },
+    {
+      "title": "Winning",
+      "description": "Win a game. (Quick Play)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/a912f6c70bf8e94f1e2cf67d64b0d8fa22519cf3.jpg",
+      "globalPercent": 22.2
+    },
+    {
+      "title": "Party Crasher",
+      "description": "Defeat a Court Crasher in Street Kings. (MyCAREER)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/a31732914ae4ec529ccd933370edd68468351a38.jpg",
+      "globalPercent": 18.7
+    },
+    {
+      "title": "VIP Connection",
+      "description": "Win a game in Street Kings with a VIP Teammate. (MyCAREER)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/9020fa856f824a4de7bb4949be471df45f463db4.jpg",
+      "globalPercent": 14.3
+    },
+    {
+      "title": "Rucker Rising",
+      "description": null,
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/040dca8fc7aaffa9e4aa0a2109f41ddbacd97582.jpg",
+      "globalPercent": 13.9
+    },
+    {
+      "title": "Combine Ready",
+      "description": "Complete Beginner Tutorial. (Learn 2K)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/3d8fbe0c937b851cee18b95e6257d1b4efa82c50.jpg",
+      "globalPercent": 10.5
+    },
+    {
+      "title": "Mirror Universe",
+      "description": "Acquire a Parallel Card. (MyTEAM)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/417670d567f149d7c7353cb0468b5f38784eb297.jpg",
+      "globalPercent": 9.2
+    },
+    {
+      "title": "Reign Fall",
+      "description": "Defeat The Reignmaker at The Hollows in Street Kings. (MyCAREER)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/24a9d8ddd352023d1395b1fcd93d0581fee08e1d.jpg",
+      "globalPercent": 8.4
+    },
+    {
+      "title": "Rucker Royalty",
+      "description": "Win the Street Kings Rucker Park tournament during your first attempt for the week. (MyCAREER)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/d33e40decb41c395090b62154b6368513b4318d0.jpg",
+      "globalPercent": 8.4
+    },
+    {
+      "title": "Master Detective",
+      "description": null,
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/83985e5418725955c76c8d84cdb1c421e5166d7c.jpg",
+      "globalPercent": 7.9
+    },
+    {
+      "title": "Peak Performance",
+      "description": "Max out Trace Miller's Build as an OVR 99. (MyCAREER)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/910850dfb359d87a435b119784313d5cc410e50e.jpg",
+      "globalPercent": 6.1
+    },
+    {
+      "title": "Login Streak",
+      "description": "Complete a seven day login streak. (MyTEAM)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/7d4b2f0837b5ed69fd1ac69fecbec9150d6b7673.jpg",
+      "globalPercent": 4.8
+    },
+    {
+      "title": "Ghosted",
+      "description": "Use all games of a Free Agent Player Card. (MyTEAM)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/ef8f4a0bdfe23a8b466a4a948dd563cf5fe3246b.jpg",
+      "globalPercent": 4.5
+    },
+    {
+      "title": "Extinguished",
+      "description": "Defeat The Flame Thrower at Clairemont Court in Street Kings. (MyCAREER)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/dd0be481e24db425ec5df0a2f94502322e841667.jpg",
+      "globalPercent": 4.1
+    },
+    {
+      "title": "It's Back",
+      "description": "Compete in a returning limited time game mode. (MyTEAM)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/9eee1d573e090af14a8e0692b2bb5a9d7d4d50dc.jpg",
+      "globalPercent": 4
+    },
+    {
+      "title": "Spreading The Love",
+      "description": "Finish a game in which all 5 starters score double-digit points. (Quick Play)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/65bddc992018ccb698da4a9e36725f20bd483688.jpg",
+      "globalPercent": 3.6
+    },
+    {
+      "title": "Trained",
+      "description": "Complete a Coach's Training Challenge. (MyTEAM)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/41d904f883c89b89c7e72260f71639b702c15316.jpg",
+      "globalPercent": 3.2
+    },
+    {
+      "title": "The Consummate Enthusiast",
+      "description": "Reach Level 40 on the Fire and Concrete Reward Track. (MyCAREER)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/d215d173b9e5b297383ea2817f23feefa91f8f46.jpg",
+      "globalPercent": 3
+    },
+    {
+      "title": "Learn and Upgrade",
+      "description": "Complete the MyTEAM Tutorial. (MyTEAM)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/2db72519c5d3380c1e1bda8a62e9e8ae1587a171.jpg",
+      "globalPercent": 2.7
+    },
+    {
+      "title": "Mastery",
+      "description": "Level up a Player Card to Level 3 in MyTEAM. (MyTEAM)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/1c7a4f0acfbd3386d5730702dbf1d5cdc6845084.jpg",
+      "globalPercent": 2.6
+    },
+    {
+      "title": "Arcade Master",
+      "description": "Complete All Mini-Games. (Learn 2K)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/f61c38f4d47d229c070f66323bf0e0e3a745bd08.jpg",
+      "globalPercent": 2.5
+    },
+    {
+      "title": "Buddy System",
+      "description": "Complete a MyCAREER Co-op Story Game with 3 Stars. (MyCAREER)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/596fe8e7041da9aa0ef321aaadb98f2fd61fa126.jpg",
+      "globalPercent": 2.3
+    },
+    {
+      "title": "Return Flight",
+      "description": "Complete an Exhibition early. (MyTEAM)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/770db80de59f2c3b315cf7eff2e873315c82cc5a.jpg",
+      "globalPercent": 2.3
+    },
+    {
+      "title": "Take Over",
+      "description": "Apply 5 Takeovers to a Shoe Card. (MyTEAM)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/af033ae1962a53933cf1b0aa0b335255c98bbe7c.jpg",
+      "globalPercent": 1.5
+    },
+    {
+      "title": "Wish Upon a Card",
+      "description": "Add a card to your Wishlist. (MyTEAM)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/fe87d678e6f65fe6e0915e5eea4a16e898812c60.jpg",
+      "globalPercent": 1.2
+    },
+    {
+      "title": "Rainbow",
+      "description": "Win a game with Player Cards representing 15 different teams. (MyTEAM)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/4d0bc251488dfc741b84ad0f88d0b8a1156f6f81.jpg",
+      "globalPercent": 1.2
+    },
+    {
+      "title": "League Certified",
+      "description": "Complete Intermediate Tutorial. (Learn 2K)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/dacd629bbeb384b36c8453270b2c5dfb04ad766b.jpg",
+      "globalPercent": 1.2
+    },
+    {
+      "title": "Fire and Concrete",
+      "description": "Complete Fire and Concrete by playing the FIBA Championship and Rucker Park bonus game. (MyCAREER)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/3e81a640d4ad04e5be4bf73486dd2bfa1031f9de.jpg",
+      "globalPercent": 0.7
+    },
+    {
+      "title": "All-Star Potential",
+      "description": "Complete Advanced Tutorial. (ALL MOVES) (Learn 2K)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/adffd0b5e95bca28a17cbd3258275f68e573de49.jpg",
+      "globalPercent": 0.6
+    },
+    {
+      "title": "It's All About the W",
+      "description": "Win a WNBA game in The W. (The W)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/fe0b23cc4a6a9cb153ad4a55247caa447c9c6a29.jpg",
+      "globalPercent": 0.5
+    },
+    {
+      "title": "Making Waves",
+      "description": "Win a WNBA game in Quick Play. (Quick Play)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/40a7e4d88160c74b94c620c69243703f06648811.jpg",
+      "globalPercent": 0.2
+    },
+    {
+      "title": "Breaking Out",
+      "description": "Earn 3 prizes on the final board in Breakout. (MyTEAM)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/105a9c2d1c5585c2531820df435ea741c25f1258.jpg",
+      "globalPercent": 0.2
+    },
+    {
+      "title": "Hoop Historian",
+      "description": "Play a MyCAREER Eras game in every single Era. (MyCAREER)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/002cd06ec6fdfbf141980445cc8098dba62113fb.jpg",
+      "globalPercent": 0.1
+    },
+    {
+      "title": "Eras Tour",
+      "description": "Reach Level 40 on the MyCAREER Eras Reward Track. (MyCAREER)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/cd954f9e2f4d06c31485c86495c18fe79f51acf8.jpg",
+      "globalPercent": 0.1
+    },
+    {
+      "title": "Level Up Everyone",
+      "description": "Earn a level up for 5 Player Cards in a single game. (MyTEAM)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/b05d3106f8ea683fc3ef13654ddd6f92ca68233a.jpg",
+      "globalPercent": 0.1
+    },
+    {
+      "title": "What are ya Buyin'",
+      "description": "Access the secret market in Triple Threat Park. (MyTEAM)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/5a3415b5271c447c0bef58618900b8ae352855aa.jpg",
+      "globalPercent": 0.1
+    },
+    {
+      "title": "I'm a Champion",
+      "description": "Become the Showdown Champion. (MyTEAM)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/6534f9944a0f8e985569e5f60255b083cf21f027.jpg",
+      "globalPercent": 0.1
+    },
+    {
+      "title": "Global Domination",
+      "description": "Complete 5 Dominations. (MyTEAM)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/f719b2373c786af1c54fd69eff6575cadd7008fc.jpg",
+      "globalPercent": 0.1
+    },
+    {
+      "title": "Shopping Spree",
+      "description": "Purchase 5 items from the Gauntlet Shop. (MyTEAM)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/6f33bec499395d6256a9b37b2bb96c4aa5875878.jpg",
+      "globalPercent": 0.1
+    },
+    {
+      "title": "Rock Hound",
+      "description": "Collect every Player Card gem color in MyTEAM. (MyTEAM)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/a50679c5a33df8348210da9a29b3787b333cfa55.jpg",
+      "globalPercent": 0.1
+    },
+    {
+      "title": "Game Over man...",
+      "description": "Run out of Player Cards to use in Gauntlet. (MyTEAM)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/fe13e9fa7059dea7cc79333e8d569b0f4c858c4d.jpg",
+      "globalPercent": 0.1
+    },
+    {
+      "title": "Big Timer",
+      "description": "Unlock an All-Time team. (Play Now Online)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/62ad1b8f5cc2a76a4d8c155369fd1c015f04cecc.jpg",
+      "globalPercent": 0.1
+    },
+    {
+      "title": "All Timer",
+      "description": "Unlock all 3 All-Time teams. (Play Now Online)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/d85e91bfe667ed50443f0ca126357e9e0742fb99.jpg",
+      "globalPercent": 0.1
+    },
+    {
+      "title": "Well-Traveled",
+      "description": "Win a game with every regular NBA team. (Play Now Online)",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4356430/727aa29e325162505c3171b834f84dc6d74b8975.jpg",
+      "globalPercent": 0.1
+    }
+  ],
+  "art": {
+    "header": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4356430/9152438fde7de9f4c20b4fd9072ba69f844dacab/header.jpg?t=1789075530",
+    "capsule": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4356430/92d7aa92bafdd80d200ef25467a3680cf525836a/capsule_231x87.jpg?t=1789075530",
+    "background": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4356430/be688153a4e95ce0c0adadfc6152f252faf900f0/page_bg_raw.jpg?t=1789075530",
+    "screenshots": [
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4356430/0202201bff9e57adf4913e9c8a21062c730e0b27/ss_0202201bff9e57adf4913e9c8a21062c730e0b27.1920x1080.jpg?t=1789075530",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4356430/2a04508bf934834c93cfe5c91f27f45d3043a83d/ss_2a04508bf934834c93cfe5c91f27f45d3043a83d.1920x1080.jpg?t=1789075530",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4356430/57773a1574208a10b2a5a12fdf3e0be991461475/ss_57773a1574208a10b2a5a12fdf3e0be991461475.1920x1080.jpg?t=1789075530",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4356430/8650f68a3903425f66263a256aa1e010b2c80334/ss_8650f68a3903425f66263a256aa1e010b2c80334.1920x1080.jpg?t=1789075530",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4356430/80b9c51723cdddd5fc65f19a04505c6e9513f471/ss_80b9c51723cdddd5fc65f19a04505c6e9513f471.1920x1080.jpg?t=1789075530",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4356430/5907fec74f8c3e45c5b59ce9a6f3026e51e49ba7/ss_5907fec74f8c3e45c5b59ce9a6f3026e51e49ba7.1920x1080.jpg?t=1789075530",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4356430/fd53124772381d96e50378052408876707ebfa27/ss_fd53124772381d96e50378052408876707ebfa27.1920x1080.jpg?t=1789075530"
+    ]
+  }
+}

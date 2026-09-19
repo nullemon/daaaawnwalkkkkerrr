@@ -1,0 +1,70 @@
+{
+  "slug": "subnautica-2",
+  "host": "subnautica.fandom.com",
+  "fetchedAt": "2026-09-19",
+  "entities": [
+    {
+      "title": "Concept Art",
+      "wikiTitle": "Concept Art",
+      "collection": "items",
+      "facts": {},
+      "categories": [
+        "Alien Structures",
+        "Alien Technology",
+        "Biomes",
+        "Concept Art",
+        "Coral",
+        "Equipment",
+        "Fauna",
+        "Flora",
+        "Story",
+        "Vehicles"
+      ],
+      "image": "https://static.wikia.nocookie.net/subnautica/images/0/04/Pat-presley-sn-alienseav2.jpg/revision/latest?cb=20170108173527",
+      "url": "https://subnautica.fandom.com/wiki/Concept_Art",
+      "imageFile": "assets/_wiki/subnautica-2/Concept-Art.jpg"
+    },
+    {
+      "title": "Ryley Robinson",
+      "wikiTitle": "Ryley Robinson",
+      "collection": "characters",
+      "facts": {
+        "affiliation": "Alterra Corporation",
+        "age": "Unknown",
+        "occupation": "Non-Essential Systems Maintenance Chief",
+        "status": "Unknown",
+        "voiceactor": "Simon Chylinski"
+      },
+      "categories": [
+        "Aurora Survivors",
+        "Characters (Subnautica)",
+        "Story",
+        "Subnautica"
+      ],
+      "image": "https://static.wikia.nocookie.net/subnautica/images/4/4e/Subnautica_Character.JPG/revision/latest?cb=20160421203311",
+      "url": "https://subnautica.fandom.com/wiki/Ryley_Robinson",
+      "imageFile": "assets/_wiki/subnautica-2/Ryley-Robinson.jpg"
+    },
+    {
+      "title": "Marguerit Maida",
+      "wikiTitle": "Marguerit Maida",
+      "collection": "characters",
+      "facts": {
+        "age": "42 at time of Degasi crash, 52 (2181), 54 (2183)",
+        "occupation": "Freelance Security Personnel (Formerly)",
+        "status": "Alive",
+        "voiceactor": "Lorelei King",
+        "affiliation": "Mongolian Defense Force (Formerly), Trans-System Federation (Formerly, dishonourably discharged), Torgal Corporation (Formerly), None (Currently)"
+      },
+      "categories": [
+        "Characters (Below Zero)",
+        "Characters (Subnautica)",
+        "Degasi Survivors",
+        "Story"
+      ],
+      "image": "https://static.wikia.nocookie.net/subnautica/images/e/e6/MargueritPortrait.png/revision/latest?cb=20210430212109",
+      "url": "https://subnautica.fandom.com/wiki/Marguerit_Maida",
+      "imageFile": "assets/_wiki/subnautica-2/Marguerit-Maida.png"
+    }
+  ]
+}

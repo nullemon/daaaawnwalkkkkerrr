@@ -1,4 +1,5 @@
 import type { Metadata, ResolvingMetadata } from 'next'
+import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
 import { Linked } from '@/components/Linked'
 import type { LinkScope } from '@/lib/link-index'
@@ -35,6 +36,19 @@ export default async function MechanicsIndex({ params }: Props) {
     getGame(slug),
     getAll('mechanics', { game: slug, sort: 'order', depth: 0 }),
   ])
+  /*
+    A section with no records is not this game's section.
+
+    The rail, the footer and the sitemap all derive from `sectionsFor`, which
+    returns only the sections a wiki has at least one record in — so an empty
+    index here is reachable only by typing the URL or arriving from a search
+    result, and what it serves is a heading over nothing. A 404 is the honest
+    answer, and it lifts by itself the moment the first record arrives.
+
+    `GUARDS_EMPTY_INDEX` in `lib/audit.ts` is pinned against this line by
+    `audit.test.ts`, so the two cannot drift.
+  */
+  if (mechanics.length === 0) notFound()
   const copy = sectionCopy('mechanics', game, { total: mechanics.length })
   /*
     Where this page is, for the inline linker.

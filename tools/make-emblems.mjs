@@ -116,6 +116,34 @@ const KINDS = {
     light: 76,
     token: '--ink-soft',
   },
+  /*
+    The seventh, and the first that is not Dawnwalker's.
+
+    198 factions across seven wikis had no picture of any kind — the worst
+    gap in the library and the only one nothing external could close, because
+    a faction here is *derived*: `seed:factions` builds it from the
+    `affiliation` field on characters and enemies, so there is no wiki article
+    behind it and no image to harvest. It was never going to get a photograph
+    from anywhere.
+
+    It is also the collection a photograph would be most wrong on. A picture
+    of a soldier over the words "Coalition of Ordered Governments" reads as a
+    claim that this is the COG, which is the rule this whole emblem set exists
+    to honour.
+
+    A shield, because a faction is the one thing here that would historically
+    carry one, and no other kind uses that silhouette — the six shapes above
+    were all taken.
+  */
+  factions: {
+    table: 'factions',
+    folder: 'factions',
+    shape: 'shield',
+    hue: 268,
+    sat: 44,
+    light: 56,
+    token: '--epic',
+  },
 }
 
 /**
@@ -152,6 +180,19 @@ const silhouette = (shape, paint) => {
     case 'tablet': {
       const side = R * 1.72
       return `<rect x="${(C - side / 2).toFixed(1)}" y="${(C - side / 2).toFixed(1)}" width="${side.toFixed(1)}" height="${side.toFixed(1)}" rx="${(SIZE * 0.085).toFixed(1)}" ${paint}/>`
+    }
+    case 'shield': {
+      /*
+        Drawn rather than composed from `points()`, which only makes regular
+        polygons. Straight shoulders, straight sides, and a base that tapers
+        to a point — the outline reads as a shield at 64px, where a curved
+        heater shape turns to mush.
+      */
+      const w = R * 1.46
+      const top = C - R * 1.06
+      const shoulder = C + R * 0.18
+      const tip = C + R * 1.12
+      return `<polygon points="${(C - w / 2).toFixed(1)},${top.toFixed(1)} ${(C + w / 2).toFixed(1)},${top.toFixed(1)} ${(C + w / 2).toFixed(1)},${shoulder.toFixed(1)} ${C.toFixed(1)},${tip.toFixed(1)} ${(C - w / 2).toFixed(1)},${shoulder.toFixed(1)}" ${paint}/>`
     }
     case 'diamond':
       return `<polygon points="${points(4, 0)}" ${paint}/>`

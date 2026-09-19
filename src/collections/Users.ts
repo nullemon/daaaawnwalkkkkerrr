@@ -1,6 +1,6 @@
 import type { CollectionConfig } from 'payload'
 import { isEditor } from '../fields/shared'
-import { HUB_ORIGIN } from '../lib/urls'
+import { HUB_ORIGIN, SESSION_COOKIE_DOMAIN } from '../lib/urls'
 /*
   The network's own name, for the two sentences an editor reads in an inbox.
 
@@ -16,6 +16,7 @@ import { HUB_ORIGIN } from '../lib/urls'
   what the network is called, and nothing would have compared them.
 */
 import { networkName } from '../lib/email-copy'
+import { adminUrl } from '../lib/admin-path'
 
 export const Users: CollectionConfig = {
   slug: 'users',
@@ -38,6 +39,20 @@ export const Users: CollectionConfig = {
   auth: {
     useAPIKey: true,
     /*
+      One sign-in across the network, not one per host.
+
+      Without this the session cookie is host-only, so an editor signed in at
+      the admin on one wiki is anonymous on the other fifteen — and the
+      editor-only confidence badge, which asks `/api/users/me` from the page,
+      would answer "not an editor" almost everywhere it is wanted.
+
+      Undefined on localhost and anywhere else with no registrable parent
+      domain, which is not a detail: a browser given a `Domain` it will not
+      accept discards the entire `Set-Cookie`, so getting this wrong logs
+      everybody out rather than erroring. See `SESSION_COOKIE_DOMAIN`.
+    */
+    ...(SESSION_COOKIE_DOMAIN ? { cookies: { domain: SESSION_COOKIE_DOMAIN } } : {}),
+    /*
       The reset link, built against the hub rather than against whatever host
       the request arrived on.
 
@@ -57,7 +72,7 @@ export const Users: CollectionConfig = {
     forgotPassword: {
       generateEmailSubject: () => 'Reset your password',
       generateEmailHTML: async (args) => {
-        const url = `${HUB_ORIGIN}/admin/reset/${args?.token ?? ''}`
+        const url = `${HUB_ORIGIN}${adminUrl('/reset')}/${args?.token ?? ''}`
         const name = args?.req?.payload ? await networkName(args.req.payload) : ''
         const who = name ? `the ${name} admin` : 'the admin'
         return [

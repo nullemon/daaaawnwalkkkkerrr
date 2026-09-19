@@ -1,0 +1,20 @@
+{
+  "slug": "gta-6",
+  "fetchedAt": "2026-09-19",
+  "wikipedia": {
+    "title": "Grand Theft Auto VI",
+    "url": "https://en.wikipedia.org/wiki/Grand_Theft_Auto_VI",
+    "licence": "CC BY-SA 4.0",
+    "facts": {
+      "developer": "Rockstar Games",
+      "publisher": "Rockstar Games",
+      "producer": "Rob Nelson",
+      "artist": "Aaron Garbut",
+      "series": "Grand Theft Auto",
+      "engine": "RAGE",
+      "released": "19 November 2026",
+      "genre": "Action-adventure",
+      "modes": "Single-player"
+    }
+  }
+}

@@ -1,7 +1,7 @@
 {
   "slug": "onimusha-way-of-the-sword",
   "host": "onimusha.fandom.com",
-  "fetchedAt": "2026-09-17",
+  "fetchedAt": "2026-09-19",
   "entities": [
     {
       "title": "Raizan",
@@ -44,9 +44,9 @@
         "Genma",
         "Onimusha: Way of the Sword Genma"
       ],
-      "image": "https://static.wikia.nocookie.net/onimusha/images/0/07/Byakue.png/revision/latest?cb=20250212230943",
+      "image": "https://static.wikia.nocookie.net/onimusha/images/2/29/Byakuescreen01.jpg/revision/latest?cb=20260918133503",
       "url": "https://onimusha.fandom.com/wiki/Byakue",
-      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Byakue.png"
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Byakue.jpg"
     },
     {
       "title": "Kubi Akari",
@@ -58,9 +58,9 @@
         "Genma",
         "Onimusha: Way of the Sword Genma"
       ],
-      "image": "https://static.wikia.nocookie.net/onimusha/images/2/23/Kubi_Akari.png/revision/latest?cb=20250607060744",
+      "image": "https://static.wikia.nocookie.net/onimusha/images/6/6b/Kubi_Akari01.jpg/revision/latest?cb=20260918150055",
       "url": "https://onimusha.fandom.com/wiki/Kubi_Akari",
-      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Kubi-Akari.png"
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Kubi-Akari.jpg"
     },
     {
       "title": "Greater Nue",
@@ -448,9 +448,9 @@
         "Genma",
         "Onimusha: Way of the Sword Genma"
       ],
-      "image": "https://static.wikia.nocookie.net/onimusha/images/2/2e/Togemaru.png/revision/latest?cb=20250924170500",
+      "image": "https://static.wikia.nocookie.net/onimusha/images/b/b5/Togemaruscreen01.jpg/revision/latest?cb=20260918140728",
       "url": "https://onimusha.fandom.com/wiki/Togemaru",
-      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Togemaru.png"
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Togemaru.jpg"
     },
     {
       "title": "Burai",
@@ -549,24 +549,30 @@
         "Characters",
         "Onimusha: Way of the Sword characters"
       ],
-      "image": null,
-      "url": "https://onimusha.fandom.com/wiki/Yorimasa"
+      "image": "https://static.wikia.nocookie.net/onimusha/images/2/2c/Yorimasascreen.jpg/revision/latest?cb=20260918132703",
+      "url": "https://onimusha.fandom.com/wiki/Yorimasa",
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Yorimasa.jpg"
     },
     {
       "title": "Gioh",
       "wikiTitle": "Gioh",
       "collection": "characters",
       "facts": {
-        "Alignment": "Evil",
-        "Allegiances": "Ganryu Sasaki"
+        "Aliases": "Barking Oni (Dokyo)",
+        "Alignment": "Good (formerly)Evil",
+        "Allegiances": "Oni (Formerly)Ganryu Sasaki",
+        "Faction(s)": "Oni (Formerly)Ganryu Sasaki",
+        "Occupation": "Oni Chief (Formerly)",
+        "Voice Actors": "Alex Constantinidi (English)Sayaka Oohara (Japanese)Mu Xue Ting (Mandarin Chinese)"
       },
       "categories": [
         "Bosses",
         "Characters",
         "Onimusha: Way of the Sword characters"
       ],
-      "image": null,
-      "url": "https://onimusha.fandom.com/wiki/Gioh"
+      "image": "https://static.wikia.nocookie.net/onimusha/images/1/15/Gioh_Oni.jpg/revision/latest?cb=20260917202701",
+      "url": "https://onimusha.fandom.com/wiki/Gioh",
+      "imageFile": "assets/_wiki/onimusha-way-of-the-sword/Gioh.jpg"
     },
     {
       "title": "Benkei",
@@ -577,7 +583,7 @@
         "Japanese Name": "弁慶西塔 武蔵坊 弁慶",
         "Aliases": "Oniwakamaru (Childhood nickname)",
         "Birthdate": "1155",
-        "Age": "34 (Died in 1189, resurrected in 1604)",
+        "Age": "34 (Died in 1189, resurrected between 1605 and 1610)",
         "Alignment": "Evil",
         "Allegiances": "Yoshitsune",
         "Faction(s)": "Genma",

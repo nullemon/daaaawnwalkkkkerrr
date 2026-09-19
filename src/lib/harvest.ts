@@ -493,7 +493,71 @@ export const isNotAnEntity = (entity: HarvestedEntity, game = ''): boolean => {
   if (isARealPerson(entity)) return true
   if (WORK_DISAMBIGUATOR.test(url)) return true
   if (WORK_DISAMBIGUATOR.test(entity.wikiTitle ?? '')) return true
+  if (isListPage(entity.title)) return true
+  if (isAnotherWorkInTheSeries(entity.title, game)) return true
   return isNumberedSequel(entity.title, game)
+}
+
+/**
+ * A page that indexes things, filed as one of the things.
+ *
+ * The GTA wiki filed `Cheats in GTA Vice City`, `Missions in GTA Online`,
+ * `Protagonists in GTA London` and `Characters in GTA VI` as **locations in
+ * GTA 6** — each with a real source URL and a composed summary reading
+ * "Cheats in GTA Vice City, a location in GTA 6". Every check passed: the
+ * rows exist, they carry a game, the pages render.
+ *
+ * These are the wiki's own index pages. `Cheats in X` is not a place, a
+ * character or an item in any game; it is a list *about* a game. The shape is
+ * always the same — a plural noun, the word "in", and a title — which is what
+ * this matches, and it matches on the leading noun rather than on "in"
+ * anywhere in a title, so `Battle in the Ashtray Maze` is untouched.
+ *
+ * The nouns are a reviewed list rather than "any plural", because "Weapons of
+ * the Locust" and "Bosses of Kyoto" are perfectly good record titles and a
+ * rule broad enough to catch the index pages would take those too — the
+ * Antar 4 mistake, which this file already carries one scar from.
+ */
+const LIST_PAGE =
+  /^(cheats|missions|characters|protagonists|weapons|vehicles|collectibles|achievements|trophies|radio stations|soundtrack|locations|gangs|businesses|properties|side missions|random events|easter eggs|glitches|beta content|cut content)\s+in\s+/i
+
+export const isListPage = (title: string): boolean => LIST_PAGE.test(title.trim())
+
+/**
+ * A different game in the same series, filed as a thing inside this one.
+ *
+ * `Grand Theft Auto: Vice City`, `Grand Theft Auto: Liberty City Stories` and
+ * `Grand Theft Auto: The Trilogy - The Definitive Edition` all arrived as
+ * *regions in GTA 6*. `isNumberedSequel` does not catch them because none of
+ * them ends in a digit: the discriminator is a subtitle after the franchise
+ * name, not a number.
+ *
+ * Matched on the franchise name the caller passes, so it can only ever reject
+ * a title that opens with the name of the game being harvested — and only
+ * when something follows it. `Vice City` on its own stays, because a place can
+ * share a name with the game it is in and on this wiki it does.
+ *
+ * The franchise stem is the game's name up to its first colon or numeral, so
+ * "Grand Theft Auto VI" yields "Grand Theft Auto" and "Resident Evil Requiem"
+ * yields "Resident Evil" — which is what makes this reject the sibling games
+ * rather than the game itself.
+ */
+export const isAnotherWorkInTheSeries = (title: string, game: string): boolean => {
+  const stem = game
+    .split(/[:\u2013\u2014]|\s+(?:[IVXLC]+|\d+)\b/)[0]
+    .trim()
+  if (stem.length < 4) return false
+
+  const name = title.trim()
+  if (!name.toLowerCase().startsWith(stem.toLowerCase())) return false
+
+  const rest = name.slice(stem.length).trim()
+  /*
+    Nothing after the stem is the game itself, or a place named for it.
+    A colon, a dash or a numeral after it is a different release.
+  */
+  if (rest === '') return false
+  return /^[:\u2013\u2014-]|^\b([IVXLC]+|\d+)\b/.test(rest)
 }
 
 /**

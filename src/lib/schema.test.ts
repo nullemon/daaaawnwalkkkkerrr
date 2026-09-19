@@ -1,5 +1,14 @@
 import { describe, expect, it } from 'vitest'
-import { breadcrumbs, gameScores, isoDate, orgRef, organization, person, videoGame } from './schema'
+import {
+  article,
+  breadcrumbs,
+  gameScores,
+  isoDate,
+  orgRef,
+  organization,
+  person,
+  videoGame,
+} from './schema'
 
 /*
   Structured data is the one thing on this site that nobody proofreads. It is
@@ -217,5 +226,55 @@ describe('gameScores', () => {
     expect(voted.aggregateRating.ratingValue).toBe(8.4)
     expect(voted.aggregateRating.ratingCount).toBe(9)
     expect(voted.review).toBeUndefined()
+  })
+})
+
+describe('article', () => {
+  /*
+    The dates on a guide are the half of this file nobody can see. They are
+    read by crawlers, they do not render, and until now the route built them
+    itself — so the Article markup and the sitemap answered the same question
+    two different ways and the one a crawler saw first was the fabricated one.
+  */
+  it('states no publication date for a generated guide', () => {
+    const data = article({
+      title: 'Every region in Gears of War: E-Day',
+      sources: [{ retrieved: '2026-09-17' }],
+    })
+    expect(data.datePublished).toBeUndefined()
+    expect(data.dateModified).toBe('2026-09-17')
+  })
+
+  it('states one where an editor typed one', () => {
+    const data = article({
+      title: 'Bakir, court by court',
+      published: '2026-09-02',
+      updated: '2026-09-14',
+    })
+    expect(data.datePublished).toBe('2026-09-02')
+    expect(data.dateModified).toBe('2026-09-14')
+  })
+
+  it('emits no date at all rather than a row timestamp', () => {
+    const data = article({ title: 'A guide with nothing behind it' })
+    expect(data.datePublished).toBeUndefined()
+    expect(data.dateModified).toBeUndefined()
+    expect('dateModified' in data).toBe(false)
+  })
+
+  it('prefers the SEO headline and keeps the author URL absolute', () => {
+    // A relative /authors/<slug> in JSON-LD resolves against the wiki
+    // subdomain this page is served on, where contributor profiles do not
+    // exist. A broken URL in structured data is the kind nobody sees.
+    const data = article(
+      { title: 'All quests', seo: { title: 'All 93 quests in The Blood of Dawnwalker' } },
+      { author: { name: 'A Contributor', url: 'https://example.com/authors/a-contributor' } },
+    )
+    expect(data.headline).toBe('All 93 quests in The Blood of Dawnwalker')
+    expect(data.author).toEqual({
+      '@type': 'Person',
+      name: 'A Contributor',
+      url: 'https://example.com/authors/a-contributor',
+    })
   })
 })

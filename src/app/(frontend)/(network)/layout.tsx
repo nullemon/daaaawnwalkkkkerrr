@@ -176,7 +176,7 @@ export default async function NetworkLayout({ children }: { children: React.Reac
       footer={{
         blurb:
           settings.description ||
-          'Guides and databases for the games worth playing carefully. Every figure carries a confidence rating, and where sources disagree we say so rather than picking one.',
+          'Guides and databases for the games worth playing carefully. Every figure is cited to where it came from, and where sources disagree we say so rather than picking one.',
         columns,
         note: settings.footerNote,
         maintainer: settings.maintainer,

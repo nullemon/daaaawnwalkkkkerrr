@@ -3,7 +3,6 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Icon, type IconName } from './Icon'
-import { Logo } from './Logo'
 import { ThemeToggle } from './ThemeToggle'
 import { RunBadge } from './RunBadge'
 
@@ -49,8 +48,20 @@ export function SiteRail({
   items,
   brandHref = '/',
   networkHome,
+  themeLocked = false,
+  brand,
 }: {
   siteName: string
+  /**
+   * The mark itself, already rendered.
+   *
+   * A node rather than a flag, because whether the network uses the drawn
+   * glyph or an uploaded picture is a question only a server component can
+   * answer and this file is `'use client'`. `Shell` resolves it once for the
+   * rail and the footer alike; the same reason the theme lock arrives as a
+   * prop rather than being looked up here.
+   */
+  brand: React.ReactNode
   items: RailItem[]
   /** Where the wordmark goes. A wiki's rail points at its own home, not the hub's. */
   brandHref?: string
@@ -64,6 +75,14 @@ export function SiteRail({
    * reads as leaving rather than as one more section of this site.
    */
   networkHome?: { label: string; href: string } | null
+  /**
+   * Site settings → Appearance has pinned the network to one theme.
+   *
+   * Passed down from `Shell`, which is the last server component in the chain
+   * and can read it; this one is a client component and cannot. Default false,
+   * so a caller that has not been told renders the site the code does.
+   */
+  themeLocked?: boolean
 }) {
   const pathname = usePathname()
 
@@ -76,9 +95,7 @@ export function SiteRail({
         {/* 21px is the rail's icon column exactly (`--rail-icon`), so the
             brand mark sits on the same centre line as every glyph below it
             rather than half a pixel off it. */}
-        <span className="navrail-brand-mark">
-          <Logo size={21} />
-        </span>
+        <span className="navrail-brand-mark">{brand}</span>
         <span className="navrail-label navrail-brand-name">{siteName}</span>
       </Link>
 
@@ -164,7 +181,17 @@ export function SiteRail({
 
       <div className="navrail-foot">
         <RunBadge />
-        <ThemeToggle />
+        {/*
+          Absent under a lock, not disabled and not hidden with CSS.
+
+          A button that cannot change the outcome is the reassuring-control
+          failure this repo keeps finding: a reader presses it, the page does
+          not change, and there is nothing anywhere saying why. A disabled
+          button is the same thing with a tooltip, and `display: none` leaves it
+          in the accessibility tree for anybody not looking at the page. The
+          honest render of "this site is dark, full stop" is no switch at all.
+        */}
+        {themeLocked ? null : <ThemeToggle />}
       </div>
     </nav>
   )

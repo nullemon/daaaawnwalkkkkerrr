@@ -4,7 +4,7 @@ A guide, database and run planner for *The Blood of Dawnwalker*, built around
 the mechanic the game is actually about: a budget of **480 time segments**.
 
 Next.js 16 + Payload CMS 3 on libSQL. Every public page is prerendered to
-static HTML; the admin at `/admin` is a full CMS.
+static HTML; the admin at `/admin1621` is a full CMS.
 
 ---
 
@@ -39,7 +39,7 @@ you overrode it, that is:
 
 | | |
 | --- | --- |
-| URL | http://localhost:3000/admin |
+| URL | http://localhost:3000/admin1621 |
 | Email | `admin@example.com` |
 | Password | `changeme-please` |
 
@@ -83,7 +83,7 @@ Windows.
 
 ## The admin panel
 
-`/admin`. Content is grouped by what it is for:
+`/admin1621`. Content is grouped by what it is for:
 
 - **Run** — Quests, Court Activities, Endings. These drive the run checker.
 - **World** — Regions, Courts, Characters, Enemies.

@@ -2,7 +2,7 @@ import type { GlobalConfig } from 'payload'
 import { isEditor } from '../fields/shared'
 import { analyticsFields, verificationFields } from '../fields/analytics'
 import { isProvisional } from '../lib/legal'
-import { accentRefusal, checkAccent } from '../lib/appearance'
+import { accentRefusal, checkAccent, lockedTheme } from '../lib/appearance'
 import { indexNowKeyRefusal } from '../lib/indexnow'
 
 /**
@@ -21,7 +21,62 @@ export const SiteSettings: GlobalConfig = {
         {
           label: 'Identity',
           fields: [
-            { name: 'siteName', type: 'text', required: true, defaultValue: 'Dawnwalker Guide' },
+            {
+              name: 'siteName',
+              type: 'text',
+              required: true,
+              defaultValue: 'Dawnwalker Guide',
+              admin: {
+                description:
+                  'The network’s name, everywhere. Nothing hardcodes it: the rail, the footer, every <title>, the share cards, the legal pages and the reset emails all read this field, so renaming the network is this one box. The drawn mark beside it is a ruled sheet rather than an initial for the same reason — it survives the rename.',
+              },
+            },
+            /*
+              The mark beside the name, and the one decision it carries.
+
+              Blank means the drawn glyph in `lib/brand.ts`, which is what the
+              favicon and the share card are cut from, so the three cannot
+              drift. An uploaded picture replaces it in the rail, the footer
+              and the two home pages — not in the favicon or the share card,
+              which are rasterised by `pnpm make:brand` and are a separate job.
+
+              Two slots, because a raster cannot be recoloured by CSS and this
+              rail is dark in one theme and light in the other. One image on
+              both is a logo that disappears half the time; the dark one is
+              optional and falls back to the light one, which is the right
+              default for a mark that already works on both.
+            */
+            {
+              name: 'logoImage',
+              type: 'upload',
+              relationTo: 'media',
+              label: 'Logo image',
+              admin: {
+                description:
+                  'Optional. Replaces the drawn mark beside the site name in the rail, the footer and the home pages. Leave empty to keep the drawn one. SVG or a transparent PNG at about 3x the height you want; it is rendered at 17–36px depending on where it sits.',
+              },
+            },
+            {
+              name: 'logoImageDark',
+              type: 'upload',
+              relationTo: 'media',
+              label: 'Logo image for the dark theme',
+              admin: {
+                description:
+                  'Optional, and only read when a logo image is set above. A picture cannot be recoloured by the theme the way the drawn mark can, so a dark-ink logo vanishes on the dark rail. Leave empty if the one above works on both.',
+                condition: (data) => Boolean(data?.logoImage),
+              },
+            },
+            {
+              name: 'logoAlt',
+              type: 'text',
+              label: 'Logo alt text',
+              admin: {
+                description:
+                  'What a screen reader says in place of the picture. Left blank it falls back to the site name, which is right for a wordmark and wrong for a logo that says something the name does not.',
+                condition: (data) => Boolean(data?.logoImage),
+              },
+            },
             {
               name: 'tagline',
               type: 'text',
@@ -212,20 +267,25 @@ export const SiteSettings: GlobalConfig = {
             },
             {
               /*
-                The footer's link columns, on all three kinds of site.
+                The footer's link columns, added to the built-in map on all
+                ten hosts.
 
-                They were three separate hardcoded lists — one in the hub
-                layout, one in a wiki layout, one on the companies host — which
-                is how the hub came to link to a page the wikis do not have.
-                Empty falls back to those lists, so nothing moves until
-                somebody fills this in.
+                They were four separate hardcoded lists — hub, wiki, companies,
+                people — which is how the hub came to link to a page the wikis
+                do not have. This field used to *replace* them outright, which
+                was one admin save away from taking the only inbound link to
+                nine pages off the site, and served the hub's wording as the
+                section list of all eight wikis because the columns are per
+                host and this field is not. `lib/footer-columns.ts` has the
+                whole rule and why removal is the half that stays in code.
               */
               name: 'footerColumns',
               type: 'array',
               label: 'Footer columns',
               labels: { singular: 'Column', plural: 'Columns' },
               admin: {
-                description: 'Leave empty to keep the built-in columns. Links are relative to whichever host the footer is on unless they start with http.',
+                description:
+                  'Added to the built-in columns, not in place of them: a heading that matches one of them adds links to it, a new heading becomes a new column, and nothing here can remove a built-in link — several pages have no other inbound link on the site. Links are relative to whichever host the footer is on unless they start with http. Leave empty to change nothing.',
                 initCollapsed: true,
               },
               fields: [
@@ -398,9 +458,32 @@ export const SiteSettings: GlobalConfig = {
                 {
                   type: 'row',
                   fields: [
-                    { name: 'statWikisLabel', type: 'text', label: 'Wikis', admin: { width: '33%' } },
-                    { name: 'statPagesLabel', type: 'text', label: 'Sourced pages', admin: { width: '33%' } },
-                    { name: 'statUpcomingLabel', type: 'text', label: 'Not out yet', admin: { width: '34%' } },
+                    { name: 'statWikisLabel', type: 'text', label: 'Wikis', admin: { width: '25%' } },
+                    { name: 'statPagesLabel', type: 'text', label: 'Sourced pages', admin: { width: '25%' } },
+                    { name: 'statUpcomingLabel', type: 'text', label: 'Not out yet', admin: { width: '25%' } },
+                    /*
+                      Three more, added when the home page began naming the
+                      other two hosts. Every figure it prints needs a field
+                      beside it or the row becomes half editable and half not,
+                      which is worse than either — an editor renaming "Wikis"
+                      would find "Studios" refusing to change with no
+                      explanation anywhere.
+                    */
+                    { name: 'statGuidesLabel', type: 'text', label: 'Guides', admin: { width: '25%' } },
+                    { name: 'statStudiosLabel', type: 'text', label: 'Studios', admin: { width: '25%' } },
+                    { name: 'statPeopleLabel', type: 'text', label: 'People', admin: { width: '25%' } },
+                    /*
+                      The fourth stat only appears when "Last checked over" on
+                      the Identity tab has a date in it. Its label is a field
+                      like the other three, so the row on the home page can be
+                      renamed without a deploy.
+                    */
+                    {
+                      name: 'statVerifiedLabel',
+                      type: 'text',
+                      label: 'Last checked',
+                      admin: { width: '25%' },
+                    },
                   ],
                 },
               ],
@@ -589,8 +672,31 @@ export const SiteSettings: GlobalConfig = {
           */
           label: 'Appearance',
           description:
-            'How the site looks before a reader touches anything. Both settings are optional: left alone, the network renders the dark palette and the red accent that shipped.',
+            'How the site looks, and how much of that a reader can change. Every setting here is optional: left alone, the network renders the dark palette and the red accent that shipped, and readers may switch between dark and light for themselves.',
           fields: [
+            /*
+              The lock is above the default theme because it outranks it.
+
+              Two fields that both answer "which theme" will be read in the
+              order they appear, so the one that can silence the other goes
+              first — and the second one disappears when it has been silenced
+              rather than sitting there doing nothing.
+            */
+            {
+              name: 'appearanceLock',
+              type: 'select',
+              label: 'Theme switching',
+              defaultValue: 'free',
+              options: [
+                { label: 'Readers may switch (default)', value: 'free' },
+                { label: 'Dark only — no switch shown', value: 'dark' },
+                { label: 'Light only — no switch shown', value: 'light' },
+              ],
+              admin: {
+                description:
+                  'Whether the sun/moon button appears at the foot of the rail at all. Left on “Readers may switch”, it does, and each reader’s choice is remembered on their own device. Set to dark only or light only, every page of every site in the network renders in that theme, the button is not drawn, and a reader who had previously chosen the other one is moved to this one on their next visit. Their old choice is kept rather than erased: lift the lock and they get it back.',
+              },
+            },
             {
               name: 'appearanceTheme',
               type: 'select',
@@ -603,7 +709,23 @@ export const SiteSettings: GlobalConfig = {
               ],
               admin: {
                 description:
-                  'What somebody sees on their first visit. The toggle in the header overrides it for that reader from then on, in both directions, and their choice is remembered — this only decides where they start.',
+                  'What somebody sees on their first visit. The toggle at the foot of the rail overrides it for that reader from then on, in both directions, and their choice is remembered — this only decides where they start.',
+                /*
+                  Hidden, not reworded, when a lock is set.
+
+                  A field with no effect is the same failure as a toggle with
+                  no effect: somebody changes it, nothing happens, and there is
+                  nothing on the screen saying why. The stored value is left
+                  alone — lifting the lock brings the site back to whatever was
+                  chosen here rather than to a default nobody picked.
+
+                  Both arguments are checked because this tab is unnamed, so
+                  its fields sit at the top level and `siblingData` is `data`;
+                  reading only one of them is a condition that works today and
+                  stops working the day somebody gives the tab a name.
+                */
+                condition: (data, siblingData) =>
+                  !lockedTheme(siblingData?.appearanceLock ?? data?.appearanceLock),
               },
             },
             {

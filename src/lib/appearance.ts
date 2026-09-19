@@ -1,6 +1,6 @@
 /**
- * The two appearance settings an editor can change, and the guard on the one
- * that can make the site unreadable.
+ * The appearance settings an editor can change, and the guard on the one that
+ * can make the site unreadable.
  *
  * Kept free of React and of Payload types so the contrast maths can be
  * unit-tested without a renderer or a database — the same reason
@@ -14,6 +14,31 @@ export type DefaultTheme = 'dark' | 'light' | 'system'
 
 export const isDefaultTheme = (value: unknown): value is DefaultTheme =>
   value === 'dark' || value === 'light' || value === 'system'
+
+/**
+ * Whether a reader may switch theme at all.
+ *
+ * `free` is the shipped behaviour and what a blank field means: the default
+ * theme decides where a reader starts and the toggle decides everything after
+ * that. `dark` and `light` are the owner saying the site is one theme, full
+ * stop — the default theme stops meaning anything, the toggle is not rendered,
+ * and a remembered choice stops being read.
+ */
+export type ThemeLock = 'free' | 'dark' | 'light'
+
+export const isThemeLock = (value: unknown): value is ThemeLock =>
+  value === 'free' || value === 'dark' || value === 'light'
+
+/**
+ * The theme a lock pins the site to, or null when readers may switch.
+ *
+ * Takes `unknown` on purpose. The column is nullable and every row written
+ * before the field existed reads back as null, so the callers that matter —
+ * the boot script and whatever decides to render the toggle — should be asking
+ * this rather than comparing strings and getting `null !== 'free'` wrong.
+ */
+export const lockedTheme = (lock: unknown): 'dark' | 'light' | null =>
+  lock === 'dark' || lock === 'light' ? lock : null
 
 /* ---------- contrast ---------------------------------------------------- */
 
@@ -72,6 +97,28 @@ export type AccentCheck = { ratio: number; against: string; label: string; passe
  * Returned rather than thrown: the caller decides whether an unreadable accent
  * is refused outright or merely reported, and the numbers are the same either
  * way.
+ *
+ * **It takes no lock, and that is the decision rather than the oversight.**
+ * A locked site only ever shows one ground, so measuring against the other one
+ * is arguably measuring a page nobody will see — and relaxing it is still
+ * wrong, for three reasons that have nothing to do with taste:
+ *
+ *  - The accent is stored once and read forever. An accent accepted against
+ *    the dark ground alone becomes illegal the moment somebody lifts the lock,
+ *    and nothing would re-check it: the refusal lives in a field validator,
+ *    which only runs when that field is saved. The site would go light with an
+ *    invisible accent and no check anywhere would have a complaint.
+ *  - `accentStyles` writes the light rules and the dark rules into the
+ *    document either way. The lock stops them matching; it does not stop them
+ *    existing, and a stylesheet that carries an unreadable rule is a loaded
+ *    gun rather than a dead one.
+ *  - The accent is not only a theme token. `brand.ts` paints it on `PLATE`
+ *    (#131211) for the favicon and the share card, which are the same colour
+ *    on a light-locked site as on a dark one. Relaxing to "the locked ground"
+ *    would drop the check on a surface the lock has no authority over.
+ *
+ * The arity of this function is pinned by a test for exactly that reason: add
+ * a lock parameter and the test fails, which routes the next person here.
  */
 export const checkAccent = (hex: string): AccentCheck[] => {
   const measure = (against: string, label: string): AccentCheck => {
@@ -137,6 +184,14 @@ const accentRule = (selector: string, accent: string, mode: 'dark' | 'light') =>
  * site the code does. The value is re-validated here as well as in the admin:
  * this string reaches the document, and a field validator is a convenience
  * rather than a boundary.
+ *
+ * A theme lock changes nothing here, and it was checked rather than assumed.
+ * Under a lock the boot script always stamps `data-theme`, so the third rule's
+ * `:not([data-theme='dark']):not([data-theme='light'])` cannot match and the
+ * first two decide — which is the same arithmetic that makes the lock work in
+ * globals.css. Emitting a narrower stylesheet would save nothing and would
+ * leave the document wrong the instant the lock is lifted, which is a change
+ * to one database field and not to a build.
  */
 export const accentStyles = (accent?: string | null): string => {
   if (!accent || !isHexColour(accent) || accentRefusal(accent)) return ''
@@ -159,17 +214,48 @@ export const accentStyles = (accent?: string | null): string => {
  * first paint has already shown the reader the other theme, which is the whole
  * failure this exists to prevent.
  *
- * The order is: a reader's remembered choice, then the network default, then
- * nothing at all. "Nothing at all" is what makes `system` work — with no
- * `data-theme` attribute the prefers-colour-scheme block in globals.css is the
- * only thing deciding, which is exactly what following the system means.
+ * Unlocked, the order is: a reader's remembered choice, then the network
+ * default, then nothing at all. "Nothing at all" is what makes `system` work —
+ * with no `data-theme` attribute the prefers-colour-scheme block in globals.css
+ * is the only thing deciding, which is exactly what following the system means.
+ *
+ * Locked, there is no order. The locked theme is stamped unconditionally and
+ * `localStorage` is never read, because a reader who chose light six months ago
+ * must not be shown light on a site the owner has since made dark-only. Three
+ * things follow from stamping it, and each is load-bearing:
+ *
+ *  - The attribute is always present, so every prefers-colour-scheme block in
+ *    globals.css — the palette at the top, and the two `--lift` / `--section-card`
+ *    blocks further down — fails its own `:not([data-theme=…])` guard and the
+ *    system preference cannot win. That is why the lock needs no CSS change;
+ *    see `accentStyles` above for the same arithmetic on the generated sheet.
+ *  - `color-scheme`, which colours scrollbars and form controls, is declared
+ *    inside those same palette blocks, so it follows the attribute for free.
+ *  - `ThemeToggle` reads the attribute rather than storage, so it would agree
+ *    with the lock — but it is not rendered at all under one, because a control
+ *    that cannot change the outcome is worse than no control.
+ *
+ * **The stored value is left where it is.** Clearing it would be tidier and is
+ * the wrong call: the preference is the reader's, and a site-wide decision is
+ * not a reason to delete somebody's setting. Lift the lock and their choice is
+ * still there, which is what they would expect.
  */
-export const themeBootScript = (fallback: DefaultTheme = 'dark'): string =>
-  `(function(){var t='';` +
-  // The try wraps only the read. Blocked site storage throws here, and with
-  // the whole body inside the try that throw also swallowed the network
-  // default — a reader in a private window got the system theme no matter
-  // what the admin had set, silently.
-  `try{t=localStorage.getItem('${THEME_STORAGE_KEY}')||''}catch(e){}` +
-  `if(t!=='light'&&t!=='dark'){t=${JSON.stringify(fallback === 'system' ? '' : fallback)}}` +
-  `if(t)document.documentElement.setAttribute('data-theme',t)})()`
+export const themeBootScript = (
+  fallback: DefaultTheme = 'dark',
+  lock: ThemeLock | null | undefined = 'free',
+): string => {
+  const pinned = lockedTheme(lock)
+  if (pinned) {
+    return `(function(){document.documentElement.setAttribute('data-theme',${JSON.stringify(pinned)})})()`
+  }
+  return (
+    `(function(){var t='';` +
+    // The try wraps only the read. Blocked site storage throws here, and with
+    // the whole body inside the try that throw also swallowed the network
+    // default — a reader in a private window got the system theme no matter
+    // what the admin had set, silently.
+    `try{t=localStorage.getItem('${THEME_STORAGE_KEY}')||''}catch(e){}` +
+    `if(t!=='light'&&t!=='dark'){t=${JSON.stringify(fallback === 'system' ? '' : fallback)}}` +
+    `if(t)document.documentElement.setAttribute('data-theme',t)})()`
+  )
+}

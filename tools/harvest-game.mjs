@@ -54,6 +54,7 @@ import fs from 'fs'
 import path from 'path'
 
 import { harvestText } from '../src/lib/text-encoding-table.mjs'
+import { downloadEntityImage, imageDirFor } from './lib/fandom-image.mjs'
 
 const UA =
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36'
@@ -143,6 +144,97 @@ const GAMES = {
     // Wookieepedia means an Appearances entry both ways, which is as close to
     // 'is in this game' as the wiki gets without parsing prose.
     linkHarvest: 'intersect',
+  },
+
+  /* ---------------------------------------------------------------------
+     The second wave.
+
+     Each `host` and `article` below was checked against the wiki's own API
+     before it was written down — article count for the link-harvest call,
+     and an existence query on the exact title, because a title that is one
+     character off returns zero candidates and reads exactly like a wiki with
+     no coverage of the game. Wookieepedia's missing colon cost this project
+     that lesson once already.
+
+     **Two of the seven new wikis are not here**, and it is not an oversight:
+     `deadlock.fandom.com` has 171 articles and no page for Valve's Deadlock,
+     and `nba2k.fandom.com` has 1,289 and no page for NBA 2K27. There is
+     nothing to harvest, so nothing is configured — those two wikis are built
+     from their store listings and the demand side, and their entity sections
+     are absent rather than empty. Add them here the day the articles exist.
+     --------------------------------------------------------------------- */
+
+  'resident-evil-requiem': {
+    host: 'residentevil.fandom.com',
+    article: 'Resident Evil Requiem',
+    match: 'Requiem',
+    /*
+      31,351 articles across thirty years of the series. That is Wookieepedia
+      territory: a link off this game's article reaches Raccoon City, the
+      T-virus and every previous protagonist, all real Resident Evil and none
+      of it Requiem. Categories only.
+    */
+    linkHarvest: false,
+  },
+  'subnautica-2': {
+    host: 'subnautica.fandom.com',
+    article: 'Subnautica 2',
+    match: 'Subnautica 2',
+    // 1,247 articles across three games. Small enough that a link off this
+    // game's article is about this game.
+    linkHarvest: true,
+  },
+  'forza-horizon-6': {
+    host: 'forza.fandom.com',
+    article: 'Forza Horizon 6',
+    match: 'Forza Horizon 6',
+    /*
+      4,916 articles, and almost all of them are cars that appear in several
+      Horizon games. A link off this article reaches the whole Forza car list,
+      which is exactly the kind of "real, sourced, and about the wrong game"
+      record `check:kind` exists to catch. Categories only.
+    */
+    linkHarvest: false,
+  },
+  'gta-6': {
+    host: 'gta.fandom.com',
+    article: 'Grand Theft Auto VI',
+    match: 'Grand Theft Auto VI',
+    /*
+      23,013 articles covering every game since 1997. Following links here
+      returns Liberty City, Trevor Philips and the Ballas — the series, not
+      this game.
+
+      Categories alone return **nothing**: 3,265 categories on that wiki and
+      not one names this game, because it is not out and a wiki files things
+      once they exist.
+
+      The intersection fallback Wookieepedia needed was tried here and is
+      wrong for this wiki. It returned 79 records and the franchise came with
+      them: Bone County and Las Venturas are San Andreas, Anywhere City is
+      GTA 2, Claude Speed is GTA III, Franklin Clinton is GTA V. Tightening
+      `isNotAnEntity` removed the index pages and the back catalogue — real
+      gains, kept — but no rule about a title can tell "Bone County" from
+      "Ambrosia": both are plausible place names and only one is in this game.
+
+      So: nothing. **GTA 6 is not out and this network has no sourced entity
+      list for it**, which is the honest state and the one the wiki itself is
+      in. The guides built from 1,359 harvested searches and the Wikipedia
+      infobox stand on their own; the day the wiki files a category for the
+      game, `pnpm refresh` fills the rest. Guide counts are data-bound, not
+      effort-bound, and a wrong region is worse than no region.
+    */
+    linkHarvest: false,
+  },
+  'fire-emblem-fortunes-weave': {
+    host: 'fireemblem.fandom.com',
+    article: "Fire Emblem: Fortune's Weave",
+    match: "Fortune's Weave",
+    /*
+      13,740 articles across seventeen games. A link off this article reaches
+      Marth, Ike and the Black Knight, none of whom are in it. Categories only.
+    */
+    linkHarvest: false,
   },
 }
 
@@ -872,46 +964,34 @@ fs.rmSync(CHECKPOINT, { force: true })
 // ---------------------------------------------------------------------------
 
 if (WANT_IMAGES) {
-  const dir = path.resolve('assets/_wiki', slug)
+  /*
+    The download itself is `tools/lib/fandom-image.mjs`, shared with
+    `pnpm fetch:entity-images` — which exists because four wikis were swept
+    without this flag and their 365 identified pictures were never fetched.
+    Re-sweeping a wiki to collect images it already names is the wrong shape,
+    so the download had to be callable on its own, and there is exactly one
+    copy of it.
+  */
+  const dir = imageDirFor(slug)
   fs.mkdirSync(dir, { recursive: true })
 
   let saved = 0
   let skipped = 0
+  let failed = 0
 
   for (const entity of entities) {
-    if (!entity.image) continue
-
-    // Fandom serves scaled variants behind /revision/latest; ask for a width
-    // that is enough for a card without pulling a 4K original.
-    const source = `${entity.image.split('/revision/')[0]}`
-    const extension = (source.match(/\.(png|jpe?g|gif|webp)$/i) ?? ['.png'])[0].toLowerCase()
-    const file = path.join(dir, `${entity.wikiTitle.replace(/[^\w.-]+/g, '-').slice(0, 80)}${extension}`)
-
-    entity.imageFile = path.relative(path.resolve('.'), file).replace(/\\/g, '/')
-
-    if (fs.existsSync(file)) {
-      skipped += 1
-      continue
-    }
-
-    try {
-      const response = await fetch(source, { headers: { 'User-Agent': UA } })
-      if (!response.ok) continue
-      const buffer = Buffer.from(await response.arrayBuffer())
-      if (buffer.length < 900) continue
-      fs.writeFileSync(file, buffer)
-      saved += 1
-    } catch {
-      // A missing image is not a reason to lose the record.
-    }
-    await sleep(200)
+    const outcome = await downloadEntityImage(entity, dir, UA)
+    if (outcome === 'saved') saved += 1
+    else if (outcome === 'present') skipped += 1
+    else if (outcome === 'failed') failed += 1
+    if (outcome === 'saved') await sleep(200)
     process.stdout.write(`\r  images: ${saved} new, ${skipped} already here   `)
   }
 
   // Rewrite with the local paths recorded.
   writeHarvest()
 
-  console.log(`\n  images: ${saved} downloaded, ${skipped} already present`)
+  console.log(`\n  images: ${saved} downloaded, ${skipped} already present${failed > 0 ? `, ${failed} the wiki would not serve` : ''}`)
 }
 
 console.log(`\nWritten to src/seed/raw/wiki-entities/${slug}.json`)

@@ -1,10 +1,9 @@
 import type { Game, Media } from '@/payload-types'
 import { companyUrl, personUrl } from '@/lib/urls'
-import { slugify } from '@/fields/shared'
 import { getUi } from '@/lib/ui'
 import { fill } from '@/lib/copy'
-import { editorialScore } from '@/lib/ratings'
-import { client } from '@/lib/payload'
+import { editorialScore } from '@/lib/verdict'
+import { client, resolveRightsholders } from '@/lib/payload'
 import { ImageCredit } from './ImageCredit'
 
 /**
@@ -114,27 +113,37 @@ export async function GameProfile({ game }: { game: Game }) {
       ? String(new Date(game.releaseDate).getUTCFullYear())
       : ''
 
-  const holders = [game.developer, game.publisher]
-    .flatMap((value) => (value ?? '').split(','))
-    .map((value) => value.trim())
-    .filter(Boolean)
+  /*
+    Splitting a `developer` or `publisher` field, and checking the far end.
 
-  const company = (name: string) => (
-    <a key={name} href={companyUrl(`/${slugify(name)}`)}>
-      {name}
-    </a>
-  )
+    This split on a bare comma, which is right for "Konami, Annapurna
+    Interactive" and wrong for "Atari, Inc." — a real profile on this
+    network's own companies host, which would have become "Atari" and "Inc.".
+    And nothing checked that the slug it built had a page behind it, so a
+    studio with no write-up got a link to a 404.
 
-  const join = (names: string[]) =>
-    names.map((name, index) => (
-      <span key={name}>
+    `lib/rightsholders.ts` has both rules and why each is needed. The About
+    page had its own, different, answer to the same question until this.
+  */
+  const developers = await resolveRightsholders(game.developer)
+  const publishers = await resolveRightsholders(game.publisher)
+
+  const company = (holder: { name: string; slug: string; exists: boolean }) =>
+    holder.exists ? (
+      <a key={holder.slug} href={companyUrl(`/${holder.slug}`)}>
+        {holder.name}
+      </a>
+    ) : (
+      <span key={holder.slug}>{holder.name}</span>
+    )
+
+  const join = (holders: { name: string; slug: string; exists: boolean }[]) =>
+    holders.map((holder, index) => (
+      <span key={holder.slug}>
         {index > 0 ? ', ' : ''}
-        {company(name)}
+        {company(holder)}
       </span>
     ))
-
-  const developers = (game.developer ?? '').split(',').map((v) => v.trim()).filter(Boolean)
-  const publishers = (game.publisher ?? '').split(',').map((v) => v.trim()).filter(Boolean)
   const modes = (profile.modes ?? []) as string[]
   const verdict = editorialScore(game)
 

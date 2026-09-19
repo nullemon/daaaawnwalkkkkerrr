@@ -1,4 +1,5 @@
 import type { Metadata, ResolvingMetadata } from 'next'
+import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
 import { Linked } from '@/components/Linked'
 import type { LinkScope } from '@/lib/link-index'
@@ -35,6 +36,19 @@ export default async function EnemiesIndex({ params }: Props) {
     getGame(slug),
     getAll('enemies', { game: slug, depth: 1 }),
   ])
+  /*
+    A section with no records is not this game's section.
+
+    The rail, the footer and the sitemap all derive from `sectionsFor`, which
+    returns only the sections a wiki has at least one record in — so an empty
+    index here is reachable only by typing the URL or arriving from a search
+    result, and what it serves is a heading over nothing. A 404 is the honest
+    answer, and it lifts by itself the moment the first record arrives.
+
+    `GUARDS_EMPTY_INDEX` in `lib/audit.ts` is pinned against this line by
+    `audit.test.ts`, so the two cannot drift.
+  */
+  if (enemies.length === 0) notFound()
   const copy = sectionCopy('enemies', game, { total: enemies.length })
   const rows: Row[] = enemies.map((enemy) => {
     const region = typeof enemy.region === 'object' ? (enemy.region as Region) : null
@@ -73,27 +87,23 @@ export default async function EnemiesIndex({ params }: Props) {
         lede={copy.lede ? <Linked text={copy.lede} scope={scope} /> : undefined}
       />
       <div className="page body-main">
-        {enemies.length === 0 ? (
-          <p className="note">Nothing catalogued yet.</p>
-        ) : (
-          <DataTable
-            rows={rows}
-            noun="enemies"
-            searchPlaceholder="Search enemies by name, region or weakness…"
-            facets={[
-              { key: 'rank', label: 'Rank' },
-              { key: 'region', label: 'Region' },
-              { key: 'phaseLabel', label: 'Met' },
-            ]}
-            columns={[
-              { key: 'title', label: 'Enemy', type: 'name' },
-              { key: 'rank', label: 'Rank' },
-              { key: 'region', label: 'Region', type: 'link' },
-              { key: 'phase', label: 'Met during', type: 'phase', sortable: false },
-              { key: 'weaknesses', label: 'Weak to', sortable: false },
-            ]}
-          />
-        )}
+        <DataTable
+          rows={rows}
+          noun="enemies"
+          searchPlaceholder="Search enemies by name, region or weakness…"
+          facets={[
+            { key: 'rank', label: 'Rank' },
+            { key: 'region', label: 'Region' },
+            { key: 'phaseLabel', label: 'Met' },
+          ]}
+          columns={[
+            { key: 'title', label: 'Enemy', type: 'name' },
+            { key: 'rank', label: 'Rank' },
+            { key: 'region', label: 'Region', type: 'link' },
+            { key: 'phase', label: 'Met during', type: 'phase', sortable: false },
+            { key: 'weaknesses', label: 'Weak to', sortable: false },
+          ]}
+        />
       </div>
     </>
   )

@@ -3,7 +3,7 @@ import path from 'path'
 import type { Finding } from './audit'
 
 /**
- * The two launch checks that read the repository rather than the database.
+ * The launch checks that read the repository rather than the database.
  *
  * Split out of `audit.ts` so that module can be imported by the admin panel
  * without dragging `fs` and `path` in behind it. Neither of these findings is
@@ -31,6 +31,28 @@ const walk = (dir: string): string[] =>
       })
     : []
 
+/**
+ * The network hosts whose layout never emits a verification tag.
+ *
+ * Exported because `pnpm seo:search-console` has to say the same thing while
+ * walking somebody through adding ten properties, and a second regex over the
+ * same two files is the drift this project keeps meeting. One reader, two
+ * callers.
+ *
+ * Only the two non-wiki hosts are asked. `[game]/layout.tsx` and the hub's
+ * both call `verificationMetadata`, and a wiki that stopped would be caught by
+ * every wiki losing its tag at once — a failure loud enough to find. These two
+ * lost it by never having it, which is the quiet kind.
+ */
+export function hostsServingNoVerificationTag(): string[] {
+  const routes = path.resolve('src', 'app', '(frontend)')
+  return ['companies', 'people'].filter((host) => {
+    const layout = path.join(routes, host, 'layout.tsx')
+    if (!fs.existsSync(layout)) return false
+    return !/verification/.test(fs.readFileSync(layout, 'utf8'))
+  })
+}
+
 export function auditSource(): Finding[] {
   const findings: Finding[] = []
 
@@ -56,6 +78,37 @@ export function auditSource(): Finding[] {
       actor: 'editorial',
       area: 'per-wiki copy',
       detail: `${path.relative(process.cwd(), file)} exports a static metadata title or description — every wiki serves the same one`,
+      count: 1,
+    })
+  }
+
+  // --- Hosts whose <head> cannot carry a verification tag -------------------
+  /*
+    `companies.<domain>` and `people.<domain>` are separate origins, so each is
+    its own Search Console property and each needs its own verification. This
+    deployment verifies by meta tag — `verificationMetadata` in `lib/tags.ts`,
+    read from the database and emitted by the layout that asks for it — and
+    these two layouts never ask.
+
+    So the network token, which is the only one they could inherit, is not
+    served on either host. `audit.ts` already reports that neither has a field
+    of its own; what it cannot see is that the fallback does not reach them
+    either, which turns "paste the token in" into an instruction that cannot
+    work. It is a source fact — two `generateMetadata` functions — so it is
+    here, and `pnpm seo:search-console` prints it beside the property list
+    rather than deciding it again.
+
+    A page in `public/` is not an answer: `proxy.ts` only serves a path whose
+    first segment is in `PASS_THROUGH`, so Google's HTML-file method cannot
+    reach these hosts. A DNS TXT record on the apex can — one Domain property
+    covers every label — which is the recommendation the script makes.
+  */
+  for (const host of hostsServingNoVerificationTag()) {
+    findings.push({
+      level: 'warn',
+      actor: 'owner',
+      area: host,
+      detail: `${host}.<domain> serves no verification tag at all — its layout never calls verificationMetadata, so the network token cannot reach this host and the HTML-tag method cannot verify it. Use a DNS Domain property, or have this layout emit the tag.`,
       count: 1,
     })
   }

@@ -2,7 +2,7 @@
   "slug": "star-wars-zero-company",
   "appId": 2075800,
   "storeUrl": "https://store.steampowered.com/app/2075800/",
-  "fetchedAt": "2026-09-17",
+  "fetchedAt": "2026-09-19",
   "title": "STAR WARS Zero Company™",
   "developers": [
     "Bit Reactor"
@@ -122,324 +122,323 @@
   "dlc": [
     3701350
   ],
-  "metacritic": null,
   "achievements": [
     {
       "title": "In a galaxy far, far away....",
       "description": null,
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/dd1acc1cab912d79cbb7be0a428b212b63a10409.jpg",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/dd1acc1cab912d79cbb7be0a428b212b63a10409.jpg",
       "globalPercent": 95.6
     },
     {
       "title": "Your Focus Determines Your Reality",
       "description": "Applied a Focus Point",
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/c170b7574730d24de015ebfd3155a148dc1f9dc2.jpg",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/c170b7574730d24de015ebfd3155a148dc1f9dc2.jpg",
       "globalPercent": 90.2
     },
     {
       "title": "Sign Here",
       "description": "Recruited an Operator",
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/50c22a534487bc2c8f5d89e8ad1cb0ac2b293e64.jpg",
-      "globalPercent": 86
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/50c22a534487bc2c8f5d89e8ad1cb0ac2b293e64.jpg",
+      "globalPercent": 86.1
     },
     {
       "title": "Scum And Villainy",
       "description": null,
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/ca87b34ce89d91762bc0962af4ecbe64b5dd32d8.jpg",
-      "globalPercent": 84.3
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/ca87b34ce89d91762bc0962af4ecbe64b5dd32d8.jpg",
+      "globalPercent": 84.4
     },
     {
       "title": "Dress Code",
       "description": "Customized a member of Zero Company",
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/923fa8717ba960bdf5c3f06f6b1f357f57c21173.jpg",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/923fa8717ba960bdf5c3f06f6b1f357f57c21173.jpg",
       "globalPercent": 82.3
     },
     {
       "title": "To the Victor Go the Spoils",
       "description": "Unlocked a Zone Reward",
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/983b859e1e8b80bdfbf734094104c049856873dd.jpg",
-      "globalPercent": 82
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/983b859e1e8b80bdfbf734094104c049856873dd.jpg",
+      "globalPercent": 82.1
     },
     {
       "title": "Do or Do Not",
       "description": "Missed a 90% or greater chance to hit shot!",
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/a4b7a3405e221c0be9daacaac34060769a891672.jpg",
-      "globalPercent": 78.4
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/a4b7a3405e221c0be9daacaac34060769a891672.jpg",
+      "globalPercent": 78.6
     },
     {
       "title": "Where Credit Is Due",
       "description": "Made a purchase at The Black Market",
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/a73f159cef14e34133ca93cd21d5bbfe403066e1.jpg",
-      "globalPercent": 77.7
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/a73f159cef14e34133ca93cd21d5bbfe403066e1.jpg",
+      "globalPercent": 77.8
     },
     {
       "title": "Signature Flair",
       "description": "Customized a Weapon",
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/a6071c1ebaff35e535e268720d58944ad77309bc.jpg",
-      "globalPercent": 75.9
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/a6071c1ebaff35e535e268720d58944ad77309bc.jpg",
+      "globalPercent": 76
     },
     {
       "title": "The High Ground",
       "description": "Defeated 10 enemies from a higher elevation",
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/4d9ef8d983a76fa4cd0100e015403fc4af7ebeeb.jpg",
-      "globalPercent": 72.7
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/4d9ef8d983a76fa4cd0100e015403fc4af7ebeeb.jpg",
+      "globalPercent": 72.9
     },
     {
       "title": "Fathom Revealed",
       "description": null,
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/40f34d36655282f7b755af604dfca4f27bda1ee7.jpg",
-      "globalPercent": 71.3
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/40f34d36655282f7b755af604dfca4f27bda1ee7.jpg",
+      "globalPercent": 71.5
     },
     {
       "title": "Watch That First Step",
       "description": "Knocked an enemy out of the combat space",
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/d5a837564f81ce1dd611bf86f11a878298081eeb.jpg",
-      "globalPercent": 66.9
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/d5a837564f81ce1dd611bf86f11a878298081eeb.jpg",
+      "globalPercent": 67.2
     },
     {
       "title": "One Less Clanker",
       "description": null,
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/13e01b57f3b000bb5903c7321524e92264a8fae1.jpg",
-      "globalPercent": 60
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/13e01b57f3b000bb5903c7321524e92264a8fae1.jpg",
+      "globalPercent": 60.4
     },
     {
       "title": "Sky High",
       "description": null,
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/0e3b3c2e15376d20118e79359bd4ceb191fd2308.jpg",
-      "globalPercent": 47.7
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/0e3b3c2e15376d20118e79359bd4ceb191fd2308.jpg",
+      "globalPercent": 48.3
     },
     {
       "title": "Forceful",
       "description": null,
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/00623e6e80a6d6457cf465bdc2cfc8b2f8d0d4c3.jpg",
-      "globalPercent": 47.7
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/00623e6e80a6d6457cf465bdc2cfc8b2f8d0d4c3.jpg",
+      "globalPercent": 48.2
     },
     {
       "title": "A Way to Pass the Time",
       "description": null,
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/424d991ee816a8c66929817ec3ee4e57f70b89a5.jpg",
-      "globalPercent": 43
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/424d991ee816a8c66929817ec3ee4e57f70b89a5.jpg",
+      "globalPercent": 43.6
     },
     {
       "title": "Luunata Reclaimed",
       "description": null,
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/b197eb7cd87780f1f29eb0cded5f1436a73bcd99.jpg",
-      "globalPercent": 33.4
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/b197eb7cd87780f1f29eb0cded5f1436a73bcd99.jpg",
+      "globalPercent": 34.1
     },
     {
       "title": "Never Tell Me the Odds",
       "description": "Landed a 10% or lower chance to hit shot!",
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/95ebf6057ef63abeca6ac5473fe2d8117a22255e.jpg",
-      "globalPercent": 32.1
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/95ebf6057ef63abeca6ac5473fe2d8117a22255e.jpg",
+      "globalPercent": 32.4
     },
     {
       "title": "A New Order",
       "description": null,
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/a9af03481e12f4d6b13892a57a99b4cd45c1ab4d.jpg",
-      "globalPercent": 30
-    },
-    {
-      "title": "The Prizefighter",
-      "description": null,
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/9f2ab7498715b7686f97dfdc67a200075933b2cc.jpg",
-      "globalPercent": 27.6
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/a9af03481e12f4d6b13892a57a99b4cd45c1ab4d.jpg",
+      "globalPercent": 30.8
     },
     {
       "title": "Jungle Warfare",
       "description": null,
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/c3a875bbeeda839529efc2c4513a8beceed05d0f.jpg",
-      "globalPercent": 27.3
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/c3a875bbeeda839529efc2c4513a8beceed05d0f.jpg",
+      "globalPercent": 28.2
+    },
+    {
+      "title": "The Prizefighter",
+      "description": null,
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/9f2ab7498715b7686f97dfdc67a200075933b2cc.jpg",
+      "globalPercent": 28.2
     },
     {
       "title": "The Baroness",
       "description": null,
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/27136a69cd86f759b471123b5ca8bd6c430616bd.jpg",
-      "globalPercent": 26.8
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/27136a69cd86f759b471123b5ca8bd6c430616bd.jpg",
+      "globalPercent": 27.6
     },
     {
       "title": "Old Friends",
       "description": null,
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/4cca4bbb87bcb53b567cc11a05809afb18763c35.jpg",
-      "globalPercent": 26.1
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/4cca4bbb87bcb53b567cc11a05809afb18763c35.jpg",
+      "globalPercent": 26.7
     },
     {
       "title": "With Friends Like These",
       "description": null,
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/7f41243fa93fccd9a645fd3b52ea27b66da764b0.jpg",
-      "globalPercent": 25.1
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/7f41243fa93fccd9a645fd3b52ea27b66da764b0.jpg",
+      "globalPercent": 26
     },
     {
       "title": "The Mandalorian",
       "description": null,
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/f9316101bf05453888ee332ac45c4eae28e2a257.jpg",
-      "globalPercent": 22.7
-    },
-    {
-      "title": "See Your Own Demise",
-      "description": null,
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/67eb1cef781af95dceaf9a539bebad8c9978b8f2.jpg",
-      "globalPercent": 21.8
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/f9316101bf05453888ee332ac45c4eae28e2a257.jpg",
+      "globalPercent": 23.6
     },
     {
       "title": "The Trooper",
       "description": null,
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/7170f0d0d765ff8fc0675e4c0a91f12079b69b8c.jpg",
-      "globalPercent": 21.5
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/7170f0d0d765ff8fc0675e4c0a91f12079b69b8c.jpg",
+      "globalPercent": 22.4
+    },
+    {
+      "title": "See Your Own Demise",
+      "description": null,
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/67eb1cef781af95dceaf9a539bebad8c9978b8f2.jpg",
+      "globalPercent": 22.2
     },
     {
       "title": "An End of the Infinite",
       "description": null,
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/32f57cf64caa9323b5d56bcd412e699de4c1fdf8.jpg",
-      "globalPercent": 20
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/32f57cf64caa9323b5d56bcd412e699de4c1fdf8.jpg",
+      "globalPercent": 20.9
     },
     {
       "title": "Hired Gun",
       "description": "Beat the game on Story or higher",
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/e155a2068219bcb7237f9958e04fa217b2878d76.jpg",
-      "globalPercent": 19.7
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/e155a2068219bcb7237f9958e04fa217b2878d76.jpg",
+      "globalPercent": 20.6
     },
     {
       "title": "The Padawan",
       "description": null,
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/771c68083b62dc37dc4e827efc1b750e69493afd.jpg",
-      "globalPercent": 19.7
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/771c68083b62dc37dc4e827efc1b750e69493afd.jpg",
+      "globalPercent": 20.5
     },
     {
       "title": "A Natural Part of Life",
       "description": "Lost a member of Zero Company",
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/530e921b29f8f1552715a1182d448b78ae62edd7.jpg",
-      "globalPercent": 19.4
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/530e921b29f8f1552715a1182d448b78ae62edd7.jpg",
+      "globalPercent": 19.6
     },
     {
       "title": "Veteran",
       "description": "Beat the game on Normal or higher",
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/b589d5bc5023196fef0ad002cfa50e7f86bf49b8.jpg",
-      "globalPercent": 18.1
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/b589d5bc5023196fef0ad002cfa50e7f86bf49b8.jpg",
+      "globalPercent": 19
     },
     {
       "title": "The Umbaran",
       "description": null,
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/2f05ececff463128eddb8b9d19c0df2eb7c4e0ab.jpg",
-      "globalPercent": 12.9
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/2f05ececff463128eddb8b9d19c0df2eb7c4e0ab.jpg",
+      "globalPercent": 13.4
     },
     {
       "title": "Lost Causes",
       "description": null,
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/3a0b95867d70208f2673c5bed75cb4fb29d0ab3e.jpg",
-      "globalPercent": 10.2
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/3a0b95867d70208f2673c5bed75cb4fb29d0ab3e.jpg",
+      "globalPercent": 10.7
     },
     {
       "title": "Class and Distinction",
       "description": null,
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/66102529a9203336f442ffc0a8d6d4cdce2da3a4.jpg",
-      "globalPercent": 10.1
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/66102529a9203336f442ffc0a8d6d4cdce2da3a4.jpg",
+      "globalPercent": 10.4
     },
     {
       "title": "Mate and Marrow",
       "description": null,
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/ba7d836fffbc18612ec46496c3b5845a5c97e5bc.jpg",
-      "globalPercent": 7
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/ba7d836fffbc18612ec46496c3b5845a5c97e5bc.jpg",
+      "globalPercent": 7.3
     },
     {
       "title": "Operator",
       "description": "Beat the game on Hard or higher",
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/e980e679020844d8a916b315e86f92cb38feda78.jpg",
-      "globalPercent": 5.8
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/e980e679020844d8a916b315e86f92cb38feda78.jpg",
+      "globalPercent": 6.1
     },
     {
       "title": "Fully Geared",
       "description": "Equipped 4 Weapon Mods to a Weapon",
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/21f608d8835632e19d33e0b2d007850c32311cd9.jpg",
-      "globalPercent": 5.7
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/21f608d8835632e19d33e0b2d007850c32311cd9.jpg",
+      "globalPercent": 5.9
     },
     {
       "title": "Word Of Honor",
       "description": null,
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/01aac716b2a61b50f70739fec5af25bbad694339.jpg",
-      "globalPercent": 4.2
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/01aac716b2a61b50f70739fec5af25bbad694339.jpg",
+      "globalPercent": 4.4
     },
     {
       "title": "If You Know You Know",
       "description": null,
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/a5a469ddcb4761bcc3eac3c70dd439f3f2a00a1c.jpg",
-      "globalPercent": 3.7
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/a5a469ddcb4761bcc3eac3c70dd439f3f2a00a1c.jpg",
+      "globalPercent": 4
     },
     {
       "title": "Thick as Thieves",
       "description": "Reached Very High Bond between Two Custom Operators",
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/862a7bb0b84819096883469819c30aa1530da00f.jpg",
-      "globalPercent": 2.3
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/862a7bb0b84819096883469819c30aa1530da00f.jpg",
+      "globalPercent": 2.4
     },
     {
       "title": "Full Roster",
       "description": "Recruited 20 Operators in a single campaign",
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/3930fe9bba4456c2468659412bdef5ae352d8a8d.jpg",
-      "globalPercent": 2.2
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/3930fe9bba4456c2468659412bdef5ae352d8a8d.jpg",
+      "globalPercent": 2.3
     },
     {
       "title": "Captain",
       "description": "Beat the game on Expert",
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/450276af01688b3c7a506fe902d531377211fd32.jpg",
-      "globalPercent": 1.7
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/450276af01688b3c7a506fe902d531377211fd32.jpg",
+      "globalPercent": 1.9
     },
     {
       "title": "Sharp Shooters",
       "description": null,
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/380c6bf1cc81dac9841725b11dad92ca7aa626ae.jpg",
-      "globalPercent": 1.4
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/380c6bf1cc81dac9841725b11dad92ca7aa626ae.jpg",
+      "globalPercent": 1.5
     },
     {
       "title": "Across the Stars",
       "description": "Unlocked all the Zone Rewards",
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/de4dd5bc303ec7c319b3ee6301e94de7390b21d5.jpg",
-      "globalPercent": 1.4
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/de4dd5bc303ec7c319b3ee6301e94de7390b21d5.jpg",
+      "globalPercent": 1.5
     },
     {
       "title": "The Baroness and the Boxer",
       "description": null,
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/709012d8b6c380f3598db029310ccc8b0aaafec3.jpg",
-      "globalPercent": 1.2
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/709012d8b6c380f3598db029310ccc8b0aaafec3.jpg",
+      "globalPercent": 1.3
     },
     {
       "title": "*Angry Beeps*",
       "description": "Completed a mission using 4 Astromechs",
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/cb9b219b446c7050e404acfdd0d1a5e522235d2c.jpg",
-      "globalPercent": 0.9
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/cb9b219b446c7050e404acfdd0d1a5e522235d2c.jpg",
+      "globalPercent": 1
     },
     {
       "title": "Legend",
       "description": "Beat the game on Expert and Beskar Mode",
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/513032f490dc17b368d7319d4e2fc65f1b534e45.jpg",
-      "globalPercent": 0.8
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/513032f490dc17b368d7319d4e2fc65f1b534e45.jpg",
+      "globalPercent": 0.9
     },
     {
       "title": "Heroes on Both Sides",
       "description": null,
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/fbe506294a6db4952528d023caf5d6295db937f5.jpg",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/fbe506294a6db4952528d023caf5d6295db937f5.jpg",
       "globalPercent": 0.7
     },
     {
       "title": "Beep Boop",
       "description": "Reached Very High Bond between Two Astromechs",
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/344cabfc567aeb7c8c43bfc00883957d35442785.jpg",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/344cabfc567aeb7c8c43bfc00883957d35442785.jpg",
       "globalPercent": 0.7
     },
     {
       "title": "There Will Be No Bargain",
       "description": null,
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/d214bbb30e5b030078142f1d05092d604ed20f22.jpg",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/d214bbb30e5b030078142f1d05092d604ed20f22.jpg",
       "globalPercent": 0.7
     },
     {
       "title": "Active Duty",
       "description": "Completed 50 Optional Missions",
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/e94d12d74c1be70b7435d0edcdd43dbef0310d24.jpg",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/e94d12d74c1be70b7435d0edcdd43dbef0310d24.jpg",
       "globalPercent": 0.4
     },
     {
       "title": "Zero Company Legend",
       "description": "Completed all other achievements",
-      "icon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2075800/f816f6e75092b95505459f4b6b3e8e63ae50e2e4.jpg",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2075800/f816f6e75092b95505459f4b6b3e8e63ae50e2e4.jpg",
       "globalPercent": 0.2
     }
   ],

@@ -13,7 +13,7 @@ import type { LinkScope } from '@/lib/link-index'
 import { Attribution } from '@/components/Attribution'
 import { ImageCredit } from '@/components/ImageCredit'
 import { Sources } from '@/components/Sources'
-import { client, gameUrl, rel, relMany } from '@/lib/payload'
+import { client, gameUrl, getGamePosters, rel, relMany } from '@/lib/payload'
 import { copy, hasRichText } from '@/lib/copy'
 import {
   CAPPED_CATALOGUE_HEADING,
@@ -27,8 +27,9 @@ import {
 import { clamp } from '@/lib/seo'
 import { COMPANIES_ORIGIN, externalSite, hub, personUrl } from '@/lib/urls'
 import { readOfficers } from '@/lib/officers'
-import type { Company, Game } from '@/payload-types'
+import type { Company, Game, Media } from '@/payload-types'
 import { socialMeta } from '@/lib/social'
+import { GameCard } from '@/components/GameCard'
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -121,6 +122,9 @@ export default async function CompanyPage({ params }: Props) {
   const sourcingNote = copy(profile.sourcingNote, built.sourcingNote)
 
   const games = relMany<Game>(company.games)
+  /* Covers for the list below. See `getGamePosters` for why this is its own
+     query rather than a deeper read. */
+  const posters = await getGamePosters(games.map((game) => game.id))
   const links = await Promise.all(
     games.map(async (game) => ({ game, href: await gameUrl(game) })),
   )
@@ -381,17 +385,12 @@ export default async function CompanyPage({ params }: Props) {
                 </div>
                 <div className="grid">
                   {links.map(({ game, href }) => (
-                    /*
-                      A plain anchor, not `next/link`: every wiki is its own
-                      origin, so there is no client-side navigation to be had
-                      and a prefetch would only fail quietly.
-                    */
-                    <a key={game.id} className="card entity-card" href={href}>
-                      <span>
-                        <h3>{game.shortTitle || game.title}</h3>
-                        {game.summary ? <p className="note">{game.summary}</p> : null}
-                      </span>
-                    </a>
+                    <GameCard
+                      key={game.id}
+                      game={game}
+                      href={href}
+                      poster={(posters.get(game.id) ?? null) as Media | null}
+                    />
                   ))}
                 </div>
               </section>

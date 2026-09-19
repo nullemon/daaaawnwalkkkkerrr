@@ -4,6 +4,7 @@ import type { CollectionSlug, Payload } from 'payload'
 
 import config from '../payload.config'
 import { games, PRIMARY_GAME } from './games'
+import { clearWithdrawnVerdicts } from './rating-basis'
 import { isGameScoped } from '../lib/tenancy'
 import {
   authors,
@@ -102,6 +103,17 @@ async function seed(): Promise<void> {
     console.log(`  created admin user ${email}`)
   } else {
     console.log('  admin user already exists, left alone')
+  }
+
+  /*
+    A value a select no longer offers refuses every write to its document, so
+    this runs before the loop below rather than in `seed:ratings`, which is
+    twenty-four steps further down `db:reset` and would never be reached. See
+    `clearWithdrawnBasis` for what it is and why it is not translated.
+  */
+  const clearedVerdicts = await clearWithdrawnVerdicts(payload)
+  for (const entry of clearedVerdicts) {
+    console.log(`  removed a pre-release verdict: ${entry}`)
   }
 
   // --- The games themselves, before anything that belongs to one ----------

@@ -10,6 +10,11 @@ import { Icon } from './Icon'
  * alternate rather than the origin. Site settings → Appearance can make that
  * default light, or hand it to the system; this button overrides whichever it
  * is, for this reader, permanently.
+ *
+ * It is not rendered at all when that same tab locks the network to one theme.
+ * `SiteRail` makes that call from a prop `Shell` reads — see the comment where
+ * it does — so nothing in here needs to know about the lock, and there is no
+ * disabled state to keep in step with it.
  */
 export function ThemeToggle() {
   const [theme, setTheme] = useState<'dark' | 'light'>('dark')

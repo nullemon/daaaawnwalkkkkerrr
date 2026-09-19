@@ -107,12 +107,52 @@ pnpm indexnow -- --send  # submit
 ```
 
 That reaches Bing, Yandex, Seznam, Naver and Yep. **Google does not
-participate in IndexNow.** For Google, add each host to Search Console as its
-own property and submit `https://<host>/sitemap.xml`. Eight properties, because
-Google treats a subdomain as a separate site — which is the cost of the
+participate in IndexNow.** For Google the sitemap in Search Console is the only
+channel, and that is the next section.
+
+### Google Search Console
+
+```bash
+pnpm seo:search-console
+```
+
+Prints every property to add, in the order to add them, with the sitemap URL to
+submit for each and the admin URL of the box its token goes into. It reads the
+same pass `pnpm check:launch` does, so "this wiki has a token" is answered once
+and not twice — see the note in `CLAUDE.md` about two implementations of one
+finding.
+
+**One property per origin**: the apex, every wiki, and the companies and people
+hosts. That is eleven today. Google treats a subdomain as a separate site, so
+the network's token does not verify any of them — which is the cost of the
 subdomain decision, accepted knowingly. See `docs/NETWORK.md`.
 
-### The key
+Which methods this deployment can actually use, which is the part worth knowing
+before opening Google's verification dialog:
+
+- **HTML tag** — supported, and what the admin is built for. The content value
+  goes in **Site settings → SEO & analytics** for the apex, or on the Game for a
+  wiki; an empty field on a Game inherits the network's. It is served from the
+  database by `verificationMetadata` in `src/lib/tags.ts`, so nothing is
+  deployed and nothing is committed.
+- **DNS TXT** — supported, and the shortest path by a distance. One TXT record
+  at the apex registers a *Domain* property, which covers every label under it
+  including wikis that do not exist yet, with no token pasted anywhere. It is
+  set at the registrar, so nothing in this repository can check it.
+- **HTML file** — *not available.* Google asks for `/google<token>.html` at the
+  root, and `proxy.ts` rewrites any path whose first segment is not in
+  `PASS_THROUGH` onto a game prefix. The file 404s on every host. This is the
+  same trap the IndexNow key file fell into, and the reason that key is answered
+  from the database by a route rather than being a file.
+
+**`companies.<domain>` and `people.<domain>` serve no verification tag at all.**
+Their layouts never call `verificationMetadata`, so there is nothing for the
+network token to reach them through — pasting one in and then choosing "HTML
+tag" for those two hosts will never verify. Use a Domain property, or have those
+two layouts emit the tag. `pnpm check:launch` reports it and
+`pnpm seo:search-console` prints it beside the property list.
+
+### The IndexNow key
 
 A key is already generated and committed at `public/<key>.txt`, so this works
 with no setup. The key is **published by design, not a secret**: the file being
@@ -150,30 +190,62 @@ anything**, and sends nothing if any of the ten does not answer with the key.
 That is the difference between a sentence naming the host and a 422 naming
 nothing.
 
-### Nothing triggers this automatically, and that is deliberate
+### Publishing a page announces it
 
-There is no hook on save, no call at the end of a build. A content change
-reaches IndexNow when somebody runs `pnpm indexnow -- --send` after the deploy
-that published it.
+The site pings IndexNow when a record is published: **one URL, the page of the
+record that was published, on its own wiki's host.** Not the sitemap, not the
+section index, not the hub.
 
-The reason is that IndexNow is priced in trust rather than in requests:
-re-submitting URLs that have not changed is the documented way to get a key
-throttled or ignored, and a save hook here would submit the whole sitemap —
-1,900-odd URLs across ten hosts — for a typo fix, because nothing in this
-codebase tracks which pages a record change actually affects. Every public page
-is prerendered, so a saved record is not even live until the next build; a hook
-firing on save would be announcing a page that still shows the old text.
+This used to say that nothing triggered IndexNow automatically and that this
+was deliberate, and the two arguments recorded against a trigger were real. So
+the ping is the answer to both of them rather than a decision to ignore them.
 
-A per-URL trigger would be worth building, and it needs a thing that does not
-exist yet: a record of which prerendered pages a given record appears on. Until
-then, manual-after-deploy is the honest mechanism, and the dry run is the
-default so it cannot happen by accident.
+**"A save hook would submit the whole sitemap for a typo fix."** It would, if
+it submitted the sitemap. IndexNow is priced in trust rather than in requests,
+and re-submitting unchanged URLs is the documented way to get a key throttled,
+so what protects the key is not politeness — it is four refusals, each of
+which drops the submission rather than delaying it, and each of which says so
+once:
+
+| | |
+| --- | --- |
+| **Only the serving site pings** | A seed run publishes thousands of records and announces none of them. The discriminator is `NEXT_RUNTIME`, which the `next` binary sets for `dev`, `build` and `start` and which `tsx` does not have — so `pnpm seed`, `pnpm ingest` and every pass in `pnpm db:reset` are silent by construction, not by a flag somebody has to pass. A **standalone** build started as `node server.js` has no `next` binary in the chain and so announces nothing until its environment sets `NEXT_RUNTIME=nodejs` itself. That is a guard failing in the safe direction; if you want the ping on such a deployment, set the variable there and nowhere a seed script will see it. |
+| **Only a real public origin** | No localhost, no unset `NEXT_PUBLIC_SITE_URL`. |
+| **A burst ceiling** | More than 25 URLs in one ten-second batch is a script rather than an editor. The batch is dropped **whole** — sending an arbitrary 25 of 400 is a submission that looks successful and announced the wrong pages — with a line saying to run `pnpm indexnow -- --send` after the deploy. |
+| **An hourly ceiling** | 200 URLs an hour, for the slow version of the same thing. |
+
+Publishes are also coalesced: twenty pages in a minute are one submission.
+
+**"Every public page is prerendered, so a saved record is not live until the
+next build."** Also true, and why **nothing is announced without asking the
+host for the URL first**. A page that answers 404 because the build has not
+run yet is not submitted — announcing it would invite a crawler to fetch a 404
+and remember it. A page that answers 200 is a real page whose text may be one
+revision behind, which is a re-crawl doing what a re-crawl is for. The key
+file is checked on that host too, once per process, because an unreachable
+`/<key>.txt` is the one thing that makes IndexNow refuse a submission and it
+says so only as a 422 naming nothing.
+
+Nothing is retried and nothing is queued across a restart. Everything the ping
+might miss, `pnpm indexnow -- --send` submits in full, with somebody watching —
+that tool is still the one to run after a deploy, and it is still a dry run by
+default.
+
+To turn the ping off and go back to manual-only, set `INDEXNOW_PING=off` in the
+environment. There is no value that forces a submission past the checks above;
+a switch that could would be a switch that submits `http://localhost:3000/…`
+to Bing.
+
+The logic and the ceilings are `src/lib/indexnow-ping.ts`, which imports
+nothing and is unit-tested in both directions; the half that reads the database
+and makes the requests is `src/lib/indexnow-publish.ts`, attached to every
+collection with a public page by `withPublishPing` in `payload.config.ts`.
 
 ---
 
 ## Analytics: the one scheduled job on this deployment
 
-`/admin/analytics` counts page views itself. Nothing external is involved and
+`/admin1621/analytics` counts page views itself. Nothing external is involved and
 there is nothing to sign up for - the switch is Site settings -> SEO & analytics
 -> "Measure page views on this network", and it is on.
 
@@ -275,23 +347,42 @@ a refresh the week a game ships. Those are terminal jobs.
 database credentials, no redeploy, and it behaves identically against
 localhost and production.
 
-**Setup, once.** In the admin: **Users → your account → tick "Enable API Key"
-→ Save**, and copy the key it generates. Then in `.env`:
+**Setup, once.** In `.env`:
 
 ```bash
 REMOTE_URL=https://your-domain.com
-REMOTE_API_KEY=<the key>
 ```
 
-The key carries exactly that user's permissions — an editor assigned to one
-wiki cannot write to another with theirs, because the same access rules run.
-Revoking one is unticking the box. Never commit it; `.env` is gitignored.
+**Then open a session.** A session is asked for from the terminal and approved
+by you in the admin, after comparing a sixteen-character code printed in both
+places, and you tick what that one session may do — create pages but not
+delete, say. It expires, it is revocable in one click, and every write it makes
+is in the Remote log with what changed. `docs/REMOTE.md` is the whole design;
+the short version:
 
-**Put the key in `.env` yourself rather than pasting it into a chat.** Every
-tool here reads it from there, so whoever is doing the work never needs to see
-it — and a key that was never in a transcript is one you never have to wonder
-about. If one does get pasted somewhere, untick the box and tick it again: the
-old key stops working immediately.
+```bash
+pnpm remote connect                            # or --can read,create,update
+#   → prints a code, waits. Approve it at /admin1621/remote.
+pnpm remote status
+pnpm remote disconnect
+```
+
+Sessions need `REMOTE_CONTROL_SECRET` set on the deployment and the box ticked
+at **Network → Remote control**. Without both, `/api/remote/*` answers 404 and
+there is nothing to use.
+
+**About `REMOTE_API_KEY`.** It is the older way in — a per-user key from
+**Users → your account → "Enable API Key"** — and on a deployment that has
+remote control it is **refused**, by the server, with a sentence. An API key
+is unscoped, never expires and its writes are not in the Remote log, so while
+one worked there would be a way around every per-session capability you tick.
+It still works exactly as it did on a deployment that has never set
+`REMOTE_CONTROL_SECRET` — a staging site, a local copy. `docs/REMOTE.md` has
+the argument and the way back.
+
+Whichever credential is in play, never paste it into a chat: every tool here
+reads `.env`, which is gitignored, so whoever is doing the work never needs to
+see it.
 
 **Then:**
 
@@ -307,6 +398,11 @@ pnpm remote delete guides old-slug --game onimusha-way-of-the-sword --yes
 `create` and `update` take a JSON file shaped like the record — the same
 fields the admin form shows. `pnpm remote get` on an existing page prints one
 to copy.
+
+A command the session was not approved for is refused by the server, naming
+what the session *may* do — `pnpm remote status` prints the same list. Widening
+it is another `pnpm remote connect`, because a grant that could be changed
+after the fact would not be a grant.
 
 This is also how a future session at a terminal adds content to the live site
 without touching the repository.

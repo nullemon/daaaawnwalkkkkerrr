@@ -63,7 +63,24 @@ export async function RelatedList({
         */}
         <span className="metarow">
           {items.length > 0 ? <span className="eyebrow">{items.length}</span> : null}
-          {href ? (
+          {/*
+            No items, no "see all", and the reason is a 404 rather than tidiness.
+
+            All sixteen section indexes answer 404 on a collection this wiki
+            has no records in — an empty section is not that wiki's section,
+            and the rail, the footer and the sitemap all leave it out. This
+            link did not: a region page on the Onimusha wiki printed "No quest
+            in the database is filed under this region yet" and offered "see
+            all" beside it, pointing at `/quests`, which does not exist on a
+            wiki with no quests. Three wikis, every region page on them.
+
+            `items.length === 0` is exactly the right test rather than an
+            approximation of one: these items are drawn from the collection the
+            href points at, so a list with something in it proves that
+            collection has a record on this wiki, and a list with nothing in it
+            is the only way the index can be missing.
+          */}
+          {href && items.length > 0 ? (
             <Link href={href} className="cta">
               {ui.t('related.see-all')}
             </Link>

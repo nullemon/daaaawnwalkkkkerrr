@@ -250,24 +250,19 @@ export default async function GameLayout({
   ]
 
   /*
-    An editor's own columns replace the derived ones outright rather than
-    merging with them. Merging would be the friendlier default and the wrong
-    one: the built-in columns are this wiki's section list, so a merge means
-    every column an editor writes is followed by links they cannot remove, and
-    the way to drop one becomes "edit the code". All or nothing is a rule
-    somebody can hold in their head; blank keeps what shipped.
+    This wiki's own map goes to the footer as it is.
 
-    Empty columns are dropped either way — a heading with nothing under it is
-    what a wiki with no tools would otherwise print.
+    `settings.footerColumns` used to be resolved here as well as in
+    `SiteFooter`, with a comment arguing that an editor's columns should
+    replace the built-in ones outright — against the comment in
+    `companies/layout.tsx` arguing the opposite about its own column, and
+    against what the replacement actually did: one filled row in the admin
+    took this wiki's whole section list off every page of it, along with the
+    only link on this host to `/about`, `/corrections` and `/requests`.
+
+    One resolution, in `lib/footer-columns.ts`, which the footer calls.
   */
-  const columns: FooterColumn[] = (
-    settings.footerColumns && settings.footerColumns.length > 0
-      ? settings.footerColumns.map((column) => ({
-          heading: column.heading,
-          links: (column.links ?? []).map(({ label, href }) => ({ label, href })),
-        }))
-      : builtInColumns
-  ).filter((column) => column.links.length > 0)
+  const columns: FooterColumn[] = builtInColumns
 
   return (
     <Shell
@@ -277,7 +272,7 @@ export default async function GameLayout({
       footer={{
         blurb:
           game.summary ||
-          `A guide and database for ${game.title}. Every figure carries a confidence rating, and where sources disagree we say so rather than picking one.`,
+          `A guide and database for ${game.title}. Every figure is cited to where it came from, and where sources disagree we say so rather than picking one.`,
         columns,
         // This wiki's own disclaimer, not the network's. See `fanProjectNote`.
         note: fanProjectNote(game, settings.footerNote),

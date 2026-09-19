@@ -473,6 +473,22 @@ async function run(): Promise<void> {
     characterByTitle.set(`${String(character.game)}::${character.title.toLowerCase()}`, character.id)
   }
 
+  /*
+    The same index for enemies, because a boss is a part somebody played and
+    this network files it under `enemies`. Onimusha's whole cast is here —
+    twenty-one credits that had nowhere to point until `People.enemies`
+    existed. Matched within one game, for the same reason characters are.
+  */
+  const enemies = await payload.find({ collection: 'enemies', limit: 10000, depth: 0 })
+  const enemyByTitle = new Map<string, string | number>()
+  for (const enemy of enemies.docs as unknown as {
+    id: string | number
+    title: string
+    game: string | number
+  }[]) {
+    enemyByTitle.set(`${String(enemy.game)}::${enemy.title.toLowerCase()}`, enemy.id)
+  }
+
   let created = 0
   let updated = 0
   let high = 0
@@ -480,6 +496,7 @@ async function run(): Promise<void> {
   let charactersLinked = 0
   let charactersMissed = 0
   let charactersElsewhere = 0
+  let enemiesLinked = 0
   let mentions = 0
   const usedSlugs = new Map<string, string>()
   const review: string[] = []
@@ -540,16 +557,29 @@ async function run(): Promise<void> {
     }
 
     const characterIds: (string | number)[] = []
+    const enemyIds: (string | number)[] = []
     for (const credit of parts) {
       const game = gameBySlug.get(credit.game)
       if (!game) continue
       if (!linkable(credit)) {
         /*
-          A real credit filed outside `characters` on its own wiki. It keeps
-          its sentence and its line in the credits list; only the relationship
-          is left empty. See `linkable`.
+          A real credit filed outside `characters` on its own wiki — almost
+          always under `enemies`, because a boss is a part somebody played and
+          this network files it by what it is in the game.
+
+          This used to end here: the credit kept its sentence and its line in
+          the credits list, and the relationship was left empty because
+          `People` related to `characters` and nothing else. It now points at
+          the enemy record, which is where it always belonged. Still counted,
+          because the count is how anybody notices a third collection starting
+          to carry credits.
         */
         charactersElsewhere += 1
+        const enemyId = enemyByTitle.get(`${String(game.id)}::${credit.character.toLowerCase()}`)
+        if (enemyId !== undefined && !enemyIds.includes(enemyId)) {
+          enemyIds.push(enemyId)
+          enemiesLinked += 1
+        }
         continue
       }
       const id = characterByTitle.get(`${String(game.id)}::${credit.character.toLowerCase()}`)
@@ -893,6 +923,7 @@ async function run(): Promise<void> {
       works,
       games: gameIds,
       characters: characterIds,
+      enemies: enemyIds,
       basis: wikiMentionOnly
         ? 'wiki-mention'
         : person.credits.length > 0
@@ -924,7 +955,7 @@ async function run(): Promise<void> {
   console.log(`confidence: ${high} high (article corroborates the credit), ${low} low (credit only)`)
   console.log(
     `character relationships: ${charactersLinked} linked, ${charactersMissed} with no record to point at, ` +
-      `${charactersElsewhere} filed outside the characters collection on their own wiki`,
+      `${charactersElsewhere} filed outside the characters collection on their own wiki` + ` (${enemiesLinked} of them linked to an enemy record)`,
   )
   console.log(
     `filed as wiki-mention (named on a franchise wiki, credited on no game here): ${mentions}`,

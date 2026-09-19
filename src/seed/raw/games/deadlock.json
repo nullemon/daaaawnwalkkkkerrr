@@ -1,0 +1,64 @@
+{
+  "slug": "deadlock",
+  "appId": 1422450,
+  "storeUrl": "https://store.steampowered.com/app/1422450/",
+  "fetchedAt": "2026-09-19",
+  "title": "Deadlock",
+  "developers": [
+    "Valve"
+  ],
+  "publishers": [
+    "Valve"
+  ],
+  "releaseDate": "To be announced",
+  "comingSoon": true,
+  "shortDescription": "Deadlock is a multiplayer game in early development.",
+  "aboutText": "EARLY DEVELOPMENT BUILD\nDeadlock is still in early development stages with lots of temporary art and experimental gameplay.\n\nLIMITED ACCESS\nAccess to Deadlock is currently limited to friend invites via our playtesters.",
+  "genres": [
+    "Action"
+  ],
+  "categories": [
+    "Multi-player"
+  ],
+  "languages": "English",
+  "contentDescriptors": null,
+  "platforms": [
+    "windows"
+  ],
+  "requirements": {
+    "minimum": [
+      {
+        "label": "OS",
+        "value": "TBD"
+      },
+      {
+        "label": "Processor",
+        "value": "TBD"
+      },
+      {
+        "label": "Graphics",
+        "value": "TBD"
+      },
+      {
+        "label": "Sound Card",
+        "value": "TBD"
+      }
+    ],
+    "recommended": []
+  },
+  "editions": [],
+  "dlc": [],
+  "achievements": [],
+  "art": {
+    "header": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1422450/aa249c5e8cc8f90941bd1dbdc311773cd1afe065/header.jpg?t=1769127177",
+    "capsule": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1422450/88b400eca727f0547232b49b3e62827f07900c77/capsule_231x87.jpg?t=1769127177",
+    "background": "https://store.akamai.steamstatic.com/images/storepagebackground/app/1422450?t=1769127177",
+    "screenshots": [
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1422450/fa25560cf85debe669f5d4acd76cf81b0943019b/ss_fa25560cf85debe669f5d4acd76cf81b0943019b.1920x1080.jpg?t=1769127177",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1422450/1a5a68e51d6aff5e2910410f84854c4c39af68cc/ss_1a5a68e51d6aff5e2910410f84854c4c39af68cc.1920x1080.jpg?t=1769127177",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1422450/52159118573367c304c43fc9ed85588c0c518a19/ss_52159118573367c304c43fc9ed85588c0c518a19.1920x1080.jpg?t=1769127177",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1422450/ac02851ede518092df55746dbc98a199c91d7411/ss_ac02851ede518092df55746dbc98a199c91d7411.1920x1080.jpg?t=1769127177",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1422450/caaf254176430d69244b99e565d3d56559f1743b/ss_caaf254176430d69244b99e565d3d56559f1743b.1920x1080.jpg?t=1769127177"
+    ]
+  }
+}

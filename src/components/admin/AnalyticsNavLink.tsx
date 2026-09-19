@@ -17,10 +17,12 @@
  * anybody: traffic is something to look at, not a queue to clear, and a count
  * next to it would make Tuesday's readers feel like a chore.
  */
+
+import { adminUrl } from '@/lib/admin-path'
 export default function AnalyticsNavLink() {
   return (
     <div className="net-nav-extra">
-      <a className="net-nav-extra-link" href="/admin/analytics">
+      <a className="net-nav-extra-link" href={adminUrl('/analytics')}>
         Analytics
       </a>
       <span className="net-nav-extra-note">Who read the site, and how they got here.</span>

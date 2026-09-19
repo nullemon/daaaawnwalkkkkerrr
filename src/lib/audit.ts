@@ -1,7 +1,11 @@
 import type { Payload, Where } from 'payload'
-import { GAME_SCOPED } from './tenancy'
+import { GAME_SCOPED, SECTION_PATH, type GameScopedCollection } from './tenancy'
 import { hostFor, hostLabelProblem } from './host-label'
 import { isSeededPublishedAt } from './guide-dates'
+import { daysSinceRelease, isReleased } from './released'
+import { editorialScore } from './verdict'
+import { demoDatesOn } from './sitemap-dates'
+import { adminUrl } from './admin-path'
 
 /**
  * Everything this network knows is unfinished, computed once.
@@ -125,10 +129,10 @@ export type AuditSnapshot = {
 export const fieldAnchor = (path: string): string => `#field-${path.replace(/\./g, '__')}`
 
 const docHref = (collection: string, id: string | number, field?: string): string =>
-  `/admin/collections/${collection}/${id}${field ? fieldAnchor(field) : ''}`
+  `${adminUrl('/collections')}/${collection}/${id}${field ? fieldAnchor(field) : ''}`
 
 const globalHref = (slug: string, field?: string): string =>
-  `/admin/globals/${slug}${field ? fieldAnchor(field) : ''}`
+  `${adminUrl('/globals')}/${slug}${field ? fieldAnchor(field) : ''}`
 
 /**
  * A filtered list view, as a URL.
@@ -160,7 +164,7 @@ export const listHref = (collection: string, or: Where[][] = [], limit = 50): st
       }
     })
   })
-  return `/admin/collections/${collection}?${params.join('&')}`
+  return `${adminUrl('/collections')}/${collection}?${params.join('&')}`
 }
 
 /** "Empty string or never set", which is the only honest test for a text field. */
@@ -279,7 +283,9 @@ export const badgeCounts = (
 
 /** Where a nav entry's own screen is, for the badge to link to. */
 export const entityHref = (entity: FindingTarget['entity']): string =>
-  entity.kind === 'global' ? `/admin/globals/${entity.slug}` : `/admin/collections/${entity.slug}`
+  entity.kind === 'global'
+    ? `${adminUrl('/globals')}/${entity.slug}`
+    : `${adminUrl('/collections')}/${entity.slug}`
 
 /* -------------------------------------------------------------------------- */
 /* The pass                                                                   */
@@ -318,6 +324,125 @@ const collectionEntity = (slug: string): FindingTarget['entity'] => ({
   slug,
   label: slug.replace(/-/g, ' ').replace(/^./, (first) => first.toUpperCase()),
 })
+
+/* -------------------------------------------------------------------------- */
+/* Pages nothing links to                                                     */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * What "an inbound internal link" means on this network, and why it has to be
+ * defined before it can be counted.
+ *
+ * Nothing on this site authors a link to a section. The rail, the footer
+ * columns and the sitemap are all derived from `sectionsFor`, which returns
+ * only the sections a wiki has at least one record in; a detail page is linked
+ * from its own section index, which lists every row. So the link graph is a
+ * consequence of the data rather than something an editor maintains, and the
+ * honest question is not "did somebody forget a link" but **"is there any rule
+ * in this codebase that puts this page in front of a reader, and does the data
+ * satisfy it?"**
+ *
+ * Three things deliberately do **not** count as an inbound link:
+ *
+ * - **The sitemap.** It is a file for crawlers. A page listed only there is
+ *   reachable by typing the URL or by arriving from a search result, which is
+ *   the state the "empty section index served the wrong game's copy" defect
+ *   lived in for months.
+ * - **`/search-index.json`.** A reader who never types the name never sees the
+ *   entry, and the index is data rather than a page with anchors on it.
+ * - **The run planner and the other tools.** They link records a reader has
+ *   already selected. A page reachable only after somebody has picked it out
+ *   of a tool is not linked from anywhere they could have found it.
+ *
+ * Inline prose links (`Linked`, via `lib/link-index.ts`) are real links and
+ * would count — but they are matched at render time from a name index, so
+ * whether a given record is named in some other record's summary cannot be
+ * answered without rendering every page. Counting them would make this check
+ * *under*-report, never over-report: a page this finding names has no link
+ * from any index, rail, footer or tile, which is the claim being made.
+ */
+
+/**
+ * The section indexes that answer 404, rather than 200, on an empty
+ * collection.
+ *
+ * All sixteen, now. Seven of them have since the "a section with no records
+ * still served a 200" fix — Dawnwalker-only sections, where an empty index on
+ * one of the other seven wikis was serving Dawnwalker's copy under a
+ * Dawnwalker heading. The other nine answered 200 with a heading over nothing
+ * on a URL the rail, the footer and the sitemap had all left out, which was
+ * nineteen live pages across the network: `/maps` on all eight wikis,
+ * `/achievements` on the four whose game is not out, `/quests` on four,
+ * and one each of `/regions`, `/enemies` and `/items`.
+ *
+ * The rule is the same in both halves and it is worth stating once: **an
+ * empty section is not that wiki's section.** The link graph here is derived
+ * rather than authored — `sectionsFor` returns only the sections a wiki has
+ * records in, and the rail, the footer columns and the sitemap all read it —
+ * so a 200 on an empty one cannot be linked to by construction. It lifts by
+ * itself the moment the first record arrives, which is what `pnpm refresh`
+ * the week a game launches is for.
+ *
+ * The set is kept, rather than deleted as a constant that is now every
+ * member, because the check below is what catches the *seventeenth*
+ * collection: a new game-scoped section copied from a route that has the
+ * guard keeps it, and one written fresh does not.
+ *
+ * This restates a fact that lives in each route file, which is normally the
+ * thing this module exists to avoid. It cannot be imported: those are Next.js
+ * server components that pull in the Payload config. So it is pinned instead —
+ * `audit.test.ts` reads all sixteen `page.tsx` files and fails if this list and
+ * their `notFound()` calls disagree, on the commit that changes either.
+ */
+export const GUARDS_EMPTY_INDEX: ReadonlySet<GameScopedCollection> = new Set<GameScopedCollection>(
+  [
+    'achievements',
+    'builds',
+    'characters',
+    'court-activities',
+    'courts',
+    'endings',
+    'enemies',
+    'factions',
+    'guides',
+    'items',
+    'maps',
+    'mechanics',
+    'perks',
+    'quests',
+    'regions',
+    'skill-trees',
+  ],
+)
+
+/**
+ * How many rows each listing page can actually render.
+ *
+ * Every index on this network reads its collection in one query with a fixed
+ * `limit` and no pagination, so a collection that grows past that limit does
+ * not paginate — the surplus rows simply stop appearing, while they stay in
+ * the database, in the sitemap and on their own detail pages. That is the
+ * shape of the bug that put 199 company profiles on no page a reader could
+ * reach, arriving through a different door.
+ *
+ * Nothing is over a limit today. This is the guard for the day something is,
+ * and it is the reason the numbers are here rather than being discovered:
+ * there is no error when a `find` returns exactly `limit` rows.
+ *
+ * Pinned against the routes by `audit.test.ts`, for the same reason as above.
+ */
+export const LISTING_LIMIT = {
+  /** `getAll`'s default in `lib/payload.ts`, which every section index takes. */
+  section: 1000,
+  /** `companies/page.tsx`. */
+  companies: 500,
+  /** `people/page.tsx`. */
+  people: 1000,
+} as const
+
+/** The sentence both the empty-index findings share, so they group as one row. */
+const unreachable = (path: string): string =>
+  `${path} answers 200 with nothing on it and nothing links to it — an empty index is off the rail, out of the footer and out of the sitemap, so it is reachable only by typing the URL or from a search result`
 
 /**
  * Ask every question, in the order `pnpm check:launch` has always asked them.
@@ -392,6 +517,31 @@ export async function auditNetwork(payload: Payload): Promise<AuditSnapshot> {
       },
     })
   }
+  /*
+    Demo dates in the sitemap, reported for exactly as long as they are on.
+
+    This is the one thing on the site that publishes a figure it made up, and
+    it is on by the owner's request for a demo. It renders nowhere a reader
+    looks, which is the whole problem: nobody will notice it at launch, and
+    what it costs is the credibility of the one sitemap field Google reads.
+
+    `owner`, because nothing in the admin changes it — it is `SITEMAP_DEMO_DATES`
+    in the environment. `warn` rather than `blocking` for the same reason the
+    licence line is a warning: it is a decision somebody made, not a mistake,
+    and a checklist that refuses to finish over a deliberate choice is a
+    checklist people learn to skip.
+  */
+  if (demoDatesOn()) {
+    add({
+      level: 'warn',
+      actor: 'owner',
+      area: 'network',
+      detail:
+        'the sitemap is publishing spread demo dates, not real ones — every page gets its own invented <lastmod>. Set SITEMAP_DEMO_DATES=off before launch',
+      count: 1,
+    })
+  }
+
   if (!settings.siteName || settings.siteName === 'Vellum') {
     add({
       level: 'note',
@@ -481,6 +631,52 @@ export async function auditNetwork(payload: Payload): Promise<AuditSnapshot> {
     )
     const records = counts.reduce((sum, row) => sum + row.n, 0)
 
+    /*
+      Pages on this wiki that nothing links to.
+
+      Free: these are the counts the dashboard table already needs, asked once
+      and read twice. A `planned` game is skipped because none of its pages
+      exist — `getPublishedGames` leaves it out, so there is no route to be
+      unreachable.
+
+      The detail deliberately names the path and not the wiki, so that eight
+      wikis with an unreachable `/maps` collapse into one row with eight
+      places rather than eight rows saying the same thing.
+    */
+    if (game.status !== 'planned') {
+      for (const { collection, n } of counts) {
+        if (n === 0 && !GUARDS_EMPTY_INDEX.has(collection)) {
+          add({
+            level: 'warn',
+            actor: 'editorial',
+            area: label,
+            detail: unreachable(SECTION_PATH[collection]),
+            count: 1,
+            /*
+              No target, and not an oversight. There is no field in the admin
+              that makes a route answer 404, and filing this against the
+              collection's list view would badge "Quests (4)" at four wikis for
+              games nobody has played — a chore the Outstanding section of
+              CLAUDE.md exists to refuse.
+            */
+          })
+        }
+        if (n > LISTING_LIMIT.section) {
+          add({
+            level: 'blocking',
+            actor: 'editorial',
+            area: label,
+            detail: `${n} records in ${collection}, and its index renders the first ${LISTING_LIMIT.section} — the rest are in the database and in the sitemap, on no page a reader can reach. Raise the limit in \`getAll\` or paginate the index.`,
+            count: n - LISTING_LIMIT.section,
+            target: {
+              entity: collectionEntity(collection),
+              href: listHref(collection),
+            },
+          })
+        }
+      }
+    }
+
     wikis.push({
       id: game.id,
       title: String(game.title),
@@ -553,6 +749,93 @@ export async function auditNetwork(payload: Payload): Promise<AuditSnapshot> {
       })
     }
 
+    /*
+      The two things the release gate cannot say out loud.
+
+      `editorialScore` withholds a score before launch and says nothing while
+      it does, which is right on the page and useless to the person running
+      the site: the failure is silent in the reassuring direction, and the
+      whole point of this file is that nothing on this network is allowed to
+      be. So the gate is asked the same question here, from the other side.
+
+      Note `daysSinceRelease` rather than a bare "is it out". A game that came
+      out yesterday needs nobody; one that came out five weeks ago and still
+      has no verdict is the site's only opinion missing from a wiki where it
+      could finally be earned. The number is in the sentence so the row argues
+      for itself.
+    */
+    const out = isReleased(game as Parameters<typeof isReleased>[0])
+    const printed = editorialScore(game as Parameters<typeof editorialScore>[0])
+    const rating = game.rating as { score?: number | null; rationale?: string | null } | undefined
+
+    if (out && !rating?.score) {
+      const days = daysSinceRelease(game as Parameters<typeof daysSinceRelease>[0]) ?? 0
+      add({
+        level: days >= 14 ? 'warn' : 'note',
+        actor: 'editorial',
+        area: label,
+        detail: `out ${days === 0 ? 'today' : `${days} day${days === 1 ? '' : 's'} ago`} and this site has no verdict on it — somebody has played it now`,
+        count: 1,
+        target: gameTarget('rating.score', 'Our rating'),
+      })
+    }
+
+    /*
+      A score that is filled in and does not appear anywhere.
+
+      Three ways in: no rationale (the original rule — a number with no
+      argument behind it does not render), or a stored `outlook`, which
+      `fields/rating.ts` no longer offers and which expires rather than being
+      promoted when the game ships. An editor who typed 8.9 into a box and saw
+      nothing change on the site has no way to find out why, and every one of
+      these is a sentence somebody wrote that nobody will ever read.
+    */
+    if (out && rating?.score && !printed) {
+      add({
+        level: 'warn',
+        actor: 'editorial',
+        area: label,
+        detail: rating.rationale
+          ? 'has a score that is not printed anywhere — it was written as an outlook, which expires at launch rather than becoming a review'
+          : 'has a score with no reasoning under it, so nothing is printed — a number on its own is what every other site publishes',
+        count: 1,
+        target: gameTarget('rating.rationale', 'Our rating'),
+      })
+    }
+
+    /*
+      A score sitting on a game that is not out.
+
+      It renders nowhere — `isReleased` refuses it, which is the owner's rule
+      and the reason the "outlook" option was removed — so nothing looks wrong
+      today. What it does is wait: on release day `editorialScore` starts
+      printing it, and what gets printed is a verdict written before anybody
+      could have played the game, dated whenever it was typed.
+
+      Four rows were in exactly that state and nothing anywhere said so. They
+      carried `basis: 'outlook'`, which `verdict.ts` reads as "expire this
+      rather than promoting it" — a guard that works and that nobody can see,
+      and that a well-meaning repair of the *other* problem those rows caused
+      (a withdrawn select value refuses every write to its document, so
+      `pnpm seed` died on them) would quietly remove by blanking the field.
+
+      So it is a finding rather than a guard. It is `editorial` because the
+      answer is a person deciding: delete it, or leave it and rewrite it the
+      week the game ships. `blocked` would be wrong — nothing about this is
+      waiting on a source nobody has published.
+    */
+    if (!out && typeof rating?.score === 'number') {
+      add({
+        level: 'warn',
+        actor: 'editorial',
+        area: label,
+        detail:
+          'carries a score although the game is not out — it prints nothing today and starts printing on release day, as a verdict written before anybody could play it',
+        count: 1,
+        target: gameTarget('rating.score', 'Our rating'),
+      })
+    }
+
     if (game.status === 'live' || game.status === 'building') {
       const own = game.verification as { google?: string } | undefined
       if (!own?.google && !networkVerification) {
@@ -615,10 +898,41 @@ export async function auditNetwork(payload: Payload): Promise<AuditSnapshot> {
     is the thing that makes these labels unavailable to a wiki. A third network
     host belongs in both places.
   */
-  const NETWORK_HOSTS: { label: string; collection: 'companies' | 'people' }[] = [
-    { label: 'companies', collection: 'companies' },
-    { label: 'people', collection: 'people' },
+  const NETWORK_HOSTS: {
+    label: string
+    collection: 'companies' | 'people'
+    /** The host's own settings record, which now carries its own token. */
+    global: 'companies-site' | 'people-site'
+  }[] = [
+    { label: 'companies', collection: 'companies', global: 'companies-site' },
+    { label: 'people', collection: 'people', global: 'people-site' },
   ]
+
+  /*
+    Each host's own verification token, read once.
+
+    This check used to report "there is no per-host field to set one", which
+    was true and was the finding: a Search Console property is a hostname, so
+    the apex's token verifies the apex and neither of these. The field exists
+    now, on each host's own global, so the check asks the right record and
+    points a badge at a screen that can actually clear it.
+  */
+  const hostVerification = new Map<string, boolean>()
+  for (const host of NETWORK_HOSTS) {
+    try {
+      const own = (await payload.findGlobal({ slug: host.global, depth: 0 })) as unknown as {
+        verification?: Record<string, unknown>
+      }
+      hostVerification.set(
+        host.label,
+        Object.values(own?.verification ?? {}).some(
+          (value) => typeof value === 'string' && value.trim() !== '',
+        ),
+      )
+    } catch {
+      hostVerification.set(host.label, false)
+    }
+  }
   for (const host of NETWORK_HOSTS) {
     const problem = hostLabelProblem(host.label)
     if (problem) {
@@ -640,6 +954,28 @@ export async function auditNetwork(payload: Payload): Promise<AuditSnapshot> {
     }
 
     const total = await count(host.collection)
+    /*
+      The same question the wikis are asked, on the two hosts that are not
+      wikis. Their indexes read the whole collection in one query and group it
+      by `basis` with a catch-all group, so every row is on the page — up to
+      the limit, which is the only way a profile can fall off it now. A
+      hundred and ninety-nine of them once did, when the grouping had no
+      catch-all, and nothing said so.
+    */
+    const cap = LISTING_LIMIT[host.collection]
+    if (total > cap) {
+      add({
+        level: 'blocking',
+        actor: 'editorial',
+        area: host.label,
+        detail: `${total} ${host.collection} profiles, and the index renders the first ${cap} — the rest are in the database and in the sitemap, on no page a reader can reach.`,
+        count: total - cap,
+        target: {
+          entity: collectionEntity(host.collection),
+          href: listHref(host.collection),
+        },
+      })
+    }
     if (total === 0) {
       add({
         level: 'warn',
@@ -662,26 +998,23 @@ export async function auditNetwork(payload: Payload): Promise<AuditSnapshot> {
     /*
       The same warning each wiki gets, for the same reason: a subdomain is its
       own Search Console property and the network's token does not cover it.
-      There is no per-host settings record to hang one on, so this can only
-      report the network's — which is exactly the gap worth printing.
 
-      The target is therefore Site settings rather than the host's own global.
-      A badge on `companies-site` would point at a screen with no such field on
-      it, and a badge the owner cannot clear by doing what it says is the
-      decoration this feature is supposed to replace.
+      The badge points at this host's own settings record, which is where the
+      field is. It used to point at Site settings and say there was no per-host
+      field — a finding the owner could not act on, which is the decoration
+      this feature exists to replace.
     */
-    if (!networkVerification) {
+    if (!hostVerification.get(host.label) && !networkVerification) {
       add({
         level: 'warn',
         actor: 'owner',
         area: host.label,
-        detail:
-          'no Search Console token — this subdomain is its own property, and there is no per-host field to set one',
+        detail: 'no Search Console token — this subdomain is its own property',
         count: 1,
         target: {
-          entity: SETTINGS,
-          href: globalHref('site-settings', 'verification.google'),
-          where: 'SEO & analytics tab — the network token; this host has no field of its own',
+          entity: collectionEntity(host.collection),
+          href: globalHref(host.global, 'verification.google'),
+          where: 'Search engines tab',
         },
       })
     }
@@ -784,7 +1117,14 @@ export async function auditNetwork(payload: Payload): Promise<AuditSnapshot> {
       level: 'note',
       actor: 'owner',
       area: 'authors',
-      detail: `${provisional} of ${authorsTotal} are placeholders — each profile page carries a placeholder notice; the bylines on their guides print the name as written, and the profiles stay indexed unless "noindex" is ticked separately`,
+      /*
+        The flag prints nothing on the site any more — it is an editorial one,
+        for this list and this report. That makes the count matter *more*, not
+        less: there is no longer a notice on the profile telling a reader the
+        byline is a stand-in, so an invented name reads as a person until
+        somebody replaces it.
+      */
+      detail: `${provisional} of ${authorsTotal} are placeholders — the flag is admin-only and prints nothing on the site, so their bylines read as real names and their profiles stay indexed unless "noindex" is ticked separately`,
       count: provisional,
       target: {
         entity: AUTHORS,
@@ -807,21 +1147,30 @@ export async function auditNetwork(payload: Payload): Promise<AuditSnapshot> {
 
   // --- Guides --------------------------------------------------------------
   /*
-    Publication dates that are still the seeder's, not the owner's.
+    Publication dates that were computed rather than known.
 
-    The owner asked for guide dates spread across thirty days rather than all
-    landing on one afternoon, and said he would correct them by hand as he
-    goes. That makes them scaffolding of exactly the same kind as the
-    placeholder contributors two blocks up, and it belongs on the same list:
-    a stand-in that looks finished is the thing this whole report exists to
-    find, and this one looks more finished than most, because a plausible date
-    under a headline is indistinguishable from a real one.
+    An earlier rule hashed each guide's slug into an offset and scattered the
+    four hundred guides across the previous thirty days, so the dates looked
+    like an editorial schedule. They were not one. A generated guide has no
+    publication day at all — the page came into being when a generator ran and
+    will come into being again, identically, the next time one does — and a
+    plausible date under a headline is indistinguishable from a real one, which
+    is what makes it worse than a blank. `src/lib/guide-dates.ts` carries the
+    full argument.
 
-    There is no flag to read. The seeded value is derived from the slug, so
-    "still seeded" is answered by recomputing it — which means the finding
-    clears itself the moment somebody edits a date, with no checkbox anybody
-    has to remember to untick. This repository already has thirty-six rows
-    proving that nobody does. See `src/lib/guide-dates.ts`.
+    **So the fix is to clear the date, not to correct it.** `published` is an
+    editor's field now and nothing else writes it; blank means no "Published"
+    row on the page, no `datePublished` in the Article markup and no fallback
+    to a row timestamp. What the page shows instead is "last checked" — the
+    most recent `sources[].retrieved`, the day a harvester actually read the
+    page being cited, which is a fact and survives a rebuild.
+    `pnpm seed:publish` clears every fabricated date it finds.
+
+    This reads zero on a database seeded since that change. It is kept because
+    a database seeded before it will not be, and nothing else would say so:
+    there is no flag to read, so "was this computed" is answered by recomputing
+    it, which also means the finding clears itself the moment somebody blanks
+    or replaces a date with no checkbox for anybody to remember.
 
     `select`, because this runs on every admin dashboard load and a default
     read would drag four hundred Lexical bodies over to compare two columns —
@@ -844,15 +1193,22 @@ export async function auditNetwork(payload: Payload): Promise<AuditSnapshot> {
   ).length
   if (seededDates > 0) {
     add({
-      level: 'note',
-      actor: 'owner',
+      /*
+        `warn`, not `note`, and `editorial`, not `owner`. It was a note while
+        these dates were scaffolding somebody meant to replace; they are
+        fabrications now — a date computed from a slug, published as a fact
+        about when an article went up — and clearing one needs the sources in
+        hand rather than an account nobody else has.
+      */
+      level: 'warn',
+      actor: 'editorial',
       area: 'guides',
-      detail: `${seededDates} of ${datedGuides.docs.length} dated guides still carry the seeded publication date — spread across 30 days as scaffolding, and counted here until each one is set to the day it actually went up`,
+      detail: `${seededDates} of ${datedGuides.docs.length} dated guides carry a publication date computed from their slug rather than one anybody stated — clear it. A generated guide has no publication day, and the page prints "last checked" from its own citations instead`,
       count: seededDates,
       target: {
         entity: GUIDES,
         href: listHref('guides'),
-        where: 'each guide, Provenance tab — the "Published" field; editing it clears that guide from this count',
+        where: 'each guide, Provenance tab — empty the "Published" field, or run pnpm seed:publish to clear them all',
       },
     })
   }
@@ -909,6 +1265,152 @@ export async function auditNetwork(payload: Payload): Promise<AuditSnapshot> {
   ]
 
   return { findings, wikis, queues, cost: { queries, ms: Date.now() - startedAt } }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Search Console                                                             */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * Does a token reach this host at all?
+ *
+ * One line, exported, because the per-wiki finding above and the property list
+ * below both have to answer it and the whole reason this module exists is that
+ * they once answered it separately. A wiki's own value wins and an empty one
+ * inherits the network's — the same rule `resolveTags` applies when it renders
+ * the tag, and the rule that makes "the network token covers everything" false
+ * only for the two hosts that never render it.
+ */
+export const resolvedToken = (
+  own: string | null | undefined,
+  network: string | null | undefined,
+): { value: string; from: 'own' | 'network' } | null => {
+  const mine = (own ?? '').trim()
+  if (mine) return { value: mine, from: 'own' }
+  const theirs = (network ?? '').trim()
+  return theirs ? { value: theirs, from: 'network' } : null
+}
+
+/** The bare domain every host on this network hangs off. */
+export const networkRoot = (): string =>
+  (process.env.NEXT_PUBLIC_SITE_URL || 'example.com')
+    .replace(/^https?:\/\//, '')
+    .replace(/\/.*$/, '')
+
+export type SearchConsoleProperty = {
+  kind: 'hub' | 'wiki' | 'network'
+  /** The label in front of the network domain; empty on the apex. */
+  label: string
+  host: string
+  /** The URL-prefix property to add, exactly as Search Console wants it typed. */
+  property: string
+  /** The sitemap to submit once it is verified. */
+  sitemap: string
+  /** The token this host will actually serve, and whose it is. */
+  token: { value: string; from: 'own' | 'network' } | null
+  /** Where to paste one in the admin, and which tab it is on. */
+  href: string
+  where: string
+  /** How many records the wiki has, for ordering. Zero for the two hosts. */
+  records: number
+}
+
+/**
+ * Every Search Console property this network needs, in the order to add them.
+ *
+ * Ten of them: the apex, eight wikis and the two network hosts. Each is its
+ * own origin, and a search engine treats an origin as a separate site — a
+ * token verified at `example.com` does nothing for `dawnwalker.example.com`,
+ * which is the whole reason `verificationFields` exists twice.
+ *
+ * The order is biggest wiki first, after the apex, because that is the order
+ * the work pays off in and because `directory()` already sorts the network
+ * that way — a property added for a wiki with nine pages buys nine pages of
+ * reporting.
+ *
+ * This is a *list*, not a finding: whether a host has a token is asked once,
+ * in `auditNetwork`, and printed by the dashboard and the checklist. What is
+ * here is the thing neither of those can give the owner — the exact string to
+ * paste into Search Console's "Add property" box, and the sitemap URL that
+ * follows it.
+ */
+export async function searchConsoleProperties(
+  payload: Payload,
+  wikis: WikiRow[],
+): Promise<SearchConsoleProperty[]> {
+  const [settings, games] = await Promise.all([
+    payload.findGlobal({ slug: 'site-settings', depth: 0 }),
+    payload.find({ collection: 'games', limit: 100, sort: 'title', depth: 0 }),
+  ])
+
+  const root = networkRoot()
+  const scheme = /^http:\/\//.test(process.env.NEXT_PUBLIC_SITE_URL || '') ? 'http' : 'https'
+  const origin = (host: string) => `${scheme}://${host}`
+  const network = (settings.verification as { google?: string } | undefined)?.google
+
+  const size = new Map(wikis.map((wiki) => [wiki.slug, wiki.records]))
+
+  const rows: SearchConsoleProperty[] = [
+    {
+      kind: 'hub',
+      label: '',
+      host: root,
+      property: `${origin(root)}/`,
+      sitemap: `${origin(root)}/sitemap.xml`,
+      token: resolvedToken(null, network),
+      href: globalHref('site-settings', 'verification.google'),
+      where: 'SEO & analytics tab',
+      records: 0,
+    },
+  ]
+
+  const wikiRows: SearchConsoleProperty[] = []
+  for (const game of games.docs) {
+    /*
+      A `planned` wiki 404s for readers, so there is nothing to verify and
+      nothing to submit. Listing it would be ten minutes of somebody's time
+      spent proving ownership of a site that does not answer.
+    */
+    if (game.status === 'planned') continue
+    const label = String((game as { subdomain?: string }).subdomain || game.slug)
+    if (hostLabelProblem(label)) continue
+    const host = hostFor(label, root)
+    wikiRows.push({
+      kind: 'wiki',
+      label,
+      host,
+      property: `${origin(host)}/`,
+      sitemap: `${origin(host)}/sitemap.xml`,
+      token: resolvedToken((game.verification as { google?: string } | undefined)?.google, network),
+      href: docHref('games', game.id, 'verification.google'),
+      where: 'Search engine verification tab',
+      records: size.get(String(game.slug)) ?? 0,
+    })
+  }
+  wikiRows.sort((a, b) => b.records - a.records || a.host.localeCompare(b.host))
+  rows.push(...wikiRows)
+
+  for (const label of ['companies', 'people']) {
+    const host = hostFor(label, root)
+    rows.push({
+      kind: 'network',
+      label,
+      host,
+      property: `${origin(host)}/`,
+      sitemap: `${origin(host)}/sitemap.xml`,
+      /*
+        These two can only ever inherit: there is no per-host settings record
+        to hang a token on. Whether the inherited one is *served* is a
+        different question, and a source one — see `audit-source.ts`.
+      */
+      token: resolvedToken(null, network),
+      href: globalHref('site-settings', 'verification.google'),
+      where: 'SEO & analytics tab — the network token; this host has no field of its own',
+      records: 0,
+    })
+  }
+
+  return rows
 }
 
 /* -------------------------------------------------------------------------- */

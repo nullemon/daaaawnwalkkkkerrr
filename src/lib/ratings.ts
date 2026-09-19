@@ -1,6 +1,7 @@
 import { cache } from 'react'
 import { client } from './payload'
 import type { Game } from '@/payload-types'
+import { editorialScore, type EditorialScore } from './verdict'
 
 /**
  * Two scores for a game, kept apart on purpose.
@@ -12,8 +13,9 @@ import type { Game } from '@/payload-types'
  * reason is not taste — a blend cannot be labelled.
  *
  * Everything `fields/rating.ts` does exists to stop the number being mistaken
- * for a fact: it is signed, it carries a `basis` (played / published material /
- * outlook), and it is dated. A reader average carries none of those. It is the
+ * for a fact: it is signed, it carries a `basis` (played or published
+ * material), it is dated, and the game has to be out. A reader average carries
+ * none of those. It is the
  * mean of N anonymous integers from people this site cannot identify, and its
  * own docstring in `collections/Ratings.ts` concedes that anybody with a VPN
  * can push it. Mix them and the result has no basis to print beside it, no
@@ -48,13 +50,7 @@ export type ReaderScore = {
   votes: number
 }
 
-export type EditorialScore = {
-  score: number
-  basis: 'played' | 'published' | 'outlook' | null
-  ratedOn: string | null
-  summary: string | null
-  rationale: string
-}
+export type { EditorialScore } from './verdict'
 
 export type GameRating = {
   readers: ReaderScore
@@ -115,33 +111,6 @@ export const readerScore = async (gameId: number | string): Promise<ReaderScore>
 export const cachedReaderScore = cache(readerScore)
 
 /**
- * This site's own verdict, or null when it is not fit to print.
- *
- * The gate is `fields/rating.ts`'s rule, enforced here so it cannot be
- * forgotten by one of the places that renders a score: **a number with no
- * rationale does not render.** Returning null rather than a partial object
- * means a caller cannot accidentally print the score and drop the argument —
- * there is no score to print.
- */
-export const editorialScore = (game: Pick<Game, 'rating'>): EditorialScore | null => {
-  const rating = game.rating
-  if (!rating) return null
-
-  const score = rating.score
-  const rationale = rating.rationale?.trim()
-  if (typeof score !== 'number' || !Number.isFinite(score)) return null
-  if (!rationale) return null
-
-  return {
-    score,
-    basis: rating.basis ?? null,
-    ratedOn: rating.ratedOn ?? null,
-    summary: rating.summary?.trim() || null,
-    rationale,
-  }
-}
-
-/**
  * Both scores for one game.
  *
  * Read at build time like everything else on this site, which means the vote
@@ -150,7 +119,9 @@ export const editorialScore = (game: Pick<Game, 'rating'>): EditorialScore | nul
  * POST response the moment somebody votes, and `StarRating` can ask
  * `/api/rate` for a fresh one on mount where a page wants it.
  */
-export const gameRating = async (game: Pick<Game, 'id' | 'rating'>): Promise<GameRating> => ({
+export const gameRating = async (
+  game: Pick<Game, 'id' | 'rating' | 'releaseDate' | 'releaseDateConfirmed'>,
+): Promise<GameRating> => ({
   readers: await cachedReaderScore(game.id),
   editorial: editorialScore(game),
 })

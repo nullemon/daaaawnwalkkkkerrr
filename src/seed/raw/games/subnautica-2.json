@@ -1,0 +1,141 @@
+{
+  "slug": "subnautica-2",
+  "appId": 1962700,
+  "storeUrl": "https://store.steampowered.com/app/1962700/",
+  "fetchedAt": "2026-09-19",
+  "title": "Subnautica 2",
+  "developers": [
+    "Unknown Worlds Entertainment"
+  ],
+  "publishers": [
+    "Unknown Worlds Entertainment"
+  ],
+  "releaseDate": "May 14, 2026",
+  "comingSoon": false,
+  "shortDescription": "Subnautica 2 is an underwater survival adventure set on an all-new alien world, developed by Unknown Worlds. Play alone or with friends in 4-player co-op. Adapt to survive by building custom bases and crafting tools. Explore the unknown to uncover the mysteries hidden within the depths.",
+  "aboutText": "Subnautica 2 is an underwater survival adventure game set on an all-new alien world. It is the next chapter in the Subnautica universe, developed by Unknown Worlds. \nDriven from your home by ongoing conflict, Alterra offers you the chance at a new life. But as the colony ship CICADA shepherds you and your fellow Pioneers to your new home, something goes awry. The ship’s AI insists that your mission should continue. Stranded and faced with near-insurmountable odds, you must do everything in your power to survive. The future of humanity on this world is in your hands.\n\nPLAY ALONE OR WITH FRIENDS \nSubnautica 2 is being crafted as a single-player experience that you can optionally play in online co-operative multiplayer with up to three friends. You can choose from four pre-designed characters, with more characters and customization options coming throughout Early Access. Work together to explore long-forgotten ruins and learn to adapt to a planet that might not want you there.\n\nADAPT TO SURVIVE \nTo survive the depths and make this planet your home, you’ll need to utilize all the tools at your disposal. Traverse vibrant and breathtaking biomes with your Tadpole submersible. Design and customize bases to return to when your adventures push you beyond the safety of shallow waters. As Early Access develops, so too will your array of tools, equipment, and vehicles. Upgrades will help push you beyond your boundaries and unlock the secrets of this strange world.\n\nEXPLORE THE UNKNOWN \nScan and study a rich world of biodiversity to understand life here. Discover everything from the smallest creatures to towering Leviathans. Experience the wonder, and sometimes danger, lurking around every corner. Every dive is an opportunity to uncover why the ship's AI is so determined to continue the mission and what mysteries lie beneath the surface of this breathtaking new frontier.\n\nDESIGNED FOR EARLY ACCESS \nSubnautica 2 is an Early Access title in active development. Throughout this journey, we will continuously expand the world with additional biomes, creatures, and craftables, while expanding the narrative. You may encounter bugs, in-development features, and performance issues. Your feedback is the cornerstone of our development process. Join us and help shape the next chapter of the Subnautica universe.\n\nCRAFTED BY UNKNOWN WORLDS \nSubnautica 2 is being developed by Unknown Worlds, the studio behind the award-winning Subnautica and Subnautica: Below Zero. Our journey began with the 2003 Half-Life mod Natural Selection, and today we have evolved into a fully remote, globally distributed team spanning from the United States to the United Kingdom, France, Australia, and beyond. Defined by a philosophy of open development and over a decade of community-focused innovation, we invite you to dive back into the depths with a studio dedicated to pushing the boundaries of the survival genre.\nWelcome aboard, Pioneer.",
+  "genres": [
+    "Action",
+    "Adventure",
+    "Early Access"
+  ],
+  "categories": [
+    "Single-player",
+    "Multi-player",
+    "Co-op",
+    "Online Co-op",
+    "Cross-Platform Multiplayer",
+    "Full controller support",
+    "Adjustable Text Size",
+    "Camera Comfort",
+    "Color Alternatives",
+    "#category_contrast_controls",
+    "Custom Volume Controls",
+    "Adjustable Difficulty",
+    "#category_playable_at_your_own_pace",
+    "Playable without Timed Input",
+    "Save Anytime",
+    "Stereo Sound",
+    "Subtitle Options",
+    "Steam Cloud",
+    "Family Sharing"
+  ],
+  "languages": "English",
+  "contentDescriptors": null,
+  "platforms": [
+    "windows"
+  ],
+  "requirements": {
+    "minimum": [
+      {
+        "label": "OS",
+        "value": "Windows 10/11"
+      },
+      {
+        "label": "Processor",
+        "value": "Intel Core i5-8400 / AMD Ryzen 5 2600"
+      },
+      {
+        "label": "Memory",
+        "value": "12 GB RAM"
+      },
+      {
+        "label": "Graphics",
+        "value": "GeForce GTX 1660 6GB / RX 5500 XT 6GB"
+      },
+      {
+        "label": "DirectX",
+        "value": "Version 12"
+      },
+      {
+        "label": "Network",
+        "value": "Broadband Internet connection"
+      },
+      {
+        "label": "Storage",
+        "value": "50 GB available space"
+      },
+      {
+        "label": "Additional Notes",
+        "value": "Requires a 64-bit processor and operating system"
+      }
+    ],
+    "recommended": [
+      {
+        "label": "OS",
+        "value": "Windows 11"
+      },
+      {
+        "label": "Processor",
+        "value": "Intel Core i7-13700 / AMD Ryzen 7 7700X"
+      },
+      {
+        "label": "Memory",
+        "value": "16 GB RAM"
+      },
+      {
+        "label": "Graphics",
+        "value": "Geforce RTX 3070 8GB / RX 6700 XT 8GB"
+      },
+      {
+        "label": "DirectX",
+        "value": "Version 12"
+      },
+      {
+        "label": "Network",
+        "value": "Broadband Internet connection"
+      },
+      {
+        "label": "Storage",
+        "value": "50 GB available space"
+      },
+      {
+        "label": "Additional Notes",
+        "value": "Requires a 64-bit processor and operating system"
+      }
+    ]
+  },
+  "editions": [
+    {
+      "title": "Subnautica 2",
+      "priceText": "$29.99"
+    }
+  ],
+  "dlc": [
+    3803320
+  ],
+  "achievements": [],
+  "art": {
+    "header": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1962700/header.jpg?t=1785967256",
+    "capsule": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1962700/a5668b4e7176e657e2f1c70667df989ba27f64b5/capsule_231x87.jpg?t=1785967256",
+    "background": "https://store.akamai.steamstatic.com/images/storepagebackground/app/1962700?t=1785967256",
+    "screenshots": [
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1962700/823b102b09530bbf588f5e9752cb52f1681dc992/ss_823b102b09530bbf588f5e9752cb52f1681dc992.1920x1080.jpg?t=1785967256",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1962700/e631ef3b91faacacb5a2c823d0b979083548d66f/ss_e631ef3b91faacacb5a2c823d0b979083548d66f.1920x1080.jpg?t=1785967256",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1962700/16b68b0941ed9c5ac1eea74e478fa726d425bebf/ss_16b68b0941ed9c5ac1eea74e478fa726d425bebf.1920x1080.jpg?t=1785967256",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1962700/56159597a28edfb07c6dd27b4a00f2e06e571048/ss_56159597a28edfb07c6dd27b4a00f2e06e571048.1920x1080.jpg?t=1785967256",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1962700/eab92bde7378f6532f765001126a8fb8b10ca8f9/ss_eab92bde7378f6532f765001126a8fb8b10ca8f9.1920x1080.jpg?t=1785967256",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1962700/787e2315a1eb5aaba73c4f75e6f7d7d8835fa260/ss_787e2315a1eb5aaba73c4f75e6f7d7d8835fa260.1920x1080.jpg?t=1785967256"
+    ]
+  }
+}

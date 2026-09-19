@@ -72,6 +72,17 @@ const SUPERSEDED: Record<string, string> = {
   */
   'unlock.no-total-one':
     'No source publishes a cost for any of the {count} remaining step, so there is no total to give — only that there are {count} of them.',
+
+  /*
+    The thank-you a reader sees after sending a correction promised "the
+    confidence rating goes up with it". The confidence rating is editorial now,
+    shown to signed-in editors only, so it promised a visible outcome the
+    reader cannot ever see — on the one screen whose whole job is to tell
+    somebody what their report will do. It is the source they gave us that
+    lands on the page, and that is what it says.
+  */
+  'correction.sent-body':
+    'We read every report. If it checks out, the page is corrected and the confidence rating goes up with it.',
 }
 
 /** The array row Payload generates for both tables. */

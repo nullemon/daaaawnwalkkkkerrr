@@ -732,6 +732,37 @@ const ACTOR_FIELDS = [
   'Voice Actors',
   'mo-capped by',
   'Face Models',
+  /*
+    The second survey, across all fifteen harvests.
+
+    The six above were what seven wikis spelled it. Adding eight wikis added
+    seven more spellings, and between them they carried **158 credits this
+    file was not reading** — nearly three times what it was. Nothing errored:
+    a key nobody reads produces a clean run and a cast of nobody, which is
+    exactly how Onimusha came to have a crew of fourteen and no actors.
+
+    Read off the harvests rather than guessed:
+
+      voice        50  GTA 6, Resident Evil Requiem
+      voiceby      41  Fire Emblem
+      mocap        30  Resident Evil Requiem
+      jpn_voiceby  28  Fire Emblem
+      portrayer     4  Resident Evil Requiem
+      portrayed     3  Silent Hill Townfall
+      voiceactor    2  Subnautica 2
+
+    `jpn_voiceby` is the Japanese cast and belongs here for the same reason
+    Onimusha's bracketed languages do: a performance credit is a performance
+    credit, and which language it was in is a qualifier the splitter already
+    handles.
+  */
+  'voice',
+  'voiceby',
+  'jpn_voiceby',
+  'voiceactor',
+  'mocap',
+  'portrayer',
+  'portrayed',
 ]
 
 /**
@@ -1415,6 +1446,39 @@ const run = async () => {
         resolved += 1
         console.log(`  ${draft.name.padEnd(30)} ${article.title} — ${article.why}`)
       } else {
+        /*
+          An article that exists and is **not about a person** ends the
+          credit, rather than recording it unresolved and publishing it anyway.
+
+          The distinction matters and it is the whole of this guard. A real
+          performer with no Wikipedia article is the ordinary case: keep them,
+          low confidence, nothing filled in — that is what `unresolved` is for.
+          A name whose article is a *video game* is not a performer at all, and
+          the classifier has already said so in as many words.
+
+          Widening `ACTOR_FIELDS` is what made this load-bearing. Fire Emblem's
+          wiki puts appearances under `voiceby` on at least one character:
+          Anna's reads "Awakening, Fates, Three Houses, Three Hopes, Heroes".
+          The splitter turns that into five names, four of them resolve to Fire
+          Emblem games, and without this they would have been published as five
+          human beings with profiles on `people.<domain>`. That is the
+          "Stéphanie Cassignard Robyn Wolf" failure with a worse ending,
+          because these ones look plausible.
+
+          Only the article-says-otherwise cases are dropped — a game, a film, a
+          company, a disambiguation page. "No article" and "no category
+          confirms a person" both stay, because neither is evidence against a
+          person, only an absence of evidence for one.
+        */
+        if (/resolved to a non-person article|disambiguation page/.test(why)) {
+          dropped.push({
+            character: draft.from?.[0]?.character ?? '',
+            value: draft.name,
+            why: `${why} — not published: an article that says it is not a person is evidence, not silence`,
+          })
+          console.log(`  ${draft.name.padEnd(30)} DROPPED: ${why}`)
+          continue
+        }
         record.unresolvedReason = why
         unresolved += 1
         console.log(`  ${draft.name.padEnd(30)} unresolved: ${why}`)

@@ -1,5 +1,6 @@
 import { describe, expect, it, vi } from 'vitest'
 import { notifyOfReport, reportBody, reportSubject, type Report } from './email-notify'
+import { adminUrl } from './admin-path'
 
 const correction: Report = {
   collection: 'corrections',
@@ -58,7 +59,7 @@ describe('reportBody', () => {
   })
 
   it('links the record so the queue is one click away', () => {
-    expect(body).toContain('/admin/collections/corrections/12')
+    expect(body).toContain(adminUrl('/collections/corrections/12'))
   })
 
   /*

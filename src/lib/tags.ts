@@ -55,6 +55,33 @@ export const resolveTags = async (gameSlug?: string): Promise<Tags> => {
 }
 
 /**
+ * The tags for `companies.<domain>` or `people.<domain>`.
+ *
+ * These two hosts had no verification field of their own and their layouts
+ * read the network's, which Search Console will not accept: a property is a
+ * hostname, so the apex's token verifies the apex and nothing else. The field
+ * exists now, on each host's own global, and this resolves it the same way a
+ * wiki's does — the host's own value where it has one, the network's
+ * otherwise, so nothing changes for a host that has not been given a token.
+ *
+ * Analytics still comes from the network alone. That is deliberate rather than
+ * an omission: these hosts are counted by this network's own page-view
+ * measurement, and `check:launch` says so in as many words.
+ */
+export const resolveHostTags = async (
+  own: { verification?: unknown } | null | undefined,
+): Promise<Tags> => {
+  const settings = await getSiteSettings()
+  return {
+    verification: pick(
+      own?.verification as Tags['verification'],
+      settings.verification as Tags['verification'],
+    ),
+    analytics: pick(null, settings.analytics as Tags['analytics']),
+  }
+}
+
+/**
  * The verification half, as Next.js metadata.
  *
  * Next has first-class fields for Google and Yandex; everything else goes

@@ -1,0 +1,184 @@
+import { describe, expect, it } from 'vitest'
+import { CARD_SIZE } from './brand'
+import {
+  CARD_CREDIT_BUDGET,
+  cardGround,
+  cardRules,
+  cardTitleSize,
+  isOgCardCollection,
+} from './og-card'
+import { cardImage } from './social'
+
+/**
+ * These pin the two directions of the one rule that matters: a photograph on a
+ * share card is used *with* its credit or not at all, and the mark beside that
+ * credit is never a guess.
+ *
+ * Both failures are silent. A card with a stripped credit renders perfectly
+ * and unfurls beautifully; a `©` over a public-domain logo is two characters
+ * asserting a copyright the file does not carry. Nothing errors either way and
+ * nobody sees a share card except in somebody else's timeline.
+ */
+describe('what the card is allowed to stand on', () => {
+  it('uses a credited screenshot and prints the credit whole', () => {
+    // The literal shape of all 408 guide lead images in the library.
+    const credit = 'Control Resonant © Remedy Entertainment. Used for identification and commentary.'
+    const ground = cardGround({ photograph: true, credit, creditsShown: true })
+    expect(ground).toEqual({ kind: 'photograph', credit, copyright: true })
+  })
+
+  it('refuses a photograph with no credit at all', () => {
+    // An uncredited screenshot under this network's wordmark is the one
+    // output the route must never produce, so the picture goes rather than
+    // the credit line.
+    expect(cardGround({ photograph: true, credit: null, creditsShown: true })).toEqual({
+      kind: 'drawn',
+      because: 'uncredited',
+    })
+    expect(cardGround({ photograph: true, credit: '   ', creditsShown: true })).toEqual({
+      kind: 'drawn',
+      because: 'uncredited',
+    })
+  })
+
+  it('gives up the photograph rather than trimming a long credit', () => {
+    /*
+      Phantom Blade Zero's cover credit is 269 characters and carries two
+      archive notices; this is the case past even the card's three-line strip.
+      Nothing is shortened — `4206c56` is what shortening looks like six
+      months later.
+    */
+    const long = `x${'y'.repeat(CARD_CREDIT_BUDGET)}`
+    expect(cardGround({ photograph: true, credit: long, creditsShown: true })).toEqual({
+      kind: 'drawn',
+      because: 'credit-will-not-fit',
+    })
+
+    // And the boundary itself still gets its picture.
+    const exact = 'z'.repeat(CARD_CREDIT_BUDGET)
+    expect(cardGround({ photograph: true, credit: exact, creditsShown: true }).kind).toBe(
+      'photograph',
+    )
+  })
+
+  it('draws the ground when the page has no picture', () => {
+    expect(
+      cardGround({ photograph: false, credit: 'anything at all', creditsShown: true }),
+    ).toEqual({ kind: 'drawn', because: 'no-image' })
+  })
+
+  it('gives up the photograph when the owner has turned image credits off', () => {
+    /*
+      The switch has no branch here where the picture is kept and the line is
+      dropped, because the rule has no exception in it. `ImageCredit` prints
+      nothing when `showImageCredits` is off; a card that cannot print the
+      credit does not use the photograph.
+    */
+    expect(
+      cardGround({
+        photograph: true,
+        credit: 'Onimusha © CAPCOM Co., Ltd. Used for identification and commentary.',
+        creditsShown: false,
+      }),
+    ).toEqual({ kind: 'drawn', because: 'credits-switched-off' })
+  })
+})
+
+describe('the mark beside the credit', () => {
+  it('marks an all-rights-reserved credit with a copyright sign', () => {
+    const ground = cardGround({
+      photograph: true,
+      credit: 'Onimusha © CAPCOM Co., Ltd. Used for identification.',
+      creditsShown: true,
+    })
+    expect(ground).toMatchObject({ kind: 'photograph', copyright: true })
+  })
+
+  it('does not mark a public-domain logo, even though its author line has a ©', () => {
+    /*
+      The real string from the library, and the reason `creditBasis` reads the
+      licence before the glyph: the file is public domain and the `©` belongs
+      to a sentence Commons put in the author field. Printing it as a
+      copyright claim would be this site asserting rights nobody holds.
+    */
+    const ground = cardGround({
+      photograph: true,
+      credit: 'TMS Entertainment logo (Public domain) — © 2013 TMS ENTERTAINMENT CO., LTD.',
+      creditsShown: true,
+    })
+    expect(ground).toMatchObject({ kind: 'photograph', copyright: false })
+  })
+
+  it('does not mark a photograph, a generated emblem or an unplaceable credit', () => {
+    // `creditMark` answers `camera`, `generated` and `null` for these three,
+    // and none of those three glyphs exists inside satori. No mark is the
+    // correct answer; substituting the one mark the renderer *can* draw is
+    // how a `©` ends up over a CC BY-SA portrait.
+    for (const credit of [
+      'Photograph of Olivier Derivière by Georges Seguin. CC BY-SA 3.0.',
+      'Emblem generated by this site from the record slug.',
+      'Screenshot supplied by the studio.',
+    ]) {
+      expect(cardGround({ photograph: true, credit, creditsShown: true })).toMatchObject({
+        copyright: false,
+        kind: 'photograph',
+      })
+    }
+  })
+})
+
+describe('the title', () => {
+  it('steps down as the headline gets longer', () => {
+    // The four bands, each named by a title that is really in the library.
+    const sizes = [
+      'All Genma in Onimusha',
+      "Ambrus's Court: How Many Activities You Actually Need",
+      'Are Court Activities Worth Doing in The Blood of Dawnwalker?',
+      'The most-searched questions about A Plague Tale Legacy, and where they are answered',
+    ].map(cardTitleSize)
+
+    // Strictly decreasing. A headline that grew with its length would overflow
+    // the box with nothing anywhere to say so.
+    for (let i = 1; i < sizes.length; i++) expect(sizes[i]).toBeLessThan(sizes[i - 1])
+  })
+
+  it('never returns a size that is not a usable headline', () => {
+    const longest = 'q'.repeat(400)
+    expect(cardTitleSize(longest)).toBeGreaterThanOrEqual(36)
+  })
+})
+
+describe('the ruled ground', () => {
+  it('rules the whole card and never on the last pixel', () => {
+    const lines = cardRules(630)
+    expect(lines[0]).toBe(42)
+    expect(Math.max(...lines)).toBeLessThan(630)
+    expect(lines).toHaveLength(14)
+  })
+})
+
+describe('the URL a page declares', () => {
+  it('names a collection the route will answer for, at the card size', () => {
+    /*
+      Tested here rather than beside `socialMeta` because the thing being
+      pinned is the agreement between `cardImage` and the route: the page
+      declares `/api/og/<collection>/<slug>` and the route refuses any
+      collection not on this list. A mismatch is a 404 in an `og:image`, which
+      is the quietest failure a share card has — nobody sees their own unfurl.
+    */
+    const image = cardImage('guides', { slug: 'anca-guide', title: 'Anca' })
+    expect(image).toEqual({
+      url: '/api/og/guides/anca-guide',
+      width: CARD_SIZE.width,
+      height: CARD_SIZE.height,
+      alt: 'Anca',
+    })
+    expect(isOgCardCollection(image!.url.split('/')[3])).toBe(true)
+  })
+
+  it('declares nothing for a record with no slug', () => {
+    // There is no page to draw a card of, so there is no card. An `og:image`
+    // pointing at `/api/og/guides/` would 404 on every share.
+    expect(cardImage('guides', { slug: '', title: 'x' })).toBeNull()
+  })
+})

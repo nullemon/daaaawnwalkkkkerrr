@@ -1,0 +1,17 @@
+{
+  "slug": "deadlock",
+  "fetchedAt": "2026-09-19",
+  "wikipedia": {
+    "title": "Deadlock (video game)",
+    "url": "https://en.wikipedia.org/wiki/Deadlock_(video_game)",
+    "licence": "CC BY-SA 4.0",
+    "facts": {
+      "developer": "Valve",
+      "publisher": "Valve",
+      "engine": "Source 2",
+      "platforms": "Windows",
+      "genre": "Third-person shooter, multiplayer online battle arena",
+      "modes": "Multiplayer"
+    }
+  }
+}

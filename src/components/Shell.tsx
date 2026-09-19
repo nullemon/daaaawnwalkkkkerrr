@@ -1,5 +1,7 @@
 import { SiteRail, type RailItem } from './SiteRail'
+import { SiteLogo } from './SiteLogo'
 import { SiteFooter, type FooterColumn } from './SiteFooter'
+import { getAppearance } from '@/lib/appearance-settings'
 
 /**
  * The page frame: rail on the left, content and footer on the right.
@@ -40,7 +42,18 @@ export type ShellProps = {
   children: React.ReactNode
 }
 
-export function Shell({
+/*
+  Why the appearance read happens here and not in the four layouts above.
+
+  `SiteRail` is a client component, so it cannot ask the database whether the
+  theme is locked, and the toggle lives in its foot. Shell is the last server
+  component in the chain and the only one all four layouts pass through, so the
+  read is here and the answer goes down as a prop — one read, one answer. Four
+  layouts each doing it is four places to forget, and `getSiteSettings` is
+  `cache()`d per request anyway, so this costs no query: the root layout has
+  already made it for the boot script.
+*/
+export async function Shell({
   siteName,
   brandHref = '/',
   items,
@@ -48,6 +61,8 @@ export function Shell({
   footer,
   children,
 }: ShellProps) {
+  const { locked } = await getAppearance()
+
   return (
     <>
       <a className="skip" href="#main">
@@ -56,9 +71,16 @@ export function Shell({
       <div className="shell">
         <SiteRail
           siteName={siteName}
+          /* 21px is the rail's icon column exactly (`--rail-icon`), so the
+             brand mark sits on the same centre line as every glyph below it.
+             Rendered here because the rail is a client component and the
+             answer needs the database — the same reason `themeLocked` is a
+             prop. */
+          brand={<SiteLogo size={21} alt={siteName} />}
           brandHref={brandHref}
           items={items}
           networkHome={networkHome}
+          themeLocked={locked !== null}
         />
         <div className="shell-main">
           <main id="main">{children}</main>

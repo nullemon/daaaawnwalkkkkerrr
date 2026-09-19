@@ -84,8 +84,9 @@ const HOME: Row = {
   recentHeading: 'Recently updated',
   statsHeading: 'What is in this wiki',
   trustHeading: 'How this wiki is written',
+  relatedHeading: 'Other wikis on this network',
   trustBody:
-    'Every figure here comes from a source and carries a confidence rating. Where nobody has published something, the page says so rather than guessing — a blank is honest, and a plausible-looking number that turns out to be invented costs you a playthrough.',
+    'Every figure here is cited to the source it came from, with the date we read it. Where nobody has published something, the page says so rather than guessing — a blank is honest, and a plausible-looking number that turns out to be invented costs you a playthrough.',
 }
 
 // ---------------------------------------------------------------------------
@@ -112,10 +113,10 @@ const PUBLISHER_LINE =
 const aboutFor = (hasRunPlanner: boolean): Row => ({
   title: 'About the {game} Wiki',
   metaDescription:
-    'Who runs the {game} wiki, where its facts come from, what the confidence ratings mean, and what we deliberately do not claim to know.',
+    'Who runs the {game} wiki, where its facts come from, what we do when sources disagree, and what we deliberately do not claim to know.',
   lede: hasRunPlanner
     ? 'A run planner and database for {title}, built around the one constraint the game never lets you forget: you have 480 segments and you cannot have them back.'
-    : 'A database for {game}, compiled from public sources, with every record carrying its citations and a rating for how far we trust it.',
+    : 'A database for {game}, compiled from public sources, with every record carrying the citations it was built from.',
   purposeHeading: 'What this site is for',
   runsItHeading: 'Who runs it',
   purpose: hasRunPlanner
@@ -133,18 +134,25 @@ const aboutFor = (hasRunPlanner: boolean): Row => ({
   sourcingHeading: 'Where the facts come from',
   sourcing: rich(
     'Every record cites its sources with the date we read them, and the importer that builds this database rejects any record that arrives without one. We compile facts from public wikis, guides and reporting, then write our own prose. We never copy text or reproduce another site’s tables. Facts are not anyone’s property; the way they were written up is.',
-    'We do not have privileged access to the game. Nothing here has been verified against a running copy, which is exactly why every record carries a confidence rating rather than presenting everything with the same certainty.',
+    'We do not have privileged access to the game. Nothing here has been verified against a running copy, which is exactly why a claim we cannot source is left out rather than smoothed over, and why the citations are on the page rather than in a footnote nobody reads.',
   ),
-  confidenceHeading: 'What the confidence ratings mean',
+  /*
+    This section used to be a glossary: High, Medium and Low, and what each one
+    meant. It explained a badge that printed on every record page.
+
+    The badge is editorial now - `Confidence` renders it only for a signed-in
+    editor - so the glossary taught a reader three words they would never meet
+    again on the site, which is worse than saying nothing: it reads as a
+    promise that the pages are annotated, and they are not. What survived is
+    the half that was always about the reader's own page, and is still visible
+    on it: where two sources disagree, the disagreement is written down.
+  */
+  confidenceHeading: 'Where sources disagree',
   confidence: rich(
-    { ul: [
-      '**High** — agreed by multiple independent sources.',
-      '**Medium** — one good source, or sources that disagree on detail.',
-      '**Low** — contested, inferred, or not confirmed anywhere we trust.',
-    ] },
     hasRunPlanner
-      ? 'These are not decoration. Published counts for a game vary widely depending on who is counting and what they count, and at least one ally questline is described with a different length and a different final quest name depending on the site. Where sources conflict we record the conflict on the page rather than pick a winner.'
-      : 'These are not decoration. Published counts for a game vary widely depending on who is counting and what they count. Where sources conflict we record the conflict on the page rather than pick a winner.',
+      ? 'Published counts for a game vary widely depending on who is counting and what they count, and at least one ally questline is described with a different length and a different final quest name depending on the site. Where sources conflict we record the conflict on the page rather than pick a winner.'
+      : 'Published counts for a game vary widely depending on who is counting and what they count. Where sources conflict we record the conflict on the page rather than pick a winner.',
+    'Behind that, every record is rated for how far we trust it, and that rating decides what gets rewritten next. It is a working note for the people editing this wiki rather than something printed beside a fact, because a hedge next to a sentence does not help you decide whether to believe it — the sources underneath do, and they are on every page.',
   ),
   limitsHeading: 'What we deliberately do not claim to know',
   limits: hasRunPlanner
@@ -319,3 +327,151 @@ const seed = async (payload: Payload): Promise<number> => {
 }
 
 export default seed
+
+// ---------------------------------------------------------------------------
+
+/**
+ * The one exception to "it never overwrites", and it is narrow for the reason
+ * `correctPrivacy` is narrow: a stale sentence about mechanism is not a stale
+ * sentence, it is a false one.
+ *
+ * Five fields on every wiki described a confidence badge printed beside every
+ * record. The owner has since decided that rating is editorial — `Confidence`
+ * in `src/components/Badges.tsx` renders it for a signed-in editor and for
+ * nobody else — so an about page headed "What the confidence ratings mean",
+ * glossing three words a reader will never meet, is a promise the pages do not
+ * keep. The terms page said it outright: "Every page shows a confidence
+ * rating". That one is a disclaimer, which makes it the worst of the five.
+ *
+ * Each field is rewritten **only while it still carries the wording this
+ * repository shipped**, which is the evidence nobody has redrafted it. An
+ * edited field is printed and left alone, with what to check by hand.
+ */
+
+/** Rich text or plain, flattened far enough to look for a sentence in. */
+const textOf = (value: unknown): string => {
+  if (value === null || value === undefined) return ''
+  if (typeof value === 'string') return value
+  if (Array.isArray(value)) return value.map(textOf).join(' ')
+  if (typeof value !== 'object') return ''
+  const record = value as Record<string, unknown>
+  const parts: string[] = []
+  if (typeof record.text === 'string') parts.push(record.text)
+  if (record.root) parts.push(textOf(record.root))
+  if (Array.isArray(record.children)) parts.push(textOf(record.children))
+  return parts.join(' ')
+}
+
+/**
+ * `group` is the field on the game that holds it, `key` the field inside,
+ * `stillSays` the fragment that proves it is ours, and `wanted` reads the
+ * replacement out of the same constants the seeder fills blanks from — so a
+ * later edit to the wording cannot leave the corrector writing the old one.
+ */
+const CONFIDENCE_CORRECTIONS: {
+  group: 'homeCopy' | 'aboutPage'
+  key: string
+  stillSays: string
+  wanted: (hasRunPlanner: boolean) => unknown
+  checkByHand: string
+}[] = [
+  {
+    group: 'homeCopy',
+    key: 'trustBody',
+    stillSays: 'carries a confidence rating',
+    wanted: () => HOME.trustBody,
+    checkByHand: 'it may still tell readers each figure carries a confidence rating; no page prints one',
+  },
+  {
+    group: 'aboutPage',
+    key: 'metaDescription',
+    stillSays: 'what the confidence ratings mean',
+    wanted: (run) => aboutFor(run).metaDescription,
+    checkByHand: 'the search result for /about may still promise an explanation of the confidence ratings',
+  },
+  {
+    group: 'aboutPage',
+    key: 'lede',
+    stillSays: 'a rating for how far we trust it',
+    wanted: (run) => aboutFor(run).lede,
+    checkByHand: 'the lede may still say each record carries a rating readers can see',
+  },
+  {
+    group: 'aboutPage',
+    key: 'sourcing',
+    stillSays: 'every record carries a confidence rating rather than presenting',
+    wanted: (run) => aboutFor(run).sourcing,
+    checkByHand: 'the sourcing section may still point at a rating on the record',
+  },
+  {
+    group: 'aboutPage',
+    key: 'confidenceHeading',
+    stillSays: 'What the confidence ratings mean',
+    wanted: (run) => aboutFor(run).confidenceHeading,
+    checkByHand: 'the heading may still announce a glossary of ratings readers cannot see',
+  },
+  {
+    group: 'aboutPage',
+    key: 'confidence',
+    stillSays: 'agreed by multiple independent sources',
+    wanted: (run) => aboutFor(run).confidence,
+    checkByHand: 'the section may still be a High/Medium/Low glossary for a badge no reader is shown',
+  },
+]
+
+export const correctConfidenceCopy = async (payload: Payload): Promise<void> => {
+  const { docs: games } = await payload.find({
+    collection: 'games',
+    limit: 1000,
+    depth: 0,
+    pagination: false,
+  })
+
+  let rewritten = 0
+  const leftAlone: string[] = []
+
+  for (const game of games) {
+    const hasRunPlanner = (game.features ?? []).includes('run-checker')
+    const groups: Record<string, Row> = {
+      homeCopy: { ...((game.homeCopy as Row | null) ?? {}) },
+      aboutPage: { ...((game.aboutPage as Row | null) ?? {}) },
+    }
+
+    let changed = 0
+    for (const rule of CONFIDENCE_CORRECTIONS) {
+      const held = groups[rule.group][rule.key]
+      // Blank means the page renders the built-in wording, which is already
+      // the corrected one; `seed` above fills it in.
+      if (blank(held)) continue
+
+      const wanted = rule.wanted(hasRunPlanner)
+      if (textOf(held) === textOf(wanted)) continue
+
+      if (!textOf(held).includes(rule.stillSays)) {
+        leftAlone.push(`${game.slug} ${rule.group}.${rule.key} \u2014 ${rule.checkByHand}`)
+        continue
+      }
+
+      groups[rule.group][rule.key] = wanted
+      changed += 1
+    }
+
+    if (changed === 0) continue
+    await payload.update({
+      collection: 'games',
+      id: game.id,
+      data: { homeCopy: groups.homeCopy, aboutPage: groups.aboutPage },
+    })
+    rewritten += changed
+  }
+
+  if (rewritten === 0 && leftAlone.length === 0) return
+  if (rewritten > 0) {
+    console.log(
+      `  confidence copy: rewrote ${rewritten} field${rewritten === 1 ? '' : 's'} that described a badge readers are no longer shown.`,
+    )
+  }
+  for (const note of leftAlone) {
+    console.log(`  confidence copy: LEFT ALONE ${note}. Edited since it shipped, so nothing here touched it.`)
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "slug": "forza-horizon-6",
+  "fetchedAt": "2026-09-19",
+  "wikipedia": {
+    "title": "Forza Horizon 6",
+    "url": "https://en.wikipedia.org/wiki/Forza_Horizon_6",
+    "licence": "CC BY-SA 4.0",
+    "facts": {
+      "developer": "Playground Games",
+      "publisher": "Xbox Game Studios",
+      "artist": "Don Arceta",
+      "series": "Forza",
+      "engine": "ForzaTech",
+      "released": "Windows, Xbox Series X/S, 19 May 2026 , PlayStation 5, 2026",
+      "genre": "Racing",
+      "modes": "Single-player, multiplayer",
+      "producer": "Mike Bennett"
+    }
+  }
+}

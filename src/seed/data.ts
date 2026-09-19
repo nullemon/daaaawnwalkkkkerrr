@@ -23,7 +23,7 @@ export const siteSettings = {
   siteName: 'Vellum',
   tagline: 'Game wikis with the sources shown',
   description:
-    'Wikis and databases for games worth playing carefully. Every figure carries a confidence rating, and where sources disagree we say so rather than picking one.',
+    'Wikis and databases for games worth playing carefully. Every figure is cited to where it came from, and where sources disagree we say so rather than picking one.',
   /*
     Hub copy. These were Dawnwalker's — "You have 480 segments. Spend them
     well." — because the hub did not exist when they were written, and they now
@@ -80,6 +80,23 @@ export const siteSettings = {
     state; it is just a picture.
   */
   showImageCredits: true,
+  /*
+    Readers may switch theme, which is the shipped behaviour.
+
+    Seeded for the reason the two notes above give and for one more that is
+    specific to this field: it decides whether a control exists. `defaultValue`
+    only reaches a row being created, so the settings global that already
+    exists reads back null here — and null is not `'free'`. Every consumer runs
+    it through `isThemeLock` for exactly that reason, but a stored value that
+    says out loud what the site is doing is worth having in a field whose other
+    two settings remove the theme toggle from every page of ten hosts.
+
+    Set it to 'dark' or 'light' to pin the network to one theme: the toggle is
+    not drawn, the default theme above stops meaning anything and the admin
+    hides it, and a reader who had chosen the other theme is moved to this one
+    without their stored preference being erased.
+  */
+  appearanceLock: 'free',
   /*
    * Every section that has an index, in the order a reader wants them: the two
    * tools first, then the database.

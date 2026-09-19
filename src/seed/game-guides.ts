@@ -1,4 +1,6 @@
 import 'dotenv/config'
+import fs from 'node:fs'
+import path from 'node:path'
 import { getPayload } from 'payload'
 import type { Payload } from 'payload'
 
@@ -137,6 +139,23 @@ async function upsert(
   })
 }
 
+/**
+ * The day the store harvest for this game was read, from the committed file it
+ * was written to.
+ *
+ * `path.join` against `process.cwd()` rather than a URL relative to this
+ * module: every other seeder in this directory resolves `src/seed/raw` the
+ * same way and they are all run from the repository root by pnpm.
+ */
+const GAME_DIR = path.join(process.cwd(), 'src', 'seed', 'raw', 'games')
+
+const storeFetchedAt = (slug: string): string | null => {
+  const file = path.join(GAME_DIR, `${slug}.json`)
+  if (!fs.existsSync(file)) return null
+  const raw = JSON.parse(fs.readFileSync(file, 'utf8')) as { fetchedAt?: string }
+  return raw.fetchedAt ?? null
+}
+
 async function run(): Promise<void> {
   console.log('Starting Payload (this takes a moment on a cold run)...\n')
   const payload = await getPayload({ config })
@@ -169,13 +188,29 @@ async function run(): Promise<void> {
       its own source is the game itself. Naming the store page is the honest
       anchor: it establishes that the game exists, who made it and when, which
       is what every one of these pages asserts before it lists anything.
+
+      `retrieved` is the day the harvest actually read that store page, out of
+      `src/seed/raw/games/<slug>.json`, and not `new Date()`. It was
+      `new Date()`, which is a lie of a particular kind: it is not a guess, it
+      is a false statement of fact — "we read Steam today" on a run that read
+      a JSON file committed a week ago. It also moved on every rebuild, which
+      is what made it invisible, because nothing that changes on every run
+      looks stale. And it is now load-bearing twice over: `guideDates` reads
+      the newest `retrieved` on a guide as its "last checked" date, so a clock
+      read here would have put today's date on four hundred pages, in the
+      sitemap and in the feeds. See `src/lib/guide-dates.ts`.
+
+      No harvest file, no date on the citation. The store URL is still true;
+      the day we read it is simply not known, and a citation without a
+      retrieval date is the ordinary shape of one.
     */
+    const storeRead = storeFetchedAt(String(game.slug))
     const sources = game.storeUrl
       ? [
           {
             title: `${game.title} — official store page`,
             url: game.storeUrl as string,
-            retrieved: new Date().toISOString().slice(0, 10),
+            ...(storeRead ? { retrieved: storeRead } : {}),
           },
         ]
       : []

@@ -104,8 +104,8 @@ const fontVars = `${cinzel.variable} ${barlow.variable} ${barlowCondensed.variab
  */
 export default async function FrontendLayout({ children }: { children: React.ReactNode }) {
   const ui = await getUiMaps()
-  const { defaultTheme, accent } = await getAppearance()
-  const boot = themeBootScript(defaultTheme)
+  const { defaultTheme, lock, accent } = await getAppearance()
+  const boot = themeBootScript(defaultTheme, lock)
 
   /*
     The page-view beacon, and whether it is sent at all.

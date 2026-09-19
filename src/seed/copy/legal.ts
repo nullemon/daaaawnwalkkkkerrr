@@ -193,8 +193,8 @@ const PAGES: Record<'privacy' | 'terms' | 'contact', PageCopy> = {
       ),
       section(
         'Accuracy',
-        'Read this part properly, because it is the one that matters. The information here is compiled from public sources and has not been verified against the game itself. It will contain errors. Every page shows a confidence rating and its sources so you can judge for yourself, and the run checker deliberately reports its totals as a floor rather than a figure.',
-        'Use it as a guide, not an authority. We make no warranty that anything here is correct, complete or current. If it is wrong, please [tell us](/corrections).',
+        'Read this part properly, because it is the one that matters. The information here is compiled from public sources and has not been verified against the game itself. It will contain errors. Every page shows the sources it was built from, with the date we read them, so you can judge for yourself, and the run checker deliberately reports its totals as a floor rather than a figure.',
+        'Use it as a guide, not an authority. We make no warranty that anything here is correct, complete or current. If it is wrong, please [tell us](/contact).',
       ),
       section(
         'Your account',
@@ -394,6 +394,17 @@ export const correctPrivacy = async (payload: Payload): Promise<void> => {
     const replacement = shipped.get(rule.becomes)
     if (!replacement) continue
 
+    /*
+      Already corrected. Without this the pass never settles: a rule whose
+      replacement body happens to keep `stillSays` rewrote the same bytes on
+      every run and bumped `updatedAt`, and a rule whose replacement drops it
+      reported the section as hand-edited from the second run onwards - telling
+      the owner to go and check by hand something this script had itself just
+      written. A corrector that cries wolf about its own work is worse than one
+      that says nothing, because the two real findings here are in that list.
+    */
+    if (plainText(next[index].body) === plainText(replacement.body)) continue
+
     if (plainText(next[index].body).includes(rule.stillSays)) {
       next[index] = { ...next[index], heading: replacement.heading, body: replacement.body }
       corrected.push(rule.heading)
@@ -435,4 +446,137 @@ export const correctPrivacy = async (payload: Payload): Promise<void> => {
   )
 }
 
+
+/**
+ * A link on the legal pages that points at a page the hub does not have.
+ *
+ * `/corrections` is a **per-wiki** route. On the apex it is not a page at all:
+ * `proxy.ts` reads an unreserved first segment as a wiki slug, so
+ * `<domain>/corrections` 308s to `corrections.<domain>`, a host that does not
+ * exist and never will. The terms page is served on the apex, and it carried
+ * "if it is wrong, please tell us" pointing straight at it — a dead link in
+ * the one sentence of the accuracy section that asks a reader to do something.
+ *
+ * The same trap the companies host's `metadataBase` fell into, in a link
+ * instead of a canonical: a path that is correct on nine hosts and is a
+ * redirect to nowhere on the tenth.
+ *
+ * `/contact` is the hub's own page and the one that receives this.
+ *
+ * ## Why this rewrites a URL and not a sentence
+ *
+ * `correctPrivacy` above matches a stored sentence and replaces a whole
+ * section, because what had gone stale there was a *claim about mechanism* and
+ * the sentence was the claim. Here the sentence is fine and the href behind it
+ * is broken, so this walks the stored Lexical tree and rewrites link nodes by
+ * their `url`. An editor who reworded the paragraph keeps every word of it and
+ * still gets the dead link repaired — which the sentence-matching rule could
+ * not do, because a reworded section is exactly the one it leaves alone.
+ *
+ * Narrow on purpose: one exact URL, on the two globals that store legal copy.
+ * It cannot touch a link somebody added.
+ */
+const DEAD_LINK = '/corrections'
+const LIVE_LINK = '/contact'
+
+const rewriteLinks = (node: unknown, from: string, to: string): number => {
+  if (!node || typeof node !== 'object') return 0
+  const record = node as Record<string, unknown>
+  let changed = 0
+
+  // Lexical stores a link's target under `fields.url` for a custom link and
+  // `url` for a plain one. Both shapes are in this database.
+  const fields = record.fields as Record<string, unknown> | undefined
+  if (fields && fields.url === from) {
+    fields.url = to
+    changed += 1
+  }
+  if (record.url === from) {
+    record.url = to
+    changed += 1
+  }
+
+  for (const key of ['root', 'children'] as const) {
+    const value = record[key]
+    if (Array.isArray(value)) {
+      for (const child of value) changed += rewriteLinks(child, from, to)
+    } else if (value) {
+      changed += rewriteLinks(value, from, to)
+    }
+  }
+  return changed
+}
+
+export const correctDeadLegalLinks = async (payload: Payload): Promise<void> => {
+  const current = (await payload.findGlobal({ slug: 'legal-pages', depth: 0 })) as unknown as
+    Record<string, { sections?: StoredSection[] }>
+
+  const next = JSON.parse(JSON.stringify(current)) as Record<string, { sections?: StoredSection[] }>
+  let changed = 0
+  const pages: string[] = []
+
+  for (const page of ['privacy', 'terms', 'contact'] as const) {
+    const sections = next[page]?.sections
+    if (!Array.isArray(sections)) continue
+    const before = changed
+    for (const section of sections) changed += rewriteLinks(section.body, DEAD_LINK, LIVE_LINK)
+    if (changed > before) pages.push(page)
+  }
+
+  if (changed === 0) return
+
+  await payload.updateGlobal({ slug: 'legal-pages', data: next as never })
+  console.log(
+    `  legal pages: repointed ${changed} link${changed === 1 ? '' : 's'} from ${DEAD_LINK} to ${LIVE_LINK} (${pages.join(', ')}) - ${DEAD_LINK} is a per-wiki page and 308s to a host that does not exist on the apex.`,
+  )
+}
+
 export default seed
+
+/**
+ * The Accuracy section of the terms page said "Every page shows a confidence
+ * rating and its sources so you can judge for yourself."
+ *
+ * Half of that stopped being true the day the badge became editorial: a reader
+ * is shown the sources and is not shown a rating. It is the same failure as
+ * the privacy sections above and it is on the page that matters most for it —
+ * a disclaimer's only job is to describe the thing accurately, and this one
+ * told a reader to judge for themselves using something the page does not give
+ * them.
+ *
+ * Rewritten only while it still carries the shipped sentence. The sources half
+ * of the promise is kept, because it was always true and still is.
+ */
+const STALE_ACCURACY = 'Every page shows a confidence rating and its sources'
+
+export const correctTermsAccuracy = async (payload: Payload): Promise<void> => {
+  const current = (await payload.findGlobal({ slug: 'legal-pages', depth: 0 })) as unknown as {
+    terms?: { sections?: StoredSection[] }
+  }
+  const stored = current?.terms?.sections
+  // Nothing written means the page renders the built-in wording, already correct.
+  if (!Array.isArray(stored) || stored.length === 0) return
+
+  const index = stored.findIndex((s) => s.heading === 'Accuracy')
+  if (index === -1) return
+
+  const shipped = PAGES.terms.sections.find((s) => s.heading === 'Accuracy')
+  if (!shipped) return
+
+  const held = plainText(stored[index].body)
+  if (held === plainText(shipped.body)) return
+
+  if (!held.includes(STALE_ACCURACY)) {
+    console.log(
+      '  terms: LEFT ALONE "Accuracy" - it has been edited since it shipped. Check by hand that it does not still tell readers every page shows a confidence rating; no page shows one.',
+    )
+    return
+  }
+
+  const next = stored.map((s, i) => (i === index ? { ...s, body: shipped.body } : { ...s }))
+  await payload.updateGlobal({
+    slug: 'legal-pages',
+    data: { terms: { ...current.terms, sections: next } } as never,
+  })
+  console.log('  terms: rewrote "Accuracy" - it promised a confidence rating on every page, and no page shows one.')
+}

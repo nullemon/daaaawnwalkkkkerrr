@@ -1,7 +1,8 @@
 import 'dotenv/config'
+import fs from 'node:fs'
+import path from 'node:path'
 import { getPayload } from 'payload'
 import config from '../payload.config'
-import { gameUrl } from '../lib/payload'
 
 /**
  * Cite the pages that compile this wiki's own records.
@@ -23,11 +24,98 @@ import { gameUrl } from '../lib/payload'
 
 const COMPILATION = /^(all-|every-|what-is-documented|.*-known$|.*-compared$|.*how-many.*)/
 
+/**
+ * When this wiki's records were last built from something outside it.
+ *
+ * This citation used to be dated `new Date()`, and that was the wrong date in
+ * two directions at once. It was not a fact — nobody read anything that day,
+ * the pass counts rows in a database — and it moved on every run, so a `pnpm
+ * db:reset` silently re-dated every compilation page on the network. Since
+ * `guideDates` now reads the newest `retrieved` on a guide as its "last
+ * checked" date, that clock read would have reached the sitemap's `lastmod`
+ * and the feeds as well. See `src/lib/guide-dates.ts`.
+ *
+ * The honest answer is the one the records themselves would give: they are
+ * built from the harvests in `src/seed/raw/`, each of which carries the day it
+ * was fetched, so "as of" is the most recent of those for this game. It is a
+ * fact, it is committed, and it reproduces exactly on any machine.
+ */
+const RAW = path.join(process.cwd(), 'src', 'seed', 'raw')
+const HARVESTS = ['games', 'reference', 'wiki-entities', 'queries']
+
+const recordsAsOf = (slug: string): string | null => {
+  let latest: string | null = null
+  for (const dir of HARVESTS) {
+    const file = path.join(RAW, dir, `${slug}.json`)
+    if (!fs.existsSync(file)) continue
+    const { fetchedAt } = JSON.parse(fs.readFileSync(file, 'utf8')) as { fetchedAt?: string }
+    if (fetchedAt && (latest === null || fetchedAt > latest)) latest = fetchedAt
+  }
+  return latest
+}
+
+/**
+ * Citations this pass wrote before it knew better, repaired in place.
+ *
+ * It used to store `await gameUrl(game)`, which reads `NEXT_PUBLIC_SITE_URL`
+ * — so a run on a developer's machine published
+ * `http://dawnwalker.localhost:3000/` as a guide's only source, and the deploy
+ * carried it. The loop below cannot fix one, because it only fills a guide
+ * that has *no* sources and a wrong citation is still a citation: the row
+ * looks done to every check there is.
+ *
+ * Narrow and guarded, like every other correction in `src/seed/`: it matches
+ * only an absolute loopback URL, which `sourcesField` now refuses outright, so
+ * this is for the rows written while it did not.
+ */
+const LOOPBACK = /^https?:\/\/(localhost|127\.0\.0\.1|\[::1\]|[^/]*\.localhost)(:|\/|$)/i
+
+const repairLoopbackCitations = async (
+  payload: Awaited<ReturnType<typeof getPayload>>,
+): Promise<number> => {
+  const all = await payload.find({
+    collection: 'guides',
+    limit: 0,
+    depth: 0,
+    pagination: false,
+  })
+
+  let repaired = 0
+  for (const guide of all.docs as unknown as {
+    id: number | string
+    slug: string
+    sources?: { title?: string; url?: string; retrieved?: string }[]
+  }[]) {
+    const sources = guide.sources ?? []
+    if (!sources.some((source) => typeof source.url === 'string' && LOOPBACK.test(source.url))) {
+      continue
+    }
+    await payload.update({
+      collection: 'guides',
+      id: guide.id,
+      data: {
+        sources: sources.map((source) =>
+          typeof source.url === 'string' && LOOPBACK.test(source.url)
+            ? { ...source, url: '/' }
+            : source,
+        ),
+      } as never,
+      depth: 0,
+    })
+    repaired += 1
+    console.log(`  repaired a localhost citation on ${guide.slug}`)
+  }
+  return repaired
+}
+
 async function run(): Promise<void> {
   const payload = await getPayload({ config })
+
+  const repaired = await repairLoopbackCitations(payload)
+  if (repaired > 0) console.log('')
+
   const guides = await payload.find({ collection: 'guides', limit: 800, depth: 1, pagination: false })
 
-  const today = new Date().toISOString().slice(0, 10)
   let fixed = 0
 
   for (const guide of guides.docs) {
@@ -50,9 +138,25 @@ async function run(): Promise<void> {
     }
 
     const name = game.shortTitle || game.title || game.slug
-    /* The wiki's own canonical host, not a guessed one - gameUrl is the single
-       place that knows a game is a subdomain rather than a path. */
-    const url = await gameUrl(game as { slug: string; subdomain?: string | null })
+    /*
+      Relative, and that is the fix rather than the shortcut.
+
+      This was `await gameUrl(game)`, which is the right function and the wrong
+      time to call it: `gameUrl` reads `NEXT_PUBLIC_SITE_URL`, so a pass run on
+      a developer's machine wrote `http://dawnwalker.localhost:3000/` into the
+      database as a guide's only citation, and it stayed there through the
+      deploy. Nothing errored and nothing could have: the page rendered, the
+      link was blue, and `check:launch` counted the guide as cited.
+
+      The page and the records it compiles are on the same host by definition
+      — that is what makes it a compilation of *this* wiki — so `/` is the
+      whole address, and it is correct wherever the site is deployed. The same
+      reasoning the wiki layout gives for not storing footer hrefs.
+
+      `sourcesField` now refuses an absolute loopback URL outright, so this
+      cannot come back quietly by another route.
+    */
+    const asOf = recordsAsOf(game.slug)
     await payload.update({
       collection: 'guides',
       id: guide.id,
@@ -60,8 +164,11 @@ async function run(): Promise<void> {
         sources: [
           {
             title: `${name} wiki records, each carrying its own sources`,
-            url: `${url}/`,
-            retrieved: today,
+            url: '/',
+            // No harvest on disk for this wiki, so no "as of". The citation is
+            // still true; the date is simply not known, and a blank one is a
+            // gap rather than a guess.
+            ...(asOf ? { retrieved: asOf } : {}),
           },
         ],
       } as never,

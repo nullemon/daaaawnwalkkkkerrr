@@ -41,6 +41,7 @@
  */
 import fs from 'fs'
 import path from 'path'
+import { createRequire } from 'module'
 import { pathToFileURL } from 'url'
 
 import { harvestText } from '../src/lib/text-encoding-table.mjs'
@@ -65,8 +66,37 @@ const limitArg = process.argv.indexOf('--limit')
 */
 const LIMIT = limitArg > -1 ? Number(process.argv[limitArg + 1]) : 300
 
-/** Games this network covers, so their makers are always included. */
-const NETWORK_HOLDERS = [
+/** `--only "A,B"` — harvest just these and merge them into the file on disk. */
+const onlyArg = process.argv.indexOf('--only')
+const ONLY =
+  onlyArg > -1
+    ? String(process.argv[onlyArg + 1] ?? '')
+        .split(',')
+        .map((name) => name.trim())
+        .filter(Boolean)
+    : []
+
+/**
+ * The makers of the games this network covers, so they are always harvested.
+ *
+ * **Read from the games themselves, not typed out here.** This was a list of
+ * twelve names written when there were eight wikis, and it stayed twelve when
+ * there were fifteen — so Valve, Playground Games, Visual Concepts,
+ * Intelligent Systems, Unknown Worlds and the rest were never asked for. The
+ * symptom was two steps away and looked like nothing: 23 companies on this
+ * network made one of our games and only 10 had a logo, so the front page's
+ * studio row was thin and the obvious conclusion was that Wikipedia had no
+ * art for them.
+ *
+ * It is the same failure as a sentence about one game living in a component.
+ * A list about which games exist belongs where the games are, and the games
+ * are in the database.
+ *
+ * `rightsholdersIn` does the splitting, so "Konami, Annapurna Interactive" is
+ * two companies and "Atari, Inc." stays one — the rule is not restated here
+ * either.
+ */
+const FALLBACK_HOLDERS = [
   'Capcom',
   'Konami',
   'Annapurna Interactive',
@@ -80,6 +110,61 @@ const NETWORK_HOLDERS = [
   'Asobo Studio',
   'Bit Reactor',
 ]
+
+/**
+ * Where a studio's own name is not the title of its article.
+ *
+ * Deriving the makers from the games table fixed a list that had gone stale at
+ * eight wikis — and lost the one thing the hand-written list was quietly
+ * carrying: **disambiguated titles.** A game's `developer` field says "The
+ * Coalition", and that is a disambiguation page; "Screen Burn" is an article
+ * about the thing that happens to old plasma screens; "Valve" is the
+ * mechanical component. Each was fetched, found to have no company infobox,
+ * and skipped with a line that reads like the company simply is not on
+ * Wikipedia.
+ *
+ * A reviewed list rather than a cleverer rule, for the same reason
+ * `isNotAnEntity` keeps one: no pattern separates "The Coalition" the studio
+ * from "Coalition" the disambiguation page without knowing which is meant.
+ *
+ * **Only titles that have been checked go in here.** A studio with no article
+ * is a real answer — Bit Reactor and S-GAME have none — and inventing a title
+ * for one produces a harvest entry for whatever happens to sit at that name.
+ */
+const ARTICLE_TITLE = {
+  /* Verified: this exact title was in the hand-written list this replaced. */
+  'The Coalition': 'The Coalition (company)',
+  /* Verified: already in the committed harvest, with a logo. */
+  Valve: 'Valve Corporation',
+}
+
+const DB = path.resolve('dawnwalker.db')
+
+const networkHolders = async () => {
+  try {
+    const { DatabaseSync } = createRequire(import.meta.url)('node:sqlite')
+    const { rightsholdersIn } = await import('../src/lib/rightsholders.ts')
+    const db = new DatabaseSync(DB, { readOnly: true })
+    const rows = db.prepare('select developer, publisher from games').all()
+    db.close()
+    const names = rightsholdersIn(
+      ...rows.flatMap((row) => [row.developer, row.publisher]),
+    ).map((holder) => ARTICLE_TITLE[holder.name] ?? holder.name)
+    if (names.length === 0) return FALLBACK_HOLDERS
+    console.log(`network's own makers, read from ${rows.length} games: ${names.length}`)
+    return names
+  } catch (error) {
+    /*
+      No database, or this was run with plain node rather than tsx. Falling
+      back is right — a harvest of the fifty largest plus twelve known names
+      is still a harvest — but it is announced, because a silent fallback to a
+      stale list is exactly what went wrong here in the first place.
+    */
+    console.log(`could not read the games table (${String(error?.message ?? error).slice(0, 80)})`)
+    console.log('falling back to the written-down list of makers, which may be out of date')
+    return FALLBACK_HOLDERS
+  }
+}
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
@@ -535,6 +620,35 @@ export const rawField = (wikitext, key) => {
  */
 const FREE_LICENCE = /^(public domain|cc[ -]|pd-|no restrictions)/i
 
+/**
+ * The file a `logo =` parameter actually names.
+ *
+ * The infobox reader hands back the parameter with its wiki-link furniture
+ * already stripped, which for a logo throws away the only part that matters:
+ *
+ *     | logo = [[File:Xbox Game Studios.svg|frameless|class=skin-invert]]
+ *
+ * arrived here as **"frameless, class=skin-invert"**, and that was then asked
+ * about on Commons, which has no such file, and recorded as
+ * `not on Commons — likely non-free`. Twenty-nine companies were written down
+ * as having an unusable logo on those grounds, Sony Interactive, Ubisoft,
+ * Bandai Namco and Xbox Game Studios among them — and the reason sounded
+ * entirely plausible, which is why it survived a read-through.
+ *
+ * So the raw wikitext is re-read for this one field. Three shapes, in order:
+ * a `[[File:…]]` link, a bare filename with an image extension anywhere in
+ * the value, and otherwise nothing — `175px, Larian Studios logo` names no
+ * file and guessing an extension for it would invent one.
+ */
+const logoFilename = (raw) => {
+  if (!raw) return null
+  const link = raw.match(/\[\[\s*(?:File|Image)\s*:\s*([^|\]]+)/i)
+  if (link) return link[1].trim()
+  const bare = raw.match(/([^|[\]=,{}]+\.(?:svg|png|jpe?g|gif|webp))/i)
+  if (bare) return bare[1].trim()
+  return null
+}
+
 const logoLicence = async (filename) => {
   if (!filename) return null
   const clean = filename.replace(/^File:/i, '').replace(/_/g, ' ').trim()
@@ -568,9 +682,18 @@ const logoLicence = async (filename) => {
     const meta = info?.extmetadata ?? {}
     const licence = meta.LicenseShortName?.value ?? ''
     const nonFree = String(meta.NonFree?.value ?? '') === '1'
-    const artist = String(meta.Artist?.value ?? '')
-      .replace(/<[^>]*>/g, '')
-      .trim()
+    /*
+      Tags out, then entities decoded — in that order, and the decode is not
+      optional. `extmetadata.Artist` is a fragment of HTML, so a credit
+      reading "Raj Joshi, Senior Producer &amp; Studio Director" survives the
+      tag strip intact and is then stored, and printed, with the `&amp;` still
+      in it. `src/lib/text-encoding.test.ts` is what caught it, over the whole
+      raw harvest, which is the only place a stray entity in one field of one
+      company was ever going to show up.
+    */
+    const artist = decodeEntities(
+      String(meta.Artist?.value ?? '').replace(/<[^>]*>/g, ''),
+    ).trim()
     const free = !nonFree && FREE_LICENCE.test(licence)
     return {
       file: clean,
@@ -631,7 +754,13 @@ const run = async () => {
   const fetchedAt = new Date().toISOString().slice(0, 10)
 
   // --- 1. the ranked spine -------------------------------------------------
-  const ranking = await fetchArticle(RANKING_ARTICLE)
+  /*
+    Skipped entirely for a top-up. `--only` exists to fetch one or two named
+    articles, and reading the revenue ranking and a thousand category members
+    first would make it as slow as the sweep it is there to avoid — and would
+    spend the same rate-limit budget doing it.
+  */
+  const ranking = ONLY.length > 0 ? { wikitext: '' } : await fetchArticle(RANKING_ARTICLE)
   if (!ranking) {
     console.error('could not read the ranking article; nothing written')
     process.exit(1)
@@ -653,8 +782,15 @@ const run = async () => {
     the corporate graph - the reason to have a hundred of these rather than
     fifty - never got harvested at all.
   */
+  /*
+    Resolved once and held, because `basisFor` below asks the same question
+    for every title in the harvest — and the first version of this change
+    called `networkHolders()` here and left `basisFor` reading the constant
+    that no longer existed, which took the run down 843 titles in.
+  */
+  const holders = ONLY.length > 0 ? ONLY : await networkHolders()
   const priority = [...ranked]
-  for (const name of NETWORK_HOLDERS) if (!priority.includes(name)) priority.push(name)
+  for (const name of holders) if (!priority.includes(name)) priority.push(name)
   const filler = []
   console.log(`plus this network's own: ${priority.length}`)
 
@@ -670,7 +806,10 @@ const run = async () => {
     They seed but never expand. Their parents and subsidiaries would be a
     second hop, which is the thing that produced an exam board last time.
   */
-  const categories = ['Video game development companies', 'Video game publishers']
+  /* Empty for a top-up: the categories are filler for a full sweep, and
+     walking two thousand members to fetch one named article is the cost
+     `--only` exists to avoid. */
+  const categories = ONLY.length > 0 ? [] : ['Video game development companies', 'Video game publishers']
   const fromCategory = new Set()
   for (const category of categories) {
     const data = await get({
@@ -688,14 +827,14 @@ const run = async () => {
     }
     await sleep(350)
   }
-  console.log(`plus gaming-company categories: ${fromCategory.size}`)
+  if (ONLY.length === 0) console.log(`plus gaming-company categories: ${fromCategory.size}`)
 
   // --- 3. harvest, expanding one hop through parent/subsidiaries -----------
   /** Why a name is in the harvest, which also decides whether it expands. */
   const basisFor = (title) =>
     ranked.includes(title)
       ? 'revenue-ranking'
-      : NETWORK_HOLDERS.includes(title)
+      : holders.includes(title)
         ? 'network-game'
         : fromCategory.has(title)
           ? 'gaming-category'
@@ -723,7 +862,12 @@ const run = async () => {
       continue
     }
 
-    const logo = await logoLicence(box.logo)
+    /*
+      From the raw wikitext, not from `box.logo` — see `logoFilename`. The
+      parsed value has had its `[[File:…]]` wrapper removed and is often only
+      the display options that followed it.
+    */
+    const logo = await logoLicence(logoFilename(rawField(article.wikitext, 'logo')) ?? box.logo)
     if (logo) await sleep(200)
 
     const parents = linkedNames(rawField(article.wikitext, 'parent'))
@@ -790,6 +934,60 @@ const run = async () => {
     `logos: ${freeLogos} freely licensed, ${blockedLogos} left alone as non-free, ` +
       `${out.length - freeLogos - blockedLogos} with none named`,
   )
+
+  /*
+    --- a top-up, rather than a whole harvest --------------------------------
+
+    `--only "The Coalition (company)"` harvests just the names given and merges
+    them into the file already on disk, matching on `wikipediaTitle`.
+
+    It exists because a full sweep is three hundred articles and around
+    twenty-five minutes against an endpoint that rate-limits, and the thing
+    that usually needs fixing is one company whose article title was wrong.
+    Re-running everything to correct one row is how a fixable row stays wrong.
+
+    The shrink guard is skipped here and that is safe by construction: this
+    path can only add or replace, never remove, and it asserts as much before
+    writing.
+  */
+  if (ONLY.length > 0) {
+    const existing = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : null
+    if (!existing?.companies?.length) {
+      console.error('--only needs an existing harvest to merge into. Run a full sweep first.')
+      process.exit(1)
+    }
+
+    const merged = [...existing.companies]
+    let replaced = 0
+    let added = 0
+    for (const entry of out) {
+      const at = merged.findIndex((row) => row.wikipediaTitle === entry.wikipediaTitle)
+      if (at === -1) {
+        merged.push(entry)
+        added += 1
+      } else {
+        merged[at] = entry
+        replaced += 1
+      }
+    }
+
+    /* Never fewer than we started with. The whole safety of skipping the
+       guard is that this path cannot lose a company. */
+    if (merged.length < existing.companies.length) {
+      console.error('refusing to write: the merge lost companies, which it cannot do. Nothing written.')
+      process.exit(1)
+    }
+
+    merged.sort((a, b) => String(a.name).localeCompare(String(b.name)))
+    fs.writeFileSync(
+      OUT,
+      `${JSON.stringify({ ...existing, fetchedAt, companies: merged }, null, 2)}
+`,
+    )
+    console.log(`
+topped up: ${replaced} replaced, ${added} added, ${merged.length} in the file`)
+    process.exit(0)
+  }
 
   // --- the guard ----------------------------------------------------------
   if (fs.existsSync(OUT)) {

@@ -1,0 +1,22 @@
+{
+  "slug": "resident-evil-requiem",
+  "fetchedAt": "2026-09-19",
+  "wikipedia": {
+    "title": "Resident Evil Requiem",
+    "url": "https://en.wikipedia.org/wiki/Resident_Evil_Requiem",
+    "licence": "CC BY-SA 4.0",
+    "facts": {
+      "developer": "Capcom",
+      "publisher": "Capcom",
+      "director": "Koshi Nakanishi",
+      "programmer": "Masaharu Kamo",
+      "artist": "Tomonori Takano",
+      "writer": "Haris Orkin",
+      "series": "Resident Evil",
+      "engine": "RE Engine",
+      "released": "February 27, 2026",
+      "genre": "Survival horror",
+      "modes": "Single-player"
+    }
+  }
+}

@@ -8,7 +8,7 @@ import type { Field } from 'payload'
  * guess — so a score has to be built so that it can never be mistaken for one
  * of those facts.
  *
- * Three things do that work:
+ * Four things do that work:
  *
  * **It is signed and explained.** A score with no `rationale` does not render.
  * A number on its own is the thing every other site publishes and the thing a
@@ -16,14 +16,29 @@ import type { Field } from 'payload'
  * reading, and making the number depend on it means nobody can ship the number
  * alone.
  *
- * **It says what it is based on.** Four of these eight games are not out. A
- * review score for a game nobody has played is not a review score, so `basis`
- * is required and is printed beside the number: a rating from play, a rating
- * from published material, or an outlook. An outlook is a different kind of
- * claim and the page says so rather than hoping the reader assumes it.
+ * **It says what it is based on.** `basis` is printed beside the number, and
+ * there are two of them: a rating from play, and a rating from published
+ * material about a game that has shipped.
+ *
+ * There used to be a third. "Outlook" let a score be published for a game
+ * nobody had played, labelled as such — and the hub served Control Resonant at
+ * **8.9/10** three weeks before launch on the strength of "Remedy has not
+ * missed in a decade". The label was honest and it was not enough: a reader
+ * scanning eight tiles reads the figure, and a screenshot of one carries the
+ * figure without the six-point word under it. The option is gone, and
+ * `src/lib/released.ts` rather than this select decides when a score may be
+ * printed at all — a game that is not out shows none, whichever option is
+ * ticked. A control that cannot change the outcome is worse than no control,
+ * because it reads as one.
  *
  * **It is dated.** A game changes after launch — patches, a rewritten ending,
  * a server shutdown. A score with no date is a claim about a moving target.
+ *
+ * **And the game has to be out.** Not a property of this group at all — it is
+ * `isReleased` in `src/lib/released.ts`, read by `editorialScore` before any
+ * of the above is even looked at. It is listed here because an editor filling
+ * this in on an unreleased game will see nothing appear on the site and
+ * deserves to know why.
  */
 export const ratingGroup = (): Field => ({
   name: 'rating',
@@ -56,12 +71,11 @@ export const ratingGroup = (): Field => ({
           options: [
             { label: 'Playing it', value: 'played' },
             { label: 'Published material about it', value: 'published' },
-            { label: 'Outlook — it is not out yet', value: 'outlook' },
           ],
           admin: {
             width: '40%',
             description:
-              'Printed beside the score. An outlook is not a review and the page must not let a reader think it is.',
+              'Printed beside the score. There is no option here for a game that is not out: it shows no score at all, whatever is filled in.',
           },
         },
         {

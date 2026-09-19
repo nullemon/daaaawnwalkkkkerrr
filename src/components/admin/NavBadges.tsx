@@ -1,5 +1,6 @@
 import { badgeCounts, entityHref } from '@/lib/audit'
 import { readAudit } from './audit-snapshot'
+import { adminUrl } from '@/lib/admin-path'
 
 /**
  * The `(1)` in the sidebar: what is waiting for you, and behind which entry.
@@ -56,7 +57,7 @@ export default async function NavBadges() {
 
   return (
     <div className="net-nav-badges">
-      <a className="net-nav-badges-title" href="/admin">
+      <a className="net-nav-badges-title" href={adminUrl()}>
         Needs you · {total.toLocaleString('en-GB')}
       </a>
       <ul>
@@ -69,7 +70,7 @@ export default async function NavBadges() {
           </li>
         ))}
       </ul>
-      <a className="net-nav-badges-more" href="/admin">
+      <a className="net-nav-badges-more" href={adminUrl()}>
         What each one needs →
       </a>
     </div>

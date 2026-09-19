@@ -7,6 +7,11 @@ import {
   listHref,
   type Finding,
 } from './audit'
+import { ADMIN_PATH } from './admin-path'
+import fs from 'node:fs'
+import path from 'node:path'
+import { GUARDS_EMPTY_INDEX, LISTING_LIMIT } from './audit'
+import { SECTION_PATH } from './tenancy'
 
 /**
  * The parts of the audit that can be wrong without anything erroring.
@@ -49,7 +54,7 @@ describe('fieldAnchor', () => {
 describe('listHref', () => {
   it('serialises an AND group the way the list view parses it', () => {
     expect(listHref('authors', [[{ provisional: { equals: true } }]])).toBe(
-      '/admin/collections/authors?limit=50&where[or][0][and][0][provisional][equals]=true',
+      `${ADMIN_PATH}/collections/authors?limit=50&where[or][0][and][0][provisional][equals]=true`,
     )
   })
 
@@ -63,7 +68,7 @@ describe('listHref', () => {
     expect(
       listHref('media', [[{ credit: { exists: false } }], [{ credit: { equals: '' } }]]),
     ).toBe(
-      '/admin/collections/media?limit=50' +
+      `${ADMIN_PATH}/collections/media?limit=50` +
         '&where[or][0][and][0][credit][exists]=false' +
         '&where[or][1][and][0][credit][equals]=',
     )
@@ -79,17 +84,17 @@ describe('listHref', () => {
   })
 
   it('still names the collection when there is nothing to filter on', () => {
-    expect(listHref('corrections')).toBe('/admin/collections/corrections?limit=50')
+    expect(listHref('corrections')).toBe(`${ADMIN_PATH}/collections/corrections?limit=50`)
   })
 })
 
 describe('entityHref', () => {
   it('knows a global from a collection', () => {
     expect(entityHref({ kind: 'global', slug: 'site-settings', label: 'x' })).toBe(
-      '/admin/globals/site-settings',
+      `${ADMIN_PATH}/globals/site-settings`,
     )
     expect(entityHref({ kind: 'collection', slug: 'authors', label: 'x' })).toBe(
-      '/admin/collections/authors',
+      `${ADMIN_PATH}/collections/authors`,
     )
   })
 })
@@ -99,7 +104,7 @@ describe('groupFindings', () => {
     const wikis = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
     const rows = groupFindings(
       wikis.map((slug, index) =>
-        finding({ area: slug, target: target('games', `/admin/collections/games/${index}`) }),
+        finding({ area: slug, target: target('games', `${ADMIN_PATH}/collections/games/${index}`) }),
       ),
       'owner',
     )
@@ -186,11 +191,11 @@ describe('badgeCounts', () => {
     const badges = badgeCounts([
       finding({
         area: 'companies',
-        target: target('site-settings', '/admin/globals/site-settings#field-verification__google', 'global'),
+        target: target('site-settings', `${ADMIN_PATH}/globals/site-settings#field-verification__google`, 'global'),
       }),
       finding({
         area: 'people',
-        target: target('site-settings', '/admin/globals/site-settings#field-verification__google', 'global'),
+        target: target('site-settings', `${ADMIN_PATH}/globals/site-settings#field-verification__google`, 'global'),
       }),
     ])
     expect(badges).toEqual([
@@ -200,9 +205,9 @@ describe('badgeCounts', () => {
 
   it('adds up distinct fields behind the same nav entry', () => {
     const badges = badgeCounts([
-      finding({ area: 'a', target: target('games', '/admin/collections/games/1#field-a') }),
-      finding({ area: 'b', target: target('games', '/admin/collections/games/2#field-a') }),
-      finding({ area: 'c', target: target('authors', '/admin/collections/authors?x'), count: 36 }),
+      finding({ area: 'a', target: target('games', `${ADMIN_PATH}/collections/games/1#field-a`) }),
+      finding({ area: 'b', target: target('games', `${ADMIN_PATH}/collections/games/2#field-a`) }),
+      finding({ area: 'c', target: target('authors', `${ADMIN_PATH}/collections/authors?x`), count: 36 }),
     ])
     expect(badges).toEqual([
       { entity: { kind: 'collection', slug: 'authors', label: 'authors' }, count: 36 },
@@ -214,7 +219,7 @@ describe('badgeCounts', () => {
     // A badge is a chore. Seventy-eight quests nobody has a source for is not.
     expect(
       badgeCounts([
-        finding({ actor: 'blocked', count: 78, target: target('quests', '/admin/collections/quests') }),
+        finding({ actor: 'blocked', count: 78, target: target('quests', `${ADMIN_PATH}/collections/quests`) }),
       ]),
     ).toEqual([])
   })
@@ -224,4 +229,86 @@ describe('badgeCounts', () => {
     // that cannot set it is a badge that can never be cleared.
     expect(badgeCounts([finding({ target: undefined })])).toEqual([])
   })
+})
+
+/**
+ * Two constants that restate a fact living in a route file, pinned against it.
+ *
+ * `GUARDS_EMPTY_INDEX` and `LISTING_LIMIT` are normally the thing this module
+ * exists to avoid — a second copy of something. They cannot be imported: the
+ * routes are Next.js server components that pull in the Payload config, and a
+ * test that booted Payload to read a number is a test nobody runs. So they are
+ * checked against the source of both ends instead, which needs no database and
+ * fails on the commit that changes either one.
+ *
+ * Same shape as `sitemap-images.test.ts`, and for the same reason. The failure
+ * it guards against is silent in both directions: a route that stops guarding
+ * is a live page nobody links to, and a constant that goes stale is a whole
+ * pass reported as fine.
+ */
+describe('GUARDS_EMPTY_INDEX matches what the section indexes actually do', () => {
+  const root = path.resolve(__dirname, '..')
+
+  const indexRoute = (collection: string): string =>
+    path.join(
+      root,
+      'app',
+      '(frontend)',
+      '[game]',
+      SECTION_PATH[collection as keyof typeof SECTION_PATH].replace(/^\//, ''),
+      'page.tsx',
+    )
+
+  it('names a route for every game-scoped section', () => {
+    // A mapping that silently found none would make every check below pass by
+    // not running - the failure `seed:topics` and `seed:cite` shipped with.
+    expect(Object.keys(SECTION_PATH).length).toBe(16)
+    for (const collection of Object.keys(SECTION_PATH)) {
+      expect(fs.existsSync(indexRoute(collection))).toBe(true)
+    }
+  })
+
+  for (const collection of Object.keys(SECTION_PATH)) {
+    it(`${collection} ${GUARDS_EMPTY_INDEX.has(collection as never) ? 'answers 404' : 'answers 200'} on an empty collection`, () => {
+      const source = fs.readFileSync(indexRoute(collection), 'utf8')
+      /*
+        `if (endings.length === 0) notFound()` - the guard is always a length
+        test on the collection this index is for, immediately followed by
+        `notFound()`. A `notFound()` anywhere else in the file would be a false
+        positive, which is why this matches the whole shape rather than the
+        word.
+      */
+      const guarded = /\.length === 0\)\s*notFound\(\)/.test(source)
+      expect(guarded).toBe(GUARDS_EMPTY_INDEX.has(collection as never))
+    })
+  }
+
+  it('is every section, which is the state the orphan finding was written for', () => {
+    // Nineteen live pages nothing linked to before this: /maps on all eight
+    // wikis, /achievements on the four whose game is not out, /quests on four,
+    // and one each of /regions, /enemies and /items.
+    expect(GUARDS_EMPTY_INDEX.size).toBe(Object.keys(SECTION_PATH).length)
+  })
+})
+
+describe('LISTING_LIMIT matches the limit each index actually passes', () => {
+  const root = path.resolve(__dirname, '..')
+
+  it('is the default every section index inherits from getAll', () => {
+    const source = fs.readFileSync(path.join(root, 'lib', 'payload.ts'), 'utf8')
+    expect(source).toContain(`options.limit ?? ${LISTING_LIMIT.section}`)
+  })
+
+  for (const [host, limit] of [
+    ['companies', LISTING_LIMIT.companies],
+    ['people', LISTING_LIMIT.people],
+  ] as const) {
+    it(`${host} reads ${limit}`, () => {
+      const source = fs.readFileSync(
+        path.join(root, 'app', '(frontend)', host, 'page.tsx'),
+        'utf8',
+      )
+      expect(source).toContain(`limit: ${limit}`)
+    })
+  }
 })

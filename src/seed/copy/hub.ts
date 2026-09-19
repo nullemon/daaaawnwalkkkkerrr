@@ -47,6 +47,9 @@ const TEXT: Partial<Record<keyof SiteSetting, string>> = {
   statWikisLabel: 'Wikis',
   statPagesLabel: 'Sourced pages',
   statUpcomingLabel: 'Not out yet',
+  statGuidesLabel: 'Guides',
+  statStudiosLabel: 'Studios',
+  statPeopleLabel: 'People',
 
   // --- Hub home page: section headings ---
   askingHeading: 'What people are asking',
@@ -70,7 +73,7 @@ const TEXT: Partial<Record<keyof SiteSetting, string>> = {
   // --- Hub home page: what a search result shows ---
   metaTitleSuffix: 'game wikis, guides and databases',
   metaDescriptionFallback:
-    '{wikis} game wikis and {pages} sourced pages. Every figure carries a confidence rating, and where sources disagree we say so rather than picking one.',
+    '{wikis} game wikis and {pages} sourced pages. Every figure is cited to where it came from, and where sources disagree we say so rather than picking one.',
 
   // --- Directory & standing notes: the wikis directory ---
   wikisTitle: 'Every wiki on the network',
@@ -84,7 +87,7 @@ const TEXT: Partial<Record<keyof SiteSetting, string>> = {
   // --- Directory & standing notes: the contributors directory ---
   authorsTitle: 'Contributors',
   authorsLede:
-    'Guides are signed; the database pages are not, because a compiled fact sheet has no author to claim. A byline that is still a placeholder prints the name on the record and links to a profile that says plainly it is a placeholder — the flag comes off the day a real person is behind it.',
+    'Guides are signed; the database pages are not, because a compiled fact sheet has no author to claim. Every byline links to a profile saying which wikis that contributor covers and what they have filed, so a reader can see who stood behind a page before deciding what it is worth.',
 
   // --- Directory & standing notes: the lines printed on several thousand pages ---
   /*
@@ -164,6 +167,90 @@ const seed = async (payload: Payload): Promise<number> => {
   // and revalidation twenty times over for a pass that changes one row.
   await payload.updateGlobal({ slug: 'site-settings', data: data as never })
   return filled
+}
+
+/**
+ * The one field here that is corrected rather than merely filled in.
+ *
+ * The contributors lede used to end "...links to a profile that says plainly
+ * it is a placeholder", which was a statement about what the site does. The
+ * owner has since decided the roster's `provisional` flag is an editorial
+ * marker and prints nothing on any public page, so that sentence became a
+ * description of behaviour this site no longer has — the same failure mode as
+ * the privacy sections `correctPrivacy` repairs, and for the same reason: a
+ * stale sentence about mechanism is not a stale sentence, it is a false one.
+ *
+ * Narrow on purpose. It rewrites the field only while it still carries the
+ * exact wording this repository shipped, which is the evidence nobody has
+ * redrafted it. An edited lede is printed and left alone.
+ */
+const STALE_AUTHORS_LEDE =
+  'Guides are signed; the database pages are not, because a compiled fact sheet has no author to claim. A byline that is still a placeholder prints the name on the record and links to a profile that says plainly it is a placeholder — the flag comes off the day a real person is behind it.'
+
+export const correctHubCopy = async (payload: Payload): Promise<void> => {
+  const settings = (await payload.findGlobal({
+    slug: 'site-settings',
+    depth: 0,
+  })) as unknown as SiteSetting
+
+  const stored = settings.authorsLede?.trim()
+  // Blank means the page is rendering the built-in wording, which is already
+  // the corrected one; `seed` above fills it in.
+  if (!stored) return
+  if (stored === TEXT.authorsLede) return
+
+  if (stored !== STALE_AUTHORS_LEDE.trim()) {
+    console.log(
+      '  contributors lede: LEFT ALONE - it has been edited since it shipped. Check by hand that it does not still promise a placeholder notice on contributor profiles; no page prints one.',
+    )
+    return
+  }
+
+  await payload.updateGlobal({
+    slug: 'site-settings',
+    data: { authorsLede: TEXT.authorsLede } as never,
+  })
+  console.log('  contributors lede: rewrote - it described a placeholder notice the site no longer prints.')
+
+  await correctHubMetaDescription(payload)
+}
+
+/**
+ * The hub's own search-result description promised "Every figure carries a
+ * confidence rating", which is the sentence a reader meets *before* they reach
+ * a page - and the badge it referred to is editorial now, shown to signed-in
+ * editors only. A meta description is the one piece of copy on this network
+ * that is read by people who have not seen the site, so a promise in it that
+ * the pages do not keep is worse than the same words on the page would be.
+ *
+ * Narrow the same way: rewritten only while it still carries the shipped
+ * sentence.
+ */
+const STALE_META_DESCRIPTION =
+  '{wikis} game wikis and {pages} sourced pages. Every figure carries a confidence rating, and where sources disagree we say so rather than picking one.'
+
+const correctHubMetaDescription = async (payload: Payload): Promise<void> => {
+  const settings = (await payload.findGlobal({
+    slug: 'site-settings',
+    depth: 0,
+  })) as unknown as SiteSetting
+
+  const stored = (settings.metaDescriptionFallback ?? '').trim()
+  if (!stored) return
+  if (stored === TEXT.metaDescriptionFallback) return
+
+  if (stored !== STALE_META_DESCRIPTION.trim()) {
+    console.log(
+      '  hub meta description: LEFT ALONE - it has been edited since it shipped. Check by hand that it does not still promise a confidence rating on every figure; readers are not shown one.',
+    )
+    return
+  }
+
+  await payload.updateGlobal({
+    slug: 'site-settings',
+    data: { metaDescriptionFallback: TEXT.metaDescriptionFallback } as never,
+  })
+  console.log('  hub meta description: rewrote - it promised readers a confidence rating they are not shown.')
 }
 
 export default seed

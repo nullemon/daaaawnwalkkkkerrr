@@ -4,6 +4,7 @@ import { CHANNELS } from '@/lib/analytics/acquisition'
 import { parseFilters, type Filter } from '@/lib/analytics/query'
 import { DIMENSIONS, RAW_RETENTION_DAYS, WINDOWS, dimension } from '@/lib/analytics/shape'
 import { readAnalytics } from './analytics-snapshot'
+import { adminUrl } from '@/lib/admin-path'
 
 /**
  * The analytics screen: who read the site, how they got here, and — in the same
@@ -51,7 +52,7 @@ import { readAnalytics } from './analytics-snapshot'
 
 const NUM = (value: number): string => value.toLocaleString('en-GB')
 
-const BASE = '/admin/analytics'
+const BASE = adminUrl('/analytics')
 
 /** The current question as a query string, with one thing changed. */
 const href = (

@@ -1,5 +1,12 @@
 import { describe, expect, it } from 'vitest'
-import { indefiniteArticle, isAnEvent, isNotAnEntity, isNotAPlace } from './harvest'
+import {
+  indefiniteArticle,
+  isAnEvent,
+  isAnotherWorkInTheSeries,
+  isListPage,
+  isNotAnEntity,
+  isNotAPlace,
+} from './harvest'
 
 const entity = (title: string, url = '') => ({ title, url })
 
@@ -381,5 +388,56 @@ describe('the abstractions on the reviewed list', () => {
     ]) {
       expect(isNotAnEntity({ title }), title).toBe(false)
     }
+  })
+})
+
+describe('index pages and sibling games, filed as things in the game', () => {
+  /*
+    All seven of these were live as "a location in GTA 6", each with a real
+    source URL and a composed summary saying so. The GTA wiki has 23,013
+    articles and the intersection harvest reached its index pages and its
+    back catalogue; every check passed, because the rows exist, carry a game
+    and render.
+  */
+  it('rejects the wiki own index pages', () => {
+    for (const title of [
+      'Cheats in GTA Vice City',
+      'Cheats in GTA Liberty City Stories',
+      'Missions in GTA Online',
+      'Characters in GTA VI',
+      'Protagonists in GTA London',
+    ]) {
+      expect(isListPage(title)).toBe(true)
+    }
+  })
+
+  it('rejects other games in the same series', () => {
+    for (const title of [
+      'Grand Theft Auto: Vice City',
+      'Grand Theft Auto: Liberty City Stories',
+      'Grand Theft Auto: The Trilogy - The Definitive Edition',
+    ]) {
+      expect(isAnotherWorkInTheSeries(title, 'Grand Theft Auto VI')).toBe(true)
+    }
+  })
+
+  /*
+    The Antar 4 half. A filter written to stop bad records throws away good
+    ones just as silently, so both directions are pinned.
+  */
+  it('keeps a place that shares its name with the game', () => {
+    expect(isAnotherWorkInTheSeries('Vice City', 'Grand Theft Auto VI')).toBe(false)
+    expect(isListPage('Vice City')).toBe(false)
+  })
+
+  it('keeps ordinary records whose titles contain "in" or a series word', () => {
+    for (const title of ['Battle in the Ashtray Maze', 'Weapons of the Locust', 'Bone County']) {
+      expect(isListPage(title)).toBe(false)
+      expect(isAnotherWorkInTheSeries(title, 'Grand Theft Auto VI')).toBe(false)
+    }
+  })
+
+  it('needs a real franchise stem, so a short game name rejects nothing', () => {
+    expect(isAnotherWorkInTheSeries('Control Resonant', 'Control')).toBe(false)
   })
 })

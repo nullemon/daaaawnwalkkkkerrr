@@ -81,7 +81,7 @@ export const UI_DEFAULTS: Record<string, string> = {
   'correction.submit': 'Send correction',
   'correction.sent-title': 'Thank you — that is in the queue',
   'correction.sent-body':
-    'We read every report. If it checks out, the page is corrected and the confidence rating goes up with it.',
+    'We read every report. If it checks out, the page is corrected and the source you gave us is added to it.',
   'correction.sent-again': 'Report something else',
   'correction.error': 'That did not send: {error}. Try again in a moment.',
 
@@ -246,6 +246,54 @@ export const UI_DEFAULTS: Record<string, string> = {
   'table.unknown-title': 'No source publishes this figure',
 
   'related.see-all': 'see all',
+
+  /*
+    The furniture around a written article — a guide, and nothing else today.
+
+    Every one of these is interface text rather than page copy, which is why
+    they are keys here and not fields on the Game: "On this page" says the same
+    thing above a contents list on all eight wikis, and a sentence that named a
+    game would be the failure CLAUDE.md records about `[game]` routes. The two
+    that *are* about a particular article — its key takeaways and its lede —
+    are fields on the guide itself.
+
+    `article.reading-time` is an estimate and is worded as one. It is derived
+    from the article's own word count at a stated rate (see
+    `src/lib/article.ts`), so it cannot drift from the words on the page; "{count}
+    min read" is the conventional phrasing and is honest in a way "takes
+    {count} minutes" would not be.
+  */
+  'article.contents': 'On this page',
+  'article.takeaways': 'Key takeaways',
+  'article.reading-time': '{count} min read',
+  'article.written-by': 'Written by',
+  'article.correction': 'Report a correction',
+  'article.all-guides': 'All guides',
+
+  /*
+    Sharing. Anchors to each service's own share endpoint and a copy-link
+    button — no third-party script, no button widget, and therefore nothing
+    that can count a reader on somebody else's behalf. Every public page here
+    is prerendered static HTML and the analytics are first-party by design;
+    a share button that phoned home would quietly undo both.
+
+    The three service names are keys rather than constants because they are
+    the only reader-visible words in the row, and a network that renames
+    itself should be renameable here rather than in a component.
+  */
+  'share.heading': 'Share',
+  'share.x': 'X',
+  'share.reddit': 'Reddit',
+  'share.facebook': 'Facebook',
+  'share.copy': 'Copy link',
+  'share.copied': 'Link copied',
+  /*
+    Copying can fail outright — `navigator.clipboard` is undefined outside a
+    secure context and a permission can be refused — and the honest answer is
+    to say so and point at the address bar, not to flash "Link copied" at
+    somebody whose clipboard is empty.
+  */
+  'share.copy-failed': 'Copy did not work — the address is in your browser bar',
 
   'neighbours.more': 'More {label}',
   'neighbours.previous': 'Previous',

@@ -141,6 +141,76 @@ export const EDGE_RULES: EdgeRule[] = [
     keys: ['location', 'containment_location'],
   },
   /*
+    Who they fight for.
+
+    `affiliation` is the commonest fact on two of these wikis — 229 values on
+    Wookieepedia, 69 on the Gears wiki — and **no rule read it at all**, so
+    every one of them sat in the harvest matching nothing while `factions`
+    records existed in the same games with those exact titles. Three
+    collections carry a `faction` relationship and all three were empty
+    everywhere. Nothing errored: a pass that writes no edges reports a clean
+    run and a cheerful count, which is the failure this file's own header
+    warns about.
+
+    It was found the way the header says to find it — by surveying the keys
+    actually present across every harvested file rather than the keys the
+    schema expected. The same survey is what turned up Onimusha's cast sitting
+    under `Voice Actors` in a collection nobody was reading.
+
+    `hasMany`, because the field is: "a rifle fielded by the COG and by its
+    Army is one rifle with two users", and a character serving two orders in
+    sequence is the ordinary case on both wikis. The values arrive
+    comma-separated and `fold` splits them.
+
+    Safe by construction, like every rule here: a value that is not the title
+    of a faction in the same game matches nothing and is counted as unmatched.
+    "Infinite Empire, Galactic Republic, Jedi Order, Galactic Empire" on a
+    Wookieepedia planet produces edges only for the ones this network actually
+    holds a record of.
+  */
+  {
+    from: 'characters',
+    field: 'faction',
+    to: 'factions',
+    hasMany: true,
+    keys: ['affiliation', 'affiliations', 'allegiance', 'organization', 'organisation'],
+  },
+  {
+    from: 'enemies',
+    field: 'faction',
+    to: 'factions',
+    hasMany: true,
+    keys: ['affiliation', 'affiliations', 'allegiance', 'organization', 'organisation'],
+  },
+  {
+    from: 'items',
+    field: 'faction',
+    to: 'factions',
+    hasMany: true,
+    /*
+      No `allegiance` here. On a weapon infobox it is the faction that issued
+      it, which is what we want — but `manufacturer` is the commoner key for
+      that and means a company rather than a faction, and the two are not the
+      same claim. Only the unambiguous ones.
+    */
+    keys: ['affiliation', 'affiliations'],
+  },
+  /*
+    Items.region, widened for a wiki that files by map rather than by region.
+
+    The Resident Evil wiki puts an item's `map` — "Rhodes Hill Chronic Care
+    Center", "East Raccoon City" — and its `room`, which is narrower: "Pantry
+    - Care Center 1F". The map is the region; the room is a place inside one
+    and matches no record, so only `map` is read.
+  */
+  {
+    from: 'items',
+    field: 'region',
+    to: 'regions',
+    hasMany: false,
+    keys: ['map'],
+  },
+  /*
     Regions.parent — "Inside".
 
     Dawnwalker's ten regions are a flat list, which is why this field did not
@@ -160,7 +230,7 @@ export const EDGE_RULES: EdgeRule[] = [
     to: 'regions',
     hasMany: false,
     acyclic: true,
-    keys: ['sector', 'location', 'region'],
+    keys: ['sector', 'location', 'region', 'state', 'country'],
   },
   /* Quests.region: `place` on the battle infoboxes, `location` on mission ones. */
   {

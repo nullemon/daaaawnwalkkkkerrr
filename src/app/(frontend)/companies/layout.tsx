@@ -9,6 +9,7 @@ import { COMPANIES_BUILT_IN, getCompaniesSite } from '@/lib/companies-copy'
 import { COMPANIES_ORIGIN, hub, personUrl } from '@/lib/urls'
 import { networkHome } from '@/lib/network-home'
 import { hostCard } from '@/lib/social'
+import { resolveHostTags, verificationMetadata } from '@/lib/tags'
 
 /**
  * The companies host.
@@ -92,6 +93,25 @@ export async function generateMetadata(): Promise<Metadata> {
       siteName: shellName,
       image: { url: '/og.png', width: 1200, height: 630, alt: shellName },
     }),
+    /*
+      The network's verification tokens, on this host too.
+
+      Search Console is a property per host — `companies.<domain>` is its own, the
+      same as each wiki — and the HTML-tag method is the one the admin's
+      verification fields are built around. This layout never called
+      `verificationMetadata`, so a token pasted into Site settings reached the
+      hub and the eight wikis and neither of these two hosts. The field was
+      filled, the screen agreed it was filled, and verification here could
+      never complete, with nothing anywhere saying why.
+
+      `resolveHostTags(site)` rather than `resolveTags()`: a Search Console
+      property is a hostname, so the apex's token verifies the apex and
+      nothing else. This host has its own field now, under "Search engines" on
+      its global, and falls back to the network's when it is empty — so a
+      deployment that has only ever set the network token behaves exactly as
+      it did before.
+    */
+    verification: verificationMetadata(await resolveHostTags(site)),
   }
 }
 

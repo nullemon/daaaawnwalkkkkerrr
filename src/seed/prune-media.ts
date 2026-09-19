@@ -57,6 +57,40 @@ async function run(): Promise<void> {
 
   // --- what is referenced -------------------------------------------------
   const used = new Set<string | number>()
+
+  /*
+    Every upload id anywhere in a record, however deeply nested.
+
+    This walked the named fields and nothing else, and the named fields did not
+    include `profile.poster` — so all fourteen game cover arts counted as
+    orphans and `--apply` would have deleted them. It is the same blind spot
+    `pnpm check:art` had, found the same way, and it is far more expensive
+    here: that check reports, this one removes files.
+
+    So the rule is the one that check ended on: walk the whole record rather
+    than a list somebody has to remember to extend. An id that is a string or a
+    number in any field, at any depth, is a reference.
+  */
+  const noteAll = (value: unknown, depth = 0): void => {
+    if (depth > 8 || value === null || value === undefined) return
+    if (typeof value === 'number') return void used.add(value)
+    if (typeof value === 'string') {
+      /* Upload ids here are numeric strings or uuids; ordinary prose is not an
+         id and adding it to the set is harmless anyway — a false reference
+         keeps a file, which errs towards not deleting. */
+      if (value.length > 0 && value.length < 64) used.add(value)
+      return
+    }
+    if (Array.isArray(value)) {
+      for (const entry of value) noteAll(entry, depth + 1)
+      return
+    }
+    if (typeof value === 'object') {
+      for (const entry of Object.values(value as Record<string, unknown>)) {
+        noteAll(entry, depth + 1)
+      }
+    }
+  }
   for (const [collection, field] of Object.entries(UPLOAD_FIELD)) {
     let docs
     try {
@@ -78,11 +112,23 @@ async function run(): Promise<void> {
     }
   }
 
-  // Games keep theirs in a group rather than at the top level.
-  const games = await payload.find({ collection: 'games', limit: 100, depth: 0 })
-  for (const game of games.docs as unknown as { theme?: { hero?: unknown; logo?: unknown } }[]) {
-    if (game.theme?.hero) used.add(game.theme.hero as string | number)
-    if (game.theme?.logo) used.add(game.theme.logo as string | number)
+  /*
+    Games keep art in two groups — `theme` (hero, capsule) and `profile`
+    (poster) — so the whole record is walked rather than the two fields that
+    were remembered. `pagination: false` because `limit: 100` was a ceiling
+    nobody would notice passing.
+  */
+  const games = await payload.find({ collection: 'games', limit: 0, pagination: false, depth: 0 })
+  for (const game of games.docs) noteAll(game)
+
+  /* And the network-wide collections, which were not consulted at all. */
+  for (const collection of ['companies', 'people', 'authors'] as const) {
+    try {
+      const docs = await payload.find({ collection, limit: 0, pagination: false, depth: 0 })
+      for (const doc of docs.docs) noteAll(doc)
+    } catch {
+      /* A collection this deployment does not have is not an error. */
+    }
   }
 
   // --- 1. rows nothing points at -----------------------------------------

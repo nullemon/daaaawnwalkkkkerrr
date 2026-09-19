@@ -61,6 +61,36 @@ const GAMES = [
   { slug: 'star-wars-zero-company', appId: 2075800 },
   { slug: 'resonance-a-plague-tale-legacy', appId: 2713000 },
   { slug: 'silent-hill-townfall', appId: 1636440 },
+
+  /*
+    The second wave, added after the first eight shipped.
+
+    Each id was verified against the store API before it was written down —
+    name, type, developer and publisher read back and checked against what the
+    game actually is. That is the whole reason this list holds ids rather than
+    titles: a title search returns the demo, the soundtrack, the playtest and
+    the season pass, and picking the wrong one attributes another product's
+    requirements, editions and achievements to this game with nothing
+    anywhere saying so.
+
+    Four of these five are out, so their achievement lists carry a global
+    unlock rate per achievement and `completion-tracker` earns its place on
+    each. Deadlock is Valve's, listed and playable but with no announced date,
+    so it has requirements and no achievements — the same shape the four
+    unreleased wikis of the first wave have.
+
+    **Two games in this wave are not here and cannot be**: Grand Theft Auto VI
+    has no Steam listing at all (no PC version is announced, so there is no
+    page to read), and Fire Emblem: Fortune's Weave is a Switch exclusive that
+    will never have one. Their wikis are built from Wikipedia, their community
+    wikis and search demand, and every store-derived section on them is a gap
+    the pages state rather than fill.
+  */
+  { slug: 'resident-evil-requiem', appId: 3764200 },
+  { slug: 'subnautica-2', appId: 1962700 },
+  { slug: 'forza-horizon-6', appId: 2483190 },
+  { slug: 'nba-2k27', appId: 4356430 },
+  { slug: 'deadlock', appId: 1422450 },
 ]
 
 const OUT_DIR = path.resolve('src/seed/raw/games')

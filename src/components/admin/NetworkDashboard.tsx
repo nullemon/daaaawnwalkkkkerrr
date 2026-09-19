@@ -1,6 +1,7 @@
 import { GAME_SCOPED } from '@/lib/tenancy'
 import { groupFindings, type ActionRow, type Finding } from '@/lib/audit'
 import { readAudit } from './audit-snapshot'
+import { adminUrl } from '@/lib/admin-path'
 
 /**
  * What the admin opens on.
@@ -216,7 +217,7 @@ export default async function NetworkDashboard() {
           <h2 className="net-dash-heading">
             The wikis · {wikis.length} · {total.toLocaleString('en-GB')} records
           </h2>
-          <a className="net-dash-action" href="/admin/collections/games/create">
+          <a className="net-dash-action" href={adminUrl('/collections/games/create')}>
             + Add a wiki
           </a>
         </div>
@@ -238,7 +239,7 @@ export default async function NetworkDashboard() {
               return (
                 <tr key={wiki.id}>
                   <td>
-                    <a href={`/admin/collections/games/${wiki.id}`}>{wiki.title}</a>
+                    <a href={adminUrl(`/collections/games/${wiki.id}`)}>{wiki.title}</a>
                     <span className="net-dash-slug">{wiki.slug}</span>
                   </td>
                   <td title={STATUS_NOTE[wiki.status] ?? ''}>{wiki.status}</td>

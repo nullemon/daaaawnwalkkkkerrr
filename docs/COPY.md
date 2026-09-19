@@ -164,11 +164,15 @@ which makes it the date of the last `pnpm db:reset`.
 4. **`src/lib/credit.ts:33`**, the no-named-holder fallback — deliberately
    un-editable so nobody can replace an honest "we do not know whose this is"
    with a guess.
-5. **The placeholder-contributor notice** on `/authors/[slug]`, shown while an
-   author row has `provisional` ticked. Same reasoning as 1: it exists because
-   the record it sits on is scaffolding, and a disclosure the person being
-   disclosed about can reword away is not a disclosure. It is also the *only*
-   place the flag renders — the byline on a guide prints the name either way,
-   deliberately, and anything that says otherwise is stale. Thirty-six
-   placeholders carried 394 bylines with four comments claiming a notice that
-   no renderer had ever printed.
+5. **The contributor `provisional` flag renders nothing, and that is the
+   owner's decision.** It was briefly a notice on `/authors/[slug]`. The owner
+   removed it: the roster is scaffolding to be replaced, and the flag is wanted
+   for sorting the admin list and for `check:launch` to count, not as a
+   sentence readers see. So it is an editorial marker only, on every page.
+
+   The byline on a guide prints the name either way, as it always has, and the
+   bio the seeder writes now describes the beat rather than the record's
+   status. Anything claiming a profile prints a placeholder notice is stale —
+   thirty-six rows carried 394 bylines with four comments claiming a notice no
+   renderer had ever printed, which is why this paragraph says what the code
+   does rather than what somebody meant it to do.

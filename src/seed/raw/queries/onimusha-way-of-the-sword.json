@@ -1,6 +1,6 @@
 {
   "slug": "onimusha-way-of-the-sword",
-  "fetchedAt": "2026-09-15",
+  "fetchedAt": "2026-09-19",
   "terms": [
     "onimusha way of the sword",
     "onimusha"
@@ -8,27 +8,27 @@
   "queries": [
     {
       "query": "how long is onimusha",
-      "weight": 164
+      "weight": 162
     },
     {
       "query": "where to use decorated sword onimusha",
-      "weight": 164
+      "weight": 162
     },
     {
       "query": "onimusha best weapon",
-      "weight": 94
+      "weight": 92
     },
     {
       "query": "is onimusha hard",
-      "weight": 84
+      "weight": 86
     },
     {
       "query": "onimusha armor locations",
-      "weight": 84
+      "weight": 82
     },
     {
       "query": "onimusha tips and tricks",
-      "weight": 60
+      "weight": 62
     },
     {
       "query": "onimusha rating",
@@ -36,23 +36,23 @@
     },
     {
       "query": "onimusha gun location",
-      "weight": 42
+      "weight": 43
     },
     {
       "query": "onimusha decorated sword use",
-      "weight": 38
-    },
-    {
-      "query": "how long to beat onimusha",
-      "weight": 32
+      "weight": 39
     },
     {
       "query": "onimusha 3 codes",
-      "weight": 32
+      "weight": 33
+    },
+    {
+      "query": "how long to beat onimusha",
+      "weight": 31
     },
     {
       "query": "onimusha weapons list",
-      "weight": 25
+      "weight": 26
     },
     {
       "query": "onimusha definition",
@@ -76,22 +76,14 @@
     },
     {
       "query": "onimusha ranked",
-      "weight": 19
-    },
-    {
-      "query": "onimusha way of the sword is it good",
       "weight": 18
     },
     {
+      "query": "onimusha way of the sword is it good",
+      "weight": 17
+    },
+    {
       "query": "onimusha way of the sword is a reboot",
-      "weight": 16
-    },
-    {
-      "query": "onimusha way of the sword is it a soulslike",
-      "weight": 16
-    },
-    {
-      "query": "onimusha way of the sword is it open world",
       "weight": 16
     },
     {
@@ -109,6 +101,14 @@
     {
       "query": "onimusha which is the equipment that was created",
       "weight": 16
+    },
+    {
+      "query": "onimusha way of the sword is it a soulslike",
+      "weight": 15
+    },
+    {
+      "query": "onimusha way of the sword is it open world",
+      "weight": 15
     },
     {
       "query": "onimusha way of the sword final boss",
@@ -143,6 +143,14 @@
       "weight": 14
     },
     {
+      "query": "onimusha way of the sword when does it take place",
+      "weight": 13
+    },
+    {
+      "query": "does onimusha way of the sword have difficulty settings",
+      "weight": 12
+    },
+    {
       "query": "how to play onimusha 3 on pc",
       "weight": 12
     },
@@ -160,10 +168,6 @@
     },
     {
       "query": "onimusha way of the sword when does it come out",
-      "weight": 12
-    },
-    {
-      "query": "onimusha way of the sword when does it take place",
       "weight": 12
     },
     {
@@ -259,23 +263,23 @@
       "weight": 10
     },
     {
-      "query": "onimusha way of the sword vs ghost of yotei",
+      "query": "onimusha way of the sword trainer",
       "weight": 10
     },
     {
-      "query": "how many onimusha games are there",
-      "weight": 9
+      "query": "onimusha way of the sword vs ghost of yotei",
+      "weight": 10
     },
     {
       "query": "does onimusha way of the sword have a demo",
       "weight": 8
     },
     {
-      "query": "does onimusha way of the sword have difficulty settings",
+      "query": "how long is onimusha warlords",
       "weight": 8
     },
     {
-      "query": "how long is onimusha warlords",
+      "query": "how many onimusha games are there",
       "weight": 8
     },
     {
@@ -284,10 +288,6 @@
     },
     {
       "query": "onimusha can you issen bosses",
-      "weight": 8
-    },
-    {
-      "query": "onimusha dawn of dreams gameplay",
       "weight": 8
     },
     {
@@ -300,10 +300,6 @@
     },
     {
       "query": "onimusha dawn of dreams ps5",
-      "weight": 8
-    },
-    {
-      "query": "onimusha dawn of dreams remaster",
       "weight": 8
     },
     {
@@ -340,6 +336,10 @@
     },
     {
       "query": "onimusha how to win power struggle",
+      "weight": 8
+    },
+    {
+      "query": "onimusha release",
       "weight": 8
     },
     {
@@ -427,6 +427,10 @@
       "weight": 8
     },
     {
+      "query": "onimusha way of the sword reboot or sequel",
+      "weight": 8
+    },
+    {
       "query": "onimusha way of the sword release",
       "weight": 8
     },
@@ -471,27 +475,19 @@
       "weight": 8
     },
     {
-      "query": "onimusha release",
+      "query": "onimusha dawn of dreams gameplay",
       "weight": 7
     },
     {
-      "query": "onimusha release date change",
-      "weight": 7
-    },
-    {
-      "query": "onimusha way of the sword difficulty settings",
-      "weight": 7
-    },
-    {
-      "query": "onimusha way of the sword manhwa",
-      "weight": 7
-    },
-    {
-      "query": "onimusha way of the sword reboot or sequel",
+      "query": "onimusha way of the sword what is it",
       "weight": 7
     },
     {
       "query": "onimusha all games",
+      "weight": 6
+    },
+    {
+      "query": "onimusha all weapons",
       "weight": 6
     },
     {
@@ -504,6 +500,10 @@
     },
     {
       "query": "onimusha dawn of dreams ps4 release date",
+      "weight": 6
+    },
+    {
+      "query": "onimusha dawn of dreams remaster",
       "weight": 6
     },
     {
@@ -531,7 +531,7 @@
       "weight": 6
     },
     {
-      "query": "onimusha donnie yen",
+      "query": "onimusha download",
       "weight": 6
     },
     {
@@ -627,6 +627,10 @@
       "weight": 6
     },
     {
+      "query": "onimusha release date change",
+      "weight": 6
+    },
+    {
       "query": "onimusha trophy guide",
       "weight": 6
     },
@@ -683,6 +687,10 @@
       "weight": 6
     },
     {
+      "query": "onimusha way of the sword controller or keyboard",
+      "weight": 6
+    },
+    {
       "query": "onimusha way of the sword de que trata",
       "weight": 6
     },
@@ -727,7 +735,7 @@
       "weight": 6
     },
     {
-      "query": "onimusha way of the sword download pc",
+      "query": "onimusha way of the sword difficulty settings",
       "weight": 6
     },
     {
@@ -744,10 +752,6 @@
     },
     {
       "query": "onimusha way of the sword frame rate",
-      "weight": 6
-    },
-    {
-      "query": "onimusha way of the sword free",
       "weight": 6
     },
     {
@@ -939,10 +943,6 @@
       "weight": 6
     },
     {
-      "query": "onimusha way of the sword what is it",
-      "weight": 6
-    },
-    {
       "query": "onimusha way of the sword who is the main character",
       "weight": 6
     },
@@ -971,10 +971,6 @@
       "weight": 6
     },
     {
-      "query": "onimusha what does fluorite do",
-      "weight": 6
-    },
-    {
       "query": "wann erscheint onimusha way of the sword",
       "weight": 6
     },
@@ -995,19 +991,23 @@
       "weight": 6
     },
     {
-      "query": "will onimusha way of the sword have a physical copy",
+      "query": "will onimusha way of the sword have denuvo",
       "weight": 6
     },
     {
-      "query": "is onimusha way of.the sword out yet",
+      "query": "onimusha demo review",
       "weight": 5
     },
     {
-      "query": "onimusha all weapons",
+      "query": "onimusha way of the sword demo release date",
       "weight": 5
     },
     {
-      "query": "onimusha way of the sword controller or keyboard",
+      "query": "onimusha way of the sword who made it",
+      "weight": 5
+    },
+    {
+      "query": "onimusha what does fluorite do",
       "weight": 5
     },
     {
@@ -1020,6 +1020,10 @@
     },
     {
       "query": "is onimusha way of the sword a souls like game",
+      "weight": 4
+    },
+    {
+      "query": "is onimusha way of.the sword out yet",
       "weight": 4
     },
     {
@@ -1119,11 +1123,15 @@
       "weight": 4
     },
     {
-      "query": "onimusha blade warriors cheats",
+      "query": "onimusha blade warriors ps2",
       "weight": 4
     },
     {
       "query": "onimusha box puzzle",
+      "weight": 4
+    },
+    {
+      "query": "onimusha buraiden",
       "weight": 4
     },
     {
@@ -1172,10 +1180,6 @@
     },
     {
       "query": "onimusha demo reddit",
-      "weight": 4
-    },
-    {
-      "query": "onimusha demo review",
       "weight": 4
     },
     {
@@ -1260,10 +1264,6 @@
     },
     {
       "query": "onimusha french actor",
-      "weight": 4
-    },
-    {
-      "query": "onimusha gift guide",
       "weight": 4
     },
     {
@@ -1503,10 +1503,6 @@
       "weight": 4
     },
     {
-      "query": "onimusha miyamoto musashi",
-      "weight": 4
-    },
-    {
       "query": "onimusha monster hunter",
       "weight": 4
     },
@@ -1536,10 +1532,6 @@
     },
     {
       "query": "onimusha netflix series",
-      "weight": 4
-    },
-    {
-      "query": "onimusha new",
       "weight": 4
     },
     {
@@ -1691,6 +1683,10 @@
       "weight": 4
     },
     {
+      "query": "onimusha remake",
+      "weight": 4
+    },
+    {
       "query": "onimusha remake release date",
       "weight": 4
     },
@@ -1792,10 +1788,6 @@
     },
     {
       "query": "onimusha voice actors",
-      "weight": 4
-    },
-    {
-      "query": "onimusha voice actors english",
       "weight": 4
     },
     {
@@ -1955,10 +1947,6 @@
       "weight": 4
     },
     {
-      "query": "onimusha way of the sword demo release date",
-      "weight": 4
-    },
-    {
       "query": "onimusha way of the sword demo where",
       "weight": 4
     },
@@ -2016,6 +2004,10 @@
     },
     {
       "query": "onimusha way of the sword first announcement",
+      "weight": 4
+    },
+    {
+      "query": "onimusha way of the sword first impressions",
       "weight": 4
     },
     {
@@ -2083,10 +2075,6 @@
       "weight": 4
     },
     {
-      "query": "onimusha way of the sword is it a reboot",
-      "weight": 4
-    },
-    {
       "query": "onimusha way of the sword is it like sekiro",
       "weight": 4
     },
@@ -2095,7 +2083,7 @@
       "weight": 4
     },
     {
-      "query": "onimusha way of the sword japanese cast",
+      "query": "onimusha way of the sword japanese dub",
       "weight": 4
     },
     {
@@ -2108,10 +2096,6 @@
     },
     {
       "query": "onimusha way of the sword japanese trailer",
-      "weight": 4
-    },
-    {
-      "query": "onimusha way of the sword japanese va",
       "weight": 4
     },
     {
@@ -2203,6 +2187,10 @@
       "weight": 4
     },
     {
+      "query": "onimusha way of the sword manhwa",
+      "weight": 4
+    },
+    {
       "query": "onimusha way of the sword map",
       "weight": 4
     },
@@ -2252,6 +2240,10 @@
     },
     {
       "query": "onimusha way of the sword nexus mods",
+      "weight": 4
+    },
+    {
+      "query": "onimusha way of the sword nintendo",
       "weight": 4
     },
     {
@@ -2324,10 +2316,6 @@
     },
     {
       "query": "onimusha way of the sword playtime",
-      "weight": 4
-    },
-    {
-      "query": "onimusha way of the sword plot",
       "weight": 4
     },
     {
@@ -2411,6 +2399,10 @@
       "weight": 4
     },
     {
+      "query": "onimusha way of the sword sasaki kojiro",
+      "weight": 4
+    },
+    {
       "query": "onimusha way of the sword setting",
       "weight": 4
     },
@@ -2424,10 +2416,6 @@
     },
     {
       "query": "onimusha way of the sword steam price",
-      "weight": 4
-    },
-    {
-      "query": "onimusha way of the sword steelbook",
       "weight": 4
     },
     {
@@ -2523,11 +2511,11 @@
       "weight": 4
     },
     {
-      "query": "onimusha way of the sword where to play",
+      "query": "onimusha way of the sword what kind of game",
       "weight": 4
     },
     {
-      "query": "onimusha way of the sword who made it",
+      "query": "onimusha way of the sword where to play",
       "weight": 4
     },
     {
@@ -2640,6 +2628,10 @@
     },
     {
       "query": "onimusha where to watch",
+      "weight": 4
+    },
+    {
+      "query": "onimusha which is a container",
       "weight": 4
     },
     {
@@ -2767,6 +2759,14 @@
       "weight": 4
     },
     {
+      "query": "weapons onimusha 2",
+      "weight": 4
+    },
+    {
+      "query": "weapons onimusha 3",
+      "weight": 4
+    },
+    {
       "query": "what is onimusha warlords",
       "weight": 4
     },
@@ -2783,11 +2783,19 @@
       "weight": 4
     },
     {
+      "query": "which onimusha is the best",
+      "weight": 4
+    },
+    {
       "query": "will onimusha way of the sword be a souls like",
       "weight": 4
     },
     {
       "query": "will onimusha way of the sword be on game pass",
+      "weight": 4
+    },
+    {
+      "query": "will onimusha way of the sword have a physical copy",
       "weight": 4
     },
     {
@@ -2799,19 +2807,39 @@
       "weight": 4
     },
     {
-      "query": "onimusha blade warriors ps2",
+      "query": "onimusha blade warriors review",
       "weight": 3
     },
     {
-      "query": "onimusha buraiden",
+      "query": "onimusha marcellus",
       "weight": 3
     },
     {
-      "query": "onimusha crest piece",
+      "query": "onimusha miyamoto musashi",
       "weight": 3
     },
     {
-      "query": "onimusha remake",
+      "query": "onimusha new",
+      "weight": 3
+    },
+    {
+      "query": "onimusha nobunaga",
+      "weight": 3
+    },
+    {
+      "query": "onimusha switch review",
+      "weight": 3
+    },
+    {
+      "query": "onimusha tactics review",
+      "weight": 3
+    },
+    {
+      "query": "onimusha voice actors english",
+      "weight": 3
+    },
+    {
+      "query": "onimusha way of the sword cost",
       "weight": 3
     },
     {
@@ -2823,35 +2851,23 @@
       "weight": 3
     },
     {
-      "query": "onimusha way of the sword looks washed out",
+      "query": "onimusha way of the sword is it a reboot",
       "weight": 3
     },
     {
-      "query": "onimusha way of the sword nintendo",
+      "query": "onimusha way of the sword is it a souls game",
       "weight": 3
     },
     {
-      "query": "onimusha way of the sword sasaki kojiro",
+      "query": "onimusha way of the sword nintendo switch 2 fps",
       "weight": 3
     },
     {
-      "query": "onimusha way of the sword what kind of game",
+      "query": "onimusha way of the sword plot",
       "weight": 3
     },
     {
-      "query": "onimusha which is a container",
-      "weight": 3
-    },
-    {
-      "query": "weapons onimusha 2",
-      "weight": 3
-    },
-    {
-      "query": "weapons onimusha 3",
-      "weight": 3
-    },
-    {
-      "query": "which onimusha is the best",
+      "query": "what year does onimusha way of the sword take place",
       "weight": 3
     },
     {
@@ -3031,7 +3047,7 @@
       "weight": 2
     },
     {
-      "query": "guide onimusha warlords",
+      "query": "guildenstern onimusha 3",
       "weight": 2
     },
     {
@@ -3275,6 +3291,10 @@
       "weight": 2
     },
     {
+      "query": "onimusha 1 weapons",
+      "weight": 2
+    },
+    {
       "query": "onimusha 1 year",
       "weight": 2
     },
@@ -3355,7 +3375,19 @@
       "weight": 2
     },
     {
+      "query": "onimusha 2 circle key",
+      "weight": 2
+    },
+    {
+      "query": "onimusha 2 circle key location",
+      "weight": 2
+    },
+    {
       "query": "onimusha 2 circle puzzle",
+      "weight": 2
+    },
+    {
+      "query": "onimusha 2 circle puzzle 6 moves",
       "weight": 2
     },
     {
@@ -3907,6 +3939,10 @@
       "weight": 2
     },
     {
+      "query": "onimusha 3 weapons list",
+      "weight": 2
+    },
+    {
       "query": "onimusha 3 year",
       "weight": 2
     },
@@ -3932,6 +3968,10 @@
     },
     {
       "query": "onimusha 4 weapons",
+      "weight": 2
+    },
+    {
+      "query": "onimusha achievement guide",
       "weight": 2
     },
     {
@@ -4151,6 +4191,10 @@
       "weight": 2
     },
     {
+      "query": "onimusha best",
+      "weight": 2
+    },
+    {
       "query": "onimusha best armor",
       "weight": 2
     },
@@ -4160,6 +4204,10 @@
     },
     {
       "query": "onimusha best ps2",
+      "weight": 2
+    },
+    {
+      "query": "onimusha best sword",
       "weight": 2
     },
     {
@@ -4203,15 +4251,15 @@
       "weight": 2
     },
     {
+      "query": "onimusha blade warriors cheats",
+      "weight": 2
+    },
+    {
       "query": "onimusha blade warriors megaman",
       "weight": 2
     },
     {
       "query": "onimusha blade warriors musashi",
-      "weight": 2
-    },
-    {
-      "query": "onimusha blade warriors review",
       "weight": 2
     },
     {
@@ -4240,10 +4288,6 @@
     },
     {
       "query": "onimusha bow location",
-      "weight": 2
-    },
-    {
-      "query": "onimusha box answers",
       "weight": 2
     },
     {
@@ -4463,6 +4507,10 @@
       "weight": 2
     },
     {
+      "query": "onimusha crest piece",
+      "weight": 2
+    },
+    {
       "query": "onimusha crest puzzle",
       "weight": 2
     },
@@ -4600,6 +4648,10 @@
     },
     {
       "query": "onimusha dlss",
+      "weight": 2
+    },
+    {
+      "query": "onimusha donnie yen",
       "weight": 2
     },
     {
@@ -4867,6 +4919,10 @@
       "weight": 2
     },
     {
+      "query": "onimusha franchise wikipedia",
+      "weight": 2
+    },
+    {
       "query": "onimusha french",
       "weight": 2
     },
@@ -4991,6 +5047,10 @@
       "weight": 2
     },
     {
+      "query": "onimusha genma xbox",
+      "weight": 2
+    },
+    {
       "query": "onimusha genre",
       "weight": 2
     },
@@ -5004,6 +5064,10 @@
     },
     {
       "query": "onimusha gift giving guide",
+      "weight": 2
+    },
+    {
+      "query": "onimusha gift guide",
       "weight": 2
     },
     {
@@ -5199,6 +5263,10 @@
       "weight": 2
     },
     {
+      "query": "onimusha hideyoshi toyotomi",
+      "weight": 2
+    },
+    {
       "query": "onimusha history",
       "weight": 2
     },
@@ -5320,6 +5388,10 @@
     },
     {
       "query": "onimusha jacket",
+      "weight": 2
+    },
+    {
+      "query": "onimusha jacques blanc",
       "weight": 2
     },
     {
@@ -5559,10 +5631,6 @@
       "weight": 2
     },
     {
-      "query": "onimusha like games ps2",
-      "weight": 2
-    },
-    {
       "query": "onimusha like resident evil",
       "weight": 2
     },
@@ -5640,10 +5708,6 @@
     },
     {
       "query": "onimusha map legend",
-      "weight": 2
-    },
-    {
-      "query": "onimusha marcellus",
       "weight": 2
     },
     {
@@ -5868,10 +5932,6 @@
     },
     {
       "query": "onimusha no upgrades",
-      "weight": 2
-    },
-    {
-      "query": "onimusha nobunaga",
       "weight": 2
     },
     {
@@ -6303,19 +6363,11 @@
       "weight": 2
     },
     {
-      "query": "onimusha puzzle answers",
-      "weight": 2
-    },
-    {
       "query": "onimusha puzzle box",
       "weight": 2
     },
     {
       "query": "onimusha puzzle box 7 moves",
-      "weight": 2
-    },
-    {
-      "query": "onimusha puzzle box solutions",
       "weight": 2
     },
     {
@@ -6391,10 +6443,6 @@
       "weight": 2
     },
     {
-      "query": "onimusha review anime",
-      "weight": 2
-    },
-    {
       "query": "onimusha review embargo",
       "weight": 2
     },
@@ -6403,23 +6451,11 @@
       "weight": 2
     },
     {
-      "query": "onimusha review ign",
-      "weight": 2
-    },
-    {
       "query": "onimusha review netflix",
       "weight": 2
     },
     {
-      "query": "onimusha review ps2",
-      "weight": 2
-    },
-    {
       "query": "onimusha review ps5",
-      "weight": 2
-    },
-    {
-      "query": "onimusha review reddit",
       "weight": 2
     },
     {
@@ -6508,10 +6544,6 @@
     },
     {
       "query": "onimusha samurai",
-      "weight": 2
-    },
-    {
-      "query": "onimusha samurai's destiny",
       "weight": 2
     },
     {
@@ -6779,10 +6811,6 @@
       "weight": 2
     },
     {
-      "query": "onimusha switch review",
-      "weight": 2
-    },
-    {
       "query": "onimusha sword clash",
       "weight": 2
     },
@@ -6819,10 +6847,6 @@
       "weight": 2
     },
     {
-      "query": "onimusha tactics review",
-      "weight": 2
-    },
-    {
       "query": "onimusha tactics tips",
       "weight": 2
     },
@@ -6832,6 +6856,10 @@
     },
     {
       "query": "onimusha takeshi kaneshiro",
+      "weight": 2
+    },
+    {
+      "query": "onimusha talisman",
       "weight": 2
     },
     {
@@ -7079,6 +7107,14 @@
       "weight": 2
     },
     {
+      "query": "onimusha video game series",
+      "weight": 2
+    },
+    {
+      "query": "onimusha villains wiki",
+      "weight": 2
+    },
+    {
       "query": "onimusha vinyl",
       "weight": 2
     },
@@ -7267,14 +7303,6 @@
       "weight": 2
     },
     {
-      "query": "onimusha warlords power jewel",
-      "weight": 2
-    },
-    {
-      "query": "onimusha warlords power struggle",
-      "weight": 2
-    },
-    {
       "query": "onimusha warlords princess yuki",
       "weight": 2
     },
@@ -7312,6 +7340,10 @@
     },
     {
       "query": "onimusha warlords way of the sword",
+      "weight": 2
+    },
+    {
+      "query": "onimusha warlords weapons",
       "weight": 2
     },
     {
@@ -7483,10 +7515,6 @@
       "weight": 2
     },
     {
-      "query": "onimusha way of the sword cast english",
-      "weight": 2
-    },
-    {
       "query": "onimusha way of the sword cd",
       "weight": 2
     },
@@ -7560,10 +7588,6 @@
     },
     {
       "query": "onimusha way of the sword control layout",
-      "weight": 2
-    },
-    {
-      "query": "onimusha way of the sword cost",
       "weight": 2
     },
     {
@@ -7659,14 +7683,6 @@
       "weight": 2
     },
     {
-      "query": "onimusha way of the sword demo crash",
-      "weight": 2
-    },
-    {
-      "query": "onimusha way of the sword demo difficulty",
-      "weight": 2
-    },
-    {
       "query": "onimusha way of the sword demo duration",
       "weight": 2
     },
@@ -7708,10 +7724,6 @@
     },
     {
       "query": "onimusha way of the sword demo link",
-      "weight": 2
-    },
-    {
-      "query": "onimusha way of the sword demo mods",
       "weight": 2
     },
     {
@@ -7944,10 +7956,6 @@
     },
     {
       "query": "onimusha way of the sword first game",
-      "weight": 2
-    },
-    {
-      "query": "onimusha way of the sword first impressions",
       "weight": 2
     },
     {
@@ -8191,10 +8199,6 @@
       "weight": 2
     },
     {
-      "query": "onimusha way of the sword is it a souls game",
-      "weight": 2
-    },
-    {
       "query": "onimusha way of the sword issen counter",
       "weight": 2
     },
@@ -8203,7 +8207,11 @@
       "weight": 2
     },
     {
-      "query": "onimusha way of the sword japanese dub",
+      "query": "onimusha way of the sword japanese cast",
+      "weight": 2
+    },
+    {
+      "query": "onimusha way of the sword japanese va",
       "weight": 2
     },
     {
@@ -8284,6 +8292,10 @@
     },
     {
       "query": "onimusha way of the sword longevità",
+      "weight": 2
+    },
+    {
+      "query": "onimusha way of the sword looks washed out",
       "weight": 2
     },
     {
@@ -8375,10 +8387,6 @@
       "weight": 2
     },
     {
-      "query": "onimusha way of the sword mod ไทย",
-      "weight": 2
-    },
-    {
       "query": "onimusha way of the sword mod พากย์ไทย",
       "weight": 2
     },
@@ -8439,6 +8447,10 @@
       "weight": 2
     },
     {
+      "query": "onimusha way of the sword musashi voice actor japanese",
+      "weight": 2
+    },
+    {
       "query": "onimusha way of the sword music",
       "weight": 2
     },
@@ -8464,10 +8476,6 @@
     },
     {
       "query": "onimusha way of the sword ngày ra mắt",
-      "weight": 2
-    },
-    {
-      "query": "onimusha way of the sword nintendo switch 2 fps",
       "weight": 2
     },
     {
@@ -8504,6 +8512,10 @@
     },
     {
       "query": "onimusha way of the sword nuuvem",
+      "weight": 2
+    },
+    {
+      "query": "onimusha way of the sword official site",
       "weight": 2
     },
     {
@@ -8839,15 +8851,7 @@
       "weight": 2
     },
     {
-      "query": "onimusha way of the sword review embargo",
-      "weight": 2
-    },
-    {
       "query": "onimusha way of the sword review ign",
-      "weight": 2
-    },
-    {
-      "query": "onimusha way of the sword review reddit",
       "weight": 2
     },
     {
@@ -8928,6 +8932,10 @@
     },
     {
       "query": "onimusha way of the sword series",
+      "weight": 2
+    },
+    {
+      "query": "onimusha way of the sword series x",
       "weight": 2
     },
     {
@@ -9015,6 +9023,10 @@
       "weight": 2
     },
     {
+      "query": "onimusha way of the sword steelbook",
+      "weight": 2
+    },
+    {
       "query": "onimusha way of the sword steelbook edition",
       "weight": 2
     },
@@ -9028,6 +9040,10 @@
     },
     {
       "query": "onimusha way of the sword storyline",
+      "weight": 2
+    },
+    {
+      "query": "onimusha way of the sword sucks",
       "weight": 2
     },
     {
@@ -9112,10 +9128,6 @@
     },
     {
       "query": "onimusha way of the sword tv tropes",
-      "weight": 2
-    },
-    {
-      "query": "onimusha way of the sword twitter",
       "weight": 2
     },
     {
@@ -9327,6 +9339,10 @@
       "weight": 2
     },
     {
+      "query": "onimusha which clan",
+      "weight": 2
+    },
+    {
       "query": "onimusha wiki fandom",
       "weight": 2
     },
@@ -9407,6 +9423,10 @@
       "weight": 2
     },
     {
+      "query": "pick onimusha 2",
+      "weight": 2
+    },
+    {
       "query": "pickaxe onimusha 2",
       "weight": 2
     },
@@ -9416,6 +9436,10 @@
     },
     {
       "query": "reviews onimusha way of the sword",
+      "weight": 2
+    },
+    {
+      "query": "shin onimusha curtain of darkness",
       "weight": 2
     },
     {
@@ -9436,6 +9460,10 @@
     },
     {
       "query": "the loneliest onimusha",
+      "weight": 2
+    },
+    {
+      "query": "tokugawa ieyasu onimusha",
       "weight": 2
     },
     {
@@ -9492,10 +9520,6 @@
     },
     {
       "query": "what onimusha games to play",
-      "weight": 2
-    },
-    {
-      "query": "what year does onimusha way of the sword take place",
       "weight": 2
     },
     {
@@ -9623,15 +9647,11 @@
       "weight": 2
     },
     {
-      "query": "will onimusha 3 and 4 be remastered",
-      "weight": 2
-    },
-    {
       "query": "will onimusha 3 be remastered",
       "weight": 2
     },
     {
-      "query": "will onimusha be on xbox",
+      "query": "will onimusha be on pc",
       "weight": 2
     },
     {
@@ -9644,10 +9664,6 @@
     },
     {
       "query": "will onimusha way of the sword be souls like",
-      "weight": 2
-    },
-    {
-      "query": "will onimusha way of the sword have a demo",
       "weight": 2
     },
     {
@@ -9683,39 +9699,7 @@
       "weight": 2
     },
     {
-      "query": "best weapons onimusha dawn of dreams",
-      "weight": 1
-    },
-    {
-      "query": "frog onimusha 2",
-      "weight": 1
-    },
-    {
-      "query": "genma onimusha",
-      "weight": 1
-    },
-    {
-      "query": "onimusha 1 weapons",
-      "weight": 1
-    },
-    {
-      "query": "onimusha 2 cinematic",
-      "weight": 1
-    },
-    {
-      "query": "onimusha 2 circle key",
-      "weight": 1
-    },
-    {
-      "query": "onimusha 2 circle key location",
-      "weight": 1
-    },
-    {
-      "query": "onimusha 2 circle puzzle 6 moves",
-      "weight": 1
-    },
-    {
-      "query": "onimusha 2 circular keyhole",
+      "query": "is onimusha like ninja gaiden",
       "weight": 1
     },
     {
@@ -9723,7 +9707,7 @@
       "weight": 1
     },
     {
-      "query": "onimusha 2 history books locations",
+      "query": "onimusha 2 pocket watch",
       "weight": 1
     },
     {
@@ -9731,103 +9715,55 @@
       "weight": 1
     },
     {
-      "query": "onimusha 2 secret weapons",
-      "weight": 1
-    },
-    {
-      "query": "onimusha 2 weapons locations",
-      "weight": 1
-    },
-    {
-      "query": "onimusha 2 weapons tier list",
-      "weight": 1
-    },
-    {
-      "query": "onimusha 3 best weapons",
-      "weight": 1
-    },
-    {
-      "query": "onimusha 3 cinematic trailer",
-      "weight": 1
-    },
-    {
       "query": "onimusha 3 game length",
       "weight": 1
     },
     {
-      "query": "onimusha 3 weapons list",
+      "query": "onimusha 3 power crystal",
       "weight": 1
     },
     {
-      "query": "onimusha best",
+      "query": "onimusha 3 review",
       "weight": 1
     },
     {
-      "query": "onimusha best sword",
+      "query": "onimusha box answers",
       "weight": 1
     },
     {
-      "query": "onimusha best upgrades",
+      "query": "onimusha boxes",
       "weight": 1
     },
     {
-      "query": "onimusha best weapon to upgrade",
+      "query": "onimusha like games ps2",
       "weight": 1
     },
     {
-      "query": "onimusha best weapons",
+      "query": "onimusha review anime",
       "weight": 1
     },
     {
-      "query": "onimusha franchise wikipedia",
+      "query": "onimusha review ign",
       "weight": 1
     },
     {
-      "query": "onimusha genma xbox",
+      "query": "onimusha review ps2",
       "weight": 1
     },
     {
-      "query": "onimusha hideyoshi toyotomi",
+      "query": "onimusha review reddit",
       "weight": 1
     },
     {
-      "query": "onimusha jacques blanc",
+      "query": "onimusha saga",
       "weight": 1
     },
     {
-      "query": "onimusha japanese cover",
+      "query": "onimusha samurai's destiny",
       "weight": 1
     },
     {
-      "query": "onimusha samanosuke weapons",
-      "weight": 1
-    },
-    {
-      "query": "onimusha skip cutscenes mod",
-      "weight": 1
-    },
-    {
-      "query": "onimusha tactics 2",
-      "weight": 1
-    },
-    {
-      "query": "onimusha talisman",
-      "weight": 1
-    },
-    {
-      "query": "onimusha video game ps4",
-      "weight": 1
-    },
-    {
-      "query": "onimusha video game series",
-      "weight": 1
-    },
-    {
-      "query": "onimusha village",
-      "weight": 1
-    },
-    {
-      "query": "onimusha villains wiki",
+      "query": "onimusha voice cast",
       "weight": 1
     },
     {
@@ -9835,63 +9771,55 @@
       "weight": 1
     },
     {
-      "query": "onimusha warlords weapons",
+      "query": "onimusha warlords power jewel",
       "weight": 1
     },
     {
-      "query": "onimusha warlords which is a mysterious place",
+      "query": "onimusha warlords power struggle",
       "weight": 1
     },
     {
-      "query": "onimusha way of the sword digital only",
+      "query": "onimusha way of the sword + difficulty levels",
       "weight": 1
     },
     {
-      "query": "onimusha way of the sword nintendo eshop",
+      "query": "onimusha way of the sword cast english",
       "weight": 1
     },
     {
-      "query": "onimusha way of the sword official site",
+      "query": "onimusha way of the sword demo carry over",
       "weight": 1
     },
     {
-      "query": "onimusha way of the sword september 4th",
+      "query": "onimusha way of the sword demo crash",
       "weight": 1
     },
     {
-      "query": "onimusha way of the sword series x",
+      "query": "onimusha way of the sword demo difficulty",
       "weight": 1
     },
     {
-      "query": "onimusha way of the sword trainer",
+      "query": "onimusha way of the sword demo mods",
       "weight": 1
     },
     {
-      "query": "onimusha which clan",
+      "query": "onimusha way of the sword mod ไทย",
       "weight": 1
     },
     {
-      "query": "pick onimusha 2",
+      "query": "onimusha way of the sword review embargo",
       "weight": 1
     },
     {
-      "query": "shin onimusha curtain of darkness",
+      "query": "onimusha way of the sword review reddit",
       "weight": 1
     },
     {
-      "query": "tokugawa ieyasu onimusha",
+      "query": "onimusha way of the sword synopsis",
       "weight": 1
     },
     {
-      "query": "wann kommt onimusha way of the sword raus",
-      "weight": 1
-    },
-    {
-      "query": "which onimusha game to start with",
-      "weight": 1
-    },
-    {
-      "query": "which onimusha to play first",
+      "query": "review onimusha 2",
       "weight": 1
     }
   ]

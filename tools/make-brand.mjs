@@ -50,7 +50,7 @@ import { execFileSync } from 'child_process'
 import { createRequire } from 'module'
 import sharp from 'sharp'
 
-import { ACCENT, PLATE, LEAF, badgeSvg, glyphSvg } from '../src/lib/brand.ts'
+import { ACCENT, CARD_LAYOUT, CARD_SIZE, PLATE, LEAF, badgeSvg, glyphSvg } from '../src/lib/brand.ts'
 
 const { DatabaseSync } = createRequire(import.meta.url)('node:sqlite')
 
@@ -188,7 +188,7 @@ async function renderCard(copy) {
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:wght@600;700&display=swap">
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
-  body{width:1200px;height:630px;background:${PLATE};color:${LEAF};
+  body{width:${CARD_SIZE.width}px;height:${CARD_SIZE.height}px;background:${PLATE};color:${LEAF};
     font-family:Barlow,sans-serif;position:relative;overflow:hidden}
   /* The ruling. 42px apart so it reads as a prepared surface at a glance and
      as nothing at all in a 300px-wide timeline crop. */
@@ -197,9 +197,9 @@ async function renderCard(copy) {
   /* The margin, in the accent, exactly where the mark puts it — and running
      the full height of the frame, because a ruled margin that stops halfway
      down reads as a stray line rather than as part of the page. */
-  .margin{position:absolute;left:150px;top:56px;bottom:56px;width:5px;background:${copy.accent}}
+  .margin{position:absolute;left:${CARD_LAYOUT.ruleX}px;top:56px;bottom:56px;width:5px;background:${copy.accent}}
   .frame{position:absolute;inset:24px;border:1px solid #3a3733;border-radius:6px}
-  .body{position:absolute;inset:0;padding:70px 76px 64px 208px;
+  .body{position:absolute;inset:0;padding:70px ${CARD_LAYOUT.bodyRight}px 64px ${CARD_LAYOUT.bodyLeft}px;
     display:flex;flex-direction:column;justify-content:space-between}
   .top{display:flex;align-items:center;gap:16px}
   .top svg{height:44px;flex:none}
@@ -232,7 +232,7 @@ async function renderCard(copy) {
   <div class="rules">${copy.rules.map((rule) => `<b>${esc(rule)}</b>`).join('')}</div>
 </div>`
 
-  const raw = await shoot(html, 1200, 630)
+  const raw = await shoot(html, CARD_SIZE.width, CARD_SIZE.height)
   const target = path.join(OUT, 'og.png')
   /*
     Recompressed on the way out. Chrome writes a truecolour PNG; the card is
@@ -241,7 +241,7 @@ async function renderCard(copy) {
     every chat client that unfurls a link.
   */
   await sharp(raw).png({ compressionLevel: 9 }).toFile(target)
-  console.log(`  og.png                1200x630  ${kb(target)}`)
+  console.log(`  og.png                ${CARD_SIZE.width}x${CARD_SIZE.height}  ${kb(target)}`)
   console.log(`\n  card reads: "${copy.name}" / "${copy.tagline}"`)
 }
 

@@ -57,6 +57,73 @@ export const clamp = (value: string, limit = LIMIT): string => {
   return `${cut.slice(0, lastSpace > 0 ? lastSpace : limit - 1).replace(/[,;:.\s]+$/, '')}…`
 }
 
+/**
+ * As many whole sentences as fit, and never a fragment.
+ *
+ * `clamp` is tuned for a meta description, where the whole budget is worth
+ * using: it stops at a sentence end only past 60% of the limit, and otherwise
+ * cuts at a word and prints an ellipsis. That is right for a search result and
+ * wrong for a byline blurb, where the opening sentence introduces the person
+ * and everything after it is the editorial policy every contributor shares.
+ * The seeded roster opens with a 62-character sentence and follows it with a
+ * 190-character one, so clamping at 200 printed the first whole, most of the
+ * second, and `as every…` — a trailing fragment in the one line whose job is
+ * to say who wrote this.
+ *
+ * No ellipsis, for the same reason `clamp` prints none on its sentence-stop
+ * branch: what is on the page is a complete sentence rather than a cut one,
+ * and the name directly above it links to the bio in full.
+ *
+ * Falls back to `clamp` when no sentence ends inside the budget, so a bio
+ * written as one long sentence still prints something rather than nothing.
+ */
+/**
+ * A word this short in front of a full stop is an abbreviation, not the end of
+ * a sentence. `St.`, `Mr.`, `Dr.`, `Co.`, `Ltd.` and `Inc.` all fit inside it,
+ * and `Inc.` is the longest of them at four. See `leadSentences`.
+ */
+const ABBREVIATION_LENGTH = 4
+
+export const leadSentences = (value: string, limit = LIMIT): string => {
+  const text = value.replace(/\s+/g, ' ').trim()
+  if (text.length <= limit) return text
+
+  /*
+    A stop followed by whitespace, which is the test `clamp` makes too: a full
+    stop with nothing after it is a decimal or an abbreviation, not the end of
+    a sentence. `«1.5 kg» and «St. Petersburg» both appear in this database.
+  */
+  const ends: number[] = []
+  const stop = /[.?!]\s/g
+  let match: RegExpExecArray | null
+  while ((match = stop.exec(text)) !== null) ends.push(match.index + 1)
+
+  let taken = 0
+  for (const end of ends) {
+    if (end > limit) break
+    /*
+      `St. Petersburg` opens a person profile on this network and `1.5 kg`
+      appears throughout the item data. The second is safe — a stop with a
+      digit after it is not followed by whitespace — but the first is a stop,
+      a space and a capital letter, which is exactly the shape being matched,
+      and taking it would print `St.` as somebody's whole byline blurb.
+
+      The word carrying the stop is what separates them, not a list of
+      abbreviations: a list is the Antar 4 mistake in miniature, a filter that
+      throws away the good records as silently as it stops the bad ones. This
+      only ever *skips forward* to the next candidate, so the cost of being
+      wrong is one sentence more than needed, or falling through to `clamp`,
+      which is where this started. `He said no.` is skipped and nothing about
+      that is worth a list.
+    */
+    const word = text.slice(text.lastIndexOf(' ', end - 2) + 1, end)
+    if (word.length <= ABBREVIATION_LENGTH) continue
+    taken = end
+  }
+
+  return taken > 0 ? text.slice(0, taken) : clamp(text, limit)
+}
+
 /** "a" or "an", so composed lines do not read as "a ultimate perk". */
 const article = (word: string) => (/^[aeiou]/i.test(word) ? 'an' : 'a')
 

@@ -1,0 +1,422 @@
+{
+  "slug": "resident-evil-requiem",
+  "appId": 3764200,
+  "storeUrl": "https://store.steampowered.com/app/3764200/",
+  "fetchedAt": "2026-09-19",
+  "title": "Resident Evil Requiem",
+  "developers": [
+    "CAPCOM Co., Ltd."
+  ],
+  "publishers": [
+    "CAPCOM Co., Ltd."
+  ],
+  "releaseDate": "Feb 26, 2026",
+  "comingSoon": false,
+  "shortDescription": "Requiem for the dead. Nightmare for the living. Prepare to escape death in a heart-stopping experience that will chill you to your core.",
+  "aboutText": "Requiem for the dead. Nightmare for the living.\n\nA new era of survival horror arrives with Resident Evil Requiem, the latest and most immersive entry yet in the iconic Resident Evil series. Experience terrifying survival horror with FBI analyst Grace Ashcroft, and dive into pulse-pounding action with legendary agent Leon S. Kennedy. Both of their journeys and unique gameplay styles intertwine into a heart-stopping, emotional experience that will chill you to your core.Raccoon City\n\nReturn once again to the city of disaster and despair.\nA midwestern city in the United States and the headquarters for the former global pharmaceutical company, Umbrella.\nIn the face of the zombie outbreak in 1998, the government approved a sterilization operation, a missile strike on the city in an attempt to quickly bring the situation under control—but this was swiftly covered up.\nGrace Ashcroft\n\nAn intelligence analyst for the FBI who demonstrates intense focus and insight in deductive reasoning and analysis. Her mother's death shook her to the soul, making her an introvert who immerses herself in work. So she heads to the abandoned hotel alone to investigate this mysterious death.\nLeon S. Kennedy\n\nOne of the survivors of the Raccoon City Incident. With a strong sense of justice and physical capabilities to match, he has responded to numerous outbreaks since that fateful day. Now, as a seasoned DSO agent combatting bioterrorism, he has returned to investigate the latest string of deaths in the Midwest.\nGameplay\n\nExperience the series' classic survival horror through combat, investigations, puzzles, and resource management. Gameplay allows you to freely switch between first and third-person views to face the horrors in a way that suits your playstyle.\n\n*This content is also available as part of one or more bundles. Please check your previous purchases to avoid duplication.",
+  "genres": [
+    "Action",
+    "Adventure"
+  ],
+  "categories": [
+    "Single-player",
+    "Steam Achievements",
+    "Full controller support",
+    "Steam Trading Cards",
+    "Captions available",
+    "DualShock Controller Support",
+    "DualShock Controller Support",
+    "DualSense Controller Support",
+    "DualSense Controller Support",
+    "Steam Cloud",
+    "HDR available",
+    "Family Sharing"
+  ],
+  "languages": "English",
+  "contentDescriptors": "This Game may contain content not appropriate for all ages, or may not be appropriate for viewing at work: Frequent Violence or Gore, General Mature Content",
+  "platforms": [
+    "windows"
+  ],
+  "requirements": {
+    "minimum": [
+      {
+        "label": "OS",
+        "value": "Windows 11 (64bit required)"
+      },
+      {
+        "label": "Processor",
+        "value": "Intel corei5-8500 / AMD Ryzen 5 3500"
+      },
+      {
+        "label": "Memory",
+        "value": "16 GB RAM"
+      },
+      {
+        "label": "Graphics",
+        "value": "GeForce GTX 1660 6GB / Radeon RX 5500 XT 8GB"
+      },
+      {
+        "label": "DirectX",
+        "value": "Version 12"
+      },
+      {
+        "label": "Additional Notes",
+        "value": "Supports 1080p gameplay (using upscaling, native resolution of 640p)/30fps. Note: Frame rate may drop when the processing load is high. An SSD is required."
+      }
+    ],
+    "recommended": [
+      {
+        "label": "OS",
+        "value": "Windows 11 (64bit required)"
+      },
+      {
+        "label": "Processor",
+        "value": "Intel Core i7-8700 / AMD Ryzen 5 5500"
+      },
+      {
+        "label": "Memory",
+        "value": "16 GB RAM"
+      },
+      {
+        "label": "Graphics",
+        "value": "GeForce RTX 2060 Super 8GB / Radeon RX 6600 8GB"
+      },
+      {
+        "label": "DirectX",
+        "value": "Version 12"
+      },
+      {
+        "label": "Additional Notes",
+        "value": "Supports 1080p gameplay (using upscaling, native resolution of 720p)/60fps. Note: Frame rate may drop when the processing load is high. An SSD is required."
+      }
+    ]
+  },
+  "editions": [
+    {
+      "title": "Resident Evil Requiem",
+      "priceText": "$69.99"
+    },
+    {
+      "title": "Resident Evil Requiem Deluxe Edition",
+      "priceText": "$79.99"
+    }
+  ],
+  "dlc": [
+    3990820,
+    3990800,
+    4460240
+  ],
+  "achievements": [
+    {
+      "title": "Déjà vu",
+      "description": null,
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/b348dd6703d7634fad4cba22f3728ea6db8d0dd8.jpg",
+      "globalPercent": 94
+    },
+    {
+      "title": "Can I Borrow This?",
+      "description": "Throw a weapon dropped by an enemy.",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/babc692cd22cf2278cab9f63d223f7b2c0fa30dd.jpg",
+      "globalPercent": 87.3
+    },
+    {
+      "title": "Out of Sight, Out of Mind",
+      "description": "Store an item in the item box as Grace.",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/854da90cd2c365292ca4ff149d0286a2947298aa.jpg",
+      "globalPercent": 86.9
+    },
+    {
+      "title": "The Hunt Begins",
+      "description": "Destroy one Mr. Raccoon memoriam.",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/658a7d2170695ecdf413f6cdede27c5f65c72d19.jpg",
+      "globalPercent": 86.1
+    },
+    {
+      "title": "Science!",
+      "description": null,
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/f8df6ee1d158003c332ddff760c334403f387c09.jpg",
+      "globalPercent": 84.9
+    },
+    {
+      "title": "Fatal Dose",
+      "description": null,
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/d72306eded4d515b32b5936fa65d0db8a4155952.jpg",
+      "globalPercent": 84.4
+    },
+    {
+      "title": "The Power of Blood",
+      "description": null,
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/54cc1fa6a31bb18c50c6fb14019d8c89e2933e9c.jpg",
+      "globalPercent": 83.3
+    },
+    {
+      "title": "Like Mother, Like Daughter",
+      "description": "Unlock a drawer with a lockpick.",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/33e5b1162ae1100813c81bac7c84cc34709c3e47.jpg",
+      "globalPercent": 82.4
+    },
+    {
+      "title": "Chop Chop",
+      "description": "Defeat three zombies with a hatchet finishing attack.",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/a1b16439b5c1739be5383962608cf9892fa77f33.jpg",
+      "globalPercent": 81.7
+    },
+    {
+      "title": "Descent Into Darkness",
+      "description": null,
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/50a45d1969baeea1a594fc6f80a515ce71ebc1fa.jpg",
+      "globalPercent": 81.5
+    },
+    {
+      "title": "Untouchable",
+      "description": "Parry an enemy attack.",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/5d46f64d5953ab56817417093ab36d541f216cf3.jpg",
+      "globalPercent": 81.5
+    },
+    {
+      "title": "Tailor Made",
+      "description": "Upgrade a weapon.",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/189f83269c132a98dc3a617f8c0a3fb2265fa016.jpg",
+      "globalPercent": 81.3
+    },
+    {
+      "title": "Blood! More Blood!",
+      "description": null,
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/fa97b91cdd4a1eefe433bc5dc2203216c8220fdf.jpg",
+      "globalPercent": 80
+    },
+    {
+      "title": "Deadly Duet",
+      "description": null,
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/6c06d18c86540a59f7e9729c8afced0db907055c.jpg",
+      "globalPercent": 79.3
+    },
+    {
+      "title": "It's Been a Long Night",
+      "description": null,
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/81cca1fee65a414a3078358e381ba39935a12aa2.jpg",
+      "globalPercent": 79.1
+    },
+    {
+      "title": "A Harsh Reality",
+      "description": null,
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/4b9821bd83adbdba47b9871bec11fed86a24d99b.jpg",
+      "globalPercent": 78.4
+    },
+    {
+      "title": "Order Up!",
+      "description": null,
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/f93e65d72fff91fddf9bf47ada3ac3487b5a80b1.jpg",
+      "globalPercent": 77.3
+    },
+    {
+      "title": "Retail Therapy",
+      "description": "Purchase an item from the supply box.",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/35e694d735ad359498d4f0e9359498d195430132.jpg",
+      "globalPercent": 77.2
+    },
+    {
+      "title": "Seasoned Pro",
+      "description": "Defeat 300 enemies.",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/696e1108cfb58507fa56df7628635c9e08c48639.jpg",
+      "globalPercent": 75.8
+    },
+    {
+      "title": "Going Down?",
+      "description": null,
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/4742edabc6da9c22dcfbe3b8eba2593d14253f88.jpg",
+      "globalPercent": 75.5
+    },
+    {
+      "title": "The Hero Returns",
+      "description": null,
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/862bf225eb5d2be8f630f6bab58a38636f7f087d.jpg",
+      "globalPercent": 75.2
+    },
+    {
+      "title": "Road Rage",
+      "description": null,
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/6b3b99cb50f69c947f7a35c3a74b566c96f76b9d.jpg",
+      "globalPercent": 74.8
+    },
+    {
+      "title": "I Remember That, Too",
+      "description": null,
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/36d6947818c8fe910f797227ce4d78a9c7f66a99.jpg",
+      "globalPercent": 74.3
+    },
+    {
+      "title": "Umbrella's Legacy",
+      "description": null,
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/fb7097c54af91995a06b2e945adc28a73426de19.jpg",
+      "globalPercent": 74.1
+    },
+    {
+      "title": "Bring Out the Big Guns",
+      "description": null,
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/6eea5415e29f45458ff344ef7d563c9d78acb120.jpg",
+      "globalPercent": 74.1
+    },
+    {
+      "title": "The Final Mission",
+      "description": null,
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/b70b17addb883238a4c8655a1ef934505cefe6d2.jpg",
+      "globalPercent": 73.7
+    },
+    {
+      "title": "Rookie Agent",
+      "description": "Complete the main story on at least Casual difficulty.",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/2dc631b63009d72482689559286968149f5d380b.jpg",
+      "globalPercent": 72.8
+    },
+    {
+      "title": "Hope and Requiem",
+      "description": null,
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/38320c1c46265dc355e51c551801aefdc385ee1a.jpg",
+      "globalPercent": 72.2
+    },
+    {
+      "title": "Rising Agent",
+      "description": "Complete the main story on at least Standard (Modern) difficulty.",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/fac79242784e8bfd0babf1ea4f2d7cc98e99254b.jpg",
+      "globalPercent": 65.9
+    },
+    {
+      "title": "Not Today, Buds!",
+      "description": null,
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/8f8e23c0c65a73cf980475c2cdc89f0ccca136a3.jpg",
+      "globalPercent": 59.9
+    },
+    {
+      "title": "Grace and Goliath",
+      "description": null,
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/cf9f18110e2f68622706cc299e6aba88a2f54c26.jpg",
+      "globalPercent": 58.2
+    },
+    {
+      "title": "Crate Expectations",
+      "description": null,
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/8fd1243ae7653ad2e7a27d40a6c19fc6e360583a.jpg",
+      "globalPercent": 51.7
+    },
+    {
+      "title": "No Safe is Safe",
+      "description": null,
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/af19071d0aa2c4dda8e31504591567b8bfcb9057.jpg",
+      "globalPercent": 48.7
+    },
+    {
+      "title": "The Ol' Fashioned Way",
+      "description": null,
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/27307dd9a196b2f0d8dafb64c41e7eabcdcd647b.jpg",
+      "globalPercent": 42.7
+    },
+    {
+      "title": "Bang For Your Buck",
+      "description": "Defeat at least three enemies with a single Requiem shot.",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/239539ae9b8445b5d27ec5e4b25585d722fc51f1.jpg",
+      "globalPercent": 40.9
+    },
+    {
+      "title": "Internal Dispute",
+      "description": null,
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/afbece2f3c4f35b3b28101238edfdc82b970541b.jpg",
+      "globalPercent": 32.3
+    },
+    {
+      "title": "Credit Where Credit Is Due",
+      "description": null,
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/74cd077e010267a280593ef3b7b47561ddbd28a1.jpg",
+      "globalPercent": 30.8
+    },
+    {
+      "title": "Resolute Agent",
+      "description": "Complete the main story on at least Standard (Classic) difficulty.",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/05f3955798103f857a3542f3532203fe0cfd9b9b.jpg",
+      "globalPercent": 30.6
+    },
+    {
+      "title": "Cat Got Your Tongue?",
+      "description": null,
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/68efd6343fdb61e9b1080749b2bf887ac6cf96d4.jpg",
+      "globalPercent": 23.7
+    },
+    {
+      "title": "Master Craftsman",
+      "description": "Craft every possible item with Leon.",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/ca8c3b37f4dedcbdb3faa99835f5bea293021d1d.jpg",
+      "globalPercent": 22.4
+    },
+    {
+      "title": "Never Touch the Stuff",
+      "description": "Complete the main story without using herbs or med injectors.",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/3c75d323d8b191729eeeaed2a1bb23e4e3b1db8f.jpg",
+      "globalPercent": 21.6
+    },
+    {
+      "title": "Bloodlust",
+      "description": null,
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/8daf8e8ea90499a4731d66a2fabd2a0e93753491.jpg",
+      "globalPercent": 21.1
+    },
+    {
+      "title": "Minimalist",
+      "description": null,
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/2041d7995ef15d5011887712ebfec8929646c3fc.jpg",
+      "globalPercent": 20.3
+    },
+    {
+      "title": "You Little Rascal!",
+      "description": "Destroy every Mr. Raccoon memoriam.",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/9f5687a1b465f697c36406d45dd9cbf3d8b4d3f1.jpg",
+      "globalPercent": 19.6
+    },
+    {
+      "title": "Speed Demon",
+      "description": null,
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/9056da5c40a6872536a76682d8dd0a4bc6e7928d.jpg",
+      "globalPercent": 18.9
+    },
+    {
+      "title": "Remarkable Agent",
+      "description": null,
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/98a05e8213f531206d40d750c7e540bafcf1093f.jpg",
+      "globalPercent": 16.9
+    },
+    {
+      "title": "Model Mania",
+      "description": "View all models.",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/cb135525843cf9a3e9e327f777fd5d9147765b56.jpg",
+      "globalPercent": 16.6
+    },
+    {
+      "title": "Case Closed",
+      "description": "Read all the files in the main story.",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/e65d64e6012028d778e3ff427ee766b90b4c5d8d.jpg",
+      "globalPercent": 16.3
+    },
+    {
+      "title": "Curator",
+      "description": "View all concept art.",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3764200/6c1a41cb5c3805f8c0d0a0da866a4ab524f40e6e.jpg",
+      "globalPercent": 16.2
+    }
+  ],
+  "art": {
+    "header": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3764200/ce5437442768e38eb575f205ab9397d0264017b0/header.jpg?t=1779840172",
+    "capsule": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3764200/64f506b9b6210df6055136e7017f2082957e5b22/capsule_231x87.jpg?t=1779840172",
+    "background": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3764200/863355a6b45cfb9c644318b9372fa937b4114e76/page_bg_raw.jpg?t=1779840172",
+    "screenshots": [
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3764200/08af4e9398b8e45152bfbedce3bc24d22e2c0990/ss_08af4e9398b8e45152bfbedce3bc24d22e2c0990.1920x1080.jpg?t=1779840172",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3764200/4921eb5fb45f6b7a3b62195e47c6d7b4175935a8/ss_4921eb5fb45f6b7a3b62195e47c6d7b4175935a8.1920x1080.jpg?t=1779840172",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3764200/e7b791b703759aebe774b813eb29a364008552b8/ss_e7b791b703759aebe774b813eb29a364008552b8.1920x1080.jpg?t=1779840172",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3764200/bbe5c4e0ba4fc551d9389cf2411c2cefe413af1d/ss_bbe5c4e0ba4fc551d9389cf2411c2cefe413af1d.1920x1080.jpg?t=1779840172",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3764200/9422ad111dfd5fe1df34352946c6aa715c23f0f6/ss_9422ad111dfd5fe1df34352946c6aa715c23f0f6.1920x1080.jpg?t=1779840172",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3764200/a5ad021e191c2f3cfcb4fcdd7abe193c887b3500/ss_a5ad021e191c2f3cfcb4fcdd7abe193c887b3500.1920x1080.jpg?t=1779840172",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3764200/e4508c17151714d5d4f80cd31bdcacf0caf5559c/ss_e4508c17151714d5d4f80cd31bdcacf0caf5559c.1920x1080.jpg?t=1779840172",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3764200/b61e78a244aef7a12cf08f9dc7e7fc7ead6eeddb/ss_b61e78a244aef7a12cf08f9dc7e7fc7ead6eeddb.1920x1080.jpg?t=1779840172",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3764200/3f63fb0ce70f3e97799226b70ebea4d4794c53a1/ss_3f63fb0ce70f3e97799226b70ebea4d4794c53a1.1920x1080.jpg?t=1779840172",
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3764200/9e35202b6c8262496e1c57275c51bcead7232249/ss_9e35202b6c8262496e1c57275c51bcead7232249.1920x1080.jpg?t=1779840172"
+    ]
+  }
+}

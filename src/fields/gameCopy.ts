@@ -363,6 +363,15 @@ export const gameCopyTabs = (): Field => ({
               fields: [
                 { name: 'trustHeading', type: 'text', label: 'Heading' },
                 { name: 'trustBody', type: 'textarea', label: 'Body' },
+                /*
+                  The heading over the sideways links, which only appear when
+                  "Related wikis" on this game's own record has something in it.
+                */
+                {
+                  name: 'relatedHeading',
+                  type: 'text',
+                  label: 'Heading over the related-wikis list',
+                },
               ],
             },
           ],
@@ -438,11 +447,11 @@ export const gameCopyTabs = (): Field => ({
               type: 'row',
               fields: [
                 { name: 'sourcingHeading', type: 'text', label: 'Heading — where facts come from', admin: { width: '50%' } },
-                { name: 'confidenceHeading', type: 'text', label: 'Heading — confidence ratings', admin: { width: '50%' } },
+                { name: 'confidenceHeading', type: 'text', label: 'Heading — where sources disagree', admin: { width: '50%' } },
               ],
             },
             richText('sourcing', 'Where the facts come from', 'Two paragraphs by default.'),
-            richText('confidence', 'What the confidence ratings mean', 'The three-level list and the note under it.'),
+            richText('confidence', 'Where sources disagree', 'What this wiki does when two sources do not agree.'),
             {
               type: 'row',
               fields: [

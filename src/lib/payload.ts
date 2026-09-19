@@ -5,6 +5,7 @@ import type { CollectionSlug, Where } from 'payload'
 import config from '@payload-config'
 import { isGameScoped, type GameScopedCollection } from './tenancy'
 import type { Config, Game } from '@/payload-types'
+import { rightsholdersIn } from './rightsholders'
 
 /**
  * Content access for the public site. Everything is read through the local API
@@ -261,6 +262,166 @@ export const getNames = async <C extends CollectionSlug>(
   collection: C,
   options: { field?: 'name' | 'title' } & Scope<C>,
 ): Promise<NameRow[]> => findNames(collection, options.game, options.field ?? 'title')
+
+/**
+ * A guide reduced to what a feed needs: how to list it, and how to date it.
+ *
+ * ## Why this exists rather than `getAll('guides', { sort, limit })`
+ *
+ * A guide's date is computed, not stored. `guideDates` reads an editor's
+ * `updated`, then falls back to the newest `retrieved` on the page's own
+ * citations, and the row's `updatedAt` is not in the answer anywhere — it is
+ * the afternoon somebody last ran the seed, identical on all 410 guides.
+ *
+ * The feed asked the database for `sort: '-updatedAt', limit: 30` and then
+ * re-sorted those thirty by the real date. The sort was harmless and the limit
+ * was not: **which** thirty reached the feed was decided by a column that is
+ * the same value on every row, so it was insertion order wearing a sort, and a
+ * guide whose sources were genuinely read yesterday could sit outside it
+ * forever. The only fix is to date them all and then take the newest, which
+ * means reading them all.
+ *
+ * So it reads them all, and reads six columns to do it. `getAll` returns every
+ * column of every row, rich-text bodies included; on Dawnwalker that is 410
+ * bodies fetched to publish thirty titles, which is the shape that made
+ * SQLite return SQLITE_BUSY and fail a build at page six hundred. `select` is
+ * the whole reason this is not `getAll`, the same as `findNames` above.
+ */
+export type DatedGuide = {
+  title: string
+  slug: string
+  summary?: string | null
+  published?: string | null
+  updated?: string | null
+  sources?: { retrieved?: string | null }[] | null
+}
+
+const findDatedGuides = cache(async (game: string): Promise<DatedGuide[]> => {
+  assertScoped('guides', game)
+  const payload = await client()
+  const result = await payload.find({
+    collection: 'guides',
+    depth: 0,
+    limit: 0,
+    pagination: false,
+    select: {
+      title: true,
+      slug: true,
+      summary: true,
+      published: true,
+      updated: true,
+      sources: true,
+    } as never,
+    where: await scopeFor(game),
+  })
+  return result.docs as unknown as DatedGuide[]
+})
+
+/** Every guide on a wiki, with the fields `guideDates` needs and nothing else. */
+export const getDatedGuides = (game: string): Promise<DatedGuide[]> => findDatedGuides(game)
+
+/**
+ * The lead images of a named handful of guides, in one query.
+ *
+ * The "More guides" rail ranks four hundred guides on six cheap columns and
+ * then wants a picture for the six that win. Reading the whole collection at
+ * depth 1 to get them is the `limit: 1000, depth: 0` mistake with a join
+ * attached; asking for each one separately is six round trips per page across
+ * four hundred prerendered pages.
+ *
+ * `slug` rather than id because that is what the ranker carries, and the slugs
+ * come from a query this function's own caller just made — there is no user
+ * input anywhere near the `in`.
+ */
+export const getGuideImages = async (
+  game: string,
+  slugs: readonly string[],
+): Promise<Map<string, unknown>> => {
+  if (slugs.length === 0) return new Map()
+  assertScoped('guides', game)
+  const payload = await client()
+  const result = await payload.find({
+    collection: 'guides',
+    depth: 1,
+    limit: slugs.length,
+    pagination: false,
+    select: { slug: true, image: true } as never,
+    where: { and: [await scopeFor(game), { slug: { in: [...slugs] } }] },
+  })
+  return new Map(
+    (result.docs as unknown as { slug: string; image?: unknown }[]).map((doc) => [
+      doc.slug,
+      doc.image,
+    ]),
+  )
+}
+
+/**
+ * Which of a game's named rightsholders actually have a profile.
+ *
+ * `developer` and `publisher` are free text off a store page, and the link
+ * built from one used to be `companyUrl(slugify(name))` with nothing checking
+ * the far end — so "Konami, Annapurna Interactive" linked
+ * `companies.<domain>/konami-annapurna-interactive`, which 404s, from every
+ * page that rendered the block. `lib/rightsholders.ts` splits the string
+ * correctly; this is the other half of the rule it states: **a name that does
+ * not resolve to a profile is not a link.**
+ *
+ * One query for every company slug, cached per render — the `findNames` shape,
+ * for the same reason. 321 slugs is a set; the alternative is a lookup per
+ * name per page.
+ */
+const companySlugSet = cache(async (): Promise<Set<string>> => {
+  const payload = await client()
+  const result = await payload.find({
+    collection: 'companies',
+    depth: 0,
+    limit: 0,
+    pagination: false,
+    select: { slug: true } as never,
+  })
+  return new Set((result.docs as unknown as { slug?: string }[]).flatMap((doc) => doc.slug ? [doc.slug] : []))
+})
+
+/** The rightsholders of a game, each marked with whether a profile exists. */
+export const resolveRightsholders = async (
+  ...values: (string | null | undefined)[]
+): Promise<{ name: string; slug: string; exists: boolean }[]> => {
+  const slugs = await companySlugSet()
+  return rightsholdersIn(...values).map((holder) => ({ ...holder, exists: slugs.has(holder.slug) }))
+}
+
+/**
+ * The cover art of a named handful of games, in one query.
+ *
+ * `companies/[slug]` and `people/[slug]` read their games at depth 1, which
+ * populates each game and stops there — `profile.poster` is an upload nested
+ * inside a group, so it needs depth 2, and depth 2 on a studio with eleven
+ * games pulls eleven games' worth of every other relationship with it.
+ *
+ * So the posters are fetched on their own, by id, once per page. Same shape as
+ * `getGuideImages` and for the same reason: ask for the one field the page
+ * actually renders rather than deepening a query that already returns plenty.
+ */
+export const getGamePosters = async (
+  ids: readonly (string | number)[],
+): Promise<Map<string | number, unknown>> => {
+  if (ids.length === 0) return new Map()
+  const payload = await client()
+  const result = await payload.find({
+    collection: 'games',
+    depth: 2,
+    limit: ids.length,
+    pagination: false,
+    select: { profile: true } as never,
+    where: { id: { in: [...ids] } },
+  })
+  return new Map(
+    (result.docs as unknown as { id: string | number; profile?: { poster?: unknown } }[]).map(
+      (doc) => [doc.id, doc.profile?.poster],
+    ),
+  )
+}
 
 const countIn = cache(
   async (collection: CollectionSlug, game: string | undefined): Promise<number> => {

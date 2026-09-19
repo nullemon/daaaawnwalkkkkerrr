@@ -108,3 +108,64 @@ export const externalSite = (value?: string | null): string | null => {
     return null
   }
 }
+
+/**
+ * The domain a session cookie should be scoped to, or nothing.
+ *
+ * ## Why this exists
+ *
+ * Payload sets its session cookie without a `domain`, which makes it
+ * **host-only**: signing in at `dawnwalker.example.com/admin1621` produces a
+ * cookie that `gta-6.example.com` cannot read. That was harmless while nothing
+ * on a public page asked who you were.
+ *
+ * The confidence rating is now an editorial control — `Confidence` in
+ * `src/components/Badges.tsx` renders it only for a signed-in editor, and
+ * `useIsEditor` asks `/api/users/me` from the browser. On a host-only cookie
+ * that question answers "no" on all sixteen hosts except the one the editor
+ * happened to sign in on, so a feature meant for editors would work on one
+ * wiki at a time and the editor would have no way to tell which.
+ *
+ * ## Why widening it is not a widening of trust
+ *
+ * Every host on this network — the apex, fifteen wiki subdomains, `companies`
+ * and `people` — is the same Next application talking to the same Payload
+ * instance. There is no other party under this domain to read the cookie, and
+ * `NETWORK_SUBDOMAINS` plus the host-label check in `Games.ts` are what stop a
+ * wiki slug ever becoming a host somebody else controls. What changes is that
+ * one sign-in covers the network, which is what an editor already expects from
+ * one admin and one account system.
+ *
+ * ## Why it is inert locally, and must stay inert
+ *
+ * Browsers refuse a `Domain` attribute on a host with no registrable parent —
+ * `localhost` is one, and so is a bare hostname or an IP address. Sending one
+ * anyway does not fail loudly; the browser **drops the whole Set-Cookie
+ * header**, which would log every editor out of development with nothing in
+ * any log to say why. So this returns nothing unless the site URL names a host
+ * with at least two labels and no digits-only final label.
+ *
+ * Returned without a leading dot. That form is the modern one and every
+ * browser treats it as covering subdomains; the leading dot is a relic of
+ * RFC 2109 that `Set-Cookie` parsers strip anyway.
+ */
+export const cookieDomainFor = (origin: string): string | undefined => {
+  let host: string
+  try {
+    host = new URL(origin).hostname
+  } catch {
+    return undefined
+  }
+
+  /* An IPv4 address, or an IPv6 literal, has no parent to share with. */
+  if (/^\d+(\.\d+){3}$/.test(host) || host.includes(':')) return undefined
+
+  const labels = host.split('.')
+  if (labels.length < 2) return undefined
+  if (/^\d+$/.test(labels[labels.length - 1])) return undefined
+  if (host === 'localhost' || host.endsWith('.localhost')) return undefined
+
+  return host
+}
+
+export const SESSION_COOKIE_DOMAIN = cookieDomainFor(HUB_ORIGIN)

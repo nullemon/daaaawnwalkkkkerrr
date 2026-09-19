@@ -1,4 +1,5 @@
 import type { Metadata, ResolvingMetadata } from 'next'
+import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
 import { Linked } from '@/components/Linked'
 import type { LinkScope } from '@/lib/link-index'
@@ -52,6 +53,23 @@ export default async function AchievementsIndex({ params }: Props) {
     getGame(game),
     getAll('achievements', { game, depth: 1 }),
   ])
+  /*
+    A section with no records is not this game's section.
+
+    The rail, the footer and the sitemap all derive from `sectionsFor`, which
+    returns only the sections a wiki has at least one record in — so an empty
+    index here is reachable only by typing the URL or arriving from a search
+    result, and what it serves is a heading over nothing. A 404 is the honest
+    answer, and it lifts by itself the moment the first record arrives.
+
+    Four of these eight games are not out, so nobody has published an
+    achievement list for them. That is the world, not a gap in the data, and
+    `pnpm refresh` the week each launches is what lights this page up.
+
+    `GUARDS_EMPTY_INDEX` in `lib/audit.ts` is pinned against this line by
+    `audit.test.ts`, so the two cannot drift.
+  */
+  if (achievements.length === 0) notFound()
 
   const sorted = [...achievements].sort((a, b) => {
     // Unknown percentages sort last: a blank is not a zero, and putting them
@@ -101,34 +119,27 @@ export default async function AchievementsIndex({ params }: Props) {
         lede={copy.lede ? <Linked text={copy.lede} scope={scope} /> : undefined}
       />
       <div className="page body-main">
-        {achievements.length === 0 ? (
+        <>
           <p className="note">
-            Nothing to list yet. The achievement list comes from the developer and appears here once
-            the game ships.
+            Unlock percentages are read from the platform and move over time — an achievement gets
+            commoner as more people finish the game. Each page records when its figure was taken.
           </p>
-        ) : (
-          <>
-            <p className="note">
-              Unlock percentages are read from the platform and move over time — an achievement gets
-              commoner as more people finish the game. Each page records when its figure was taken.
-            </p>
-            <DataTable
-              rows={rows}
-              noun="achievements"
-              searchPlaceholder="Search achievements by name or description…"
-              facets={[
-                { key: 'rarity', label: 'Rarity' },
-                { key: 'kind', label: 'Type' },
-              ]}
-              columns={[
-                { key: 'title', label: 'Achievement', type: 'name' },
-                { key: 'description', label: 'How it is described', sortable: false },
-                { key: 'rarity', label: 'Rarity' },
-                { key: 'percent', label: '% of players', type: 'num' },
-              ]}
-            />
-          </>
-        )}
+          <DataTable
+            rows={rows}
+            noun="achievements"
+            searchPlaceholder="Search achievements by name or description…"
+            facets={[
+              { key: 'rarity', label: 'Rarity' },
+              { key: 'kind', label: 'Type' },
+            ]}
+            columns={[
+              { key: 'title', label: 'Achievement', type: 'name' },
+              { key: 'description', label: 'How it is described', sortable: false },
+              { key: 'rarity', label: 'Rarity' },
+              { key: 'percent', label: '% of players', type: 'num' },
+            ]}
+          />
+        </>
       </div>
     </>
   )

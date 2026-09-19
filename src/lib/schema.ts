@@ -1,5 +1,7 @@
 import { companyUrl, externalSite, personUrl, HUB_ORIGIN } from './urls'
 import { slugify } from '../fields/shared'
+import { rightsholderNames } from './rightsholders'
+import { guideDates, type GuideForDates } from './guide-dates'
 
 /**
  * Structured data, as one graph rather than three unconnected blobs.
@@ -89,12 +91,15 @@ export const orgRef = (name: string, known: ReadonlySet<string>): Json => {
     : { '@type': 'Organization', name }
 }
 
+/*
+  Split by `lib/rightsholders.ts`, which is the third place that was doing it
+  on a bare comma. Here the cost of the naive version was quieter than a broken
+  link and harder to see: "Atari, Inc." became two Organization nodes, one
+  named "Inc.", in the structured data a search engine reads to decide who
+  published the game.
+*/
 const orgRefs = (value: string | null | undefined, known: ReadonlySet<string>): Json[] =>
-  (value ?? '')
-    .split(',')
-    .map((name) => name.trim())
-    .filter(Boolean)
-    .map((name) => orgRef(name, known))
+  rightsholderNames(value).map((name) => orgRef(name, known))
 
 /**
  * A date a machine should be given, or nothing.
@@ -360,6 +365,70 @@ export const person = (
   })
 }
 
+export type ArticleForSchema = GuideForDates & {
+  title: string
+  seo?: { title?: string | null } | null
+}
+
+/**
+ * A guide, as an Article.
+ *
+ * ## Why the dates are not built here
+ *
+ * They were, in the route, and they were wrong in the way structured data is
+ * always wrong: invisibly. `dateModified` came off the guide's `updated`
+ * field, which 349 of the 410 guides do not have, so most of the network's
+ * articles carried no modification date at all — while the `<lastmod>` in the
+ * sitemap for the same URL carried the row's `updatedAt`, which is the
+ * afternoon somebody last ran the seed. Two answers to one question, and the
+ * one a crawler saw first was the fabricated one.
+ *
+ * So both come from `guideDates`, which is also what the sitemap, the feeds
+ * and the visible "About this article" panel read. One derivation, four
+ * consumers, and no way for the machine-readable date and the printed one to
+ * disagree.
+ *
+ * What that derivation decides is worth restating here, because this is the
+ * half a reader never sees: **`datePublished` is emitted only where an editor
+ * typed one.** A generated guide has no publication day, and every candidate
+ * for inventing one — the row timestamps, a hash of the slug — produces a
+ * number that looks exactly like a fact. An Article with a `dateModified` and
+ * no `datePublished` is valid, and is the true shape of these pages.
+ *
+ * ## Why the author is passed in rather than read off the record
+ *
+ * A contributor profile lives once, at the apex, and this markup is served on
+ * a wiki subdomain. A relative `/authors/<slug>` in JSON-LD resolves against
+ * the page it is on and 404s — so the caller resolves the host and hands over
+ * a finished URL, the same way the visible byline does.
+ */
+export const article = (
+  guide: ArticleForSchema,
+  options: {
+    description?: string | null
+    /** This page's own absolute address. */
+    url?: string | null
+    image?: string | null
+    author?: { name: string; url: string } | null
+  } = {},
+): Json => {
+  const dates = guideDates(guide)
+
+  return compact({
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: guide.seo?.title || guide.title,
+    description: options.description || undefined,
+    url: options.url || undefined,
+    image: options.image || undefined,
+    datePublished: dates.published,
+    dateModified: dates.updated,
+    author: options.author
+      ? { '@type': 'Person', name: options.author.name, url: options.author.url }
+      : undefined,
+  })
+}
+
 /**
  * The site itself, and the network that publishes it.
  *
@@ -453,12 +522,16 @@ export const itemList = (
  * made only to a crawler. This is called from the home page, where the verdict
  * is actually printed.
  *
- * **An outlook is not a review and gets no `Review`.** `src/fields/rating.ts`
- * says the page must not let a reader think an outlook is a review, and the
- * visible half honours that with a label — while the JSON-LD was publishing
- * `reviewRating: 7.9` for a game out in October whose own review body opens
- * "An outlook". A machine cannot read the caveat, so the honest thing is to
- * publish no review at all until somebody can say what the game is like.
+ * **The rating handed in is the one the page prints.** The caller passes the
+ * object `editorialScore` returned, not the raw `game.rating` field, and that
+ * is load-bearing: the release gate lives in `editorialScore`, so a second
+ * derivation from the same field here would have gone on publishing
+ * `reviewRating: 8.9` to crawlers for a game whose own page shows no score.
+ * Two implementations of one finding, and the reassuring one wins.
+ *
+ * The `outlook` check below is therefore a backstop rather than the gate. It
+ * can only ever reject more than the caller already has, which is the one
+ * direction a duplicated check is safe in.
  *
  * Two nodes sharing an `@id` describe one entity; a consumer merges them. That
  * is the whole point of the id scheme.

@@ -215,7 +215,7 @@ describe('every route builds its card through this module', () => {
 })
 
 /**
- * Each detail route asks `recordImage` for its picture, and passes its own
+ * Each detail route asks this module for its picture, and passes its own
  * collection slug.
  *
  * All sixteen ask, including the six whose answer is always no. That is the
@@ -223,8 +223,24 @@ describe('every route builds its card through this module', () => {
  * hand-rolled `images: [...]` that would slip an emblem onto a card, and a
  * seventeenth route copied from any of these inherits the rule.
  */
-describe('every detail route routes its image through recordImage', () => {
+describe('every detail route routes its image through this module', () => {
   const root = path.resolve(__dirname, '..')
+
+  /*
+    Guides ask for a different picture, not for it in a different way.
+
+    `recordImage` hands an unfurler the lead photograph on its own: no
+    headline, no wiki name, and no rightsholder, because the credit this site
+    prints inside every picture does not travel into an `og:image` tag — a
+    Capcom screenshot posted to Slack under our wordmark with nothing saying
+    whose it is. `cardImage` names `/api/og/guides/<slug>`, which draws the
+    photograph, the headline, the wiki and the credit into one card, and gives
+    up the photograph entirely when it cannot print the credit in full.
+
+    Pinned per collection rather than allowed as 'either one', so a guide
+    route reverting to the bare photograph fails here instead of shipping.
+  */
+  const BUILDER: Record<string, string> = { guides: 'cardImage' }
 
   for (const [collection, segment] of Object.entries(SECTION_PATH)) {
     it(`${collection}`, () => {
@@ -244,7 +260,7 @@ describe('every detail route routes its image through recordImage', () => {
         collection - so passing the folder would quietly re-enable emblems on
         two of the six.
       */
-      expect(source).toMatch(new RegExp(`recordImage\\('${collection}',`))
+      expect(source).toMatch(new RegExp(`${BUILDER[collection] ?? 'recordImage'}\\('${collection}',`))
     })
   }
 })
