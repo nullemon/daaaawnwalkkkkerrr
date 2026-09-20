@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-19",
+  "fetchedAt": "2026-09-20",
   "source": "en.wikipedia.org/w/api.php (CC BY-SA 4.0)",
   "complete": false,
   "games": {
@@ -111,9 +111,9 @@
   },
   "counts": {
     "candidates": 306,
-    "resolved": 19,
-    "unresolved": 56,
-    "dropped": 234
+    "resolved": 81,
+    "unresolved": 214,
+    "dropped": 245
   },
   "people": [
     {
@@ -2418,7 +2418,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Charlotte Randle",
@@ -2439,7 +2439,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Alex Lanipekun",
@@ -2511,48 +2511,6 @@
       "unresolvedReason": null
     },
     {
-      "name": "Three Houses",
-      "alsoKnownAs": [],
-      "credits": [],
-      "characters": [
-        {
-          "game": "fire-emblem-fortunes-weave",
-          "gameTitle": "Fire Emblem: Fortune's Weave",
-          "character": "Anna",
-          "collection": "characters",
-          "field": "voiceby",
-          "note": null,
-          "source": "https://fireemblem.fandom.com/wiki/Anna",
-          "sourceTitle": "Anna — fireemblem.fandom.com (CC BY-SA)",
-          "retrieved": "2026-09-19"
-        }
-      ],
-      "profile": null,
-      "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
-    },
-    {
-      "name": "Three Hopes",
-      "alsoKnownAs": [],
-      "credits": [],
-      "characters": [
-        {
-          "game": "fire-emblem-fortunes-weave",
-          "gameTitle": "Fire Emblem: Fortune's Weave",
-          "character": "Anna",
-          "collection": "characters",
-          "field": "voiceby",
-          "note": null,
-          "source": "https://fireemblem.fandom.com/wiki/Anna",
-          "sourceTitle": "Anna — fireemblem.fandom.com (CC BY-SA)",
-          "retrieved": "2026-09-19"
-        }
-      ],
-      "profile": null,
-      "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
-    },
-    {
       "name": "Ylisse Anna)",
       "alsoKnownAs": [],
       "credits": [],
@@ -2571,28 +2529,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
-    },
-    {
-      "name": "Fortune's Weave",
-      "alsoKnownAs": [],
-      "credits": [],
-      "characters": [
-        {
-          "game": "fire-emblem-fortunes-weave",
-          "gameTitle": "Fire Emblem: Fortune's Weave",
-          "character": "Anna",
-          "collection": "characters",
-          "field": "voiceby",
-          "note": null,
-          "source": "https://fireemblem.fandom.com/wiki/Anna",
-          "sourceTitle": "Anna — fireemblem.fandom.com (CC BY-SA)",
-          "retrieved": "2026-09-19"
-        }
-      ],
-      "profile": null,
-      "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Max Lindsey",
@@ -2613,7 +2550,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Hironori Kondō",
@@ -2634,7 +2571,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Marcus Rothenberg",
@@ -2666,28 +2603,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
-    },
-    {
-      "name": "Christian Young",
-      "alsoKnownAs": [],
-      "credits": [],
-      "characters": [
-        {
-          "game": "fire-emblem-fortunes-weave",
-          "gameTitle": "Fire Emblem: Fortune's Weave",
-          "character": "Bertrand",
-          "collection": "characters",
-          "field": "voiceby",
-          "note": null,
-          "source": "https://fireemblem.fandom.com/wiki/Bertrand",
-          "sourceTitle": "Bertrand — fireemblem.fandom.com (CC BY-SA)",
-          "retrieved": "2026-09-19"
-        }
-      ],
-      "profile": null,
-      "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Jamie Sara Lewis",
@@ -2708,7 +2624,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Konomi Tamura",
@@ -2729,7 +2645,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Justice Washington",
@@ -2750,7 +2666,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "redirects to \"Bushrod Washington\", which does not mention this name"
     },
     {
       "name": "Kōji Takeda",
@@ -2771,7 +2687,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Ryōkan Koyanagi",
@@ -2792,7 +2708,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Chris Okawa",
@@ -2813,7 +2729,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Willow Engel",
@@ -2834,7 +2750,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Toshiki Iwasawa",
@@ -2855,7 +2771,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Nazeeh Tarsha",
@@ -2876,7 +2792,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Kengo Takanashi",
@@ -2897,7 +2813,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Alaina Wis",
@@ -2918,7 +2834,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Sumi Tomomi Jiena",
@@ -2939,7 +2855,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Damon Alums",
@@ -2960,7 +2876,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Ryunosuke Watanuki",
@@ -2981,7 +2897,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Matthew David Rudd",
@@ -3002,7 +2918,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Hayato Kaneko",
@@ -3023,7 +2939,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Nerida Bronwen",
@@ -3044,7 +2960,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Aya Suzaki",
@@ -3114,7 +3030,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Hideyuki Kobayashi",
@@ -3135,7 +3051,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Jennifer Sun Bell",
@@ -3156,7 +3072,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Airi Ōtsu",
@@ -3177,7 +3093,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "redirects to \"Eri Ōtsu\", which does not mention this name"
     },
     {
       "name": "Kieran Regan",
@@ -3198,7 +3114,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Jalen Askins",
@@ -3219,7 +3135,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Shunsuke Todo",
@@ -3323,7 +3239,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Yūki Onodera",
@@ -3344,7 +3260,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Nadia Marshall",
@@ -3365,7 +3281,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Mayuko Kazama",
@@ -3442,7 +3358,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Aiko Ōkubo",
@@ -3474,7 +3390,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Kana Shimanuki",
@@ -3495,7 +3411,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Ashely Biski",
@@ -3516,7 +3432,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Natsuki Miwa",
@@ -3537,7 +3453,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Mark P. Whitten",
@@ -3558,28 +3474,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
-    },
-    {
-      "name": "George Peter",
-      "alsoKnownAs": [],
-      "credits": [],
-      "characters": [
-        {
-          "game": "fire-emblem-fortunes-weave",
-          "gameTitle": "Fire Emblem: Fortune's Weave",
-          "character": "Nuzzuo",
-          "collection": "characters",
-          "field": "voiceby",
-          "note": null,
-          "source": "https://fireemblem.fandom.com/wiki/Nuzzuo",
-          "sourceTitle": "Nuzzuo — fireemblem.fandom.com (CC BY-SA)",
-          "retrieved": "2026-09-19"
-        }
-      ],
-      "profile": null,
-      "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Yū Akiba",
@@ -3600,7 +3495,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Madeline Dorroh",
@@ -3621,7 +3516,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Matt Silver",
@@ -3642,7 +3537,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Makoto Kaneko",
@@ -3663,7 +3558,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "ambiguous — 3 articles share this name"
     },
     {
       "name": "Cassie Ewulu",
@@ -3684,7 +3579,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Shota Hayama",
@@ -3705,7 +3600,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Anjali Kunapneni",
@@ -3726,7 +3621,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Saeko Miura",
@@ -3747,7 +3642,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Phil Sterman",
@@ -3768,7 +3663,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Tomoya Ito",
@@ -3855,7 +3750,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Ryoma Masuda",
@@ -3876,7 +3771,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Courtney Lin",
@@ -3897,28 +3792,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
-    },
-    {
-      "name": "David Cherry",
-      "alsoKnownAs": [],
-      "credits": [],
-      "characters": [
-        {
-          "game": "fire-emblem-fortunes-weave",
-          "gameTitle": "Fire Emblem: Fortune's Weave",
-          "character": "Simon",
-          "collection": "characters",
-          "field": "voiceby",
-          "note": null,
-          "source": "https://fireemblem.fandom.com/wiki/Simon_(Fortune's_Weave)",
-          "sourceTitle": "Simon — fireemblem.fandom.com (CC BY-SA)",
-          "retrieved": "2026-09-19"
-        }
-      ],
-      "profile": null,
-      "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Chikahiro Kobayashi",
@@ -3986,7 +3860,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Kazutaka Ishii",
@@ -4007,7 +3881,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Mauricio Ortiz-Segura",
@@ -4028,7 +3902,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Frankie Kevich",
@@ -4049,7 +3923,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Arisa Kiyoto",
@@ -4070,7 +3944,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "A.J. Beckles",
@@ -4091,7 +3965,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Jonathan Fernandez",
@@ -4147,7 +4021,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Anthony Howell",
@@ -4168,7 +4042,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "ambiguous — 4 articles share this name"
     },
     {
       "name": "Shinnosuke Hai",
@@ -4189,7 +4063,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Gao Sihang",
@@ -4210,7 +4084,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Adam Longworth",
@@ -4231,7 +4105,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Yasuhiro Mamiya",
@@ -4252,7 +4126,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Liu Beichen",
@@ -4273,7 +4147,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Yoshimasa Hosoya",
@@ -4347,7 +4221,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Cao Zhen",
@@ -4522,7 +4396,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Zhang Pei",
@@ -4543,7 +4417,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Abe Jarman",
@@ -4564,7 +4438,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Miyake Kenta",
@@ -4637,7 +4511,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Clare Corbett",
@@ -4701,7 +4575,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Xu Hui",
@@ -4769,7 +4643,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Aya Endo",
@@ -4842,7 +4716,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Shogo Miyakita",
@@ -4863,7 +4737,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Akihiko Ishizumi",
@@ -4927,7 +4801,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Leader Looi",
@@ -4948,7 +4822,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Chiharu",
@@ -4969,7 +4843,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no category confirms a person"
     },
     {
       "name": "Xie Ying",
@@ -4990,7 +4864,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Richard Reed",
@@ -5040,27 +4914,6 @@
       "unresolvedReason": null
     },
     {
-      "name": "Saitou Jirou",
-      "alsoKnownAs": [],
-      "credits": [],
-      "characters": [
-        {
-          "game": "onimusha-way-of-the-sword",
-          "gameTitle": "Onimusha: Way of the Sword",
-          "character": "Burai",
-          "collection": "enemies",
-          "field": "Voice Actors",
-          "note": "Japanese",
-          "source": "https://onimusha.fandom.com/wiki/Burai",
-          "sourceTitle": "Burai — onimusha.fandom.com (CC BY-SA)",
-          "retrieved": "2026-09-19"
-        }
-      ],
-      "profile": null,
-      "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
-    },
-    {
       "name": "Adam Stickler",
       "alsoKnownAs": [],
       "credits": [],
@@ -5079,7 +4932,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Kanuka Mitsuaki",
@@ -5100,7 +4953,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Ami Okumura Jones",
@@ -5121,7 +4974,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Yuka Terasaki",
@@ -5191,7 +5044,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Alex Constantinidi",
@@ -5212,7 +5065,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Sayaka Oohara",
@@ -5233,7 +5086,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "redirects to \"Sayaka Ohara\", which does not mention this name"
     },
     {
       "name": "Mu Xue Ting",
@@ -5265,7 +5118,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Sara Fletcher",
@@ -5480,7 +5333,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Richard Epcar",
@@ -5597,7 +5450,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Riva Di Paola",
@@ -5618,7 +5471,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Death Island)",
@@ -5650,7 +5503,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Sumie Kaneshiro",
@@ -5671,7 +5524,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Erin Cahill",
@@ -5742,28 +5595,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
-    },
-    {
-      "name": "Linda",
-      "alsoKnownAs": [],
-      "credits": [],
-      "characters": [
-        {
-          "game": "resident-evil-requiem",
-          "gameTitle": "Resident Evil Requiem",
-          "character": "Rebecca Chambers",
-          "collection": "characters",
-          "field": "portrayer",
-          "note": "RE1 live-action",
-          "source": "https://residentevil.fandom.com/wiki/Rebecca_Chambers",
-          "sourceTitle": "Rebecca Chambers — residentevil.fandom.com (CC BY-SA)",
-          "retrieved": "2026-09-19"
-        }
-      ],
-      "profile": null,
-      "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Rin Asuka",
@@ -5892,7 +5724,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no category confirms a person"
     },
     {
       "name": "Jane Perry",
@@ -6006,7 +5838,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Michael McConnohie",
@@ -6072,7 +5904,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Diego Sabre",
@@ -6093,7 +5925,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Daigaku Sekine",
@@ -6114,7 +5946,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Greg Smith",
@@ -6135,7 +5967,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "ambiguous — 8 articles share this name"
     },
     {
       "name": "Rod Wilson",
@@ -6201,27 +6033,6 @@
         "why": "birth/living-people category"
       },
       "unresolvedReason": null
-    },
-    {
-      "name": "Keith Anthony",
-      "alsoKnownAs": [],
-      "credits": [],
-      "characters": [
-        {
-          "game": "resident-evil-requiem",
-          "gameTitle": "Resident Evil Requiem",
-          "character": "Marvin Branagh",
-          "collection": "characters",
-          "field": "voice",
-          "note": "Outbreak File #2",
-          "source": "https://residentevil.fandom.com/wiki/Marvin_Branagh",
-          "sourceTitle": "Marvin Branagh — residentevil.fandom.com (CC BY-SA)",
-          "retrieved": "2026-09-19"
-        }
-      ],
-      "profile": null,
-      "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
     },
     {
       "name": "Lex Lang",
@@ -6290,7 +6101,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Farahnaz Nikray",
@@ -6341,82 +6152,6 @@
       "unresolvedReason": null
     },
     {
-      "name": "Unknown",
-      "alsoKnownAs": [],
-      "credits": [],
-      "characters": [
-        {
-          "game": "resident-evil-requiem",
-          "gameTitle": "Resident Evil Requiem",
-          "character": "Mitchell Bennett",
-          "collection": "characters",
-          "field": "voice",
-          "note": null,
-          "source": "https://residentevil.fandom.com/wiki/Mitchell_Bennett",
-          "sourceTitle": "Mitchell Bennett — residentevil.fandom.com (CC BY-SA)",
-          "retrieved": "2026-09-19"
-        },
-        {
-          "game": "resident-evil-requiem",
-          "gameTitle": "Resident Evil Requiem",
-          "character": "Mitchell Bennett",
-          "collection": "characters",
-          "field": "mocap",
-          "note": null,
-          "source": "https://residentevil.fandom.com/wiki/Mitchell_Bennett",
-          "sourceTitle": "Mitchell Bennett — residentevil.fandom.com (CC BY-SA)",
-          "retrieved": "2026-09-19"
-        },
-        {
-          "game": "resident-evil-requiem",
-          "gameTitle": "Resident Evil Requiem",
-          "character": "Luke Clark",
-          "collection": "characters",
-          "field": "voice",
-          "note": null,
-          "source": "https://residentevil.fandom.com/wiki/Luke_Clark",
-          "sourceTitle": "Luke Clark — residentevil.fandom.com (CC BY-SA)",
-          "retrieved": "2026-09-19"
-        },
-        {
-          "game": "resident-evil-requiem",
-          "gameTitle": "Resident Evil Requiem",
-          "character": "Luke Clark",
-          "collection": "characters",
-          "field": "mocap",
-          "note": null,
-          "source": "https://residentevil.fandom.com/wiki/Luke_Clark",
-          "sourceTitle": "Luke Clark — residentevil.fandom.com (CC BY-SA)",
-          "retrieved": "2026-09-19"
-        },
-        {
-          "game": "resident-evil-requiem",
-          "gameTitle": "Resident Evil Requiem",
-          "character": "Anthony Richardson",
-          "collection": "characters",
-          "field": "voice",
-          "note": null,
-          "source": "https://residentevil.fandom.com/wiki/Anthony_Richardson",
-          "sourceTitle": "Anthony Richardson — residentevil.fandom.com (CC BY-SA)",
-          "retrieved": "2026-09-19"
-        },
-        {
-          "game": "resident-evil-requiem",
-          "gameTitle": "Resident Evil Requiem",
-          "character": "Anthony Richardson",
-          "collection": "characters",
-          "field": "mocap",
-          "note": null,
-          "source": "https://residentevil.fandom.com/wiki/Anthony_Richardson",
-          "sourceTitle": "Anthony Richardson — residentevil.fandom.com (CC BY-SA)",
-          "retrieved": "2026-09-19"
-        }
-      ],
-      "profile": null,
-      "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
-    },
-    {
       "name": "Conner Marx",
       "alsoKnownAs": [],
       "credits": [],
@@ -6435,7 +6170,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Kazuhiro Fusegawa",
@@ -6456,7 +6191,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Richie Campbell",
@@ -6477,7 +6212,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "ambiguous — 3 articles share this name"
     },
     {
       "name": "Antony Byrne",
@@ -6545,7 +6280,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "ambiguous — 3 articles share this name"
     },
     {
       "name": "Mercer Boffey",
@@ -6566,7 +6301,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Emma Rose Creaner",
@@ -6598,7 +6333,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Chris O'Reilly",
@@ -6619,7 +6354,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Isabella Inchbald",
@@ -6651,7 +6386,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Teddy Linard",
@@ -6672,7 +6407,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Ian Downie",
@@ -6693,7 +6428,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Hiroshi Ito",
@@ -6756,7 +6491,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Jean-Benoît Blanc",
@@ -6890,7 +6625,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Mana Hirata",
@@ -6957,7 +6692,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Michelle Lukes",
@@ -7057,7 +6792,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Marcella Silvestri",
@@ -7118,7 +6853,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Silvia Sarmentera",
@@ -7139,7 +6874,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Beatriz Villa",
@@ -7160,7 +6895,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Rey Silva",
@@ -7181,7 +6916,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Kosuke Sakaki",
@@ -7202,7 +6937,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Gwendal Anglade",
@@ -7223,7 +6958,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Alessandro Zurla",
@@ -7244,7 +6979,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Ole Jacobsen",
@@ -7265,7 +7000,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "David Blanco",
@@ -7338,7 +7073,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "ambiguous — 4 articles share this name"
     },
     {
       "name": "Jonathan Guedes",
@@ -7359,7 +7094,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Alexander Matrosov",
@@ -7440,7 +7175,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Neil Newbon",
@@ -7513,7 +7248,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Weronika Maria",
@@ -7534,7 +7269,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Elishia Edwards",
@@ -7555,7 +7290,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Wesker's Report)",
@@ -7576,7 +7311,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Junichi Kawamoto",
@@ -7597,7 +7332,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Ilram Choi",
@@ -7618,7 +7353,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Yoshio Iizuka",
@@ -7639,7 +7374,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Craig Burnatowski",
@@ -7671,7 +7406,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Eric Pirius",
@@ -7692,7 +7427,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Adam D. Clark",
@@ -7713,7 +7448,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "James Clyde",
@@ -7780,7 +7515,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Ryūnosuke Watanuki",
@@ -7801,28 +7536,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
-    },
-    {
-      "name": "Nick Apostolides",
-      "alsoKnownAs": [],
-      "credits": [],
-      "characters": [
-        {
-          "game": "resident-evil-requiem",
-          "gameTitle": "Resident Evil Requiem",
-          "character": "Unnamed truck driver",
-          "collection": "characters",
-          "field": "mocap",
-          "note": "2019 remake performance capture only",
-          "source": "https://residentevil.fandom.com/wiki/Unnamed_truck_driver",
-          "sourceTitle": "Unnamed truck driver — residentevil.fandom.com (CC BY-SA)",
-          "retrieved": "2026-09-19"
-        }
-      ],
-      "profile": null,
-      "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Mayuko Maruoka",
@@ -7843,7 +7557,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Michelle C. Lee",
@@ -7864,7 +7578,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Lily Gao",
@@ -7926,7 +7640,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Adam Paul",
@@ -7947,7 +7661,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Johnny Yong Bosch",
@@ -8025,7 +7739,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Shigeo Kiyama",
@@ -8093,7 +7807,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Inezh",
@@ -8114,7 +7828,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Michael Matus",
@@ -8135,7 +7849,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "ambiguous — 2 articles share this name"
     },
     {
       "name": "Giorgia Sinicorni",
@@ -8167,7 +7881,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Stéphane Cornicard",
@@ -8244,7 +7958,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Anna Demetriou",
@@ -8316,7 +8030,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Mard Bruthenaux",
@@ -8337,7 +8051,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Mark Healy",
@@ -8409,7 +8123,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Alistair Petrie",
@@ -8480,7 +8194,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Ellie Heydon",
@@ -8501,7 +8215,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Anthony Byrne",
@@ -8522,7 +8236,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "ambiguous — 2 articles share this name"
     },
     {
       "name": "Edouard Chény",
@@ -8554,7 +8268,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Ruben Crow",
@@ -8575,7 +8289,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Nicky Naudé",
@@ -8596,7 +8310,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Claire Morgan",
@@ -8675,7 +8389,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "ambiguous — 3 articles share this name"
     },
     {
       "name": "Nico Lennon",
@@ -8696,7 +8410,7 @@
       ],
       "profile": null,
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
     },
     {
       "name": "Franck Besançon",
@@ -8736,7 +8450,652 @@
         "retrieved": "2026-09-17"
       },
       "article": null,
-      "unresolvedReason": "not looked up — the run has not reached this name"
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Jovan Adepo",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "silent-hill-townfall",
+          "gameTitle": "Silent Hill: Townfall",
+          "role": "actor",
+          "note": "Actor",
+          "stated": "Actor",
+          "uncertain": false,
+          "source": "https://silenthill.fandom.com/wiki/Jovan_Adepo",
+          "sourceTitle": "Jovan Adepo — silenthill.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-17"
+        }
+      ],
+      "characters": [
+        {
+          "game": "silent-hill-townfall",
+          "gameTitle": "Silent Hill: Townfall",
+          "character": "Simon Ordell",
+          "collection": "characters",
+          "field": "actor",
+          "note": null,
+          "source": "https://silenthill.fandom.com/wiki/Simon_Ordell",
+          "sourceTitle": "Simon Ordell — silenthill.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-17"
+        }
+      ],
+      "profile": {
+        "title": "Jovan Adepo",
+        "url": "https://silenthill.fandom.com/wiki/Jovan_Adepo",
+        "wiki": "silenthill.fandom.com",
+        "game": "silent-hill-townfall",
+        "gameTitle": "Silent Hill: Townfall",
+        "profession": "Actor",
+        "crewRole": null,
+        "hometown": "Upper Heyford, Oxfordshire, England",
+        "born": null,
+        "birthPlace": null,
+        "nationality": null,
+        "activeSince": null,
+        "films": [],
+        "otherWorks": [
+          "The Leftovers",
+          "3 Body Problem",
+          "It: Welcome To Derry",
+          "The Odyssey"
+        ],
+        "roles": [
+          "actor"
+        ],
+        "onOurGame": true,
+        "sortName": "",
+        "retrieved": "2026-09-17"
+      },
+      "article": {
+        "title": "Jovan Adepo",
+        "url": "https://en.wikipedia.org/wiki/Jovan_Adepo",
+        "extract": "Jovan Adepo (born 6 September 1988) is a British-American actor. He made his feature film debut in the period drama Fences (2016), which was followed by roles in the psychological horror film Mother! (2017), the action horror film Overlord (2018), the period comedy-drama Babylon (2022), and the drama His Three Daughters (2023).\nAdepo also starred in the HBO supernatural drama series The Leftovers (2015–2017), the Facebook Watch drama series Sorry for Your Loss (2018–2019), the Amazon Prime Video action thriller series Jack Ryan (2019), the Netflix true crime miniseries When They See Us (2019), the HBO superhero miniseries Watchmen (2019), the CBS All Access fantasy miniseries The Stand (2020–2021), the Netflix science fiction series 3 Body Problem (2024) and the HBO horror series It: Welcome To Derry (2025). For his performance as Hooded Justice in Watchmen, he was nominated for the Primetime Emmy Award for Outstanding Supporting Actor in a Limited Series or Movie.",
+        "categories": [
+          "1988 births",
+          "21st-century African-American male actors",
+          "21st-century American male actors",
+          "21st-century British male actors",
+          "Actors from Cherwell District",
+          "American male film actors",
+          "American male television actors",
+          "Bowie State University alumni",
+          "British Christians",
+          "British male film actors",
+          "British male television actors",
+          "British people of Nigerian descent",
+          "Living people",
+          "Male actors from Oxfordshire",
+          "People from Waldorf, Maryland"
+        ],
+        "facts": {
+          "name": "Jovan Adepo",
+          "birth_date": "6 September 1988",
+          "birth_place": "Upper Heyford, Oxfordshire, England",
+          "education": "Bowie State University (BA)",
+          "occupation": "Actor",
+          "years_active": "2012–present"
+        },
+        "sortName": "Adepo, Jovan",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Hiroki Yasumoto",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "silent-hill-townfall",
+          "gameTitle": "Silent Hill: Townfall",
+          "character": "Simon Ordell",
+          "collection": "characters",
+          "field": "actor",
+          "note": "Japanese dub",
+          "source": "https://silenthill.fandom.com/wiki/Simon_Ordell",
+          "sourceTitle": "Simon Ordell — silenthill.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-17"
+        }
+      ],
+      "profile": null,
+      "article": {
+        "title": "Hiroki Yasumoto",
+        "url": "https://en.wikipedia.org/wiki/Hiroki_Yasumoto",
+        "extract": "Hiroki Yasumoto (安元 洋貴, Yasumoto Hiroki; born March 16, 1977) is a Japanese voice actor and narrator. He belongs to Sigma Seven. His representative works are Hozuki's Coolheadedness (Hozuki), Bleach (Yasutora Sado), Hetalia: Axis Powers (Germany), Super Soccer (narration), and Close-up Gendai (narration).",
+        "categories": [
+          "1977 births",
+          "21st-century Japanese male actors",
+          "Japanese male video game actors",
+          "Japanese male voice actors",
+          "Komazawa University alumni",
+          "Living people",
+          "Male voice actors from Yamaguchi Prefecture"
+        ],
+        "facts": {
+          "name": "Hiroki Yasumoto",
+          "native_name": "安元 洋貴",
+          "native_name_lang": "ja",
+          "birth_date": "16 March 1977",
+          "birth_place": "Yamaguchi Prefecture, Japan",
+          "education": "Komazawa University",
+          "occupation": "Voice actor, narrator",
+          "years_active": "2003–present",
+          "agent": "Sigma Seven",
+          "credits": "Bleach as Yasutora Sado, Fairy Tail as Elfman Strauss and Draculos Hyberion, Sword Art Online as Agil, Hetalia: Axis Powers as Germany, Yowamushi Pedal as Shingo Kinjou, Kyouran Kazoku Nikki as Midarezaki Teika, Street Fighter as Guile, Hozuki's Coolheadedness as Hōzuki, Black Butler as Agni"
+        },
+        "sortName": "Yasumoto, Hiroki",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Kezia Burrows",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "silent-hill-townfall",
+          "gameTitle": "Silent Hill: Townfall",
+          "role": "actor",
+          "note": "Actress",
+          "stated": "Actress",
+          "uncertain": false,
+          "source": "https://silenthill.fandom.com/wiki/Kezia_Burrows",
+          "sourceTitle": "Kezia Burrows — silenthill.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-17"
+        }
+      ],
+      "characters": [
+        {
+          "game": "silent-hill-townfall",
+          "gameTitle": "Silent Hill: Townfall",
+          "character": "Zoe Ellis",
+          "collection": "characters",
+          "field": "actor",
+          "note": null,
+          "source": "https://silenthill.fandom.com/wiki/Zoe_Ellis",
+          "sourceTitle": "Zoe Ellis — silenthill.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-17"
+        }
+      ],
+      "profile": {
+        "title": "Kezia Burrows",
+        "url": "https://silenthill.fandom.com/wiki/Kezia_Burrows",
+        "wiki": "silenthill.fandom.com",
+        "game": "silent-hill-townfall",
+        "gameTitle": "Silent Hill: Townfall",
+        "profession": "Actress",
+        "crewRole": null,
+        "hometown": "Neath, Wales, United Kingdom",
+        "born": "May 11",
+        "birthPlace": null,
+        "nationality": null,
+        "activeSince": null,
+        "films": [],
+        "otherWorks": [
+          "Crash",
+          "Elden Ring",
+          "Observation"
+        ],
+        "roles": [
+          "actor"
+        ],
+        "onOurGame": true,
+        "sortName": "",
+        "retrieved": "2026-09-17"
+      },
+      "article": {
+        "title": "Kezia Burrows",
+        "url": "https://en.wikipedia.org/wiki/Kezia_Burrows",
+        "extract": "Kezia Burrows is a Welsh actress, known for playing Dr Cath Llewelyn in the BBC Wales medical drama Crash from 2009 to 2010.",
+        "categories": [
+          "21st-century Welsh actresses",
+          "Actors from Carmarthen",
+          "Actors from Neath",
+          "Actors from Porthcawl",
+          "Actresses from Bridgend County Borough",
+          "Actresses from Carmarthenshire",
+          "Alumni of the Royal Academy of Dramatic Art",
+          "Living people",
+          "Welsh film actresses",
+          "Welsh people stubs",
+          "Welsh stage actresses",
+          "Welsh television actresses",
+          "Welsh video game actresses",
+          "Welsh voice actresses"
+        ],
+        "facts": {},
+        "sortName": "Burrows, Kezia",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Yuko Kaida",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "silent-hill-townfall",
+          "gameTitle": "Silent Hill: Townfall",
+          "character": "Zoe Ellis",
+          "collection": "characters",
+          "field": "actor",
+          "note": "Japanese dub",
+          "source": "https://silenthill.fandom.com/wiki/Zoe_Ellis",
+          "sourceTitle": "Zoe Ellis — silenthill.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-17"
+        }
+      ],
+      "profile": null,
+      "article": {
+        "title": "Yūko Kaida",
+        "url": "https://en.wikipedia.org/wiki/Y%C5%ABko_Kaida",
+        "extract": "Yūko Kaida (甲斐田 裕子, Kaida Yūko; born January 14, 1980) is a Japanese actress and voice actress who is affiliated with Ken Production. Her most known roles include Shimei Ryomou in Ikki Tousen, Tsukuyo in Gintama, Chasca in Genshin Impact, Kyō Takamimori in Potemayo, Amane Ootori in Strawberry Panic!, Minako Tsukiyama in Maria-sama ga Miteru, Maeda Matsu in Sengoku Basara, and Isabella in The Promised Neverland.",
+        "categories": [
+          "1971 births",
+          "21st-century Japanese actresses",
+          "Japanese stage actresses",
+          "Japanese video game actresses",
+          "Ken Production voice actors",
+          "Living people",
+          "Voice actors from Kawasaki, Kanagawa",
+          "Voice actresses from Kanagawa Prefecture"
+        ],
+        "facts": {
+          "name": "Yūko Kaida",
+          "native_name": "甲斐田 裕子",
+          "native_name_lang": "ja",
+          "birth_date": "14 January 1980",
+          "birth_place": "Kawasaki, Kanagawa Prefecture, Japan",
+          "other_names": "Kaita-chin, Yuhko Kaida",
+          "occupation": "Actress, voice actress",
+          "years_active": "2000–present",
+          "agent": "Ken Production",
+          "spouse": "Tomoyuki Hirasawa",
+          "website": "http://yuhko-kaida.com/"
+        },
+        "sortName": "Kaida, Yuko",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Terry O'Quinn",
+      "alsoKnownAs": [
+        "Terrence Quinn"
+      ],
+      "credits": [
+        {
+          "game": "silent-hill-townfall",
+          "gameTitle": "Silent Hill: Townfall",
+          "role": "actor",
+          "note": "Actor",
+          "stated": "Actor",
+          "uncertain": false,
+          "source": "https://silenthill.fandom.com/wiki/Terry_O'Quinn",
+          "sourceTitle": "Terry O'Quinn — silenthill.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-17"
+        }
+      ],
+      "characters": [
+        {
+          "game": "silent-hill-townfall",
+          "gameTitle": "Silent Hill: Townfall",
+          "character": "Richard",
+          "collection": "characters",
+          "field": "portrayed",
+          "note": "Actor",
+          "source": "https://silenthill.fandom.com/wiki/Terry_O'Quinn",
+          "sourceTitle": "Terry O'Quinn — silenthill.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-17"
+        },
+        {
+          "game": "silent-hill-townfall",
+          "gameTitle": "Silent Hill: Townfall",
+          "character": "Richard",
+          "collection": "characters",
+          "field": "actor",
+          "note": null,
+          "source": "https://silenthill.fandom.com/wiki/Richard",
+          "sourceTitle": "Richard — silenthill.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-17"
+        }
+      ],
+      "profile": {
+        "title": "Terry O'Quinn",
+        "url": "https://silenthill.fandom.com/wiki/Terry_O'Quinn",
+        "wiki": "silenthill.fandom.com",
+        "game": "silent-hill-townfall",
+        "gameTitle": "Silent Hill: Townfall",
+        "profession": "Actor",
+        "crewRole": null,
+        "hometown": "Sault Ste. Marie, Michigan, U.S.",
+        "born": null,
+        "birthPlace": null,
+        "nationality": null,
+        "activeSince": null,
+        "films": [],
+        "otherWorks": [
+          "Lost",
+          "The Walking Dead: The Ones Who Live"
+        ],
+        "roles": [
+          "actor"
+        ],
+        "onOurGame": true,
+        "sortName": "",
+        "retrieved": "2026-09-17"
+      },
+      "article": {
+        "title": "Terry O'Quinn",
+        "url": "https://en.wikipedia.org/wiki/Terry_O%27Quinn",
+        "extract": "Terrance Quinn (born July 15, 1952), known professionally as Terry O'Quinn, is an American actor. He won a Primetime Emmy Award for his performance as John Locke on the TV series Lost (2004–2010). In film, he also played the title role in The Stepfather (1987) and Howard Hughes in The Rocketeer (1991) with roles in other films such as Heaven's Gate (1980), Silver Bullet (1985), Young Guns (1988), Blind Fury (1989), Tombstone (1993) and Primal Fear (1996).\nOther prominent television roles include Peter Watts in Millennium (1996–1999), FBI Asst. Director Kendall in Alias (2002–2004), Commander Joe White in Hawaii Five-0 (2011–2018), and Tom Tavner in Patriot (2015–2018).",
+        "categories": [
+          "1952 births",
+          "20th-century American male actors",
+          "21st-century American male actors",
+          "American male film actors",
+          "American male television actors",
+          "American people of Irish descent",
+          "Catholics from Maryland",
+          "Catholics from Michigan",
+          "Central Michigan University alumni",
+          "Living people",
+          "Male actors from Michigan",
+          "Outstanding Performance by a Supporting Actor in a Drama Series Primetime Emmy Award winners",
+          "People from Mount Pleasant, Michigan",
+          "People from Newberry, Michigan",
+          "People from Reistertown, Maryland",
+          "People from Sault Ste. Marie, Michigan",
+          "University of Iowa alumni"
+        ],
+        "facts": {
+          "birth_name": "Terrance Quinn",
+          "birth_date": "15 July 1952",
+          "birth_place": "Sault Ste. Marie, Michigan, U.S.",
+          "years_active": "1975–present",
+          "occupation": "Actor"
+        },
+        "sortName": "Oquinn, Terry",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Akio Otsuka",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "silent-hill-townfall",
+          "gameTitle": "Silent Hill: Townfall",
+          "character": "Richard",
+          "collection": "characters",
+          "field": "actor",
+          "note": "Japanese dub",
+          "source": "https://silenthill.fandom.com/wiki/Richard",
+          "sourceTitle": "Richard — silenthill.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-17"
+        }
+      ],
+      "profile": null,
+      "article": {
+        "title": "Akio Otsuka",
+        "url": "https://en.wikipedia.org/wiki/Akio_Otsuka",
+        "extract": "Akio Otsuka (大塚 明夫, Ōtsuka Akio; born November 24, 1959) is a Japanese actor, voice actor, and narrator from the Tokyo Metropolitan area. He is currently a freelancer, but had previously been attached to Mausu Promotion.\nThe warm, calm quality of his deep voice has landed him many roles in films, dubbing, animation, and video games. He is most known for the roles of second generation Jigen Daisuke in Lupin III, the titular protagonist in Black Jack, Solid Snake, Naked Snake, Solidus Snake, and Venom Snake in the Metal Gear series, Gamigami Devil in Popolocrois, Ryoma Hoshi in Danganronpa V3: Killing Harmony, Shunsui Kyouraku in Bleach, Lieutenant Garuru in Sgt. Frog, Gwendel von Voltaire in Kyo Kara Maoh!, Batou in Ghost in the Shell, Blackbeard in One Piece, Tadakatsu Honda in the Samurai Warriors and Warriors Orochi series, Sango and Jugo Yokomizo in Detective Conan, Bryan Hawk in Hajime no Ippo, Zen Shigaraki/All For One in My Hero Academia, Thorkell in Vinland Saga, Wamuu in JoJo's Bizarre Adventure, Anavel Gato in Mobile Suit Gundam 0083: Stardust Memory, and Xehanort in the Kingdom Hearts series.\nHe is also the official dub voice for many Western actors, including Steven Seagal, Nicolas Cage, Antonio Banderas, Dolph Lundgren, Samuel L. Jackson, Denzel Washington, and Dennis Quaid.\nMausu Promotion announced on January 7, 2017 that Otsuka had married someone outside of the voice acting industry.\nOn March 31, 2026, Mausu Promotion announced that Otsuka had left the agency to become an independent voice actor.",
+        "categories": [
+          "1959 births",
+          "20th-century Japanese male actors",
+          "21st-century Japanese male actors",
+          "Japanese male musical theatre actors",
+          "Japanese male video game actors",
+          "Living people",
+          "Male voice actors from Tokyo",
+          "Mausu Promotion voice actors",
+          "Seiyu Award winners"
+        ],
+        "facts": {
+          "name": "Akio Otsuka",
+          "native_name": "大塚 明夫",
+          "native_name_lang": "ja",
+          "birth_date": "24 November 1959",
+          "birth_place": "Tokyo, Japan",
+          "occupation": "Actor, voice actor, narrator",
+          "years_active": "1988–present",
+          "parents": "Chikao Ōtsuka (father)",
+          "agent": "Topone",
+          "website": "https://topone.inc/talent/%E5%A4%A7%E5%A1%9A-%E6%98%8E%E5%A4%AB/"
+        },
+        "sortName": "Otsuka, Akio",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Christophe Gans",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [],
+      "profile": {
+        "title": "Christophe Gans",
+        "url": "https://silenthill.fandom.com/wiki/Christophe_Gans",
+        "wiki": "silenthill.fandom.com",
+        "game": "silent-hill-townfall",
+        "gameTitle": "Silent Hill: Townfall",
+        "profession": null,
+        "crewRole": "Director Writer (uncredited)",
+        "hometown": null,
+        "born": null,
+        "birthPlace": null,
+        "nationality": null,
+        "activeSince": null,
+        "films": [
+          "Silent Hill",
+          "Return to Silent Hill"
+        ],
+        "otherWorks": [],
+        "roles": [
+          "director",
+          "writer"
+        ],
+        "onOurGame": false,
+        "sortName": "",
+        "retrieved": "2026-09-17"
+      },
+      "article": {
+        "title": "Christophe Gans",
+        "url": "https://en.wikipedia.org/wiki/Christophe_Gans",
+        "extract": "Christophe Gans (born 11 March 1960) is a French film director, producer, and screenwriter who specializes in horror and fantasy movies.",
+        "categories": [
+          "1960 births",
+          "Filmmakers from Provence-Alpes-Côte d'Azur",
+          "French fantasy film directors",
+          "French film directors",
+          "French horror film directors",
+          "French screenwriters",
+          "Institut des hautes études cinématographiques alumni",
+          "Living people",
+          "People from Antibes"
+        ],
+        "facts": {
+          "name": "Christophe Gans",
+          "birth_name": "Christophe Gans",
+          "birth_date": "11 March 1960",
+          "birth_place": "Antibes, France",
+          "occupation": "Film director, producer; screenwriter",
+          "years_active": "1981–present"
+        },
+        "sortName": "Gans, Christophe",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Simon Chylinski",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "subnautica-2",
+          "gameTitle": "Subnautica 2",
+          "character": "Ryley Robinson",
+          "collection": "characters",
+          "field": "voiceactor",
+          "note": null,
+          "source": "https://subnautica.fandom.com/wiki/Ryley_Robinson",
+          "sourceTitle": "Ryley Robinson — subnautica.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-19"
+        }
+      ],
+      "profile": null,
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Lorelei King",
+      "alsoKnownAs": [],
+      "credits": [],
+      "characters": [
+        {
+          "game": "subnautica-2",
+          "gameTitle": "Subnautica 2",
+          "character": "Marguerit Maida",
+          "collection": "characters",
+          "field": "voiceactor",
+          "note": null,
+          "source": "https://subnautica.fandom.com/wiki/Marguerit_Maida",
+          "sourceTitle": "Marguerit Maida — subnautica.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-19"
+        }
+      ],
+      "profile": null,
+      "article": {
+        "title": "Lorelei King",
+        "url": "https://en.wikipedia.org/wiki/Lorelei_King",
+        "extract": "Lorelei King is an American actress, screenwriter and development executive who has been based in the United Kingdom since 1981. She has narrated audiobooks, acted in radio plays for BBC Radio 4 and appeared on television.",
+        "categories": [
+          "Actresses from Pittsburgh",
+          "American emigrants to the United Kingdom",
+          "American expatriate actresses",
+          "American expatriates in England",
+          "American film actresses",
+          "American television actresses",
+          "American television writers",
+          "American voice actresses",
+          "American voice directors",
+          "American women screenwriters",
+          "American women television writers",
+          "Audiobook narrators",
+          "British television actresses",
+          "Living people",
+          "Naturalised citizens of the United Kingdom",
+          "Screenwriters from Pennsylvania"
+        ],
+        "facts": {},
+        "sortName": "King, Lorelei",
+        "person": true,
+        "why": "birth/living-people category"
+      },
+      "unresolvedReason": null
+    },
+    {
+      "name": "Will de Renzy-Martin",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "dawnwalker",
+          "gameTitle": "The Blood of Dawnwalker",
+          "role": "actor",
+          "note": "Actor",
+          "stated": "Actor",
+          "uncertain": false,
+          "source": "https://dawnwalker.fandom.com/wiki/Will_de_Renzy-Martin",
+          "sourceTitle": "Will de Renzy-Martin — dawnwalker.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-19"
+        }
+      ],
+      "characters": [
+        {
+          "game": "dawnwalker",
+          "gameTitle": "The Blood of Dawnwalker",
+          "character": "Coen",
+          "collection": "characters",
+          "field": "role",
+          "note": "Actor",
+          "source": "https://dawnwalker.fandom.com/wiki/Will_de_Renzy-Martin",
+          "sourceTitle": "Will de Renzy-Martin — dawnwalker.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-19"
+        }
+      ],
+      "profile": {
+        "title": "Will de Renzy-Martin",
+        "url": "https://dawnwalker.fandom.com/wiki/Will_de_Renzy-Martin",
+        "wiki": "dawnwalker.fandom.com",
+        "profession": "Actor",
+        "crewRole": null,
+        "born": null,
+        "birthPlace": null,
+        "nationality": null,
+        "activeSince": null,
+        "sortName": "de Renzy-Martin, Will",
+        "retrieved": "2026-09-19"
+      },
+      "article": null,
+      "unresolvedReason": "no article"
+    },
+    {
+      "name": "Andrew James Spooner",
+      "alsoKnownAs": [],
+      "credits": [
+        {
+          "game": "dawnwalker",
+          "gameTitle": "The Blood of Dawnwalker",
+          "role": "actor",
+          "note": "Actor",
+          "stated": "Actor",
+          "uncertain": false,
+          "source": "https://dawnwalker.fandom.com/wiki/Andrew_James_Spooner",
+          "sourceTitle": "Andrew James Spooner — dawnwalker.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-19"
+        }
+      ],
+      "characters": [
+        {
+          "game": "dawnwalker",
+          "gameTitle": "The Blood of Dawnwalker",
+          "character": "Brencis",
+          "collection": "characters",
+          "field": "role",
+          "note": "Actor",
+          "source": "https://dawnwalker.fandom.com/wiki/Andrew_James_Spooner",
+          "sourceTitle": "Andrew James Spooner — dawnwalker.fandom.com (CC BY-SA)",
+          "retrieved": "2026-09-19"
+        }
+      ],
+      "profile": {
+        "title": "Andrew James Spooner",
+        "url": "https://dawnwalker.fandom.com/wiki/Andrew_James_Spooner",
+        "wiki": "dawnwalker.fandom.com",
+        "profession": "Actor",
+        "crewRole": null,
+        "born": null,
+        "birthPlace": null,
+        "nationality": null,
+        "activeSince": null,
+        "sortName": "Spooner, Andrew James",
+        "retrieved": "2026-09-19"
+      },
+      "article": null,
+      "unresolvedReason": "no article"
     },
     {
       "name": "Jovan Adepo",
@@ -11256,6 +11615,61 @@
       "game": "resonance-a-plague-tale-legacy",
       "field": "mo-capped by",
       "character": "Sophia"
+    },
+    {
+      "character": "",
+      "value": "Three Houses",
+      "why": "disambiguation page — not published: an article that says it is not a person is evidence, not silence"
+    },
+    {
+      "character": "",
+      "value": "Three Hopes",
+      "why": "resolved to a non-person article (2022 video games) — not published: an article that says it is not a person is evidence, not silence"
+    },
+    {
+      "character": "",
+      "value": "Fortune's Weave",
+      "why": "resolved to a non-person article (2026 video games) — not published: an article that says it is not a person is evidence, not silence"
+    },
+    {
+      "character": "",
+      "value": "Christian Young",
+      "why": "resolved to a non-person article (2000s British crime drama television series) — not published: an article that says it is not a person is evidence, not silence"
+    },
+    {
+      "character": "",
+      "value": "George Peter",
+      "why": "disambiguation page — not published: an article that says it is not a person is evidence, not silence"
+    },
+    {
+      "character": "",
+      "value": "David Cherry",
+      "why": "disambiguation page — not published: an article that says it is not a person is evidence, not silence"
+    },
+    {
+      "character": "",
+      "value": "Saitou Jirou",
+      "why": "disambiguation page — not published: an article that says it is not a person is evidence, not silence"
+    },
+    {
+      "character": "",
+      "value": "Linda",
+      "why": "disambiguation page — not published: an article that says it is not a person is evidence, not silence"
+    },
+    {
+      "character": "",
+      "value": "Keith Anthony",
+      "why": "resolved to a non-person article (2008 Irish television series debuts) — not published: an article that says it is not a person is evidence, not silence"
+    },
+    {
+      "character": "",
+      "value": "Unknown",
+      "why": "disambiguation page — not published: an article that says it is not a person is evidence, not silence"
+    },
+    {
+      "character": "",
+      "value": "Nick Apostolides",
+      "why": "resolved to a non-person article (2016 American films) — not published: an article that says it is not a person is evidence, not silence"
     }
   ]
 }

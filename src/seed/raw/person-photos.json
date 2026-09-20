@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-19",
+  "fetchedAt": "2026-09-20",
   "source": "en.wikipedia.org/w/api.php — imageinfo, extmetadata",
   "complete": true,
   "people": [
@@ -708,12 +708,6 @@
     {
       "name": "Shigeo Kiyama",
       "article": "https://en.wikipedia.org/wiki/Shigeo_Kiyama",
-      "photo": false,
-      "reason": "the article carries no lead image"
-    },
-    {
-      "name": "Lorelei King",
-      "article": "https://en.wikipedia.org/wiki/Lorelei_King",
       "photo": false,
       "reason": "the article carries no lead image"
     },
