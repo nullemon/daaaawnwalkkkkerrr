@@ -94,9 +94,22 @@ const classify = async (file) => {
   return { verdict, lightness, saturation, opaque: n }
 }
 
+/*
+  No `media/` is the normal state of a fresh clone, not a fault: uploads live
+  in the database and in `media/`, neither of which is in git. This step is in
+  `pnpm db:reset`, so exiting non-zero here failed the chain two thirds of the
+  way through and took the twenty-one passes after it — guides, contributors,
+  art, publish, copy — with nothing in the output saying the rebuild was
+  incomplete. `src/seed/assets.ts` has always said this and exited 0; this is
+  the same rule in the one place that disagreed.
+
+  It also has to return *before* the write. A run with no files and `--write`
+  would save an empty map over the good one, which is the failure this project
+  has already met twice — a refusal written down as a fact.
+*/
 if (!fs.existsSync(MEDIA)) {
-  console.error(`No media directory at ${MEDIA}.`)
-  process.exit(1)
+  console.log(`No media directory at ${MEDIA}. Nothing to classify; leaving ${OUT} alone.`)
+  process.exit(0)
 }
 
 const files = fs.readdirSync(MEDIA).filter((name) => IS_LOGO.test(name) && /\.(png|jpe?g|webp)$/i.test(name))
