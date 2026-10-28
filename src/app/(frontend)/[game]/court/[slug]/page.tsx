@@ -2,6 +2,7 @@ import type { Metadata, ResolvingMetadata } from 'next'
 import { SectionNeighbours } from '@/components/SectionNeighbours'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
+import { RecordLd } from '@/components/PageLd'
 import { Confidence } from '@/components/Badges'
 import { Linked, LinkedRichText } from '@/components/Linked'
 import type { LinkScope } from '@/lib/link-index'
@@ -79,6 +80,10 @@ export default async function CourtPage({ params }: Props) {
 
   return (
     <>
+      {/* The page, its trail and its subject, for machines. The layout already
+          emits the game, the site and the publisher on every page; this is
+          the part that says what *this* page is. */}
+      <RecordLd game={game} collection="courts" doc={doc} />
       <PageHeader
         eyebrow="Court"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Court', href: '/court' }, { label: doc.title }]}

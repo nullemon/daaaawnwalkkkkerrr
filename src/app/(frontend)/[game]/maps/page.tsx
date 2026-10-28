@@ -2,6 +2,7 @@ import type { Metadata, ResolvingMetadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { PageHeader } from '@/components/PageHeader'
+import { IndexLd } from '@/components/PageLd'
 import { Linked } from '@/components/Linked'
 import type { LinkScope } from '@/lib/link-index'
 import { getAll, getGame } from '@/lib/payload'
@@ -66,6 +67,8 @@ export default async function MapsIndex({ params }: Props) {
 
   return (
     <>
+      {/* The index, its trail and the list of what is on it, for machines. */}
+      <IndexLd game={slug} collection="maps" items={maps} />
       <PageHeader
         eyebrow="Database"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Maps' }]}

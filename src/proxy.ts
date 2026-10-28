@@ -39,6 +39,9 @@ import { ADMIN_SEGMENT } from './lib/admin-path'
  * claims any route folder of that name.
  */
 export const PASS_THROUGH = new Set([
+  /* Who makes the site, in the convention browsers and crawlers know. Served
+     on every host; the people are the same on all of them. */
+  'humans.txt',
   '_next',
   'api',
   ADMIN_SEGMENT,

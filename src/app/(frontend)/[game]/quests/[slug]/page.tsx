@@ -3,6 +3,7 @@ import { SectionNeighbours } from '@/components/SectionNeighbours'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
+import { RecordLd } from '@/components/PageLd'
 import { Callout } from '@/components/Callout'
 import { Confidence, PhaseBadge } from '@/components/Badges'
 import { Linked, LinkedRichText } from '@/components/Linked'
@@ -113,6 +114,10 @@ export default async function QuestPage({ params }: Props) {
 
   return (
     <>
+      {/* The page, its trail and its subject, for machines. The layout already
+          emits the game, the site and the publisher on every page; this is
+          the part that says what *this* page is. */}
+      <RecordLd game={game} collection="quests" doc={quest} />
       <PageHeader
         eyebrow="Quest"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Quests', href: '/quests' }, { label: quest.title }]}

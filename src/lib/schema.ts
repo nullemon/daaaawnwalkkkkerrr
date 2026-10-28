@@ -588,3 +588,138 @@ export const gameScores = (
       : undefined,
   })
 }
+
+// --- a record page, and a section index ------------------------------------
+
+/**
+ * One record's page: the page, its breadcrumb trail, and the thing it is about.
+ *
+ * Every wiki page already carries the `VideoGame`, the `WebSite` and the
+ * network `Organization` from its layout. What a record page lacked was
+ * itself — a `WebPage` saying what it is a page *about*, a `BreadcrumbList`
+ * for the trail a result shows, and the entity, so a consumer can tell a
+ * quest page from a character page without reading the prose.
+ *
+ * ## Why the entity is a `Thing`
+ *
+ * A quest, an item, a region or a character in a game is not a schema.org
+ * `Place` or `Person` — those are the real ones — and calling a fictional
+ * town a `Place` is the overstatement this file exists to refuse. `Thing`
+ * with the collection's own name as `additionalType` text and
+ * `mainEntityOfPage` back to the page is true, valid, and still joins the
+ * graph through `about` on the page to the game's `@id`.
+ *
+ * ## Why `dateModified` and not `datePublished`
+ *
+ * `updatedAt` is when the row was last written, which is a real event, so it
+ * is emitted. There is no publication date on a compiled record — the facts
+ * were published by the game's own sources on the dates each citation says —
+ * and a `datePublished` set to the day the seeder ran would be the invented
+ * precision `article()` already refuses for guides.
+ *
+ * One `@graph`, three nodes, so the page renders one script rather than
+ * three and the `@id`s between them resolve inside the same document.
+ */
+export const recordPage = (
+  base: string,
+  options: {
+    /** The record's own path on this host, e.g. `/quests/a-study-in-crimson`. */
+    path: string
+    name: string
+    description?: string | null
+    image?: string | null
+    /** What the section calls one of these: "Quest", "Character". */
+    kind: string
+    updated?: string | null
+    crumbs: { label: string; href?: string }[]
+  },
+): Json => {
+  const url = `${base}${options.path}`
+  const page = {
+    '@type': 'WebPage',
+    '@id': url,
+    url,
+    name: options.name,
+    description: options.description || undefined,
+    isPartOf: { '@id': `${base}#website` },
+    about: { '@id': gameId(base) },
+    dateModified: isoDate(options.updated),
+    primaryImageOfPage: options.image || undefined,
+    breadcrumb: { '@id': `${url}#breadcrumb` },
+    mainEntity: { '@id': `${url}#thing` },
+  }
+  const trail = breadcrumbs(base, options.crumbs)
+  const thing = {
+    '@type': 'Thing',
+    '@id': `${url}#thing`,
+    name: options.name,
+    description: options.description || undefined,
+    image: options.image || undefined,
+    additionalType: options.kind,
+    mainEntityOfPage: { '@id': url },
+  }
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      compact(page),
+      compact({ ...trail, '@context': undefined, '@id': `${url}#breadcrumb` }),
+      compact(thing),
+    ],
+  }
+}
+
+/**
+ * A section index: the page, its trail, and the list of what is on it.
+ *
+ * The list is capped. An `ItemList` of five hundred entries is a page-sized
+ * script on a page that already prints the same five hundred names in a
+ * table, and the consumers that read these stop well short of that;
+ * `numberOfItems` carries the real total so the cap costs no information.
+ */
+export const collectionPage = (
+  base: string,
+  options: {
+    path: string
+    name: string
+    description?: string | null
+    items: { name: string; path: string }[]
+    crumbs: { label: string; href?: string }[]
+    limit?: number
+  },
+): Json => {
+  const url = `${base}${options.path}`
+  const limit = options.limit ?? 50
+  const page = {
+    '@type': 'CollectionPage',
+    '@id': url,
+    url,
+    name: options.name,
+    description: options.description || undefined,
+    isPartOf: { '@id': `${base}#website` },
+    about: { '@id': gameId(base) },
+    breadcrumb: { '@id': `${url}#breadcrumb` },
+    mainEntity: { '@id': `${url}#list` },
+  }
+  const trail = breadcrumbs(base, options.crumbs)
+  const list = {
+    '@type': 'ItemList',
+    '@id': `${url}#list`,
+    name: options.name,
+    numberOfItems: options.items.length,
+    itemListOrder: 'https://schema.org/ItemListUnordered',
+    itemListElement: options.items.slice(0, limit).map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      url: `${base}${item.path}`,
+    })),
+  }
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      compact(page),
+      compact({ ...trail, '@context': undefined, '@id': `${url}#breadcrumb` }),
+      compact(list),
+    ],
+  }
+}

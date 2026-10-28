@@ -3,6 +3,7 @@ import { SectionNeighbours } from '@/components/SectionNeighbours'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
+import { RecordLd } from '@/components/PageLd'
 import { EntityImage } from '@/components/EntityImage'
 import { Confidence, PhaseBadge } from '@/components/Badges'
 import { Facts } from '@/components/Facts'
@@ -70,6 +71,10 @@ export default async function CourtActivityPage({ params }: Props) {
 
   return (
     <>
+      {/* The page, its trail and its subject, for machines. The layout already
+          emits the game, the site and the publisher on every page; this is
+          the part that says what *this* page is. */}
+      <RecordLd game={game} collection="court-activities" doc={doc} />
       <PageHeader
         eyebrow="Court Activity"
         crumbs={[

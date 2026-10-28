@@ -1,5 +1,6 @@
 import { getPublishedGames } from '@/lib/payload'
 import { escapeXml, feedFor } from '@/lib/feed'
+import { WEBSUB_HUB } from '@/lib/websub'
 
 export const dynamic = 'force-static'
 
@@ -31,6 +32,7 @@ export async function GET(
   <title>${escapeXml(title)}</title>
   <subtitle>${escapeXml(description)}</subtitle>
   <link href="${base}/atom.xml" rel="self" type="application/atom+xml" />
+  <link href="${WEBSUB_HUB}" rel="hub" />
   <link href="${base}" rel="alternate" type="text/html" />
   <id>${base}/</id>
   <updated>${updated}</updated>

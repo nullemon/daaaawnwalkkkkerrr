@@ -1,7 +1,13 @@
 /**
  * Demo mode for `<lastmod>`: a spread of unique dates instead of real ones.
  *
- *   SITEMAP_DEMO_DATES=off   in `.env`, to turn it back off
+ *   SITEMAP_DEMO_DATES=on    in `.env`, to turn it on for a demo
+ *
+ * **Off unless asked for.** It shipped the other way round — on unless an
+ * `.env` said `off` — which meant every deployment that forgot the variable
+ * handed search engines 3,194 fabricated `<lastmod>` values, and Google's own
+ * documentation says it stops trusting a sitemap's dates once it catches them
+ * being wrong. A demo switch that is on in production is not a demo switch.
  *
  * ## What this does, plainly
  *
@@ -61,9 +67,9 @@ const hash = (value: string): number => {
   return out >>> 0
 }
 
-/** Is demo mode on? Anything but an explicit `off` means yes. */
+/** Is demo mode on? Only an explicit `on` means yes. */
 export const demoDatesOn = (value: string | undefined = process.env.SITEMAP_DEMO_DATES): boolean =>
-  (value ?? '').trim().toLowerCase() !== 'off'
+  (value ?? '').trim().toLowerCase() === 'on'
 
 /**
  * A date for one URL: its own, stable, and inside the window.

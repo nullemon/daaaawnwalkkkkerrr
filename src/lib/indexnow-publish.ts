@@ -3,6 +3,7 @@ import { resolveIndexNowKey } from './indexnow'
 import { shippedIndexNowKey } from './indexnow-shipped'
 import { PingQueue, isPublication, pingAllowed } from './indexnow-ping'
 import { SECTION_PATH, type GameScopedCollection } from './tenancy'
+import { announceFeeds } from './websub'
 
 /**
  * The half of the publish ping that touches a database and the network.
@@ -316,7 +317,16 @@ export const pingOnPublish =
         doc: record,
         origin: allowed.origin,
       }).then((url) => {
-        if (url) queueFor(req.payload).add(url)
+        if (!url) return
+        queueFor(req.payload).add(url)
+        /*
+          And the feeds. A published page changes this wiki's `feed.xml` and
+          `atom.xml`, both of which name a WebSub hub; telling the hub is what
+          makes a subscriber hear about the page in seconds rather than on its
+          next poll. Same posture as the queue above: fire and forget, never a
+          failed save.
+        */
+        void announceFeeds(url, (message) => req.payload.logger.info(`[websub] ${message}`))
       })
     } catch {
       /* A publish is never failed by this. See above. */

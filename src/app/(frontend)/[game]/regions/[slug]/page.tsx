@@ -4,6 +4,7 @@ import { SectionNeighbours } from '@/components/SectionNeighbours'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
+import { RecordLd } from '@/components/PageLd'
 import { Confidence, PhaseBadge } from '@/components/Badges'
 import { Linked, LinkedRichText } from '@/components/Linked'
 import type { LinkScope } from '@/lib/link-index'
@@ -126,6 +127,10 @@ export default async function RegionPage({ params }: Props) {
 
   return (
     <>
+      {/* The page, its trail and its subject, for machines. The layout already
+          emits the game, the site and the publisher on every page; this is
+          the part that says what *this* page is. */}
+      <RecordLd game={game} collection="regions" doc={doc} />
       <PageHeader
         eyebrow="Region"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Regions', href: '/regions' }, { label: doc.title }]}

@@ -2,6 +2,7 @@ import type { Metadata, ResolvingMetadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { PageHeader } from '@/components/PageHeader'
+import { IndexLd } from '@/components/PageLd'
 import { Linked } from '@/components/Linked'
 import type { LinkScope } from '@/lib/link-index'
 import { sectionArt } from '@/lib/art'
@@ -96,6 +97,8 @@ export default async function CourtActivitiesIndex({ params }: Props) {
 
   return (
     <>
+      {/* The index, its trail and the list of what is on it, for machines. */}
+      <IndexLd game={game} collection="court-activities" items={activities} />
       <PageHeader
         art={sectionArt(game, 'court-activities')}
         eyebrow="Database"

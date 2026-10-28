@@ -2,6 +2,7 @@ import type { Metadata, ResolvingMetadata } from 'next'
 import { SectionNeighbours } from '@/components/SectionNeighbours'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
+import { RecordLd } from '@/components/PageLd'
 import { Linked } from '@/components/Linked'
 import type { LinkScope } from '@/lib/link-index'
 import { Confidence } from '@/components/Badges'
@@ -94,6 +95,10 @@ export default async function MapPage({ params }: Props) {
 
   return (
     <>
+      {/* The page, its trail and its subject, for machines. The layout already
+          emits the game, the site and the publisher on every page; this is
+          the part that says what *this* page is. */}
+      <RecordLd game={game} collection="maps" doc={doc} />
       <PageHeader
         eyebrow="Map"
         crumbs={[

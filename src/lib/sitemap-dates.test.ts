@@ -4,9 +4,9 @@ import { demoDatesOn, lastmodFor, spreadDate } from './sitemap-dates'
 const NOW = new Date('2026-09-18T12:00:00.000Z')
 
 describe('demoDatesOn', () => {
-  it('is on unless the variable explicitly says off', () => {
-    expect(demoDatesOn(undefined)).toBe(true)
-    expect(demoDatesOn('')).toBe(true)
+  it('is off unless the variable explicitly says on', () => {
+    expect(demoDatesOn(undefined)).toBe(false)
+    expect(demoDatesOn('')).toBe(false)
     expect(demoDatesOn('on')).toBe(true)
     expect(demoDatesOn('off')).toBe(false)
     expect(demoDatesOn('  OFF  ')).toBe(false)

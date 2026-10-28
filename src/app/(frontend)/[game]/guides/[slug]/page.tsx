@@ -53,10 +53,23 @@ export async function generateMetadata(
   const { game, slug } = await params
   const doc = await getBySlug('guides', slug, { game, depth: 1 })
   if (!doc) return {}
+  /*
+    The byline, in the document head as well as on the page.
+
+    `<meta name="author">` and `<link rel="author">` are the two signals a
+    crawler reads for who wrote a thing before it reads the prose, and they
+    were on no page of this network while the visible byline and the
+    `Article` JSON-LD both named the writer. Same person, same profile URL on
+    the hub, so the three cannot disagree. Absent when the guide has no
+    author rather than filled with the network's name: a site is not a
+    person.
+  */
+  const author = doc.author && typeof doc.author === 'object' ? doc.author : null
   return {
     title: doc.seo?.title || doc.title,
     description: clamp(doc.seo?.description || doc.summary || ''),
     alternates: { canonical: `/guides/${doc.slug}` },
+    authors: author ? [{ name: author.name, url: hub(`/authors/${author.slug}`) }] : undefined,
     /*
       Each article shares its own lead image, which is what this route has
       always meant to do — it just used to do it by writing `openGraph` out

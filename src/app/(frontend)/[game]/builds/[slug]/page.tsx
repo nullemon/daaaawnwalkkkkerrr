@@ -3,6 +3,7 @@ import { SectionNeighbours } from '@/components/SectionNeighbours'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
+import { RecordLd } from '@/components/PageLd'
 import { Badge, Confidence } from '@/components/Badges'
 import { Facts } from '@/components/Facts'
 import { Linked, LinkedRichText } from '@/components/Linked'
@@ -73,6 +74,10 @@ export default async function BuildPage({ params }: Props) {
 
   return (
     <>
+      {/* The page, its trail and its subject, for machines. The layout already
+          emits the game, the site and the publisher on every page; this is
+          the part that says what *this* page is. */}
+      <RecordLd game={game} collection="builds" doc={doc} />
       <PageHeader
         eyebrow="Build"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Builds', href: '/builds' }, { label: doc.title }]}

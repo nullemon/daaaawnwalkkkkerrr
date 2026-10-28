@@ -1,5 +1,6 @@
 import { getPublishedGames } from '@/lib/payload'
 import { escapeXml, feedFor } from '@/lib/feed'
+import { WEBSUB_HUB } from '@/lib/websub'
 
 export const dynamic = 'force-static'
 
@@ -32,6 +33,7 @@ export async function GET(
     <language>en</language>
     <lastBuildDate>${new Date(updated).toUTCString()}</lastBuildDate>
     <atom:link href="${base}/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="${WEBSUB_HUB}" rel="hub" />
 ${items
   .map(
     (item) => `    <item>

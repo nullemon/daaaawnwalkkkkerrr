@@ -1,6 +1,7 @@
 import type { Metadata, ResolvingMetadata } from 'next'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/PageHeader'
+import { IndexLd } from '@/components/PageLd'
 import { Linked } from '@/components/Linked'
 import type { LinkScope } from '@/lib/link-index'
 import { sectionArt } from '@/lib/art'
@@ -76,6 +77,8 @@ export default async function FactionsIndex({ params }: Props) {
 
   return (
     <>
+      {/* The index, its trail and the list of what is on it, for machines. */}
+      <IndexLd game={slug} collection="factions" items={factions} />
       <PageHeader
         art={sectionArt(slug, 'factions')}
         eyebrow="Database"
