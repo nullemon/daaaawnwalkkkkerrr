@@ -66,7 +66,7 @@ export const VIEW = 64
 export const GRID = 4
 
 /** Charcoal ground and paper ink: the `--ground` and `--ink` tokens. */
-export const PLATE = '#131211'
+export const PLATE = '#0b0b0d'
 export const LEAF = '#f7f4f1'
 
 /**
@@ -77,7 +77,7 @@ export const LEAF = '#f7f4f1'
  * second hard-coded red further down the pipeline would be a second opinion
  * about the brand colour, which is the shape of bug this repo keeps finding.
  */
-export const ACCENT = '#d13a44'
+export const ACCENT = '#e5192f'
 
 type Box = { x: number; y: number; w: number; h: number }
 

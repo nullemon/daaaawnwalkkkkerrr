@@ -75,8 +75,8 @@ export const contrast = (a: string, b: string): number => {
   hexes are the shipped `--ground` values and the `#fff` that sits on every
   accent-filled button; if the palette moves, these move with it.
 */
-const DARK_GROUND = '#131211'
-const LIGHT_GROUND = '#eef0f4'
+const DARK_GROUND = '#0b0b0d'
+const LIGHT_GROUND = '#f2f2f4'
 const ON_ACCENT = '#ffffff'
 
 /*

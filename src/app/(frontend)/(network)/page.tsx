@@ -1,6 +1,7 @@
 import type { Metadata, ResolvingMetadata } from 'next'
 import { Icon } from '@/components/Icon'
 import { SiteLogo } from '@/components/SiteLogo'
+import { Ticker } from '@/components/Ticker'
 import {
   Asking,
   Directory,
@@ -168,6 +169,20 @@ export default async function HubHome() {
           {settings.siteName}
         </p>
       </header>
+
+      {/*
+        The strip. Every wiki and what it holds, counted from the same rows
+        the directory below is built from, so the two cannot disagree. Plain
+        hrefs: every wiki is its own origin.
+      */}
+      <Ticker
+        label="Wikis and their record counts"
+        items={wikis.map((entry) => ({
+          label: entry.game.shortTitle || entry.game.title,
+          value: entry.pages,
+          href: entry.url,
+        }))}
+      />
 
       <HomeHead data={data} />
 

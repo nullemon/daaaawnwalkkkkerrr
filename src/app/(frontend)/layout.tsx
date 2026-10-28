@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Barlow, Barlow_Semi_Condensed, Cinzel } from 'next/font/google'
+import { Kanit, Rubik } from 'next/font/google'
 import { themeBootScript } from '@/lib/appearance'
 import { getAppearance } from '@/lib/appearance-settings'
 import { RunProvider } from '@/components/RunProvider'
@@ -25,29 +25,29 @@ import './globals.css'
  * Self-hosted through next/font: no render-blocking request to a font host and
  * no layout shift, both of which show up directly in Core Web Vitals.
  *
- * Cinzel is inscriptional Roman capitals — right for a 14th-century setting,
- * and used only on the wordmark and page titles so it never has to carry body
- * text. Barlow does the work: slightly condensed, dense enough for data tables,
- * and readable at 13px where most of this site lives.
+ * Kanit is the display face and it is only ever set italic, heavy and in
+ * capitals — the broadcast-graphics register the whole visual layer is built
+ * on, where a heading reads as a lower-third rather than a line of text. It
+ * carries wordmarks, page titles, section heads, labels and figures and never
+ * body copy. Rubik does the body: round enough to sit beside a slanted
+ * display face without fighting it, dense enough for a data table at 13px.
+ *
+ * Both weights of the italic are loaded because the two do different jobs:
+ * 900 is a title, 800 is a label or a figure, and a label set in the title
+ * weight reads as a second title.
  */
-const cinzel = Cinzel({
+const kanit = Kanit({
   subsets: ['latin'],
-  weight: ['600', '700'],
-  variable: '--font-cinzel',
+  weight: ['500', '700', '800', '900'],
+  style: ['normal', 'italic'],
+  variable: '--font-kanit',
   display: 'swap',
 })
 
-const barlow = Barlow({
+const rubik = Rubik({
   subsets: ['latin'],
   weight: ['400', '500', '600'],
-  variable: '--font-barlow',
-  display: 'swap',
-})
-
-const barlowCondensed = Barlow_Semi_Condensed({
-  subsets: ['latin'],
-  weight: ['500', '600'],
-  variable: '--font-barlow-condensed',
+  variable: '--font-rubik',
   display: 'swap',
 })
 
@@ -90,7 +90,7 @@ export async function generateMetadata(): Promise<Metadata> {
  * font-family on the site silently fell back to the browser default — which is
  * exactly what was happening until this was caught.
  */
-const fontVars = `${cinzel.variable} ${barlow.variable} ${barlowCondensed.variable}`
+const fontVars = `${kanit.variable} ${rubik.variable}`
 
 /*
  * The interface-text overrides are read here and nowhere else.

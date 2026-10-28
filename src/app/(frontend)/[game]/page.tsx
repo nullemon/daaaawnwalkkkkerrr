@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { ART_GAME, sectionArt, tileArt } from '@/lib/art'
 import { HeroSearch } from '@/components/HeroSearch'
 import { SiteLogo } from '@/components/SiteLogo'
+import { Ticker } from '@/components/Ticker'
 import { Icon } from '@/components/Icon'
 import { Briefing } from '@/components/home/Briefing'
 import { Linked } from '@/components/Linked'
@@ -329,6 +330,20 @@ export default async function Home({ params }: Props) {
         */}
         <ImageCredit credit={heroCredit} slot="band" as="p" />
       </header>
+
+      {/*
+        The strip under the masthead: every section this wiki has, with its
+        count, from the same `sectionsFor` read the tiles below use. A section
+        with no records is not in it, for the reason it is not in the rail.
+      */}
+      <Ticker
+        label="Sections and their record counts"
+        items={sections.map((section) => ({
+          label: section.label,
+          value: section.count,
+          href: section.href,
+        }))}
+      />
 
       <div className="page wikihome">
         {/*

@@ -377,7 +377,17 @@ function PosterTile({ entry }: { entry: DirectoryEntry }) {
   const score = editorialScore(entry.game)
   const year = releaseYear(entry.game)
   return (
-    <a className="home-poster" href={entry.url}>
+    <a
+      className="home-poster"
+      href={entry.url}
+      /* The game's own accent, as the bar down the card's leading edge. The
+         same custom property `WikiCard` sets, read by the same rule. */
+      style={
+        entry.game.theme?.accent
+          ? ({ '--card-accent': entry.game.theme.accent } as React.CSSProperties)
+          : undefined
+      }
+    >
       <span className="home-poster-art">
         {art.box ? <img src={src(art.box)} alt="" loading="lazy" /> : null}
         {score ? <span className="home-poster-score">{score.score.toFixed(1)}</span> : null}
