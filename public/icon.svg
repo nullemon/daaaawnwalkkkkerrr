@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="A ruled leaf of vellum">
-  <rect width="64" height="64" rx="12" fill="#131211"/>
+  <rect width="64" height="64" rx="12" fill="#0b0b0d"/>
   <path d="M12 8H40L52 20V56H12ZM20 24H24V52H20ZM28 28H44V32H28ZM28 36H44V40H28ZM28 44H36V48H28Z" fill="#f7f4f1" fill-rule="evenodd"/>
-  <path d="M20 24H24V52H20Z" fill="#d13a44"/>
+  <path d="M20 24H24V52H20Z" fill="#e5192f"/>
 </svg>

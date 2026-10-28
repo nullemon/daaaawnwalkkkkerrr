@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation'
+import { wikiAssetsFor } from '@/lib/wiki-assets'
 import type { Metadata } from 'next'
 import { Shell } from '@/components/Shell'
 import type { RailItem } from '@/components/SiteRail'
@@ -70,6 +71,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const base = await gameUrl(game)
   const name = game.shortTitle || game.title
 
+  const assets = wikiAssetsFor(slug)
+
   return {
     // Each wiki is its own site as far as search engines are concerned, so it
     // gets its own canonical origin, its own title template and its own feeds.
@@ -104,15 +107,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     */
     icons: {
       icon: [
-        { url: `/wiki-assets/${slug}/icon-32.png`, type: 'image/png', sizes: '32x32' },
-        { url: `/wiki-assets/${slug}/icon-512.png`, type: 'image/png', sizes: '512x512' },
+        { url: assets.icon32, type: 'image/png', sizes: '32x32' },
+        { url: assets.icon512, type: 'image/png', sizes: '512x512' },
       ],
-      apple: `/wiki-assets/${slug}/apple-touch-icon.png`,
+      apple: assets.apple,
     },
     ...hostCard({
       siteName: `${name} Wiki`,
       image: {
-        url: `/wiki-assets/${slug}/og.jpg`,
+        /* The wiki's own card, or the network's for a wiki whose art has not
+           been attached yet. A 404 here is the picture on every shared link. */
+        url: assets.og,
         width: 1200,
         height: 630,
         alt: `${game.title}${game.publisher ? ` — ${game.publisher}` : ''}`,

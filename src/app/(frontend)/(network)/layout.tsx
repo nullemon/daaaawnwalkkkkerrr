@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { wikiIcon } from '@/lib/wiki-assets'
 import { Shell } from '@/components/Shell'
 import type { RailItem } from '@/components/SiteRail'
 import type { FooterColumn } from '@/components/SiteFooter'
@@ -110,9 +111,11 @@ export default async function NetworkLayout({ children }: { children: React.Reac
           The 1:1 favicon crop `tools/make-wiki-icons.mjs` already produces,
           which is the right image for a square hole — the capsule is roughly
           2:1 and centre-cropping one slices the title off. Served from
-          `public/` on every host.
+          `public/` on every host. Null for a wiki the script has not run for,
+          and then the initials above draw instead of a broken image: two of
+          fifteen were a 404 in the header of every hub page.
         */
-        image: `/wiki-assets/${game.slug}/icon-32.png`,
+        image: wikiIcon(game.slug),
       },
       external: true,
     })),

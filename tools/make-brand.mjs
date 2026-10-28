@@ -354,6 +354,10 @@ async function shootWithLocalChrome(html, width, height) {
       '--headless=new',
       '--disable-gpu',
       '--hide-scrollbars',
+      // Chrome refuses to start as root without this, and a CI container or a
+      // cloud session is root. It is the sandbox around a page this script
+      // wrote itself; nothing untrusted is rendered.
+      '--no-sandbox',
       // The webfont comes off the network; give it time to land before the
       // shot. `checkFontHost` has already established that it can.
       '--virtual-time-budget=4000',

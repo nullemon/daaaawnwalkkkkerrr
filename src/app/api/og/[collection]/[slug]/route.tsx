@@ -1,4 +1,5 @@
 import { readFile } from 'node:fs/promises'
+import { wikiAssetsFor } from '@/lib/wiki-assets'
 import path from 'node:path'
 import { ImageResponse } from 'next/og'
 import { NextResponse, type NextRequest } from 'next/server'
@@ -224,7 +225,7 @@ export async function GET(
   /** Exactly what this page shared before the card existed. */
   const fallback = () =>
     NextResponse.redirect(
-      new URL(photoUrl ?? `/wiki-assets/${label}/og.jpg`, request.url),
+      new URL(photoUrl ?? wikiAssetsFor(label).og, request.url),
       302,
     )
 

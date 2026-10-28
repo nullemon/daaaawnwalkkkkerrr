@@ -1,4 +1,5 @@
 import fs from 'fs'
+import { wikisWithoutAssets } from './wiki-assets'
 import path from 'path'
 import type { Finding } from './audit'
 
@@ -53,7 +54,7 @@ export function hostsServingNoVerificationTag(): string[] {
   })
 }
 
-export function auditSource(): Finding[] {
+export function auditSource(wikiSlugs: string[] = []): Finding[] {
   const findings: Finding[] = []
 
   // --- Copy that cannot vary per wiki --------------------------------------
@@ -109,6 +110,25 @@ export function auditSource(): Finding[] {
       actor: 'owner',
       area: host,
       detail: `${host}.<domain> serves no verification tag at all — its layout never calls verificationMetadata, so the network token cannot reach this host and the HTML-tag method cannot verify it. Use a DNS Domain property, or have this layout emit the tag.`,
+      count: 1,
+    })
+  }
+
+  // --- A wiki with no icon set of its own -----------------------------------
+  /*
+    `tools/make-wiki-icons.mjs` skips a game with no capsule or hero art, and
+    nothing said so afterwards: the wiki simply served the network's favicon
+    and share card through the fallback in `lib/wiki-assets.ts` — which is the
+    right thing to serve, and still a wiki whose shared links show the
+    network's picture instead of the game's. Editorial, because the fix is
+    attaching the publisher's art and running the script, not a token.
+  */
+  for (const slug of wikisWithoutAssets(wikiSlugs)) {
+    findings.push({
+      level: 'warn',
+      actor: 'editorial',
+      area: slug,
+      detail: `no icon set or share card of its own in public/wiki-assets/${slug}/ — the network's serve instead. Attach hero and capsule art, then run node tools/make-wiki-icons.mjs`,
       count: 1,
     })
   }

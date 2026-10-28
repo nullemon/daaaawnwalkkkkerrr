@@ -5025,7 +5025,10 @@ a.chip:hover { background: var(--ink); color: var(--ground); border-color: var(-
 
 /* --- tables ---------------------------------------------------------------- */
 
-.tablewrap { clip-path: var(--cut-sm); }
+/* No cut on a table's frame. The frame is a horizontal scroll container on a
+   phone, and a cut corner takes the end off its scrollbar, which reads as a
+   glitch rather than a shape. Square corners here; the cut is everywhere else. */
+.tablewrap { clip-path: none; }
 .tablewrap table th, th { background: var(--sunken); color: var(--muted); border-bottom: 2px solid var(--rule); }
 .tablewrap table tbody tr:nth-child(even), tbody tr:nth-child(odd) { background: transparent; }
 tbody tr:hover, .tablewrap table tbody tr:hover {
@@ -5246,3 +5249,21 @@ tbody tr:hover, .tablewrap table tbody tr:hover {
    system bar on the side keeps its text clear of it. Set once, on `.page`,
    which every band's inner wrapper already is. */
 .page { padding-left: max(18px, env(safe-area-inset-left, 0px)); padding-right: max(18px, env(safe-area-inset-right, 0px)); }
+
+/* --- what the sticky header costs the page --------------------------------
+   Three rules above were written when the navigation was a rail down the
+   left and the top of the viewport was the top of the page: `.anchored`
+   scrolled a heading to 20px from the top, the wiki home's rail stuck at
+   18px, the planner's summary at 64px. With a header that stays, every one of
+   them put its target under it — a contents link in a guide landed with the
+   heading hidden behind the tabs, which is the one thing a contents link
+   must not do. The header's height is one token, read by all of them, and
+   `scroll-padding-top` on the root covers every fragment link that has no
+   class of its own. 64px is the brand row plus the red rule; under 860px the
+   tabs take their own row and the figure grows with it. */
+:root { --header-h: 64px; }
+@media (max-width: 860px) { :root { --header-h: 100px; } }
+html { scroll-padding-top: calc(var(--header-h) + 12px); }
+.anchored { scroll-margin-top: calc(var(--header-h) + 16px); }
+@media (min-width: 1000px) { .wikihome-rail { top: calc(var(--header-h) + 18px); } }
+.planner-summary { top: calc(var(--header-h) + 12px); }

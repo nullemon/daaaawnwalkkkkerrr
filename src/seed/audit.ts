@@ -53,7 +53,7 @@ async function run(): Promise<void> {
     sections below them.
   */
   const snapshot = await auditNetwork(payload)
-  const findings: Finding[] = [...snapshot.findings, ...auditSource()]
+  const findings: Finding[] = [...snapshot.findings, ...auditSource(snapshot.wikis.map((wiki) => wiki.slug))]
 
   // --- Report --------------------------------------------------------------
   const order: Finding['level'][] = ['blocking', 'warn', 'note']

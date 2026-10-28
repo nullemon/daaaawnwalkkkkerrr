@@ -1,4 +1,5 @@
 import type { DirectoryEntry } from '@/lib/directory'
+import { wikiIcon } from '@/lib/wiki-assets'
 import type { Media } from '@/payload-types'
 
 /**
@@ -29,7 +30,7 @@ export type WikiArt = {
   /** Prefer portrait: shelves, poster walls, tiles. */
   box: Media | null
   /** Always present, always small. */
-  icon: string
+  icon: string | null
 }
 
 const asMedia = (value: unknown): Media | null =>
@@ -43,7 +44,7 @@ export const artOf = (entry: DirectoryEntry): WikiArt => {
     poster,
     wide: hero ?? poster,
     box: poster ?? hero,
-    icon: `/wiki-assets/${entry.game.slug}/icon-32.png`,
+    icon: wikiIcon(entry.game.slug),
   }
 }
 

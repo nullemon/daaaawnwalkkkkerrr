@@ -1,4 +1,5 @@
 import type { IconName } from '@/components/Icon'
+import { wikiIcon } from './wiki-assets'
 import type { HubTarget } from '@/components/HubSearch'
 import { directory, type DirectoryEntry } from '@/lib/directory'
 import { whatPeopleAreAsking } from '@/lib/asking'
@@ -60,7 +61,7 @@ export type LatestEntry = {
   summary?: string | null
   wiki: string
   /** The wiki's favicon: small, and every wiki has one. */
-  icon: string
+  icon: string | null
   /** The article's own lead image. Every one of the 597 has one. */
   image: Media | null
 }
@@ -128,7 +129,7 @@ export const homeData = async (): Promise<HomeData> => {
       href: `${await gameUrl(game)}/guides/${doc.slug}`,
       summary: doc.summary,
       wiki: game.shortTitle || game.title,
-      icon: `/wiki-assets/${game.slug}/icon-32.png`,
+      icon: wikiIcon(game.slug),
       image: doc.image && typeof doc.image === 'object' ? (doc.image as Media) : null,
     })),
   )
@@ -274,7 +275,7 @@ export const homeData = async (): Promise<HomeData> => {
       label: entry.game.shortTitle || entry.game.title,
       sub: `${entry.pages.toLocaleString('en-GB')} pages · ${entry.game.status}`,
       href: entry.url,
-      icon: `/wiki-assets/${entry.game.slug}/icon-32.png`,
+      icon: wikiIcon(entry.game.slug),
       kind: 'wiki' as const,
     })),
     ...latest.map((entry) => ({
