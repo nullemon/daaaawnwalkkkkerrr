@@ -1036,3 +1036,144 @@
   font-size: 0.75rem;
   color: var(--theme-elevation-600);
 }
+
+/* ---------------------------------------------------------------------------
+   The brand, lightly.
+
+   Payload's own design system stays: the elevations, the forms, the lists. What
+   changes is the one colour that was Payload's and is now the network's — the
+   primary button, the active nav link, the focus ring — and a red rule along
+   the top of every admin screen so the panel is visibly the same publication
+   as the site. Nothing here touches a field, a table or a token the forms
+   depend on, which is how an admin restyle stays a restyle and not a bug.
+--------------------------------------------------------------------------- */
+
+:root {
+  --net-red: #e5192f;
+  --net-red-ink: #ffffff;
+}
+
+.template-default::before,
+.template-minimal::before {
+  content: '';
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: var(--net-red);
+  z-index: 100;
+  pointer-events: none;
+}
+
+.btn--style-primary {
+  background: var(--net-red) !important;
+  border-color: var(--net-red) !important;
+  color: var(--net-red-ink) !important;
+}
+.btn--style-primary:hover { filter: brightness(1.08); }
+
+.nav__link--active { color: var(--net-red); }
+.nav__link--active::before { background: var(--net-red); }
+
+/* ---------------------------------------------------------------------------
+   /wiki — one wiki on one screen, and the cards.
+--------------------------------------------------------------------------- */
+
+.net-wiki, .net-seo { display: flex; flex-direction: column; gap: var(--base, 20px); padding-bottom: calc(var(--base, 20px) * 2); }
+.net-wiki-title, .net-seo-title { margin: 0; font-size: 1.6rem; letter-spacing: -0.01em; }
+.net-wiki-note, .net-seo-note { margin: 6px 0 0; font-size: 0.85rem; color: var(--theme-elevation-600); max-width: 70ch; line-height: 1.5; }
+.net-wiki-crumbs { margin: 0; font-size: 0.8rem; color: var(--theme-elevation-500); }
+.net-wiki-crumbs a { color: inherit; }
+
+.net-wiki-head { display: flex; align-items: flex-start; gap: 18px; flex-wrap: wrap; }
+.net-wiki-head > div:first-child { flex: 1 1 320px; min-width: 0; }
+.net-wiki-host { margin: 6px 0 0; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font-size: 0.85rem; }
+.net-wiki-host a { font-family: var(--font-mono, monospace); color: var(--theme-elevation-700); text-decoration: none; }
+.net-wiki-host a:hover { color: var(--net-red); }
+.net-wiki-status { padding: 2px 8px; border-radius: 3px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; background: var(--theme-elevation-100); color: var(--theme-elevation-700); }
+.net-wiki-status[data-status='live'] { background: color-mix(in srgb, var(--theme-success-500) 18%, transparent); color: var(--theme-success-600, #1a7f4b); }
+.net-wiki-status[data-status='planned'] { background: color-mix(in srgb, var(--net-red) 14%, transparent); color: var(--net-red); }
+.net-wiki-slug { font-family: var(--font-mono, monospace); font-size: 0.75rem; color: var(--theme-elevation-500); }
+
+.net-wiki-score { display: flex; flex-direction: column; align-items: flex-end; padding: 8px 14px; border: 1px solid var(--theme-elevation-150); border-radius: 4px; font-size: 0.9rem; color: var(--theme-elevation-600); line-height: 1.1; }
+.net-wiki-score b { font-size: 1.5rem; color: var(--theme-elevation-900); }
+.net-wiki-score span { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--theme-elevation-500); }
+.net-wiki-actions { display: flex; gap: 8px; flex-wrap: wrap; align-items: flex-start; }
+
+.net-wiki-grid { display: grid; grid-template-columns: 1fr; gap: var(--base, 20px); }
+@media (min-width: 1100px) { .net-wiki-grid { grid-template-columns: 1fr 1fr; } }
+.net-wiki-panel { border: 1px solid var(--theme-elevation-150); border-radius: 4px; padding: 16px 18px; background: var(--theme-elevation-0); min-width: 0; }
+.net-wiki-panel--wide { grid-column: 1 / -1; }
+.net-wiki-heading { margin: 0 0 8px; font-size: 1rem; display: flex; align-items: baseline; gap: 10px; }
+.net-wiki-count { font-size: 0.8rem; color: var(--theme-elevation-500); font-variant-numeric: tabular-nums; }
+
+.net-wiki-groups { display: grid; grid-template-columns: 1fr; gap: 14px 24px; margin-top: 12px; }
+@media (min-width: 800px) { .net-wiki-groups { grid-template-columns: 1fr 1fr; } }
+.net-wiki-group-head { margin: 0 0 4px; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--theme-elevation-500); }
+.net-wiki-rows { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.net-wiki-row { display: grid; grid-template-columns: 20px 1fr auto; gap: 10px; align-items: baseline; padding: 8px 0; border-top: 1px solid var(--theme-elevation-100); font-size: 0.86rem; }
+.net-wiki-row:first-child { border-top: 0; }
+.net-wiki-row-body { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+.net-wiki-row-label { font-weight: 600; color: var(--theme-elevation-800); }
+.net-wiki-row-detail { color: var(--theme-elevation-600); font-size: 0.8rem; overflow-wrap: anywhere; }
+.net-wiki-row[data-ok='gap'] .net-wiki-row-detail { color: var(--theme-elevation-800); }
+.net-wiki-row-go { font-size: 0.75rem; white-space: nowrap; color: var(--theme-elevation-600); text-decoration: none; }
+.net-wiki-row-go:hover { color: var(--net-red); }
+.net-wiki-mark { display: inline-flex; width: 18px; height: 18px; align-items: center; justify-content: center; border-radius: 3px; font-size: 0.72rem; font-weight: 700; }
+.net-wiki-mark--ok { background: color-mix(in srgb, var(--theme-success-500) 18%, transparent); color: var(--theme-success-600, #1a7f4b); }
+.net-wiki-mark--gap { background: var(--net-red); color: #fff; }
+.net-wiki-mark--na { background: var(--theme-elevation-100); color: var(--theme-elevation-500); }
+
+.net-wiki-empty { color: var(--theme-elevation-400); font-size: 0.78rem; }
+.net-dash-table tr[data-empty='true'] td { color: var(--theme-elevation-500); }
+.net-wiki-recent { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.net-wiki-recent li { padding: 7px 0; border-top: 1px solid var(--theme-elevation-100); font-size: 0.86rem; display: flex; flex-direction: column; gap: 1px; }
+.net-wiki-recent li:first-child { border-top: 0; }
+.net-wiki-recent-meta { font-size: 0.76rem; color: var(--theme-elevation-500); }
+.net-wiki-findings { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.net-wiki-findings li { display: grid; grid-template-columns: 76px 1fr; gap: 12px; padding: 7px 0; border-top: 1px solid var(--theme-elevation-100); font-size: 0.85rem; }
+.net-wiki-findings li:first-child { border-top: 0; }
+.net-wiki-finding-actor { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--theme-elevation-500); padding-top: 3px; }
+.net-wiki-findings li[data-actor='blocked'] { color: var(--theme-elevation-500); }
+.net-wiki-findings li[data-level='blocking'] .net-wiki-finding-actor { color: var(--net-red); }
+
+.net-wiki-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+.net-wiki-card { --wiki-accent: var(--theme-elevation-300); display: flex; flex-direction: column; gap: 6px; padding: 14px 16px 14px 18px; border: 1px solid var(--theme-elevation-150); border-left: 5px solid var(--wiki-accent); border-radius: 4px; background: var(--theme-elevation-0); color: inherit; text-decoration: none; min-width: 0; }
+.net-wiki-card:hover { border-color: var(--theme-elevation-400); border-left-color: var(--wiki-accent); background: var(--theme-elevation-50); }
+.net-wiki-card-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.net-wiki-card-head b { font-size: 1rem; }
+.net-wiki-card-score { font-variant-numeric: tabular-nums; font-size: 0.82rem; color: var(--theme-elevation-600); padding: 1px 7px; border-radius: 3px; background: var(--theme-elevation-100); }
+.net-wiki-card-score[data-full='true'] { background: color-mix(in srgb, var(--theme-success-500) 18%, transparent); color: var(--theme-success-600, #1a7f4b); }
+.net-wiki-card-host { font-family: var(--font-mono, monospace); font-size: 0.74rem; color: var(--theme-elevation-500); overflow-wrap: anywhere; }
+.net-wiki-card-meta { font-size: 0.8rem; color: var(--theme-elevation-600); }
+.net-wiki-card-gaps { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+.net-wiki-card-gaps span { font-size: 0.7rem; padding: 2px 7px; border-radius: 3px; background: color-mix(in srgb, var(--net-red) 12%, transparent); color: var(--net-red); }
+.net-wiki-card-clear { font-size: 0.78rem; color: var(--theme-success-600, #1a7f4b); margin-top: 4px; }
+.net-dash-manage { font-weight: 600; }
+
+/* ---------------------------------------------------------------------------
+   /seo — every host as a search engine sees it.
+--------------------------------------------------------------------------- */
+
+.net-seo-switches { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; }
+.net-seo-switch { display: flex; flex-direction: column; gap: 3px; padding: 10px 12px 10px 14px; border: 1px solid var(--theme-elevation-150); border-left: 4px solid var(--theme-elevation-300); border-radius: 4px; background: var(--theme-elevation-0); font-size: 0.82rem; }
+.net-seo-switch b { font-size: 0.78rem; letter-spacing: 0.04em; }
+.net-seo-switch span { color: var(--theme-elevation-600); line-height: 1.45; }
+.net-seo-switch[data-state='good'] { border-left-color: var(--theme-success-500); }
+.net-seo-switch[data-state='warn'] { border-left-color: var(--theme-warning-500, #d98f00); }
+.net-seo-switch[data-state='bad'] { border-left-color: var(--net-red); }
+.net-seo-switch[data-state='bad'] span { color: var(--theme-elevation-900); font-weight: 500; }
+
+.net-dash-table-wrap { overflow-x: auto; max-width: 100%; }
+.net-seo-table { min-width: 900px; }
+.net-seo-table td a { color: inherit; }
+.net-seo-yn { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; }
+.net-seo-yn--yes { background: color-mix(in srgb, var(--theme-success-500) 18%, transparent); color: var(--theme-success-600, #1a7f4b); }
+.net-seo-yn--no { background: var(--net-red); color: #fff; }
+.net-seo-toks { white-space: nowrap; }
+.net-seo-tok { display: inline-flex; width: 20px; height: 20px; align-items: center; justify-content: center; margin-right: 3px; border-radius: 3px; font-size: 0.7rem; font-weight: 700; background: var(--theme-elevation-100); color: var(--theme-elevation-400); }
+.net-seo-tok--on { background: color-mix(in srgb, var(--theme-success-500) 18%, transparent); color: var(--theme-success-600, #1a7f4b); }
+.net-seo-files { white-space: nowrap; }
+.net-seo-files a { margin-right: 8px; font-size: 0.8rem; }
+.net-seo-how { border: 1px solid var(--theme-elevation-150); border-radius: 4px; padding: 14px 18px; background: var(--theme-elevation-0); }
+.net-seo-how ul { margin: 8px 0 0; padding-left: 18px; font-size: 0.85rem; color: var(--theme-elevation-700); display: flex; flex-direction: column; gap: 6px; }
+.net-seo-how code { font-family: var(--font-mono, monospace); font-size: 0.8rem; }

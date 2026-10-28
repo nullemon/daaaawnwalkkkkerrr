@@ -121,6 +121,12 @@ export default buildConfig({
       beforeLogin: ['@/components/admin/LoginNotice'],
       afterNavLinks: [
         '@/components/admin/NavBadges',
+        /*
+          The per-wiki control room and the SEO table. Both are root views,
+          and a root view is not in Payload's nav unless something puts it
+          there — see the note above `AnalyticsNavLink`.
+        */
+        '@/components/admin/WikiNavLink',
         '@/components/admin/AnalyticsNavLink',
         /*
           Renders nothing at all unless REMOTE_CONTROL_SECRET is set on the
@@ -160,6 +166,27 @@ export default buildConfig({
           Component: '@/components/admin/AnalyticsView',
           path: '/analytics',
           meta: { title: 'Analytics' },
+        },
+        /*
+          One wiki on one screen, and the list of them. `?game=<slug>` picks
+          one; a query rather than a path segment because Payload's root
+          views take a fixed path. Everything it decides is
+          `lib/wiki-health.ts`, which is pure and tested; the view gathers.
+        */
+        wiki: {
+          Component: '@/components/admin/WikiView',
+          path: '/wiki',
+          meta: { title: 'Wikis' },
+        },
+        /*
+          Every host as a search engine sees it: indexable, verified, measured,
+          carrying its own card, when it last changed — and the two environment
+          switches that have already bitten, in words.
+        */
+        seo: {
+          Component: '@/components/admin/SeoView',
+          path: '/seo',
+          meta: { title: 'SEO & indexing' },
         },
         /*
           Approving a terminal to write to the live site. A root view for the

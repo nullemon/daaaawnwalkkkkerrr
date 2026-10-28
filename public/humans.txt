@@ -4,6 +4,8 @@ Location: Manila, Philippines
 Contact: see the contact page on this site
 
 /* SITE */
+Name: RUNEBACK.gg
+Domain: runeback.gg
 Every record on this network is compiled and checked by hand from a cited
 source, and carries that citation and the date it was read. Where a source
 does not state something, the field is left empty and the page says so.

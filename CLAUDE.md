@@ -915,6 +915,21 @@ robots.txt has published its own new address.
   searching `analytics-events`. A GET form, not a typeahead: the query lands
   in the URL, and twenty-three queries per keystroke against SQLite is not a
   feature. Each group is capped and **says when it was cut**.
+- **One wiki on one screen** at `/wiki?game=<slug>` (`WikiView`), and every
+  wiki as a card at `/wiki`. The checklist on it — status, release, art, icon
+  set, indexable, tokens, analytics, records, guides, tools, verdict, waiting
+  comments — is `src/lib/wiki-health.ts`, pure and tested; the view gathers
+  and the module decides. Three answers per row, not two: a dash is "does not
+  apply" (a verdict on a game that is not out), never a tick. Each field row
+  names the tab it is on, for the deep-link reason below.
+- **Every host as a search engine sees it** at `/seo` (`SeoView`): indexable,
+  title source, the three verification tokens, analytics, whether the share
+  card is the wiki's own or the network's, last change, and links to each
+  host's sitemap, robots and feeds. It also prints the two environment
+  switches that have already bitten — `SITEMAP_DEMO_DATES` and
+  `INDEXNOW_PING` — in words. It reads records, settings, disk and env; it
+  fetches nothing and asks no engine, because whether a page is *indexed* is
+  Search Console's answer and not this network's guess.
 - **The login screen** carries the network's own mark, its name from Site
   settings, and one warning that matters: with no mail provider configured,
   Payload's "forgot password" accepts an address and delivers nothing. The
@@ -1129,7 +1144,9 @@ argument.
 - **Owner-supplied settings** that `pnpm check:launch` reports and no source can
   supply: a Search Console token per subdomain (each is its own property), an
   analytics ID per wiki, real contributors in place of the 36 placeholder
-  authors, and the network's own name — it is still "Vellum", a working title.
+  authors, and the network's own name — set to **RUNEBACK.gg** (domain `runeback.gg`) in Site
+  settings and in `seed/data.ts`; the `check:launch` row about the working
+  title "Vellum" is gone with it.
   The **IndexNow key** is not one of these, and is worth knowing about because
   it looks like one: it is Site settings → SEO & analytics → IndexNow key,
   blank falls back to the key committed in `public/`, and `/<key>.txt` is

@@ -263,6 +263,10 @@ export default async function NetworkDashboard() {
                     )}
                   </td>
                   <td className="net-dash-num">
+                    <a className="net-dash-manage" href={adminUrl(`/wiki?game=${wiki.slug}`)}>
+                      manage
+                    </a>
+                    {' · '}
                     {/*
                       The internal path form on the apex. proxy.ts redirects it to
                       the wiki's own host, so this keeps working if a subdomain is

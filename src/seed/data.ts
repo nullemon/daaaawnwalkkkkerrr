@@ -20,7 +20,7 @@ export const siteSettings = {
     hub. "Vellum" is a working name and nothing depends on it — change it here
     or, better, in Site settings → Identity, and every wiki picks it up.
   */
-  siteName: 'Vellum',
+  siteName: 'RUNEBACK.gg',
   tagline: 'Game wikis with the sources shown',
   description:
     'Wikis and databases for games worth playing carefully. Every figure is cited to where it came from, and where sources disagree we say so rather than picking one.',

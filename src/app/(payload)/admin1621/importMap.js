@@ -25,6 +25,7 @@ import { default as default_ea808f6cf6462b4390257299af97fbf3 } from '@/component
 import { default as default_d500ae2ad98a0a33d640ae0ac1a3417c } from '@/components/admin/AdminIcon'
 import { default as default_b80a86fce1072afc84cd6a430a965697 } from '@/components/admin/AdminLogo'
 import { default as default_b00b5b7ec8a95f6eca9d47579d2ab8e0 } from '@/components/admin/NavBadges'
+import { default as default_95fc3d8f68c115ca7a6cfa98d74e8cfe } from '@/components/admin/WikiNavLink'
 import { default as default_fb17e397022e83cc802d5c55b8837bc2 } from '@/components/admin/AnalyticsNavLink'
 import { default as default_d5595a2203cb11a9a527e1a3f4a11fed } from '@/components/admin/RemoteNavLink'
 import { default as default_898fe857122f157d3c9f5f1d23f234ed } from '@/components/admin/NetworkDashboard'
@@ -32,6 +33,8 @@ import { default as default_fc85ab5396f462b20cb580778c477079 } from '@/component
 import { default as default_c5d72b064dce59295828e942aeb1a3b0 } from '@/components/admin/SearchNavLink'
 import { default as default_a8e0a8c493b3e5a43e9ecea963ad33c0 } from '@/components/admin/SearchView'
 import { default as default_db43129b90862b042c8e58805b1c34d3 } from '@/components/admin/AnalyticsView'
+import { default as default_824269f144980ca426ccec1879995b2f } from '@/components/admin/WikiView'
+import { default as default_256e8065dd029b52134d27789d020c4d } from '@/components/admin/SeoView'
 import { default as default_b52c47d040b3de98f13b8f8b461fbeb5 } from '@/components/admin/RemoteView'
 import { CollectionCards as CollectionCards_f9c02e79a4aed9a3924487c0cd4cafb1 } from '@payloadcms/next/rsc'
 
@@ -64,6 +67,7 @@ export const importMap = {
   "@/components/admin/AdminIcon#default": default_d500ae2ad98a0a33d640ae0ac1a3417c,
   "@/components/admin/AdminLogo#default": default_b80a86fce1072afc84cd6a430a965697,
   "@/components/admin/NavBadges#default": default_b00b5b7ec8a95f6eca9d47579d2ab8e0,
+  "@/components/admin/WikiNavLink#default": default_95fc3d8f68c115ca7a6cfa98d74e8cfe,
   "@/components/admin/AnalyticsNavLink#default": default_fb17e397022e83cc802d5c55b8837bc2,
   "@/components/admin/RemoteNavLink#default": default_d5595a2203cb11a9a527e1a3f4a11fed,
   "@/components/admin/NetworkDashboard#default": default_898fe857122f157d3c9f5f1d23f234ed,
@@ -71,6 +75,8 @@ export const importMap = {
   "@/components/admin/SearchNavLink#default": default_c5d72b064dce59295828e942aeb1a3b0,
   "@/components/admin/SearchView#default": default_a8e0a8c493b3e5a43e9ecea963ad33c0,
   "@/components/admin/AnalyticsView#default": default_db43129b90862b042c8e58805b1c34d3,
+  "@/components/admin/WikiView#default": default_824269f144980ca426ccec1879995b2f,
+  "@/components/admin/SeoView#default": default_256e8065dd029b52134d27789d020c4d,
   "@/components/admin/RemoteView#default": default_b52c47d040b3de98f13b8f8b461fbeb5,
   "@payloadcms/next/rsc#CollectionCards": CollectionCards_f9c02e79a4aed9a3924487c0cd4cafb1
 }
