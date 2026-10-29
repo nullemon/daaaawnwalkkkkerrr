@@ -737,6 +737,27 @@ that inherits the default would let any reader who signs up edit content.
   stored credit needs `pnpm seed:posters --force`, because the upload is keyed
   on filename and an ordinary run reuses the row.
 
+- **Payload's own schema moves on a minor upgrade, and `push: false` will not
+  follow it.** 3.89 to 3.92 added `reset_password_requested_at` to both auth
+  collections and `has_api_key` to `users`. Nothing said so: `next build` was
+  green, every page rendered, and only a *write* to `players` — the
+  forgot-password endpoint — answered 500 with `no such column` in the server
+  log. A dev-server boot pushes the columns in; a production database built
+  before the upgrade needs the same, which `pnpm db:reset` against it does.
+  The upgrade itself was the security fix (`pnpm audit --prod` went from 7
+  critical and 29 high to 0 and 0), so this is the price of every one of them.
+
+- **Four write endpoints exist whether or not a form links to them.**
+  `comments`, `corrections`, `requests` and `players` accept a `create` from
+  anybody at `/api/<collection>`, and `players` answers `forgot-password`,
+  which sends a mail per call. `src/lib/write-limit.ts` is the one ceiling
+  they share, as a `beforeOperation` hook: ten a minute per address, six
+  hundred per process, editors exempt, 429 past it. In memory and per process,
+  the same floor-not-guarantee `/api/hit` records. GraphQL is **off**
+  (`graphQL.disable`) and its two generated route files are deleted, because
+  nothing here ever queried it. Security headers are in `next.config.ts`,
+  with the reason there is no Content-Security-Policy written beside them.
+
 ## How a guide gets written
 
 Four passes, each grounded in a different source, each idempotent on

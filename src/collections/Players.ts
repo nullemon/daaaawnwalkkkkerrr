@@ -1,4 +1,5 @@
 import type { CollectionConfig } from 'payload'
+import { limitPublicWrites } from '../lib/write-limit'
 import { networkName } from '../lib/email-copy'
 import { HUB_ORIGIN } from '../lib/urls'
 
@@ -111,6 +112,11 @@ export const Players: CollectionConfig = {
       if (req.user?.collection === 'players') return { id: { equals: req.user.id } }
       return false
     },
+  },
+  hooks: {
+    // Registration and forgot-password are open to anyone and the second one
+    // sends an email per call; both are rate-limited. See lib/write-limit.ts.
+    beforeOperation: [limitPublicWrites()],
   },
   fields: [
     {

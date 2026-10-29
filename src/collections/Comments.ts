@@ -1,4 +1,5 @@
 import type { CollectionConfig } from 'payload'
+import { limitPublicWrites } from '../lib/write-limit'
 import { isEditor } from '../fields/shared'
 import { screen, FLAG_LABELS, type Flag } from '../lib/moderation'
 
@@ -52,6 +53,8 @@ export const Comments: CollectionConfig = {
     delete: isEditor,
   },
   hooks: {
+    // Anonymous writes are rate-limited; see lib/write-limit.ts for the ceiling and why.
+    beforeOperation: [limitPublicWrites()],
     beforeValidate: [
       async ({ data, operation, req }) => {
         if (!data) return data

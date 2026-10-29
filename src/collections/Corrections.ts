@@ -1,4 +1,5 @@
 import type { CollectionConfig } from 'payload'
+import { limitPublicWrites } from '../lib/write-limit'
 import { isEditor } from '../fields/shared'
 import { notifyOfReport } from '../lib/email-notify'
 
@@ -25,6 +26,8 @@ export const Corrections: CollectionConfig = {
     delete: isEditor,
   },
   hooks: {
+    // Anonymous writes are rate-limited; see lib/write-limit.ts for the ceiling and why.
+    beforeOperation: [limitPublicWrites()],
     /*
       The site invites corrections on every page and promises they "go straight
       to our review queue". For as long as this collection has existed the

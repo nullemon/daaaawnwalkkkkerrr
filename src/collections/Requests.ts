@@ -1,4 +1,5 @@
 import type { CollectionConfig } from 'payload'
+import { limitPublicWrites } from '../lib/write-limit'
 import { isEditor } from '../fields/shared'
 import { notifyOfReport } from '../lib/email-notify'
 
@@ -51,6 +52,8 @@ export const Requests: CollectionConfig = {
     is also where to change it.
   */
   hooks: {
+    // Anonymous writes are rate-limited; see lib/write-limit.ts for the ceiling and why.
+    beforeOperation: [limitPublicWrites()],
     afterChange: [
       async ({ doc, operation, req }) => {
         if (operation !== 'create') return

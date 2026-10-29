@@ -295,6 +295,15 @@ export default buildConfig({
     whether it works.
   */
   email,
+  /*
+    No GraphQL. Nothing on the site or in the tools queries it — every read is
+    the local API at build time and every write is REST — so the endpoint was
+    attack surface with no caller: introspection of the whole schema, and a
+    query language whose cost per request is set by the sender. The generated
+    route files under `(payload)/api/graphql*` are deleted with it; Payload
+    does not recreate them.
+  */
+  graphQL: { disable: true },
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: { outputFile: path.resolve(dirname, 'payload-types.ts') },
   /**
